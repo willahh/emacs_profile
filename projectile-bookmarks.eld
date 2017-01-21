@@ -1,1 +1,1 @@
-("~/www/test/svn_test/willahh_siteweb/dev/" "~/.emacs.d/" "~/www/test/svn_test/willahh_siteweb/dev/admin/vendor/Imagine-develop/" "~/www/test/git_test/willahh_siteweb/" "~/.emacs_spacemac.d/" "~/www/test/svn_test/willahh_siteweb/")
+("~/.emacs.d/" "~/www/test/svn_test/willahh_siteweb/dev/" "~/www/test/svn_test/willahh_siteweb/dev/admin/vendor/Imagine-develop/" "~/www/test/git_test/willahh_siteweb/" "~/.emacs_spacemac.d/" "~/www/test/svn_test/willahh_siteweb/")
