@@ -1,0 +1,286 @@
+
+
+(setq frame-title-format "emacs")
+(global-auto-revert-mode -1)
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
+(set-default 'cursor-type 'bar)
+(column-number-mode)
+(show-paren-mode)
+(global-hl-line-mode)
+(winner-mode t)
+
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "https://melpa.org/packages/") t)
+(when (< emacs-major-version 24)
+  ;; For important compatibility libraries like cl-lib
+  (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/")))
+(package-initialize)
+
+
+(load-theme 'monokai t)
+
+(require 'powerline)
+;;(powerline-default-theme)
+(powerline-center-theme)
+
+;; Multiple cursor
+(require 'multiple-cursors-core)
+;; This is globally useful, so it goes under `C-x', and `m'
+;; for "multiple-cursors" is easy to remember.
+(define-key ctl-x-map "\C-m" #'mc/mark-all-dwim)
+;; Usually, both `C-x C-m' and `C-x RET' invoke the
+;; `mule-keymap', but that's a waste of keys. Here we put it
+;; _just_ under `C-x RET'.
+(define-key ctl-x-map (kbd "<return>") mule-keymap)
+
+;; Remember `er/expand-region' is bound to M-2!
+(global-set-key (kbd "M-3") #'mc/mark-next-like-this)
+(global-set-key (kbd "M-4") #'mc/mark-previous-like-this)
+
+
+
+
+;; helm
+(require 'helm)
+(require 'helm-config)
+
+;; The default "C-x c" is quite close to "C-x C-c", which quits Emacs.
+;; Changed to "C-c h". Note: We must set "C-c h" globally, because we
+;; cannot change `helm-command-prefix-key' once `helm-config' is loaded.
+(global-set-key (kbd "C-c h") 'helm-command-prefix)
+(global-unset-key (kbd "C-x c"))
+
+; (global-set-key (kbd "M-x") 'helm-M-x)
+; (global-set-key (kbd "C-x C-m") 'helm-M-x)
+; (global-set-key (kbd "C-c -") 'helm-M-x)
+; (global-set-key (kbd "C-c C-_") 'helm-M-x)
+; (global-set-key (kbd "C-c )") 'helm-M-x)
+; (global-set-key (kbd "C-c c-)") 'helm-M-x)
+; (global-set-key (kbd "M-p") 'helm-M-x)
+(global-set-key (kbd "M-x") 'helm-M-x)
+
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+(global-set-key (kbd "C-x b") 'helm-mini)
+(global-set-key (kbd "M-y") 'helm-show-kill-ring)
+(helm-autoresize-mode t)
+
+(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
+(define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB work in terminal
+(define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
+
+(when (executable-find "curl")
+  (setq helm-google-suggest-use-curl-p t))
+
+(setq helm-split-window-in-side-p           t ; open helm buffer inside current window, not occupy whole other window
+      helm-move-to-line-cycle-in-source     t ; move to end or beginning of source when reaching top or bottom of source.
+      helm-ff-search-library-in-sexp        t ; search for library in `require' and `declare-function' sexp.
+      helm-scroll-amount                    8 ; scroll 8 lines other window using M-<next>/M-<prior>
+      helm-ff-file-name-history-use-recentf t
+      helm-echo-input-in-header-line t)
+
+(defun spacemacs//helm-hide-minibuffer-maybe ()
+  "Hide minibuffer in Helm session if we use the header line as input field."
+  (when (with-helm-buffer helm-echo-input-in-header-line)
+    (let ((ov (make-overlay (point-min) (point-max) nil nil t)))
+      (overlay-put ov 'window (selected-window))
+      (overlay-put ov 'face
+                   (let ((bg-color (face-background 'default nil)))
+                     `(:background ,bg-color :foreground ,bg-color)))
+      (setq-local cursor-type nil))))
+
+(add-hook 'helm-minibuffer-set-up-hook
+          'spacemacs//helm-hide-minibuffer-maybe)
+
+
+
+
+
+
+;; Smart modde line
+(setq sml/no-confirm-load-theme t)
+(setq sml/theme 'dark)
+(sml/setup)
+
+
+
+
+
+;; Wind (Deplacement plus rapide entre les window)
+(when (fboundp 'windmove-default-keybindings)
+  (windmove-default-keybindings))
+
+
+
+
+
+;;
+(setq helm-autoresize-max-height 500)
+(setq helm-autoresize-min-height 500)
+(helm-autoresize-mode 1)
+
+
+
+(helm-mode 1)
+
+
+
+;; Help with projectile
+; (global-set-key (kbd "C-c ù") 'helm-projectile)
+; (global-set-key (kbd "C-x )") 'helm-projectile)
+;;(global-set-key (kbd "C-c p") 'helm-projectile)
+; (global-set-key (kbd "C-c -") 'helm-projectile)
+; (global-set-key (kbd "C-c C-_") 'helm-projectile)
+(global-set-key (kbd "C-x C-p") 'helm-projectile)
+
+;; Line number config (linum-mode)
+(add-hook 'prog-mode-hook 'linum-mode)
+
+;; Projectile
+(projectile-global-mode)
+(add-hook 'ruby-mode-hook' projectile-mode)
+
+
+
+
+;; Bookmarks
+(require 'bookmark+)
+
+
+
+
+
+
+
+;; Auto complete
+(global-auto-complete-mode t)
+
+
+;; Avy
+(global-set-key (kbd "C-:") 'avy-goto-char)
+(global-set-key (kbd "C-'") 'avy-goto-char-2)
+(global-set-key (kbd "M-g f") 'avy-goto-line)
+(global-set-key (kbd "M-g w") 'avy-goto-word-1)
+(global-set-key (kbd "M-g e") 'avy-goto-word-0)
+
+
+
+
+;; Expand region
+(require 'expand-region)
+(global-set-key (kbd "C-@") 'er/expand-region)
+
+
+
+;; Auto save all buffer when file change on disk (aka function to keep synchro between buffers)
+;; UPDATE : @todo n a pas l air de fonctionner .. une prochaine fois peut être !
+;; Update : @todo doesn't seems to work... may be an other day !
+(global-auto-revert-mode t)
+
+
+
+;; Git gutter
+(require 'git-gutter)
+
+;; If you enable global minor mode
+(global-git-gutter-mode t)
+
+;; If you would like to use git-gutter.el and linum-mode
+(git-gutter:linum-setup)
+
+;; If you enable git-gutter-mode for some modes
+(add-hook 'ruby-mode-hook 'git-gutter-mode)
+
+(global-set-key (kbd "C-x C-g") 'git-gutter)
+(global-set-key (kbd "C-x v =") 'git-gutter:popup-hunk)
+
+;; Jump to next/previous hunk
+(global-set-key (kbd "C-x p") 'git-gutter:previous-hunk)
+(global-set-key (kbd "C-x n") 'git-gutter:next-hunk)
+
+;; Stage current hunk
+(global-set-key (kbd "C-x v s") 'git-gutter:stage-hunk)
+
+;; Revert current hunk
+(global-set-key (kbd "C-x v r") 'git-gutter:revert-hunk)
+
+;; Mark current hunk
+
+
+;; Use for 'Git'(`git`), 'Mercurial'(`hg`), 'Bazaar'(`bzr`), and 'Subversion'(`svn`) projects
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
+ '(custom-safe-themes
+   (quote
+    ("c7a9a68bd07e38620a5508fef62ec079d274475c8f92d75ed0c33c45fbe306bc" default)))
+ '(git-gutter:handled-backends (quote (git hg bzr svn)))
+ '(package-selected-packages
+   (quote
+    (multiple-cursors powerline smex magit-svn git-gutter other-frame-window desktop+ bookmark+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window git-gutter+ php-mode php+-mode web-mode magit neotree monokai-theme helm-projectile helm))))
+
+
+
+;; Magit with svn
+(add-hook 'magit-mode-hook 'magit-svn-mode)
+
+
+
+(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)
+;;(setq neo-smart-open t)
+
+
+;; Web mode
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+
+
+;; undo-tree
+(require 'undo-tree)
+(global-undo-tree-mode)
+
+
+;; CUA MODE (integre par default) permet de faire du ctrl c/v/x a la place des yank bidul pouet
+ (cua-mode t)
+    (setq cua-auto-tabify-rectangles nil) ;; Don't tabify after rectangle commands
+    (transient-mark-mode 1) ;; No region when it is not highlighted
+    (setq cua-keep-region-after-copy t) ;; Standard Windows behaviour
+
+
+
+;; Mac key bindings
+;;(setq mac-command-modifier 'meta) ; make cmd key do Meta
+;;(setq mac-option-modifier 'super) ; make opt key do Super
+;;(setq mac-control-modifier 'control) ; make Control key do Control
+;;(setq ns-function-modifier 'hyper)  ; make Fn key do Hyper
+
+ ;; changing the command to control
+;;    (setq mac-command-modifier 'control)
+
+
+;; TODO REMETTRE LE MOVE DOWN (avant meta+p) --> le mettre sur CMD+
+;;    --> semble dejà bon ?
+;; TODO : Desactiver CMD+SPACE DANS EMACS
+
+
+
+;; auto write
+
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
