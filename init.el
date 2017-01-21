@@ -95,6 +95,15 @@
 
 
 
+
+;; Projectile cache
+;; Note : Des ralentissements ont etes constates a un moment donne,
+;; Pas sur que ca change quelque chose, mais a voir ...
+(setq projectile-enable-caching t)
+
+
+
+
 ;; Smart modde line
 (setq sml/no-confirm-load-theme t)
 (setq sml/theme 'dark)
