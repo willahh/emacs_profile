@@ -169,6 +169,7 @@
 ;; Remember `er/expand-region' is bound to M-2!
 (global-set-key (kbd "M-3") #'mc/mark-next-like-this)
 (global-set-key (kbd "M-4") #'mc/mark-previous-like-this)
+(global-set-key (kbd "M-D") #'mc/mark-all-line-like-this)
 
 
 
