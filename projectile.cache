@@ -1,3 +1,3 @@
-#s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8 data ("/Users/wravel/.emacs.d/" (".gitignore" "elpa/monokai-theme-20161216.628/monokai-theme.el" "init.el" "../../../bin/bash: git: command not found
+#s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8 data ("/Users/wravel/.emacs.d/" ("README.md" "projectile.cache" ".gitignore" "elpa/monokai-theme-20161216.628/monokai-theme.el" "init.el" "../../../bin/bash: git: command not found
 ") "/Users/wravel/www/project/arsia/gun_3.0.1/dev/" ("creation/module/creagen/_actiontoolbar.inc.html.php" "svn: OPTIONS of 'https:/192.168.0.7/svn/sygesp_2010/arsia_alpia/3.0/gun_3.0.1/dev': SSL negotiation failed: SSL error code -1/1/336032856 (https:/192.168.0.7)
 ")))
