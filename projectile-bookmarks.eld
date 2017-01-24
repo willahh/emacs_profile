@@ -1,1 +1,1 @@
-("~/.emacs.d/" "~/www/project/arsia/gun_3.0.1/dev/" "~/www/project/arsia/default_300/make/" "~/www/project/goa_siteweb/5.2.0/dev/" "~/www/project/arsia/gun_3.0.1/licence/" "~/.emacs_spacemac.d/" "~/www/test/angular/angular_test/testcopy/" "~/www/test/svn_test/willahh_siteweb/dev/" "~/www/test/svn_test/willahh_siteweb/dev/admin/vendor/Imagine-develop/" "~/www/test/git_test/willahh_siteweb/" "~/www/test/svn_test/willahh_siteweb/")
+("~/.emacs.d/" "~/www/project/arsia/gun_3.0.1/dev/")

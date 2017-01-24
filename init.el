@@ -17,6 +17,24 @@
 
 
 
+
+
+;; Set meta key to command
+;;; I prefer cmd key for meta
+;;
+;; Update wra : cmd key is disabled with this,
+;; Copy paste from system to emacs is not possible with this.
+
+;;(setq mac-option-key-is-meta nil
+;;      mac-command-key-is-meta t
+;;      mac-command-modifier 'meta
+;;      mac-option-modifier 'none)
+
+
+
+
+
+
 ;; 
 ;;
 ;; Package settings
@@ -103,6 +121,21 @@
 ;;
 ;;
 (load-theme 'monokai t)
+
+
+
+
+
+;; wra Custom theme
+;; Default font
+(set-default-font "Inconsolata-14") ;; Font face: Inconsolata, font-size: 14
+;;(add-to-list 'default-frame-alist '(foreground-color . "#272822"))
+;;(add-to-list 'default-frame-alist '(background-color . "#272822"))
+;; (add-to-list 'default-frame-alist '(background-color . "black"))
+
+
+
+
 
 
 
@@ -250,11 +283,6 @@
 
 
 
-;; Projectile cache
-;; Note : Des ralentissements ont etes constates a un moment donne,
-;; Pas sur que ca change quelque chose, mais a voir ...
-(setq projectile-enable-caching t)
-
 
 
 
@@ -301,6 +329,18 @@
 (projectile-global-mode)
 (add-hook 'ruby-mode-hook' projectile-mode)
 
+
+;; Projectile cache
+;; Read : http://batsov.com/projectile/
+;; Note : Des ralentissements ont etes constates a un moment donne,
+;; Pas sur que ca change quelque chose, mais a voir ...
+(setq projectile-enable-caching t)
+
+;; Method d indexation native
+(setq projectile-indexing-method 'native)
+
+;; Using Projectile everywhere
+(setq projectile-require-project-root nil)
 
 
 
