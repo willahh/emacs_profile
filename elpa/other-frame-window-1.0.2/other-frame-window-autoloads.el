@@ -4,7 +4,7 @@
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
 ;;;### (autoloads nil "other-frame-window" "other-frame-window.el"
-;;;;;;  (22657 21246 0 0))
+;;;;;;  (22663 8721 0 0))
 ;;; Generated autoloads from other-frame-window.el
 
 (defvar other-frame-window-mode nil "\

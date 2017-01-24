@@ -1,5 +1,8 @@
-
-
+;; 
+;;
+;; Emacs global settings
+;;
+;;
 (setq frame-title-format "emacs")
 (global-auto-revert-mode -1)
 (tool-bar-mode -1)
@@ -10,20 +13,114 @@
 (global-hl-line-mode)
 (winner-mode t)
 
+
+
+
+
+;; 
+;;
+;; Package settings
+;;
+;;
+
+;; ?
 (require 'package)
+
+;; Liste des packages a installer si repertoire non disponible
+(setq package-list '(
+  ace-jump-mode
+  ace-window
+  anaphora
+  anything
+  ;;archives
+  async
+  auto-complete
+  avy
+  avy-menu
+  bookmark+
+  dash
+  desktop+
+  epl
+  expand-region
+  f
+  git-commit
+  git-gutter
+  git-gutter+
+  helm
+  helm-anything
+  helm-core
+  helm-projectile
+  magit
+  magit-popup
+  magit-svn
+  monokai-theme
+  multiple-cursors
+  neotree
+  other-frame-window
+  php+-mode
+  php-mode
+  pkg-info
+  popup
+  powerline
+  projectile
+  rich-minority
+  s
+  smart-mode-line
+  smex
+  undo-tree
+  web-mode
+  with-editor
+  workgroups2
+))
+
+;; Liste des repositories pour trouver les packages
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/") t)
+
+;; ??
 (when (< emacs-major-version 24)
   ;; For important compatibility libraries like cl-lib
   (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/")))
+
+; activate all the packages (in particular autoloads)
 (package-initialize)
 
+; fetch the list of packages available 
+(unless package-archive-contents
+  (package-refresh-contents))
 
-(load-theme 'monokai t)
+; install the missing packages
+(dolist (package package-list)
+  (unless (package-installed-p package)
+    (package-install package)))
+
+
+
+;;
+;;
+;;
+;;
+;;
+;;
+;;(load-theme 'monokai t)
 
 (require 'powerline)
 ;;(powerline-default-theme)
 (powerline-center-theme)
+
+;; Multiple cursor
+(require 'multiple-cursors-core)
+;; This is globally useful, so it goes under `C-x', and `m'
+;; for "multiple-cursors" is easy to remember.
+(define-key ctl-x-map "\C-m" #'mc/mark-all-dwim)
+;; Usually, both `C-x C-m' and `C-x RET' invoke the
+;; `mule-keymap', but that's a waste of keys. Here we put it
+;; _just_ under `C-x RET'.
+(define-key ctl-x-map (kbd "<return>") mule-keymap)
+
+;; Remember `er/expand-region' is bound to M-2!
+(global-set-key (kbd "M-3") #'mc/mark-next-like-this)
+(global-set-key (kbd "M-4") #'mc/mark-previous-like-this)
 
 
 
@@ -80,6 +177,14 @@
           'spacemacs//helm-hide-minibuffer-maybe)
 
 
+;
+
+
+
+;; Projectile cache
+;; Note : Des ralentissements ont etes constates a un moment donne,
+;; Pas sur que ca change quelque chose, mais a voir ...
+(setq projectile-enable-caching t)
 
 
 
@@ -207,7 +312,7 @@
  '(git-gutter:handled-backends (quote (git hg bzr svn)))
  '(package-selected-packages
    (quote
-    (multiple-cursors powerline smex magit-svn git-gutter other-frame-window desktop+ bookmark+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window git-gutter+ php-mode php+-mode web-mode magit neotree monokai-theme helm-projectile helm))))
+    (workgroups2 multiple-cursors powerline smex magit-svn git-gutter other-frame-window desktop+ bookmark+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window git-gutter+ php-mode php+-mode web-mode magit neotree monokai-theme helm-projectile helm))))
 
 
 
@@ -259,6 +364,65 @@
 ;; TODO REMETTRE LE MOVE DOWN (avant meta+p) --> le mettre sur CMD+
 ;;    --> semble dejà bon ?
 ;; TODO : Desactiver CMD+SPACE DANS EMACS
+
+
+
+
+
+
+
+;; workgroup
+(require 'workgroups2)
+;; Your settings here
+
+;;(setq wg-session-load-on-start t)    ; default: (not (daemonp))
+
+;; Change prefix key (before activating WG)
+(setq wg-prefix-key (kbd "C-c z"))
+
+;; Change workgroups session file
+(setq wg-session-file "~/.emacs.d/.emacs_workgroups")
+
+;; Set your own keyboard shortcuts to reload/save/switch WGs:
+;; "s" == "Super" or "Win"-key, "S" == Shift, "C" == Control
+(global-set-key (kbd "<pause>")     'wg-reload-session)
+(global-set-key (kbd "C-S-<pause>") 'wg-save-session)
+(global-set-key (kbd "s-z")         'wg-switch-to-workgroup)
+(global-set-key (kbd "s-/")         'wg-switch-to-previous-workgroup)
+
+(workgroups-mode 1)   ; put this one at the bottom of .emacs
+
+
+
+;; What to do on Emacs exit / workgroups-mode exit?
+(setq wg-emacs-exit-save-behavior           'save)      ; Options: 'save 'ask nil
+(setq wg-workgroups-mode-exit-save-behavior 'save)      ; Options: 'save 'ask nil
+
+;; Mode Line changes
+;; Display workgroups in Mode Line?
+(setq wg-mode-line-display-on t)          ; Default: (not (featurep 'powerline))
+(setq wg-flag-modified t)                 ; Display modified flags as well
+(setq wg-mode-line-decor-left-brace "["
+      wg-mode-line-decor-right-brace "]"  ; how to surround it
+      wg-mode-line-decor-divider ":")
+
+
+
+
+
+
+;; Copy current pwd into clipboard
+;; Source http://stackoverflow.com/a/18816438
+;; Doesnt seems to work ....
+(defun clip-file()
+  "Put the current file name on the clipboard"
+  (interactive)
+  (let ((filename (if (equal major-mode 'dired-mode)
+                      (file-name-directory default-directory)
+                    (buffer-file-name))))
+    (when filename
+      (x-select-text filename))))
+
 
 
 

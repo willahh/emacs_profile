@@ -8,7 +8,7 @@
 ;;;;;;  "php-doc.el" "php-edit.el" "php-font-lock.el" "php-format.el"
 ;;;;;;  "php-funcs.el" "php-help.el" "php-lineup.el" "php-parse.el"
 ;;;;;;  "php-project.el" "php-refactor.el" "php-string.el" "php-structure.el"
-;;;;;;  "php-tags.el" "php-utils.el" "string-utils.el") (22655 65398
+;;;;;;  "php-tags.el" "php-utils.el" "string-utils.el") (22663 8727
 ;;;;;;  0 0))
 
 ;;;***

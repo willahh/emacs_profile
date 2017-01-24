@@ -1,3 +1,8 @@
+;; 
+;;
+;; Emacs global settings
+;;
+;;
 (setq frame-title-format "emacs")
 (global-auto-revert-mode -1)
 (tool-bar-mode -1)
@@ -8,15 +13,95 @@
 (global-hl-line-mode)
 (winner-mode t)
 
+
+
+
+
+;; 
+;;
+;; Package settings
+;;
+;;
+
+;; ?
 (require 'package)
+
+;; Liste des packages a installer si repertoire non disponible
+(setq package-list '(
+  ace-jump-mode
+  ace-window
+  anaphora
+  anything
+  ;;archives
+  async
+  auto-complete
+  avy
+  avy-menu
+  bookmark+
+  dash
+  desktop+
+  epl
+  expand-region
+  f
+  git-commit
+  git-gutter
+  git-gutter+
+  helm
+  helm-anything
+  helm-core
+  helm-projectile
+  magit
+  magit-popup
+  magit-svn
+  monokai-theme
+  multiple-cursors
+  neotree
+  other-frame-window
+  php+-mode
+  php-mode
+  pkg-info
+  popup
+  powerline
+  projectile
+  rich-minority
+  s
+  smart-mode-line
+  smex
+  undo-tree
+  web-mode
+  with-editor
+  workgroups2
+))
+
+;; Liste des repositories pour trouver les packages
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/") t)
+
+;; ??
 (when (< emacs-major-version 24)
   ;; For important compatibility libraries like cl-lib
   (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/")))
+
+; activate all the packages (in particular autoloads)
 (package-initialize)
 
+; fetch the list of packages available 
+(unless package-archive-contents
+  (package-refresh-contents))
 
+; install the missing packages
+(dolist (package package-list)
+  (unless (package-installed-p package)
+    (package-install package)))
+
+
+
+;;
+;;
+;;
+;;
+;;
+;;
 (load-theme 'monokai t)
 
 (require 'powerline)
@@ -92,7 +177,7 @@
           'spacemacs//helm-hide-minibuffer-maybe)
 
 
-
+;
 
 
 
@@ -324,6 +409,19 @@
 
 
 
+
+
+;; Copy current pwd into clipboard
+;; Source http://stackoverflow.com/a/18816438
+;; Doesnt seems to work ....
+(defun clip-file()
+  "Put the current file name on the clipboard"
+  (interactive)
+  (let ((filename (if (equal major-mode 'dired-mode)
+                      (file-name-directory default-directory)
+                    (buffer-file-name))))
+    (when filename
+      (x-select-text filename))))
 
 
 

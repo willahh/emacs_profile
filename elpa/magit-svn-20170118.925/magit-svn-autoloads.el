@@ -3,7 +3,7 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "magit-svn" "magit-svn.el" (22658 24780 0 0))
+;;;### (autoloads nil "magit-svn" "magit-svn.el" (22663 8715 0 0))
 ;;; Generated autoloads from magit-svn.el
 
 (autoload 'magit-svn-show-commit "magit-svn" "\
