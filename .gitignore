@@ -4,3 +4,14 @@ bookmarks
 elpia/*
 
 
+.emacs_workgroups
+.emacs_workgroups~
+.gitignore~
+.mc-lists.el
+auto-save-list
+bookmarks~
+elpa/yascroll-20150315.605
+eshell
+recentf~
+projectile.cache
+
