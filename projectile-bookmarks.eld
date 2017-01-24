@@ -1,1 +1,0 @@
-("~/.emacs.d/" "~/www/project/arsia/gun_3.0.1/dev/")
