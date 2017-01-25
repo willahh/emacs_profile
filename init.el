@@ -14,7 +14,8 @@
 (winner-mode t)
 
 
-
+;; Add comment/uncomment key binding
+(global-set-key (kbd "C-x C-:") 'comment-or-uncomment-region)
 
 
 
@@ -24,11 +25,23 @@
 ;;
 ;; Update wra : cmd key is disabled with this,
 ;; Copy paste from system to emacs is not possible with this.
-
-;;(setq mac-option-key-is-meta nil
+;;
+;; Update wra 2 :
+;;  bracket {} cant be typed if alt is used as meta key...
+;;
+;;
+;; (setq mac-option-key-is-meta nil
 ;;      mac-command-key-is-meta t
 ;;      mac-command-modifier 'meta
 ;;      mac-option-modifier 'none)
+
+
+(
+ setq mac-option-key-is-meta nil
+     mac-command-key-is-meta t
+     mac-command-modifier 'meta
+     mac-option-modifier 'none)
+
 
 
 
@@ -56,6 +69,7 @@
   avy
   avy-menu
   bookmark+
+  company
   dash
   desktop+
   epl
@@ -89,6 +103,7 @@
   web-mode
   with-editor
   workgroups2
+  web-beautify
 ))
 
 ;; Liste des repositories pour trouver les packages
@@ -129,6 +144,7 @@
 ;; wra Custom theme
 ;; Default font
 (set-default-font "Inconsolata-14") ;; Font face: Inconsolata, font-size: 14
+(set-face-attribute 'region nil :background "#b3e33b")
 ;;(add-to-list 'default-frame-alist '(foreground-color . "#272822"))
 ;;(add-to-list 'default-frame-alist '(background-color . "#272822"))
 ;; (add-to-list 'default-frame-alist '(background-color . "black"))
@@ -211,7 +227,92 @@
 
 
 
+;; Company config
+;; Permet de declencher l auto indent css apres avoir saisi une tabulation
+;; 
+;; Source : http://emacs.stackexchange.com/a/12457
+(setq tab-always-indent 'complete)
 
+(defvar completion-at-point-functions-saved nil)
+
+(defun company-indent-for-tab-command (&optional arg)
+  (interactive "P")
+  (let ((completion-at-point-functions-saved completion-at-point-functions)
+        (completion-at-point-functions '(company-complete-common-wrapper)))
+    (indent-for-tab-command arg)))
+
+(defun company-complete-common-wrapper ()
+  (let ((completion-at-point-functions completion-at-point-functions-saved))
+    (company-complete-common)))
+
+
+
+
+;; Auto pair config
+;; Souhait initial : En mode css : Fermeture auto d une accolade lors de l ouverture d une nouvelle (ST behaviour)
+;; --> Fonctionne parfaitement :)
+;; 
+(autopair-global-mode) ;; enable autopair in all buffer
+
+
+
+
+
+
+;; Emmet
+(add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
+(add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
+
+
+
+;; Smart tab
+;; Souhait initial : Depuis Sublime, fichier css, saisie de "ul" + TAB =
+;; Activation de emmet (construction du <ul></ul>)
+;; Source : http://emacs.stackexchange.com/a/10674
+;; (Je n ai pas regarde en detail ...)
+;; --> @todo comportement encore non identique, creuser un peu plus
+
+(require 'smart-tab)
+(global-smart-tab-mode 1)
+
+(defun add-emmet-expand-to-smart-tab-completions ()
+  ;; Add an entry for current major mode in
+  ;; `smart-tab-completion-functions-alist' to use
+  ;; `emmet-expand-line'.
+  (add-to-list 'smart-tab-completion-functions-alist
+               (cons major-mode #'emmet-expand-line)))   
+
+(require 'emmet-mode)
+(add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
+(add-hook 'sgml-mode-hook 'add-emmet-expand-to-smart-tab-completions)
+(add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
+(add-hook 'css-mode-hook 'add-emmet-expand-to-smart-tab-completions)
+
+
+
+
+;; Web beautify
+(eval-after-load 'js2-mode
+  '(define-key js2-mode-map (kbd "C-c b") 'web-beautify-js))
+;; Or if you're using 'js-mode' (a.k.a 'javascript-mode')
+(eval-after-load 'js
+  '(define-key js-mode-map (kbd "C-c b") 'web-beautify-js))
+
+(eval-after-load 'json-mode
+  '(define-key json-mode-map (kbd "C-c b") 'web-beautify-js))
+
+(eval-after-load 'sgml-mode
+  '(define-key html-mode-map (kbd "C-c b") 'web-beautify-html))
+
+(eval-after-load 'web-mode
+  '(define-key web-mode-map (kbd "C-c b") 'web-beautify-html))
+
+(eval-after-load 'css-mode
+  '(define-key css-mode-map (kbd "C-c b") 'web-beautify-css))
+
+;; Add path where "js-beautify" is in, add it to the emacs env PATH
+ (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
+    (setq exec-path (append exec-path '("/usr/local/bin")))
 
 
 
@@ -422,7 +523,7 @@
  '(git-gutter:handled-backends (quote (git hg bzr svn)))
  '(package-selected-packages
    (quote
-    (yascroll workgroups2 multiple-cursors powerline smex magit-svn git-gutter other-frame-window desktop+ bookmark+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window git-gutter+ php-mode php+-mode web-mode magit neotree monokai-theme helm-projectile helm))))
+    (smart-tab emmet-mode autopair company web-beautify yascroll workgroups2 multiple-cursors powerline smex magit-svn git-gutter other-frame-window desktop+ bookmark+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window git-gutter+ php-mode php+-mode web-mode magit neotree monokai-theme helm-projectile helm))))
 
 
 
