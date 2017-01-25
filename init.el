@@ -128,7 +128,7 @@
 
 ;; wra Custom theme
 ;; Default font
-(set-default-font "Inconsolata-14") ;; Font face: Inconsolata, font-size: 14
+;; (set-default-font "Inconsolata-14") ;; Font face: Inconsolata, font-size: 14
 ;;(add-to-list 'default-frame-alist '(foreground-color . "#272822"))
 ;;(add-to-list 'default-frame-alist '(background-color . "#272822"))
 ;; (add-to-list 'default-frame-alist '(background-color . "black"))
