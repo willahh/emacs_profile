@@ -2,7 +2,9 @@ projectile-bookmarks.eld
 recentf
 bookmarks
 elpa/*
+projectile.cache
 ac-comphist.dat
+
 
 .emacs_workgroups
 .emacs_workgroups~

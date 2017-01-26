@@ -179,13 +179,14 @@
 (define-key ctl-x-map "\C-m" #'mc/mark-all-dwim)
 ;; Usually, both `C-x C-m' and `C-x RET' invoke the
 ;; `mule-keymap', but that's a waste of keys. Here we put it
-;; _just_ under `C-x RET'.
+;; _justn_ under `C-x RET'.
 (define-key ctl-x-map (kbd "<return>") mule-keymap)
 
 ;; Remember `er/expand-region' is bound to M-2!
 (global-set-key (kbd "M-3") #'mc/mark-next-like-this)
 (global-set-key (kbd "M-4") #'mc/mark-previous-like-this)
-(global-set-key (kbd "M-D") #'mc/mark-all-line-like-this)
+(global-set-key (kbd "C-&") #'mc/mark-all-line-like-this)
+
 
 
 
@@ -339,13 +340,6 @@
 (global-set-key (kbd "C-c h") 'helm-command-prefix)
 (global-unset-key (kbd "C-x c"))
 
-; (global-set-key (kbd "M-x") 'helm-M-x)
-; (global-set-key (kbd "C-x C-m") 'helm-M-x)
-; (global-set-key (kbd "C-c -") 'helm-M-x)
-; (global-set-key (kbd "C-c C-_") 'helm-M-x)
-; (global-set-key (kbd "C-c )") 'helm-M-x)
-; (global-set-key (kbd "C-c c-)") 'helm-M-x)
-; (global-set-key (kbd "M-p") 'helm-M-x)
 (global-set-key (kbd "M-x") 'helm-M-x)
 
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
@@ -367,22 +361,26 @@
       helm-ff-file-name-history-use-recentf t
       helm-echo-input-in-header-line t)
 
-(defun spacemacs//helm-hide-minibuffer-maybe ()
-  "Hide minibuffer in Helm session if we use the header line as input field."
-  (when (with-helm-buffer helm-echo-input-in-header-line)
-    (let ((ov (make-overlay (point-min) (point-max) nil nil t)))
-      (overlay-put ov 'window (selected-window))
-      (overlay-put ov 'face
-                   (let ((bg-color (face-background 'default nil)))
-                     `(:background ,bg-color :foreground ,bg-color)))
-      (setq-local cursor-type nil))))
+;; (defun spacemacs//helm-hide-minibuffer-maybe ()
+;;   "Hide minibuffer in Helm session if we use the header line as input field."
+;;   (when (with-helm-buffer helm-echo-input-in-header-line)
+;;     (let ((ov (make-overlay (point-min) (point-max) nil nil t)))
+;;       (overlay-put ov 'window (selected-window))
+;;       (overlay-put ov 'face
+;;                    (let ((bg-color (face-background 'default nil)))
+;;                      `(:background ,bg-color :foreground ,bg-color)))
+;;       (setq-local cursor-type nil))))
 
-(add-hook 'helm-minibuffer-set-up-hook
-          'spacemacs//helm-hide-minibuffer-maybe)
+;; (add-hook 'helm-minibuffer-set-up-hook
+;;           'spacemacs//helm-hide-minibuffer-maybe)
+;;
 
 
-;
 
+;; Helm conf suite
+;; Source : http://tuhdo.github.io/helm-intro.html
+;; helm locate
+(setq helm-locate-fuzzy-match t)
 
 
 
@@ -436,10 +434,13 @@
 ;; Read : http://batsov.com/projectile/
 ;; Note : Des ralentissements ont etes constates a un moment donne,
 ;; Pas sur que ca change quelque chose, mais a voir ...
-(setq projectile-enable-caching t)
+;; Update : Le cache se charge indefinnement
+
+;; Enable cache
+;;(setq projectile-enable-caching t)
 
 ;; Method d indexation native
-(setq projectile-indexing-method 'native)
+;;(setq projectile-indexing-method 'native)
 
 ;; Using Projectile everywhere
 (setq projectile-require-project-root nil)
@@ -523,7 +524,7 @@
  '(git-gutter:handled-backends (quote (git hg bzr svn)))
  '(package-selected-packages
    (quote
-    (smart-tab emmet-mode autopair company web-beautify yascroll workgroups2 multiple-cursors powerline smex magit-svn git-gutter other-frame-window desktop+ bookmark+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window git-gutter+ php-mode php+-mode web-mode magit neotree monokai-theme helm-projectile helm))))
+    (markdown-mode+ smart-tab emmet-mode autopair company web-beautify yascroll workgroups2 multiple-cursors powerline smex magit-svn git-gutter other-frame-window desktop+ bookmark+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window git-gutter+ php-mode php+-mode web-mode magit neotree monokai-theme helm-projectile helm))))
 
 
 
