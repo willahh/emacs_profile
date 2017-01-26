@@ -178,18 +178,26 @@
 
 ;; Multiple cursor
 (require 'multiple-cursors-core)
+
 ;; This is globally useful, so it goes under `C-x', and `m'
 ;; for "multiple-cursors" is easy to remember.
-(define-key ctl-x-map "\C-m" #'mc/mark-all-dwim)
+;; (define-key ctl-x-map "\C-m" #'mc/mark-all-dwim)
+
 ;; Usually, both `C-x C-m' and `C-x RET' invoke the
 ;; `mule-keymap', but that's a waste of keys. Here we put it
 ;; _just_ under `C-x RET'.
-(define-key ctl-x-map (kbd "<return>") mule-keymap)
+;; (define-key ctl-x-map (kbd "<return>") mule-keymap)
 
 ;; Remember `er/expand-region' is bound to M-2!
-(global-set-key (kbd "M-3") #'mc/mark-next-like-this)
-(global-set-key (kbd "M-4") #'mc/mark-previous-like-this)
-(global-set-key (kbd "M-D") #'mc/mark-all-line-like-this)
+;; (global-set-key (kbd "M-3") #'mc/mark-next-like-this)
+;; (global-set-key (kbd "M-4") #'mc/mark-previous-like-this)
+;; (global-set-key (kbd "M-D") #'mc/mark-all-line-like-this)
+
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+
+
 
 
 
@@ -226,12 +234,12 @@
     (interactive)
     (zz-scroll-half-page t))
 
+
 (global-set-key (kbd "M-p") 'zz-scroll-half-page-up) 
-(global-set-key (kbd "M-n") 'zz-scroll-half-page-down) 
+(global-set-key (kbd "M-n") 'zz-scroll-half-page-down)
 
 
 
-;; Company config
 ;; Permet de declencher l auto indent css apres avoir saisi une tabulation
 ;; 
 ;; Source : http://emacs.stackexchange.com/a/12457
@@ -248,6 +256,38 @@
 (defun company-complete-common-wrapper ()
   (let ((completion-at-point-functions completion-at-point-functions-saved))
     (company-complete-common)))
+
+
+
+
+
+
+
+;; Move line up and down
+;; Besoin initial : pouvoir deplacer des lignes en haut ou en bas
+;; Source : http://emacsredux.com/blog/2013/04/02/move-current-line-up-or-down/
+(defun move-line-up ()
+  "Move up the current line."
+  (interactive)
+  (transpose-lines 1)
+  (forward-line -2)
+  (indent-according-to-mode))
+
+(defun move-line-down ()
+  "Move down the current line."
+  (interactive)
+  (forward-line 1)
+  (transpose-lines 1)
+  (forward-line -1)
+  (indent-according-to-mode))
+
+
+
+(global-set-key [(meta up)] 'move-line-up)
+(global-set-key [(meta down)] 'move-line-down)
+
+;; (global-set-key [(control shift up)]  'move-line-up)
+;; (global-set-key [(control shift down)]  'move-line-down)
 
 
 
