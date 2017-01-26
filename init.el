@@ -59,8 +59,12 @@
 
 ;; Liste des packages a installer si repertoire non disponible
 (setq package-list '(
+  autopair		     
   ace-jump-mode
   ace-window
+  company
+  emmet-mode
+  smart-tab
   anaphora
   anything
   ;;archives
@@ -143,7 +147,7 @@
 
 ;; wra Custom theme
 ;; Default font
-(set-default-font "Inconsolata-14") ;; Font face: Inconsolata, font-size: 14
+;; (set-default-font "Inconsolata-14") ;; Font face: Inconsolata, font-size: 14
 (set-face-attribute 'region nil :background "#b3e33b")
 ;;(add-to-list 'default-frame-alist '(foreground-color . "#272822"))
 ;;(add-to-list 'default-frame-alist '(background-color . "#272822"))
@@ -434,13 +438,16 @@
 ;; Read : http://batsov.com/projectile/
 ;; Note : Des ralentissements ont etes constates a un moment donne,
 ;; Pas sur que ca change quelque chose, mais a voir ...
-;; Update : Le cache se charge indefinnement
-
-;; Enable cache
-;;(setq projectile-enable-caching t)
+;;
+;; Update :
+;; Mac os x last version : l indexation tourne indefinnemment
+;; Mac os x snow leopard : ne fonctionne pas
+;; Laisser sans indexation et voir plus tard si on peut vraiment optimiser ou non
+ 
+;; (setq projectile-enable-caching t)
 
 ;; Method d indexation native
-;;(setq projectile-indexing-method 'native)
+;; (setq projectile-indexing-method 'native)
 
 ;; Using Projectile everywhere
 (setq projectile-require-project-root nil)
