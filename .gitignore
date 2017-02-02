@@ -4,6 +4,13 @@ bookmarks
 elpa/*
 projectile.cache
 ac-comphist.dat
+recentf
+projectile.cache
+\#*.gitignore\#
+.#*
+
+
+
 
 
 .emacs_workgroups
@@ -15,5 +22,4 @@ bookmarks~
 elpa/yascroll-20150315.605
 eshell
 recentf~
-projectile.cache
 *~
