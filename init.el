@@ -20,6 +20,13 @@
 
 
 
+;; Open in fullscreen on startup
+;; Source : http://emacs.stackexchange.com/a/3008
+;; (add-to-list 'default-frame-alist '(fullscreen . maximized))maximized))
+
+
+
+
 ;; Set meta key to command
 ;;; I prefer cmd key for meta
 ;;
@@ -89,6 +96,7 @@
   magit
   magit-popup
   magit-svn
+  zerodark-theme
   monokai-theme
   multiple-cursors
   neotree
@@ -139,7 +147,7 @@
 ;;
 ;;
 ;;
-(load-theme 'monokai t)
+(load-theme 'zerodark t)
 
 
 
@@ -167,7 +175,7 @@
 ;;
 ;;
 ;;
-(load-theme 'monokai t)
+(load-theme 'zerodark t)
 
 ;; Yascroll
 ;; (global-yascroll-bar-mode 1)
@@ -192,6 +200,27 @@
 (global-set-key (kbd "C-&") #'mc/mark-all-line-like-this)
 
 
+
+
+
+
+
+
+;; File-path to clipboard
+;; Besoin initial :
+;;   Pouvoir copier le chemin du buffer actuel dans le clipboard
+;; Source : http://stackoverflow.com/a/2417617
+(defun my-put-file-name-on-clipboard ()
+  "Put the current file name on the clipboard"
+  (interactive)
+  (let ((filename (if (equal major-mode 'dired-mode)
+                      default-directory
+                    (buffer-file-name))))
+    (when filename
+      (with-temp-buffer
+        (insert filename)
+        (clipboard-kill-region (point-min) (point-max)))
+      (message filename))))
 
 
 
@@ -527,11 +556,11 @@
  '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
  '(custom-safe-themes
    (quote
-    ("c7a9a68bd07e38620a5508fef62ec079d274475c8f92d75ed0c33c45fbe306bc" default)))
+    ("f5ad3af69f2b6b7c547208b8708d4fa7928b5697ca0845633d1d67c2d145952a" "c7a9a68bd07e38620a5508fef62ec079d274475c8f92d75ed0c33c45fbe306bc" default)))
  '(git-gutter:handled-backends (quote (git hg bzr svn)))
  '(package-selected-packages
    (quote
-    (markdown-mode+ smart-tab emmet-mode autopair company web-beautify yascroll workgroups2 multiple-cursors powerline smex magit-svn git-gutter other-frame-window desktop+ bookmark+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window git-gutter+ php-mode php+-mode web-mode magit neotree monokai-theme helm-projectile helm))))
+    (zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify yascroll workgroups2 multiple-cursors powerline smex magit-svn git-gutter other-frame-window desktop+ bookmark+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window git-gutter+ php-mode php+-mode web-mode magit neotree monokai-theme helm-projectile helm))))
 
 
 
@@ -582,7 +611,7 @@
 
 ;; TODO REMETTRE LE MOVE DOWN (avant meta+p) --> le mettre sur CMD+
 ;;    --> semble dejà bon ?
-;; TODO : Desactiver CMD+SPACE DANS EMACS
+;; TODO : Desactiver CMD+SPACE DANS EMACS ()
 
 
 
@@ -645,6 +674,12 @@
 
 
 
+
+;; Auto-refresh dired on file change
+;; Source : http://superuser.com/a/566401
+(add-hook 'dired-mode-hook 'auto-revert-mode)
+
+
 ;; auto write
 
 (custom-set-faces
@@ -653,3 +688,79 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+
+
+
+;; Quickly copy/move file in Emacs Dired
+;; Source : http://emacs.stackexchange.com/q/5603
+(setq dired-dwim-target t)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;;
+(defun svn-repo-open (s)
+  "Open a buffer to browse a Subversion repository."
+  (interactive "sRepo: ")
+  (switch-to-buffer "svn-repo")
+  (svn-repo-mode)
+  (shell-command (concat "svn ls " (shell-quote-argument s)) "svn-repo")
+  (goto-char (point-min))
+  (if	(equal "/" (substring s (- (length s) 1) (length s)))
+      (insert (concat s "\n\n"))
+    (insert (concat s "/\n\n"))))
+
+(defun svn-repo-browse ()
+  "Browse to the SVN folder at point in svn-repo buffer."
+  (interactive)
+  (let (currentFolder rootFolder)
+    (setq currentFolder (buffer-substring-no-properties (line-beginning-position) (line-end-position)))
+    (goto-char (point-min))
+    (setq rootFolder (buffer-substring-no-properties (line-beginning-position) (line-end-position)))
+    (svn-repo-open (concat rootFolder currentFolder))))
+
+(defun svn-repo-up ()
+  "Browse to the parent of the current SVN folder."
+  (interactive)
+  (let (rootFolder rootFolderPieces)
+    (goto-char (point-min))
+    (setq rootFolder (buffer-substring-no-properties (line-beginning-position) (line-end-position)))
+    (setq rootFolderPieces (split-string rootFolder "/" nil))
+    (svn-repo-open (mapconcat 'identity (butlast(butlast rootFolderPieces)) "/"))))
+
+(define-minor-mode svn-repo-mode
+       "Toggle svn-repo mode."
+      ;; The initial value.
+      nil
+      ;; The indicator for the mode line.
+      " SVN-Repo"
+      ;; The minor mode bindings.
+      '(
+	(("\^M") . svn-repo-browse)
+	((kbd "^") . svn-repo-up)
+	((kbd "n") . next-line)
+	((kbd "p") . previous-line)
+	))
+
+
+
+
+
+;; Launch in fullscreen
+;; Source: http://emacs.stackexchange.com/a/3008
+;; (add-to-list 'default-frame-alist '(fullscreen . maximized)
+(add-to-list 'initial-frame-alist '(fullscreen . maximized))
+(add-to-list 'default-frame-alist '(fullscreen . fullheight))
