@@ -220,8 +220,8 @@
 ;; Besoin initial :
 ;;   Pouvoir copier le chemin du buffer actuel dans le clipboard
 ;; Source : http://stackoverflow.com/a/2417617
-(defun my-put-file-name-on-clipboard ()
-  "Put the current file name on the clipboard"
+(defun copy-file-path ()
+  "Copy current file path into clipboard"
   (interactive)
   (let ((filename (if (equal major-mode 'dired-mode)
                       default-directory
@@ -602,7 +602,7 @@
  '(git-gutter:handled-backends (quote (git hg bzr svn)))
  '(package-selected-packages
    (quote
-    (zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify yascroll workgroups2 multiple-cursors powerline smex magit-svn git-gutter other-frame-window desktop+ bookmark+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window git-gutter+ php-mode php+-mode web-mode magit neotree monokai-theme helm-projectile helm))))
+    (helm-ls-svn zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify yascroll workgroups2 multiple-cursors powerline smex magit-svn git-gutter other-frame-window desktop+ bookmark+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window git-gutter+ php-mode php+-mode web-mode magit neotree monokai-theme helm-projectile helm))))
 
 
 
@@ -687,6 +687,8 @@
 ;; What to do on Emacs exit / workgroups-mode exit?
 (setq wg-emacs-exit-save-behavior           'save)      ; Options: 'save 'ask nil
 (setq wg-workgroups-mode-exit-save-behavior 'save)      ; Options: 'save 'ask nil
+
+
 
 ;; Mode Line changes
 ;; Display workgroups in Mode Line?
@@ -775,7 +777,7 @@
     (svn-repo-open (concat rootFolder currentFolder))))
 
 (defun svn-repo-up ()
-  "Browse to the parent of the current SVN folder."
+  "Browse to the parent of the current SpwdVN folder."
   (interactive)
   (let (rootFolder rootFolderPieces)
     (goto-char (point-min))
