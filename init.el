@@ -606,6 +606,18 @@
 
 
 
+
+
+;; Desktop+ Configuration
+;; Ajout de save mode auto
+(desktop-save-mode 1)
+
+
+
+
+
+
+
 ;; Magit with svn
 (add-hook 'magit-mode-hook 'magit-svn-mode)
 
@@ -818,3 +830,7 @@
 (global-set-key [(shift f3)] 'highlight-symbol-prev)
 (global-set-key [(meta f3)] 'highlight-symbol-query-replace)
 (setq highlight-symbol-idle-delay 1.0)
+
+
+;; test
+;; test2
