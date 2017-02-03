@@ -100,6 +100,7 @@
   monokai-theme
   multiple-cursors
   neotree
+  markdown-mode+
   other-frame-window
   php+-mode
   php-mode
@@ -602,7 +603,7 @@
  '(git-gutter:handled-backends (quote (git hg bzr svn)))
  '(package-selected-packages
    (quote
-    (helm-ls-svn zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify yascroll workgroups2 multiple-cursors powerline smex magit-svn git-gutter other-frame-window desktop+ bookmark+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window git-gutter+ php-mode php+-mode web-mode magit neotree monokai-theme helm-projectile helm))))
+    (psvn helm-ls-svn zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify yascroll workgroups2 multiple-cursors powerline smex magit-svn git-gutter other-frame-window desktop+ bookmark+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window git-gutter+ php-mode php+-mode web-mode magit neotree monokai-theme helm-projectile helm))))
 
 
 
@@ -798,6 +799,18 @@
 	((kbd "n") . next-line)
 	((kbd "p") . previous-line)
 	))
+
+
+
+
+;; dsvn conf
+;; Besoin : Avoir des commandes svn non disponible par default comme svn status
+;; Sources :
+;; http://stackoverflow.com/a/2490367
+;; http://svn.apache.org/repos/asf/subversion/trunk/contrib/client-side/emacs/dsvn.el
+;;(require 'vc-svn)
+;;(autoload 'svn-status "dsvn" "Run `svn status'." t)
+;;(autoload 'svn-update "dsvn" "Run `svn update'." t)
 
 
 
