@@ -104,6 +104,7 @@
   monokai-theme
   multiple-cursors
   neotree
+  markdown-mode+
   other-frame-window
   php+-mode
   php-mode
@@ -624,7 +625,6 @@
 
 
 
-
 ;; Magit with svn
 ;; (add-hook 'magit-mode-hook 'magit-svn-mode)
 
@@ -822,6 +822,18 @@
 	((kbd "n") . next-line)
 	((kbd "p") . previous-line)
 	))
+
+
+
+
+;; dsvn conf
+;; Besoin : Avoir des commandes svn non disponible par default comme svn status
+;; Sources :
+;; http://stackoverflow.com/a/2490367
+;; http://svn.apache.org/repos/asf/subversion/trunk/contrib/client-side/emacs/dsvn.el
+;;(require 'vc-svn)
+;;(autoload 'svn-status "dsvn" "Run `svn status'." t)
+;;(autoload 'svn-update "dsvn" "Run `svn update'." t)
 
 
 
