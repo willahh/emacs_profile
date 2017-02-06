@@ -53,6 +53,10 @@
 
 
 
+;; bash profile
+(setq shell-file-name "bash")
+(setq shell-command-switch "-ic")
+
 
 
 ;; 
@@ -114,7 +118,7 @@
   undo-tree
   web-mode
   with-editor
-  workgroups2
+;;  workgNroups2
   web-beautify
 ))
 
@@ -520,6 +524,10 @@
 ;; Method d indexation native
 ;; (setq projectile-indexing-method 'native)
 
+
+(setq projectile-enable-caching t)
+
+
 ;; Using Projectile everywhere
 (setq projectile-require-project-root nil)
 
@@ -602,7 +610,7 @@
  '(git-gutter:handled-backends (quote (git hg bzr svn)))
  '(package-selected-packages
    (quote
-    (highlight-symbol helm-ls-svn zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify yascroll workgroups2 multiple-cursors powerline smex magit-svn git-gutter other-frame-window desktop+ bookmark+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window git-gutter+ php-mode php+-mode web-mode magit neotree monokai-theme helm-projectile helm))))
+    (workgNroups2 highlight-symbol helm-ls-svn zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify yascroll workgroups2 multiple-cursors powerline smex git-gutter other-frame-window desktop+ bookmark+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window git-gutter+ php-mode php+-mode web-mode magit neotree monokai-theme helm-projectile helm))))
 
 
 
@@ -617,9 +625,13 @@
 
 
 
-
 ;; Magit with svn
-(add-hook 'magit-mode-hook 'magit-svn-mode)
+;; (add-hook 'magit-mode-hook 'magit-svn-mode)
+
+
+;; psvn
+;;(require 'psvn)
+;; (load-file "./.emacs.d/package/vc-svn/vc-svn.el")
 
 
 
