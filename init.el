@@ -123,6 +123,27 @@
   web-beautify
 ))
 
+
+
+
+;;
+;; Besoin : Afficher le chemin du fichier complet dans le title de la frame courante
+;; Source: http://stackoverflow.com/a/12009623
+;; ----> Marche a la perfection !!!
+;;
+;; Disable loading of “default.el” at startup,
+;; in Fedora all it does is fix window title which I rather configure differently
+(setq inhibit-default-init t)
+
+;; SHOW FILE PATH IN FRAME TITLE
+(setq-default frame-title-format "%b (%f)")
+
+
+
+
+
+
+
 ;; Liste des repositories pour trouver les packages
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/") t)
@@ -607,11 +628,11 @@
  '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
  '(custom-safe-themes
    (quote
-    ("f5ad3af69f2b6b7c547208b8708d4fa7928b5697ca0845633d1d67c2d145952a" "c7a9a68bd07e38620a5508fef62ec079d274475c8f92d75ed0c33c45fbe306bc" default)))
+    ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "f5ad3af69f2b6b7c547208b8708d4fa7928b5697ca0845633d1d67c2d145952a" "c7a9a68bd07e38620a5508fef62ec079d274475c8f92d75ed0c33c45fbe306bc" default)))
  '(git-gutter:handled-backends (quote (git hg bzr svn)))
  '(package-selected-packages
    (quote
-    (workgroups2 highlight-symbol helm-ls-svn zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify yascroll workgroups2 multiple-cursors powerline smex git-gutter other-frame-window desktop+ bookmark+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window git-gutter+ php-mode php+-mode web-mode magit neotree monokai-theme helm-projectile helm))))
+    (solarized-theme workgroups2 highlight-symbol helm-ls-svn zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify yascroll workgroups2 multiple-cursors powerline smex git-gutter other-frame-window desktop+ bookmark+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window git-gutter+ php-mode php+-mode web-mode magit neotree monokai-theme helm-projectile helm))))
 
 
 
