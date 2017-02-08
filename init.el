@@ -259,10 +259,26 @@
       (message filename))))
 
 
+;; Besoin initial :
+;; Pouvoir copier le nom du fichier courant dans le clipboard
+;; Source : http://emacsredux.com/blog/2013/03/27/copy-filename-to-the-clipboard/
+;; Update : Ne fonctionne pas avec le code qui affiche le nom complet dans le title
+;;
+;; (defun copy-file-name-to-clipboard ()
+;;   "Copy the current buffer file name to the clipboard."
+;;   (interactive)
+;;   (let ((filename (if (equal major-mode 'dired-mode)
+;;                       default-directory
+;;                     (buffer-file-name))))
+;;     (when filename
+;;       (kill-new filename)
+;;       (message "Copied buffer file name '%s' to the clipboard." filename))))
 
 
 
-
+;; Switch buffer with tab
+(global-set-key [C-tab] 'next-buffer)
+(global-set-key [C-S-iso-lefttab] 'previous-buffer)
 
 
 
@@ -324,25 +340,33 @@
 ;; Move line up and down
 ;; Besoin initial : pouvoir deplacer des lignes en haut ou en bas
 ;; Source : http://emacsredux.com/blog/2013/04/02/move-current-line-up-or-down/
-(defun move-line-up ()
-  "Move up the current line."
-  (interactive)
-  (transpose-lines 1)
-  (forward-line -2)
-  (indent-according-to-mode))
+;; 
+;; Update : Mise a jour par le package drag-stuff ci dessous
+;; 
+;;(defun move-line-up ()
+;;  "Move up the current line."
+;;  (interactive)
+;;  (transpose-lines 1)
+;;  (forward-line -2)
+;;  (indent-according-to-mode))
+;;
+;;(defun move-line-down ()
+;;  "Move down the current line."
+;;  (interactive)
+;;  (forward-line 1)
+;;  (transpose-lines 1)
+;;  (forward-line -1)
+;;  (indent-according-to-mode))
 
-(defun move-line-down ()
-  "Move down the current line."
-  (interactive)
-  (forward-line 1)
-  (transpose-lines 1)
-  (forward-line -1)
-  (indent-according-to-mode))
+
+;; (global-set-key [(meta up)] 'move-line-up)
+;; (global-set-key [(meta down)] 'move-line-down)
 
 
+(require 'drag-stuff)
+(global-set-key (kbd "M-<up>")   #'drag-stuff-up)
+(global-set-key (kbd "M-<down>") #'drag-stuff-down)
 
-(global-set-key [(meta up)] 'move-line-up)
-(global-set-key [(meta down)] 'move-line-down)
 
 ;; (global-set-key [(control shift up)]  'move-line-up)
 ;; (global-set-key [(control shift down)]  'move-line-down)
@@ -628,11 +652,11 @@
  '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
  '(custom-safe-themes
    (quote
-    ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "f5ad3af69f2b6b7c547208b8708d4fa7928b5697ca0845633d1d67c2d145952a" "c7a9a68bd07e38620a5508fef62ec079d274475c8f92d75ed0c33c45fbe306bc" default)))
+    ("eb0a314ac9f75a2bf6ed53563b5d28b563eeba938f8433f6d1db781a47da1366" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "f5ad3af69f2b6b7c547208b8708d4fa7928b5697ca0845633d1d67c2d145952a" "c7a9a68bd07e38620a5508fef62ec079d274475c8f92d75ed0c33c45fbe306bc" default)))
  '(git-gutter:handled-backends (quote (git hg bzr svn)))
  '(package-selected-packages
    (quote
-    (solarized-theme workgroups2 highlight-symbol helm-ls-svn zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify yascroll workgroups2 multiple-cursors powerline smex git-gutter other-frame-window desktop+ bookmark+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window git-gutter+ php-mode php+-mode web-mode magit neotree monokai-theme helm-projectile helm))))
+    (dracula-theme solarized-theme workgroups2 highlight-symbol helm-ls-svn zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify yascroll workgroups2 multiple-cursors powerline smex git-gutter other-frame-window desktop+ bookmark+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window git-gutter+ php-mode php+-mode web-mode magit neotree monokai-theme helm-projectile helm))))
 
 
 
@@ -663,6 +687,9 @@
 
 ;; Web mode
 (require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
