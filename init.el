@@ -8,7 +8,6 @@
 ;;    - git
 ;;
 ;;  - ~/.bash_profile doit etre duplique en .bashrc
-;;  - Lancer la commande "exec-path-from-shell"
 
 
 
@@ -95,6 +94,7 @@
 ;; ?
 (require 'package)
 
+;; Auto loader
 ;; Liste des packages a installer si repertoire non disponible
 (setq package-list '(
   ;;archives
@@ -148,32 +148,12 @@
   smart-tab
   undo-tree
   web-beautify
+  yascroll
   web-mode
   with-editor
   zerodark-theme
 ;;  workgNroups2
   ))
-
-
-
-
-;; exec-path-from-shell
-;; Source : https://github.com/purcell/exec-path-from-shell
-;;
-;; Note :
-;; svn n etait pas reconnu par svn-status
-;; Apres quelques recherche il s avere qu il etait dispo : dans :
-;;   - terminal
-;;   - emacs > shell
-;; mais pas depuis la commande svn-status (par exemple)
-;; Les lignes ci-dessous font planter l init de emacs...
-;; Jouer la fonction exec-path-from-shell-initialize corrige les problemes
-;;
-;;(when (memq window-system '(mac ns))
-;;  (exec-path-from-shell-initialize))
-
-
-
 
 
 ;;
@@ -217,6 +197,29 @@
 
 
 
+
+
+
+
+
+;; exec-path-from-shell
+;; Source : https://github.com/purcell/exec-path-from-shell
+;;
+;; Note :
+;; svn n etait pas reconnu par svn-status
+;; Apres quelques recherche il s avere qu il etait dispo : dans :
+;;   - terminal
+;;   - emacs > shell
+;; Mais pas depuis la commande svn-status (par exemple)
+(when (memq window-system '(mac ns))
+ (exec-path-from-shell-initialize))
+
+
+
+
+
+
+
 ;;
 ;;
 ;;
@@ -254,7 +257,7 @@
 (load-theme 'zerodark t)
 
 ;; Yascroll
-;; (global-yascroll-bar-mode 1)
+(global-yascroll-bar-mode 1)
 
 (require 'powerline)
 ;;(powerline-default-theme)
