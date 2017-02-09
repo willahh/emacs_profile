@@ -260,7 +260,6 @@
 (global-yascroll-bar-mode 1)
 
 (require 'powerline)
-;;(powerline-default-theme)
 (powerline-center-theme)
 
 ;; Multiple cursor
@@ -522,7 +521,7 @@
 
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 (global-set-key (kbd "C-x b") 'helm-mini)
-(global-set-key (kbd "M-y") 'helm-show-kill-ring)
+;; (global-set-key (kbd "M-y") 'helm-show-kill-ring) ;; Update : Pas forcement tip top 
 (helm-autoresize-mode t)
 
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
@@ -553,6 +552,11 @@
 ;;           'spacemacs//helm-hide-minibuffer-maybe)
 ;;
 
+
+;; Spaceline
+;; Note : power line stylee, mais je n arrive pas a la faire fonctionner
+;;(require 'spaceline-config)
+;;(spaceline-spacemacs-theme)
 
 
 ;; Helm conf suite
@@ -709,8 +713,11 @@
  '(git-gutter:handled-backends (quote (git hg bzr svn)))
  '(package-selected-packages
    (quote
-    (exec-path-from-shell dsvn helm-swoop highlight-symbol helm-ls-svn zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ bookmark+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window git-gutter+ php-mode php+-mode web-mode magit neotree helm-projectile helm))))
+    (diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol helm-ls-svn zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ bookmark+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window git-gutter+ php-mode php+-mode web-mode magit neotree helm-projectile helm))))
 
+
+
+;; diff-hl
 
 
 
@@ -759,10 +766,11 @@
 
 
 ;; CUA MODE (integre par default) permet de faire du ctrl c/v/x a la place des yank bidul pouet
- (cua-mode t)
-    (setq cua-auto-tabify-rectangles nil) ;; Don't tabify after rectangle commands
-    (transient-mark-mode 1) ;; No region when it is not highlighted
-    (setq cua-keep-region-after-copy t) ;; Standard Windows behaviour
+;; Update : C-v entre en conflit avec la fonction de base de scroll
+;; (cua-mode t)
+;;    (setq cua-auto-tabify-rectangles nil) ;; Don't tabify after rectangle commands
+;;    (transient-mark-mode 1) ;; No region when it is not highlighted
+;;    (setq cua-keep-region-after-copy t) ;; Standard Windows behaviour
 
 
 
