@@ -719,6 +719,22 @@
 
 
 
+
+
+;; tern
+(autoload 'tern-mode "tern.el" nil t)
+
+
+
+
+
+
+
+
+
+
+
+
 ;; diff-hl
 ;; Source : http://emacs.stackexchange.com/a/21665
 (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
