@@ -737,7 +737,9 @@
 
 ;; diff-hl
 ;; Source : http://emacs.stackexchange.com/a/21665
-(add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
+;; Edit : interet ? pas sure
+;; Edit 2 : semble poser probleme ...
+;; (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
 
 
 
