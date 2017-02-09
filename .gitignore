@@ -7,7 +7,7 @@ recentf
 projectile.cache
 \#*.gitignore\#
 .#*
-
+.DS_Store
 
 
 
