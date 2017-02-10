@@ -99,6 +99,8 @@
 ;; Liste des packages a installer si repertoire non disponible
 (setq package-list '(
   ;;archives
+  ag
+  helm-ag
   ace-jump-mode
   ace-window
   anaphora
@@ -555,6 +557,20 @@
 ;;
 
 
+
+;; helm-ag conf
+;; https://github.com/syohex/emacs-helm-ag
+(custom-set-variables
+ '(helm-follow-mode-persistent t))
+
+
+
+
+
+
+
+
+
 ;; Spaceline
 ;; Note : power line stylee, mais je n arrive pas a la faire fonctionner
 ;;(require 'spaceline-config)
@@ -715,7 +731,7 @@
  '(git-gutter:handled-backends (quote (git hg bzr svn)))
  '(package-selected-packages
    (quote
-    (tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol helm-ls-svn zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ bookmark+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window git-gutter+ php-mode php+-mode web-mode magit neotree helm-projectile helm))))
+    (helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol helm-ls-svn zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ bookmark+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window git-gutter+ php-mode php+-mode web-mode magit neotree helm-projectile helm))))
 
 
 
@@ -895,7 +911,14 @@
 (setq dired-dwim-target t)
 
 
+;; Dired+
 
+
+
+
+;; AG
+;; http://agel.readthedocs.io/en/latest/installation.html
+(require 'ag)
 
 
 
