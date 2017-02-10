@@ -30,3 +30,8 @@ LIST B
 La Fiducaire
 http://www.vaudoise.ch/fr/accueil.html
 Pastille en bas ˆ droite avec numŽro erron
+
+
+
+
+Test 
