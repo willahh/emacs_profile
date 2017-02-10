@@ -28,6 +28,13 @@
 (global-hl-line-mode)
 (winner-mode t)
 
+;; Replace selection by text
+;; Utilisation du comportement des editeurs modernes :
+;; Lorsque un selection est active, le fait de saisir un caractere declenche les actions suivantes :
+;;   - delete selection, - insert command
+(delete-selection-mode 1)
+
+
 ;; Turn truncate lines off by default (like in many modern tools)
 (set-default 'truncate-lines t)
 
@@ -239,6 +246,9 @@
 ;; wra Custom theme
 ;; Default font
 ;; (set-default-font "Inconsolata-14") ;; Font face: Inconsolata, font-size: 14
+;; Note : Cette partie ne s initalize pas,
+;; Il semblerait que le theme n est pas finis de se charger
+;; En revanhe aucun hook n existe      
 (set-face-attribute 'region nil :background "#b3e33b")
 ;;(add-to-list 'default-frame-alist '(foreground-color . "#272822"))
 ;;(add-to-list 'default-frame-alist '(background-color . "#272822"))
@@ -611,7 +621,6 @@
 ;; Wind (Deplacement plus rapide entre les window)
 (when (fboundp 'windmove-default-keybindings)
   (windmove-default-keybindings))
-
 
 
 
