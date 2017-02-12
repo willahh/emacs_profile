@@ -87,6 +87,26 @@
 
 
 
+
+;; Duplicate line
+;; Duplicate line (like in Sublime (CTRL+d in sublime - Ctrl+c d in Emacs))
+(defun duplicate-line()
+  (interactive)
+  (move-beginning-of-line 1)
+  (kill-line)
+  (yank)
+  (open-line 1)
+  (next-line 1)
+  (yank)
+)
+(global-set-key (kbd "C-c d") 'duplicate-line)
+
+
+
+
+
+
+
 ;; bash profile
 (setq shell-file-name "bash")
 (setq shell-command-switch "-ic")
