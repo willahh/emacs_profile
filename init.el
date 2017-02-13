@@ -55,27 +55,25 @@
 (global-set-key (kbd "C-c C-d") 'duplicate-line)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ;; Remove bip relou
 (setq visible-bell t)
-        
+
+;; Auto refresh buffers
+(global-auto-revert-mode 1)
+
+;; UTF-8 please
+(setq locale-coding-system 'utf-8) ; pretty
+(set-terminal-coding-system 'utf-8) ; pretty
+(set-keyboard-coding-system 'utf-8) ; pretty
+(set-selection-coding-system 'utf-8) ; please
+(prefer-coding-system 'utf-8) ; with sugar on top
+
+
+;; Always display line and column numbers
+(setq line-number-mode t)
+(setq column-number-mode t)
+
+
 
 ;; Replace selection by text
 ;; Utilisation du comportement des editeurs modernes :
@@ -164,6 +162,9 @@
 
 
 
+;; Keep cursor away from edges when scrolling up/down
+;;(require 'smooth-scrolling)
+
 
 
 
@@ -180,8 +181,8 @@
 ;; Package settings
 ;;
 ;;
-
 ;; ?
+
 (require 'package)
 
 ;; Auto loader
@@ -189,6 +190,9 @@
 (setq package-list '(
   ;;archives
   ag
+;;  smooth-scroll
+;;  smooth-scroll
+  key-chord
   helm-ag
   ace-jump-mode
   ace-window
@@ -208,7 +212,7 @@
   emmet-mode
   epl
   expand-region
-  f
+;;  sizef
 ;;  flymake-mode
   less-css-mode
   tern
@@ -226,8 +230,8 @@
   ;;rpsvn
   markdown-mode+
   multiple-cursors
-  neotree
   other-frame-window
+  neotree
   ;;php+-mode
   php-mode
   pkg-info
@@ -249,6 +253,7 @@
   zerodark-theme
 ;;  workgNroups2
   ))
+
 
 
 ;;
@@ -341,6 +346,19 @@
 
 
 
+
+;; Key chords commands
+;; From http://emacsrocks.com/e07.html
+
+;; Max time delay between two key presses to be considered a key chord
+(setq key-chord-two-keys-delay 0.1) ; default 0.1
+;; Max time delay between two presses of the same key to be considered a key chord.
+;; Should normally be a little longer than `key-chord-two-keys-delay'.
+(setq key-chord-one-key-delay 0.2) ; default 0.2
+
+
+
+(key-chord-define-global "fg" 'avy-goto-char)
 
 
 
@@ -753,7 +771,7 @@
  '(magit-dispatch-arguments nil)
  '(package-selected-packages
    (quote
-    (php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol helm-ls-svn zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ bookmark+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window git-gutter+ web-mode magit neotree helm-projectile helm))))
+    (key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol helm-ls-svn zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ bookmark+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window git-gutter+ web-mode magit neotree helm-projectile helm))))
 
 
 
@@ -1152,7 +1170,7 @@
     (setq currentFolder (buffer-substring-no-properties (line-beginning-position) (line-end-position)))
     (goto-char (point-min))
     (setq rootFolder (buffer-substring-no-properties (line-beginning-position) (line-end-position)))
-    (svn-repo-open (concat rootFolder currentFolder))))
+v    (svn-repo-open (concat rootFolder currentFolder))))
 
 (defun svn-repo-up ()
   "Browse to the parent of the current SpwdVN folder."
@@ -1293,3 +1311,10 @@
 ; (helm-migemo-mode 1)
 
 
+
+;; Smooth scroll
+(require 'smooth-scroll)
+(smooth-scroll-mode t)
+  
+(setq smooth-scroll/vscroll-step-size 8)
+(setq smooth-scroll/hscroll-step-size 8)
