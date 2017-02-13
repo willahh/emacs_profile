@@ -4,15 +4,26 @@
 ;;  - emacs >= 25
 ;;  
 ;;  - bin en acces global :
+;;    - ag (lightning search)
 ;;    - svn
 ;;    - git
 ;;    - tern
-;;
+;;    - jshint - npm -g install jshint
+;;    - csslint - npm -g install csslint
+;;    - jscs (npm -g install jscs)
+      
+;;    - tags https://github.com/leoliu/ggtags/wiki/Install-Global-with-support-for-exuberant-ctags
+;;    - brew install global (gtags)
+;;    - brew install --HEAD ctags
+;;    - brew install global --with-exuberant-ctags
 ;;  - ~/.bash_profile doit etre duplique en .bashrc
 
 
+;; Todo faire fonctionner gtags
+;; Todo faire fonctionner flycheck en mode javascript (base sur jscss )
 
 
+    
 ;; 
 ;;
 ;; Emacs global settings
@@ -27,6 +38,44 @@
 (show-paren-mode)
 (global-hl-line-mode)
 (winner-mode t)
+
+;; Duplicate line
+;; Source : http://stackoverflow.com/a/88828
+;; Update : ajout retour debut de ligne 
+(defun duplicate-line()
+  (interactive)
+  (move-beginning-of-line 1)
+  (kill-line)
+  (yank)
+  (open-line 1)
+  (next-line 1)
+  (yank)
+  (move-beginning-of-line 1)
+)
+(global-set-key (kbd "C-c C-d") 'duplicate-line)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;; Remove bip relou
+(setq visible-bell t)
+        
 
 ;; Replace selection by text
 ;; Utilisation du comportement des editeurs modernes :
@@ -56,6 +105,17 @@
 ;; (add-to-list 'default-frame-alist '(fullscreen . maximized)
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 (add-to-list 'default-frame-alist '(fullscreen . fullheight))
+
+
+
+
+
+
+
+;; Enable gtags
+(setq load-path (cons "/usr/local/share/gtags" load-path))
+(autoload 'gtags-mode "gtags" "" t)
+
 
 
 
@@ -107,6 +167,8 @@
 
 
 
+
+
 ;; bash profile
 (setq shell-file-name "bash")
 (setq shell-command-switch "-ic")
@@ -142,11 +204,13 @@
   company
   dash
   desktop+
-  drag-stuff
+  ;;drag-stuff
   emmet-mode
   epl
   expand-region
   f
+;;  flymake-mode
+  less-css-mode
   tern
   git-commit
   git-gutter
@@ -164,7 +228,7 @@
   multiple-cursors
   neotree
   other-frame-window
-  php+-mode
+  ;;php+-mode
   php-mode
   pkg-info
   popup
@@ -449,13 +513,97 @@
 ;; (global-set-key [(meta down)] 'move-line-down)
 
 
-(require 'drag-stuff)
-(global-set-key (kbd "M-<up>")   #'drag-stuff-up)
-(global-set-key (kbd "M-<down>") #'drag-stuff-down)
+;; (require 'drag-stuff)
+;; (global-set-key (kbd "M-<up>")   #'drag-stuff-up)
+;; (global-set-key (kbd "M-<down>") #'drag-stuff-down)
 
 
 ;; (global-set-key [(control shift up)]  'move-line-up)
 ;; (global-set-key [(control shift down)]  'move-line-down)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;; Move line or region up and down update
+;; Source : https://www.emacswiki.org/emacs/MoveLineRegion
+
+;; Move line
+(defun move-line (n)
+  "Move the current line up or down by N lines."
+  (interactive "p")
+  (setq col (current-column))
+  (beginning-of-line) (setq start (point))
+  (end-of-line) (forward-char) (setq end (point))
+  (let ((line-text (delete-and-extract-region start end)))
+    (forward-line n)
+    (insert line-text)
+    ;; restore point to original column in moved line
+    (forward-line -1)
+    (forward-char col)))
+
+(defun move-line-up (n)
+  "Move the current line up by N lines."
+  (interactive "p")
+  (move-line (if (null n) -1 (- n))))
+
+(defun move-line-down (n)
+  "Move the current line down by N lines."
+  (interactive "p")
+  (move-line (if (null n) 1 n)))
+
+;; Move region
+(defun move-region (start end n)
+  "Move the current region up or down by N lines."
+  (interactive "r\np")
+  (let ((line-text (delete-and-extract-region start end)))
+    (forward-line n)
+    (let ((start (point)))
+      (insert line-text)
+      (setq deactivate-mark nil)
+      (set-mark start))))
+
+(defun move-region-up (start end n)
+  "Move the current line up by N lines."
+  (interactive "r\np")
+  (move-region start end (if (null n) -1 (- n))))
+
+(defun move-region-down (start end n)
+  "Move the current line down by N lines."
+  (interactive "r\np")
+  (move-region start end (if (null n) 1 n)))
+
+;; Move lineregin
+(defun move-line-region-up (&optional start end n)
+  (interactive "r\np")
+  (if (use-region-p) (move-region-up start end n) (move-line-up n)))
+
+(defun move-line-region-down (&optional start end n)
+  (interactive "r\np")
+  (if (use-region-p) (move-region-down start end n) (move-line-down n)))
+
+(global-set-key (kbd "M-p") 'move-line-region-up)
+(global-set-key (kbd "M-n") 'move-line-region-down)
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -474,6 +622,7 @@
 ;; Emmet
 (add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
 (add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
+
 
 
 
@@ -604,7 +753,7 @@
  '(magit-dispatch-arguments nil)
  '(package-selected-packages
    (quote
-    (helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol helm-ls-svn zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ bookmark+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window git-gutter+ php-mode php+-mode web-mode magit neotree helm-projectile helm))))
+    (php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol helm-ls-svn zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ bookmark+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window git-gutter+ web-mode magit neotree helm-projectile helm))))
 
 
 
@@ -825,6 +974,28 @@
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+
+
+
+
+
+
+
+;; flymake-mode
+;; Let's run 8 checks at once instead.
+(setq flymake-max-parallel-syntax-checks 4)
+
+;; I don't want no steekin' limits.
+(setq flymake-max-parallel-syntax-checks nil)
+
+;; Nope, I want my copies in the system temp dir.
+(setq flymake-run-in-place nil)
+;; This lets me say where my temp dir is.
+(setq temporary-file-directory "~/.emacs.d/tmp/")
+
+;; I want to see all errors for the line.
+(setq flymake-number-of-errors-to-display nil)
+
 
 
 ;; undo-tree
