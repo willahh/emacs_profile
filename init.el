@@ -477,8 +477,8 @@
     (zz-scroll-half-page t))
 
 
-(global-set-key (kbd "M-p") 'zz-scroll-half-page-up) 
-(global-set-key (kbd "M-n") 'zz-scroll-half-page-down)
+(global-set-key (kbd "M-v") 'zz-scroll-half-page-up) 
+(global-set-key (kbd "C-v") 'zz-scroll-half-page-down)
 
 
 
@@ -765,13 +765,13 @@
  '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
  '(custom-safe-themes
    (quote
-    ("eb0a314ac9f75a2bf6ed53563b5d28b563eeba938f8433f6d1db781a47da1366" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "f5ad3af69f2b6b7c547208b8708d4fa7928b5697ca0845633d1d67c2d145952a" "c7a9a68bd07e38620a5508fef62ec079d274475c8f92d75ed0c33c45fbe306bc" default)))
+    ("945fe66fbc30a7cbe0ed3e970195a7ee79ee34f49a86bc96d02662ab449b8134" "ad1c2abad40e11d22156fe3987fd9b74b9e1c822264a07dacb24e0b3133aaed1" "eb0a314ac9f75a2bf6ed53563b5d28b563eeba938f8433f6d1db781a47da1366" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "f5ad3af69f2b6b7c547208b8708d4fa7928b5697ca0845633d1d67c2d145952a" "c7a9a68bd07e38620a5508fef62ec079d274475c8f92d75ed0c33c45fbe306bc" default)))
  '(git-gutter:handled-backends (quote (git hg bzr svn)))
  '(helm-follow-mode-persistent t)
  '(magit-dispatch-arguments nil)
  '(package-selected-packages
    (quote
-    (key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol helm-ls-svn zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ bookmark+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window git-gutter+ web-mode magit neotree helm-projectile helm))))
+    (psvn dracula-theme doom-themes key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ bookmark+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window git-gutter+ web-mode magit neotree helm-projectile helm))))
 
 
 
@@ -1313,8 +1313,8 @@ v    (svn-repo-open (concat rootFolder currentFolder))))
 
 
 ;; Smooth scroll
-(require 'smooth-scroll)
-(smooth-scroll-mode t)
-  
-(setq smooth-scroll/vscroll-step-size 8)
-(setq smooth-scroll/hscroll-step-size 8)
+;;(require 'smooth-scroll)
+;;(smooth-scroll-mode t)
+;;  
+;;(setq smooth-scroll/vscroll-step-size 8)
+;;(setq smooth-scroll/hscroll-step-size 8)
