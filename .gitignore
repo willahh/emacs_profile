@@ -11,6 +11,11 @@ projectile.cache
 .emacs-buffers
 .emacs.desktop    
 .emacs.desktop.lock
+tmp/*
+
+
+
+
 
 .emacs_workgroups
 .emacs_workgroups~
