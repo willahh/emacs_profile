@@ -19,9 +19,9 @@
 ;;  - ~/.bash_profile doit etre duplique en .bashrc
 
 
-;; Todo faire fonctionner gtags
-;; Todo faire fonctionner flycheck en mode javascript (base sur jscss )
-
+;; @todo faire fonctionner gtags
+;; @todo faire fonctionner flycheck en mode javascript (base sur jscss )
+;; @todo Faire fonctionner les snippets YAS 
 
 
 ;;
@@ -278,8 +278,10 @@
 
 
 ;; Liste des repositories pour trouver les packages
-(add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/") t)
+;; Add melpa to package repos
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+
 
 ;; ??
 (when (< emacs-major-version 24)
@@ -356,72 +358,17 @@
 
 
 
+;; Yasnippet
+;; Note : Yasnippet error when installing from elpa package
+(add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
+(require 'yasnippet)
+(yas-global-mode 1)
 
-;; Key chords commands
-;; From http://emacsrocks.com/e07.html
-(require 'key-chord)
-(key-chord-mode 1)
-
-
-
-;; Max time delay between two key presses to be considered a key chord
-(setq key-chord-two-keys-delay 0.1) ; default 0.1
-;; Max time delay between two presses of the same key to be considered a key chord.
-;; Should normally be a little longer than `key-chord-two-keys-delay'.
-(setq key-chord-one-key-delay 0.2) ; default 0.2
-
-
-
-;; Define some key chord.
-;; Use ù has a first "meta" character
-
-;; Goto char / expand region / goto line
-(key-chord-define-global "fg" 'avy-goto-char)
-(key-chord-define-global "xc" 'er/expand-region)
-(key-chord-define-global "wx" 'er/contract-region)
-(key-chord-define-global "ùg" 'goto-line)
-(key-chord-define-global "ùw" 'whitespace-mode)
-(key-chord-define-global "ùq" 'delete-trailing-whitespace)
-(key-chord-define-global "ds" 'mc/mark-all-like-this)
-
-
-;; Helm - find - ...
-(key-chord-define-global "ùp" 'helm-projectile)
-(key-chord-define-global "ùr" 'helm-swoop)
-(key-chord-define-global "ùf" 'helm-find-files)
-(key-chord-define-global "ùa" 'helm-ag)
-
-;; str
-(key-chord-define-global "r'" 'query-replace)
-(key-chord-define-global "r\"" 'replace-string)
-
-;; undo redo
-(key-chord-define-global "ji" 'undo-tree-undo)
-(key-chord-define-global "jo" 'undo-tree-redo)
-(key-chord-define-global "jk" 'undo-tree-switch-branch)
-(key-chord-define-global "j;" 'undo-tree-visualize)
-
-
-
-;; Magit / svn
-(key-chord-define-global "ms" 'magit-status)
-(key-chord-define-global "ls" 'svn-status)
-
-;; Window
-(key-chord-define-global "ùà" 'delete-window)
-(key-chord-define-global "ùo" 'other-window)
-(key-chord-define-global "ù&" 'delete-other-windows)
-(key-chord-define-global "ùé" 'split-window-below)
-(key-chord-define-global "ù\"" 'split-window-right)
-
-;; Buffer
-(key-chord-define-global "ùb" 'helm-mini) ;; switch buffer (helm-mini) (c-x b)
-(key-chord-define-global "ùk" 'kill-this-buffer)
-(key-chord-define-global "ùl" 'ibuffer)
-
-;; Shell
-(key-chord-define-global "ùs" 'shell)
-
+(setq yas-snippet-dirs
+      '("~/.emacs.d/snippets"                 ;; personal snippets
+        "~/.emacs.d/plugins/yasnippet/yasmate/snippets" ;; the yasmate collection
+        "~/.emacs.d/plugins/yasnippet/snippets"         ;; the default collection
+        ))
 
 
 ;;
@@ -1054,8 +1001,8 @@
 
 
 
-(add-to-list 'auto-mode-alist '("\\.el\\'" . key-chord-mode))
-(add-to-list 'auto-mode-alist '("\\.js\\'" . key-chord-mode))
+;; (add-to-list 'auto-mode-alist '("\\.el\\'" . key-chord-mode))
+;; (add-to-list 'auto-mode-alist '("\\.js\\'" . key-chord-mode))
 
 
 
@@ -1234,7 +1181,7 @@
     (setq currentFolder (buffer-substring-no-properties (line-beginning-position) (line-end-position)))
     (goto-char (point-min))
     (setq rootFolder (buffer-substring-no-properties (line-beginning-position) (line-end-position)))
-v    (svn-repo-open (concat rootFolder currentFolder))))
+    (svn-repo-open (concat rootFolder currentFolder))))
 
 (defun svn-repo-up ()
   "Browse to the parent of the current SpwdVN folder."
@@ -1382,3 +1329,88 @@ v    (svn-repo-open (concat rootFolder currentFolder))))
 ;;
 ;;(setq smooth-scroll/vscroll-step-size 8)
 ;;(setq smooth-scroll/hscroll-step-size 8)
+
+
+
+
+
+
+
+
+
+
+;; Key chords commands
+;; From http://emacsrocks.com/e07.html
+(require 'key-chord)
+(key-chord-mode 1)
+
+
+
+;; Max time delay between two key presses to be considered a key chord
+(setq key-chord-two-keys-delay 0.1) ; default 0.1
+;; Max time delay between two presses of the same key to be considered a key chord.
+;; Should normally be a little longer than `key-chord-two-keys-delay'.
+(setq key-chord-one-key-delay 0.2) ; default 0.2
+
+
+;; Define some key chord.
+;; Use $ has a first "key" character for most of commmands
+
+
+
+;; Goto char / expand region / goto line
+(key-chord-define-global "fg" 'avy-goto-char)
+(key-chord-define-global "xc" 'er/expand-region)
+(key-chord-define-global "wx" 'er/contract-region)
+(key-chord-define-global "<w" 'mc/mark-all-like-this)
+
+(key-chord-define-global "$g" 'goto-line)
+(key-chord-define-global "$w" 'whitespace-mode)
+(key-chord-define-global "$q" 'delete-trailing-whitespace)
+
+
+;; Helm - find - ...
+(key-chord-define-global "$p" 'helm-projectile)
+(key-chord-define-global "$r" 'helm-swoop)
+(key-chord-define-global "$f" 'helm-find-files)
+(key-chord-define-global "$a" 'helm-ag)
+
+;; str
+(key-chord-define-global "r'" 'query-replace)
+(key-chord-define-global "r\"" 'replace-string)
+
+;; undo redo
+(key-chord-define-global "ji" 'undo-tree-undo)
+(key-chord-define-global "jo" 'undo-tree-redo)
+(key-chord-define-global "jk" 'undo-tree-switch-branch)
+(key-chord-define-global "j;" 'undo-tree-visualize)
+
+
+
+;; Magit / svn
+(key-chord-define-global "ms" 'magit-status)
+(key-chord-define-global "ls" 'svn-status)
+
+;; Window
+(key-chord-define-global "$à" 'delete-window)
+(key-chord-define-global "$o" 'other-window)
+(key-chord-define-global "$&" 'delete-other-windows)
+(key-chord-define-global "$é" 'split-window-below)
+(key-chord-define-global "$\"" 'split-window-right)
+
+;; Buffer
+(key-chord-define-global "$b" 'helm-mini) ;; switch buffer (helm-mini) (c-x b)
+(key-chord-define-global "$k" 'kill-this-buffer)
+(key-chord-define-global "$l" 'ibuffer)
+(key-chord-define-global "ev" 'eval-buffer)
+
+;; Shell
+(key-chord-define-global "$s" 'shell)
+
+;; Window
+(key-chord-define-global "ùà" 'balance-windows)
+(key-chord-define-global "ù&" 'enlarge-window)
+(key-chord-define-global "ùé" 'shrink-window)
+
+(key-chord-define-global "ù\"" 'enlarge-window-horizontally)
+(key-chord-define-global "ù'" 'shrink-window-horizontally)
