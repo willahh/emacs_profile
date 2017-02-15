@@ -393,8 +393,14 @@
 (key-chord-define-global "r'" 'query-replace)
 (key-chord-define-global "r\"" 'replace-string)
 
+;; undo redo
+(key-chord-define-global "ji" 'undo-tree-undo)
+(key-chord-define-global "jo" 'undo-tree-redo)
+(key-chord-define-global "jk" 'undo-tree-switch-branch)
+(key-chord-define-global "j;" 'undo-tree-visualize)
 
-    
+
+
 ;; Magit
 (key-chord-define-global "ms" 'magit-status)
 
