@@ -38,7 +38,17 @@
 (show-paren-mode)
 (global-hl-line-mode)
 (winner-mode t)
-(global-whitespace-mode 0)
+
+;; Show white space
+;; Source : http://ergoemacs.org/emacs/whitespace-mode.html
+(global-whitespace-mode 1)
+(progn
+ ;; Make whitespace-mode with very basic background coloring for whitespaces.
+  ;; http://ergoemacs.org/emacs/whitespace-mode.html
+  (setq whitespace-style (quote (face spaces tabs newline space-mark tab-mark newline-mark )))
+  )
+
+
 
 
 
@@ -208,7 +218,7 @@
   avy-menu
   bookmark+
   company
-  company
+  helm-company
   dash
   desktop+
   ;;drag-stuff
@@ -219,6 +229,9 @@
 ;;  flymake-mode
   less-css-mode
   tern
+  tern-auto-complete
+
+  doom-themes
   git-commit
   git-gutter
   git-gutter+
@@ -226,6 +239,7 @@
   helm-anything
   helm-core
   helm-projectile
+  js2-mode
   highlight-symbol
   magit
   magit-popup
@@ -347,6 +361,15 @@
 ;; wra Custom theme
 ;; Default font
 ;; (set-default-font "Inconsolata-14") ;; Font face: Inconsolata, font-size: 14
+(set-face-attribute 'default nil :family "Inconsolata" :height 135 :weight 'normal)
+
+
+
+;; (set-face-attribute 'whitespace-space nil :background nil :foreground "gray30")
+
+
+
+
 ;; Note : Cette partie ne s initalize pas,
 ;; Il semblerait que le theme n est pas finis de se charger
 ;; En revanhe aucun hook n existe
@@ -377,7 +400,9 @@
 ;;
 ;;
 ;;
-(load-theme 'zerodark t)
+(load-theme 'doom-molokai t)
+
+
 ;; Yascroll
 (global-yascroll-bar-mode 1)
 
@@ -491,19 +516,19 @@
 ;; Permet de declencher l auto indent css apres avoir saisi une tabulation
 ;;
 ;; Source : http://emacs.stackexchange.com/a/12457
-(setq tab-always-indent 'complete)
-
-(defvar completion-at-point-functions-saved nil)
-
-(defun company-indent-for-tab-command (&optional arg)
-  (interactive "P")
-  (let ((completion-at-point-functions-saved completion-at-point-functions)
-        (completion-at-point-functions '(company-complete-common-wrapper)))
-    (indent-for-tab-command arg)))
-
-(defun company-complete-common-wrapper ()
-  (let ((completion-at-point-functions completion-at-point-functions-saved))
-    (company-complete-common)))
+;; (setq tab-always-indent 'complete)
+;; 
+;; (defvar completion-at-point-functions-saved nil)
+;; 
+;; (defun company-indent-for-tab-command (&optional arg)
+;;   (interactive "P")
+;;   (let ((completion-at-point-functions-saved completion-at-point-functions)
+;;         (completion-at-point-functions '(company-complete-common-wrapper)))
+;;     (indent-for-tab-command arg)))
+;; 
+;; (defun company-complete-common-wrapper ()
+;;   (let ((completion-at-point-functions completion-at-point-functions-saved))
+;;     (company-complete-common)))
 
 
 
@@ -645,7 +670,7 @@
 
 ;; Emmet
 (add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
-(add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
+;; (add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
 
 
 
@@ -657,21 +682,21 @@
 ;; (Je n ai pas regarde en detail ...)
 ;; --> @todo comportement encore non identique, creuser un peu plus
 
-(require 'smart-tab)
-(global-smart-tab-mode 1)
+;; (require 'smart-tab)
+;; (global-smart-tab-mode 1)
 
-(defun add-emmet-expand-to-smart-tab-completions ()
-  ;; Add an entry for current major mode in
-  ;; `smart-tab-completion-functions-alist' to use
-  ;; `emmet-expand-line'.
-  (add-to-list 'smart-tab-completion-functions-alist
-               (cons major-mode #'emmet-expand-line)))
-
-(require 'emmet-mode)
-(add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
-(add-hook 'sgml-mode-hook 'add-emmet-expand-to-smart-tab-completions)
-(add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
-(add-hook 'css-mode-hook 'add-emmet-expand-to-smart-tab-completions)
+;; (defun add-emmet-expand-to-smart-tab-completions ()
+;;   ;; Add an entry for current major mode in
+;;   ;; `smart-tab-completion-functions-alist' to use
+;;   ;; `emmet-expand-line'.
+;;   (add-to-list 'smart-tab-completion-functions-alist
+;;                (cons major-mode #'emmet-expand-line)))
+;; 
+;; (require 'emmet-mode)
+;; (add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
+;; (add-hook 'sgml-mode-hook 'add-emmet-expand-to-smart-tab-completions)
+;; (add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
+;; (add-hook 'css-mode-hook 'add-emmet-expand-to-smart-tab-completions)
 
 
 
@@ -771,13 +796,14 @@
  '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
  '(custom-safe-themes
    (quote
-    ("945fe66fbc30a7cbe0ed3e970195a7ee79ee34f49a86bc96d02662ab449b8134" "ad1c2abad40e11d22156fe3987fd9b74b9e1c822264a07dacb24e0b3133aaed1" "eb0a314ac9f75a2bf6ed53563b5d28b563eeba938f8433f6d1db781a47da1366" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "f5ad3af69f2b6b7c547208b8708d4fa7928b5697ca0845633d1d67c2d145952a" "c7a9a68bd07e38620a5508fef62ec079d274475c8f92d75ed0c33c45fbe306bc" default)))
+    ("3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "9d91458c4ad7c74cf946bd97ad085c0f6a40c370ac0a1cbeb2e3879f15b40553" "dd6e52a5b1180f5c8bf408764a32867e2fa86594ded78a29040cafce6a4ea808" "945fe66fbc30a7cbe0ed3e970195a7ee79ee34f49a86bc96d02662ab449b8134" "ad1c2abad40e11d22156fe3987fd9b74b9e1c822264a07dacb24e0b3133aaed1" "eb0a314ac9f75a2bf6ed53563b5d28b563eeba938f8433f6d1db781a47da1366" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "f5ad3af69f2b6b7c547208b8708d4fa7928b5697ca0845633d1d67c2d145952a" "c7a9a68bd07e38620a5508fef62ec079d274475c8f92d75ed0c33c45fbe306bc" default)))
  '(git-gutter:handled-backends (quote (git hg bzr svn)))
  '(helm-follow-mode-persistent t)
  '(magit-dispatch-arguments nil)
  '(package-selected-packages
    (quote
-    (psvn dracula-theme doom-themes key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ bookmark+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window git-gutter+ web-mode magit neotree helm-projectile helm))))
+    (theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ bookmark+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window git-gutter+ web-mode magit neotree helm-projectile helm)))
+ '(yas-global-mode t))
 
 
 
@@ -941,10 +967,15 @@
 
 
 ;; tern
+;; (autoload 'tern-mode "tern.el" nil t)
+;; (add-hook 'js-mode-hook (lambda () (tern-mode t)))
+
 (autoload 'tern-mode "tern.el" nil t)
 (add-hook 'js-mode-hook (lambda () (tern-mode t)))
-
-
+(eval-after-load 'tern
+   '(progn
+      (require 'tern-auto-complete)
+      (tern-ac-setup)))
 
 
 
@@ -987,9 +1018,11 @@
 
 ;; Web mode
 (require 'web-mode)
-(add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html\\'" . html-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.css\\'" . css-mode))
+(add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
+
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
@@ -1237,9 +1270,6 @@
 (setq highlight-symbol-idle-delay 1.0)
 
 
-;; test
-;; test2
-
 
 
 ;; will keybindings
@@ -1414,3 +1444,41 @@
 
 (key-chord-define-global "ù\"" 'enlarge-window-horizontally)
 (key-chord-define-global "ù'" 'shrink-window-horizontally)
+
+
+
+
+
+;; Company
+
+;; Helm company
+;;(eval-after-load 'company
+;;  '(progn
+;;     (define-key company-mode-map (kbd "C-:") 'helm-company)
+;;     (define-key company-active-map (kbd "C-:") 'helm-company)))
+
+;; (defun complete-or-indent ()
+;;     (interactive)
+;;     (if (company-manual-begin)
+;;         (company-complete-common)
+;;       (indent-according-to-mode)))
+
+
+;;(global-set-key (kbd "TAB") 'company-complete-common)
+;; (define-key company-active-map [tab] 'company-complete-common-or-cycle)
+
+
+
+
+
+
+
+
+
+
+(add-hook 'after-init-hook 'global-company-mode)
+(setq tab-always-indent 'complete)
+
+
+
+
