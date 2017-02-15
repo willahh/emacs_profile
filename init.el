@@ -373,7 +373,7 @@
 
 
 ;; Define some key chord.
-;; Use ` has a first "meta" character
+;; Use ù has a first "meta" character
 
 ;; Goto char / expand region / goto line
 (key-chord-define-global "fg" 'avy-goto-char)
@@ -387,6 +387,7 @@
 (key-chord-define-global "ùp" 'helm-projectile)
 (key-chord-define-global "ùr" 'helm-swoop)
 (key-chord-define-global "ùf" 'helm-find-files)
+(key-chord-define-global "ùa" 'helm-ag)
 
 ;; str
 (key-chord-define-global "r'" 'query-replace)
