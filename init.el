@@ -381,6 +381,8 @@
 (key-chord-define-global "wx" 'er/contract-region)
 (key-chord-define-global "ùg" 'goto-line)
 (key-chord-define-global "ùw" 'whitespace-mode)
+(key-chord-define-global "ùq" 'delete-trailing-whitespace)
+(key-chord-define-global "ds" 'mc/mark-all-like-this)
 
 
 ;; Helm - find - ...
@@ -401,8 +403,9 @@
 
 
 
-;; Magit
+;; Magit / svn
 (key-chord-define-global "ms" 'magit-status)
+(key-chord-define-global "ls" 'svn-status)
 
 ;; Window
 (key-chord-define-global "ùà" 'delete-window)
