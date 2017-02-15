@@ -38,6 +38,9 @@
 (show-paren-mode)
 (global-hl-line-mode)
 (winner-mode t)
+(global-whitespace-mode 1)
+
+
 
 ;; Duplicate line
 ;; Source : http://stackoverflow.com/a/88828
@@ -200,7 +203,7 @@
   anything
   async
   auto-complete
-  autopair         
+  autopair
   avy
   avy-menu
   bookmark+
@@ -316,6 +319,13 @@
 
 
 
+;; Don't prompt me when i want to kill a shell
+;; Source : http://stackoverflow.com/a/2706660
+(require 'cl-lib)
+(defadvice save-buffers-kill-emacs (around no-query-kill-emacs activate)
+  "Prevent annoying \"Active processes exist\" query when you quit Emacs."
+  (cl-letf (((symbol-function #'process-list) (lambda ())))
+    ad-do-it))
 
 
 
@@ -337,7 +347,7 @@
 ;; (set-default-font "Inconsolata-14") ;; Font face: Inconsolata, font-size: 14
 ;; Note : Cette partie ne s initalize pas,
 ;; Il semblerait que le theme n est pas finis de se charger
-;; En revanhe aucun hook n existe      
+;; En revanhe aucun hook n existe
 (set-face-attribute 'region nil :background "#b3e33b")
 ;;(add-to-list 'default-frame-alist '(foreground-color . "#272822"))
 ;;(add-to-list 'default-frame-alist '(background-color . "#272822"))
@@ -358,9 +368,48 @@
 
 
 
+;; Alternative for `M-x'
+;;(key-chord-define-global ";:" 'helm-M-x)
+
+;; Quit
+;;(key-chord-define-global ")g" 'keyboard-quit)
+
+;; Goto char / expand region
 (key-chord-define-global "fg" 'avy-goto-char)
+(key-chord-define-global "xc" 'er/expand-region)
 
 
+;; Helm - find - ...
+(key-chord-define-global "hp" 'helm-projectile)
+(key-chord-define-global "cr" 'helm-swoop)
+(key-chord-define-global "xf" 'helm-find-files)
+
+;; str
+(key-chord-define-global "r'" 'query-replace)
+(key-chord-define-global "r\"" 'replace-string)
+
+;; Magit
+(key-chord-define-global "ms" 'magit-status)
+
+;; Window
+(key-chord-define-global " à" 'delete-window)
+(key-chord-define-global " o" 'other-window)
+(key-chord-define-global " &" 'delete-other-windows)
+(key-chord-define-global " é" 'split-window-below)
+(key-chord-define-global " \"" 'split-window-right)
+
+;; Buffer
+(key-chord-define-global " b" 'helm-mini) ;; switch buffer (helm-mini) (c-x b)
+(key-chord-define-global " k" 'kill-this-buffer)
+(key-chord-define-global " l" 'ibuffer)
+
+;; Shell
+(key-chord-define-global " s" 'shell)
+
+
+
+
+;;
 
 
 
@@ -371,7 +420,6 @@
 ;;
 ;;
 (load-theme 'zerodark t)
-
 ;; Yascroll
 (global-yascroll-bar-mode 1)
 
@@ -995,6 +1043,11 @@
 
 
 
+(add-to-list 'auto-mode-alist '("\\.el\\'" . key-chord-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . key-chord-mode))
+
+
+
 
 
 
@@ -1313,7 +1366,7 @@ v    (svn-repo-open (concat rootFolder currentFolder))))
 
 
 ;; Smooth scroll
-;;(require 'smooth-scroll)
+l;;(require 'smooth-scroll)
 ;;(smooth-scroll-mode t)
 ;;  
 ;;(setq smooth-scroll/vscroll-step-size 8)
