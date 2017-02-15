@@ -2,7 +2,7 @@
 ;; Pre-requis :
 ;;  - Os : Mac Os X >= 10.11 (El Captain)
 ;;  - emacs >= 25
-;;  
+;;
 ;;  - bin en acces global :
 ;;    - ag (lightning search)
 ;;    - svn
@@ -11,7 +11,7 @@
 ;;    - jshint - npm -g install jshint
 ;;    - csslint - npm -g install csslint
 ;;    - jscs (npm -g install jscs)
-      
+;;
 ;;    - tags https://github.com/leoliu/ggtags/wiki/Install-Global-with-support-for-exuberant-ctags
 ;;    - brew install global (gtags)
 ;;    - brew install --HEAD ctags
@@ -23,8 +23,8 @@
 ;; Todo faire fonctionner flycheck en mode javascript (base sur jscss )
 
 
-    
-;; 
+
+;;
 ;;
 ;; Emacs global settings
 ;;
@@ -38,13 +38,13 @@
 (show-paren-mode)
 (global-hl-line-mode)
 (winner-mode t)
-(global-whitespace-mode 1)
+(global-whitespace-mode 0)
 
 
 
 ;; Duplicate line
 ;; Source : http://stackoverflow.com/a/88828
-;; Update : ajout retour debut de ligne 
+;; Update : ajout retour debut de ligne
 (defun duplicate-line()
   (interactive)
   (move-beginning-of-line 1)
@@ -179,7 +179,7 @@
 
 
 
-;; 
+;;
 ;;
 ;; Package settings
 ;;
@@ -286,14 +286,14 @@
   ;; For important compatibility libraries like cl-lib
   (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/")))
 
-; activate all the packages (in particular autoloads)
+;; activate all the packages (in particular autoloads)
 (package-initialize)
 
-; fetch the list of packages available 
+;; fetch the list of packages available
 (unless package-archive-contents
   (package-refresh-contents))
 
-; install the missing packages
+;; install the missing packages
 (dolist (package package-list)
   (unless (package-installed-p package)
     (package-install package)))
@@ -359,6 +359,10 @@
 
 ;; Key chords commands
 ;; From http://emacsrocks.com/e07.html
+(require 'key-chord)
+(key-chord-mode 1)
+
+
 
 ;; Max time delay between two key presses to be considered a key chord
 (setq key-chord-two-keys-delay 0.1) ; default 0.1
@@ -368,48 +372,45 @@
 
 
 
-;; Alternative for `M-x'
-;;(key-chord-define-global ";:" 'helm-M-x)
+;; Define some key chord.
+;; Use ` has a first "meta" character
 
-;; Quit
-;;(key-chord-define-global ")g" 'keyboard-quit)
-
-;; Goto char / expand region
+;; Goto char / expand region / goto line
 (key-chord-define-global "fg" 'avy-goto-char)
 (key-chord-define-global "xc" 'er/expand-region)
+(key-chord-define-global "wx" 'er/contract-region)
+(key-chord-define-global "ùg" 'goto-line)
+(key-chord-define-global "ùw" 'whitespace-mode)
 
 
 ;; Helm - find - ...
-(key-chord-define-global "hp" 'helm-projectile)
-(key-chord-define-global "cr" 'helm-swoop)
-(key-chord-define-global "xf" 'helm-find-files)
+(key-chord-define-global "ùp" 'helm-projectile)
+(key-chord-define-global "ùr" 'helm-swoop)
+(key-chord-define-global "ùf" 'helm-find-files)
 
 ;; str
 (key-chord-define-global "r'" 'query-replace)
 (key-chord-define-global "r\"" 'replace-string)
 
+
+    
 ;; Magit
 (key-chord-define-global "ms" 'magit-status)
 
 ;; Window
-(key-chord-define-global " à" 'delete-window)
-(key-chord-define-global " o" 'other-window)
-(key-chord-define-global " &" 'delete-other-windows)
-(key-chord-define-global " é" 'split-window-below)
-(key-chord-define-global " \"" 'split-window-right)
+(key-chord-define-global "ùà" 'delete-window)
+(key-chord-define-global "ùo" 'other-window)
+(key-chord-define-global "ù&" 'delete-other-windows)
+(key-chord-define-global "ùé" 'split-window-below)
+(key-chord-define-global "ù\"" 'split-window-right)
 
 ;; Buffer
-(key-chord-define-global " b" 'helm-mini) ;; switch buffer (helm-mini) (c-x b)
-(key-chord-define-global " k" 'kill-this-buffer)
-(key-chord-define-global " l" 'ibuffer)
+(key-chord-define-global "ùb" 'helm-mini) ;; switch buffer (helm-mini) (c-x b)
+(key-chord-define-global "ùk" 'kill-this-buffer)
+(key-chord-define-global "ùl" 'ibuffer)
 
 ;; Shell
-(key-chord-define-global " s" 'shell)
-
-
-
-
-;;
+(key-chord-define-global "ùs" 'shell)
 
 
 
@@ -500,7 +501,7 @@
 
 
 
-;; 
+;;
 ;; Half page scrolling script
 ;; https://www.emacswiki.org/emacs/HalfScrolling
 ;;
@@ -513,25 +514,25 @@
           (recenter-top-bottom -1)  ;; Current line becomes last
         (recenter-top-bottom 0))  ;; Current line becomes first
       (move-to-window-line opos)))  ;; Restore cursor/point position
-  
+
   (defun zz-scroll-half-page-down ()
     "Scrolls exactly half page down keeping cursor/point position."
     (interactive)
     (zz-scroll-half-page nil))
-  
+
   (defun zz-scroll-half-page-up ()
     "Scrolls exactly half page up keeping cursor/point position."
     (interactive)
     (zz-scroll-half-page t))
 
 
-(global-set-key (kbd "M-v") 'zz-scroll-half-page-up) 
+(global-set-key (kbd "M-v") 'zz-scroll-half-page-up)
 (global-set-key (kbd "C-v") 'zz-scroll-half-page-down)
 
 
 
 ;; Permet de declencher l auto indent css apres avoir saisi une tabulation
-;; 
+;;
 ;; Source : http://emacs.stackexchange.com/a/12457
 (setq tab-always-indent 'complete)
 
@@ -556,9 +557,9 @@
 ;; Move line up and down
 ;; Besoin initial : pouvoir deplacer des lignes en haut ou en bas
 ;; Source : http://emacsredux.com/blog/2013/04/02/move-current-line-up-or-down/
-;; 
+;;
 ;; Update : Mise a jour par le package drag-stuff ci dessous
-;; 
+;;
 ;;(defun move-line-up ()
 ;;  "Move up the current line."
 ;;  (interactive)
@@ -677,7 +678,7 @@
 ;; Auto pair config
 ;; Souhait initial : En mode css : Fermeture auto d une accolade lors de l ouverture d une nouvelle (ST behaviour)
 ;; --> Fonctionne parfaitement :)
-;; 
+;;
 (autopair-global-mode) ;; enable autopair in all buffer
 
 
@@ -707,7 +708,7 @@
   ;; `smart-tab-completion-functions-alist' to use
   ;; `emmet-expand-line'.
   (add-to-list 'smart-tab-completion-functions-alist
-               (cons major-mode #'emmet-expand-line)))   
+               (cons major-mode #'emmet-expand-line)))
 
 (require 'emmet-mode)
 (add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
@@ -770,7 +771,7 @@
 
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 (global-set-key (kbd "C-x b") 'helm-mini)
-;; (global-set-key (kbd "M-y") 'helm-show-kill-ring) ;; Update : Pas forcement tip top 
+;; (global-set-key (kbd "M-y") 'helm-show-kill-ring) ;; Update : Pas forcement tip top
 (helm-autoresize-mode t)
 
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
@@ -896,7 +897,7 @@
 ;; Mac os x last version : l indexation tourne indefinnemment
 ;; Mac os x snow leopard : ne fonctionne pas
 ;; Laisser sans indexation et voir plus tard si on peut vraiment optimiser ou non
- 
+
 ;; (setq projectile-enable-caching t)
 
 ;; Method d indexation native
@@ -1259,7 +1260,7 @@ v    (svn-repo-open (concat rootFolder currentFolder))))
 ;; http://stackoverflow.com/a/2490367
 ;; http://svn.apache.org/repos/asf/subversion/trunk/contrib/client-side/emacs/dsvn.el
 ;;
-;; 
+;;
 (require 'vc-svn)
 (autoload 'svn-status "dsvn" "Run `svn status'." t)
 (autoload 'svn-update "dsvn" "Run `svn update'." t)
@@ -1283,7 +1284,7 @@ v    (svn-repo-open (concat rootFolder currentFolder))))
 ;; test2
 
 
-  
+
 ;; will keybindings
 ;; Define some keybindings
 (global-set-key (kbd "C-c r") 'helm-swoop)
@@ -1366,8 +1367,8 @@ v    (svn-repo-open (concat rootFolder currentFolder))))
 
 
 ;; Smooth scroll
-l;;(require 'smooth-scroll)
+;;(require 'smooth-scroll)
 ;;(smooth-scroll-mode t)
-;;  
+;;
 ;;(setq smooth-scroll/vscroll-step-size 8)
 ;;(setq smooth-scroll/hscroll-step-size 8)
