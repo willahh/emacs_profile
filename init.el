@@ -4,6 +4,8 @@
 ;;  - emacs >= 25
 ;;
 ;;  - bin en acces global :
+;;    - php (brew  install homebrew/php/php56)
+;;    - cscope (brew  install cscope)
 ;;    - ag (lightning search)
 ;;    - svn
 ;;    - git
@@ -225,6 +227,7 @@
 ;; Liste des packages a installer si repertoire non disponible
 (setq package-list '(
   ;;archives
+  ;;dumb-jump
   ag
 ;;  smooth-scroll
 ;;  smooth-scroll
@@ -318,6 +321,7 @@
 ;; Add melpa to package repos
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+
 
 
 ;; ??
@@ -457,8 +461,10 @@
 
 
 
-
-
+;; Dumb jump
+(add-to-list 'load-path "~/.emacs.d/plugins/dumb-jump-20161218.110")
+(require 'dumb-jump)
+(dumb-jump-mode)
 
 
 
@@ -824,14 +830,14 @@
  ;; If there is more than one, they won't work right.
  '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
  '(custom-safe-themes
-   (quote
-    ("3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "9d91458c4ad7c74cf946bd97ad085c0f6a40c370ac0a1cbeb2e3879f15b40553" "dd6e52a5b1180f5c8bf408764a32867e2fa86594ded78a29040cafce6a4ea808" "945fe66fbc30a7cbe0ed3e970195a7ee79ee34f49a86bc96d02662ab449b8134" "ad1c2abad40e11d22156fe3987fd9b74b9e1c822264a07dacb24e0b3133aaed1" "eb0a314ac9f75a2bf6ed53563b5d28b563eeba938f8433f6d1db781a47da1366" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "f5ad3af69f2b6b7c547208b8708d4fa7928b5697ca0845633d1d67c2d145952a" "c7a9a68bd07e38620a5508fef62ec079d274475c8f92d75ed0c33c45fbe306bc" default)))
+        (quote
+         ("3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "9d91458c4ad7c74cf946bd97ad085c0f6a40c370ac0a1cbeb2e3879f15b40553" "dd6e52a5b1180f5c8bf408764a32867e2fa86594ded78a29040cafce6a4ea808" "945fe66fbc30a7cbe0ed3e970195a7ee79ee34f49a86bc96d02662ab449b8134" "ad1c2abad40e11d22156fe3987fd9b74b9e1c822264a07dacb24e0b3133aaed1" "eb0a314ac9f75a2bf6ed53563b5d28b563eeba938f8433f6d1db781a47da1366" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "f5ad3af69f2b6b7c547208b8708d4fa7928b5697ca0845633d1d67c2d145952a" "c7a9a68bd07e38620a5508fef62ec079d274475c8f92d75ed0c33c45fbe306bc" default)))
  '(git-gutter:handled-backends (quote (git hg bzr svn)))
  '(helm-follow-mode-persistent t)
  '(magit-dispatch-arguments nil)
  '(package-selected-packages
-   (quote
-    (theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ bookmark+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window git-gutter+ web-mode magit neotree helm-projectile helm)))
+        (quote
+         (dumb-mode ac-php theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ bookmark+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window git-gutter+ web-mode magit neotree helm-projectile helm)))
  '(yas-global-mode t))
 
 
@@ -1068,6 +1074,30 @@
 
 
 
+
+;; ac-php
+(add-to-list 'load-path "~/.emacs.d/plugins/ac-php")
+;; (require 'cl)
+;;  (require 'php-mode)
+;;  (add-hook 'php-mode-hook
+;;            '(lambda ()
+;;               (auto-complete-mode t)
+;;               (require 'ac-php)
+;;               (setq ac-sources  '(ac-source-php ) )
+;;               (yas-global-mode 1)
+;;               (define-key php-mode-map  (kbd "C-]") 'ac-php-find-symbol-at-point)   ;goto define
+;;               (define-key php-mode-map  (kbd "C-t") 'ac-php-location-stack-back   ) ;go back
+;;               ))
+ (add-hook 'php-mode-hook
+            '(lambda ()
+               (auto-complete-mode t)
+               (require 'ac-php)
+               (setq ac-sources  '(ac-source-php ) )
+               (yas-global-mode 1)
+               (define-key php-mode-map  (kbd "C-]") 'ac-php-find-symbol-at-point)   ;goto define
+               (define-key php-mode-map  (kbd "C-t") 'ac-php-location-stack-back   ) ;go back
+               ))
+    
 
 
 
@@ -1438,6 +1468,9 @@
 (key-chord-define-global "r'" 'query-replace)
 (key-chord-define-global "r\"" 'replace-string)
 
+;; Jump to definition
+(key-chord-define-global "jd" 'dumb-jump-go)
+
 ;; undo redo
 (key-chord-define-global "ji" 'undo-tree-undo)
 (key-chord-define-global "jo" 'undo-tree-redo)
@@ -1448,7 +1481,7 @@
 
 ;; Magit / svn
 (key-chord-define-global "ms" 'magit-status)
-(key-chord-define-global "ls" 'svn-status)
+(key-chord-define-global "$s" 'svn-status)
 
 ;; Window
 (key-chord-define-global "$à" 'delete-window)
@@ -1461,7 +1494,7 @@
 (key-chord-define-global "$b" 'helm-mini) ;; switch buffer (helm-mini) (c-x b)
 (key-chord-define-global "$k" 'kill-this-buffer)
 (key-chord-define-global "$l" 'ibuffer)
-(key-chord-define-global "ev" 'eval-buffer)
+(key-chord-define-global "$e" 'eval-buffer)
 
 ;; Shell
 (key-chord-define-global "$s" 'shell)
@@ -1511,3 +1544,23 @@
 
 
 
+;; Custom binding for backward-paragraph and foreword-paragraph
+
+
+;; Tentative d ajout de hook pour surcharge des racourcis deja utilise par un package
+;; ... sans succes -> copie du package depuis melpa vers le dossier plugins
+;;  - Mise a jour du fichier pour virer les 2 racourcis
+(global-set-key (kbd "C-M-p") 'backward-paragraph)
+(global-set-key (kbd "C-M-n") 'forward-paragraph)
+
+;; (add-hook 'dumb-jump-mode-hook
+;;     (lambda()
+;;         (global-set-key (kbd "C-M-p") 'backward-paragraph)
+;;         (global-set-key (kbd "C-M-n") 'forward-paragraph)
+;;     )
+;; )
+;;     
+;; (eval-after-load 'dumb-jump-mode'
+;;     (global-set-key (kbd "C-M-p") 'backward-paragraph)
+;; )
+;;
