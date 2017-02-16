@@ -8,6 +8,7 @@
 ;;    - svn
 ;;    - git
 ;;    - tern
+;;      js-beautify
 ;;    - jshint - npm -g install jshint
 ;;    - csslint - npm -g install csslint
 ;;    - jscs (npm -g install jscs)
@@ -103,6 +104,28 @@
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 (setq indent-line-function 'insert-tab)
+
+
+
+;; un indent
+;; Shift tab to indent to left
+;; Source http://stackoverflow.com/a/2250155
+(global-set-key (kbd "<S-tab>") 'un-indent-by-removing-4-spaces)
+(defun un-indent-by-removing-4-spaces ()
+  "remove 4 spaces from beginning of of line"
+  (interactive)
+  (save-excursion
+    (save-match-data
+      (beginning-of-line)
+      ;; get rid of tabs at beginning of line
+      (when (looking-at "^\\s-+")
+        (untabify (match-beginning 0) (match-end 0)))
+      (when (looking-at "^    ")
+        (replace-match "")))))
+
+
+
+
 
 
 ;; Add comment/uncomment key binding
@@ -513,6 +536,12 @@
 
 
 
+;; Custom binding for backward-paragraph and foreword-paragraph
+(global-set-key (kbd "C-M-n") 'forward-paragraph)
+(global-set-key (kbd "C-M-p") 'backward-paragraph)
+        
+
+
 ;; Permet de declencher l auto indent css apres avoir saisi une tabulation
 ;;
 ;; Source : http://emacs.stackexchange.com/a/12457
@@ -812,7 +841,6 @@
 
 
 
-
 ;; Spaceline
 ;; Note : power line stylee, mais je n arrive pas a la faire fonctionner
 ;;(require 'spaceline-config)
@@ -1018,12 +1046,12 @@
 
 ;; Web mode
 (require 'web-mode)
-(add-to-list 'auto-mode-alist '("\\.html\\'" . html-mode))
+(add-to-list 'auto-mode-alist '("\\.html\\'" . nxml-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.css\\'" . css-mode))
 (add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
 
-(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.phtml\\'" . nxml-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
@@ -1404,6 +1432,7 @@
 (key-chord-define-global "$r" 'helm-swoop)
 (key-chord-define-global "$f" 'helm-find-files)
 (key-chord-define-global "$a" 'helm-ag)
+(key-chord-define-global "ùa" 'ag-project-files)
 
 ;; str
 (key-chord-define-global "r'" 'query-replace)
