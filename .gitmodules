@@ -1,0 +1,3 @@
+[submodule "plugins/ac-php"]
+	path = plugins/ac-php
+	url = https://github.com/xcwen/ac-php.git
