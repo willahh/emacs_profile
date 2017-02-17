@@ -25,7 +25,7 @@
 ;; @todo faire fonctionner gtags
 ;; @todo faire fonctionner flycheck en mode javascript (base sur jscss )
 ;; @todo Faire fonctionner les snippets YAS 
-
+;; @todo Afficher le mode whitespace uniquement sur la selectiono
 
 ;;
 ;;
@@ -44,12 +44,13 @@
 
 ;; Show white space
 ;; Source : http://ergoemacs.org/emacs/whitespace-mode.html
-(global-whitespace-mode 1)
+;; (global-whitespace-mode 1)
 (progn
  ;; Make whitespace-mode with very basic background coloring for whitespaces.
   ;; http://ergoemacs.org/emacs/whitespace-mode.html
   (setq whitespace-style (quote (face spaces tabs newline space-mark tab-mark newline-mark )))
   )
+
 
 
 
@@ -235,14 +236,14 @@
   helm-ag
   ace-jump-mode
   ace-window
-  anaphora
+  ;;anaphora
   anything
   async
   auto-complete
   autopair
   avy
   avy-menu
-  bookmark+
+  ;;bookmark+
   company
   helm-company
   dash
@@ -253,14 +254,14 @@
   expand-region
 ;;  sizef
 ;;  flymake-mode
-  less-css-mode
+  ;;less-css-mode
   tern
   tern-auto-complete
-
+  ;;nlinum
   doom-themes
-  git-commit
+  ;;git-commit
   git-gutter
-  git-gutter+
+  ;;git-gutter+
   helm
   helm-anything
   helm-core
@@ -269,12 +270,12 @@
   highlight-symbol
   magit
   magit-popup
-  magit-svn
+ ;; magit-svn
   ;;rpsvn
   markdown-mode+
   multiple-cursors
   other-frame-window
-  neotree
+  ;;neotree
   ;;php+-mode
   php-mode
   pkg-info
@@ -832,15 +833,15 @@
  ;; If there is more than one, they won't work right.
  '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
  '(custom-safe-themes
-        (quote
-         ("3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "9d91458c4ad7c74cf946bd97ad085c0f6a40c370ac0a1cbeb2e3879f15b40553" "dd6e52a5b1180f5c8bf408764a32867e2fa86594ded78a29040cafce6a4ea808" "945fe66fbc30a7cbe0ed3e970195a7ee79ee34f49a86bc96d02662ab449b8134" "ad1c2abad40e11d22156fe3987fd9b74b9e1c822264a07dacb24e0b3133aaed1" "eb0a314ac9f75a2bf6ed53563b5d28b563eeba938f8433f6d1db781a47da1366" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "f5ad3af69f2b6b7c547208b8708d4fa7928b5697ca0845633d1d67c2d145952a" "c7a9a68bd07e38620a5508fef62ec079d274475c8f92d75ed0c33c45fbe306bc" default)))
+   (quote
+    ("9f3181dc1fabe5d58bbbda8c48ef7ece59b01bed606cfb868dd147e8b36af97c" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "9d91458c4ad7c74cf946bd97ad085c0f6a40c370ac0a1cbeb2e3879f15b40553" "dd6e52a5b1180f5c8bf408764a32867e2fa86594ded78a29040cafce6a4ea808" "945fe66fbc30a7cbe0ed3e970195a7ee79ee34f49a86bc96d02662ab449b8134" "ad1c2abad40e11d22156fe3987fd9b74b9e1c822264a07dacb24e0b3133aaed1" "eb0a314ac9f75a2bf6ed53563b5d28b563eeba938f8433f6d1db781a47da1366" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "f5ad3af69f2b6b7c547208b8708d4fa7928b5697ca0845633d1d67c2d145952a" "c7a9a68bd07e38620a5508fef62ec079d274475c8f92d75ed0c33c45fbe306bc" default)))
  '(git-gutter:handled-backends (quote (git hg bzr svn)))
  '(helm-follow-mode-persistent t)
  '(magit-dispatch-arguments nil)
  '(package-selected-packages
-        (quote
-         (dumb-mode ac-php theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ bookmark+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window git-gutter+ web-mode magit neotree helm-projectile helm)))
- '(yas-global-mode t))
+   (quote
+    (nlinum crosshairs dumb-mode ac-php theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ bookmark+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window web-mode magit neotree helm-projectile helm)))
+ '(yas-global-mode t t))
 
 
 
@@ -900,7 +901,45 @@
 (global-set-key (kbd "C-x C-p") 'helm-projectile)
 
 ;; Line number config (linum-mode)
-(add-hook 'prog-mode-hook 'linum-mode)
+;;(add-hook 'prog-mode-hook 'linum-mode)
+;;(setq linum-format "%d ")
+;;(setq-default left-fringe-width 200)
+
+
+
+
+
+;; Fast line numbers
+;; Line number gutter in ncurses mode
+;; (Fix linum display bug in mac os x cocoa)
+;; Source : https://www.reddit.com/r/emacs/comments/25v0eo/you_emacs_tips_and_tricks/chlgnda/
+;; Note : nlinum ne fonctionne pas avec git guttern
+;; L activation des 2 modes semble corriger le probleme, mais ne semble pas etre une solution clean
+;; Update 2 : nlium non compatible avec gitter gutter / git gutter+
+;; Fast line numbers
+;;(require 'nlinum)
+;;
+;;;; Line number gutter in ncurses mode
+;;(unless window-system
+;;  (setq nlinum-format "%d "))
+;;
+;;
+;;(global-nlinum-mode)
+
+(global-linum-mode)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ;; Projectile
 (projectile-global-mode)
@@ -992,10 +1031,52 @@
 ;; Revert current hunk
 (global-set-key (kbd "C-x v r") 'git-gutter:revert-hunk)
 
+;;
+(custom-set-variables
+ '(git-gutter:update-interval 0))
+
+
+;;
+(custom-set-variables
+ '(git-gutter:modified-sign "u") ;; two space
+ '(git-gutter:added-sign "+")    ;; multiple character is OK
+ '(git-gutter:deleted-sign "-"))
+
+(set-face-background 'git-gutter:modified "purple") ;; background color
+(set-face-foreground 'git-gutter:added "green")
+(set-face-foreground 'git-gutter:deleted "red")
+
+
+
+
+
+
+
 ;; Mark current hunk
 
 
 ;; Use for 'Git'(`git`), 'Mercurial'(`hg`), 'Bazaar'(`bzr`), and 'Subversion'(`svn`) projects
+; Git gutter+
+;;(global-git-gutter+-mode)
+;;(global-set-key (kbd "C-x g") 'git-gutter+-mode) ; Turn on/off in the current buffer
+;;(global-set-key (kbd "C-x G") 'global-git-gutter+-mode) ; Turn on/off globally
+;;
+;;(eval-after-load 'git-gutter+
+;;  '(progn
+;;     ;;; Jump between hunks
+;;     (define-key git-gutter+-mode-map (kbd "C-x n") 'git-gutter+-next-hunk)
+;;     (define-key git-gutter+-mode-map (kbd "C-x p") 'git-gutter+-previous-hunk)
+;;
+;;     ;;; Act on hunks
+;;     (define-key git-gutter+-mode-map (kbd "C-x v =") 'git-gutter+-show-hunk)
+;;     (define-key git-gutter+-mode-map (kbd "C-x r") 'git-gutter+-revert-hunks)
+;;     ;; Stage hunk at point.
+;;     ;; If region is active, stage all hunk lines within the region.
+;;     (define-key git-gutter+-mode-map (kbd "C-x t") 'git-gutter+-stage-hunks)
+;;     (define-key git-gutter+-mode-map (kbd "C-x c") 'git-gutter+-commit)
+;;     (define-key git-gutter+-mode-map (kbd "C-x C") 'git-gutter+-stage-and-commit)
+;;     (define-key git-gutter+-mode-map (kbd "C-x C-y") 'git-gutter+-stage-and-commit-whole-buffer)
+;;     (define-key git-gutter+-mode-map (kbd "C-x U") 'git-gutter+-unstage-whole-buffer)))
 
 
 
@@ -1012,7 +1093,6 @@
    '(progn
       (require 'tern-auto-complete)
       (tern-ac-setup)))
-
 
 
 
@@ -1526,7 +1606,7 @@
 ;;     (if (company-manual-begin)
 ;;         (company-complete-common)
 ;;       (indent-according-to-mode)))
-
+                      
 
 ;;(global-set-key (kbd "TAB") 'company-complete-common)
 ;; (define-key company-active-map [tab] 'company-complete-common-or-cycle)
