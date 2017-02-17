@@ -379,10 +379,12 @@
 ;;
 ;;
 ;;
-(load-theme 'zerodark t)
+;;(load-theme 'zerodark t)
 
 
-
+;; Golden ratio
+;; (require 'golden-ratio)
+;; (golden-ratio-mode 1)
 
 
 ;; wra Custom theme
@@ -410,15 +412,15 @@
 
 ;; Yasnippet
 ;; Note : Yasnippet error when installing from elpa package
-(add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
-(require 'yasnippet)
-(yas-global-mode 1)
+;; (add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
+;; (require 'yasnippet)
+;; (yas-global-mode 1)
 
-(setq yas-snippet-dirs
-      '("~/.emacs.d/snippets"                 ;; personal snippets
-        "~/.emacs.d/plugins/yasnippet/yasmate/snippets" ;; the yasmate collection
-        "~/.emacs.d/plugins/yasnippet/snippets"         ;; the default collection
-        ))
+;;(setq yas-snippet-dirs
+;;      '("~/.emacs.d/snippets"                 ;; personal snippets
+;;        "~/.emacs.d/plugins/yasnippet/yasmate/snippets" ;; the yasmate collection
+;;        "~/.emacs.d/plugins/yasnippet/snippets"         ;; the default collection
+;;        ))
 
 
 ;;
@@ -506,7 +508,7 @@
 
 ;; Switch buffer with tab
 (global-set-key [C-tab] 'next-buffer)
-(global-set-key [C-S-iso-lefttab] 'previous-buffer) ;; @todo Ne semble pas fonctionner
+(global-set-key [C-S-tab] 'previous-buffer)
 
 
 
