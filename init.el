@@ -26,8 +26,10 @@
 ;; @todo faire fonctionner flycheck en mode javascript (base sur jscss )
 ;; @todo Faire fonctionner les snippets YAS 
 ;; @todo Afficher le mode whitespace uniquement sur la selectiono
-
-;;
+;; @todo Faire un theme custom, prendre la partie VC de monokai et la merger dans doom theme
+;; @todo git-gutter plus de preview en mode svn :(
+;; @todo Supprimer le warning orange horrible (et bugge)
+;;    
 ;;
 ;; Emacs global settings
 ;;
@@ -41,6 +43,7 @@
 (show-paren-mode)
 (global-hl-line-mode)
 (winner-mode t)
+(setq next-line-add-newlines t)
 
 ;; Show white space
 ;; Source : http://ergoemacs.org/emacs/whitespace-mode.html
@@ -267,7 +270,7 @@
   helm-core
   helm-projectile
   js2-mode
-  highlight-symbol
+  ;;highlight-symbol
   magit
   magit-popup
  ;; magit-svn
@@ -862,7 +865,7 @@
  '(magit-dispatch-arguments nil)
  '(package-selected-packages
    (quote
-    (monokai-theme color-theme-sanityinc-tomorrow moe-theme material-theme noctilux-theme nlinum crosshairs dumb-mode ac-php theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window web-mode magit helm-projectile helm)))
+    (monokai-theme color-theme-sanityinc-tomorrow moe-theme material-theme noctilux-theme nlinum crosshairs dumb-mode ac-php theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window web-mode magit helm-projectile helm)))
  '(yas-global-mode t t))
 
 
@@ -1438,12 +1441,12 @@
 
 ;; Auto highlight symbol
 ;; Source : https://github.com/nschum/highlight-symbol.el/blob/master/highlight-symbol.el
-(require 'highlight-symbol)
-(global-set-key [(control f3)] 'highlight-symbol)
-(global-set-key [f3] 'highlight-symbol-next)
-(global-set-key [(shift f3)] 'highlight-symbol-prev)
-(global-set-key [(meta f3)] 'highlight-symbol-query-replace)
-(setq highlight-symbol-idle-delay 1.0)
+;;(require 'highlight-symbol)
+;;(global-set-key [(control f3)] 'highlight-symbol)
+;;(global-set-key [f3] 'highlight-symbol-next)
+;;(global-set-key [(shift f3)] 'highlight-symbol-prev)
+;;(global-set-key [(meta f3)] 'highlight-symbol-query-replace)
+;;(setq highlight-symbol-idle-delay 1.0)
 
 
 
