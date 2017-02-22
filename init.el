@@ -1584,7 +1584,9 @@
 ;; Define some key chord.
 ;; Use $ has a first "key" character for most of commmands
 
-
+;; BUffer
+(key-chord-define-global "jk" 'beginning-of-buffer)    
+(key-chord-define-global "kl" 'end-of-buffer)    
 
 ;; Goto char / expand region / goto line
 (key-chord-define-global "fg" 'avy-goto-char)
