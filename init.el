@@ -230,6 +230,7 @@
 ;; Auto loader
 ;; Liste des packages a installer si repertoire non disponible
 (setq package-list '(
+  skewer-mode
   ;;archives
   ;;dumb-jump
   ag
@@ -1173,9 +1174,9 @@
 
 ;; Web mode
 (require 'web-mode)
-(add-to-list 'auto-mode-alist '("\\.html\\'" . nxml-mode))
+(add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.css\\'" . css-mode))
+(add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
 
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . nxml-mode))
@@ -1200,6 +1201,14 @@
 )
 (add-hook 'web-mode-hook  'my-web-mode-hook)
 
+
+(define-key web-mode-map (kbd "C-M-n") 'web-mode-tag-next)
+(define-key web-mode-map (kbd "C-M-p") 'web-mode-tag-previous)
+
+(setq web-mode-enable-auto-pairing t)
+(setq web-mode-enable-css-colorization t)
+(setq web-mode-enable-current-element-highlight t)    
+(setq web-mode-enable-current-column-highlight t)
 
 
 
