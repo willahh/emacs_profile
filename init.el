@@ -1044,6 +1044,10 @@
 ;; If you would like to use git-gutter.el and linum-mode
 (git-gutter:linum-setup)
 
+;; Use for 'Git'(`git`), 'Mercurial'(`hg`), 'Bazaar'(`bzr`), and 'Subversion'(`svn`) projects
+(custom-set-variables
+ '(git-gutter:handled-backends '(git hg bzr svn)))
+
 ;; If you enable git-gutter-mode for some modes
 ;;(add-hook 'ruby-mode-hook 'git-gutter-mode)
 
