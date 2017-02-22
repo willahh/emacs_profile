@@ -284,6 +284,7 @@
   other-frame-window
   ;;neotree
   ;;php+-mode
+  evil
   tabbar
   php-mode
   pkg-info
