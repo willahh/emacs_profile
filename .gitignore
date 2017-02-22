@@ -13,7 +13,8 @@ projectile.cache
 .emacs.desktop.lock
 tramp
 image-dired
-
+tmp/*
+url/*    
 
 
 .emacs_workgroups
