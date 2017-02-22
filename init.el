@@ -26,8 +26,10 @@
 ;; @todo faire fonctionner flycheck en mode javascript (base sur jscss )
 ;; @todo Faire fonctionner les snippets YAS 
 ;; @todo Afficher le mode whitespace uniquement sur la selectiono
-
-;;
+;; @todo Faire un theme custom, prendre la partie VC de monokai et la merger dans doom theme
+;; @todo git-gutter plus de preview en mode svn :(
+;; @todo Supprimer le warning orange horrible (et bugge)
+;;    
 ;;
 ;; Emacs global settings
 ;;
@@ -41,6 +43,7 @@
 (show-paren-mode)
 (global-hl-line-mode)
 (winner-mode t)
+(setq next-line-add-newlines t)
 
 ;; Show white space
 ;; Source : http://ergoemacs.org/emacs/whitespace-mode.html
@@ -227,6 +230,7 @@
 ;; Auto loader
 ;; Liste des packages a installer si repertoire non disponible
 (setq package-list '(
+  skewer-mode
   ;;archives
   neotree
   edit-server
@@ -270,7 +274,7 @@
   helm-core
   helm-projectile
   js2-mode
-  highlight-symbol
+  ;;highlight-symbol
   magit
   magit-popup
  ;; magit-svn
@@ -1049,6 +1053,10 @@
 ;; If you would like to use git-gutter.el and linum-mode
 (git-gutter:linum-setup)
 
+;; Use for 'Git'(`git`), 'Mercurial'(`hg`), 'Bazaar'(`bzr`), and 'Subversion'(`svn`) projects
+(custom-set-variables
+ '(git-gutter:handled-backends '(git hg bzr svn)))
+
 ;; If you enable git-gutter-mode for some modes
 ;;(add-hook 'ruby-mode-hook 'git-gutter-mode)
 
@@ -1182,9 +1190,9 @@
     
 ;; Web mode
 (require 'web-mode)
-(add-to-list 'auto-mode-alist '("\\.html\\'" . nxml-mode))
+(add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.css\\'" . css-mode))
+(add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
 
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . nxml-mode))
@@ -1211,6 +1219,14 @@
 
 (setq web-mode-enable-current-element-highlight t)
 (setq web-mode-enable-current-column-highlight t)    
+
+(define-key web-mode-map (kbd "C-M-n") 'web-mode-tag-next)
+(define-key web-mode-map (kbd "C-M-p") 'web-mode-tag-previous)
+
+(setq web-mode-enable-auto-pairing t)
+(setq web-mode-enable-css-colorization t)
+(setq web-mode-enable-current-element-highlight t)    
+(setq web-mode-enable-current-column-highlight t)
 
 
 
@@ -1438,12 +1454,12 @@
 
 ;; Auto highlight symbol
 ;; Source : https://github.com/nschum/highlight-symbol.el/blob/master/highlight-symbol.el
-(require 'highlight-symbol)
-(global-set-key [(control f3)] 'highlight-symbol)
-(global-set-key [f3] 'highlight-symbol-next)
-(global-set-key [(shift f3)] 'highlight-symbol-prev)
-(global-set-key [(meta f3)] 'highlight-symbol-query-replace)
-(setq highlight-symbol-idle-delay 1.0)
+;;(require 'highlight-symbol)
+;;(global-set-key [(control f3)] 'highlight-symbol)
+;;(global-set-key [f3] 'highlight-symbol-next)
+;;(global-set-key [(shift f3)] 'highlight-symbol-prev)
+;;(global-set-key [(meta f3)] 'highlight-symbol-query-replace)
+;;(setq highlight-symbol-idle-delay 1.0)
 
 
 
@@ -1562,7 +1578,9 @@
 ;; Define some key chord.
 ;; Use $ has a first "key" character for most of commmands
 
-
+;; BUffer
+(key-chord-define-global "jk" 'beginning-of-buffer)    
+(key-chord-define-global "kl" 'end-of-buffer)    
 
 ;; Goto char / expand region / goto line
 (key-chord-define-global "fg" 'avy-goto-char)
