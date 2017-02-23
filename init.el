@@ -237,6 +237,9 @@
   evil                      
   spaceline
   skewer-mode
+  eyebrowse
+  persp-mode
+  window-numbering
   which-key
   ;;archives
   ;;dumb-jump
@@ -439,7 +442,7 @@
 ;;(key-chord-define evil-insert-state-map "fd" 'evil-normal-state)
 ;;(key-chord-define evil-visual-state-map "fd" 'evil-normal-state)
 
-(setq evil-emacs-state-cursor '("red" box))
+(setq evil-emacs-state-cursor '("#97d85d" bar))
 (setq evil-normal-state-cursor '("green" box))
 (setq evil-visual-state-cursor '("orange" box))
 (setq evil-insert-state-cursor '("red" bar))
@@ -447,6 +450,24 @@
 (setq evil-operator-state-cursor '("red" hollow))
 
 
+
+
+;; eyebrowse
+(require 'eyebrowse)    
+(eyebrowse-mode t)
+
+;; window-numbering
+(require 'window-numbering)
+(window-numbering-mode)            
+
+;;persp-mode
+(require 'persp-mode)
+(with-eval-after-load "persp-mode-autoloads"
+  (setq wg-morph-on nil) ;; switch off animation
+  (setq persp-autokill-buffer-on-remove 'kill-weak)
+  (add-hook 'after-init-hook #'(lambda () (persp-mode 1))))
+   
+        
 
 ;; Spaceline
 ;; Note : power line stylee, mais je n arrive pas a la faire fonctionner
@@ -459,7 +480,6 @@
 ;; Which-key
 (require 'which-key)
 (which-key-mode)
-
 
 
 
@@ -556,14 +576,6 @@
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
-
-
-
-
-;; Dumb jump
-(add-to-list 'load-path "~/.emacs.d/plugins/dumb-jump-20161218.110")
-(require 'dumb-jump)
-(dumb-jump-mode)
 
 
 
@@ -929,8 +941,8 @@
  ;; If there is more than one, they won't work right.
  '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
  '(custom-safe-themes
-   (quote
-    ("06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "82d2cac368ccdec2fcc7573f24c3f79654b78bf133096f9b40c20d97ec1d8016" "98cc377af705c0f2133bb6d340bf0becd08944a588804ee655809da5d8140de6" "4980e5ddaae985e4bae004280bd343721271ebb28f22b3e3b2427443e748cd3f" "9f3181dc1fabe5d58bbbda8c48ef7ece59b01bed606cfb868dd147e8b36af97c" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "9d91458c4ad7c74cf946bd97ad085c0f6a40c370ac0a1cbeb2e3879f15b40553" "dd6e52a5b1180f5c8bf408764a32867e2fa86594ded78a29040cafce6a4ea808" "945fe66fbc30a7cbe0ed3e970195a7ee79ee34f49a86bc96d02662ab449b8134" "ad1c2abad40e11d22156fe3987fd9b74b9e1c822264a07dacb24e0b3133aaed1" "eb0a314ac9f75a2bf6ed53563b5d28b563eeba938f8433f6d1db781a47da1366" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "f5ad3af69f2b6b7c547208b8708d4fa7928b5697ca0845633d1d67c2d145952a" "c7a9a68bd07e38620a5508fef62ec079d274475c8f92d75ed0c33c45fbe306bc" default)))
+        (quote
+         ("06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "82d2cac368ccdec2fcc7573f24c3f79654b78bf133096f9b40c20d97ec1d8016" "98cc377af705c0f2133bb6d340bf0becd08944a588804ee655809da5d8140de6" "4980e5ddaae985e4bae004280bd343721271ebb28f22b3e3b2427443e748cd3f" "9f3181dc1fabe5d58bbbda8c48ef7ece59b01bed606cfb868dd147e8b36af97c" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "9d91458c4ad7c74cf946bd97ad085c0f6a40c370ac0a1cbeb2e3879f15b40553" "dd6e52a5b1180f5c8bf408764a32867e2fa86594ded78a29040cafce6a4ea808" "945fe66fbc30a7cbe0ed3e970195a7ee79ee34f49a86bc96d02662ab449b8134" "ad1c2abad40e11d22156fe3987fd9b74b9e1c822264a07dacb24e0b3133aaed1" "eb0a314ac9f75a2bf6ed53563b5d28b563eeba938f8433f6d1db781a47da1366" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "f5ad3af69f2b6b7c547208b8708d4fa7928b5697ca0845633d1d67c2d145952a" "c7a9a68bd07e38620a5508fef62ec079d274475c8f92d75ed0c33c45fbe306bc" default)))
  '(git-gutter:added-sign "|")
  '(git-gutter:deleted-sign "|")
  '(git-gutter:handled-backends (quote (git hg bzr svn)))
@@ -939,8 +951,8 @@
  '(helm-follow-mode-persistent t)
  '(magit-dispatch-arguments nil)
  '(package-selected-packages
-   (quote
-    (which-key evil monokai-theme color-theme-sanityinc-tomorrow moe-theme material-theme noctilux-theme nlinum crosshairs dumb-mode ac-php theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window web-mode magit helm-projectile helm)))
+        (quote
+         (window-numbering persp-mode eyebrowse which-key spaceline evil tabbar edit-server neotree elfeed logview monokai-theme color-theme-sanityinc-tomorrow moe-theme material-theme noctilux-theme nlinum crosshairs dumb-mode ac-php theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window web-mode magit helm-projectile helm)))
  '(yas-global-mode t t))
 
 
@@ -988,16 +1000,19 @@
 
 
 ;; Help with projectile
-; (global-set-key (kbd "C-c ù") 'helm-projectile)
-; (global-set-key (kbd "C-x )") 'helm-projectile)
+(require 'helm-projectile)
+(helm-projectile-on)
+(global-set-key (kbd "C-x C-p") 'helm-projectile-find-file)
+
+;; (global-set-key (kbd "C-c ù") 'helm-projectile)
+;; (global-set-key (kbd "C-x )") 'helm-projectile)
 ;;(global-set-key (kbd "C-c p") 'helm-projectile)
-; (global-set-key (kbd "C-c -") 'helm-projectile)
-; (global-set-key (kbd "C-c C-_") 'helm-projectile)
-(global-set-key (kbd "C-x C-p") 'helm-projectile)
+;; (global-set-key (kbd "C-c -") 'helm-projectile)
+;; (global-set-key (kbd "C-c C-_") 'helm-projectile)
 
 ;; Line number config (linum-mode)
-;;(add-hook 'prog-mode-hook 'linum-mode)
 ;;(setq linum-format "%d ")
+;;(add-hook 'prog-mode-hook 'linum-mode)
 ;;(setq-default left-fringe-width 200)
 
 
@@ -1144,8 +1159,8 @@
 
 
 ;;
-(set-face-background 'git-gutter:modified "#436167")
-(set-face-foreground 'git-gutter:modified "#436167")
+(set-face-background 'git-gutter:modified "#ff7200")
+(set-face-foreground 'git-gutter:modified "#ff7200")
 (set-face-background 'git-gutter:added "#92de37")
 (set-face-foreground 'git-gutter:added "#92de37")
 (set-face-background 'git-gutter:deleted "#f82167")
@@ -1557,7 +1572,6 @@
 
 
 
-
 ;;
 ;;
 ;;
@@ -1638,93 +1652,6 @@
 
 
 
-
-
-;; Key chords commands
-;; From http://emacsrocks.com/e07.html
-(require 'key-chord)
-(key-chord-mode 1)
-
-
-
-;; Max time delay between two key presses to be considered a key chord
-(setq key-chord-two-keys-delay 0.1) ; default 0.1
-;; Max time delay between two presses of the same key to be considered a key chord.
-;; Should normally be a little longer than `key-chord-two-keys-delay'.
-(setq key-chord-one-key-delay 0.2) ; default 0.2
-
-
-;; Define some key chord.
-;; Use $ has a first "key" character for most of commmands
-
-;; BUffer
-(key-chord-define-global "jk" 'beginning-of-buffer)    
-(key-chord-define-global "kl" 'end-of-buffer)    
-
-;; Goto char / expand region / goto line
-(key-chord-define-global "fg" 'avy-goto-char)
-(key-chord-define-global "xc" 'er/expand-region)
-(key-chord-define-global "wx" 'er/contract-region)
-(key-chord-define-global "<w" 'mc/mark-all-like-this)
-
-(key-chord-define-global "$g" 'goto-line)
-(key-chord-define-global "$w" 'whitespace-mode)
-(key-chord-define-global "$q" 'delete-trailing-whitespace)
-
-
-;; Helm - find - ...
-(key-chord-define-global "$p" 'helm-projectile)
-(key-chord-define-global "$r" 'helm-swoop)
-(key-chord-define-global "$f" 'helm-find-files)
-(key-chord-define-global "$a" 'helm-ag)
-(key-chord-define-global "ùa" 'ag-project-files)
-
-;; str
-(key-chord-define-global "r'" 'query-replace)
-(key-chord-define-global "r\"" 'replace-string)
-
-;; Jump to definition
-(key-chord-define-global "jd" 'dumb-jump-go)
-
-;; undo redo
-(key-chord-define-global "ji" 'undo-tree-undo)
-(key-chord-define-global "jo" 'undo-tree-redo)
-(key-chord-define-global "jk" 'undo-tree-switch-branch)
-(key-chord-define-global "j;" 'undo-tree-visualize)
-
-
-
-;; VC key chords Magit / svn
-(key-chord-define-global "ùs" 'magit-status)
-(key-chord-define-global "`s" 'svn-status)
-
-;; Window
-(key-chord-define-global "$à" 'delete-window)
-(key-chord-define-global "$o" 'other-window)
-(key-chord-define-global "$&" 'delete-other-windows)
-(key-chord-define-global "$é" 'split-window-below)
-(key-chord-define-global "$\"" 'split-window-right)
-
-;; Buffer
-(key-chord-define-global "$b" 'helm-mini) ;; switch buffer (helm-mini) (c-x b)
-(key-chord-define-global "$k" 'kill-this-buffer)
-(key-chord-define-global "$l" 'ibuffer)
-(key-chord-define-global "$e" 'eval-buffer)
-
-;; Shell
-(key-chord-define-global "$s" 'shell)
-
-;; Window
-(key-chord-define-global "ùà" 'balance-windows)
-(key-chord-define-global "ù&" 'enlarge-window)
-(key-chord-define-global "ùé" 'shrink-window)
-
-(key-chord-define-global "ù\"" 'enlarge-window-horizontally)
-(key-chord-define-global "ù'" 'shrink-window-horizontally)
-
-
-;; Evil mode
-(key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
 
 
 ;; Company
@@ -1843,7 +1770,7 @@
 
 ;; Duplicate line
 ;; Source : http://stackoverflow.com/a/88828
-;; Update : ajout retour debut de ligne
+
 (defun duplicate-line()
   (interactive)
   (move-beginning-of-line 1)
@@ -1852,7 +1779,6 @@
   (open-line 1)
   (next-line 1)
   (yank)
-  (move-beginning-of-line 1)
 )
 (global-set-key (kbd "C-c C-d") 'duplicate-line)
 
@@ -2081,7 +2007,7 @@
   dsvn
   exec-path-from-shell
   smart-mode-line
-  smart-tab
+;;  smart-tab
   undo-tree
   web-beautify
   yascroll
@@ -2092,7 +2018,6 @@
   zerodark-theme
 ;;  workgNroups2
   ))
-
 
 
 
@@ -2212,23 +2137,6 @@
 
 
 
-;; evil mode    
-(require 'evil)
-(evil-mode 1)
-
-;;(key-chord-define evil-insert-state-map "fd" 'evil-normal-state)
-;;(key-chord-define evil-visual-state-map "fd" 'evil-normal-state)
-
-
-
-
-
-;; Spaceline
-;; Note : power line stylee, mais je n arrive pas a la faire fonctionner
-;; Update : il faut avoir le mode evil active pour que le package fonctionne
-(require 'spaceline-config)
-(spaceline-spacemacs-theme)
-
 
 
 
@@ -2332,10 +2240,13 @@
 
 
 ;; Dumb jump
-(add-to-list 'load-path "~/.emacs.d/plugins/dumb-jump-20161218.110")
-(require 'dumb-jump)
-(dumb-jump-mode)
+;; @todo faire en sorte que les key ne mangent pas sur tout le monde
+;; En commentaire pur le moment    
+;(add-to-list 'load-path "~/.emacs.d/plugins/dumb-jump-20161218.110")
+;(require 'dumb-jump)
+;(dumb-jump-mode)
 
+    
 
 
 
@@ -2751,7 +2662,9 @@
 ;;(global-set-key (kbd "C-c p") 'helm-projectile)
 ; (global-set-key (kbd "C-c -") 'helm-projectile)
 ; (global-set-key (kbd "C-c C-_") 'helm-projectile)
+
 (global-set-key (kbd "C-x C-p") 'helm-projectile)
+(global-set-key (kbd "C-M-p") 'helm-projectile-switch-project)
 
 ;; Line number config (linum-mode)
 ;;(add-hook 'prog-mode-hook 'linum-mode)
@@ -3303,78 +3216,7 @@
 
 
 
-;;
-;;
-;;
-;;
-;;
-;; Helm swoop configuration
-;;
-;;
-;;
-;;
-;; helm from https://github.com/emacs-helm/helm
-; (require 'helm)
 
-; ;; Locate the helm-swoop folder to your path
-; ; (add-to-list 'load-path "~/.emacs.d/elisp/helm-swoop")
-; (require 'helm-swoop)
-
-; ;; Change the keybinds to whatever you like :)
-; (global-set-key (kbd "M-i") 'helm-swoop)
-; (global-set-key (kbd "M-I") 'helm-swoop-back-to-last-point)
-; (global-set-key (kbd "C-c M-i") 'helm-multi-swoop)
-; (global-set-key (kbd "C-x M-i") 'helm-multi-swoop-all)
-
-; ;; When doing isearch, hand the word over to helm-swoop
-; (define-key isearch-mode-map (kbd "M-i") 'helm-swoop-from-isearch)
-; ;; From helm-swoop to helm-multi-swoop-all
-; (define-key helm-swoop-map (kbd "M-i") 'helm-multi-swoop-all-from-helm-swoop)
-; ;; When doing evil-search, hand the word over to helm-swoop
-; ;; (define-key evil-motion-state-map (kbd "M-i") 'helm-swoop-from-evil-search)
-
-; ;; Instead of helm-multi-swoop-all, you can also use helm-multi-swoop-current-mode
-; (define-key helm-swoop-map (kbd "M-m") 'helm-multi-swoop-current-mode-from-helm-swoop)
-
-; ;; Move up and down like isearch
-; (define-key helm-swoop-map (kbd "C-r") 'helm-previous-line)
-; (define-key helm-swoop-map (kbd "C-s") 'helm-next-line)
-; (define-key helm-multi-swoop-map (kbd "C-r") 'helm-previous-line)
-; (define-key helm-multi-swoop-map (kbd "C-s") 'helm-next-line)
-
-; ;; Save buffer when helm-multi-swoop-edit complete
-; (setq helm-multi-swoop-edit-save t)
-
-; ;; If this value is t, split window inside the current window
-; (setq helm-swoop-split-with-multiple-windows nil)
-
-; ;; Split direcion. 'split-window-vertically or 'split-window-horizontally
-; (setq helm-swoop-split-direction 'split-window-vertically)
-
-; ;; If nil, you can slightly boost invoke speed in exchange for text color
-; (setq helm-swoop-speed-or-color nil)
-
-; ;; ;; Go to the opposite side of line from the end or beginning of line
-; (setq helm-swoop-move-to-line-cycle t)
-
-; ;; Optional face for line numbers
-; ;; Face name is `helm-swoop-line-number-face`
-; (setq helm-swoop-use-line-number-face t)
-
-; ;; If you prefer fuzzy matching
-; (setq helm-swoop-use-fuzzy-match t)
-
-;; If you would like to use migemo, enable helm's migemo feature
-; (helm-migemo-mode 1)
-
-
-
-;; Smooth scroll
-;;(require 'smooth-scroll)
-;;(smooth-scroll-mode t)
-;;
-;;(setq smooth-scroll/vscroll-step-size 8)
-;;(setq smooth-scroll/hscroll-step-size 8)
 
 
 
@@ -3418,7 +3260,7 @@
 
 
 ;; Helm - find - ...
-(key-chord-define-global "$p" 'helm-projectile)
+;; (key-chord-define-global "$p" 'helm-projectile) ;; Trop peut pratique, back to C-x C-p
 (key-chord-define-global "$r" 'helm-swoop)
 (key-chord-define-global "$f" 'helm-find-files)
 (key-chord-define-global "$a" 'helm-ag)
@@ -3468,6 +3310,9 @@
 (key-chord-define-global "ù'" 'shrink-window-horizontally)
 
 
+;; Evil mode
+(key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
+(key-chord-define evil-emacs-state-map "jj" 'evil-normal-state)
 
 
 
@@ -3510,8 +3355,8 @@
 ;; Tentative d ajout de hook pour surcharge des racourcis deja utilise par un package
 ;; ... sans succes -> copie du package depuis melpa vers le dossier plugins
 ;;  - Mise a jour du fichier pour virer les 2 racourcis
-(global-set-key (kbd "C-M-p") 'backward-paragraph)
-(global-set-key (kbd "C-M-n") 'forward-paragraph)
+;; (global-set-key (kbd "C-M-p") 'backward-paragraph)
+;; (global-set-key (kbd "C-M-n") 'forward-paragraph)
 
 ;; (add-hook 'dumb-jump-mode-hook
 ;;     (lambda()
