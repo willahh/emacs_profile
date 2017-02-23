@@ -2011,6 +2011,8 @@
   spaceline
   skewer-mode
   ;;archives
+  neotree
+  edit-server
   ;;dumb-jump
   ag
 ;;  logview
@@ -2061,6 +2063,8 @@
   other-frame-window
   ;;neotree
   ;;php+-mode
+  evil
+  tabbar
   php-mode
   pkg-info
   popup
@@ -2702,13 +2706,19 @@
  '(magit-dispatch-arguments nil)
  '(package-selected-packages
    (quote
-    (evil monokai-theme color-theme-sanityinc-tomorrow moe-theme material-theme noctilux-theme nlinum crosshairs dumb-mode ac-php theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window web-mode magit helm-projectile helm)))
+    (evil tabbar edit-server neotree elfeed logview monokai-theme color-theme-sanityinc-tomorrow moe-theme material-theme noctilux-theme nlinum crosshairs dumb-mode ac-php theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window web-mode magit helm-projectile helm)))
  '(yas-global-mode t t))
 
 
 
 
 
+;; Elfeed
+(global-set-key (kbd "C-x w") 'elfeed)
+(setq elfeed-feeds
+      '(("http://nullprogram.com/feed/" blog emacs)
+        "http://www.50ply.com/atom.xml"  ; no autotagging
+        ("http://nedroid.com/feed/" webcomic)))    
 
 
 
@@ -2986,7 +2996,7 @@
 
 ;; Desktop+ Configuration
 ;; Ajout de save mode auto
-(desktop-save-mode 1)
+;; (desktop-save-mode 1)
 
 
 
@@ -3002,11 +3012,25 @@
 
 
 
-;; (require 'neotree)
-;; (global-set-key [f8] 'neotree-toggle)
-;;(setq neo-smart-open t)
+(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)
+(setq neo-smart-open t)
+
+;; tabbar
+(require 'tabbar)
+(tabbar-mode 1)
 
 
+
+
+;; Edit server
+;;     
+;;(require 'edit-server')
+;;(edit-server-start)        
+
+
+
+    
 ;; Web mode
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
@@ -3036,6 +3060,8 @@
 )
 (add-hook 'web-mode-hook  'my-web-mode-hook)
 
+(setq web-mode-enable-current-element-highlight t)
+(setq web-mode-enable-current-column-highlight t)    
 
 (define-key web-mode-map (kbd "C-M-n") 'web-mode-tag-next)
 (define-key web-mode-map (kbd "C-M-p") 'web-mode-tag-previous)
@@ -3096,30 +3122,6 @@
 ;; undo-tree
 (require 'undo-tree)
 (global-undo-tree-mode)
-
-
-;; CUA MODE (integre par default) permet de faire du ctrl c/v/x a la place des yank bidul pouet
-;; Update : C-v entre en conflit avec la fonction de base de scroll
-;; (cua-mode t)
-;;    (setq cua-auto-tabify-rectangles nil) ;; Don't tabify after rectangle commands
-;;    (transient-mark-mode 1) ;; No region when it is not highlighted
-;;    (setq cua-keep-region-after-copy t) ;; Standard Windows behaviour
-
-
-
-;; Mac key bindings
-;;(setq mac-command-modifier 'meta) ; make cmd key do Meta
-;;(setq mac-option-modifier 'super) ; make opt key do Super
-;;(setq mac-control-modifier 'control) ; make Control key do Control
-;;(setq ns-function-modifier 'hyper)  ; make Fn key do Hyper
-
- ;; changing the command to control
-;;    (setq mac-command-modifier 'control)
-
-
-;; TODO REMETTRE LE MOVE DOWN (avant meta+p) --> le mettre sur CMD+
-;;    --> semble dejà bon ?
-;; TODO : Desactiver CMD+SPACE DANS EMACS ()
 
 
 
