@@ -439,7 +439,7 @@
 ;;(key-chord-define evil-insert-state-map "fd" 'evil-normal-state)
 ;;(key-chord-define evil-visual-state-map "fd" 'evil-normal-state)
 
-(setq evil-emacs-state-cursor '("red" box))
+(setq evil-emacs-state-cursor '("#a7e236" bar))
 (setq evil-normal-state-cursor '("green" box))
 (setq evil-visual-state-cursor '("orange" box))
 (setq evil-insert-state-cursor '("red" bar))
@@ -516,8 +516,8 @@
 ;;(load-theme 'material t)
 ;;(load-theme 'moe-theme t)
 
+(load-theme 'monokai t)
 (load-theme 'doom-molokai t)
-;;(load-theme 'monokai t)
 
 
 
@@ -3524,5 +3524,35 @@
 ;;     (global-set-key (kbd "C-M-p") 'backward-paragraph)
 ;; )
 ;;
+
+
+;; Ediff setup
+(winner-mode)
+
+;; Restore windows after quit
+(add-hook 'ediff-after-quit-hook-internal 'winner-undo)
+
+;; Display ediff vertical by default
+(custom-set-variables
+ '(ediff-window-setup-function 'ediff-setup-windows-plain)
+ '(ediff-diff-options "-w")
+ '(ediff-split-window-function 'split-window-horizontally))
+
+
+
+
+
+
+
+
+;; Evil setup
+;;Bind some quick window navigation
+(eval-after-load "evil"
+  '(progn
+     (define-key evil-normal-state-map (kbd "C-h") 'evil-window-left)
+     (define-key evil-normal-state-map (kbd "C-j") 'evil-window-down)
+     (define-key evil-normal-state-map (kbd "C-k") 'evil-window-up)
+     (define-key evil-normal-state-map (kbd "C-l") 'evil-window-right)))      
+
 
 
