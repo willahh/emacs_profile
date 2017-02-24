@@ -3,8 +3,9 @@
 ## Installation
 
 ### Mac Os X
-Get emacs from homebrew-emacsmacport https://github.com/railwaycat/homebrew-emacsmacport.
-Way better gui (see http://superuser.com/a/650694)
+Get emacs from homebrew-emacsmacport (way better GUI) and built it from source for better performances.
+https://github.com/railwaycat/homebrew-emacsmacport
+http://superuser.com/a/650694
 
 ```{r, engine='bash', count_lines}
 git clone https://github.com/willahh/emacs_profile ~/.emacs.d
