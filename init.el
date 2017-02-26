@@ -3325,13 +3325,18 @@
 (evil-leader/set-leader "<SPC>")
 (evil-leader/set-key "ms" 'magit-status)
 (evil-leader/set-key "pp" 'helm-projectile-switch-project)
-(evil-leader/set-key "pr" 'helm-recentf)
+(evil-leader/set-key "br" 'helm-recentf)
 (evil-leader/set-key "pf" 'helm-projectile-find-file)
 (evil-leader/set-key "bl" 'helm-buffers-list)
 (evil-leader/set-key "bb" 'list-buffers)
 (evil-leader/set-key "bn" 'evil-buffer-new)
 (evil-leader/set-key "bk" 'kill-this-buffer)
 (evil-leader/set-key "bk" 'kill-this-buffer)
+(evil-leader/set-key "ss" 'helm-swoop)
+(evil-leader/set-key "ff" 'helm-find-files)
+(evil-leader/set-key "fa" 'ag-files)
+(evil-leader/set-key "fq" 'helm-ag)
+
 
 
     
