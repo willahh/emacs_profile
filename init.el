@@ -3279,7 +3279,13 @@
 
 ;; Display ediff vertical by default
 
+;; Dont prompt me when quit
+;; Source : http://emacs.stackexchange.com/a/24602
+(defun disable-y-or-n-p (orig-fun &rest args)
+  (cl-letf (((symbol-function 'y-or-n-p) (lambda (prompt) t)))
+    (apply orig-fun args)))
 
+(advice-add 'ediff-quit :around #'disable-y-or-n-p)
 
 
 
@@ -3308,10 +3314,14 @@
 
 ;; Remove all keybindings from insert-state keymap (insert mode behavior like emacs) 
 (setcdr evil-insert-state-map nil)
-(define-key evil-insert-state-map [escape] 'evil-normal-state)
 
-    
-    
+;; Escape (tab ;)) key toggle for between state
+(define-key evil-insert-state-map [escape] 'evil-normal-state)
+(define-key evil-emacs-state-map [escape] 'evil-normal-state)
+(define-key evil-normal-state-map [escape] 'evil-emacs-state)
+
+
+
 ;; Add some missing keybinding ?
 ;; Scroll up 1/2 page
 (define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-up)
@@ -3387,7 +3397,7 @@
 (evil-leader/set-key "bn" 'evil-buffer-new)
 (evil-leader/set-key "bk" 'kill-this-buffer)
 (evil-leader/set-key "bk" 'kill-this-buffer)
-(evil-leader/set-key "ss" 'helm-swoop)
+(evil-leader/set-key "r" 'helm-swoop)
 (evil-leader/set-key "ff" 'helm-find-files)
 (evil-leader/set-key "fa" 'ag-files)
 (evil-leader/set-key "fq" 'helm-ag)
@@ -3414,19 +3424,6 @@
 
 ;; Define some key chord.
 ;; Use $ has a first "key" character for most of commmands
-
-;; BUffer
-(key-chord-define-global "jk" 'beginning-of-buffer)    
-(key-chord-define-global "kl" 'end-of-buffer)    
-
-;; Goto char / expand region / goto line
-(key-chord-define-global "fg" 'avy-goto-char)
-(key-chord-define-global "xc" 'er/expand-region)
-(key-chord-define-global "wx" 'er/contract-region)
-(key-chord-define-global "<w" 'mc/mark-all-like-this)
-
-(key-chord-define-global "$g" 'goto-line)
-(key-chord-define-global "$w" 'whitespace-mode)
 (key-chord-define-global "$q" 'delete-trailing-whitespace)
 
 
@@ -3440,9 +3437,6 @@
 ;; str
 (key-chord-define-global "r'" 'query-replace)
 (key-chord-define-global "r\"" 'replace-string)
-
-;; Jump to definition
-(key-chord-define-global "jd" 'dumb-jump-go)
 
 ;; undo redo
 (key-chord-define-global "ji" 'undo-tree-undo)
@@ -3548,17 +3542,12 @@
 ;; Define some key chord.
 ;; Use $ has a first "key" character for most of commmands
 
-;; BUffer
-(key-chord-define-global "jk" 'beginning-of-buffer)    
-(key-chord-define-global "kl" 'end-of-buffer)    
-
 ;; Goto char / expand region / goto line
-(key-chord-define-global "fg" 'avy-goto-char)
+(key-chord-define-global "az" 'evil-ace-jump-char-mode)
 (key-chord-define-global "xc" 'er/expand-region)
 (key-chord-define-global "wx" 'er/contract-region)
 (key-chord-define-global "<w" 'mc/mark-all-like-this)
 
-(key-chord-define-global "$g" 'goto-line)
 (key-chord-define-global "$w" 'whitespace-mode)
 (key-chord-define-global "$q" 'delete-trailing-whitespace)
 
@@ -3574,8 +3563,7 @@
 (key-chord-define-global "r'" 'query-replace)
 (key-chord-define-global "r\"" 'replace-string)
 
-;; Jump to definition
-(key-chord-define-global "jd" 'dumb-jump-go)
+
 
 ;; undo redo
 (key-chord-define-global "ji" 'undo-tree-undo)
