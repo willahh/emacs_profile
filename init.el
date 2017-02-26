@@ -1,6 +1,9 @@
 ;; Readme
-;; Readme
 ;; Pre-requis :
+;;  - Custom system keybinding :
+;;   - Capslock remapped as ESCAPE key (Karabiner)
+;;   - Key repeat faster : Delay until repeat : 250ms - Key repeat : 33ms (Karabiner)
+;;
 ;;  - Os : Mac Os X >= 10.11 (El Captain)
 ;;  - emacs >= 25
 ;;
@@ -11,14 +14,15 @@
 ;;    - svn
 ;;    - git
 ;;    - tern
-;;      js-beautify
+;;    - js-beautify (npm install -g js-beautify)
 ;;    - jshint - npm -g install jshint
 ;;    - csslint - npm -g install csslint
 ;;    - jscs (npm -g install jscs)
 ;;    - tags https://github.com/leoliu/ggtags/wiki/Install-Global-with-support-for-exuberant-ctags
-;;    - brew install global (gtags)
-;;    - brew install --HEAD ctags
-;;    - brew install global --with-exuberant-ctags
+;;    - gtags - brew install global (gtags)
+;;    - ctags - brew install --HEAD ctags
+;;    - global - brew install global --with-exuberant-ctags
+;;    - ispell - brew install ispell --witch-lang-fr
 ;;  - ~/.bash_profile doit etre duplique en .bashrc
 
 
@@ -1967,7 +1971,6 @@
   php-mode
   pkg-info
   popup
-  powerline
   projectile
   rich-minority
   s
@@ -2174,10 +2177,7 @@
 
 
 ;; Yascroll
-(global-yascroll-bar-mode 1)
-
-;;(require 'powerline)
-;;(powerline-center-theme)
+;; (global-yascroll-bar-mode 1)
 
 
 
@@ -3315,7 +3315,7 @@
 ;; Remove all keybindings from insert-state keymap (insert mode behavior like emacs) 
 (setcdr evil-insert-state-map nil)
 
-;; Escape (tab ;)) key toggle for between state
+;; Escape (tab ;)) key toggle for between stat
 (define-key evil-insert-state-map [escape] 'evil-normal-state)
 (define-key evil-emacs-state-map [escape] 'evil-normal-state)
 (define-key evil-normal-state-map [escape] 'evil-emacs-state)
