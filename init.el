@@ -43,6 +43,13 @@
 (winner-mode t)
 (setq next-line-add-newlines t)
 
+;; disable backup
+(setq backup-inhibited t)
+
+;; disable auto save
+(setq auto-save-default nil)
+
+            
 ;; No backup file    
 (setq make-backup-files nil)
     
@@ -159,6 +166,10 @@
 
 
 
+
+;; Enable gtags
+(setq load-path (cons "/usr/local/share/gtags" load-path))
+(autoload 'gtags-mode "gtags" "" t)
 
 
 ;;
@@ -3286,7 +3297,6 @@
 
 
 ;; evil mode    
-;; Brain fuck start here 
 (require 'evil)
 
 ;; Evil key leader (should be set before evil mode)
@@ -3296,6 +3306,12 @@
 ;; Enable evil mode
 (evil-mode 1)
 
+;; Remove all keybindings from insert-state keymap (insert mode behavior like emacs) 
+(setcdr evil-insert-state-map nil)
+(define-key evil-insert-state-map [escape] 'evil-normal-state)
+
+    
+    
 ;; Add some missing keybinding ?
 ;; Scroll up 1/2 page
 (define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-up)
@@ -3312,7 +3328,7 @@
 
 ;; Cursor state
 (setq evil-emacs-state-cursor '("#a7e236" bar))
-(setq evil-normal-state-cursor '("green" box))
+(setq evil-normal-state-cursor '("#a7e236" box))
 (setq evil-visual-state-cursor '("orange" box))
 (setq evil-insert-state-cursor '("red" bar))
 (setq evil-replace-state-cursor '("red" bar))
