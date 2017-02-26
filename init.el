@@ -3331,6 +3331,7 @@
 (evil-leader/set-key "bb" 'list-buffers)
 (evil-leader/set-key "bn" 'evil-buffer-new)
 (evil-leader/set-key "bk" 'kill-this-buffer)
+(evil-leader/set-key "bk" 'kill-this-buffer)
 
 
     
