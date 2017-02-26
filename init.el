@@ -27,8 +27,6 @@
 ;; @todo faire fonctionner flycheck en mode javascript (base sur jscss )
 ;; @todo Faire fonctionner les snippets YAS 
 ;; @todo Afficher le mode whitespace uniquement sur la selectiono
-;; @todo Faire un theme custom, prendre la partie VC de monokai et la merger dans doom theme
-;; @todo git-gutter plus de preview en mode svn :(
 ;; @todo Supprimer le warning orange horrible (et bugge)
 ;;    
 ;;
@@ -57,6 +55,11 @@
   ;; http://ergoemacs.org/emacs/whitespace-mode.html
   (setq whitespace-style (quote (face spaces tabs newline space-mark tab-mark newline-mark )))
   )
+
+
+
+
+
 
 
 
@@ -111,28 +114,30 @@
 
 ;; Indent to 4 space -> transform tab to 4spaces
 ;; Source http://stackoverflow.com/questions/69934/set-4-space-indent-in-emacs-in-text-mode
-(setq-default indent-tabs-mode nil)
-(setq-default tab-width 4)
-(setq indent-line-function 'insert-tab)
-
-
-
-;; un indent
-;; Shift tab to indent to left
-;; Source http://stackoverflow.com/a/2250155
-(global-set-key (kbd "<S-tab>") 'un-indent-by-removing-4-spaces)
-(defun un-indent-by-removing-4-spaces ()
-  "remove 4 spaces from beginning of of line"
-  (interactive)
-  (save-excursion
-    (save-match-data
-      (beginning-of-line)
-      ;; get rid of tabs at beginning of line
-      (when (looking-at "^\\s-+")
-        (untabify (match-beginning 0) (match-end 0)))
-      (when (looking-at "^    ")
-        (replace-match "")))))
-
+;;(setq-default indent-tabs-mode nil)
+;;(setq-default tab-width 4)
+;;(setq indent-line-function 'insert-tab)
+;;
+;;
+;;    
+;;
+;;
+;;;; un indent
+;;;; Shift tab to indent to left
+;;;; Source http://stackoverflow.com/a/2250155
+;;(global-set-key (kbd "<S-tab>") 'un-indent-by-removing-4-spaces)
+;;(defun un-indent-by-removing-4-spaces ()
+;;  "remove 4 spaces from beginning of of line"
+;;  (interactive)
+;;  (save-excursion
+;;    (save-match-data
+;;      (beginning-of-line)
+;;      ;; get rid of tabs at beginning of line
+;;      (when (looking-at "^\\s-+")
+;;        (untabify (match-beginning 0) (match-end 0)))
+;;      (when (looking-at "^    ")
+;;        (replace-match "")))))
+;;
 
 
 
@@ -161,6 +166,7 @@
 (autoload 'gtags-mode "gtags" "" t)
 
 
+;;
 
 
 
@@ -234,11 +240,13 @@
 ;; Auto loader
 ;; Liste des packages a installer si repertoire non disponible
 (setq package-list '(
-  evil                      
+  evil
+  evil-leader
+  
   spaceline
   skewer-mode
   eyebrowse
-  persp-mode
+;;  persp-mode
   window-numbering
   which-key
   ;;archives
@@ -425,61 +433,7 @@
   (cl-letf (((symbol-function #'process-list) (lambda ())))
     ad-do-it))
 
-
-
-
-
-
-
-
-
-
-;; evil mode    
-;; Brain fuck start here 
-(require 'evil)
-(evil-mode 1)
-
-;;(key-chord-define evil-insert-state-map "fd" 'evil-normal-state)
-;;(key-chord-define evil-visual-state-map "fd" 'evil-normal-state)
-
-(setq evil-emacs-state-cursor '("#a7e236" bar))
-(setq evil-normal-state-cursor '("green" box))
-(setq evil-visual-state-cursor '("orange" box))
-(setq evil-insert-state-cursor '("red" bar))
-(setq evil-replace-state-cursor '("red" bar))
-(setq evil-operator-state-cursor '("red" hollow))
-
-
-
-
-;; eyebrowse
-(require 'eyebrowse)    
-(eyebrowse-mode t)
-
-;; window-numbering
-(require 'window-numbering)
-(window-numbering-mode)            
-
-;;persp-mode
-(require 'persp-mode)
-(with-eval-after-load "persp-mode-autoloads"
-  (setq wg-morph-on nil) ;; switch off animation
-  (setq persp-autokill-buffer-on-remove 'kill-weak)
-  (add-hook 'after-init-hook #'(lambda () (persp-mode 1))))
-   
-        
-
-;; Spaceline
-;; Note : power line stylee, mais je n arrive pas a la faire fonctionner
-;; Update : il faut avoir le mode evil active pour que le package fonctionne
-(require 'spaceline-config)
-(spaceline-spacemacs-theme)
-
-
-
-;; Which-key
-(require 'which-key)
-(which-key-mode)
+    
 
 
 
@@ -941,8 +895,11 @@
  ;; If there is more than one, they won't work right.
  '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
  '(custom-safe-themes
-        (quote
-         ("06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "82d2cac368ccdec2fcc7573f24c3f79654b78bf133096f9b40c20d97ec1d8016" "98cc377af705c0f2133bb6d340bf0becd08944a588804ee655809da5d8140de6" "4980e5ddaae985e4bae004280bd343721271ebb28f22b3e3b2427443e748cd3f" "9f3181dc1fabe5d58bbbda8c48ef7ece59b01bed606cfb868dd147e8b36af97c" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "9d91458c4ad7c74cf946bd97ad085c0f6a40c370ac0a1cbeb2e3879f15b40553" "dd6e52a5b1180f5c8bf408764a32867e2fa86594ded78a29040cafce6a4ea808" "945fe66fbc30a7cbe0ed3e970195a7ee79ee34f49a86bc96d02662ab449b8134" "ad1c2abad40e11d22156fe3987fd9b74b9e1c822264a07dacb24e0b3133aaed1" "eb0a314ac9f75a2bf6ed53563b5d28b563eeba938f8433f6d1db781a47da1366" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "f5ad3af69f2b6b7c547208b8708d4fa7928b5697ca0845633d1d67c2d145952a" "c7a9a68bd07e38620a5508fef62ec079d274475c8f92d75ed0c33c45fbe306bc" default)))
+   (quote
+    ("06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "82d2cac368ccdec2fcc7573f24c3f79654b78bf133096f9b40c20d97ec1d8016" "98cc377af705c0f2133bb6d340bf0becd08944a588804ee655809da5d8140de6" "4980e5ddaae985e4bae004280bd343721271ebb28f22b3e3b2427443e748cd3f" "9f3181dc1fabe5d58bbbda8c48ef7ece59b01bed606cfb868dd147e8b36af97c" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "9d91458c4ad7c74cf946bd97ad085c0f6a40c370ac0a1cbeb2e3879f15b40553" "dd6e52a5b1180f5c8bf408764a32867e2fa86594ded78a29040cafce6a4ea808" "945fe66fbc30a7cbe0ed3e970195a7ee79ee34f49a86bc96d02662ab449b8134" "ad1c2abad40e11d22156fe3987fd9b74b9e1c822264a07dacb24e0b3133aaed1" "eb0a314ac9f75a2bf6ed53563b5d28b563eeba938f8433f6d1db781a47da1366" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "f5ad3af69f2b6b7c547208b8708d4fa7928b5697ca0845633d1d67c2d145952a" "c7a9a68bd07e38620a5508fef62ec079d274475c8f92d75ed0c33c45fbe306bc" default)))
+ '(ediff-diff-options "-w")
+ '(ediff-split-window-function (quote split-window-horizontally))
+ '(ediff-window-setup-function (quote ediff-setup-windows-plain))
  '(git-gutter:added-sign "|")
  '(git-gutter:deleted-sign "|")
  '(git-gutter:handled-backends (quote (git hg bzr svn)))
@@ -951,8 +908,9 @@
  '(helm-follow-mode-persistent t)
  '(magit-dispatch-arguments nil)
  '(package-selected-packages
-        (quote
-         (window-numbering persp-mode eyebrowse which-key spaceline evil tabbar edit-server neotree elfeed logview monokai-theme color-theme-sanityinc-tomorrow moe-theme material-theme noctilux-theme nlinum crosshairs dumb-mode ac-php theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window web-mode magit helm-projectile helm)))
+   (quote
+    (evil-leader window-numbering eyebrowse which-key spaceline evil edit-server neotree elfeed logview monokai-theme color-theme-sanityinc-tomorrow moe-theme material-theme noctilux-theme nlinum crosshairs dumb-mode ac-php theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window web-mode magit helm-projectile helm)))
+ '(safe-local-variable-values (quote ((no-byte-compile t))))
  '(yas-global-mode t t))
 
 
@@ -1299,12 +1257,12 @@
 (setq web-mode-enable-current-column-highlight t)
 
 
+    
 
 
 
 
-;; ac-php
-(add-to-list 'load-path "~/.emacs.d/plugins/ac-php")
+
 ;; (require 'cl)
 ;;  (require 'php-mode)
 ;;  (add-hook 'php-mode-hook
@@ -1819,8 +1777,10 @@
 (setq-default tab-width 4)
 (setq indent-line-function 'insert-tab)
 
-
-
+    
+    
+    
+    
 ;; un indent
 ;; Shift tab to indent to left
 ;; Source http://stackoverflow.com/a/2250155
@@ -1837,12 +1797,9 @@
       (when (looking-at "^    ")
         (replace-match "")))))
 
-
-
-
-
-
-;; Add comment/uncomment key binding
+;
+;
+; Add comment/uncomment key binding
 (global-set-key (kbd "C-x C-:") 'comment-or-uncomment-region)
 
 
@@ -1935,6 +1892,12 @@
 
 (require 'package)
 
+
+;; Add to list
+(add-to-list 'load-path "~/.emacs.d/plugins/ac-php")
+(add-to-list 'load-path "~/.emacs.d/plugins/persp-mode")
+    
+
 ;; Auto loader
 ;; Liste des packages a installer si repertoire non disponible
 (setq package-list '(
@@ -1994,8 +1957,7 @@
   other-frame-window
   ;;neotree
   ;;php+-mode
-  evil
-  tabbar
+  ;;tabbar
   php-mode
   pkg-info
   popup
@@ -2916,8 +2878,8 @@
 (setq neo-smart-open t)
 
 ;; tabbar
-(require 'tabbar)
-(tabbar-mode 1)
+;;(require 'tabbar)
+;;(tabbar-mode 1)
 
 
 
@@ -3241,6 +3203,199 @@
 (setq key-chord-one-key-delay 0.2) ; default 0.2
 
 
+
+;; Evil mode
+;;(key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
+;;(key-chord-define evil-emacs-state-map "jj" 'evil-normal-state)
+
+
+
+;; Company
+
+;; Helm company
+;;(eval-after-load 'company
+;;  '(progn
+;;     (define-key company-mode-map (kbd "C-:") 'helm-company)
+;;     (define-key company-active-map (kbd "C-:") 'helm-company)))
+
+;; (defun complete-or-indent ()
+;;     (interactive)
+;;     (if (company-manual-begin)
+;;         (company-complete-common)
+;;       (indent-according-to-mode)))
+                      
+
+;;(global-set-key (kbd "TAB") 'company-complete-common)
+;; (define-key company-active-map [tab] 'company-complete-common-or-cycle)
+
+
+
+
+
+
+
+
+
+
+(add-hook 'after-init-hook 'global-company-mode)
+(setq tab-always-indent 'complete)
+
+
+
+
+;; Custom binding for backward-paragraph and foreword-paragraph
+ 
+
+;; Tentative d ajout de hook pour surcharge des racourcis deja utilise par un package
+;; ... sans succes -> copie du package depuis melpa vers le dossier plugins
+;;  - Mise a jour du fichier pour virer les 2 racourcis
+;; (global-set-key (kbd "C-M-p") 'backward-paragraph)
+;; (global-set-key (kbd "C-M-n") 'forward-paragraph)
+
+;; (add-hook 'dumb-jump-mode-hook
+;;     (lambda()
+;;         (global-set-key (kbd "C-M-p") 'backward-paragraph)
+;;         (global-set-key (kbd "C-M-n") 'forward-paragraph)
+;;     )
+;; )
+;;     
+;; (eval-after-load 'dumb-jump-mode'
+;;     (global-set-key (kbd "C-M-p") 'backward-paragraph)
+;; )
+;;
+
+
+;; Ediff setup
+(winner-mode)
+
+;; Restore windows after quit
+(add-hook 'ediff-after-quit-hook-internal 'winner-undo)
+
+;; Display ediff vertical by default
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;; evil mode    
+;; Brain fuck start here 
+(require 'evil)
+
+;; Evil key leader (should be set before evil mode)
+(require 'evil-leader)
+(global-evil-leader-mode)
+
+;; Enable evil mode
+(evil-mode 1)
+
+;; Add some missing keybinding ?
+;; Scroll up 1/2 page
+(define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-up)
+(define-key evil-visual-state-map (kbd "C-u") 'evil-scroll-up)
+(define-key evil-insert-state-map (kbd "C-u")
+  (lambda ()
+    (interactive)
+    (evil-delete (point-at-bol) (point))))`
+
+
+(eval-after-load "evil"
+  '(progn
+     (define-key evil-normal-state-map (kbd "C-h") 'evil-window-left)
+     (define-key evil-normal-state-map (kbd "C-j") 'evil-window-down)
+     (define-key evil-normal-state-map (kbd "C-k") 'evil-window-up)
+     (define-key evil-normal-state-map (kbd "C-l") 'evil-window-right)))      
+
+
+
+    
+;; Add custom commands
+(evil-leader/set-leader "<SPC>")
+(evil-leader/set-key "ms" 'magit-status)
+(evil-leader/set-key "pp" 'helm-projectile-switch-project)
+(evil-leader/set-key "pr" 'helm-recentf)
+(evil-leader/set-key "pf" 'helm-projectile-find-file)
+(evil-leader/set-key "bl" 'helm-buffers-list)
+(evil-leader/set-key "bb" 'list-buffers)
+(evil-leader/set-key "bn" 'evil-buffer-new)
+(evil-leader/set-key "bk" 'kill-this-buffer)
+
+
+    
+;;(key-chord-define evil-insert-state-map "fd" 'evil-normal-state)
+;;(key-chord-define evil-visual-state-map "fd" 'evil-normal-state)
+
+(setq evil-emacs-state-cursor '("#a7e236" bar))
+(setq evil-normal-state-cursor '("green" box))
+(setq evil-visual-state-cursor '("orange" box))
+(setq evil-insert-state-cursor '("red" bar))
+(setq evil-replace-state-cursor '("red" bar))
+(setq evil-operator-state-cursor '("red" hollow))
+
+
+
+
+;; eyebrowse
+(require 'eyebrowse)    
+(eyebrowse-mode t)
+
+;; window-numbering
+(require 'window-numbering)
+(window-numbering-mode)            
+
+;;persp-mode
+;; Desactive pour le moment chargement impossible depuis repertoire plugins
+;; @todo trouver pourquoi        
+;;(require 'persp-mode)
+;;(with-eval-after-load "persp-mode-autoloads"
+;;  (setq wg-morph-on nil) ;; switch off animation
+;;  (setq persp-autokill-buffer-on-remove 'kill-weak)
+;;  (add-hook 'after-init-hook #'(lambda () (persp-mode 1))))
+   
+        
+
+;; Spaceline
+;; Note : power line stylee, mais je n arrive pas a la faire fonctionner
+;; Update : il faut avoir le mode evil active pour que le package fonctionne
+(require 'spaceline-config)
+(spaceline-spacemacs-theme)
+
+
+
+;; Which-key
+(require 'which-key)
+(which-key-mode)    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ;; Define some key chord.
 ;; Use $ has a first "key" character for most of commmands
 
@@ -3311,8 +3466,8 @@
 
 
 ;; Evil mode
-(key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
-(key-chord-define evil-emacs-state-map "jj" 'evil-normal-state)
+;;(key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
+;;(key-chord-define evil-emacs-state-map "jj" 'evil-normal-state)
 
 
 
@@ -3333,71 +3488,4 @@
 
 ;;(global-set-key (kbd "TAB") 'company-complete-common)
 ;; (define-key company-active-map [tab] 'company-complete-common-or-cycle)
-
-
-
-
-
-
-
-
-
-
-(add-hook 'after-init-hook 'global-company-mode)
-(setq tab-always-indent 'complete)
-
-
-
-
-;; Custom binding for backward-paragraph and foreword-paragraph
- 
-
-;; Tentative d ajout de hook pour surcharge des racourcis deja utilise par un package
-;; ... sans succes -> copie du package depuis melpa vers le dossier plugins
-;;  - Mise a jour du fichier pour virer les 2 racourcis
-;; (global-set-key (kbd "C-M-p") 'backward-paragraph)
-;; (global-set-key (kbd "C-M-n") 'forward-paragraph)
-
-;; (add-hook 'dumb-jump-mode-hook
-;;     (lambda()
-;;         (global-set-key (kbd "C-M-p") 'backward-paragraph)
-;;         (global-set-key (kbd "C-M-n") 'forward-paragraph)
-;;     )
-;; )
-;;     
-;; (eval-after-load 'dumb-jump-mode'
-;;     (global-set-key (kbd "C-M-p") 'backward-paragraph)
-;; )
-;;
-
-
-;; Ediff setup
-(winner-mode)
-
-;; Restore windows after quit
-(add-hook 'ediff-after-quit-hook-internal 'winner-undo)
-
-;; Display ediff vertical by default
-(custom-set-variables
- '(ediff-window-setup-function 'ediff-setup-windows-plain)
- '(ediff-diff-options "-w")
- '(ediff-split-window-function 'split-window-horizontally))
-
-
-
-
-
-
-
-
-;; Evil setup
-;;Bind some quick window navigation
-(eval-after-load "evil"
-  '(progn
-     (define-key evil-normal-state-map (kbd "C-h") 'evil-window-left)
-     (define-key evil-normal-state-map (kbd "C-j") 'evil-window-down)
-     (define-key evil-normal-state-map (kbd "C-k") 'evil-window-up)
-     (define-key evil-normal-state-map (kbd "C-l") 'evil-window-right)))      
-
-
 
