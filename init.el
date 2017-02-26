@@ -15,7 +15,6 @@
 ;;    - jshint - npm -g install jshint
 ;;    - csslint - npm -g install csslint
 ;;    - jscs (npm -g install jscs)
-;;
 ;;    - tags https://github.com/leoliu/ggtags/wiki/Install-Global-with-support-for-exuberant-ctags
 ;;    - brew install global (gtags)
 ;;    - brew install --HEAD ctags
@@ -160,10 +159,6 @@
 
 
 
-
-;; Enable gtags
-(setq load-path (cons "/usr/local/share/gtags" load-path))
-(autoload 'gtags-mode "gtags" "" t)
 
 
 ;;
@@ -909,7 +904,7 @@
  '(magit-dispatch-arguments nil)
  '(package-selected-packages
    (quote
-    (evil-leader window-numbering eyebrowse which-key spaceline evil edit-server neotree elfeed logview monokai-theme color-theme-sanityinc-tomorrow moe-theme material-theme noctilux-theme nlinum crosshairs dumb-mode ac-php theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window web-mode magit helm-projectile helm)))
+    (evil-surround evil-leader window-numbering eyebrowse which-key spaceline evil edit-server neotree elfeed logview monokai-theme color-theme-sanityinc-tomorrow moe-theme material-theme noctilux-theme nlinum crosshairs dumb-mode ac-php theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window web-mode magit helm-projectile helm)))
  '(safe-local-variable-values (quote ((no-byte-compile t))))
  '(yas-global-mode t t))
 
@@ -1519,8 +1514,7 @@
 ;; will keybindings
 ;; Define some keybindings
 (global-set-key (kbd "C-c r") 'helm-swoop)
-
-
+(global-set-key (kbd "<C-268632091>") 'evil-jump-to-tag) ;; Note : default vim keybinding ctrl+]
 
 
 
@@ -1902,6 +1896,7 @@
 ;; Liste des packages a installer si repertoire non disponible
 (setq package-list '(
   evil                      
+  evil-surround
   spaceline
   skewer-mode
   ;;archives
@@ -3311,17 +3306,61 @@
     (evil-delete (point-at-bol) (point))))`
 
 
-(eval-after-load "evil"
-  '(progn
-     (define-key evil-normal-state-map (kbd "C-h") 'evil-window-left)
-     (define-key evil-normal-state-map (kbd "C-j") 'evil-window-down)
-     (define-key evil-normal-state-map (kbd "C-k") 'evil-window-up)
-     (define-key evil-normal-state-map (kbd "C-l") 'evil-window-right)))      
+;; evil-surround
+(require 'evil-surround)
+(global-evil-surround-mode 1)
+
+;; Cursor state
+(setq evil-emacs-state-cursor '("#a7e236" bar))
+(setq evil-normal-state-cursor '("green" box))
+(setq evil-visual-state-cursor '("orange" box))
+(setq evil-insert-state-cursor '("red" bar))
+(setq evil-replace-state-cursor '("red" bar))
+(setq evil-operator-state-cursor '("red" hollow))
 
 
 
-    
-;; Add custom commands
+;; eyebrowse
+(require 'eyebrowse)    
+(eyebrowse-mode t)
+
+;; window-numbering
+(require 'window-numbering)
+(window-numbering-mode)            
+
+;;persp-mode
+;; Desactive pour le moment chargement impossible depuis repertoire plugins
+;; @todo trouver pourquoi        
+;;(require 'persp-mode)
+;;(with-eval-after-load "persp-mode-autoloads"
+;;  (setq wg-morph-on nil) ;; switch off animation
+;;  (setq persp-autokill-buffer-on-remove 'kill-weak)
+;;  (add-hook 'after-init-hook #'(lambda () (persp-mode 1))))
+   
+        
+
+;; Spaceline
+;; Note : power line stylee, mais je n arrive pas a la faire fonctionner
+;; Update : il faut avoir le mode evil active pour que le package fonctionne
+(require 'spaceline-config)
+(spaceline-spacemacs-theme)
+
+
+
+;; Which-key
+(require 'which-key)
+(which-key-mode)    
+
+
+
+
+
+
+
+
+
+
+;; Evil leader key commands
 (evil-leader/set-leader "<SPC>")
 (evil-leader/set-key "ms" 'magit-status)
 (evil-leader/set-key "pp" 'helm-projectile-switch-project)
@@ -3336,6 +3375,94 @@
 (evil-leader/set-key "ff" 'helm-find-files)
 (evil-leader/set-key "fa" 'ag-files)
 (evil-leader/set-key "fq" 'helm-ag)
+
+;; -- window
+(evil-leader/set-key "ws" 'evil-window-split) 
+(evil-leader/set-key "wv" 'evil-window-vsplit) 
+
+(evil-leader/set-key "wc" 'evil-window-delete) 
+(evil-leader/set-key "wd" 'delete-other-windows) 
+
+(evil-leader/set-key "wh" 'evil-window-left) 
+(evil-leader/set-key "wl" 'evil-window-right) 
+(evil-leader/set-key "wk" 'evil-window-up) 
+(evil-leader/set-key "wj" 'evil-window-down) 
+
+;; -- Jump
+(evil-leader/set-key "]" 'evil-jump-to-tag) 
+
+
+
+
+
+
+;; Define some key chord.
+;; Use $ has a first "key" character for most of commmands
+
+;; BUffer
+(key-chord-define-global "jk" 'beginning-of-buffer)    
+(key-chord-define-global "kl" 'end-of-buffer)    
+
+;; Goto char / expand region / goto line
+(key-chord-define-global "fg" 'avy-goto-char)
+(key-chord-define-global "xc" 'er/expand-region)
+(key-chord-define-global "wx" 'er/contract-region)
+(key-chord-define-global "<w" 'mc/mark-all-like-this)
+
+(key-chord-define-global "$g" 'goto-line)
+(key-chord-define-global "$w" 'whitespace-mode)
+(key-chord-define-global "$q" 'delete-trailing-whitespace)
+
+
+;; Helm - find - ...
+;; (key-chord-define-global "$p" 'helm-projectile) ;; Trop peut pratique, back to C-x C-p
+(key-chord-define-global "$r" 'helm-swoop)
+(key-chord-define-global "$f" 'helm-find-files)
+(key-chord-define-global "$a" 'helm-ag)
+(key-chord-define-global "ùa" 'ag-project-files)
+
+;; str
+(key-chord-define-global "r'" 'query-replace)
+(key-chord-define-global "r\"" 'replace-string)
+
+;; Jump to definition
+(key-chord-define-global "jd" 'dumb-jump-go)
+
+;; undo redo
+(key-chord-define-global "ji" 'undo-tree-undo)
+(key-chord-define-global "jo" 'undo-tree-redo)
+(key-chord-define-global "jk" 'undo-tree-switch-branch)
+(key-chord-define-global "j;" 'undo-tree-visualize)
+
+
+
+;; VC key chords Magit / svn
+(key-chord-define-global "ùs" 'magit-status)
+(key-chord-define-global "`s" 'svn-status)
+
+;; Window
+(key-chord-define-global "$à" 'delete-window)
+(key-chord-define-global "$o" 'other-window)
+(key-chord-define-global "$&" 'delete-other-windows)
+(key-chord-define-global "$é" 'split-window-below)
+(key-chord-define-global "$\"" 'split-window-right)
+
+;; Buffer
+(key-chord-define-global "$b" 'helm-mini) ;; switch buffer (helm-mini) (c-x b)
+(key-chord-define-global "$k" 'kill-this-buffer)
+(key-chord-define-global "$l" 'ibuffer)
+(key-chord-define-global "$e" 'eval-buffer)
+
+;; Shell
+(key-chord-define-global "$s" 'shell)
+
+;; Window
+(key-chord-define-global "ùà" 'balance-windows)
+(key-chord-define-global "ù&" 'enlarge-window)
+(key-chord-define-global "ùé" 'shrink-window)
+
+(key-chord-define-global "ù\"" 'enlarge-window-horizontally)
+(key-chord-define-global "ù'" 'shrink-window-horizontally)
 
 
 
