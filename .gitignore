@@ -15,6 +15,7 @@ tramp
 image-dired
 tmp/*
 url/*    
+.cache
 
 
 .emacs_workgroups

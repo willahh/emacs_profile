@@ -1,3 +1,6 @@
 [submodule "plugins/ac-php"]
 	path = plugins/ac-php
 	url = https://github.com/xcwen/ac-php.git
+[submodule "plugins/persp-mode"]
+	path = plugins/persp-mode
+	url = https://github.com/Bad-ptr/persp-mode.el.git
