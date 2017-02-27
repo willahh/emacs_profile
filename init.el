@@ -923,7 +923,7 @@
  '(magit-dispatch-arguments nil)
  '(package-selected-packages
    (quote
-    (evil-surround evil-leader window-numbering eyebrowse which-key spaceline evil edit-server neotree elfeed logview monokai-theme color-theme-sanityinc-tomorrow moe-theme material-theme noctilux-theme nlinum crosshairs dumb-mode ac-php theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window web-mode magit helm-projectile helm)))
+    (popwin evil-surround evil-leader window-numbering eyebrowse which-key spaceline evil edit-server neotree elfeed logview monokai-theme color-theme-sanityinc-tomorrow moe-theme material-theme noctilux-theme nlinum crosshairs dumb-mode ac-php theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window web-mode magit helm-projectile helm)))
  '(safe-local-variable-values (quote ((no-byte-compile t))))
  '(yas-global-mode t t))
 
@@ -1929,6 +1929,7 @@
   key-chord
   helm-ag
   ace-jump-mode
+
   ace-window
   ;;anaphora
   anything
@@ -2722,9 +2723,11 @@
 ;; Auto complete
 (global-auto-complete-mode t)
 
+;; ace-window
+;; (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
 
-;; Avy
-(global-set-key (kbd "C-:") 'avy-goto-char)
+
+
 (global-set-key (kbd "C-'") 'avy-goto-char-2)
 (global-set-key (kbd "M-g f") 'avy-goto-line)
 (global-set-key (kbd "M-g w") 'avy-goto-word-1)
@@ -2737,12 +2740,27 @@
 (require 'expand-region)
 (global-set-key (kbd "C-@") 'er/expand-region)
 
+;; pop-win
+;; Buffer pain in random new windows fix
+;;(require 'popwin)
+;;(popwin-mode 1)
 
+;; Buffer windows
+;; Open some buffer type in same windows
+(setq display-buffer-alist
+'(
+  ("*Help*"         . (display-buffer-pop-up-window . nil))
+  ("*vc-dir*"       . (display-buffer-same-window . nil))
+  ("*shell*"        . (display-buffer-same-window . nil))
+))        
 
 ;; Auto save all buffer when file change on disk (aka function to keep synchro between buffers)
 ;; UPDATE : @todo n a pas l air de fonctionner .. une prochaine fois peut être !
 ;; Update : @todo doesn't seems to work... may be an other day !
 (global-auto-revert-mode t)
+
+;; Force some buffer to stay in the same window
+;;(same-window-buffer "*grep")
 
 
 ;; git gutter fringe
@@ -3418,12 +3436,15 @@
 (evil-leader/set-key "wk" 'evil-window-up) 
 (evil-leader/set-key "wj" 'evil-window-down) 
 
+
 ;; -- Jump
 (evil-leader/set-key "]" 'evil-jump-to-tag) 
 
 ;; -- VC
 (evil-leader/set-key "ve" 'vc-ediff) 
 (evil-leader/set-key "vd" 'vc-dir)
+(evil-leader/set-key "vr" 'vc-dir-refresh)
+
 
 
 
@@ -3462,6 +3483,7 @@
 (key-chord-define-global "$&" 'delete-other-windows)
 (key-chord-define-global "$é" 'split-window-below)
 (key-chord-define-global "$\"" 'split-window-right)
+(key-chord-define-global "ae" 'ace-window)
 
 ;; Buffer
 (key-chord-define-global "$b" 'helm-mini) ;; switch buffer (helm-mini) (c-x b)
