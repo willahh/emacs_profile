@@ -1,4 +1,4 @@
-;; Readme
+; Readme
 ;; Pre-requis :
 ;;  - Custom system keybinding :
 ;;   - Capslock remapped as ESCAPE key (Karabiner)
@@ -308,7 +308,7 @@
   magit
   magit-popup
  ;; magit-svn
-  ;;rpsvn
+  ;;psvn
   markdown-mode+
   multiple-cursors
   other-frame-window
@@ -1222,8 +1222,8 @@
 
 
 ;; psvn
-;; (require 'psvn)
-;; (load-file "./.emacs.d/package/vc-svn/vc-svn.el")
+(require 'psvn)
+;;(load-file "./.emacs.d/package/vc-svn/vc-svn.el")
 
 
 
@@ -1966,7 +1966,7 @@
   magit
   magit-popup
  ;; magit-svn
-  ;;rpsvn
+ psvn
   markdown-mode+
   multiple-cursors
   other-frame-window
@@ -2749,9 +2749,10 @@
 ;; Open some buffer type in same windows
 (setq display-buffer-alist
 '(
-  ("*Help*"         . (display-buffer-pop-up-window . nil))
   ("*vc-dir*"       . (display-buffer-same-window . nil))
   ("*shell*"        . (display-buffer-same-window . nil))
+  ("*Buffer List*"  . (display-buffer-same-window . nil))
+  ("*Help*"  . (display-buffer-same-window . nil))
 ))        
 
 ;; Auto save all buffer when file change on disk (aka function to keep synchro between buffers)
@@ -3436,6 +3437,8 @@
 (evil-leader/set-key "wk" 'evil-window-up) 
 (evil-leader/set-key "wj" 'evil-window-down) 
 
+;; -- Shell
+(evil-leader/set-key "s" 'shell) 
 
 ;; -- Jump
 (evil-leader/set-key "]" 'evil-jump-to-tag) 
