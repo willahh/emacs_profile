@@ -2,7 +2,11 @@
 ;; Pre-requis :
 ;;  - Custom system keybinding :
 ;;   - Capslock remapped as ESCAPE key (Karabiner)
-;;   - Key repeat faster : Delay until repeat : 250ms - Key repeat : 33ms (Karabiner)
+;;   - Key repeat faster : Delay until repeat : 200ms - Key repeat : 25ms (Karabiner)
+;;
+;;      OsX Sierra :
+;;      defaults write -g InitialKeyRepeat -int 150 # normal minimum is 15 (225 ms)
+;;      defaults write -g KeyRepeat -int 25 # normal minimum is 2 (25 ms)
 ;;
 ;;  - Os : Mac Os X >= 10.11 (El Captain)
 ;;  - emacs >= 25
@@ -21,7 +25,7 @@
 ;;    - tags https://github.com/leoliu/ggtags/wiki/Install-Global-with-support-for-exuberant-ctags
 ;;    - gtags - brew install global (gtags)
 ;;    - ctags - brew install --HEAD ctags
-;;    - global - brew install global --with-exuberant-ctags
+;;    - Global - brew install global --with-exuberant-ctags
 ;;    - ispell - brew install ispell --witch-lang-fr
 ;;  - ~/.bash_profile doit etre duplique en .bashrc
 
@@ -456,7 +460,7 @@
 ;; wra Custom theme
 ;; Default font
 ;; (set-default-font "Inconsolata-14") ;; Font face: Inconsolata, font-size: 14
-(set-face-attribute 'default nil :family "Inconsolata" :height 135 :weight 'normal)
+(set-face-attribute 'default nil :family "Inconsolata" :height 140 :weight 'normal)
 
 
 
@@ -3288,9 +3292,9 @@
 (advice-add 'ediff-quit :around #'disable-y-or-n-p)
 
 
-
-
-
+;; Add vc hooks to enable ediff checking
+(eval-after-load "vc-hooks"
+         '(define-key vc-prefix-map "=" 'vc-ediff))
 
 
 
@@ -3392,7 +3396,7 @@
 (evil-leader/set-key "pp" 'helm-projectile-switch-project)
 (evil-leader/set-key "br" 'helm-recentf)
 (evil-leader/set-key "pf" 'helm-projectile-find-file)
-(evil-leader/set-key "bl" 'helm-buffers-list)
+(evil-leader/set-key "bl" 'helm-mini)
 (evil-leader/set-key "bb" 'list-buffers)
 (evil-leader/set-key "bn" 'evil-buffer-new)
 (evil-leader/set-key "bk" 'kill-this-buffer)
@@ -3417,7 +3421,9 @@
 ;; -- Jump
 (evil-leader/set-key "]" 'evil-jump-to-tag) 
 
-
+;; -- VC
+(evil-leader/set-key "ve" 'vc-ediff) 
+(evil-leader/set-key "vd" 'vc-dir)
 
 
 
