@@ -2806,8 +2806,8 @@
 
 
 ;;
-(set-face-background 'git-gutter:modified "#436167")
-(set-face-foreground 'git-gutter:modified "#436167")
+(set-face-background 'git-gutter:modified "#17a1be")
+(set-face-foreground 'git-gutter:modified "#17a1be")
 (set-face-background 'git-gutter:added "#92de37")
 (set-face-foreground 'git-gutter:added "#92de37")
 (set-face-background 'git-gutter:deleted "#f82167")
