@@ -78,7 +78,10 @@
 
 
 
-
+;; Revert without confirm
+(defun revert-buffer-no-confirm ()
+  "Revert buffer without confirmation."
+  (interactive) (revert-buffer t t))
 
 
 
@@ -3472,7 +3475,7 @@
 (evil-leader/set-key "bb" 'list-buffers)
 (evil-leader/set-key "bn" 'evil-buffer-new)
 (evil-leader/set-key "bk" 'kill-this-buffer)
-(evil-leader/set-key "br" 'revert-buffer)
+(evil-leader/set-key "br" 'revert-buffer-no-confirm)
 
 
 
