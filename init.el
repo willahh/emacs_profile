@@ -262,6 +262,7 @@
 (setq package-list '(
   evil
   general
+  evil-leader
   psvn
   spaceline
   skewer-mode
@@ -3405,61 +3406,143 @@
 
 ;; Which-key
 (require 'which-key)
-(which-key-mode)    
+(which-key-mode)
 
 
-;; general
-(require 'general)
-;;(setq my-leader1 "<SPC>")
+
+;; Evil key leader (should be set before evil mode)
+(require 'evil-leader)
+(global-evil-leader-mode)
 
 
-;; bind a key globally in normal state; keymaps must be quoted
-(setq general-default-keymaps 'evil-normal-state-map)
 
-;; bind gj and gk
-(general-define-key :prefix "<SPC>"
-         "ms" 'magit-status
-         "pp" 'helm-projectile-switch-project
-         "pf" 'helm-projectile-find-file
-         "r" 'helm-swoop
-         "e" 'swiper-helm ;; Alternative to helm-swoop, lets see with time which is better
-         "ff" 'helm-find-files
-         "fa" 'ag-files
-         "fq" 'helm-ag
 
-         ;; -- window
-         "ws" 'evil-window-split 
-         "wv" 'evil-window-vsplit 
-         "wc" 'evil-window-delete 
-         "wd" 'delete-other-windows 
-         "wh" 'evil-window-left 
-         "wl" 'evil-window-right 
-         "wk" 'evil-window-up 
-         "wj" 'evil-window-down 
 
-         ;; -- Shell
-         "s" 'shell 
 
-         ;; -- Jump
-         "]" 'evil-jump-to-tag ;; Like in vim
 
-         ;; -- VC
-         "vDD" 'vc-dir
-         "vDr" 'vc-dir-refresh
-         "vd" 'vc-diff
-         "ve" 'vc-ediff 
-         "vrd" 'vc-root-diff 
-         "vc" 'vc-next-action ;; Command for commit 80% of the time
+
+
+
+;; Evil leader key commands
+(evil-leader/set-leader "<SPC>")
+(evil-leader/set-key "ms" 'magit-status)
+(evil-leader/set-key "pp" 'helm-projectile-switch-project)
+(evil-leader/set-key "pf" 'helm-projectile-find-file)
+
+;; (evil-leader/set-key "br" 'helm-recentf)
+(evil-leader/set-key "r" 'helm-swoop)
+(evil-leader/set-key "e" 'swiper-helm) ;; Alternative to helm-swoop, lets see with time which is better
+(evil-leader/set-key "ff" 'helm-find-files)
+(evil-leader/set-key "fa" 'ag-files)
+(evil-leader/set-key "fq" 'helm-ag)
+
+;; -- window
+(evil-leader/set-key "ws" 'evil-window-split) 
+(evil-leader/set-key "wv" 'evil-window-vsplit) 
+
+(evil-leader/set-key "wc" 'evil-window-delete) 
+(evil-leader/set-key "wd" 'delete-other-windows) 
+
+(evil-leader/set-key "wh" 'evil-window-left) 
+(evil-leader/set-key "wl" 'evil-window-right) 
+(evil-leader/set-key "wk" 'evil-window-up) 
+(evil-leader/set-key "wj" 'evil-window-down) 
+
+;; -- Shell
+(evil-leader/set-key "s" 'shell) 
+
+;; -- Jump
+(evil-leader/set-key "]" 'evil-jump-to-tag) 
+
+;; -- VC
+;; (evil-leader/set-key "ve" 'vc-ediff) 
+;; (evil-leader/set-key "vd" 'vc-dir)
+;; (evil-leader/set-key "vr" 'vc-dir-refresh)
+
+(evil-leader/set-key "vDD" 'vc-dir)
+(evil-leader/set-key "vDr" 'vc-dir-refresh)
+(evil-leader/set-key "vd" 'vc-diff)
+(evil-leader/set-key "ve" 'vc-ediff) 
+(evil-leader/set-key "vrd" 'vc-root-diff)
+(evil-leader/set-key "vc" 'vc-next-action) ;; Command for commit 80% of the time
+      
+
+;; -- Buffer
+(evil-leader/set-key "bl" 'helm-mini)
+(evil-leader/set-key "bb" 'list-buffers)
+(evil-leader/set-key "bn" 'evil-buffer-new)
+(evil-leader/set-key "bk" 'kill-this-buffer)
+(evil-leader/set-key "br" 'revert-buffer)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;; ;; general
+;; (require 'general)
+;; ;;(setq my-leader1 "<SPC>")
+
+
+;; ;; bind a key globally in normal state; keymaps must be quoted
+;; (setq general-default-keymaps 'evil-normal-state-map)
+
+
+
+;; ;; bind gj and gk
+;; (general-define-key :prefix "<SPC>"
+;;          "ms" 'magit-status
+;;          "pp" 'helm-projectile-switch-project
+;;          "pf" 'helm-projectile-find-file
+;;          "r" 'helm-swoop
+;;          "e" 'swiper-helm ;; Alternative to helm-swoop, lets see with time which is better
+;;          "ff" 'helm-find-files
+;;          "fa" 'ag-files
+;;          "fq" 'helm-ag
+
+;;          ;; -- window
+;;          "ws" 'evil-window-split 
+;;          "wv" 'evil-window-vsplit 
+;;          "wc" 'evil-window-delete 
+;;          "wd" 'delete-other-windows 
+;;          "wh" 'evil-window-left 
+;;          "wl" 'evil-window-right 
+;;          "wk" 'evil-window-up 
+;;          "wj" 'evil-window-down 
+
+;;          ;; -- Shell
+;;          "s" 'shell 
+
+;;          ;; -- Jump
+;;          "]" 'evil-jump-to-tag ;; Like in vim
+
+;;          ;; -- VC
+;;          "vDD" 'vc-dir
+;;          "vDr" 'vc-dir-refresh
+;;          "vd" 'vc-diff
+;;          "ve" 'vc-ediff 
+;;          "vrd" 'vc-root-diff 
+;;          "vc" 'vc-next-action ;; Command for commit 80% of the time
        
-         ;; -- Buffer
-         "bl" 'helm-mini
-         "bb" 'list-buffers
-         "bn" 'evil-buffer-new
-         "bk" 'kill-this-buffer
+;;          ;; -- Buffer
+;;          "bl" 'helm-mini
+;;          "bb" 'list-buffers
+;;          "bn" 'evil-buffer-new
+;;          "bk" 'kill-this-buffer
 
-         ;; "br" 'helm-recentf
-         "br" 'revert-buffer
-)
+;;          ;; "br" 'helm-recentf
+;;          "br" 'revert-buffer
+;; )
 
 
 
