@@ -3497,7 +3497,7 @@
 (key-chord-define-global "$&" 'delete-other-windows)
 (key-chord-define-global "$é" 'split-window-below)
 (key-chord-define-global "$\"" 'split-window-right)
-(key-chord-define-global "ae" 'ace-window)
+(key-chord-define-global "lm" 'ace-window)
 
 ;; Buffer
 (key-chord-define-global "$b" 'helm-mini) ;; switch buffer (helm-mini) (c-x b)
