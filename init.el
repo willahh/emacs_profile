@@ -35,6 +35,12 @@
 ;; @todo Faire fonctionner les snippets YAS 
 ;; @todo Afficher le mode whitespace uniquement sur la selectiono
 ;; @todo Supprimer le warning orange horrible (et bugge)
+;;     - vc-svn-log-view-mode coloration
+;;       ansi color ?
+;;       http://stackoverflow.com/questions/23378271/how-do-i-display-ansi-color-codes-in-emacs-for-any-mode ?
+;;     
+;;     - vc diff from vc-log
+;;       Le panneau se réduit en hauteur, il ne devrait pas bouger
 ;;    
 ;;
 ;; Emacs global settings
@@ -881,9 +887,9 @@
 (setq helm-split-window-in-side-p           t ; open helm buffer inside current window, not occupy whole other window
       helm-move-to-line-cycle-in-source     t ; move to end or beginning of source when reaching top or bottom of source.
       helm-ff-search-library-in-sexp        t ; search for library in `require' and `declare-function' sexp.
-      helm-scroll-amount                    8 ; scroll 8 lines other window using M-<next>/M-<prior>
-      helm-ff-file-name-history-use-recentf t
-      helm-echo-input-in-header-line t)
+      helm-scroll-amount                    8 ; scroll 8 lines other window using M-<evil-next>/M-<prior>
+      helm-ff-file-name-evil-history-use-recentf tevil-
+      helm-echo-input-in-evil-header-line t)
 
 ;; (defun spacemacs//helm-hide-minibuffer-maybe ()
 ;;   "Hide minibuffer in Helm session if we use the header line as input field."
