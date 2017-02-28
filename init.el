@@ -261,7 +261,7 @@
 ;; Liste des packages a installer si repertoire non disponible
 (setq package-list '(
   evil
-  evil-leader
+  general
   psvn
   spaceline
   skewer-mode
@@ -888,7 +888,7 @@
       helm-move-to-line-cycle-in-source     t ; move to end or beginning of source when reaching top or bottom of source.
       helm-ff-search-library-in-sexp        t ; search for library in `require' and `declare-function' sexp.
       helm-scroll-amount                    8 ; scroll 8 lines other window using M-<evil-next>/M-<prior>
-      helm-ff-file-name-evil-history-use-recentf tevil-
+;;      helm-ff-file-name-evil-history-use-recentf evil
       helm-echo-input-in-evil-header-line t)
 
 ;; (defun spacemacs//helm-hide-minibuffer-maybe ()
@@ -930,7 +930,7 @@
  '(magit-dispatch-arguments nil)
  '(package-selected-packages
    (quote
-    (swiper-helm popwin evil-surround evil-leader window-numbering eyebrowse which-key spaceline evil edit-server neotree elfeed logview monokai-theme color-theme-sanityinc-tomorrow moe-theme material-theme noctilux-theme nlinum crosshairs dumb-mode ac-php theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window web-mode magit helm-projectile helm)))
+    (general swiper-helm popwin evil-surround window-numbering eyebrowse which-key spaceline evil edit-server neotree elfeed logview monokai-theme color-theme-sanityinc-tomorrow moe-theme material-theme noctilux-theme nlinum crosshairs dumb-mode ac-php theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window web-mode magit helm-projectile helm)))
  '(safe-local-variable-values (quote ((no-byte-compile t))))
  '(yas-global-mode t t))
 
@@ -3340,10 +3340,6 @@
 ;; evil mode    
 (require 'evil)
 
-;; Evil key leader (should be set before evil mode)
-(require 'evil-leader)
-(global-evil-leader-mode)
-
 ;; Enable evil mode
 (evil-mode 1)
 
@@ -3395,7 +3391,7 @@
 ;;(require 'persp-mode)
 ;;(with-eval-after-load "persp-mode-autoloads"
 ;;  (setq wg-morph-on nil) ;; switch off animation
-;;  (setq persp-autokill-buffer-on-remove 'kill-weak)
+;;  (Setq persp-autokill-buffer-on-remove 'kill-weak)
 ;;  (add-hook 'after-init-hook #'(lambda () (persp-mode 1))))
    
         
@@ -3407,60 +3403,62 @@
 (spaceline-spacemacs-theme)
 
 
-
 ;; Which-key
 (require 'which-key)
 (which-key-mode)    
 
 
+;; general
+(require 'general)
+;;(setq my-leader1 "<SPC>")
 
 
+;; bind a key globally in normal state; keymaps must be quoted
+(setq general-default-keymaps 'evil-normal-state-map)
 
+;; bind gj and gk
+(general-define-key :prefix "<SPC>"
+         "ms" 'magit-status
+         "pp" 'helm-projectile-switch-project
+         "pf" 'helm-projectile-find-file
+         "r" 'helm-swoop
+         "e" 'swiper-helm ;; Alternative to helm-swoop, lets see with time which is better
+         "ff" 'helm-find-files
+         "fa" 'ag-files
+         "fq" 'helm-ag
 
+         ;; -- window
+         "ws" 'evil-window-split 
+         "wv" 'evil-window-vsplit 
+         "wc" 'evil-window-delete 
+         "wd" 'delete-other-windows 
+         "wh" 'evil-window-left 
+         "wl" 'evil-window-right 
+         "wk" 'evil-window-up 
+         "wj" 'evil-window-down 
 
+         ;; -- Shell
+         "s" 'shell 
 
+         ;; -- Jump
+         "]" 'evil-jump-to-tag ;; Like in vim
 
+         ;; -- VC
+         "vDD" 'vc-dir
+         "vDr" 'vc-dir-refresh
+         "vd" 'vc-diff
+         "ve" 'vc-ediff 
+         "vrd" 'vc-root-diff 
+       
+         ;; -- Buffer
+         "bl" 'helm-mini
+         "bb" 'list-buffers
+         "bn" 'evil-buffer-new
+         "bk" 'kill-this-buffer
 
-;; Evil leader key commands
-(evil-leader/set-leader "<SPC>")
-(evil-leader/set-key "ms" 'magit-status)
-(evil-leader/set-key "pp" 'helm-projectile-switch-project)
-(evil-leader/set-key "br" 'helm-recentf)
-(evil-leader/set-key "pf" 'helm-projectile-find-file)
-(evil-leader/set-key "bl" 'helm-mini)
-(evil-leader/set-key "bb" 'list-buffers)
-(evil-leader/set-key "bn" 'evil-buffer-new)
-(evil-leader/set-key "bk" 'kill-this-buffer)
-(evil-leader/set-key "bk" 'kill-this-buffer)
-(evil-leader/set-key "r" 'helm-swoop)
-(evil-leader/set-key "e" 'swiper-helm) ;; Alternative to helm-swoop, lets see with time which is better
-(evil-leader/set-key "ff" 'helm-find-files)
-(evil-leader/set-key "fa" 'ag-files)
-(evil-leader/set-key "fq" 'helm-ag)
-
-;; -- window
-(evil-leader/set-key "ws" 'evil-window-split) 
-(evil-leader/set-key "wv" 'evil-window-vsplit) 
-
-(evil-leader/set-key "wc" 'evil-window-delete) 
-(evil-leader/set-key "wd" 'delete-other-windows) 
-
-(evil-leader/set-key "wh" 'evil-window-left) 
-(evil-leader/set-key "wl" 'evil-window-right) 
-(evil-leader/set-key "wk" 'evil-window-up) 
-(evil-leader/set-key "wj" 'evil-window-down) 
-
-;; -- Shell
-(evil-leader/set-key "s" 'shell) 
-
-;; -- Jump
-(evil-leader/set-key "]" 'evil-jump-to-tag) 
-
-;; -- VC
-(evil-leader/set-key "ve" 'vc-ediff) 
-(evil-leader/set-key "vd" 'vc-dir)
-(evil-leader/set-key "vr" 'vc-dir-refresh)
-
+         ;; "br" 'helm-recentf
+         "br" 'revert-buffer
+)
 
 
 
