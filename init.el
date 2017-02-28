@@ -1,4 +1,4 @@
-; Readme
+ Readme
 ;; Pre-requis :
 ;;  - Custom system keybinding :
 ;;   - Capslock remapped as ESCAPE key (Karabiner)
@@ -25,6 +25,7 @@
 ;;    - tags https://github.com/leoliu/ggtags/wiki/Install-Global-with-support-for-exuberant-ctags
 ;;    - gtags - brew install global (gtags)
 ;;    - ctags - brew install --HEAD ctags
+;;    - cscope - brew install cscope
 ;;    - Global - brew install global --with-exuberant-ctags
 ;;    - ispell - brew install ispell --witch-lang-fr
 ;;  - ~/.bash_profile doit etre duplique en .bashrc
@@ -265,6 +266,7 @@
 (setq package-list '(
   evil
   general
+  php-refactor-mode
   evil-leader
   psvn
   spaceline
@@ -934,9 +936,9 @@
  '(magit-dispatch-arguments nil)
  '(package-selected-packages
    (quote
-    (general swiper-helm popwin evil-surround window-numbering eyebrowse which-key spaceline evil edit-server neotree elfeed logview monokai-theme color-theme-sanityinc-tomorrow moe-theme material-theme noctilux-theme nlinum crosshairs dumb-mode ac-php theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window web-mode magit helm-projectile helm)))
+    (php-refactor-mode ac-php general swiper-helm popwin evil-surround window-numbering eyebrowse which-key spaceline evil edit-server neotree elfeed logview monokai-theme color-theme-sanityinc-tomorrow moe-theme material-theme noctilux-theme nlinum crosshairs dumb-mode theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window web-mode magit helm-projectile helm)))
  '(safe-local-variable-values (quote ((no-byte-compile t))))
- '(yas-global-mode t t))
+ '(yas-global-mode t))
 
 
 
@@ -1287,27 +1289,6 @@
 
 
 
-
-;; (require 'cl)
-;;  (require 'php-mode)
-;;  (add-hook 'php-mode-hook
-;;            '(lambda ()
-;;               (auto-complete-mode t)
-;;               (require 'ac-php)
-;;               (setq ac-sources  '(ac-source-php ) )
-;;               (yas-global-mode 1)
-;;               (define-key php-mode-map  (kbd "C-]") 'ac-php-find-symbol-at-point)   ;goto define
-;;               (define-key php-mode-map  (kbd "C-t") 'ac-php-location-stack-back   ) ;go back
-;;               ))
- (add-hook 'php-mode-hook
-            '(lambda ()
-               (auto-complete-mode t)
-               (require 'ac-php)
-               (setq ac-sources  '(ac-source-php ) )
-               (yas-global-mode 1)
-               (define-key php-mode-map  (kbd "C-]") 'ac-php-find-symbol-at-point)   ;goto define
-               (define-key php-mode-map  (kbd "C-t") 'ac-php-location-stack-back   ) ;go back
-               ))
     
 
 
@@ -1922,7 +1903,6 @@
 
 
 ;; Add to list
-(add-to-list 'load-path "~/.emacs.d/plugins/ac-php")
 (add-to-list 'load-path "~/.emacs.d/plugins/persp-mode")
     
 
@@ -2982,29 +2962,40 @@
 
 
 
-;; ac-php
-(add-to-list 'load-path "~/.emacs.d/plugins/ac-php")
-;; (require 'cl)
-;;  (require 'php-mode)
-;;  (add-hook 'php-mode-hook
-;;            '(lambda ()
-;;               (auto-complete-mode t)
-;;               (require 'ac-php)
-;;               (setq ac-sources  '(ac-source-php ) )
-;;               (yas-global-mode 1)
-;;               (define-key php-mode-map  (kbd "C-]") 'ac-php-find-symbol-at-point)   ;goto define
-;;               (define-key php-mode-map  (kbd "C-t") 'ac-php-location-stack-back   ) ;go back
-;;               ))
- (add-hook 'php-mode-hook
-            '(lambda ()
-               (auto-complete-mode t)
-               (require 'ac-php)
-               (setq ac-sources  '(ac-source-php ) )
-               (yas-global-mode 1)
-               (define-key php-mode-map  (kbd "C-]") 'ac-php-find-symbol-at-point)   ;goto define
-               (define-key php-mode-map  (kbd "C-t") 'ac-php-location-stack-back   ) ;go back
-               ))
-    
+;; ac-php    
+(add-hook 'php-mode-hook
+          '(lambda ()
+             (require 'company-php)
+             (company-mode t)
+             (add-to-list 'company-backends 'company-ac-php-backend )))
+
+
+
+
+
+
+;; php doc and stuff
+;; Source : http://www.prodevtips.com/2013/10/18/emacs-as-a-multi-mode-web-dev-ide-is-now-possible/ 
+(defun php-jump ()
+  (interactive)
+  (let (myword myurl)
+    (setq myword
+          (if (and transient-mark-mode mark-active)
+              (buffer-substring-no-properties (region-beginning) (region-end))
+            (thing-at-point 'symbol)))
+    (setq myurl (concat "http://php.net/manual/en/function." (replace-regexp-in-string "_" "-" myword) ".php"))
+    (browse-url myurl)))
+
+;; php-refactor
+(require 'php-refactor-mode)
+(add-hook 'php-mode-hook 'php-refactor-mode)
+
+
+
+
+
+
+
 
 
 
