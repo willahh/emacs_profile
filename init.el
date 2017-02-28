@@ -3449,6 +3449,7 @@
          "vd" 'vc-diff
          "ve" 'vc-ediff 
          "vrd" 'vc-root-diff 
+         "vc" 'vc-next-action ;; Command for commit 80% of the time
        
          ;; -- Buffer
          "bl" 'helm-mini
