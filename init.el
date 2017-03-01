@@ -473,10 +473,13 @@
 ;; Default font
 ;; (set-default-font "Inconsolata-14") ;; Font face: Inconsolata, font-size: 14
 (set-face-attribute 'default nil :family "Inconsolata" :height 140 :weight 'normal)
+;;(load-file (expand-file-name "theme/willahh/willahh-theme.el"))
+;;(expand-file-name "theme/willahh/willahh-theme.el")
 
-
-
+(load-file "/Users/willahh/.emacs.d/theme/willahh/willahh-theme.el")
 ;; (set-face-attribute 'whitespace-space nil :background nil :foreground "gray30")
+
+
 
 
 
@@ -914,7 +917,7 @@
  '(magit-dispatch-arguments nil)
  '(package-selected-packages
    (quote
-    (php-refactor-mode ac-php general swiper-helm popwin evil-surround window-numbering eyebrowse which-key spaceline evil edit-server neotree elfeed logview monokai-theme color-theme-sanityinc-tomorrow moe-theme material-theme noctilux-theme nlinum crosshairs dumb-mode theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window web-mode magit helm-projectile helm)))
+    (resize-window php-refactor-mode ac-php general swiper-helm popwin evil-surround window-numbering eyebrowse which-key spaceline evil edit-server neotree elfeed logview monokai-theme color-theme-sanityinc-tomorrow moe-theme material-theme noctilux-theme nlinum crosshairs dumb-mode theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window web-mode magit helm-projectile helm)))
  '(safe-local-variable-values (quote ((no-byte-compile t))))
  '(yas-global-mode t))
 
@@ -1817,6 +1820,7 @@
   evil-surround
   spaceline
   skewer-mode
+  resize-window
   ;;archives
   neotree
   edit-server
@@ -1853,7 +1857,7 @@
   tern-auto-complete
   ;;nlinum
   ;;git-commit
-  git-gutter
+  ;; git-gutter
   ;;git-gutter+
   ;;git-gutter-fringe
   helm
@@ -2662,45 +2666,45 @@
 
 
 ;;;; Git gutter
-(require 'git-gutter)
-;;
-;;;; If you enable global minor mode
-(global-git-gutter-mode t)
+;; (require 'git-gutter)
+;; ;;
+;; ;;;; If you enable global minor mode
+;; (global-git-gutter-mode t)
 
-;; If you would like to use git-gutter.el and linum-mode
-(git-gutter:linum-setup)
+;; ;; If you would like to use git-gutter.el and linum-mode
+;; (git-gutter:linum-setup)
 
-;; Use for 'Git'(`git`), 'Mercurial'(`hg`), 'Bazaar'(`bzr`), and 'Subversion'(`svn`) projects
-
-
-;; If you enable git-gutter-mode for some modes
-;;(add-hook 'ruby-mode-hook 'git-gutter-mode)
-
-(global-set-key (kbd "C-x C-g") 'git-gutter)
-(global-set-key (kbd "C-x v =") 'git-gutter:popup-hunk)
-
-;; Jump to next/previous hunk
-(global-set-key (kbd "C-x p") 'git-gutter:previous-hunk)
-(global-set-key (kbd "C-x n") 'git-gutter:next-hunk)
-
-;; Stage current hunk
-(global-set-key (kbd "C-x v s") 'git-gutter:stage-hunk)
-
-;; Revert current hunk
-(global-set-key (kbd "C-x v r") 'git-gutter:revert-hunk)
+;; ;; Use for 'Git'(`git`), 'Mercurial'(`hg`), 'Bazaar'(`bzr`), and 'Subversion'(`svn`) projects
 
 
+;; ;; If you enable git-gutter-mode for some modes
+;; ;;(add-hook 'ruby-mode-hook 'git-gutter-mode)
+
+;; (global-set-key (kbd "C-x C-g") 'git-gutter)
+;; (global-set-key (kbd "C-x v =") 'git-gutter:popup-hunk)
+
+;; ;; Jump to next/previous hunk
+;; (global-set-key (kbd "C-x p") 'git-gutter:previous-hunk)
+;; (global-set-key (kbd "C-x n") 'git-gutter:next-hunk)
+
+;; ;; Stage current hunk
+;; (global-set-key (kbd "C-x v s") 'git-gutter:stage-hunk)
+
+;; ;; Revert current hunk
+;; (global-set-key (kbd "C-x v r") 'git-gutter:revert-hunk)
 
 
 
 
-;;
-(set-face-background 'git-gutter:modified "#17a1be")
-(set-face-foreground 'git-gutter:modified "#17a1be")
-(set-face-background 'git-gutter:added "#92de37")
-(set-face-foreground 'git-gutter:added "#92de37")
-(set-face-background 'git-gutter:deleted "#f82167")
-(set-face-foreground 'git-gutter:deleted "#f82167")
+
+
+;; ;;
+;; (set-face-background 'git-gutter:modified "#17a1be")
+;; (set-face-foreground 'git-gutter:modified "#17a1be")
+;; (set-face-background 'git-gutter:added "#92de37")
+;; (set-face-foreground 'git-gutter:added "#92de37")
+;; (set-face-background 'git-gutter:deleted "#f82167")
+;; (set-face-foreground 'git-gutter:deleted "#f82167")
 
 
 
@@ -3318,22 +3322,23 @@
 (evil-leader/set-key "r" 'helm-swoop)
 (evil-leader/set-key "e" 'swiper-helm) ;; Alternative to helm-swoop, lets see with time which is better
 (evil-leader/set-key "ff" 'helm-find-files)
-(evil-leader/set-key "fa" 'ag-files)
-(evil-leader/set-key "fq" 'helm-ag)
+(evil-leader/set-key "fa" 'helm-ag)
+(evil-leader/set-key "fq" 'ag-files)
 
 ;; -- window
-(evil-leader/set-key "ws" 'evil-window-split) 
-(evil-leader/set-key "wv" 'evil-window-vsplit) 
+(evil-leader/set-key "w" 'resize-window)
+;; (evil-leader/set-key "ws" 'evil-window-split) 
+;; (evil-leader/set-key "wv" 'evil-window-vsplit) 
 
-(evil-leader/set-key "wc" 'evil-window-delete) 
-(evil-leader/set-key "wd" 'delete-other-windows) 
+;; (evil-leader/set-key "wc" 'evil-window-delete) 
+;; (evil-leader/set-key "wd" 'delete-other-windows) 
 
-(evil-leader/set-key "wh" 'evil-window-left) 
-(evil-leader/set-key "wl" 'evil-window-right) 
-(evil-leader/set-key "wk" 'evil-window-up) 
-(evil-leader/set-key "wj" 'evil-window-down) 
+;; (evil-leader/set-key "wh" 'evil-window-left) 
+;; (evil-leader/set-key "wl" 'evil-window-right) 
+;; (evil-leader/set-key "wk" 'evil-window-up) 
+;; (evil-leader/set-key "wj" 'evil-window-down) 
 
-;; -- Shell
+;; ;; -- Shell
 (evil-leader/set-key "s" 'shell) 
 
 ;; -- Jump
