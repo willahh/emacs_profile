@@ -305,7 +305,7 @@
   ;;less-css-mode
   tern
   tern-auto-complete
-  ;;nlinum
+  nlinum
   ;;git-commit
   git-gutter
   ;;git-gutter+
