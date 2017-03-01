@@ -1156,6 +1156,7 @@
 (setq package-list '(
   evil                      
   evil-surround
+  nyan-mode
   spaceline
   skewer-mode
   resize-window
