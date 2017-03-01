@@ -3496,46 +3496,46 @@
 ;; ;; bind gj and gk
 ;; (general-define-key :prefix "<SPC>"
 ;;          "ms" 'magit-status
-;;          "pp" 'helm-projectile-switch-project
-;;          "pf" 'helm-projectile-find-file
-;;          "r" 'helm-swoop
-;;          "e" 'swiper-helm ;; Alternative to helm-swoop, lets see with time which is better
-;;          "ff" 'helm-find-files
-;;          "fa" 'ag-files
-;;          "fq" 'helm-ag
+;; "pp" 'helm-projectile-switch-project
+;; "pf" 'helm-projectile-find-file
+;; "r" 'helm-swoop
+;; "e" 'swiper-helm ;; Alternative to helm-swoop, lets see with time which is better
+;; "ff" 'helm-find-files
+;; "fa" 'ag-files
+;; "fq" 'helm-ag
 
 ;;          ;; -- window
-;;          "ws" 'evil-window-split 
-;;          "wv" 'evil-window-vsplit 
-;;          "wc" 'evil-window-delete 
-;;          "wd" 'delete-other-windows 
-;;          "wh" 'evil-window-left 
-;;          "wl" 'evil-window-right 
-;;          "wk" 'evil-window-up 
-;;          "wj" 'evil-window-down 
+;; "ws" 'evil-window-split 
+;; "wv" 'evil-window-vsplit 
+;; "wc" 'evil-window-delete 
+;; "wd" 'delete-other-windows 
+;; "wh" 'evil-window-left 
+;; "wl" 'evil-window-right 
+;; "wk" 'evil-window-up 
+;; "wj" 'evil-window-down 
 
-;;          ;; -- Shell
-;;          "s" 'shell 
+;; ;; -- Shell
+;; "s" 'shell 
 
-;;          ;; -- Jump
-;;          "]" 'evil-jump-to-tag ;; Like in vim
+;; ;; -- Jump
+;; "]" 'evil-jump-to-tag ;; Like in vim
 
-;;          ;; -- VC
-;;          "vDD" 'vc-dir
-;;          "vDr" 'vc-dir-refresh
-;;          "vd" 'vc-diff
-;;          "ve" 'vc-ediff 
-;;          "vrd" 'vc-root-diff 
-;;          "vc" 'vc-next-action ;; Command for commit 80% of the time
+;; ;; -- VC
+;; "vDD" 'vc-dir
+;; "vDr" 'vc-dir-refresh
+;; "vd" 'vc-diff
+;; "ve" 'vc-ediff 
+;; "vrd" 'vc-root-diff 
+;; "vc" 'vc-next-action ;; Command for commit 80% of the time
        
-;;          ;; -- Buffer
-;;          "bl" 'helm-mini
-;;          "bb" 'list-buffers
-;;          "bn" 'evil-buffer-new
-;;          "bk" 'kill-this-buffer
+;; ;; -- Buffer
+;; "bl" 'helm-mini
+;; "bb" 'list-buffers
+;; "bn" 'evil-buffer-new
+;; "bk" 'kill-this-buffer
 
-;;          ;; "br" 'helm-recentf
-;;          "br" 'revert-buffer
+;; ;; "br" 'helm-recentf
+;; "br" 'revert-buffer
 ;; )
 
 
