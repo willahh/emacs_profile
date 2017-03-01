@@ -2688,14 +2688,12 @@
 (evil-leader/set-key "]" 'evil-jump-to-tag) 
 
 ;; -- VC
-;; (evil-leader/set-key "ve" 'vc-ediff) 
-;; (evil-leader/set-key "vd" 'vc-dir)
-;; (evil-leader/set-key "vr" 'vc-dir-refresh)
-
 (evil-leader/set-key "vDD" 'vc-dir)
 (evil-leader/set-key "vDr" 'vc-dir-refresh)
 (evil-leader/set-key "vd" 'vc-diff)
 (evil-leader/set-key "ve" 'vc-ediff) 
+(evil-leader/set-key "vve" 'vc-version-ediff) 
+(evil-leader/set-key "vvd" 'vc-version-diff) 
 (evil-leader/set-key "vrd" 'vc-root-diff)
 (evil-leader/set-key "vc" 'vc-next-action) ;; Command for commit 80% of the time
 (evil-leader/set-key "vr" 'vc-revert)
