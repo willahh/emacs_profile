@@ -2631,6 +2631,10 @@
 (require 'spaceline-config)
 (spaceline-spacemacs-theme)
 
+;; Nyan
+(require 'nyan-mode)
+(nyan-mode)
+(nyan-start-animation)
 
 ;; Which-key
 (require 'which-key)
