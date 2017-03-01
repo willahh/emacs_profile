@@ -1,5 +1,4 @@
- Readme
-;; Pre-requis :
+; Pre-requis :
 ;;  - Custom system keybinding :
 ;;   - Capslock remapped as ESCAPE key (Karabiner)
 ;;   - Key repeat faster : Delay until repeat : 200ms - Key repeat : 25ms (Karabiner)
@@ -927,6 +926,7 @@
  '(ediff-diff-options "-w")
  '(ediff-split-window-function (quote split-window-horizontally))
  '(ediff-window-setup-function (quote ediff-setup-windows-plain))
+ '(evil-search-module (quote evil-search))
  '(git-gutter:added-sign "|")
  '(git-gutter:deleted-sign "|")
  '(git-gutter:handled-backends (quote (git hg bzr svn)))
