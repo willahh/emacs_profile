@@ -311,6 +311,7 @@
   git-gutter
   ;;git-gutter+
   ;;git-gutter-fringe
+  diff-hl
   helm
   helm-anything
   helm-core
@@ -827,28 +828,6 @@
 
 
 
-;; Web beautify
-;;(eval-after-load 'js2-mode
-;;  '(define-key js2-mode-map (kbd "C-c b") 'web-beautify-js))
-;;;; Or if you're using 'js-mode' (a.k.a 'javascript-mode')
-;;(eval-after-load 'js
-;;  '(define-key js-mode-map (kbd "C-c b") 'web-beautify-js))
-;;
-;;(eval-after-load 'json-mode
-;;  '(define-key json-mode-map (kbd "C-c b") 'web-beautify-js))
-;;
-;;(eval-after-load 'sgml-mode
-;;  '(define-key html-mode-map (kbd "C-c b") 'web-beautify-html))
-;;
-;;(eval-after-load 'web-mode
-;;  '(define-key web-mode-map (kbd "C-c b") 'web-beautify-html))
-;;
-;;(eval-after-load 'css-mode
-;;  '(define-key css-mode-map (kbd "C-c b") 'web-beautify-css))
-
-;; Add path where "js-beautify" is in, add it to the emacs env PATH
- (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
-    (setq exec-path (append exec-path '("/usr/local/bin")))
 
 
 
@@ -989,42 +968,6 @@
 (helm-projectile-on)
 (global-set-key (kbd "C-x C-p") 'helm-projectile-find-file)
 
-;; (global-set-key (kbd "C-c ù") 'helm-projectile)
-;; (global-set-key (kbd "C-x )") 'helm-projectile)
-;;(global-set-key (kbd "C-c p") 'helm-projectile)
-;; (global-set-key (kbd "C-c -") 'helm-projectile)
-;; (global-set-key (kbd "C-c C-_") 'helm-projectile)
-
-;; Line number config (linum-mode)
-;;(setq linum-format "%d ")
-;;(add-hook 'prog-mode-hook 'linum-mode)
-;;(setq-default left-fringe-width 200)
-
-
-
-
-
-;; Fast line numbers
-;; Line number gutter in ncurses mode
-;; (Fix linum display bug in mac os x cocoa)
-;; Source : https://www.reddit.com/r/emacs/comments/25v0eo/you_emacs_tips_and_tricks/chlgnda/
-;; Note : nlinum ne fonctionne pas avec git guttern
-;; L activation des 2 modes semble corriger le probleme, mais ne semble pas etre une solution clean
-;; Update 2 : nlium non compatible avec gitter gutter / git gutter+
-;; Update 3 : nlinum et git)gutter-fringe sont compatible
-;; Update 4 : git-gutter-fringe non compatible avec svn, retour sur linum de base + git-gutter normal
-
-;; Fast line numbers
-;;(require 'nlinum)
-;;
-;;;; Line number gutter in ncurses mode
-;;(unless window-system
-;;  (setq nlinum-format "%d "))
-
-
-;;(global-nlinum-mode)
-(global-linum-mode)
-
 
 
 
@@ -1154,8 +1097,8 @@
 
 
 
-
-
+;; diff-hl
+(global-diff-hl-mode t)
 
 
 
@@ -1244,44 +1187,6 @@
 ;; (global-set-key [f8] 'neotree-toggle)
 ;;(setq neo-smart-open t)
 
-
-;; Web mode
-(require 'web-mode)
-(add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
-
-(add-to-list 'auto-mode-alist '("\\.phtml\\'" . nxml-mode))
-(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-
-
-;; (add-to-list 'auto-mode-alist '("\\.el\\'" . key-chord-mode))
-;; (add-to-list 'auto-mode-alist '("\\.js\\'" . key-chord-mode))
-
-(defun my-web-mode-hook ()
-  "Hooks for Web mode."
-    (setq web-mode-markup-indent-offset 4)
-    (setq web-mode-css-indent-offset 4)
-    (setq web-mode-code-indent-offset 4)
-    (setq web-mode-indent-style 4)
-)
-(add-hook 'web-mode-hook  'my-web-mode-hook)
-
-
-(define-key web-mode-map (kbd "C-M-n") 'web-mode-tag-next)
-(define-key web-mode-map (kbd "C-M-p") 'web-mode-tag-previous)
-
-(setq web-mode-enable-auto-pairing t)
-(setq web-mode-enable-css-colorization t)
-(setq web-mode-enable-current-element-highlight t)    
-(setq web-mode-enable-current-column-highlight t)
 
 
     
@@ -2121,8 +2026,6 @@
 
 ;; wra Custom theme
 ;; Default font
-;; (set-default-font "Inconsolata-14") ;; Font face: Inconsolata, font-size: 14
-(set-face-attribute 'default nil :family "Inconsolata" :height 135 :weight 'normal)
 
 
 
@@ -2160,15 +2063,6 @@
 ;;
 ;;
 ;;
-;; Load zerodark before for nice fancy diff color
-;;(load-theme 'zerodark t)
-;;(load-theme 'doom-molokai t)
-;;(load-theme 'material t)
-;;(load-theme 'moe-theme t)
-
-(load-theme 'doom-molokai t)
-;;(load-theme 'monokai t)
-
 
 
 
@@ -2661,8 +2555,8 @@
 ;;  (setq nlinum-format "%d "))
 
 
-;;(global-nlinum-mode)
-(global-linum-mode)
+(global-nlinum-mode)
+;; (global-linum-mode)
 
 
 
@@ -2934,9 +2828,7 @@
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 
 
-;; (add-to-list 'auto-mode-alist '("\\.el\\'" . key-chord-mode))
-;; (add-to-list 'auto-mode-alist '("\\.js\\'" . key-chord-mode))
-
+ 
 (defun my-web-mode-hook ()
   "Hooks for Web mode."
     (setq web-mode-markup-indent-offset 4)
@@ -3560,7 +3452,7 @@
 ;; undo redo
 (key-chord-define-global "ji" 'undo-tree-undo)
 (key-chord-define-global "jo" 'undo-tree-redo)
-(key-chord-define-global "jk" 'undo-tree-switch-branch)
+;;(key-chord-define-global "jk" 'undo-tree-switch-branch)
 (key-chord-define-global "j;" 'undo-tree-visualize)
 
 
@@ -3575,7 +3467,7 @@
 (key-chord-define-global "$&" 'delete-other-windows)
 (key-chord-define-global "$é" 'split-window-below)
 (key-chord-define-global "$\"" 'split-window-right)
-(key-chord-define-global "lm" 'ace-window)
+(key-chord-define-global "jk" 'ace-window)
 
 ;; Buffer
 (key-chord-define-global "$b" 'helm-mini) ;; switch buffer (helm-mini) (c-x b)
@@ -3688,7 +3580,7 @@
 ;; undo redo
 (key-chord-define-global "ji" 'undo-tree-undo)
 (key-chord-define-global "jo" 'undo-tree-redo)
-(key-chord-define-global "jk" 'undo-tree-switch-branch)
+;; (key-chord-define-global "jk" 'undo-tree-switch-branch)
 (key-chord-define-global "j;" 'undo-tree-visualize)
 
 
