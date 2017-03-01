@@ -41,7 +41,6 @@
 ;;     
 ;;     - vc diff from vc-log
 ;;       Le panneau se réduit en hauteur, il ne devrait pas bouger
-;;    
 ;;
 ;; Emacs global settings
 ;;
@@ -3351,6 +3350,8 @@
 (evil-leader/set-key "ve" 'vc-ediff) 
 (evil-leader/set-key "vrd" 'vc-root-diff)
 (evil-leader/set-key "vc" 'vc-next-action) ;; Command for commit 80% of the time
+(evil-leader/set-key "vr" 'vc-revert)
+(evil-leader/set-key "vl" 'vc-log)
       
 
 ;; -- Buffer
@@ -3361,7 +3362,8 @@
 (evil-leader/set-key "br" 'revert-buffer-no-confirm)
 
 
-
+;; -- Eval
+(evil-leader/set-key "be" 'eval-buffer)
 
 
 
