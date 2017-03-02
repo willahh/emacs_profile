@@ -1346,34 +1346,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-;; Golden ratio
-;; (require 'golden-ratio)
-;; (golden-ratio-mode 1)
-
-
-;; wra Custom theme
-;; Default font
-
-
-
-;; (set-face-attribute 'whitespace-space nil :background nil :foreground "gray30")
-
-
-
-
 ;; Note : Cette partie ne s initalize pas,
 ;; Il semblerait que le theme n est pas finis de se charger
 ;; En revanhe aucun hook n existe
@@ -1385,70 +1357,12 @@
 
 
 
-;; Yasnippet
-;; Note : Yasnippet error when installing from elpa package
-;; (add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
-;; (require 'yasnippet)
-;; (yas-global-mode 1)
-
-;;(setq yas-snippet-dirs
-;;      '("~/.emacs.d/snippets"                 ;; personal snippets
-;;        "~/.emacs.d/plugins/yasnippet/yasmate/snippets" ;; the yasmate collection
-;;        "~/.emacs.d/plugins/yasnippet/snippets"         ;; the default collection
-;;        ))
-
-
-;;
-;;
-;;
-;;
-;;
-
-
-
-
-
-
-
-;; Yascroll
-;; (global-yascroll-bar-mode 1)
-
-
-
-
 ;; Multiple cursor
 (require 'multiple-cursors-core)
-
-;; This is globally useful, so it goes under `C-x', and `m'
-;; for "multiple-cursors" is easy to remember.
-;; (define-key ctl-x-map "\C-m" #'mc/mark-all-dwim)
-
-;; Usually, both `C-x C-m' and `C-x RET' invoke the
-;; `mule-keymap', but that's a waste of keys. Here we put it
-
-;; _just_ under `C-x RET'.
-;; (define-key ctl-x-map (kbd "<return>") mule-keymap)
-
-;; Remember `er/expand-region' is bound to M-2!
-;; (global-set-key (kbd "M-3") #'mc/mark-next-like-this)
-;; (global-set-key (kbd "M-4") #'mc/mark-previous-like-this)
-;; (global-set-key (kbd "M-D") #'mc/mark-all-line-like-this)
 
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
-
-
-
-
-;; Dumb jump
-;; @todo faire en sorte que les key ne mangent pas sur tout le monde
-;; En commentaire pur le moment    
-;(add-to-list 'load-path "~/.emacs.d/plugins/dumb-jump-20161218.110")
-;(require 'dumb-jump)
-;(dumb-jump-mode)
-
-    
 
 
 
@@ -1468,23 +1382,6 @@
         (insert filename)
         (clipboard-kill-region (point-min) (point-max)))
       (message filename))))
-
-
-;; Besoin initial :
-;; Pouvoir copier le nom du fichier courant dans le clipboard
-;; Source : http://emacsredux.com/blog/2013/03/27/copy-filename-to-the-clipboard/
-;; Update : Ne fonctionne pas avec le code qui affiche le nom complet dans le title
-;;
-;; (defun copy-file-name-to-clipboard ()
-;;   "Copy the current buffer file name to the clipboard."
-;;   (interactive)
-;;   (let ((filename (if (equal major-mode 'dired-mode)
-;;                       default-directory
-;;                     (buffer-file-name))))
-;;     (when filename
-;;       (kill-new filename)
-;;       (message "Copied buffer file name '%s' to the clipboard." filename))))
-
 
 
 ;; Switch buffer with tab
@@ -1529,75 +1426,6 @@
 (global-set-key (kbd "C-M-n") 'forward-paragraph)
 (global-set-key (kbd "C-M-p") 'backward-paragraph)
         
-
-
-;; Permet de declencher l auto indent css apres avoir saisi une tabulation
-;;
-;; Source : http://emacs.stackexchange.com/a/12457
-;; (setq tab-always-indent 'complete)
-;; 
-;; (defvar completion-at-point-functions-saved nil)
-;; 
-;; (defun company-indent-for-tab-command (&optional arg)
-;;   (interactive "P")
-;;   (let ((completion-at-point-functions-saved completion-at-point-functions)
-;;         (completion-at-point-functions '(company-complete-common-wrapper)))
-;;     (indent-for-tab-command arg)))
-;; 
-;; (defun company-complete-common-wrapper ()
-;;   (let ((completion-at-point-functions completion-at-point-functions-saved))
-;;     (company-complete-common)))
-
-
-
-
-
-
-
-;; Move line up and down
-;; Besoin initial : pouvoir deplacer des lignes en haut ou en bas
-;; Source : http://emacsredux.com/blog/2013/04/02/move-current-line-up-or-down/
-;;
-;; Update : Mise a jour par le package drag-stuff ci dessous
-;;
-;;(defun move-line-up ()
-;;  "Move up the current line."
-;;  (interactive)
-;;  (transpose-lines 1)
-;;  (forward-line -2)
-;;  (indent-according-to-mode))
-;;
-;;(defun move-line-down ()
-;;  "Move down the current line."
-;;  (interactive)
-;;  (forward-line 1)
-;;  (transpose-lines 1)
-;;  (forward-line -1)
-;;  (indent-according-to-mode))
-
-
-;; (global-set-key [(meta up)] 'move-line-up)
-;; (global-set-key [(meta down)] 'move-line-down)
-
-
-;; (require 'drag-stuff)
-;; (global-set-key (kbd "M-<up>")   #'drag-stuff-up)
-;; (global-set-key (kbd "M-<down>") #'drag-stuff-down)
-
-
-;; (global-set-key [(control shift up)]  'move-line-up)
-;; (global-set-key [(control shift down)]  'move-line-down)
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1693,50 +1521,7 @@
 
 
 
-;; Smart tab
-;; Souhait initial : Depuis Sublime, fichier css, saisie de "ul" + TAB =
-;; Activation de emmet (construction du <ul></ul>)
-;; Source : http://emacs.stackexchange.com/a/10674
-;; (Je n ai pas regarde en detail ...)
-;; --> @todo comportement encore non identique, creuser un peu plus
-
-;; (require 'smart-tab)
-;; (global-smart-tab-mode 1)
-
-;; (defun add-emmet-expand-to-smart-tab-completions ()
-;;   ;; Add an entry for current major mode in
-;;   ;; `smart-tab-completion-functions-alist' to use
-;;   ;; `emmet-expand-line'.
-;;   (add-to-list 'smart-tab-completion-functions-alist
-;;                (cons major-mode #'emmet-expand-line)))
-;; 
-;; (require 'emmet-mode)
-;; (add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
-;; (add-hook 'sgml-mode-hook 'add-emmet-expand-to-smart-tab-completions)
-;; (add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
-;; (add-hook 'css-mode-hook 'add-emmet-expand-to-smart-tab-completions)
-
-
-
-
 ;; Web beautify
-;;(eval-after-load 'js2-mode
-;;  '(define-key js2-mode-map (kbd "C-c b") 'web-beautify-js))
-;;;; Or if you're using 'js-mode' (a.k.a 'javascript-mode')
-;;(eval-after-load 'js
-;;  '(define-key js-mode-map (kbd "C-c b") 'web-beautify-js))
-;;
-;;(eval-after-load 'json-mode
-;;  '(define-key json-mode-map (kbd "C-c b") 'web-beautify-js))
-;;
-;;(eval-after-load 'sgml-mode
-;;  '(define-key html-mode-map (kbd "C-c b") 'web-beautify-html))
-;;
-;;(eval-after-load 'web-mode
-;;  '(define-key web-mode-map (kbd "C-c b") 'web-beautify-html))
-;;
-;;(eval-after-load 'css-mode
-;;  '(define-key css-mode-map (kbd "C-c b") 'web-beautify-css))
 
 ;; Add path where "js-beautify" is in, add it to the emacs env PATH
  (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
@@ -1788,27 +1573,6 @@
       helm-ff-file-name-history-use-recentf t
       helm-echo-input-in-header-line t)
 
-;; (defun spacemacs//helm-hide-minibuffer-maybe ()
-;;   "Hide minibuffer in Helm session if we use the header line as input field."
-;;   (when (with-helm-buffer helm-echo-input-in-header-line)
-;;     (let ((ov (make-overlay (point-min) (point-max) nil nil t)))
-;;       (overlay-put ov 'window (selected-window))
-;;       (overlay-put ov 'face
-;;                    (let ((bg-color (face-background 'default nil)))
-;;                      `(:background ,bg-color :foreground ,bg-color)))
-;;       (setq-local cursor-type nil))))
-
-;; (add-hook 'helm-minibuffer-set-up-hook
-;;           'spacemacs//helm-hide-minibuffer-maybe)
-;;
-
-
-
-;; helm-ag conf
-;; https://github.com/syohex/emacs-helm-ag
-
-
-
 
 
 
@@ -1859,40 +1623,9 @@
 
 
 ;; Help with projectile
-; (global-set-key (kbd "C-c ù") 'helm-projectile)
-; (global-set-key (kbd "C-x )") 'helm-projectile)
-;;(global-set-key (kbd "C-c p") 'helm-projectile)
-; (global-set-key (kbd "C-c -") 'helm-projectile)
-; (global-set-key (kbd "C-c C-_") 'helm-projectile)
 
 (global-set-key (kbd "C-x C-p") 'helm-projectile)
 (global-set-key (kbd "C-M-p") 'helm-projectile-switch-project)
-
-;; Line number config (linum-mode)
-;;(add-hook 'prog-mode-hook 'linum-mode)
-;;(setq linum-format "%d ")
-;;(setq-default left-fringe-width 200)
-
-
-
-
-
-;; Fast line numbers
-;; Line number gutter in ncurses mode
-;; (Fix linum display bug in mac os x cocoa)
-;; Source : https://www.reddit.com/r/emacs/comments/25v0eo/you_emacs_tips_and_tricks/chlgnda/
-;; Note : nlinum ne fonctionne pas avec git guttern
-;; L activation des 2 modes semble corriger le probleme, mais ne semble pas etre une solution clean
-;; Update 2 : nlium non compatible avec gitter gutter / git gutter+
-;; Update 3 : nlinum et git)gutter-fringe sont compatible
-;; Update 4 : git-gutter-fringe non compatible avec svn, retour sur linum de base + git-gutter normal
-
-;; Fast line numbers
-;;(require 'nlinum)
-;;
-;;;; Line number gutter in ncurses mode
-;;(unless window-system
-;;  (setq nlinum-format "%d "))
 
 
 (global-nlinum-mode)
@@ -1914,22 +1647,6 @@
 ;; Projectile
 (projectile-global-mode)
 (add-hook 'ruby-mode-hook' projectile-mode)
-
-
-;; Projectile cache
-;; Read : http://batsov.com/projectile/
-;; Note : Des ralentissements ont etes constates a un moment donne,
-;; Pas sur que ca change quelque chose, mais a voir ...
-;;
-;; Update :
-;; Mac os x last version : l indexation tourne indefinnemment
-;; Mac os x snow leopard : ne fonctionne pas
-;; Laisser sans indexation et voir plus tard si on peut vraiment optimiser ou non
-
-;; (setq projectile-enable-caching t)
-
-;; Method d indexation native
-;; (setq projectile-indexing-method 'native)
 
 
 (setq projectile-enable-caching t)
@@ -1990,98 +1707,7 @@
 ;; Update : @todo doesn't seems to work... may be an other day !
 (global-auto-revert-mode t)
 
-;; Force some buffer to stay in the same window
-;;(same-window-buffer "*grep")
 
-
-;; git gutter fringe
-;; You need to install fringe-helper.el
-;; Update : non compatible avec svn
-;;
-;;(add-to-list 'load-path "~/.emacs.d/plugins/fringe-helper/fringe-helper.el")
-;;(require 'git-gutter-fringe)
-
-
-;;;; Git gutter
-;; (require 'git-gutter)
-;; ;;
-;; ;;;; If you enable global minor mode
-;; (global-git-gutter-mode t)
-
-;; ;; If you would like to use git-gutter.el and linum-mode
-;; (git-gutter:linum-setup)
-
-;; ;; Use for 'Git'(`git`), 'Mercurial'(`hg`), 'Bazaar'(`bzr`), and 'Subversion'(`svn`) projects
-
-
-;; ;; If you enable git-gutter-mode for some modes
-;; ;;(add-hook 'ruby-mode-hook 'git-gutter-mode)
-
-;; (global-set-key (kbd "C-x C-g") 'git-gutter)
-;; (global-set-key (kbd "C-x v =") 'git-gutter:popup-hunk)
-
-;; ;; Jump to next/previous hunk
-;; (global-set-key (kbd "C-x p") 'git-gutter:previous-hunk)
-;; (global-set-key (kbd "C-x n") 'git-gutter:next-hunk)
-
-;; ;; Stage current hunk
-;; (global-set-key (kbd "C-x v s") 'git-gutter:stage-hunk)
-
-;; ;; Revert current hunk
-;; (global-set-key (kbd "C-x v r") 'git-gutter:revert-hunk)
-
-
-
-
-
-
-;; ;;
-;; (set-face-background 'git-gutter:modified "#17a1be")
-;; (set-face-foreground 'git-gutter:modified "#17a1be")
-;; (set-face-background 'git-gutter:added "#92de37")
-;; (set-face-foreground 'git-gutter:added "#92de37")
-;; (set-face-background 'git-gutter:deleted "#f82167")
-;; (set-face-foreground 'git-gutter:deleted "#f82167")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-;; Mark current hunk
-
-
-;; Use for 'Git'(`git`), 'Mercurial'(`hg`), 'Bazaar'(`bzr`), and 'Subversion'(`svn`) projects
-; Git gutter+
-;;(global-git-gutter+-mode)
-;;(global-set-key (kbd "C-x g") 'git-gutter+-mode) ; Turn on/off in the current buffer
-;;(global-set-key (kbd "C-x G") 'global-git-gutter+-mode) ; Turn on/off globally
-;;
-;;(eval-after-load 'git-gutter+
-;;  '(progn
-;;     ;;; Jump between hunks
-;;     (define-key git-gutter+-mode-map (kbd "C-x n") 'git-gutter+-next-hunk)
-;;     (define-key git-gutter+-mode-map (kbd "C-x p") 'git-gutter+-previous-hunk)
-;;
-;;     ;;; Act on hunks
-;;     (define-key git-gutter+-mode-map (kbd "C-x v =") 'git-gutter+-show-hunk)
-;;     (define-key git-gutter+-mode-map (kbd "C-x r") 'git-gutter+-revert-hunks)
-;;     ;; Stage hunk at point.
-;;     ;; If region is active, stage all hunk lines within the region.
-;;     (define-key git-gutter+-mode-map (kbd "C-x t") 'git-gutter+-stage-hunks)
-;;     (define-key git-gutter+-mode-map (kbd "C-x c") 'git-gutter+-commit)
-;;     (define-key git-gutter+-mode-map (kbd "C-x C") 'git-gutter+-stage-and-commit)
-;;     (define-key git-gutter+-mode-map (kbd "C-x C-y") 'git-gutter+-stage-and-commit-whole-buffer)
-;;     (define-key git-gutter+-mode-map (kbd "C-x U") 'git-gutter+-unstage-whole-buffer)))
 
 
 
@@ -2098,38 +1724,6 @@
    '(progn
       (require 'tern-auto-complete)
       (tern-ac-setup)))
-
-
-
-
-
-
-
-
-;; diff-hl
-;; Source : http://emacs.stackexchange.com/a/21665
-;; Edit : interet ? pas sure
-;; Edit 2 : semble poser probleme ...
-;; (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
-
-
-
-;; Desktop+ Configuration
-;; Ajout de save mode auto
-;; (desktop-save-mode 1)
-
-
-
-
-
-;; Magit with svn
-;; (add-hook 'magit-mode-hook 'magit-svn-mode)
-
-
-;; psvn
-;; (require 'psvn)
-;; (load-file "./.emacs.d/package/vc-svn/vc-svn.el")
-
 
 
 (require 'neotree)
@@ -2258,28 +1852,6 @@
 
 
 
-; ;; workgroup
-; (require 'workgroups2)
-; ;; Your settings here
-
-; ;;(setq wg-session-load-on-start t)    ; default: (not (daemonp))
-
-; ;; Change prefix key (before activating WG)
-; (setq wg-prefix-key (kbd "C-c z"))
-
-; ;; Change workgroups session file
-; (setq wg-session-file "~/.emacs.d/.emacs_workgroups")
-
-; ;; Set your own keyboard shortcuts to reload/save/switch WGs:
-; ;; "s" == "Super" or "Win"-key, "S" == Shift, "C" == Control
-; (global-set-key (kbd "<pause>")     'wg-reload-session)
-; (global-set-key (kbd "C-S-<pause>") 'wg-save-session)
-; (global-set-key (kbd "s-z")         'wg-switch-to-workgroup)
-; (global-set-key (kbd "s-/")         'wg-switch-to-previous-workgroup)
-
-; (workgroups-mode 1)   ; put this one at the bottom of .emacs
-
-
 
 ;; What to do on Emacs exit / workgroups-mode exit?
 (setq wg-emacs-exit-save-behavior           'save)      ; Options: 'save 'ask nil
@@ -2294,10 +1866,6 @@
 (setq wg-mode-line-decor-left-brace "["
       wg-mode-line-decor-right-brace "]"  ; how to surround it
       wg-mode-line-decor-divider ":")
-
-
-
-
 
 
 ;; Copy current pwd into clipboard
@@ -2419,14 +1987,7 @@
 
 
 
-;; Auto highlight symbol
-;; Source : https://github.com/nschum/highlight-symbol.el/blob/master/highlight-symbol.el
-;;(require 'highlight-symbol)
-;;(global-set-key [(control f3)] 'highlight-symbol)
-;;(global-set-key [f3] 'highlight-symbol-next)
-;;(global-set-key [(shift f3)] 'highlight-symbol-prev)
-;;(global-set-key [(meta f3)] 'highlight-symbol-query-replace)
-;;(setq highlight-symbol-idle-delay 1.0)
+
 
 
 
@@ -2514,25 +2075,6 @@
 ;; Custom binding for backward-paragraph and foreword-paragraph
  
 
-;; Tentative d ajout de hook pour surcharge des racourcis deja utilise par un package
-;; ... sans succes -> copie du package depuis melpa vers le dossier plugins
-;;  - Mise a jour du fichier pour virer les 2 racourcis
-;; (global-set-key (kbd "C-M-p") 'backward-paragraph)
-;; (global-set-key (kbd "C-M-n") 'forward-paragraph)
-
-;; (add-hook 'dumb-jump-mode-hook
-;;     (lambda()
-;;         (global-set-key (kbd "C-M-p") 'backward-paragraph)
-;;         (global-set-key (kbd "C-M-n") 'forward-paragraph)
-;;     )
-;; )
-;;     
-;; (eval-after-load 'dumb-jump-mode'
-;;     (global-set-key (kbd "C-M-p") 'backward-paragraph)
-;; )
-;;
-
-
 ;; Ediff setup
 (winner-mode)
 
@@ -2553,13 +2095,6 @@
 ;; Add vc hooks to enable ediff checking
 (eval-after-load "vc-hooks"
          '(define-key vc-prefix-map "=" 'vc-ediff))
-
-
-
-
-
-
-
 
 
 
@@ -2725,126 +2260,11 @@
 
 
 
-
-
-
-
-;; ;; general
-;; (require 'general)
-;; ;;(setq my-leader1 "<SPC>")
-
-
-;; ;; bind a key globally in normal state; keymaps must be quoted
-;; (setq general-default-keymaps 'evil-normal-state-map)
-
-
-
-;; ;; bind gj and gk
-;; (general-define-key :prefix "<SPC>"
-;;          "ms" 'magit-status
-;; "pp" 'helm-projectile-switch-project
-;; "pf" 'helm-projectile-find-file
-;; "r" 'helm-swoop
-;; "e" 'swiper-helm ;; Alternative to helm-swoop, lets see with time which is better
-;; "ff" 'helm-find-files
-;; "fa" 'ag-files
-;; "fq" 'helm-ag
-
-;;          ;; -- window
-;; "ws" 'evil-window-split 
-;; "wv" 'evil-window-vsplit 
-;; "wc" 'evil-window-delete 
-;; "wd" 'delete-other-windows 
-;; "wh" 'evil-window-left 
-;; "wl" 'evil-window-right 
-;; "wk" 'evil-window-up 
-;; "wj" 'evil-window-down 
-
-;; ;; -- Shell
-;; "s" 'shell 
-
-;; ;; -- Jump
-;; "]" 'evil-jump-to-tag ;; Like in vim
-
-;; ;; -- VC
-;; "vDD" 'vc-dir
-;; "vDr" 'vc-dir-refresh
-;; "vd" 'vc-diff
-;; "ve" 'vc-ediff 
-;; "vrd" 'vc-root-diff 
-;; "vc" 'vc-next-action ;; Command for commit 80% of the time
-       
-;; ;; -- Buffer
-;; "bl" 'helm-mini
-;; "bb" 'list-buffers
-;; "bn" 'evil-buffer-new
-;; "bk" 'kill-this-buffer
-
-;; ;; "br" 'helm-recentf
-;; "br" 'revert-buffer
-;; )
-
-
-
-
 ;; Define some key chord.
-;; Use $ has a first "key" character for most of commmands
-(key-chord-define-global "$q" 'delete-trailing-whitespace)
 
-
-;; Helm - find - ...
-;; (key-chord-define-global "$p" 'helm-projectile) ;; Trop peut pratique, back to C-x C-p
-(key-chord-define-global "$r" 'helm-swoop)
-(key-chord-define-global "$f" 'helm-find-files)
-(key-chord-define-global "$a" 'helm-ag)
-(key-chord-define-global "ùa" 'ag-project-files)
-
-;; str
-(key-chord-define-global "r'" 'query-replace)
-(key-chord-define-global "r\"" 'replace-string)
-
-;; undo redo
+;; ;; undo redo
 (key-chord-define-global "ji" 'undo-tree-undo)
 (key-chord-define-global "jo" 'undo-tree-redo)
-;;(key-chord-define-global "jk" 'undo-tree-switch-branch)
-(key-chord-define-global "j;" 'undo-tree-visualize)
-
-
-
-;; VC key chords Magit / svn
-(key-chord-define-global "ùs" 'magit-status)
-(key-chord-define-global "`s" 'svn-status)
-
-;; Window
-(key-chord-define-global "$à" 'delete-window)
-(key-chord-define-global "$o" 'other-window)
-(key-chord-define-global "$&" 'delete-other-windows)
-(key-chord-define-global "$é" 'split-window-below)
-(key-chord-define-global "$\"" 'split-window-right)
-(key-chord-define-global "jk" 'ace-window)
-
-;; Buffer
-(key-chord-define-global "$b" 'helm-mini) ;; switch buffer (helm-mini) (c-x b)
-(key-chord-define-global "$k" 'kill-this-buffer)
-(key-chord-define-global "$l" 'ibuffer)
-(key-chord-define-global "$e" 'eval-buffer)
-
-;; Shell
-(key-chord-define-global "$s" 'shell)
-
-;; Window
-(key-chord-define-global "ùà" 'balance-windows)
-(key-chord-define-global "ù&" 'enlarge-window)
-(key-chord-define-global "ùé" 'shrink-window)
-
-(key-chord-define-global "ù\"" 'enlarge-window-horizontally)
-(key-chord-define-global "ù'" 'shrink-window-horizontally)
-
-
-
-    
-;;(key-chord-define evil-insert-state-map "fd" 'evil-normal-state)
-;;(key-chord-define evil-visual-state-map "fd" 'evil-normal-state)
 
 (setq evil-emacs-state-cursor '("#a7e236" bar))
 (setq evil-normal-state-cursor '("green" box))
@@ -2864,16 +2284,6 @@
 (require 'window-numbering)
 (window-numbering-mode)            
 
-;;persp-mode
-;; Desactive pour le moment chargement impossible depuis repertoire plugins
-;; @todo trouver pourquoi        
-;;(require 'persp-mode)
-;;(with-eval-after-load "persp-mode-autoloads"
-;;  (setq wg-morph-on nil) ;; switch off animation
-;;  (setq persp-autokill-buffer-on-remove 'kill-weak)
-;;  (add-hook 'after-init-hook #'(lambda () (persp-mode 1))))
-   
-        
 
 ;; Spaceline
 ;; Note : power line stylee, mais je n arrive pas a la faire fonctionner
@@ -2894,101 +2304,4 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-;; Define some key chord.
-;; Use $ has a first "key" character for most of commmands
-
-;; Goto char / expand region / goto line
-(key-chord-define-global "az" 'evil-ace-jump-char-mode)
-(key-chord-define-global "xc" 'er/expand-region)
-(key-chord-define-global "wx" 'er/contract-region)
-(key-chord-define-global "<w" 'mc/mark-all-like-this)
-
-(key-chord-define-global "$w" 'whitespace-mode)
-(key-chord-define-global "$q" 'delete-trailing-whitespace)
-
-
-;; Helm - find - ...
-;; (key-chord-define-global "$p" 'helm-projectile) ;; Trop peut pratique, back to C-x C-p
-(key-chord-define-global "$r" 'helm-swoop)
-(key-chord-define-global "$f" 'helm-find-files)
-(key-chord-define-global "$a" 'helm-ag)
-(key-chord-define-global "ùa" 'ag-project-files)
-
-;; str
-(key-chord-define-global "r'" 'query-replace)
-(key-chord-define-global "r\"" 'replace-string)
-
-
-
-;; undo redo
-(key-chord-define-global "ji" 'undo-tree-undo)
-(key-chord-define-global "jo" 'undo-tree-redo)
-;; (key-chord-define-global "jk" 'undo-tree-switch-branch)
-(key-chord-define-global "j;" 'undo-tree-visualize)
-
-
-
-;; VC key chords Magit / svn
-(key-chord-define-global "ùs" 'magit-status)
-(key-chord-define-global "`s" 'svn-status)
-
-;; Window
-(key-chord-define-global "$à" 'delete-window)
-(key-chord-define-global "$o" 'other-window)
-(key-chord-define-global "$&" 'delete-other-windows)
-(key-chord-define-global "$é" 'split-window-below)
-(key-chord-define-global "$\"" 'split-window-right)
-
-;; Buffer
-(key-chord-define-global "$b" 'helm-mini) ;; switch buffer (helm-mini) (c-x b)
-(key-chord-define-global "$k" 'kill-this-buffer)
-(key-chord-define-global "$l" 'ibuffer)
-(key-chord-define-global "$e" 'eval-buffer)
-
-;; Shell
-(key-chord-define-global "$s" 'shell)
-
-;; Window
-(key-chord-define-global "ùà" 'balance-windows)
-(key-chord-define-global "ù&" 'enlarge-window)
-(key-chord-define-global "ùé" 'shrink-window)
-
-(key-chord-define-global "ù\"" 'enlarge-window-horizontally)
-(key-chord-define-global "ù'" 'shrink-window-horizontally)
-
-
-;; Evil mode
-;;(key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
-;;(key-chord-define evil-emacs-state-map "jj" 'evil-normal-state)
-
-
-
-;; Company
-
-;; Helm company
-;;(eval-after-load 'company
-;;  '(progn
-;;     (define-key company-mode-map (kbd "C-:") 'helm-company)
-;;     (define-key company-active-map (kbd "C-:") 'helm-company)))
-
-;; (defun complete-or-indent ()
-;;     (interactive)
-;;     (if (company-manual-begin)
-;;         (company-complete-common)
-;;       (indent-according-to-mode)))
-                      
-
-;;(global-set-key (kbd "TAB") 'company-complete-common)
-;; (define-key company-active-map [tab] 'company-complete-common-or-cycle)
 
