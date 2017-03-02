@@ -80,11 +80,10 @@
 
 ;; smart pairing for all
 ;;(require 'smartparens-config)
-(setq sp-base-key-bindings 'paredit)
-(setq sp-autoskip-closing-pair 'always)
-(setq sp-hybrid-kill-entire-symbol nil)
+;; (setq sp-base-key-bindings 'paredit)
+;; (setq sp-autoskip-closing-pair 'always)
+;; (setq sp-hybrid-kill-entire-symbol nil)
 ;; (sp-use-paredit-bindings)
-
 
 ;; Colorize output of Compilation Mode, see
 ;; http://stackoverflow.com/a/3072831/355252
@@ -263,7 +262,7 @@
   anything
   async
   auto-complete
-  autopair
+  ;;autopair
   avy
   avy-menu
   ;;bookmark+
@@ -673,7 +672,7 @@
  '(magit-dispatch-arguments nil)
  '(package-selected-packages
    (quote
-    (nlinum-relative resize-window php-refactor-mode ac-php general swiper-helm popwin evil-surround window-numbering eyebrowse which-key spaceline evil edit-server neotree elfeed logview monokai-theme color-theme-sanityinc-tomorrow moe-theme material-theme noctilux-theme nlinum dumb-mode theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window web-mode magit helm-projectile helm)))
+    (nlinum-relative resize-window php-refactor-mode ac-php general swiper-helm popwin evil-surround window-numbering eyebrowse which-key spaceline evil edit-server neotree elfeed logview monokai-theme color-theme-sanityinc-tomorrow moe-theme material-theme noctilux-theme nlinum dumb-mode theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol zerodark-theme markdown-mode+ smart-tab emmet-mode company web-beautify multiple-cursors powerline other-frame-window desktop+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window web-mode magit helm-projectile helm)))
  '(safe-local-variable-values (quote ((no-byte-compile t))))
  '(yas-global-mode t))
 
@@ -1196,7 +1195,7 @@
   anything
   async
   auto-complete
-  autopair
+  ;; autopair
   avy
   avy-menu
   ;;bookmark+
@@ -1527,8 +1526,8 @@
 ;; Auto pair config
 ;; Souhait initial : En mode css : Fermeture auto d une accolade lors de l ouverture d une nouvelle (ST behaviour)
 ;; --> Fonctionne parfaitement :)
-;;
-(autopair-global-mode) ;; enable autopair in all buffer
+;; Update : C'est trop relouuuuuuuu !!!!!!!!!!!, desactivation.
+;; (autopair-global-mode) ;; enable autopair in all buffer
 
 
 
@@ -2212,27 +2211,27 @@
 
 
 
-;; Evil leader key commands
+;; -- Evil leader key commands
 (evil-leader/set-leader "<SPC>")
 
-;; M-x
+;; -- M-x
 (evil-leader/set-key "x" 'helm-M-x)
 
-;; magit
+;; -- magit
 (evil-leader/set-key "ms" 'magit-status)
 
-;; Projectile
+;; -- Projectile
 (evil-leader/set-key "pp" 'helm-projectile-switch-project)
 (evil-leader/set-key "pf" 'helm-projectile-find-file)
 
-;; (evil-leader/set-key "br" 'helm-recentf)
+;; -- (evil-leader/set-key "br" 'helm-recentf)
 (evil-leader/set-key "r" 'helm-swoop)
 (evil-leader/set-key "e" 'swiper-helm) ;; Alternative to helm-swoop, lets see with time which is better
 (evil-leader/set-key "ff" 'helm-find-files)
 (evil-leader/set-key "fa" 'helm-ag)
 (evil-leader/set-key "fq" 'ag-files)
 
-;; -- window
+;; -- window [w]
 (evil-leader/set-key "w" 'resize-window)
 ;; (evil-leader/set-key "ws" 'evil-window-split) 
 ;; (evil-leader/set-key "wv" 'evil-window-vsplit) 
@@ -2245,13 +2244,13 @@
 ;; (evil-leader/set-key "wk" 'evil-window-up) 
 ;; (evil-leader/set-key "wj" 'evil-window-down) 
 
-;; ;; -- Shell
+;; -- Shell [s]
 (evil-leader/set-key "ss" 'shell) 
 
-;; -- Jump
+;; -- Jump []]
 (evil-leader/set-key "]" 'evil-jump-to-tag) 
 
-;; -- VC
+;; -- VC [v]
 (evil-leader/set-key "vp" 'vc-dir)
 (evil-leader/set-key "vg" 'vc-dir-refresh)
 (evil-leader/set-key "vd" 'vc-diff)
@@ -2267,7 +2266,7 @@
 (evil-leader/set-key "vrd" 'vc-root-diff)
       
 
-;; -- Buffer
+;; -- Buffer [b]
 (evil-leader/set-key "bl" 'helm-mini)
 (evil-leader/set-key "bb" 'list-buffers)
 (evil-leader/set-key "bn" 'evil-buffer-new)
@@ -2275,13 +2274,17 @@
 (evil-leader/set-key "br" 'revert-buffer-no-confirm)
 
 
-;; -- Eval
-(evil-leader/set-key "be" 'eval-buffer)
+;; -- Eval [h]
+(evil-leader/set-key "he" 'eval-buffer) ;; Meaning : h for eval (e already used) [h]eval-[b]uffer
+(evil-leader/set-key "hs" 'eval-last-sexp) ;; Meaning : [h]val-last-[s]exp
 
 
-;; -- Web-mode
-(evil-leader/set-key "su" 'web-mode-surround)
 
+;; -- Web-mode [s–]
+(evil-leader/set-key "su" 'web-mode-surround) ;; Meaning ([s]: webmode (w is used for window)) [s][u]rround
+
+;; -- Linum [l]
+(evil-leader/set-key "lt" 'web-mode-surround) ;; Meaning "[l]inum [t]oggle"
 
 
 
