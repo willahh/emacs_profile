@@ -1,4 +1,4 @@
-; Pre-requis :
+;; Pre-requis :
 ;;  - Custom system keybinding :
 ;;   - Capslock remapped as ESCAPE key (Karabiner)
 ;;   - Key repeat faster : Delay until repeat : 200ms - Key repeat : 25ms (Karabiner)
@@ -58,14 +58,40 @@
 
 ;; disable backup
 (setq backup-inhibited t)
-
+ 
 ;; disable auto save
 (setq auto-save-default nil)
-
             
 ;; No backup file    
 (setq make-backup-files nil)
-    
+
+;; Always load newest byte code
+(setq load-prefer-newer t)
+
+;; reduce the frequency of garbage collection by making it happen on
+;; each 50MB of allocated data (the default is on every 0.76MB)
+(setq gc-cons-threshold 50000000)
+
+;; warn when opening files bigger than 100MB
+(setq large-file-warning-threshold 100000000)
+
+;; smart tab behavior - indent or complete
+(setq tab-always-indent 'complete)
+
+;; smart pairing for all
+;;(require 'smartparens-config)
+(setq sp-base-key-bindings 'paredit)
+(setq sp-autoskip-closing-pair 'always)
+(setq sp-hybrid-kill-entire-symbol nil)
+;; (sp-use-paredit-bindings)
+
+
+;; Colorize output of Compilation Mode, see
+;; http://stackoverflow.com/a/3072831/355252
+(require 'ansi-color)
+(add-hook 'compilation-filter-hook #'prelude-colorize-compilation-buffer)
+
+
 ;; Show white space
 ;; Source : http://ergoemacs.org/emacs/whitespace-mode.html
 ;; (global-whitespace-mode 1)
@@ -255,6 +281,7 @@
   tern
   tern-auto-complete
   nlinum
+  nlinum-relative
   ;;git-commit
   git-gutter
   ;;git-gutter+
@@ -585,12 +612,6 @@
 (global-set-key (kbd "M-n") 'move-line-region-down)
 
 
-;; Auto pair config
-;; Souhait initial : En mode css : Fermeture auto d une accolade lors de l ouverture d une nouvelle (ST behaviour)
-;; --> Fonctionne parfaitement :)
-;;
-(autopair-global-mode) ;; enable autopair in all buffer
-
 ;; Emmet
 (add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
 ;; (add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
@@ -652,7 +673,7 @@
  '(magit-dispatch-arguments nil)
  '(package-selected-packages
    (quote
-    (resize-window php-refactor-mode ac-php general swiper-helm popwin evil-surround window-numbering eyebrowse which-key spaceline evil edit-server neotree elfeed logview monokai-theme color-theme-sanityinc-tomorrow moe-theme material-theme noctilux-theme nlinum dumb-mode theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window web-mode magit helm-projectile helm)))
+    (nlinum-relative resize-window php-refactor-mode ac-php general swiper-helm popwin evil-surround window-numbering eyebrowse which-key spaceline evil edit-server neotree elfeed logview monokai-theme color-theme-sanityinc-tomorrow moe-theme material-theme noctilux-theme nlinum dumb-mode theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window web-mode magit helm-projectile helm)))
  '(safe-local-variable-values (quote ((no-byte-compile t))))
  '(yas-global-mode t))
 
@@ -933,7 +954,7 @@
 (global-set-key (kbd "C-c r") 'helm-swoop)
 (global-set-key (kbd "<C-268632091>") 'evil-jump-to-tag) ;; Note : default vim keybinding ctrl+]
 (add-hook 'after-init-hook 'global-company-mode)
-(setq tab-always-indent 'complete)
+
  
 
 ;; Tentative d ajout de hook pour surcharge des racourcis deja utilise par un package
@@ -1541,7 +1562,6 @@
 
 
 
-
 ;; helm
 (require 'helm)
 (require 'helm-config)
@@ -1628,9 +1648,13 @@
 (global-set-key (kbd "C-M-p") 'helm-projectile-switch-project)
 
 
-(global-nlinum-mode)
-;; (global-linum-mode)
-
+;; (global-nlinum-mode)
+(require 'nlinum-relative)
+(nlinum-relative-setup-evil)                    ;; setup for evil
+(add-hook 'prog-mode-hook 'nlinum-relative-mode)
+(setq nlinum-relative-redisplay-delay 0)      ;; delay
+(setq nlinum-relative-current-symbol "->")      ;; or "" for display current line number
+(setq nlinum-relative-offset 0)                 ;; 1 if you want 0, 2, 3...
 
 
 
@@ -2067,7 +2091,7 @@
 
 
 (add-hook 'after-init-hook 'global-company-mode)
-(setq tab-always-indent 'complete)
+
 
 
 
@@ -2270,8 +2294,12 @@
 ;; Define some key chord.
 
 ;; ;; undo redo
+(key-chord-define-global "xc" 'er/expand-region)
+(key-chord-define-global "wx" 'er/contract-region)
+(key-chord-define-global "<w" 'mc/mark-all-like-this)
 (key-chord-define-global "ji" 'undo-tree-undo)
 (key-chord-define-global "jo" 'undo-tree-redo)
+(key-chord-define-global "jk" 'ace-window)
 
 (setq evil-emacs-state-cursor '("#a7e236" bar))
 (setq evil-normal-state-cursor '("green" box))
