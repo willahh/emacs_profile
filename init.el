@@ -418,10 +418,7 @@
 ;; Default font
 ;; (set-default-font "Inconsolata-14") ;; Font face: Inconsolata, font-size: 14
 (set-face-attribute 'default nil :family "Inconsolata" :height 140 :weight 'normal)
-;;(load-file (expand-file-name "theme/willahh/willahh-theme.el"))
-;;(expand-file-name "theme/willahh/willahh-theme.el")
-
-(load-file "/Users/willahh/.emacs.d/theme/willahh/willahh-theme.el")
+;;(load-file "/Users/willahh/.emacs.d/theme/willahh/willahh-theme.el")
 ;; (set-face-attribute 'whitespace-space nil :background nil :foreground "gray30")
 
 
@@ -655,9 +652,10 @@
  '(magit-dispatch-arguments nil)
  '(package-selected-packages
    (quote
-    (resize-window php-refactor-mode ac-php general swiper-helm popwin evil-surround window-numbering eyebrowse which-key spaceline evil edit-server neotree elfeed logview monokai-theme color-theme-sanityinc-tomorrow moe-theme material-theme noctilux-theme nlinum crosshairs dumb-mode theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window web-mode magit helm-projectile helm)))
+    (resize-window php-refactor-mode ac-php general swiper-helm popwin evil-surround window-numbering eyebrowse which-key spaceline evil edit-server neotree elfeed logview monokai-theme color-theme-sanityinc-tomorrow moe-theme material-theme noctilux-theme nlinum dumb-mode theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window web-mode magit helm-projectile helm)))
  '(safe-local-variable-values (quote ((no-byte-compile t))))
  '(yas-global-mode t))
+
 
 
 
@@ -2682,7 +2680,7 @@
 ;; (evil-leader/set-key "wj" 'evil-window-down) 
 
 ;; ;; -- Shell
-(evil-leader/set-key "s" 'shell) 
+(evil-leader/set-key "ss" 'shell) 
 
 ;; -- Jump
 (evil-leader/set-key "]" 'evil-jump-to-tag) 
@@ -2695,6 +2693,7 @@
 (evil-leader/set-key "vve" 'vc-version-ediff) 
 (evil-leader/set-key "vvd" 'vc-version-diff) 
 (evil-leader/set-key "vrd" 'vc-root-diff)
+(evil-leader/set-key "vrl" 'vc-print-root-log)
 (evil-leader/set-key "vc" 'vc-next-action) ;; Command for commit 80% of the time
 (evil-leader/set-key "vrr" 'vc-revert)
 (evil-leader/set-key "vl" 'vc-print-log)
@@ -2712,6 +2711,11 @@
 
 ;; -- Eval
 (evil-leader/set-key "be" 'eval-buffer)
+
+
+;; -- Web-mode
+(evil-leader/set-key "su" 'web-mode-surround)
+
 
 
 
