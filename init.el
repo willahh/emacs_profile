@@ -107,12 +107,6 @@
   "Revert buffer without confirmation."
   (interactive) (revert-buffer t t))
 
-
-
-
-
-
-
 ;; Duplicate line
 ;; Source : http://stackoverflow.com/a/88828
 ;; Update : ajout retour debut de ligne
@@ -147,27 +141,17 @@
 (setq line-number-mode t)
 (setq column-number-mode t)
 
-
-
 ;; Replace selection by text
 ;; Utilisation du comportement des editeurs modernes :
 ;; Lorsque un selection est active, le fait de saisir un caractere declenche les actions suivantes :
 ;;   - delete selection, - insert command
 (delete-selection-mode 1)
 
-
 ;; Turn truncate lines off by default (like in many modern tools)
 (set-default 'truncate-lines t)
 
-
-
-
-
 ;; Add comment/uncomment key binding
 (global-set-key (kbd "C-x C-:") 'comment-or-uncomment-region)
-
-
-
 
 ;; Launch in fullscreen
 ;; Source: http://emacs.stackexchange.com/a/3008
@@ -175,28 +159,15 @@
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 (add-to-list 'default-frame-alist '(fullscreen . fullheight))
 
-
-
-
-
-
-
 ;; Enable gtags
 (setq load-path (cons "/usr/local/share/gtags" load-path))
 (autoload 'gtags-mode "gtags" "" t)
-
-
 
 (
  setq mac-option-key-is-meta nil
      mac-command-key-is-meta t
      mac-command-modifier 'meta
      mac-option-modifier 'none)
-
-
-
-
-
 
 ;; Duplicate line
 ;; Duplicate line (like in Sublime (CTRL+d in sublime - Ctrl+c d in Emacs))
@@ -211,18 +182,9 @@
 )
 (global-set-key (kbd "C-c d") 'duplicate-line)
 
-
-
-
-
-
-
-
 ;; bash profile
 (setq shell-file-name "bash")
 (setq shell-command-switch "-ic")
-
-
 
 ;;
 ;;
@@ -324,45 +286,6 @@
 ;;  workgNroups2
   ))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ;;
 ;; Besoin : Afficher le chemin du fichier complet dans le title de la frame courante
 ;; Source: http://stackoverflow.com/a/12009623
@@ -375,18 +298,10 @@
 ;; SHOW FILE PATH IN FRAME TITLE
 (setq-default frame-title-format "%b (%f)")
 
-
-
-
-
-
-
 ;; Liste des repositories pour trouver les packages
 ;; Add melpa to package repos
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/") t)
-
-
 
 ;; ??
 (when (< emacs-major-version 24)
@@ -405,13 +320,6 @@
   (unless (package-installed-p package)
     (package-install package)))
 
-
-
-
-
-
-
-
 ;; exec-path-from-shell
 ;; Source : https://github.com/purcell/exec-path-from-shell
 ;;
@@ -424,8 +332,6 @@
 (when (memq window-system '(mac ns))
  (exec-path-from-shell-initialize))
 
-
-
 ;; Don't prompt me when i want to kill a shell
 ;; Source : http://stackoverflow.com/a/2706660
 (require 'cl-lib)
@@ -433,12 +339,6 @@
   "Prevent annoying \"Active processes exist\" query when you quit Emacs."
   (cl-letf (((symbol-function #'process-list) (lambda ())))
     ad-do-it))
-
-    
-
-
-
-
 
 ;; wra Custom theme
 ;; Default font
@@ -457,18 +357,11 @@
 ;;(require 'powerline)
 ;;(powerline-center-theme)
 
-
-
-
 ;; Multiple cursor
 (require 'multiple-cursors-core)
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
-
-
-
-
 
 ;; File-path to clipboard
 ;; Besoin initial :
@@ -490,10 +383,6 @@
 ;; Switch buffer with tab
 (global-set-key [C-tab] 'next-buffer)
 (global-set-key [C-S-tab] 'previous-buffer)
-
-
-
-
 
 ;;
 ;; Half page scrolling script
@@ -693,7 +582,6 @@
 (add-hook 'ruby-mode-hook' projectile-mode)
 
 
-
 (setq projectile-enable-caching t)
 
 
@@ -749,7 +637,6 @@
 ;; Revert current hunk
 (global-set-key (kbd "C-x v r") 'git-gutter:revert-hunk)
 
-
 ;;
 (set-face-background 'git-gutter:modified "#ff7200")
 (set-face-foreground 'git-gutter:modified "#ff7200")
@@ -758,19 +645,8 @@
 (set-face-background 'git-gutter:deleted "#f82167")
 (set-face-foreground 'git-gutter:deleted "#f82167")
 
-
-
-
 ;; diff-hl
 (global-diff-hl-mode t)
-
-
-
-
-
-
-
-
 
 ;; tern
 ;; (autoload 'tern-mode "tern.el" nil t)
@@ -852,9 +728,6 @@
  ;; If there is more than one, they won't work right.
  )
 
-
-
-
 ;; Quickly copy/move file in Emacs Dired
 ;; Source : http://emacs.stackexchange.com/q/5603
 (setq dired-dwim-target t)
@@ -922,17 +795,11 @@
 (autoload 'svn-status "dsvn" "Run `svn status'." t)
 (autoload 'svn-update "dsvn" "Run `svn update'." t)
 
-
-
-
-
 ;; will keybindings
 ;; Define some keybindings
 (global-set-key (kbd "C-c r") 'helm-swoop)
 (global-set-key (kbd "<C-268632091>") 'evil-jump-to-tag) ;; Note : default vim keybinding ctrl+]
 (add-hook 'after-init-hook 'global-company-mode)
-
- 
 
 ;; Tentative d ajout de hook pour surcharge des racourcis deja utilise par un package
 ;; ... sans succes -> copie du package depuis melpa vers le dossier plugins
@@ -970,11 +837,6 @@
   ;; http://ergoemacs.org/emacs/whitespace-mode.html
   (setq whitespace-style (quote (face spaces tabs newline space-mark tab-mark newline-mark )))
   )
-
-
-
-
-
 
 ;; Duplicate line
 ;; Source : http://stackoverflow.com/a/88828
@@ -1026,9 +888,6 @@
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 (setq indent-line-function 'insert-tab)
-
-    
-    
     
     
 ;; un indent
@@ -2254,14 +2113,7 @@
 
 ;; -- toggle [t] Toggle + command 
 (evil-leader/set-key "tw" 'whitespace-mode) ;; Meaning "[l]inum [t]oggle                      "
-
-
-
-
-
-
-
-
+(evil-leader/set-key "tt" 'toggle-truncate-lines) ;; Meaning "[t]oggle-truncate-[lines
 
 ;; Define some key chord.
 
@@ -2279,9 +2131,6 @@
 (setq evil-insert-state-cursor '("red" bar))
 (setq evil-replace-state-cursor '("red" bar))
 (setq evil-operator-state-cursor '("red" hollow))
-
-
-
 
 ;; eyebrowse
 (require 'eyebrowse)    
