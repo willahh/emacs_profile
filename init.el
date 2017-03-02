@@ -1,4 +1,4 @@
-;; Pre-requis :
+; Pre-requis :
 ;;  - Custom system keybinding :
 ;;   - Capslock remapped as ESCAPE key (Karabiner)
 ;;   - Key repeat faster : Delay until repeat : 200ms - Key repeat : 25ms (Karabiner)
@@ -280,7 +280,8 @@
   smart-tab
   undo-tree
   web-beautify
-  yascroll
+  ;; yascroll
+  yasnippet
   web-mode
   with-editor
   monokai-theme
@@ -1086,7 +1087,7 @@
 ;;  smart-tab
   undo-tree
   web-beautify
-  yascroll
+  ;; yascroll
   web-mode
   with-editor
   monokai-theme
@@ -1614,6 +1615,10 @@
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 
+;; yasnippet
+(require 'yasnippet)
+(add-to-list 'yas-snippet-dirs "~/.emacs.d/elpa/yasnippet-20170216.1928/snippets/")
+(yas-global-mode 1)
 
  
 (defun my-web-mode-hook ()
