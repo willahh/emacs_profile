@@ -78,6 +78,9 @@
 ;; smart tab behavior - indent or complete
 (setq tab-always-indent 'complete)
 
+;; enable y/n answers
+(fset 'yes-or-no-p 'y-or-n-p)
+
 ;; smart pairing for all
 ;;(require 'smartparens-config)
 ;; (setq sp-base-key-bindings 'paredit)
