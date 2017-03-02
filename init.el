@@ -443,38 +443,16 @@
 ;; wra Custom theme
 ;; Default font
 ;; (set-default-font "Inconsolata-14") ;; Font face: Inconsolata, font-size: 14
-(set-face-attribute 'default nil :family "Inconsolata" :height 140 :weight 'normal)
-;;(load-file "/Users/willahh/.emacs.d/theme/willahh/willahh-theme.el")
-;; (set-face-attribute 'whitespace-space nil :background nil :foreground "gray30")
-
-
-
-
-
-
-;; Note : Cette partie ne s initalize pas,
-;; Il semblerait que le theme n est pas finis de se charger
-;; En revanhe aucun hook n existe
-(set-face-attribute 'region nil :background "#b3e33b")
-;;(add-to-list 'default-frame-alist '(foreground-color . "#272822"))
-;;(add-to-list 'default-frame-alist '(background-color . "#272822"))
-;; (add-to-list 'default-frame-alist '(background-color . "black"))
-
-
-
-
 (load-theme 'monokai t)
 (load-theme 'doom-molokai t)
 
-
-
-
-
-
-
+(set-face-attribute 'default nil :family "Inconsolata" :height 140 :weight 'normal)
+(set-face-attribute 'region nil :background "black")
+(set-face-attribute 'region nil :background "#1b1d1d" :foreground "#edd400") ;; Current line
+(add-to-list 'default-frame-alist '(background-color . "red"))
 
 ;; Yascroll
-(global-yascroll-bar-mode 1)
+;;(global-yascroll-bar-mode 1)
 
 ;;(require 'powerline)
 ;;(powerline-center-theme)
@@ -1366,17 +1344,7 @@
 
 
 
-;; Note : Cette partie ne s initalize pas,
-;; Il semblerait que le theme n est pas finis de se charger
-;; En revanhe aucun hook n existe
-(set-face-attribute 'region nil :background "#b3e33b")
-;;(add-to-list 'default-frame-alist '(foreground-color . "#272822"))
-;;(add-to-list 'default-frame-alist '(background-color . "#272822"))
-;; (add-to-list 'default-frame-alist '(background-color . "black"))
-
-
-
-
+    
 ;; Multiple cursor
 (require 'multiple-cursors-core)
 
@@ -2273,11 +2241,9 @@
 (evil-leader/set-key "bk" 'kill-this-buffer)
 (evil-leader/set-key "br" 'revert-buffer-no-confirm)
 
-
 ;; -- Eval [h]
 (evil-leader/set-key "he" 'eval-buffer) ;; Meaning : h for eval (e already used) [h]eval-[b]uffer
 (evil-leader/set-key "hs" 'eval-last-sexp) ;; Meaning : [h]val-last-[s]exp
-
 
 
 ;; -- Web-mode [s–]
@@ -2285,6 +2251,9 @@
 
 ;; -- Linum [l]
 (evil-leader/set-key "lt" 'web-mode-surround) ;; Meaning "[l]inum [t]oggle"
+
+;; -- toggle [t] Toggle + command 
+(evil-leader/set-key "tw" 'whitespace-mode) ;; Meaning "[l]inum [t]oggle                      "
 
 
 
