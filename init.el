@@ -2190,7 +2190,14 @@
 
 ;; Evil leader key commands
 (evil-leader/set-leader "<SPC>")
+
+;; M-x
+(evil-leader/set-key "x" 'helm-M-x)
+
+;; magit
 (evil-leader/set-key "ms" 'magit-status)
+
+;; Projectile
 (evil-leader/set-key "pp" 'helm-projectile-switch-project)
 (evil-leader/set-key "pf" 'helm-projectile-find-file)
 
