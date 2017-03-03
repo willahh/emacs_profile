@@ -81,6 +81,10 @@
 ;; enable y/n answers
 (fset 'yes-or-no-p 'y-or-n-p)
 
+;; Unbind default emacs search foreword / backward -----> Replaced by vim search
+(dolist (key '("\C-f" "\C-r"))
+(global-unset-key key))    
+
 ;; smart pairing for all
 ;;(require 'smartparens-config)
 ;; (setq sp-base-key-bindings 'paredit)
@@ -549,20 +553,7 @@
 (setq sml/theme 'dark)
 (sml/setup)
 
-
-;; Wind (Deplacement plus rapide entre les window)
-(when (fboundp 'windmove-default-keybindings)
-  (windmove-default-keybindings))
-;;
-(setq helm-autoresize-max-height 500)
-(setq helm-autoresize-min-height 500)
-(helm-autoresize-mode 1)
-
-
-
 (helm-mode 1)
-
-
 
 ;; Help with projectile
 (require 'helm-projectile)
