@@ -81,9 +81,6 @@
 ;; enable y/n answers
 (fset 'yes-or-no-p 'y-or-n-p)
 
-;; Unbind default emacs search foreword / backward -----> Replaced by vim search
-(dolist (key '("\C-s" "\C-r"))
-(global-unset-key key))    
 
 ;; Smooth scrolling
 (setq scroll-margin 5
@@ -127,7 +124,7 @@ scroll-step 1)
   (yank)
   (move-beginning-of-line 1)
 )
-(global-set-key (kbd "C-c C-d") 'duplicate-line)
+
 
 
 ;; Remove bip relou
@@ -156,9 +153,6 @@ scroll-step 1)
 
 ;; Turn truncate lines off by default (like in many modern tools)
 (set-default 'truncate-lines t)
-
-;; Add comment/uncomment key binding
-(global-set-key (kbd "C-x C-:") 'comment-or-uncomment-region)
 
 ;; Launch in fullscreen
 ;; Source: http://emacs.stackexchange.com/a/3008
@@ -517,7 +511,7 @@ scroll-step 1)
 
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
 (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB work in terminal
-(define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
+;;(define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
 
 (when (executable-find "curl")
   (setq helm-google-suggest-use-curl-p t))
@@ -800,18 +794,7 @@ scroll-step 1)
 (autoload 'svn-status "dsvn" "Run `svn status'." t)
 (autoload 'svn-update "dsvn" "Run `svn update'." t)
 
-;; will keybindings
-;; Define some keybindings
-(global-set-key (kbd "C-c r") 'helm-swoop)
-(global-set-key (kbd "<C-268632091>") 'evil-jump-to-tag) ;; Note : default vim keybinding ctrl+]
-(add-hook 'after-init-hook 'global-company-mode)
-
-;; Tentative d ajout de hook pour surcharge des racourcis deja utilise par un package
-;; ... sans succes -> copie du package depuis melpa vers le dossier plugins
-;;  - Mise a jour du fichier pour virer les 2 racourcis
-(global-set-key (kbd "C-M-p") 'backward-paragraph)
-(global-set-key (kbd "C-M-n") 'forward-paragraph)
-; @todo faire fonctionner gtags
+;; @todo faire fonctionner gtags
 ;; @todo faire fonctionner flycheck en mode javascript (base sur jscss )
 ;; @todo Faire fonctionner les snippets YAS 
 ;; @todo Afficher le mode whitespace uniquement sur la selectiono
@@ -845,18 +828,6 @@ scroll-step 1)
 
 ;; Duplicate line
 ;; Source : http://stackoverflow.com/a/88828
-
-(defun duplicate-line()
-  (interactive)
-  (move-beginning-of-line 1)
-  (kill-line)
-  (yank)
-  (open-line 1)
-  (next-line 1)
-  (yank)
-)
-(global-set-key (kbd "C-c C-d") 'duplicate-line)
-
 
 ;; Remove bip relou
 (setq visible-bell t)
@@ -894,28 +865,48 @@ scroll-step 1)
 (setq-default tab-width 4)
 (setq indent-line-function 'insert-tab)
 
+
+
+
+(defun keyboard-indent (&optional arg)
+  (interactive)
+  (let ((deactivate-mark nil)
+        (beg (or (and mark-active (region-beginning))
+                 (line-beginning-position)))
+        (end (or (and mark-active (region-end)) (line-end-position))))
+    (indent-rigidly beg end (* (or arg 1) tab-width))))
+
+(defun keyboard-unindent (&optional arg)
+  (interactive)
+  (keyboard-indent (* -1 (or arg 1))))
+
+
+
+
+
+
 ;; Always indent with 4 spaces
 ;; Source http://stackoverflow.com/a/70027
 
 
     
-;; un indent
-;; Shift tab to indent to left
-;; Source http://stackoverflow.com/a/2250155
-(global-set-key (kbd "<S-tab>") 'un-indent-by-removing-4-spaces)
-(defun un-indent-by-removing-4-spaces ()
-  "remove 4 spaces from beginning of of line"
-  (interactive)
-  (save-excursion
-    (save-match-data
-      (beginning-of-line)
-      ;; get rid of tabs at beginning of line
-      (when (looking-at "^\\s-+")
-        (untabify (match-beginning 0) (match-end 0)))
-      (when (looking-at "^    ")
-        (replace-match "")))))
+;; ;; un indent
+;; ;; Shift tab to indent to left
+;; ;; Source http://stackoverflow.com/a/2250155
+;; (global-set-key (kbd "<S-tab>") 'un-indent-by-removing-4-spaces)
+;; (defun un-indent-by-removing-4-spaces ()
+;;   "remove 4 spaces from beginning of of line"
+;;   (interactive)
+;;   (save-excursion
+;;     (save-match-data
+;;       (beginning-of-line)
+;;       ;; get rid of tabs at beginning of line
+;;       (when (looking-at "^\\s-+")
+;;         (untabify (match-beginning 0) (match-end 0)))
+;;       (when (looking-at "^    ")
+;;         (replace-match "")))))
 
-;; Launch in fullscreen
+;; ;; Launch in fullscreen
 ;; Source: http://emacs.stackexchange.com/a/3008
 ;; (add-to-list 'default-frame-alist '(fullscreen . maximized)
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
@@ -1370,7 +1361,8 @@ scroll-step 1)
 (global-set-key (kbd "C-c h") 'helm-command-prefix)
 (global-unset-key (kbd "C-x c"))
 
-(global-set-key (kbd "M-x") 'helm-M-x)
+;;(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "C-ù") 'helm-M-x)
 
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 (global-set-key (kbd "C-x b") 'helm-mini)
@@ -1379,7 +1371,7 @@ scroll-step 1)
 
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
 (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB work in terminal
-(define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
+;; (define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
 
 (when (executable-find "curl")
   (setq helm-google-suggest-use-curl-p t))
@@ -1522,6 +1514,7 @@ scroll-step 1)
   ("*shell*"        . (display-buffer-same-window . nil))
   ("*Buffer List*"  . (display-buffer-same-window . nil))
   ("*ag*"           . (display-buffer-same-window . nil))
+  ("*Backtrace*"    . (display-buffer-same-window . nil))
 ;;  ("*Help*"  . (display-buffer-same-window . nil))
   ))
 
@@ -1590,16 +1583,16 @@ scroll-step 1)
 (yas-global-mode 1)
 
  
-(defun my-web-mode-hook ()
-  "Hooks for Web mode."
-    (setq web-mode-markup-indent-offset 4)
-    (setq web-mode-css-indent-offset 4)
-    (setq web-mode-code-indent-offset 4)
-    (setq web-mode-indent-style 4)
-)
-(add-hook 'web-mode-hook  'my-web-mode-hook)
+;; (defun my-web-mode-hook ()
+;;   "Hooks for Web mode."
+;;     (setq web-mode-markup-indent-offset 4)
+;;     (setq web-mode-css-indent-offset 4)
+;;     (setq web-mode-code-indent-offset 4)
+;;     (setq web-mode-indent-style 4)
+;; )
+;; (add-hook 'web-mode-hook  'my-web-mode-hook)
 
-(setq web-mode-enable-current-element-highlight t)
+;; (setq web-mode-enable-current-element-highlight t)
 (setq web-mode-enable-current-column-highlight t)    
 
 (define-key web-mode-map (kbd "C-M-n") 'web-mode-tag-next)
@@ -1819,17 +1812,6 @@ scroll-step 1)
 
 
 
-;; will keybindings
-;; Define some keybindings
-(global-set-key (kbd "C-c r") 'helm-swoop)
-
-
-
-
-
-
-
-
 
 
 
@@ -1857,38 +1839,6 @@ scroll-step 1)
 ;; Max time delay between two presses of the same key to be considered a key chord.
 ;; Should normally be a little longer than `key-chord-two-keys-delay'.
 (setq key-chord-one-key-delay 0.2) ; default 0.2
-
-
-
-;; Evil mode
-;;(key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
-;;(key-chord-define evil-emacs-state-map "jj" 'evil-normal-state)
-
-
-
-;; Company
-
-;; Helm company
-;;(eval-after-load 'company
-;;  '(progn
-;;     (define-key company-mode-map (kbd "C-:") 'helm-company)
-;;     (define-key company-active-map (kbd "C-:") 'helm-company)))
-
-;; (defun complete-or-indent ()
-;;     (interactive)
-;;     (if (company-manual-begin)
-;;         (company-complete-common)
-;;       (indent-according-to-mode)))
-                      
-
-;;(global-set-key (kbd "TAB") 'company-complete-common)
-;; (define-key company-active-map [tab] 'company-complete-common-or-cycle)
-
-
-
-
-
-
 
 
 
@@ -2041,7 +1991,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (evil-leader/set-leader "<SPC>")
 
 ;; -- M-x
-(evil-leader/set-key "x" 'helm-M-x)
+(evil-leader/set-key "<SPC>" 'helm-M-x) ;; Double space for main emacs menu
 
 ;; -- magit
 (evil-leader/set-key "ms" 'magit-status)
@@ -2162,7 +2112,30 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 
 
 
+;; Unbind some default / package keybindings
+;; Disable emacs search (c-s / c-r) -> Replaced by evil search
+(dolist (key '("\M-x" "\M-z" "\M-v" "\C-s" "\C-r"))
+  (global-unset-key key))
 
 
 
+
+
+
+
+;; will keybindings
+;; Some default default modern editor keybinding the rescue !
+;; Don't blame me old school user !
+
+;; Define some keybindings
+(global-set-key (kbd "M-z") 'undo-tree-undo)
+(global-set-key [(meta shift z)] 'undo-tree-redo)
+;;(global-set-key (kbd "M-d") 'mc/mark-next-like-this) ;; Cannot be setted, because meta+d means delete word in emacs (and it is very usefull)
+(global-set-key [(meta shift d)] 'duplicate-line)
+
+(global-set-key (kbd "M-c") 'kill-ring-save)
+(global-set-key (kbd "M-v") 'yank)
+(global-set-key (kbd "M-x") 'kill-region)
+(global-set-key (kbd "M-a") 'mark-whole-buffer)
+(global-set-key [(meta /)] 'comment-or-uncomment-region)
 
