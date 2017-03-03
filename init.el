@@ -93,18 +93,6 @@
 (require 'ansi-color)
 (add-hook 'compilation-filter-hook #'prelude-colorize-compilation-buffer)
 
-
-;; Show white space
-;; Source : http://ergoemacs.org/emacs/whitespace-mode.html
-;; (global-whitespace-mode 1)
-(progn
- ;; Make whitespace-mode with very basic background coloring for whitespaces.
-  ;; http://ergoemacs.org/emacs/whitespace-mode.html
-  (setq whitespace-style (quote (face spaces tabs newline space-mark tab-mark newline-mark )))
-  )
-
-
-
 ;; Revert without confirm
 (defun revert-buffer-no-confirm ()
   "Revert buffer without confirmation."
@@ -892,7 +880,16 @@
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 (setq indent-line-function 'insert-tab)
-    
+
+;; Always indent with 4 spaces
+;; Source http://stackoverflow.com/a/70027
+(custom-set-variables
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(tab-stop-list (quote (4 8 12 16 20 24 28 32 36 40 44 48 52 56 60 64 68 72 76 80 84 88 92 96 100 104 108 112 116 120))))
+
     
 ;; un indent
 ;; Shift tab to indent to left
