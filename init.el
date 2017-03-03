@@ -1,12 +1,10 @@
 ; Pre-requis :
 ;;  - Custom system keybinding :
-;;   - Capslock remapped as ESCAPE key (Karabiner)
-;;   - Key repeat faster : Delay until repeat : 200ms - Key repeat : 25ms (Karabiner)
-;;
-;;      OsX Sierra :
-;;      defaults write -g InitialKeyRepeat -int 150 # normal minimum is 15 (225 ms)
-;;      defaults write -g KeyRepeat -int 25 # normal minimum is 2 (25 ms)
-;;
+;;     - All systems
+;;       - Capslock remapped to ESCAPE key
+;;       - Key press delay (until repeat) : 200ms
+;;       - Key press repeat : 25ms
+;;     - Mac OS X
 ;;  - Os : Mac Os X >= 10.11 (El Captain)
 ;;  - emacs >= 25
 ;;
@@ -92,25 +90,10 @@ scroll-step 1)
 (setq-default save-place t)
 (require 'saveplace)
 
-;; smart pairing for all
-;;(require 'smartparens-config)
-;; (setq sp-base-key-bindings 'paredit)
-;; (setq sp-autoskip-closing-pair 'always)
-;; (setq sp-hybrid-kill-entire-symbol nil)
-;; (sp-use-paredit-bindings)
-
-;; Colorize output of Compilation Mode, see
-;; http://stackoverflow.com/a/3072831/355252
-
-
-;;(require 'ansi-color)
-;; (add-hook 'compilation-filter-hook #'prelude-colorize-compilation-buffer) ;; bug
-
 ;; Revert without confirm
 (defun revert-buffer-no-confirm ()
   "Revert buffer without confirmation."
   (interactive) (revert-buffer t t))
-
 
 
 ;; Duplicate current line or region
@@ -134,7 +117,6 @@ there's a region, all lines that region covers will be duplicated."
         (insert region)
         (setq end (point)))
       (goto-char (+ origin (* (length region) arg) arg)))))
-
 
 
 ;; Remove bip relou
@@ -188,90 +170,50 @@ there's a region, all lines that region covers will be duplicated."
 (setq shell-file-name "bash")
 (setq shell-command-switch "-ic")
 
-;;
-;;
 ;; Package settings
-;;
-;;
-;; ?
-
 (require 'package)
 
 ;; Auto loader
 ;; Liste des packages a installer si repertoire non disponible
-(setq package-list '(
-  evil
-  ;; evil-easymotion
-  helm-cscope
-  general
-  php-refactor-mode
-  evil-leader
-  psvn
-  spaceline
-  skewer-mode
-  eyebrowse
-  swiper-helm
-  color-identifiers-mode
-;;  persp-mode
-  window-numbering
-  which-key
-  ;;archives
-  ;;dumb-jump
+(setq package-list '(          
+  evil    
+  evil-surround   
+  evil-visualstar
+  neotree
+  edit-server
   ag
-;;  logview
-;;  smooth-scroll
-;;  smooth-scroll
   key-chord
   helm-ag
   ace-jump-mode
   ace-window
-  ;;anaphora
   anything
   async
   auto-complete
-  ;;autopair
   avy
   avy-menu
-  ;;bookmark+
   company
   helm-company
   dash
-  ;; desktop+
-  ;;drag-stuff
+  desktop+
   emmet-mode
   epl
   expand-region
-;;  sizef
-;;  flymake-mode
-  ;;less-css-mode
   tern
   tern-auto-complete
-  nlinum
-  nlinum-relative
-  ;;git-commit
-  git-gutter
-  ;;git-gutter+
-  ;;git-gutter-fringe
-  diff-hl
   helm
   helm-anything
   helm-core
   helm-projectile
   js2-mode
-  ;;highlight-symbol
   magit
   magit-popup
- ;; magit-svn
-  ;;psvn
+  psvn
   markdown-mode+
   multiple-cursors
   other-frame-window
-  ;;neotree
-  ;;php+-mode
   php-mode
   pkg-info
   popup
-  powerline
   projectile
   rich-minority
   s
@@ -279,17 +221,34 @@ there's a region, all lines that region covers will be duplicated."
   dsvn
   exec-path-from-shell
   smart-mode-line
-  smart-tab
   undo-tree
   web-beautify
-  ;; yascroll
-  yasnippet
   web-mode
   with-editor
   monokai-theme
   doom-themes
   zerodark-theme
-;;  workgNroups2
+  nyan-mode
+  spaceline
+  skewer-mode
+  resize-window
+  general
+  php-refactor-mode
+  evil-leader
+  spaceline
+  skewer-mode
+  eyebrowse
+  swiper-helm
+  color-identifiers-mode
+  window-numbering
+  which-key
+  nlinum
+  nlinum-relative
+  git-gutter
+  diff-hl
+  powerline
+  smart-tab
+  yasnippet
   ))
 
 ;;
@@ -389,10 +348,6 @@ there's a region, all lines that region covers will be duplicated."
         (clipboard-kill-region (point-min) (point-max)))
       (message filename))))
 
-
-;; Switch buffer with tab
-(global-set-key [C-tab] 'next-buffer)
-(global-set-key [C-S-tab] 'previous-buffer)
 
 ;;
 ;; Half page scrolling script
@@ -503,7 +458,7 @@ there's a region, all lines that region covers will be duplicated."
 (global-set-key (kbd "C-c h") 'helm-command-prefix)
 (global-unset-key (kbd "C-x c"))
 
-(global-set-key (kbd "M-x") 'helm-M-x)
+
 
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 (global-set-key (kbd "C-x b") 'helm-mini)
@@ -549,7 +504,7 @@ there's a region, all lines that region covers will be duplicated."
  '(magit-dispatch-arguments nil)
  '(package-selected-packages
    (quote
-    (helm-cscope color-identifiers-mode nlinum-relative resize-window php-refactor-mode ac-php general swiper-helm popwin evil-surround window-numbering eyebrowse which-key spaceline evil edit-server neotree elfeed logview monokai-theme color-theme-sanityinc-tomorrow moe-theme material-theme noctilux-theme nlinum dumb-mode theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol zerodark-theme markdown-mode+ smart-tab emmet-mode company web-beautify multiple-cursors powerline other-frame-window desktop+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window web-mode magit helm-projectile helm)))
+    (evil-visualstar helm-cscope color-identifiers-mode nlinum-relative resize-window php-refactor-mode ac-php general swiper-helm popwin evil-surround window-numbering eyebrowse which-key spaceline evil edit-server neotree elfeed logview monokai-theme color-theme-sanityinc-tomorrow moe-theme material-theme noctilux-theme nlinum dumb-mode theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol zerodark-theme markdown-mode+ smart-tab emmet-mode company web-beautify multiple-cursors powerline other-frame-window desktop+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window web-mode magit helm-projectile helm)))
  '(safe-local-variable-values (quote ((no-byte-compile t))))
  '(tab-stop-list
    (quote
@@ -954,128 +909,6 @@ there's a region, all lines that region covers will be duplicated."
 (add-to-list 'load-path "~/.emacs.d/plugins/persp-mode")
     
 
-;; Auto loader
-;; Liste des packages a installer si repertoire non disponible
-(setq package-list '(
-  evil                      
-  evil-surround
-  nyan-mode
-  spaceline
-  skewer-mode
-  resize-window
-  ;;archives
-  neotree
-  edit-server
-  ;;dumb-jump
-  ag
-;;  logview
-;;  smooth-scroll
-;;  smooth-scroll
-  key-chord
-  helm-ag
-  ace-jump-mode
-
-  ace-window
-  ;;anaphora
-  anything
-  async
-  auto-complete
-  ;; autopair
-  avy
-  avy-menu
-  ;;bookmark+
-  company
-  helm-company
-  dash
-  desktop+
-  ;;drag-stuff
-  emmet-mode
-  epl
-  expand-region
-;;  sizef
-;;  flymake-mode
-  ;;less-css-mode
-  tern
-  tern-auto-complete
-  ;;nlinum
-  ;;git-commit
-  ;; git-gutter
-  ;;git-gutter+
-  ;;git-gutter-fringe
-  helm
-  helm-anything
-  helm-core
-  helm-projectile
-  js2-mode
-  ;;highlight-symbol
-  magit
-  magit-popup
- ;; magit-svn
- psvn
-  markdown-mode+
-  multiple-cursors
-  other-frame-window
-  ;;neotree
-  ;;php+-mode
-  ;;tabbar
-  php-mode
-  pkg-info
-  popup
-  projectile
-  rich-minority
-  s
-  helm-swoop
-  dsvn
-  exec-path-from-shell
-  smart-mode-line
-;;  smart-tab
-  undo-tree
-  web-beautify
-  ;; yascroll
-  web-mode
-  with-editor
-  monokai-theme
-  doom-themes
-  zerodark-theme
-;;  workgNroups2
-  ))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 ;;
@@ -1343,20 +1176,8 @@ there's a region, all lines that region covers will be duplicated."
 ;; The default "C-x c" is quite close to "C-x C-c", which quits Emacs.
 ;; Changed to "C-c h". Note: We must set "C-c h" globally, because we
 ;; cannot change `helm-command-prefix-key' once `helm-config' is loaded.
-(global-set-key (kbd "C-c h") 'helm-command-prefix)
-(global-unset-key (kbd "C-x c"))
-
-;;(global-set-key (kbd "M-x") 'helm-M-x)
-(global-set-key (kbd "M-ù") 'helm-M-x)
-
-(global-set-key (kbd "C-x C-f") 'helm-find-files)
-(global-set-key (kbd "C-x b") 'helm-mini)
 ;; (global-set-key (kbd "M-y") 'helm-show-kill-ring) ;; Update : Pas forcement tip top
 (helm-autoresize-mode t)
-
-(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
-(define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB work in terminal
-;; (define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
 
 (when (executable-find "curl")
   (setq helm-google-suggest-use-curl-p t))
@@ -1913,6 +1734,9 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (require 'evil-surround)
 (global-evil-surround-mode 1)
 
+;; evil-visualstar
+(global-evil-visualstar-mode)
+
 ;; Cursor state
 (setq evil-emacs-state-cursor '("#a7e236" bar))
 (setq evil-normal-state-cursor '("#a7e236" box))
@@ -2113,6 +1937,18 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;; Some default default modern editor keybinding the rescue !
 ;; Don't blame me old school user !
 
+(global-set-key (kbd "C-c h") 'helm-command-prefix)
+(global-unset-key (kbd "C-x c"))
+
+;;(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "≈") 'helm-M-x) ;; Correspond to [right cmd + x] (mac os x) with right cmd and right alt switch
+
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+(global-set-key (kbd "C-x b") 'helm-mini)
+
+(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
+(define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB work in terminal
+
 ;; Define some keybindings
 (global-set-key (kbd "M-z") 'undo-tree-undo)
 (global-set-key (kbd "<C-escape>") 'keyboard-quit)
@@ -2120,11 +1956,24 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;;(global-set-key (kbd "M-d") 'mc/mark-next-like-this) ;; Cannot be setted, because meta+d means delete word in emacs (and it is very usefull)
 ;; (global-set-key [(meta shift d)] 'duplicate-line)
 (global-set-key [(meta shift d)] 'duplicate-current-line-or-region)
+(global-set-key (kbd "C-x C-d") 'duplicate-current-line-or-region)
 
 (global-set-key (kbd "C-w") 'resize-window)
-(global-set-key (kbd "M-v") 'yank)
+
+;; copy cut paste
+(global-set-key (kbd "M-c") 'kill-ring-save)
 (global-set-key (kbd "M-x") 'kill-region)
-(global-set-key (kbd "M-a") 'mark-whole-buffer)
+(global-set-key (kbd "M-v") 'yank)
+
+;; (global-set-key (kbd "M-a") 'mark-whole-buffer)
 (global-set-key [(meta /)] 'comment-or-uncomment-region)
  
+;; Switch buffer with tab
+(global-set-key [C-tab] 'next-buffer)
+(global-set-key [C-S-tab] 'previous-buffer)
 
+;; Switch between window
+(global-set-key [C-M-tab] 'other-window)
+
+;; color theme
+(set-face-attribute 'lazy-highlight nil :background "green")
