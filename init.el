@@ -119,6 +119,17 @@ there's a region, all lines that region covers will be duplicated."
       (goto-char (+ origin (* (length region) arg) arg)))))
 
 
+;; Prompt Before Closing Emacs
+;; Source : http://nileshk.com/2009/06/13/prompt-before-closing-emacs.html
+(defun ask-before-closing ()
+  "Ask whether or not to close, and then close if y was pressed"
+  (interactive)
+  (if (y-or-n-p (format "Are you sure you want to exit Emacs? "))
+      (if (< emacs-major-version 22)
+          (save-buffers-kill-terminal)
+        (save-buffers-kill-emacs))
+    (message "Canceled exit")))
+
 ;; Remove bip relou
 (setq visible-bell t)
 
@@ -1783,7 +1794,8 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;; Don't blame me old school user !
 
 (global-set-key (kbd "M-s") 'save-buffer)
-(global-set-key (kbd "M-q") 'save-buffers-kill-terminal)
+;;(global-set-key (kbd "M-q") 'save-buffers-kill-terminal)
+(global-set-key (kbd "M-q") 'ask-before-closing)
 (global-set-key (kbd "C-c h") 'helm-command-prefix)
 
 ;;(global-set-key (kbd "M-x") 'helm-M-x)
