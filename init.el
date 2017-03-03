@@ -111,19 +111,29 @@ scroll-step 1)
   "Revert buffer without confirmation."
   (interactive) (revert-buffer t t))
 
-;; Duplicate line
-;; Source : http://stackoverflow.com/a/88828
-;; Update : ajout retour debut de ligne
-(defun duplicate-line()
-  (interactive)
-  (move-beginning-of-line 1)
-  (kill-line)
-  (yank)
-  (open-line 1)
-  (next-line 1)
-  (yank)
-  (move-beginning-of-line 1)
-)
+
+
+;; Duplicate current line or region
+;; source : http://rejeep.github.io/emacs/elisp/2010/03/11/duplicate-current-line-or-region-in-emacs.html
+(defun duplicate-current-line-or-region (arg)
+  "Duplicates the current line or region ARG times.
+If there's no region, the current line will be duplicated. However, if
+there's a region, all lines that region covers will be duplicated."
+  (interactive "p")
+  (let (beg end (origin (point)))
+    (if (and mark-active (> (point) (mark)))
+        (exchange-point-and-mark))
+    (setq beg (line-beginning-position))
+    (if mark-active
+        (exchange-point-and-mark))
+    (setq end (line-end-position))
+    (let ((region (buffer-substring-no-properties beg end)))
+      (dotimes (i arg)
+        (goto-char end)
+        (newline)
+        (insert region)
+        (setq end (point)))
+      (goto-char (+ origin (* (length region) arg) arg)))))
 
 
 
@@ -169,19 +179,6 @@ scroll-step 1)
      mac-command-key-is-meta t
      mac-command-modifier 'meta
      mac-option-modifier 'none)
-
-;; Duplicate line
-;; Duplicate line (like in Sublime (CTRL+d in sublime - Ctrl+c d in Emacs))
-(defun duplicate-line()
-  (interactive)
-  (move-beginning-of-line 1)
-  (kill-line)
-  (yank)
-  (open-line 1)
-  (next-line 1)
-  (yank)
-)
-(global-set-key (kbd "C-c d") 'duplicate-line)
 
 ;; bash profile
 (setq shell-file-name "bash")
@@ -923,19 +920,6 @@ scroll-step 1)
      mac-option-modifier 'none)
 
 
-;; Duplicate line
-;; Duplicate line (like in Sublime (CTRL+d in sublime - Ctrl+c d in Emacs))
-(defun duplicate-line()
-  (interactive)
-  (move-beginning-of-line 1)
-  (kill-line)
-  (yank)
-  (open-line 1)
-  (next-line 1)
-  (yank)
-)
-(global-set-key (kbd "C-c d") 'duplicate-line)
-
 
 
 
@@ -1362,7 +1346,7 @@ scroll-step 1)
 (global-unset-key (kbd "C-x c"))
 
 ;;(global-set-key (kbd "M-x") 'helm-M-x)
-(global-set-key (kbd "C-ù") 'helm-M-x)
+(global-set-key (kbd "M-ù") 'helm-M-x)
 
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 (global-set-key (kbd "C-x b") 'helm-mini)
@@ -2131,7 +2115,8 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (global-set-key (kbd "M-z") 'undo-tree-undo)
 (global-set-key [(meta shift z)] 'undo-tree-redo)
 ;;(global-set-key (kbd "M-d") 'mc/mark-next-like-this) ;; Cannot be setted, because meta+d means delete word in emacs (and it is very usefull)
-(global-set-key [(meta shift d)] 'duplicate-line)
+;; (global-set-key [(meta shift d)] 'duplicate-line)
+(global-set-key [(meta shift d)] 'duplicate-current-line-or-region)
 
 (global-set-key (kbd "M-c") 'kill-ring-save)
 (global-set-key (kbd "M-v") 'yank)
