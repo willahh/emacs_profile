@@ -104,8 +104,10 @@ scroll-step 1)
 
 ;; Colorize output of Compilation Mode, see
 ;; http://stackoverflow.com/a/3072831/355252
-(require 'ansi-color)
-(add-hook 'compilation-filter-hook #'prelude-colorize-compilation-buffer)
+
+
+;;(require 'ansi-color)
+;; (add-hook 'compilation-filter-hook #'prelude-colorize-compilation-buffer) ;; bug
 
 ;; Revert without confirm
 (defun revert-buffer-no-confirm ()
@@ -204,6 +206,8 @@ scroll-step 1)
 ;; Liste des packages a installer si repertoire non disponible
 (setq package-list '(
   evil
+  ;; evil-easymotion
+  helm-cscope
   general
   php-refactor-mode
   evil-leader
@@ -550,7 +554,7 @@ scroll-step 1)
  '(magit-dispatch-arguments nil)
  '(package-selected-packages
    (quote
-    (color-identifiers-mode nlinum-relative resize-window php-refactor-mode ac-php general swiper-helm popwin evil-surround window-numbering eyebrowse which-key spaceline evil edit-server neotree elfeed logview monokai-theme color-theme-sanityinc-tomorrow moe-theme material-theme noctilux-theme nlinum dumb-mode theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol zerodark-theme markdown-mode+ smart-tab emmet-mode company web-beautify multiple-cursors powerline other-frame-window desktop+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window web-mode magit helm-projectile helm)))
+    (helm-cscope color-identifiers-mode nlinum-relative resize-window php-refactor-mode ac-php general swiper-helm popwin evil-surround window-numbering eyebrowse which-key spaceline evil edit-server neotree elfeed logview monokai-theme color-theme-sanityinc-tomorrow moe-theme material-theme noctilux-theme nlinum dumb-mode theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol zerodark-theme markdown-mode+ smart-tab emmet-mode company web-beautify multiple-cursors powerline other-frame-window desktop+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window web-mode magit helm-projectile helm)))
  '(safe-local-variable-values (quote ((no-byte-compile t))))
  '(tab-stop-list
    (quote
@@ -967,6 +971,8 @@ scroll-step 1)
 
 (require 'package)
 
+;; cscope
+(require 'helm-cscope)
 
 ;; Add to list
 (add-to-list 'load-path "~/.emacs.d/plugins/persp-mode")
@@ -1515,6 +1521,7 @@ scroll-step 1)
   ("*vc-dir*"       . (display-buffer-same-window . nil))
   ("*shell*"        . (display-buffer-same-window . nil))
   ("*Buffer List*"  . (display-buffer-same-window . nil))
+  ("*ag*"           . (display-buffer-same-window . nil))
 ;;  ("*Help*"  . (display-buffer-same-window . nil))
   ))
 
