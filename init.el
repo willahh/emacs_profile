@@ -82,9 +82,11 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 
 ;; Unbind default emacs search foreword / backward -----> Replaced by vim search
-(dolist (key '("\C-f" "\C-r"))
+(dolist (key '("\C-s" "\C-r"))
 (global-unset-key key))    
 
+
+        
 ;; smart pairing for all
 ;;(require 'smartparens-config)
 ;; (setq sp-base-key-bindings 'paredit)
@@ -1954,6 +1956,28 @@
 ;; Remove all keybindings from insert-state keymap (insert mode behavior like emacs) 
 (setcdr evil-insert-state-map nil)
 
+;next-hunk; Single escape to quit buffer
+;; esc quits
+;; Source : https://juanjoalvarez.net/es/detail/2014/sep/19/vim-emacsevil-chaotic-migration-guide/x    
+(defun minibuffer-keyboard-quit ()
+  "Abort recursive edit.
+In Delete Selection mode, if the mark is active, just deactivate it;
+then it takes a second \\[keyboard-quit] to abort the minibuffer."
+  (interactive)
+  (if (and delete-selection-mode transient-mark-mode mark-active)
+      (setq deactivate-mark  t)
+    (when (get-buffer "*Completions*") (delete-windows-on "*Completions*"))
+    (abort-recursive-edit)))
+(define-key evil-normal-state-map [escape] 'keyboard-quit)
+(define-key evil-visual-state-map [escape] 'keyboard-quit)
+(define-key minibuffer-local-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-ns-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-completion-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-must-match-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-isearch-map [escape] 'minibuffer-keyboard-quit)
+(global-set-key [escape] 'evil-exit-emacs-state)
+
+
 ;; Escape (tab ;)) key toggle for between stat
 (define-key evil-insert-state-map [escape] 'evil-normal-state)
 (define-key evil-emacs-state-map [escape] 'evil-normal-state)
@@ -2103,6 +2127,11 @@
 
 ;; -- Web-mode [s–]
 (evil-leader/set-key "su" 'web-mode-surround) ;; Meaning ([s]: webmode (w is used for window)) [s][u]rround
+(evil-leader/set-key "j" 'web-mode-tag-next)
+(evil-leader/set-key "k" 'web-mode-tag-previous)
+(evil-leader/set-key "n" 'git-gutter:next-hunk)
+(evil-leader/set-key "p" 'git-gutter:previous-hunk)
+
 
 ;; -- Linum [l]
 (evil-leader/set-key "lt" 'web-mode-surround) ;; Meaning "[l]inum [t]oggle"
