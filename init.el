@@ -2099,8 +2099,9 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 
 ;; Unbind some default / package keybindings
 ;; Disable emacs search (c-s / c-r) -> Replaced by evil search
-(dolist (key '("\M-x" "\M-z" "\M-v" "\C-s" "\C-r"))
+(dolist (key '("\M-x" "\M-z" "\M-v" "\C-s" "\C-r" "\C-g" "\C-w"))
   (global-unset-key key))
+
 
 
 
@@ -2114,14 +2115,16 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 
 ;; Define some keybindings
 (global-set-key (kbd "M-z") 'undo-tree-undo)
+(global-set-key (kbd "<C-escape>") 'keyboard-quit)
 (global-set-key [(meta shift z)] 'undo-tree-redo)
 ;;(global-set-key (kbd "M-d") 'mc/mark-next-like-this) ;; Cannot be setted, because meta+d means delete word in emacs (and it is very usefull)
 ;; (global-set-key [(meta shift d)] 'duplicate-line)
 (global-set-key [(meta shift d)] 'duplicate-current-line-or-region)
 
-(global-set-key (kbd "M-c") 'kill-ring-save)
+(global-set-key (kbd "C-w") 'resize-window)
 (global-set-key (kbd "M-v") 'yank)
 (global-set-key (kbd "M-x") 'kill-region)
 (global-set-key (kbd "M-a") 'mark-whole-buffer)
 (global-set-key [(meta /)] 'comment-or-uncomment-region)
+ 
 
