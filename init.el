@@ -140,6 +140,10 @@ there's a region, all lines that region covers will be duplicated."
 ;; Remove bip relou
 (setq visible-bell t)
 
+;; Remove big yellow warning relou
+(setq visible-bell nil)
+(setq ring-bell-function 'ignore)
+
 ;; Auto refresh buffers
 (global-auto-revert-mode 1)
 
@@ -825,9 +829,6 @@ there's a region, all lines that region covers will be duplicated."
 
 ;; Duplicate line
 ;; Source : http://stackoverflow.com/a/88828
-
-;; Remove bip relou
-(setq visible-bell t)
 
 ;; Auto refresh buffers
 (global-auto-revert-mode 1)
