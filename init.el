@@ -2140,8 +2140,10 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (evil-leader/set-key "su" 'web-mode-surround) ;; Meaning ([s]: webmode (w is used for window)) [s][u]rround
 (evil-leader/set-key "j" 'web-mode-tag-next)
 (evil-leader/set-key "k" 'web-mode-tag-previous)
-(evil-leader/set-key "n" 'git-gutter:next-hunk)
-(evil-leader/set-key "p" 'git-gutter:previous-hunk)
+(evil-leader/set-key "," 'git-gutter:next-hunk)
+(evil-leader/set-key ";" 'git-gutter:previous-hunk)
+(evil-leader/set-key "gr" 'git-gutter:revert-hunk)
+(evil-leader/set-key "g" 'git-gutter:revert-hunk)
 
 
 ;; -- Linum [l]
