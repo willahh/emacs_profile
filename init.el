@@ -85,6 +85,10 @@
 (dolist (key '("\C-s" "\C-r"))
 (global-unset-key key))    
 
+;; Smooth scrolling
+(setq scroll-margin 5
+scroll-conservatively 9999
+scroll-step 1)
 
         
 ;; smart pairing for all
