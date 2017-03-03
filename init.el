@@ -426,8 +426,8 @@ scroll-step 1)
 
 
 ;; Custom binding for backward-paragraph and foreword-paragraph
-(global-set-key (kbd "C-M-n") 'forward-paragraph)
-(global-set-key (kbd "C-M-p") 'backward-paragraph)
+;; (global-set-key (kbd "C-M-n") 'forward-paragraph)
+;; (global-set-key (kbd "C-M-p") 'backward-paragraph)
 ;; Move line or region up and down update
 ;; Source : https://www.emacswiki.org/emacs/MoveLineRegion
 
@@ -911,60 +911,21 @@ scroll-step 1)
       (when (looking-at "^    ")
         (replace-match "")))))
 
-;
-;
-; Add comment/uncomment key binding
-(global-set-key (kbd "C-x C-:") 'comment-or-uncomment-region)
-
-
-
-
 ;; Launch in fullscreen
 ;; Source: http://emacs.stackexchange.com/a/3008
 ;; (add-to-list 'default-frame-alist '(fullscreen . maximized)
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 (add-to-list 'default-frame-alist '(fullscreen . fullheight))
 
-
-
-
-
-
-
 ;; Enable gtags
 (setq load-path (cons "/usr/local/share/gtags" load-path))
 (autoload 'gtags-mode "gtags" "" t)
-
-
-
-
-
-
-;; Set meta key to command
-;;; I prefer cmd key for meta
-;;
-;; Update wra : cmd key is disabled with this,
-;; Copy paste from system to emacs is not possible with this.
-;;
-;; Update wra 2 :
-;;  bracket {} cant be typed if alt is used as meta key...
-;;
-;;
-;; (setq mac-option-key-is-meta nil
-;;      mac-command-key-is-meta t
-;;      mac-command-modifier 'meta
-;;      mac-option-modifier 'none)
-
 
 (
  setq mac-option-key-is-meta nil
      mac-command-key-is-meta t
      mac-command-modifier 'meta
      mac-option-modifier 'none)
-
-
-
-
 
 
 ;; Duplicate line
@@ -2152,8 +2113,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;; -- toggle [t] Toggle + command 
 (evil-leader/set-key "tw" 'whitespace-mode) ;; Meaning "[l]inum [t]oggle                      "
 (evil-leader/set-key "tt" 'toggle-truncate-lines) ;; Meaning "[t]oggle-truncate-[lines
-
-;; Define some key chord.
+(evil-leader/set-key "tc" 'comment-or-uncomment-region) ;; Meaning [t]oggle [c]omment
 
 ;; ;; undo redo
 (key-chord-define-global "xc" 'er/expand-region)
