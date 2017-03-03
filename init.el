@@ -1224,19 +1224,12 @@ there's a region, all lines that region covers will be duplicated."
 (when (fboundp 'windmove-default-keybindings)
   (windmove-default-keybindings))
 
-
-
-
 ;;
 (setq helm-autoresize-max-height 500)
 (setq helm-autoresize-min-height 500)
 (helm-autoresize-mode 1)
 
-
-
 (helm-mode 1)
-
-
 
 ;; Help with projectile
 
@@ -1252,67 +1245,27 @@ there's a region, all lines that region covers will be duplicated."
 (setq nlinum-relative-current-symbol "->")      ;; or "" for display current line number
 (setq nlinum-relative-offset 0)                 ;; 1 if you want 0, 2, 3...
 
-
-
-
-
-
-
-
-
-
-
-
-
 ;; Projectile
 (projectile-global-mode)
 (add-hook 'ruby-mode-hook' projectile-mode)
 
-
 (setq projectile-enable-caching t)
-
 
 ;; Using Projectile everywhere
 (setq projectile-require-project-root nil)
 
-
-
-;; Bookmarks
-;; (require 'bookmark+)
-
-
-
-
-
-
-
 ;; Auto complete
 (global-auto-complete-mode t)
-
-;; ace-window
-;; (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
-
-
 
 (global-set-key (kbd "C-'") 'avy-goto-char-2)
 (global-set-key (kbd "M-g f") 'avy-goto-line)
 (global-set-key (kbd "M-g w") 'avy-goto-word-1)
 (global-set-key (kbd "M-g e") 'avy-goto-word-0)
 
-
-
-
 ;; Expand region
 (require 'expand-region)
 (global-set-key (kbd "C-@") 'er/expand-region)
 
-;; pop-win
-;; Buffer pain in random new windows fix
-;;(require 'popwin)
-;;(popwin-mode 1)
-
-;; Buffer windows
-;; Open some buffer type in same windows
 ;; Note : "*Help*" rentre en conflit avec les buffer helm (buffer helm en full height)
 (setq display-buffer-alist
 '(
@@ -1329,13 +1282,6 @@ there's a region, all lines that region covers will be duplicated."
 ;; Update : @todo doesn't seems to work... may be an other day !
 (global-auto-revert-mode t)
 
-
-
-
-
-
-
-
 ;; tern
 ;; (autoload 'tern-mode "tern.el" nil t)
 ;; (add-hook 'js-mode-hook (lambda () (tern-mode t)))
@@ -1351,21 +1297,6 @@ there's a region, all lines that region covers will be duplicated."
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
 (setq neo-smart-open t)
-
-;; tabbar
-;;(require 'tabbar)
-;;(tabbar-mode 1)
-
-
-
-
-;; Edit server
-;;     
-;;(require 'edit-server')
-;;(edit-server-start)        
-
-
-
     
 ;; Web mode
 (require 'web-mode)
@@ -1388,16 +1319,6 @@ there's a region, all lines that region covers will be duplicated."
 (add-to-list 'yas-snippet-dirs "~/.emacs.d/elpa/yasnippet-20170216.1928/snippets/")
 (yas-global-mode 1)
 
- 
-;; (defun my-web-mode-hook ()
-;;   "Hooks for Web mode."
-;;     (setq web-mode-markup-indent-offset 4)
-;;     (setq web-mode-css-indent-offset 4)
-;;     (setq web-mode-code-indent-offset 4)
-;;     (setq web-mode-indent-style 4)
-;; )
-;; (add-hook 'web-mode-hook  'my-web-mode-hook)
-
 ;; (setq web-mode-enable-current-element-highlight t)
 (setq web-mode-enable-current-column-highlight t)    
 
@@ -1409,22 +1330,12 @@ there's a region, all lines that region covers will be duplicated."
 (setq web-mode-enable-current-element-highlight t)    
 (setq web-mode-enable-current-column-highlight t)
 
-
-
-
-
-
 ;; ac-php    
 (add-hook 'php-mode-hook
           '(lambda ()
              (require 'company-php)
              (company-mode t)
              (add-to-list 'company-backends 'company-ac-php-backend )))
-
-
-
-
-
 
 ;; php doc and stuff
 ;; Source : http://www.prodevtips.com/2013/10/18/emacs-as-a-multi-mode-web-dev-ide-is-now-possible/ 
@@ -1442,15 +1353,6 @@ there's a region, all lines that region covers will be duplicated."
 (require 'php-refactor-mode)
 (add-hook 'php-mode-hook 'php-refactor-mode)
 
-
-
-
-
-
-
-
-
-
 ;; flymake-mode
 ;; Let's run 8 checks at once instead.
 (setq flymake-max-parallel-syntax-checks 4)
@@ -1466,17 +1368,9 @@ there's a region, all lines that region covers will be duplicated."
 ;; I want to see all errors for the line.
 (setq flymake-number-of-errors-to-display nil)
 
-
-
 ;; undo-tree
 (require 'undo-tree)
 (global-undo-tree-mode)
-
-
-
-
-
-
 
 
 ;; What to do on Emacs exit / workgroups-mode exit?
@@ -1514,39 +1408,16 @@ there's a region, all lines that region covers will be duplicated."
 ;; Source : http://superuser.com/a/566401
 (add-hook 'dired-mode-hook 'auto-revert-mode)
 
-
 ;; auto write
-
-
-
-
-
 
 ;; Quickly copy/move file in Emacs Dired
 ;; Source : http://emacs.stackexchange.com/q/5603
 (setq dired-dwim-target t)
 
 
-;; Dired+
-
-
-
-
 ;; AG
 ;; http://agel.readthedocs.io/en/latest/installation.html
 (require 'ag)
-
-
-
-
-
-
-
-
-
-
-
-
 
 ;;
 (defun svn-repo-open (s)
@@ -1612,27 +1483,6 @@ there's a region, all lines that region covers will be duplicated."
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ;; Key chords commands
 ;; From http://emacsrocks.com/e07.html
 (require 'key-chord)
@@ -1640,7 +1490,7 @@ there's a region, all lines that region covers will be duplicated."
 
 
 
-;; Max time delay between two key presses to be considered a key chord
+;; Max time delay between two key presses to be considered a key
 (setq key-chord-two-keys-delay 0.1) ; default 0.1
 ;; Max time delay between two presses of the same key to be considered a key chord.
 ;; Should normally be a little longer than `key-chord-two-keys-delay'.
@@ -1926,19 +1776,15 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (dolist (key '("\M-x" "\M-z" "\M-v" "\C-s" "\C-r" "\C-g" "\C-w"))
   (global-unset-key key))
 
-
-
-
-
-
-
+(global-unset-key (kbd "C-x C-c"))
 
 ;; will keybindings
 ;; Some default default modern editor keybinding the rescue !
 ;; Don't blame me old school user !
 
+(global-set-key (kbd "M-s") 'save-buffer)
+(global-set-key (kbd "M-q") 'save-buffers-kill-terminal)
 (global-set-key (kbd "C-c h") 'helm-command-prefix)
-(global-unset-key (kbd "C-x c"))
 
 ;;(global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "≈") 'helm-M-x) ;; Correspond to [right cmd + x] (mac os x) with right cmd and right alt switch
