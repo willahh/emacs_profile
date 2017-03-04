@@ -351,6 +351,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   evil-nerd-commenter
   evil-surround   
   evil-visualstar
+  evil-snipe
   expand-region
   eyebrowse
   general
@@ -505,10 +506,13 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
  '(safe-local-variable-values (quote ((no-byte-compile t))))
  '(yas-global-mode t))
 
-
-
-
-
+;; nlinum
+(require 'nlinum-relative)
+(nlinum-relative-setup-evil)                    ;; setup for evil
+(add-hook 'prog-mode-hook 'nlinum-relative-mode)
+(setq nlinum-relative-redisplay-delay 0)      ;; delay
+(setq nlinum-relative-current-symbol "->")      ;; or "" for display current line number
+(setq nlinum-relative-offset 0)                 ;; 1 if you want 0, 2, 3...
 
 ;; Smart modde line
 (setq sml/no-confirm-load-theme t)
@@ -851,8 +855,8 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (global-evil-visualstar-mode)
 
 ;; evil-snipe
-;; (require 'evil-snipe)
-;; (evil-snipe-mode 1)
+(require 'evil-snipe)
+(evil-snipe-mode 1)
 
 ;; evil-nerd-commenter
 (require 'evil-nerd-commenter)
