@@ -182,91 +182,82 @@ there's a region, all lines that region covers will be duplicated."
 (setq shell-command-switch "-ic")
 
 ;; Package settings
+;; ------------ Package list
 (require 'package)
-
-;; Auto loader
-;; Liste des packages a installer si repertoire non disponible
 (setq package-list '(          
-  evil    
-  evil-surround   
-  evil-visualstar
-  neotree
-  edit-server
-  ag
-  key-chord
-  helm-ag
-  ace-jump-mode
+  ;; exec-path-from-shell
+  ;; smart-mode-line
+  ;; with-editor
+  ;;rich-minority
+  ;;s
   ace-window
+  ag
   anything
   async
   auto-complete
   avy
   avy-menu
+  color-identifiers-mode
   company
-  helm-company
   dash
-  desktop+
+  diff-hl
+  doom-themes
+  dsvn
   emmet-mode
   epl
+  evil    
+  evil-easymotion
+  evil-leader
+  evil-nerd-commenter
+  evil-snipe
+  evil-surround   
+  evil-visualstar
   expand-region
-  tern
-  tern-auto-complete
+  eyebrowse
+  general
+  git-gutter
   helm
+  helm-ag
   helm-anything
+  helm-company
   helm-core
   helm-projectile
+  helm-swoop
   js2-mode
+  key-chord
   magit
   magit-popup
-  psvn
-  markdown-mode+
+  monokai-theme
   multiple-cursors
-  other-frame-window
+  nlinum
+  nlinum-relative
+  nyan-mode
   php-mode
+  php-refactor-mode
   pkg-info
   popup
+  powerline
   projectile
-  rich-minority
-  s
-  helm-swoop
-  dsvn
-  exec-path-from-shell
-  smart-mode-line
+  psvn
+  resize-window
+  skewer-mode
+  smart-tab
+  spaceline
+  swiper-helm
+  tern
+  tern-auto-complete
   undo-tree
   web-beautify
   web-mode
-  with-editor
-  monokai-theme
-  doom-themes
-  zerodark-theme
-  nyan-mode
-  spaceline
-  skewer-mode
-  resize-window
-  general
-  php-refactor-mode
-  evil-leader
-  spaceline
-  skewer-mode
-  eyebrowse
-  swiper-helm
-  color-identifiers-mode
-  window-numbering
   which-key
-  nlinum
-  nlinum-relative
-  git-gutter
-  diff-hl
-  powerline
-  smart-tab
+  window-numbering
   yasnippet
+  zerodark-theme
   ))
 
 ;;
 ;; Besoin : Afficher le chemin du fichier complet dans le title de la frame courante
 ;; Source: http://stackoverflow.com/a/12009623
-;; ----> Marche a la perfection !!!
-;;
 ;; Disable loading of “default.el” at startup,
 ;; in Fedora all it does is fix window title which I rather configure differently
 (setq inhibit-default-init t)
@@ -336,10 +327,6 @@ there's a region, all lines that region covers will be duplicated."
 
 ;; Multiple cursor
 (require 'multiple-cursors-core)
-(global-set-key (kbd "C->") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
-
 ;; Color identifier
 (add-hook 'after-init-hook 'global-color-identifiers-mode)
 
@@ -360,39 +347,10 @@ there's a region, all lines that region covers will be duplicated."
       (message filename))))
 
 
-;;
-;; Half page scrolling script
-;; https://www.emacswiki.org/emacs/HalfScrolling
-;;
-(defun zz-scroll-half-page (direction)
-    "Scrolls half page up if `direction' is non-nil, otherwise will scroll half page down."
-    (let ((opos (cdr (nth 6 (posn-at-point)))))
-      ;; opos = original position line relative to window
-      (move-to-window-line nil)  ;; Move cursor to middle line
-      (if direction
-          (recenter-top-bottom -1)  ;; Current line becomes last
-        (recenter-top-bottom 0))  ;; Current line becomes first
-      (move-to-window-line opos)))  ;; Restore cursor/point position
-
-  (defun zz-scroll-half-page-down ()
-    "Scrolls exactly half page down keeping cursor/point position."
-    (interactive)
-    (zz-scroll-half-page nil))
-
-  (defun zz-scroll-half-page-up ()
-    "Scrolls exactly half page up keeping cursor/point position."
-    (interactive)
-    (zz-scroll-half-page t))
-
-
-(global-set-key (kbd "M-v") 'zz-scroll-half-page-up)
-(global-set-key (kbd "C-v") 'zz-scroll-half-page-down)
 
 
 
 ;; Custom binding for backward-paragraph and foreword-paragraph
-;; (global-set-key (kbd "C-M-n") 'forward-paragraph)
-;; (global-set-key (kbd "C-M-p") 'backward-paragraph)
 ;; Move line or region up and down update
 ;; Source : https://www.emacswiki.org/emacs/MoveLineRegion
 
@@ -450,9 +408,6 @@ there's a region, all lines that region covers will be duplicated."
   (interactive "r\np")
   (if (use-region-p) (move-region-down start end n) (move-line-down n)))
 
-(global-set-key (kbd "M-p") 'move-line-region-up)
-(global-set-key (kbd "M-n") 'move-line-region-down)
-
 
 ;; Emmet
 (add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
@@ -466,14 +421,14 @@ there's a region, all lines that region covers will be duplicated."
 ;; The default "C-x c" is quite close to "C-x C-c", which quits Emacs.
 ;; Changed to "C-c h". Note: We must set "C-c h" globally, because we
 ;; cannot change `helm-command-prefix-key' once `helm-config' is loaded.
-(global-set-key (kbd "C-c h") 'helm-command-prefix)
+
 (global-unset-key (kbd "C-x c"))
 
 
 
-(global-set-key (kbd "C-x C-f") 'helm-find-files)
-(global-set-key (kbd "C-x b") 'helm-mini)
-;; (global-set-key (kbd "M-y") 'helm-show-kill-ring) ;; Update : Pas forcement tip top
+
+
+
 (helm-autoresize-mode t)
 
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
@@ -513,9 +468,6 @@ there's a region, all lines that region covers will be duplicated."
  '(git-gutter:window-width 1)
  '(helm-follow-mode-persistent t)
  '(magit-dispatch-arguments nil)
- '(package-selected-packages
-   (quote
-    (evil-visualstar helm-cscope color-identifiers-mode nlinum-relative resize-window php-refactor-mode ac-php general swiper-helm popwin evil-surround window-numbering eyebrowse which-key spaceline evil edit-server neotree elfeed logview monokai-theme color-theme-sanityinc-tomorrow moe-theme material-theme noctilux-theme nlinum dumb-mode theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol zerodark-theme markdown-mode+ smart-tab emmet-mode company web-beautify multiple-cursors powerline other-frame-window desktop+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window web-mode magit helm-projectile helm)))
  '(safe-local-variable-values (quote ((no-byte-compile t))))
  '(tab-stop-list
    (quote
@@ -541,7 +493,7 @@ there's a region, all lines that region covers will be duplicated."
 ;; Help with projectile
 (require 'helm-projectile)
 (helm-projectile-on)
-(global-set-key (kbd "C-x C-p") 'helm-projectile-find-file)
+
 
 ; Projectile
 (projectile-global-mode)
@@ -559,15 +511,15 @@ there's a region, all lines that region covers will be duplicated."
 
 
 ;; Avy
-(global-set-key (kbd "C-:") 'avy-goto-char)
-(global-set-key (kbd "C-'") 'avy-goto-char-2)
-(global-set-key (kbd "M-g f") 'avy-goto-line)
-(global-set-key (kbd "M-g w") 'avy-goto-word-1)
-(global-set-key (kbd "M-g e") 'avy-goto-word-0)
+
+
+
+
+
 
 ;; Expand region
 (require 'expand-region)
-(global-set-key (kbd "C-@") 'er/expand-region)
+
 
 
 
@@ -590,18 +542,18 @@ there's a region, all lines that region covers will be duplicated."
 ;; If you enable git-gutter-mode for some modes
 ;;(add-hook 'ruby-mode-hook 'git-gutter-mode)
 
-(global-set-key (kbd "C-x C-g") 'git-gutter)
-(global-set-key (kbd "C-x v =") 'git-gutter:popup-hunk)
+
+
 
 ;; Jump to next/previous hunk
-(global-set-key (kbd "C-x p") 'git-gutter:previous-hunk)
-(global-set-key (kbd "C-x n") 'git-gutter:next-hunk)
+
+
 
 ;; Stage current hunk
-(global-set-key (kbd "C-x v s") 'git-gutter:stage-hunk)
+
 
 ;; Revert current hunk
-(global-set-key (kbd "C-x v r") 'git-gutter:revert-hunk)
+
 
 ;;
 (set-face-background 'git-gutter:modified "#ff7200")
@@ -626,7 +578,6 @@ there's a region, all lines that region covers will be duplicated."
       (tern-ac-setup)))
 
 
-;; Desktop+ Configuration
 ;; Ajout de save mode auto
 (desktop-save-mode 1)
 
@@ -857,7 +808,7 @@ there's a region, all lines that region covers will be duplicated."
 ;; ;; un indent
 ;; ;; Shift tab to indent to left
 ;; ;; Source http://stackoverflow.com/a/2250155
-;; (global-set-key (kbd "<S-tab>") 'un-indent-by-removing-4-spaces)
+
 ;; (defun un-indent-by-removing-4-spaces ()
 ;;   "remove 4 spaces from beginning of of line"
 ;;   (interactive)
@@ -922,18 +873,6 @@ there's a region, all lines that region covers will be duplicated."
 
 
 
-;;
-;; Besoin : Afficher le chemin du fichier complet dans le title de la frame courante
-;; Source: http://stackoverflow.com/a/12009623
-;; ----> Marche a la perfection !!!
-;;
-;; Disable loading of “default.el” at startup,
-;; in Fedora all it does is fix window title which I rather configure differently
-(setq inhibit-default-init t)
-
-;; SHOW FILE PATH IN FRAME TITLE
-(setq-default frame-title-format "%b (%f)")
-
 
 
 
@@ -996,12 +935,10 @@ there's a region, all lines that region covers will be duplicated."
 
 
     
-;; Multiple cursor
-(require 'multiple-cursors-core)
 
-(global-set-key (kbd "C->") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+
+
+
 
 
 
@@ -1024,8 +961,8 @@ there's a region, all lines that region covers will be duplicated."
 
 
 ;; Switch buffer with tab
-(global-set-key [C-tab] 'next-buffer)
-(global-set-key [C-S-tab] 'previous-buffer)
+
+
 
 
 
@@ -1056,14 +993,14 @@ there's a region, all lines that region covers will be duplicated."
     (zz-scroll-half-page t))
 
 
-(global-set-key (kbd "M-v") 'zz-scroll-half-page-up)
-(global-set-key (kbd "C-v") 'zz-scroll-half-page-down)
+
+
 
 
 
 ;; Custom binding for backward-paragraph and foreword-paragraph
-(global-set-key (kbd "C-M-n") 'forward-paragraph)
-(global-set-key (kbd "C-M-p") 'backward-paragraph)
+
+
         
 
 
@@ -1126,8 +1063,8 @@ there's a region, all lines that region covers will be duplicated."
   (interactive "r\np")
   (if (use-region-p) (move-region-down start end n) (move-line-down n)))
 
-(global-set-key (kbd "M-p") 'move-line-region-up)
-(global-set-key (kbd "M-n") 'move-line-region-down)
+
+
 
 
 
@@ -1187,7 +1124,7 @@ there's a region, all lines that region covers will be duplicated."
 ;; The default "C-x c" is quite close to "C-x C-c", which quits Emacs.
 ;; Changed to "C-c h". Note: We must set "C-c h" globally, because we
 ;; cannot change `helm-command-prefix-key' once `helm-config' is loaded.
-;; (global-set-key (kbd "M-y") 'helm-show-kill-ring) ;; Update : Pas forcement tip top
+
 (helm-autoresize-mode t)
 
 (when (executable-find "curl")
@@ -1204,7 +1141,7 @@ there's a region, all lines that region covers will be duplicated."
 
 
 ;; Elfeed
-(global-set-key (kbd "C-x w") 'elfeed)
+
 (setq elfeed-feeds
       '(("http://nullprogram.com/feed/" blog emacs)
         "http://www.50ply.com/atom.xml"  ; no autotagging
@@ -1244,8 +1181,8 @@ there's a region, all lines that region covers will be duplicated."
 
 ;; Help with projectile
 
-(global-set-key (kbd "C-x C-p") 'helm-projectile)
-(global-set-key (kbd "C-M-p") 'helm-projectile-switch-project)
+
+
 
 
 ;; (global-nlinum-mode)
@@ -1268,14 +1205,14 @@ there's a region, all lines that region covers will be duplicated."
 ;; Auto complete
 (global-auto-complete-mode t)
 
-(global-set-key (kbd "C-'") 'avy-goto-char-2)
-(global-set-key (kbd "M-g f") 'avy-goto-line)
-(global-set-key (kbd "M-g w") 'avy-goto-word-1)
-(global-set-key (kbd "M-g e") 'avy-goto-word-0)
+
+
+
+
 
 ;; Expand region
 (require 'expand-region)
-(global-set-key (kbd "C-@") 'er/expand-region)
+
 
 ;; Note : "*Help*" rentre en conflit avec les buffer helm (buffer helm en full height)
 (setq display-buffer-alist
@@ -1305,8 +1242,7 @@ there's a region, all lines that region covers will be duplicated."
       (tern-ac-setup)))
 
 
-(require 'neotree)
-(global-set-key [f8] 'neotree-toggle)
+
 (setq neo-smart-open t)
     
 ;; Web mode
@@ -1378,10 +1314,6 @@ there's a region, all lines that region covers will be duplicated."
 
 ;; I want to see all errors for the line.
 (setq flymake-number-of-errors-to-display nil)
-
-;; undo-tree
-(require 'undo-tree)
-(global-undo-tree-mode)
 
 
 ;; What to do on Emacs exit / workgroups-mode exit?
@@ -1571,7 +1503,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (define-key minibuffer-local-completion-map [escape] 'minibuffer-keyboard-quit)
 (define-key minibuffer-local-must-match-map [escape] 'minibuffer-keyboard-quit)
 (define-key minibuffer-local-isearch-map [escape] 'minibuffer-keyboard-quit)
-(global-set-key [escape] 'evil-exit-emacs-state)
+
 
 
 ;; Escape (tab ;)) key toggle for between stat
@@ -1598,6 +1530,10 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;; evil-visualstar
 (global-evil-visualstar-mode)
 
+;; evil-snipe
+(require 'evil-snipe)
+(evil-snipe-mode 1)
+
 ;; Cursor state
 (setq evil-emacs-state-cursor '("#a7e236" bar))
 (setq evil-normal-state-cursor '("#a7e236" box))
@@ -1606,6 +1542,11 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (setq evil-replace-state-cursor '("red" bar))
 (setq evil-operator-state-cursor '("red" hollow))
 
+;;
+(require 'evil-easymotion)
+
+;; evil-nerd-commenter
+(require 'evil-nerd-commenter)
 
 
 ;; eyebrowse
@@ -1740,14 +1681,14 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;; -- toggle [t] Toggle + command 
 (evil-leader/set-key "tw" 'whitespace-mode) ;; Meaning "[l]inum [t]oggle                      "
 (evil-leader/set-key "tt" 'toggle-truncate-lines) ;; Meaning "[t]oggle-truncate-[lines
-(evil-leader/set-key "tc" 'comment-or-uncomment-region) ;; Meaning [t]oggle [c]omment
+(evil-leader/set-key "tc" 'evilnc-comment-or-uncomment-lines) ;; Meaning [t]oggle [c]omment
 
 ;; ;; undo redo
 (key-chord-define-global "xc" 'er/expand-region)
 (key-chord-define-global "wx" 'er/contract-region)
 (key-chord-define-global "<w" 'mc/mark-all-like-this)
-(key-chord-define-global "ji" 'undo-tree-undo)
-(key-chord-define-global "jo" 'undo-tree-redo)
+;; (key-chord-define-global "ji" 'undo-tree-undo)
+;; (key-chord-define-global "jo" 'undo-tree-redo)
 (key-chord-define-global "jk" 'ace-window)
 
 (setq evil-emacs-state-cursor '("#a7e236" bar))
@@ -1764,13 +1705,6 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;; window-numbering
 (require 'window-numbering)
 (window-numbering-mode)            
-
-
-;; Spaceline
-;; Note : power line stylee, mais je n arrive pas a la faire fonctionner
-;; Update : il faut avoir le mode evil active pour que le package fonctionne
-(require 'spaceline-config)
-(spaceline-spacemacs-theme)
 
 
 
@@ -1793,45 +1727,116 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;; Some default default modern editor keybinding the rescue !
 ;; Don't blame me old school user !
 
-(global-set-key (kbd "M-s") 'save-buffer)
-;;(global-set-key (kbd "M-q") 'save-buffers-kill-terminal)
-(global-set-key (kbd "M-q") 'ask-before-closing)
-(global-set-key (kbd "C-c h") 'helm-command-prefix)
 
-;;(global-set-key (kbd "M-x") 'helm-M-x)
-(global-set-key (kbd "≈") 'helm-M-x) ;; Correspond to [right cmd + x] (mac os x) with right cmd and right alt switch
 
-(global-set-key (kbd "C-x C-f") 'helm-find-files)
-(global-set-key (kbd "C-x b") 'helm-mini)
+
+
+
+
+
+
+
+
 
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
 (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB work in terminal
 
 ;; Define some keybindings
-(global-set-key (kbd "M-z") 'undo-tree-undo)
-(global-set-key (kbd "<C-escape>") 'keyboard-quit)
-(global-set-key [(meta shift z)] 'undo-tree-redo)
-;;(global-set-key (kbd "M-d") 'mc/mark-next-like-this) ;; Cannot be setted, because meta+d means delete word in emacs (and it is very usefull)
-;; (global-set-key [(meta shift d)] 'duplicate-line)
-(global-set-key [(meta shift d)] 'duplicate-current-line-or-region)
-(global-set-key (kbd "C-x C-d") 'duplicate-current-line-or-region)
 
-(global-set-key (kbd "C-w") 'resize-window)
+
+
+
+
+
+
+
+
 
 ;; copy cut paste
-(global-set-key (kbd "M-c") 'kill-ring-save)
-(global-set-key (kbd "M-x") 'kill-region)
-(global-set-key (kbd "M-v") 'yank)
 
-;; (global-set-key (kbd "M-a") 'mark-whole-buffer)
-(global-set-key [(meta /)] 'comment-or-uncomment-region)
+
+
+
+
+
  
 ;; Switch buffer with tab
-(global-set-key [C-tab] 'next-buffer)
-(global-set-key [C-S-tab] 'previous-buffer)
+
+
 
 ;; Switch between window
-(global-set-key [C-M-tab] 'other-window)
+
 
 ;; color theme
 (set-face-attribute 'lazy-highlight nil :background "green")
+
+
+;; Multiple cursor
+
+
+
+
+;;
+
+
+
+;;
+
+
+
+
+
+
+        
+(global-set-key (kbd "<C-escape>") 'keyboard-quit)
+;;(global-set-key (kbd "C-'") 'avy-goto-char-2)
+;;(global-set-key (kbd "C-:") 'avy-goto-char)
+(global-set-key (kbd "C-<") 'mc/maru-previous-like-this)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+;;(global-set-key (kbd "C-@") 'er/expand-region)
+;;(global-set-key (kbd "C-M-n") 'forward-paragraph)
+;;(global-set-key (kbd "C-M-p") 'backward-paragraph)
+;; (global-set-key (kbd "C-M-p") 'helm-projectile-switch-project)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+(global-set-key (kbd "C-c h") 'helm-command-prefix)
+;; (global-set-key (kbd "C-v") 'zz-scroll-half-page-down)
+(global-set-key (kbd "C-w") 'resize-window)
+(global-set-key (kbd "C-x C-d") 'duplicate-current-line-or-region)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+;; (global-set-key (kbd "C-x C-g") 'git-gutter)
+;; (global-set-key (kbd "C-x C-p") 'helm-projectile)
+;; (global-set-key (kbd "C-x C-p") 'helm-projectile-find-file)
+;; (global-set-key (kbd "C-x b") 'helm-mini)
+;; (global-set-key (kbd "C-x n") 'git-gutter:next-hunk)
+;; (global-set-key (kbd "C-x p") 'git-gutter:previous-hunk)
+;; (global-set-key (kbd "C-x v =") 'git-gutter:popup-hunk)
+;; (global-set-key (kbd "C-x v r") 'git-gutter:revert-hunk)
+;; (global-set-key (kbd "C-x v s") 'git-gutter:stage-hunk)
+;; (global-set-key (kbd "C-x w") 'elfeed)
+(global-set-key (kbd "M-c") 'kill-ring-save)
+;; (global-set-key (kbd "M-g e") 'avy-goto-word-0)
+;; (global-set-key (kbd "M-g f") 'avy-goto-line)
+;; (global-set-key (kbd "M-g w") 'avy-goto-word-1)
+(global-set-key (kbd "M-n") 'move-line-region-down)
+(global-set-key (kbd "M-p") 'move-line-region-up)
+(global-set-key (kbd "M-q") 'ask-before-closing)
+(global-set-key (kbd "M-s") 'save-buffer)
+(global-set-key (kbd "M-v") 'yank)
+;; (global-set-key (kbd "M-v") 'zz-scroll-half-page-up)
+(global-set-key (kbd "M-x") 'kill-region)
+(global-set-key (kbd "M-z") 'undo-tree-undo)
+(global-set-key (kbd "≈") 'helm-M-x) ;; Correspond to [right cmd + x] (mac os x) with right cmd and right alt switch
+(global-set-key [(meta /)] 'evilnc-comment-or-uncomment-lines)
+(global-set-key [(meta shift d)] 'duplicate-current-line-or-region)
+(global-set-key [(meta shift z)] 'undo-tree-redo)
+(global-set-key [C-M-tab] 'other-window)
+(global-set-key [C-S-tab] 'previous-buffer)
+(global-set-key [C-tab] 'next-buffer)
+(global-set-key [escape] 'evil-exit-emacs-state)
+;; (global-set-key (kbd "<S-tab>") 'un-indent-by-removing-4-spaces)
+;; (global-set-key (kbd "M-a") 'mark-whole-buffer)
+;; (global-set-key (kbd "M-y") 'helm-show-kill-ring) ;; Update : Pas forcement tip top
+;; (global-set-key [(meta shift d)] 'duplicate-line)
+;;(global-set-key (kbd "M-d") 'mc/mark-next-like-this) ;; Cannot be setted, because meta+d means delete word in emacs (and it is very usefull)
+;;(global-set-key (kbd "M-q") 'save-buffers-kill-terminal)
+;;(global-set-key (kbd "M-x") 'helm-M-x)
