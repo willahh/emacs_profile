@@ -1,3 +1,4 @@
+- [-] Dired : remove folder is very slow
 - [-] Don't prompt for delete recursivly (code available in prelude)
 - [-] Enable evil easy motion to work like vim easy motion  https://github.com/easymotion/vim-easymotion
 - [-] Bottom line
