@@ -664,14 +664,17 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 
 
 ;; Note : "*Help*" rentre en conflit avec les buffer helm (buffer helm en full height)
+;; @todo : les buffers *magit-diff-popup ne devrait pas etre dans la regle *magit-diff*
 (setq display-buffer-alist
 '(
-  ("*vc-dir*"       . (display-buffer-same-window . nil))
-  ("*shell*"        . (display-buffer-same-window . nil))
-  ("*Buffer List*"  . (display-buffer-same-window . nil))
-  ("*ag*"           . (display-buffer-same-window . nil))
-  ("*Backtrace*"    . (display-buffer-same-window . nil))
-;;  ("*Help*"  . (display-buffer-same-window . nil))
+  ("*vc-dir*"            . (display-buffer-same-window . nil))
+  ("*shell*"             . (display-buffer-same-window . nil))
+  ("*Buffer List*"       . (display-buffer-same-window . nil))
+  ("*ag*"                . (display-buffer-same-window . nil))
+  ("*Backtrace*"         . (display-buffer-same-window . nil))
+  ("*magit-revision*"    . (display-buffer-same-window . nil))
+  ("*magit-diff*"        . (display-buffer-same-window . nil))
+;;  ("*Help*"            . (display-buffer-same-window . nil))
   ))
 
 ;; Auto save all buffer when file change on disk (aka function to keep synchro between buffers)

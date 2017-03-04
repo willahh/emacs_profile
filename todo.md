@@ -1,20 +1,21 @@
-- Markdown in white theme
-- git-svn
-- big visible current buffer
-
-
-
-* * Emacs   
-- Selected all same occurrence than current selection   
-- CSS mode > attribut —> TAB touch —> wrote :   
-- Chromium included   
-- Correcteur orthographique   
-- Display current encoding   
-- Move selection up / down (almost)            http://emacs.stackexchange.com/questions/13941/move
-- Parcourir partage smb   
-- [theme] Color in shell mode   
-- [theme] Les couleurs ne sont pas assez décomposé comme dans Sublime (« var » colorA, = colorB, …)   
-- mysql integration  
+- [-] Enable evil easy motion to work like vim easy motion  https://github.com/easymotion/vim-easymotion
+- [-] Bottom line
+  - [-] Show current mode in color
+  - [-] Show current VC system used
+  - [-] Show current encoding
+- [-] Markdown in white theme
+- [-] git-svn
+- [-] big visible current buffer
+- [-] Selected all same occurrence than current selection   
+- [-] CSS mode > attribut —> TAB touch —> wrote :   
+- [-] Chromium included   
+- [-] Correcteur orthographique   
+- [-] Display current encoding   
+- [-] Move selection up / down (almost)            http://emacs.stackexchange.com/questions/13941/move
+- [-] Parcourir partage smb   
+- [-] [theme] Color in shell mode   
+- [-] [theme] Les couleurs ne sont pas assez décomposé comme dans Sublime (« var » colorA, = colorB, …)   
+- [-] mysql integration  
 - [x] CTRL+SHIFT+TAB   
 - [x] Emacs find previous and next   
 - [x] Evil mode 
@@ -42,4 +43,12 @@
 - [x] svn (status, commit, diff, …) ——> almost          —> Utilisation de dsvn   
 - [x] svn ediff       
 - [x] sync scroll   
+
+
+
+
+
+
+
+
 
