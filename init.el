@@ -195,6 +195,30 @@ there's a region, all lines that region covers will be duplicated."
     (setq rootFolder (buffer-substring-no-properties (line-beginning-position) (line-end-position)))
     (setq rootFolderPieces (split-string rootFolder "/" nil))
     (svn-repo-open (mapconcat 'identity (butlast(butlast rootFolderPieces)) "/"))))
+
+;; php doc and stuff
+;; Source : http://www.prodevtips.com/2013/10/18/emacs-as-a-multi-mode-web-dev-ide-is-now-possible/ 
+(defun php-jump ()
+  (interactive)
+  (let (myword myurl)
+    (setq myword
+          (if (and transient-mark-mode mark-active)
+              (buffer-substring-no-properties (region-beginning) (region-end))
+            (thing-at-point 'symbol)))
+    (setq myurl (concat "http://php.net/manual/en/function." (replace-regexp-in-string "_" "-" myword) ".php"))
+    (browse-url myurl)))
+
+;; Copy current pwd into clipboard
+;; Source http://stackoverflow.com/a/18816438
+;; Doesnt seems to work ....
+(defun clip-file()
+  "Put the current file name on the clipboard"
+  (interactive)
+  (let ((filename (if (equal major-mode 'dired-mode)
+                      (file-name-directory default-directory)
+                    (buffer-file-name))))
+    (when filename
+      (x-select-text filename))))
 ;;
 (define-minor-mode svn-repo-mode
        "Toggle svn-repo mode."
@@ -210,27 +234,31 @@ there's a region, all lines that region covers will be duplicated."
   ((kbd "p") . previous-line)
   ))
 
+;; Dont prompt me when quit
+;; Source : http://emacs.stackexchange.com/a/24602
+(defun disable-y-or-n-p (orig-fun &rest args)
+  (cl-letf (((symbol-function 'y-or-n-p) (lambda (prompt) t)))
+    (apply orig-fun args)))
+
+;; next-hunk; Single escape to quit buffer
+;; esc quits
+;; Source : https://juanjoalvarez.net/es/detail/2014/sep/19/vim-emacsevil-chaotic-migration-guide/x    
+(defun minibuffer-keyboard-quit ()
+  "Abort recursive edit.
+In Delete Selection mode, if the mark is active, just deactivate it;
+then it takes a second \\[keyboard-quit] to abort the minibuffer."
+  (interactive)
+  (if (and delete-selection-mode transient-mark-mode mark-active)
+      (setq deactivate-mark  t)
+    (when (get-buffer "*Completions*") (delete-windows-on "*Completions*"))
+    (abort-recursive-edit)))
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+;; -----------------------------
 ;; Remove bip relou
 (setq visible-bell t)
 
@@ -383,11 +411,6 @@ there's a region, all lines that region covers will be duplicated."
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 
-;; ??
-(when (< emacs-major-version 24)
-  ;; For important compatibility libraries like cl-lib
-  (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/")))
-
 ;; activate all the packages (in particular autoloads)
 (package-initialize)
 
@@ -493,19 +516,15 @@ there's a region, all lines that region covers will be duplicated."
 (setq sml/theme 'dark)
 (sml/setup)
 
-
 ;; Help with projectile
 (require 'helm-projectile)
 (helm-projectile-on)
-
 
 ; Projectile
 (projectile-global-mode)
 (add-hook 'ruby-mode-hook' projectile-mode)
 
-
 (setq projectile-enable-caching t)
-
 
 ;; Using Projectile everywhere
 (setq projectile-require-project-root nil)
@@ -513,19 +532,8 @@ there's a region, all lines that region covers will be duplicated."
 ;;Auto complete
 (global-auto-complete-mode t)
 
-
-;; Avy
-
-
-
-
-
-
 ;; Expand region
 (require 'expand-region)
-
-
-
 
 ;; Auto save all buffer when file change on disk (aka function to keep synchro between buffers)
 ;; UPDATE : @todo n a pas l air de fonctionner .. une prochaine fois peut être !
@@ -608,14 +616,6 @@ there's a region, all lines that region covers will be duplicated."
 (autoload 'svn-status "dsvn" "Run `svn status'." t)
 (autoload 'svn-update "dsvn" "Run `svn update'." t)
 
-;; @todo faire fonctionner gtags
-;; @todo faire fonctionner flycheck en mode javascript (base sur jscss )
-;; @todo Faire fonctionner les snippets YAS 
-;; @todo Afficher le mode whitespace uniquement sur la selectiono
-;; @todo Faire un theme custom, prendre la partie VC de monokai et la merger dans doom theme
-;; @todo git-gutter plus de preview en mode svn :(
-;; @todo Supprimer le warning orange horrible (et bugge)
-;;    
 ;;
 ;; Emacs global settings
 ;;
@@ -649,17 +649,9 @@ there's a region, all lines that region covers will be duplicated."
 ;; Update : C'est trop relouuuuuuuu !!!!!!!!!!!, desactivation.
 ;; (autopair-global-mode) ;; enable autopair in all buffer
 
-
-
-
-
-
 ;; Emmet
 (add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
 ;; (add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
-
-
-
 
 ;; Web beautify
 
@@ -738,18 +730,6 @@ there's a region, all lines that region covers will be duplicated."
              (company-mode t)
              (add-to-list 'company-backends 'company-ac-php-backend )))
 
-;; php doc and stuff
-;; Source : http://www.prodevtips.com/2013/10/18/emacs-as-a-multi-mode-web-dev-ide-is-now-possible/ 
-(defun php-jump ()
-  (interactive)
-  (let (myword myurl)
-    (setq myword
-          (if (and transient-mark-mode mark-active)
-              (buffer-substring-no-properties (region-beginning) (region-end))
-            (thing-at-point 'symbol)))
-    (setq myurl (concat "http://php.net/manual/en/function." (replace-regexp-in-string "_" "-" myword) ".php"))
-    (browse-url myurl)))
-
 ;; php-refactor
 (require 'php-refactor-mode)
 (add-hook 'php-mode-hook 'php-refactor-mode)
@@ -783,22 +763,6 @@ there's a region, all lines that region covers will be duplicated."
 (setq wg-mode-line-decor-left-brace "["
       wg-mode-line-decor-right-brace "]"  ; how to surround it
       wg-mode-line-decor-divider ":")
-
-
-;; Copy current pwd into clipboard
-;; Source http://stackoverflow.com/a/18816438
-;; Doesnt seems to work ....
-(defun clip-file()
-  "Put the current file name on the clipboard"
-  (interactive)
-  (let ((filename (if (equal major-mode 'dired-mode)
-                      (file-name-directory default-directory)
-                    (buffer-file-name))))
-    (when filename
-      (x-select-text filename))))
-
-
-
 
 
 ;; Auto-refresh dired on file change
@@ -839,12 +803,6 @@ there's a region, all lines that region covers will be duplicated."
 
 ;; Display ediff vertical by default
 
-;; Dont prompt me when quit
-;; Source : http://emacs.stackexchange.com/a/24602
-(defun disable-y-or-n-p (orig-fun &rest args)
-  (cl-letf (((symbol-function 'y-or-n-p) (lambda (prompt) t)))
-    (apply orig-fun args)))
-
 (advice-add 'ediff-quit :around #'disable-y-or-n-p)
 
 
@@ -864,18 +822,6 @@ there's a region, all lines that region covers will be duplicated."
 ;; Remove all keybindings from insert-state keymap (insert mode behavior like emacs) 
 (setcdr evil-insert-state-map nil)
 
-;; next-hunk; Single escape to quit buffer
-;; esc quits
-;; Source : https://juanjoalvarez.net/es/detail/2014/sep/19/vim-emacsevil-chaotic-migration-guide/x    
-(defun minibuffer-keyboard-quit ()
-  "Abort recursive edit.
-In Delete Selection mode, if the mark is active, just deactivate it;
-then it takes a second \\[keyboard-quit] to abort the minibuffer."
-  (interactive)
-  (if (and delete-selection-mode transient-mark-mode mark-active)
-      (setq deactivate-mark  t)
-    (when (get-buffer "*Completions*") (delete-windows-on "*Completions*"))
-    (abort-recursive-edit)))
 (define-key evil-normal-state-map [escape] 'keyboard-quit)
 (define-key evil-visual-state-map [escape] 'keyboard-quit)
 (define-key minibuffer-local-map [escape] 'minibuffer-keyboard-quit)
@@ -884,14 +830,10 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (define-key minibuffer-local-must-match-map [escape] 'minibuffer-keyboard-quit)
 (define-key minibuffer-local-isearch-map [escape] 'minibuffer-keyboard-quit)
 
-
-
 ;; Escape (tab ;)) key toggle for between stat
 (define-key evil-insert-state-map [escape] 'evil-normal-state)
 (define-key evil-emacs-state-map [escape] 'evil-normal-state)
 (define-key evil-normal-state-map [escape] 'evil-emacs-state)
-
-
 
 ;; Add some missing keybinding ?
 ;; Scroll up 1/2 page
@@ -901,7 +843,6 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   (lambda ()
     (interactive)
     (evil-delete (point-at-bol) (point))))`
-
 
 ;; evil-surround
 (require 'evil-surround)
@@ -916,7 +857,6 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 
 ;; evil-nerd-commenter
 (require 'evil-nerd-commenter)
-
 
 ;; eyebrowse
 (require 'eyebrowse)    
@@ -941,14 +881,12 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (require 'which-key)
 (which-key-mode)
 
-
 ;; Evil key leader (should be set before evil mode)
 (require 'evil-leader)
 (global-evil-leader-mode)
 
 ;; evil-easymotion
 (require 'evil-easymotion)
-(evilem-default-keybindings "$")
 
 ;; Cursor state
 (setq evil-emacs-state-cursor '("#a7e236" bar))
@@ -969,11 +907,6 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;; Which-key
 (require 'which-key)
 (which-key-mode)    
-
-
-
-
-
 
 
 
@@ -1012,20 +945,10 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 
 
 
-
-
-
-
-
-
-
 ;; ---------------- Unbind some default / package keybindings
 ;; Disable emacs search (c-s / c-r) -> Replaced by evil search
 (dolist (key '("\M-x" "\M-z" "\M-v" "\C-s" "\C-r" "\C-g" "\C-w" "\C-v"))
   (global-unset-key key))
-
-
-
 
 
 
@@ -1172,3 +1095,6 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;; (global-set-key [(meta shift d)] 'duplicate-line)
 ;;(global-set-key (kbd "M-d") 'mc/mark-next-like-this) ;; Cannot be setted, because meta+d means delete word in emacs (and it is very usefull)
 ;;(global-set-key (kbd "M-q") 'save-buffers-kill-terminal)
+
+(evilem-default-keybindings "ù")
+
