@@ -349,7 +349,6 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   evil-easymotion
   evil-leader
   evil-nerd-commenter
-  evil-snipe
   evil-surround   
   evil-visualstar
   expand-region
@@ -852,8 +851,8 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (global-evil-visualstar-mode)
 
 ;; evil-snipe
-(require 'evil-snipe)
-(evil-snipe-mode 1)
+;; (require 'evil-snipe)
+;; (evil-snipe-mode 1)
 
 ;; evil-nerd-commenter
 (require 'evil-nerd-commenter)
@@ -962,6 +961,9 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;; -- M-x
 (evil-leader/set-key "<SPC>" 'helm-M-x) ;; Double space for main emacs menu
 
+;; -- M-x 
+(evil-leader/set-key "x" 'helm-M-x) 
+
 ;; -- magit
 (evil-leader/set-key "ms" 'magit-status)
 
@@ -1008,11 +1010,11 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (evil-leader/set-key "br" 'revert-buffer-no-confirm)
 
 ;; -- Eval [h]
-(evil-leader/set-key "he" 'eval-buffer) ;; Meaning : h for eval (e already used) [h]eval-[b]uffer
+(evil-leader/set-key "hb" 'eval-buffer) ;; Meaning : h for eval (e already used) [h]eval-[b]uffer
 (evil-leader/set-key "hs" 'eval-last-sexp) ;; Meaning : [h]val-last-[s]exp
 
 ;; -- Web-mode
-(evil-leader/set-key "su" 'web-mode-surround) ;; Meaning ([s]: webmode (w is used for window)) [s][u]rround
+;; (evil-leader/set-key "su" 'web-mode-surround) ;; Meaning ([s]: webmode (w is used for window)) [s][u]rround
 (evil-leader/set-key "j" 'web-mode-tag-next)
 (evil-leader/set-key "k" 'web-mode-tag-previous)
 
@@ -1036,7 +1038,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (key-chord-define-global "<w" 'mc/mark-all-like-this)
 ;; (key-chord-define-global "ji" 'undo-tree-undo)
 ;; (key-chord-define-global "jo" 'undo-tree-redo)
-(key-chord-define-global "jk" 'ace-window)
+;;(key-chord-define-global "jk" 'ace-window) ;; cannot be jk (vim up/right)
 
 
 
@@ -1096,5 +1098,6 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;;(global-set-key (kbd "M-d") 'mc/mark-next-like-this) ;; Cannot be setted, because meta+d means delete word in emacs (and it is very usefull)
 ;;(global-set-key (kbd "M-q") 'save-buffers-kill-terminal)
 
+;; easy-motion
 (evilem-default-keybindings "ù")
 
