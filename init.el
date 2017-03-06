@@ -1,7 +1,3 @@
-
-
-
-
 ;; ------------------------- Init config
 (setq frame-title-format "emacs")
 (global-auto-revert-mode -1)
@@ -11,6 +7,8 @@
 
 ;; Show matching parenthesis
 (show-paren-mode)
+
+;;
 (global-hl-line-mode)
 (winner-mode t)
 (setq next-line-add-newlines t)
@@ -382,7 +380,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   psvn
   resize-window
   skewer-mode
-  smart-tab
+  ;; smart-tab
   spaceline
   swiper-helm
   tern
@@ -486,7 +484,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
  '(magit-dispatch-arguments nil)
  '(package-selected-packages
    (quote
-    (resize-window php-refactor-mode ac-php general swiper-helm popwin evil-surround window-numbering eyebrowse which-key spaceline evil edit-server neotree elfeed logview monokai-theme material-theme noctilux-theme nlinum crosshairs dumb-mode theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window web-mode magit helm-projectile helm)))
+    (resize-window php-refactor-mode ac-php general swiper-helm popwin evil-surround window-numbering eyebrowse which-key spaceline evil edit-server neotree elfeed logview monokai-theme material-theme noctilux-theme nlinum crosshairs dumb-mode theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol zerodark-theme markdown-mode+ emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window web-mode magit helm-projectile helm)))
  '(safe-local-variable-values (quote ((no-byte-compile t))))
  '(yas-global-mode t))
 
@@ -687,6 +685,8 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;; Web mode
 (require 'web-mode)
 ;;(setq web-mode-enable-auto-indentation nil)
+
+(setq-default web-mode-enable-auto-indentation nil)
 
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
@@ -1028,8 +1028,9 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 
 
 
-
-
+;; ---------------- Key binding evil normal mode
+(with-eval-after-load 'evil-maps
+  (define-key evil-normal-state-map (kbd "M-a") 'mark-whole-buffer))
 
 ;; ---------------- Key binding
 ;; (global-unset-key (kbd "C-x C-c"))
