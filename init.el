@@ -337,7 +337,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   auto-complete
   avy
   avy-menu
-  color-identifiers-mode
+  ;; color-identifiers-mode
   company
   dash
   diff-hl
@@ -345,10 +345,10 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   dsvn
   emmet-mode
   epl
-  evil    
+  evil
   evil-easymotion
   evil-leader
-  evil-nerd-commenter
+  ;; evil-nerd-commenter
   evil-surround   
   evil-visualstar
   evil-snipe
@@ -394,6 +394,9 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   yasnippet
   zerodark-theme
   ))
+
+;; Tell emacs where is your personal elisp lib dir
+(add-to-list 'load-path "~/.emacs.d/plugins/evil-nerd-commenter/")
 
 ;;
 ;; Besoin : Afficher le chemin du fichier complet dans le title de la frame courante
@@ -455,7 +458,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (set-face-attribute 'default nil :family "Inconsolata" :height 140 :weight 'normal)
 (set-face-attribute 'region nil :background "black")
 (set-face-attribute 'region nil :background "#1b1d1d" :foreground "#edd400") ;; Current line
-(add-to-list 'default-frame-alist '(background-color . "red"))
+;; (add-to-list 'default-frame-alist '(background-color . "red"))
 
 ;; Yascroll
 ;;(global-yascroll-bar-mode 1)
@@ -464,9 +467,9 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;;(powerline-center-theme)
 
 ;; Multiple cursor
-(require 'multiple-cursors-core)
+;; (require 'multiple-cursors-core)
 ;; Color identifier
-(add-hook 'after-init-hook 'global-color-identifiers-mode)
+;; (add-hook 'after-init-hook 'global-color-identifiers-mode)
 
 ;; Emmet
 (add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
@@ -502,7 +505,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
  '(magit-dispatch-arguments nil)
  '(package-selected-packages
    (quote
-    (resize-window php-refactor-mode ac-php general swiper-helm popwin evil-surround window-numbering eyebrowse which-key spaceline evil edit-server neotree elfeed logview monokai-theme color-theme-sanityinc-tomorrow moe-theme material-theme noctilux-theme nlinum crosshairs dumb-mode theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window web-mode magit helm-projectile helm)))
+    (resize-window php-refactor-mode ac-php general swiper-helm popwin evil-surround window-numbering eyebrowse which-key spaceline evil edit-server neotree elfeed logview monokai-theme material-theme noctilux-theme nlinum crosshairs dumb-mode theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol zerodark-theme markdown-mode+ smart-tab emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window web-mode magit helm-projectile helm)))
  '(safe-local-variable-values (quote ((no-byte-compile t))))
  '(yas-global-mode t))
 
@@ -698,23 +701,21 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 
 
 
+;;
 (setq neo-smart-open t)
     
 ;; Web mode
 (require 'web-mode)
+;;(setq web-mode-enable-auto-indentation nil)
+
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
 
-(add-to-list 'auto-mode-alist '("\\.phtml\\'" . nxml-mode))
-(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+;; (setq web-mode-enable-css-colorization t)
+;; (setq web-mode-enable-current-element-highlight t)    
+;; (setq web-mode-enable-current-column-highlight t)
 
 ;; yasnippet
 (require 'yasnippet)
@@ -722,16 +723,6 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (yas-global-mode 1)
 
 ;; (setq web-mode-enable-current-element-highlight t)
-(setq web-mode-enable-current-column-highlight t)    
-
-(define-key web-mode-map (kbd "C-M-n") 'web-mode-tag-next)
-(define-key web-mode-map (kbd "C-M-p") 'web-mode-tag-previous)
-
-(setq web-mode-enable-auto-pairing t)
-(setq web-mode-enable-css-colorization t)
-(setq web-mode-enable-current-element-highlight t)    
-(setq web-mode-enable-current-column-highlight t)
-
 ;; ac-php    
 (add-hook 'php-mode-hook
           '(lambda ()
@@ -1050,9 +1041,8 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;; (key-chord-define-global "jo" 'undo-tree-redo)
 (key-chord-define-global "ji" 'ace-window) ;; cannot be jk (vim up/right)
 
-
-
-
+;; avy
+(evil-leader/set-key "c" 'avy-goto-word-1)
 
 
 
@@ -1111,4 +1101,8 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 
 ;; easy-motion
 (evilem-default-keybindings "ù")
+
+;; web mode
+(define-key web-mode-map (kbd "C-M-n") 'web-mode-tag-next)
+(define-key web-mode-map (kbd "C-M-p") 'web-mode-tag-previous)
 

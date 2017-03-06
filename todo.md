@@ -1,3 +1,12 @@
+-- [-] Ne jamais ajouter de TAB
+- [-] CMD+SHIFT+/ affiche le menu aide (pas de declenchement du trigger comment/uncomment
+- [-] Validateur de syntax javascript / html / php on fly (doit fonctionner en web mode)
+- [-] SHIFT+Click dont show me submenu .. do a selection
+- [-] web mode disable auto indent 
+- [-] vc-ediff highlight color illisible
+- [-] implementer ctrL+x
+- [-] ctrl+c ne doit pas retirer la selection courante
+- [-] match bracket/color highlight -----> une couleur plus discrete, on voit rien
 - [-] Dired : remove folder is very slow
 - [-] Don't prompt for delete recursivly (code available in prelude)
 - [-] Enable evil easy motion to work like vim easy motion  https://github.com/easymotion/vim-easymotion
@@ -18,6 +27,10 @@
 - [-] [theme] Color in shell mode   
 - [-] [theme] Les couleurs ne sont pas assez décomposé comme dans Sublime (« var » colorA, = colorB, …)   
 - [-] mysql integration  
+- [-] Markdown in white theme
+- [-] git-svn
+- [-] big visible current buffer
+
 - [x] CTRL+SHIFT+TAB   
 - [x] Emacs find previous and next   
 - [x] Evil mode 
