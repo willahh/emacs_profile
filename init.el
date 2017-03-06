@@ -451,6 +451,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 
 
 ;; Emmet
+(require 'emmet-mode)
 (add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
 ;; (add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
 
@@ -624,20 +625,6 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   (setq whitespace-style (quote (face spaces tabs newline space-mark tab-mark newline-mark )))
   )
 
-;; Duplicate line
-;; Source : http://stackoverflow.com/a/88828
-
-;; Auto pair config
-;; Souhait initial : En mode css : Fermeture auto d une accolade lors de l ouverture d une nouvelle (ST behaviour)
-;; --> Fonctionne parfaitement :)
-;; Update : C'est trop relouuuuuuuu !!!!!!!!!!!, desactivation.
-;; (autopair-global-mode) ;; enable autopair in all buffer
-
-;; Emmet
-(add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
-;; (add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
-
-;; Web beautify
 
 ;; Add path where "js-beautify" is in, add it to the emacs env PATH
  (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
@@ -686,11 +673,11 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (require 'web-mode)
 ;;(setq web-mode-enable-auto-indentation nil)
 
-(setq-default web-mode-enable-auto-indentation nil)
+;; (setq-default web-mode-enable-auto-indentation nil)
 
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.css\\'" . css-mode)) ;; .css file should be assigned to css-mode for nice emmet support
 (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
 
 ;; (setq web-mode-enable-css-colorization t)
@@ -1057,10 +1044,12 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (global-set-key (kbd "M-c") 'kill-ring-save)
 (global-set-key (kbd "C-M-j") 'move-line-region-down)
 (global-set-key (kbd "C-M-k") 'move-line-region-up)
+(global-set-key (kbd "C-M-n") 'move-line-region-down)
+(global-set-key (kbd "C-M-p") 'move-line-region-up)
 (global-set-key (kbd "M-q") 'ask-before-closing)
 (global-set-key (kbd "M-s") 'save-buffer)
 (global-set-key (kbd "M-v") 'yank)
-(global-set-key (kbd "M-x") 'kill-region)
+(global-set-key (kbd "M-x") 'kill-whole-line)
 (global-set-key (kbd "C-M-x") 'helm-M-x)
 (global-set-key (kbd "M-z") 'undo-tree-undo)
 (global-set-key (kbd "≈") 'helm-M-x) ;; Correspond to [right cmd + x] (mac os x) with right cmd and right alt switch
