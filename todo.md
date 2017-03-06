@@ -1,3 +1,12 @@
+- [-] Ne jamais ajouter de TAB
+- [-] CMD+SHIFT+/ affiche le menu aide (pas de declenchement du trigger comment/uncomment
+- [-] Validateur de syntax javascript / html / php on fly (doit fonctionner en web mode)
+- [-] SHIFT+Click dont show me submenu .. do a selection
+- [-] web mode disable auto indent 
+- [-] vc-ediff highlight color illisible
+- [-] implementer ctrL+x
+- [-] ctrl+c ne doit pas retirer la selection courante
+- [-] match bracket/color highlight -----> une couleur plus discrete, on voit rien
 - Markdown in white theme
 - git-svn
 - big visible current buffer
