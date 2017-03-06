@@ -7,6 +7,8 @@
 
 ;; Show matching parenthesis
 (show-paren-mode)
+;; New line and indent by default
+(global-set-key (kbd "RET") 'newline-and-indent)
 
 ;;
 (global-hl-line-mode)
@@ -218,6 +220,31 @@ there's a region, all lines that region covers will be duplicated."
                     (buffer-file-name))))
     (when filename
       (x-select-text filename))))
+
+;; insert line after
+;; Source : http://emacsredux.com/blog/2013/03/26/smarter-open-line/
+(defun smart-open-line ()
+  "Insert an empty line after the current line.
+Position the cursor at its beginning, according to the current mode."
+  (interactive)
+  (move-end-of-line nil)
+  (newline-and-indent))
+
+(global-set-key [(M return)] 'smart-open-line)
+
+;; Insert line before
+;; Source : http://emacsredux.com/blog/2013/06/15/open-line-above/
+(defun smart-open-line-above ()
+  "Insert an empty line above the current line.
+Position the cursor at it's beginning, according to the current mode."
+  (interactive)
+  (move-beginning-of-line nil)
+  (newline-and-indent)
+  (forward-line -1)
+  (indent-according-to-mode))
+
+(global-set-key [(M shift return)] 'smart-open-line-above)
+
 ;;
 (define-minor-mode svn-repo-mode
        "Toggle svn-repo mode."
@@ -383,6 +410,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   smart-tab
   spaceline
   swiper-helm
+  ;; smart-newline
   tern
   tern-auto-complete
   undo-tree
@@ -392,6 +420,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   window-numbering
   yasnippet
   zerodark-theme
+  imenu-anywhere
   ))
 
 ;; Tell emacs where is your personal elisp lib dir
@@ -452,6 +481,11 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 
 
 
+;; Auto close parenthesis brackets, ...
+(require 'autopair)
+(autopair-global-mode 1)
+
+
 ;; Emmet
 (require 'emmet-mode)
 (add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
@@ -487,7 +521,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
  '(magit-dispatch-arguments nil)
  '(package-selected-packages
    (quote
-    (resize-window php-refactor-mode ac-php general swiper-helm popwin evil-surround window-numbering eyebrowse which-key spaceline evil edit-server neotree elfeed logview monokai-theme material-theme noctilux-theme nlinum crosshairs dumb-mode theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol zerodark-theme markdown-mode+ emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window web-mode magit helm-projectile helm)))
+    (imenu-anywhere smart-newline resize-window php-refactor-mode ac-php general swiper-helm popwin evil-surround window-numbering eyebrowse which-key spaceline evil edit-server neotree elfeed logview monokai-theme material-theme noctilux-theme nlinum crosshairs dumb-mode theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol zerodark-theme markdown-mode+ emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window web-mode magit helm-projectile helm)))
  '(safe-local-variable-values (quote ((no-byte-compile t))))
  '(yas-global-mode t))
 
@@ -516,6 +550,10 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 
 ;; Using Projectile everywhere
 (setq projectile-require-project-root nil)
+
+;; imenu-anywhere
+(require 'imenu-anywhere)
+
 
 ;;Auto complete
 (global-auto-complete-mode t)
@@ -864,6 +902,10 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (require 'spaceline-config)
 (spaceline-spacemacs-theme)
 
+;; ;; Smart-newline
+;; (require 'smart-newline)
+;; (smart-newline-mode 1)
+
 ;; Nyan
 ;; (require 'nyan-mode)
 ;; (nyan-mode)
@@ -966,7 +1008,8 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 
 ;; -- (evil-leader/set-key "br" 'helm-recentf)
 (evil-leader/set-key "r" 'helm-swoop)
-(evil-leader/set-key "e" 'swiper-helm) ;; Alternative to helm-swoop, lets see with time which is better
+;; (evil-leader/set-key "e" 'swiper-helm) ;; Alternative to helm-swoop, lets see with time which is better
+(evil-leader/set-key "e" 'imenu-anywhere)
 (evil-leader/set-key "ff" 'helm-find-files)
 (evil-leader/set-key "fa" 'helm-ag)
 (evil-leader/set-key "fq" 'ag-files)
@@ -1118,3 +1161,9 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (set-face-foreground 'show-paren-match "#000")
 (set-face-background 'show-paren-match "#FFF")
 
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

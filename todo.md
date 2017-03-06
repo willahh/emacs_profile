@@ -7,8 +7,11 @@
 - [x] Toujours utiliser des espaces pour l indentation 
 - [x] CMD+A select all (just in normal mode)
 - [x] CTRL+X ne doit supprimer que la ligne
-- [-] Default mode : emacs (not Evil default)
+- [x] Default mode : emacs (not Evil default)
 - [x] CTRL+X si selection, supprimer la selection
+- [x] insert line after (Sublime --> CTRL+o)
+- [x] insert line before (Sublime --> CTRL+SHIFT+o)
+- [-] Web mode continue des tab (creation d un html depuis une page vierge)
 - [-] Afficher le petit menu d autocompletion plus rapidement
 - [-] Current highlight line : background plus fonce
 - [-] Implementer Emmet en web mode (.test + tab = <div class="test"></div>)
