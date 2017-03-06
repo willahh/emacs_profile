@@ -7,6 +7,10 @@
 - [x] Toujours utiliser des espaces pour l indentation 
 - [x] CMD+A select all (just in normal mode)
 - [x] CTRL+X ne doit supprimer que la ligne
+- [-] Default mode : emacs (not Evil default)
+- [x] CTRL+X si selection, supprimer la selection
+- [-] Afficher le petit menu d autocompletion plus rapidement
+- [-] Current highlight line : background plus fonce
 - [-] Implementer Emmet en web mode (.test + tab = <div class="test"></div>)
 - [-] web mode : refresh colors after yank
 - [-] Disable web mode disable auto indent 

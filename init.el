@@ -370,7 +370,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   multiple-cursors
   nlinum
   nlinum-relative
-  nyan-mode
+  ;; nyan-mode
   php-mode
   php-refactor-mode
   pkg-info
@@ -380,7 +380,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   psvn
   resize-window
   skewer-mode
-  ;; smart-tab
+  smart-tab
   spaceline
   swiper-helm
   tern
@@ -396,6 +396,8 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 
 ;; Tell emacs where is your personal elisp lib dir
 (add-to-list 'load-path "~/.emacs.d/plugins/evil-nerd-commenter/")
+(add-to-list 'load-path "~/.emacs.d/plugins/whole-line-or-region")
+(require 'whole-line-or-region)
 
 ;;
 ;; Besoin : Afficher le chemin du fichier complet dans le title de la frame courante
@@ -563,6 +565,26 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;; psvn
 (require 'psvn)
 ;;(load-file "./.emacs.d/package/vc-svn/vc-svn.el")
+
+;; smart-tab
+(require 'smart-tab)
+(global-smart-tab-mode 1)
+
+;; Tab to trigget emmet
+;; Source : http://emacs.stackexchange.com/questions/10521/rebind-emmet-mode-to-smart-tab
+;; Doesn't work
+;; (defun add-emmet-expand-to-smart-tab-completions ()
+;;   ;; Add an entry for current major mode in
+;;   ;; `smart-tab-completion-functions-alist' to use
+;;   ;; `emmet-expand-line'.
+;;   (add-to-list 'smart-tab-completion-functions-alist
+;;                (cons major-mode #'emmet-expand-line))) 
+
+;; (require 'emmet-mode)
+;; ;; (add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
+;; ;; (add-hook 'sgml-mode-hook 'add-emmet-expand-to-smart-tab-completions)
+;; (add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
+;; (add-hook 'css-mode-hook 'add-emmet-expand-to-smart-tab-completions)
 
 ;; flymake-mode
 ;; Let's run 8 checks at once instead.
@@ -786,6 +808,9 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;; Enable evil mode
 (evil-mode 1)
 
+;; Default mode to emacs (Avant d etre vraiment habitue ;))
+(setq evil-default-state 'emacs)
+
 ;; Remove all keybindings from insert-state keymap (insert mode behavior like emacs) 
 (setcdr evil-insert-state-map nil)
 
@@ -840,9 +865,9 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (spaceline-spacemacs-theme)
 
 ;; Nyan
-(require 'nyan-mode)
-(nyan-mode)
-(nyan-start-animation)
+;; (require 'nyan-mode)
+;; (nyan-mode)
+;; (nyan-start-animation)
 
 ;; Which-key
 (require 'which-key)
@@ -1041,18 +1066,20 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 (global-set-key (kbd "C-x C-p") 'helm-projectile)
 (global-set-key (kbd "C-x b") 'helm-mini)
-(global-set-key (kbd "M-c") 'kill-ring-save)
+;; (global-set-key (kbd "M-c") 'kill-ring-save)
+(global-set-key (kbd "M-c") 'whole-line-or-region-copy-region-as-kill)
 (global-set-key (kbd "C-M-j") 'move-line-region-down)
 (global-set-key (kbd "C-M-k") 'move-line-region-up)
 (global-set-key (kbd "C-M-n") 'move-line-region-down)
 (global-set-key (kbd "C-M-p") 'move-line-region-up)
 (global-set-key (kbd "M-q") 'ask-before-closing)
 (global-set-key (kbd "M-s") 'save-buffer)
-(global-set-key (kbd "M-v") 'yank)
-(global-set-key (kbd "M-x") 'kill-whole-line)
-(global-set-key (kbd "C-M-x") 'helm-M-x)
+;; (global-set-key (kbd "M-v") 'yank)
+(global-set-key (kbd "M-v") 'whole-line-or-region-yank)
+;; (global-set-key (kbd "M-x") 'kill-whole-line)
+(global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
 (global-set-key (kbd "M-z") 'undo-tree-undo)
-(global-set-key (kbd "≈") 'helm-M-x) ;; Correspond to [right cmd + x] (mac os x) with right cmd and right alt switch
+(global-set-key (kbd "C-M-x") 'helm-M-x) ;; Doesn t work
 (global-set-key [(meta /)] 'evilnc-comment-or-uncomment-lines)
 (global-set-key [(meta shift d)] 'duplicate-current-line-or-region)
 (global-set-key [(meta shift z)] 'undo-tree-redo)
