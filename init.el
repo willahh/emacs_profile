@@ -674,6 +674,9 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   ("*Backtrace*"         . (display-buffer-same-window . nil))
   ("*magit-revision*"    . (display-buffer-same-window . nil))
   ("*magit-diff*"        . (display-buffer-same-window . nil))
+  ;; ("*magit:"             . (display-buffer-same-window . nil))
+  ;; ("*vc-log*"            . (display-buffer-same-window . nil))
+  ;; ("*log-edit-files*"    . (display-buffer-same-window . nil))
 ;;  ("*Help*"            . (display-buffer-same-window . nil))
   ))
 
@@ -1045,7 +1048,8 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (key-chord-define-global "<w" 'mc/mark-all-like-this)
 ;; (key-chord-define-global "ji" 'undo-tree-undo)
 ;; (key-chord-define-global "jo" 'undo-tree-redo)
-;;(key-chord-define-global "jk" 'ace-window) ;; cannot be jk (vim up/right)
+(key-chord-define-global "ji" 'ace-window) ;; cannot be jk (vim up/right)
+
 
 
 
