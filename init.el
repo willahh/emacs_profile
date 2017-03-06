@@ -8,7 +8,8 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 (set-default 'cursor-type 'bar)
-(column-number-mode)
+
+;; Show matching parenthesis
 (show-paren-mode)
 (global-hl-line-mode)
 (winner-mode t)
@@ -449,27 +450,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   (cl-letf (((symbol-function #'process-list) (lambda ())))
     ad-do-it))
 
-;; wra Custom theme
-;; Default font
-;; (set-default-font "Inconsolata-14") ;; Font face: Inconsolata, font-size: 14
-(load-theme 'monokai t)
-(load-theme 'doom-molokai t)
 
-(set-face-attribute 'default nil :family "Inconsolata" :height 140 :weight 'normal)
-(set-face-attribute 'region nil :background "black")
-(set-face-attribute 'region nil :background "#1b1d1d" :foreground "#edd400") ;; Current line
-;; (add-to-list 'default-frame-alist '(background-color . "red"))
-
-;; Yascroll
-;;(global-yascroll-bar-mode 1)
-
-;;(require 'powerline)
-;;(powerline-center-theme)
-
-;; Multiple cursor
-;; (require 'multiple-cursors-core)
-;; Color identifier
-;; (add-hook 'after-init-hook 'global-color-identifiers-mode)
 
 ;; Emmet
 (add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
@@ -632,7 +613,6 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (scroll-bar-mode -1)
 (set-default 'cursor-type 'bar)
 (column-number-mode)
-(show-paren-mode)
 (global-hl-line-mode)
 (winner-mode t)
 (setq next-line-add-newlines t)
@@ -947,7 +927,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 
 ;; ---------------- Unbind some default / package keybindings
 ;; Disable emacs search (c-s / c-r) -> Replaced by evil search
-(dolist (key '("\M-x" "\M-z" "\M-v" "\C-s" "\C-r" "\C-g" "\C-w" "\C-v"))
+(dolist (key '("\M-x" "\M-z" "\M-v" "\C-s" "\C-r" "\C-g" "\C-w" "\C-v" "\M-p" "\M-n"))
   (global-unset-key key))
 
 
@@ -1058,10 +1038,8 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB work in terminal
 (define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
 
-;; color theme
+;; ---------------- Dolor theme
 (set-face-attribute 'lazy-highlight nil :background "green")
-
-
 
 
 ;; --------- key binding
@@ -1076,13 +1054,13 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (global-set-key (kbd "C-x C-p") 'helm-projectile)
 (global-set-key (kbd "C-x b") 'helm-mini)
 (global-set-key (kbd "M-c") 'kill-ring-save)
-(global-set-key (kbd "M-n") 'move-line-region-down)
-(global-set-key (kbd "M-p") 'move-line-region-up)
+(global-set-key (kbd "C-M-j") 'move-line-region-down)
+(global-set-key (kbd "C-M-k") 'move-line-region-up)
 (global-set-key (kbd "M-q") 'ask-before-closing)
 (global-set-key (kbd "M-s") 'save-buffer)
 (global-set-key (kbd "M-v") 'yank)
-;;(global-set-key (kbd "M-x") 'kill-region)
-(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "M-x") 'kill-region)
+(global-set-key (kbd "C-M-x") 'helm-M-x)
 (global-set-key (kbd "M-z") 'undo-tree-undo)
 (global-set-key (kbd "≈") 'helm-M-x) ;; Correspond to [right cmd + x] (mac os x) with right cmd and right alt switch
 (global-set-key [(meta /)] 'evilnc-comment-or-uncomment-lines)
@@ -1105,4 +1083,21 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;; web mode
 (define-key web-mode-map (kbd "C-M-n") 'web-mode-tag-next)
 (define-key web-mode-map (kbd "C-M-p") 'web-mode-tag-previous)
+
+
+
+
+;; --------- willahh theme 
+;; (set-default-font "Inconsolata-14") ;; Font face: Inconsolata, font-size: 14
+(load-theme 'monokai t)
+(load-theme 'doom-molokai t)
+
+;;
+(set-face-attribute 'default nil :family "Inconsolata" :height 140 :weight 'normal)
+(set-face-attribute 'region nil :background "black")
+(set-face-attribute 'region nil :background "#1b1d1d" :foreground "#edd400") ;; Current line
+
+;; parenthesis
+(set-face-foreground 'show-paren-match "#000")
+(set-face-background 'show-paren-match "#FFF")
 
