@@ -4,15 +4,18 @@
 - [x] match bracket/color highlight -----> une couleur plus discrete, on voit rien
 - [x] CMD+SHIFT+/ affiche le menu aide (pas de declenchement du trigger comment/uncomment
       ----> Fonctione bien avec emacs from brew
-- [-] web mode disable auto indent 
+- [x] Toujours utiliser des espaces pour l indentation 
+- [x] CMD+A select all (just in normal mode)
+- [x] CTRL+X ne doit supprimer que la ligne
+- [-] Implementer Emmet en web mode (.test + tab = <div class="test"></div>)
+- [-] web mode : refresh colors after yank
+- [-] Disable web mode disable auto indent 
 - [-] vc-ediff highlight color illisible
-- [-] Ne jamais ajouter de TAB
 - [-] Validateur de syntax javascript / html / php on fly (doit fonctionner en web mode)
 - [-] Dired : remove folder is very slow
 - [-] Don't prompt for delete recursivly (code available in prelude)
 - [-] Enable evil easy motion to work like vim easy motion  https://github.com/easymotion/vim-easymotion
 - [-] ctrl+c ne doit pas retirer la selection courante
-
 
 - [-] Bottom line
   - [-] Show current mode in color
