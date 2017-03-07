@@ -5,8 +5,12 @@
 (scroll-bar-mode -1)
 (set-default 'cursor-type 'bar)
 
+;; Always indent with space
+(setq-default indent-tabs-mode nil)
+
 ;; Show matching parenthesis
 (show-paren-mode)
+
 ;; New line and indent by default
 (global-set-key (kbd "RET") 'newline-and-indent)
 
@@ -348,8 +352,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;; ------------ Package list
 (require 'package)
 (setq package-list '(
-
-         
+  php-auto-yasnippets
   ;; exec-path-from-shell
   ;; smart-mode-line
   ;; with-editor
@@ -364,7 +367,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   avy
   avy-menu
   ;; color-identifiers-mode
-  company
+  ;; company
   dash
   diff-hl
   doom-themes
@@ -521,7 +524,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
  '(magit-dispatch-arguments nil)
  '(package-selected-packages
    (quote
-    (imenu-anywhere smart-newline resize-window php-refactor-mode ac-php general swiper-helm popwin evil-surround window-numbering eyebrowse which-key spaceline evil edit-server neotree elfeed logview monokai-theme material-theme noctilux-theme nlinum crosshairs dumb-mode theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol zerodark-theme markdown-mode+ emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window web-mode magit helm-projectile helm)))
+    (php-auto-yasnippets imenu-anywhere smart-newline resize-window php-refactor-mode ac-php general swiper-helm popwin evil-surround window-numbering eyebrowse which-key spaceline evil edit-server neotree elfeed logview monokai-theme material-theme noctilux-theme nlinum crosshairs dumb-mode theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol zerodark-theme markdown-mode+ emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window web-mode magit helm-projectile helm)))
  '(safe-local-variable-values (quote ((no-byte-compile t))))
  '(yas-global-mode t))
 
@@ -556,7 +559,9 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 
 
 ;;Auto complete
+(ac-config-default)
 (global-auto-complete-mode t)
+(setq ac-auto-show-menu 0) ;; Delay until open menu (fast please !)
 
 ;; Expand region
 (require 'expand-region)
@@ -744,18 +749,15 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;; (setq web-mode-enable-current-element-highlight t)    
 ;; (setq web-mode-enable-current-column-highlight t)
 
-;; yasnippet
-(require 'yasnippet)
-(add-to-list 'yas-snippet-dirs "~/.emacs.d/elpa/yasnippet-20170216.1928/snippets/")
-(yas-global-mode 1)
 
 ;; (setq web-mode-enable-current-element-highlight t)
 ;; ac-php    
-(add-hook 'php-mode-hook
-          '(lambda ()
-             (require 'company-php)
-             (company-mode t)
-             (add-to-list 'company-backends 'company-ac-php-backend )))
+;; (add-hook 'php-mode-hook
+;;           '(lambda ()
+;;              (require 'company-php)
+;;              (company-mode t)
+;;              (add-to-list 'company-backends 'company-ac-php-backend )))
+
 
 ;; php-refactor
 (require 'php-refactor-mode)
@@ -815,7 +817,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (setq key-chord-one-key-delay 0.2) ; default 0.2
 
 
-(add-hook 'after-init-hook 'global-company-mode)
+;; (add-hook 'after-init-hook 'global-company-mode)
 
 
 
@@ -836,6 +838,21 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;; Add vc hooks to enable ediff checking
 (eval-after-load "vc-hooks"
          '(define-key vc-prefix-map "=" 'vc-ediff))
+
+
+;; yasnippet
+(require 'yasnippet)
+;; (add-to-list 'yas-snippet-dirs "~/.emacs.d/elpa/yasnippet-20170216.1928/snippets/")
+(add-to-list 'yas-snippet-dirs "~/.emacs.d/elpa/yasnippet-20170216.1928/snippets")
+(yas-global-mode 1)
+(define-key web-mode-map (kbd "C-c C-y") 'yas/create-php-snippet)
+;;(payas/ac-setup)
+
+
+;; php-auto-yasnippets
+(require 'php-auto-yasnippets)
+(setq php-auto-yasnippet-php-program "~/.emacs.d/elpa/php-auto-yasnippets-20141128.1411/Create-PHP-YASnippet.php")
+
 
 
 
