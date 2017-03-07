@@ -17,6 +17,12 @@
       --- Ctrl+j fonctionne bien et on s'y habitue vite
 - [x] Current highlight line : background plus fonce
 - [x] ctrl+c ne doit pas retirer la selection courante
+- [-] ctrl+a en mode evil > default ne fonctionne pas
+- [-] Certains gros fichiers impossibe à ouvrir
+- [-] Fichiers markdown mette toutes les windows en centré
+- [-] ctrl+e --> en mode emacs, ouvrir le panneau de filtre rapide
+- [-] Don't add behaviour for end of line (remove end of line stuff)
+      (Creation de differences inutiles sur la toute dernière ligne de certains fichiers)
 - [-] Markdown mode style like in Sublime (background white, text black, column width limit, center inside)
 - [-] M-w : close current buffer
 - [-] Faire tourner "create-tags" (ctags doit etre lu par emacs)

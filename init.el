@@ -1,4 +1,5 @@
- ;; ------------------------- Init config
+
+;; ------------------------- Init config
 (setq frame-title-format "emacs")
 (global-auto-revert-mode -1)
 (tool-bar-mode -1)
@@ -735,6 +736,9 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;; Add path where "js-beautify" is in, add it to the emacs env PATH
  (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
     (setq exec-path (append exec-path '("/usr/local/bin")))
+
+(setenv "PATH" (shell-command-to-string "source ~/.bashrc; echo -n $PATH"))
+
 
 
 ;; Note : "*Help*" rentre en conflit avec les buffer helm (buffer helm en full height)
