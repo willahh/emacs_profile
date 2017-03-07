@@ -17,6 +17,7 @@
       --- Ctrl+j fonctionne bien et on s'y habitue vite
 - [x] Current highlight line : background plus fonce
 - [x] ctrl+c ne doit pas retirer la selection courante
+- [-] JS auto doc
 - [-] Faire fonctionner des snippets javascript
 - [-] Web mode : avoir des propositions d auto completion de mots cles php connu
       Comme dans Sublime (var_       --> proposition var_dump)
