@@ -21,6 +21,8 @@
 
 ;;
 (global-hl-line-mode)
+
+;;
 (winner-mode t)
 (setq next-line-add-newlines t)
 

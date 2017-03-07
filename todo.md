@@ -2,12 +2,21 @@
 - [x] M-S-w : close window
 - [x] M-r -- ouvrir le panneau de filtre rapide
 - [x] Nom du chemin courant dans le title (disparu suite merge)
-- [-] tabbar organiser par group de fichiers et par mode
+- [x] M-o : find file
+- [x] M-S-o : find in buffer (helm-mini)- [-] tabbar organiser par group de fichiers et par mode
+- [x] M-S-p : M-x main
+- [x] M-d : select all like this
+- [x] M-p : projectile file
+- [x] M-C-p : projectile project
+- [x] M-S-f (search) : Binder sur helm-ag
+- [x] M-C-f (search) : Binduer sur ag-files
+- [x] M-x regression --> do cut instead of main emacs panel
+- [-] nlinum : highlight current line number
+- [-] nlinum : plus large
 - [-] M-a regression --> ne selectionne plus l integralite du buffer
-- [-] M-x regression --> do cut instead of main emacs panel
 - [-] big visible current buffer
-- [-] M-o : find file
-- [-] M-S-o : find in buffer (helm-mini)
+- [-]
+
 - [-] ctrl+a en mode evil > default ne fonctionne pas
 - [-] Certains gros fichiers impossibe à ouvrir
 - [-] Fichiers markdown mette toutes les windows en centré

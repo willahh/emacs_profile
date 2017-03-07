@@ -1,19 +1,7 @@
-
-
-
-
-
-
-
-
 ;; ---------------- Unbind some default / package keybindings
 ;; Disable emacs search (c-s / c-r) -> Replaced by evil search
 (dolist (key '("\M-x" "\M-z" "\M-v" "\C-s" "\C-r" "\C-g" "\C-w" "\C-v" "\M-p" "\M-n"))
   (global-unset-key key))
-
-
-
-
 
 
 ;; ---------------- Key binding leader
@@ -22,9 +10,7 @@
 
 ;; -- M-x
 (evil-leader/set-key "<SPC>" 'helm-M-x) ;; Double space for main emacs menu
-
-;; -- M-x 
-(evil-leader/set-key "x" 'helm-M-x) 
+;; (evil-leader/set-key "x" 'helm-M-x) 
 
 ;; -- magit
 (evil-leader/set-key "ms" 'magit-status)
@@ -140,8 +126,13 @@
 ;; (global-set-key (kbd "M-c") 'whole-line-or-region-copy-region-as-kill)
 (global-set-key (kbd "C-M-j") 'move-line-region-down)
 (global-set-key (kbd "C-M-k") 'move-line-region-up)
-(global-set-key (kbd "C-M-n") 'move-line-region-down)
-(global-set-key (kbd "C-M-p") 'move-line-region-up)
+;; (global-set-key (kbd "C-M-n") 'move-line-region-down)
+;; (global-set-key (kbd "C-M-p") 'move-line-region-up)
+
+(global-set-key [(meta shift p)] 'helm-M-x)
+(global-set-key (kbd "M-p") 'helm-projectile-find-file)
+(global-set-key (kbd "C-M-p") 'helm-projectile-switch-project)
+
 (global-set-key (kbd "M-q") 'ask-before-closing)
 (global-set-key (kbd "M-s") 'save-buffer)
 ;; (global-set-key (kbd "M-v") 'yank)
@@ -151,7 +142,15 @@
 (global-set-key (kbd "M-z") 'undo-tree-undo)
 (global-set-key (kbd "M-w")  'kill-this-buffer)
 (global-set-key (kbd "M-r")  'helm-swoop)
-(global-set-key [(meta x)] 'helm-M-x) ;; Doesn t work
+(global-set-key (kbd "M-o")  'helm-find-files)
+(global-set-key (kbd "M-d")  'mc/mark-next-like-this)
+
+(global-set-key [(meta shift o)]  'helm-mini)
+(global-set-key [(meta shift f)]  'helm-ag)
+(global-set-key (kbd "C-M-f") 'ag)
+
+
+;; (global-set-key [(meta x)] 'helm-M-x) ;; Doesn t work
 (global-set-key [(meta shift w)] 'delete-window)
 (global-set-key [(meta /)] 'evilnc-comment-or-uncomment-lines)
 (global-set-key [(meta shift d)] 'duplicate-current-line-or-region)

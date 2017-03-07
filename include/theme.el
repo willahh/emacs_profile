@@ -1,7 +1,7 @@
 ;; (set-default-font "Inconsolata-14") ;; Font face: Inconsolata, font-size: 14
 ;; Base theme
-(load-theme 'monokai t)
-(load-theme 'doom-molokai t)
+;; (load-theme 'monokai t)
+(load-theme 'doom-one t)
 
 
 ;; ------- Custom theme
@@ -22,7 +22,7 @@
 ;; ------- Tabbar settings
 (set-face-attribute
  'tabbar-default nil
- :background "#1b1d1d"
+ :background "#1e2126"
  :foreground "#5e6161"
  :box '(:line-width 1 :color "#2f2f2d" :style nil)
  :height 1
@@ -30,13 +30,13 @@
 
 (set-face-attribute
  'tabbar-unselected nil
- :background "#1b1d1d"
+ :background "#1e2126"
  :foreground "#5e6161"
- :box '(:line-width 5 :color "#1b1d1d" :style nil))
+ :box '(:line-width 5 :color "#1e2126" :style nil))
 
 (set-face-attribute
  'tabbar-selected nil
- :background "#1b1d1d"
+ :background "#1e2126"
  :foreground "#ffffff"
  :box '(:line-width 1 :color "#80cbc4" :style nil))
 
