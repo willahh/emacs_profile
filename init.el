@@ -1,4 +1,4 @@
-;; ------------------------- Init config
+ ;; ------------------------- Init config
 (setq frame-title-format "emacs")
 (global-auto-revert-mode -1)
 (tool-bar-mode -1)
@@ -292,6 +292,38 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   (setq deactivate-mark nil))
 (ad-activate 'kill-ring-save)
 
+;; Create-tags
+;; Source : https://www.emacswiki.org/emacs/BuildTags
+(defun create-tags (dir-name)
+    "Create tags file."
+    (interactive "DDirectory: ")
+    (shell-command
+     (format "%s -f TAGS -e -R %s" ctags (directory-file-name dir-name)))
+  )
+
+
+
+
+
+;; Add left and right margins, when file is markdown or text.
+(defun center-window (window) ""
+  (let* ((current-extension (file-name-extension (or (buffer-file-name) "foo.unknown")))
+         (max-text-width 80)
+         (margin (max 0 (/ (- (window-width window) max-text-width) 2))))
+    (if (and (not (string= current-extension "md"))
+             (not (string= current-extension "txt")))
+        ;; Do nothing if this isn't an .md or .txt file.
+        ()
+      (set-window-margins window margin margin))))
+
+;; Adjust margins of all windows.
+(defun center-windows () ""
+  (walk-windows (lambda (window) (center-window window)) nil 1))
+
+;; Listen to window changes.
+(add-hook 'window-configuration-change-hook 'center-windows)
+
+
 
 
 ;; -----------------------------
@@ -362,11 +394,9 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   js-comint
   smart-forward
   js-doc
+  autopair
   ;; exec-path-from-shell
-  ;; smart-mode-line
-  ;; with-editor
-  ;;rich-mino≈rity
-  ;;s
+  smart-mode-line ;; (sml -> activated)
   sml-mode         
   ace-window
   ag
@@ -375,18 +405,19 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   auto-complete
   avy
   avy-menu
-  ;; color-identifiers-mode
-  ;; company
   dash
   diff-hl
   doom-themes
+  leuven-theme
+  color-theme-buffer-local 
   dsvn
   emmet-mode
+  markdown-mode
   epl
   evil
   evil-easymotion
   evil-leader
-  ;; evil-nerd-commenter
+  evil-nerd-commenter ;; keep this (get it from melpa or from plugin folder)
   evil-surround   
   evil-visualstar
   evil-snipe
@@ -409,7 +440,6 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   multiple-cursors
   nlinum
   nlinum-relative
-  ;; nyan-mode
   php-mode
   php-refactor-mode
   pkg-info
@@ -422,7 +452,6 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   smart-tab
   spaceline
   swiper-helm
-  ;; smart-newline
   tern
   tern-auto-complete
   undo-tree
@@ -516,13 +545,13 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
+ '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks" t)
  '(custom-safe-themes
    (quote
-    ("06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "82d2cac368ccdec2fcc7573f24c3f79654b78bf133096f9b40c20d97ec1d8016" "98cc377af705c0f2133bb6d340bf0becd08944a588804ee655809da5d8140de6" "4980e5ddaae985e4bae004280bd343721271ebb28f22b3e3b2427443e748cd3f" "9f3181dc1fabe5d58bbbda8c48ef7ece59b01bed606cfb868dd147e8b36af97c" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "9d91458c4ad7c74cf946bd97ad085c0f6a40c370ac0a1cbeb2e3879f15b40553" "dd6e52a5b1180f5c8bf408764a32867e2fa86594ded78a29040cafce6a4ea808" "945fe66fbc30a7cbe0ed3e970195a7ee79ee34f49a86bc96d02662ab449b8134" "ad1c2abad40e11d22156fe3987fd9b74b9e1c822264a07dacb24e0b3133aaed1" "eb0a314ac9f75a2bf6ed53563b5d28b563eeba938f8433f6d1db781a47da1366" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "f5ad3af69f2b6b7c547208b8708d4fa7928b5697ca0845633d1d67c2d145952a" "c7a9a68bd07e38620a5508fef62ec079d274475c8f92d75ed0c33c45fbe306bc" default)))
- '(ediff-diff-options "-w")
- '(ediff-split-window-function (quote split-window-horizontally))
- '(ediff-window-setup-function (quote ediff-setup-windows-plain))
+    ("807a7f4c2d0d331fc1798e6d38b890ce3582096b8d622ba3b491b2aa4345e962" "cdf96318f1671344564ba74ef75cc2a3f4692b2bee77de9ce9ff5f165de60b1f" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "82d2cac368ccdec2fcc7573f24c3f79654b78bf133096f9b40c20d97ec1d8016" "98cc377af705c0f2133bb6d340bf0becd08944a588804ee655809da5d8140de6" "4980e5ddaae985e4bae004280bd343721271ebb28f22b3e3b2427443e748cd3f" "9f3181dc1fabe5d58bbbda8c48ef7ece59b01bed606cfb868dd147e8b36af97c" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "9d91458c4ad7c74cf946bd97ad085c0f6a40c370ac0a1cbeb2e3879f15b40553" "dd6e52a5b1180f5c8bf408764a32867e2fa86594ded78a29040cafce6a4ea808" "945fe66fbc30a7cbe0ed3e970195a7ee79ee34f49a86bc96d02662ab449b8134" "ad1c2abad40e11d22156fe3987fd9b74b9e1c822264a07dacb24e0b3133aaed1" "eb0a314ac9f75a2bf6ed53563b5d28b563eeba938f8433f6d1db781a47da1366" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "f5ad3af69f2b6b7c547208b8708d4fa7928b5697ca0845633d1d67c2d145952a" "c7a9a68bd07e38620a5508fef62ec079d274475c8f92d75ed0c33c45fbe306bc" default)))
+ '(ediff-diff-options "-w" t)
+ '(ediff-split-window-function (quote split-window-horizontally) t)
+ '(ediff-window-setup-function (quote ediff-setup-windows-plain) t)
  '(evil-search-module (quote evil-search))
  '(git-gutter:added-sign "|")
  '(git-gutter:deleted-sign "|")
@@ -530,10 +559,10 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
  '(git-gutter:modified-sign "|")
  '(git-gutter:window-width 1)
  '(helm-follow-mode-persistent t)
- '(magit-dispatch-arguments nil)
+ '(magit-dispatch-arguments nil t)
  '(package-selected-packages
    (quote
-    (js-doc smart-forward js-comint php-auto-yasnippets imenu-anywhere smart-newline resize-window php-refactor-mode ac-php general swiper-helm popwin evil-surround window-numbering eyebrowse which-key spaceline evil edit-server neotree elfeed logview monokai-theme material-theme noctilux-theme nlinum crosshairs dumb-mode theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol zerodark-theme markdown-mode+ emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window web-mode magit helm-projectile helm)))
+    (leuven-theme load-theme-buffer-local markdown-mode js-doc smart-forward js-comint php-auto-yasnippets imenu-anywhere smart-newline resize-window php-refactor-mode ac-php general swiper-helm popwin evil-surround window-numbering eyebrowse which-key spaceline evil edit-server neotree elfeed logview monokai-theme material-theme noctilux-theme nlinum crosshairs dumb-mode theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol zerodark-theme markdown-mode+ emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window web-mode magit helm-projectile helm)))
  '(safe-local-variable-values (quote ((no-byte-compile t))))
  '(yas-global-mode t))
 
@@ -653,6 +682,9 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;; I want to see all errors for the line.
 (setq flymake-number-of-errors-to-display nil)
 
+;; markdown-mode
+(require 'markdown-mode)
+
 
 ;; flycheck
 (global-flycheck-mode)
@@ -670,11 +702,8 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;; Besoin : Avoir des commandes svn non disponible par default comme svn status
 ;; Sources :
 ;; Update : suite a pas mal de test avec psn, dsvn est plus recent et convient mieu.
-;;
 ;; http://stackoverflow.com/a/2490367
 ;; http://svn.apache.org/repos/asf/subversion/trunk/contrib/client-side/emacs/dsvn.el
-;;
-;;
 (require 'vc-svn)
 (autoload 'svn-status "dsvn" "Run `svn status'." t)
 (autoload 'svn-update "dsvn" "Run `svn update'." t)
@@ -816,25 +845,15 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;; Source : http://emacs.stackexchange.com/q/5603
 (setq dired-dwim-target t)
 
-
 ;; Key chords commands
 ;; From http://emacsrocks.com/e07.html
 (require 'key-chord)
 (key-chord-mode 1)
 
 
-
 ;; Max time delay between two key presses to be considered a key
 (setq key-chord-two-keys-delay 0.1) ; default 0.1
 (setq key-chord-one-key-delay 0.2) ; default 0.2
-
-
-;; (add-hook 'after-init-hook 'global-company-mode)
-
-
-
-;; Custom binding for backward-paragraph and foreword-paragraph
- 
 
 ;; Ediff setup
 (winner-mode)
