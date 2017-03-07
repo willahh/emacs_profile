@@ -11,8 +11,16 @@
 - [x] M-S-f (search) : Binder sur helm-ag
 - [x] M-C-f (search) : Binduer sur ag-files
 - [x] M-x regression --> do cut instead of main emacs panel
-- [-] nlinum : highlight current line number
+- [-] git gutter / hl line : Plus d'affichage dans la goutiere
+- [-] web mode : highlight current tag ne fonctionne plus (c etait parfait avant)
+- [-] M-c-p doesn't work on all buffer
+- [-] Enable emmet by default for web files
 - [-] nlinum : plus large
+- [-] nlinum : highlight current line number
+- [-] meta shift 1 : delete other windows --> don't work --> maybe disable it globaly 
+- [-] tabbar : hide bad icons
+- [-] M-p doesn't work on all buffer
+- [-] Ajouter une méthode copy file name pour retourner uniquement le nom du fichier
 - [-] M-a regression --> ne selectionne plus l integralite du buffer
 - [-] big visible current buffer
 - [-]

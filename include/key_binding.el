@@ -1,6 +1,6 @@
 ;; ---------------- Unbind some default / package keybindings
 ;; Disable emacs search (c-s / c-r) -> Replaced by evil search
-(dolist (key '("\M-x" "\M-z" "\M-v" "\C-s" "\C-r" "\C-g" "\C-w" "\C-v" "\M-p" "\M-n"))
+(dolist (key '("\M-x" "\M-z" "\M-v" "\C-s" "\C-r" "\C-g" "\C-w" "\C-v" "\M-p" "\M-n" "\M-S1"))
   (global-unset-key key))
 
 
@@ -128,6 +128,8 @@
 (global-set-key (kbd "C-M-k") 'move-line-region-up)
 ;; (global-set-key (kbd "C-M-n") 'move-line-region-down)
 ;; (global-set-key (kbd "C-M-p") 'move-line-region-up)
+
+(global-set-key [(meta shift 1)] 'delete-other-windows)
 
 (global-set-key [(meta shift p)] 'helm-M-x)
 (global-set-key (kbd "M-p") 'helm-projectile-find-file)

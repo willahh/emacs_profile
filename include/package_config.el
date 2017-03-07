@@ -371,7 +371,8 @@
 (evil-mode 1)
 
 ;; Default mode to emacs (Avant d etre vraiment habitue ;))
-(setq evil-default-state 'emacs)
+;; Update : lets stay on vim like by default
+;; (setq evil-default-state 'emacs)
 
 ;; Remove all keybindings from insert-state keymap (insert mode behavior like emacs) 
 (setcdr evil-insert-state-map nil)
