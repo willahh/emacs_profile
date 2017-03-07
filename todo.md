@@ -17,6 +17,9 @@
       --- Ctrl+j fonctionne bien et on s'y habitue vite
 - [x] Current highlight line : background plus fonce
 - [x] ctrl+c ne doit pas retirer la selection courante
+- [-] Markdown mode style like in Sublime (background white, text black, column width limit, center inside)
+- [-] M-w : close current buffer
+- [-] Faire tourner "create-tags" (ctags doit etre lu par emacs)
 - [-] JS auto doc
 - [-] Faire fonctionner des snippets javascript
 - [-] Web mode : avoir des propositions d auto completion de mots cles php connu
