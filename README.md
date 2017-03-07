@@ -6,11 +6,9 @@
 - Mac Os X >= 10.11
 - emacs >= 25
 
-Get emacs from homebrew-emacsmacport for better performances.
-https://github.com/railwaycat/homebrew-emacsmacport
-http://superuser.com/a/650694
 
 ```{r, engine='bash', count_lines}
+brew install --with-cocoa --srgb emacs
 git clone https://github.com/willahh/emacs_profile ~/.emacs.d
 ```
 (Update : didn't see any differences ...)
