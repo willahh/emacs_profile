@@ -15,22 +15,23 @@
 - [x] Afficher le petit menu d autocompletion plus rapidement
 - [x] Implementer Emmet en web mode (.test + tab = <div class="test"></div>)
       --- Ctrl+j fonctionne bien et on s'y habitue vite
+- [x] Current highlight line : background plus fonce
+- [x] ctrl+c ne doit pas retirer la selection courante
+- [-] Faire fonctionner des snippets javascript
 - [-] Web mode : avoir des propositions d auto completion de mots cles php connu
       Comme dans Sublime (var_       --> proposition var_dump)
       Voir du cote des snippets (Yasnippet)
       Update : il faut faire fonctionner yasnippet correctement avant
 - [-] Nom du chemin courant dans le title (disparu suite merge)
-- [-] Current highlight line : background plus fonce
 - [-] web mode : refresh colors after yank
 - [-] Disable web mode disable auto indent
-      Je pense qu il faut laisser cette fonctionalite, et plutot voir les quelques cas 
+      Je pense qu il faut laisser cette fonctionalitee, et plutot voir les quelques cas 
       qui ne conviennt pas
 - [-] vc-ediff highlight color illisible
 - [-] Validateur de syntax javascript / html / php on fly (doit fonctionner en web mode)
 - [-] Dired : remove folder is very slow
 - [-] Don't prompt for delete recursivly (code available in prelude)
 - [-] Enable evil easy motion to work like vim easy motion  https://github.com/easymotion/vim-easymotion
-- [-] ctrl+c ne doit pas retirer la selection courante
 
 - [-] Bottom line
   - [-] Show current mode in color

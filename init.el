@@ -8,8 +8,11 @@
 ;; Always indent with space
 (setq-default indent-tabs-mode nil)
 
+;;
+(transient-mark-mode 0)
+
 ;; Show matching parenthesis
-(show-paren-mode)
+;; (show-paren-mode)
 
 ;; New line and indent by default
 (global-set-key (kbd "RET") 'newline-and-indent)
@@ -283,8 +286,11 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
     (when (get-buffer "*Completions*") (delete-windows-on "*Completions*"))
     (abort-recursive-edit)))
 
-
-
+;; Keep selection after kill ring savex
+(defadvice kill-ring-save (after keep-transient-mark-active ())
+  "Override the deactivation of the mark."
+  (setq deactivate-mark nil))
+(ad-activate 'kill-ring-save)
 
 
 
@@ -1126,8 +1132,8 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 (global-set-key (kbd "C-x C-p") 'helm-projectile)
 (global-set-key (kbd "C-x b") 'helm-mini)
-;; (global-set-key (kbd "M-c") 'kill-ring-save)
-(global-set-key (kbd "M-c") 'whole-line-or-region-copy-region-as-kill)
+(global-set-key (kbd "M-c") 'kill-ring-save)
+;; (global-set-key (kbd "M-c") 'whole-line-or-region-copy-region-as-kill)
 (global-set-key (kbd "C-M-j") 'move-line-region-down)
 (global-set-key (kbd "C-M-k") 'move-line-region-up)
 (global-set-key (kbd "C-M-n") 'move-line-region-down)
@@ -1164,6 +1170,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 
 
 
+
 ;; --------- willahh theme 
 ;; (set-default-font "Inconsolata-14") ;; Font face: Inconsolata, font-size: 14
 (load-theme 'monokai t)
@@ -1172,7 +1179,8 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;;
 (set-face-attribute 'default nil :family "Inconsolata" :height 140 :weight 'normal)
 (set-face-attribute 'region nil :background "black")
-(set-face-attribute 'region nil :background "#1b1d1d" :foreground "#edd400") ;; Current line
+(set-face-attribute 'region nil :background "#1b1d1d" :foreground "#b7e44d") ;; Current selection
+(set-face-background 'hl-line "#101112")
 
 ;; parenthesis
 (set-face-foreground 'show-paren-match "#000")
