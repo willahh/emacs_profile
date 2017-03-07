@@ -360,6 +360,8 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (setq package-list '(
   php-auto-yasnippets
   js-comint
+  smart-forward
+  js-doc
   ;; exec-path-from-shell
   ;; smart-mode-line
   ;; with-editor
@@ -499,7 +501,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;; Emmet
 (require 'emmet-mode)
 (add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
-;; (add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
+(add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
 
 
 
@@ -531,7 +533,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
  '(magit-dispatch-arguments nil)
  '(package-selected-packages
    (quote
-    (js-comint php-auto-yasnippets imenu-anywhere smart-newline resize-window php-refactor-mode ac-php general swiper-helm popwin evil-surround window-numbering eyebrowse which-key spaceline evil edit-server neotree elfeed logview monokai-theme material-theme noctilux-theme nlinum crosshairs dumb-mode theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol zerodark-theme markdown-mode+ emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window web-mode magit helm-projectile helm)))
+    (js-doc smart-forward js-comint php-auto-yasnippets imenu-anywhere smart-newline resize-window php-refactor-mode ac-php general swiper-helm popwin evil-surround window-numbering eyebrowse which-key spaceline evil edit-server neotree elfeed logview monokai-theme material-theme noctilux-theme nlinum crosshairs dumb-mode theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol zerodark-theme markdown-mode+ emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window web-mode magit helm-projectile helm)))
  '(safe-local-variable-values (quote ((no-byte-compile t))))
  '(yas-global-mode t))
 
@@ -864,6 +866,15 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;; Javascript live interpreter nice to test regexp on fly
 (require 'js-comint)
 
+;; smart-forward
+;; Javascript smart navigation
+;; A voir ...
+(require 'smart-forward)
+
+(global-set-key (kbd "M-<up>") 'smart-up)
+(global-set-key (kbd "M-<down>") 'smart-down)
+(global-set-key (kbd "M-<left>") 'smart-backward)
+(global-set-key (kbd "M-<right>") 'smart-forward)
 
 ;; evil mode    
 (require 'evil)
