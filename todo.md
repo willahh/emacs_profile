@@ -3,7 +3,7 @@
 - [x] M-r -- ouvrir le panneau de filtre rapide
 - [x] Nom du chemin courant dans le title (disparu suite merge)
 - [x] M-o : find file
-- [x] M-S-o : find in buffer (helm-mini)- [-] tabbar organiser par group de fichiers et par mode
+- [x] M-S-o : find in buffer (helm-mini)
 - [x] M-S-p : M-x main
 - [x] M-d : select all like this
 - [x] M-p : projectile file
@@ -11,7 +11,8 @@
 - [x] M-S-f (search) : Binder sur helm-ag
 - [x] M-C-f (search) : Binduer sur ag-files
 - [x] M-x regression --> do cut instead of main emacs panel
-- [-] git gutter / hl line : Plus d'affichage dans la goutiere
+- [x] git gutter / hl line : Plus d'affichage dans la goutiere
+- [-] tabbar organiser par group de fichiers et par mode
 - [-] web mode : highlight current tag ne fonctionne plus (c etait parfait avant)
 - [-] M-c-p doesn't work on all buffer
 - [-] Enable emmet by default for web files

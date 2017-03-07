@@ -5,7 +5,7 @@
   smart-forward
   js-doc
   autopair
-  ;; exec-path-from-shell
+  exec-path-from-shell
   smart-mode-line ;; (sml -> activated)
   sml-mode         
   ace-window

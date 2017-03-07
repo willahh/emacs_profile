@@ -5,12 +5,23 @@
 
 
 ;; ------- Custom theme
-(set-face-attribute 'default nil :family "Inconsolata" :height 140 :weight 'normal)
+;; (set-face-attribute 'default nil :family "Inconsolata" :height 140 :weight 'normal)
+(set-face-attribute 'default nil :family "Fira mono" :height 120 :weight 'normal)
+(set-frame-font "Fira mono:antialias=1") ;; Don't work ?
+
+;; (set-face-bold-p 'bold nil)
+
+;; Disable bold ---> seems to work !
+(mapc
+ (lambda (face)
+        (when (eq (face-attribute face :weight) 'bold)
+          (set-face-attribute face nil :weight 'normal)))
+ (face-list))
+
+;;
 (set-face-attribute 'region nil :background "black")
 (set-face-attribute 'region nil :background "#1b1d1d" :foreground "#b7e44d") ;; Current selection
 (set-face-background 'hl-line "#101112")
-
-
 
 
 

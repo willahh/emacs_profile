@@ -252,29 +252,66 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 
 
 
-;; tabbar-buffer-groups
-;; Source : http://stackoverflow.com/a/3814313
+;; ;; tabbar-buffer-groups
+;; ;; Source : http://stackoverflow.com/a/3814313
+;; (defun tabbar-buffer-groups ()
+;;   "Return the list of group names the current buffer belongs to.
+;; This function is a custom function for tabbar-mode's tabbar-buffer-groups.
+;; This function group all buffers into 3 groups:
+;; Those Dired, those user buffer, and those emacs buffer.
+;; Emacs buffer are those starting with “*”."
+;;   (list
+;;    (cond
+;;     ((string-equal "*" (substring (buffer-name) 0 1))
+;;      "Emacs Buffer"
+;;      )
+;;     ((eq major-mode 'dired-mode)
+;;      "Dired"
+;;      )
+;;     (t
+;;      "User Buffer"
+;;      )
+;;     )))
+
+
+
+;; tabbar group
+;; Source : https://github.com/djangoliv/conf/blob/master/init.org#tabbar
 (defun tabbar-buffer-groups ()
-  "Return the list of group names the current buffer belongs to.
-This function is a custom function for tabbar-mode's tabbar-buffer-groups.
-This function group all buffers into 3 groups:
-Those Dired, those user buffer, and those emacs buffer.
-Emacs buffer are those starting with “*”."
   (list
    (cond
-    ((string-equal "*" (substring (buffer-name) 0 1))
-     "Emacs Buffer"
-     )
     ((eq major-mode 'dired-mode)
      "Dired"
      )
-    (t
-     "User Buffer"
+    ((eq major-mode 'image-dired-thumbnail)
+     "Image-Dired"
      )
-    )))
-
-
-
+    ((eq major-mode 'term-mode)
+     "term"
+     )
+    ((eq major-mode 'org-mode)
+     "org"
+     )
+    ((eq major-mode 'nxml-mode)
+     "nXml"
+     )
+    ((eq major-mode 'image-mode)
+     "image"
+     )
+    ((eq major-mode 'csv-mode)
+     "CSV"
+     )
+    ((eq major-mode 'text-mode)
+     "text"
+     )
+    ((or (string-equal "." (substring (buffer-name) 0 1)) (eq major-mode 'emacs-lisp-mode))
+     "Conf Buffer"
+     )
+    ((eq major-mode 'fundamental-mode)
+     "Unknown"
+     )
+    (t
+     "User Buffer"))))
 
 
 ;; Add left and right margins, when file is markdown or text.

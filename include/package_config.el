@@ -115,6 +115,28 @@
 ;; define all tabs to be one of 3 possible groups: “Emacs Buffer”, “Dired”, “User Buffer”.
 (setq tabbar-buffer-groups-function 'tabbar-buffer-groups)
 
+
+(setq tabbar-use-images nil)
+;; permet de ne pas afficher les buffers non pertinents (comme *scratch* par exemple):
+(when (require 'tabbar nil t)
+  (setq tabbar-buffer-groups-function
+        (lambda () (list "All Buffers")))
+  (setq tabbar-buffer-list-function
+        (lambda ()
+          (remove-if
+           (lambda(buffer)
+             (or (string-match-p "TAGS" (buffer-name buffer))
+                 (find (aref (buffer-name buffer) 0) " *" )))
+           (buffer-list))))
+  (tabbar-mode))
+;; ?
+(setq table-time-before-update 0.1)
+
+
+
+
+
+
 ;; Ajout de save mode auto
 (desktop-save-mode 1)
 
@@ -193,6 +215,12 @@
   ;; http://ergoemacs.org/emacs/whitespace-mode.html
   (setq whitespace-style (quote (face spaces tabs newline space-mark tab-mark newline-mark )))
   )
+
+
+
+;; exec-path-from-shell
+(require 'exec-path-from-shell) ;; if not using the ELPA package
+(exec-path-from-shell-initialize)
 
 
 ;; Add path where "js-beautify" is in, add it to the emacs env PATH
