@@ -654,6 +654,9 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (setq flymake-number-of-errors-to-display nil)
 
 
+;; flycheck
+(global-flycheck-mode)
+
 
 ;; AG
 ;; http://agel.readthedocs.io/en/latest/installation.html
