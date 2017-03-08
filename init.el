@@ -6,6 +6,7 @@
 (package-initialize)
 
 (load-file "~/.emacs.d/include/defun.el")
+;; (load-file "~/.emacs.d/plugins/all-the-icons.el/all-the-icons.el")
 (load-file "~/.emacs.d/include/base.el")
 (load-file "~/.emacs.d/include/package_list.el")
 (load-file "~/.emacs.d/include/package_installer.el")
@@ -38,9 +39,9 @@
  '(magit-dispatch-arguments nil)
  '(package-selected-packages
    (quote
-    (use-package evil-multiedit evil-mc tabbar color-theme-buffer-local leuven-theme js-doc smart-forward js-comint php-auto-yasnippets imenu-anywhere smart-newline resize-window php-refactor-mode ac-php general swiper-helm popwin evil-surround window-numbering eyebrowse which-key spaceline evil edit-server neotree elfeed logview monokai-theme material-theme noctilux-theme nlinum crosshairs dumb-mode theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol zerodark-theme markdown-mode+ emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window web-mode magit helm-projectile helm)))
+    (0blayout use-package evil-multiedit evil-mc tabbar color-theme-buffer-local leuven-theme js-doc smart-forward js-comint php-auto-yasnippets imenu-anywhere smart-newline resize-window php-refactor-mode ac-php general swiper-helm popwin evil-surround window-numbering eyebrowse which-key spaceline evil edit-server neotree elfeed logview monokai-theme material-theme noctilux-theme nlinum crosshairs dumb-mode theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord php-mode flymake-mode ggtags less-css-mode helm-ag ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn helm-swoop highlight-symbol zerodark-theme markdown-mode+ emmet-mode autopair company web-beautify multiple-cursors powerline other-frame-window desktop+ smart-mode-line undo-tree expand-region avy-menu ace-jump-mode auto-complete helm-anything ace-window web-mode magit helm-projectile helm)))
  '(safe-local-variable-values (quote ((no-byte-compile t))))
- '(tabbar-separator (quote (0.5)))
+ '(tabbar-separator (quote (1)))
  '(yas-global-mode t))
 
 
@@ -49,4 +50,20 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(diff-added ((t (:foreground "Green"))))
+ '(diff-changed ((((background dark)) (:foreground "Yellow")) (t (:foreground "MediumBlue"))))
+ '(diff-context ((((background dark)) (:foreground "White")) (t (:foreground "Black"))))
+ '(diff-file-header ((t (:foreground "#f78c6c"))))
+ '(diff-file1-hunk-header ((t (:foreground "#c3e88d"))))
+ '(diff-header ((((background dark)) (:foreground "Cyan")) (t (:foreground "Red"))))
+ '(diff-hunk-header ((((background dark)) (:foreground "Black" :background "#05057F7F8D8D")) (t (:foreground "White" :background "Salmon"))))
+ '(diff-index ((t (:foreground "#c3e88d"))))
+ '(diff-nonexistent ((((background dark)) (:foreground "#FFFFFFFF7474")) (t (:foreground "DarkBlue"))))
+ '(diff-removed ((t (:foreground "Red")))))
+
+
+
+
+
+
+
