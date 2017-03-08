@@ -3,7 +3,7 @@
   https://github.com/hlissner/.emacs.d
 
 
-
+- [-] C+M+W -----> close window
 - [-] ediff : pas de couleurs avec le nouveau thème
 - [-] theme > diff : Se rapproche au max des couleurs du theme Sublime 
 - [-] unbind M-p (markdown mode, others ?)
