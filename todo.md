@@ -1,3 +1,7 @@
+- Some nice .emacs.d
+  https://github.com/djangoliv/conf
+  https://github.com/hlissner/.emacs.d
+
 - [x] M-w : close current buffer
 - [x] M-S-w : close window
 - [x] M-r -- ouvrir le panneau de filtre rapide
@@ -12,6 +16,13 @@
 - [x] M-C-f (search) : Binduer sur ag-files
 - [x] M-x regression --> do cut instead of main emacs panel
 - [x] git gutter / hl line : Plus d'affichage dans la goutiere
+- [-] Rester en mode evil emacs sur les mode suivants : (liste non exhaustive)
+       - *vc-change-log*
+       
+- [-] vc ediff part en live (N opere plus vraiment en mode fullscreen, inutilisable)
+- [-] vc ediff : Customiser mieux le theme
+- [-] open url in browser
+- [-] neotree synchro with current opened file
 - [-] tabbar organiser par group de fichiers et par mode
 - [-] web mode : highlight current tag ne fonctionne plus (c etait parfait avant)
 - [-] M-c-p doesn't work on all buffer

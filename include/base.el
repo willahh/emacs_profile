@@ -116,14 +116,10 @@ scroll-step 1)
 (setq load-path (cons "/usr/local/share/gtags" load-path))
 (autoload 'gtags-mode "gtags" "" t)
 
-
-
-
-
-
-
 ;; Remember the cursor position of files when reopening them        
 (setq save-place-file "~/.emacs.d/saveplace")
 (setq-default save-place t)
 (require 'saveplace)
 
+;; Enable jump to url quickly for all buffers
+(goto-address-mode 1)

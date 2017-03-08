@@ -241,7 +241,7 @@
   ("*ag*"                . (display-buffer-same-window . nil))
   ("*Backtrace*"         . (display-buffer-same-window . nil))
   ("*magit-revision*"    . (display-buffer-same-window . nil))
-  ("*magit-diff*"        . (display-buffer-same-window . nil))
+  ;; ("*magit-diff*"        . (display-buffer-same-window . nil)) ;; En commentaire, car dans ce buffer ipossible d avoir acces aux racourcis pour switch, du coup bloque ici
   ;; ("*magit:"             . (display-buffer-same-window . nil))
   ;; ("*vc-log*"            . (display-buffer-same-window . nil))
   ;; ("*log-edit-files*"    . (display-buffer-same-window . nil))
@@ -265,10 +265,6 @@
       (tern-ac-setup)))
 
 
-
-;;
-(setq neo-smart-open t)
-    
 ;; Web mode
 (require 'web-mode)
 ;;(setq web-mode-enable-auto-indentation nil)
@@ -526,4 +522,26 @@
 
 ;; helm locate
 (setq helm-locate-fuzzy-match t)
+
+
+
+
+
+
+;; ---------------- neotree
+(require 'neotree)
+(neotree-show)
+;;(neotree-mode)
+
+;; keybinding
+
+;; Every time when the neotree window is opened, let it find current file and jump to node.
+(setq neo-smart-open t)
+(setq neo-show-auto-change-root t)
+
+;; When running ‘projectile-switch-project’ (C-c p p), ‘neotree’ will change root automatically.
+(setq projectile-switch-project-action 'neotree-projectile-action)
+    
+(global-set-key [f8] 'neotree-toggle)
+
 

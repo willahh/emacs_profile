@@ -50,6 +50,7 @@
   multiple-cursors
   nlinum
   nlinum-relative
+  neotree
   php-mode
   php-refactor-mode
   pkg-info
