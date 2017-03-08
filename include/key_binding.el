@@ -1,8 +1,15 @@
 ;; ---------------- Unbind some default / package keybindings
 ;; Disable emacs search (c-s / c-r) -> Replaced by evil search
-(dolist (key '("\M-x" "\M-z" "\M-v" "\C-s" "\C-r" "\C-g" "\C-w" "\C-v" "\M-p" "\M-n" "\M-S1"))
+(dolist (key '("\M-x" "\M-z" "\M-v" "\C-s" "\C-r" "\C-g" "\C-w" "\C-v" "\M-p" "\M-n" "\M-S1" "\M-C-ep"))
   (global-unset-key key))
 
+
+(eval-after-load "web-mode"
+  ; (unbind-key "C-M-p" 'web-mode-map)
+  '(define-key web-mode-map (kbd "C-M-p") nil)
+)
+
+; web-mode-map)
 
 ;; ---------------- Key binding leader
 ;; -- Evil leader key commands
@@ -150,11 +157,12 @@
 (global-set-key (kbd "M-w")  'kill-this-buffer)
 (global-set-key (kbd "M-r")  'helm-swoop)
 (global-set-key (kbd "M-o")  'helm-find-files)
-(global-set-key (kbd "M-d")  'mc/mark-next-like-this)
+;; (global-set-key (kbd "M-d")  'mc/mark-next-like-this) ;; Cannot be setted, (emacs backward delete word)
 
 (global-set-key [(meta shift o)]  'helm-mini)
-(global-set-key [(meta shift f)]  'helm-ag)
-(global-set-key (kbd "C-M-f") 'ag)
+(global-set-key [(meta shift f)]  'helm-ag-project-root)
+;; (global-set-key [(meta shift f)]  'helm-ag)
+(global-set-key (kbd "M-ƒ") 'ag) ;; (cmd + alt + f)
 
 
 ;; (global-set-key [(meta x)] 'helm-M-x) ;; Doesn t work
@@ -186,7 +194,7 @@
 (evilem-default-keybindings "ù")
 
 ;; web mode
-(define-key web-mode-map (kbd "C-M-n") 'web-mode-tag-next)
-(define-key web-mode-map (kbd "C-M-p") 'web-mode-tag-previous)
+(define-key web-mode-map [(meta shift j)] 'web-mode-tag-next)
+(define-key web-mode-map [(meta shift k)] 'web-mode-tag-previous)
 
 

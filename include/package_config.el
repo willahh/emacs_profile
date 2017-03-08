@@ -276,6 +276,8 @@
 (add-to-list 'auto-mode-alist '("\\.css\\'" . css-mode)) ;; .css file should be assigned to css-mode for nice emmet support
 (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
 
+
+
 ;; (setq web-mode-enable-css-colorization t)
 ;; (setq web-mode-enable-current-element-highlight t)    
 ;; (setq web-mode-enable-current-column-highlight t)
