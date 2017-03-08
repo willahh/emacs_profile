@@ -2,48 +2,57 @@
   https://github.com/djangoliv/conf
   https://github.com/hlissner/.emacs.d
 
+
 --------- Bloquant
 - [-] ediff : pas de couleurs avec le nouveau thème
-- [-] theme > diff : Se rapproche au max des couleurs du theme Sublime 
-- [-] unbind M-p (markdown mode, others ?)
-- [-] unbind M-d (should be delete backward)
+- [-] tabbar organiser par group de fichiers et par mode
+- [-] neotree synchro with current opened file
+- [-] unbind key on some mode :
+    - [-] M-p (markdown mode, others ?, yes : evil-c too)
+    - [-] M-d (should be delete backward)
+    - [-] M-S-p diff-mode
 - [-] Emacs-ag very slow compared to ag from command line
       ---> Peut être retirer certains mode pour ag ?
       ----> non, emacs slow with longlines
-https://emacs.stackexchange.com/questions/598/how-do-i-prevent-extremely-long-lines-making-emacs-slow
-http://emacs.stackexchange.com/questions/598/how-do-i-prevent-extremely-long-lines-making-emacs-slow
-- [-] helm-ag pas de regexp par default
+      https://emacs.stackexchange.com/questions/598/how-do-i-prevent-extremely-long-lines-making-emacs-slow
+      http://emacs.stackexchange.com/questions/598/how-do-i-prevent-extremely-long-lines-making-emacs-slow
 - [-] (d) --> dont yank beore
 - [-] (M-C-d) (duplicate line or selection) Duplique parfois une portion beaucoup trop importante
-
-- [x] F5 -> refresh buffer ?
-- [x] C-ALT-S : Save all buffers
 - [-] *vc-diff* Lorsque ce buffer apparait, il apparait dans un nouvel emplacement (ok), mais en minuscule (ko)
-- [-] emacs --> save a cursor place ?
+- [-] Certains gros fichiers impossibe à ouvrir
+- [x] vc ediff : Customiser mieux le theme
+- [x] helm-ag truncate lines
 
 
 --------- Majeur
-- [-] *log-edit-files* : Mettre en mode emacs
-- [-] Evil multi cursor
-- [-] vc ediff : Customiser mieux le theme
-- [-] neotree synchro with current opened file
-- [-] tabbar organiser par group de fichiers et par mode
-- [-] web mode : highlight current tag avec une barre verticale ne fonctionne plus (c etait parfait avant)
+- [-] theme > diff : Se rapproche au max des couleurs du theme Sublime 
+- [-] M-a regression --> ne selectionne plus l integralite du buffer
+- [-] Mode emacs par default pour les mode majeur suivants 
+    Lignes en commentaires dans les fichiers concernes solution temporaire
+    Il faut passer par le package special pour surcharger, pas encore trouve parfaitement comment faire
+    - [-] *log-edit-files*
+    - [-] - COMMIT_EDITMSG
+    - [-] - *Help*
+    - [-] - *vc-diff*
 - [-] M-c-p doesn't work on all buffer
-- [-] Enable emmet by default for web files
+      -> Lesquels ?
+- [-] helm-ag pas de regexp par default
 - [-] nlinum : plus large
 - [-] nlinum : highlight current line number
 - [-] meta shift 1 : delete other windows --> don't work --> maybe disable it globaly 
-- [-] tabbar : hide bad icons
 - [-] M-p doesn't work on all buffer
-- [-] Ajouter une méthode copy file name pour retourner uniquement le nom du fichier
-- [-] M-a regression --> ne selectionne plus l integralite du buffer
 - [-] big visible current buffer
-- [-]
+- [-] Ajouter une méthode copy file name pour retourner uniquement le nom du fichier
+
 
 --------- Mineur 
+- [-] web mode : refresh colors after yank
+- [-] tabbar : hide bad icons
+- [-] emacs --> save a cursor place ?
+- [-] Enable emmet by default for web files
+- [-] git-svn
+- [-] web mode : highlight current tag avec une barre verticale ne fonctionne plus (c etait parfait avant)
 - [-] ctrl+a en mode evil > default ne fonctionne pas
-- [-] Certains gros fichiers impossibe à ouvrir
 - [-] Fichiers markdown mette toutes les windows en centré
 - [-] Don't add behaviour for end of line (remove end of line stuff)
       (Creation de differences inutiles sur la toute dernière ligne de certains fichiers)
@@ -55,11 +64,9 @@ http://emacs.stackexchange.com/questions/598/how-do-i-prevent-extremely-long-lin
       Comme dans Sublime (var_       --> proposition var_dump)
       Voir du cote des snippets (Yasnippet)
       Update : il faut faire fonctionner yasnippet correctement avant
-- [-] web mode : refresh colors after yank
 - [-] Disable web mode disable auto indent
       Je pense qu il faut laisser cette fonctionalitee, et plutot voir les quelques cas
       qui ne conviennt pas
-- [-] vc-ediff highlight color illisible
 - [-] Validateur de syntax javascript / html / php on fly (doit fonctionner en web mode)
 - [-] Dired : remove folder is very slow
 - [-] Don't prompt for delete recursivly (code available in prelude)
@@ -69,21 +76,25 @@ http://emacs.stackexchange.com/questions/598/how-do-i-prevent-extremely-long-lin
   - [-] Show current mode in color
   - [-] Show current VC system used
   - [-] Show current encoding
-- [-] Selected all same occurrence than current selection 
+- [-] Display current encoding 
+
 - [-] CSS mode > attribut —> TAB touch —> wrote : 
 - [-] Chromium included 
 - [-] Correcteur orthographique 
 - [-] Markdown in white theme
-- [-] git-svn
-- [-] Display current encoding 
 - [-] Parcourir partage smb 
 - [-] [theme] Color in shell mode 
 - [-] [theme] Les couleurs ne sont pas assez décomposé comme dans Sublime (« var » colorA, = colorB, …) 
 - [-] mysql integration 
 - [-] Markdown in white theme
 - [-] git-svn
+- [x] Selected all same occurrence than current selection 
+
 
 --------- Corrige 
+- [x] Evil multi cursor
+- [x] F5 -> refresh buffer ?
+- [x] C-ALT-S : Save all buffers
 - [x] C+M+W -----> close window
 - [x] M-w : close current buffer
 - [x] M-S-w : close window

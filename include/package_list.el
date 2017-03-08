@@ -31,7 +31,7 @@
   evil-surround   
   evil-visualstar
   evil-snipe
-  evil-mc
+  evil-multiedit
   expand-region
   eyebrowse
   general
@@ -68,6 +68,7 @@
   tern-auto-complete
   ;; tabbar
   undo-tree
+  use-package
   web-beautify
   web-mode
   which-key

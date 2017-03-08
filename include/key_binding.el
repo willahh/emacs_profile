@@ -1,13 +1,65 @@
 ;;;; key_binding: --- some default / package keybindings
 ;; Disable emacs search (c-s / c-r) -> Replaced by evil search
-(dolist (key '("\M-x" "\M-z" "\M-v" "\C-s" "\C-r" "\C-g" "\C-w" "\C-v" "\M-p" "\M-n" "\M-S1" "\M-C-ep"))
+(dolist (key '("\M-x" "\M-z" "\M-v" "\C-s" "\C-r" "\C-g" "\C-w" "\C-v" "\M-p" "\M-n" "\M-S1" "\M-C-ep" "\M-p"))
   (global-unset-key key))
 
 
-(eval-after-load "web-mode"
-  ; (unbind-key "C-M-p" 'web-mode-map)
-  '(define-key web-mode-map (kbd "C-M-p") nil)
+;;(eval-after-load "web-mode"
+  ;; (unbind-key "C-M-p" 'web-mode-map)
+;;  '(define-key web-mode-map (kbd "C-M-p") nil)
+;;)
+
+
+;;(eval-after-load 'markdown
+;;  (progn
+;;    (define-key markdown-mode-map (kbd "M-p") nil)
+;;)
+
+;;(use-package markdown-mode
+;; :defer t ;;don't access `markdown-mode-map' until `markdown-mode' is loaded
+;; :config (define-key (kbd "M-p") 'nil markdown-mode-map)
+;; )
+
+
+
+
+
+
+;; (use-package markdown-mode
+;;   :bind ("M-p" . nil)
+;; )
+
+
+(use-package evil-mc
+  :bind (:map evil-mc-key-map
+              ("\M-p" . nil)
+              ("M-p" . nil)
+        )
 )
+
+
+
+;; (eval-after-load "evil-mc"
+;;   '(progn
+;;      (define-key evil-mc-key-map "\C-p" 'nil)
+;;      (define-key evil-mc-key-map "C-p" 'nil)
+;;      ))
+
+
+
+;;(use-package markdown-mode
+;; :bind (:map markdown-mode-map
+;;           ("M-p" . nil)))
+
+;;(use-package term
+;;  :bind (:map term-mode-map
+;;         ("M-p" . term-send-up)
+;;         ("M-n" . term-send-down)
+;;         :map term-raw-map
+;;         ("M-o" . other-window)
+;;         ("M-p" . term-send-up)
+;;         ("M-n" . term-send-down)))
+
 
 ; web-mode-map)
 
@@ -164,9 +216,13 @@
 ;; (global-set-key (kbd "M-d")  'mc/mark-next-like-this) ;; Cannot be setted, (emacs backward delete word)
 
 (global-set-key [(meta shift o)]  'helm-mini)
-(global-set-key [(meta shift f)]  'helm-ag-project-root)
+
+;; search
+;; (global-set-key [(meta shift f)]  'helm-ag-project-root)
 ;; (global-set-key [(meta shift f)]  'helm-ag)
-(global-set-key (kbd "M-ƒ") 'ag) ;; (cmd + alt + f)
+(global-set-key [(meta shift f)]  'ag)
+(global-set-key (kbd "M-ƒ") 'helm-ag) ;; (cmd + alt + f)
+
 
 
 ;; (global-set-key [(meta x)] 'helm-M-x) ;; Doesn t work

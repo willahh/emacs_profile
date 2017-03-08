@@ -108,6 +108,9 @@
       (require 'tern-auto-complete)
       (tern-ac-setup)))
 
+;; use-package
+(require 'use-package)
+
 ;; tabbar
 (require 'tabbar)
 (tabbar-mode t)
@@ -350,6 +353,10 @@
 ;; Ediff setup
 (winner-mode)
 
+;; Show character-level diff
+;; http://emacs.stackexchange.com/q/7362
+(setq-default ediff-forward-word-function 'forward-char)
+
 ;; Restore windows after quit
 (add-hook 'ediff-after-quit-hook-internal 'winner-undo)
 
@@ -436,9 +443,43 @@
 (require 'evil-snipe)
 (evil-snipe-mode 1)
 
-;; evil-mc
-(require 'evil-mc)
-(global-evil-mc-mode  1)
+;; evil-multiedit
+(require 'evil-multiedit)
+
+;; Highlights all matches of the selection in the buffer.
+(define-key evil-visual-state-map "R" 'evil-multiedit-match-all)
+
+;; Match the word under cursor (i.e. make it an edit region). Consecutive presses will
+;; incrementally add the next unmatched match.
+(define-key evil-normal-state-map (kbd "M-d") 'evil-multiedit-match-and-next)
+;; Match selected region.
+(define-key evil-visual-state-map (kbd "M-d") 'evil-multiedit-match-and-next)
+
+;; Same as M-d but in reverse.
+(define-key evil-normal-state-map (kbd "M-D") 'evil-multiedit-match-and-prev)
+(define-key evil-visual-state-map (kbd "M-D") 'evil-multiedit-match-and-prev)
+
+;; OPTIONAL: If you prefer to grab symbols rather than words, use
+;; `evil-multiedit-match-symbol-and-next` (or prev).
+
+;; Restore the last group of multiedit regions.
+(define-key evil-visual-state-map (kbd "C-M-D") 'evil-multiedit-restore)
+
+;; RET will toggle the region under the cursor
+(define-key evil-multiedit-state-map (kbd "RET") 'evil-multiedit-toggle-or-restrict-region)
+
+;; ...and in visual mode, RET will disable all fields outside the selected region
+(define-key evil-motion-state-map (kbd "RET") 'evil-multiedit-toggle-or-restrict-region)
+
+;; For moving between edit regions
+(define-key evil-multiedit-state-map (kbd "C-n") 'evil-multiedit-next)
+(define-key evil-multiedit-state-map (kbd "C-p") 'evil-multiedit-prev)
+(define-key evil-multiedit-insert-state-map (kbd "C-n") 'evil-multiedit-next)
+(define-key evil-multiedit-insert-state-map (kbd "C-p") 'evil-multiedit-prev)
+
+;; Ex command that allows you to invoke evil-multiedit with a regular expression, e.g.
+(evil-ex-define-cmd "ie[dit]" 'evil-multiedit-ex-match)
+
 
 ;; evil-nerd-commenter
 (require 'evil-nerd-commenter)
@@ -529,6 +570,8 @@
 ;; helm locate
 (setq helm-locate-fuzzy-match t)
 
+;; Truncate lines
+(setq helm-truncate-lines 1)
 
 
 
@@ -537,9 +580,8 @@
 ;; ---------------- neotree
 (require 'neotree)
 (neotree-show)
-;;(neotree-mode)
 
-;; keybinding
+
 
 ;; Every time when the neotree window is opened, let it find current file and jump to node.
 (setq neo-smart-open t)
@@ -547,7 +589,10 @@
 
 ;; When running ‘projectile-switch-project’ (C-c p p), ‘neotree’ will change root automatically.
 (setq projectile-switch-project-action 'neotree-projectile-action)
-    
-(global-set-key [f8] 'neotree-toggle)
 
+;;
+(evil-define-key 'normal neotree-mode-map (kbd "TAB") 'neotree-enter)
+(evil-define-key 'normal neotree-mode-map (kbd "SPC") 'neotree-enter)
+(evil-define-key 'normal neotree-mode-map (kbd "q") 'neotree-hide)
+(evil-define-key 'normal neotree-mode-map (kbd "RET") 'neotree-enter)
 
