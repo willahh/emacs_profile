@@ -2,6 +2,25 @@
   https://github.com/djangoliv/conf
   https://github.com/hlissner/.emacs.d
 
+
+
+- [-] ediff : pas de couleurs avec le nouveau thème
+- [-] theme > diff : Se rapproche au max des couleurs du theme Sublime 
+- [-] unbind M-p (markdown mode, others ?)
+- [-] unbind M-d (should be delete backward)
+- [-] Emacs-ag very slow compared to ag from command line
+      ---> Peut être retirer certains mode pour ag ?
+      ----> non, emacs slow with longlines
+https://emacs.stackexchange.com/questions/598/how-do-i-prevent-extremely-long-lines-making-emacs-slow
+http://emacs.stackexchange.com/questions/598/how-do-i-prevent-extremely-long-lines-making-emacs-slow
+- [-] helm-ag pas de regexp par default
+- [-] (d) --> dont yank beore
+- [-] F5 -> refresh buffer ?
+- [-] C-ALT-S : Save all buffers
+- [-] *vc-diff* appears : bloquer le resize en petit c'est relou !
+- [-] emacs --> save a cursor place ?
+
+
 - [x] M-w : close current buffer
 - [x] M-S-w : close window
 - [x] M-r -- ouvrir le panneau de filtre rapide
@@ -19,7 +38,7 @@
 - [x] open url in browser
 - [-] Rester en mode evil emacs sur les mode suivants : (liste non exhaustive)
        - *vc-change-log*
-- [-] vc ediff part en live (N opere plus vraiment en mode fullscreen, inutilisable)
+- [x] vc ediff part en live (N opere plus vraiment en mode fullscreen, inutilisable)
 - [-] vc ediff : Customiser mieux le theme
 - [-] neotree synchro with current opened file
 - [-] tabbar organiser par group de fichiers et par mode
