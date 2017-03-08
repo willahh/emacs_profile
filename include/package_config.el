@@ -436,6 +436,10 @@
 (require 'evil-snipe)
 (evil-snipe-mode 1)
 
+;; evil-mc
+(require 'evil-mc)
+(global-evil-mc-mode  1)
+
 ;; evil-nerd-commenter
 (require 'evil-nerd-commenter)
 

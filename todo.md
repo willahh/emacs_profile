@@ -2,8 +2,7 @@
   https://github.com/djangoliv/conf
   https://github.com/hlissner/.emacs.d
 
-
-- [-] C+M+W -----> close window
+--------- Bloquant
 - [-] ediff : pas de couleurs avec le nouveau thème
 - [-] theme > diff : Se rapproche au max des couleurs du theme Sublime 
 - [-] unbind M-p (markdown mode, others ?)
@@ -15,34 +14,21 @@ https://emacs.stackexchange.com/questions/598/how-do-i-prevent-extremely-long-li
 http://emacs.stackexchange.com/questions/598/how-do-i-prevent-extremely-long-lines-making-emacs-slow
 - [-] helm-ag pas de regexp par default
 - [-] (d) --> dont yank beore
-- [-] F5 -> refresh buffer ?
-- [-] C-ALT-S : Save all buffers
-- [-] *vc-diff* appears : bloquer le resize en petit c'est relou !
+- [-] (M-C-d) (duplicate line or selection) Duplique parfois une portion beaucoup trop importante
+
+- [x] F5 -> refresh buffer ?
+- [x] C-ALT-S : Save all buffers
+- [-] *vc-diff* Lorsque ce buffer apparait, il apparait dans un nouvel emplacement (ok), mais en minuscule (ko)
 - [-] emacs --> save a cursor place ?
 
 
-- [x] M-w : close current buffer
-- [x] M-S-w : close window
-- [x] M-r -- ouvrir le panneau de filtre rapide
-- [x] Nom du chemin courant dans le title (disparu suite merge)
-- [x] M-o : find file
-- [x] M-S-o : find in buffer (helm-mini)
-- [x] M-S-p : M-x main
-- [x] M-d : select all like this
-- [x] M-p : projectile file
-- [x] M-C-p : projectile project
-- [x] M-S-f (search) : Binder sur helm-ag
-- [x] M-C-f (search) : Binduer sur ag-files
-- [x] M-x regression --> do cut instead of main emacs panel
-- [x] git gutter / hl line : Plus d'affichage dans la goutiere
-- [x] open url in browser
-- [-] Rester en mode evil emacs sur les mode suivants : (liste non exhaustive)
-       - *vc-change-log*
-- [x] vc ediff part en live (N opere plus vraiment en mode fullscreen, inutilisable)
+--------- Majeur
+- [-] *log-edit-files* : Mettre en mode emacs
+- [-] Evil multi cursor
 - [-] vc ediff : Customiser mieux le theme
 - [-] neotree synchro with current opened file
 - [-] tabbar organiser par group de fichiers et par mode
-- [-] web mode : highlight current tag ne fonctionne plus (c etait parfait avant)
+- [-] web mode : highlight current tag avec une barre verticale ne fonctionne plus (c etait parfait avant)
 - [-] M-c-p doesn't work on all buffer
 - [-] Enable emmet by default for web files
 - [-] nlinum : plus large
@@ -55,6 +41,7 @@ http://emacs.stackexchange.com/questions/598/how-do-i-prevent-extremely-long-lin
 - [-] big visible current buffer
 - [-]
 
+--------- Mineur 
 - [-] ctrl+a en mode evil > default ne fonctionne pas
 - [-] Certains gros fichiers impossibe à ouvrir
 - [-] Fichiers markdown mette toutes les windows en centré
@@ -95,6 +82,27 @@ http://emacs.stackexchange.com/questions/598/how-do-i-prevent-extremely-long-lin
 - [-] mysql integration 
 - [-] Markdown in white theme
 - [-] git-svn
+
+--------- Corrige 
+- [x] C+M+W -----> close window
+- [x] M-w : close current buffer
+- [x] M-S-w : close window
+- [x] M-r -- ouvrir le panneau de filtre rapide
+- [x] Nom du chemin courant dans le title (disparu suite merge)
+- [x] M-o : find file
+- [x] M-S-o : find in buffer (helm-mini)
+- [x] M-S-p : M-x main
+- [x] M-d : select all like this
+- [x] M-p : projectile file
+- [x] M-C-p : projectile project
+- [x] M-S-f (search) : Binder sur helm-ag
+- [x] M-C-f (search) : Binduer sur ag-files
+- [x] M-x regression --> do cut instead of main emacs panel
+- [x] git gutter / hl line : Plus d'affichage dans la goutiere
+- [x] open url in browser
+- [-] Rester en mode evil emacs sur les mode suivants : (liste non exhaustive)
+       - *vc-change-log*
+- [x] vc ediff part en live (N opere plus vraiment en mode fullscreen, inutilisable)
 
 - [x] implementer ctrL+x
 - [x] SHIFT+Click dont show me submenu .. do a selection

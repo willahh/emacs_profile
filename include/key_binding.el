@@ -1,4 +1,4 @@
-;; ---------------- Unbind some default / package keybindings
+;;;; key_binding: --- some default / package keybindings
 ;; Disable emacs search (c-s / c-r) -> Replaced by evil search
 (dolist (key '("\M-x" "\M-z" "\M-v" "\C-s" "\C-r" "\C-g" "\C-w" "\C-v" "\M-p" "\M-n" "\M-S1" "\M-C-ep"))
   (global-unset-key key))
@@ -124,17 +124,21 @@
 
 
 ;; --------- key binding
+(global-set-key (kbd "<f5>") 'eval-buffer)
 (global-set-key (kbd "<C-escape>") 'keyboard-quit)
 (global-set-key (kbd "C-<") 'mc/maru-previous-like-this)
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 (global-set-key (kbd "C-c h") 'helm-command-prefix)
-(global-set-key (kbd "C-w") 'resize-window)
+(global-set-key (kbd "M-C-w") 'resize-window)
 (global-set-key (kbd "C-x C-d") 'duplicate-current-line-or-region)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 (global-set-key (kbd "C-x C-p") 'helm-projectile)
 (global-set-key (kbd "C-x b") 'helm-mini)
 (global-set-key (kbd "M-c") 'kill-ring-save)
+(global-set-key (kbd "M-c") 'kill-ring-save)
+(global-set-key (kbd "M-Ò") 'save-some-buffers) ;; (command + alt + s)
+
 ;; (global-set-key (kbd "M-c") 'whole-line-or-region-copy-region-as-kill)
 (global-set-key (kbd "C-M-j") 'move-line-region-down)
 (global-set-key (kbd "C-M-k") 'move-line-region-up)

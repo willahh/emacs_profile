@@ -31,6 +31,7 @@
   evil-surround   
   evil-visualstar
   evil-snipe
+  evil-mc
   expand-region
   eyebrowse
   general
