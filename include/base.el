@@ -16,6 +16,9 @@
 ;; Show matching parenthesis
 ;; (show-paren-mode)
 
+;; syntax highlighting everywhere
+(global-font-lock-mode 1)
+
 ;; New line and indent by default
 (global-set-key (kbd "RET") 'newline-and-indent)
 

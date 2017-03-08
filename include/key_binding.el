@@ -81,12 +81,17 @@
 (evil-leader/set-key "tt" 'toggle-truncate-lines) ;; Meaning "[t]oggle-truncate-[lines
 (evil-leader/set-key "tc" 'evilnc-comment-or-uncomment-lines) ;; Meaning [t]oggle [c]omment
 
-;; ;; undo redo
+
+
+
+
+
+
+;; -------- key chords binding
+(key-chord-define-global "az" 'avy-goto-word-1)
 (key-chord-define-global "xc" 'er/expand-region)
 (key-chord-define-global "wx" 'er/contract-region)
 (key-chord-define-global "<w" 'mc/mark-all-like-this)
-;; (key-chord-define-global "ji" 'undo-tree-undo)
-;; (key-chord-define-global "jo" 'undo-tree-redo)
 (key-chord-define-global "ji" 'ace-window) ;; cannot be jk (vim up/right)
 
 ;; avy

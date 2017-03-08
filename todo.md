@@ -16,12 +16,11 @@
 - [x] M-C-f (search) : Binduer sur ag-files
 - [x] M-x regression --> do cut instead of main emacs panel
 - [x] git gutter / hl line : Plus d'affichage dans la goutiere
+- [x] open url in browser
 - [-] Rester en mode evil emacs sur les mode suivants : (liste non exhaustive)
        - *vc-change-log*
-       
 - [-] vc ediff part en live (N opere plus vraiment en mode fullscreen, inutilisable)
 - [-] vc ediff : Customiser mieux le theme
-- [-] open url in browser
 - [-] neotree synchro with current opened file
 - [-] tabbar organiser par group de fichiers et par mode
 - [-] web mode : highlight current tag ne fonctionne plus (c etait parfait avant)
