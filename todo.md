@@ -3,6 +3,26 @@
   https://github.com/hlissner/.emacs.d
 
 
+
+
+--------- A ranger 
+- [-] Tab ne pas faire de group, ignorer juste certains buffer (genre des "widgets list de helm")
+      Trop de problème potentiel (fermeture d'un buffer -> context précédent perdu)
+- [-] melange tab space (exemple file : "pdpm.php")
+- [-] \n on save (exemple file : "pdpm.php")
+- [-] unbinding
+      M-p on "*ag search text:......*" buffer
+- [-] [Neotree] > after load > Open first file > focus to other window 
+- [-] [vc-dir] Faire une fonction pour activer un vc-version-diff avec les paramètres older revision : "base", newer revision : "head"
+- [-] [vc-dir] Trouver l'équilvalent de svn log en mode verbose "svn log -v"
+- [-] style : la selection courante depuis ctrl a n'est pas visible mais fonctioone bien
+- [-] [web-mode] indenting region slow when past text
+
+
+
+
+
+
 --------- Bloquant
 - [-] ediff : pas de couleurs avec le nouveau thème
 - [-] tabbar organiser par group de fichiers et par mode
@@ -44,6 +64,16 @@
 - [-] big visible current buffer
 - [-] Ajouter une méthode copy file name pour retourner uniquement le nom du fichier
 
+
+- [-] Dired default mode : emacs
+- [-] Dired delete folder very slow
+- [-] Dired > mkdir : refresh slow
+- [-] Dired diff gutter
+- [-] Dired > Don't display tabbar
+- [-] vc log dont write summary
+- [-] delete-file
+      - dont prompt for path
+      - kill buffer 
 
 --------- Mineur 
 - [-] web mode : refresh colors after yank
