@@ -1,4 +1,5 @@
-- Some nice .emacs.d
+- Resources
+  https://github.com/epsil
   https://github.com/djangoliv/conf
   https://github.com/hlissner/.emacs.d
 
@@ -6,6 +7,38 @@
 
 
 --------- A ranger 
+
+
+
+
+
+
+- [-] Creer les fichier .tern-port autre part !!!!!!!
+- [-] [MAJEUR] Double clic sur un mot : highlight tous les autres
+- [-] vc-dir n'affiche pas les fichiers supprimés localement, mais non envoyé à svn (svn remove)
+- [-] Le double click sur un mot ne selectionne pas tout le mot (il coupe la sélection si il y a des "_")
+- [-] Delete file : ne pas re demander le chemin alors que l'on a deja le focus
+- [-] Ajouter la commande : "VC: (File) Revert"
+- [-] Ajouter la commande : "VC: (Folder) Revert"
+- [-] Emacs mode : 
+  - [-] "*Helm find files*"
+  - [-] "ag search text:......"
+- [-] Add key : [spc G] : refresh current buffer (for color (exemple))
+- [-] webmode backtab --> indent back 
+
+
+
+- [-] Ne pas reformater tout le fichier automatiquement !!
+      (Exemple sur mediaList.json.php)
+
+
+
+
+
+
+
+
+
 - [-] ag/helm-ag/helm-ag-... : Ignore les regles suivantes :
     - "*.min.js"
     - "*.svn-base"
@@ -18,7 +51,7 @@
 - [-] unbinding
 - [-] [vc-dir] Faire une fonction pour activer un vc-version-diff avec les paramètres older revision : "base", newer revision : "head"
 - [-] [vc-dir] Trouver l'équilvalent de svn log en mode verbose "svn log -v"
-- [-] style : la selection courante depuis ctrl a n'est pas visible mais fonctioone bien
+- [-] theme : la selection courante depuis ctrl a n'est pas visible mais fonctioone bien
 - [-] [web-mode] indenting region slow when past text
 
 
@@ -27,9 +60,7 @@
 
 
 --------- Bloquant
-- [-] Certains gros fichiers impossibe à ouvrir
 - [-] ediff : pas de couleurs avec le nouveau thème
-- [-] tabbar organiser par group de fichiers et par mode
 - [-] neotree synchro with current opened file
 - [-] unbind key on some mode :
     Lignes en commentaires dans les fichiers concernes solution temporaire
@@ -50,21 +81,21 @@
 - [-] *vc-diff* Lorsque ce buffer apparait, il apparait dans un nouvel emplacement (ok), mais en minuscule (ko)
 - [x] vc ediff : Customiser mieux le theme
 - [x] helm-ag truncate lines
+- [x] Certains gros fichiers impossibe à ouvrir
+- [x] tabbar organiser par group de fichiers et par mode
+      (by by tabbar, trop relou)
 
 
 --------- Majeur
 - [-] theme > diff : Se rapproche au max des couleurs du theme Sublime 
 - [-] M-a regression --> ne selectionne plus l integralite du buffer
-- [-] Mode emacs par default pour les mode majeur suivants 
-    - [-] *log-edit-files*
-    - [-] - COMMIT_EDITMSG
-    - [-] - *Help*
-    - [-] - *vc-diff*
-    - [-] - Neotree
-- [-] vc log dont write summary
-- [-] M-c-p doesn't work on all buffer
-      -> Lesquels ?
-- [-] helm-ag pas de regexp par default
+- [x] Mode emacs par default pour les mode majeur suivants 
+    - [x] *log-edit-files*
+    - [x] - COMMIT_EDITMSG
+    - [x] - *Help*
+    - [x] - *vc-diff*
+    - [x] - Neotree
+- [x] vc log dont write summary
 - [-] nlinum : plus large
 - [-] nlinum : highlight current line number
 - [-] meta shift 1 : delete other windows --> don't work --> maybe disable it globaly 
@@ -73,11 +104,11 @@
 - [-] Ajouter une méthode copy file name pour retourner uniquement le nom du fichier
 
 
-- [-] Dired default mode : emacs
+- [x] Dired default mode : emacs
 - [-] Dired delete folder very slow
 - [-] Dired > mkdir : refresh slow
 - [-] Dired diff gutter
-- [-] Dired > Don't display tabbar
+- [x] Dired > Don't display tabbar
 - [-] delete-file
       - dont prompt for path
       - kill buffer 
