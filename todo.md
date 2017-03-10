@@ -6,6 +6,11 @@
 
 
 --------- A ranger 
+- [-] ag/helm-ag/helm-ag-... : Ignore les regles suivantes :
+    - "*.min.js"
+    - "*.svn-base"
+    - "*.log"
+- [-] Check kill yank ring
 - [-] Tab ne pas faire de group, ignorer juste certains buffer (genre des "widgets list de helm")
       Trop de problème potentiel (fermeture d'un buffer -> context précédent perdu)
 - [-] melange tab space (exemple file : "pdpm.php")
@@ -56,6 +61,7 @@
     - [-] - *Help*
     - [-] - *vc-diff*
     - [-] - Neotree
+- [-] vc log dont write summary
 - [-] M-c-p doesn't work on all buffer
       -> Lesquels ?
 - [-] helm-ag pas de regexp par default
@@ -72,7 +78,6 @@
 - [-] Dired > mkdir : refresh slow
 - [-] Dired diff gutter
 - [-] Dired > Don't display tabbar
-- [-] vc log dont write summary
 - [-] delete-file
       - dont prompt for path
       - kill buffer 

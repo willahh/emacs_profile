@@ -131,29 +131,29 @@
 ;; use-package
 (require 'use-package)
 
-;; tabbar
-(require 'tabbar)
-(tabbar-mode t)
+;; ;; tabbar
+;; (require 'tabbar)
+;; (tabbar-mode t)
 
-;; define all tabs to be one of 3 possible groups: “Emacs Buffer”, “Dired”, “User Buffer”.
-(setq tabbar-buffer-groups-function 'tabbar-buffer-groups)
+;; ;; define all tabs to be one of 3 possible groups: “Emacs Buffer”, “Dired”, “User Buffer”.
+;; (setq tabbar-buffer-groups-function 'tabbar-buffer-groups)
 
 
-(setq tabbar-use-images nil)
-;; permet de ne pas afficher les buffers non pertinents (comme *scratch* par exemple):
-(when (require 'tabbar nil t)
-  (setq tabbar-buffer-groups-function
-        (lambda () (list "All Buffers")))
-  (setq tabbar-buffer-list-function
-        (lambda ()
-          (remove-if
-           (lambda(buffer)
-             (or (string-match-p "TAGS" (buffer-name buffer))
-                 (find (aref (buffer-name buffer) 0) " *" )))
-           (buffer-list))))
-  (tabbar-mode))
-;; ?
-(setq table-time-before-update 0.1)
+;; (setq tabbar-use-images nil)
+;; ;; permet de ne pas afficher les buffers non pertinents (comme *scratch* par exemple):
+;; (when (require 'tabbar nil t)
+;;   (setq tabbar-buffer-groups-function
+;;         (lambda () (list "All Buffers")))
+;;   (setq tabbar-buffer-list-function
+;;         (lambda ()
+;;           (remove-if
+;;            (lambda(buffer)
+;;              (or (string-match-p "TAGS" (buffer-name buffer))
+;;                  (find (aref (buffer-name buffer) 0) " *" )))
+;;            (buffer-list))))
+;;   (tabbar-mode))
+;; ;; ?
+;; (setq table-time-before-update 0.1)
 
 
 
@@ -457,8 +457,8 @@
 (global-evil-visualstar-mode)
 
 ;; evil-snipe
-(require 'evil-snipe)
-(evil-snipe-mode 1)
+;; (require 'evil-snipe)
+;; (evil-snipe-mode 1)
 
 ;; evil-multiedit
 (require 'evil-multiedit)

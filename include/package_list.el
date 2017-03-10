@@ -29,7 +29,7 @@
   evil-nerd-commenter ;; keep this (get it from melpa or from plugin folder)
   evil-surround   
   evil-visualstar
-  evil-snipe
+  ;; evil-snipe
   evil-multiedit
   expand-region
   eyebrowse
@@ -81,4 +81,4 @@
 ;; Tell emacs where is your personal elisp lib dir
 (add-to-list 'load-path "~/.emacs.d/plugins/evil-nerd-commenter/")
 (add-to-list 'load-path "~/.emacs.d/plugins/whole-line-or-region")
-(add-to-list 'load-path "~/.emacs.d/plugins/tabbar")
+;; (add-to-list 'load-path "~/.emacs.d/plugins/tabbar")

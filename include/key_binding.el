@@ -222,7 +222,7 @@
 (global-set-key [(meta shift f)]  'ag)
 ;; (global-set-key (kbd "M-ƒ") 'helm-ag) ;; (cmd + alt + f)
 (global-set-key (kbd "M-ƒ") 'helm-do-grep-ag) ;; (cmd + alt + f)
-
+(global-set-key (kbd "M-·") 'helm-ag) ;; (cmd + alt + shift + f)
 
 
 ;; (global-set-key [(meta x)] 'helm-M-x) ;; Doesn t work
@@ -232,9 +232,6 @@
 (global-set-key [(meta shift z)] 'undo-tree-redo)
 
 (global-set-key [C-M-tab] 'other-window)
-
-;; (global-set-key [C-S-tab] 'previous-buffer)
-;; (global-set-key [C-tab] 'next-buffer)
 
 (global-set-key [C-tab] 'tabbar-forward)
 (global-set-key [C-S-tab] 'tabbar-backward)
@@ -247,8 +244,19 @@
 ;;(global-set-key (kbd "M-d") 'mc/mark-next-like-this) ;; Cannot be setted, because meta+d means delete word in emacs (and it is very usefull)
 ;;(global-set-key (kbd "M-q") 'save-buffers-kill-terminal)
 
-(global-set-key [M-s-left] 'tabbar-backward)
-(global-set-key [M-s-right] 'tabbar-forward)
+
+;; tab nav
+;; update : navigation through tabbar plugin
+;; update 2 : go back to default vanilla prev / next buffer
+;; (global-set-key [M-s-left] 'tabbar-backward)
+;; (global-set-key [M-s-right] 'tabbar-forward)
+
+
+(global-set-key [C-S-tab] 'previous-buffer)
+(global-set-key [C-tab] 'next-buffer) 
+
+
+
 
 ;; easy-motion
 (evilem-default-keybindings "ù")
