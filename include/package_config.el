@@ -47,6 +47,7 @@
 ;; nlinum
 (require 'nlinum-relative)
 (nlinum-relative-setup-evil)      
+
 ;; setup for evil
 (add-hook 'prog-mode-hook 'nlinum-relative-mode)
 (setq nlinum-relative-redisplay-delay 0)      ;; delay
@@ -423,6 +424,18 @@
 ;; Default mode to emacs (Avant d etre vraiment habitue ;))
 ;; Update : lets stay on vim like by default
 ;; (setq evil-default-state 'emacs)
+
+
+;; Define some mode that should be initialized on emacs mode
+(evil-set-initial-state 'org-mode 'emacs)
+(evil-set-initial-state 'dired-mode 'emacs)
+(evil-set-initial-state 'log-edit-files 'emacs) 
+(evil-set-initial-state 'help-mode 'emacs)
+(evil-set-initial-state 'magit-commit-message-buffer 'emacs) ;; Non teste 
+(evil-set-initial-state 'diff-mode 'emacs) 
+(evil-set-initial-state 'text-mode 'emacs)
+;; (evil-set-initial-state 'neotree 'emacs)
+
 
 ;; Remove all keybindings from insert-state keymap (insert mode behavior like emacs) 
 (setcdr evil-insert-state-map nil)

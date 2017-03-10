@@ -233,6 +233,7 @@
 (global-set-key [(meta shift z)] 'undo-tree-redo)
 
 (global-set-key [C-M-tab] 'other-window)
+(global-set-key [C-M-S-tab] 'previous-multiframe-window)
 
 (global-set-key [C-tab] 'tabbar-forward)
 (global-set-key [C-S-tab] 'tabbar-backward)

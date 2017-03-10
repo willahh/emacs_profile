@@ -7,7 +7,6 @@
 ; (setq bidi-display-reordering nil)
 
 
-
 ;; Display current file path in title
 (setq frame-title-format "%b")
 
@@ -76,12 +75,11 @@ scroll-step 1)
 ;; Auto refresh buffers
 (global-auto-revert-mode 1)
 
-;; UTF-8 please
-(setq locale-coding-system 'utf-8) ; pretty
-(set-terminal-coding-system 'utf-8) ; pretty
-(set-keyboard-coding-system 'utf-8) ; pretty
-(set-selection-coding-system 'utf-8) ; please
-(prefer-coding-system 'utf-8) ; with sugar on top
+;; UTF-8 
+(setq locale-coding-system 'utf-8) 
+(set-keyboard-coding-system 'utf-8)  
+(set-selection-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
 
 
 ;; Set meta key to command
