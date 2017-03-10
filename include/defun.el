@@ -350,3 +350,15 @@ That is, a string used to represent it on the tab bar."
        label (max 1 (/ (window-width)
                        (length (tabbar-view
                                 (tabbar-current-tabset)))))))))
+
+;; Dont start commit message with bullshit
+;; Source : http://emacs.stackexchange.com/a/3031
+(load "log-edit")
+(defun log-edit-insert-message-template ()
+  "Insert the default template."
+  (interactive)
+  (when (or (called-interactively-p 'interactive)
+            (log-edit-empty-buffer-p))
+    (when log-edit-setup-add-author
+      (insert "\nAuthor: "))
+    (message-position-point)))

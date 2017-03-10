@@ -431,9 +431,9 @@
 (evil-set-initial-state 'dired-mode 'emacs)
 (evil-set-initial-state 'log-edit-files 'emacs) 
 (evil-set-initial-state 'help-mode 'emacs)
-(evil-set-initial-state 'magit-commit-message-buffer 'emacs) ;; Non teste 
 (evil-set-initial-state 'diff-mode 'emacs) 
-(evil-set-initial-state 'text-mode 'emacs)
+(evil-set-initial-state 'text-mode 'emacs) ;; Mode utilise pour saisir des messages depuis magit
+(evil-set-initial-state 'log-edit-mode 'emacs) ;; Mode utilise pour saisir des messages depuis vc
 ;; (evil-set-initial-state 'neotree 'emacs)
 
 
