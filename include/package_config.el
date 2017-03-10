@@ -595,21 +595,20 @@
 
 
 ;; ---------------- neotree
-(require 'neotree)
-(neotree-show)
+;; (require 'neotree)
+;; (neotree-show)
 
 
+;; ;; Every time when the neotree window is opened, let it find current file and jump to node.
+;; (setq neo-smart-open t)
+;; (setq neo-show-auto-change-root t)
 
-;; Every time when the neotree window is opened, let it find current file and jump to node.
-(setq neo-smart-open t)
-(setq neo-show-auto-change-root t)
+;; ;; When running ‘projectile-switch-project’ (C-c p p), ‘neotree’ will change root automatically.
+;; (setq projectile-switch-project-action 'neotree-projectile-action)
 
-;; When running ‘projectile-switch-project’ (C-c p p), ‘neotree’ will change root automatically.
-(setq projectile-switch-project-action 'neotree-projectile-action)
-
-;;
-(evil-define-key 'normal neotree-mode-map (kbd "TAB") 'neotree-enter)
-(evil-define-key 'normal neotree-mode-map (kbd "SPC") 'neotree-enter)
-(evil-define-key 'normal neotree-mode-map (kbd "q") 'neotree-hide)
-(evil-define-key 'normal neotree-mode-map (kbd "RET") 'neotree-enter)
+;; ;;
+;; (evil-define-key 'normal neotree-mode-map (kbd "TAB") 'neotree-enter)
+;; (evil-define-key 'normal neotree-mode-map (kbd "SPC") 'neotree-enter)
+;; (evil-define-key 'normal neotree-mode-map (kbd "q") 'neotree-hide)
+;; (evil-define-key 'normal neotree-mode-map (kbd "RET") 'neotree-enter)
 

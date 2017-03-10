@@ -50,10 +50,10 @@
   multiple-cursors
   nlinum
   nlinum-relative
-  neotree
-  ; php-mode
-  ; php-refactor-mode
-  ; php-auto-yasnippets
+  ;; neotree
+  ;; php-mode
+  ;; php-refactor-mode
+  ;; php-auto-yasnippets
   pkg-info
   popup
   powerline

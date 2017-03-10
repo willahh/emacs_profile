@@ -31,46 +31,46 @@
 
 
 ;; ------- Tabbar settings
-(set-face-attribute
- 'tabbar-default nil
- :background "#1e2126"
- :foreground "#5e6161"
- :box '(:line-width 1 :color "#2f2f2d" :style nil)
- :height 1
-)
+;; (set-face-attribute
+;;  'tabbar-default nil
+;;  :background "#1e2126"
+;;  :foreground "#5e6161"
+;;  :box '(:line-width 1 :color "#2f2f2d" :style nil)
+;;  :height 1
+;; )
 
-(set-face-attribute
- 'tabbar-unselected nil
- :background "#1e2126"
- :foreground "#5e6161"
- :box '(:line-width 5 :color "#1e2126" :style nil))
+;; (set-face-attribute
+;;  'tabbar-unselected nil
+;;  :background "#1e2126"
+;;  :foreground "#5e6161"
+;;  :box '(:line-width 5 :color "#1e2126" :style nil))
 
-(set-face-attribute
- 'tabbar-selected nil
- :background "#1e2126"
- :foreground "#ffffff"
- :box '(:line-width 1 :color "#80cbc4" :style nil))
+;; (set-face-attribute
+;;  'tabbar-selected nil
+;;  :background "#1e2126"
+;;  :foreground "#ffffff"
+;;  :box '(:line-width 1 :color "#80cbc4" :style nil))
 
-(set-face-attribute
- 'tabbar-highlight nil
- :background "white"
- :foreground "black"
- :underline nil
- :box '(:line-width 5 :color "white" :style nil))
+;; (set-face-attribute
+;;  'tabbar-highlight nil
+;;  :background "white"
+;;  :foreground "black"
+;;  :underline nil
+;;  :box '(:line-width 5 :color "white" :style nil))
 
-(set-face-attribute
- 'tabbar-button nil
- :box '(:line-width 1 :color "#2f2f2d" :style nil))
+;; (set-face-attribute
+;;  'tabbar-button nil
+;;  :box '(:line-width 1 :color "#2f2f2d" :style nil))
 
-(set-face-attribute
- 'tabbar-separator nil
- :background "#1b1d1d"
- :height 0.6)
+;; (set-face-attribute
+;;  'tabbar-separator nil
+;;  :background "#1b1d1d"
+;;  :height 0.6)
 
-;; Change padding of the tabs
-;; we also need to set separator to avoid overlapping tabs by highlighted tabs
-(custom-set-variables
- '(tabbar-separator (quote (1))))
+;; ;; Change padding of the tabs
+;; ;; we also need to set separator to avoid overlapping tabs by highlighted tabs
+;; (custom-set-variables
+;;  '(tabbar-separator (quote (1))))
 
 
 
