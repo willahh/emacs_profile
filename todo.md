@@ -11,8 +11,6 @@
 - [-] melange tab space (exemple file : "pdpm.php")
 - [-] \n on save (exemple file : "pdpm.php")
 - [-] unbinding
-      M-p on "*ag search text:......*" buffer
-- [-] [Neotree] > after load > Open first file > focus to other window 
 - [-] [vc-dir] Faire une fonction pour activer un vc-version-diff avec les paramètres older revision : "base", newer revision : "head"
 - [-] [vc-dir] Trouver l'équilvalent de svn log en mode verbose "svn log -v"
 - [-] style : la selection courante depuis ctrl a n'est pas visible mais fonctioone bien
@@ -24,13 +22,19 @@
 
 
 --------- Bloquant
+- [-] Certains gros fichiers impossibe à ouvrir
 - [-] ediff : pas de couleurs avec le nouveau thème
 - [-] tabbar organiser par group de fichiers et par mode
 - [-] neotree synchro with current opened file
 - [-] unbind key on some mode :
+    Lignes en commentaires dans les fichiers concernes solution temporaire
+    Il faut passer par le package special pour surcharger, pas encore trouve parfaitement comment faire
+    - [-] M-w magit
     - [-] M-p (markdown mode, others ?, yes : evil-c too)
     - [-] M-d (should be delete backward)
     - [-] M-S-p diff-mode
+    - [-] M-p on "*ag search text:......*" buffer
+    - [-] C-M-p dired buffer  (dired-aux.el) (dired-mode-map)
 - [-] Emacs-ag very slow compared to ag from command line
       ---> Peut être retirer certains mode pour ag ?
       ----> non, emacs slow with longlines
@@ -39,7 +43,6 @@
 - [-] (d) --> dont yank beore
 - [-] (M-C-d) (duplicate line or selection) Duplique parfois une portion beaucoup trop importante
 - [-] *vc-diff* Lorsque ce buffer apparait, il apparait dans un nouvel emplacement (ok), mais en minuscule (ko)
-- [-] Certains gros fichiers impossibe à ouvrir
 - [x] vc ediff : Customiser mieux le theme
 - [x] helm-ag truncate lines
 
@@ -48,12 +51,11 @@
 - [-] theme > diff : Se rapproche au max des couleurs du theme Sublime 
 - [-] M-a regression --> ne selectionne plus l integralite du buffer
 - [-] Mode emacs par default pour les mode majeur suivants 
-    Lignes en commentaires dans les fichiers concernes solution temporaire
-    Il faut passer par le package special pour surcharger, pas encore trouve parfaitement comment faire
     - [-] *log-edit-files*
     - [-] - COMMIT_EDITMSG
     - [-] - *Help*
     - [-] - *vc-diff*
+    - [-] - Neotree
 - [-] M-c-p doesn't work on all buffer
       -> Lesquels ?
 - [-] helm-ag pas de regexp par default
@@ -74,6 +76,8 @@
 - [-] delete-file
       - dont prompt for path
       - kill buffer 
+- 
+- [-] [Neotree] > after load > Open first file > focus to other window 
 
 --------- Mineur 
 - [-] web mode : refresh colors after yank

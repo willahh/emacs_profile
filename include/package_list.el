@@ -1,6 +1,5 @@
 (require 'package)
 (setq package-list '(
-  php-auto-yasnippets
   js-comint
   smart-forward
   js-doc
@@ -52,8 +51,9 @@
   nlinum
   nlinum-relative
   neotree
-  php-mode
-  php-refactor-mode
+  ; php-mode
+  ; php-refactor-mode
+  ; php-auto-yasnippets
   pkg-info
   popup
   powerline

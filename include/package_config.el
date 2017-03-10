@@ -1,5 +1,13 @@
 ;; whole-line-or-region
+;; Ce package ou cette fonction n est pas disponible
+;; est elle importante ?
 (require 'whole-line-or-region)
+
+
+;; Ajout de save mode auto
+;; En commentaire pour le moment, car fait FREEZER emacs sur l ouverture d un gros fichier
+;; Voir pour trouver la raison et remettre ce package, mais je peux m'en passer
+; (desktop-save-mode 1)
 
 ;;
 ;; Besoin : Afficher le chemin du fichier complet dans le title de la frame courante
@@ -23,6 +31,7 @@
 
 
 ;; Auto close parenthesis brackets, ...
+;; @todo ce package ne se telecharge pas
 (require 'autopair)
 (autopair-global-mode 1)
 
@@ -37,7 +46,8 @@
 
 ;; nlinum
 (require 'nlinum-relative)
-(nlinum-relative-setup-evil)                    ;; setup for evil
+(nlinum-relative-setup-evil)      
+;; setup for evil
 (add-hook 'prog-mode-hook 'nlinum-relative-mode)
 (setq nlinum-relative-redisplay-delay 0)      ;; delay
 (setq nlinum-relative-current-symbol "->")      ;; or "" for display current line number
@@ -139,9 +149,6 @@
 
 
 
-
-;; Ajout de save mode auto
-(desktop-save-mode 1)
 
 ;; psvn
 (require 'psvn)
@@ -296,8 +303,8 @@
 
 
 ;; php-refactor
-(require 'php-refactor-mode)
-(add-hook 'php-mode-hook 'php-refactor-mode)
+; (require 'php-refactor-mode)
+; (add-hook 'php-mode-hook 'php-refactor-mode)
 
 ;; flymake-mode
 ;; Let's run 8 checks at once instead.
@@ -380,8 +387,8 @@
 
 
 ;; php-auto-yasnippets
-(require 'php-auto-yasnippets)
-(setq php-auto-yasnippet-php-program "~/.emacs.d/elpa/php-auto-yasnippets-20141128.1411/Create-PHP-YASnippet.php")
+; (require 'php-auto-yasnippets)
+; (setq php-auto-yasnippet-php-program "~/.emacs.d/elpa/php-auto-yasnippets-20141128.1411/Create-PHP-YASnippet.php")
 
 ;; js-comint
 ;; Javascript live interpreter nice to test regexp on fly

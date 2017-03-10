@@ -1,3 +1,13 @@
+;; Turn truncate lines off by default (like in many modern tools)
+(set-default 'truncate-lines t)
+
+;; syntax highlighting everywhere
+(global-font-lock-mode 1)
+; (global-font-lock-mode 0)
+; (setq bidi-display-reordering nil)
+
+
+
 ;; Display current file path in title
 (setq frame-title-format "%b")
 
@@ -15,9 +25,6 @@
 
 ;; Show matching parenthesis
 ;; (show-paren-mode)
-
-;; syntax highlighting everywhere
-(global-font-lock-mode 1)
 
 ;; New line and indent by default
 (global-set-key (kbd "RET") 'newline-and-indent)
@@ -105,9 +112,6 @@ scroll-step 1)
 ;; Lorsque un selection est active, le fait de saisir un caractere declenche les actions suivantes :
 ;;   - delete selection, - insert command
 (delete-selection-mode 1)
-
-;; Turn truncate lines off by default (like in many modern tools)
-(set-default 'truncate-lines t)
 
 ;; Launch in fullscreen
 ;; Source: http://emacs.stackexchange.com/a/3008

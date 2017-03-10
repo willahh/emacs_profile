@@ -6,7 +6,6 @@
 (package-initialize)
 
 (load-file "~/.emacs.d/include/defun.el")
-;; (load-file "~/.emacs.d/plugins/all-the-icons.el/all-the-icons.el")
 (load-file "~/.emacs.d/include/base.el")
 (load-file "~/.emacs.d/include/package_list.el")
 (load-file "~/.emacs.d/include/package_installer.el")
@@ -50,16 +49,16 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(diff-added ((t (:foreground "Green"))))
+ '(diff-added ((((background dark)) (:foreground "#FFFF9B9BFFFF")) (t (:foreground "DarkGreen"))))
  '(diff-changed ((((background dark)) (:foreground "Yellow")) (t (:foreground "MediumBlue"))))
  '(diff-context ((((background dark)) (:foreground "White")) (t (:foreground "Black"))))
- '(diff-file-header ((t (:foreground "#f78c6c"))))
+ '(diff-file-header ((((background dark)) (:foreground "Cyan" :background "Black")) (t (:foreground "Red" :background "White"))))
  '(diff-file1-hunk-header ((t (:foreground "#c3e88d"))))
  '(diff-header ((((background dark)) (:foreground "Cyan")) (t (:foreground "Red"))))
  '(diff-hunk-header ((((background dark)) (:foreground "Black" :background "#05057F7F8D8D")) (t (:foreground "White" :background "Salmon"))))
- '(diff-index ((t (:foreground "#c3e88d"))))
+ '(diff-index ((((background dark)) (:foreground "Magenta")) (t (:foreground "Green"))))
  '(diff-nonexistent ((((background dark)) (:foreground "#FFFFFFFF7474")) (t (:foreground "DarkBlue"))))
- '(diff-removed ((t (:foreground "Red")))))
+ '(diff-removed ((((background dark)) (:foreground "#7474FFFF7474")) (t (:foreground "DarkMagenta")))))
 
 
 
