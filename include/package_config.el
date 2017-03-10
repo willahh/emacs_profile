@@ -58,6 +58,16 @@
 (setq sml/theme 'dark)
 (sml/setup)
 
+
+;; helm-ag
+(custom-set-variables
+ '(helm-ag-base-command "ag --nocolor --nogroup --ignore-case")
+ '(helm-ag-command-option "--all-text")
+ '(helm-ag-insert-at-point 'symbol)
+ '(helm-ag-ignore-buffer-patterns '("\\.txt\\'" "\\.min.js\\'")))
+
+
+
 ;; Help with projectile
 (require 'helm-projectile)
 (helm-projectile-on)
