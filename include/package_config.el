@@ -299,9 +299,9 @@
 
 
 
-;; (setq web-mode-enable-css-colorization t)
-;; (setq web-mode-enable-current-element-highlight t)    
-;; (setq web-mode-enable-current-column-highlight t)
+(setq web-mode-enable-css-colorization t)
+(setq web-mode-enable-current-element-highlight t)    
+(setq web-mode-enable-current-column-highlight t)
 
 
 ;; (setq web-mode-enable-current-element-highlight t)
@@ -434,6 +434,8 @@
 (evil-set-initial-state 'diff-mode 'emacs) 
 (evil-set-initial-state 'text-mode 'emacs) ;; Mode utilise pour saisir des messages depuis magit
 (evil-set-initial-state 'log-edit-mode 'emacs) ;; Mode utilise pour saisir des messages depuis vc
+(evil-set-initial-state 'markdown-mode 'emacs) 
+(evil-set-initial-state 'ag-mode 'emacs) 
 ;; (evil-set-initial-state 'neotree 'emacs)
 
 

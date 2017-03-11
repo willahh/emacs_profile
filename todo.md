@@ -7,30 +7,28 @@
 
 
 --------- A ranger 
-
-
-
-
-
-
 - [-] Creer les fichier .tern-port autre part !!!!!!!
 - [-] [MAJEUR] Double clic sur un mot : highlight tous les autres
 - [-] vc-dir n'affiche pas les fichiers supprimés localement, mais non envoyé à svn (svn remove)
 - [-] Le double click sur un mot ne selectionne pas tout le mot (il coupe la sélection si il y a des "_")
-- [-] Delete file : ne pas re demander le chemin alors que l'on a deja le focus
 - [-] Ajouter la commande : "VC: (File) Revert"
 - [-] Ajouter la commande : "VC: (Folder) Revert"
-- [-] Emacs mode : 
-  - [-] "*Helm find files*"
-  - [-] "ag search text:......"
-- [-] Add key : [spc G] : refresh current buffer (for color (exemple))
 - [-] webmode backtab --> indent back 
+- [x] Add key : [spc G] : refresh current buffer (for color (exemple))
+- [x] Emacs mode : 
+  - [x] "*Helm find files*"
+  - [x] "ag search text:......"
+- [x] add new keybidining : M-n : new buffer
+- [x] emacs mode :
+    - [x] .md
+    - [x] *ag search buffer
 
 
 
 - [-] Ne pas reformater tout le fichier automatiquement !!
       (Exemple sur mediaList.json.php)
 
+- [-] Delete file : ne pas re demander le chemin alors que l'on a deja le focus
 
 
 

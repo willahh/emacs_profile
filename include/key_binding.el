@@ -139,6 +139,7 @@
 (evil-leader/set-key "tw" 'whitespace-mode) ;; Meaning "[l]inum [t]oggle                      "
 (evil-leader/set-key "tt" 'toggle-truncate-lines) ;; Meaning "[t]oggle-truncate-[lines
 (evil-leader/set-key "tc" 'evilnc-comment-or-uncomment-lines) ;; Meaning [t]oggle [c]omment
+(evil-leader/set-key "G" 'revert-buffer-no-confirm) ;; Meaning [t]oggle [c]omment
 
 
 
@@ -213,6 +214,7 @@
 (global-set-key (kbd "M-w")  'kill-this-buffer)
 (global-set-key (kbd "M-r")  'helm-swoop)
 (global-set-key (kbd "M-o")  'helm-find-files)
+(global-set-key (kbd "M-n")  'evil-buffer-new)
 ;; (global-set-key (kbd "M-d")  'mc/mark-next-like-this) ;; Cannot be setted, (emacs backward delete word)
 
 (global-set-key [(meta shift o)]  'helm-mini)
@@ -266,6 +268,7 @@
 ;; web mode
 (define-key web-mode-map [(meta shift j)] 'web-mode-tag-next)
 (define-key web-mode-map [(meta shift k)] 'web-mode-tag-previous)
+
 
 
 
