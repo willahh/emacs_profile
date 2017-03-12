@@ -189,11 +189,37 @@
 
 
 ;; powerline theme
-(set-face-attribute 'mode-line nil
-                    :foreground "Brelack"
-                    :background "#9ecf00"
-                    :box nil)
+(defun powerline-theme-emacs()
+  (set-face-attribute 'mode-line nil
+                      :foreground "Brelack"
+                      :background "#9ecf00"
+                      :box nil)
+)
 
+(defun powerline-theme-visual()
+  (set-face-attribute 'mode-line nil
+                      :foreground "Brelack"
+                      :background "#fffc00"
+                      :box nil)
+)
 
+(defun powerline-theme-normal()
+  (set-face-attribute 'mode-line nil
+                      :foreground "Brelack"
+                      :background "#ffba00"
+                      :box nil)
+)
 
-;; DIred theme
+(defun powerline-theme-insert()
+  (set-face-attribute 'mode-line nil
+                      :foreground "Brelack"
+                      :background "red"
+                      :box nil)
+)
+
+(add-hook 'evil-normal-state-entry-hook 'powerline-theme-normal)
+(add-hook 'evil-visual-state-entry-hook 'powerline-theme-visual)
+(add-hook 'evil-insert-state-entry-hook 'powerline-theme-insert)
+(add-hook 'evil-emacs-state-entry-hook 'powerline-theme-emacs)
+
+(powerline-theme-normal)

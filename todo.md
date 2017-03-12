@@ -7,6 +7,8 @@
 
 
 --------- A ranger 
+- [-] Voir pour utiliser une largeur max lors de la saisie de long texte
+- [x] Changer la couleur de powerline en fonction du mode courant (normal, insert, emacs, visual)
 - [-] [web-mode] indenting region slow when past text
 - [-] Creer les fichier .tern-port autre part !!!!!!!
 - [-] Delete file : ne pas re demander le chemin alors que l'on a deja le focus
@@ -15,7 +17,6 @@
     - "*.svn-base"
     - "*.log"
 - [-] Check kill yank ring
-- [-] unbinding
 - [-] [vc-dir] Faire une fonction pour activer un vc-version-diff avec les paramètres older revision : "base", newer revision : "head"
 - [-] [vc-dir] Trouver l'équilvalent de svn log en mode verbose "svn log -v"
 - [x] Le double click sur un mot ne selectionne pas tout le mot (il coupe la sélection si il y a des "_")

@@ -592,9 +592,9 @@
 (require 'evil-easymotion)
 
 ;; Cursor state
-(setq evil-emacs-state-cursor '("#a7e236" bar))
-(setq evil-normal-state-cursor '("green" box))
-(setq evil-visual-state-cursor '("orange" box))
+(setq evil-emacs-state-cursor '("#9ecf00" bar))
+(setq evil-normal-state-cursor '("#ffba00" box))
+(setq evil-visual-state-cursor '("#fffc00" box))
 (setq evil-insert-state-cursor '("red" bar))
 (setq evil-replace-state-cursor '("red" bar))
 (setq evil-operator-state-cursor '("red" hollow))
