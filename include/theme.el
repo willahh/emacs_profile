@@ -19,9 +19,11 @@
  (face-list))
 
 ;;
-(set-face-attribute 'region nil :background "black")
-(set-face-attribute 'region nil :background "#1b1d1d" :foreground "#b7e44d") ;; Current selection
+;; (set-face-attribute 'region nil :background "black")
+(set-face-attribute 'region nil :background "#ffc800" :foreground "#000") ;; Current selection
 (set-face-background 'hl-line "#101112")
+
+
 
 
 
