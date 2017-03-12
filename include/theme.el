@@ -185,3 +185,11 @@
      (2 font-lock-comment-face))
     ("^[^-=+*!<>#].*\n" (0 diff-context-face))))
 
+
+
+
+;; powerline theme
+(set-face-attribute 'mode-line nil
+                    :foreground "Brelack"
+                    :background "#9ecf00"
+                    :box nil)

@@ -28,6 +28,11 @@
   (cl-letf (((symbol-function #'process-list) (lambda ())))
     ad-do-it))
 
+;; powerline
+;; (require 'cl)
+(require 'powerline)
+;; (setq powerline-arrow-shape 'curve)
+
 
 
 ;; Auto close parenthesis brackets, ...
@@ -55,9 +60,9 @@
 (setq nlinum-relative-offset 0)                 ;; 1 if you want 0, 2, 3...
 
 ;; Smart modde line
-(setq sml/no-confirm-load-theme t)
-(setq sml/theme 'dark)
-(sml/setup)
+;; (setq sml/no-confirm-load-theme t)
+;; (setq sml/theme 'dark)
+;; (sml/setup)
 
 
 ;; helm-ag
@@ -376,7 +381,7 @@
 
 ;; Mode Line changes
 ;; Display workgroups in Mode Line?
-(setq wg-mode-line-display-on t)          ; Default: (not (featurep 'powerline))
+;;(setq wg-mode-line-display-on t)          ; Default: (not (featurep 'powerline))
 (setq wg-flag-modified t)                 ; Display modified flags as well
 (setq wg-mode-line-decor-left-brace "["
       wg-mode-line-decor-right-brace "]"  ; how to surround it
@@ -562,8 +567,8 @@
 ;; Spaceline
 ;; Note : power line stylee, mais je n arrive pas a la faire fonctionner
 ;; Update : il faut avoir le mode evil active pour que le package fonctionne
-(require 'spaceline-config)
-(spaceline-spacemacs-theme)
+;; (require 'spaceline-config)
+;; (spaceline-spacemacs-theme)
 
 ;; ;; Smart-newline
 ;; (require 'smart-newline)

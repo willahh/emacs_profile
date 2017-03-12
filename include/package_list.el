@@ -56,16 +56,16 @@
   nlinum-relative
   pkg-info
   popup
-  powerline
+  ;; powerline
   projectile
   psvn
   resize-window
   skewer-mode
   smart-forward
-  smart-mode-line ;; (sml -> activated)
+  ;; smart-mode-line ;; (sml -> activated)
   smart-tab
   sml-mode         
-  spaceline
+  ;; spaceline
   swiper-helm
   tern
   tern-auto-complete
@@ -79,7 +79,8 @@
   zerodark-theme
   ))
 
-;; Tell emacs where is your personal elisp lib dir
+;; 
+(add-to-list 'load-path "~/.emacs.d/plugins/emacs-powerline")
 (add-to-list 'load-path "~/.emacs.d/plugins/evil-nerd-commenter/")
 (add-to-list 'load-path "~/.emacs.d/plugins/whole-line-or-region")
 ;; (add-to-list 'load-path "~/.emacs.d/plugins/tabbar")

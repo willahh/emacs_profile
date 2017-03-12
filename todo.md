@@ -9,7 +9,6 @@
 --------- A ranger 
 - [-] [web-mode] indenting region slow when past text
 - [-] Creer les fichier .tern-port autre part !!!!!!!
-- [-] vc-dir n'affiche pas les fichiers supprimés localement, mais non envoyé à svn (svn remove)
 - [-] Delete file : ne pas re demander le chemin alors que l'on a deja le focus
 - [-] ag/helm-ag/helm-ag-... : Ignore les regles suivantes :
     - "*.min.js"
@@ -76,6 +75,7 @@
 
 
 --------- Majeur
+- [-] vc-dir n'affiche pas les fichiers supprimés localement, mais non envoyé à svn (svn remove)
 - [-] theme > diff : Se rapproche au max des couleurs du theme Sublime 
 - [-] nlinum : plus large
 - [-] nlinum : highlight current line number
