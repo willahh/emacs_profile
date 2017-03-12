@@ -122,6 +122,7 @@
 
 ;; diff-hl
 (global-diff-hl-mode t)
+(add-hook 'dired-mode-hook 'diff-hl-dired-mode)
 
 ;; tern
 ;; (autoload 'tern-mode "tern.el" nil t)
