@@ -1,7 +1,7 @@
 
 ;;;; key_binding: --- some default / package keybindings
 ;; Disable emacs search (c-s / c-r) -> Replaced by evil search
-(dolist (key '("\M-x" "\M-z" "\M-v" "\C-s" "\C-r" "\C-g" "\C-w" "\C-v" "\M-p" "\M-n" "\M-S1" "\M-C-ep" "\M-p" "\C-\M-p"))
+(dolist (key '("\M-x" "\M-z" "\M-v" "\C-r" "\C-g" "\C-w" "\C-v" "\M-p" "\M-n" "\M-S1" "\M-C-ep" "\M-p" "\C-\M-p"))
   (global-unset-key key))
 
 

@@ -58,6 +58,20 @@ there's a region, all lines that region covers will be duplicated."
         (clipboard-kill-region (point-min) (point-max)))
       (message filename))))
 
+;; copy-file-name-to-clipboard
+;; Source : http://emacsredux.com/blog/2013/03/27/copy-filename-to-the-clipboard/
+(defun copy-file-name-to-clipboard ()
+  "Copy the current buffer file name to the clipboard."
+  (interactive)
+  (let ((filename (if (equal major-mode 'dired-mode)
+                      default-directory
+                    (buffer-file-name))))
+    (when filename
+      (kill-new filename)
+      (message "Copied buffer file name '%s' to the clipboard." filename))))
+
+
+
 ;; Move line or region up and down update
 ;; Source : https://www.emacswiki.org/emacs/MoveLineRegion
 ;; Move line
@@ -364,3 +378,11 @@ That is, a string used to represent it on the tab bar."
     (when log-edit-setup-add-author
       (insert "\nAuthor: "))
     (message-position-point)))
+
+
+;; Shorthand 
+(defun file:revert()
+  "VC: (File) Revert"
+  (interactive)
+  (vc-revert)
+)

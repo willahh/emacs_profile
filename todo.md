@@ -7,19 +7,11 @@
 
 
 --------- A ranger 
-- [-] melange tab space (exemple file : "pdpm.php")
 - [-] [web-mode] indenting region slow when past text
 - [-] Creer les fichier .tern-port autre part !!!!!!!
 - [-] vc-dir n'affiche pas les fichiers supprimés localement, mais non envoyé à svn (svn remove)
-- [-] Ajouter la commande : "VC: (File) Revert"
-- [-] Ajouter la commande : "VC: (Folder) Revert"
 - [-] webmode backtab --> indent back 
-- [-] Ne pas reformater tout le fichier automatiquement !!
-      (Exemple sur mediaList.json.php)
-
 - [-] Delete file : ne pas re demander le chemin alors que l'on a deja le focus
-
-
 - [-] ag/helm-ag/helm-ag-... : Ignore les regles suivantes :
     - "*.min.js"
     - "*.svn-base"
@@ -42,6 +34,13 @@
     - [x] *ag search buffer
 - [x] Tab ne pas faire de group, ignorer juste certains buffer (genre des "widgets list de helm")
       Trop de problème potentiel (fermeture d'un buffer -> context précédent perdu)
+- [x] Ne pas reformater tout le fichier automatiquement !!
+      (Exemple sur mediaList.json.php)
+      Edit : tout semble ok ?
+- [x] melange tab space (exemple file : "pdpm.php")
+      Edit : tout semble ok ?
+- [x] Ajouter la commande : "VC: (File) Revert"
+
 
 
 
@@ -78,7 +77,21 @@
 
 --------- Majeur
 - [-] theme > diff : Se rapproche au max des couleurs du theme Sublime 
-- [-] M-a regression --> ne selectionne plus l integralite du buffer
+- [-] nlinum : plus large
+- [-] nlinum : highlight current line number
+- [-] big visible current buffer
+- [-] Ajouter une méthode copy file name pour retourner uniquement le nom du fichier
+      - La fonction copy-file-name-to-clipbord est present, mais elle retourne le chemin complet
+        Il faudrait garder que la derniere partie apres le /
+- [-] Dired delete folder very slow
+- [-] Dired > mkdir : refresh slow
+- [-] Dired diff gutter
+- [-] delete-file
+      - dont prompt for path
+      - kill buffer 
+- 
+- [-] [Neotree] > after load > Open first file > focus to other window 
+- [x] M-a regression --> ne selectionne plus l integralite du buffer
 - [x] Mode emacs par default pour les mode majeur suivants 
     - [x] *log-edit-files*
     - [x] - COMMIT_EDITMSG
@@ -86,24 +99,9 @@
     - [x] - *vc-diff*
     - [x] - Neotree
 - [x] vc log dont write summary
-- [-] nlinum : plus large
-- [-] nlinum : highlight current line number
-- [-] meta shift 1 : delete other windows --> don't work --> maybe disable it globaly 
-- [-] M-p doesn't work on all buffer
-- [-] big visible current buffer
-- [-] Ajouter une méthode copy file name pour retourner uniquement le nom du fichier
-
-
 - [x] Dired default mode : emacs
-- [-] Dired delete folder very slow
-- [-] Dired > mkdir : refresh slow
-- [-] Dired diff gutter
 - [x] Dired > Don't display tabbar
-- [-] delete-file
-      - dont prompt for path
-      - kill buffer 
-- 
-- [-] [Neotree] > after load > Open first file > focus to other window 
+- [x] M-p doesn't work on all buffer
 
 --------- Mineur 
 - [-] web mode : refresh colors after yank
