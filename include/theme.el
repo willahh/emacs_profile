@@ -193,3 +193,7 @@
                     :foreground "Brelack"
                     :background "#9ecf00"
                     :box nil)
+
+
+
+;; DIred theme
