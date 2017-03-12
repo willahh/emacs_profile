@@ -185,4 +185,3 @@
      (2 font-lock-comment-face))
     ("^[^-=+*!<>#].*\n" (0 diff-context-face))))
 
-

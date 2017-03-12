@@ -1,36 +1,35 @@
 (require 'package)
 (setq package-list '(
-  js-comint
-  smart-forward
-  js-doc
-  autopair
-  exec-path-from-shell
-  smart-mode-line ;; (sml -> activated)
-  sml-mode         
+  ;; evil-snipe
+  ;; neotree
+  ;; php-auto-yasnippets
+  ;; php-mode
+  ;; php-refactor-mode
+  ;; tabbar
   ace-window
   ag
   anything
   async
   auto-complete
+  auto-highlight-symbol
+  autopair
   avy
   avy-menu
+  color-theme-buffer-local 
   dash
   diff-hl
   doom-themes
-  leuven-theme
-  color-theme-buffer-local 
   dsvn
   emmet-mode
-  markdown-mode
   epl
   evil
   evil-easymotion
   evil-leader
+  evil-multiedit
   evil-nerd-commenter ;; keep this (get it from melpa or from plugin folder)
   evil-surround   
   evil-visualstar
-  ;; evil-snipe
-  evil-multiedit
+  exec-path-from-shell
   expand-region
   eyebrowse
   general
@@ -42,18 +41,19 @@
   helm-core
   helm-projectile
   helm-swoop
+  imenu-anywhere
+  js-comint
+  js-doc
   js2-mode
   key-chord
+  leuven-theme
   magit
   magit-popup
+  markdown-mode
   monokai-theme
   multiple-cursors
   nlinum
   nlinum-relative
-  ;; neotree
-  ;; php-mode
-  ;; php-refactor-mode
-  ;; php-auto-yasnippets
   pkg-info
   popup
   powerline
@@ -61,12 +61,14 @@
   psvn
   resize-window
   skewer-mode
+  smart-forward
+  smart-mode-line ;; (sml -> activated)
   smart-tab
+  sml-mode         
   spaceline
   swiper-helm
   tern
   tern-auto-complete
-  ;; tabbar
   undo-tree
   use-package
   web-beautify
@@ -75,7 +77,6 @@
   window-numbering
   yasnippet
   zerodark-theme
-  imenu-anywhere
   ))
 
 ;; Tell emacs where is your personal elisp lib dir

@@ -6,6 +6,8 @@
 ; (global-font-lock-mode 0)
 ; (setq bidi-display-reordering nil)
 
+;; Do startup message
+(setq initial-scratch-message "")
 
 ;; Display current file path in title
 (setq frame-title-format "%b")

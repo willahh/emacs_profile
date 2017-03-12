@@ -7,8 +7,11 @@
 
 
 --------- A ranger 
+- [-] melange tab space (exemple file : "pdpm.php")
+- [-] [web-mode] indenting region slow when past text
+- [-] \n on save (exemple file : "pdpm.php")
 - [-] Creer les fichier .tern-port autre part !!!!!!!
-- [-] [MAJEUR] Double clic sur un mot : highlight tous les autres
+- [x] [MAJEUR] Double clic sur un mot : highlight tous les autres
 - [-] vc-dir n'affiche pas les fichiers supprimés localement, mais non envoyé à svn (svn remove)
 - [-] Le double click sur un mot ne selectionne pas tout le mot (il coupe la sélection si il y a des "_")
 - [-] Ajouter la commande : "VC: (File) Revert"
@@ -23,18 +26,10 @@
     - [x] .md
     - [x] *ag search buffer
 
-
-
 - [-] Ne pas reformater tout le fichier automatiquement !!
       (Exemple sur mediaList.json.php)
 
 - [-] Delete file : ne pas re demander le chemin alors que l'on a deja le focus
-
-
-
-
-
-
 
 
 - [-] ag/helm-ag/helm-ag-... : Ignore les regles suivantes :
@@ -42,15 +37,12 @@
     - "*.svn-base"
     - "*.log"
 - [-] Check kill yank ring
-- [-] Tab ne pas faire de group, ignorer juste certains buffer (genre des "widgets list de helm")
+- [x] Tab ne pas faire de group, ignorer juste certains buffer (genre des "widgets list de helm")
       Trop de problème potentiel (fermeture d'un buffer -> context précédent perdu)
-- [-] melange tab space (exemple file : "pdpm.php")
-- [-] \n on save (exemple file : "pdpm.php")
 - [-] unbinding
 - [-] [vc-dir] Faire une fonction pour activer un vc-version-diff avec les paramètres older revision : "base", newer revision : "head"
 - [-] [vc-dir] Trouver l'équilvalent de svn log en mode verbose "svn log -v"
-- [-] theme : la selection courante depuis ctrl a n'est pas visible mais fonctioone bien
-- [-] [web-mode] indenting region slow when past text
+- [x] theme : la selection courante depuis ctrl a n'est pas visible mais fonctioone bien
 
 
 
@@ -58,6 +50,8 @@
 
 
 --------- Bloquant
+- [-] (d) --> dont yank beore
+- [-] (M-C-d) (duplicate line or selection) Duplique parfois une portion beaucoup trop importante
 - [-] ediff : pas de couleurs avec le nouveau thème
 - [-] neotree synchro with current opened file
 - [-] unbind key on some mode :
@@ -69,13 +63,11 @@
     - [-] M-S-p diff-mode
     - [-] M-p on "*ag search text:......*" buffer
     - [-] C-M-p dired buffer  (dired-aux.el) (dired-mode-map)
-- [-] Emacs-ag very slow compared to ag from command line
+- [x] Emacs-ag very slow compared to ag from command line
       ---> Peut être retirer certains mode pour ag ?
       ----> non, emacs slow with longlines
       https://emacs.stackexchange.com/questions/598/how-do-i-prevent-extremely-long-lines-making-emacs-slow
       http://emacs.stackexchange.com/questions/598/how-do-i-prevent-extremely-long-lines-making-emacs-slow
-- [-] (d) --> dont yank beore
-- [-] (M-C-d) (duplicate line or selection) Duplique parfois une portion beaucoup trop importante
 - [-] *vc-diff* Lorsque ce buffer apparait, il apparait dans un nouvel emplacement (ok), mais en minuscule (ko)
 - [x] vc ediff : Customiser mieux le theme
 - [x] helm-ag truncate lines

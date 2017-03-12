@@ -285,6 +285,40 @@
       (require 'tern-auto-complete)
       (tern-ac-setup)))
 
+;; auto-highlight-symbol
+(require 'auto-highlight-symbol)
+(global-auto-highlight-symbol-mode 0)
+(setq ahs-set-idle-interval 0)
+
+;; wra custom hook
+;; Activation du mode highlight all same occurence uniquement
+;; apres une selection (ST behaviour)
+(add-hook 'activate-mark-hook
+      (lambda ()
+        (auto-highlight-symbol-mode 1)))
+
+(add-hook 'deactivate-mark-hook
+      (lambda ()
+        (auto-highlight-symbol-mode 0)))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ;; Web mode
 (require 'web-mode)
