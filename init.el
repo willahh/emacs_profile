@@ -11,7 +11,7 @@
 (load-file "~/.emacs.d/include/package_installer.el")
 (load-file "~/.emacs.d/include/package_config.el")
 (load-file "~/.emacs.d/include/key_binding.el")
-(load-file "~/.emacs.d/include/theme.el")
+(load-file "~/.emacs.d/include/theme.el") 
 
 
 

@@ -287,19 +287,19 @@
 
 ;; auto-highlight-symbol
 (require 'auto-highlight-symbol)
-(global-auto-highlight-symbol-mode 0)
-(setq ahs-set-idle-interval 0)
+;; (global-auto-highlight-symbol-mode 0)
+;; (setq ahs-set-idle-interval 0)
 
-;; wra custom hook
-;; Activation du mode highlight all same occurence uniquement
-;; apres une selection (ST behaviour)
-(add-hook 'activate-mark-hook
-      (lambda ()
-        (auto-highlight-symbol-mode 1)))
+;; ;; wra custom hook
+;; ;; Activation du mode highlight all same occurence uniquement
+;; ;; apres une selection (ST behaviour)
+;; (add-hook 'activate-mark-hook
+;;       (lambda ()
+;;         (auto-highlight-symbol-mode 1)))
 
-(add-hook 'deactivate-mark-hook
-      (lambda ()
-        (auto-highlight-symbol-mode 0)))
+;; (add-hook 'deactivate-mark-hook
+;;       (lambda ()
+;;         (auto-highlight-symbol-mode 0)))
 
 
 
@@ -660,4 +660,3 @@
 ;; (evil-define-key 'normal neotree-mode-map (kbd "SPC") 'neotree-enter)
 ;; (evil-define-key 'normal neotree-mode-map (kbd "q") 'neotree-hide)
 ;; (evil-define-key 'normal neotree-mode-map (kbd "RET") 'neotree-enter)
-

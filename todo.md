@@ -9,23 +9,11 @@
 --------- A ranger 
 - [-] melange tab space (exemple file : "pdpm.php")
 - [-] [web-mode] indenting region slow when past text
-- [-] \n on save (exemple file : "pdpm.php")
 - [-] Creer les fichier .tern-port autre part !!!!!!!
-- [x] [MAJEUR] Double clic sur un mot : highlight tous les autres
 - [-] vc-dir n'affiche pas les fichiers supprimés localement, mais non envoyé à svn (svn remove)
-- [-] Le double click sur un mot ne selectionne pas tout le mot (il coupe la sélection si il y a des "_")
 - [-] Ajouter la commande : "VC: (File) Revert"
 - [-] Ajouter la commande : "VC: (Folder) Revert"
 - [-] webmode backtab --> indent back 
-- [x] Add key : [spc G] : refresh current buffer (for color (exemple))
-- [x] Emacs mode : 
-  - [x] "*Helm find files*"
-  - [x] "ag search text:......"
-- [x] add new keybidining : M-n : new buffer
-- [x] emacs mode :
-    - [x] .md
-    - [x] *ag search buffer
-
 - [-] Ne pas reformater tout le fichier automatiquement !!
       (Exemple sur mediaList.json.php)
 
@@ -37,12 +25,24 @@
     - "*.svn-base"
     - "*.log"
 - [-] Check kill yank ring
-- [x] Tab ne pas faire de group, ignorer juste certains buffer (genre des "widgets list de helm")
-      Trop de problème potentiel (fermeture d'un buffer -> context précédent perdu)
 - [-] unbinding
 - [-] [vc-dir] Faire une fonction pour activer un vc-version-diff avec les paramètres older revision : "base", newer revision : "head"
 - [-] [vc-dir] Trouver l'équilvalent de svn log en mode verbose "svn log -v"
+- [x] Le double click sur un mot ne selectionne pas tout le mot (il coupe la sélection si il y a des "_")
 - [x] theme : la selection courante depuis ctrl a n'est pas visible mais fonctioone bien
+- [x] \n on save (exemple file : "pdpm.php")
+- [x] [MAJEUR] Double clic sur un mot : highlight tous les autres
+- [x] Add key : [spc G] : refresh current buffer (for color (exemple))
+- [x] Emacs mode : 
+  - [x] "*Helm find files*"
+  - [x] "ag search text:......"
+- [x] add new keybidining : M-n : new buffer
+- [x] emacs mode :
+    - [x] .md
+    - [x] *ag search buffer
+- [x] Tab ne pas faire de group, ignorer juste certains buffer (genre des "widgets list de helm")
+      Trop de problème potentiel (fermeture d'un buffer -> context précédent perdu)
+
 
 
 

@@ -268,13 +268,3 @@
 ;; web mode
 (define-key web-mode-map [(meta shift j)] 'web-mode-tag-next)
 (define-key web-mode-map [(meta shift k)] 'web-mode-tag-previous)
-
-
-
-
-
-
-
-
-
-

@@ -6,11 +6,17 @@
 ; (global-font-lock-mode 0)
 ; (setq bidi-display-reordering nil)
 
+;; Don't write nwe line at end of document
+(setq mode-require-final-newline nil)
+
 ;; Do startup message
 (setq initial-scratch-message "")
 
 ;; Display current file path in title
 (setq frame-title-format "%b")
+
+;; Select whole word when separated with _
+(modify-syntax-entry ?_ "w")
 
 ;;
 (global-auto-revert-mode -1)

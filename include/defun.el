@@ -351,6 +351,8 @@ That is, a string used to represent it on the tab bar."
                        (length (tabbar-view
                                 (tabbar-current-tabset)))))))))
 
+
+
 ;; Dont start commit message with bullshit
 ;; Source : http://emacs.stackexchange.com/a/3031
 (load "log-edit")
