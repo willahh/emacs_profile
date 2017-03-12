@@ -7,8 +7,6 @@
 
 
 --------- A ranger 
-- [-] Voir pour utiliser une largeur max lors de la saisie de long texte
-- [x] Changer la couleur de powerline en fonction du mode courant (normal, insert, emacs, visual)
 - [-] [web-mode] indenting region slow when past text
 - [-] Creer les fichier .tern-port autre part !!!!!!!
 - [-] Delete file : ne pas re demander le chemin alors que l'on a deja le focus
@@ -19,28 +17,6 @@
 - [-] Check kill yank ring
 - [-] [vc-dir] Faire une fonction pour activer un vc-version-diff avec les paramètres older revision : "base", newer revision : "head"
 - [-] [vc-dir] Trouver l'équilvalent de svn log en mode verbose "svn log -v"
-- [x] Le double click sur un mot ne selectionne pas tout le mot (il coupe la sélection si il y a des "_")
-- [x] theme : la selection courante depuis ctrl a n'est pas visible mais fonctioone bien
-- [x] \n on save (exemple file : "pdpm.php")
-- [x] [MAJEUR] Double clic sur un mot : highlight tous les autres
-- [x] Add key : [spc G] : refresh current buffer (for color (exemple))
-- [x] Emacs mode : 
-  - [x] "*Helm find files*"
-  - [x] "ag search text:......"
-- [x] add new keybidining : M-n : new buffer
-- [x] emacs mode :
-    - [x] .md
-    - [x] *ag search buffer
-- [x] Tab ne pas faire de group, ignorer juste certains buffer (genre des "widgets list de helm")
-      Trop de problème potentiel (fermeture d'un buffer -> context précédent perdu)
-- [x] Ne pas reformater tout le fichier automatiquement !!
-      (Exemple sur mediaList.json.php)
-      Edit : tout semble ok ?
-- [x] melange tab space (exemple file : "pdpm.php")
-      Edit : tout semble ok ?
-- [x] Ajouter la commande : "VC: (File) Revert"
-- [x] webmode backtab --> indent back 
-
 
 
 
@@ -52,7 +28,7 @@
 - [-] (d) --> dont yank beore
 - [-] (M-C-d) (duplicate line or selection) Duplique parfois une portion beaucoup trop importante
 - [-] ediff : pas de couleurs avec le nouveau thème
-- [-] neotree synchro with current opened file
+- [-] *vc-diff* Lorsque ce buffer apparait, il apparait dans un nouvel emplacement (ok), mais en minuscule (ko)
 - [-] unbind key on some mode :
     Lignes en commentaires dans les fichiers concernes solution temporaire
     Il faut passer par le package special pour surcharger, pas encore trouve parfaitement comment faire
@@ -62,18 +38,6 @@
     - [-] M-S-p diff-mode
     - [-] M-p on "*ag search text:......*" buffer
     - [-] C-M-p dired buffer  (dired-aux.el) (dired-mode-map)
-- [x] Emacs-ag very slow compared to ag from command line
-      ---> Peut être retirer certains mode pour ag ?
-      ----> non, emacs slow with longlines
-      https://emacs.stackexchange.com/questions/598/how-do-i-prevent-extremely-long-lines-making-emacs-slow
-      http://emacs.stackexchange.com/questions/598/how-do-i-prevent-extremely-long-lines-making-emacs-slow
-- [-] *vc-diff* Lorsque ce buffer apparait, il apparait dans un nouvel emplacement (ok), mais en minuscule (ko)
-- [x] vc ediff : Customiser mieux le theme
-- [x] helm-ag truncate lines
-- [x] Certains gros fichiers impossibe à ouvrir
-- [x] tabbar organiser par group de fichiers et par mode
-      (by by tabbar, trop relou)
-
 
 --------- Majeur
 - [-] vc-dir n'affiche pas les fichiers supprimés localement, mais non envoyé à svn (svn remove)
@@ -105,6 +69,7 @@
 - [x] M-p doesn't work on all buffer
 
 --------- Mineur 
+- [-] Voir pour utiliser une largeur max lors de la saisie de long texte
 - [-] web mode : refresh colors after yank
 - [-] tabbar : hide bad icons
 - [-] emacs --> save a cursor place ?
@@ -151,6 +116,43 @@
 
 
 --------- Corrige 
+- [x] Emacs-ag very slow compared to ag from command line
+      ---> Peut être retirer certains mode pour ag ?
+      ----> non, emacs slow with longlines
+      https://emacs.stackexchange.com/questions/598/how-do-i-prevent-extremely-long-lines-making-emacs-slow
+      http://emacs.stackexchange.com/questions/598/how-do-i-prevent-extremely-long-lines-making-emacs-slow
+- [x] vc ediff : Customiser mieux le theme
+- [x] helm-ag truncate lines
+- [x] Certains gros fichiers impossibe à ouvrir
+- [x] tabbar organiser par group de fichiers et par mode
+      (by by tabbar, trop relou)
+
+- [x] Le double click sur un mot ne selectionne pas tout le mot (il coupe la sélection si il y a des "_")
+- [x] theme : la selection courante depuis ctrl a n'est pas visible mais fonctioone bien
+- [x] \n on save (exemple file : "pdpm.php")
+- [x] [MAJEUR] Double clic sur un mot : highlight tous les autres
+- [x] Add key : [spc G] : refresh current buffer (for color (exemple))
+- [x] Emacs mode : 
+  - [x] "*Helm find files*"
+  - [x] "ag search text:......"
+- [x] add new keybidining : M-n : new buffer
+- [x] emacs mode :
+    - [x] .md
+    - [x] *ag search buffer
+- [x] Tab ne pas faire de group, ignorer juste certains buffer (genre des "widgets list de helm")
+      Trop de problème potentiel (fermeture d'un buffer -> context précédent perdu)
+- [x] Ne pas reformater tout le fichier automatiquement !!
+      (Exemple sur mediaList.json.php)
+      Edit : tout semble ok ?
+- [x] melange tab space (exemple file : "pdpm.php")
+      Edit : tout semble ok ?
+- [x] Ajouter la commande : "VC: (File) Revert"
+- [x] webmode backtab --> indent back 
+- [x] Changer la couleur de powerline en fonction du mode courant (normal, insert, emacs, visual)
+
+
+
+
 - [x] Evil multi cursor
 - [x] F5 -> refresh buffer ?
 - [x] C-ALT-S : Save all buffers
