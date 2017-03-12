@@ -10,7 +10,6 @@
 - [-] [web-mode] indenting region slow when past text
 - [-] Creer les fichier .tern-port autre part !!!!!!!
 - [-] vc-dir n'affiche pas les fichiers supprimés localement, mais non envoyé à svn (svn remove)
-- [-] webmode backtab --> indent back 
 - [-] Delete file : ne pas re demander le chemin alors que l'on a deja le focus
 - [-] ag/helm-ag/helm-ag-... : Ignore les regles suivantes :
     - "*.min.js"
@@ -40,6 +39,7 @@
 - [x] melange tab space (exemple file : "pdpm.php")
       Edit : tout semble ok ?
 - [x] Ajouter la commande : "VC: (File) Revert"
+- [x] webmode backtab --> indent back 
 
 
 

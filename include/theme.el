@@ -29,7 +29,7 @@
 
 ;; parenthesis
 (set-face-foreground 'show-paren-match "#000")
-(set-face-background 'show-paren-match "#FFF")
+(set-face-background 'show-paren-match "#56b0ec")
 
 
 ;; ------- Tabbar settings

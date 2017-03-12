@@ -385,4 +385,73 @@ That is, a string used to represent it on the tab bar."
   "VC: (File) Revert"
   (interactive)
   (vc-revert)
+  )
+
+
+
+;; (defun un-indent-by-removing-4-spaces ()
+;;   "remove 4 spaces from beginning of of line"
+;;   (interactive)
+;;   (save-excursion
+;;     (save-match-data
+;;       (beginning-of-line)
+;;       ;; get rid of tabs at beginning of line
+;;       (when (looking-at "^\\s-+")
+;;         (untabify (match-beginning 0) (match-end 0)))
+;;       (when (looking-at "^    ")
+;;         (replace-match "")))))
+
+
+;; (global-set-key (kbd "<S-tab>") 'nil)
+
+
+;; Indent - unindent 
+;; Source http://stackoverflow.com/a/35183657
+;; Updated to just use for back indent, forward indent is 
+(defun custom-indent-region(numSpaces)
+    (progn 
+        ; default to start and end of current line
+        (setq regionStart (line-beginning-position))
+        (setq regionEnd (line-end-position))
+
+        ; if there's a selection, use that instead of the current line
+        (when (use-region-p)
+            (setq regionStart (region-beginning))
+            (setq regionEnd (region-end))
+        )
+
+        (save-excursion ; restore the position afterwards            
+            (goto-char regionStart) ; go to the start of region
+            (setq start (line-beginning-position)) ; save the start of the line
+            (goto-char regionEnd) ; go to the end of region
+            (setq end (line-end-position)) ; save the end of the line
+
+            (indent-rigidly start end numSpaces) ; indent between start and end
+            (setq deactivate-mark nil) ; restore the selected region
+        )
+    )
 )
+
+(defun untab-region (N)
+    (interactive "p")
+    (custom-indent-region -4)
+)
+
+;; (defun tab-region (N)
+;;     (interactive "p")
+;;     (if (use-region-p)
+;;         (custom-indent-region 4) ; region was selected, call indent-region
+;;         (insert "    ") ; else insert four spaces as expected
+;;     )
+;;     )
+
+(global-set-key (kbd "<backtab>") 'untab-region)
+;; (global-set-key (kbd "<tab>") 'tab-region)
+
+
+
+
+(defun my-delete (filename)
+  "If the given file exists, delete it; otherwise do nothing."
+  (when (file-exists-p filename) (delete-file filename)))
+

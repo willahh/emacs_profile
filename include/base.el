@@ -31,7 +31,7 @@
 (transient-mark-mode 0)
 
 ;; Show matching parenthesis
-;; (show-paren-mode)
+(show-paren-mode)
 
 ;; New line and indent by default
 (global-set-key (kbd "RET") 'newline-and-indent)
