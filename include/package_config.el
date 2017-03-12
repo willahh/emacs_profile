@@ -286,7 +286,14 @@
       (tern-ac-setup)))
 
 ;; auto-highlight-symbol
-(require 'auto-highlight-symbol)
+;; Note ce plugin semble un peu lourd,
+;; Tout ce que j ai besoin c est un highlight du mot courant sur apres selection.
+;; Les 2 hooks plus bas sont bien fonctionnel.
+;; Il faudrait pouvoir executer la fonction native emacs (highlight-regexp)
+;; et l activer / desactiver dans les 2 hook ci dessous.
+;; Non trouve comment faire pour le moment
+
+;; (require 'auto-highlight-symbol)
 ;; (global-auto-highlight-symbol-mode 0)
 ;; (setq ahs-set-idle-interval 0)
 
@@ -301,13 +308,7 @@
 ;;       (lambda ()
 ;;         (auto-highlight-symbol-mode 0)))
 
-
-
-
-
-
-
-
+;; (highlight-regexp "hook" 'hi-yellow)
 
 
 
