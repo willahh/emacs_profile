@@ -6,8 +6,8 @@
 ; (global-font-lock-mode 0)
 ; (setq bidi-display-reordering nil)
 
-;; Disable blink cursor
-(blink-cursor-mode 0)
+;; Enable blink cursor
+(blink-cursor-mode 1)
 
 ;; Don't write nwe line at end of document
 (setq mode-require-final-newline nil)

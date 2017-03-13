@@ -65,6 +65,7 @@
 ;; (sml/setup)
 
 
+
 ;; helm-ag
 (custom-set-variables
  '(helm-ag-base-command "ag --nocolor --nogroup --ignore-case")
@@ -667,3 +668,17 @@
 ;; (evil-define-key 'normal neotree-mode-map (kbd "SPC") 'neotree-enter)
 ;; (evil-define-key 'normal neotree-mode-map (kbd "q") 'neotree-hide)
 ;; (evil-define-key 'normal neotree-mode-map (kbd "RET") 'neotree-enter)
+
+
+
+
+
+
+
+
+;; color-theme-buffer-local
+
+;; (add-hook 'text-mode-hook (lambda () (set-fill-column 72)))
+;; (add-hook 'markdown-mode-hook (lambda () (load-theme-buffer-local 'leuven))
+;; (add-hook 'markdown-mode-hook (lambda () (load-theme-buffer-local 'whiteboard))
+

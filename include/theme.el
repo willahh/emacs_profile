@@ -1,3 +1,6 @@
+;; A bit margin left
+(set-window-margins nil 3)
+
 ;; (set-default-font "Inconsolata-14") ;; Font face: Inconsolata, font-size: 14
 ;; Base theme
 ;; (load-theme 'monokai t)
