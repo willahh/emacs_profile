@@ -1,10 +1,12 @@
-;; A bit margin left
-(set-window-margins nil 3)
+(load-file "~/.emacs.d/elpa/doom-themes-20170222.1412/doom-neotree.el")
 
 ;; (set-default-font "Inconsolata-14") ;; Font face: Inconsolata, font-size: 14
 ;; Base theme
 ;; (load-theme 'monokai t)
 (load-theme 'doom-one t)
+
+;; A bit margin left
+(set-window-margins nil 4)
 
 
 ;; ------- Custom theme
@@ -226,3 +228,7 @@
 (add-hook 'evil-emacs-state-entry-hook 'powerline-theme-emacs)
 
 (powerline-theme-normal)
+
+
+
+;; web mode html color

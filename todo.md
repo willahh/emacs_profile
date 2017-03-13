@@ -7,30 +7,22 @@
 
 
 --------- A ranger 
-- [-] lib_override.css non éditable (freeze)
-- [-] [web-mode] indenting region slow when past text
-- [-] Creer les fichier .tern-port autre part !!!!!!!
-- [-] Delete file : ne pas re demander le chemin alors que l'on a deja le focus
-- [-] ag/helm-ag/helm-ag-... : Ignore les regles suivantes :
-    - "*.min.js"
-    - "*.svn-base"
-    - "*.log"
-- [-] Check kill yank ring
-- [-] [vc-dir] Faire une fonction pour activer un vc-version-diff avec les paramètres older revision : "base", newer revision : "head"
-- [-] [vc-dir] Trouver l'équilvalent de svn log en mode verbose "svn log -v"
-
-
-
-
+- [-] nlinum in fringe ? Pouvoir afficher les vc diff plus loin que le contenu
+- [-] Faire fonctionner le theme neotree (get all-the-icons ?)
+- [-] Theme > Helm - Changer la couleur de fond de la première ligne de titre de helm
 
 
 
 --------- Bloquant
+- [-] [web-mode] indenting region slow when past text
+- [-] lib_override.css non éditable (freeze)
 - [-] (d) --> dont yank beore
 - [-] (M-C-d) (duplicate line or selection) Duplique parfois une portion beaucoup trop importante
 - [-] ediff : pas de couleurs avec le nouveau thème
+- [-] [vc-dir] Trouver l'équilvalent de svn log en mode verbose "svn log -v"
 - [-] vc-dir n'affiche pas les fichiers supprimés localement, mais non envoyé à svn (svn remove)
 - [-] Installer / configurer php mode | ac-php (auto completion php)
+- [-] Creer les fichier .tern-port autre part !!!!!!!
 - [-] unbind key on some mode :
     Lignes en commentaires dans les fichiers concernes solution temporaire
     Il faut passer par le package special pour surcharger, pas encore trouve parfaitement comment faire
@@ -43,8 +35,11 @@
 
 --------- Majeur
 - [-] theme > diff : Se rapproche au max des couleurs du theme Sublime 
+- [-] Delete file : ne pas re demander le chemin alors que l'on a deja le focus
 - [-] nlinum : plus large
+- [-] [vc-dir] Faire une fonction pour activer un vc-version-diff avec les paramètres older revision : "base", newer revision : "head"
 - [-] nlinum : highlight current line number
+- [-] Check kill yank ring
 - [-] big visible current buffer
 - [-] Ajouter une méthode copy file name pour retourner uniquement le nom du fichier
       - La fonction copy-file-name-to-clipbord est present, mais elle retourne le chemin complet
@@ -55,6 +50,11 @@
 - [-] delete-file
       - dont prompt for path
       - kill buffer 
+- [-] ag/helm-ag/helm-ag-... : Ignore les regles suivantes :
+    - "*.min.js"
+    - "*.svn-base"
+    - "*.log"
+
 - 
 - [-] [Neotree] > after load > Open first file > focus to other window 
 - [x] M-a regression --> ne selectionne plus l integralite du buffer

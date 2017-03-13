@@ -1,7 +1,7 @@
 (require 'package)
 (setq package-list '(
   ;; evil-snipe
-  ;; neotree
+  neotree
   ;; php-auto-yasnippets
   php-mode
   ;; php-refactor-mode
