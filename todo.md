@@ -7,6 +7,26 @@
 
 
 --------- A ranger 
+- [-] Il faut mettre en place le CMD+D à tout prix (dans tous les modes)
+- [-] Double click word CMD+D -> go to next result (scroll focus)
+
+- [-] Snippet
+      - Ajouter le snippet CTRL+ALT+C console.log
+
+- [-] Auto indent --> Super slow
+         ------> Exemples visibles sur "flatplan/index.php", "lang_fr.php"
+         --> Il faut coller un texte depuis l'exterieur ou mettre en commentaire une ligne.
+- [-] Bind shift mouse wheel pour scroller horizontalement
+
+
+- [-] Terminer la fonction file:duplicate pour n'avoir qu'un seul prompt -> celui du nom du fichier target
+- [-] ag --> ignore hudge file (ST behaviour) (aucun problème dans, à mon avis, 99% des cas)     (il peut être utile de faire des recherches dans des fichieux volumineux, mais pour ca la recherche peut être faite de manière spécifique (paramètres supplémentaire, utilisation directement depuis ligne de commande ...)
+- [-] (command+r pour reload vc-dir) - M-r ----> vc-dir-refresh
+- [-] [theme - swoop] Ne pas mettre la premiere ligne susr fond jaune, on ne voit rien
+- [-] ag search result buffer : highlight search words
+- [-] Double click word on web mode : prendre le garder le "_" en tant que mot 
+- [-] Bind shift mouse wheel pour scroller horizontalement
+
 - [-] nlinum in fringe ? Pouvoir afficher les vc diff plus loin que le contenu
 - [-] Faire fonctionner le theme neotree (get all-the-icons ?)
 - [-] Theme > Helm - Changer la couleur de fond de la première ligne de titre de helm

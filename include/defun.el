@@ -380,11 +380,18 @@ That is, a string used to represent it on the tab bar."
     (message-position-point)))
 
 
-;; Shorthand 
+;; Shorthand - file:revert 
 (defun file:revert()
   "VC: (File) Revert"
   (interactive)
   (vc-revert)
+  )
+
+;; Shorthand - file:duplicate
+(defun file:duplicate()
+  "File: Duplicate"
+  (interactive)
+  (copy-file)
   )
 
 
@@ -471,3 +478,5 @@ That is, a string used to represent it on the tab bar."
   (after dired-after-updating-hook first () activate)
   "Sort dired listings with directories first before adding marks."
   (mydired-sort))
+
+

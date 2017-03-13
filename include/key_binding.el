@@ -223,8 +223,13 @@
 ;; (global-set-key [(meta shift f)]  'helm-ag-project-root)
 ;; (global-set-key [(meta shift f)]  'helm-ag)
 (global-set-key [(meta shift f)]  'ag)
+
+
 ;; (global-set-key (kbd "M-ƒ") 'helm-ag) ;; (cmd + alt + f)
-(global-set-key (kbd "M-ƒ") 'helm-do-grep-ag) ;; (cmd + alt + f)
+;; (global-set-key (kbd "M-ƒ") 'helm-do-grep-ag) ;; (cmd + alt + f)
+(global-set-key (kbd "M-ƒ") 'helm-ag-project-root) ;; (cmd + alt + f)
+
+
 (global-set-key (kbd "M-·") 'helm-ag) ;; (cmd + alt + shift + f)
 
 
@@ -268,3 +273,7 @@
 ;; web mode
 (define-key web-mode-map [(meta shift j)] 'web-mode-tag-next)
 (define-key web-mode-map [(meta shift k)] 'web-mode-tag-previous)
+
+
+
+;; 
