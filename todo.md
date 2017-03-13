@@ -1,4 +1,4 @@
-j- Resources
+- Resources
   https://github.com/epsil
   https://github.com/djangoliv/conf
   https://github.com/hlissner/.emacs.d
@@ -7,6 +7,7 @@ j- Resources
 
 
 --------- A ranger 
+- [-] lib_override.css non éditable (freeze)
 - [-] [web-mode] indenting region slow when past text
 - [-] Creer les fichier .tern-port autre part !!!!!!!
 - [-] Delete file : ne pas re demander le chemin alors que l'on a deja le focus
@@ -28,7 +29,8 @@ j- Resources
 - [-] (d) --> dont yank beore
 - [-] (M-C-d) (duplicate line or selection) Duplique parfois une portion beaucoup trop importante
 - [-] ediff : pas de couleurs avec le nouveau thème
-- [-] *vc-diff* Lorsque ce buffer apparait, il apparait dans un nouvel emplacement (ok), mais en minuscule (ko)
+- [-] vc-dir n'affiche pas les fichiers supprimés localement, mais non envoyé à svn (svn remove)
+- [-] Installer / configurer php mode | ac-php (auto completion php)
 - [-] unbind key on some mode :
     Lignes en commentaires dans les fichiers concernes solution temporaire
     Il faut passer par le package special pour surcharger, pas encore trouve parfaitement comment faire
@@ -40,7 +42,6 @@ j- Resources
     - [-] C-M-p dired buffer  (dired-aux.el) (dired-mode-map)
 
 --------- Majeur
-- [-] vc-dir n'affiche pas les fichiers supprimés localement, mais non envoyé à svn (svn remove)
 - [-] theme > diff : Se rapproche au max des couleurs du theme Sublime 
 - [-] nlinum : plus large
 - [-] nlinum : highlight current line number
@@ -67,6 +68,8 @@ j- Resources
 - [x] Dired default mode : emacs
 - [x] Dired > Don't display tabbar
 - [x] M-p doesn't work on all buffer
+- [x] *vc-diff* Lorsque ce buffer apparait, il apparait dans un nouvel emplacement (ok), mais en minuscule (ko)
+      - Fix pour laisser emacs ouvrir une nouvelle window
 
 --------- Mineur 
 - [-] Voir pour utiliser une largeur max lors de la saisie de long texte

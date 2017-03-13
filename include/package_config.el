@@ -263,7 +263,7 @@
 ;; @todo : les buffers *magit-diff-popup ne devrait pas etre dans la regle *magit-diff*
 (setq display-buffer-alist
 '(
-  ("*vc-dir*"            . (display-buffer-same-window . nil))
+  ;; ("*vc-dir*"            . (display-buffer-same-window . nil))
   ("*shell*"             . (display-buffer-same-window . nil))
   ("*Buffer List*"       . (display-buffer-same-window . nil))
   ("*ag*"                . (display-buffer-same-window . nil))
@@ -275,6 +275,12 @@
   ;; ("*log-edit-files*"    . (display-buffer-same-window . nil))
 ;;  ("*Help*"            . (display-buffer-same-window . nil))
   ))
+
+
+
+
+;; (add-hook vc-diff-finish)
+
 
 ;; Auto save all buffer when file change on disk (aka function to keep synchro between buffers)
 ;; UPDATE : @todo n a pas l air de fonctionner .. une prochaine fois peut être !
@@ -353,6 +359,11 @@
 ;;              (require 'company-php)
 ;;              (company-mode t)
 ;;              (add-to-list 'company-backends 'company-ac-php-backend )))
+
+;; php mode
+(require 'cl)
+(require 'php-mode)
+
 
 
 ;; php-refactor

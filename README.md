@@ -9,10 +9,8 @@
 
 ```{r, engine='bash', count_lines}
 brew install --with-cocoa --srgb emacs
-git clone https://github.com/willahh/emacs_profile ~/.emacs.d
+git clone --recursive https://github.com/willahh/emacs_profile ~/.emacs.d
 ```
-(Update : didn't see any differences ...)
-Otherwise : brew install emacs
 
 ### Windows
   - Gnutls
