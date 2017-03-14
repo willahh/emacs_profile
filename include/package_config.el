@@ -1,3 +1,8 @@
+;; all-the-icons
+(require 'all-the-icons)
+
+
+
 ;; whole-line-or-region
 ;; Ce package ou cette fonction n est pas disponible
 ;; est elle importante ?
@@ -674,11 +679,42 @@
 ;; When running ‘projectile-switch-project’ (C-c p p), ‘neotree’ will change root automatically.
 (setq projectile-switch-project-action 'neotree-projectile-action)
 
+;; Lock auto resize
+(setq neo-window-fixed-size nil)
+
 ;;
 (evil-define-key 'normal neotree-mode-map (kbd "TAB") 'neotree-enter)
 (evil-define-key 'normal neotree-mode-map (kbd "SPC") 'neotree-enter)
 (evil-define-key 'normal neotree-mode-map (kbd "q") 'neotree-hide)
 (evil-define-key 'normal neotree-mode-map (kbd "RET") 'neotree-enter)
+
+
+
+
+
+
+;; Auto resize neotree when changing root / opening node
+;; https://www.bountysource.com/issues/23676794-automatically-resize-neotree-window-to-contents
+(defun neotree-resize-window (&rest _args)
+    "Resize neotree window.
+https://github.com/jaypei/emacs-neotree/pull/110"
+    (interactive)
+    (neo-buffer--with-resizable-window
+     (let ((fit-window-to-buffer-horizontally t))
+       (fit-window-to-buffer))))
+
+  (add-hook 'neo-change-root-hook #'neotree-resize-window)
+  (add-hook 'neo-enter-hook #'neotree-resize-window)
+
+
+
+
+
+
+
+
+
+
 
 
 

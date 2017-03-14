@@ -83,4 +83,5 @@
 (add-to-list 'load-path "~/.emacs.d/plugins/emacs-powerline")
 (add-to-list 'load-path "~/.emacs.d/plugins/evil-nerd-commenter/")
 (add-to-list 'load-path "~/.emacs.d/plugins/whole-line-or-region")
+(add-to-list 'load-path "~/.emacs.d/plugins/all-the-icons")
 ;; (add-to-list 'load-path "~/.emacs.d/plugins/tabbar")

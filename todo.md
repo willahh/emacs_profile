@@ -9,7 +9,7 @@
 --------- A ranger 
 - [-] passer sur le multi curseur de base (celui legerement bugge, en attendant)
 - [-] [en cours] double click souris coupe entre les "_" (web mode, javascript mode)
-  [-] c'est majeur parceque toute les méthodes privée en js commencent avec un _
+       c'est majeur parceque toute les méthodes privée en js commencent avec un _
 - [-] la selection avec la souris doit aller loin avant de prendre en compte la deuxieme ligne
 
 - [-] Auto indent --> Super slow
@@ -30,6 +30,7 @@
 - [-] nlinum in fringe ? Pouvoir afficher les vc diff plus loin que le contenu
 - [-] Faire fonctionner le theme neotree (get all-the-icons ?)
 - [-] Theme > Helm - Changer la couleur de fond de la première ligne de titre de helm
+- [-] [vc-dir] Ne pas afficher les lignes dossiers (les lignes qui sont grisées)
 
 
 

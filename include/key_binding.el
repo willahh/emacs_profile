@@ -179,9 +179,16 @@
 ;; --------- key binding
 (global-set-key (kbd "<f5>") 'eval-buffer)
 (global-set-key (kbd "<C-escape>") 'keyboard-quit)
+
+;; Multi stuff
 (global-set-key (kbd "C-<") 'mc/maru-previous-like-this)
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+
+;; (global-set-key (kbd "C-M-d") 'mc/mark-next-like-this)
+(global-set-key [(meta control d)] 'mc/mark-next-like-this)
+
+;; Helm
 (global-set-key (kbd "C-c h") 'helm-command-prefix)
 (global-set-key (kbd "M-C-w") 'resize-window)
 (global-set-key (kbd "C-x C-d") 'duplicate-current-line-or-region)
