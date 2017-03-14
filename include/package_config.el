@@ -278,8 +278,8 @@
   ("*shell*"             . (display-buffer-same-window . nil))
   ("*Buffer List*"       . (display-buffer-same-window . nil))
   ("*ag*"                . (display-buffer-same-window . nil))
-  ("*Backtrace*"         . (display-buffer-same-window . nil))
-  ("*magit-revision*"    . (display-buffer-same-window . nil))
+  ;; ("*Backtrace*"         . (display-buffer-same-window . nil)) ;; En commentaire pour voir
+  ;; ("*magit-revision*"    . (display-buffer-same-window . nil)) ;; En commentaire pour voir
   ;; ("*magit-diff*"        . (display-buffer-same-window . nil)) ;; En commentaire, car dans ce buffer ipossible d avoir acces aux racourcis pour switch, du coup bloque ici
   ;; ("*magit:"             . (display-buffer-same-window . nil))
   ;; ("*vc-log*"            . (display-buffer-same-window . nil))
@@ -299,17 +299,10 @@
 ;; ;; Web mode
 (require 'web-mode)
 
-
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.css\\'" . css-mode)) ;; .css file should be assigned to css-mode for nice emmet support
 (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
-
-
-
-
-
-
 
 (setq web-mode-enable-css-colorization t)
 (setq web-mode-enable-current-element-highlight t)    
