@@ -27,10 +27,15 @@
 
 
 
+(set-face-attribute 'fringe nil :background "#21242b")
 
+;; make the left fringe 4 pixels wide and the right disappear
+(fringe-mode '(8 . 0))
+
+(setq nlinum-format "%4d \u2502 ")
 
 ;; A bit margin left
-(set-window-margins nil 4)
+(set-window-margins nil 5)
 
 
 ;; ------- Custom theme

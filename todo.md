@@ -90,6 +90,8 @@
 - [-] (command+r pour reload vc-dir) - M-r ----> vc-dir-refresh
 
 - [-] Le scrolling vertical n est pas aussi rapide que sur les editeurs moderne (voir dans base.el pour modifier la conf)
+- [-] [theme] Voir pour avoir une font plus lisible (aliasing different --> Se rapprocher du rendu de Sublime (la font est bien la meme))
+- [-] [theme] Voir si il est possible d'avoir une bordure autour de la selection (comme dans Sublime))
 - [-] [Neotree] > after load > Open first file > focus to other window 
 - [x] M-a regression --> ne selectionne plus l integralite du buffer
 - [x] Mode emacs par default pour les mode majeur suivants 
