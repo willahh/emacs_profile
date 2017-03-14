@@ -62,8 +62,7 @@
 
 ;; Enable nlinum-relative with html mode
 (add-hook 'html-mode-hook 'nlinum-relative-mode 1)
-
-
+ 
 
 
 ;; setup for evil
