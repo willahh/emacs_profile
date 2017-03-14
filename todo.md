@@ -7,19 +7,19 @@
 
 
 --------- A ranger 
-- [-] Il faut mettre en place le CMD+D à tout prix (dans tous les modes)
-- [-] Double click word CMD+D -> go to next result (scroll focus)
-
-- [-] Snippet
-      - Ajouter le snippet CTRL+ALT+C console.log
+- [-] passer sur le multi curseur de base (celui legerement bugge, en attendant)
+- [-] [en cours] double click souris coupe entre les "_" (web mode, javascript mode)
+  [-] c'est majeur parceque toute les méthodes privée en js commencent avec un _
+- [-] la selection avec la souris doit aller loin avant de prendre en compte la deuxieme ligne
 
 - [-] Auto indent --> Super slow
          ------> Exemples visibles sur "flatplan/index.php", "lang_fr.php"
          --> Il faut coller un texte depuis l'exterieur ou mettre en commentaire une ligne.
-- [-] Bind shift mouse wheel pour scroller horizontalement
 
 
-- [-] Terminer la fonction file:duplicate pour n'avoir qu'un seul prompt -> celui du nom du fichier target
+- [-] Il faut mettre en place le CMD+D à tout prix (dans tous les modes)
+- [-] Double click word CMD+D -> go to next result (scroll focus)
+
 - [-] ag --> ignore hudge file (ST behaviour) (aucun problème dans, à mon avis, 99% des cas)     (il peut être utile de faire des recherches dans des fichieux volumineux, mais pour ca la recherche peut être faite de manière spécifique (paramètres supplémentaire, utilisation directement depuis ligne de commande ...)
 - [-] (command+r pour reload vc-dir) - M-r ----> vc-dir-refresh
 - [-] [theme - swoop] Ne pas mettre la premiere ligne susr fond jaune, on ne voit rien
@@ -54,6 +54,10 @@
     - [-] C-M-p dired buffer  (dired-aux.el) (dired-mode-map)
 
 --------- Majeur
+- [-] Snippet
+      - Ajouter le snippet CTRL+ALT+C console.log
+- [-] Bind shift mouse wheel pour scroller horizontalement
+- [-] Terminer la fonction file:duplicate pour n'avoir qu'un seul prompt -> celui du nom du fichier target
 - [-] theme > diff : Se rapproche au max des couleurs du theme Sublime 
 - [-] Delete file : ne pas re demander le chemin alors que l'on a deja le focus
 - [-] nlinum : plus large
