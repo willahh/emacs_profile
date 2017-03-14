@@ -17,6 +17,7 @@
 - [-] [theme - swoop] Ne pas mettre la premiere ligne sur fond jaune, on ne voit rien
          Theme > Helm - Changer la couleur de fond de la première ligne de titre de helm
 - [-] Il faut mettre en place le CMD+D à tout prix (dans tous les modes)
+- [-] Highlight les memes instances que le mot selectionne
 - [-] Double click word CMD+D -> go to next result (scroll focus)
 - [-] passer sur le multi curseur de base (celui legerement bugge, en attendant)
 
@@ -88,7 +89,7 @@
 - [-] nlinum in fringe ? Pouvoir afficher les vc diff plus loin que le contenu
 - [-] (command+r pour reload vc-dir) - M-r ----> vc-dir-refresh
 
-- 
+- [-] Le scrolling vertical n est pas aussi rapide que sur les editeurs moderne (voir dans base.el pour modifier la conf)
 - [-] [Neotree] > after load > Open first file > focus to other window 
 - [x] M-a regression --> ne selectionne plus l integralite du buffer
 - [x] Mode emacs par default pour les mode majeur suivants 

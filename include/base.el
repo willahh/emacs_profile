@@ -84,9 +84,10 @@ scroll-step 1)
 
 ;; Mouse wheel behaviour -> Add acceleration like Sublime
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil)))
-(setq mouse-wheel-progressive-speed 7)
+(setq mouse-wheel-progressive-speed 10)
 
 ;; Remove bip relou
+
 (setq visible-bell t)
 
 ;; Remove big yellow warning relou

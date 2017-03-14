@@ -242,11 +242,10 @@
 ;; (global-set-key [(meta shift f)]  'helm-ag)
 (global-set-key [(meta shift f)]  'ag)
 
-
 ;; (global-set-key (kbd "M-ƒ") 'helm-ag) ;; (cmd + alt + f)
 ;; (global-set-key (kbd "M-ƒ") 'helm-do-grep-ag) ;; (cmd + alt + f)
-(global-set-key (kbd "M-ƒ") 'helm-ag-project-root) ;; (cmd + alt + f)
-
+;; (global-set-key (kbd "M-ƒ") 'helm-ag-project-root) ;; (cmd + alt + f)
+(global-set-key (kbd "M-ƒ") 'helm-do-grep-ag) ;; (cmd + alt + f)
 
 (global-set-key (kbd "M-·") 'helm-ag) ;; (cmd + alt + shift + f)
 

@@ -13,6 +13,7 @@ cd ~/.emacs.d
 mkdir tmp
 ```
 - Install icons from ~/.emacs.d/plugins/all-the-icons/fonts/
+- Use font "Meslo LG M" - size : 12 -  ~/.emacs.d/fonts/meslo (Menu > option > set default font )
 
 ### Windows
   - Gnutls

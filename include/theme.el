@@ -1,17 +1,33 @@
-;; neotree
-;; (load-file "~/.emacs.d/elpa/doom-themes-20170222.1412/doom-neotree.el")
-;; (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
-;; (setq neo-theme 'icons)
-
-
-
-
-
-
-;; (set-default-font "Inconsolata-14") ;; Font face: Inconsolata, font-size: 14
 ;; Base theme
-;; (load-theme 'monokai t)
 (load-theme 'doom-one t)
+
+;; font (family / size, ...)
+;; (set-default-font "Inconsolata-14") ;; Font face: Inconsolata, font-size: 14
+
+
+
+
+
+
+
+;; ------ Override theme 
+(custom-set-faces `(default ((t (:background "#21242b")))))
+(set-face-attribute 'fringe nil :background "#21242b")
+(set-face-attribute 'linum nil :background "#21242b")
+
+
+
+
+;; powerline
+(setq powerline-color1 "#21242b")
+(setq powerline-color2 "#21242b")
+
+
+
+
+
+
+
 
 ;; A bit margin left
 (set-window-margins nil 4)
@@ -32,11 +48,10 @@
  (face-list))
 
 ;; Current line highlight
-;; (set-face-attribute 'region nil :background "black")
-(set-face-attribute 'region nil :background "#ffc800" :foreground "#000") ;; Current selection
 (set-face-background 'hl-line "#101112")
 
-
+;; Text selection
+(set-face-attribute 'region nil :background "#00ff9c" :foreground "#2c2886")
 
 ;; parenthesis
 (set-face-foreground 'show-paren-match "#b5ff05")
