@@ -9,6 +9,8 @@
 --------- Notes ralentissements sur gros fichiers :
   - global fly check mode
   - 
+  
+  
 --------- A ranger 
 - [-] passer sur le multi curseur de base (celui legerement bugge, en attendant)
 - [-] [en cours] double click souris coupe entre les "_" (web mode, javascript mode)

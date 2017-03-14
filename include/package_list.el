@@ -59,6 +59,7 @@
   ;; powerline
   projectile
   psvn
+  ;; perspective
   resize-window
   skewer-mode
   smart-forward
@@ -72,6 +73,7 @@
   undo-tree
   use-package
   web-beautify
+  ;; workgroups2
   ;; web-mode
   which-key
   window-numbering

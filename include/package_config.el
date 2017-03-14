@@ -12,7 +12,9 @@
 ;; Ajout de save mode auto
 ;; En commentaire pour le moment, car fait FREEZER emacs sur l ouverture d un gros fichier
 ;; Voir pour trouver la raison et remettre ce package, mais je peux m'en passer
-; (desktop-save-mode 1)
+;; Update : desktop (emacs native) est utile pour sauvegarder l etat actuel.
+;; Utilise avec eyebrowe fonctionne a merveille pour restaurer des "workspace".
+(desktop-save-mode 1)
 
 ;;
 ;; Besoin : Afficher le chemin du fichier complet dans le title de la frame courante
@@ -86,11 +88,13 @@
 
 
 
-;; Help with projectile
-(require 'helm-projectile)
-(helm-projectile-on)
+;; ----- eyebrowse
+(require 'eyebrowse)    
+(eyebrowse-mode t)
 
-; Projectile
+
+
+;; ---- Projectile
 (projectile-global-mode)
 (add-hook 'ruby-mode-hook' projectile-mode)
 
@@ -98,6 +102,31 @@
 
 ;; Using Projectile everywhere
 (setq projectile-require-project-root nil)
+
+
+;; helm-projectile
+(require 'helm-projectile)
+(helm-projectile-on)
+
+
+;; ;; ;; ----- perspective
+;; (require 'perspective)
+;; (persp-mode)
+
+
+
+
+;; ----- workgroups2
+;; (require 'workgroups2)
+;; (workgroups-mode 1)
+
+
+
+
+
+
+
+
 
 ;; imenu-anywhere
 (require 'imenu-anywhere)
@@ -527,10 +556,6 @@
 ;; evil-nerd-commenter
 (require 'evil-nerd-commenter)
 
-;; eyebrowse
-(require 'eyebrowse)    
-(eyebrowse-mode t)
-
 ;; window-numbering
 (require 'window-numbering)
 (window-numbering-mode)            
@@ -622,6 +647,7 @@
 
 ;; ---------------- neotree
 (require 'neotree)
+(setq neo-theme 'icons) ;; Set the neotree theme before show
 (neotree-show)
 
 
@@ -633,13 +659,14 @@
 (setq projectile-switch-project-action 'neotree-projectile-action)
 
 ;; Lock auto resize
-(setq neo-window-fixed-size nil)
+;; Seems broken ? (Donne une largeur debile a neotree)
+;; (setq neo-window-fixed-size nil)
 
-;;
-(evil-define-key 'normal neotree-mode-map (kbd "TAB") 'neotree-enter)
-(evil-define-key 'normal neotree-mode-map (kbd "SPC") 'neotree-enter)
-(evil-define-key 'normal neotree-mode-map (kbd "q") 'neotree-hide)
-(evil-define-key 'normal neotree-mode-map (kbd "RET") 'neotree-enter)
+;; Evil key binding for neotree
+;; (evil-define-key 'normal neotree-mode-map (kbd "TAB") 'neotree-enter)
+;; (evil-define-key 'normal neotree-mode-map (kbd "SPC") 'neotree-enter)
+;; (evil-define-key 'normal neotree-mode-map (kbd "q") 'neotree-hide)
+;; (evil-define-key 'normal neotree-mode-map (kbd "RET") 'neotree-enter)
 
 
 
@@ -648,16 +675,18 @@
 
 ;; Auto resize neotree when changing root / opening node
 ;; https://www.bountysource.com/issues/23676794-automatically-resize-neotree-window-to-contents
-(defun neotree-resize-window (&rest _args)
-    "Resize neotree window.
-https://github.com/jaypei/emacs-neotree/pull/110"
-    (interactive)
-    (neo-buffer--with-resizable-window
-     (let ((fit-window-to-buffer-horizontally t))
-       (fit-window-to-buffer))))
+;; Seems broken ? (Donne une largeur debile a neotree)
 
-  (add-hook 'neo-change-root-hook #'neotree-resize-window)
-  (add-hook 'neo-enter-hook #'neotree-resize-window)
+;; (defun neotree-resize-window (&rest _args)
+;;     "Resize neotree window.
+;; https://github.com/jaypei/emacs-neotree/pull/110"
+;;     (interactive)
+;;     (neo-buffer--with-resizable-window
+;;      (let ((fit-window-to-buffer-horizontally t))
+;;        (fit-window-to-buffer))))
+
+;;   (add-hook 'neo-change-root-hook #'neotree-resize-window)
+;;   (add-hook 'neo-enter-hook #'neotree-resize-window)
 
 
 

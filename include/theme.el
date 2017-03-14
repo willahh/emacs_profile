@@ -1,7 +1,7 @@
 ;; neotree
 ;; (load-file "~/.emacs.d/elpa/doom-themes-20170222.1412/doom-neotree.el")
 ;; (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
-(setq neo-theme 'icons)
+;; (setq neo-theme 'icons)
 
 
 
