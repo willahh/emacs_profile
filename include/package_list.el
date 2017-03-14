@@ -3,7 +3,7 @@
   ;; evil-snipe
   neotree
   ;; php-auto-yasnippets
-  ;; php-mode
+  php-mode
   ;; php-refactor-mode
   ;; tabbar
   ace-window

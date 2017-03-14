@@ -4,39 +4,37 @@
   https://github.com/hlissner/.emacs.d
 
 
+-------- Pense bete
+---- [M+S+;] ---> xref-find-definitions (natif) ----> A consommer sans moderation
 
 
 --------- Notes ralentissements sur gros fichiers :
   - global fly check mode
-  - 
+  - web-mode : new line
   
   
 --------- A ranger 
-- [-] passer sur le multi curseur de base (celui legerement bugge, en attendant)
-- [-] [en cours] double click souris coupe entre les "_" (web mode, javascript mode)
-       c'est majeur parceque toute les méthodes privée en js commencent avec un _
-- [-] la selection avec la souris doit aller loin avant de prendre en compte la deuxieme ligne
-
-- [-] Auto indent --> Super slow
-         ------> Exemples visibles sur "flatplan/index.php", "lang_fr.php"
-         --> Il faut coller un texte depuis l'exterieur ou mettre en commentaire une ligne.
-
-
+- [-] [theme - swoop] Ne pas mettre la premiere ligne sur fond jaune, on ne voit rien
+         Theme > Helm - Changer la couleur de fond de la première ligne de titre de helm
 - [-] Il faut mettre en place le CMD+D à tout prix (dans tous les modes)
 - [-] Double click word CMD+D -> go to next result (scroll focus)
+- [-] passer sur le multi curseur de base (celui legerement bugge, en attendant)
+
+- [-] Auto indent --> Super slow
+         -> Exemples visibles sur "flatplan/index.php", "lang_fr.php"
+         -> Il faut coller un texte depuis l'exterieur ou mettre en commentaire une ligne.
+
 
 - [-] ag --> ignore hudge file (ST behaviour) (aucun problème dans, à mon avis, 99% des cas)     (il peut être utile de faire des recherches dans des fichieux volumineux, mais pour ca la recherche peut être faite de manière spécifique (paramètres supplémentaire, utilisation directement depuis ligne de commande ...)
-- [-] (command+r pour reload vc-dir) - M-r ----> vc-dir-refresh
-- [-] [theme - swoop] Ne pas mettre la premiere ligne susr fond jaune, on ne voit rien
-- [-] ag search result buffer : highlight search words
-- [-] Double click word on web mode : prendre le garder le "_" en tant que mot 
-- [-] Bind shift mouse wheel pour scroller horizontalement
 
-- [-] nlinum in fringe ? Pouvoir afficher les vc diff plus loin que le contenu
-- [-] Faire fonctionner le theme neotree (get all-the-icons ?)
-- [-] Theme > Helm - Changer la couleur de fond de la première ligne de titre de helm
 - [-] [vc-dir] Ne pas afficher les lignes dossiers (les lignes qui sont grisées)
 
+- [-] la selection avec la souris doit aller loin avant de prendre en compte la deuxieme ligne
+- [x] [en cours]  click souris coupe entre les "_" (web mode, javascript mode)
+       c'est majeur parceque toute les méthodes privée en js commencent avec un _
+- [x] Double click word on web mode : prendre le garder le "_" en tant que mot 
+- [x] Faire fonctionner le theme neotree (get all-the-icons ?)
+- [x] Bind shift mouse wheel pour scroller horizontalement
 
 
 --------- Bloquant
@@ -58,6 +56,7 @@
     - [-] M-S-p diff-mode
     - [-] M-p on "*ag search text:......*" buffer
     - [-] C-M-p dired buffer  (dired-aux.el) (dired-mode-map)
+
 
 --------- Majeur
 - [-] Snippet
@@ -85,6 +84,10 @@
     - "*.svn-base"
     - "*.log"
 
+- [-] ag search result buffer : highlight search words
+- [-] nlinum in fringe ? Pouvoir afficher les vc diff plus loin que le contenu
+- [-] (command+r pour reload vc-dir) - M-r ----> vc-dir-refresh
+
 - 
 - [-] [Neotree] > after load > Open first file > focus to other window 
 - [x] M-a regression --> ne selectionne plus l integralite du buffer
@@ -100,6 +103,7 @@
 - [x] M-p doesn't work on all buffer
 - [x] *vc-diff* Lorsque ce buffer apparait, il apparait dans un nouvel emplacement (ok), mais en minuscule (ko)
       - Fix pour laisser emacs ouvrir une nouvelle window
+
 
 --------- Mineur 
 - [-] Voir pour utiliser une largeur max lors de la saisie de long texte

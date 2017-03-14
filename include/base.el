@@ -7,6 +7,9 @@
 ; (setq bidi-display-reordering nil)
 (setq-default bidi-display-reordering nil)
 
+;; Don't display "Reverting buffer ..." message
+(setq auto-revert-verbose nil)
+
 ;; Enable blink cursor
 (blink-cursor-mode 1)
 
@@ -78,6 +81,10 @@
 (setq scroll-margin 5
 scroll-conservatively 9999
 scroll-step 1)
+
+;; Mouse wheel behaviour -> Add acceleration like Sublime
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil)))
+(setq mouse-wheel-progressive-speed 7)
 
 ;; Remove bip relou
 (setq visible-bell t)

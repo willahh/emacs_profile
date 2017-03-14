@@ -31,18 +31,16 @@
           (set-face-attribute face nil :weight 'normal)))
  (face-list))
 
-;;
+;; Current line highlight
 ;; (set-face-attribute 'region nil :background "black")
 (set-face-attribute 'region nil :background "#ffc800" :foreground "#000") ;; Current selection
 (set-face-background 'hl-line "#101112")
 
 
 
-
-
 ;; parenthesis
-(set-face-foreground 'show-paren-match "#000")
-(set-face-background 'show-paren-match "#56b0ec")
+(set-face-foreground 'show-paren-match "#b5ff05")
+(set-face-background 'show-paren-match "#0a63ae")
 
 
 ;; ------- Tabbar settings

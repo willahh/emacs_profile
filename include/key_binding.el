@@ -177,10 +177,21 @@
 
 
 ;; --------- key binding
+
+;; Main binds
 (global-set-key (kbd "<f5>") 'eval-buffer)
 (global-set-key (kbd "<C-escape>") 'keyboard-quit)
 
-;; Multi stuff
+;; Mouse key binding
+(global-set-key (kbd "<S-wheel-left>") '(lambda ()
+                                          (interactive)
+                                          (scroll-right 4)))
+
+(global-set-key (kbd "<S-wheel-right>") '(lambda ()
+                                          (interactive)
+                                          (scroll-left 4)))
+
+;; Multi cursor stuff
 (global-set-key (kbd "C-<") 'mc/maru-previous-like-this)
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)

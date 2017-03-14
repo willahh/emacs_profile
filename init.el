@@ -31,33 +31,24 @@
 ;; Syntax entry for web mode doesnt work actualy
 ;; https://github.com/fxbois/web-mode/issues/149
 ;; Select whole word when separated with _
-(modify-syntax-entry ?_ "w")
+;; Update : Besoin d ajouter des hook pour certains mode
+;; Je n ai pas reussis a setter cette propriete de maniere globale
 
+(defun update-syntax-entry () 
+      (modify-syntax-entry ?_ "w")
+)
+(update-syntax-entry)
 
-
-
-(defvar web-mode-syntax-table
-(let ((table (make-syntax-table)))
-(modify-syntax-entry ?< "." table)
-(modify-syntax-entry ?> "." table)
-(modify-syntax-entry ?& "." table)
-(modify-syntax-entry ?/ "." table)
-(modify-syntax-entry ?= "." table)
-(modify-syntax-entry ?_ "w" table)
-table)
-"Syntax table in use in web-mode buffers.
-Removes some character from character list used in symbols(function name, variable name, etc).")
-
-
-(set-syntax-table web-mode-syntax-table)
+(add-hook 'web-mode-hook (lambda () (update-syntax-entry)))
+(add-hook 'emacs-lisp-mode (lambda () (update-syntax-entry)))
+(add-hook 'php-mode-hook (lambda () (update-syntax-entry)))
+(add-hook 'css-mode-hook (lambda () (update-syntax-entry)))
 
 
 
 
 
-
-
-
+;; word_word2_word3
 
 
 
