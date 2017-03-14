@@ -1,5 +1,5 @@
 [submodule "all-the-icons"]
-	path = plugins/all-the-icons.el
+	path = plugins/all-the-icons
 	url = https://github.com/domtronn/all-the-icons.el.git
 [submodule "emacs-powerline"]
 	path = plugins/emacs-powerline

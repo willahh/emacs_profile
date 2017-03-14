@@ -1,4 +1,12 @@
-(load-file "~/.emacs.d/elpa/doom-themes-20170222.1412/doom-neotree.el")
+;; neotree
+;; (load-file "~/.emacs.d/elpa/doom-themes-20170222.1412/doom-neotree.el")
+;; (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+(setq neo-theme 'icons)
+
+
+
+
+
 
 ;; (set-default-font "Inconsolata-14") ;; Font face: Inconsolata, font-size: 14
 ;; Base theme
