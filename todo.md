@@ -6,6 +6,9 @@
 
 
 
+--------- Notes ralentissements sur gros fichiers :
+  - global fly check mode
+  - 
 --------- A ranger 
 - [-] Il faut mettre en place le CMD+D à tout prix (dans tous les modes)
 - [-] Double click word CMD+D -> go to next result (scroll focus)

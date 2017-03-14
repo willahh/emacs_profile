@@ -51,7 +51,13 @@
 
 ;; nlinum
 (require 'nlinum-relative)
-(nlinum-relative-setup-evil)      
+(nlinum-relative-setup-evil)
+
+;; Enable nlinum-relative with html mode
+(add-hook 'html-mode-hook 'nlinum-relative-mode 1)
+
+
+
 
 ;; setup for evil
 (add-hook 'prog-mode-hook 'nlinum-relative-mode)
@@ -279,66 +285,15 @@
 
 
 
-;; (add-hook vc-diff-finish)
-
-
-;; Auto save all buffer when file change on disk (aka function to keep synchro between buffers)
-;; UPDATE : @todo n a pas l air de fonctionner .. une prochaine fois peut être !
-;; Update : @todo doesn't seems to work... may be an other day !
-(global-auto-revert-mode t)
-
-;; tern
-;; (autoload 'tern-mode "tern.el" nil t)
-;; (add-hook 'js-mode-hook (lambda () (tern-mode t)))
-
-(autoload 'tern-mode "tern.el" nil t)
-(add-hook 'js-mode-hook (lambda () (tern-mode t)))
-(eval-after-load 'tern
-   '(progn
-      (require 'tern-auto-complete)
-      (tern-ac-setup)))
-
-;; auto-highlight-symbol
-;; Note ce plugin semble un peu lourd,
-;; Tout ce que j ai besoin c est un highlight du mot courant sur apres selection.
-;; Les 2 hooks plus bas sont bien fonctionnel.
-;; Il faudrait pouvoir executer la fonction native emacs (highlight-regexp)
-;; et l activer / desactiver dans les 2 hook ci dessous.
-;; Non trouve comment faire pour le moment
-
-;; (require 'auto-highlight-symbol)
-;; (global-auto-highlight-symbol-mode 0)
-;; (setq ahs-set-idle-interval 0)
-
-;; ;; wra custom hook
-;; ;; Activation du mode highlight all same occurence uniquement
-;; ;; apres une selection (ST behaviour)
-;; (add-hook 'activate-mark-hook
-;;       (lambda ()
-;;         (auto-highlight-symbol-mode 1)))
-
-;; (add-hook 'deactivate-mark-hook
-;;       (lambda ()
-;;         (auto-highlight-symbol-mode 0)))
-
-;; (highlight-regexp "hook" 'hi-yellow)
 
 
 
 
 
 
-
-
-
-
-
-
-;; Web mode
+;; ;; Web mode
 (require 'web-mode)
-;;(setq web-mode-enable-auto-indentation nil)
 
-;; (setq-default web-mode-enable-auto-indentation nil)
 
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
@@ -347,18 +302,23 @@
 
 
 
+
+
+
+
 (setq web-mode-enable-css-colorization t)
 (setq web-mode-enable-current-element-highlight t)    
 (setq web-mode-enable-current-column-highlight t)
 
 
-;; (setq web-mode-enable-current-element-highlight t)
-;; ac-php    
-;; (add-hook 'php-mode-hook
-;;           '(lambda ()
-;;              (require 'company-php)
-;;              (company-mode t)
-;;              (add-to-list 'company-backends 'company-ac-php-backend )))
+;; php-mode
+
+;; ;; mmm-mode
+;; (require 'mmm-mode)
+;; (setq mmm-global-mode 'maybe)
+;; (mmm-add-mode-ext-class 'html-mode "\\.php\\'" 'html-php)
+
+
 
 ;; php mode
 (require 'cl)
@@ -446,7 +406,7 @@
 ;; (add-to-list 'yas-snippet-dirs "~/.emacs.d/elpa/yasnippet-20170216.1928/snippets/")
 (add-to-list 'yas-snippet-dirs "~/.emacs.d/elpa/yasnippet-20170216.1928/snippets")
 (yas-global-mode 1)
-(define-key web-mode-map (kbd "C-c C-y") 'yas/create-php-snippet)
+;; (define-key web-mode-map (kbd "C-c C-y") 'yas/create-php-snippet)
 ;;(payas/ac-setup)
 
 

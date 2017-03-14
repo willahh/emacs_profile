@@ -3,7 +3,7 @@
   ;; evil-snipe
   neotree
   ;; php-auto-yasnippets
-  php-mode
+  ;; php-mode
   ;; php-refactor-mode
   ;; tabbar
   ace-window
@@ -72,15 +72,15 @@
   undo-tree
   use-package
   web-beautify
-  web-mode
+  ;; web-mode
   which-key
   window-numbering
   yasnippet
   zerodark-theme
   ))
-
-;; 
+; 
 (add-to-list 'load-path "~/.emacs.d/plugins/emacs-powerline")
+(add-to-list 'load-path "~/.emacs.d/plugins/web-mode")
 (add-to-list 'load-path "~/.emacs.d/plugins/evil-nerd-commenter/")
 (add-to-list 'load-path "~/.emacs.d/plugins/whole-line-or-region")
 ;; (add-to-list 'load-path "~/.emacs.d/plugins/tabbar")

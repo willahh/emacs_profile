@@ -5,6 +5,7 @@
 (global-font-lock-mode 1)
 ; (global-font-lock-mode 0)
 ; (setq bidi-display-reordering nil)
+(setq-default bidi-display-reordering nil)
 
 ;; Enable blink cursor
 (blink-cursor-mode 1)
@@ -86,7 +87,7 @@ scroll-step 1)
 (setq ring-bell-function 'ignore)
 
 ;; Auto refresh buffers
-(global-auto-revert-mode 1)
+;; (global-auto-revert-mode 1)
 
 ;; UTF-8 
 (setq locale-coding-system 'utf-8) 
