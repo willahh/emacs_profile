@@ -252,6 +252,7 @@
 (global-set-key (kbd "M-w")  'kill-this-buffer)
 (global-set-key (kbd "M-r")  'helm-swoop)
 (global-set-key (kbd "M-o")  'helm-find-files)
+(global-set-key (kbd "œ")  'projectile-dired) ;; alt+o
 (global-set-key (kbd "M-n")  'evil-buffer-new)
 ;; (global-set-key (kbd "M-d")  'mc/mark-next-like-this) ;; Cannot be setted, (emacs backward delete word)
 

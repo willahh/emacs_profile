@@ -18,17 +18,14 @@ Revert hunk (depuis vc-diff) :
   
   
 --------- A ranger
-- [-] M-alt-o --> Déclenher une fonction qui rammene sur le dired du current project
-- [-] helm-ag buffer height plus haute
 - [-] Ag/helmag/agbidul -> Ignorer les fichier "*.svn-base"
-- [-] Faire une fonction copy file from project
+      -> helm-ag-ignore-buffer-patterns (conf ajoutee, non testee, maj : ne fonctionne pas, voir pour mettre la bonne regle)
 - [-] Attention voir si la modif des word separator n agit pas sur evil
 - [-] Neotree auto find when buffer open without focus
 - [-] Refresh color after yank
 - [-] Faire une fonction "Merge lines" pour supprimer es linebreak/whitespace
 - [-] expand selection : ne pas prendre en compte les "_"
 - [-] Paste dans un fichier contenant beaucoup de texte (fichier de trad) -> Indenting region --> slooooooooow
-
 
 - [-] add svn ignore for .projectile
 - [-] [theme - swoop] Ne pas mettre la premiere ligne sur fond jaune, on ne voit rien
@@ -43,9 +40,9 @@ Revert hunk (depuis vc-diff) :
 
 
 - [-] helm-swoop --> dont display in the fucking neotree 
-
 - [-] [vc-dir] Ne pas afficher les lignes dossiers (les lignes qui sont grisées)
 
+- [x] M-alt-o --> Déclenher une fonction qui rammene sur le dired du current project
 - [x] [en cours]  click souris coupe entre les "_" (web mode, javascript mode)
        c'est majeur parceque toute les méthodes privée en js commencent avec un _
 - [x] Double click word on web mode : prendre le garder le "_" en tant que mot 
@@ -81,6 +78,7 @@ Revert hunk (depuis vc-diff) :
 
 
 --------- Majeur
+- [-] helm-ag buffer height plus haute
 - [-] Snippet
       - Ajouter le snippet CTRL+ALT+C console.log
 - [-] Bind shift mouse wheel pour scroller horizontalement
@@ -108,6 +106,7 @@ Revert hunk (depuis vc-diff) :
 
 
 
+- [-] Faire une fonction copy file from project
 - [-] highlight symbol : Mettre 0 delai d attente pour la surbrillance des autres symboles
 - [-] la selection avec la souris doit aller loin avant de prendre en compte la deuxieme ligne
       (Comportement de selection legerement different a celui de Sublime)

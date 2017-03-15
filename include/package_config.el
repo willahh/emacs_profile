@@ -90,6 +90,8 @@
 ;; Enable nlinum-relative with html mode
 (add-hook 'html-mode-hook 'nlinum-relative-mode 1) 
 (add-hook 'actionscript-mode-hook 'nlinum-relative-mode 1)
+(add-hook 'fundamental-mode 'nlinum-relative-mode 1)
+(add-hook 'fundamental-mode-abbrev-table 'nlinum-relative-mode 1)
  
 
 
@@ -111,7 +113,7 @@
  '(helm-ag-base-command "ag --nocolor --nogroup --ignore-case")
  '(helm-ag-command-option "--all-text")
  '(helm-ag-insert-at-point 'symbol)
- '(helm-ag-ignore-buffer-patterns '("\\.txt\\'" "\\.min.js\\'")))
+ '(helm-ag-ignore-buffer-patterns '("\\.txt\\'" "\\.min.js\\'" "\\.svn-base\\'")))
 
 
 
@@ -334,6 +336,8 @@
   ("*shell*"             . (display-buffer-same-window . nil))
   ("*Buffer List*"       . (display-buffer-same-window . nil))
   ("*ag*"                . (display-buffer-same-window . nil))
+  ("*vc-dir*"            . (display-buffer-same-window . nil)) ;; Toujours mettre le buffer vc-dir dans la fenetre actuelle, trop bordelique autrement
+  ;; ("*helm-ag-edit*"      . (display-buffer-same-window . nil)) ;; ko nil = le buffer prend la place de helm (tout petit)
   ;; ("*Backtrace*"         . (display-buffer-same-window . nil)) ;; En commentaire pour voir
   ;; ("*magit-revision*"    . (display-buffer-same-window . nil)) ;; En commentaire pour voir
   ;; ("*magit-diff*"        . (display-buffer-same-window . nil)) ;; En commentaire, car dans ce buffer ipossible d avoir acces aux racourcis pour switch, du coup bloque ici
