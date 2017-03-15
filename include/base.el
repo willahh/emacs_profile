@@ -27,8 +27,8 @@
 ;; Select whole word when separated with _
 (modify-syntax-entry ?_ "w")
 
-;;
-(global-auto-revert-mode -1)
+;; Auto refresh buffers
+(global-auto-revert-mode 1)
 
 ;; Disable toolbar
 (tool-bar-mode -1)
@@ -100,8 +100,6 @@ scroll-step 1)
 (setq visible-bell nil)
 (setq ring-bell-function 'ignore)
 
-;; Auto refresh buffers
-;; (global-auto-revert-mode 1)
 
 ;; UTF-8 
 (setq locale-coding-system 'utf-8) 
