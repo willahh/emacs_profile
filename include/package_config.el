@@ -45,8 +45,6 @@
 (highlight-symbol-mode 0)
 
 
-
-
 ;; wra custom hook
 ;; Activation du mode highlight all same occurence uniquement
 ;; apres une selection (ST behaviour)

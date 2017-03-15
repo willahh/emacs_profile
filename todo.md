@@ -16,6 +16,7 @@
 --------- A ranger 
 - [-] [theme - swoop] Ne pas mettre la premiere ligne sur fond jaune, on ne voit rien
          Theme > Helm - Changer la couleur de fond de la première ligne de titre de helm
+- [-] highlight symbol : Mettre 0 delai d attente pour la surbrillance des autres symboles
 - [-] Il faut mettre en place le CMD+D à tout prix (dans tous les modes)
 - [-] Highlight les memes instances que le mot selectionne
 - [-] Double click word CMD+D -> go to next result (scroll focus)
