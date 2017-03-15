@@ -29,8 +29,14 @@
 
 ;;
 (global-auto-revert-mode -1)
+
+;; Disable toolbar
 (tool-bar-mode -1)
+
+;; Disable scrollbar
 (scroll-bar-mode -1)
+
+;; ?
 (set-default 'cursor-type 'bar)
 
 ;; Always indent with space

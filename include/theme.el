@@ -3,6 +3,7 @@
 
 ;; font (family / size, ...)
 ;; (set-default-font "Inconsolata-14") ;; Font face: Inconsolata, font-size: 14
+(set-default-font "Meslo LG M") ;; Font face: Meslo LG M, font-size: 12
 
 
 

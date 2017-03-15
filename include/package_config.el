@@ -88,7 +88,8 @@
 (nlinum-relative-setup-evil)
 
 ;; Enable nlinum-relative with html mode
-(add-hook 'html-mode-hook 'nlinum-relative-mode 1)
+(add-hook 'html-mode-hook 'nlinum-relative-mode 1) 
+(add-hook 'actionscript-mode-hook 'nlinum-relative-mode 1)
  
 
 
@@ -471,6 +472,9 @@
 ;; (define-key web-mode-map (kbd "C-c C-y") 'yas/create-php-snippet)
 ;;(payas/ac-setup)
 
+;; yascroll
+(require 'yascroll)
+(global-yascroll-bar-mode)
 
 ;; php-auto-yasnippets
 ; (require 'php-auto-yasnippets)
@@ -522,7 +526,8 @@
 (evil-set-initial-state 'log-edit-mode 'emacs) ;; Mode utilise pour saisir des messages depuis vc
 (evil-set-initial-state 'markdown-mode 'emacs) 
 (evil-set-initial-state 'ag-mode 'emacs) 
-(evil-set-initial-state 'neotree 'emacs)
+;; (evil-set-initial-state 'neotree 'emacs)
+(evil-set-initial-state 'neotree-mode 'emacs) ;; neotree doesnt work maybe neotree-mode ? -> update ok, works
 
 
 ;; Remove all keybindings from insert-state keymap (insert mode behavior like emacs) 
@@ -675,11 +680,12 @@
       helm-echo-input-in-header-line t)
 
 ;; Size
-(setq helm-autoresize-max-height 500)
-(setq helm-autoresize-min-height 500)
+;; (setq helm-autoresize-max-height 500)
+(setq helm-autoresize-min-height 600) ;; Important
 
 ;; Auto resize
 (helm-autoresize-mode 1)
+(setq helm-autoresize-max-height 70) ;; Utilisation de 70% de hauteur
 
 ;; helm locate
 (setq helm-locate-fuzzy-match t)
@@ -688,13 +694,48 @@
 (setq helm-truncate-lines 1)
 
 
+;; ---------------- helm-swoop
+(require 'helm-swoop)
+(setq helm-split-window-in-side-p t
+helm-always-two-windows nil)
 
+
+
+;; ---------------- resize-window
+(require 'resize-window)
+;; (defvar resize-window-alias-list
+;;   '(
+;;     (up ?n)
+;;     (resize-window--cycle-window-positive ?à)
+;;     (cycle-window-positive ?à)
+;;     )
+;;   "List of aliases for commands.
+;; Rather than have to use n, etc, you can alias keys for others.")
+
+;; (defvar resize-window-dispatch-alist
+;;   '((?n resize-window--enlarge-down          " Resize - Expand down" t)
+;;     (?p resize-window--enlarge-up            " Resize - Expand up" t)
+;;     (?f resize-window--enlarge-horizontally  " Resize - horizontally" t)
+;;     (?b resize-window--shrink-horizontally   " Resize - shrink horizontally" t)
+;;     (?r resize-window--reset-windows         " Resize - reset window layout" nil)
+;;     (?à resize-window--cycle-window-positive " Resize - cycle window" nil)
+;;     (?W resize-window--cycle-window-negative " Resize - cycle window" nil)
+;;     (?2 split-window-below " Split window horizontally" nil)
+;;     (?3 split-window-right " Slit window vertically" nil)
+;;     (?0 resize-window--delete-window " Delete window" nil)
+;;     (?k resize-window--kill-other-windows " Kill other windows (save state)" nil)
+;;     (?y resize-window--restore-windows " (when state) Restore window configuration" nil)
+;;     (?? resize-window--display-menu          " Resize - display menu" nil))
+;;   "List of actions for `resize-window-dispatch-default.
+;; Main data structure of the dispatcher with the form:
+;; \(char function documentation match-capitals\)")
 
 
 ;; ---------------- neotree
 (require 'neotree)
 (setq neo-theme 'icons) ;; Set the neotree theme before show
 (neotree-show)
+
 
 
 ;; Every time when the neotree window is opened, let it find current file and jump to node.

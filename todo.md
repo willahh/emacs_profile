@@ -5,7 +5,11 @@
 
 
 -------- Pense bete
----- [M+S+;] ---> xref-find-definitions (natif) ----> A consommer sans moderation
+[M+S+;] ---> xref-find-definitions (natif) ----> A consommer sans moderation
+
+Revert hunk (depuis vc-diff) :
+  - C-c C-r (diff-reverse-direction)
+  - C-C C-a (diff-apply-hunk)
 
 
 --------- Notes ralentissements sur gros fichiers :
@@ -13,10 +17,22 @@
   - web-mode : new line
   
   
---------- A ranger 
+--------- A ranger
+- [-] M-alt-o --> Déclenher une fonction qui rammene sur le dired du current project
+- [-] helm-ag buffer height plus haute
+- [-] Ag/helmag/agbidul -> Ignorer les fichier "*.svn-base"
+- [-] Faire une fonction copy file from project
+- [-] Attention voir si la modif des word separator n agit pas sur evil
+- [-] Neotree auto find when buffer open without focus
+- [-] Refresh color after yank
+- [-] Faire une fonction "Merge lines" pour supprimer es linebreak/whitespace
+- [-] expand selection : ne pas prendre en compte les "_"
+- [-] Paste dans un fichier contenant beaucoup de texte (fichier de trad) -> Indenting region --> slooooooooow
+
+
+- [-] add svn ignore for .projectile
 - [-] [theme - swoop] Ne pas mettre la premiere ligne sur fond jaune, on ne voit rien
          Theme > Helm - Changer la couleur de fond de la première ligne de titre de helm
-- [-] highlight symbol : Mettre 0 delai d attente pour la surbrillance des autres symboles
 
 - [-] Auto indent --> Super slow
          -> Exemples visibles sur "flatplan/index.php", "lang_fr.php"
@@ -24,6 +40,9 @@
 
 
 - [-] ag --> ignore hudge file (ST behaviour) (aucun problème dans, à mon avis, 99% des cas)     (il peut être utile de faire des recherches dans des fichieux volumineux, mais pour ca la recherche peut être faite de manière spécifique (paramètres supplémentaire, utilisation directement depuis ligne de commande ...)
+
+
+- [-] helm-swoop --> dont display in the fucking neotree 
 
 - [-] [vc-dir] Ne pas afficher les lignes dossiers (les lignes qui sont grisées)
 
@@ -35,6 +54,9 @@
 - [x] Il faut mettre en place le CMD+D à tout prix (dans tous les modes)
 - [x] Highlight les memes instances que le mot selectionne
 - [x] passer sur le multi curseur de base (celui legerement bugge, en attendant)
+- [x] Update M-D ne peut pas overrider la fonction native... trop utile
+      -> Update sur alt+d / alt+shift+d
+- [x] helm --> Augmenter la hauteur (pourcentage ? 75% ?)
 
 
 --------- Bloquant
@@ -86,6 +108,7 @@
 
 
 
+- [-] highlight symbol : Mettre 0 delai d attente pour la surbrillance des autres symboles
 - [-] la selection avec la souris doit aller loin avant de prendre en compte la deuxieme ligne
       (Comportement de selection legerement different a celui de Sublime)
 - [-] Double click word CMD+D -> go to next result (scroll focus)

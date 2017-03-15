@@ -194,6 +194,8 @@
 ;; Multi cursor stuff
 ;; Dilemme : Retirer le M-d natif de emacs pour avoir le M-d de Sublime (que j utilise tout le temps...)
 ;; (Default M-d = delete word back)
+;; Non faisaible, M-d par default est trop utile
+
 ;; (global-set-key (kbd "C-<") 'mc/maru-previous-like-this)
 ;; (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 ;; (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
@@ -203,20 +205,23 @@
 
 (global-set-key (kbd "C-<") 'mc/mark-next-like-this-symbol)
 (global-set-key (kbd "C-@") 'mc/mark-next-like-this-symbol)
-(global-set-key [(meta control d)] 'mc/mark-next-like-this-symbol)
 
 (global-set-key (kbd "<C-268632068>") 'mc/mark-next-like-this-symbol) ;; CONTROL+ALT+d
 (global-set-key (kbd "<C-S-268632068>") 'mc/mark-previous-like-this-symbol) ;; CONTROL+ALT+SHIFT+d
-(global-set-key (kbd "<C-S-268632068>") 'mc/mark-previous-like-this-symbol) ;; CONTROL+ALT+SHIFT+d
 
-(global-set-key (kbd "M-d") 'mc/mark-next-like-this-symbol) ;; META+d
-(global-set-key (kbd "M-S-d") 'mc/mark-previous-like-this-symbol) ;; META+shift+d
+;; (global-set-key (kbd "M-d") 'mc/mark-next-like-this-symbol) ;; META+d
+;; (global-set-key (kbd "M-S-d") 'mc/mark-previous-like-this-symbol) ;; META+shift+d
+
+(global-set-key (kbd "∂") 'mc/mark-next-like-this-symbol) ;; ALT+d
+(global-set-key (kbd "∆") 'mc/mark-previous-like-this-symbol) ;; ALT+SHIFT+d
 
 
+;; window
+;; (global-set-key (kbd "M-C-w") 'resize-window)
+(global-set-key (kbd "M-à") 'resize-window)
 
 ;; Helm
 (global-set-key (kbd "C-c h") 'helm-command-prefix)
-(global-set-key (kbd "M-C-w") 'resize-window)
 (global-set-key (kbd "C-x C-d") 'duplicate-current-line-or-region)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 (global-set-key (kbd "C-x C-p") 'helm-projectile)

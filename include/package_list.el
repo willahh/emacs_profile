@@ -1,6 +1,7 @@
 (require 'package)
 (setq package-list '(
   ;; evil-snipe
+  actionscript-mode
   neotree
   ;; php-auto-yasnippets
   php-mode
@@ -79,6 +80,7 @@
   which-key
   window-numbering
   yasnippet
+  yascroll
   zerodark-theme
   ))
 ; 
