@@ -40,6 +40,35 @@
 (require 'powerline)
 ;; (setq powerline-arrow-shape 'curve)
 
+;; highlight-symbol
+(require 'highlight-symbol)
+(highlight-symbol-mode 0)
+
+
+
+
+;; wra custom hook
+;; Activation du mode highlight all same occurence uniquement
+;; apres une selection (ST behaviour)
+(add-hook 'activate-mark-hook
+      (lambda ()
+        (highlight-symbol-mode 1)))
+ 
+(add-hook 'deactivate-mark-hook
+      (lambda ()
+        (highlight-symbol-mode 0)))
+ 
+
+
+
+
+
+
+
+
+
+
+
 
 
 ;; Auto close parenthesis brackets, ...
@@ -443,6 +472,17 @@
 ;; js-comint
 ;; Javascript live interpreter nice to test regexp on fly
 (require 'js-comint)
+
+
+
+;; multiple-cursors
+(require 'multiple-cursors)
+
+
+
+
+
+
 
 ;; smart-forward
 ;; Javascript smart navigation

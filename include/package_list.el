@@ -11,7 +11,7 @@
   anything
   async
   auto-complete
-  auto-highlight-symbol
+  highlight-symbol
   autopair
   avy
   avy-menu
