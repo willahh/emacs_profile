@@ -18,16 +18,14 @@ Revert hunk (depuis vc-diff) :
   
   
 --------- A ranger
-- [-] Ag/helmag/agbidul -> Ignorer les fichier "*.svn-base"
-      -> helm-ag-ignore-buffer-patterns (conf ajoutee, non testee, maj : ne fonctionne pas, voir pour mettre la bonne regle)
+- [-] Faire fonctionner un jump to definition en javascript - Le binder sur M+S+; (default emacs lisp jump)
+
 - [-] Attention voir si la modif des word separator n agit pas sur evil
 - [-] Neotree auto find when buffer open without focus
 - [-] Refresh color after yank
-- [-] Faire une fonction "Merge lines" pour supprimer es linebreak/whitespace
 - [-] expand selection : ne pas prendre en compte les "_"
 - [-] Paste dans un fichier contenant beaucoup de texte (fichier de trad) -> Indenting region --> slooooooooow
 
-- [-] add svn ignore for .projectile
 - [-] [theme - swoop] Ne pas mettre la premiere ligne sur fond jaune, on ne voit rien
          Theme > Helm - Changer la couleur de fond de la première ligne de titre de helm
 
@@ -78,7 +76,8 @@ Revert hunk (depuis vc-diff) :
 
 
 --------- Majeur
-- [-] helm-ag buffer height plus haute
+- [-] Faire une fonction "Merge lines" pour supprimer les linebreak/whitespace
+- [x] helm-ag buffer height plus haute
 - [-] Snippet
       - Ajouter le snippet CTRL+ALT+C console.log
 - [-] Bind shift mouse wheel pour scroller horizontalement
@@ -104,7 +103,10 @@ Revert hunk (depuis vc-diff) :
     - "*.svn-base"
     - "*.log"
 
-
+- [-] add svn ignore for .projectile
+- [-] helm-do-grep-ag -> Ignjorer les fichier "*.svn-base"
+      -> helm-ag-ignore-buffer-patterns (conf ajoutee, non testee, maj : ne fonctionne pas, voir pour mettre la bonne regle)
+      -> Impossible de trouver la raison sur cette commande, utiliser helm-ag a la place
 
 - [-] Faire une fonction copy file from project
 - [-] highlight symbol : Mettre 0 delai d attente pour la surbrillance des autres symboles

@@ -219,6 +219,10 @@
 ;; window
 ;; (global-set-key (kbd "M-C-w") 'resize-window)
 (global-set-key (kbd "M-à") 'resize-window)
+(global-set-key (kbd "<C-M-268632091>") 'split-window-below) ;; CTRL+ALT+COMMAND + ° (caractere a droite du 0)
+(global-set-key (kbd "<C-M-268632095>") 'split-window-right) ;; CTRL+ALT+COMMAND + - (caractere a droite du 0 + 1)
+
+
 
 ;; Helm
 (global-set-key (kbd "C-c h") 'helm-command-prefix)

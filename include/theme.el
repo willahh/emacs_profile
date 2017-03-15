@@ -28,6 +28,7 @@
 
 
 
+;;
 (set-face-attribute 'fringe nil :background "#21242b")
 
 ;; make the left fringe 4 pixels wide and the right disappear
@@ -223,28 +224,28 @@
 ;; powerline theme
 (defun powerline-theme-emacs()
   (set-face-attribute 'mode-line nil
-                      :foreground "Brelack"
+                      :foreground "#000"
                       :background "#9ecf00"
                       :box nil)
 )
 
 (defun powerline-theme-visual()
   (set-face-attribute 'mode-line nil
-                      :foreground "Brelack"
-                      :background "#fffc00"
+                      :foreground "#000"
+                      :background "#000c00"
                       :box nil)
 )
 
 (defun powerline-theme-normal()
   (set-face-attribute 'mode-line nil
-                      :foreground "Brelack"
+                      :foreground "#000"
                       :background "#ffba00"
                       :box nil)
 )
 
 (defun powerline-theme-insert()
   (set-face-attribute 'mode-line nil
-                      :foreground "Brelack"
+                      :foreground "#000"
                       :background "red"
                       :box nil)
 )
@@ -255,6 +256,4 @@
 (add-hook 'evil-emacs-state-entry-hook 'powerline-theme-emacs)
 
 (powerline-theme-normal)
-
-
 

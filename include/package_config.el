@@ -3,6 +3,18 @@
 
 
 
+
+;; ------- dired conf
+(require 'dired-x)
+
+;; Hide dot files (.svn, .git, ...)
+(setq dired-omit-files "^\\...+$")
+(add-hook 'dired-mode-hook (lambda () (dired-omit-mode 1)))
+
+
+
+
+
 ;; whole-line-or-region
 ;; Ce package ou cette fonction n est pas disponible
 ;; est elle importante ?
@@ -109,11 +121,18 @@
 
 
 ;; helm-ag
-(custom-set-variables
- '(helm-ag-base-command "ag --nocolor --nogroup --ignore-case")
- '(helm-ag-command-option "--all-text")
- '(helm-ag-insert-at-point 'symbol)
- '(helm-ag-ignore-buffer-patterns '("\\.txt\\'" "\\.min.js\\'" "\\.svn-base\\'")))
+;; (custom-set-variables
+;;  '(helm-ag-base-command "ag --nocolor --nogroup --ignore-case --exclude=*.svn-base")
+;;  '(helm-ag-command-option "--all-text")
+;;  '(helm-ag-insert-at-point 'symbol)
+;;  '(helm-ag-ignore-buffer-patterns '("\\.txt\\'" "\\.min.js\\'" "\\.svn-base\\'")))
+
+
+;; (setq helm-ag-ignore-patterns '("*.svn-base"))
+;; (customize-set-variable 'grep-find-ignored-directories (list "SCCS" "RCS" "CVS" "MCVS" ".svn" ".git" ".hg" ".bzr" "_MTN" "_darcs" "{arch}" "objects" "build" "bin" "out" "lib" "svn-base"))
+;; (customize-set-variable '(helm-ag-ignore-buffer-patterns (list "SCCS" "RCS" "CVS" "MCVS" ".svn" ".git" ".hg" ".bzr" "_MTN" "_darcs" "{arch}" "objects" "build" "bin" "out" "lib" "svn-base"))
+
+
 
 
 
