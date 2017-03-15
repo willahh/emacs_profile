@@ -4,6 +4,7 @@
   neotree
   ;; php-auto-yasnippets
   php-mode
+  ac-php
   ;; php-refactor-mode
   ;; tabbar
   ace-window

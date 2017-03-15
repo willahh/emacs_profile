@@ -17,10 +17,6 @@
 - [-] [theme - swoop] Ne pas mettre la premiere ligne sur fond jaune, on ne voit rien
          Theme > Helm - Changer la couleur de fond de la première ligne de titre de helm
 - [-] highlight symbol : Mettre 0 delai d attente pour la surbrillance des autres symboles
-- [-] Il faut mettre en place le CMD+D à tout prix (dans tous les modes)
-- [-] Highlight les memes instances que le mot selectionne
-- [-] Double click word CMD+D -> go to next result (scroll focus)
-- [-] passer sur le multi curseur de base (celui legerement bugge, en attendant)
 
 - [-] Auto indent --> Super slow
          -> Exemples visibles sur "flatplan/index.php", "lang_fr.php"
@@ -31,12 +27,14 @@
 
 - [-] [vc-dir] Ne pas afficher les lignes dossiers (les lignes qui sont grisées)
 
-- [-] la selection avec la souris doit aller loin avant de prendre en compte la deuxieme ligne
 - [x] [en cours]  click souris coupe entre les "_" (web mode, javascript mode)
        c'est majeur parceque toute les méthodes privée en js commencent avec un _
 - [x] Double click word on web mode : prendre le garder le "_" en tant que mot 
 - [x] Faire fonctionner le theme neotree (get all-the-icons ?)
 - [x] Bind shift mouse wheel pour scroller horizontalement
+- [x] Il faut mettre en place le CMD+D à tout prix (dans tous les modes)
+- [x] Highlight les memes instances que le mot selectionne
+- [x] passer sur le multi curseur de base (celui legerement bugge, en attendant)
 
 
 --------- Bloquant
@@ -86,6 +84,11 @@
     - "*.svn-base"
     - "*.log"
 
+
+
+- [-] la selection avec la souris doit aller loin avant de prendre en compte la deuxieme ligne
+      (Comportement de selection legerement different a celui de Sublime)
+- [-] Double click word CMD+D -> go to next result (scroll focus)
 - [-] ag search result buffer : highlight search words
 - [-] nlinum in fringe ? Pouvoir afficher les vc diff plus loin que le contenu
 - [-] (command+r pour reload vc-dir) - M-r ----> vc-dir-refresh
