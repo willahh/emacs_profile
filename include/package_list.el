@@ -1,5 +1,6 @@
 (require 'package)
 (setq package-list '(
+  helm-hunks                     
   ;; evil-snipe
   ;; powerline
   ;; perspective
@@ -15,7 +16,7 @@
   php-mode
   php-refactor-mode
   ac-php
-  golden-ratio
+  ;; golden-ratio
   ace-window
   ag
   anything

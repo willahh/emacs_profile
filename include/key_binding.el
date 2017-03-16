@@ -266,13 +266,18 @@
 
 (global-set-key [(meta shift r)] 'helm-swoop)
 
-;; Files
+;; Files / Browse files / Browse buffer 
 (global-set-key (kbd "M-o")  'helm-find-files)
 (global-set-key (kbd "œ")  'projectile-dired) ;; alt+o
-(global-set-key (kbd "M-n")  'evil-buffer-new)
+(global-set-key (kbd "M-œ")  'neotree-find) ;; CMD+ALT+o
+(global-set-key [(meta shift o)]  'helm-mini)
+
+
+
+
 ;; (global-set-key (kbd "M-d")  'mc/mark-next-like-this) ;; Cannot be setted, (emacs backward delete word)
 
-(global-set-key [(meta shift o)]  'helm-mini)
+(global-set-key (kbd "M-n")  'evil-buffer-new)
 
 ;; search
 ;; (global-set-key [(meta shift f)]  'helm-ag-project-root)

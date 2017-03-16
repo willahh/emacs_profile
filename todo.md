@@ -4,30 +4,55 @@
   https://github.com/hlissner/.emacs.d
 
 
--------- Pense bete
+
+-------- Notes diverses
+- ALT+D déclenche bien la sélection auto du mot sur lequel le curseur est positionne
+- C-x r t (string rectangle) : Voir plus en détail
+
 [M+S+;] ---> xref-find-definitions (natif) ----> A consommer sans moderation
 
-Revert hunk (depuis vc-diff) :
+- Revert hunk (depuis vc-diff) :
   - C-c C-r (diff-reverse-direction)
   - C-C C-a (diff-apply-hunk)
+
+- Php completion
+  - Create ".ac-php-conf.json" file at project root
+  - Create ".projectile" file at project root
+
 
 
 --------- Notes ralentissements sur gros fichiers :
   - global fly check mode
   - web-mode : new line
   
+
   
 --------- A ranger
+- [-] [IMPORTANT] Highlight other words doit être instanté
+- [-] [IMPORTANT] [ag search result buffer] Open file -> ne pas créer de nouvelle window n'importe ou c'est super chiant, ---> rester sur la même
+- [-] File slow keywords
+- [-] [IMPORTANT] Fonction get file name to clipboard (très utilisé)
+- [-] [IMPORTANT] Javascript double click sur mot, ne pas utliser le caractère _ comme séparateur
+- [-] [IMPORTANT] CTRL+ALT+C --> console.log
+- [-] [IMPORTANT] Changer les couleurs moches en javascript (les vert rose et orange sont moches)
+- [-] [IMPORTANT] Faire la fonctioner "Merge lines" (Remove white space and breakline)
+
+
+- [-] svn ignore rules to add :
+  - .ac-php-conf.json
+  - logs
+  - .tern-port
+  - .DS_Store
+
+
 - [-] Faire fonctionner un jump to definition en javascript - Le binder sur M+S+; (default emacs lisp jump)
+- [-] Neotree margin
 
 - [-] Attention voir si la modif des word separator n agit pas sur evil
 - [-] Neotree auto find when buffer open without focus
 - [-] Refresh color after yank
 - [-] expand selection : ne pas prendre en compte les "_"
 - [-] Paste dans un fichier contenant beaucoup de texte (fichier de trad) -> Indenting region --> slooooooooow
-
-- [-] [theme - swoop] Ne pas mettre la premiere ligne sur fond jaune, on ne voit rien
-         Theme > Helm - Changer la couleur de fond de la première ligne de titre de helm
 
 - [-] Auto indent --> Super slow
          -> Exemples visibles sur "flatplan/index.php", "lang_fr.php"
@@ -77,7 +102,6 @@ Revert hunk (depuis vc-diff) :
 
 --------- Majeur
 - [-] Faire une fonction "Merge lines" pour supprimer les linebreak/whitespace
-- [x] helm-ag buffer height plus haute
 - [-] Snippet
       - Ajouter le snippet CTRL+ALT+C console.log
 - [-] Bind shift mouse wheel pour scroller horizontalement
@@ -102,8 +126,6 @@ Revert hunk (depuis vc-diff) :
     - "*.min.js"
     - "*.svn-base"
     - "*.log"
-
-- [-] add svn ignore for .projectile
 - [-] helm-do-grep-ag -> Ignjorer les fichier "*.svn-base"
       -> helm-ag-ignore-buffer-patterns (conf ajoutee, non testee, maj : ne fonctionne pas, voir pour mettre la bonne regle)
       -> Impossible de trouver la raison sur cette commande, utiliser helm-ag a la place
@@ -121,6 +143,7 @@ Revert hunk (depuis vc-diff) :
 - [-] [theme] Voir pour avoir une font plus lisible (aliasing different --> Se rapprocher du rendu de Sublime (la font est bien la meme))
 - [-] [theme] Voir si il est possible d'avoir une bordure autour de la selection (comme dans Sublime))
 - [-] [Neotree] > after load > Open first file > focus to other window 
+- [x] helm-ag buffer height plus haute
 - [x] M-a regression --> ne selectionne plus l integralite du buffer
 - [x] Mode emacs par default pour les mode majeur suivants 
     - [x] *log-edit-files*
@@ -134,10 +157,13 @@ Revert hunk (depuis vc-diff) :
 - [x] M-p doesn't work on all buffer
 - [x] *vc-diff* Lorsque ce buffer apparait, il apparait dans un nouvel emplacement (ok), mais en minuscule (ko)
       - Fix pour laisser emacs ouvrir une nouvelle window
-
+- [x] [theme - swoop] Ne pas mettre la premiere ligne sur fond jaune, on ne voit rien
+         Theme > Helm - Changer la couleur de fond de la première ligne de titre de helm
+         -> Update : impossible, la même propriété est utilisée pour gérer cette ligne ainsi que l'indicateur visuel en bas à gauche
 
 --------- Mineur 
 - [-] Voir pour utiliser une largeur max lors de la saisie de long texte
+- [-] Auto complete > 2eme boite > Afficher instantanement
 - [-] web mode : refresh colors after yank
 - [-] tabbar : hide bad icons
 - [-] emacs --> save a cursor place ?

@@ -13,8 +13,8 @@
 
 
 ;; golden-ratio
-(require 'golden-ratio)
-(golden-ratio-mode)
+;; (require 'golden-ratio)
+;; (golden-ratio-mode)
 
 
 ;; whole-line-or-region
@@ -256,7 +256,9 @@
 
 
 
-
+;; helm-hunks
+;; Update : ne semble pas fonctionner avec un buffer type "*vc-diff*" (from vc)
+;; (require 'helm-hunks)
 
 
 ;; psvn
@@ -397,6 +399,10 @@
 ;; (setq mmm-global-mode 'maybe)
 ;; (mmm-add-mode-ext-class 'html-mode "\\.php\\'" 'html-php)
 
+
+;; javascript mode
+(require 'js2-mode)
+(js2-imenu-extras-mode)
 
 
 ;; php mode
@@ -775,7 +781,8 @@ helm-always-two-windows nil)
 
 ;; Lock auto resize
 ;; Seems broken ? (Donne une largeur debile a neotree)
-;; (setq neo-window-fixed-size nil)
+(setq neo-window-fixed-size nil)
+
 
 ;; Evil key binding for neotree
 ;; (evil-define-key 'normal neotree-mode-map (kbd "TAB") 'neotree-enter)
