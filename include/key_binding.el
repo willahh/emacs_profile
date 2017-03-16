@@ -201,6 +201,7 @@
 ;; Dilemme : Retirer le M-d natif de emacs pour avoir le M-d de Sublime (que j utilise tout le temps...)
 ;; (Default M-d = delete word back)
 ;; Non faisaible, M-d par default est trop utile
+;; Alternative tres proche : ALT+d (et ALD+SHIFT+d)
 
 ;; (global-set-key (kbd "C-<") 'mc/maru-previous-like-this)
 ;; (global-set-key (kbd "C->") 'mc/mark-next-like-this)
@@ -220,6 +221,7 @@
 
 (global-set-key (kbd "∂") 'mc/mark-next-like-this-symbol) ;; ALT+d
 (global-set-key (kbd "∆") 'mc/mark-previous-like-this-symbol) ;; ALT+SHIFT+d
+(global-set-key [(meta control g)] 'mc/mark-all-symbols-like-this) ;; CTRL+META+G
 
 
 ;; window
