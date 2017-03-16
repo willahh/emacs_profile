@@ -1,13 +1,21 @@
 (require 'package)
 (setq package-list '(
   ;; evil-snipe
-  actionscript-mode
-  neotree
-  ;; php-auto-yasnippets
-  php-mode
-  ac-php
+  ;; powerline
+  ;; perspective
+  ;; smart-mode-line ;; (sml -> activated)
+  ;; spaceline
+  ;; workgroups2
+  ;; web-mode
   ;; php-refactor-mode
   ;; tabbar
+  ;; php-auto-yasnippets
+  actionscript-mode
+  neotree
+  php-mode
+  php-refactor-mode
+  ac-php
+  golden-ratio
   ace-window
   ag
   anything
@@ -58,25 +66,19 @@
   nlinum-relative
   pkg-info
   popup
-  ;; powerline
   projectile
   psvn
-  ;; perspective
   resize-window
   skewer-mode
   smart-forward
-  ;; smart-mode-line ;; (sml -> activated)
   smart-tab
   sml-mode         
-  ;; spaceline
   swiper-helm
   tern
   tern-auto-complete
   undo-tree
   use-package
   web-beautify
-  ;; workgroups2
-  ;; web-mode
   which-key
   window-numbering
   yasnippet

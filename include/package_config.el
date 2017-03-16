@@ -12,7 +12,9 @@
 (add-hook 'dired-mode-hook (lambda () (dired-omit-mode 1)))
 
 
-
+;; golden-ratio
+(require 'golden-ratio)
+(golden-ratio-mode)
 
 
 ;; whole-line-or-region
@@ -89,8 +91,9 @@
 
 ;; Emmet
 (require 'emmet-mode)
-(add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
-(add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
+(add-hook 'sgml-mode-hook 'emmet-mode)
+(add-hook 'css-mode-hook  'emmet-mode)
+;; (add-hook 'php-mode-hook  'emmet-mode) ;; Edit : peut poser des problemes, a voir
 
 
 
@@ -381,7 +384,8 @@
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.css\\'" . css-mode)) ;; .css file should be assigned to css-mode for nice emmet support
-(add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode)) ;; Update : .php sur php pour avoir une vrai navigation et de vrai definitions
+;; (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
 
 (setq web-mode-enable-css-colorization t)
 (setq web-mode-enable-current-element-highlight t)    
@@ -401,20 +405,21 @@
 
 
 ;; ac-php
-;; (add-hook 'php-mode-hook
-;;             '(lambda ()
-;;                (auto-complete-mode t)
-;;                (require 'ac-php)
-;;                (setq ac-sources  '(ac-source-php ) )
-;;                (yas-global-mode 1)
-;;                (define-key php-mode-map  (kbd "C-]") 'ac-php-find-symbol-at-point)   ;goto define
-;;                (define-key php-mode-map  (kbd "C-t") 'ac-php-location-stack-back   ) ;go back
-;;                ))
+(add-hook 'php-mode-hook
+            '(lambda ()
+               (auto-complete-mode t)
+               (require 'ac-php)
+               (setq ac-sources  '(ac-source-php ) )
+               (yas-global-mode 1)
+               (define-key php-mode-map  (kbd "C-]") 'ac-php-find-symbol-at-point)   ;goto define
+               (define-key php-mode-map  (kbd "C-t") 'ac-php-location-stack-back   ) ;go back
+               ))
 
 
 ;; php-refactor
-; (require 'php-refactor-mode)
-; (add-hook 'php-mode-hook 'php-refactor-mode)
+(require 'php-refactor-mode)
+(add-hook 'php-mode-hook 'php-refactor-mode)
+
 
 ;; flymake-mode
 ;; Let's run 8 checks at once instead.

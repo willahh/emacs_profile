@@ -141,21 +141,27 @@
 (evil-leader/set-key "tc" 'evilnc-comment-or-uncomment-lines) ;; Meaning [t]oggle [c]omment
 (evil-leader/set-key "G" 'revert-buffer-no-confirm) ;; Meaning [t]oggle [c]omment
 
-
+;; avy
+(evil-leader/set-key "c" 'avy-goto-word-1)
 
 
 
 
 
 ;; -------- key chords binding
-(key-chord-define-global "az" 'avy-goto-word-1)
+
+;; avy
+;; (key-chord-define-global "az" 'avy-goto-word-1)
+(key-chord-define-global "az" 'avy-goto-word-1-above)
+(key-chord-define-global "qs" 'avy-goto-word-1-below)
+
+
+;;
 (key-chord-define-global "xc" 'er/expand-region)
 (key-chord-define-global "wx" 'er/contract-region)
 (key-chord-define-global "<w" 'mc/mark-all-like-this)
 (key-chord-define-global "ji" 'ace-window) ;; cannot be jk (vim up/right)
 
-;; avy
-(evil-leader/set-key "c" 'avy-goto-word-1)
 
 
 
@@ -254,7 +260,13 @@
 (global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
 (global-set-key (kbd "M-z") 'undo-tree-undo)
 (global-set-key (kbd "M-w")  'kill-this-buffer)
-(global-set-key (kbd "M-r")  'helm-swoop)
+
+;; Filter buffer / Get buffer definitions
+(global-set-key [(meta r)]  'helm-semantic-or-imenu)
+
+(global-set-key [(meta shift r)] 'helm-swoop)
+
+;; Files
 (global-set-key (kbd "M-o")  'helm-find-files)
 (global-set-key (kbd "œ")  'projectile-dired) ;; alt+o
 (global-set-key (kbd "M-n")  'evil-buffer-new)
