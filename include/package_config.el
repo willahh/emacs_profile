@@ -405,6 +405,12 @@
 (js2-imenu-extras-mode)
 
 
+;;  flymake-jshint
+(require 'flymake-jshint)
+(add-hook 'js-mode-hook 'flymake-mode)
+
+
+
 ;; php mode
 (require 'cl)
 (require 'php-mode)

@@ -28,6 +28,21 @@
 
   
 --------- A ranger
+- [-] Emmet mode in html mode please !
+- [-] Voir si il est possible de faire un (CMD+P + touche @) pour avoir une complétion des méthodes direct sans entrer dans le fichier
+- [-] Toutes les fonctionsj javascript ne sont pas listées ("mediaListList.js")
+- [-] Le CTRL+G ne ne fonctionne pas à l'identique que celui de Sublime
+   Exemple avec le mot background :
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: contain;
+
+    background: red;
+    
+    
+    
+
+
 - [-] [IMPORTANT] Highlight other words doit être instanté
 - [-] [IMPORTANT] [ag search result buffer] Open file -> ne pas créer de nouvelle window n'importe ou c'est super chiant, ---> rester sur la même
 - [-] File slow keywords
