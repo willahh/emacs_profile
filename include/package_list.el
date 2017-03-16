@@ -1,5 +1,6 @@
 (require 'package)
 (setq package-list '(
+  ;; helm-hunks                     
   ;; evil-snipe
   ;; powerline
   ;; perspective
@@ -11,11 +12,12 @@
   ;; tabbar
   ;; php-auto-yasnippets
   actionscript-mode
+  flymake-jshint
   neotree
   php-mode
   php-refactor-mode
   ac-php
-  golden-ratio
+  ;; golden-ratio
   ace-window
   ag
   anything
