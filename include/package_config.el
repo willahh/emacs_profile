@@ -385,7 +385,7 @@
   ("*shell*"             . (display-buffer-same-window . nil))
   ("*Buffer List*"       . (display-buffer-same-window . nil))
   ("*ag*"                . (display-buffer-same-window . nil))
-  ("*vc-dir*"            . (display-buffer-same-window . nil)) ;; Toujours mettre le buffer vc-dir dans la fenetre actuelle, trop bordelique autrement
+  ;;("*vc-dir*"            . (display-buffer-same-window . nil)) ;; Toujours mettre le buffer vc-dir dans la fenetre actuelle, trop bordelique autrement - Update 2 :  test sans : Tres pratique d avoir une nouvelle window lorsque l on affiche un buffer de type vc-diff
   ;; ("*helm-ag-edit*"      . (display-buffer-same-window . nil)) ;; ko nil = le buffer prend la place de helm (tout petit)
   ;; ("*Backtrace*"         . (display-buffer-same-window . nil)) ;; En commentaire pour voir
   ;; ("*magit-revision*"    . (display-buffer-same-window . nil)) ;; En commentaire pour voir
@@ -437,10 +437,13 @@
               (setup-tide-mode))))
 
 ;; js support
+;; Update : Fichier js ne doivent pas etre en tide-mode
+;; Update 2 : Il faut que ca soit activer pour avoir un support avance
 (add-hook 'js2-mode-hook #'setup-tide-mode)
 
 
 ;; jsx support
+;; Update voir si ca rentre pas en conflit avec les fichiers ".js"
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
 (add-hook 'web-mode-hook
           (lambda ()
@@ -888,8 +891,23 @@
 ;; ---------------- helm-swoop
 (require 'helm-swoop)
 (setq helm-split-window-in-side-p t
-helm-always-two-windows nil)
+      helm-always-two-windows nil)
 
+;; Split the curent window (solve lot of problems (buffer show in wrong place sometimes (inside neotree for example)))
+(setq helm-swoop-split-with-multiple-windows t)
+
+;; Keep buffer colorized, if slow, go back to nil value
+(setq helm-swoop-speed-or-color t)
+
+;; If you prefer fuzzy matching (yes i do)
+(setq helm-swoop-use-fuzzy-match t)
+
+;; Disable pre-input (most of the time annoying) - Update : keep default
+;; (setq helm-swoop-pre-input-function
+;;       (lambda () ""))
+
+(setq helm-swoop-pre-input-function
+      (lambda () (thing-at-point 'symbol)))
 
 
 ;; ---------------- resize-window

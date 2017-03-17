@@ -17,6 +17,9 @@
 - Php completion
   - Create ".ac-php-conf.json" file at project root
   - Create ".projectile" file at project root
+  
+- Javascript complet
+  - Make sure tsconfig.json or jsconfig.json is present in the root folder of the project.
 
 
 
@@ -29,13 +32,14 @@
 
   
 --------- A ranger
-- [-] Neotree margin
+- [x] Neotree margin
+     Semble ok si celui-ci n est pas affiche a l init
 - [x] Emmet mode in html mode please !
 - [x] Le CTRL+G ne ne fonctionne pas à l'identique que celui de Sublime
 - [x] [IMPORTANT] Highlight other words doit être instanté
 - [x] [IMPORTANT] Javascript double click sur mot, ne pas utliser le caractère _ comme séparateur
 
-- [-] Toutes les fonctionsj javascript ne sont pas listées ("mediaListList.js")
+- [x] Toutes les fonctionsj javascript ne sont pas listées ("mediaListList.js")
 - [-] [IMPORTANT] Fonction "Merge lines" (Remove white space and breakline)
 - [-] [IMPORTANT] Fonction get file name to clipboard (très utilisé)
 - [-] [IMPORTANT] [ag search result buffer] Open file -> ne pas créer de nouvelle window n'importe ou c'est super chiant, ---> rester sur la même
@@ -62,7 +66,8 @@
     - [-] M-n depuis Markdown-mode
 
 
-- [-] Faire fonctionner un jump to definition en javascript - Le binder sur M+S+; (default emacs lisp jump)
+- [x] Faire fonctionner un jump to definition en javascript - Le binder sur M+S+; (default emacs lisp jump)
+      - OK avec le support (tide)
 
 - [-] Attention voir si la modif des word separator n agit pas sur evil
 - [-] Neotree auto find when buffer open without focus
