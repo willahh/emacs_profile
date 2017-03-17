@@ -1,3 +1,9 @@
+;; diffstat
+;; Enhanced version of diff
+(require 'diffstat)
+(add-hook 'diff-mode-hook (lambda () (local-set-key "\C-c\C-l" 'diffstat)))
+
+
 ;; all-the-icons
 (require 'all-the-icons)
 
@@ -379,22 +385,22 @@
 
 ;; Note : "*Help*" rentre en conflit avec les buffer helm (buffer helm en full height)
 ;; @todo : les buffers *magit-diff-popup ne devrait pas etre dans la regle *magit-diff*
-(setq display-buffer-alist
-'(
-  ;; ("*vc-dir*"            . (display-buffer-same-window . nil))
-  ("*shell*"             . (display-buffer-same-window . nil))
-  ("*Buffer List*"       . (display-buffer-same-window . nil))
-  ("*ag*"                . (display-buffer-same-window . nil))
-  ;;("*vc-dir*"            . (display-buffer-same-window . nil)) ;; Toujours mettre le buffer vc-dir dans la fenetre actuelle, trop bordelique autrement - Update 2 :  test sans : Tres pratique d avoir une nouvelle window lorsque l on affiche un buffer de type vc-diff
-  ;; ("*helm-ag-edit*"      . (display-buffer-same-window . nil)) ;; ko nil = le buffer prend la place de helm (tout petit)
-  ;; ("*Backtrace*"         . (display-buffer-same-window . nil)) ;; En commentaire pour voir
-  ;; ("*magit-revision*"    . (display-buffer-same-window . nil)) ;; En commentaire pour voir
-  ;; ("*magit-diff*"        . (display-buffer-same-window . nil)) ;; En commentaire, car dans ce buffer ipossible d avoir acces aux racourcis pour switch, du coup bloque ici
-  ;; ("*magit:"             . (display-buffer-same-window . nil))
-  ;; ("*vc-log*"            . (display-buffer-same-window . nil))
-  ;; ("*log-edit-files*"    . (display-buffer-same-window . nil))
-;;  ("*Help*"            . (display-buffer-same-window . nil))
-  ))
+;; (setq display-buffer-alist
+;; '(
+;;   ;; ("*vc-dir*"            . (display-buffer-same-window . nil))
+;;   ("*shell*"             . (display-buffer-same-window . nil))
+;;   ("*Buffer List*"       . (display-buffer-same-window . nil))
+;;   ("*ag*"                . (display-buffer-same-window . nil))
+;;   ;;("*vc-dir*"            . (display-buffer-same-window . nil)) ;; Toujours mettre le buffer vc-dir dans la fenetre actuelle, trop bordelique autrement - Update 2 :  test sans : Tres pratique d avoir une nouvelle window lorsque l on affiche un buffer de type vc-diff
+;;   ;; ("*helm-ag-edit*"      . (display-buffer-same-window . nil)) ;; ko nil = le buffer prend la place de helm (tout petit)
+;;   ;; ("*Backtrace*"         . (display-buffer-same-window . nil)) ;; En commentaire pour voir
+;;   ;; ("*magit-revision*"    . (display-buffer-same-window . nil)) ;; En commentaire pour voir
+;;   ;; ("*magit-diff*"        . (display-buffer-same-window . nil)) ;; En commentaire, car dans ce buffer ipossible d avoir acces aux racourcis pour switch, du coup bloque ici
+;;   ;; ("*magit:"             . (display-buffer-same-window . nil))
+;;   ;; ("*vc-log*"            . (display-buffer-same-window . nil))
+;;   ;; ("*log-edit-files*"    . (display-buffer-same-window . nil))
+;; ;;  ("*Help*"            . (display-buffer-same-window . nil))
+;;   ))
 
 
 
@@ -451,8 +457,8 @@
               (setup-tide-mode))))
 
 
-
-
+;; Disable tide auto formatting before save (override with an empty function)
+(defun tide-format-before-save ())
 
 
 
@@ -649,13 +655,16 @@
 (add-hook 'ediff-after-quit-hook-internal 'winner-undo)
 
 ;; Display ediff vertical by default
-
 (advice-add 'ediff-quit :around #'disable-y-or-n-p)
 
 
 ;; Add vc hooks to enable ediff checking
 (eval-after-load "vc-hooks"
-         '(define-key vc-prefix-map "=" 'vc-ediff))
+  '(define-key vc-prefix-map "=" 'vc-ediff))
+
+
+;; Close neotree before show
+(add-hook 'ediff-before-setup-windows-hook 'neotree-hide)
 
 
 ;; yasnippet

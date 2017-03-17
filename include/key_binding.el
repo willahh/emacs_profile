@@ -1,7 +1,7 @@
 
 ;;;; key_binding: --- some default / package keybindings
 ;; Disable emacs search (c-s / c-r) -> Replaced by evil search
-(dolist (key '("\M-x" "\M-z" "\M-v" "\C-r" "\C-g" "\C-w" "\M-p" "\M-n" "\M-S1" "\M-C-ep" "\M-p" "\C-\M-p"))
+(dolist (key '("\M-x" "\M-z" "\M-v" "\C-r" "\C-g" "\C-w" "\M-p" "\M-S1" "\M-C-ep" "\M-p" "\C-\M-p"))
   (global-unset-key key))
 
 
@@ -143,10 +143,12 @@
 (evil-leader/set-key "G" 'revert-buffer-no-confirm) ;; Meaning [t]oggle [c]omment
 
 ;; avy
-(evil-leader/set-key "c" 'avy-goto-word-1)
+;; (evil-leader/set-key "c" 'avy-goto-word-1)
 
 
-
+;; Code folding
+(evil-leader/set-key "zs" 'hs-show-block)
+(evil-leader/set-key "zh" 'hs-hide-block)
 
 
 ;; -------- key chords binding
@@ -281,7 +283,10 @@
 
 ;; (global-set-key (kbd "M-d")  'mc/mark-next-like-this) ;; Cannot be setted, (emacs backward delete word)
 
-(global-set-key (kbd "M-n")  'evil-buffer-new)
+;; Edit : Desactivation, il m arrive trop souvent de faire des M-n
+;; pour scroller
+;; (global-set-key (kbd "M-n")  'evil-buffer-new)
+
 
 ;; search
 ;; (global-set-key [(meta shift f)]  'helm-ag-project-root)
