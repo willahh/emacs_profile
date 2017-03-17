@@ -8,17 +8,17 @@
 -------- Notes diverses
 - C-x r t (string rectangle) : Voir plus en détail
 
-[M+S+;] ---> xref-find-definitions (natif) ----> A consommer sans moderation
+- [M+S+;] ---> xref-find-definitions (natif) ----> A consommer sans moderation
 
 - Revert hunk (depuis vc-diff) :
   - C-c C-r (diff-reverse-direction)
   - C-C C-a (diff-apply-hunk)
 
-- Php completion
+- Php ide mode
   - Create ".ac-php-conf.json" file at project root
   - Create ".projectile" file at project root
   
-- Javascript complet
+- Javascript ide mode
   - Make sure tsconfig.json or jsconfig.json is present in the root folder of the project.
 
 
@@ -32,27 +32,26 @@
 
   
 --------- A ranger
-- [x] Neotree margin
-     Semble ok si celui-ci n est pas affiche a l init
-- [x] Emmet mode in html mode please !
-- [x] Le CTRL+G ne ne fonctionne pas à l'identique que celui de Sublime
-- [x] [IMPORTANT] Highlight other words doit être instanté
-- [x] [IMPORTANT] Javascript double click sur mot, ne pas utliser le caractère _ comme séparateur
 
-- [x] Toutes les fonctionsj javascript ne sont pas listées ("mediaListList.js")
+
+
+--------- Bloquant
 - [-] [IMPORTANT] Fonction "Merge lines" (Remove white space and breakline)
 - [-] [IMPORTANT] Fonction get file name to clipboard (très utilisé)
 - [-] [IMPORTANT] [ag search result buffer] Open file -> ne pas créer de nouvelle window n'importe ou c'est super chiant, ---> rester sur la même
 - [-] [IMPORTANT] CTRL+ALT+C --> console.log
 - [-] [IMPORTANT] Changer les couleurs moches en javascript (les vert rose et orange sont moches)
-
+- [-] [IMPORTANT] Auto indent slow
+         -> Depuis web mode
+         -> Paste dans un fichier contenant beaucoup de texte (fichier de trad) -> Indenting region --> slooooooooow
+         -> Exemples visibles sur "flatplan/index.php", "lang_fr.php"
+         -> Il faut coller un texte depuis l'exterieur ou mettre en commentaire une ligne.
 
 - [-] svn ignore rules to add :
   - .ac-php-conf.json
   - logs
   - .tern-port
   - .DS_Store
-
 
 - [-] unbind key on some mode :
     Lignes en commentaires dans les fichiers concernes solution temporaire
@@ -64,44 +63,9 @@
     - [-] M-p on "*ag search text:......*" buffer
     - [-] C-M-p dired buffer  (dired-aux.el) (dired-mode-map)
     - [-] M-n depuis Markdown-mode
-
-
-- [x] Faire fonctionner un jump to definition en javascript - Le binder sur M+S+; (default emacs lisp jump)
-      - OK avec le support (tide)
-
-- [-] Attention voir si la modif des word separator n agit pas sur evil
-- [-] Neotree auto find when buffer open without focus
-- [-] Refresh color after yank
-- [-] expand selection : ne pas prendre en compte les "_"
-- [-] Paste dans un fichier contenant beaucoup de texte (fichier de trad) -> Indenting region --> slooooooooow
-
-- [-] Auto indent --> Super slow
-         -> Exemples visibles sur "flatplan/index.php", "lang_fr.php"
-         -> Il faut coller un texte depuis l'exterieur ou mettre en commentaire une ligne.
-
-
-- [-] ag --> ignore hudge file (ST behaviour) (aucun problème dans, à mon avis, 99% des cas)     (il peut être utile de faire des recherches dans des fichieux volumineux, mais pour ca la recherche peut être faite de manière spécifique (paramètres supplémentaire, utilisation directement depuis ligne de commande ...)
-
-
-- [-] helm-swoop --> dont display in the fucking neotree 
-- [-] [vc-dir] Ne pas afficher les lignes dossiers (les lignes qui sont grisées)
-
-- [x] M-alt-o --> Déclenher une fonction qui rammene sur le dired du current project
-- [x] [en cours]  click souris coupe entre les "_" (web mode, javascript mode)
-       c'est majeur parceque toute les méthodes privée en js commencent avec un _
-- [x] Double click word on web mode : prendre le garder le "_" en tant que mot 
-- [x] Faire fonctionner le theme neotree (get all-the-icons ?)
-- [x] Bind shift mouse wheel pour scroller horizontalement
-- [x] Il faut mettre en place le CMD+D à tout prix (dans tous les modes)
-- [x] Highlight les memes instances que le mot selectionne
-- [x] passer sur le multi curseur de base (celui legerement bugge, en attendant)
-- [x] Update M-D ne peut pas overrider la fonction native... trop utile
-      -> Update sur alt+d / alt+shift+d
-- [x] helm --> Augmenter la hauteur (pourcentage ? 75% ?)
-
-
---------- Bloquant
-- [-] [web-mode] indenting region slow when past text
+  
+- [-] ag --> ignore hudge file (ST behaviour) (aucun problème dans, à mon avis, 99% des cas)  (il peut être utile de faire des recherches dans des fichieux volumineux, mais pour ca la recherche peut être faite de manière spécifique (paramètres supplémentaire, utilisation directement depuis ligne de commande ...)
+         
 - [-] lib_override.css non éditable (freeze)
 - [-] (d) --> dont yank beore
 - [-] (M-C-d) (duplicate line or selection) Duplique parfois une portion beaucoup trop importante
@@ -144,6 +108,7 @@
       -> helm-ag-ignore-buffer-patterns (conf ajoutee, non testee, maj : ne fonctionne pas, voir pour mettre la bonne regle)
       -> Impossible de trouver la raison sur cette commande, utiliser helm-ag a la place
 
+- [-] Attention voir si la modif des word separator n agit pas sur evil
 - [-] Faire une fonction copy file from project
 - [-] highlight symbol : Mettre 0 delai d attente pour la surbrillance des autres symboles
 - [-] la selection avec la souris doit aller loin avant de prendre en compte la deuxieme ligne
@@ -157,25 +122,12 @@
 - [-] [theme] Voir pour avoir une font plus lisible (aliasing different --> Se rapprocher du rendu de Sublime (la font est bien la meme))
 - [-] [theme] Voir si il est possible d'avoir une bordure autour de la selection (comme dans Sublime))
 - [-] [Neotree] > after load > Open first file > focus to other window 
-- [x] helm-ag buffer height plus haute
-- [x] M-a regression --> ne selectionne plus l integralite du buffer
-- [x] Mode emacs par default pour les mode majeur suivants 
-    - [x] *log-edit-files*
-    - [x] - COMMIT_EDITMSG
-    - [x] - *Help*
-    - [x] - *vc-diff*
-    - [x] - Neotree
-- [x] vc log dont write summary
-- [x] Dired default mode : emacs
-- [x] Dired > Don't display tabbar
-- [x] M-p doesn't work on all buffer
-- [x] *vc-diff* Lorsque ce buffer apparait, il apparait dans un nouvel emplacement (ok), mais en minuscule (ko)
-      - Fix pour laisser emacs ouvrir une nouvelle window
-- [x] [theme - swoop] Ne pas mettre la premiere ligne sur fond jaune, on ne voit rien
-         Theme > Helm - Changer la couleur de fond de la première ligne de titre de helm
-         -> Update : impossible, la même propriété est utilisée pour gérer cette ligne ainsi que l'indicateur visuel en bas à gauche
 
---------- Mineur 
+
+
+--------- Mineur  
+- [-] [vc-dir] Ne pas afficher les lignes dossiers (les lignes qui sont grisées)
+- [-] Neotree auto find when buffer open without focus
 - [-] Voir pour utiliser une largeur max lors de la saisie de long texte
 - [-] Auto complete > 2eme boite > Afficher instantanement
 - [-] web mode : refresh colors after yank
@@ -220,10 +172,61 @@
 - [-] mysql integration 
 - [-] Markdown in white theme
 - [-] git-svn
-- [x] Selected all same occurrence than current selection 
 
 
 --------- Corrige 
+- [x] Selected all same occurrence than current selection 
+- [x] Neotree margin
+     Semble ok si celui-ci n est pas affiche a l init
+- [x] Emmet mode in html mode please !
+- [x] Le CTRL+G ne ne fonctionne pas à l'identique que celui de Sublime
+- [x] [IMPORTANT] Highlight other words doit être instanté
+- [x] [IMPORTANT] Javascript double click sur mot, ne pas utliser le caractère _ comme séparateur
+
+- [x] Toutes les fonctionsj javascript ne sont pas listées ("mediaListList.js")
+
+- [x] Faire fonctionner un jump to definition en javascript - Le binder sur M+S+; (default emacs lisp jump)
+      - OK avec le support (tide)
+- [x] expand selection : ne pas prendre en compte les "_"
+- [x] Refresh color after yank
+      ---> Seems ok, maybe auto revert buffer conf solve the problem
+
+- [x] helm-swoop --> dont display in the fucking neotree
+- [x] M-alt-o --> Déclenher une fonction qui rammene sur le dired du current project
+- [x] [en cours]  click souris coupe entre les "_" (web mode, javascript mode)
+       c'est majeur parceque toute les méthodes privée en js commencent avec un _
+- [x] Double click word on web mode : prendre le garder le "_" en tant que mot 
+- [x] Faire fonctionner le theme neotree (get all-the-icons ?)
+- [x] Bind shift mouse wheel pour scroller horizontalement
+- [x] Il faut mettre en place le CMD+D à tout prix (dans tous les modes)
+- [x] Highlight les memes instances que le mot selectionne
+- [x] passer sur le multi curseur de base (celui legerement bugge, en attendant)
+- [x] Update M-D ne peut pas overrider la fonction native... trop utile
+      -> Update sur alt+d / alt+shift+d
+- [x] helm --> Augmenter la hauteur (pourcentage ? 75% ?)
+
+
+- [x] helm-ag buffer height plus haute
+- [x] M-a regression --> ne selectionne plus l integralite du buffer
+- [x] Mode emacs par default pour les mode majeur suivants 
+    - [x] *log-edit-files*
+    - [x] - COMMIT_EDITMSG
+    - [x] - *Help*
+    - [x] - *vc-diff*
+    - [x] - Neotree
+- [x] vc log dont write summary
+- [x] Dired default mode : emacs
+- [x] Dired > Don't display tabbar
+- [x] M-p doesn't work on all buffer
+- [x] *vc-diff* Lorsque ce buffer apparait, il apparait dans un nouvel emplacement (ok), mais en minuscule (ko)
+      - Fix pour laisser emacs ouvrir une nouvelle window
+- [x] [theme - swoop] Ne pas mettre la premiere ligne sur fond jaune, on ne voit rien
+         Theme > Helm - Changer la couleur de fond de la première ligne de titre de helm
+         -> Update : impossible, la même propriété est utilisée pour gérer cette ligne ainsi que l'indicateur visuel en bas à gauche
+
+
+
+
 - [x] Emacs-ag very slow compared to ag from command line
       ---> Peut être retirer certains mode pour ag ?
       ----> non, emacs slow with longlines
