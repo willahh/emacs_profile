@@ -59,6 +59,23 @@
 (highlight-symbol-mode 0)
 
 
+
+
+;; (defface highlight-symbol-face
+;;   '((((class color) (background red))
+;;      (:background "red"))
+;;     (((class color) (background light))
+;;      (:background "gray90")))
+;;   :group 'highlight-symbol)
+
+
+
+
+;; (defcustom highlight-symbol-idle-delay 0)
+(setq highlight-symbol-idle-delay 0)
+
+
+
 ;; wra custom hook
 ;; Activation du mode highlight all same occurence uniquement
 ;; apres une selection (ST behaviour)
@@ -93,7 +110,30 @@
 (require 'emmet-mode)
 (add-hook 'sgml-mode-hook 'emmet-mode)
 (add-hook 'css-mode-hook  'emmet-mode)
+(add-hook 'web-mode-hook 'emmet-mode)
 ;; (add-hook 'php-mode-hook  'emmet-mode) ;; Edit : peut poser des problemes, a voir
+
+
+
+
+
+;; Tab to trigget emmet
+;; Source : http://emacs.stackexchange.com/questions/10521/rebind-emmet-mode-to-smart-tab
+;; Doesn't work
+;; (defun add-emmet-expand-to-smart-tab-completions ()
+;;   ;; Add an entry for current major mode in
+;;   ;; `smart-tab-completion-functions-alist' to use
+;;   ;; `emmet-expand-line'.
+;;   (add-to-list 'smart-tab-completion-functions-alist
+;;                (cons major-mode #'emmet-expand-line))) 
+
+;; (require 'emmet-mode)
+;; ;; (add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
+;; ;; (add-hook 'sgml-mode-hook 'add-emmet-expand-to-smart-tab-completions)
+;; (add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
+;; (add-hook 'css-mode-hook 'add-emmet-expand-to-smart-tab-completions)
+
+
 
 
 
@@ -269,21 +309,6 @@
 (require 'smart-tab)
 (global-smart-tab-mode 1)
 
-;; Tab to trigget emmet
-;; Source : http://emacs.stackexchange.com/questions/10521/rebind-emmet-mode-to-smart-tab
-;; Doesn't work
-;; (defun add-emmet-expand-to-smart-tab-completions ()
-;;   ;; Add an entry for current major mode in
-;;   ;; `smart-tab-completion-functions-alist' to use
-;;   ;; `emmet-expand-line'.
-;;   (add-to-list 'smart-tab-completion-functions-alist
-;;                (cons major-mode #'emmet-expand-line))) 
-
-;; (require 'emmet-mode)
-;; ;; (add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
-;; ;; (add-hook 'sgml-mode-hook 'add-emmet-expand-to-smart-tab-completions)
-;; (add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
-;; (add-hook 'css-mode-hook 'add-emmet-expand-to-smart-tab-completions)
 
 ;; flymake-mode
 ;; Let's run 8 checks at once instead.
@@ -375,6 +400,54 @@
 
 
 
+;; --------------- Type scrip support
+;; typescript
+(require 'typescript-mode)
+
+;; tide
+;; (require 'tide-mode)
+
+
+(defun setup-tide-mode ()
+  (interactive)
+  (tide-setup)
+  (flycheck-mode +1)
+  (setq flycheck-check-syntax-automatically '(save mode-enabled))
+  (eldoc-mode +1)
+  (tide-hl-identifier-mode +1)
+  ;; company is an optional dependency. You have to
+  ;; install it separately via package-install
+  ;; `M-x package-install [ret] company`
+  (company-mode +1))
+
+;; aligns annotation to the right hand side
+(setq company-tooltip-align-annotations t)
+
+;; formats the buffer before saving
+(add-hook 'before-save-hook 'tide-format-before-save)
+
+(add-hook 'typescript-mode-hook #'setup-tide-mode)
+
+
+;; tsx support
+(add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
+(add-hook 'web-mode-hook
+          (lambda ()
+            (when (string-equal "tsx" (file-name-extension buffer-file-name))
+              (setup-tide-mode))))
+
+;; js support
+(add-hook 'js2-mode-hook #'setup-tide-mode)
+
+
+;; jsx support
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
+(add-hook 'web-mode-hook
+          (lambda ()
+            (when (string-equal "jsx" (file-name-extension buffer-file-name))
+              (setup-tide-mode))))
+
+
 
 
 
@@ -382,16 +455,89 @@
 
 ;; ;; Web mode
 (require 'web-mode)
+;; Remarques
+;; Update : .php sur php pour avoir une vrai navigation et de vrai definitions
+;; Update 2 : webmode sur php, car plus rapide d une maniere generale (sauf pour l insertion d une nouvelle ligne)
+;; - .php contenant beaucoup de html et beaucoup de chaine de caractere :
+;;   [speed]
+;;       php-mode : ko - web-mode : ok - html-mode : ok
+;;   [indentation (dans un bloc de javascript)]
+;;       php-mode : ok - web-mode : ok - html-mode : ko
+;;   [insert new line speed]
+;;       php-mode : ok - web-mode : ko - html-mode : ok
+;;   [Support php go to etc]
+;;       php-mode : ok - web-mode : ?  - html-mode : ko
+;;   [Definitions (methods, private, public, properties, etc)]
+;;       php-mode : ok - web-mode : ko - html-mode : ko
 
+
+;; 
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.css\\'" . css-mode)) ;; .css file should be assigned to css-mode for nice emmet support
-(add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode)) ;; Update : .php sur php pour avoir une vrai navigation et de vrai definitions
+(add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-mode))
+;; (add-to-list 'auto-mode-alist '(".ts" . typescript-mode))
 ;; (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
 
 (setq web-mode-enable-css-colorization t)
 (setq web-mode-enable-current-element-highlight t)    
 (setq web-mode-enable-current-column-highlight t)
+
+
+;; Creation d une fonction toggle pour switcher entre web-mode et php-mode
+;; @todo a finaliser
+(defvar togl-current-mode "web-mode"
+  "The current mode used to handle .php files")
+
+(defun toggle-php-mode-web-mode
+      '(lambda ()
+         (if (togl-current-mode "web-mode")
+             (setq togl-current-mode "php-mode")
+           (setq togl-current-mode "web-mode")
+         )
+         )
+)
+
+;; (defun togle-curr-mode ()
+;;   (interactive)
+;;   ;; use a property “state”. Value is t or nil
+;;   (if (get 'togl-current-mode 'web-mode)
+;;       (progn
+;;         (put 'togl-current-mode 'php-mode))
+;;     (progn
+;;       (put 'togl-current-mode 'web-mode))))
+
+;; (setq web-mode-ac-sources-alist
+;;       '(("css" . (ac-source-words-in-buffer ac-source-css-property))
+;;         ("html" . (ac-source-words-in-buffer ac-source-abbrev))
+;;         ("php" . (ac-source-words-in-buffer
+;;                   ac-source-words-in-same-mode-buffers
+;;                   ac-source-dictionary))))
+
+
+(setq web-mode-ac-sources-alist
+  '(("php" . (ac-source-yasnippet ac-source-php-auto-yasnippets))
+    ("html" . (ac-source-emmet-html-aliases ac-source-emmet-html-snippets))
+    ("css" . (ac-source-css-property ac-source-emmet-css-snippets))))
+
+(add-hook 'web-mode-before-auto-complete-hooks
+          '(lambda ()
+             (let ((web-mode-cur-language
+                    (web-mode-language-at-pos)))
+               (if (string= web-mode-cur-language "php")
+                   (yas-activate-extra-mode 'php-mode)
+                 (yas-deactivate-extra-mode 'php-mode))
+               (if (string= web-mode-cur-language "css")
+                   (setq emmet-use-css-transform t)
+                 (setq emmet-use-css-transform nil)))))
+
+
+
+
+
+
+
 
 
 ;; ;; mmm-mode
@@ -403,6 +549,11 @@
 ;; javascript mode
 (require 'js2-mode)
 (js2-imenu-extras-mode)
+
+
+;; js2-refactor
+(require 'js2-refactor)
+(add-hook 'js2-mode-hook #'js2-refactor-mode)
 
 
 ;;  flymake-jshint
@@ -774,20 +925,20 @@ helm-always-two-windows nil)
 ;; ---------------- neotree
 (require 'neotree)
 (setq neo-theme 'icons) ;; Set the neotree theme before show
-(neotree-show)
+;; (neotreezshow)
 
 
 
 ;; Every time when the neotree window is opened, let it find current file and jump to node.
-(setq neo-smart-open t)
-(setq neo-show-auto-change-root t)
+;; (setq neo-smart-open t)
+;; (setq neo-show-auto-change-root t)
 
 ;; When running ‘projectile-switch-project’ (C-c p p), ‘neotree’ will change root automatically.
-(setq projectile-switch-project-action 'neotree-projectile-action)
+;; (setq projectile-switch-project-action 'neotree-projectile-action)
 
 ;; Lock auto resize
 ;; Seems broken ? (Donne une largeur debile a neotree)
-(setq neo-window-fixed-size nil)
+;; (setq neo-window-fixed-size nil)
 
 
 ;; Evil key binding for neotree

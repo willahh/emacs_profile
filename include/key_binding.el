@@ -1,7 +1,7 @@
 
 ;;;; key_binding: --- some default / package keybindings
 ;; Disable emacs search (c-s / c-r) -> Replaced by evil search
-(dolist (key '("\M-x" "\M-z" "\M-v" "\C-r" "\C-g" "\C-w" "\C-v" "\M-p" "\M-n" "\M-S1" "\M-C-ep" "\M-p" "\C-\M-p"))
+(dolist (key '("\M-x" "\M-z" "\M-v" "\C-r" "\C-g" "\C-w" "\M-p" "\M-n" "\M-S1" "\M-C-ep" "\M-p" "\C-\M-p"))
   (global-unset-key key))
 
 
@@ -84,6 +84,7 @@
 (evil-leader/set-key "e" 'imenu-anywhere)
 (evil-leader/set-key "ff" 'helm-find-files)
 (evil-leader/set-key "fa" 'helm-ag)
+
 (evil-leader/set-key "fq" 'ag-files)
 
 ;; -- window [w]
@@ -167,6 +168,7 @@
 
 
 
+
 ;; ---------------- Key binding evil normal mode
 (with-eval-after-load 'evil-maps
   (define-key evil-normal-state-map (kbd "M-a") 'mark-whole-buffer))
@@ -221,7 +223,7 @@
 
 (global-set-key (kbd "∂") 'mc/mark-next-like-this-symbol) ;; ALT+d
 (global-set-key (kbd "∆") 'mc/mark-previous-like-this-symbol) ;; ALT+SHIFT+d
-(global-set-key [(meta control g)] 'mc/mark-all-symbols-like-this) ;; CTRL+META+G
+(global-set-key [(meta control g)] 'mc/mark-all-words-like-this) ;; CTRL+META+G
 
 
 ;; window
@@ -264,9 +266,9 @@
 (global-set-key (kbd "M-w")  'kill-this-buffer)
 
 ;; Filter buffer / Get buffer definitions
-(global-set-key [(meta r)]  'helm-semantic-or-imenu)
-
-(global-set-key [(meta shift r)] 'helm-swoop)
+(global-set-key [(meta r)]  'helm-semantic-or-imenu) ;; command + r
+(global-set-key [(meta shift r)] 'helm-swoop) ;; command + shift + r
+(global-set-key (kbd "®") 'helm-imenu-anywhere) ;; alt + r
 
 ;; Files / Browse files / Browse buffer 
 (global-set-key (kbd "M-o")  'helm-find-files)

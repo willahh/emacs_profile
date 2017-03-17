@@ -7,3 +7,6 @@
 [submodule "web-mode"]
 	path = plugins/web-mode
 	url = https://github.com/fxbois/web-mode.git
+[submodule "js2-refactor"]
+	path = plugins/js2-refactor
+	url = https://github.com/magnars/js2-refactor.el.git

@@ -1,6 +1,12 @@
 
 
 ;; ------------------------- Defun
+;; yank-pop-forwards
+(defun yank-pop-forwards (arg)
+      (interactive "p")
+      (yank-pop (- arg)))
+
+
 ;; Revert without confirm
 (defun revert-buffer-no-confirm ()
   "Revert buffer without confirmation."

@@ -6,7 +6,6 @@
 
 
 -------- Notes diverses
-- ALT+D déclenche bien la sélection auto du mot sur lequel le curseur est positionne
 - C-x r t (string rectangle) : Voir plus en détail
 
 [M+S+;] ---> xref-find-definitions (natif) ----> A consommer sans moderation
@@ -21,36 +20,27 @@
 
 
 
---------- Notes ralentissements sur gros fichiers :
-  - global fly check mode
-  - web-mode : new line
+--------- Notes ralentissements :
+  - web-mode : new line après une grosse quantitee de lignes
+  - Comportement native lorsuqe de longues lignes de textes sont presentes sans retour a la ligne
+    https://www.emacswiki.org/emacs/FindLongLines
+  - global fly check mode (semble plus que honnête)
   
 
   
 --------- A ranger
-- [-] Emmet mode in html mode please !
-- [-] Voir si il est possible de faire un (CMD+P + touche @) pour avoir une complétion des méthodes direct sans entrer dans le fichier
+- [-] Neotree margin
+- [x] Emmet mode in html mode please !
+- [x] Le CTRL+G ne ne fonctionne pas à l'identique que celui de Sublime
+- [x] [IMPORTANT] Highlight other words doit être instanté
+- [x] [IMPORTANT] Javascript double click sur mot, ne pas utliser le caractère _ comme séparateur
+
 - [-] Toutes les fonctionsj javascript ne sont pas listées ("mediaListList.js")
-- [-] Le CTRL+G ne ne fonctionne pas à l'identique que celui de Sublime
-   Exemple avec le mot background :
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    background-size: contain;
-
-    background: red;
-    
-    
-    
-
-
-- [-] [IMPORTANT] Highlight other words doit être instanté
-- [-] [IMPORTANT] [ag search result buffer] Open file -> ne pas créer de nouvelle window n'importe ou c'est super chiant, ---> rester sur la même
-- [-] File slow keywords
+- [-] [IMPORTANT] Fonction "Merge lines" (Remove white space and breakline)
 - [-] [IMPORTANT] Fonction get file name to clipboard (très utilisé)
-- [-] [IMPORTANT] Javascript double click sur mot, ne pas utliser le caractère _ comme séparateur
+- [-] [IMPORTANT] [ag search result buffer] Open file -> ne pas créer de nouvelle window n'importe ou c'est super chiant, ---> rester sur la même
 - [-] [IMPORTANT] CTRL+ALT+C --> console.log
 - [-] [IMPORTANT] Changer les couleurs moches en javascript (les vert rose et orange sont moches)
-- [-] [IMPORTANT] Faire la fonctioner "Merge lines" (Remove white space and breakline)
 
 
 - [-] svn ignore rules to add :
@@ -60,8 +50,19 @@
   - .DS_Store
 
 
+- [-] unbind key on some mode :
+    Lignes en commentaires dans les fichiers concernes solution temporaire
+    Il faut passer par le package special pour surcharger, pas encore trouve parfaitement comment faire
+    - [-] M-w magit
+    - [-] M-p (markdown mode, others ?, yes : evil-c too)
+    - [-] M-d (should be delete backward)
+    - [-] M-S-p diff-mode
+    - [-] M-p on "*ag search text:......*" buffer
+    - [-] C-M-p dired buffer  (dired-aux.el) (dired-mode-map)
+    - [-] M-n depuis Markdown-mode
+
+
 - [-] Faire fonctionner un jump to definition en javascript - Le binder sur M+S+; (default emacs lisp jump)
-- [-] Neotree margin
 
 - [-] Attention voir si la modif des word separator n agit pas sur evil
 - [-] Neotree auto find when buffer open without focus
@@ -104,18 +105,11 @@
 - [-] vc-dir n'affiche pas les fichiers supprimés localement, mais non envoyé à svn (svn remove)
 - [-] Installer / configurer php mode | ac-php (auto completion php)
 - [-] Creer les fichier .tern-port autre part !!!!!!!
-- [-] unbind key on some mode :
-    Lignes en commentaires dans les fichiers concernes solution temporaire
-    Il faut passer par le package special pour surcharger, pas encore trouve parfaitement comment faire
-    - [-] M-w magit
-    - [-] M-p (markdown mode, others ?, yes : evil-c too)
-    - [-] M-d (should be delete backward)
-    - [-] M-S-p diff-mode
-    - [-] M-p on "*ag search text:......*" buffer
-    - [-] C-M-p dired buffer  (dired-aux.el) (dired-mode-map)
 
 
 --------- Majeur
+- [-] Voir si il est possible de faire un (CMD+P + touche @) (file.php@methode_name)
+      pour avoir une complétion des méthodes direct sans entrer dans le fichier
 - [-] Faire une fonction "Merge lines" pour supprimer les linebreak/whitespace
 - [-] Snippet
       - Ajouter le snippet CTRL+ALT+C console.log
