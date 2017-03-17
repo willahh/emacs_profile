@@ -32,10 +32,16 @@
 
   
 --------- A ranger
-
+- [-] [IMPORTANT] tide mode --> le highlight en bleu est super bien mais trop intrusif.
+- [-] [IMPORTANT] Implementer une navigation next/prev depuis la selection courante (comme dans sublime, CMD+D scroll focus)
+- [-] [IMPORTANTA] Le scroll vertical doit être plus rapide 
+- [-] [IMPORTANT] Changer la couleur de auto highlight pour avoir qqchoze de très visible tout de suite (c'est important)
+- [-] (kill + coller) (très chiant)  Action 1 : "DIS(" - Action 2 : "M-v" --> La première action fait un kill, la partie dans le presse papier n'est plus bonne 
+- [-] Refresh semantic apres modification source (rien d'urgent)
 
 
 --------- Bloquant
+- [-] (kill + coller) (très chiant)  Action 1 : "DIS(" - Action 2 : "M-v" --> La première action fait un kill, la partie dans le presse papier n'est plus bonne 
 - [-] [IMPORTANT] Fonction "Merge lines" (Remove white space and breakline)
 - [-] [IMPORTANT] Fonction get file name to clipboard (très utilisé)
 - [-] [IMPORTANT] [ag search result buffer] Open file -> ne pas créer de nouvelle window n'importe ou c'est super chiant, ---> rester sur la même

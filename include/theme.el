@@ -42,7 +42,8 @@
 
 ;; ------- Custom theme
 ;; (set-face-attribute 'default nil :family "Inconsolata" :height 140 :weight 'normal)
-(set-face-attribute 'default nil :family "Fira mono" :height 120 :weight 'normal)
+;; (set-face-attribute 'default nil :family "Fira mono" :height 120 :weight 'normal)
+(set-face-attribute 'default nil :family "Meslo LG M" :height 120 :weight 'normal)
 (set-frame-font "Fira mono:antialias=1") ;; Don't work ?
 
 ;; (set-face-bold-p 'bold nil)

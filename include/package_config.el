@@ -707,7 +707,8 @@
 
 ;; Default mode to emacs (Avant d etre vraiment habitue ;))
 ;; Update : lets stay on vim like by default
-;; (setq evil-default-state 'emacs)
+;; Update 2 : Retour sur emacs state par default (par rapport a mon utilisation)
+(setq evil-default-state 'emacs)
 
 
 ;; Define some mode that should be initialized on emacs mode
@@ -899,8 +900,8 @@
 ;; Keep buffer colorized, if slow, go back to nil value
 (setq helm-swoop-speed-or-color t)
 
-;; If you prefer fuzzy matching (yes i do)
-(setq helm-swoop-use-fuzzy-match t)
+;; If you prefer fuzzy matching (yes i do) - update : (no i don't want tro peut precis)
+(setq helm-swoop-use-fuzzy-match nil)
 
 ;; Disable pre-input (most of the time annoying) - Update : keep default
 ;; (setq helm-swoop-pre-input-function
