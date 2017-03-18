@@ -43,7 +43,6 @@
 - [-] helm imenu autofocus !!!!!!!
 - [-] CMD+SHIFT+D ne fonctionne plus lorsqu'il n'y a rien de sélectionné
 - [-] helm directory first
-- [-] helm 
 - [-] Ne pas fermer automatiquement les quotes lors d'un tank (coller)
 
 
@@ -59,8 +58,8 @@
 - [-] [IMPORTANT] Fonction get file name to clipboard (très utilisé)
 - [-] [IMPORTANT] [ag search result buffer] Open file -> ne pas créer de nouvelle window n'importe ou c'est super chiant, ---> rester sur la même
 - [-] [IMPORTANT] CTRL+ALT+C --> console.log
-- [-] [IMPORTANT] Changer les couleurs moches en javascript (les vert rose et orange sont moches)
-- [-] [IMPORTANT] Auto indent slow
+- [x] [IMPORTANT] Changer les couleurs moches en javascript (les vert rose et orange sont moches)
+- [x] [IMPORTANT] Auto indent slow
          -> Depuis web mode
          -> Paste dans un fichier contenant beaucoup de texte (fichier de trad) -> Indenting region --> slooooooooow
          -> Exemples visibles sur "flatplan/index.php", "lang_fr.php"
@@ -77,7 +76,7 @@
     Il faut passer par le package special pour surcharger, pas encore trouve parfaitement comment faire
     - [-] M-w magit
     - [-] M-p (markdown mode, others ?, yes : evil-c too)
-    - [-] M-d (should be delete backward)
+    - [-] m-d (should be delete backward)
     - [-] M-S-p diff-mode
     - [-] M-p on "*ag search text:......*" buffer
     - [-] C-M-p dired buffer  (dired-aux.el) (dired-mode-map)

@@ -228,7 +228,7 @@
 
 (global-set-key (kbd "∂") 'mc/mark-next-like-this-word) ;; ALT+d
 (global-set-key (kbd "∆") 'mc/mark-previous-like-this-word) ;; ALT+SHIFT+d
-(global-set-key [(meta control g)] 'mc/mark-all-words-like-this) ;; CTRL+META+G
+;; (global-set-key [(meta control g)] 'mc/mark-all-words-like-this) ;; CTRL+META+G - Update c-m-g est utilise pour activer desactiver le highlight auto
 (global-set-key (kbd "ı") 'mc/mark-next-lines) ;; ALT+SHIFT+n 
 
 
@@ -259,7 +259,8 @@
 (global-set-key [(meta shift 1)] 'delete-other-windows)
 
 (global-set-key [(meta shift p)] 'helm-M-x)
-(global-set-key (kbd "M-p") 'helm-projectile-find-file)
+;; (global-set-key (kbd "M-p") 'helm-projectile-find-file)
+(global-set-key (kbd "π") 'helm-projectile-find-file) ;; ALT+P
 (global-set-key (kbd "C-M-p") 'helm-projectile-switch-project)
 
 (global-set-key (kbd "M-q") 'ask-before-closing)
@@ -349,5 +350,5 @@
 (define-key web-mode-map [(meta shift k)] 'web-mode-tag-previous)
 
 
+(global-set-key [(meta control g)] 'highlight-symbol-mode) ;; CTRL+META+G - Update c-m-g est utilise pour activer desactiver le highlight auto
 
-;; 

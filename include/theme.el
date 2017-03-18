@@ -33,6 +33,7 @@
 ;; ------ Font
 (set-face-attribute 'font-lock-string-face nil :foreground "#c3e88d")
 (set-face-attribute 'highlight-symbol-face nil :foreground "#fff" :background "#4b65a0")
+;; (set-face-attribute 'highlight-symbol-face nil :foreground "#000" :background "#4b65a0")
 (set-face-attribute 'evil-ex-lazy-highlight nil :foreground "#fff" :background "#9e4c93")
 ;; (set-face-attribute 'highlight-symbol-face nil :foreground "#000" :background "#84acfc")
 

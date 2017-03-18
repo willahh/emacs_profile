@@ -1,3 +1,13 @@
+
+;; (defun my-find-file-check-make-large-file-read-only-hook ()
+;;   "If a file is over a given size, make the buffer read only."
+;;   (when (> (buffer-size) (* 1024 1024))
+;;     (setq buffer-read-only t)
+;;     (buffer-disable-undo)
+;;     (fundamental-mode)))
+
+;; (add-hook 'find-file-hook 'my-find-file-check-make-large-file-read-only-hook)
+
 ;;; use-package
 (require 'use-package)
 
@@ -73,17 +83,14 @@
 ;; (setq powerline-arrow-shape 'curve)
 
 ;; highlight-symbol
+;; Update : L activation automatique en temps reel n est pas possible
+;; car consomme trop de resources (gros ralentissements sur des gros fichiers)
 (require 'highlight-symbol)
-;; (highlight-symbol-mode 0)
+(highlight-symbol-mode 0)
 (setq highlight-symbol-idle-delay 0)
-;; (highlight-symbol-mode 1)
-
-(add-hook 'prog-mode-hook 'highlight-symbol-mode)
-(add-hook 'web-mode-hook 'highlight-symbol-mode)
-(add-hook 'css-mode-hook 'highlight-symbol-mode)
-(add-hook 'html-mode-hook 'highlight-symbol-mode)
-(add-hook 'php-mode-hook 'highlight-symbol-mode)
-(add-hook 'emacs-lisp-mode 'highlight-symbol-mode)
+(add-hook 'highlight-symbol-mode-hook
+          (setq highlight-symbol-idle-delay 0)
+          )
 
 
 
@@ -92,17 +99,33 @@
 ;; ;; apres une selection (ST behaviour)
 ;; ;; Update 2 : Keep auto
 
-;;  (add-hook 'activate-mark-hook
-;;        (lambda ()
-;;          (highlight-symbol-mode 1)))
+ ;;  (add-hook 'activate-mark-hook
+ ;;        (lambda ()
+ ;;          (highlight-symbol-mode 1)))
 
-;;  (add-hook 'deactivate-mark-hook
-;;        (lambda ()
-;;          (highlight-symbol-mode 0)))
+ ;; (add-hook 'deactivate-mark-hook
+ ;;        (lambda ()
+ ;;          (highlight-symbol-mode 0)))
  
 
+;; Hook to enable highlight-symbol-nav-mode
+(add-hook 'prog-mode-hook 'highlight-symbol-mode)
+(add-hook 'prog-mode-hook 'highlight-symbol-nav-mode)
 
+(add-hook 'web-mode-hook 'highlight-symbol-mode)
+(add-hook 'web-mode-hook 'highlight-symbol-nav-mode)
 
+(add-hook 'css-mode-hook 'highlight-symbol-mode)
+(add-hook 'css-mode-hook 'highlight-symbol-nav-mode)
+
+(add-hook 'html-mode-hook 'highlight-symbol-mode)
+(add-hook 'html-mode-hook 'highlight-symbol-nav-mode)
+
+(add-hook 'php-mode-hook 'highlight-symbol-mode)
+(add-hook 'php-mode-hook 'highlight-symbol-nav-mode)
+
+(add-hook 'emacs-lisp-mode 'highlight-symbol-mode)
+(add-hook 'emacs-lisp-mode 'highlight-symbol-nav-mode)
 
 
 
@@ -520,6 +543,9 @@
          )
          )
 )
+
+
+
 
 ;; (defun togle-curr-mode ()
 ;;   (interactive)
@@ -1034,4 +1060,23 @@
 ;; (add-hook 'text-mode-hook (lambda () (set-fill-column 72)))
 ;; (add-hook 'markdown-mode-hook (lambda () (load-theme-buffer-local 'leuven))
 ;; (add-hook 'markdown-mode-hook (lambda () (load-theme-buffer-local 'whiteboard))
+
+
+
+;; Custom new line function
+;; EN mode web sur des fichiers très gros problemes suivants :
+;; - Default emacs default-indent-new-line : Tres lent
+;; - Autopair mode active : autopairmode new line : Tres lent
+;; - js2 indent line fonctionne tres bien et sur portions de php/html/css
+;; -> Utilisation d une indentation type "js" en mode web
+;; OOOOOOOh Yeahhhhhhhhhhhhhhhhhh
+(defun custom-newline ()
+   (interactive)
+    (newline)
+    (js2-indent-line)
+    )
+
+(add-hook 'web-mode-hook
+          (global-set-key (kbd "RET") 'custom-newline)
+)
 
