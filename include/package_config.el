@@ -1069,14 +1069,18 @@
 ;; - Autopair mode active : autopairmode new line : Tres lent
 ;; - js2 indent line fonctionne tres bien et sur portions de php/html/css
 ;; -> Utilisation d une indentation type "js" en mode web
-;; OOOOOOOh Yeahhhhhhhhhhhhhhhhhh
+;; -> Update : Indentation pas clean dans bcp de cacs
+;;    -> Trouver/faire une fonction indent en se basant uniquement sur les info de la ligne courante (pas de parcours de toute la page)
+;; -> Update 2 : OK, utilisation de indent-relative ---> Une indentation simple qui fonctionne (pas aussi avancee que les autres, mais couvre 75, 80% de mon utilisation)      
+;; @todo
 (defun custom-newline ()
    (interactive)
-    (newline)
-    (js2-indent-line)
+   (newline)
+   (indent-relative)
     )
 
 (add-hook 'web-mode-hook
           (global-set-key (kbd "RET") 'custom-newline)
 )
+
 

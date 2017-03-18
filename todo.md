@@ -32,6 +32,7 @@
 
   
 --------- A ranger
+- [-] emmet mode sur web mode
 - [-] Custom theme, se baser sur les couleurs suivantes "images/theme.png"
          http://blog.pabuisson.com/2014/07/vim-vundle-gestion-plugins/
 - [x] [IMPORTANT] tide mode --> le highlight en bleu est super bien mais trop intrusif.
