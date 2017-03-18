@@ -214,18 +214,19 @@
 ;; ;; (global-set-key (kbd "C-M-d") 'mc/mark-next-like-this)
 ;; (global-set-key [(meta control d)] 'mc/mark-next-like-this)
 
-(global-set-key (kbd "C-<") 'mc/mark-next-like-this-symbol)
-(global-set-key (kbd "C-@") 'mc/mark-next-like-this-symbol)
+;; (global-set-key (kbd "C-<") 'mc/mark-next-like-this-symbol)
+;; (global-set-key (kbd "C-@") 'mc/mark-next-like-this-symbol)
 
-(global-set-key (kbd "<C-268632068>") 'mc/mark-next-like-this-symbol) ;; CONTROL+ALT+d
-(global-set-key (kbd "<C-S-268632068>") 'mc/mark-previous-like-this-symbol) ;; CONTROL+ALT+SHIFT+d
+;; (global-set-key (kbd "<C-268632068>") 'mc/mark-next-like-this-symbol) ;; CONTROL+ALT+d
+;; (global-set-key (kbd "<C-S-268632068>") 'mc/mark-previous-like-this-symbol) ;; CONTROL+ALT+SHIFT+d
 
 ;; (global-set-key (kbd "M-d") 'mc/mark-next-like-this-symbol) ;; META+d
 ;; (global-set-key (kbd "M-S-d") 'mc/mark-previous-like-this-symbol) ;; META+shift+d
 
-(global-set-key (kbd "∂") 'mc/mark-next-like-this-symbol) ;; ALT+d
-(global-set-key (kbd "∆") 'mc/mark-previous-like-this-symbol) ;; ALT+SHIFT+d
+(global-set-key (kbd "∂") 'mc/mark-next-like-this-word) ;; ALT+d
+(global-set-key (kbd "∆") 'mc/mark-previous-like-this-word) ;; ALT+SHIFT+d
 (global-set-key [(meta control g)] 'mc/mark-all-words-like-this) ;; CTRL+META+G
+(global-set-key (kbd "ı") 'mc/mark-next-lines) ;; ALT+SHIFT+n 
 
 
 ;; window
@@ -285,7 +286,8 @@
 
 ;; Edit : Desactivation, il m arrive trop souvent de faire des M-n
 ;; pour scroller
-;; (global-set-key (kbd "M-n")  'evil-buffer-new)
+;; Edit 2 : Tant pis, vraiment pratique
+(global-set-key (kbd "M-n")  'evil-buffer-new)
 
 
 ;; search

@@ -432,9 +432,8 @@
 (setq company-tooltip-align-annotations t)
 
 ;; formats the buffer before saving
-(add-hook 'before-save-hook 'tide-format-before-save)
-
-(add-hook 'typescript-mode-hook #'setup-tide-mode)
+;; (add-hook 'before-save-hook 'tide-format-before-save)
+;; (add-hook 'typescript-mode-hook #'setup-tide-mode)
 
 
 ;; tsx support
@@ -722,7 +721,11 @@
 ;; Default mode to emacs (Avant d etre vraiment habitue ;))
 ;; Update : lets stay on vim like by default
 ;; Update 2 : Retour sur emacs state par default (par rapport a mon utilisation)
-(setq evil-default-state 'emacs)
+;; Update 3 : Retour sur normal state : Il m arrive encore d ecrire des actions dans les buffers au lieu de faire des raccourcis
+
+
+;; (setq evil-default-state 'emacs)
+(setq evil-default-state 'normal)
 
 
 ;; Define some mode that should be initialized on emacs mode
@@ -846,10 +849,10 @@
 ;; evil-easymotion
 (require 'evil-easymotion)
 
-;; Cursor state
+;; Cursor / caret state color
 (setq evil-emacs-state-cursor '("#9ecf00" bar))
-(setq evil-normal-state-cursor '("#ffba00" box))
-(setq evil-visual-state-cursor '("#fffc00" box))
+(setq evil-normal-state-cursor '("#56b0ec" box))
+(setq evil-visual-state-cursor '("#ffba00" box))
 (setq evil-insert-state-cursor '("red" bar))
 (setq evil-replace-state-cursor '("red" bar))
 (setq evil-operator-state-cursor '("red" hollow))

@@ -19,6 +19,28 @@
 
 
 
+;; ------ Override theme code color
+;; ------ Font
+(set-face-attribute 'font-lock-string-face nil :foreground "#c3e88d")
+
+;; ------ Flycheck
+(set-face-attribute 'flycheck-warning nil :foreground "#fff" :background: nil)
+
+;; ------ js2-mode
+(set-face-attribute 'js2-function-call nil :foreground "#82aaff")
+(set-face-attribute 'js2-external-variable nil :foreground "#82aaff")
+" :background nil)
+
+
+
+
+
+
+
+
+
+
+
 ;; powerline
 (setq powerline-color1 "#21242b")
 (setq powerline-color2 "#21242b")
@@ -233,13 +255,6 @@
 (defun powerline-theme-visual()
   (set-face-attribute 'mode-line nil
                       :foreground "#000"
-                      :background "#000c00"
-                      :box nil)
-)
-
-(defun powerline-theme-normal()
-  (set-face-attribute 'mode-line nil
-                      :foreground "#000"
                       :background "#ffba00"
                       :box nil)
 )
@@ -251,10 +266,38 @@
                       :box nil)
 )
 
+(defun powerline-theme-normal()
+  (set-face-attribute 'mode-line nil
+                      :foreground "#000"
+                      :background "#56b0ec"
+                      :box nil)
+)
+
 (add-hook 'evil-normal-state-entry-hook 'powerline-theme-normal)
 (add-hook 'evil-visual-state-entry-hook 'powerline-theme-visual)
 (add-hook 'evil-insert-state-entry-hook 'powerline-theme-insert)
 (add-hook 'evil-emacs-state-entry-hook 'powerline-theme-emacs)
 
 (powerline-theme-normal)
+
+
+
+
+
+
+
+;; yascroll color
+(defface yascroll:thumb-fringe
+  '((t (:background "#56b0ec" :foreground "#000")))
+  "Face for fringe scroll bar thumb."
+  :group 'yascroll)
+
+
+
+
+
+
+
+
+
 
