@@ -1,7 +1,10 @@
-;; diffstat
+;;; use-package
+(require 'use-package)
+
+; diffstat
 ;; Enhanced version of diff
-(require 'diffstat)
-(add-hook 'diff-mode-hook (lambda () (local-set-key "\C-c\C-l" 'diffstat)))
+;; (require 'diffstat)
+;; (add-hook 'diff-mode-hook (lambda () (local-set-key "\C-c\C-l" 'diffstat)))
 
 
 ;; all-the-icons
@@ -268,13 +271,12 @@
 
 (autoload 'tern-mode "tern.el" nil t)
 (add-hook 'js-mode-hook (lambda () (tern-mode t)))
+(add-hook 'typescript-mode-hook (lambda () (tern-mode t)))
+
 (eval-after-load 'tern
    '(progn
       (require 'tern-auto-complete)
       (tern-ac-setup)))
-
-;; use-package
-(require 'use-package)
 
 ;; ;; tabbar
 ;; (require 'tabbar)
@@ -459,8 +461,11 @@
 
 ;; Disable tide auto formatting before save (override with an empty function)
 (defun tide-format-before-save ())
+(defun tide-format ())
 
-
+;; Disable tide auto highlight (override with an empty function)
+;; (defun tide--hl-set-timer ())
+(defun tide--hl-highlight (response))
 
 ;; ;; Web mode
 (require 'web-mode)

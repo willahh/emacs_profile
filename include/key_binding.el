@@ -298,8 +298,9 @@
 ;; (global-set-key (kbd "M-ƒ") 'helm-ag-project-root) ;; (cmd + alt + f)
 (global-set-key (kbd "M-·") 'helm-ag) ;; (cmd + alt + shift + f)
 
-(global-set-key (kbd "M-ƒ") 'helm-do-grep-ag)  ;; (cmd + alt + f)
 
+(global-set-key (kbd "M-ƒ") 'helm-projectile-ag)  ;; (cmd + alt + f)
+(global-set-key (kbd "ƒ") 'helm-do-grep-ag);; (alt + f)
 
 ;; (global-set-key [(meta x)] 'helm-M-x) ;; Doesn t work
 (global-set-key [(meta shift w)] 'delete-window)

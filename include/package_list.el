@@ -91,7 +91,7 @@
   zerodark-theme
   ))
 ; 
-(add-to-list 'load-path "~/.emacs.d/plugins/diffstat")
+; (add-to-list 'load-path "~/.emacs.d/plugins/diffstat")
 (add-to-list 'load-path "~/.emacs.d/plugins/emacs-powerline")
 (add-to-list 'load-path "~/.emacs.d/plugins/web-mode")
 (add-to-list 'load-path "~/.emacs.d/plugins/evil-nerd-commenter/")
