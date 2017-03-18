@@ -1,10 +1,19 @@
 ;;; use-package
 (require 'use-package)
 
+;; rainbow-delimite
+(require 'rainbow-delimiters)
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'web-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'css-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'html-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'php-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'emacs-lisp-mode 'rainbow-delimiters-mode)
+
 ; diffstat
 ;; Enhanced version of diff
 ;; (require 'diffstat)
-;; (add-hook 'diff-mode-hook (lambda () (local-set-key "\C-c\C-l" 'diffstat)))
+(add-hook 'diff-mode-hook (lambda () (local-set-key "\C-c\C-l" 'diffstat)))
 
 
 ;; all-the-icons
@@ -65,36 +74,31 @@
 
 ;; highlight-symbol
 (require 'highlight-symbol)
-(highlight-symbol-mode 0)
-
-
-
-
-;; (defface highlight-symbol-face
-;;   '((((class color) (background red))
-;;      (:background "red"))
-;;     (((class color) (background light))
-;;      (:background "gray90")))
-;;   :group 'highlight-symbol)
-
-
-
-
-;; (defcustom highlight-symbol-idle-delay 0)
+;; (highlight-symbol-mode 0)
 (setq highlight-symbol-idle-delay 0)
+;; (highlight-symbol-mode 1)
+
+(add-hook 'prog-mode-hook 'highlight-symbol-mode)
+(add-hook 'web-mode-hook 'highlight-symbol-mode)
+(add-hook 'css-mode-hook 'highlight-symbol-mode)
+(add-hook 'html-mode-hook 'highlight-symbol-mode)
+(add-hook 'php-mode-hook 'highlight-symbol-mode)
+(add-hook 'emacs-lisp-mode 'highlight-symbol-mode)
 
 
 
-;; wra custom hook
-;; Activation du mode highlight all same occurence uniquement
-;; apres une selection (ST behaviour)
-(add-hook 'activate-mark-hook
-      (lambda ()
-        (highlight-symbol-mode 1)))
- 
-(add-hook 'deactivate-mark-hook
-      (lambda ()
-        (highlight-symbol-mode 0)))
+;; ;; wra custom hook
+;; ;; Activation du mode highlight all same occurence uniquement
+;; ;; apres une selection (ST behaviour)
+;; ;; Update 2 : Keep auto
+
+;;  (add-hook 'activate-mark-hook
+;;        (lambda ()
+;;          (highlight-symbol-mode 1)))
+
+;;  (add-hook 'deactivate-mark-hook
+;;        (lambda ()
+;;          (highlight-symbol-mode 0)))
  
 
 
@@ -235,6 +239,7 @@
 ;;Auto complete
 (ac-config-default)
 (global-auto-complete-mode t)
+
 (setq ac-auto-show-menu 0) ;; Delay until open menu (fast please !)
 
 ;; Expand region
@@ -459,14 +464,18 @@
 
 
 ;; Disable tide auto formatting before save (override with an empty function)
-(defun tide-format-before-save ())
-(defun tide-format ())
+;; Update : il suffisait de desactiver 2 lignes de conf copiees depuis le site
+;; (defun tide-format-before-save ())
+;; (defun tide-format ())
 
 ;; Disable tide auto highlight (override with an empty function)
 ;; (defun tide--hl-set-timer ())
-(defun tide--hl-highlight (response))
+;; (defun tide--hl-highlight (response))
+(add-hook 'tide-mode-hook
+          (defun tide--hl-highlight (response))
+          )
 
-;; ;; Web mode
+;; ;; Web mod
 (require 'web-mode)
 ;; Remarques
 ;; Update : .php sur php pour avoir une vrai navigation et de vrai definitions

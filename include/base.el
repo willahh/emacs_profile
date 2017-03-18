@@ -3,8 +3,10 @@
 
 ;; syntax highlighting everywhere
 (global-font-lock-mode 1)
-; (global-font-lock-mode 0)
-; (setq bidi-display-reordering nil)
+;; (global-font-lock-mode 0)
+;; (setq bidi-display-reordering nil)
+
+;;
 (setq-default bidi-display-reordering nil)
 
 ;; Don't display "Reverting buffer ..." message

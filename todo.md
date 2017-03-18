@@ -34,11 +34,17 @@
 --------- A ranger
 - [-] Custom theme, se baser sur les couleurs suivantes "images/theme.png"
          http://blog.pabuisson.com/2014/07/vim-vundle-gestion-plugins/
-- [-] [IMPORTANT] tide mode --> le highlight en bleu est super bien mais trop intrusif.
- [-] [IMPORTANTA] Le scroll vertical doit être plus rapide 
-- [-] [IMPORTANT] Changer la couleur de auto highlight pour avoir qqchoze de très visible tout de suite (c'est important)
+- [x] [IMPORTANT] tide mode --> le highlight en bleu est super bien mais trop intrusif.
+- [-] [IMPORTANTA] Le scroll vertical doit être plus rapide 
+- [x] [IMPORTANT] Changer la couleur de auto highlight pour avoir qqchoze de très visible tout de suite (c'est important)
 - [-] (kill + coller) (très chiant)  Action 1 : "DIS(" - Action 2 : "M-v" --> La première action fait un kill, la partie dans le presse papier n'est plus bonne 
 - [-] Refresh semantic apres modification source (rien d'urgent)
+
+- [-] helm imenu autofocus !!!!!!!
+- [-] CMD+SHIFT+D ne fonctionne plus lorsqu'il n'y a rien de sélectionné
+- [-] helm directory first
+- [-] helm 
+- [-] Ne pas fermer automatiquement les quotes lors d'un tank (coller)
 
 
 

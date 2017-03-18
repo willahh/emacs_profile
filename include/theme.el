@@ -16,20 +16,32 @@
 (set-face-attribute 'fringe nil :background "#21242b")
 (set-face-attribute 'linum nil :background "#21242b")
 
+;; @todo coloriser les parentheses
+;; (font-lock-add-keywords 'emacs-lisp-mode '(("\\s\"\\|\\s|" 0 'font-lock-keyword-face t)))
+;; (font-lock-add-keywords 'emacs-lisp-mode '(( 0 'font-lock-keyword-face t)))
+;; (font-lock-add-keywords 'emacs-lisp-mode
+;;   '(("foo" . font-lock-keyword-face)))
+;; (font-lock-add-keywords 'c-mode
+;;   '(("\\<\\(FIXME\\):" 1 font-lock-warning-face prepend)
+;;     ("\\<\\(and\\|or\\|not\\)\\>" . font-lock-keyword-face)))
 
-
+;; (set-face-attribute 'font-lock-keyword-face nil :foreground "red")
+;; (set-face-attribute 'font-lock-warning-face nil :foreground "red")
+;; "fdsfsdf" foo test foo FIXME test "test" 'test' test FIXME
 
 ;; ------ Override theme code color
 ;; ------ Font
 (set-face-attribute 'font-lock-string-face nil :foreground "#c3e88d")
+(set-face-attribute 'highlight-symbol-face nil :foreground "#fff" :background "#4b65a0")
+(set-face-attribute 'evil-ex-lazy-highlight nil :foreground "#fff" :background "#9e4c93")
+;; (set-face-attribute 'highlight-symbol-face nil :foreground "#000" :background "#84acfc")
 
 ;; ------ Flycheck
-(set-face-attribute 'flycheck-warning nil :foreground "#fff" :background: nil)
+(set-face-attribute 'flycheck-warning nil :foreground "#fff" :background nil)
 
 ;; ------ js2-mode
 (set-face-attribute 'js2-function-call nil :foreground "#82aaff")
 (set-face-attribute 'js2-external-variable nil :foreground "#82aaff")
-" :background nil)
 
 
 
@@ -291,6 +303,7 @@
   '((t (:background "#56b0ec" :foreground "#000")))
   "Face for fringe scroll bar thumb."
   :group 'yascroll)
+
 
 
 

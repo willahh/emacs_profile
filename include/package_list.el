@@ -23,6 +23,7 @@
   ;; golden-ratio
   ace-window
   ag
+  rainbow-delimiters
   anything
   async
   auto-complete

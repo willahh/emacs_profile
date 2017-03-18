@@ -154,9 +154,12 @@
 ;; -------- key chords binding
 
 ;; avy
+;; Update : az pour goto char 2 (plus de precision)
+
 ;; (key-chord-define-global "az" 'avy-goto-word-1)
-(key-chord-define-global "az" 'avy-goto-word-1-above)
+;; (key-chord-define-global "az" 'avy-goto-word-1-above)
 (key-chord-define-global "qs" 'avy-goto-word-1-below)
+(key-chord-define-global "az" 'avy-goto-char-2)
 
 
 ;;
