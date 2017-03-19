@@ -90,6 +90,9 @@
 scroll-conservatively 9999
 scroll-step 1)
 
+;; (setq auto-window-vscroll 1)
+;; (setq scroll-conservatively 0)
+      
 ;; Mouse wheel behaviour -> Add acceleration like Sublime
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil)))
 (setq mouse-wheel-progressive-speed 10)
@@ -99,7 +102,7 @@ scroll-step 1)
 (setq visible-bell t)
 
 ;; Remove big yellow warning relou
-(setq visible-bell nil)
+(setq vipsible-bell nil)
 (setq ring-bell-function 'ignore)
 
 

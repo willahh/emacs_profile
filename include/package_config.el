@@ -1,4 +1,10 @@
 
+
+
+
+        
+        
+        
 ;; (defun my-find-file-check-make-large-file-read-only-hook ()
 ;;   "If a file is over a given size, make the buffer read only."
 ;;   (when (> (buffer-size) (* 1024 1024))
@@ -12,13 +18,14 @@
 (require 'use-package)
 
 ;; rainbow-delimite
-(require 'rainbow-delimiters)
-(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
-(add-hook 'web-mode-hook 'rainbow-delimiters-mode)
-(add-hook 'css-mode-hook 'rainbow-delimiters-mode)
-(add-hook 'html-mode-hook 'rainbow-delimiters-mode)
-(add-hook 'php-mode-hook 'rainbow-delimiters-mode)
-(add-hook 'emacs-lisp-mode 'rainbow-delimiters-mode)
+;; Desactive pour le moment, trop de couleurs c est pas trop beau
+;; (require 'rainbow-delimiters)
+;; (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+;; (add-hook 'web-mode-hook 'rainbow-delimiters-mode)
+;; (add-hook 'css-mode-hook 'rainbow-delimiters-mode)
+;; (add-hook 'html-mode-hook 'rainbow-delimiters-mode)
+;; (add-hook 'php-mode-hook 'rainbow-delimiters-mode)
+;; (add-hook 'emacs-lisp-mode 'rainbow-delimiters-mode)
 
 ; diffstat
 ;; Enhanced version of diff
@@ -88,9 +95,9 @@
 (require 'highlight-symbol)
 (highlight-symbol-mode 0)
 (setq highlight-symbol-idle-delay 0)
-(add-hook 'highlight-symbol-mode-hook
-          (setq highlight-symbol-idle-delay 0)
-          )
+;; (add-hook 'highlight-symbol-mode-hook
+;;           (setq highlight-symbol-idle-delay 0)
+;;           )
 
 
 
@@ -138,8 +145,9 @@
 
 ;; Auto close parenthesis brackets, ...
 ;; @todo ce package ne se telecharge pas
-(require 'autopair)
-(autopair-global-mode 1)
+;; (require 'autopair)
+;; (autopair-global-mode 1)
+
 
 
 
@@ -258,8 +266,6 @@
 
 (setq ac-auto-show-menu 0) ;; Delay until open menu (fast please !)
 
-;; Expand region
-(require 'expand-region)
 
 ;; Auto save all buffer when file change on disk (aka function to keep synchro between buffers)
 ;; UPDATE : @todo n a pas l air de fonctionner .. une prochaine fois peut être !
@@ -457,6 +463,13 @@
 (add-hook 'web-mode-hook
           (lambda ()
             (when (string-equal "jsx" (file-name-extension buffer-file-name))
+              (setup-tide-mode))))
+
+;; ts support
+(add-to-list 'auto-mode-alist '("\\.ts\\'" . web-mode))
+(add-hook 'web-mode-hook
+          (lambda ()
+            (when (string-equal "ts" (file-name-extension buffer-file-name))
               (setup-tide-mode))))
 
 
@@ -1140,16 +1153,30 @@
 ;; -> Update : Indentation pas clean dans bcp de cacs
 ;;    -> Trouver/faire une fonction indent en se basant uniquement sur les info de la ligne courante (pas de parcours de toute la page)
 ;; -> Update 2 : OK, utilisation de indent-relative ---> Une indentation simple qui fonctionne (pas aussi avancee que les autres, mais couvre 75, 80% de mon utilisation)      
-;; @todo
+;; @todo : RET ne doit pas etre defini en global
 (defun custom-newline ()
    (interactive)
    (newline)
    (indent-relative)
     )
 
+(global-set-key (kbd "RET") 'custom-newline)
 (add-hook 'web-mode-hook
+         (interactive)
           (global-set-key (kbd "RET") 'custom-newline)
 )
+  
+(add-hook 'fundamental-mode
+         (interactive)
+          (global-set-key (kbd "RET") 'default-indent-new-line)
+)
+        
+(add-hook 'emacs-lisp-mode-hook
+          (interactive)
+          (global-set-key (kbd "RET") 'default-indent-new-line)
+)
+
+
 
 
 
@@ -1164,27 +1191,5 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+;; Expand region
+(require 'expand-region)

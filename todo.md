@@ -8,7 +8,7 @@
 -------- Notes diverses
 - C-x r t (string rectangle) : Voir plus en détail
 
-- [M+S+;] ---> xref-find-definitions (natif) ----> A consommer sans moderation
+- [M+S+;] ---> xref-find-definitions (natif) 
 
 - Revert hunk (depuis vc-diff) :
   - C-c C-r (diff-reverse-direction)
@@ -24,34 +24,30 @@
 
 
 --------- Notes ralentissements :
-  - web-mode : new line après une grosse quantitee de lignes
   - Comportement native lorsuqe de longues lignes de textes sont presentes sans retour a la ligne
     https://www.emacswiki.org/emacs/FindLongLines
-  - global fly check mode (semble plus que honnête)
+
   
 
   
 --------- A ranger
-- [-] emmet mode sur web mode
+- [-] Ajouter hook pour recentrer sur la ligne courante après les actions suivantes :
+  (recenter)
+  - [-] git-gutter next / prev
+  - [x] evil search
+  - [-] highlight mode nav
 - [-] Custom theme, se baser sur les couleurs suivantes "images/theme.png"
          http://blog.pabuisson.com/2014/07/vim-vundle-gestion-plugins/
-- [x] [IMPORTANT] tide mode --> le highlight en bleu est super bien mais trop intrusif.
 - [-] [IMPORTANTA] Le scroll vertical doit être plus rapide 
-- [x] [IMPORTANT] Changer la couleur de auto highlight pour avoir qqchoze de très visible tout de suite (c'est important)
 - [-] (kill + coller) (très chiant)  Action 1 : "DIS(" - Action 2 : "M-v" --> La première action fait un kill, la partie dans le presse papier n'est plus bonne 
 - [-] Refresh semantic apres modification source (rien d'urgent)
 
 - [-] helm imenu autofocus !!!!!!!
-- [-] CMD+SHIFT+D ne fonctionne plus lorsqu'il n'y a rien de sélectionné
 - [-] helm directory first
 - [-] Ne pas fermer automatiquement les quotes lors d'un tank (coller)
 
 
 
-
-
-
--
 
 --------- Bloquant
 - [-] (kill + coller) (très chiant)  Action 1 : "DIS(" - Action 2 : "M-v" --> La première action fait un kill, la partie dans le presse papier n'est plus bonne 
@@ -198,6 +194,13 @@
 
 
 --------- Corrige 
+- [x] web-mode : new line après une grosse quantitee de lignes
+- [x] emmet mode sur web mode
+- [x] Tern ne démarre pas en mode js2
+- [x] Emmet ne se lance pas en mode web mode
+- [x] CMD+SHIFT+D ne fonctionne plus lorsqu'il n'y a rien de sélectionné
+- [x] [IMPORTANT] tide mode --> le highlight en bleu est super bien mais trop intrusif.
+- [x] [IMPORTANT] Changer la couleur de auto highlight pour avoir qqchoze de très visible tout de suite (c'est important)
 
 - [x] [IMPORTANT] Implementer une navigation next/prev depuis la selection courante (comme dans sublime, CMD+D scroll focus)
       -> normal de mode : "*" 
