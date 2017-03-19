@@ -26,14 +26,15 @@ In osx by default emacs load .bashrc (~/.bash_profile should be copied .bashrc)
 - ag (lightning search)
 - cscope
 - csslint
+- eslint (javascript checker)
 - ctags
 - git
 - Global
 - gtags
 - ispell
 - js-beautify
-- jscs
-- jshint
+<!-- - jscs -->
+<!-- - jshint -->
 - php
 - svn
 - tags
@@ -52,9 +53,10 @@ In osx by default emacs load .bashrc (~/.bash_profile should be copied .bashrc)
 - git
 - tern
 - js-beautify (npm install -g js-beautify)
-- jshint - npm -g install jshint
-- csslint - npm -g install csslint
-- jscs (npm -g install jscs)
+- csslint (sudo npm -g install csslint)
+- eslint (sudo npm -g install eslint)
+<!-- - jshint (sudo npm -g install jshint) -->
+<!-- - jscs (npm -g install jscs) -->
 - tags https://github.com/leoliu/ggtags/wiki/Install-Global-with-support-for-exuberant-ctags
 - gtags - brew install global (gtags)
 - ctags - brew install --HEAD ctags

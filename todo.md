@@ -96,6 +96,10 @@
 
 
 --------- Majeur
+- [-] Faire fonctionner flycher avec eslint
+      http://eslint.org/docs/user-guide/integrations
+      http://codewinds.com/blog/2015-04-02-emacs-flycheck-eslint-jsx.html
+      http://www.flycheck.org/en/latest/languages.html#javascript
 - [-] Voir si il est possible de faire un (CMD+P + touche @) (file.php@methode_name)
       pour avoir une complétion des méthodes direct sans entrer dans le fichier
 - [-] Faire une fonction "Merge lines" pour supprimer les linebreak/whitespace

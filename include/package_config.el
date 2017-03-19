@@ -127,7 +127,7 @@
 (add-hook 'emacs-lisp-mode 'highlight-symbol-mode)
 (add-hook 'emacs-lisp-mode 'highlight-symbol-nav-mode)
 
-
+;;(add-hook highlight-symbol-jump 'recenter)
 
 
 
@@ -281,6 +281,16 @@
 ;; If you would like to use git-gutter.el and linum-mode
 (git-gutter:linum-setup)
 
+;; Tentative de recentrer l ecran apres certaines actions        
+;; (add-hook 'git-gutter:next-hunk 'recenter)
+;; (add-hook 'git-gutter:post-command-hook 'recenter)
+;; (add-hook 'goto-char 'recenter)
+;; (add-hook 'isearch-mode-end-hook 'recenter)
+;; (add-hook 'isearch-mode-end-hook 'recenter-top-bottom)
+
+  
+   
+   
 ;;
 (set-face-background 'git-gutter:modified "#ff7200")
 (set-face-foreground 'git-gutter:modified "#ff7200")
@@ -293,7 +303,7 @@
 (global-diff-hl-mode t)
 (add-hook 'dired-mode-hook 'diff-hl-dired-mode)
 
-     
+                                   
       
 
 ;; ;; tabbar
@@ -336,27 +346,10 @@
 (global-smart-tab-mode 1)
 
 
-;; flymake-mode
-;; Let's run 8 checks at once instead.
-(setq flymake-max-parallel-syntax-checks 4)
-
-;; I don't want no steekin' limits.
-(setq flymake-max-parallel-syntax-checks nil)
-
-;; Nope, I want my copies in the system temp dir.
-(setq flymake-run-in-place nil)
-;; This lets me say where my temp dir is.
-(setq temporary-file-directory "~/.emacs.d/tmp/")
-
-;; I want to see all errors for the line.
-(setq flymake-number-of-errors-to-display nil)
-
 ;; markdown-mode
 (require 'markdown-mode)
 
 
-;; flycheck
-(global-flycheck-mode)
 
 
 ;; AG
@@ -440,7 +433,7 @@
   (flycheck-mode +1)
   (setq flycheck-check-syntax-automatically '(save mode-enabled))
   (eldoc-mode +1)
-  (tide-hl-identifier-mode +1)
+  ;; (tide-hl-identifier-mode +1)
   )
 
 ;; aligns annotation to the right hand side
@@ -461,7 +454,8 @@
 ;; js support
 ;; Update : Fichier js ne doivent pas etre en tide-mode
 ;; Update 2 : Il faut que ca soit activer pour avoir un support avance
-(add-hook 'js2-mode-hook #'setup-tide-mode)
+;; Update 3 : Pas si sure, tide devrait etre utilise uniquement pour du typescript
+;; (add-hook 'js2-mode-hook #'setup-tide-mode)
 
 
 ;; jsx support
@@ -481,9 +475,9 @@
 ;; Disable tide auto highlight (override with an empty function)
 ;; (defun tide--hl-set-timer ())
 ;; (defun tide--hl-highlight (response))
-(add-hook 'tide-mode-hook
-          (defun tide--hl-highlight (response))
-          )
+;; (add-hook 'tide-mode-hook
+;;           (defun tide--hl-highlight (response))
+;;           )
 
 ;; ;; Web mod
 (require 'web-mode)
@@ -586,14 +580,6 @@
 (js2-imenu-extras-mode)
 
 
-;; js2-refactor
-(require 'js2-refactor)
-(add-hook 'js2-mode-hook #'js2-refactor-mode)
-
-
-;;  flymake-jshint
-(require 'flymake-jshint)
-(add-hook 'js-mode-hook 'flymake-mode)
 
 
 
@@ -619,20 +605,6 @@
 (add-hook 'php-mode-hook 'php-refactor-mode)
 
 
-;; flymake-mode
-;; Let's run 8 checks at once instead.
-(setq flymake-max-parallel-syntax-checks 4)
-
-;; I don't want no steekin' limits.
-(setq flymake-max-parallel-syntax-checks nil)
-
-;; Nope, I want my copies in the system temp dir.
-(setq flymake-run-in-place nil)
-;; This lets me say where my temp dir is.
-(setq temporary-file-directory "~/.emacs.d/tmp/")
-
-;; I want to see all errors for the line.
-(setq flymake-number-of-errors-to-display nil)
 
 
 ;; What to do on Emacs exit / workgroups-mode exit?
@@ -655,6 +627,10 @@
       (tern-ac-setup)))
  
 
+;; js2-refactor
+(require 'js2-refactor)
+(add-hook 'js2-mode-hook #'js2-refactor-mode)
+
 
 
 ;; Mode Line changes
@@ -666,6 +642,90 @@
       wg-mode-line-decor-divider ":")
 
 
+      
+      
+      
+      
+      
+      
+;; flymake
+;; (add-hook 'js2-mode-hook 'flymake-mode)
+
+;; Let's run 8 checks at once instead.
+(setq flymake-max-parallel-syntax-checks 4)
+
+;; I don't want no steekin' limits.
+(setq flymake-max-parallel-syntax-checks nil)
+
+;; Nope, I want my copies in the system temp dir.
+(setq flymake-run-in-place nil)
+;; This lets me say where my temp dir is.
+(setq temporary-file-directory "~/.emacs.d/tmp/")
+
+;; I want to see all errors for the line.
+(setq flymake-number-of-errors-to-display nil)
+      
+      
+      
+;; flycheck     
+;; http://codewinds.com/blog/2015-04-02-emacs-flycheck-eslint-jsx.html    
+(require 'flycheck)      
+      
+;; Note : doit etre active de maniere globale, je n arrive pas
+;; a l activer avec un hook sur js2mode (pour le moment)      
+(global-flycheck-mode)
+
+;; (setq flycheck-javascript-esline-executable 'eslint) ;; Ne semble pas fonctionner
+(setq-default flycheck-disabled-checkers '(javascript-jscs))
+      
+;; (add-hook 'js2-mode-hook 'flycheck-mode)
+
+;; turn on flychecking globally
+(add-hook 'after-init-hook #'global-flycheck-mode)
+
+;; disable jshint since we prefer eslint checking
+(setq-default flycheck-disabled-checkers
+  (append flycheck-disabled-checkers
+    '(javascript-jshint)))
+
+;; use eslint with web-mode for jsx files
+(flycheck-add-mode 'javascript-eslint 'web-mode)
+
+;; customize flycheck temp file prefix
+(setq-default flycheck-temp-prefix ".flycheck")                   
+              
+;; disable json-jsonlist checking for json files
+(setq-default flycheck-disabled-checkers
+  (append flycheck-disabled-checkers
+    '(json-jsonlist)))                   
+    
+;; for better jsx syntax-highlighting in web-mode
+;; - courtesy of Patrick @halbtuerke
+(defadvice web-mode-highlight-part (around tweak-jsx activate)
+  (if (equal web-mode-content-type "jsx")
+    (let ((web-mode-enable-part-face nil))
+      ad-do-it)
+    ad-do-it))
+    
+                       
+;;  flymake-jshint 
+;; (require 'flymake-jshint) 
+;; (add-to-list 'load-path "~/.emacs.d/elpa/flymake-jshint-20140319.1500/") ;; @todo voir si utile ou non
+;; (setq jshint-configuration-path "~/.emacs/jshint.json")
+;; (flycheck-def-config-file-var flycheck-jscsrc javascript-jscs "~/.emacs.d/.jscsrc"
+;;   :safe #'stringp)
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
 ;; Auto-refresh dired on file change
 ;; Source : http://superuser.com/a/566401
 (add-hook 'dired-mode-hook 'auto-revert-mode)
@@ -778,6 +838,7 @@
 (evil-set-initial-state 'ag-mode 'emacs) 
 ;; (evil-set-initial-state 'neotree 'emacs)
 (evil-set-initial-state 'neotree-mode 'emacs) ;; neotree doesnt work maybe neotree-mode ? -> update ok, works
+;;(evil-set-initial-state 'vc-dir-mode' 'normal) 
 
 
 ;; Remove all keybindings from insert-state keymap (insert mode behavior like emacs) 
@@ -804,6 +865,10 @@
   (lambda ()
     (interactive)
     (evil-delete (point-at-bol) (point))))`
+
+;; Recenter after search
+ (defadvice evil-ex-search-next (after advice-for-evil-ex-search-next activate)
+  (evil-scroll-line-to-center (line-number-at-pos))) 
 
 ;; evil-surround
 (require 'evil-surround)
@@ -1093,6 +1158,16 @@
         
 (defadvice evil-ex-search-next (after advice-for-evil-ex-search-next activate)
   (evil-scroll-line-to-center (line-number-at-pos)))        
+
+
+
+
+
+
+
+
+
+
 
 
 
