@@ -293,18 +293,8 @@
 (global-diff-hl-mode t)
 (add-hook 'dired-mode-hook 'diff-hl-dired-mode)
 
-;; tern
-;; (autoload 'tern-mode "tern.el" nil t)
-;; (add-hook 'js-mode-hook (lambda () (tern-mode t)))
-
-(autoload 'tern-mode "tern.el" nil t)
-(add-hook 'js-mode-hook (lambda () (tern-mode t)))
-(add-hook 'typescript-mode-hook (lambda () (tern-mode t)))
-
-(eval-after-load 'tern
-   '(progn
-      (require 'tern-auto-complete)
-      (tern-ac-setup)))
+     
+      
 
 ;; ;; tabbar
 ;; (require 'tabbar)
@@ -451,10 +441,7 @@
   (setq flycheck-check-syntax-automatically '(save mode-enabled))
   (eldoc-mode +1)
   (tide-hl-identifier-mode +1)
-  ;; company is an optional dependency. You have to
-  ;; install it separately via package-install
-  ;; `M-x package-install [ret] company`
-  (company-mode +1))
+  )
 
 ;; aligns annotation to the right hand side
 (setq company-tooltip-align-annotations t)
@@ -651,6 +638,22 @@
 ;; What to do on Emacs exit / workgroups-mode exit?
 (setq wg-emacs-exit-save-behavior           'save)      ; Options: 'save 'ask nil
 (setq wg-workgroups-mode-exit-save-behavior 'save)      ; Options: 'save 'ask nil
+
+;; tern
+;; (autoload 'tern-mode "tern.el" nil t)
+;; (add-hook 'js-mode-hook (lambda () (tern-mode t)))
+
+(autoload 'tern-mode "tern.el" nil t)
+(add-hook 'js-mode-hook (lambda () (tern-mode t)))
+(add-hook 'js2-mode-hook (lambda () (tern-mode t)))
+(add-hook 'js2-mode-hook 'tern-mode)
+(add-hook 'typescript-mode-hook (lambda () (tern-mode t)))
+
+(eval-after-load 'tern
+   '(progn
+      (require 'tern-auto-complete)
+      (tern-ac-setup)))
+ 
 
 
 
@@ -1082,5 +1085,31 @@
 (add-hook 'web-mode-hook
           (global-set-key (kbd "RET") 'custom-newline)
 )
+
+
+
+        
+        
+        
+(defadvice evil-ex-search-next (after advice-for-evil-ex-search-next activate)
+  (evil-scroll-line-to-center (line-number-at-pos)))        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
