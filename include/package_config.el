@@ -520,17 +520,17 @@
 
 ;; Creation d une fonction toggle pour switcher entre web-mode et php-mode
 ;; @todo a finaliser
-(defvar togl-current-mode "web-mode"
-  "The current mode used to handle .php files")
+;; (defvar togl-current-mode "web-mode"
+;;   "The current mode used to handle .php files")
 
-(defun toggle-php-mode-web-mode
-      '(lambda ()
-         (if (togl-current-mode "web-mode")
-             (setq togl-current-mode "php-mode")
-           (setq togl-current-mode "web-mode")
-         )
-         )
-)
+;; (defun toggle-php-mode-web-mode
+;;       '(lambda ()
+;;          (if (togl-current-mode "web-mode")
+;;              (setq togl-current-mode "php-mode")
+;;            (setq togl-current-mode "web-mode")
+;;          )
+;;          )
+;; )
 
 
 

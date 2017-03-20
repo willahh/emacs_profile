@@ -90,6 +90,8 @@
 scroll-conservatively 9999
 scroll-step 1)
 
+
+
 ;; (setq auto-window-vscroll 1)
 ;; (setq scroll-conservatively 0)
       
@@ -159,3 +161,16 @@ scroll-step 1)
 
 ;; Enable jump to url quickly for all buffers
 (goto-address-mode 1)
+
+
+
+
+
+
+
+
+
+
+;; OH MY GOD -------> SPEED IMPROVMENT !!! (deffer font rendering)
+;; thanks http://tsengf.blogspot.fr/2012/11/slow-scrolling-speed-in-emacs.html !!!!!!!!!!!!!!!!!!
+(setq jit-lock-defer-time 0.05)
