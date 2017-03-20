@@ -66,7 +66,8 @@
 (set-face-attribute 'web-mode-html-tag-bracket-face nil :foreground "#80ddff" :background nil)
 
 
-
+;; ------- git
+(set-face-attribute 'git-commit-summary nil :foreground "#f78c6c" :background nil)
 
 
 
