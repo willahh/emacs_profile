@@ -146,7 +146,7 @@
 ;; Auto close parenthesis brackets, ...
 ;; @todo ce package ne se telecharge pas
 ;; (require 'autopair)
-;; (autopair-global-mode 1)
+(autopair-global-mode 1)
 
 
 
