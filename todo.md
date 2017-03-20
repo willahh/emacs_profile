@@ -31,6 +31,8 @@
 
   
 --------- A ranger
+- [-] [dired] TAB -> go to
+- [-] [magit-diff] M-w didn't work
 - [-] helm evil mode
 - [-] (kill + coller) (très chiant)  Action 1 : "DIS(" - Action 2 : "M-v" --> La première action fait un kill, la partie dans le presse papier n'est plus bonne 
 - [-] helm imenu autofocus !!!!!!!
@@ -42,6 +44,7 @@
 - [-] [vc-dir] Faire une fonction toggle des hunk comme dans magit
 - [-] [vc-dir] Faire une fonction pour activer un vc-version-diff avec les paramètres older revision : "base", newer revision : "head"
 - [-] [vc-dir] Trouver l'équilvalent de svn log en mode verbose "svn log -v"
+- [-] [vc-dir] yn'affiche pas les fichiers supprimés localement, mais non envoyé à svn (svn remove)
 - [-] (d) --> dont yank beore
 - [-] Multi cursor s'arrête de fonctionner lorsque la touche RET est invoquée ("nouvelle ligne")
 - [-] (M-C-d) (duplicate line or selection) Duplique parfois une portion beaucoup trop importante
@@ -51,7 +54,6 @@
 - [-] [IMPORTANT] CTRL+ALT+C --> console.log
 - [-] lib_override.css non éditable (freeze)
 - [-] ediff : pas de couleurs avec le nouveau thème
-- [-] vc-dir n'affiche pas les fichiers supprimés localement, mais non envoyé à svn (svn remove)
 
 
 
@@ -135,7 +137,7 @@
 - [-] emacs --> save a cursor place ?
 - [-] Enable emmet by default for web files
 - [-] git-svn
-- [-] web mode : highlight current tag avec une barre verticale ne fonctionne plus (c etait parfait avant)
+
 - [-] ctrl+a en mode evil > default ne fonctionne pas
 - [-] Fichiers markdown mette toutes les windows en centré
 - [-] Don't add behaviour for end of line (remove end of line stuff)
@@ -174,6 +176,7 @@
 
 
 --------- Corrige 
+- [x] web mode : highlight current tag avec une barre verticale ne fonctionne plus (c etait parfait avant)
 - [x] Validateur de syntax javascript / html / php on fly (doit fonctionner en web mode)
 - [x] [dired] diff gutter
 - [x] [IMPORTANT] Changer les couleurs moches en javascript (les vert rose et orange sont moches)
@@ -356,3 +359,4 @@
 - [x] svn (status, commit, diff, …) ——> almost          —> Utilisation de dsvn 
 - [x] svn ediff  
 - [x] sync scroll 
+

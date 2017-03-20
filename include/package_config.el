@@ -338,7 +338,39 @@
 
 ;; psvn
 (require 'psvn)
-;;(load-file "./.emacs.d/package/vc-svn/vc-svn.el")
+(load-file "~/.emacs.d/plugins/psvn/psvn.el")
+
+
+
+;; Psvn conf source : http://www.generation-nt.com/reponses/emacs-svn-entraide-3776751.html
+;; `svn-status-property-edit-svn-ignore' (`P TAB') allows user to edit
+;; list of files ignored by Subversion
+
+;; hide unmodified files
+(setq svn-status-hide-unmodified t)
+
+;; use longer phrases
+(setq svn-status-short-mod-flag-p nil)
+
+;; delete temporary files
+(setq svn-status-ediff-delete-temporary-files t)
+
+;; show the diff we are about to commit
+(define-key svn-log-edit-mode-map [(f6)] 'svn-log-edit-svn-diff)
+
+;; examine
+(global-set-key [(control x) (v) (e)] 'svn-status)
+
+(defun my-svn-log-edit-mode-setup ()
+(setq ispell-local-dictionary "american")
+(flyspell-mode))
+
+(add-hook 'svn-log-edit-mode-hook 'my-svn-log-edit-mode-setup)
+
+
+
+
+
 
 ;; smart-tab
 (require 'smart-tab)
@@ -416,6 +448,7 @@
 
 (setq display-buffer-alist
   '(
+  ("*vc-dir*"            . (display-buffer-same-window . nil))
   ("*Buffer List*"       . (display-buffer-same-window . nil))
   ("*ag*"                . (display-buffer-same-window . nil))
 ))

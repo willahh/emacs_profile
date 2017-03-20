@@ -74,7 +74,7 @@
   pkg-info
   popup
   projectile
-  psvn
+  ;; psvn
   resize-window
   skewer-mode
   smart-forward

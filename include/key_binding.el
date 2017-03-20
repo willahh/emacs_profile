@@ -242,6 +242,8 @@
 (global-set-key (kbd "∆") 'mc/mark-previous-like-this-word) ;; ALT+SHIFT+d
 ;; (global-set-key [(meta control g)] 'mc/mark-all-words-like-this) ;; CTRL+META+G - Update c-m-g est utilise pour activer desactiver le highlight auto
 (global-set-key (kbd "ı") 'mc/mark-next-lines) ;; ALT+SHIFT+n 
+(global-set-key (kbd "∏") 'mc/mark-previous-lines) ;; ALT+SHIFT+n 
+
 
 
 ;; window
