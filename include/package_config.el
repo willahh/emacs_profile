@@ -146,7 +146,7 @@
 ;; Auto close parenthesis brackets, ...
 ;; @todo ce package ne se telecharge pas
 ;; (require 'autopair)
-(autopair-global-mode 1)
+;; (autopair-global-mode 1)
 
 
 
@@ -1154,27 +1154,29 @@
 ;;    -> Trouver/faire une fonction indent en se basant uniquement sur les info de la ligne courante (pas de parcours de toute la page)
 ;; -> Update 2 : OK, utilisation de indent-relative ---> Une indentation simple qui fonctionne (pas aussi avancee que les autres, mais couvre 75, 80% de mon utilisation)      
 ;; @todo : RET ne doit pas etre defini en global
-(defun custom-newline ()
-   (interactive)
-   (newline)
-   (indent-relative)
-    )
+;; -> Update 3 : Utilisation de clean auto indent (spacemac utilise ca)
+;;              
+;; (defun custom-newline ()
+;;    (interactive)
+;;    (newline)
+;;    (indent-relative)
+;;     )
 
-(global-set-key (kbd "RET") 'custom-newline)
-(add-hook 'web-mode-hook
-         (interactive)
-          (global-set-key (kbd "RET") 'custom-newline)
-)
+;; (global-set-key (kbd "RET") 'custom-newline)
+;; (add-hook 'web-mode-hook
+;;          (interactive)
+;;           (global-set-key (kbd "RET") 'custom-newline)
+;; )
   
-(add-hook 'fundamental-mode
-         (interactive)
-          (global-set-key (kbd "RET") 'default-indent-new-line)
-)
+;; (add-hook 'fundamental-mode
+;;          (interactive)
+;;           (global-set-key (kbd "RET") 'default-indent-new-line)
+;; )
         
-(add-hook 'emacs-lisp-mode-hook
-          (interactive)
-          (global-set-key (kbd "RET") 'default-indent-new-line)
-)
+;; (add-hook 'emacs-lisp-mode-hook
+;;           (interactive)
+;;           (global-set-key (kbd "RET") 'default-indent-new-line)
+;; )
 
 
 
@@ -1193,3 +1195,19 @@
 
 ;; Expand region
 (require 'expand-region)
+
+
+
+;; clean-aindent-mode
+(require 'clean-aindent-mode)
+(define-key global-map (kbd "RET") 'newline-and-indent)
+
+(defun my-pkg-init()
+  (electric-indent-mode -1)  ; no electric indent, auto-indent is sufficient
+  (clean-aindent-mode t)
+  (setq clean-aindent-is-simple-indent t)
+  (define-key global-map (kbd "RET") 'newline-and-indent))
+(add-hook 'after-init-hook 'my-pkg-init)
+
+
+(set 'clean-aindent-is-simple-indent t)

@@ -11,6 +11,7 @@
   ;; php-refactor-mode
   ;; tabbar
   ;; php-auto-yasnippets
+  clean-aindent-mode
   actionscript-mode
   typescript-mode
   tide
@@ -28,7 +29,7 @@
   async
   auto-complete
   highlight-symbol
-  autopair
+  ;; autopair
   avy
   avy-menu
   color-theme-buffer-local 
