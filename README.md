@@ -14,6 +14,16 @@ mkdir tmp
 ```
 - Install icons from ~/.emacs.d/plugins/all-the-icons/fonts/
 - Use font "Meslo LG M" - size : 12 -  ~/.emacs.d/fonts/meslo (Menu > option > set default font )
+- Install below dependencies globaly
+- Create a .tern-project file in ~/ directory for javascript ES6 support
+```{r, engine='bash', count_lines}
+{
+    "plugins": {
+        "node": {}
+    }
+}
+```
+
 
 ### Windows
   - Gnutls
@@ -31,8 +41,8 @@ In osx by default emacs load .bashrc (~/.bash_profile should be copied .bashrc)
 - git
 - Global
 - gtags
-- ispell
-- js-beautify
+<!-- - ispell -->
+<!-- - js-beautify -->
 <!-- - jscs -->
 <!-- - jshint -->
 - php

@@ -19,6 +19,8 @@
   - Create ".projectile" file at project root
   
 - Javascript ide mode
+  - require support :
+    - Just add .tern-project
   - Make sure tsconfig.json or jsconfig.json is present in the root folder of the project.
 
 
