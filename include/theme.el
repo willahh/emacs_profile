@@ -31,20 +31,39 @@
 
 ;; ------ Override theme code color
 ;; ------ Font
+(set-face-attribute 'default nil :foreground "#eeffff")
 (set-face-attribute 'font-lock-string-face nil :foreground "#c3e88d")
 (set-face-attribute 'highlight-symbol-face nil :foreground "#fff" :background "#4b65a0")
-;; (set-face-attribute 'highlight-symbol-face nil :foreground "#000" :background "#4b65a0")
 (set-face-attribute 'evil-ex-lazy-highlight nil :foreground "#fff" :background "#9e4c93")
-;; (set-face-attribute 'highlight-symbol-face nil :foreground "#000" :background "#84acfc")
+(set-face-attribute 'font-lock-builtin-face nil :foreground "#f78c6c" :background nil)
+
 
 ;; ------ Flycheck
 (set-face-attribute 'flycheck-warning nil :foreground "#fff" :background nil)
+(set-face-attribute 'dired-directory nil :foreground "#56b0ec" :background nil)
+
+
+;; ------ Dired
+(set-face-attribute 'dired-header nil :foreground "#56b0ec" :background nil)
 
 ;; ------ js2-mode
+
 (set-face-attribute 'js2-function-call nil :foreground "#82aaff")
 (set-face-attribute 'js2-external-variable nil :foreground "#82aaff")
 
+;; ------ web-mode
+(set-face-attribute 'web-mode-type-face nil :foreground "#ffcb6b" :background nil)
+(set-face-attribute 'web-mode-keyword-face nil :foreground "#c792ea" :background nil)
+(set-face-attribute 'web-mode-function-call-face nil :foreground "#82aaff" :background nil)
+(set-face-attribute 'web-mode-function-name-face nil :foreground "#82aaff" :background nil)
+(set-face-attribute 'web-mode-keyword-face nil :foreground "#c792ea" :background nil)
+(set-face-attribute 'web-mode-variable-name-face nil :foreground "#eeffff" :background nil)
 
+(set-face-attribute 'web-mode-doctype-face nil :foreground "#f07178" :background nil)
+(set-face-attribute 'web-mode-html-tag-face nil :foreground "#f07178" :background nil)
+(set-face-attribute 'web-mode-html-attr-name-face nil :foreground "#ffcb6b" :background nil)
+(set-face-attribute 'web-mode-html-attr-value-face nil :foreground "#c3e88d" :background nil)
+(set-face-attribute 'web-mode-html-tag-bracket-face nil :foreground "#80ddff" :background nil)
 
 
 
