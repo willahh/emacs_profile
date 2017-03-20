@@ -54,6 +54,7 @@
 ;; ------ web-mode
 (set-face-attribute 'web-mode-type-face nil :foreground "#ffcb6b" :background nil)
 (set-face-attribute 'web-mode-keyword-face nil :foreground "#c792ea" :background nil)
+;; (set-face-attribute 'web-mode-keyword-face nil :foreground "#82aaff" :background nil)
 (set-face-attribute 'web-mode-function-call-face nil :foreground "#82aaff" :background nil)
 (set-face-attribute 'web-mode-function-name-face nil :foreground "#82aaff" :background nil)
 (set-face-attribute 'web-mode-keyword-face nil :foreground "#c792ea" :background nil)
@@ -64,6 +65,9 @@
 (set-face-attribute 'web-mode-html-attr-name-face nil :foreground "#ffcb6b" :background nil)
 (set-face-attribute 'web-mode-html-attr-value-face nil :foreground "#c3e88d" :background nil)
 (set-face-attribute 'web-mode-html-tag-bracket-face nil :foreground "#80ddff" :background nil)
+(set-face-attribute 'web-mode-block-delimiter-face nil :foreground "#89ddff" :background nil)
+(set-face-attribute 'web-mode-constant-face nil :foreground "#f78c6c" :background nil)
+;; (set-face-attribute 'web-mode-variable-name-face nil :foreground "#f78c6c" :background nil)
 
 
 ;; ------- git
