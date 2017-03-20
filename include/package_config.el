@@ -792,11 +792,16 @@
 
 ;; yasnippet
 (require 'yasnippet)
-;; (add-to-list 'yas-snippet-dirs "~/.emacs.d/elpa/yasnippet-20170216.1928/snippets/")
-(add-to-list 'yas-snippet-dirs "~/.emacs.d/elpa/yasnippet-20170216.1928/snippets")
 (yas-global-mode 1)
+;; (add-to-list 'yas-snippet-dirs "~/.emacs.d/elpa/yasnippet-20170216.1928/snippets/")
+(add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/willahh/")
+;; (setq yas-snippet-dirs '("~/.emacs.d/snippets/"))
+;; (yas-global-mode 1)
 ;; (define-key web-mode-map (kbd "C-c C-y") 'yas/create-php-snippet)
 ;;(payas/ac-setup)
+
+ (yas-reload-all)
+    (add-hook 'prog-mode-hook #'yas-minor-mode)
 
 ;; yascroll
 (require 'yascroll)
