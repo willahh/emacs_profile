@@ -507,7 +507,8 @@
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.css\\'" . css-mode)) ;; .css file should be assigned to css-mode for nice emmet support
-(add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
+;; (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
 (add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-mode))
 ;; (add-to-list 'auto-mode-alist '(".ts" . typescript-mode))
 ;; (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
@@ -841,7 +842,7 @@
 
 ;; Define some mode that should be initialized on emacs mode
 (evil-set-initial-state 'org-mode 'emacs)
-(evil-set-initial-state 'dired-mode 'emacs)
+;; (evil-set-initial-state 'dired-mode 'emacs) ;; Note : pas besoin en principe
 (evil-set-initial-state 'log-edit-files 'emacs) 
 (evil-set-initial-state 'help-mode 'emacs)
 (evil-set-initial-state 'diff-mode 'emacs) 
