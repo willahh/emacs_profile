@@ -43,8 +43,8 @@
 (require 'dired-x)
 
 ;; Hide dot files (.svn, .git, ...)
-(setq dired-omit-files "^\\...+$")
-(add-hook 'dired-mode-hook (lambda () (dired-omit-mode 1)))
+;; (setq dired-omit-files "^\\...+$")
+;; (add-hook 'dired-mode-hook (lambda () (dired-omit-mode 1)))
 
 
 ;; golden-ratio
@@ -414,6 +414,11 @@
 ;; ;;  ("*Help*"            . (display-buffer-same-window . nil))
 ;;   ))
 
+(setq display-buffer-alist
+  '(
+  ("*Buffer List*"       . (display-buffer-same-window . nil))
+  ("*ag*"                . (display-buffer-same-window . nil))
+))
 
 
 
@@ -832,13 +837,14 @@
 ;; Enable evil mode
 (evil-mode 1)
 
+;; Use the same behaviour as in vim when move trough sentences
+(setf sentence-end-double-space nil)
+
 ;; Default mode to emacs (Avant d etre vraiment habitue ;))
 ;; Update : lets stay on vim like by default
 ;; Update 2 : Retour sur emacs state par default (par rapport a mon utilisation)
 ;; Update 3 : Retour sur normal state : Il m arrive encore d ecrire des actions dans les buffers au lieu de faire des raccourcis
 
-
-;; (setq evil-default-state 'emacs)
 (setq evil-default-state 'normal)
 
 
@@ -856,6 +862,7 @@
 ;; (evil-set-initial-state 'neotree-mode 'emacs) ;; neotree doesnt work maybe neotree-mode ? -> update ok, works -> Update laisse en evil mode
 ;;(evil-set-initial-state 'vc-dir-mode' 'normal) 
 (evil-set-initial-state 'vc-dir-mode 'normal)
+(evil-set-initial-state 'profiler-mode 'emacs)
 
 
 ;; Remove all keybindings from insert-state keymap (insert mode behavior like emacs) 

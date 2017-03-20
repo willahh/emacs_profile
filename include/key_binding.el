@@ -4,6 +4,19 @@
   (global-unset-key key))
 
 
+(defun vc-diff-conf ()
+ "For use in 'vc-diff-mode-hook"
+ (local-set-key [(meta shift p)] 'helm-M-x)
+)
+(add-hook 'diff-mode-hook 'vc-diff-conf)
+
+(defun ag-mode-conf ()
+ (local-set-key (kbd "k") 'helm-M-x)
+)
+(add-hook 'diff-mode-hook 'ag-mode-conf)
+
+
+
 ;;(eval-after-load "web-mode"
   ;; (unbind-key "C-M-p" 'web-mode-map)
 ;;  '(define-key web-mode-map (kbd "C-M-p") nil)
@@ -260,7 +273,8 @@
 (global-set-key [(meta shift p)] 'helm-M-x)
 ;; (global-set-key (kbd "M-p") 'helm-projectile-find-file)
 (global-set-key (kbd "π") 'helm-projectile-find-file) ;; ALT+P
-(global-set-key (kbd "C-M-p") 'helm-projectile-switch-project)
+;; (global-set-key (kbd "C-M-p") 'helm-projectile-switch-project)
+(global-set-key (kbd "M-π") 'helm-projectile-switch-project) ;; (commande + alt + p)
 
 (global-set-key (kbd "M-q") 'ask-before-closing)
 (global-set-key (kbd "M-s") 'save-buffer)

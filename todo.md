@@ -31,69 +31,32 @@
 
   
 --------- A ranger
-- [x] vc-dir evil mode
 - [-] helm evil mode
-- [-] Ajouter hook pour recentrer sur la ligne courante après les actions suivantes :
-  (recenter)
-  - [-] git-gutter next / prev
-  - [x] evil search
-  - [-] highlight mode nav
-- [-] Custom theme, se baser sur les couleurs suivantes "images/theme.png"
-         http://blog.pabuisson.com/2014/07/vim-vundle-gestion-plugins/
-- [-] [IMPORTANTA] Le scroll vertical doit être plus rapide 
 - [-] (kill + coller) (très chiant)  Action 1 : "DIS(" - Action 2 : "M-v" --> La première action fait un kill, la partie dans le presse papier n'est plus bonne 
-- [-] Refresh semantic apres modification source (rien d'urgent)
 - [-] helm imenu autofocus !!!!!!!
 - [-] helm directory first
-- [-] Ne pas fermer automatiquement les quotes lors d'un tank (coller)
 
-- [x] neotree evil mode
-- [x] markdown evil mode
-- [x] tern -> ranger les fichier .tern dans un dossier exterieur
 
 
 --------- Bloquant
+- [-] [vc-dir] Faire une fonction toggle des hunk comme dans magit
+- [-] [vc-dir] Faire une fonction pour activer un vc-version-diff avec les paramètres older revision : "base", newer revision : "head"
+- [-] [vc-dir] Trouver l'équilvalent de svn log en mode verbose "svn log -v"
+- [-] (d) --> dont yank beore
+- [-] Multi cursor s'arrête de fonctionner lorsque la touche RET est invoquée ("nouvelle ligne")
+- [-] (M-C-d) (duplicate line or selection) Duplique parfois une portion beaucoup trop importante
 - [-] (kill + coller) (très chiant)  Action 1 : "DIS(" - Action 2 : "M-v" --> La première action fait un kill, la partie dans le presse papier n'est plus bonne 
 - [-] [IMPORTANT] Fonction "Merge lines" (Remove white space and breakline)
 - [-] [IMPORTANT] Fonction get file name to clipboard (très utilisé)
-- [-] [IMPORTANT] [ag search result buffer] Open file -> ne pas créer de nouvelle window n'importe ou c'est super chiant, ---> rester sur la même
 - [-] [IMPORTANT] CTRL+ALT+C --> console.log
-- [x] [IMPORTANT] Changer les couleurs moches en javascript (les vert rose et orange sont moches)
-- [x] [IMPORTANT] Auto indent slow
-         -> Depuis web mode
-         -> Paste dans un fichier contenant beaucoup de texte (fichier de trad) -> Indenting region --> slooooooooow
-         -> Exemples visibles sur "flatplan/index.php", "lang_fr.php"
-         -> Il faut coller un texte depuis l'exterieur ou mettre en commentaire une ligne.
-
-- [-] svn ignore rules to add :
-  - .ac-php-conf.json
-  - logs
-  - .DS_Store
-
-- [-] unbind key on some mode :
-    Lignes en commentaires dans les fichiers concernes solution temporaire
-    Il faut passer par le package special pour surcharger, pas encore trouve parfaitement comment faire
-    - [-] M-w magit
-    - [-] M-p (markdown mode, others ?, yes : evil-c too)
-    - [-] m-d (should be delete backward)
-    - [-] M-S-p diff-mode
-    - [-] M-p on "*ag search text:......*" buffer
-    - [-] C-M-p dired buffer  (dired-aux.el) (dired-mode-map)
-    - [-] M-n depuis Markdown-mode
-  
-- [-] ag --> ignore hudge file (ST behaviour) (aucun problème dans, à mon avis, 99% des cas)  (il peut être utile de faire des recherches dans des fichieux volumineux, mais pour ca la recherche peut être faite de manière spécifique (paramètres supplémentaire, utilisation directement depuis ligne de commande ...)
-         
 - [-] lib_override.css non éditable (freeze)
-- [-] (d) --> dont yank beore
-- [-] (M-C-d) (duplicate line or selection) Duplique parfois une portion beaucoup trop importante
 - [-] ediff : pas de couleurs avec le nouveau thème
-- [-] [vc-dir] Trouver l'équilvalent de svn log en mode verbose "svn log -v"
 - [-] vc-dir n'affiche pas les fichiers supprimés localement, mais non envoyé à svn (svn remove)
-- [-] Installer / configurer php mode | ac-php (auto completion php)
-- [x] Creer les fichier .tern-port autre part !!!!!!!
+
 
 
 --------- Majeur
+- [-] helm imenu autofocus !!!!!!!
 - [-] Faire fonctionner flycher avec eslint
       http://eslint.org/docs/user-guide/integrations
       http://codewinds.com/blog/2015-04-02-emacs-flycheck-eslint-jsx.html
@@ -101,23 +64,17 @@
 - [-] Voir si il est possible de faire un (CMD+P + touche @) (file.php@methode_name)
       pour avoir une complétion des méthodes direct sans entrer dans le fichier
 - [-] Faire une fonction "Merge lines" pour supprimer les linebreak/whitespace
-- [-] Snippet
-      - Ajouter le snippet CTRL+ALT+C console.log
-- [-] Bind shift mouse wheel pour scroller horizontalement
 - [-] Terminer la fonction file:duplicate pour n'avoir qu'un seul prompt -> celui du nom du fichier target
 - [-] theme > diff : Se rapproche au max des couleurs du theme Sublime 
 - [-] Delete file : ne pas re demander le chemin alors que l'on a deja le focus
-- [-] nlinum : plus large
-- [-] [vc-dir] Faire une fonction pour activer un vc-version-diff avec les paramètres older revision : "base", newer revision : "head"
 - [-] nlinum : highlight current line number
 - [-] Check kill yank ring
 - [-] big visible current buffer
 - [-] Ajouter une méthode copy file name pour retourner uniquement le nom du fichier
       - La fonction copy-file-name-to-clipbord est present, mais elle retourne le chemin complet
         Il faudrait garder que la derniere partie apres le /
-- [-] Dired delete folder very slow
-- [-] Dired > mkdir : refresh slow
-- [-] Dired diff gutter
+- [-] [dired] delete folder very slow
+- [-] [dired] > mkdir : refresh slow
 - [-] delete-file
       - dont prompt for path
       - kill buffer 
@@ -144,6 +101,28 @@
 - [-] [theme] Voir si il est possible d'avoir une bordure autour de la selection (comme dans Sublime))
 - [-] [Neotree] > after load > Open first file > focus to other window 
 
+- [-] unbind key on some mode :
+    - [-] M-w magit
+    - [-] C-tab on magit buffer
+    - [x] m-d (should be delete backward)
+    - [x] M-S-p diff-mode
+    - [x] M-p on "*ag search text:......*" buffer
+ - [-] Ajouter hook pour recentrer sur la ligne courante après les actions suivantes :
+  (recenter)
+  - [-] git-gutter next / prev
+  - [x] evil search
+  - [-] highlight mode nav
+
+- [-] Refresh semantic apres modification source (rien d'urgent)
+- [-] Custom theme, se baser sur les couleurs suivantes "images/theme.png"
+         http://blog.pabuisson.com/2014/07/vim-vundle-gestion-plugins/
+- [-] Ne pas fermer automatiquement les quotes lors d'un yank (coller)
+- [-] ag --> ignore hudge file (ST behaviour) (aucun problème dans, à mon avis, 99% des cas)  (il peut être utile de faire des recherches dans des fichieux volumineux, mais pour ca la recherche peut être faite de manière spécifique (paramètres supplémentaire, utilisation directement depuis ligne de commande ...)
+- [-] svn ignore rules to add :
+  - .ac-php-conf.json
+  - logs
+  - .DS_Store
+- [-] Installer / configurer php mode | ac-php (auto completion php)
 
 
 --------- Mineur  
@@ -172,7 +151,6 @@
 - [-] Disable web mode disable auto indent
       Je pense qu il faut laisser cette fonctionalitee, et plutot voir les quelques cas
       qui ne conviennt pas
-- [-] Validateur de syntax javascript / html / php on fly (doit fonctionner en web mode)
 - [-] Dired : remove folder is very slow
 - [-] Don't prompt for delete recursivly (code available in prelude)
 - [-] Enable evil easy motion to work like vim easy motion  https://github.com/easymotion/vim-easymotion
@@ -196,6 +174,18 @@
 
 
 --------- Corrige 
+- [x] Validateur de syntax javascript / html / php on fly (doit fonctionner en web mode)
+- [x] [dired] diff gutter
+- [x] [IMPORTANT] Changer les couleurs moches en javascript (les vert rose et orange sont moches)
+- [x] [IMPORTANT] Auto indent slow
+         -> Depuis web mode
+         -> Paste dans un fichier contenant beaucoup de texte (fichier de trad) -> Indenting region --> slooooooooow
+         -> Exemples visibles sur "flatplan/index.php", "lang_fr.php"
+         -> Il faut coller un texte depuis l'exterieur ou mettre en commentaire une ligne.
+- [x] neotree evil mode
+- [x] markdown evil mode
+- [x] tern -> ranger les fichier .tern dans un dossier exterieur
+- [x] vc-dir evil mode
 - [x] web-mode : new line après une grosse quantitee de lignes
 - [x] emmet mode sur web mode
 - [x] Tern ne démarre pas en mode js2
