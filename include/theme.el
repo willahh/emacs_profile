@@ -31,8 +31,15 @@
 
 ;; ------ Override theme code color
 ;; ------ Font
+
 (set-face-attribute 'default nil :foreground "#eeffff")
 (set-face-attribute 'font-lock-string-face nil :foreground "#c3e88d")
+(set-face-attribute 'font-lock-keyword-face nil :foreground "#c792ea")
+(set-face-attribute 'font-lock-type-face nil :foreground "#ffcb6b")
+(set-face-attribute 'font-lock-variable-name-face nil :foreground "#eeffff")
+(set-face-attribute 'font-lock-constant-face nil :foreground "#ff5370")
+(set-face-attribute 'font-lock-function-name-face nil :foreground "#79aaff")
+
 (set-face-attribute 'highlight-symbol-face nil :foreground "#fff" :background "#4b65a0")
 (set-face-attribute 'evil-ex-lazy-highlight nil :foreground "#fff" :background "#9e4c93")
 (set-face-attribute 'font-lock-builtin-face nil :foreground "#f78c6c" :background nil)
@@ -47,9 +54,10 @@
 (set-face-attribute 'dired-header nil :foreground "#56b0ec" :background nil)
 
 ;; ------ js2-mode
-
 (set-face-attribute 'js2-function-call nil :foreground "#82aaff")
 (set-face-attribute 'js2-external-variable nil :foreground "#82aaff")
+(set-face-attribute 'js2-jsdoc-value nil :foreground "#82aaff")
+(set-face-attribute 'js2-jsdoc-html-tag-name nil :foreground "#82aaff")
 
 ;; ------ web-mode
 (set-face-attribute 'web-mode-type-face nil :foreground "#ffcb6b" :background nil)
