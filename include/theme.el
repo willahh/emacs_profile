@@ -79,7 +79,7 @@
 
 
 ;; ------- git
-(set-face-attribute 'git-commit-summary nil :foreground "#f78c6c" :background nil)
+;; (set-face-attribute 'git-commit-summary nil :foreground "#f78c6c" :background nil) ;; Non dispo
 
 
 

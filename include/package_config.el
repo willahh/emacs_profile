@@ -635,6 +635,8 @@
 (add-hook 'js2-mode-hook 'tern-mode)
 (add-hook 'typescript-mode-hook (lambda () (tern-mode t)))
 
+(setq tern-command '("tern" "--no-port-file"))
+
 (eval-after-load 'tern
    '(progn
       (require 'tern-auto-complete)
@@ -848,11 +850,12 @@
 (evil-set-initial-state 'diff-mode 'emacs) 
 (evil-set-initial-state 'text-mode 'emacs) ;; Mode utilise pour saisir des messages depuis magit
 (evil-set-initial-state 'log-edit-mode 'emacs) ;; Mode utilise pour saisir des messages depuis vc
-(evil-set-initial-state 'markdown-mode 'emacs) 
+;; (evil-set-initial-state 'markdown-mode 'emacs) ;; Update laisse en evil mode 
 (evil-set-initial-state 'ag-mode 'emacs) 
 ;; (evil-set-initial-state 'neotree 'emacs)
-(evil-set-initial-state 'neotree-mode 'emacs) ;; neotree doesnt work maybe neotree-mode ? -> update ok, works
+;; (evil-set-initial-state 'neotree-mode 'emacs) ;; neotree doesnt work maybe neotree-mode ? -> update ok, works -> Update laisse en evil mode
 ;;(evil-set-initial-state 'vc-dir-mode' 'normal) 
+(evil-set-initial-state 'vc-dir-mode 'normal)
 
 
 ;; Remove all keybindings from insert-state keymap (insert mode behavior like emacs) 
@@ -1095,10 +1098,10 @@
 
 
 ;; Evil key binding for neotree
-;; (evil-define-key 'normal neotree-mode-map (kbd "TAB") 'neotree-enter)
-;; (evil-define-key 'normal neotree-mode-map (kbd "SPC") 'neotree-enter)
-;; (evil-define-key 'normal neotree-mode-map (kbd "q") 'neotree-hide)
-;; (evil-define-key 'normal neotree-mode-map (kbd "RET") 'neotree-enter)
+(evil-define-key 'normal neotree-mode-map (kbd "TAB") 'neotree-enter)
+(evil-define-key 'normal neotree-mode-map (kbd "SPC") 'neotree-enter)
+(evil-define-key 'normal neotree-mode-map (kbd "q") 'neotree-hide)
+(evil-define-key 'normal neotree-mode-map (kbd "RET") 'neotree-enter)
 
 
 

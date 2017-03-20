@@ -31,6 +31,8 @@
 
   
 --------- A ranger
+- [x] vc-dir evil mode
+- [-] helm evil mode
 - [-] Ajouter hook pour recentrer sur la ligne courante après les actions suivantes :
   (recenter)
   - [-] git-gutter next / prev
@@ -41,12 +43,13 @@
 - [-] [IMPORTANTA] Le scroll vertical doit être plus rapide 
 - [-] (kill + coller) (très chiant)  Action 1 : "DIS(" - Action 2 : "M-v" --> La première action fait un kill, la partie dans le presse papier n'est plus bonne 
 - [-] Refresh semantic apres modification source (rien d'urgent)
-
 - [-] helm imenu autofocus !!!!!!!
 - [-] helm directory first
 - [-] Ne pas fermer automatiquement les quotes lors d'un tank (coller)
 
-
+- [x] neotree evil mode
+- [x] markdown evil mode
+- [x] tern -> ranger les fichier .tern dans un dossier exterieur
 
 
 --------- Bloquant
@@ -65,7 +68,6 @@
 - [-] svn ignore rules to add :
   - .ac-php-conf.json
   - logs
-  - .tern-port
   - .DS_Store
 
 - [-] unbind key on some mode :
@@ -88,7 +90,7 @@
 - [-] [vc-dir] Trouver l'équilvalent de svn log en mode verbose "svn log -v"
 - [-] vc-dir n'affiche pas les fichiers supprimés localement, mais non envoyé à svn (svn remove)
 - [-] Installer / configurer php mode | ac-php (auto completion php)
-- [-] Creer les fichier .tern-port autre part !!!!!!!
+- [x] Creer les fichier .tern-port autre part !!!!!!!
 
 
 --------- Majeur
