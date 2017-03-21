@@ -852,7 +852,7 @@
 
 ;; multiple-cursors
 (require 'multiple-cursors)
-
+;; (setq mc/always-run-for-all 1)
 
 
 

@@ -33,22 +33,23 @@ mkdir tmp
 All binaries should be accessible from emacs.
 In osx by default emacs load .bashrc (~/.bash_profile should be copied .bashrc)
 
-- ag (lightning search)
-- cscope
-- csslint
-- eslint (javascript checker)
-- ctags
-- git
-- Global
-- gtags
-<!-- - ispell -->
-<!-- - js-beautify -->
-<!-- - jscs -->
-<!-- - jshint -->
 - php
 - svn
-- tags
-- tern
+- git
+- ag (lightning search)
+- csslint (css syntax checker)
+- eslint (javascript syntax checker)
+- tern (javascript 
+- js-beautify
+
+<!-- - ispell -->
+<!-- - jscs -->
+<!-- - jshint -->
+<!-- - ctags -->
+<!-- - tags -->
+<!-- - cscope -->
+<!-- - Global -->
+<!-- - gtags -->
 
 ### Recommanded
 - Capslock remapped to ESCAPE key

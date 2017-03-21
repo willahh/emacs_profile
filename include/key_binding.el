@@ -240,11 +240,13 @@
 
 (global-set-key (kbd "∂") 'mc/mark-next-like-this-word) ;; ALT+d
 (global-set-key (kbd "∆") 'mc/mark-previous-like-this-word) ;; ALT+SHIFT+d
-;; (global-set-key [(meta control g)] 'mc/mark-all-words-like-this) ;; CTRL+META+G - Update c-m-g est utilise pour activer desactiver le highlight auto
+(global-set-key [(meta control g)] 'mc/mark-all-dwim) ;; CTRL+META+G - Update c-m-g est utilise pour activer desactiver le highlight auto
 (global-set-key (kbd "ı") 'mc/mark-next-lines) ;; ALT+SHIFT+n 
-(global-set-key (kbd "∏") 'mc/mark-previous-lines) ;; ALT+SHIFT+n 
+(global-set-key (kbd "∏") 'mc/mark-previous-lines) ;; ALT+SHIFT+n
 
-
+;; (global-unset-key (kbd "M-<down-mouse-1>")) ;; Mouse
+;; (global-set-key (kbd "M-<mouse-1>") 'mc/add-cursor-on-click) ;; Mouse
+(global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click) ;; Mouse
 
 ;; window
 ;; (global-set-key (kbd "M-C-w") 'resize-window)
@@ -306,7 +308,8 @@
 ;; Edit : Desactivation, il m arrive trop souvent de faire des M-n
 ;; pour scroller
 ;; Edit 2 : Tant pis, vraiment pratique
-(global-set-key (kbd "M-n")  'evil-buffer-new)
+;; (global-set-key (kbd "M-n")  'evil-buffer-new)
+(global-set-key [(meta shift n)]  'evil-buffer-new)
 
 
 ;; search
@@ -365,5 +368,6 @@
 (define-key web-mode-map [(meta shift k)] 'web-mode-tag-previous)
 
 
-(global-set-key [(meta control g)] 'highlight-symbol-mode) ;; CTRL+META+G - Update c-m-g est utilise pour activer desactiver le highlight auto
+
+(global-set-key [(control 12)] 'highlight-symbol-mode)
 

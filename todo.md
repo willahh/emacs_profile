@@ -33,33 +33,49 @@
 
   
 --------- A ranger
-- [-] [dired] TAB -> go to
-- [-] [magit-diff] M-w didn't work
-- [-] helm evil mode
-- [-] (kill + coller) (très chiant)  Action 1 : "DIS(" - Action 2 : "M-v" --> La première action fait un kill, la partie dans le presse papier n'est plus bonne 
-- [-] helm imenu autofocus !!!!!!!
-- [-] helm directory first
-
 
 
 --------- Bloquant
+- [-] Multi cursor : fail "detailShootIntention.php" 61:27
+- [-] Multi cursor : S'arrête de fonctionner lorsque la touche RET est invoquée ("nouvelle ligne")
+      Voir https://github.com/magnars/multiple-cursors.el Unknown commands
+- [x] Multi cursor : mouse + command + click -> multi cursor
+- [x] Multi cursor : Multi key mouse
+
+
+- [-] cmd+ctrl+ (j/k) move line or selection up/down
+- [x] cmd+shift+n new buffer
+- [-] Merge lines
+- [-] (kill + coller) (très chiant)  Action 1 : "DIS(" - Action 2 : "M-v" --> La première action fait un kill, la partie dans le presse papier n'est plus bonne 
+
+
 - [-] [vc-dir] Faire une fonction toggle des hunk comme dans magit
 - [-] [vc-dir] Faire une fonction pour activer un vc-version-diff avec les paramètres older revision : "base", newer revision : "head"
 - [-] [vc-dir] Trouver l'équilvalent de svn log en mode verbose "svn log -v"
-- [-] [vc-dir] yn'affiche pas les fichiers supprimés localement, mais non envoyé à svn (svn remove)
-- [-] (d) --> dont yank beore
-- [-] Multi cursor s'arrête de fonctionner lorsque la touche RET est invoquée ("nouvelle ligne")
+- [-] [vc-dir] N'affiche pas les fichiers supprimés localement, mais non envoyé à svn (svn remove)
+
+- [-] ediff : pas de couleurs avec le nouveau thème
+
+
+- [-] (d) --> dont yank before
 - [-] (M-C-d) (duplicate line or selection) Duplique parfois une portion beaucoup trop importante
 - [-] (kill + coller) (très chiant)  Action 1 : "DIS(" - Action 2 : "M-v" --> La première action fait un kill, la partie dans le presse papier n'est plus bonne 
-- [-] [IMPORTANT] Fonction "Merge lines" (Remove white space and breakline)
+
+
 - [-] [IMPORTANT] Fonction get file name to clipboard (très utilisé)
 - [-] [IMPORTANT] CTRL+ALT+C --> console.log
+
+
 - [-] lib_override.css non éditable (freeze)
-- [-] ediff : pas de couleurs avec le nouveau thème
 
 
 
 --------- Majeur
+- [-] js color var 
+- [-] Sublime go to definition - CTRL+MOUSE CLICK - Add new context menu first entry : "Goto Definition"
+- [-] [dired] TAB -> go to
+- [-] [magit-diff] M-w didn't work
+
 - [-] helm imenu autofocus !!!!!!!
 - [-] Faire fonctionner flycher avec eslint
       http://eslint.org/docs/user-guide/integrations
@@ -128,6 +144,9 @@
   - .DS_Store
 - [-] Installer / configurer php mode | ac-php (auto completion php)
 
+- [-] helm evil mode
+- [-] helm imenu autofocus !!!!!!!
+- [-] helm directory first
 
 --------- Mineur  
 - [-] [vc-dir] Ne pas afficher les lignes dossiers (les lignes qui sont grisées)
