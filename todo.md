@@ -7,6 +7,8 @@
 
 -------- Notes diverses
 - C-x r t (string rectangle) : Voir plus en détail
+- evil mode : ":new file.extension" -> Create new buffer/file/window
+- evil mode : "gf" ("go to file")
 
 - [M+S+;] ---> xref-find-definitions (natif) 
 
