@@ -6,6 +6,7 @@
 ;; (global-font-lock-mode 0)
 ;; (setq bidi-display-reordering nil)
 
+
 ;;
 (setq-default bidi-display-reordering nil)
 
@@ -96,17 +97,30 @@ scroll-step 1)
 
 ;; (setq auto-window-vscroll 1)
 ;; (setq scroll-conservatively 0)
-      
+
+
+
+
+
+
 ;; Mouse wheel behaviour -> Add acceleration like Sublime
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil)))
 (setq mouse-wheel-progressive-speed 10)
 
-;; Remove bip relou
+;; (setq mouse-wheel-scroll-amount '(0.01))
+;; (setq mouse-wheel-progressive-speed 1)
 
+(setq mouse-wheel-scroll-amount '(0.022))
+(setq mouse-wheel-progressive-speed 0)
+
+
+
+
+;; Remove bip relou
 (setq visible-bell t)
 
 ;; Remove big yellow warning relou
-(setq vipsible-bell nil)
+(setq visible-bell nil)
 (setq ring-bell-function 'ignore)
 
 
@@ -145,6 +159,10 @@ scroll-step 1)
 ;; Lorsque un selection est active, le fait de saisir un caractere declenche les actions suivantes :
 ;;   - delete selection, - insert command
 (delete-selection-mode 1)
+
+;;
+(setq save-interprogram-paste-before-kill t)
+(setq x-select-enable-clipboard 1)
 
 ;; Launch in fullscreen
 ;; Source: http://emacs.stackexchange.com/a/3008

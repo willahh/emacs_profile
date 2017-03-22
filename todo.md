@@ -23,7 +23,10 @@
 - Javascript ide mode
   - require support :
     - Just add .tern-project
+
+- Typescript ide mode
   - Make sure tsconfig.json or jsconfig.json is present in the root folder of the project.
+
 
 
 
@@ -31,21 +34,26 @@
   - Comportement native lorsuqe de longues lignes de textes sont presentes sans retour a la ligne
     https://www.emacswiki.org/emacs/FindLongLines
 
-  
-  
-  
+
+
+
 --------- A ranger
 - [x] Click mouse 1 -> Si mode courant n est pas emacs -> passer en emacs
 - [x] Indent javascript cassééééééééééééé
 - [x] svn color non visible avec le nouveau beau theme
-- [-] Highlight trailing whitespace
-- [-] Changer la couleur de la selection pour avoir la meme couleur que dans Sublime
-- [-] Highlight comme cf capture
-- [-] démarquer plus les splitter !!!
-- [-] vc dir en mode evil
-- [-] css mode couleurs horribles
-- [-] Le scrolling vertical n est pas aussi rapide que sur les editeurs moderne (voir dans base.el pour modifier la conf)
-
+- [x] Changer la couleur de la selection pour avoir la meme couleur que dans Sublime
+- [x] démarquer plus les splitter
+- [x] Le scrolling vertical n est pas aussi rapide que sur les editeurs moderne (voir dans base.el pour modifier la conf)
+- [x] Highlight trailing whitespace
+- [x] cmd+shift+d (duplicate-current-line-or-region) Prend parfois le contenu du clipboard plutot que la ligne courante
+- [x] Highlight comme cf capture
+- [x] Duplicate current line or region -> Si selection : garder la selection active
+- [ ] Multi cursor paste 
+- [ ] [theme] Ajouter des differenciations sur certains mot clee comme "$", "=", ".", "'", "(", ")", "+", "-", certains mots clés php "var_dump", "PHP_EOL", etc
+      - Voir package "highlight-chars"
+- [ ] [theme] Changer la couleur de la scrollbar (yascroll)
+- [ ] vc dir en mode evil
+- [ ] css mode couleurs horribles
 
 
 

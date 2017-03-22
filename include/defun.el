@@ -12,6 +12,11 @@
   "Revert buffer without confirmation."
   (interactive) (revert-buffer t t))
 
+
+
+
+
+
 ;; Duplicate current line or region
 ;; source : http://rejeep.github.io/emacs/elisp/2010/03/11/duplicate-current-line-or-region-in-emacs.html
 (defun duplicate-current-line-or-region (arg)
@@ -33,6 +38,43 @@ there's a region, all lines that region covers will be duplicated."
         (insert region)
         (setq end (point)))
       (goto-char (+ origin (* (length region) arg) arg)))))
+
+
+
+
+
+
+;; Source : https://www.emacswiki.org/emacs/DuplicateStartOfLineOrRegion
+;; Update to use duplicate-current-line-or-region instead of duplicate-start-of-line
+(defun duplicate-start-of-line-or-region ()
+  (interactive)
+  (if mark-active
+      (duplicate-region)
+    (duplicate-current-line-or-region 1)))
+    ;; (duplicate-start-of-line)))
+
+
+;; (defun duplicate-start-of-line ()
+;;   (let ((text (buffer-substring (point)
+;;                                 (beginning-of-thing 'line))))
+;;     (forward-line)
+;;     (push-mark)
+;;     (insert text)
+;;     (open-line 1)))
+
+(defun duplicate-region ()
+  (let* ((end (region-end))
+         (text (buffer-substring (region-beginning)
+                                 end)))
+    (goto-char end)
+    (insert text)
+    (push-mark end)
+    (setq deactivate-mark nil)
+    (exchange-point-and-mark)))
+
+
+
+
 
 ;; Prompt Before Closing Emacs
 ;; Source : http://nileshk.com/2009/06/13/prompt-before-closing-emacs.html

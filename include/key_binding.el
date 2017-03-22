@@ -336,7 +336,8 @@
 ;; (global-set-key [(meta x)] 'helm-M-x) ;; Doesn t work
 (global-set-key [(meta shift w)] 'delete-window)
 (global-set-key [(meta /)] 'evilnc-comment-or-uncomment-lines)
-(global-set-key [(meta shift d)] 'duplicate-current-line-or-region)
+;; (global-set-key [(meta shift d)] 'duplicate-current-line-or-region)
+(global-set-key [(meta shift d)] 'duplicate-start-of-line-or-region)
 (global-set-key [(meta shift z)] 'undo-tree-redo)
 
 (global-set-key [C-M-tab] 'other-window)

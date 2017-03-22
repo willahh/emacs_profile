@@ -1,7 +1,12 @@
 ;; drag-stuff
 (require 'drag-stuff)
 (drag-stuff-global-mode 1)
-        
+
+
+;; highlight-chars
+(require 'highlight-chars)
+
+
 ;; (defun my-find-file-check-make-large-file-read-only-hook ()
 ;;   "If a file is over a given size, make the buffer read only."
 ;;   (when (> (buffer-size) (* 1024 1024))
@@ -28,6 +33,16 @@
 ;; Enhanced version of diff
 ;; (require 'diffstat)
 (add-hook 'diff-mode-hook (lambda () (local-set-key "\C-c\C-l" 'diffstat)))
+
+
+;; Show trailing whitespace White space
+(setq-default show-trailing-whitespace t)
+
+
+
+
+;; (setq whitespace-style '(face tabs))
+;; (whitespace-mode)
 
 
 ;; all-the-icons
@@ -90,26 +105,25 @@
 ;; Update : L activation automatique en temps reel n est pas possible
 ;; car consomme trop de resources (gros ralentissements sur des gros fichiers)
 (require 'highlight-symbol)
-(highlight-symbol-mode 0)
-(setq highlight-symbol-idle-delay 0)
+;; (highlight-symbol-mode 0)
+;; (setq highlight-symbol-idle-delay 0)
+
 ;; (add-hook 'highlight-symbol-mode-hook
 ;;           (setq highlight-symbol-idle-delay 0)
 ;;           )
-
-
 
 ;; ;; wra custom hook
 ;; ;; Activation du mode highlight all same occurence uniquement
 ;; ;; apres une selection (ST behaviour)
 ;; ;; Update 2 : Keep auto
 
- ;;  (add-hook 'activate-mark-hook
- ;;        (lambda ()
- ;;          (highlight-symbol-mode 1)))
+;; (add-hook 'activate-mark-hook
+;;         (lambda ()
+;;           (highlight-symbol-mode 1)))
 
- ;; (add-hook 'deactivate-mark-hook
- ;;        (lambda ()
- ;;          (highlight-symbol-mode 0)))
+;; (add-hook 'deactivate-mark-hook
+;;         (lambda ()
+;;           (highlight-symbol-mode 0)))
  
 
 ;; Hook to enable highlight-symbol-nav-mode
