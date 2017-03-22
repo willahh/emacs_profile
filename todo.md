@@ -35,12 +35,17 @@
 
   
 --------- A ranger
+- [-] Click mouse 1 -> Si mode courant n est pas emacs -> passer en emacs
+- [-] Changer la couleur de la selection pour avoir la meme couleur que dans Sublime
 - [-] Highlight comme cf capture
-- [-] Indent javascript cassééééééééééééé
 - [-] démarquer plus les splitter !!!
-- [-] svn color non visible avec le nouveau beau theme
-- [-] vc diff dans nouvelle fenêtre
 - [-] vc dir en mode evil
+- [-] css mode couleurs horribles
+- [x] Indent javascript cassééééééééééééé
+- [x] svn color non visible avec le nouveau beau theme
+
+
+
 
 --------- Bloquant
 - [x] Multi cursor : fail "detailShootIntention.php" 61:27
@@ -60,7 +65,7 @@
 - [-] [vc-dir] Trouver l'équilvalent de svn log en mode verbose "svn log -v"
 - [-] [vc-dir] N'affiche pas les fichiers supprimés localement, mais non envoyé à svn (svn remove)
 
-- [-] ediff : pas de couleurs avec le nouveau thème
+- [x] ediff : pas de couleurs avec le nouveau thème
 
 
 - [-] (d) --> dont yank before

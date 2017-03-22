@@ -90,6 +90,8 @@
 scroll-conservatively 9999
 scroll-step 1)
 
+;; js indent 4
+(setq js-indent-level 4)
 
 
 ;; (setq auto-window-vscroll 1)

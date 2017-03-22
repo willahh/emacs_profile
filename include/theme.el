@@ -192,106 +192,108 @@
 ;;; Define some additional faces.
 ;; https://www.emacswiki.org/emacs/diff-mode-.el
 ;; Updated
-;;;###autoload
-(defface diff-file1-hunk-header
-  '((((background dark))
-     (:foreground "Yellow" :background "#3E3E00003E3E")) ; ~ dark magenta
-    (t (:foreground "Blue" :background "DarkSeaGreen1")))
-  "Face used to highlight a diff hunk for the first `diff' argument."
-  :group 'diff-mode)
-(defvar diff-file1-hunk-header-face 'diff-file1-hunk-header)
 
-;;;###autoload
-(defface diff-file2-hunk-header
-    '((((background dark))
-       (:foreground "Cyan" :background "#111117175555")) ; ~ dark blue
-      (t (:foreground "Red" :background "PaleGoldenrod")))
-  "Face used to highlight a diff hunk for the second `diff' argument."
-  :group 'diff-mode)
-(defvar diff-file2-hunk-header-face 'diff-file2-hunk-header)
 
-;;; These faces are standard in Emacs 22, but they are new for Emacs 21.
-;;;###autoload
-(defface diff-indicator-changed
-  '((((background dark))
-       (:foreground "#111117175555" :background "Yellow")) ; ~ dark blue
-    (t (:foreground "PaleGoldenrod" :background "MediumBlue")))
-  "*Face used to highlight the line-start indicator of a modified line."
-  :group 'diff-mode)
-(defvar diff-indicator-changed-face 'diff-indicator-changed)
+;; ;;;###autoload
+;; (defface diff-file1-hunk-header
+;;   '((((background dark))
+;;      (:foreground "Yellow" :background "#3E3E00003E3E")) ; ~ dark magenta
+;;     (t (:foreground "Blue" :background "DarkSeaGreen1")))
+;;   "Face used to highlight a diff hunk for the first `diff' argument."
+;;   :group 'diff-mode)
+;; (defvar diff-file1-hunk-header-face 'diff-file1-hunk-header)
 
-;;;###autoload
-(defface diff-indicator-added
-  '((((background dark))
-       (:foreground "#111117175555" :background "#FFFF9B9BFFFF")) ; ~ dk blue, pink
-    (t (:foreground "PaleGoldenrod" :background "DarkGreen")))
-  "*Face used to highlight the line-start indicator of an inserted line."
-  :group 'diff-mode)
-(defvar diff-indicator-added-face 'diff-indicator-added)
+;; ;;;###autoload
+;; (defface diff-file2-hunk-header
+;;     '((((background dark))
+;;        (:foreground "Cyan" :background "#111117175555")) ; ~ dark blue
+;;       (t (:foreground "Red" :background "PaleGoldenrod")))
+;;   "Face used to highlight a diff hunk for the second `diff' argument."
+;;   :group 'diff-mode)
+;; (defvar diff-file2-hunk-header-face 'diff-file2-hunk-header)
 
-;;;###autoload
-(defface diff-indicator-removed
-  '((((background dark))
-       (:foreground "#111117175555" :background "#7474FFFF7474")) ; ~ dk blue,green
-    (t (:foreground "PaleGoldenrod" :background "DarkMagenta")))
-  "*Face used to highlight the line-start indicator of a removed line."
-  :group 'diff-mode)
-(defvar diff-indicator-removed-face 'diff-indicator-removed)
+;; ;;; These faces are standard in Emacs 22, but they are new for Emacs 21.
+;; ;;;###autoload
+;; (defface diff-indicator-changed
+;;   '((((background dark))
+;;        (:foreground "#111117175555" :background "Yellow")) ; ~ dark blue
+;;     (t (:foreground "PaleGoldenrod" :background "MediumBlue")))
+;;   "*Face used to highlight the line-start indicator of a modified line."
+;;   :group 'diff-mode)
+;; (defvar diff-indicator-changed-face 'diff-indicator-changed)
 
-;;; Change existing `diff-mode' faces too.
-(custom-set-faces
- '(diff-added ((((background dark)) (:foreground "#FFFF9B9BFFFF")) ; ~ pink
-               (t (:foreground "DarkGreen"))) 'now)
- '(diff-changed ((((background dark)) (:foreground "Yellow"))
-                 (t (:foreground "MediumBlue"))) 'now)
- '(diff-context ((((background dark)) (:foreground "White"))
-                 (t (:foreground "Black"))) 'now)
- '(diff-file-header ((((background dark)) (:foreground "Cyan" :background "Black"))
-                     (t (:foreground "Red" :background "White"))) 'now)
- ;; '(diff-function ((t (:foreground "Orange"))) 'now)
- '(diff-header ((((background dark)) (:foreground "Cyan"))
-                (t (:foreground "Red"))) 'now)
- '(diff-hunk-header
-   ((((background dark))
-     (:foreground "Black" :background "#05057F7F8D8D")) ; ~ dark cyan
-    (t (:foreground "White" :background "Salmon"))) 'now)
- '(diff-index ((((background dark)) (:foreground "Magenta"))
-               (t (:foreground "Green"))) 'now)
- '(diff-nonexistent ((((background dark)) (:foreground "#FFFFFFFF7474")) ; ~ yellow
-                     (t (:foreground "DarkBlue"))) 'now)
- '(diff-removed ((((background dark)) (:foreground "#7474FFFF7474"))
-                 (t (:foreground "DarkMagenta"))) 'now)
- )
+;; ;;;###autoload
+;; (defface diff-indicator-added
+;;   '((((background dark))
+;;        (:foreground "#111117175555" :background "#FFFF9B9BFFFF")) ; ~ dk blue, pink
+;;     (t (:foreground "PaleGoldenrod" :background "DarkGreen")))
+;;   "*Face used to highlight the line-start indicator of an inserted line."
+;;   :group 'diff-mode)
+;; (defvar diff-indicator-added-face 'diff-indicator-added)
 
-;;; The only real difference here now from the standard Emacs 22 version is the
-;;; use of diff-file1* and diff-file2*.
-(defvar diff-font-lock-keywords
-  `(
-    ("^\\(@@ -[0-9,]+ \\+[0-9,]+ @@\\)\\(.*\\)$" ;unified
-     (1 diff-hunk-header-face) (2 diff-function-face))
-    ("^\\(\\*\\{15\\}\\)\\(.*\\)$"      ;context
-     (1 diff-hunk-header-face) (2 diff-function-face))
-    ("^\\*\\*\\* .+ \\*\\*\\*\\*". diff-file1-hunk-header-face) ;context
-    ("^--- .+ ----$" . diff-file2-hunk-header-face) ;context
-    ("^[0-9,]+[acd][0-9,]+$" . diff-hunk-header-face) ; normal
-    ("^---$" . diff-hunk-header-face)   ;normal
-    ("^\\(---\\|\\+\\+\\+\\|\\*\\*\\*\\) \\(\\S-+\\)\\(.*[^*-]\\)?\n"
-     (0 diff-header-face) (2 diff-file-header-face prepend))
-    ("^\\([-<]\\)\\(.*\n\\)" (1 diff-indicator-removed-face) (2 diff-removed-face))
-    ("^\\([+>]\\)\\(.*\n\\)" (1 diff-indicator-added-face) (2 diff-added-face))
-    ("^\\(!\\)\\(.*\n\\)" (1 diff-indicator-changed-face) (2 diff-changed-face))
-    ("^Index: \\(.+\\).*\n" (0 diff-header-face) (1 diff-index-face prepend))
-    ("^Only in .*\n" . diff-nonexistent-face)
-    ("^\\(#\\)\\(.*\\)"
-     (1 (if (facep 'font-lock-comment-delimiter-face)
-            'font-lock-comment-face))
-     (2 font-lock-comment-face))
-    ("^[^-=+*!<>#].*\n" (0 diff-context-face))))
+;; ;;;###autoload
+;; (defface diff-indicator-removed
+;;   '((((background dark))
+;;        (:foreground "#111117175555" :background "#7474FFFF7474")) ; ~ dk blue,green
+;;     (t (:foreground "PaleGoldenrod" :background "DarkMagenta")))
+;;   "*Face used to highlight the line-start indicator of a removed line."
+;;   :group 'diff-mode)
+;; (defvar diff-indicator-removed-face 'diff-indicator-removed)
+
+;; ;;; Change existing `diff-mode' faces too.
+;; (custom-set-faces
+;;  '(diff-added ((((background dark)) (:foreground "#FFFF9B9BFFFF")) ; ~ pink
+;;                (t (:foreground "DarkGreen"))) 'now)
+;;  '(diff-changed ((((background dark)) (:foreground "Yellow"))
+;;                  (t (:foreground "MediumBlue"))) 'now)
+;;  '(diff-context ((((background dark)) (:foreground "White"))
+;;                  (t (:foreground "Black"))) 'now)
+;;  '(diff-file-header ((((background dark)) (:foreground "Cyan" :background "Black"))
+;;                      (t (:foreground "Red" :background "White"))) 'now)
+;;  ;; '(diff-function ((t (:foreground "Orange"))) 'now)
+;;  '(diff-header ((((background dark)) (:foreground "Cyan"))
+;;                 (t (:foreground "Red"))) 'now)
+;;  '(diff-hunk-header
+;;    ((((background dark))
+;;      (:foreground "Black" :background "#05057F7F8D8D")) ; ~ dark cyan
+;;     (t (:foreground "White" :background "Salmon"))) 'now)
+;;  '(diff-index ((((background dark)) (:foreground "Magenta"))
+;;                (t (:foreground "Green"))) 'now)
+;;  '(diff-nonexistent ((((background dark)) (:foreground "#FFFFFFFF7474")) ; ~ yellow
+;;                      (t (:foreground "DarkBlue"))) 'now)
+;;  '(diff-removed ((((background dark)) (:foreground "#7474FFFF7474"))
+;;                  (t (:foreground "DarkMagenta"))) 'now)
+;;  )
+
+;; ;;; The only real difference here now from the standard Emacs 22 version is the
+;; ;;; use of diff-file1* and diff-file2*.
+;; (defvar diff-font-lock-keywords
+;;   `(
+;;     ("^\\(@@ -[0-9,]+ \\+[0-9,]+ @@\\)\\(.*\\)$" ;unified
+;;      (1 diff-hunk-header-face) (2 diff-function-face))
+;;     ("^\\(\\*\\{15\\}\\)\\(.*\\)$"      ;context
+;;      (1 diff-hunk-header-face) (2 diff-function-face))
+;;     ("^\\*\\*\\* .+ \\*\\*\\*\\*". diff-file1-hunk-header-face) ;context
+;;     ("^--- .+ ----$" . diff-file2-hunk-header-face) ;context
+;;     ("^[0-9,]+[acd][0-9,]+$" . diff-hunk-header-face) ; normal
+;;     ("^---$" . diff-hunk-header-face)   ;normal
+;;     ("^\\(---\\|\\+\\+\\+\\|\\*\\*\\*\\) \\(\\S-+\\)\\(.*[^*-]\\)?\n"
+;;      (0 diff-header-face) (2 diff-file-header-face prepend))
+;;     ("^\\([-<]\\)\\(.*\n\\)" (1 diff-indicator-removed-face) (2 diff-removed-face))
+;;     ("^\\([+>]\\)\\(.*\n\\)" (1 diff-indicator-added-face) (2 diff-added-face))
+;;     ("^\\(!\\)\\(.*\n\\)" (1 diff-indicator-changed-face) (2 diff-changed-face))
+;;     ("^Index: \\(.+\\).*\n" (0 diff-header-face) (1 diff-index-face prepend))
+;;     ("^Only in .*\n" . diff-nonexistent-face)
+;;     ("^\\(#\\)\\(.*\\)"
+;;      (1 (if (facep 'font-lock-comment-delimiter-face)
+;;             'font-lock-comment-face))
+;;      (2 font-lock-comment-face))
+;;     ("^[^-=+*!<>#].*\n" (0 diff-context-face))))
 
 
 ;; ------ vc-diff color custom 
-(set-face-attribute 'diff-context nil :foreground "#41464b")
-(set-face-attribute 'diff-header nil :foreground "#89ddff")
+(set-face-attribute 'diff-context nil :foreground "#41464b" :background nil)
+(set-face-attribute 'diff-header nil :foreground "#89ddff" :background nil)
 (set-face-attribute 'diff-file-header nil :foreground "#eeffff" :background nil)
 (set-face-attribute 'diff-function nil :foreground "#41464b" :background nil)
 (set-face-attribute 'diff-hunk-header nil :foreground "#8cddfd" :background nil :box "#8cddfd") 

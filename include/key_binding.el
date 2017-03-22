@@ -179,7 +179,7 @@
 (key-chord-define-global "wx" 'er/contract-region)
 (key-chord-define-global "<w" 'mc/mark-all-like-this)
 (key-chord-define-global "ji" 'ace-window) ;; cannot be jk (vim up/right)
-
+(key-chord-define-global ";:" 'highlight-symbol-mode)
 
 
 
@@ -374,7 +374,8 @@
 (define-key web-mode-map [(meta shift j)] 'web-mode-tag-next)
 (define-key web-mode-map [(meta shift k)] 'web-mode-tag-previous)
 
-
-
-(global-set-key [(control 12)] 'highlight-symbol-mode)
-
+;; open line
+(global-set-key [(M shift return)] 'smart-open-line-above)
+(global-set-key [(M return)] 'smart-open-line)
+;; (global-set-key [(M shift return)] 'evil-open-above)
+;; (global-set-key [(M return)] 'evil-open-above)

@@ -209,28 +209,29 @@ there's a region, all lines that region covers will be duplicated."
 
 ;; insert line after
 ;; Source : http://emacsredux.com/blog/2013/03/26/smarter-open-line/
+;; Update use newline instead of newline-and-indent
 (defun smart-open-line ()
   "Insert an empty line after the current line.
 Position the cursor at its beginning, according to the current mode."
   (interactive)
   (move-end-of-line nil)
-  (newline-and-indent))
+  ;; (newline-and-indent))
+  (newline))
 
-(global-set-key [(M return)] 'smart-open-line)
 
 
 ;; Insert line before
 ;; Source : http://emacsredux.com/blog/2013/06/15/open-line-above/
+;; Update use newline instead of newline-and-indent
 (defun smart-open-line-above ()
   "Insert an empty line above the current line.
 Position the cursor at it's beginning, according to the current mode."
   (interactive)
   (move-beginning-of-line nil)
-  (newline-and-indent)
+  ;; (newline-and-indent)
+  (newline)
   (forward-line -1)
   (indent-according-to-mode))
-
-(global-set-key [(M shift return)] 'smart-open-line-above)
 
 ;;
 (define-minor-mode svn-repo-mode

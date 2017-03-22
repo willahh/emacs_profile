@@ -31,6 +31,7 @@
   auto-complete
   highlight-symbol
   ;; autopair
+  smartparens
   avy
   avy-menu
   color-theme-buffer-local 

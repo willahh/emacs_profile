@@ -144,12 +144,6 @@
 
 
 
-;; Auto close parenthesis brackets, ...
-;; @todo ce package ne se telecharge pas
-;; (require 'autopair)
-;; (autopair-global-mode 1)
-
-
 
 
 
@@ -452,6 +446,7 @@
   ("*vc-dir*"            . (display-buffer-same-window . nil))
   ("*Buffer List*"       . (display-buffer-same-window . nil))
   ("*ag*"                . (display-buffer-same-window . nil))
+  ;;("*vc-dir*"            . (display-buffer-same-window . nil)) ;; Toujours mettre le buffer vc-dir dans la fenetre actuelle, trop bordelique autrement - Update 2 :  test sans : Tres pratique d avoir une nouvelle window lorsque l on affiche un buffer de type vc-diff
 ))
 
 
@@ -735,12 +730,17 @@
       
       
 ;; flycheck     
-;; http://codewinds.com/blog/2015-04-02-emacs-flycheck-eslint-jsx.html    
+;; http://codewinds.com/blog/2015-04-02-emacs-flycheck-eslint-jsx.html
+;; Note : attention flycheck fat ralentir web mode sur des gros fichiers
 (require 'flycheck)      
       
 ;; Note : doit etre active de maniere globale, je n arrive pas
 ;; a l activer avec un hook sur js2mode (pour le moment)      
-(global-flycheck-mode)
+;; (global-flycheck-mode)
+
+(add-hook 'js2-mode-hook 'flycheck)
+
+
 
 ;; (setq flycheck-javascript-esline-executable 'eslint) ;; Ne semble pas fonctionner
 (setq-default flycheck-disabled-checkers '(javascript-jscs))
@@ -748,7 +748,8 @@
 ;; (add-hook 'js2-mode-hook 'flycheck-mode)
 
 ;; turn on flychecking globally
-(add-hook 'after-init-hook #'global-flycheck-mode)
+;; wr : Non cela ralenti trop
+;; (add-hook 'after-init-hook #'global-flycheck-mode)
 
 ;; disable jshint since we prefer eslint checking
 (setq-default flycheck-disabled-checkers
@@ -1260,6 +1261,12 @@
 
 
 
+
+
+
+
+
+;; ------- Indentation stuff
 ;; clean-aindent-mode
 (require 'clean-aindent-mode)
 (define-key global-map (kbd "RET") 'newline-and-indent)
@@ -1269,7 +1276,19 @@
   (clean-aindent-mode t)
   (setq clean-aindent-is-simple-indent t)
   (define-key global-map (kbd "RET") 'newline-and-indent))
+
 (add-hook 'after-init-hook 'my-pkg-init)
-
-
 (set 'clean-aindent-is-simple-indent t)
+
+
+
+;; Auto close parenthesis brackets, ...
+;; @todo ce package ne se telecharge pas
+;; (require 'autopair)
+;; (autopair-global-mode 1)
+
+;; smart-parens
+(require 'smartparens-config)
+
+(add-hook 'js-mode-hook #'smartparens-mode)
+
