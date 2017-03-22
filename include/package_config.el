@@ -338,8 +338,8 @@
 
 
 ;; psvn
-(require 'psvn)
 (load-file "~/.emacs.d/plugins/psvn/psvn.el")
+(require 'psvn)
 
 
 
@@ -612,7 +612,8 @@
   '(define-key web-mode-map (kbd "M-J") nil))
 
 (defun my-web-mode-hook ()
-  (define-key web-mode-map (kbd "M-J" nil))
+  (define-key web-mode-map (kbd "M-J" nil)))
+
 (add-hook 'web-mode-hook 'my-web-mode-hook)
   
 ;; Emmet
@@ -633,7 +634,7 @@
 ;; (setq mmm-global-mode 'maybe)
 ;; (mmm-add-mode-ext-class 'html-mode "\\.php\\'" 'html-php)
 ;; html-mode
-(require 'html-mode)
+;;(require 'html-mode)
 (add-hook 'html-mode-hook
         (lambda ()
           ;; Default indentation is usually 2 spaces, changing to 4.

@@ -41,7 +41,8 @@
 (set-face-attribute 'font-lock-function-name-face nil :foreground "#79aaff")
 
 ;; (set-face-attribute 'highlight-symbol-face nil :foreground "#fff" :background "#026a88")
-(set-face-attribute 'highlight-symbol-face nil :foreground "#8fddfb" :background "#21242b" :box nil)
+;; (set-face-attribute 'highlight-symbol-face nil :foreground "#8fddfb" :background "#21242b" :box nil)
+(set-face-attribute 'highlight-symbol-face nil :foreground "#fff" :background "#0d7aa6" :box nil)
 (set-face-attribute 'evil-ex-lazy-highlight nil :foreground "#fff" :background "#21242b")
 (set-face-attribute 'font-lock-builtin-face nil :foreground "#f78c6c" :background nil)
 
@@ -306,8 +307,8 @@
 
 ;; ;; ----- vc-ediff color custom
 (set-face-attribute 'ediff-current-diff-A nil :foreground "#fff" :background nil)
-(set-face-attribute 'ediff-current-diff-Ancestornil :foreground "#fff" :background "#fc5572")
-(set-face-attribute 'ediff-current-diff-B nil :foreground "#fff" :background: "#c4e791")
+(set-face-attribute 'ediff-current-diff-Ancestor nil :foreground "#fff" :background "#fc5572")
+(set-face-attribute 'ediff-current-diff-B nil :foreground "#fff" :background "#c4e791")
 (set-face-attribute 'ediff-current-diff-C nil :foreground "#fff" :background nil)
 
 (set-face-attribute 'ediff-even-diff-A nil :foreground "#000" :background "#fc5572")
@@ -316,7 +317,7 @@
 (set-face-attribute 'ediff-even-diff-C nil :foreground "#fff" :background nil)
 
 (set-face-attribute 'ediff-fine-diff-A nil :foreground "#000" :background "#fc5572")
-(set-face-attribute 'ediff-fine-diff-Ancestornil :foreground "#fff" :background "red")
+(set-face-attribute 'ediff-fine-diff-Ancestor nil :foreground "#fff" :background "red")
 (set-face-attribute 'ediff-fine-diff-B nil :foreground "#000" :background "#c4e791")
 (set-face-attribute 'ediff-fine-diff-C nil :foreground "#000" :background "#56b0ec")
 
