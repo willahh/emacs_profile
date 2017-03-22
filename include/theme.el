@@ -299,31 +299,31 @@
 (set-face-attribute 'diff-removed nil :foreground "#ff5370" :background nil)
 (set-face-attribute 'diff-indicator-removed nil :foreground "#89ddff" :background nil)
 
-(set-face-attribute 'diff-refine-removed nil :foreground "#ff5370" :background "#181a20")
-(set-face-attribute 'diff-refine-added nil :foreground "#c3e88d" :background "#181a20")
+(set-face-attribute 'diff-refine-removed nil :foreground "#000" :background "#fc5572")
+(set-face-attribute 'diff-refine-added nil :foreground "#000" :background "#c4e791")
 ;; (set-face-attribute 'diff-hunk-header nil :foreground "#eeffff")
 
 
 ;; ;; ----- vc-ediff color custom
 (set-face-attribute 'ediff-current-diff-A nil :foreground "#fff" :background nil)
-(set-face-attribute 'ediff-current-diff-Ancestornil :foreground "#fff" :background  nil)
-(set-face-attribute 'ediff-current-diff-B nil :foreground "#fff" :background:  nil)
+(set-face-attribute 'ediff-current-diff-Ancestornil :foreground "#fff" :background "#fc5572")
+(set-face-attribute 'ediff-current-diff-B nil :foreground "#fff" :background: "#c4e791")
 (set-face-attribute 'ediff-current-diff-C nil :foreground "#fff" :background nil)
 
-(set-face-attribute 'ediff-even-diff-A nil :foreground "#fff" :background nil)
-(set-face-attribute 'ediff-even-diff-Ancestor nil :foreground "#fff" :background nil)
-(set-face-attribute 'ediff-even-diff-B nil :foreground "#fff" :background nil)
+(set-face-attribute 'ediff-even-diff-A nil :foreground "#000" :background "#fc5572")
+(set-face-attribute 'ediff-even-diff-Ancestor nil :foreground "#000" :background "red")
+(set-face-attribute 'ediff-even-diff-B nil :foreground "#000" :background "#c4e791")
 (set-face-attribute 'ediff-even-diff-C nil :foreground "#fff" :background nil)
 
 (set-face-attribute 'ediff-fine-diff-A nil :foreground "#000" :background "#fc5572")
-(set-face-attribute 'ediff-fine-diff-Ancestornil :foreground "#ff000c" :background "red")
-(set-face-attribute 'ediff-fine-diff-B nil :foreground "#000" :background "#72ff00")
+(set-face-attribute 'ediff-fine-diff-Ancestornil :foreground "#fff" :background "red")
+(set-face-attribute 'ediff-fine-diff-B nil :foreground "#000" :background "#c4e791")
 (set-face-attribute 'ediff-fine-diff-C nil :foreground "#000" :background "#56b0ec")
 
-(set-face-attribute 'ediff-odd-diff-A nil :foreground "#c3e88d" :background nil)
-(set-face-attribute 'ediff-odd-diff-Ancestornil :foreground "#ff000c" :background nil)
-(set-face-attribute 'ediff-odd-diff-Bnil :foreground "#c3e88d" :background nil)
-(set-face-attribute 'ediff-odd-diff-Cnil :foreground "#7bacfc" :background nil)
+(set-face-attribute 'ediff-odd-diff-A nil :foreground "#fff" :background "#2b323c" :box nil)
+(set-face-attribute 'ediff-odd-diff-Ancestor nil :foreground "#fff" :background "#2b323c" :box nil)
+(set-face-attribute 'ediff-odd-diff-B nil :foreground "#fff" :background "#2b323c" :box nil)
+(set-face-attribute 'ediff-odd-diff-C nil :foreground "#fff" :background "#2b323c" :box nil)
 
 
 
