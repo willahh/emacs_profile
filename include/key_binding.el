@@ -188,8 +188,11 @@
 
 ;; ---------------- Key binding evil normal mode
 (with-eval-after-load 'evil-maps
-  (define-key evil-normal-state-map (kbd "M-a") 'mark-whole-buffer))
+  (define-key evil-normal-state-map (kbd "M-a") 'mark-whole-buffer)
+  )
+(evil-define-key 'normal 'dired-mode (kbd "TAB") 'dired-find-file)
 
+(define-key evil-normal-state-map (kbd "M-n") 'evil-buffer-new)
 ;; ---------------- Key binding
 ;; (global-unset-key (kbd "C-x C-c"))
 
@@ -267,11 +270,15 @@
 (global-set-key (kbd "M-Ò") 'save-some-buffers) ;; (command + alt + s)
 
 ;; (global-set-key (kbd "M-c") 'whole-line-or-region-copy-region-as-kill)
-(global-set-key (kbd "C-M-j") 'move-line-region-down)
-(global-set-key (kbd "C-M-k") 'move-line-region-up)
+;; (global-set-key (kbd "C-M-j") 'move-line-region-down)
+;; (global-set-key (kbd "C-M-k") 'move-line-region-up)
 ;; (global-set-key (kbd "C-M-n") 'move-line-region-down)
 ;; (global-set-key (kbd "C-M-p") 'move-line-region-up)
 
+(global-set-key (kbd "C-M-j") 'drag-stuff-down)
+(global-set-key (kbd "C-M-k") 'drag-stuff-up)
+
+;; (global-set-key (kbd "C-M-n") 'move-line-region-down)
 (global-set-key [(meta shift 1)] 'delete-other-windows)
 
 (global-set-key [(meta shift p)] 'helm-M-x)

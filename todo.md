@@ -9,7 +9,7 @@
 - C-x r t (string rectangle) : Voir plus en détail
 - evil mode : ":new file.extension" -> Create new buffer/file/window
 - evil mode : "gf" ("go to file")
-
+- Sublime merge lines -> Evil Gj
 - [M+S+;] ---> xref-find-definitions (natif) 
 
 - Revert hunk (depuis vc-diff) :
@@ -38,16 +38,15 @@
 
 
 --------- Bloquant
-- [-] Multi cursor : fail "detailShootIntention.php" 61:27
+- [x] Multi cursor : fail "detailShootIntention.php" 61:27
+      Semble ok
 - [-] Multi cursor : S'arrête de fonctionner lorsque la touche RET est invoquée ("nouvelle ligne")
       Voir https://github.com/magnars/multiple-cursors.el Unknown commands
 - [x] Multi cursor : mouse + command + click -> multi cursor
 - [x] Multi cursor : Multi key mouse
-
-
-- [-] cmd+ctrl+ (j/k) move line or selection up/down
+- [x] cmd+ctrl+ (j/k) move line or selection up/down
 - [x] cmd+shift+n new buffer
-- [-] Merge lines
+- [x] Merge lines
 - [-] (kill + coller) (très chiant)  Action 1 : "DIS(" - Action 2 : "M-v" --> La première action fait un kill, la partie dans le presse papier n'est plus bonne 
 
 

@@ -11,6 +11,7 @@
   ;; php-refactor-mode
   ;; tabbar
   ;; php-auto-yasnippets
+  drag-stuff
   clean-aindent-mode
   actionscript-mode
   typescript-mode

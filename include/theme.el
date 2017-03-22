@@ -40,8 +40,9 @@
 (set-face-attribute 'font-lock-constant-face nil :foreground "#ff5370")
 (set-face-attribute 'font-lock-function-name-face nil :foreground "#79aaff")
 
-(set-face-attribute 'highlight-symbol-face nil :foreground "#fff" :background "#4b65a0")
-(set-face-attribute 'evil-ex-lazy-highlight nil :foreground "#fff" :background "#9e4c93")
+;; (set-face-attribute 'highlight-symbol-face nil :foreground "#fff" :background "#026a88")
+(set-face-attribute 'highlight-symbol-face nil :foreground "#8fddfb" :background "#21242b" :box nil)
+(set-face-attribute 'evil-ex-lazy-highlight nil :foreground "#fff" :background "#21242b")
 (set-face-attribute 'font-lock-builtin-face nil :foreground "#f78c6c" :background nil)
 
 
@@ -126,7 +127,7 @@
 (set-face-background 'hl-line "#101112")
 
 ;; Text selection
-(set-face-attribute 'region nil :background "#00ff9c" :foreground "#2c2886")
+(set-face-attribute 'region nil :background "#2f3c46" :foreground "#eeffff")
 
 ;; parenthesis
 (set-face-foreground 'show-paren-match "#b5ff05")
@@ -286,6 +287,43 @@
      (2 font-lock-comment-face))
     ("^[^-=+*!<>#].*\n" (0 diff-context-face))))
 
+
+;; ------ vc-diff color custom 
+(set-face-attribute 'diff-context nil :foreground "#41464b")
+(set-face-attribute 'diff-header nil :foreground "#89ddff")
+(set-face-attribute 'diff-file-header nil :foreground "#eeffff" :background nil)
+(set-face-attribute 'diff-function nil :foreground "#41464b" :background nil)
+(set-face-attribute 'diff-hunk-header nil :foreground "#8cddfd" :background nil :box "#8cddfd") 
+(set-face-attribute 'diff-indicator-added nil :foreground "#89ddff" :background nil)
+(set-face-attribute 'diff-added nil :foreground "#c3e88d" :background nil)
+(set-face-attribute 'diff-removed nil :foreground "#ff5370" :background nil)
+(set-face-attribute 'diff-indicator-removed nil :foreground "#89ddff" :background nil)
+
+(set-face-attribute 'diff-refine-removed nil :foreground "#ff5370" :background "#181a20")
+(set-face-attribute 'diff-refine-added nil :foreground "#c3e88d" :background "#181a20")
+;; (set-face-attribute 'diff-hunk-header nil :foreground "#eeffff")
+
+
+;; ;; ----- vc-ediff color custom
+(set-face-attribute 'ediff-current-diff-A nil :foreground "#fff" :background nil)
+(set-face-attribute 'ediff-current-diff-Ancestornil :foreground "#fff" :background  nil)
+(set-face-attribute 'ediff-current-diff-B nil :foreground "#fff" :background:  nil)
+(set-face-attribute 'ediff-current-diff-C nil :foreground "#fff" :background nil)
+
+(set-face-attribute 'ediff-even-diff-A nil :foreground "#fff" :background nil)
+(set-face-attribute 'ediff-even-diff-Ancestor nil :foreground "#fff" :background nil)
+(set-face-attribute 'ediff-even-diff-B nil :foreground "#fff" :background nil)
+(set-face-attribute 'ediff-even-diff-C nil :foreground "#fff" :background nil)
+
+(set-face-attribute 'ediff-fine-diff-A nil :foreground "#000" :background "#fc5572")
+(set-face-attribute 'ediff-fine-diff-Ancestornil :foreground "#ff000c" :background "red")
+(set-face-attribute 'ediff-fine-diff-B nil :foreground "#000" :background "#72ff00")
+(set-face-attribute 'ediff-fine-diff-C nil :foreground "#000" :background "#56b0ec")
+
+(set-face-attribute 'ediff-odd-diff-A nil :foreground "#c3e88d" :background nil)
+(set-face-attribute 'ediff-odd-diff-Ancestornil :foreground "#ff000c" :background nil)
+(set-face-attribute 'ediff-odd-diff-Bnil :foreground "#c3e88d" :background nil)
+(set-face-attribute 'ediff-odd-diff-Cnil :foreground "#7bacfc" :background nil)
 
 
 
