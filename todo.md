@@ -32,53 +32,42 @@
     https://www.emacswiki.org/emacs/FindLongLines
 
   
-
+  
   
 --------- A ranger
-- [-] Click mouse 1 -> Si mode courant n est pas emacs -> passer en emacs
+- [x] Click mouse 1 -> Si mode courant n est pas emacs -> passer en emacs
+- [x] Indent javascript cassééééééééééééé
+- [x] svn color non visible avec le nouveau beau theme
+- [-] Highlight trailing whitespace
 - [-] Changer la couleur de la selection pour avoir la meme couleur que dans Sublime
 - [-] Highlight comme cf capture
 - [-] démarquer plus les splitter !!!
 - [-] vc dir en mode evil
 - [-] css mode couleurs horribles
-- [x] Indent javascript cassééééééééééééé
-- [x] svn color non visible avec le nouveau beau theme
+- [-] Le scrolling vertical n est pas aussi rapide que sur les editeurs moderne (voir dans base.el pour modifier la conf)
 
 
 
 
 --------- Bloquant
-- [x] Multi cursor : fail "detailShootIntention.php" 61:27
-      Semble ok
 - [-] Multi cursor : S'arrête de fonctionner lorsque la touche RET est invoquée ("nouvelle ligne")
       Voir https://github.com/magnars/multiple-cursors.el Unknown commands
-- [x] Multi cursor : mouse + command + click -> multi cursor
-- [x] Multi cursor : Multi key mouse
-- [x] cmd+ctrl+ (j/k) move line or selection up/down
-- [x] cmd+shift+n new buffer
-- [x] Merge lines
-- [-] (kill + coller) (très chiant)  Action 1 : "DIS(" - Action 2 : "M-v" --> La première action fait un kill, la partie dans le presse papier n'est plus bonne 
 
+- [-] (kill + coller) (très chiant)  Action 1 : "DIS(" - Action 2 : "M-v" --> La première action fait un kill, la partie dans le presse papier n'est plus bonne 
 
 - [-] [vc-dir] Faire une fonction toggle des hunk comme dans magit
 - [-] [vc-dir] Faire une fonction pour activer un vc-version-diff avec les paramètres older revision : "base", newer revision : "head"
 - [-] [vc-dir] Trouver l'équilvalent de svn log en mode verbose "svn log -v"
 - [-] [vc-dir] N'affiche pas les fichiers supprimés localement, mais non envoyé à svn (svn remove)
 
-- [x] ediff : pas de couleurs avec le nouveau thème
-
-
 - [-] (d) --> dont yank before
 - [-] (M-C-d) (duplicate line or selection) Duplique parfois une portion beaucoup trop importante
 - [-] (kill + coller) (très chiant)  Action 1 : "DIS(" - Action 2 : "M-v" --> La première action fait un kill, la partie dans le presse papier n'est plus bonne 
 
-
 - [-] [IMPORTANT] Fonction get file name to clipboard (très utilisé)
 - [-] [IMPORTANT] CTRL+ALT+C --> console.log
 
-
 - [-] lib_override.css non éditable (freeze)
-
 
 
 --------- Majeur
@@ -122,12 +111,10 @@
 - [-] highlight symbol : Mettre 0 delai d attente pour la surbrillance des autres symboles
 - [-] la selection avec la souris doit aller loin avant de prendre en compte la deuxieme ligne
       (Comportement de selection legerement different a celui de Sublime)
-- [-] Double click word CMD+D -> go to next result (scroll focus)
 - [-] ag search result buffer : highlight search words
 - [-] nlinum in fringe ? Pouvoir afficher les vc diff plus loin que le contenu
 - [-] (command+r pour reload vc-dir) - M-r ----> vc-dir-refresh
 
-- [-] Le scrolling vertical n est pas aussi rapide que sur les editeurs moderne (voir dans base.el pour modifier la conf)
 - [-] [theme] Voir pour avoir une font plus lisible (aliasing different --> Se rapprocher du rendu de Sublime (la font est bien la meme))
 - [-] [theme] Voir si il est possible d'avoir une bordure autour de la selection (comme dans Sublime))
 - [-] [Neotree] > after load > Open first file > focus to other window 
@@ -208,6 +195,16 @@
 
 
 --------- Corrige 
+- [x] Multi cursor : fail "detailShootIntention.php" 61:27
+      Semble ok
+- [x] Multi cursor : mouse + command + click -> multi cursor
+- [x] Multi cursor : Multi key mouse
+- [x] cmd+ctrl+ (j/k) move line or selection up/down
+- [x] cmd+shift+n new buffer
+- [x] Merge lines
+- [x] ediff : pas de couleurs avec le nouveau thème
+
+
 - [x] web mode : highlight current tag avec une barre verticale ne fonctionne plus (c etait parfait avant)
 - [x] Validateur de syntax javascript / html / php on fly (doit fonctionner en web mode)
 - [x] [dired] diff gutter

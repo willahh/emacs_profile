@@ -1,10 +1,6 @@
 ;; drag-stuff
 (require 'drag-stuff)
 (drag-stuff-global-mode 1)
-
-
-        
-        
         
 ;; (defun my-find-file-check-make-large-file-read-only-hook ()
 ;;   "If a file is over a given size, make the buffer read only."
@@ -945,6 +941,14 @@
 ;; Recenter after search
  (defadvice evil-ex-search-next (after advice-for-evil-ex-search-next activate)
   (evil-scroll-line-to-center (line-number-at-pos))) 
+
+
+;; switch to emacs state mouse click
+;; Update : pb empeche le double click
+;; Update 2 : OK, fonctionnel grace au hook mouse-leave-buffer-hook
+(add-hook 'mouse-leave-buffer-hook 'evil-emacs-state)
+
+
 
 ;; evil-surround
 (require 'evil-surround)

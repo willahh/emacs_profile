@@ -128,7 +128,7 @@
 (set-face-background 'hl-line "#101112")
 
 ;; Text selection
-(set-face-attribute 'region nil :background "#2f3c46" :foreground "#eeffff")
+(set-face-attribute 'region nil :background "#0d7aa6" :foreground "#eeffff")
 
 ;; parenthesis
 (set-face-foreground 'show-paren-match "#b5ff05")
