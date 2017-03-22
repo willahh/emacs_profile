@@ -35,7 +35,12 @@
 
   
 --------- A ranger
-
+- [-] Highlight comme cf capture
+- [-] Indent javascript cassééééééééééééé
+- [-] démarquer plus les splitter !!!
+- [-] svn color non visible avec le nouveau beau theme
+- [-] vc diff dans nouvelle fenêtre
+- [-] vc dir en mode evil
 
 --------- Bloquant
 - [x] Multi cursor : fail "detailShootIntention.php" 61:27
