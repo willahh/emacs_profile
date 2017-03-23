@@ -1,6 +1,6 @@
 
 ;;;; key_binding: --- some default / package keybindings
-(dolist (key '("\M-x" "\M-z" "\M-v" "\M-p" "\C-\M-p"))
+(dolist (key '("\M-x" "\M-z" "\M-v" "\M-p" "\C-\M-p" "\C-\M-j"))
   (global-unset-key key))
 
 
@@ -180,6 +180,7 @@
 (key-chord-define-global "<w" 'mc/mark-all-like-this)
 (key-chord-define-global "ji" 'ace-window) ;; cannot be jk (vim up/right)
 (key-chord-define-global ";:" 'highlight-symbol-mode)
+(key-chord-define-global "ju" 'toggle-php-flavor-mode)
 
 
 
@@ -275,8 +276,17 @@
 ;; (global-set-key (kbd "C-M-n") 'move-line-region-down)
 ;; (global-set-key (kbd "C-M-p") 'move-line-region-up)
 
-(global-set-key (kbd "C-M-j") 'drag-stuff-down)
+(global-set-key (kbd "C-M-J") 'drag-stuff-down)
 (global-set-key (kbd "C-M-k") 'drag-stuff-up)
+
+
+;; (add-hook 'php-mode-hook
+;;           (interactive)
+;;           (global-set-key (kbd "C-M-J") 'drag-stuff-down)
+;; (global-set-key (kbd "C-M-k") 'drag-stuff-up)
+
+;; )
+
 
 ;; (global-set-key (kbd "C-M-n") 'move-line-region-down)
 (global-set-key [(meta shift 1)] 'delete-other-windows)

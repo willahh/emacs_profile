@@ -48,9 +48,13 @@
 - [x] cmd+shift+d (duplicate-current-line-or-region) Prend parfois le contenu du clipboard plutot que la ligne courante
 - [x] Highlight comme cf capture
 - [x] Duplicate current line or region -> Si selection : garder la selection active
+
+- [ ] C-M-j php-mode move line down -> racourcis utilise a un autre endroit
+- [ ] F5 revert buffer ?
 - [ ] Multi cursor paste 
 - [ ] [theme] Ajouter des differenciations sur certains mot clee comme "$", "=", ".", "'", "(", ")", "+", "-", certains mots clés php "var_dump", "PHP_EOL", etc
       - Voir package "highlight-chars"
+ 
 - [ ] [theme] Changer la couleur de la scrollbar (yascroll)
 - [ ] vc dir en mode evil
 - [ ] css mode couleurs horribles

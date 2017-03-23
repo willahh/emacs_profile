@@ -562,6 +562,7 @@
 (setq web-mode-enable-current-column-highlight t)
 
 
+
 ;; Creation d une fonction toggle pour switcher entre web-mode et php-mode
 ;; @todo a finaliser
 ;; (defvar togl-current-mode "web-mode"
@@ -576,6 +577,19 @@
 ;;          )
 ;; )
 
+;; From : http://www.blogbyben.com/2016/08/emacs-php-modern-and-far-more-complete.html
+;; @todo ajouter le changement lors de l ouverture du prochain fichier php
+(defun toggle-php-flavor-mode ()
+  (interactive)
+  "Toggle mode between PHP & Web-Mode Helper modes"
+  (cond ((string= mode-name "PHP")
+         (web-mode)
+         (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
+         )
+        ((string= mode-name "Web")
+         (php-mode))
+         (add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
+         ))
 
 
 

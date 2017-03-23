@@ -229,9 +229,9 @@
   :group 'yascroll)
 
 
-(set-face-attribute 'yascroll:thumb-fringe nil :foreground "#fff" :background "#fff")
-(set-face-attribute 'yascroll:thumb-text-area nil :foreground "#fff" :background "#fff")
-(set-face-attribute 'yascroll:thumb-overlays nil :foreground "#fff" :background "#fff")
+(set-face-attribute 'yascroll:thumb-fringe nil :foreground "#000" :background "#000")
+(set-face-attribute 'yascroll:thumb-text-area nil :foreground "#000" :background "#000")
+;; (set-face-attribute 'yascroll:thumb-overlays nil :foreground "#000" :background "#000")
 
 
 
