@@ -5,7 +5,7 @@
 
 
 
--------- Notes diverses
+##Notes diverses
 - C-x r t (string rectangle) : Voir plus en détail
 - evil mode : ":new file.extension" -> Create new buffer/file/window
 - evil mode : "gf" ("go to file")
@@ -30,39 +30,44 @@
 
 
 
---------- Notes ralentissements :
+## Notes ralentissements :
   - Comportement native lorsuqe de longues lignes de textes sont presentes sans retour a la ligne
     https://www.emacswiki.org/emacs/FindLongLines
 
 
 
 
---------- A ranger
-- [x] Click mouse 1 -> Si mode courant n est pas emacs -> passer en emacs
-- [x] Indent javascript cassééééééééééééé
-- [x] svn color non visible avec le nouveau beau theme
-- [x] Changer la couleur de la selection pour avoir la meme couleur que dans Sublime
-- [x] démarquer plus les splitter
-- [x] Le scrolling vertical n est pas aussi rapide que sur les editeurs moderne (voir dans base.el pour modifier la conf)
-- [x] Highlight trailing whitespace
-- [x] cmd+shift+d (duplicate-current-line-or-region) Prend parfois le contenu du clipboard plutot que la ligne courante
-- [x] Highlight comme cf capture
-- [x] Duplicate current line or region -> Si selection : garder la selection active
+## A ranger
+- [ ] [vc-dir] Hide up to date by default
+- [ ] [vc-dir] Check Compare with base revision (vc dir menu)
+- [ ] CMD+SHIFT+A (emacs mode) -> select all 
+- [ ] web-mode : paste : indenting region ...
+- [ ] il faut avoir un système d'onglet fonctionnel, c'est vraiment pratique de voir sous les yeux les fichiers dont on a besoin
+
+
+- [x] Remettre un highlight des mêmes instances plus rapide
+- [ ] ctrl+v dans minibuffer
+- [ ] css mode : Open close brackets
+- [ ] php mode : Plus de couleurs
+- [ ] "*vc-change-log*" --> même window
+
+- [ ] TAB dans le vide : ne pas déployer le menu (js mode)
 
 - [ ] C-M-j php-mode move line down -> racourcis utilise a un autre endroit
 - [ ] F5 revert buffer ?
-- [ ] Multi cursor paste 
 - [ ] [theme] Ajouter des differenciations sur certains mot clee comme "$", "=", ".", "'", "(", ")", "+", "-", certains mots clés php "var_dump", "PHP_EOL", etc
       - Voir package "highlight-chars"
  
 - [ ] [theme] Changer la couleur de la scrollbar (yascroll)
 - [ ] vc dir en mode evil
 - [ ] css mode couleurs horribles
+- [ ] helm-projectile pas suffisamment rapide
 
 
-
---------- Bloquant
-- [-] Multi cursor : S'arrête de fonctionner lorsque la touche RET est invoquée ("nouvelle ligne")
+## Bloquant
+- [ ] [urgent] Trouver comment avoir un copier / coller qui fonctionne en interne/interne externe/interne comme sur les éditeurs modernes
+- [ ] [multi-cursor] cursor paste 
+- [-] [multi-cursor] S'arrête de fonctionner lorsque la touche RET est invoquée ("nouvelle ligne")
       Voir https://github.com/magnars/multiple-cursors.el Unknown commands
 
 - [-] (kill + coller) (très chiant)  Action 1 : "DIS(" - Action 2 : "M-v" --> La première action fait un kill, la partie dans le presse papier n'est plus bonne 
@@ -82,7 +87,7 @@
 - [-] lib_override.css non éditable (freeze)
 
 
---------- Majeur
+## Majeur
 - [-] js color var 
 - [-] Sublime go to definition - CTRL+MOUSE CLICK - Add new context menu first entry : "Goto Definition"
 - [-] [dired] TAB -> go to
@@ -158,7 +163,7 @@
 - [-] helm imenu autofocus !!!!!!!
 - [-] helm directory first
 
---------- Mineur  
+##  Mineur 
 - [-] [vc-dir] Ne pas afficher les lignes dossiers (les lignes qui sont grisées)
 - [-] Neotree auto find when buffer open without focus
 - [-] Voir pour utiliser une largeur max lors de la saisie de long texte
@@ -206,7 +211,19 @@
 - [-] git-svn
 
 
---------- Corrige 
+## Corrige 
+- [x] Click mouse 1 -> Si mode courant n est pas emacs -> passer en emacs
+- [x] Indent javascript cassééééééééééééé
+- [x] svn color non visible avec le nouveau beau theme
+- [x] Changer la couleur de la selection pour avoir la meme couleur que dans Sublime
+- [x] démarquer plus les splitter
+- [x] Le scrolling vertical n est pas aussi rapide que sur les editeurs moderne (voir dans base.el pour modifier la conf)
+- [x] Highlight trailing whitespace
+- [x] cmd+shift+d (duplicate-current-line-or-region) Prend parfois le contenu du clipboard plutot que la ligne courante
+- [x] Highlight comme cf capture
+- [x] Duplicate current line or region -> Si selection : garder la selection active
+
+
 - [x] Multi cursor : fail "detailShootIntention.php" 61:27
       Semble ok
 - [x] Multi cursor : mouse + command + click -> multi cursor
@@ -215,7 +232,6 @@
 - [x] cmd+shift+n new buffer
 - [x] Merge lines
 - [x] ediff : pas de couleurs avec le nouveau thème
-
 
 - [x] web mode : highlight current tag avec une barre verticale ne fonctionne plus (c etait parfait avant)
 - [x] Validateur de syntax javascript / html / php on fly (doit fonctionner en web mode)

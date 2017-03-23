@@ -17,6 +17,7 @@
 (set-face-attribute 'default nil :foreground "#e6fbfb" :box nil)
 (set-face-attribute 'fringe nil :background "#212121")
 (set-face-attribute 'linum nil :background "#212121")
+(set-face-attribute 'sp-pair-overlay-face nil :foreground "#fff" :background "#212121")
 (set-face-attribute 'trailing-whitespace nil :background "#171717")
 
 
@@ -44,10 +45,6 @@
 (set-face-attribute 'font-lock-constant-face nil :foreground "#ff5370")
 (set-face-attribute 'font-lock-function-name-face nil :foreground "#79aaff")
 
-;; (set-face-attribute 'highlight-symbol-face nil :foreground "#fff" :background "#026a88")
-;; (set-face-attribute 'highlight-symbol-face nil :foreground "#8fddfb" :background "#212121" :box nil)
-(set-face-attribute 'highlight-symbol-face nil :foreground "#fff" :background "#0d7aa6" :box nil)
-(set-face-attribute 'evil-ex-lazy-highlight nil :foreground "#fff" :background "#212121")
 ;; (set-face-attribute 'font-lock-builtin-face nil :foreground "#f78c6c" :background nil)
 (set-face-attribute 'font-lock-builtin-face nil :foreground "#ff5370" :background nil)
 
@@ -130,10 +127,19 @@
  (face-list))
 
 ;; Current line highlight
-(set-face-background 'hl-line "#101112")
+(set-face-background 'hl-line "#161616")
 
 ;; Text selection
 (set-face-attribute 'region nil :background "#0d7aa6" :foreground "#eeffff" :box nil)
+;; (set-face-attribute 'region nil :background "red" :foreground "#eeffff" :box nil)
+
+;; (set-face-attribute 'highlight-symbol-face nil :foreground "#fff" :background "#026a88")
+;; (set-face-attribute 'highlight-symbol-face nil :foreground "#8fddfb" :background "#212121" :box nil)
+;; (set-face-attribute 'highlight-symbol-face nil :foreground "#fff" :background "#4e3742" :box nil)
+(set-face-attribute 'highlight-symbol-face nil :foreground "#fff" :background "#e6de00" :box nil :overline nil)
+
+(set-face-attribute 'evil-ex-lazy-highlight nil :foreground "#fff" :background "#212121")
+
 
 ;; parenthesis
 (set-face-foreground 'show-paren-match "#b5ff05")

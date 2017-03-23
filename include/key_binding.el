@@ -330,21 +330,18 @@
 
 
 ;; search
-;; (global-set-key [(meta shift f)]  'helm-ag-project-root)
-;; (global-set-key [(meta shift f)]  'helm-ag)
 (global-set-key [(meta shift f)]  'ag)
 
-;; (global-set-key (kbd "M-ƒ") 'helm-ag) ;; (cmd + alt + f)
-;; (global-set-key (kbd "M-ƒ") 'helm-do-grep-ag) ;; (cmd + alt + f)
-;; (global-set-key (kbd "M-ƒ") 'helm-ag-project-root) ;; (cmd + alt + f)
 (global-set-key (kbd "M-·") 'helm-ag) ;; (cmd + alt + shift + f)
 
+(global-set-key (kbd "ƒ") 'helm-projectile-ag)  ;; (cmd + alt + f)
+(global-set-key (kbd "M-ƒ") 'helm-do-grep-ag) ;; (alt + f)
 
-(global-set-key (kbd "M-ƒ") 'helm-projectile-ag)  ;; (cmd + alt + f)
-(global-set-key (kbd "ƒ") 'helm-do-grep-ag);; (alt + f)
-
+;; window
 ;; (global-set-key [(meta x)] 'helm-M-x) ;; Doesn t work
 (global-set-key [(meta shift w)] 'delete-window)
+
+;; comment
 (global-set-key [(meta /)] 'evilnc-comment-or-uncomment-lines)
 ;; (global-set-key [(meta shift d)] 'duplicate-current-line-or-region)
 (global-set-key [(meta shift d)] 'duplicate-start-of-line-or-region)

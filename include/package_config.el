@@ -105,12 +105,12 @@
 ;; Update : L activation automatique en temps reel n est pas possible
 ;; car consomme trop de resources (gros ralentissements sur des gros fichiers)
 (require 'highlight-symbol)
-;; (highlight-symbol-mode 0)
-;; (setq highlight-symbol-idle-delay 0)
+(highlight-symbol-mode 0)
+(setq highlight-symbol-idle-delay 0)
 
-;; (add-hook 'highlight-symbol-mode-hook
-;;           (setq highlight-symbol-idle-delay 0)
-;;           )
+(add-hook 'highlight-symbol-mode-hook
+          (setq highlight-symbol-idle-delay 0)
+          )
 
 ;; ;; wra custom hook
 ;; ;; Activation du mode highlight all same occurence uniquement
@@ -457,6 +457,7 @@
   ("*Buffer List*"       . (display-buffer-same-window . nil))
   ("*ag*"                . (display-buffer-same-window . nil))
   ;;("*vc-dir*"            . (display-buffer-same-window . nil)) ;; Toujours mettre le buffer vc-dir dans la fenetre actuelle, trop bordelique autrement - Update 2 :  test sans : Tres pratique d avoir une nouvelle window lorsque l on affiche un buffer de type vc-diff
+  ("*shell*"             . (display-buffer-same-window . nil))
 ))
 
 
@@ -1061,7 +1062,8 @@
 (require 'evil-easymotion)
 
 ;; Cursor / caret state color
-(setq evil-emacs-state-cursor '("#9ecf00" bar))
+;; (setq evil-emacs-state-cursor '("#9ecf00" bar))
+(setq evil-emacs-state-cursor '("#f1c70a" bar))
 (setq evil-normal-state-cursor '("#56b0ec" box))
 (setq evil-visual-state-cursor '("#ffba00" box))
 (setq evil-insert-state-cursor '("red" bar))
@@ -1174,7 +1176,8 @@
 (setq neo-theme 'icons) ;; Set the neotree theme before show
 ;; (neotreezshow)
 
-
+;; dont ask 
+(setq neo-force-change-root t)
 
 ;; Every time when the neotree window is opened, let it find current file and jump to node.
 ;; (setq neo-smart-open t)
