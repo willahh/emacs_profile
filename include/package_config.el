@@ -1193,6 +1193,7 @@
 ;; Lock auto resize
 ;; Seems broken ? (Donne une largeur debile a neotree)
 ;; (setq neo-window-fixed-size nil)
+(setq neo-window-fixed-size nil)
 
 
 ;; Evil key binding for neotree
@@ -1200,6 +1201,24 @@
 (evil-define-key 'normal neotree-mode-map (kbd "SPC") 'neotree-enter)
 (evil-define-key 'normal neotree-mode-map (kbd "q") 'neotree-hide)
 (evil-define-key 'normal neotree-mode-map (kbd "RET") 'neotree-enter)
+
+
+
+
+;; Custom hook :
+;; Focus sur le fichier a la sauvegarde uniquement si
+;; neotree est ouvert
+(defun my-after-save-actions ()
+  "Used in `after-save-hook'."
+
+  (interactive)
+  (if (neo-global--window-exists-p)
+      (neotree-find)
+    )
+)
+
+(add-hook 'after-save-hook 'my-after-save-actions)
+
 
 
 

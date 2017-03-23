@@ -48,17 +48,6 @@
 (add-hook 'js2-mode-hook (lambda () (update-syntax-entry)))
 
 
-
-
-
-;; word_word2_word3
-
-
-
-
-
-
-
 ;; -------------- custom-set-variables
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

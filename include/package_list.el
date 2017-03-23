@@ -19,7 +19,7 @@
   tide
   js2-refactor
   flymake-jshint
-  neotree
+  ;; neotree
   php-mode
   php-refactor-mode
   ac-php
@@ -102,3 +102,6 @@
 (add-to-list 'load-path "~/.emacs.d/plugins/evil-nerd-commenter/")
 (add-to-list 'load-path "~/.emacs.d/plugins/whole-line-or-region")
 (add-to-list 'load-path "~/.emacs.d/plugins/all-the-icons")
+(add-to-list 'load-path "~/.emacs.d/plugins/neotree")
+
+

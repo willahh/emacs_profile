@@ -38,7 +38,6 @@
 
 
 ## A ranger
-
 - [ ] "*vc-change-log*" --> même window
 
 - [ ] C-M-j php-mode move line down -> racourcis utilise a un autre endroit
@@ -46,7 +45,7 @@
 - [ ] [theme] Ajouter des differenciations sur certains mot clee comme "$", "=", ".", "'", "(", ")", "+", "-", certains mots clés php "var_dump", "PHP_EOL", etc
       - Voir package "highlight-chars"
  
-- [ ] [theme] Changer la couleur de la scrollbar (yascroll)
+- [x] [theme] Changer la couleur de la scrollbar (yascroll)
 - [ ] vc dir en mode evil
 - [ ] css mode couleurs horribles
 - [ ] helm-projectile pas suffisamment rapidement
@@ -54,14 +53,13 @@
 
 ## Bloquant
 - [ ] [urgent] Trouver comment avoir un copier / coller qui fonctionne en interne/interne externe/interne comme sur les éditeurs modernes
-- [ ] CMD+SHIFT+A (emacs mode) -> select all 
-- [ ] web-mode : paste : indenting region ...
+               (kill + coller) (très chiant)  Action 1 : "DIS(" - Action 2 : "M-v" --> La première action fait un kill, la partie dans le presse papier n'est plus bonne
+               Update : il faut passer par le system interne de emacs (kill-ring, mark-ring) --> paste -> yank-pop
 - [ ] il faut avoir un système d'onglet fonctionnel, c'est vraiment pratique de voir sous les yeux les fichiers dont on a besoin
 - [ ] [multi-cursor] cursor paste 
 - [-] [multi-cursor] S'arrête de fonctionner lorsque la touche RET est invoquée ("nouvelle ligne")
       Voir https://github.com/magnars/multiple-cursors.el Unknown commands
 
-- [-] (kill + coller) (très chiant)  Action 1 : "DIS(" - Action 2 : "M-v" --> La première action fait un kill, la partie dans le presse papier n'est plus bonne
 - [ ] ctrl+v dans minibuffer 
 
 - [-] [vc-dir] Faire une fonction toggle des hunk comme dans magit
@@ -69,9 +67,7 @@
 - [-] [vc-dir] Trouver l'équilvalent de svn log en mode verbose "svn log -v"
 - [-] [vc-dir] N'affiche pas les fichiers supprimés localement, mais non envoyé à svn (svn remove)
 
-- [-] (d) --> dont yank before
-- [-] (M-C-d) (duplicate line or selection) Duplique parfois une portion beaucoup trop importante
-- [-] (kill + coller) (très chiant)  Action 1 : "DIS(" - Action 2 : "M-v" --> La première action fait un kill, la partie dans le presse papier n'est plus bonne 
+- [x] (M-C-d) (duplicate line or selection) Duplique parfois une portion beaucoup trop importante
 
 - [-] [IMPORTANT] Fonction get file name to clipboard (très utilisé)
 - [-] [IMPORTANT] CTRL+ALT+C --> console.log
@@ -80,15 +76,16 @@
 
 - [ ] [vc-dir] Hide up to date by default
 - [ ] [vc-dir] Check Compare with base revision (vc dir menu)
-- [ ] [vc-dir] Check Compare with base revision (vc dir menu)
-
-- [x] Remettre un highlight des mêmes instances plus rapide
 
 - [ ] css mode : Open close brackets
 - [ ] php mode : Plus de couleurs
 - [ ] TAB dans le vide : ne pas déployer le menu (js mode)
 
+- [x] Remettre un highlight des mêmes instances plus rapide
+- [x] web-mode : paste : indenting region ...
+
 ## Majeur
+- [ ] CMD+SHIFT+A (emacs mode) -> select all 
 - [-] js color var 
 - [-] Sublime go to definition - CTRL+MOUSE CLICK - Add new context menu first entry : "Goto Definition"
 - [-] [dired] TAB -> go to
@@ -397,24 +394,3 @@
 - [x] Highlight color (http://stackoverflow.com/questions/385661/how
 - [x] Indent html.  —> web beautify html 
 - [x] Installer ag  
-- [x] Lancer depuis launcher Mac 
-- [x] Mettre le truncate line off par défault 
-- [x] Multiple instances of shell ——> CTRL+U CTRL+X+b « shell » 
-- [x] Open action target in same buffer 
-- [x] Parcourir un repos 
-- [x] Search copy text in search 
-- [x] Show white space 
-- [x] Switch buffer keybinding CTRL+TAB
-- [x] Trouver un meilleur keybinding pour le move around panels (C+left top right bottom) 
-- [x] Vertical (« | ») 
-- [x] Voir quel .profile est utilise pour utiliser les bin (svn ne pointe pas sur le bon bin, etc etc) 
-- [x] Webmode s’initialise mal sur certains fichiers 
-- [x] [theme] Change typo 
-- [x] [theme] couleur highlight bg courante plus visible 
-- [x] convert tab to 4space 
-- [x] emacs.app launch multiple instances ———> open
-- [x] helm projectile relative to a certain directory point       > .projectile file 
-- [x] svn (status, commit, diff, …) ——> almost          —> Utilisation de dsvn 
-- [x] svn ediff  
-- [x] sync scroll 
-
