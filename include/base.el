@@ -46,7 +46,7 @@
 (setq-default indent-tabs-mode nil)
 
 ;;
-(transient-mark-mode 0)
+(setq transient-mark-mode 1)
 
 ;; Show matching parenthesis
 (show-paren-mode)
@@ -154,15 +154,23 @@ scroll-step 1)
 (setq line-number-mode t)
 (setq column-number-mode t)
 
+
+;; (setq set-mark-command-repeat-pop t)
+
+
 ;; Replace selection by text
 ;; Utilisation du comportement des editeurs modernes :
 ;; Lorsque un selection est active, le fait de saisir un caractere declenche les actions suivantes :
 ;;   - delete selection, - insert command
 (delete-selection-mode 1)
 
-;;
+
+
 (setq save-interprogram-paste-before-kill t)
-(setq x-select-enable-clipboard 1)
+;; (setq x-select-enable-clipboard 1)
+
+
+
 
 ;; Launch in fullscreen
 ;; Source: http://emacs.stackexchange.com/a/3008

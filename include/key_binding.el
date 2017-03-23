@@ -299,8 +299,12 @@
 
 (global-set-key (kbd "M-q") 'ask-before-closing)
 (global-set-key (kbd "M-s") 'save-buffer)
-;; (global-set-key (kbd "M-v") 'yank)
-(global-set-key (kbd "M-v") 'whole-line-or-region-yank)
+
+;; 
+(global-set-key (kbd "M-v") 'yank)
+;; (global-set-key (kbd "M-v") 'whole-line-or-region-yank)
+(global-set-key [(meta shift v)] 'helm-show-kill-ring)
+
 ;; (global-set-key (kbd "M-x") 'kill-whole-line)
 (global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
 (global-set-key (kbd "M-z") 'undo-tree-undo)
@@ -334,8 +338,8 @@
 
 (global-set-key (kbd "M-·") 'helm-ag) ;; (cmd + alt + shift + f)
 
-(global-set-key (kbd "ƒ") 'helm-projectile-ag)  ;; (cmd + alt + f)
-(global-set-key (kbd "M-ƒ") 'helm-do-grep-ag) ;; (alt + f)
+(global-set-key (kbd "M-ƒ") 'helm-projectile-ag)  ;; (cmd + alt + f)
+(global-set-key (kbd "ƒ") 'helm-do-grep-ag) ;; (alt + f)
 
 ;; window
 ;; (global-set-key [(meta x)] 'helm-M-x) ;; Doesn t work
@@ -387,3 +391,4 @@
 (global-set-key [(M return)] 'smart-open-line)
 ;; (global-set-key [(M shift return)] 'evil-open-above)
 ;; (global-set-key [(M return)] 'evil-open-above)
+

@@ -38,20 +38,8 @@
 
 
 ## A ranger
-- [ ] [vc-dir] Hide up to date by default
-- [ ] [vc-dir] Check Compare with base revision (vc dir menu)
-- [ ] CMD+SHIFT+A (emacs mode) -> select all 
-- [ ] web-mode : paste : indenting region ...
-- [ ] il faut avoir un système d'onglet fonctionnel, c'est vraiment pratique de voir sous les yeux les fichiers dont on a besoin
 
-
-- [x] Remettre un highlight des mêmes instances plus rapide
-- [ ] ctrl+v dans minibuffer
-- [ ] css mode : Open close brackets
-- [ ] php mode : Plus de couleurs
 - [ ] "*vc-change-log*" --> même window
-
-- [ ] TAB dans le vide : ne pas déployer le menu (js mode)
 
 - [ ] C-M-j php-mode move line down -> racourcis utilise a un autre endroit
 - [ ] F5 revert buffer ?
@@ -61,16 +49,20 @@
 - [ ] [theme] Changer la couleur de la scrollbar (yascroll)
 - [ ] vc dir en mode evil
 - [ ] css mode couleurs horribles
-- [ ] helm-projectile pas suffisamment rapide
+- [ ] helm-projectile pas suffisamment rapidement
 
 
 ## Bloquant
 - [ ] [urgent] Trouver comment avoir un copier / coller qui fonctionne en interne/interne externe/interne comme sur les éditeurs modernes
+- [ ] CMD+SHIFT+A (emacs mode) -> select all 
+- [ ] web-mode : paste : indenting region ...
+- [ ] il faut avoir un système d'onglet fonctionnel, c'est vraiment pratique de voir sous les yeux les fichiers dont on a besoin
 - [ ] [multi-cursor] cursor paste 
 - [-] [multi-cursor] S'arrête de fonctionner lorsque la touche RET est invoquée ("nouvelle ligne")
       Voir https://github.com/magnars/multiple-cursors.el Unknown commands
 
-- [-] (kill + coller) (très chiant)  Action 1 : "DIS(" - Action 2 : "M-v" --> La première action fait un kill, la partie dans le presse papier n'est plus bonne 
+- [-] (kill + coller) (très chiant)  Action 1 : "DIS(" - Action 2 : "M-v" --> La première action fait un kill, la partie dans le presse papier n'est plus bonne
+- [ ] ctrl+v dans minibuffer 
 
 - [-] [vc-dir] Faire une fonction toggle des hunk comme dans magit
 - [-] [vc-dir] Faire une fonction pour activer un vc-version-diff avec les paramètres older revision : "base", newer revision : "head"
@@ -86,6 +78,15 @@
 
 - [-] lib_override.css non éditable (freeze)
 
+- [ ] [vc-dir] Hide up to date by default
+- [ ] [vc-dir] Check Compare with base revision (vc dir menu)
+- [ ] [vc-dir] Check Compare with base revision (vc dir menu)
+
+- [x] Remettre un highlight des mêmes instances plus rapide
+
+- [ ] css mode : Open close brackets
+- [ ] php mode : Plus de couleurs
+- [ ] TAB dans le vide : ne pas déployer le menu (js mode)
 
 ## Majeur
 - [-] js color var 

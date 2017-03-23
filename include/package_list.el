@@ -92,7 +92,7 @@
   which-key
   window-numbering
   yasnippet
-  yascroll
+  ;; yascroll
   zerodark-theme
   ))
 ; 

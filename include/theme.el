@@ -130,13 +130,15 @@
 (set-face-background 'hl-line "#161616")
 
 ;; Text selection
-(set-face-attribute 'region nil :background "#0d7aa6" :foreground "#eeffff" :box nil)
+;; (set-face-attribute 'region nil :background "#0d7aa6" :foreground "#eeffff" :box nil)
 ;; (set-face-attribute 'region nil :background "red" :foreground "#eeffff" :box nil)
+(set-face-attribute 'region nil :background "#ffe400" :foreground "#000" :box nil)
 
 ;; (set-face-attribute 'highlight-symbol-face nil :foreground "#fff" :background "#026a88")
 ;; (set-face-attribute 'highlight-symbol-face nil :foreground "#8fddfb" :background "#212121" :box nil)
 ;; (set-face-attribute 'highlight-symbol-face nil :foreground "#fff" :background "#4e3742" :box nil)
-(set-face-attribute 'highlight-symbol-face nil :foreground "#fff" :background "#e6de00" :box nil :overline nil)
+;; (set-face-attribute 'highlight-symbol-face nil :foreground "#fff" :background "#e6de00" :box nil :overline nil)
+(set-face-attribute 'highlight-symbol-face nil :foreground "#55fdbd" :background nil :box nil :overline nil)
 
 (set-face-attribute 'evil-ex-lazy-highlight nil :foreground "#fff" :background "#212121")
 
@@ -229,15 +231,15 @@
 
 
 ;; yascroll color
-(defface yascroll:thumb-fringe
-  '((t (:background "#56b0ec" :foreground "#000")))
-  "Face for fringe scroll bar thumb."
-  :group 'yascroll)
+;; (defface yascroll:thumb-fringe
+;;   '((t (:background "#56b0ec" :foreground "#000")))
+;;   "Face for fringe scroll bar thumb."
+;;   :group 'yascroll)
 
 
-(set-face-attribute 'yascroll:thumb-fringe nil :foreground "#000" :background "#000")
-(set-face-attribute 'yascroll:thumb-text-area nil :foreground "#000" :background "#000")
-;; (set-face-attribute 'yascroll:thumb-overlays nil :foreground "#000" :background "#000")
+;; (set-face-attribute 'yascroll:thumb-fringe nil :foreground "#000" :background "#000")
+;; (set-face-attribute 'yascroll:thumb-text-area nil :foreground "#000" :background "#000")
+;; ;; (set-face-attribute 'yascroll:thumb-overlays nil :foreground "#000" :background "#000")
 
 
 

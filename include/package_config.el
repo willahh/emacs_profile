@@ -452,13 +452,15 @@
 ;;   ))
 
 (setq display-buffer-alist
-  '(
-  ("*vc-dir*"            . (display-buffer-same-window . nil))
-  ("*Buffer List*"       . (display-buffer-same-window . nil))
-  ("*ag*"                . (display-buffer-same-window . nil))
-  ;;("*vc-dir*"            . (display-buffer-same-window . nil)) ;; Toujours mettre le buffer vc-dir dans la fenetre actuelle, trop bordelique autrement - Update 2 :  test sans : Tres pratique d avoir une nouvelle window lorsque l on affiche un buffer de type vc-diff
-  ("*shell*"             . (display-buffer-same-window . nil))
+  '(  
+  ("*vc-dir*"                              . (display-buffer-same-window . nil))
+  ("*Buffer List*"                         . (display-buffer-same-window . nil))
+  ("*ag*"                                  . (display-buffer-same-window . nil))
+  ("*shell*"                               . (display-buffer-same-window . nil))
 ))
+
+
+
 
 
 
@@ -876,8 +878,9 @@
     (add-hook 'prog-mode-hook #'yas-minor-mode)
 
 ;; yascroll
-(require 'yascroll)
-(global-yascroll-bar-mode)
+;; Update : desactivation ralenti beaucoup l affichage (visible lors de scroll ligne par ligne avec beaucoup de texte)
+;; (require 'yascroll)
+;; (global-yascroll-bar-mode)
 
 ;; php-auto-yasnippets
 ; (require 'php-auto-yasnippets)
@@ -940,6 +943,7 @@
 ;;(evil-set-initial-state 'vc-dir-mode' 'normal) 
 (evil-set-initial-state 'vc-dir-mode 'normal)
 (evil-set-initial-state 'profiler-mode 'emacs)
+(evil-set-initial-state 'profiler-report-mode 'emacs)
 
 
 ;; Remove all keybindings from insert-state keymap (insert mode behavior like emacs) 
