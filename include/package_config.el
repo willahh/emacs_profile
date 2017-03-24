@@ -1208,16 +1208,16 @@
 ;; Custom hook :
 ;; Focus sur le fichier a la sauvegarde uniquement si
 ;; neotree est ouvert
-(defun my-after-save-actions ()
-  "Used in `after-save-hook'."
+;; (defun my-after-save-actions ()
+;;   "Used in `after-save-hook'."
 
-  (interactive)
-  (if (neo-global--window-exists-p)
-      (neotree-find)
-    )
-)
+;;   (interactive)
+;;   (if (neo-global--window-exists-p)
+;;       (neotree-find)
+;;     )
+;; )
 
-(add-hook 'after-save-hook 'my-after-save-actions)
+;; (add-hook 'after-save-hook 'my-after-save-actions)
 
 
 
