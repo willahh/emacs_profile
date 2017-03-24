@@ -45,7 +45,7 @@
   evil
   evil-easymotion
   evil-leader
-  evil-multiedit
+  ;; evil-multiedit
   evil-nerd-commenter ;; keep this (get it from melpa or from plugin folder)
   evil-surround   
   evil-visualstar

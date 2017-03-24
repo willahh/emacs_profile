@@ -31,7 +31,7 @@
 
 
 ## Notes :
-  - Comportement native lorsuqe de longues lignes de textes sont presentes sans retour a la ligne
+  - Comportement native lorsques de longues lignes de textes sont presentes sans retour a la ligne
     https://www.emacswiki.org/emacs/FindLongLines
 
 
@@ -70,90 +70,91 @@
 - [x] (M-C-d) (duplicate line or selection) Duplique parfois une portion beaucoup trop importante
 
 ## Majeur
-- [-] [theme] Mettre plus en avant le buffer actif 
+- [ ] Revert buffer : keep current line position 
+- [ ] [theme] Mettre plus en avant le buffer actif 
 - [x] [theme] Changer la couleur de la scrollbar (yascroll)
 - [ ] [theme] css mode couleurs horribles
 - [ ] [perf] helm-projectile pas suffisamment rapide
 - [ ] [theme] Ajouter des differenciations sur certains mot clee comme "$", "=", ".", "'", "(", ")", "+", "-", certains mots clés php "var_dump", "PHP_EOL", etc
               Voir package "highlight-chars"
 - [ ] [util] F5 revert buffer ?
-- [-] [theme] js color var 
-- [-] [util] Sublime go to definition - CTRL+MOUSE CLICK - Add new context menu first entry : "Goto Definition"
+- [ ] [theme] js color var 
+- [ ] [util] Sublime go to definition - CTRL+MOUSE CLICK - Add new context menu first entry : "Goto Definition"
 - [ ] [vc-dir] en mode evil
-- [-] [dired] TAB -> go to
-- [-] [dired] delete folder very slow
-- [-] [dired] > mkdir : refresh slow
-- [-] [magit-diff] M-w didn't work
-- [-] [dired] TAB -> go to
-- [-] [magit-diff] M-w didn't work
+- [ ] [dired] TAB -> go to
+- [ ] [dired] delete folder very slow
+- [ ] [dired] > mkdir : refresh slow
+- [ ] [magit-diff] M-w didn't work
+- [ ] [dired] TAB -> go to
+- [ ] [magit-diff] M-w didn't work
 
-- [-] [util] helm imenu autofocus !!!!!!!
-- [-] Faire fonctionner flycher avec eslint
+- [ ] [util] helm imenu autofocus !!!!!!!
+- [ ] Faire fonctionner flycher avec eslint
       http://eslint.org/docs/user-guide/integrations
       http://codewinds.com/blog/2015-04-02-emacs-flycheck-eslint-jsx.html
       http://www.flycheck.org/en/latest/languages.html#javascript
-- [-] [util] Voir si il est possible de faire un (CMD+P + touche @) (file.php@methode_name)
+- [ ] [util] Voir si il est possible de faire un (CMD+P + touche @) (file.php@methode_name)
       pour avoir une complétion des méthodes direct sans entrer dans le fichier
-- [-] Faire une fonction "Merge lines" pour supprimer les linebreak/whitespace
-- [-] Terminer la fonction file:duplicate pour n'avoir qu'un seul prompt -> celui du nom du fichier target
-- [-] theme > diff : Se rapproche au max des couleurs du theme Sublime 
-- [-] Delete file : ne pas re demander le chemin alors que l'on a deja le focus
-- [-] [theme] nlinum : highlight current line number
-- [-] Ajouter une méthode copy file name pour retourner uniquement le nom du fichier
+- [ ] Faire une fonction "Merge lines" pour supprimer les linebreak/whitespace
+- [ ] Terminer la fonction file:duplicate pour n'avoir qu'un seul prompt -> celui du nom du fichier target
+- [ ] theme > diff : Se rapproche au max des couleurs du theme Sublime 
+- [ ] Delete file : ne pas re demander le chemin alors que l'on a deja le focus
+- [ ] [theme] nlinum : highlight current line number
+- [ ] Ajouter une méthode copy file name pour retourner uniquement le nom du fichier
       - La fonction copy-file-name-to-clipbord est present, mais elle retourne le chemin complet
         Il faudrait garder que la derniere partie apres le /
-- [-] delete-file
+- [ ] delete-file
       - dont prompt for path
       - kill buffer 
-- [-] ag/helm-ag/helm-ag-... : Ignore les regles suivantes :
+- [ ] ag/helm-ag/helm-ag-... : Ignore les regles suivantes :
     - "*.min.js"
     - "*.svn-base"
     - "*.log"
-- [-] helm-do-grep-ag -> Ignjorer les fichier "*.svn-base"
+- [ ] helm-do-grep-ag -> Ignjorer les fichier "*.svn-base"
       -> helm-ag-ignore-buffer-patterns (conf ajoutee, non testee, maj : ne fonctionne pas, voir pour mettre la bonne regle)
       -> Impossible de trouver la raison sur cette commande, utiliser helm-ag a la place
 
-- [-] Attention voir si la modif des word separator n agit pas sur evil
-- [-] Faire une fonction copy file from project
-- [-] highlight symbol : Mettre 0 delai d attente pour la surbrillance des autres symboles
-- [-] la selection avec la souris doit aller loin avant de prendre en compte la deuxieme ligne
+- [x] Attention voir si la modif des word separator n agit pas sur evil
+- [ ] Faire une fonction copy file from project
+- [x] highlight symbol : Mettre 0 delai d attente pour la surbrillance des autres symboles
+- [ ] la selection avec la souris doit aller loin avant de prendre en compte la deuxieme ligne
       (Comportement de selection legerement different a celui de Sublime)
-- [-] ag search result buffer : highlight search words
-- [-] nlinum in fringe ? Pouvoir afficher les vc diff plus loin que le contenu
-- [-] (command+r pour reload vc-dir) - M-r ----> vc-dir-refresh
+- [ ] ag search result buffer : highlight search words
+- [ ] (command+r pour reload vc-dir) - M-r ----> vc-dir-refresh
 
-- [-] [theme] Voir pour avoir une font plus lisible (aliasing different --> Se rapprocher du rendu de Sublime (la font est bien la meme))
-- [-] [theme] Voir si il est possible d'avoir une bordure autour de la selection (comme dans Sublime))
-- [-] [Neotree] > after load > Open first file > focus to other window 
+- [ ] [theme] Voir pour avoir une font plus lisible (aliasing different --> Se rapprocher du rendu de Sublime (la font est bien la meme))
+- [ ] [theme] Voir si il est possible d'avoir une bordure autour de la selection (comme dans Sublime))
+- [ ] [Neotree] > after load > Open first file > focus to other window 
 
-- [-] unbind key on some mode :
-    - [-] M-w magit
-    - [-] C-tab on magit buffer
+- [ ] unbind key on some mode :
+    - [ ] M-w magit
+    - [ ] C-tab on magit buffer
     - [x] m-d (should be delete backward)
     - [x] M-S-p diff-mode
     - [x] M-p on "*ag search text:......*" buffer
- - [-] Ajouter hook pour recentrer sur la ligne courante après les actions suivantes :
+ - [ ] Ajouter hook pour recentrer sur la ligne courante après les actions suivantes :
   (recenter)
-  - [-] git-gutter next / prev
+  - [ ] git-gutter next / prev
   - [x] evil search
-  - [-] highlight mode nav
+  - [ ] highlight mode nav
 
-- [-] Refresh semantic apres modification source (rien d'urgent)
-- [-] Custom theme, se baser sur les couleurs suivantes "images/theme.png"
+- [ ] Refresh semantic apres modification source (rien d'urgent)
+- [ ] Custom theme, se baser sur les couleurs suivantes "images/theme.png"
          http://blog.pabuisson.com/2014/07/vim-vundle-gestion-plugins/
-- [-] Ne pas fermer automatiquement les quotes lors d'un yank (coller)
-- [-] ag --> ignore hudge file (ST behaviour) (aucun problème dans, à mon avis, 99% des cas)  (il peut être utile de faire des recherches dans des fichieux volumineux, mais pour ca la recherche peut être faite de manière spécifique (paramètres supplémentaire, utilisation directement depuis ligne de commande ...)
-- [-] svn ignore rules to add :
+- [ ] Ne pas fermer automatiquement les quotes lors d'un yank (coller)
+- [ ] ag --> ignore hudge file (ST behaviour) (aucun problème dans, à mon avis, 99% des cas)  (il peut être utile de faire des recherches dans des fichieux volumineux, mais pour ca la recherche peut être faite de manière spécifique (paramètres supplémentaire, utilisation directement depuis ligne de commande ...)
+- [ ] svn ignore rules to add :
   - .ac-php-conf.json
   - logs
   - .DS_Store
-- [-] Installer / configurer php mode | ac-php (auto completion php)
+- [ ] Installer / configurer php mode | ac-php (auto completion php)
 
-- [-] helm evil mode
-- [-] helm imenu autofocus !!!!!!!
-- [-] helm directory first
+- [ ] helm evil mode
+- [ ] helm imenu autofocus !!!!!!!
+- [ ] helm directory first
 
 ##  Mineur 
+- [-] nlinum in fringe ? Pouvoir afficher les vc diff plus loin que le contenu
 - [-] [vc-dir] Ne pas afficher les lignes dossiers (les lignes qui sont grisées)
 - [-] Neotree auto find when buffer open without focus
 - [-] Voir pour utiliser une largeur max lors de la saisie de long texte
