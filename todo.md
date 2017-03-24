@@ -38,7 +38,8 @@
 
 
 ## A ranger
-
+- [ ] web-mode don't do auto format all the time
+- [ ] css-mode indent css needed
 
 ## Bloquant
 - [ ] [multi-cursor] [IMPORTANT] cursor paste 

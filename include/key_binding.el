@@ -335,7 +335,7 @@
 ;; search
 (global-set-key [(meta shift f)]  'ag)
 
-(global-set-key (kbd "M-·") helm-projectile-ag) ;; (cmd + alt + shift + f)
+(global-set-key (kbd "M-·") 'helm-projectile-ag) ;; (cmd + alt + shift + f)
 (global-set-key (kbd "ƒ") 'helm-ag)  ;; (cmd + alt + f)
 (global-set-key (kbd "M-ƒ") 'helm-do-grep-ag) ;; (alt + f)
 
