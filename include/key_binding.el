@@ -180,7 +180,7 @@
 (key-chord-define-global "<w" 'mc/mark-all-like-this)
 (key-chord-define-global "ji" 'ace-window) ;; cannot be jk (vim up/right)
 (key-chord-define-global ";:" 'highlight-symbol-mode)
-(key-chord-define-global "ju" 'toggle-php-flavor-mode)
+(key-chord-define-global "qs" 'toggle-php-flavor-mode) 
 
 
 
