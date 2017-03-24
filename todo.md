@@ -5,7 +5,7 @@
 
 
 
-##Notes diverses
+## Utils
 - C-x r t (string rectangle) : Voir plus en détail
 - evil mode : ":new file.extension" -> Create new buffer/file/window
 - evil mode : "gf" ("go to file")
@@ -30,7 +30,7 @@
 
 
 
-## Notes ralentissements :
+## Notes :
   - Comportement native lorsuqe de longues lignes de textes sont presentes sans retour a la ligne
     https://www.emacswiki.org/emacs/FindLongLines
 
@@ -38,78 +38,69 @@
 
 
 ## A ranger
-- [ ] "*vc-change-log*" --> même window
-
-- [ ] C-M-j php-mode move line down -> racourcis utilise a un autre endroit
-- [ ] F5 revert buffer ?
-- [ ] [theme] Ajouter des differenciations sur certains mot clee comme "$", "=", ".", "'", "(", ")", "+", "-", certains mots clés php "var_dump", "PHP_EOL", etc
-      - Voir package "highlight-chars"
- 
-- [x] [theme] Changer la couleur de la scrollbar (yascroll)
-- [ ] vc dir en mode evil
-- [ ] css mode couleurs horribles
-- [ ] helm-projectile pas suffisamment rapidement
 
 
 ## Bloquant
+- [ ] [multi-cursor] [IMPORTANT] cursor paste 
+- [-] [multi-cursor] [IMPORTANT] S'arrête de fonctionner lorsque la touche RET est invoquée ("nouvelle ligne")
+      Voir https://github.com/magnars/multiple-cursors.el Unknown commands
+- [-] [IMPORTANT] Fonction get file name to clipboard (très utilisé)
+- [-] [IMPORTANT] CTRL+ALT+C --> console.log
+- [ ] [util] css mode : Open close brackets
+- [ ] [util] php mode : Plus de couleurs
+- [ ] [util] CMD+SHIFT+A (emacs mode) -> select all 
+- [ ] [util] C-M-j php-mode move line down -> racourcis utilise a un autre endroit
 - [ ] [urgent] Trouver comment avoir un copier / coller qui fonctionne en interne/interne externe/interne comme sur les éditeurs modernes
                (kill + coller) (très chiant)  Action 1 : "DIS(" - Action 2 : "M-v" --> La première action fait un kill, la partie dans le presse papier n'est plus bonne
                Update : il faut passer par le system interne de emacs (kill-ring, mark-ring) --> paste -> yank-pop
-- [ ] il faut avoir un système d'onglet fonctionnel, c'est vraiment pratique de voir sous les yeux les fichiers dont on a besoin
-- [ ] [multi-cursor] cursor paste 
-- [-] [multi-cursor] S'arrête de fonctionner lorsque la touche RET est invoquée ("nouvelle ligne")
-      Voir https://github.com/magnars/multiple-cursors.el Unknown commands
-
-- [ ] ctrl+v dans minibuffer 
-
+- [ ] [util] Il faut avoir un système d'onglet fonctionnel, c'est vraiment pratique de voir sous les yeux les fichiers dont on a besoin
+- [ ] [util] ctrl+v dans minibuffer 
 - [-] [vc-dir] Faire une fonction toggle des hunk comme dans magit
 - [-] [vc-dir] Faire une fonction pour activer un vc-version-diff avec les paramètres older revision : "base", newer revision : "head"
 - [-] [vc-dir] Trouver l'équilvalent de svn log en mode verbose "svn log -v"
 - [-] [vc-dir] N'affiche pas les fichiers supprimés localement, mais non envoyé à svn (svn remove)
-
-- [x] (M-C-d) (duplicate line or selection) Duplique parfois une portion beaucoup trop importante
-
-- [-] [IMPORTANT] Fonction get file name to clipboard (très utilisé)
-- [-] [IMPORTANT] CTRL+ALT+C --> console.log
-
-- [-] lib_override.css non éditable (freeze)
-
 - [ ] [vc-dir] Hide up to date by default
 - [ ] [vc-dir] Check Compare with base revision (vc dir menu)
-
-- [ ] css mode : Open close brackets
-- [ ] php mode : Plus de couleurs
 - [ ] TAB dans le vide : ne pas déployer le menu (js mode)
 
 - [x] Remettre un highlight des mêmes instances plus rapide
 - [x] web-mode : paste : indenting region ...
+- [x] lib_override.css non éditable (freeze)
+- [x] (M-C-d) (duplicate line or selection) Duplique parfois une portion beaucoup trop importante
 
 ## Majeur
-- [ ] CMD+SHIFT+A (emacs mode) -> select all 
-- [-] js color var 
-- [-] Sublime go to definition - CTRL+MOUSE CLICK - Add new context menu first entry : "Goto Definition"
+- [-] [theme] Mettre plus en avant le buffer actif 
+- [x] [theme] Changer la couleur de la scrollbar (yascroll)
+- [ ] [theme] css mode couleurs horribles
+- [ ] [perf] helm-projectile pas suffisamment rapide
+- [ ] [theme] Ajouter des differenciations sur certains mot clee comme "$", "=", ".", "'", "(", ")", "+", "-", certains mots clés php "var_dump", "PHP_EOL", etc
+              Voir package "highlight-chars"
+- [ ] [util] F5 revert buffer ?
+- [-] [theme] js color var 
+- [-] [util] Sublime go to definition - CTRL+MOUSE CLICK - Add new context menu first entry : "Goto Definition"
+- [ ] [vc-dir] en mode evil
+- [-] [dired] TAB -> go to
+- [-] [dired] delete folder very slow
+- [-] [dired] > mkdir : refresh slow
+- [-] [magit-diff] M-w didn't work
 - [-] [dired] TAB -> go to
 - [-] [magit-diff] M-w didn't work
 
-- [-] helm imenu autofocus !!!!!!!
+- [-] [util] helm imenu autofocus !!!!!!!
 - [-] Faire fonctionner flycher avec eslint
       http://eslint.org/docs/user-guide/integrations
       http://codewinds.com/blog/2015-04-02-emacs-flycheck-eslint-jsx.html
       http://www.flycheck.org/en/latest/languages.html#javascript
-- [-] Voir si il est possible de faire un (CMD+P + touche @) (file.php@methode_name)
+- [-] [util] Voir si il est possible de faire un (CMD+P + touche @) (file.php@methode_name)
       pour avoir une complétion des méthodes direct sans entrer dans le fichier
 - [-] Faire une fonction "Merge lines" pour supprimer les linebreak/whitespace
 - [-] Terminer la fonction file:duplicate pour n'avoir qu'un seul prompt -> celui du nom du fichier target
 - [-] theme > diff : Se rapproche au max des couleurs du theme Sublime 
 - [-] Delete file : ne pas re demander le chemin alors que l'on a deja le focus
-- [-] nlinum : highlight current line number
-- [-] Check kill yank ring
-- [-] big visible current buffer
+- [-] [theme] nlinum : highlight current line number
 - [-] Ajouter une méthode copy file name pour retourner uniquement le nom du fichier
       - La fonction copy-file-name-to-clipbord est present, mais elle retourne le chemin complet
         Il faudrait garder que la derniere partie apres le /
-- [-] [dired] delete folder very slow
-- [-] [dired] > mkdir : refresh slow
 - [-] delete-file
       - dont prompt for path
       - kill buffer 
