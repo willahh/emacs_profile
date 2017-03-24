@@ -323,7 +323,6 @@
 
 
 
-
 ;; (global-set-key (kbd "M-d")  'mc/mark-next-like-this) ;; Cannot be setted, (emacs backward delete word)
 
 ;; Edit : Desactivation, il m arrive trop souvent de faire des M-n
@@ -336,10 +335,9 @@
 ;; search
 (global-set-key [(meta shift f)]  'ag)
 
-(global-set-key (kbd "M-·") 'helm-ag) ;; (cmd + alt + shift + f)
-
-(global-set-key (kbd "M-ƒ") 'helm-projectile-ag)  ;; (cmd + alt + f)
-(global-set-key (kbd "ƒ") 'helm-do-grep-ag) ;; (alt + f)
+(global-set-key (kbd "M-·") 'helm-projectile-ag) ;; (cmd + alt + shift + f)
+(global-set-key (kbd "ƒ") 'helm-ag)  ;; (cmd + alt + f)
+(global-set-key (kbd "M-ƒ") 'helm-do-grep-ag) ;; (alt + f)
 
 ;; window
 ;; (global-set-key [(meta x)] 'helm-M-x) ;; Doesn t work
