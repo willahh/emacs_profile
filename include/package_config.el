@@ -306,6 +306,7 @@
 ;; diff-hl
 (global-diff-hl-mode t)
 (add-hook 'dired-mode-hook 'diff-hl-dired-mode)
+(add-hook 'prog-mode-hook 'diff-hl-mode)
 
                                    
       
@@ -457,13 +458,13 @@
 ;; ;;  ("*Help*"            . (display-buffer-same-window . nil))
 ;;   ))
 
-(setq display-buffer-alist
-  '(  
-  ("*vc-dir*"                              . (display-buffer-same-window . nil))
-  ("*Buffer List*"                         . (display-buffer-same-window . nil))
-  ("*ag*"                                  . (display-buffer-same-window . nil))
-  ("*shell*"                               . (display-buffer-same-window . nil))
-))
+;; (setq display-buffer-alist
+;;   '(  
+;;   ("*vc-dir*"                              . (display-buffer-same-window . nil))
+;;   ("*Buffer List*"                         . (display-buffer-same-window . nil))
+;;   ("*ag*"                                  . (display-buffer-same-window . nil))
+;;   ("*shell*"                               . (display-buffer-same-window . nil))
+;; ))
 
 
 
@@ -950,6 +951,12 @@
 (evil-set-initial-state 'vc-dir-mode 'normal)
 (evil-set-initial-state 'profiler-mode 'emacs)
 (evil-set-initial-state 'profiler-report-mode 'emacs)
+
+(evil-set-initial-state 'dired 'emacs)
+(evil-set-initial-state 'dired-mode 'emacs)
+(evil-set-initial-state 'dired-find-file 'emacs)
+(evil-set-initial-state 'find-file 'emacs)
+
 
 
 ;; Remove all keybindings from insert-state keymap (insert mode behavior like emacs) 

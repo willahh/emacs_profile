@@ -257,6 +257,11 @@
 (global-set-key (kbd "M-à") 'resize-window)
 (global-set-key (kbd "<C-M-268632091>") 'split-window-below) ;; CTRL+ALT+COMMAND + ° (caractere a droite du 0)
 (global-set-key (kbd "<C-M-268632095>") 'split-window-right) ;; CTRL+ALT+COMMAND + - (caractere a droite du 0 + 1)
+(global-set-key [(meta shift control h)] 'evil-window-left)
+(global-set-key [(meta shift control l)] 'evil-window-right)
+(global-set-key [(meta shift control j)] 'evil-window-down)
+(global-set-key [(meta shift control k)] 'evil-window-up)
+
 
 
 
@@ -333,7 +338,7 @@
 
 
 ;; search
-(global-set-key [(meta shift f)]  'ag)
+;; (global-set-key [(meta shift f)]  'ag) ;; Update : impossible, m s f correspond a une action native d emacs (selection du mot suivant) : Utlisation d m-x --> ag
 
 (global-set-key (kbd "M-·") 'helm-projectile-ag) ;; (cmd + alt + shift + f)
 (global-set-key (kbd "ƒ") 'helm-ag)  ;; (cmd + alt + f)
