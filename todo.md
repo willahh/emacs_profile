@@ -38,47 +38,49 @@
 
 
 ## A ranger
-- [ ] web-mode don't do auto format all the time
-- [ ] css-mode indent css needed
+- [x] web-mode don't do auto format all the time
+      Semble ok
+- [x] css-mode indent css needed
 
 ## Bloquant
 - [ ] [multi-cursor] [IMPORTANT] cursor paste 
-- [-] [multi-cursor] [IMPORTANT] S'arrête de fonctionner lorsque la touche RET est invoquée ("nouvelle ligne")
+- [x] [multi-cursor] [IMPORTANT] S'arrête de fonctionner lorsque la touche RET est invoquée ("nouvelle ligne")
       Voir https://github.com/magnars/multiple-cursors.el Unknown commands
-- [-] [IMPORTANT] Fonction get file name to clipboard (très utilisé)
-- [-] [IMPORTANT] CTRL+ALT+C --> console.log
-- [ ] [util] css mode : Open close brackets
-- [ ] [util] php mode : Plus de couleurs
+      Normal : ENTER est binde pour sortir du mode multi, utiliser M+j (new line indent command)
+- [ ] [IMPORTANT] Fonction get file name to clipboard (très utilisé)
+- [ ] [IMPORTANT] CTRL+ALT+C --> console.log
 - [ ] [util] CMD+SHIFT+A (emacs mode) -> select all 
-- [ ] [util] C-M-j php-mode move line down -> racourcis utilise a un autre endroit
 - [ ] [urgent] Trouver comment avoir un copier / coller qui fonctionne en interne/interne externe/interne comme sur les éditeurs modernes
                (kill + coller) (très chiant)  Action 1 : "DIS(" - Action 2 : "M-v" --> La première action fait un kill, la partie dans le presse papier n'est plus bonne
                Update : il faut passer par le system interne de emacs (kill-ring, mark-ring) --> paste -> yank-pop
 - [ ] [util] Il faut avoir un système d'onglet fonctionnel, c'est vraiment pratique de voir sous les yeux les fichiers dont on a besoin
 - [ ] [util] ctrl+v dans minibuffer 
-- [-] [vc-dir] Faire une fonction toggle des hunk comme dans magit
-- [-] [vc-dir] Faire une fonction pour activer un vc-version-diff avec les paramètres older revision : "base", newer revision : "head"
-- [-] [vc-dir] Trouver l'équilvalent de svn log en mode verbose "svn log -v"
-- [-] [vc-dir] N'affiche pas les fichiers supprimés localement, mais non envoyé à svn (svn remove)
-- [ ] [vc-dir] Hide up to date by default
+- [ ] [vc-dir] Faire une fonction toggle des hunk comme dans magit
+- [ ] [vc-dir] Faire une fonction pour activer un vc-version-diff avec les paramètres older revision : "base", newer revision : "head"
+- [ ] [vc-dir] Trouver l'équilvalent de svn log en mode verbose "svn log -v"
+- [ ] [vc-dir] N'affiche pas les fichiers supprimés localement, mais non envoyé à svn (svn remove)
+- [x] [vc-dir] Hide up to date by default
+       --> key binding : "x"
 - [ ] [vc-dir] Check Compare with base revision (vc dir menu)
 - [ ] TAB dans le vide : ne pas déployer le menu (js mode)
 
+- [x] [util] css mode : Open close brackets
 - [x] Remettre un highlight des mêmes instances plus rapide
 - [x] web-mode : paste : indenting region ...
 - [x] lib_override.css non éditable (freeze)
 - [x] (M-C-d) (duplicate line or selection) Duplique parfois une portion beaucoup trop importante
+- [x] [util] C-M-j php-mode move line down -> racourcis utilise a un autre endroit
 
 ## Majeur
 - [ ] Revert buffer : keep current line position 
 - [ ] [theme] Mettre plus en avant le buffer actif 
 - [x] [theme] Changer la couleur de la scrollbar (yascroll)
 - [ ] [theme] css mode couleurs horribles
-- [ ] [perf] helm-projectile pas suffisamment rapide
+- [ ] [theme] js color var 
 - [ ] [theme] Ajouter des differenciations sur certains mot clee comme "$", "=", ".", "'", "(", ")", "+", "-", certains mots clés php "var_dump", "PHP_EOL", etc
               Voir package "highlight-chars"
+- [ ] [perf] helm-projectile pas suffisamment rapide
 - [ ] [util] F5 revert buffer ?
-- [ ] [theme] js color var 
 - [ ] [util] Sublime go to definition - CTRL+MOUSE CLICK - Add new context menu first entry : "Goto Definition"
 - [ ] [vc-dir] en mode evil
 - [ ] [dired] TAB -> go to
@@ -94,6 +96,7 @@
       http://codewinds.com/blog/2015-04-02-emacs-flycheck-eslint-jsx.html
       http://www.flycheck.org/en/latest/languages.html#javascript
 - [ ] [util] Voir si il est possible de faire un (CMD+P + touche @) (file.php@methode_name)
+- [ ] [theme] php mode : Plus de couleurs
       pour avoir une complétion des méthodes direct sans entrer dans le fichier
 - [ ] Faire une fonction "Merge lines" pour supprimer les linebreak/whitespace
 - [ ] Terminer la fonction file:duplicate pour n'avoir qu'un seul prompt -> celui du nom du fichier target
@@ -154,52 +157,50 @@
 - [ ] helm directory first
 
 ##  Mineur 
-- [-] nlinum in fringe ? Pouvoir afficher les vc diff plus loin que le contenu
-- [-] [vc-dir] Ne pas afficher les lignes dossiers (les lignes qui sont grisées)
-- [-] Neotree auto find when buffer open without focus
-- [-] Voir pour utiliser une largeur max lors de la saisie de long texte
-- [-] Auto complete > 2eme boite > Afficher instantanement
-- [-] web mode : refresh colors after yank
-- [-] tabbar : hide bad icons
-- [-] emacs --> save a cursor place ?
-- [-] Enable emmet by default for web files
-- [-] git-svn
-
-- [-] ctrl+a en mode evil > default ne fonctionne pas
-- [-] Fichiers markdown mette toutes les windows en centré
-- [-] Don't add behaviour for end of line (remove end of line stuff)
+- [ ] nlinum in fringe ? Pouvoir afficher les vc diff plus loin que le contenu
+- [ ] [vc-dir] Ne pas afficher les lignes dossiers (les lignes qui sont grisées)
+- [ ] Neotree auto find when buffer open without focus
+- [ ] Voir pour utiliser une largeur max lors de la saisie de long texte
+- [ ] Auto complete > 2eme boite > Afficher instantanement
+- [ ] web mode : refresh colors after yank
+- [ ] tabbar : hide bad icons
+- [ ] emacs --> save a cursor place ?
+- [ ] Enable emmet by default for web files
+- [ ] git-svn
+- [x] ctrl+a en mode evil > default ne fonctionne pas
+- [ ] Fichiers markdown mette toutes les windows en centré
+- [ ] Don't add behaviour for end of line (remove end of line stuff)
       (Creation de differences inutiles sur la toute dernière ligne de certains fichiers)
-- [-] Markdown mode style like in Sublime (background white, text black, column width limit, center inside)
-- [-] Faire tourner "create-tags" (ctags doit etre lu par emacs)
-- [-] JS auto doc
-- [-] Faire fonctionner des snippets javascript
-- [-] Web mode : avoir des propositions d auto completion de mots cles php connu
+- [ ] Markdown mode style like in Sublime (background white, text black, column width limit, center inside)
+- [ ] Faire tourner "create-tags" (ctags doit etre lu par emacs)
+- [ ] JS auto doc
+- [ ] Faire fonctionner des snippets javascript
+- [ ] Web mode : avoir des propositions d auto completion de mots cles php connu
       Comme dans Sublime (var_       --> proposition var_dump)
       Voir du cote des snippets (Yasnippet)
       Update : il faut faire fonctionner yasnippet correctement avant
-- [-] Disable web mode disable auto indent
+- [ ] Disable web mode disable auto indent
       Je pense qu il faut laisser cette fonctionalitee, et plutot voir les quelques cas
       qui ne conviennt pas
-- [-] Dired : remove folder is very slow
-- [-] Don't prompt for delete recursivly (code available in prelude)
-- [-] Enable evil easy motion to work like vim easy motion  https://github.com/easymotion/vim-easymotion
+- [ ] Dired : remove folder is very slow
+- [ ] Don't prompt for delete recursivly (code available in prelude)
+- [ ] Enable evil easy motion to work like vim easy motion  https://github.com/easymotion/vim-easymotion
 
-- [-] Bottom line
-  - [-] Show current mode in color
-  - [-] Show current VC system used
-  - [-] Show current encoding
-- [-] Display current encoding 
+- [ ] Bottom line
+  - [ ] Show current mode in color
+  - [ ] Show current VC system used
+  - [ ] Show current encoding
+- [ ] Display current encoding 
 
-- [-] CSS mode > attribut —> TAB touch —> wrote : 
-- [-] Chromium included 
-- [-] Correcteur orthographique 
-- [-] Markdown in white theme
-- [-] Parcourir partage smb 
-- [-] [theme] Color in shell mode 
-- [-] [theme] Les couleurs ne sont pas assez décomposé comme dans Sublime (« var » colorA, = colorB, …) 
-- [-] mysql integration 
-- [-] Markdown in white theme
-- [-] git-svn
+- [ ] CSS mode > attribut —> TAB touch —> wrote : 
+- [ ] Correcteur orthographique 
+- [ ] Markdown in white theme
+- [ ] Parcourir partage smb 
+- [ ] [theme] Color in shell mode 
+- [ ] [theme] Les couleurs ne sont pas assez décomposé comme dans Sublime (« var » colorA, = colorB, …) 
+- [ ] mysql integration 
+- [ ] Markdown in white theme
+- [ ] git-svn
 
 
 ## Corrige 
@@ -356,7 +357,7 @@
 - [x] M-x regression --> do cut instead of main emacs panel
 - [x] git gutter / hl line : Plus d'affichage dans la goutiere
 - [x] open url in browser
-- [-] Rester en mode evil emacs sur les mode suivants : (liste non exhaustive)
+- [ ] Rester en mode evil emacs sur les mode suivants : (liste non exhaustive)
        - *vc-change-log*
 - [x] vc ediff part en live (N opere plus vraiment en mode fullscreen, inutilisable)
 

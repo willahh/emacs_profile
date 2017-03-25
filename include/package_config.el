@@ -906,7 +906,7 @@
 ;; multiple-cursors
 (require 'multiple-cursors)
 ;; (setq mc/always-run-for-all 1)
-
+(setq mc/always-run-for-all 1)
 
 
 
@@ -1361,8 +1361,9 @@
 
 ;; Auto close parenthesis brackets, ...
 ;; @todo ce package ne se telecharge pas
-;; (require 'autopair)
-;; (autopair-global-mode 1)
+;; Update ce package est quand meme tres pratique, reactivation
+(require 'autopair)
+(autopair-global-mode 1)
 
 ;; smart-parens
 (require 'smartparens-config)

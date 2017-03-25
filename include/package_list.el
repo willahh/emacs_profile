@@ -31,7 +31,7 @@
   async
   auto-complete
   highlight-symbol
-  ;; autopair
+  autopair
   smartparens
   avy
   avy-menu

@@ -283,7 +283,7 @@
 
 (global-set-key (kbd "C-M-J") 'drag-stuff-down)
 (global-set-key (kbd "C-M-k") 'drag-stuff-up)
-
+(define-key php-mode-map (kbd "C-M-J") 'drag-stuff-down) ;; override php mode map cmj
 
 ;; (add-hook 'php-mode-hook
 ;;           (interactive)
@@ -394,4 +394,7 @@
 (global-set-key [(M return)] 'smart-open-line)
 ;; (global-set-key [(M shift return)] 'evil-open-above)
 ;; (global-set-key [(M return)] 'evil-open-above)
+
+
+
 
