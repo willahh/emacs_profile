@@ -108,9 +108,13 @@
 (highlight-symbol-mode 0)
 (setq highlight-symbol-idle-delay 0)
 
-(add-hook 'highlight-symbol-mode-hook
-          (setq highlight-symbol-idle-delay 0)
-          )
+;; (add-hook 'highlight-symbol-mode-hook
+;;           (setq highlight-symbol-idle-delay 0)
+;;           )
+
+
+
+
 
 ;; ;; wra custom hook
 ;; ;; Activation du mode highlight all same occurence uniquement
@@ -386,13 +390,13 @@
 ;; markdown-mode
 (require 'markdown-mode)
 
-(defun my-markdown-mode-hook ()
-  (setq-default left-margin-width 30 right-margin-width 30) ; Define new widths.
-  (set-window-buffer nil (current-buffer)) ; Use them now.
-  (toggle-truncate-lines)
-)
+;; (defun my-markdown-mode-hook ()
+;;   (setq-default left-margin-width 30 right-margin-width 30) ; Define new widths.
+;;   (set-window-buffer nil (current-buffer)) ; Use them now.
+;;   (toggle-truncate-lines)
+;; )
 
-(add-hook 'markdown-mode-hook 'my-markdown-mode-hook)
+;; (add-hook 'markdown-mode-hook 'my-markdown-mode-hook)
 
 
 ;; AG
@@ -637,13 +641,13 @@
                  (setq emmet-use-css-transform nil)))))
 
 ;; Cancel some web-mode key binding
-(eval-after-load "web-mode"
-  '(define-key web-mode-map (kbd "M-J") nil))
+;; (eval-after-load "web-mode"
+;;   '(define-key web-mode-map (kbd "M-J") nil))
 
-(defun my-web-mode-hook ()
-  (define-key web-mode-map (kbd "M-J" nil)))
+;; (defun my-web-mode-hook ()
+;;   (define-key web-mode-map (kbd "M-J" nil)))
 
-(add-hook 'web-mode-hook 'my-web-mode-hook)
+;; (add-hook 'web-mode-hook 'my-web-mode-hook)
   
 ;; Emmet
 (require 'emmet-mode)
@@ -931,8 +935,10 @@
 ;; Update : lets stay on vim like by default
 ;; Update 2 : Retour sur emacs state par default (par rapport a mon utilisation)
 ;; Update 3 : Retour sur normal state : Il m arrive encore d ecrire des actions dans les buffers au lieu de faire des raccourcis
+;; Update : 4 emacs
 
-(setq evil-default-state 'normal)
+;; (setq evil-default-state 'normal)
+(setq evil-default-state 'emacs)
 
 
 ;; Define some mode that should be initialized on emacs mode
