@@ -37,13 +37,15 @@
 ;; ------ Override theme code color
 ;; ------ Font
 (set-face-attribute 'font-lock-doc-face nil :foreground "#4a4a4a")
-(set-face-attribute 'font-lock-comment-face nil :foreground "#4a4a4a")
+;; (set-face-attribute 'font-lock-comment-face nil :foreground "#4a4a4a")
+(set-face-attribute 'font-lock-comment-face nil :foreground "#676767")
 (set-face-attribute 'font-lock-string-face nil :foreground "#c3e88d")
 (set-face-attribute 'font-lock-keyword-face nil :foreground "#c792ea")
 (set-face-attribute 'font-lock-type-face nil :foreground "#ffcb6b")
 (set-face-attribute 'font-lock-variable-name-face nil :foreground "#eeffff")
 (set-face-attribute 'font-lock-constant-face nil :foreground "#ff5370")
 (set-face-attribute 'font-lock-function-name-face nil :foreground "#79aaff")
+(set-face-attribute 'link nil :foreground "#676767")
 
 ;; (set-face-attribute 'font-lock-builtin-face nil :foreground "#f78c6c" :background nil)
 (set-face-attribute 'font-lock-builtin-face nil :foreground "#ff5370" :background nil)
@@ -51,7 +53,9 @@
 
 ;; ------ Flycheck
 (set-face-attribute 'flycheck-warning nil :foreground "#fff" :background nil)
+(set-face-attribute 'flycheck-error nil :foreground "#000" :background "#f86c6d")
 (set-face-attribute 'dired-directory nil :foreground "#56b0ec" :background nil)
+
 
 
 ;; ------ Dired
@@ -66,6 +70,10 @@
 ;; (set-face-attribute 'js2-object-property nil :foreground "#f37745")
 (set-face-attribute 'js2-object-property nil :foreground "#6ca7ff")
 ;; (set-face-attribute 'js2-object-property nil :foreground "#eeffff")
+
+;; ------ js2 warning
+(set-face-attribute 'js2-warning nil :foreground "#000" :underline nil :background "#f86c6d")
+
 
 ;; ------ web-mode
 (set-face-attribute 'web-mode-type-face nil :foreground "#ffcb6b" :background nil)
@@ -138,7 +146,8 @@
 ;; (set-face-attribute 'highlight-symbol-face nil :foreground "#8fddfb" :background "#212121" :box nil)
 ;; (set-face-attribute 'highlight-symbol-face nil :foreground "#fff" :background "#4e3742" :box nil)
 ;; (set-face-attribute 'highlight-symbol-face nil :foreground "#fff" :background "#e6de00" :box nil :overline nil)
-(set-face-attribute 'highlight-symbol-face nil :foreground "#55fdbd" :background nil :box nil :overline nil)
+;; (set-face-attribute 'highlight-symbol-face nil :foreground "#55fdbd" :background nil :box nil :overline nil)
+(set-face-attribute 'highlight-symbol-face nil :foreground "#fee233" :background nil :box nil :overline nil)
 
 (set-face-attribute 'evil-ex-lazy-highlight nil :foreground "#fff" :background "#212121")
 
@@ -186,6 +195,9 @@
 (set-face-attribute 'ediff-odd-diff-B nil :foreground "#fff" :background "#2b323c" :box nil)
 (set-face-attribute 'ediff-odd-diff-C nil :foreground "#fff" :background "#2b323c" :box nil)
 
+;; --- yas
+(set-face-attribute 'yas--field-debug-face nil :foreground "#fff" :background nil)
+(set-face-attribute 'yas-field-highlight-face nil :foreground "#fff" :background nil)
 
 
 ;; powerline theme

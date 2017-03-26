@@ -226,6 +226,11 @@
 ;; Using Projectile everywhere
 (setq projectile-require-project-root nil)
 
+;; Some ignore rules
+(add-to-list 'projectile-globally-ignored-directories "node_modules")
+
+
+
 
 ;; helm-projectile
 (require 'helm-projectile)
@@ -864,13 +869,16 @@ ac-source-words-in-same-mode-buffers))
 ;; Note : doit etre active de maniere globale, je n arrive pas
 ;; a l activer avec un hook sur js2mode (pour le moment)      
 ;; (global-flycheck-mode)
+;; Update : fonctionel avec flycheck-mode
 
-(add-hook 'js2-mode-hook 'flycheck)
+(add-hook 'js2-mode-hook 'flycheck-mode)
+(setq flycheck-highlighting-mode 'lines)
+
 
 
 
 ;; (setq flycheck-javascript-esline-executable 'eslint) ;; Ne semble pas fonctionner
-(setq-default flycheck-disabled-checkers '(javascript-jscs))
+;; (setq-default flycheck-disabled-checkers '(javascript-jscs))
       
 ;; (add-hook 'js2-mode-hook 'flycheck-mode)
 
@@ -1456,3 +1464,4 @@ ac-source-words-in-same-mode-buffers))
 ;; Enable jump to url quickly for all buffers
 (add-hook 'prog-mode-hook (goto-address-mode 1))
 (add-hook 'emacs-lisp-mode-hook (goto-address-mode 1))
+(add-hook 'js2-mode-hook (goto-address-mode 1))

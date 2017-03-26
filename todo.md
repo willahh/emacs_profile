@@ -41,11 +41,7 @@
 
 ## Bloquant
 - [ ] [IMPORTANT] Fonction get file name to clipboard (très utilisé)
-- [ ] [urgent] Trouver comment avoir un copier / coller qui fonctionne en interne/interne externe/interne comme sur les éditeurs modernes
-               (kill + coller) (très chiant)  Action 1 : "DIS(" - Action 2 : "M-v" --> La première action fait un kill, la partie dans le presse papier n'est plus bonne
-               Update : il faut passer par le system interne de emacs (kill-ring, mark-ring) --> paste -> yank-pop
 - [ ] [util] Il faut avoir un système d'onglet fonctionnel, c'est vraiment pratique de voir sous les yeux les fichiers dont on a besoin
-- [ ] [util] ctrl+v dans minibuffer 
 - [ ] [vc-dir] Faire une fonction toggle des hunk comme dans magit
 - [ ] [vc-dir] Faire une fonction pour activer un vc-version-diff avec les paramètres older revision : "base", newer revision : "head"
 - [ ] [vc-dir] Trouver l'équilvalent de svn log en mode verbose "svn log -v"
@@ -53,14 +49,10 @@
 - [ ] [vc-dir] Check Compare with base revision (vc dir menu)
 
 
-- [x] TAB dans le vide : ne pas déployer le menu (js mode)
-- [x] [IMPORTANT] CTRL+ALT+C --> console.log
-      -> yassnippet configure, "cl" + TAB
-- [x] [util] CMD+SHIFT+A (emacs mode) -> select all 
-- [x] [vc-dir] Hide up to date by default
-       --> key binding : "x"
+
 
 ## Majeur
+- [ ] [util] ctrl+v dans minibuffer 
 - [ ] Revert buffer : keep current line position 
 - [ ] [theme] Mettre plus en avant le buffer actif 
 - [ ] [theme] css mode couleurs horribles
@@ -141,16 +133,6 @@
 - [ ] helm imenu autofocus !!!!!!!
 - [ ] helm directory first
 
-- [x] [theme] Voir si il est possible d'avoir une bordure autour de la selection (comme dans Sublime))
-       -> Non impossible le rendu ne pourra jamais etre identique (chaque ligne contient sa double bordure top bottom (pas de bordure autour du bloc de selection))
-- [x] Attention voir si la modif des word separator n agit pas sur evil
-- [x] highlight symbol : Mettre 0 delai d attente pour la surbrillance des autres symboles
-- [x] [theme] Changer la couleur de la scrollbar (yascroll)
-- [x] [multi-cursor] [IMPORTANT] cursor paste 
-      -> C+v - M+y
-- [x] [multi-cursor] [IMPORTANT] S'arrête de fonctionner lorsque la touche RET est invoquée ("nouvelle ligne")
-      Voir https://github.com/magnars/multiple-cursors.el Unknown commands
-      Normal : ENTER est binde pour sortir du mode multi, utiliser M+j (new line indent command)
       
 ##  Mineur 
 - [ ] nlinum in fringe ? Pouvoir afficher les vc diff plus loin que le contenu
@@ -163,7 +145,6 @@
 - [ ] emacs --> save a cursor place ?
 - [ ] Enable emmet by default for web files
 - [ ] git-svn
-- [x] ctrl+a en mode evil > default ne fonctionne pas
 - [ ] Fichiers markdown mette toutes les windows en centré
 - [ ] Don't add behaviour for end of line (remove end of line stuff)
       (Creation de differences inutiles sur la toute dernière ligne de certains fichiers)
@@ -200,7 +181,29 @@
 
 
 ## Corrige 
--- [x] web-mode don't do auto format all the time
+- [x] TAB dans le vide : ne pas déployer le menu (js mode)
+- [x] [IMPORTANT] CTRL+ALT+C --> console.log
+      -> yassnippet configure, "cl" + TAB
+- [x] [util] CMD+SHIFT+A (emacs mode) -> select all 
+- [x] [vc-dir] Hide up to date by default
+       --> key binding : "x"
+- [x] [urgent] Trouver comment avoir un copier / coller qui fonctionne en interne/interne externe/interne comme sur les éditeurs modernes
+               (kill + coller) (très chiant)  Action 1 : "DIS(" - Action 2 : "M-v" --> La première action fait un kill, la partie dans le presse papier n'est plus bonne
+               Update : il faut passer par le system interne de emacs (kill-ring, mark-ring) --> paste -> yank-pop
+               
+
+- [x] ctrl+a en mode evil > default ne fonctionne pas
+- [x] [theme] Voir si il est possible d'avoir une bordure autour de la selection (comme dans Sublime))
+       -> Non impossible le rendu ne pourra jamais etre identique (chaque ligne contient sa double bordure top bottom (pas de bordure autour du bloc de selection))
+- [x] Attention voir si la modif des word separator n agit pas sur evil
+- [x] highlight symbol : Mettre 0 delai d attente pour la surbrillance des autres symboles
+- [x] [theme] Changer la couleur de la scrollbar (yascroll)
+- [x] [multi-cursor] [IMPORTANT] cursor paste 
+      -> C+v - M+y
+- [x] [multi-cursor] [IMPORTANT] S'arrête de fonctionner lorsque la touche RET est invoquée ("nouvelle ligne")
+      Voir https://github.com/magnars/multiple-cursors.el Unknown commands
+      Normal : ENTER est binde pour sortir du mode multi, utiliser M+j (new line indent command)
+- [x] web-mode don't do auto format all the time
       Semble ok
 - [x] css-mode indent css needed
 
