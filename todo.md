@@ -41,8 +41,6 @@
 
 ## Bloquant
 - [ ] [IMPORTANT] Fonction get file name to clipboard (très utilisé)
-- [ ] [IMPORTANT] CTRL+ALT+C --> console.log
-- [ ] [util] CMD+SHIFT+A (emacs mode) -> select all 
 - [ ] [urgent] Trouver comment avoir un copier / coller qui fonctionne en interne/interne externe/interne comme sur les éditeurs modernes
                (kill + coller) (très chiant)  Action 1 : "DIS(" - Action 2 : "M-v" --> La première action fait un kill, la partie dans le presse papier n'est plus bonne
                Update : il faut passer par le system interne de emacs (kill-ring, mark-ring) --> paste -> yank-pop
@@ -52,10 +50,15 @@
 - [ ] [vc-dir] Faire une fonction pour activer un vc-version-diff avec les paramètres older revision : "base", newer revision : "head"
 - [ ] [vc-dir] Trouver l'équilvalent de svn log en mode verbose "svn log -v"
 - [ ] [vc-dir] N'affiche pas les fichiers supprimés localement, mais non envoyé à svn (svn remove)
+- [ ] [vc-dir] Check Compare with base revision (vc dir menu)
+
+
+- [x] TAB dans le vide : ne pas déployer le menu (js mode)
+- [x] [IMPORTANT] CTRL+ALT+C --> console.log
+      -> yassnippet configure, "cl" + TAB
+- [x] [util] CMD+SHIFT+A (emacs mode) -> select all 
 - [x] [vc-dir] Hide up to date by default
        --> key binding : "x"
-- [ ] [vc-dir] Check Compare with base revision (vc dir menu)
-- [ ] TAB dans le vide : ne pas déployer le menu (js mode)
 
 ## Majeur
 - [ ] Revert buffer : keep current line position 

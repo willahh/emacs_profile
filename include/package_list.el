@@ -81,7 +81,7 @@
   resize-window
   skewer-mode
   smart-forward
-  smart-tab
+  ;; smart-tab
   sml-mode         
   swiper-helm
   tern

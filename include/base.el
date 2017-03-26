@@ -184,11 +184,6 @@ scroll-step 1)
 (setq-default save-place t)
 (require 'saveplace)
 
-;; Enable jump to url quickly for all buffers
-(goto-address-mode 1)
-
-
-
 
 
 

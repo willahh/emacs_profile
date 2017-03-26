@@ -1738,7 +1738,7 @@ If path is nil and no buffer file name, then use DEFAULT-PATH,"
       (neo-global--open-and-find npath))
     (when neo-auto-indent-point
       (neo-point-auto-indent))))
-  ;; (neo-global--select-w(defun my-after-save-actions ()
+  ;; (neo-global--select-w(defun my-after-save-actions () 
 
 (defun neotree-click-changes-root-toggle ()
   "Toggle the variable neo-click-changes-root.

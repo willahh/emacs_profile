@@ -286,6 +286,39 @@
 ;; Update : smart tab non utilise
 
 
+
+;;Auto complete
+(require 'auto-complete)
+(require 'auto-complete-config)
+
+
+;; (ac-config-default)
+;; (global-auto-complete-mode t)
+
+(ac-config-default)
+(global-auto-complete-mode t)
+
+(setq ac-auto-show-menu 0) ;; Delay until open menu (fast please !)
+
+(setq ac-dwim t)
+(ac-config-default)
+
+(setq ac-sources '(ac-source-yasnippet
+ac-source-abbrev
+ac-source-words-in-same-mode-buffers))
+
+;; Auto start a true
+(setq ac-auto-start 1)
+
+;; (setq ac-auto-start nil)
+;; (ac-set-trigger-key "TAB")
+
+(setq ac-delay 0)
+(setq ac-auto-show-menu 0) ;; Delay until open menu (fast please !)
+
+
+
+
 ;; yasnippet
 (require 'yasnippet)
 (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/willahh/")
@@ -293,7 +326,8 @@
 (add-to-list 'yas-snippet-dirs "/Users/willahh/.emacs.d/snippets/willahh/js-mode")
 
 (setq yas/indent-line nil)
-(yas-global-mode 1)
+;; (yas-global-mode 1)
+(yas-global-mode t)
 
 ;; (setq yas-snippet-dirs '("~/.emacs.d/snippets/"))
 ;; (yas-global-mode 1)
@@ -304,33 +338,19 @@
 (add-hook 'prog-mode-hook #'yas-minor-mode)
 (add-hook 'web-mode-hook #'yas-minor-mode)
 
+;; Update : bind un keybinding to yas expand
+;; Because yas + autocomplete (when auto start) are always in conflict (with my yas keywords)
+(global-set-key (kbd "<C-return>") 'yas-expand)
 
 
 
+;; Ajoute la liste des snippets dans les resultats de autocomplete
+(defun my-prog-mode-hook ()
+  (push 'ac-source-yasnippet ac-sources))
 
-;;Auto complete
-(require 'auto-complete)
-(require 'auto-complete-config)
-
-
-;; (ac-config-default)
-;; (global-auto-complete-mode t)
-
-;; (setq ac-auto-show-menu 0) ;; Delay until open menu (fast please !)
-
-(setq ac-dwim t)
-(ac-config-default)
-
-(setq ac-sources '(ac-source-yasnippet
-ac-source-abbrev
-ac-source-words-in-same-mode-buffers))
+(add-hook 'prog-mode-hook 'my-prog-mode-hook)
 
 
-(setq ac-auto-start nil)
-(ac-set-trigger-key "TAB")
-
-(setq ac-delay 0)
-(setq ac-auto-show-menu 0) ;; Delay until open menu (fast please !)
 
 
 
@@ -1426,3 +1446,13 @@ ac-source-words-in-same-mode-buffers))
 ;; (add-hook 'js-mode-hook #'smartparens-mode)
 (add-hook 'prog-mode-hook #'smartparens-mode)
 
+
+
+
+
+
+
+;; -------- url
+;; Enable jump to url quickly for all buffers
+(add-hook 'prog-mode-hook (goto-address-mode 1))
+(add-hook 'emacs-lisp-mode-hook (goto-address-mode 1))

@@ -362,7 +362,12 @@
 
 (global-set-key [escape] 'evil-exit-emacs-state)
 ;; (global-set-key (kbd "<S-tab>") 'un-indent-by-removing-4-spaces)
-;; (global-set-key (kbd "M-a") 'mark-whole-buffer)
+
+;; Update : on ne peut pas car meta shift a est utilise
+;; (global-set-key [(meta shift a)] 'mark-whole-buffer)
+(global-set-key [(meta control shift a)] 'mark-whole-buffer)
+
+
 ;; (global-set-key (kbd "M-y") 'helm-show-kill-ring) ;; Update : Pas forcement tip top
 ;; (global-set-key [(meta shift d)] 'duplicate-line)
 ;;(global-set-key (kbd "M-d") 'mc/mark-next-like-this) ;; Cannot be setted, because meta+d means delete word in emacs (and it is very usefull)
