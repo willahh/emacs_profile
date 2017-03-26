@@ -673,21 +673,6 @@ ac-source-words-in-same-mode-buffers))
 (setq web-mode-enable-current-column-highlight t)
 
 
-
-;; Creation d une fonction toggle pour switcher entre web-mode et php-mode
-;; @todo a finaliser
-;; (defvar togl-current-mode "web-mode"
-;;   "The current mode used to handle .php files")
-
-;; (defun toggle-php-mode-web-mode
-;;       '(lambda ()
-;;          (if (togl-current-mode "web-mode")
-;;              (setq togl-current-mode "php-mode")
-;;            (setq togl-current-mode "web-mode")
-;;          )
-;;          )
-;; )
-
 ;; From : http://www.blogbyben.com/2016/08/emacs-php-modern-and-far-more-complete.html
 ;; @todo ajouter le changement lors de l ouverture du prochain fichier php
 (defun toggle-php-flavor-mode ()
@@ -731,7 +716,7 @@ ac-source-words-in-same-mode-buffers))
 ;;   (define-key web-mode-map (kbd "M-J" nil)))
 
 ;; (add-hook 'web-mode-hook 'my-web-mode-hook)
-  
+
 ;; Emmet
 (require 'emmet-mode)
 (add-hook 'sgml-mode-hook 'emmet-mode)
@@ -1218,13 +1203,19 @@ ac-source-words-in-same-mode-buffers))
 ;; If you prefer fuzzy matching (yes i do) - update : (no i don't want tro peut precis)
 (setq helm-swoop-use-fuzzy-match nil)
 
-;; Disable pre-input (most of the time annoying) - Update : keep default
-;; (setq helm-swoop-pre-input-function
-;;       (lambda () ""))
+;; Disable pre-input (most of the time annoying) - 
+;; Update 1 : keep default
+;; Update 2 : yes it is annoying
 
 (setq helm-swoop-pre-input-function
-      (lambda () (thing-at-point 'symbol)))
+      (lambda () ""))
 
+;; (setq helm-swoop-pre-input-function
+;;       (lambda () (thing-at-point 'symbol)))
+
+;; If nil, you can slightly boost invoke speed in exchange for text color
+;; Update : Feels better without colours (and faster)
+(setq helm-swoop-speed-or-color nil)
 
 ;; ---------------- resize-window
 (require 'resize-window)

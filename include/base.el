@@ -90,7 +90,7 @@ scroll-step 1)
 
 ;; js indent 4
 (setq js-indent-level 4)
-
+(setq sgml-basic-offset 4)
 
 ;; (setq auto-window-vscroll 1)
 ;; (setq scroll-conservatively 0)
