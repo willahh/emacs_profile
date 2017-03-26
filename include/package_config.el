@@ -163,21 +163,7 @@
 
 
 
-;; Tab to trigget emmet
-;; Source : http://emacs.stackexchange.com/questions/10521/rebind-emmet-mode-to-smart-tab
-;; Doesn't work
-;; (defun add-emmet-expand-to-smart-tab-completions ()
-;;   ;; Add an entry for current major mode in
-;;   ;; `smart-tab-completion-functions-alist' to use
-;;   ;; `emmet-expand-line'.
-;;   (add-to-list 'smart-tab-completion-functions-alist
-;;                (cons major-mode #'emmet-expand-line))) 
 
-;; (require 'emmet-mode)
-;; ;; (add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
-;; ;; (add-hook 'sgml-mode-hook 'add-emmet-expand-to-smart-tab-completions)
-;; (add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
-;; (add-hook 'css-mode-hook 'add-emmet-expand-to-smart-tab-completions)
 
 
 
@@ -269,11 +255,124 @@
 (require 'imenu-anywhere)
 
 
-;;Auto complete
-(ac-config-default)
-(global-auto-complete-mode t)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;; -------------- Start of indent / auto complete / yasnippet
+;; Cette partie prend en charge les actions bindees sur la touche TAB
+;; Tab va etre utilise pour indenter, declencher l auto completion et
+;; declencher les snippets.
+;; Ces trois parties pouvant entrer en conflit sont regroupees dans ce
+;; bloc ci-dessous
+;; Ordre de configuration : yasnippet, auto-complete, smart tab.
+;; Update : smart tab non utilise
+
+
+;; yasnippet
+(require 'yasnippet)
+(add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/willahh/")
+(add-to-list 'yas-snippet-dirs "/Users/willahh/.emacs.d/snippets/willahh")
+(add-to-list 'yas-snippet-dirs "/Users/willahh/.emacs.d/snippets/willahh/js-mode")
+
+(setq yas/indent-line nil)
+(yas-global-mode 1)
+
+;; (setq yas-snippet-dirs '("~/.emacs.d/snippets/"))
+;; (yas-global-mode 1)
+;; (define-key web-mode-map (kbd "C-c C-y") 'yas/create-php-snippet)
+;;(payas/ac-setup)
+
+(yas-reload-all)
+(add-hook 'prog-mode-hook #'yas-minor-mode)
+(add-hook 'web-mode-hook #'yas-minor-mode)
+
+
+
+
+
+;;Auto complete
+(require 'auto-complete)
+(require 'auto-complete-config)
+
+
+;; (ac-config-default)
+;; (global-auto-complete-mode t)
+
+;; (setq ac-auto-show-menu 0) ;; Delay until open menu (fast please !)
+
+(setq ac-dwim t)
+(ac-config-default)
+
+(setq ac-sources '(ac-source-yasnippet
+ac-source-abbrev
+ac-source-words-in-same-mode-buffers))
+
+
+(setq ac-auto-start nil)
+(ac-set-trigger-key "TAB")
+
+(setq ac-delay 0)
 (setq ac-auto-show-menu 0) ;; Delay until open menu (fast please !)
+
+
+
+
+
+
+;; smart-tab
+;; (require 'smart-tab)
+;; (global-smart-tab-mode 1)
+
+
+
+
+;; smart tab behavior - indent or complete
+;; Update : ne surtout pas mettre cette ligne
+;; Le tab est gere automatiquement avec la conf plus haute
+;;
+;; (setq tab-always-indent 'complete)
+
+
+
+;; -------------- End of indent / auto complete / yasnippet
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ;; Auto save all buffer when file change on disk (aka function to keep synchro between buffers)
@@ -382,9 +481,7 @@
 
 
 
-;; smart-tab
-(require 'smart-tab)
-(global-smart-tab-mode 1)
+
 
 
 ;; markdown-mode
@@ -607,38 +704,24 @@
 
 
 
-;; (defun togle-curr-mode ()
-;;   (interactive)
-;;   ;; use a property “state”. Value is t or nil
-;;   (if (get 'togl-current-mode 'web-mode)
-;;       (progn
-;;         (put 'togl-current-mode 'php-mode))
-;;     (progn
-;;       (put 'togl-current-mode 'web-mode))))
-
 ;; (setq web-mode-ac-sources-alist
-;;       '(("css" . (ac-source-words-in-buffer ac-source-css-property))
-;;         ("html" . (ac-source-words-in-buffer ac-source-abbrev))
-;;         ("php" . (ac-source-words-in-buffer
-;;                   ac-source-words-in-same-mode-buffers
-;;                   ac-source-dictionary))))
+;;   '(("php" . (ac-source-yasnippet ac-source-php-auto-yasnippets))
+;;     ("html" . (ac-source-emmet-html-aliases ac-source-emmet-html-snippets))
+;;     ("javascript" . (ac-source-emmet-html-aliases ac-source-emmet-html-snippets))
+;;     ("css" . (ac-source-css-property ac-source-emmet-css-snippets))))
+
+;; (add-hook 'web-mode-before-auto-complete-hooks
+;;           '(lambda ()
+;;              (let ((web-mode-cur-language
+;;                     (web-mode-language-at-pos)))
+;;                (if (string= web-mode-cur-language "php")
+;;                    (yas-activate-extra-mode 'php-mode)
+;;                  (yas-deactivate-extra-mode 'php-mode))
+;;                (if (string= web-mode-cur-language "css")
+;;                    (setq emmet-use-css-transform t)
+;;                  (setq emmet-use-css-transform nil)))))
 
 
-(setq web-mode-ac-sources-alist
-  '(("php" . (ac-source-yasnippet ac-source-php-auto-yasnippets))
-    ("html" . (ac-source-emmet-html-aliases ac-source-emmet-html-snippets))
-    ("css" . (ac-source-css-property ac-source-emmet-css-snippets))))
-
-(add-hook 'web-mode-before-auto-complete-hooks
-          '(lambda ()
-             (let ((web-mode-cur-language
-                    (web-mode-language-at-pos)))
-               (if (string= web-mode-cur-language "php")
-                   (yas-activate-extra-mode 'php-mode)
-                 (yas-deactivate-extra-mode 'php-mode))
-               (if (string= web-mode-cur-language "css")
-                   (setq emmet-use-css-transform t)
-                 (setq emmet-use-css-transform nil)))))
 
 ;; Cancel some web-mode key binding
 ;; (eval-after-load "web-mode"
@@ -718,6 +801,7 @@
 (add-hook 'js2-mode-hook (lambda () (tern-mode t)))
 (add-hook 'js2-mode-hook 'tern-mode)
 (add-hook 'typescript-mode-hook (lambda () (tern-mode t)))
+(add-hook 'web-mode-hook (lambda () (tern-mode t))) ;; Update : utile aussi en web mode !
 
 (setq tern-command '("tern" "--no-port-file"))
 
@@ -874,29 +958,6 @@
 ;; Close neotree before show
 (add-hook 'ediff-before-setup-windows-hook 'neotree-hide)
 
-
-;; yasnippet
-(require 'yasnippet)
-(yas-global-mode 1)
-;; (add-to-list 'yas-snippet-dirs "~/.emacs.d/elpa/yasnippet-20170216.1928/snippets/")
-(add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/willahh/")
-;; (setq yas-snippet-dirs '("~/.emacs.d/snippets/"))
-;; (yas-global-mode 1)
-;; (define-key web-mode-map (kbd "C-c C-y") 'yas/create-php-snippet)
-;;(payas/ac-setup)
-
- (yas-reload-all)
-    (add-hook 'prog-mode-hook #'yas-minor-mode)
-
-;; yascroll
-;; Update : desactivation ralenti beaucoup l affichage (visible lors de scroll ligne par ligne avec beaucoup de texte)
-;; (require 'yascroll)
-;; (global-yascroll-bar-mode)
-
-;; php-auto-yasnippets
-; (require 'php-auto-yasnippets)
-; (setq php-auto-yasnippet-php-program "~/.emacs.d/elpa/php-auto-yasnippets-20141128.1411/Create-PHP-YASnippet.php")
-
 ;; js-comint
 ;; Javascript live interpreter nice to test regexp on fly
 (require 'js-comint)
@@ -907,6 +968,7 @@
 (require 'multiple-cursors)
 ;; (setq mc/always-run-for-all 1)
 (setq mc/always-run-for-all 1)
+
 
 
 
@@ -1362,11 +1424,14 @@
 ;; Auto close parenthesis brackets, ...
 ;; @todo ce package ne se telecharge pas
 ;; Update ce package est quand meme tres pratique, reactivation
-(require 'autopair)
-(autopair-global-mode 1)
+;; Update 2 : En fait utilisation de smartparens plutot
+
+;; (require 'autopair)
+;; (autopair-global-mode 1)
 
 ;; smart-parens
 (require 'smartparens-config)
 
-(add-hook 'js-mode-hook #'smartparens-mode)
+;; (add-hook 'js-mode-hook #'smartparens-mode)
+(add-hook 'prog-mode-hook #'smartparens-mode)
 

@@ -80,9 +80,6 @@
 ;; warn when opening files bigger than 100MB
 (setq large-file-warning-threshold 100000000)
 
-;; smart tab behavior - indent or complete
-(setq tab-always-indent 'complete)
-
 ;; enable y/n answers
 (fset 'yes-or-no-p 'y-or-n-p)
 

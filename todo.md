@@ -38,15 +38,8 @@
 
 
 ## A ranger
-- [x] web-mode don't do auto format all the time
-      Semble ok
-- [x] css-mode indent css needed
 
 ## Bloquant
-- [ ] [multi-cursor] [IMPORTANT] cursor paste 
-- [x] [multi-cursor] [IMPORTANT] S'arrête de fonctionner lorsque la touche RET est invoquée ("nouvelle ligne")
-      Voir https://github.com/magnars/multiple-cursors.el Unknown commands
-      Normal : ENTER est binde pour sortir du mode multi, utiliser M+j (new line indent command)
 - [ ] [IMPORTANT] Fonction get file name to clipboard (très utilisé)
 - [ ] [IMPORTANT] CTRL+ALT+C --> console.log
 - [ ] [util] CMD+SHIFT+A (emacs mode) -> select all 
@@ -64,17 +57,9 @@
 - [ ] [vc-dir] Check Compare with base revision (vc dir menu)
 - [ ] TAB dans le vide : ne pas déployer le menu (js mode)
 
-- [x] [util] css mode : Open close brackets
-- [x] Remettre un highlight des mêmes instances plus rapide
-- [x] web-mode : paste : indenting region ...
-- [x] lib_override.css non éditable (freeze)
-- [x] (M-C-d) (duplicate line or selection) Duplique parfois une portion beaucoup trop importante
-- [x] [util] C-M-j php-mode move line down -> racourcis utilise a un autre endroit
-
 ## Majeur
 - [ ] Revert buffer : keep current line position 
 - [ ] [theme] Mettre plus en avant le buffer actif 
-- [x] [theme] Changer la couleur de la scrollbar (yascroll)
 - [ ] [theme] css mode couleurs horribles
 - [ ] [theme] js color var 
 - [ ] [theme] Ajouter des differenciations sur certains mot clee comme "$", "=", ".", "'", "(", ")", "+", "-", certains mots clés php "var_dump", "PHP_EOL", etc
@@ -117,16 +102,13 @@
       -> helm-ag-ignore-buffer-patterns (conf ajoutee, non testee, maj : ne fonctionne pas, voir pour mettre la bonne regle)
       -> Impossible de trouver la raison sur cette commande, utiliser helm-ag a la place
 
-- [x] Attention voir si la modif des word separator n agit pas sur evil
 - [ ] Faire une fonction copy file from project
-- [x] highlight symbol : Mettre 0 delai d attente pour la surbrillance des autres symboles
 - [ ] la selection avec la souris doit aller loin avant de prendre en compte la deuxieme ligne
       (Comportement de selection legerement different a celui de Sublime)
 - [ ] ag search result buffer : highlight search words
 - [ ] (command+r pour reload vc-dir) - M-r ----> vc-dir-refresh
 
 - [ ] [theme] Voir pour avoir une font plus lisible (aliasing different --> Se rapprocher du rendu de Sublime (la font est bien la meme))
-- [ ] [theme] Voir si il est possible d'avoir une bordure autour de la selection (comme dans Sublime))
 - [ ] [Neotree] > after load > Open first file > focus to other window 
 
 - [ ] unbind key on some mode :
@@ -156,6 +138,17 @@
 - [ ] helm imenu autofocus !!!!!!!
 - [ ] helm directory first
 
+- [x] [theme] Voir si il est possible d'avoir une bordure autour de la selection (comme dans Sublime))
+       -> Non impossible le rendu ne pourra jamais etre identique (chaque ligne contient sa double bordure top bottom (pas de bordure autour du bloc de selection))
+- [x] Attention voir si la modif des word separator n agit pas sur evil
+- [x] highlight symbol : Mettre 0 delai d attente pour la surbrillance des autres symboles
+- [x] [theme] Changer la couleur de la scrollbar (yascroll)
+- [x] [multi-cursor] [IMPORTANT] cursor paste 
+      -> C+v - M+y
+- [x] [multi-cursor] [IMPORTANT] S'arrête de fonctionner lorsque la touche RET est invoquée ("nouvelle ligne")
+      Voir https://github.com/magnars/multiple-cursors.el Unknown commands
+      Normal : ENTER est binde pour sortir du mode multi, utiliser M+j (new line indent command)
+      
 ##  Mineur 
 - [ ] nlinum in fringe ? Pouvoir afficher les vc diff plus loin que le contenu
 - [ ] [vc-dir] Ne pas afficher les lignes dossiers (les lignes qui sont grisées)
@@ -204,6 +197,16 @@
 
 
 ## Corrige 
+-- [x] web-mode don't do auto format all the time
+      Semble ok
+- [x] css-mode indent css needed
+
+- [x] [util] css mode : Open close brackets
+- [x] Remettre un highlight des mêmes instances plus rapide
+- [x] web-mode : paste : indenting region ...
+- [x] lib_override.css non éditable (freeze)
+- [x] (M-C-d) (duplicate line or selection) Duplique parfois une portion beaucoup trop importante
+- [x] [util] C-M-j php-mode move line down -> racourcis utilise a un autre endroit
 - [x] Click mouse 1 -> Si mode courant n est pas emacs -> passer en emacs
 - [x] Indent javascript cassééééééééééééé
 - [x] svn color non visible avec le nouveau beau theme

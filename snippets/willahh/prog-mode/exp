@@ -1,0 +1,6 @@
+## -*- mode: snippet -*-
+#name : _export
+# --
+_export.$1 = function($2) {
+    console.info('$1', $2);
+};$3
