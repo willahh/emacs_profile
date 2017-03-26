@@ -788,7 +788,38 @@ ac-source-words-in-same-mode-buffers))
                (yas-global-mode 1)
                (define-key php-mode-map  (kbd "C-]") 'ac-php-find-symbol-at-point)   ;goto define
                (define-key php-mode-map  (kbd "C-t") 'ac-php-location-stack-back   ) ;go back
+               (payas/ac-setup) ;; wra add (don't work)
                ))
+
+
+
+
+;; php-
+(require 'php-auto-yasnippets)
+(setq php-auto-yasnippet-php-program "~/.emacs.d/plugins/php-auto-yasnippets/Create-PHP-YASnippet.php")
+;; (define-key php-mode-map (kbd "C-c C-y") 'yas/create-php-snippet)
+;; (payas/ac-setup)
+
+;; (add-hook 'php-mode-hook 'payas/ac-setup)
+
+;; ;; Ajoute la liste des snippets dans les resultats de autocomplete
+;; (defun my-php-mode-hook ()
+;;   (push 'ac-source-yasnippet ac-sources))
+
+;; (add-hook 'php-mode-hook 'my-php-mode-hook)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ;; php-refactor

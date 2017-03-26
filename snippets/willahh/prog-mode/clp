@@ -1,0 +1,4 @@
+## -*- mode: snippet -*-
+#name : console.log "plus"
+# --
+console.log('$1', $1);$2
