@@ -6,14 +6,30 @@
       autopair-insert-opening
       autopair-newline
       clean-aindent--bsunindent
+      electric-newline-and-maybe-indent
       eval-last-sexp
       evil-a-word
+      evil-backward-char
+      evil-backward-word-begin
       evil-change
+      evil-delete
+      evil-digit-argument-or-evil-beginning-of-line
+      evil-end-of-line
+      evil-find-char
+      evil-forward-char
+      evil-forward-word-begin
+      evil-jump-item
+      evil-next-line
+      evil-next-line-1-first-non-blank
+      evil-previous-line
       evil-window-down
       evilnc-comment-or-uncomment-lines
       forward-sentence
+      forward-sexp
       helm-M-x
       highlight-symbol-mode
+      indent-for-tab-command
+      kill-region
       mouse-set-region
       web-mode-comment-indent-new-line
       ))
@@ -21,29 +37,12 @@
 (setq mc/cmds-to-run-once
       '(
       avy-goto-word-1-below
+      delete-window
       describe-key
       dired-unmark-backward
       emmet-expand-line
-      evil-avy-goto-char-2
-      evil-backward-word-begin
-      evil-digit-argument-or-evil-beginning-of-line
-      evil-downcase
       evil-emacs-state
-      evil-ex-search-next
-      evil-find-char-to
-      evil-forward-word-begin
-      evil-goto-line
-      evil-inner-word
-      evil-mouse-drag-region
-      evil-next-line
-      evil-normal-state
-      evil-previous-line
-      evil-previous-line-first-non-blank
-      evil-substitute
-      evil-visual-char
-      highlight-symbol-next
       keyboard-quit
       mc/mark-next-lines
       mc/mark-previous-lines
-      web-mode-tag-next
       ))
