@@ -194,12 +194,19 @@
 (evil-define-key 'normal 'dired-mode (kbd "TAB") 'dired-find-file)
 
 (define-key evil-normal-state-map (kbd "M-n") 'evil-buffer-new)
+
+
 ;; ---------------- Key binding
 ;; (global-unset-key (kbd "C-x C-c"))
 
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
 (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB work in terminal
 (define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
+
+
+;; Dired
+(define-key dired-mode-map (kbd "<mouse-1>") 'dired-find-file)
+;; (define-key dired-mode-map (kbd "<mouse-2>") 'dired-find-file)
 
 ;; ---------------- Dolor theme
 (set-face-attribute 'lazy-highlight nil :background "green")
@@ -340,8 +347,12 @@
 ;; search
 ;; (global-set-key [(meta shift f)]  'ag) ;; Update : impossible, m s f correspond a une action native d emacs (selection du mot suivant) : Utlisation d m-x --> ag
 
-(global-set-key (kbd "M-·") 'helm-projectile-ag) ;; (cmd + alt + shift + f)
-(global-set-key (kbd "ƒ") 'helm-ag)  ;; (cmd + alt + f)
+;; (global-set-key (kbd "M-·") 'helm-projectile-ag) ;; (cmd + alt + shift + f)
+;; (global-set-key (kbd "ƒ") 'helm-ag)  ;; (cmd + alt + f)
+;; (global-set-key (kbd "M-ƒ") 'helm-do-grep-ag) ;; (alt + f)
+
+(global-set-key (kbd "M-·") 'helm-ag) ;; (cmd + alt + shift + f)
+(global-set-key (kbd "ƒ") 'helm-projectile-ag)  ;; (cmd + alt + f)
 (global-set-key (kbd "M-ƒ") 'helm-do-grep-ag) ;; (alt + f)
 
 ;; window
