@@ -108,13 +108,15 @@
 (highlight-symbol-mode 0)
 (setq highlight-symbol-idle-delay 0)
 
+;; (add-hook 'emacs-lisp-mode 'highlight-symbol-nav-mode)
+(add-hook 'prog-mode-hook 'highlight-symbol-nav-mode)
+(add-hook 'prog-mode-hook 'highlight-symbol-mode)
+(add-hook 'web-mode-hook 'highlight-symbol-mode)
+(add-hook 'web-mode-hook 'highlight-symbol-nav-mode)
+
 ;; (add-hook 'highlight-symbol-mode-hook
 ;;           (setq highlight-symbol-idle-delay 0)
 ;;           )
-
-
-
-
 
 ;; ;; wra custom hook
 ;; ;; Activation du mode highlight all same occurence uniquement
@@ -129,27 +131,26 @@
 ;;         (lambda ()
 ;;           (highlight-symbol-mode 0)))
  
+;; ;; Hook to enable highlight-symbol-nav-mode
+;; (add-hook 'prog-mode-hook 'highlight-symbol-mode)
+;; (add-hook 'prog-mode-hook 'highlight-symbol-nav-mode)
 
-;; Hook to enable highlight-symbol-nav-mode
-(add-hook 'prog-mode-hook 'highlight-symbol-mode)
-(add-hook 'prog-mode-hook 'highlight-symbol-nav-mode)
+;; (add-hook 'web-mode-hook 'highlight-symbol-mode)
+;; (add-hook 'web-mode-hook 'highlight-symbol-nav-mode)
 
-(add-hook 'web-mode-hook 'highlight-symbol-mode)
-(add-hook 'web-mode-hook 'highlight-symbol-nav-mode)
+;; (add-hook 'css-mode-hook 'highlight-symbol-mode)
+;; (add-hook 'css-mode-hook 'highlight-symbol-nav-mode)
 
-(add-hook 'css-mode-hook 'highlight-symbol-mode)
-(add-hook 'css-mode-hook 'highlight-symbol-nav-mode)
+;; (add-hook 'html-mode-hook 'highlight-symbol-mode)
+;; (add-hook 'html-mode-hook 'highlight-symbol-nav-mode)
 
-(add-hook 'html-mode-hook 'highlight-symbol-mode)
-(add-hook 'html-mode-hook 'highlight-symbol-nav-mode)
+;; (add-hook 'php-mode-hook 'highlight-symbol-mode)
+;; (add-hook 'php-mode-hook 'highlight-symbol-nav-mode)
 
-(add-hook 'php-mode-hook 'highlight-symbol-mode)
-(add-hook 'php-mode-hook 'highlight-symbol-nav-mode)
+;; (add-hook 'emacs-lisp-mode 'highlight-symbol-mode)
+;; (add-hook 'emacs-lisp-mode 'highlight-symbol-nav-mode)
 
-(add-hook 'emacs-lisp-mode 'highlight-symbol-mode)
-(add-hook 'emacs-lisp-mode 'highlight-symbol-nav-mode)
 
-;;(add-hook highlight-symbol-jump 'recenter)
 
 
 
@@ -303,7 +304,6 @@
 (ac-config-default)
 (global-auto-complete-mode t)
 
-(setq ac-auto-show-menu 0) ;; Delay until open menu (fast please !)
 
 (setq ac-dwim t)
 (ac-config-default)
@@ -318,8 +318,16 @@ ac-source-words-in-same-mode-buffers))
 ;; (setq ac-auto-start nil)
 ;; (ac-set-trigger-key "TAB")
 
-(setq ac-delay 0)
-(setq ac-auto-show-menu 0) ;; Delay until open menu (fast please !)
+;; (setq ac-delay 0)
+;; (setq ac-auto-show-menu 0) ;; Delay until open menu (fast please !))F)
+
+;; Update : le declenchement ne dois pas etre rapide
+;; pour eviter d avoir des freeze, 0.1 et 0.5 sont de bonnes 
+;; (setq ac-delay 0.1)
+(setq ac-delay 0.1)
+(setq ac-auto-show-menu 0.5)
+
+
 
 
 

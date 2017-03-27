@@ -37,7 +37,10 @@
   
 
 ## A ranger
+- [x] Auto complete fait ramer lors d une saisie rapide
+- [x] Web mode + highlight mode conflict
 - [ ] Web mode > HTML : Couleurs sont presques identiques a celle du theme Sublime mais moins pétante, il faut mettre les memes
+- [ ] Web mode > Paste dans un html indente d une facon inconuu reformate tout, il faut bloquer ça (pas de reformatage automatique)
 - [ ] Helm mini : Voir pour n'avoir que du gris + highlight, c'est trop folklo là
 - [ ] Multi cursor : add bottom : S initialise avec trop de lignes
 - [ ] [important] Helm mini ---> preview file when over (Comme dans Sublime)
