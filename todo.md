@@ -34,14 +34,20 @@
   - Comportement native lorsques de longues lignes de textes sont presentes sans retour a la ligne
     https://www.emacswiki.org/emacs/FindLongLines
 
-
-
+  
 
 ## A ranger
+- [ ] Web mode > HTML : Couleurs sont presques identiques a celle du theme Sublime mais moins pétante, il faut mettre les memes
+- [ ] Helm mini : Voir pour n'avoir que du gris + highlight, c'est trop folklo là
+- [ ] Multi cursor : add bottom : S initialise avec trop de lignes
+- [ ] [important] Helm mini ---> preview file when over (Comme dans Sublime)
+- [x] [dired] Click mouse1 sur item -> Ouvrir dans la même fenêtre
+- [ ] [dired] Affichage plus light
+
+
 Semantic PHP parser with ECB
 http://ecb.sourceforge.net/
 https://www.youtube.com/watch?v=KoRNCrx9pak
-
 
 
 
