@@ -34,39 +34,40 @@
   - Comportement native lorsques de longues lignes de textes sont presentes sans retour a la ligne
     https://www.emacswiki.org/emacs/FindLongLines
 
+Semantic PHP parser with ECB
+http://ecb.sourceforge.net/
+https://www.youtube.com/watch?v=KoRNCrx9pak
   
 
 ## A ranger
 - [x] Auto complete fait ramer lors d une saisie rapide
 - [x] Web mode + highlight mode conflict
-- [ ] Web mode > HTML : Couleurs sont presques identiques a celle du theme Sublime mais moins pétante, il faut mettre les memes
-- [ ] Web mode > Paste dans un html indente d une facon inconuu reformate tout, il faut bloquer ça (pas de reformatage automatique)
-- [ ] Helm mini : Voir pour n'avoir que du gris + highlight, c'est trop folklo là
-- [ ] Multi cursor : add bottom : S initialise avec trop de lignes
-- [ ] [important] Helm mini ---> preview file when over (Comme dans Sublime)
 - [x] [dired] Click mouse1 sur item -> Ouvrir dans la même fenêtre
-- [ ] [dired] Affichage plus light
-
-
-Semantic PHP parser with ECB
-http://ecb.sourceforge.net/
-https://www.youtube.com/watch?v=KoRNCrx9pak
 
 
 
 ## Bloquant
+- [ ] Multi cursor : add bottom : S initialise avec trop de lignes
+- [ ] Web mode > Paste dans un html indente d une facon inconuu reformate tout, il faut bloquer ça (pas de reformatage automatique)
+      -> Semble ok
+
 - [ ] [IMPORTANT] Fonction get file name to clipboard (très utilisé)
-- [ ] [util] Il faut avoir un système d'onglet fonctionnel, c'est vraiment pratique de voir sous les yeux les fichiers dont on a besoin
-- [ ] [vc-dir] Faire une fonction toggle des hunk comme dans magit
 - [ ] [vc-dir] Faire une fonction pour activer un vc-version-diff avec les paramètres older revision : "base", newer revision : "head"
-- [ ] [vc-dir] Trouver l'équilvalent de svn log en mode verbose "svn log -v"
 - [ ] [vc-dir] N'affiche pas les fichiers supprimés localement, mais non envoyé à svn (svn remove)
 - [ ] [vc-dir] Check Compare with base revision (vc dir menu)
 
-
+- [x] [vc-dir] Trouver l'équilvalent de svn log en mode verbose "svn log -v"
+      Pas besoin, il suffit de faire "=" (vc-diff) pour voir les diff (et les noms des fichiers)
 
 
 ## Majeur
+- [ ] Web mode > HTML : Couleurs sont presques identiques a celle du theme Sublime mais moins pétante, il faut mettre les memes
+- [ ] Helm mini : Voir pour n'avoir que du gris + highlight, c'est trop folklo là
+- [ ] [important] Helm mini ---> preview file when over (Comme dans Sublime)
+- [ ] [dired] Affichage plus light
+
+
+
 - [ ] [util] ctrl+v dans minibuffer 
 - [ ] Revert buffer : keep current line position 
 - [ ] [theme] Mettre plus en avant le buffer actif 
@@ -74,6 +75,8 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [theme] js color var 
 - [ ] [theme] Ajouter des differenciations sur certains mot clee comme "$", "=", ".", "'", "(", ")", "+", "-", certains mots clés php "var_dump", "PHP_EOL", etc
               Voir package "highlight-chars"
+
+
 - [ ] [perf] helm-projectile pas suffisamment rapide
 - [ ] [util] F5 revert buffer ?
 - [ ] [util] Sublime go to definition - CTRL+MOUSE CLICK - Add new context menu first entry : "Goto Definition"
@@ -84,6 +87,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [magit-diff] M-w didn't work
 - [ ] [dired] TAB -> go to
 - [ ] [magit-diff] M-w didn't work
+- [ ] [vc-dir] Faire une fonction toggle des hunk comme dans magit
 
 - [ ] [util] helm imenu autofocus !!!!!!!
 - [ ] Faire fonctionner flycher avec eslint

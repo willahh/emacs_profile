@@ -1018,8 +1018,10 @@ ac-source-words-in-same-mode-buffers))
 
 ;; multiple-cursors
 (require 'multiple-cursors)
+
+;; Ask for apply command for all, keep on default (remember settings are stored in ~/.emacs/.mc-lists.el)
 ;; (setq mc/always-run-for-all 1)
-(setq mc/always-run-for-all 1)
+(setq mc/always-run-for-all nil)
 
 
 
