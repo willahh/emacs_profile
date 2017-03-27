@@ -4,7 +4,111 @@
 ;; font (family / size, ...)
 ;; (set-default-font "Inconsolata-14") ;; Font face: Inconsolata, font-size: 14
 ;; (set-default-font "Meslo LG M") ;; Font face: Meslo LG M, font-size: 12
-(set-default-font "Menlo") ;; Font face: Menlo, font-size: 12
+;; (set-default-font "Menlo") ;; Font face: Menlo, font-size: 12
+(set-default-font "Meslo LG M") ;; Font face: ), font-size: 12
+(setq-default line-spacing 0)
+
+
+
+
+
+
+
+
+;; ----------- Customisation de certains en caractere en cours (pas si simple)
+;; But : Mettre en avant les caractères suivants : " ' = [ ] { }
+
+;; (font-lock-add-keywords 'web-mode
+;;   '(
+;;     ("\\b\\(\\w+\\)\\b=" . font-lock-variable-name-face)
+;;    ))
+
+;; (set-face-attribute 'font-lock-variable-name-face nil :foreground "#f78c6c" :background "blue")
+
+;; ;; (add-hook 'after-change-major-mode-hook
+;; (eval-after-load "web-mode"
+;;   '(font-lock-add-keywords 'web-mode
+;;                nil 
+;;                '(("[^a-zA-Z]\\([0-9]+\\)[^a-zA-Z]" 
+;;                   1 font-lock-warning-face prepend))))
+
+;; ;; (add-hook 'after-change-major-mode-hook
+;; (eval-after-load "web-mode"
+;;   '(font-lock-add-keywords 'web-mode
+;;                nil 
+;;                '(("\\(=\\)" 
+;;                   1 font-lock-warning-face prepend))))
+
+
+;; (font-lock-add-keywords 'emacs-lisp-mode
+;;   '(("foo" . font-lock-keyword-face)))
+
+;; (custom-set-faces `(foo ((t (:background "red")))))
+
+;; foo
+;; foo
+
+
+
+
+
+
+
+;; ;; https://hbfs.wordpress.com/2010/03/02/adding-keywords-in-emacs/
+;; (make-face 'font-lock-special-macro-face)
+;; ;; (set-face-foreground 'font-lock-special-macro-face "pink")
+;; (set-face-attribute 'font-lock-special-macro-face nil :background "#212121")
+
+;; (defun add-custom-keyw()
+;;   "adds a few special keywords for c and c++ modes"
+;;   ;
+;;   (font-lock-add-keywords nil
+;;    '(
+;;      ("\\<\\(LOL\\)" . 'font-lock-special-macro-face)
+;;      ("\\<\\(UNIT_TEST_ONLY\\)" . 'font-lock-special-macro-face)
+;;      ("\\<\\(BEGIN_UNIT_TEST_ONLY\\)" . 'font-lock-special-macro-face)
+;;      ("\\<\\(END_UNIT_TEST_ONLY\\)" . 'font-lock-special-macro-face)
+ 
+;;      ; more of those would go here
+;;      )
+;;    )
+;;  )
+
+;; (add-hook 'web-mode-hook 'add-custom-keyw)
+;; (add-hook 'web-mode 'add-custom-keyw)
+
+
+
+
+
+
+
+;; (defface bday-face
+;;   '((t (:background "red")))
+;;   "Face to use for birthday tags in org-mode"
+;;   :group 'web-mode-faces)
+
+;; (font-lock-add-keywords 'web-mode
+;;  '(
+;;    ("#bday" 0 'bday-face t)
+;;    ("LOL" 0 'bday-face t)
+;;    ("\\<\\(LOL\\)" . 'bday-face)
+;;    ("\\<\\(UNIT_TEST_ONLY\\)" . 'bday-face)
+;;    ("\\<\\(BEGIN_UNIT_TEST_ONLY\\)" . 'bday-face)
+;;    ("\\<\\(END_UNIT_TEST_ONLY\\)" . 'bday-face)
+;;  ))
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -52,9 +156,9 @@
 
 
 ;; ------ Flycheck
-(set-face-attribute 'flycheck-warning nil :foreground "#fff" :background nil)
-(set-face-attribute 'flycheck-error nil :foreground "#000" :background "#f86c6d")
-(set-face-attribute 'dired-directory nil :foreground "#56b0ec" :background nil)
+(set-face-attribute 'flycheck-warning nil :foreground "#f86c6d" :background nil :underline nil)
+(set-face-attribute 'flycheck-error nil :foreground "#f86c6d" :background nil :underline nil)
+(set-face-attribute 'dired-directory nil :foreground "#56b0ec" :background nil :underline nil)
 
 
 
@@ -72,23 +176,27 @@
 ;; (set-face-attribute 'js2-object-property nil :foreground "#eeffff")
 
 ;; ------ js2 warning
-(set-face-attribute 'js2-warning nil :foreground "#000" :underline nil :background "#f86c6d")
+;; (set-face-attribute 'js2-warning nil :foreground "#000" :underline nil :background "#f86c6d")
+(set-face-attribute 'js2-warning nil :foreground "#f86c6d" :underline nil :background nil)
+(set-face-attribute 'js2-error nil :foreground "#f86c6d" :underline nil :background nil)
 
 
 ;; ------ web-mode
 (set-face-attribute 'web-mode-type-face nil :foreground "#ffcb6b" :background nil)
-(set-face-attribute 'web-mode-keyword-face nil :foreground "#c792ea" :background nil)
+(set-face-attribute 'web-mode-keyword-face nil :foreground "#c694e8" :background nil)
 ;; (set-face-attribute 'web-mode-keyword-face nil :foreground "#82aaff" :background nil)
 (set-face-attribute 'web-mode-function-call-face nil :foreground "#82aaff" :background nil)
 (set-face-attribute 'web-mode-function-name-face nil :foreground "#82aaff" :background nil)
-(set-face-attribute 'web-mode-keyword-face nil :foreground "#c792ea" :background nil)
+(set-face-attribute 'web-mode-keyword-face nil :foreground "#c694e8" :background nil)
 (set-face-attribute 'web-mode-variable-name-face nil :foreground "#eeffff" :background nil)
 
 (set-face-attribute 'web-mode-doctype-face nil :foreground "#f07178" :background nil)
+
 (set-face-attribute 'web-mode-html-tag-face nil :foreground "#f07178" :background nil)
-(set-face-attribute 'web-mode-html-attr-name-face nil :foreground "#ffcb6b" :background nil)
+(set-face-attribute 'web-mode-html-attr-name-face nil :foreground "#ffcb69" :background nil)
 (set-face-attribute 'web-mode-html-attr-value-face nil :foreground "#c3e88d" :background nil)
-(set-face-attribute 'web-mode-html-tag-bracket-face nil :foreground "#80ddff" :background nil)
+(set-face-attribute 'web-mode-html-tag-bracket-face nil :foreground "#84ddfd" :background nil)
+
 (set-face-attribute 'web-mode-block-delimiter-face nil :foreground "#89ddff" :background nil)
 (set-face-attribute 'web-mode-constant-face nil :foreground "#f78c6c" :background nil)
 ;; (set-face-attribute 'web-mode-variable-name-face nil :foreground "#f78c6c" :background nil)

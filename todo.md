@@ -40,24 +40,26 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
   
 
 ## A ranger
-- [x] Auto complete fait ramer lors d une saisie rapide
-- [x] Web mode + highlight mode conflict
-- [x] [dired] Click mouse1 sur item -> Ouvrir dans la même fenêtre
+
 
 
 
 ## Bloquant
-- [ ] Multi cursor : add bottom : S initialise avec trop de lignes
-- [ ] Web mode > Paste dans un html indente d une facon inconuu reformate tout, il faut bloquer ça (pas de reformatage automatique)
-      -> Semble ok
-
 - [ ] [IMPORTANT] Fonction get file name to clipboard (très utilisé)
 - [ ] [vc-dir] Faire une fonction pour activer un vc-version-diff avec les paramètres older revision : "base", newer revision : "head"
 - [ ] [vc-dir] N'affiche pas les fichiers supprimés localement, mais non envoyé à svn (svn remove)
 - [ ] [vc-dir] Check Compare with base revision (vc dir menu)
 
+- [x] Auto complete fait ramer lors d une saisie rapide
+- [x] Web mode + highlight mode conflict
+- [x] [dired] Click mouse1 sur item -> Ouvrir dans la même fenêtre
+
 - [x] [vc-dir] Trouver l'équilvalent de svn log en mode verbose "svn log -v"
       Pas besoin, il suffit de faire "=" (vc-diff) pour voir les diff (et les noms des fichiers)
+- [x] Multi cursor : add bottom : S initialise avec trop de lignes
+- [x] Web mode > Paste dans un html indente d une facon inconuu reformate tout, il faut bloquer ça (pas de reformatage automatique)
+      -> Semble ok
+
 
 
 ## Majeur
@@ -66,16 +68,13 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [important] Helm mini ---> preview file when over (Comme dans Sublime)
 - [ ] [dired] Affichage plus light
 
-
-
 - [ ] [util] ctrl+v dans minibuffer 
-- [ ] Revert buffer : keep current line position 
+- [ ] [util] Revert buffer : keep current line position 
 - [ ] [theme] Mettre plus en avant le buffer actif 
 - [ ] [theme] css mode couleurs horribles
 - [ ] [theme] js color var 
 - [ ] [theme] Ajouter des differenciations sur certains mot clee comme "$", "=", ".", "'", "(", ")", "+", "-", certains mots clés php "var_dump", "PHP_EOL", etc
               Voir package "highlight-chars"
-
 
 - [ ] [perf] helm-projectile pas suffisamment rapide
 - [ ] [util] F5 revert buffer ?
@@ -156,39 +155,25 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 ##  Mineur 
 - [ ] nlinum in fringe ? Pouvoir afficher les vc diff plus loin que le contenu
 - [ ] [vc-dir] Ne pas afficher les lignes dossiers (les lignes qui sont grisées)
-- [ ] Neotree auto find when buffer open without focus
 - [ ] Voir pour utiliser une largeur max lors de la saisie de long texte
 - [ ] Auto complete > 2eme boite > Afficher instantanement
 - [ ] web mode : refresh colors after yank
 - [ ] tabbar : hide bad icons
-- [ ] emacs --> save a cursor place ?
-- [ ] Enable emmet by default for web files
+
 - [ ] git-svn
 - [ ] Fichiers markdown mette toutes les windows en centré
-- [ ] Don't add behaviour for end of line (remove end of line stuff)
       (Creation de differences inutiles sur la toute dernière ligne de certains fichiers)
 - [ ] Markdown mode style like in Sublime (background white, text black, column width limit, center inside)
 - [ ] Faire tourner "create-tags" (ctags doit etre lu par emacs)
 - [ ] JS auto doc
-- [ ] Faire fonctionner des snippets javascript
-- [ ] Web mode : avoir des propositions d auto completion de mots cles php connu
-      Comme dans Sublime (var_       --> proposition var_dump)
-      Voir du cote des snippets (Yasnippet)
-      Update : il faut faire fonctionner yasnippet correctement avant
-- [ ] Disable web mode disable auto indent
-      Je pense qu il faut laisser cette fonctionalitee, et plutot voir les quelques cas
-      qui ne conviennt pas
 - [ ] Dired : remove folder is very slow
 - [ ] Don't prompt for delete recursivly (code available in prelude)
 - [ ] Enable evil easy motion to work like vim easy motion  https://github.com/easymotion/vim-easymotion
-
 - [ ] Bottom line
   - [ ] Show current mode in color
   - [ ] Show current VC system used
   - [ ] Show current encoding
 - [ ] Display current encoding 
-
-- [ ] CSS mode > attribut —> TAB touch —> wrote : 
 - [ ] Correcteur orthographique 
 - [ ] Markdown in white theme
 - [ ] Parcourir partage smb 
@@ -200,6 +185,21 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 
 ## Corrige 
+- [x] Neotree auto find when buffer open without focus
+- [x] emacs --> save a cursor place ?
+- [x] Enable emmet by default for web files
+- [x] Don't add behaviour for end of line (remove end of line stuff)
+- [x] Faire fonctionner des snippets javascript
+- [x] Web mode : avoir des propositions d auto completion de mots cles php connu
+      Comme dans Sublime (var_       --> proposition var_dump)
+      Voir du cote des snippets (Yasnippet)
+      Update : il faut faire fonctionner yasnippet correctement avant
+- [x] Disable web mode disable auto indent
+      qui ne conviennt pas
+      Je pense qu il faut laisser cette fonctionalitee, et plutot voir les quelques cas
+      
+
+
 - [x] TAB dans le vide : ne pas déployer le menu (js mode)
 - [x] [IMPORTANT] CTRL+ALT+C --> console.log
       -> yassnippet configure, "cl" + TAB
@@ -416,3 +416,18 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [x] Highlight color (http://stackoverflow.com/questions/385661/how
 - [x] Indent html.  —> web beautify html 
 - [x] Installer ag  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
