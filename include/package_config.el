@@ -333,14 +333,19 @@ ac-source-words-in-same-mode-buffers))
 (setq ac-show-menu-immediately-on-auto-complete t)
 
 
-
+;; ;; Company
+;; (require 'company)
+;; (global-company-mode)
 
 
 ;; yasnippet
 (require 'yasnippet)
+;; (add-to-list 'yas-snippet-dirs "/Users/willahh/.emacs.d/snippets/willahh")
+;; (add-to-list 'yas-snippet-dirs "/Users/willahh/.emacs.d/snippets/willahh/js-mode")
+
 (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/willahh/")
-(add-to-list 'yas-snippet-dirs "/Users/willahh/.emacs.d/snippets/willahh")
-(add-to-list 'yas-snippet-dirs "/Users/willahh/.emacs.d/snippets/willahh/js-mode")
+(add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/snippets/es6-snippets")
+
 
 (setq yas/indent-line nil)
 ;; (yas-global-mode 1)

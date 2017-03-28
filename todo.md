@@ -11,6 +11,7 @@
 - evil mode : "gf" ("go to file")
 - Sublime merge lines -> Evil Gj
 - [M+S+;] ---> xref-find-definitions (natif) 
+- dired-jump (C-x C-j) : Jump directly to dired from file
 
 - Revert hunk (depuis vc-diff) :
   - C-c C-r (diff-reverse-direction)
@@ -40,7 +41,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
   
 
 ## A ranger
-
+- [ ] Directory completion : Possibilite d'avoir de l'auto completion lors de la saisie d'un chemin.
 
 
 
