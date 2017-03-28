@@ -11,6 +11,8 @@
   ;; php-refactor-mode
   ;; tabbar
   ;; php-auto-yasnippets
+  company-tern
+  company-quickhelp
   highlight-chars
   drag-stuff
   clean-aindent-mode

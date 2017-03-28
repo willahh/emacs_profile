@@ -46,6 +46,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 
 ## Bloquant
+- [ ] Attention dans magit TAB n est plus fonctionnel (toggle)
 - [ ] [IMPORTANT] Fonction get file name to clipboard (très utilisé)
 - [ ] [vc-dir] Faire une fonction pour activer un vc-version-diff avec les paramètres older revision : "base", newer revision : "head"
 - [ ] [vc-dir] N'affiche pas les fichiers supprimés localement, mais non envoyé à svn (svn remove)
