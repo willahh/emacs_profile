@@ -852,7 +852,7 @@ ac-source-words-in-same-mode-buffers))
 (add-hook 'typescript-mode-hook (lambda () (tern-mode t)))
 (add-hook 'web-mode-hook (lambda () (tern-mode t))) ;; Update : utile aussi en web mode !
 
-(setq tern-command '("tern" "--no-port-file"))
+;; (setq tern-command '("tern" "--no-port-file"))
 
 (eval-after-load 'tern
    '(progn
