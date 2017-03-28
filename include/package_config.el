@@ -325,8 +325,12 @@ ac-source-words-in-same-mode-buffers))
 ;; pour eviter d avoir des freeze, 0.1 et 0.5 sont de bonnes 
 ;; (setq ac-delay 0.1)
 (setq ac-delay 0.1)
-(setq ac-auto-show-menu 0.5)
 
+;; (setq ac-auto-show-menu 0.5)
+(setq ac-auto-show-menu 0.25)
+
+(setq ac-menu-height 30)
+(setq ac-show-menu-immediately-on-auto-complete t)
 
 
 
@@ -852,7 +856,9 @@ ac-source-words-in-same-mode-buffers))
 (add-hook 'typescript-mode-hook (lambda () (tern-mode t)))
 (add-hook 'web-mode-hook (lambda () (tern-mode t))) ;; Update : utile aussi en web mode !
 
-;; (setq tern-command '("tern" "--no-port-file"))
+;; Don't create .tern-project automatically
+;; ~/.tern-config file is used globally instead
+(setq tern-command '("tern" "--no-port-file"))
 
 (eval-after-load 'tern
    '(progn

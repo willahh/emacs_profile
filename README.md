@@ -15,12 +15,29 @@ mkdir tmp
 - Install icons from ~/.emacs.d/plugins/all-the-icons/fonts/
 - Use font "Menlo" - size : 12 -  ~/.emacs.d/fonts/menlo (Menu > option > set default font)
 - Install below dependencies globaly
-- Create a .tern-project file in ~/ directory for javascript ES6 support
+- Create a .tern-project file in ~/ directory for a global javascript ES6 support
 ```{r, engine='bash', count_lines}
 {
-    "plugins": {
-        "node": {}
+  "ecmaVersion": 6,
+  "libs": [
+    "browser"
+  ],
+  "loadEagerly": [
+    "path/to/your/js/**/*.js"
+  ],
+  "dontLoad": [
+    "node_modules/**",
+    "path/to/your/js/**/*.js"
+  ],
+  "plugins": {
+    "modules": {},
+    "es_modules": {},
+    "node": {},
+    "doc_comment": {
+      "fullDocs": true,
+      "strong": true
     }
+  }
 }
 ```
 

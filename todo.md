@@ -50,23 +50,23 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [vc-dir] N'affiche pas les fichiers supprimés localement, mais non envoyé à svn (svn remove)
 - [ ] [vc-dir] Check Compare with base revision (vc dir menu)
 
-- [x] Auto complete fait ramer lors d une saisie rapide
-- [x] Web mode + highlight mode conflict
-- [x] [dired] Click mouse1 sur item -> Ouvrir dans la même fenêtre
-
-- [x] [vc-dir] Trouver l'équilvalent de svn log en mode verbose "svn log -v"
-      Pas besoin, il suffit de faire "=" (vc-diff) pour voir les diff (et les noms des fichiers)
-- [x] Multi cursor : add bottom : S initialise avec trop de lignes
-- [x] Web mode > Paste dans un html indente d une facon inconuu reformate tout, il faut bloquer ça (pas de reformatage automatique)
-      -> Semble ok
 
 
 
 ## Majeur
+- [ ] Indent according to current file
+      Si la fichier courant contient une indentation en tabulation, indent = tab, si 2 space, indent = 2, etc
+      (Comportement Sublime Text)
+      
+- [ ] Auto complete : Deuxième ouverture instantane
+- [ ] Tooltip : Voir pour faire des tooltips comme dans Sublime
+
+
 - [ ] Web mode > HTML : Couleurs sont presques identiques a celle du theme Sublime mais moins pétante, il faut mettre les memes
 - [ ] Helm mini : Voir pour n'avoir que du gris + highlight, c'est trop folklo là
 - [ ] [important] Helm mini ---> preview file when over (Comme dans Sublime)
 - [ ] [dired] Affichage plus light
+
 
 - [ ] [util] ctrl+v dans minibuffer 
 - [ ] [util] Revert buffer : keep current line position 
@@ -75,6 +75,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [theme] js color var 
 - [ ] [theme] Ajouter des differenciations sur certains mot clee comme "$", "=", ".", "'", "(", ")", "+", "-", certains mots clés php "var_dump", "PHP_EOL", etc
               Voir package "highlight-chars"
+
 
 - [ ] [perf] helm-projectile pas suffisamment rapide
 - [ ] [util] F5 revert buffer ?
@@ -185,6 +186,17 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 
 ## Corrige 
+- [x] Auto complete fait ramer lors d une saisie rapide
+- [x] Web mode + highlight mode conflict
+- [x] [dired] Click mouse1 sur item -> Ouvrir dans la même fenêtre
+
+- [x] [vc-dir] Trouver l'équilvalent de svn log en mode verbose "svn log -v"
+      Pas besoin, il suffit de faire "=" (vc-diff) pour voir les diff (et les noms des fichiers)
+- [x] Multi cursor : add bottom : S initialise avec trop de lignes
+- [x] Web mode > Paste dans un html indente d une facon inconuu reformate tout, il faut bloquer ça (pas de reformatage automatique)
+      -> Semble ok
+      
+      
 - [x] Neotree auto find when buffer open without focus
 - [x] emacs --> save a cursor place ?
 - [x] Enable emmet by default for web files
