@@ -5,7 +5,8 @@
 ;; (set-default-font "Inconsolata-14") ;; Font face: Inconsolata, font-size: 14
 ;; (set-default-font "Meslo LG M") ;; Font face: Meslo LG M, font-size: 12
 ;; (set-default-font "Menlo") ;; Font face: Menlo, font-size: 12
-(set-default-font "Meslo LG M") ;; Font face: ), font-size: 12
+(set-default-font "Meslo LG S") ;; Font face: Meslo LG S, font-size: 12
+
 (setq-default line-spacing 0)
 
 

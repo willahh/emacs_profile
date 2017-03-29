@@ -210,3 +210,8 @@ scroll-step 1)
         save-place-file (concat user-emacs-directory "places")
         backup-directory-alist `(("." . ,(concat user-emacs-directory
                                                  "backups")))))
+
+
+
+;; Tootip
+

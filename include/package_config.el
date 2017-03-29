@@ -346,38 +346,175 @@
 
 
 ;;Auto complete
-(require 'auto-complete)
-(require 'auto-complete-config)
-
+;; (require 'auto-complete)
+;; (require 'auto-complete-config)
 
 ;; (ac-config-default)
 ;; (global-auto-complete-mode t)
 
-(ac-config-default)
-(global-auto-complete-mode t)
+;; (setq ac-dwim t)
+;; (ac-config-default)
 
+;; (setq ac-sources '(ac-source-yasnippet
+;; ac-source-abbrev
+;; ac-source-words-in-same-mode-buffers))
 
-(setq ac-dwim t)
-(ac-config-default)
+;; ;; Auto start a true
+;; (setq ac-auto-start 1)
 
-(setq ac-sources '(ac-source-yasnippet
-ac-source-abbrev
-ac-source-words-in-same-mode-buffers))
-
-;; Auto start a true
-(setq ac-auto-start 1)
-
-;; (setq ac-auto-start nil)
-;; (ac-set-trigger-key "TAB")
-
-;; (setq ac-delay 0)
-;; (setq ac-auto-show-menu 0) ;; Delay until open menu (fast please !))F)
-
-;; Update : le declenchement ne dois pas etre rapide
-;; pour eviter d avoir des freeze, 0.1 et 0.5 sont de bonnes 
+;; ;;
 ;; (setq ac-delay 0.1)
-(setq ac-delay 0.1)
-(setq ac-auto-show-menu 0.5)
+
+;; ;; (setq ac-auto-show-menu 0.5)
+;; (setq ac-auto-show-menu 0.25)
+
+;; (setq ac-menu-height 30)
+;; (setq ac-show-menu-immediately-on-auto-complete t)
+
+
+
+
+
+
+
+;; Update try to switch from auto-compete to company
+;; http://emacs.stackexchange.com/a/758
+
+;; Company
+(require 'company)
+(setq company-idle-delay 0.1)
+(setq company-show-numbers t)
+(setq company-minimum-prefix-length 2)
+
+(setq company-dabbrev-downcase 0)
+(setq company-idle-delay 0)
+
+
+
+
+;; COmpany-quickhelp
+(company-quickhelp-mode 1)
+
+
+
+
+(add-hook 'after-init-hook 'global-company-mode)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;; Source : http://emacs.stackexchange.com/a/7925
+(defun check-expansion ()
+  (save-excursion
+    (if (looking-at "\\_>") t
+      (backward-char 1)
+      (if (looking-at "\\.") t
+    (backward-char 1)
+    (if (looking-at "->") t nil)))))
+
+(defun do-yas-expand ()
+  (let ((yas/fallback-behavior 'return-nil))
+    (yas/expand)))
+
+(defun tab-indent-or-complete ()
+  (interactive)
+  (cond
+   ((minibufferp)
+    (minibuffer-complete))
+   (t
+    (indent-for-tab-command)
+    (if (or (not yas/minor-mode)
+        (null (do-yas-expand)))
+    (if (check-expansion)
+        (progn
+          (company-manual-begin)
+          (if (null company-candidates)
+          (progn
+            (company-abort)
+            (indent-for-tab-command)))))))))
+
+(defun tab-complete-or-next-field ()
+  (interactive)
+  (if (or (not yas/minor-mode)
+      (null (do-yas-expand)))
+      (if company-candidates
+      (company-complete-selection)
+    (if (check-expansion)
+      (progn
+        (company-manual-begin)
+        (if (null company-candidates)
+        (progn
+          (company-abort)
+          (yas-next-field))))
+      (yas-next-field)))))
+
+(defun expand-snippet-or-complete-selection ()
+  (interactive)
+  (if (or (not yas/minor-mode)
+      (null (do-yas-expand))
+      (company-abort))
+      (company-complete-selection)))
+
+(defun abort-company-or-yas ()
+  (interactive)
+  (if (null company-candidates)
+      (yas-abort-snippet)
+    (company-abort)))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -386,9 +523,12 @@ ac-source-words-in-same-mode-buffers))
 
 ;; yasnippet
 (require 'yasnippet)
+;; (add-to-list 'yas-snippet-dirs "/Users/willahh/.emacs.d/snippets/willahh")
+;; (add-to-list 'yas-snippet-dirs "/Users/willahh/.emacs.d/snippets/willahh/js-mode")
+
 (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/willahh/")
-(add-to-list 'yas-snippet-dirs "/Users/willahh/.emacs.d/snippets/willahh")
-(add-to-list 'yas-snippet-dirs "/Users/willahh/.emacs.d/snippets/willahh/js-mode")
+(add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/snippets/es6-snippets")
+
 
 (setq yas/indent-line nil)
 ;; (yas-global-mode 1)
@@ -414,6 +554,51 @@ ac-source-words-in-same-mode-buffers))
   (push 'ac-source-yasnippet ac-sources))
 
 (add-hook 'prog-mode-hook 'my-prog-mode-hook)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(global-set-key [tab] 'tab-indent-or-complete)
+(global-set-key (kbd "TAB") 'tab-indent-or-complete)
+(global-set-key [(control return)] 'company-complete-common)
+
+(define-key company-active-map [tab] 'expand-snippet-or-complete-selection)
+(define-key company-active-map (kbd "TAB") 'expand-snippet-or-complete-selection)
+
+(define-key yas-minor-mode-map [tab] nil)
+(define-key yas-minor-mode-map (kbd "TAB") nil)
+
+(define-key yas-keymap [tab] 'tab-complete-or-next-field)
+(define-key yas-keymap (kbd "TAB") 'tab-complete-or-next-field)
+(define-key yas-keymap [(control tab)] 'yas-next-field)
+(define-key yas-keymap (kbd "C-g") 'abort-company-or-yas)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -665,15 +850,17 @@ ac-source-words-in-same-mode-buffers))
 ;; tide
 ;; (require 'tide-mode)
 
-
 (defun setup-tide-mode ()
   (interactive)
   (tide-setup)
   (flycheck-mode +1)
   (setq flycheck-check-syntax-automatically '(save mode-enabled))
   (eldoc-mode +1)
-  ;; (tide-hl-identifier-mode +1)
-  )
+  (tide-hl-identifier-mode +1)
+  ;; company is an optional dependency. You have to
+  ;; install it separately via package-install
+  ;; `M-x package-install [ret] company`
+  (company-mode +1))
 
 ;; aligns annotation to the right hand side
 (setq company-tooltip-align-annotations t)
@@ -904,13 +1091,28 @@ ac-source-words-in-same-mode-buffers))
 (add-hook 'typescript-mode-hook (lambda () (tern-mode t)))
 (add-hook 'web-mode-hook (lambda () (tern-mode t))) ;; Update : utile aussi en web mode !
 
+;; Don't create .tern-project automatically
+;; ~/.tern-config file is used globally instead
 (setq tern-command '("tern" "--no-port-file"))
 
 (eval-after-load 'tern
    '(progn
       (require 'tern-auto-complete)
       (tern-ac-setup)))
- 
+
+
+
+
+;; company-tern
+;; Add tern support for company
+(require 'company-tern)
+(add-to-list 'company-backends 'company-tern)
+
+
+
+
+
+
 
 ;; js2-refactor
 (require 'js2-refactor)
