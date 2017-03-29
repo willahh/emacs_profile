@@ -13,7 +13,7 @@ cd ~/.emacs.d
 mkdir tmp
 ```
 - Install icons from ~/.emacs.d/plugins/all-the-icons/fonts/
-- Use font "Menlo" - size : 12 -  ~/.emacs.d/fonts/menlo (Menu > option > set default font)
+- Use font "Meslo LG S" - size : 12 -  ~/.emacs.d/fonts/meslo (Menu > option > set default font)
 - Install below dependencies globaly
 - Create a .tern-project file in ~/ directory for javascript ES6 support
 ```{r, engine='bash', count_lines}

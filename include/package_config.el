@@ -40,7 +40,6 @@
 
 
 
-
 ;; (setq whitespace-style '(face tabs))
 ;; (whitespace-mode)
 
@@ -57,6 +56,59 @@
 ;; Hide dot files (.svn, .git, ...)
 ;; (setq dired-omit-files "^\\...+$")
 ;; (add-hook 'dired-mode-hook (lambda () (dired-omit-mode 1)))
+
+;; Mouse click to open in current window
+(define-key dired-mode-map [mouse-2] 'dired-find-file)
+
+
+
+
+
+;; https://www.emacswiki.org/emacs/LsLispToggleVerbosity
+(defun leo-toggle-ls-lisp-verbosity ()
+      (interactive)
+      (if (memq 'uid ls-lisp-verbosity)
+          (progn
+            (setq ls-lisp-verbosity (delq 'uid ls-lisp-verbosity))
+            (setq ls-lisp-verbosity (delq 'gid ls-lisp-verbosity))
+            (revert-buffer)
+            (message "uid & gid hidden"))
+        (progn
+          (add-to-list 'ls-lisp-verbosity 'uid)
+          (add-to-list 'ls-lisp-verbosity 'gid)
+          (revert-buffer)
+          (message "uid & gid visible"))))
+
+;; (custom-set-variables
+;;  '(ls-lisp-verbosity nil))
+
+;;  (defadvice ls-lisp-format (around my-ls-lisp-format
+;;   (file-name file-attr file-size switches time-index now))
+;;   "Advice definition which removes unnecessary information
+;; during file listing in dired. For such purposes 
+;; `ls-lisp-verbosity' customized variable can be used, but 
+;; even if it is equal to nil dired will display file 
+;; permissions field like \"drwxrwxrwx\".\. So here we just 
+;; get full control to what dired shows and leave only those 
+;; fields which we need."
+;;   (progn
+;;     ad-do-it
+;;     (setq ad-return-value (concat 
+;;       (substring ad-return-value 0 1)
+;;       (substring ad-return-value 13)))))
+
+;; (ad-activate 'ls-lisp-format t)
+
+
+
+
+
+
+
+
+
+
+
 
 
 ;; golden-ratio
