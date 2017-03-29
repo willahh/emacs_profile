@@ -588,7 +588,8 @@
 
 
 
-
+;; magit
+; (require 'magit)
 
 
 

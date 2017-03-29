@@ -46,6 +46,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 
 ## Bloquant
+- [ ] C-M-b ne fonctionne pas avec la touche meta left mac os x
 - [ ] Attention dans magit TAB n est plus fonctionnel (toggle)
 - [ ] [IMPORTANT] Fonction get file name to clipboard (très utilisé)
 - [ ] [vc-dir] Faire une fonction pour activer un vc-version-diff avec les paramètres older revision : "base", newer revision : "head"

@@ -136,6 +136,7 @@ scroll-step 1)
 ;;
 ;; Update wra 2 :
 ;;  bracket {} cant be typed if alt is used as meta key...
+
 (
  setq mac-option-key-is-meta nil
      mac-command-key-is-meta t
