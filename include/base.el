@@ -42,10 +42,16 @@
 ;; ?
 (set-default 'cursor-type 'bar)
 
+;; ------ Indentation
 ;; Always indent with space
 (setq-default indent-tabs-mode nil)
 
-;;
+;; (setq default-tab-width 2)
+(setq typescript-indent-level 2) ;; Most of ts examples have 2 space indent
+(setq js-indent-level 4)
+(setq sgml-basic-offset 4)
+
+;; -----
 (setq transient-mark-mode 1)
 
 ;; Show matching parenthesis
@@ -88,9 +94,7 @@
 scroll-conservatively 9999
 scroll-step 1)
 
-;; js indent 4
-(setq js-indent-level 4)
-(setq sgml-basic-offset 4)
+
 
 ;; (setq auto-window-vscroll 1)
 ;; (setq scroll-conservatively 0)

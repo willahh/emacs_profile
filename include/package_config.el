@@ -1,6 +1,4 @@
-;; drag-stuff
-(require 'drag-stuff)
-(drag-stuff-global-mode 1)
+
 
 
 ;; highlight-chars
