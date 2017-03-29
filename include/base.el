@@ -7,7 +7,7 @@
 ;; (setq bidi-display-reordering nil)
 
 
-;;
+;; Display function, didn't see real changes
 (setq-default bidi-display-reordering nil)
 
 ;; Don't display "Reverting buffer ..." message
@@ -54,7 +54,7 @@
 ;; New line and indent by default
 (global-set-key (kbd "RET") 'newline-and-indent)
 
-;;
+;; 
 (global-hl-line-mode)
 
 ;;
@@ -129,12 +129,11 @@ scroll-step 1)
 
 
 ;; Set meta key to command
-;;; I prefer cmd key for meta
 ;;
-;; Update wra : cmd key is disabled with this,
+;; Update: cmd key is disabled with this,
 ;; Copy paste from system to emacs is not possible with this.
 ;;
-;; Update wra 2 :
+;; Update 2:
 ;;  bracket {} cant be typed if alt is used as meta key...
 
 (
@@ -142,6 +141,10 @@ scroll-step 1)
      mac-command-key-is-meta t
      mac-command-modifier 'meta
      mac-option-modifier 'none)
+
+(setq mac-control-modifier 'control)
+(setq ns-function-modifier 'control) ;; mbp FN and CTRL system switch 
+
 
 ;; bash profile
 (setq shell-file-name "bash")

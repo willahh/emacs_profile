@@ -31,6 +31,7 @@
       indent-for-tab-command
       kill-region
       mouse-set-region
+      tab-indent-or-complete
       web-mode-comment-indent-new-line
       ))
 

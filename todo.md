@@ -41,8 +41,11 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
   
 
 ## A ranger
+- [ ] Quickly ediff files from dired
+      https://oremacs.com/2017/03/18/dired-ediff/
+      
 - [ ] Directory completion : Possibilite d'avoir de l'auto completion lors de la saisie d'un chemin.
-
+- [ ] Indent : 2 or 4 spaces
 
 
 ## Bloquant
