@@ -5,6 +5,7 @@
       '(
       autopair-insert-opening
       autopair-newline
+      backward-sexp
       clean-aindent--bsunindent
       electric-newline-and-maybe-indent
       eval-last-sexp
@@ -44,10 +45,14 @@
       describe-key
       dired-unmark-backward
       emmet-expand-line
+      evil-buffer-new
       evil-emacs-state
+      helm-mini
       helm-projectile-ag
       keyboard-quit
       mark-whole-buffer
       mc/mark-next-lines
       mc/mark-previous-lines
+      next-buffer
+      previous-buffer
       ))
