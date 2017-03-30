@@ -837,6 +837,14 @@
 ;; ))
 
 
+;; Update pour avoir ag et vc dir dans la meme window : plutot pratique
+(setq display-buffer-alist
+  '(  
+   ("*ag*"                                  . (display-buffer-same-window . nil))
+   ("*vc-dir*"                              . (display-buffer-same-window . nil))
+))
+
+
 
 
 

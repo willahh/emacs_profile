@@ -48,7 +48,18 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 ## A ranger
 
 ## Bloquant
-- [ ] [dired] Plus de couleurs par defuault (premiere ligne en blue)
+- [ ] [important] Web-mode auto indent after paste
+      Supprimer ce comportemtn, l'auto indent ne doit pas se faire apres un paste
+      
+- [ ] Ouverture fichier : avoir de meilleurs perfs
+- [ ] Auto hihglight, peut être pas si bien (perte de perf)
+
+- [ ] Copier : Ne pas embarquer la couleur
+      
+- [ ] [ag] Ajouter une touche très rapide a "ag-projectile" (le plus proche de la recherche de Sublime)
+- [ ] [ag] keybinding : ENTER ---> rester sur la meme fenetre
+
+- [ ] [dired] Plus de couleurs par default (premiere ligne en blue)
 - [ ] [multi-cursor] Intégration le Meta+mouse1 click pour avoir un curseur multiple
 - [ ] [Multi-cursor] Pouvoir faire un copier de toutes les chaines selectionnees
        Permet d'extraire des strings (Sublime text)
