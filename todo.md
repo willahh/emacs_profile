@@ -55,8 +55,16 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [multi-cursor] Intégration le Meta+mouse1 click pour avoir un curseur multiple
 - [x] Directory completion : Possibilite d'avoir de l'auto completion lors de la saisie d'un chemin.
 
+- [ ] Quickly ediff files from dired
+      https://oremacs.com/2017/03/18/dired-ediff/
+      
+- [ ] Directory completion : Possibilite d'avoir de l'auto completion lors de la saisie d'un chemin.
+- [ ] Indent : 2 or 4 spaces
+
+
 
 ## Bloquant
+- [ ] C-M-b ne fonctionne pas avec la touche meta left mac os x
 - [ ] Attention dans magit TAB n est plus fonctionnel (toggle)
 - [ ] [IMPORTANT] Fonction get file name to clipboard (très utilisé)
 - [ ] [vc-dir] Faire une fonction pour activer un vc-version-diff avec les paramètres older revision : "base", newer revision : "head"

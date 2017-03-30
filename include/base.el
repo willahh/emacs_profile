@@ -7,7 +7,7 @@
 ;; (setq bidi-display-reordering nil)
 
 
-;;
+;; Display function, didn't see real changes
 (setq-default bidi-display-reordering nil)
 
 ;; Don't display "Reverting buffer ..." message
@@ -42,10 +42,16 @@
 ;; ?
 (set-default 'cursor-type 'bar)
 
+;; ------ Indentation
 ;; Always indent with space
 (setq-default indent-tabs-mode nil)
 
-;;
+;; (setq default-tab-width 2)
+(setq typescript-indent-level 2) ;; Most of ts examples have 2 space indent
+(setq js-indent-level 4)
+(setq sgml-basic-offset 4)
+
+;; -----
 (setq transient-mark-mode 1)
 
 ;; Show matching parenthesis
@@ -54,7 +60,7 @@
 ;; New line and indent by default
 (global-set-key (kbd "RET") 'newline-and-indent)
 
-;;
+;; 
 (global-hl-line-mode)
 
 ;;
@@ -88,9 +94,7 @@
 scroll-conservatively 9999
 scroll-step 1)
 
-;; js indent 4
-(setq js-indent-level 4)
-(setq sgml-basic-offset 4)
+
 
 ;; (setq auto-window-vscroll 1)
 ;; (setq scroll-conservatively 0)
@@ -129,18 +133,22 @@ scroll-step 1)
 
 
 ;; Set meta key to command
-;;; I prefer cmd key for meta
 ;;
-;; Update wra : cmd key is disabled with this,
+;; Update: cmd key is disabled with this,
 ;; Copy paste from system to emacs is not possible with this.
 ;;
-;; Update wra 2 :
+;; Update 2:
 ;;  bracket {} cant be typed if alt is used as meta key...
+
 (
  setq mac-option-key-is-meta nil
      mac-command-key-is-meta t
      mac-command-modifier 'meta
      mac-option-modifier 'none)
+
+(setq mac-control-modifier 'control)
+(setq ns-function-modifier 'control) ;; mbp FN and CTRL system switch 
+
 
 ;; bash profile
 (setq shell-file-name "bash")

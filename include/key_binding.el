@@ -1,6 +1,7 @@
-
 ;;;; key_binding: --- some default / package keybindings
-(dolist (key '("\M-x" "\M-z" "\M-v" "\M-p" "\C-\M-p" "\C-\M-j"))
+;; (dolist (key '("\M-x" "\M-z" "\M-v" "\M-p" "\C-\M-p" "\C-\M-j"))
+;; (dolist (key '("\M-x" "\M-z" "\M-v" "\M-p" "\C-\M-p"))
+(dolist (key '("\M-x" "\M-z" "\M-v" "\C-\M-p"))
   (global-unset-key key))
 
 
@@ -199,6 +200,8 @@
 ;; ---------------- Key binding
 ;; (global-unset-key (kbd "C-x C-c"))
 
+
+;; (global-set-key (kbd "C-M-b") 'backward-sexp) ; rebind backward-sexp (default)
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
 (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB work in terminal
 (define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
@@ -416,8 +419,7 @@
 
 ;; magit
 ;; (define-key magit-mode-map "C-c a" 'magit-section-toggle)
-;; (define-key magit-mode-map (kbd "C-c h") 'magit-section-toggle)
+
+
 ;; (define-key magit-popup-mode-map (kbd "C-c h") 'magit-section-toggle)
-
-
-
+;; (define-key magit-popup-mode-map (kbd "C-c h") 'magit-section-toggle)
