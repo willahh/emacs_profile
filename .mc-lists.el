@@ -45,6 +45,7 @@
       dired-unmark-backward
       emmet-expand-line
       evil-emacs-state
+      helm-projectile-ag
       keyboard-quit
       mark-whole-buffer
       mc/mark-next-lines
