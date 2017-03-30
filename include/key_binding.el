@@ -307,9 +307,12 @@
 (global-set-key [(meta shift 1)] 'delete-other-windows)
 
 (global-set-key [(meta shift p)] 'helm-M-x)
-;; (global-set-key (kbd "M-p") 'helm-projectile-find-file)
+
+;; Sublime Text go to anything
+;; (global-set-key (kbd "π") 'helm-projectile-find-file) ;; ALT+P
+;; (global-set-key (kbd "π") 'helm-projectile-find-file-dwim) ;; ALT+P
 (global-set-key (kbd "π") 'helm-projectile-find-file) ;; ALT+P
-;; (global-set-key (kbd "C-M-p") 'helm-projectile-switch-project)
+
 (global-set-key (kbd "M-π") 'helm-projectile-switch-project) ;; (commande + alt + p)
 
 (global-set-key (kbd "M-q") 'ask-before-closing)

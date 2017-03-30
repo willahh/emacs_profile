@@ -154,51 +154,17 @@
 ;; highlight-symbol
 ;; Update : L activation automatique en temps reel n est pas possible
 ;; car consomme trop de resources (gros ralentissements sur des gros fichiers)
+
 (require 'highlight-symbol)
 (highlight-symbol-mode 0)
 (setq highlight-symbol-idle-delay 0)
 
-;; (add-hook 'emacs-lisp-mode 'highlight-symbol-nav-mode)
+
 (add-hook 'prog-mode-hook 'highlight-symbol-nav-mode)
 (add-hook 'prog-mode-hook 'highlight-symbol-mode)
 (add-hook 'web-mode-hook 'highlight-symbol-mode)
 (add-hook 'web-mode-hook 'highlight-symbol-nav-mode)
 
-;; (add-hook 'highlight-symbol-mode-hook
-;;           (setq highlight-symbol-idle-delay 0)
-;;           )
-
-;; ;; wra custom hook
-;; ;; Activation du mode highlight all same occurence uniquement
-;; ;; apres une selection (ST behaviour)
-;; ;; Update 2 : Keep auto
-
-;; (add-hook 'activate-mark-hook
-;;         (lambda ()
-;;           (highlight-symbol-mode 1)))
-
-;; (add-hook 'deactivate-mark-hook
-;;         (lambda ()
-;;           (highlight-symbol-mode 0)))
- 
-;; ;; Hook to enable highlight-symbol-nav-mode
-;; (add-hook 'prog-mode-hook 'highlight-symbol-mode)
-;; (add-hook 'prog-mode-hook 'highlight-symbol-nav-mode)
-
-;; (add-hook 'web-mode-hook 'highlight-symbol-mode)
-;; (add-hook 'web-mode-hook 'highlight-symbol-nav-mode)
-
-;; (add-hook 'css-mode-hook 'highlight-symbol-mode)
-;; (add-hook 'css-mode-hook 'highlight-symbol-nav-mode)
-
-;; (add-hook 'html-mode-hook 'highlight-symbol-mode)
-;; (add-hook 'html-mode-hook 'highlight-symbol-nav-mode)
-
-;; (add-hook 'php-mode-hook 'highlight-symbol-mode)
-;; (add-hook 'php-mode-hook 'highlight-symbol-nav-mode)
-
-;; (add-hook 'emacs-lisp-mode 'highlight-symbol-mode)
-;; (add-hook 'emacs-lisp-mode 'highlight-symbol-nav-mode)
 
 
 
@@ -1095,15 +1061,19 @@
 (setq wg-workgroups-mode-exit-save-behavior 'save)      ; Options: 'save 'ask nil
 
 ;; tern
+;; Update : tern doit etre active manuellement car il lance des process des qu un buffer
+;; est ouvert. Lors d une exploration de plein de fichiers, trop de process sont ouvert
+;; et font freezer l ensemble.
+
 ;; (autoload 'tern-mode "tern.el" nil t)
 ;; (add-hook 'js-mode-hook (lambda () (tern-mode t)))
 
-(autoload 'tern-mode "tern.el" nil t)
-(add-hook 'js-mode-hook (lambda () (tern-mode t)))
-(add-hook 'js2-mode-hook (lambda () (tern-mode t)))
-(add-hook 'js2-mode-hook 'tern-mode)
-(add-hook 'typescript-mode-hook (lambda () (tern-mode t)))
-(add-hook 'web-mode-hook (lambda () (tern-mode t))) ;; Update : utile aussi en web mode !
+;; (autoload 'tern-mode "tern.el" nil t)
+;; (add-hook 'js-mode-hook (lambda () (tern-mode t)))
+;; (add-hook 'js2-mode-hook (lambda () (tern-mode t)))
+;; (add-hook 'js2-mode-hook 'tern-mode)
+;; (add-hook 'typescript-mode-hook (lambda () (tern-mode t)))
+;; (add-hook 'web-mode-hook (lambda () (tern-mode t))) ;; Update : utile aussi en web mode !
 
 ;; Don't create .tern-project automatically
 ;; ~/.tern-config file is used globally instead
@@ -1529,6 +1499,12 @@
 
 ;; Truncate lines
 (setq helm-truncate-lines 1)
+
+;; Slower performance
+;; (setq helm-candidate-number-limit 10000)
+
+
+
 
 
 ;; ---------------- helm-swoop
