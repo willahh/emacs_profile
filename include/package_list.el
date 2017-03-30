@@ -11,6 +11,7 @@
   ;; php-refactor-mode
   ;; tabbar
   ;; php-auto-yasnippets
+  json-mode
   company-tern
   company-quickhelp
   highlight-chars
@@ -20,7 +21,7 @@
   typescript-mode
   tide
   js2-refactor
-  flymake-jshint
+  ;; flymake-jshint
   ;; neotree
   php-mode
   php-refactor-mode

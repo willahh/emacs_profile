@@ -419,5 +419,7 @@
 
 ;; magit
 ;; (define-key magit-mode-map "C-c a" 'magit-section-toggle)
+
+
 ;; (define-key magit-popup-mode-map (kbd "C-c h") 'magit-section-toggle)
 ;; (define-key magit-popup-mode-map (kbd "C-c h") 'magit-section-toggle)

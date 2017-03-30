@@ -5,6 +5,7 @@
       '(
       autopair-insert-opening
       autopair-newline
+      backward-sexp
       clean-aindent--bsunindent
       electric-newline-and-maybe-indent
       eval-last-sexp
@@ -21,6 +22,7 @@
       evil-jump-item
       evil-next-line
       evil-next-line-1-first-non-blank
+      evil-normal-state
       evil-previous-line
       evil-window-down
       evilnc-comment-or-uncomment-lines
@@ -33,6 +35,7 @@
       mouse-set-region
       tab-indent-or-complete
       web-mode-comment-indent-new-line
+      whole-line-or-region-kill-region
       ))
 
 (setq mc/cmds-to-run-once
@@ -42,8 +45,14 @@
       describe-key
       dired-unmark-backward
       emmet-expand-line
+      evil-buffer-new
       evil-emacs-state
+      helm-mini
+      helm-projectile-ag
       keyboard-quit
+      mark-whole-buffer
       mc/mark-next-lines
       mc/mark-previous-lines
+      next-buffer
+      previous-buffer
       ))

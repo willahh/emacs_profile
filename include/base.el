@@ -93,7 +93,11 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 
 ;; Smooth scrolling
-(setq scroll-margin 5
+;; (setq scroll-margin 5
+;; scroll-conservatively 9999
+;; scroll-step 1)
+
+(setq scroll-margin 8
 scroll-conservatively 9999
 scroll-step 1)
 

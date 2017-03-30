@@ -9,7 +9,7 @@
 - C-x r t (string rectangle) : Voir plus en détail
 - evil mode : ":new file.extension" -> Create new buffer/file/window
 - evil mode : "gf" ("go to file")
-- Sublime merge lines -> Evil Gj
+- Sublime merge lines -> Evil gJ
 - [M+S+;] ---> xref-find-definitions (natif) 
 - dired-jump (C-x C-j) : Jump directly to dired from file
 
@@ -35,20 +35,37 @@
   - Comportement native lorsques de longues lignes de textes sont presentes sans retour a la ligne
     https://www.emacswiki.org/emacs/FindLongLines
 
+PHP checker
+http://daniel-bush.blogspot.fr/2014/12/emacs-flycheck-and-jshint-and-other.html
+phpcs
+phpmd
+
 Semantic PHP parser with ECB
 http://ecb.sourceforge.net/
 https://www.youtube.com/watch?v=KoRNCrx9pak
   
 
 ## A ranger
-- [ ] Quickly ediff files from dired
-      https://oremacs.com/2017/03/18/dired-ediff/
-      
-- [ ] Directory completion : Possibilite d'avoir de l'auto completion lors de la saisie d'un chemin.
-- [ ] Indent : 2 or 4 spaces
-
 
 ## Bloquant
+- [ ] [important] Web-mode auto indent after paste
+      Supprimer ce comportemtn, l'auto indent ne doit pas se faire apres un paste
+      
+- [ ] Ouverture fichier : avoir de meilleurs perfs
+- [ ] Auto hihglight, peut être pas si bien (perte de perf)
+
+- [ ] Copier : Ne pas embarquer la couleur
+      
+- [ ] [ag] Ajouter une touche très rapide a "ag-projectile" (le plus proche de la recherche de Sublime)
+- [ ] [ag] keybinding : ENTER ---> rester sur la meme fenetre
+
+- [ ] [dired] Plus de couleurs par default (premiere ligne en blue)
+- [ ] [multi-cursor] Intégration le Meta+mouse1 click pour avoir un curseur multiple
+- [ ] [Multi-cursor] Pouvoir faire un copier de toutes les chaines selectionnees
+       Permet d'extraire des strings (Sublime text)
+- [ ] [Multi-cursor] paste dans une sélection multitple
+- [ ] Indent dans un gros fichier en web-mode = longn
+
 - [ ] C-M-b ne fonctionne pas avec la touche meta left mac os x
 - [ ] Attention dans magit TAB n est plus fonctionnel (toggle)
 - [ ] [IMPORTANT] Fonction get file name to clipboard (très utilisé)
@@ -56,10 +73,17 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [vc-dir] N'affiche pas les fichiers supprimés localement, mais non envoyé à svn (svn remove)
 - [ ] [vc-dir] Check Compare with base revision (vc dir menu)
 
+- [ ] Indent : 2 or 4 spaces
 
 
 
 ## Majeur
+- [ ] No JSCS configuration round. Set 'flycheck-jscsrc' for JSCS
+- [ ] Quickly ediff files from dired
+      https://oremacs.com/2017/03/18/dired-ediff/
+      
+- [x] Directory completion : Possibilite d'avoir de l'auto completion lors de la saisie d'un chemin.
+
 - [ ] Indent according to current file
       Si la fichier courant contient une indentation en tabulation, indent = tab, si 2 space, indent = 2, etc
       (Comportement Sublime Text)
