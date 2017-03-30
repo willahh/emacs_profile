@@ -49,7 +49,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 ## Bloquant
 - [ ] [important] Web-mode auto indent after paste
-      Supprimer ce comportemtn, l'auto indent ne doit pas se faire apres un paste
+      Supprimer ce comportemt, l'auto indent ne doit pas se faire apres un paste
       
 - [ ] Ouverture fichier : avoir de meilleurs perfs
 - [ ] Auto hihglight, peut être pas si bien (perte de perf)
@@ -61,8 +61,9 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 - [ ] [dired] Plus de couleurs par default (premiere ligne en blue)
 - [ ] [multi-cursor] Intégration le Meta+mouse1 click pour avoir un curseur multiple
-- [ ] [Multi-cursor] Pouvoir faire un copier de toutes les chaines selectionnees
-       Permet d'extraire des strings (Sublime text)
+- [x] [Multi-cursor] Pouvoir faire un copier de toutes les chaines selectionnees
+      Permet d'extraire des strings (Sublime text)
+      -> La copie se retrouve dans le rectangle ring -> pour l utiliser : C-x r y 
 - [ ] [Multi-cursor] paste dans une sélection multitple
 - [ ] Indent dans un gros fichier en web-mode = longn
 

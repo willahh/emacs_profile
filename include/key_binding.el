@@ -348,15 +348,14 @@
 
 
 ;; search
-;; (global-set-key [(meta shift f)]  'ag) ;; Update : impossible, m s f correspond a une action native d emacs (selection du mot suivant) : Utlisation d m-x --> ag
-
-;; (global-set-key (kbd "M-·") 'helm-projectile-ag) ;; (cmd + alt + shift + f)
-;; (global-set-key (kbd "ƒ") 'helm-ag)  ;; (cmd + alt + f)
-;; (global-set-key (kbd "M-ƒ") 'helm-do-grep-ag) ;; (alt + f)
+;; Update : Apres pas mal d essais, la commande "ag-project" me convient le mieux.
+;; Cette commande permet de faire une recherche globale depuis le projet (retrouve via .projectile ou .svn .git)
+;; et affiche les resultats dans le meme buffer tout comme dans Sublime Text.
+;; Le raccourcis utilise est COMMAND+ALT+f ("M-ƒ" sur osx)
 
 (global-set-key (kbd "M-·") 'helm-ag) ;; (cmd + alt + shift + f)
-(global-set-key (kbd "ƒ") 'helm-projectile-ag)  ;; (cmd + alt + f)
-(global-set-key (kbd "M-ƒ") 'helm-do-grep-ag) ;; (alt + f)
+(global-set-key (kbd "ƒ") 'helm-do-grep-ag) ;; (alt + f)
+(global-set-key (kbd "M-ƒ") 'ag-project) ;; (cmd + alt  + f)
 
 ;; window
 ;; (global-set-key [(meta x)] 'helm-M-x) ;; Doesn t work
@@ -423,3 +422,5 @@
 
 ;; (define-key magit-popup-mode-map (kbd "C-c h") 'magit-section-toggle)
 ;; (define-key magit-popup-mode-map (kbd "C-c h") 'magit-section-toggle)
+
+

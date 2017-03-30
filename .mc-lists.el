@@ -55,4 +55,6 @@
       mc/mark-previous-lines
       next-buffer
       previous-buffer
+      previous-multiframe-window
+      resize-window
       ))
