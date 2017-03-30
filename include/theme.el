@@ -157,9 +157,17 @@
 
 
 ;; ------ Flycheck
-(set-face-attribute 'flycheck-warning nil :foreground "#f86c6d" :background nil :underline nil)
-(set-face-attribute 'flycheck-error nil :foreground "#f86c6d" :background nil :underline nil)
-(set-face-attribute 'dired-directory nil :foreground "#56b0ec" :background nil :underline nil)
+;; (set-face-attribute 'flycheck-warning nil :foreground "#f86c6d" :background nil :underline nil)
+;; (set-face-attribute 'flycheck-error nil :foreground "#f86c6d" :background nil :underline nil)
+;; (set-face-attribute 'dired-directory nil :foreground "#56b0ec" :background nil :underline nil)
+
+;; (set-face-attribute 'flycheck-warning nil :foreground "#fff" :background "#e68700" :underline nil)
+;; (set-face-attribute 'flycheck-error nil :foreground "#fff" :background "#ff5370" :underline nil)
+;; (set-face-attribute 'dired-directory nil :foreground "#56b0ec" :background nil :underline nil)
+
+(set-face-attribute 'flycheck-warning nil :foreground nil :background nil :underline nil)
+(set-face-attribute 'flycheck-error nil :foreground nil :background nil :underline nil)
+(set-face-attribute 'dired-directory nil :foreground nil :background nil :underline nil)
 
 
 
@@ -177,9 +185,11 @@
 ;; (set-face-attribute 'js2-object-property nil :foreground "#eeffff")
 
 ;; ------ js2 warning
-;; (set-face-attribute 'js2-warning nil :foreground "#000" :underline nil :background "#f86c6d")
-(set-face-attribute 'js2-warning nil :foreground "#f86c6d" :underline nil :background nil)
-(set-face-attribute 'js2-error nil :foreground "#f86c6d" :underline nil :background nil)
+;; (set-face-attribute 'js2-warning nil :foreground "#f86c6d" :underline nil :background nil)
+;; (set-face-attribute 'js2-error nil :foreground "#f86c6d" :underline nil :background nil)
+
+(set-face-attribute 'js2-warning nil :foreground "#fff" :underline nil :background "#e68700")
+(set-face-attribute 'js2-error nil :foreground "#fff" :underline nil :background "#ff5370")
 
 
 ;; ------ web-mode

@@ -1138,21 +1138,26 @@
 ;; flymake
 ;; (add-hook 'js2-mode-hook 'flymake-mode)
 
-;; Let's run 8 checks at once instead.
-(setq flymake-max-parallel-syntax-checks 4)
+;; ;; Let's run 8 checks at once instead.
+;; (setq flymake-max-parallel-syntax-checks 4)
 
-;; I don't want no steekin' limits.
-(setq flymake-max-parallel-syntax-checks nil)
+;; ;; I don't want no steekin' limits.
+;; (setq flymake-max-parallel-syntax-checks nil)
 
-;; Nope, I want my copies in the system temp dir.
-(setq flymake-run-in-place nil)
-;; This lets me say where my temp dir is.
-(setq temporary-file-directory "~/.emacs.d/tmp/")
+;; ;; Nope, I want my copies in the system temp dir.
+;; (setq flymake-run-in-place nil)
+;; ;; This lets me say where my temp dir is.
+;; (setq temporary-file-directory "~/.emacs.d/tmp/")
 
-;; I want to see all errors for the line.
-(setq flymake-number-of-errors-to-display nil)
+;; ;; I want to see all errors for the line.
+;; (setq flymake-number-of-errors-to-display nil)
       
-      
+
+
+
+
+
+
       
 ;; flycheck     
 ;; http://codewinds.com/blog/2015-04-02-emacs-flycheck-eslint-jsx.html

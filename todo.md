@@ -35,14 +35,25 @@
   - Comportement native lorsques de longues lignes de textes sont presentes sans retour a la ligne
     https://www.emacswiki.org/emacs/FindLongLines
 
+PHP checker
+http://daniel-bush.blogspot.fr/2014/12/emacs-flycheck-and-jshint-and-other.html
+phpcs
+phpmd
+
 Semantic PHP parser with ECB
 http://ecb.sourceforge.net/
 https://www.youtube.com/watch?v=KoRNCrx9pak
   
 
 ## A ranger
-- [ ] Directory completion : Possibilite d'avoir de l'auto completion lors de la saisie d'un chemin.
-
+- [ ] [multi-cursor] Intégration le Meta+mouse1 click pour avoir un curseur multiple
+- [ ] [Multi-cursor] Pouvoir faire un copier de toutes les chaines selectionnees
+       Permet d'extraire des strings (Sublime text)
+- [ ] [Multi-cursor] paste dans multi selection impossible 
+- [ ] Indent dans un gros fichier en web-mode = long
+- [ ] No JSCS configuration round. Set 'flycheck-jscsrc' for JSCS
+- [ ] [multi-cursor] Intégration le Meta+mouse1 click pour avoir un curseur multiple
+- [x] Directory completion : Possibilite d'avoir de l'auto completion lors de la saisie d'un chemin.
 
 
 ## Bloquant

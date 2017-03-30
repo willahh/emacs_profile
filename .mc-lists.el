@@ -21,6 +21,7 @@
       evil-jump-item
       evil-next-line
       evil-next-line-1-first-non-blank
+      evil-normal-state
       evil-previous-line
       evil-window-down
       evilnc-comment-or-uncomment-lines
@@ -31,7 +32,9 @@
       indent-for-tab-command
       kill-region
       mouse-set-region
+      tab-indent-or-complete
       web-mode-comment-indent-new-line
+      whole-line-or-region-kill-region
       ))
 
 (setq mc/cmds-to-run-once
@@ -43,6 +46,7 @@
       emmet-expand-line
       evil-emacs-state
       keyboard-quit
+      mark-whole-buffer
       mc/mark-next-lines
       mc/mark-previous-lines
       ))

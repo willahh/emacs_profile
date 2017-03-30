@@ -40,6 +40,44 @@ mkdir tmp
   }
 }
 ```
+- Create a ..eslintrc file in ~/ directory for a global javascript checker
+```{r, engine='bash', count_lines}
+{
+  "parser": "babel-eslint",
+  "plugins": [ "react" ],
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "ecmaFeatures": {
+    "arrowFunctions": true,
+    "blockBindings": true,
+    "classes": true,
+    "defaultParams": true,
+    "destructuring": true,
+    "forOf": true,
+    "generators": true,
+    "modules": true,
+    "spread": true,
+    "templateStrings": true,
+    "jsx": true
+  },
+  "rules": {
+    "consistent-return": [0],
+    "key-spacing": [0],
+    "quotes": [0],
+    "new-cap": [0],
+    "no-multi-spaces": [0],
+    "no-shadow": [0],
+    "no-unused-vars": [1],
+    "no-use-before-define": [2, "nofunc"],
+    "react/jsx-no-undef": 1,
+    "react/jsx-uses-react": 1,
+    "react/jsx-uses-vars": 1
+  }
+}
+```
 
 
 ### Windows
@@ -50,44 +88,86 @@ mkdir tmp
 All binaries should be accessible from emacs.
 In osx by default emacs load .bashrc (~/.bash_profile should be copied .bashrc)
 
-- php
+VC
 - svn
 - git
+
+Search tools
 - ag (lightning search)
-- csslint (css syntax checker)
-- eslint (javascript syntax checker)
-- tern (javascript 
+
+PHP tools
+- php
+
+Javascript tools
+- tern
+- eslint
+- babel-eslint
+- eslint-plugin-react
 - js-beautify
 
+CSS tools
+- csslint (Syntax checker)
+
+Language tools
 <!-- - ispell -->
-<!-- - jscs -->
-<!-- - jshint -->
+
+Tags tools
 <!-- - ctags -->
 <!-- - tags -->
 <!-- - cscope -->
 <!-- - Global -->
 <!-- - gtags -->
 
+#### global bin 
+VC
+- svn
+- git
+
+Search tools
+- ag (lightning search)
+
+PHP tools
+- php
+  https://secure.php.net/
+  (brew install homebrew/php/php56)
+
+Javascript tools
+- Nodejs
+  https://nodejs.org/en/
+  
+- Node package manager
+  https://www.npmjs.com/
+
+- tern
+  http://ternjs.net/
+  
+- eslint
+  http://eslint.org/docs/user-guide/getting-started
+  (sudo npm -g install eslint)
+  
+- babel-eslint
+  (sudo npm install babel-eslint -g)
+
+- eslint-plugin-react
+  (sudo npm install eslint-plugin-react -g)
+  
+- js-beautify (npm install -g js-beautify)
+
+CSS tools
+- csslint (sudo npm -g install csslint)
+
+Language tools
+<!-- - ispell - brew install ispell --witch-lang-fr -->
+
+Tags tools
+<!-- - tags https://github.com/leoliu/ggtags/wiki/Install-Global-with-support-for-exuberant-ctags -->
+<!-- - gtags - brew install global (gtags) -->
+<!-- - ctags - brew install --HEAD ctags -->
+<!-- - cscope - brew install cscope -->
+<!-- - Global - brew install global --with-exuberant-ctags -->
+
+
 ### Recommanded
 - Capslock remapped to ESCAPE key
 - Key press delay (until repeat) : 200ms
 - Key press repeat : 25ms
-
-#### global bin 
-- php (brew install homebrew/php/php56)
-- cscope (brew install cscope)
-- ag (lightning search)
-- svn
-- git
-- tern
-- js-beautify (npm install -g js-beautify)
-- csslint (sudo npm -g install csslint)
-- eslint (sudo npm -g install eslint)
-<!-- - jshint (sudo npm -g install jshint) -->
-<!-- - jscs (npm -g install jscs) -->
-- tags https://github.com/leoliu/ggtags/wiki/Install-Global-with-support-for-exuberant-ctags
-- gtags - brew install global (gtags)
-- ctags - brew install --HEAD ctags
-- cscope - brew install cscope
-- Global - brew install global --with-exuberant-ctags
-- ispell - brew install ispell --witch-lang-fr
