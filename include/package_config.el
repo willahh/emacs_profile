@@ -967,6 +967,13 @@
 
 
 
+;; http://stackoverflow.com/a/42678565
+;; (add-hook 'js-mode-hook
+;;           (lambda ()
+;;             (when (string-match-p "^  [A-Za-z]" (buffer-string))
+;;               (make-variable-buffer-local 'js-indent-level)
+;;               (set-variable 'js-indent-level 2))))
+
 
 ;; php mode
 (require 'cl)
