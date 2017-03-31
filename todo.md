@@ -48,6 +48,17 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 ## A ranger
 
 ## Bloquant
+- [ ] [important] ag buffer] Rester sur la meme window !!
+- [ ] [important] Ne pas mettre de preview auto du fichier lors de la navigation avec Helm
+       Pas necessaire (et genere potentillement pas mal de pb (creation de thread ternjs lors de chaque preview d un fichier javascript))
+- [ ] Revoir toutes les couleurs pour avoir les mêmes que dans Sublime
+      Le profile colorimétrique utilisé par Photoshop n'était pas bon ... ... ...
+
+
+
+
+
+
 - [ ] [bloquant] [web mode] [auto indentation] ml.json.php
 - [x] [bloquant] [web-mode] Paste : auto indent slow
 - [ ] [bloquant] [web-mode] [php-mode] Php language support (words, snippets, completion, ...)
