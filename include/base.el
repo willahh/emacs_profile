@@ -208,7 +208,8 @@ scroll-step 1)
 
 ;; OH MY GOD -------> SPEED IMPROVMENT !!! (deffer font rendering)
 ;; thanks http://tsengf.blogspot.fr/2012/11/slow-scrolling-speed-in-emacs.html !!!!!!!!!!!!!!!!!!
-(setq jit-lock-defer-time 0.05)
+(setq jit-lock-defer-time 1)
+;; (setq jit-lock-defer-time 0.05)
 
 
 ;; Some settings from https://github.com/technomancy/better-defaults/blob/master/better-defaults.el

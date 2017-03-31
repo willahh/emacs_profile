@@ -156,14 +156,15 @@
 ;; car consomme trop de resources (gros ralentissements sur des gros fichiers)
 
 (require 'highlight-symbol)
-(highlight-symbol-mode 0)
-(setq highlight-symbol-idle-delay 0)
+;; (highlight-symbol-mode 0)
+;; (setq highlight-symbol-idle-delay 0)
 
 
 (add-hook 'prog-mode-hook 'highlight-symbol-nav-mode)
-(add-hook 'prog-mode-hook 'highlight-symbol-mode)
-(add-hook 'web-mode-hook 'highlight-symbol-mode)
+;; (add-hook 'prog-mode-hook 'highlight-symbol-mode)
+
 (add-hook 'web-mode-hook 'highlight-symbol-nav-mode)
+;; (add-hook 'web-mode-hook 'highlight-symbol-mode)
 
 
 
@@ -346,7 +347,8 @@
 
 ;; Company
 (require 'company)
-(setq company-idle-delay 0.1)
+;; (setq company-idle-delay 0.1)
+(setq company-idle-delay 0.8)
 (setq company-show-numbers t)
 (setq company-minimum-prefix-length 2)
 
@@ -799,7 +801,7 @@
 ;;   ("*vc-dir*"                              . (display-buffer-same-window . nil))
 ;;   ("*Buffer List*"                         . (display-buffer-same-window . nil))
 ;;   ("*ag*"                                  . (display-buffer-same-window . nil))
-;;   ("*shell*"                               . (display-buffer-same-window . nil))
+;;   ("*shell*"                               . (fdisplay-buffer-same-window . nil))
 ;; ))
 
 
@@ -808,6 +810,7 @@
   '(  
    ("*ag*"                                  . (display-buffer-same-window . nil))
    ("*vc-dir*"                              . (display-buffer-same-window . nil))
+   ("*shell*"                               . (display-buffer-same-window . nil))
 ))
 
 
@@ -902,6 +905,8 @@
 ;;   [Definitions (methods, private, public, properties, etc)]
 ;;       php-mode : ok - web-mode : ko - html-mode : ko
 
+;; Perf improvement !
+(setq web-mode-enable-block-partial-invalidation t)
 
 ;; 
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
@@ -952,7 +957,6 @@
 ;;                  (setq emmet-use-css-transform nil)))))
 
 
-
 ;; Cancel some web-mode key binding
 ;; (eval-after-load "web-mode"
 ;;   '(define-key web-mode-map (kbd "M-J") nil))
@@ -961,6 +965,11 @@
 ;;   (define-key web-mode-map (kbd "M-J" nil)))
 
 ;; (add-hook 'web-mode-hook 'my-web-mode-hook)
+
+;; (defun web-mode-indent-line ()
+;; )
+
+
 
 ;; Emmet
 (require 'emmet-mode)
@@ -989,8 +998,6 @@
 ;; javascript mode
 (require 'js2-mode)
 (js2-imenu-extras-mode)
-
-
 
 
 ;; http://stackoverflow.com/a/42678565
@@ -1064,16 +1071,14 @@
 ;; Update : tern doit etre active manuellement car il lance des process des qu un buffer
 ;; est ouvert. Lors d une exploration de plein de fichiers, trop de process sont ouvert
 ;; et font freezer l ensemble.
+;; Update 2 : tres pratique lors d une utlisation sur project contenant pas trop de fichiers
 
-;; (autoload 'tern-mode "tern.el" nil t)
-;; (add-hook 'js-mode-hook (lambda () (tern-mode t)))
-
-;; (autoload 'tern-mode "tern.el" nil t)
-;; (add-hook 'js-mode-hook (lambda () (tern-mode t)))
-;; (add-hook 'js2-mode-hook (lambda () (tern-mode t)))
-;; (add-hook 'js2-mode-hook 'tern-mode)
-;; (add-hook 'typescript-mode-hook (lambda () (tern-mode t)))
-;; (add-hook 'web-mode-hook (lambda () (tern-mode t))) ;; Update : utile aussi en web mode !
+(autoload 'tern-mode "tern.el" nil t)
+(add-hook 'js-mode-hook (lambda () (tern-mode t)))
+(add-hook 'js2-mode-hook (lambda () (tern-mode t)))
+(add-hook 'js2-mode-hook 'tern-mode)
+(add-hook 'typescript-mode-hook (lambda () (tern-mode t)))
+(add-hook 'web-mode-hook (lambda () (tern-mode t))) ;; Update : utile aussi en web mode !
 
 ;; Don't create .tern-project automatically
 ;; ~/.tern-config file is used globally instead
@@ -1154,7 +1159,8 @@
 ;; Update : fonctionel avec flycheck-mode
 
 (add-hook 'js2-mode-hook 'flycheck-mode)
-(setq flycheck-highlighting-mode 'lines)
+;; (setq flycheck-highlighting-mode 'lines)
+(setq flycheck-highlighting-mode nil)
 
 
 
@@ -1503,7 +1509,8 @@
 ;; Slower performance
 ;; (setq helm-candidate-number-limit 10000)
 
-
+;; Don't follow
+(setq helm-follow-mode-persistent nil)
 
 
 
@@ -1741,7 +1748,6 @@
 ;; smart-parens
 (require 'smartparens-config)
 
-;; (add-hook 'js-mode-hook #'smartparens-mode)
 (add-hook 'prog-mode-hook #'smartparens-mode)
 
 

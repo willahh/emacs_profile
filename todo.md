@@ -48,13 +48,21 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 ## A ranger
 
 ## Bloquant
+- [ ] [bloquant] [web mode] [auto indentation] ml.json.php
+- [x] [bloquant] [web-mode] Paste : auto indent slow
+- [ ] [bloquant] [web-mode] [php-mode] Php language support (words, snippets, completion, ...)
+- [ ] [bloquant] [js2-mode] [validation] Lorsque l'on saisie du texte, la validation se déclenche automatiquement.
+      Il faut empêcher ça pour éviter d'avoir du texte qui scintille au moment de la saisie.
+
+- [ ] Js mode + Smartparens  : 
+      Dans la chaine suiante sHtml += ' <li data-value=""><a href="#">text</a></li>';
+      Lors de la saisie d une single quote dans l attribut data-value le curseur se place en fin de chaine
+      
 - [ ] [important] Web-mode auto indent after paste
       Supprimer ce comportemt, l'auto indent ne doit pas se faire apres un paste
       
 - [ ] Ouverture fichier : avoir de meilleurs perfs
 - [ ] Auto hihglight, peut être pas si bien (perte de perf)
-
-- [ ] Copier : Ne pas embarquer la couleur
       
 - [ ] [ag] Ajouter une touche très rapide a "ag-projectile" (le plus proche de la recherche de Sublime)
 - [ ] [ag] keybinding : ENTER ---> rester sur la meme fenetre
@@ -79,6 +87,8 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 
 ## Majeur
+- [ ] Copier : Ne pas embarquer la couleur
+
 - [ ] No JSCS configuration round. Set 'flycheck-jscsrc' for JSCS
 - [ ] Quickly ediff files from dired
       https://oremacs.com/2017/03/18/dired-ediff/

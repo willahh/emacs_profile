@@ -356,9 +356,12 @@
 ;; et affiche les resultats dans le meme buffer tout comme dans Sublime Text.
 ;; Le raccourcis utilise est COMMAND+ALT+f ("M-ƒ" sur osx)
 
-(global-set-key (kbd "M-·") 'helm-ag) ;; (cmd + alt + shift + f)
-(global-set-key (kbd "ƒ") 'helm-do-grep-ag) ;; (alt + f)
+;; Les deux plus utiles (selon moi)
+(global-set-key (kbd "ƒ") 'helm-ag) ;; (alt + f)
 (global-set-key (kbd "M-ƒ") 'ag-project) ;; (cmd + alt  + f)
+
+;; Puis celle ci
+(global-set-key (kbd "M-·") 'helm-do-grep-ag) ;; (cmd + alt + shift + f)
 
 ;; window
 ;; (global-set-key [(meta x)] 'helm-M-x) ;; Doesn t work

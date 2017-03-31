@@ -144,7 +144,8 @@
 (set-face-attribute 'font-lock-doc-face nil :foreground "#4a4a4a")
 ;; (set-face-attribute 'font-lock-comment-face nil :foreground "#4a4a4a")
 (set-face-attribute 'font-lock-comment-face nil :foreground "#676767")
-(set-face-attribute 'font-lock-string-face nil :foreground "#c3e88d")
+;; (set-face-attribute 'font-lock-string-face nil :foreground "#c3e88d")
+(set-face-attribute 'font-lock-string-face nil :foreground "#bfee79")
 (set-face-attribute 'font-lock-keyword-face nil :foreground "#c792ea")
 (set-face-attribute 'font-lock-type-face nil :foreground "#ffcb6b")
 (set-face-attribute 'font-lock-variable-name-face nil :foreground "#eeffff")
@@ -209,6 +210,7 @@
 (set-face-attribute 'web-mode-html-tag-bracket-face nil :foreground "#84ddfd" :background nil)
 
 (set-face-attribute 'web-mode-block-delimiter-face nil :foreground "#89ddff" :background nil)
+(set-face-attribute 'web-mode-block-string-face nil :foreground "#bfee79" :background nil)
 (set-face-attribute 'web-mode-constant-face nil :foreground "#f78c6c" :background nil)
 ;; (set-face-attribute 'web-mode-variable-name-face nil :foreground "#f78c6c" :background nil)
 
@@ -216,7 +218,8 @@
 ;; ------- git
 ;; (set-face-attribute 'git-commit-summary nil :foreground "#f78c6c" :background nil) ;; Non dispo
 
-
+;; ------- Compilation
+(set-face-attribute 'compilation-info nil :foreground "#bfee79" :background nil)
 
 
 
