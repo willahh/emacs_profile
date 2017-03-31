@@ -158,11 +158,16 @@
 (require 'highlight-symbol)
 (highlight-symbol-mode 0)
 (setq highlight-symbol-idle-delay 0)
+;; (setq highlight-symbol-idle-delay 1)
+
+;; (highlight-symbol-mode 1)
+;; (setq highlight-symbol-idle-delay 1)
 
 
+;; (add-hook 'prog-mode-hook 'highlight-symbol-mode)
 (add-hook 'prog-mode-hook 'highlight-symbol-nav-mode)
-(add-hook 'prog-mode-hook 'highlight-symbol-mode)
-(add-hook 'web-mode-hook 'highlight-symbol-mode)
+
+;; (add-hook 'web-mode-hook 'highlight-symbol-mode)
 (add-hook 'web-mode-hook 'highlight-symbol-nav-mode)
 
 
@@ -346,7 +351,8 @@
 
 ;; Company
 (require 'company)
-(setq company-idle-delay 0.1)
+;; (setq company-idle-delay 0.1)
+(setq company-idle-delay 0.5)
 (setq company-show-numbers t)
 (setq company-minimum-prefix-length 2)
 

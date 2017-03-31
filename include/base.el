@@ -6,7 +6,6 @@
 ;; (global-font-lock-mode 0)
 ;; (setq bidi-display-reordering nil)
 
-
 ;; Display function, didn't see real changes
 (setq-default bidi-display-reordering nil)
 
@@ -22,7 +21,6 @@
 ;; Do startup message
 (setq inhibit-startup-screen t)
 (setq initial-scratch-message "")
-
 
 ;; Display current file path in title
 (setq frame-title-format "%b")
@@ -41,6 +39,11 @@
 
 ;; ?
 (set-default 'cursor-type 'bar)
+
+;; Paste without source font lock
+;; 
+;; (add-to-list 'yank-excluded-properties 'font)
+;; (add-to-list 'yank-excluded-properties 'face)
 
 ;; ------ Indentation
 ;; Always indent with space

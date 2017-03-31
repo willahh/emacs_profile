@@ -48,24 +48,18 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 ## A ranger
 
 ## Bloquant
-- [ ] [important] Web-mode auto indent after paste
+- [ ] [web-mode indent] [important] Web-mode auto indent after paste
       Supprimer ce comportemt, l'auto indent ne doit pas se faire apres un paste
+- [ ] [web-mode indent] Indent dans un gros fichier en web-mode = long
       
-- [ ] Ouverture fichier : avoir de meilleurs perfs
-- [ ] Auto hihglight, peut être pas si bien (perte de perf)
-
-- [ ] Copier : Ne pas embarquer la couleur
+- [ ] [perf] Auto hihglight, peut être pas si bien (perte de perf)
       
-- [ ] [ag] Ajouter une touche très rapide a "ag-projectile" (le plus proche de la recherche de Sublime)
 - [ ] [ag] keybinding : ENTER ---> rester sur la meme fenetre
 
 - [ ] [dired] Plus de couleurs par default (premiere ligne en blue)
 - [ ] [multi-cursor] Intégration le Meta+mouse1 click pour avoir un curseur multiple
-- [x] [Multi-cursor] Pouvoir faire un copier de toutes les chaines selectionnees
-      Permet d'extraire des strings (Sublime text)
-      -> La copie se retrouve dans le rectangle ring -> pour l utiliser : C-x r y 
+
 - [ ] [Multi-cursor] paste dans une sélection multitple
-- [ ] Indent dans un gros fichier en web-mode = longn
 
 - [ ] C-M-b ne fonctionne pas avec la touche meta left mac os x
 - [ ] Attention dans magit TAB n est plus fonctionnel (toggle)
@@ -76,9 +70,20 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 - [ ] Indent : 2 or 4 spaces
 
-
+- [x] [ag] Ajouter une touche très rapide a "ag-projectile" (le plus proche de la recherche de Sublime)
+- [x] [Multi-cursor] Pouvoir faire un copier de toutes les chaines selectionnees
+      Permet d'extraire des strings (Sublime text)
+      -> La copie se retrouve dans le rectangle ring -> pour l utiliser : C-x r y 
+      
+- [x] Ouverture fichier : avoir de meilleurs perfs
+      -> Désactivation de ternjs automatiquement (le lancer manuellement lorue necessaire)
+      -> Augmentation du temps avant rendu des couleurs des textes
 
 ## Majeur
+- [ ] [misc] Copier : Ne pas embarquer la couleur
+      -> Cibler uniquement certains buffers
+      
+- [ ] echantillon/fract.js long a l ouverture
 - [ ] No JSCS configuration round. Set 'flycheck-jscsrc' for JSCS
 - [ ] Quickly ediff files from dired
       https://oremacs.com/2017/03/18/dired-ediff/

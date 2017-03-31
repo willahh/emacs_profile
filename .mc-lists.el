@@ -5,6 +5,7 @@
       '(
       autopair-insert-opening
       autopair-newline
+      backward-sentence
       backward-sexp
       clean-aindent--bsunindent
       electric-newline-and-maybe-indent
