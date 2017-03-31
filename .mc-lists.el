@@ -7,6 +7,7 @@
       autopair-newline
       backward-sentence
       backward-sexp
+      c-electric-delete-forward
       clean-aindent--bsunindent
       electric-newline-and-maybe-indent
       eval-last-sexp
@@ -50,6 +51,8 @@
       evil-emacs-state
       helm-mini
       helm-projectile-ag
+      helm-projectile-find-file
+      helm-projectile-switch-project
       keyboard-quit
       mark-whole-buffer
       mc/mark-next-lines

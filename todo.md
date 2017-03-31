@@ -49,10 +49,31 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 ## Bloquant
 - [ ] [web-mode indent] [important] Web-mode auto indent after paste
+- [ ] [important] ag buffer] Rester sur la meme window !!
+- [ ] [important] Ne pas mettre de preview auto du fichier lors de la navigation avec Helm
+       Pas necessaire (et genere potentillement pas mal de pb (creation de thread ternjs lors de chaque preview d un fichier javascript))
+- [ ] Revoir toutes les couleurs pour avoir les mêmes que dans Sublime
+      Le profile colorimétrique utilisé par Photoshop n'était pas bon ... ... ...
+
+
+- [ ] [bloquant] [web mode] [auto indentation] ml.json.php
+- [x] [bloquant] [web-mode] Paste : auto indent slow
+- [ ] [bloquant] [web-mode] [php-mode] Php language support (words, snippets, completion, ...)
+- [ ] [bloquant] [js2-mode] [validation] Lorsque l'on saisie du texte, la validation se déclenche automatiquement.
+      Il faut empêcher ça pour éviter d'avoir du texte qui scintille au moment de la saisie.
+
+- [ ] Js mode + Smartparens  : 
+      Dans la chaine suiante sHtml += ' <li data-value=""><a href="#">text</a></li>';
+      Lors de la saisie d une single quote dans l attribut data-value le curseur se place en fin de chaine
+      
+- [ ] [important] Web-mode auto indent after paste
       Supprimer ce comportemt, l'auto indent ne doit pas se faire apres un paste
 - [ ] [web-mode indent] Indent dans un gros fichier en web-mode = long
       
 - [ ] [perf] Auto hihglight, peut être pas si bien (perte de perf)
+
+- [ ] Ouverture fichier : avoir de meilleurs perfs
+- [ ] Auto hihglight, peut être pas si bien (perte de perf)
       
 - [ ] [ag] keybinding : ENTER ---> rester sur la meme fenetre
 
@@ -84,6 +105,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
       -> Cibler uniquement certains buffers
       
 - [ ] echantillon/fract.js long a l ouverture
+
 - [ ] No JSCS configuration round. Set 'flycheck-jscsrc' for JSCS
 - [ ] Quickly ediff files from dired
       https://oremacs.com/2017/03/18/dired-ediff/
