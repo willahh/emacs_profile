@@ -2,7 +2,7 @@
 (setq package-list '(
   ;; helm-hunks                     
   ;; evil-snipe
-  ;; powerline
+   powerline
   ;; perspective
   ;; smart-mode-line ;; (sml -> activated)
   ;; spaceline
