@@ -48,6 +48,9 @@
 ;; ------ Indentation
 ;; Always indent with space
 (setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+(setq indent-tabs-mode nil)
+(setq tab-width 4)
 
 ;; (setq default-tab-width 2)
 (setq typescript-indent-level 4) ;; Most of ts examples have 2 space indent
@@ -211,8 +214,13 @@ scroll-step 1)
 
 ;; OH MY GOD -------> SPEED IMPROVMENT !!! (deffer font rendering)
 ;; thanks http://tsengf.blogspot.fr/2012/11/slow-scrolling-speed-in-emacs.html !!!!!!!!!!!!!!!!!!
-(setq jit-lock-defer-time 1)
+;; Avec une valeur de 1, des problemes de font lock couleur surviennent.
+;; (Couleurs de textes qui n apparaissent plus, etc)
+;; 0.1 semble correct
+
 ;; (setq jit-lock-defer-time 0.05)
+;; (setq jit-lock-defer-time 1)
+(setq jit-lock-defer-time 0.1)
 
 
 ;; Some settings from https://github.com/technomancy/better-defaults/blob/master/better-defaults.el

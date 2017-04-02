@@ -20,7 +20,7 @@
   actionscript-mode
   typescript-mode
   tide
-  js2-refactor
+  ;;js2-refactor ;; Available in plugins directory
   ;; flymake-jshint
   ;; neotree
   php-mode
@@ -49,7 +49,7 @@
   evil-easymotion
   evil-leader
   ;; evil-multiedit
-  evil-nerd-commenter ;; keep this (get it from melpa or from plugin folder)
+  evil-nerd-commenter 
   evil-surround   
   evil-visualstar
   exec-path-from-shell
@@ -97,15 +97,25 @@
   yasnippet
   ;; yascroll
   zerodark-theme
+
+
+
+  all-the-icons
+  js2-refactor
+  ;;emacs-powerline
+  ;;web-mode
+  whole-line-or-region
+  neotree
+  php-auto-yasnippets
+
   ))
 ; 
-; (add-to-list 'load-path "~/.emacs.d/plugins/diffstat")
 (add-to-list 'load-path "~/.emacs.d/plugins/emacs-powerline")
 (add-to-list 'load-path "~/.emacs.d/plugins/web-mode")
-(add-to-list 'load-path "~/.emacs.d/plugins/evil-nerd-commenter")
-(add-to-list 'load-path "~/.emacs.d/plugins/whole-line-or-region")
-(add-to-list 'load-path "~/.emacs.d/plugins/all-the-icons")
-(add-to-list 'load-path "~/.emacs.d/plugins/neotree")
-(add-to-list 'load-path "~/.emacs.d/plugins/php-auto-yasnippets")
+;; (add-to-list 'load-path "~/.emacs.d/plugins/evil-nerd-commenter")
+;; (add-to-list 'load-path "~/.emacs.d/plugins/whole-line-or-region")
+;; (add-to-list 'load-path "~/.emacs.d/plugins/all-the-icons")
+;; (add-to-list 'load-path "~/.emacs.d/plugins/neotree")
+;; (add-to-list 'load-path "~/.emacs.d/plugins/php-auto-yasnippets")
 
 

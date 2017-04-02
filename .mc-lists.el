@@ -36,6 +36,8 @@
       kill-region
       mouse-set-region
       tab-indent-or-complete
+      tern-ac-dot-complete
+      untab-region
       web-mode-comment-indent-new-line
       whole-line-or-region-kill-region
       ))
