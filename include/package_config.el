@@ -1020,6 +1020,22 @@
 (define-key php-mode-map [tab] #'tab-indent-or-complete)
 
 
+;; ac-php
+(add-hook 'php-mode-hook
+          '(lambda ()
+             (require 'company-php)
+             (company-mode t)
+             (ac-php-core-eldoc-setup ) ;; enable eldoc
+             (add-to-list 'company-backends 'company-ac-php-backend )))
+
+
+
+
+
+
+
+
+
 ;; php-
 (require 'php-auto-yasnippets)
 (setq php-auto-yasnippet-php-program "~/.emacs.d/plugins/php-auto-yasnippets/Create-PHP-YASnippet.php")
@@ -1049,8 +1065,8 @@
 
 
 ;; php-refactor
-(require 'php-refactor-mode)
-(add-hook 'php-mode-hook 'php-refactor-mode)
+;; (require 'php-refactor-mode)
+;; (add-hook 'php-mode-hook 'php-refactor-mode)
 
 
 
@@ -1091,6 +1107,7 @@
 
 
 
+;; company-php
 
 
 

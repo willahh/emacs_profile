@@ -23,9 +23,13 @@
   ;;js2-refactor ;; Available in plugins directory
   ;; flymake-jshint
   ;; neotree
+
   php-mode
   php-refactor-mode
+  php-auto-yasnippets
+  company-php
   ac-php
+
   ;; golden-ratio
   ace-window
   ag
@@ -106,7 +110,7 @@
   ;;web-mode
   whole-line-or-region
   neotree
-  php-auto-yasnippets
+  
 
   ))
 ; 

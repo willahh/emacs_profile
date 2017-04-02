@@ -97,6 +97,7 @@ Search tools
 
 PHP tools
 - php
+- composer
 
 Javascript tools
 - tern
