@@ -64,7 +64,6 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [perf] Auto hihglight, peut être pas si bien (perte de perf)
 
 - [ ] Ouverture fichier : avoir de meilleurs perfs
-- [ ] Auto hihglight, peut être pas si bien (perte de perf)
       
 - [ ] [ag] keybinding : ENTER ---> rester sur la meme fenetre
 

@@ -810,6 +810,12 @@
 ))
 
 
+(add-to-list 'display-buffer-alist
+             '((lambda (&rest _)
+                 (memq this-command display-buffer-same-window-commands))
+               (display-buffer-reuse-window
+                display-buffer-same-window)
+               (inhibit-same-window . nil)))
 
 
 
@@ -1038,25 +1044,24 @@
 
 
 
-
-
 ;; set default `company-backends'
 ;; Source : http://emacs.stackexchange.com/a/17548
 
-(setq company-backends
-      '((company-files          ; files & directory
-         company-keywords       ; keywords
-         company-capf
-         company-yasnippet
-         company-ac-php-backend
-         )
-        (company-abbrev company-dabbrev)
-        ))
+;; (setq company-backends
+;;       '((company-files          ; files & directory
+;;          company-keywords       ; keywords
+;;          company-capf
+;;          company-yasnippet
+;;          company-ac-php-backend
+;;          )
+;;         (company-abbrev company-dabbrev)
+;;         ))
 
 (add-hook 'python-mode-hook
           (lambda ()
             (add-to-list (make-local-variable 'company-backends)
                          'company-anaconda)))
+
 (dolist (hook '(js-mode-hook
                 js2-mode-hook
                 js3-mode-hook
@@ -1070,6 +1075,12 @@
               (add-to-list (make-local-variable 'company-backends)
                            'company-tern)
               )))
+
+(add-hook 'php-mode-hook
+          (lambda ()
+            (add-to-list (make-local-variable 'company-backends)
+                         'company-keywords ;; @todo : ne semble pas fonctionner : Il faudrait ajouter la liste des mots dejas saisie dans la completion php
+                         'company-ac-php-backend)))
 
 ;;;_. company-mode support like auto-complete in web-mode
 
@@ -1185,7 +1196,6 @@
 
 
 
-;; company-php
 
 
 
