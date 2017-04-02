@@ -110,6 +110,7 @@
 
   ))
 ; 
+(add-to-list 'load-path "~/.emacs.d/plugins/alltheicons/")
 (add-to-list 'load-path "~/.emacs.d/plugins/emacs-powerline")
 (add-to-list 'load-path "~/.emacs.d/plugins/webmode")
 (add-to-list 'load-path "~/.emacs.d/plugins/emacspowerline")
