@@ -146,8 +146,10 @@
 (set-face-attribute 'font-lock-comment-face nil :foreground "#676767")
 ;; (set-face-attribute 'font-lock-string-face nil :foreground "#c3e88d")
 (set-face-attribute 'font-lock-string-face nil :foreground "#bfee79")
+;; (set-face-attribute 'font-lock-keyword-face nil :foreground "#c792ea")
 (set-face-attribute 'font-lock-keyword-face nil :foreground "#c792ea")
-(set-face-attribute 'font-lock-type-face nil :foreground "#ffcb6b")
+;; (set-face-attribute 'font-lock-type-face nil :foreground "#ffcb6b")
+(set-face-attribute 'font-lock-type-face nil :foreground "#fecc6a")
 (set-face-attribute 'font-lock-variable-name-face nil :foreground "#eeffff")
 (set-face-attribute 'font-lock-constant-face nil :foreground "#ff5370")
 (set-face-attribute 'font-lock-function-name-face nil :foreground "#79aaff")
@@ -155,6 +157,8 @@
 
 ;; (set-face-attribute 'font-lock-builtin-face nil :foreground "#f78c6c" :background nil)
 (set-face-attribute 'font-lock-builtin-face nil :foreground "#ff5370" :background nil)
+
+(set-face-attribute 'font-lock-preprocessor-face nil :foreground "#80ddff")
 
 
 ;; ------ Flycheck
@@ -221,7 +225,16 @@
 ;; ------- Compilation
 (set-face-attribute 'compilation-info nil :foreground "#bfee79" :background nil)
 
+;; ------- css
+;; (set-face-attribute 'css-selector nil :foreground "#f07178")
+;; (set-face-attribute 'css-property nil :foreground "#b2ccd6")
+;; (set-face-attribute 'css-proprietary-property nil :foreground "#c792ea")
 
+;; (add-hook 'css-mode-hook
+;;           (set-face-attribute 'css-selector nil :foreground "#f07178")
+;;           (set-face-attribute 'css-property nil :foreground "#b2ccd6")
+;;           (set-face-attribute 'css-proprietary-property nil :foreground "#c792ea")
+;; )
 
 
 ;; powerline

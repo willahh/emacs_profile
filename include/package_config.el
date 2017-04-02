@@ -970,7 +970,15 @@
 
 ;; javascript mode
 (require 'js2-mode)
+
 (js2-imenu-extras-mode)
+
+(setq js2-mode-show-parse-errors nil)
+(setq js2-mode-show-strict-warnings nil)
+(setq js2-mode-show-warnings nil)
+
+;; (js2-mode-show-parse-errors)
+;; (js2-)
 
 
 ;; http://stackoverflow.com/a/42678565
@@ -1079,8 +1087,13 @@
 (add-hook 'php-mode-hook
           (lambda ()
             (add-to-list (make-local-variable 'company-backends)
-                         'company-keywords ;; @todo : ne semble pas fonctionner : Il faudrait ajouter la liste des mots dejas saisie dans la completion php
                          'company-ac-php-backend)))
+
+;; (add-hook 'php-mode-hook
+;;           (lambda ()
+;;             (add-to-list (make-local-variable 'company-backends)
+;;                          'company-keywords))) 
+                         
 
 ;;;_. company-mode support like auto-complete in web-mode
 
@@ -1104,22 +1117,11 @@
           ))))
 
 
-
-
-;; word1 word
-
-
-
-
-
-
-
-
-
-
-
-
-
+;; (defadvice company-ac-php-backend (before web-mode-set-up-ac-sources activate)
+;;   (if (equal major-mode 'web-mode)
+;;       (let ((web-mode-cur-language (web-mode-language-at-pos)))
+;;         (if (string= web-mode-cur-language "php")
+;;             (unless php-mode (php-mode))))))
 
 
 
@@ -1257,9 +1259,9 @@
 
 (add-hook 'js2-mode-hook 'flycheck-mode)
 ;; (setq flycheck-highlighting-mode 'lines)
-(setq flycheck-highlighting-mode nil)
 
-
+;; (setq flycheck-highlighting-mode nil)
+;; (setq flycheck-check-syntax-automatically '(save mode-enabled)) 
 
 
 ;; (setq flycheck-javascript-esline-executable 'eslint) ;; Ne semble pas fonctionner

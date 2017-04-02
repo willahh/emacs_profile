@@ -44,43 +44,37 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 ## A ranger
 
 ## Bloquant
-
-- [x] [important] ag buffer] Rester sur la meme window !!
-- [ ] [important] Ne pas mettre de preview auto du fichier lors de la navigation avec Helm
-       Pas necessaire (et genere potentillement pas mal de pb (creation de thread ternjs lors de chaque preview d un fichier javascript))
-- [ ] Revoir toutes les couleurs pour avoir les mêmes que dans Sublime
-      Le profile colorimétrique utilisé par Photoshop n'était pas bon ... ... ...
-
-
-- [ ] [bloquant] [web-mode] [php-mode] Php language support (words, snippets, completion, ...)
-- [ ] [bloquant] [js2-mode] [validation] Lorsque l'on saisie du texte, la validation se déclenche automatiquement.
+- [x] [bloquant] [js2-mode] [validation] Lorsque l'on saisie du texte, la validation se déclenche automatiquement.
       Il faut empêcher ça pour éviter d'avoir du texte qui scintille au moment de la saisie.
 
-- [ ] Js mode + Smartparens  : 
-      Dans la chaine suiante sHtml += ' <li data-value=""><a href="#">text</a></li>';
-      Lors de la saisie d une single quote dans l attribut data-value le curseur se place en fin de chaine
+- [ ] [Multi-cursor] paste dans une sélection multitple
 
-      
-- [ ] [perf] Auto hihglight, peut être pas si bien (perte de perf)
-
-- [ ] Ouverture fichier : avoir de meilleurs perfs
-      
-- [ ] [ag] keybinding : ENTER ---> rester sur la meme fenetre
+- [ ] Attention dans magit TAB n est plus fonctionnel (toggle)
+- [ ] [important] Ne pas mettre de preview auto du fichier lors de la navigation avec Helm
+       Pas necessaire (et genere potentillement pas mal de pb (creation de thread ternjs lors de chaque preview d un fichier javascript))
 
 - [ ] [dired] Plus de couleurs par default (premiere ligne en blue)
 - [ ] [multi-cursor] Intégration le Meta+mouse1 click pour avoir un curseur multiple
 
-- [ ] [Multi-cursor] paste dans une sélection multitple
-
-- [ ] C-M-b ne fonctionne pas avec la touche meta left mac os x
-- [ ] Attention dans magit TAB n est plus fonctionnel (toggle)
 - [ ] [IMPORTANT] Fonction get file name to clipboard (très utilisé)
 - [ ] [vc-dir] Faire une fonction pour activer un vc-version-diff avec les paramètres older revision : "base", newer revision : "head"
 - [ ] [vc-dir] N'affiche pas les fichiers supprimés localement, mais non envoyé à svn (svn remove)
 - [ ] [vc-dir] Check Compare with base revision (vc dir menu)
 
-- [ ] Indent : 2 or 4 spaces
+- [ ] Js mode + Smartparens  : 
+      Fichier echantillons/template_html.js
+      Dans la chaine suivante sHtml += ' <li data-value=""><a href="#">text</a></li>';
+      Lors de la saisie d une single quote dans l attribut data-value le curseur se place en fin de chaine
 
+- [ ] Indent : 2 or 4 spaces
+- [ ] Revoir toutes les couleurs pour avoir les mêmes que dans Sublime
+      Le profile colorimétrique utilisé par Photoshop n'était pas bon ... ... ...
+
+- [ ] Ouverture fichier : avoir de meilleurs perfs
+
+- [x] [important] ag buffer] Rester sur la meme window !!
+- [x] [bloquant] [web-mode] [php-mode] Php language support (words, snippets, completion, ...)
+- [x] [ag] keybinding : ENTER ---> rester sur la meme fenetre
 
 - [x] [web-mode indent] [important] Web-mode auto indent after paste
 - [x] [bloquant] [web mode] [auto indentation] ml.json.php
@@ -101,6 +95,8 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 ## Majeur
 - [ ] [misc] Copier : Ne pas embarquer la couleur
       -> Cibler uniquement certains buffers
+        -> mini buffer
+        -> fundamental
       
 - [ ] echantillon/fract.js long a l ouverture
 
@@ -108,30 +104,23 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] Quickly ediff files from dired
       https://oremacs.com/2017/03/18/dired-ediff/
       
-- [x] Directory completion : Possibilite d'avoir de l'auto completion lors de la saisie d'un chemin.
 
 - [ ] Indent according to current file
       Si la fichier courant contient une indentation en tabulation, indent = tab, si 2 space, indent = 2, etc
       (Comportement Sublime Text)
-      
-- [ ] Auto complete : Deuxième ouverture instantane
-- [ ] Tooltip : Voir pour faire des tooltips comme dans Sublime
 
+
+- [ ] Tooltip : Voir pour faire des tooltips comme dans Sublime
 
 - [ ] Web mode > HTML : Couleurs sont presques identiques a celle du theme Sublime mais moins pétante, il faut mettre les memes
 - [ ] Helm mini : Voir pour n'avoir que du gris + highlight, c'est trop folklo là
-- [ ] [important] Helm mini ---> preview file when over (Comme dans Sublime)
-- [ ] [dired] Affichage plus light
 
-
-- [ ] [util] ctrl+v dans minibuffer 
 - [ ] [util] Revert buffer : keep current line position 
 - [ ] [theme] Mettre plus en avant le buffer actif 
 - [ ] [theme] css mode couleurs horribles
 - [ ] [theme] js color var 
 - [ ] [theme] Ajouter des differenciations sur certains mot clee comme "$", "=", ".", "'", "(", ")", "+", "-", certains mots clés php "var_dump", "PHP_EOL", etc
               Voir package "highlight-chars"
-
 
 - [ ] [perf] helm-projectile pas suffisamment rapide
 - [ ] [util] F5 revert buffer ?
@@ -141,15 +130,10 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [dired] delete folder very slow
 - [ ] [dired] > mkdir : refresh slow
 - [ ] [magit-diff] M-w didn't work
-- [ ] [dired] TAB -> go to
-- [ ] [magit-diff] M-w didn't work
 - [ ] [vc-dir] Faire une fonction toggle des hunk comme dans magit
 
 - [ ] [util] helm imenu autofocus !!!!!!!
-- [ ] Faire fonctionner flycher avec eslint
-      http://eslint.org/docs/user-guide/integrations
-      http://codewinds.com/blog/2015-04-02-emacs-flycheck-eslint-jsx.html
-      http://www.flycheck.org/en/latest/languages.html#javascript
+
 - [ ] [util] Voir si il est possible de faire un (CMD+P + touche @) (file.php@methode_name)
 - [ ] [theme] php mode : Plus de couleurs
       pour avoir une complétion des méthodes direct sans entrer dans le fichier
@@ -242,6 +226,15 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 
 ## Corrige 
+- [x] Directory completion : Possibilite d'avoir de l'auto completion lors de la saisie d'un chemin.
+- [x] Auto complete : Deuxième ouverture instantane
+- [x] [important] Helm mini ---> preview file when over (Comme dans Sublime)
+- [x] Faire fonctionner flycher avec eslint
+      http://eslint.org/docs/user-guide/integrations
+      http://codewinds.com/blog/2015-04-02-emacs-flycheck-eslint-jsx.html
+      http://www.flycheck.org/en/latest/languages.html#javascript
+
+
 - [x] Auto complete fait ramer lors d une saisie rapide
 - [x] Web mode + highlight mode conflict
 - [x] [dired] Click mouse1 sur item -> Ouvrir dans la même fenêtre
