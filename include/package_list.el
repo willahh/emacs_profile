@@ -111,7 +111,8 @@
   ))
 ; 
 (add-to-list 'load-path "~/.emacs.d/plugins/emacs-powerline")
-(add-to-list 'load-path "~/.emacs.d/plugins/web-mode")
+(add-to-list 'load-path "~/.emacs.d/plugins/webmode")
+(add-to-list 'load-path "~/.emacs.d/plugins/emacspowerline")
 ;; (add-to-list 'load-path "~/.emacs.d/plugins/evil-nerd-commenter")
 ;; (add-to-list 'load-path "~/.emacs.d/plugins/whole-line-or-region")
 ;; (add-to-list 'load-path "~/.emacs.d/plugins/all-the-icons")
