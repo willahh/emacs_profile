@@ -29,6 +29,7 @@
   php-auto-yasnippets
   company-php
   ac-php
+  php-eldoc
 
   ;; golden-ratio
   ace-window

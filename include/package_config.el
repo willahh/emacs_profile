@@ -550,14 +550,6 @@
 
 
 
-
-
-
-
-
-
-
-
 (global-set-key [tab] 'tab-indent-or-complete)
 (global-set-key (kbd "TAB") 'tab-indent-or-complete)
 (global-set-key [(control return)] 'company-complete-common)
@@ -572,22 +564,6 @@
 (define-key yas-keymap (kbd "TAB") 'tab-complete-or-next-field)
 (define-key yas-keymap [(control tab)] 'yas-next-field)
 (define-key yas-keymap (kbd "C-g") 'abort-company-or-yas)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1020,13 +996,115 @@
 (define-key php-mode-map [tab] #'tab-indent-or-complete)
 
 
+
+;; php-eldoc
+;; (defun php-mode-options ()
+;;   (php-eldoc-enable)
+;;   (cond
+;;     ((string-match-p "^/my-project-folder")
+;;      (php-eldoc-probe-load "http://my-project.com/probe.php?secret=sesame"))
+;;     ((string-match-p "^/other-project-folder")
+;;      (php-eldoc-probe-load "http://localhost/otherproject/probe.php?secret=sesame"))))
+
 ;; ac-php
+
+
+
+
+
+
+
+;; #########################################
+;; (add-hook 'php-mode-hook
+;;           '(lambda ()
+;;              (require 'company-php)
+;;              (company-mode t)
+;;              (ac-php-core-eldoc-setup ) ;; enable eldoc
+;;              (add-to-list 'company-backends 'company-ac-php-backend )))
+
+
 (add-hook 'php-mode-hook
           '(lambda ()
              (require 'company-php)
              (company-mode t)
-             (ac-php-core-eldoc-setup ) ;; enable eldoc
-             (add-to-list 'company-backends 'company-ac-php-backend )))
+             (ac-php-core-eldoc-setup ))) ;; enable eldoc
+
+
+
+
+;; word1 word2 word3
+
+
+
+
+
+
+
+;; set default `company-backends'
+;; Source : http://emacs.stackexchange.com/a/17548
+
+(setq company-backends
+      '((company-files          ; files & directory
+         company-keywords       ; keywords
+         company-capf
+         company-yasnippet
+         company-ac-php-backend
+         )
+        (company-abbrev company-dabbrev)
+        ))
+
+(add-hook 'python-mode-hook
+          (lambda ()
+            (add-to-list (make-local-variable 'company-backends)
+                         'company-anaconda)))
+(dolist (hook '(js-mode-hook
+                js2-mode-hook
+                js3-mode-hook
+                inferior-js-mode-hook
+                ))
+
+  (add-hook hook
+            (lambda ()
+              (tern-mode t)
+
+              (add-to-list (make-local-variable 'company-backends)
+                           'company-tern)
+              )))
+
+;;;_. company-mode support like auto-complete in web-mode
+
+;; Enable CSS completion between <style>...</style>
+(defadvice company-css (before web-mode-set-up-ac-sources activate)
+  "Set CSS completion based on current language before running `company-css'."
+  (if (equal major-mode 'web-mode)
+      (let ((web-mode-cur-language (web-mode-language-at-pos)))
+        (if (string= web-mode-cur-language "css")
+            (unless css-mode (css-mode))))))
+
+;; Enable JavaScript completion between <script>...</script> etc.
+(defadvice company-tern (before web-mode-set-up-ac-sources activate)
+  "Set `tern-mode' based on current language before running `company-tern'."
+  (if (equal major-mode 'web-mode)
+      (let ((web-mode-cur-language (web-mode-language-at-pos)))
+        (if (or (string= web-mode-cur-language "javascript")
+               (string= web-mode-cur-language "jsx"))
+            (unless tern-mode (tern-mode))
+          ;; (if tern-mode (tern-mode))
+          ))))
+
+
+
+
+;; word1 word
+
+
+
+
+
+
+
+
+
 
 
 
