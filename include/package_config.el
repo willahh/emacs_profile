@@ -364,7 +364,8 @@
 ;; (setq company-idle-delay 0.1)
 (setq company-idle-delay 0.5)
 (setq company-show-numbers t)
-(setq company-minimum-prefix-length 2)
+;; (setq company-minimum-prefix-length 2)
+(setq company-minimum-prefix-length 1)
 
 (setq company-dabbrev-downcase 0)
 ;; (setq company-idle-delay 0)
@@ -1004,18 +1005,19 @@
 
 
 ;; ac-php
-(add-hook 'php-mode-hook
-            '(lambda ()
-               (auto-complete-mode t)
-               (require 'ac-php)
-               (setq ac-sources  '(ac-source-php ) )
-               (yas-global-mode 1)
-               (define-key php-mode-map  (kbd "C-]") 'ac-php-find-symbol-at-point)   ;goto define
-               (define-key php-mode-map  (kbd "C-t") 'ac-php-location-stack-back   ) ;go back
-               (payas/ac-setup) ;; wra add (don't work)
-               ))
+;; (add-hook 'php-mode-hook
+;;             '(lambda ()
+;;                ;; (auto-complete-mode t)
+;;                (require 'ac-php)
+;;                (setq ac-sources  '(ac-source-php ) )
+;;                (yas-global-mode 1)
+;;                (define-key php-mode-map  (kbd "C-]") 'ac-php-find-symbol-at-point)   ;goto define
+;;                (define-key php-mode-map  (kbd "C-t") 'ac-php-location-stack-back   ) ;go back
+;;                (payas/ac-setup) ;; wra add (don't work)
+;;                ))
 
-
+;; Rebind php mode map tab to get tab-indent-or-complete like everywhere
+(define-key php-mode-map [tab] #'tab-indent-or-complete)
 
 
 ;; php-
