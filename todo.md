@@ -20,10 +20,6 @@
 - Php ide mode
   - Create ".ac-php-conf.json" file at project root
   - Create ".projectile" file at project root
-  
-- Javascript ide mode
-  - require support :
-    - Just add .tern-project
 
 - Typescript ide mode
   - Make sure tsconfig.json or jsconfig.json is present in the root folder of the project.
@@ -48,16 +44,14 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 ## A ranger
 
 ## Bloquant
-- [ ] [web-mode indent] [important] Web-mode auto indent after paste
-- [ ] [important] ag buffer] Rester sur la meme window !!
+
+- [x] [important] ag buffer] Rester sur la meme window !!
 - [ ] [important] Ne pas mettre de preview auto du fichier lors de la navigation avec Helm
        Pas necessaire (et genere potentillement pas mal de pb (creation de thread ternjs lors de chaque preview d un fichier javascript))
 - [ ] Revoir toutes les couleurs pour avoir les mêmes que dans Sublime
       Le profile colorimétrique utilisé par Photoshop n'était pas bon ... ... ...
 
 
-- [ ] [bloquant] [web mode] [auto indentation] ml.json.php
-- [x] [bloquant] [web-mode] Paste : auto indent slow
 - [ ] [bloquant] [web-mode] [php-mode] Php language support (words, snippets, completion, ...)
 - [ ] [bloquant] [js2-mode] [validation] Lorsque l'on saisie du texte, la validation se déclenche automatiquement.
       Il faut empêcher ça pour éviter d'avoir du texte qui scintille au moment de la saisie.
@@ -65,10 +59,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] Js mode + Smartparens  : 
       Dans la chaine suiante sHtml += ' <li data-value=""><a href="#">text</a></li>';
       Lors de la saisie d une single quote dans l attribut data-value le curseur se place en fin de chaine
-      
-- [ ] [important] Web-mode auto indent after paste
-      Supprimer ce comportemt, l'auto indent ne doit pas se faire apres un paste
-- [ ] [web-mode indent] Indent dans un gros fichier en web-mode = long
+
       
 - [ ] [perf] Auto hihglight, peut être pas si bien (perte de perf)
 
@@ -90,6 +81,14 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [vc-dir] Check Compare with base revision (vc dir menu)
 
 - [ ] Indent : 2 or 4 spaces
+
+
+- [x] [web-mode indent] [important] Web-mode auto indent after paste
+- [x] [bloquant] [web mode] [auto indentation] ml.json.php
+- [x] [bloquant] [web-mode] Paste : auto indent slow
+- [x] [important] Web-mode auto indent after paste
+      Supprimer ce comportemt, l'auto indent ne doit pas se faire apres un paste
+- [x] [web-mode indent] Indent dans un gros fichier en web-mode = long
 
 - [x] [ag] Ajouter une touche très rapide a "ag-projectile" (le plus proche de la recherche de Sublime)
 - [x] [Multi-cursor] Pouvoir faire un copier de toutes les chaines selectionnees

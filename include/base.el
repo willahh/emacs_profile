@@ -239,6 +239,14 @@ scroll-step 1)
                                                  "backups")))))
 
 
+;; Displat result from ag buffer in the same window
+;; http://emacs.stackexchange.com/a/26219
+(defvar display-buffer-same-window-commands
+  '(occur-mode-goto-occurrence compile-goto-error))
 
-;; Tootip
-
+(add-to-list 'display-buffer-alist
+             '((lambda (&rest _)
+                 (memq this-command display-buffer-same-window-commands))
+               (display-buffer-reuse-window
+                display-buffer-same-window)
+               (inhibit-same-window . nil)))

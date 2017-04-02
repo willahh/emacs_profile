@@ -155,20 +155,28 @@
 ;; Update : L activation automatique en temps reel n est pas possible
 ;; car consomme trop de resources (gros ralentissements sur des gros fichiers)
 
+;; Update 2 : laisse l'indentation en temps reel, si des ralentissements surviennent
+;; Utiliser le racourcis ;: pour switcher en toggle on off
+
 (require 'highlight-symbol)
 (highlight-symbol-mode 0)
+
 (setq highlight-symbol-idle-delay 0)
+;; (setq highlight-symbol-idle-delay 1)
+
 ;; (highlight-symbol-mode 1)
 ;; (setq highlight-symbol-idle-delay 1)
 
-
-;; (add-hook 'prog-mode-hook 'highlight-symbol-mode)
+(add-hook 'prog-mode-hook 'highlight-symbol-mode)
 (add-hook 'prog-mode-hook 'highlight-symbol-nav-mode)
-;; (add-hook 'web-mode-hook 'highlight-symbol-mode)
-;; (add-hook 'prog-mode-hook 'highlight-symbol-mode)
-(add-hook 'web-mode-hook 'highlight-symbol-nav-mode)
-;; (add-hook 'web-mode-hook 'highlight-symbol-mode)
 
+
+;; (add-hook 'web-mode-hook 'highlight-symbol-mode)
+;; (add-hook 'web-mode-hook 'highlight-symbol-nav-mode)
+
+;; (add-hook 'js2-mode-hook 'highlight-symbol-mode)
+;; (add-hook 'php-mode-hook 'highlight-symbol-mode)
+;; (add-hook 'emacs-lisp-mode 'highlight-symbol-mode)
 
 
 
@@ -349,6 +357,9 @@
 ;; http://emacs.stackexchange.com/a/758
 
 ;; Company
+;; Valeur idle delay a 0.35 car les valeurs (0 | 0.1 | 025) font ralentir 
+;;lors de la saisie de texte
+
 (require 'company)
 ;; (setq company-idle-delay 0.1)
 (setq company-idle-delay 0.5)
@@ -356,7 +367,12 @@
 (setq company-minimum-prefix-length 2)
 
 (setq company-dabbrev-downcase 0)
-(setq company-idle-delay 0)
+;; (setq company-idle-delay 0)
+(setq company-idle-delay 0.35)
+
+;; Test de saisie de text
+;; Test de saisie de text
+;; Test de saisie de text
 
 
 
@@ -1484,6 +1500,10 @@
 ;; (setq helm-candidate-number-limit 10000)
 
 ;; Don't follow
+;; (setq helm-follow-mode-persistent nil)
+(custom-set-variables
+ '(helm-follow-mode-persistent nil))
+
 (setq helm-follow-mode-persistent nil)
 
 
