@@ -1008,6 +1008,7 @@
 
 ;; Rebind php mode map tab to get tab-indent-or-complete like everywhere
 (define-key php-mode-map [tab] #'tab-indent-or-complete)
+(define-key php-mode-map [(meta shift e)] #'forward-sentence)
 
 
 
@@ -1610,7 +1611,11 @@
 ;; full file names - useful when multiple files have same names
 (setq ivy-virtual-abbreviate 'full)
 
+;;
+(setq ivy-use-virtual-buffers t)
 
+;;
+(setq ivy-count-format "(%d/%d) ")
 
 ;; ---------------- helm
 (require 'helm) 
@@ -1986,3 +1991,7 @@ then `diff-jump-to-old-file' is also set, for the next invocations."
       (pop-to-buffer-same-window buf)
       (goto-char (+ (car pos) (cdr src)))
       (diff-hunk-status-msg line-offset (diff-xor rev switched) t))))
+
+
+
+

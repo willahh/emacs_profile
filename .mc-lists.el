@@ -6,9 +6,11 @@
       autopair-insert-opening
       autopair-insert-or-skip-quote
       autopair-newline
+      autopair-skip-close-maybe
       backward-sentence
       backward-sexp
       c-electric-delete-forward
+      c-electric-semi&comma
       clean-aindent--bsunindent
       electric-newline-and-maybe-indent
       eval-last-sexp
@@ -46,6 +48,7 @@
 (setq mc/cmds-to-run-once
       '(
       avy-goto-word-1-below
+      c-end-of-statement
       delete-window
       describe-key
       dired-find-file

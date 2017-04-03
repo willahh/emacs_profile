@@ -183,7 +183,8 @@
 (key-chord-define-global "ji" 'ace-window) ;; cannot be jk (vim up/right)
 (key-chord-define-global ";:" 'highlight-symbol-mode)
 (key-chord-define-global "qs" 'toggle-php-flavor-mode) 
-
+(key-chord-define-global "zz" 'zop-to-char) 
+(key-chord-define-global "ZZ" 'zop-up-to-char) 
 
 
 
@@ -431,8 +432,6 @@
 (global-set-key [C-tab] 'next-buffer) 
 
 
-
-
 ;; easy-motion
 (evilem-default-keybindings "ù")
 
@@ -446,7 +445,8 @@
 ;; (global-set-key [(M shift return)] 'evil-open-above)
 ;; (global-set-key [(M return)] 'evil-open-above)
 
-
+;; avy go to word
+(global-set-key (kbd "C-x C-s") 'avy-goto-word-or-subword-1)
 
 
 ;; magit
@@ -458,3 +458,65 @@
 
 
 (global-set-key [(meta π)] 'projectile-switch-project) ;; (commande + alt + p
+
+
+
+;; Align your code in a pretty way.
+(global-set-key (kbd "C-x \\") 'align-regexp)
+
+;; replace zap-to-char functionaity with the more powerful zop-to-char
+;; (global-set-key (kbd "M-z") 'zop-up-to-char)
+;; (global-set-key (kbd "M-Z") 'zop-to-char)
+
+;; Magit
+(global-set-key (kbd "C-x g") 'magit-status)
+(global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;; (defmacro prelude-install-search-engine (search-engine-name search-engine-url search-engine-prompt)
+;;   "Given some information regarding a search engine, install the interactive command to search through them"
+;;   `(defun ,(intern (format "prelude-%s" search-engine-name)) ()
+;;        ,(format "Search %s with a query or region if any." search-engine-name)
+;;        (interactive)
+;;        (prelude-search ,search-engine-url ,search-engine-prompt)))
+
+;; (prelude-install-search-engine "google"     "http://www.google.com/search?q="              "Google: ")
+;; (prelude-install-search-engine "youtube"    "http://www.youtube.com/results?search_query=" "Search YouTube: ")
+;; (prelude-install-search-engine "github"     "https://github.com/search?q="                 "Search GitHub: ")
+;; (prelude-install-search-engine "duckduckgo" "https://duckduckgo.com/?t=lm&q="              "Search DuckDuckGo: ")
+
+
+
+
+
+
+
+
+;; (define-key map (kbd "C-c g") 'prelude-google)
+
+
+
+;; (define-key map (kbd "C-c g") 'prelude-google)
+;; (define-key map (kbd "C-c G") 'prelude-github)
+;; (define-key map (kbd "C-c y") 'prelude-youtube)
+;; (define-key map (kbd "C-c U") 'prelude-duckduckgo)
+

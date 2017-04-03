@@ -285,7 +285,8 @@
 (set-face-attribute 'highlight-symbol-face nil :foreground "#fee233" :background nil :box nil :overline nil)
 
 ;; (set-face-attribute 'evil-ex-lazy-highlight nil :foreground "#fff" :background "#212121")
-(set-face-attribute 'evil-ex-lazy-highlight nil :foreground "#000" :background "#5ab1ea")
+;; (set-face-attribute 'evil-ex-lazy-highlight nil :foreground "#000" :background "#5ab1ea")
+(set-face-attribute 'evil-ex-lazy-highlight nil :foreground "#000" :background "#b3b3b3")
 
 
 ;; parenthesis

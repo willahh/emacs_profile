@@ -101,11 +101,13 @@
   ;; smart-tab
 
   counsel
+
   sml-mode
   swiper
   swiper-helm
   tern
 
+  zop-to-char
 
   tern-auto-complete
   undo-tree
