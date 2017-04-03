@@ -94,6 +94,7 @@
 ;; -- (evil-leader/set-key "br" 'helm-recentf)
 (evil-leader/set-key "r" 'helm-swoop)
 ;; (evil-leader/set-key "e" 'swiper-helm) ;; Alternative to helm-swoop, lets see with time which is better
+
 (evil-leader/set-key "e" 'imenu-anywhere)
 (evil-leader/set-key "ff" 'helm-find-files)
 (evil-leader/set-key "fa" 'helm-ag)
@@ -347,7 +348,8 @@
 
 ;; Filter buffer / Get buffer definitions
 (global-set-key [(meta r)]  'helm-semantic-or-imenu) ;; command + r
-(global-set-key [(meta shift r)] 'helm-swoop) ;; command + shift + r
+;; (global-set-key [(meta shift r)] 'helm-swoop) ;; command + shift + r
+(global-set-key [(meta shift r)] 'swiper) ;; command + shift + r : Update : Switch to swiper (lighter / faster)
 (global-set-key (kbd "®") 'helm-imenu-anywhere) ;; alt + r
 
 ;; Files / Browse files / Browse buffer 

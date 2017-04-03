@@ -44,6 +44,24 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 ## A ranger
 
 ## Bloquant
+- [ ] Error in process sentine: Selecting deleted buffer
+- [ ] [smart-parens] Desactiver smartparens pour les quotes, c'est vraiment pas utiles
+- [ ] [vc-diff] : Ne pas ouvrir les resultats dans une nouvelle fenêtre !
+       command diff-goto-source, diff-mode-shared-map
+- [ ] [ido-switch-buffer] : Afficher le chemin des fichiers
+- [ ] [web-mode] [html] : La saisie d'un nouvel attribu dans un noeud html ouvre et ferme directement la double quote, et place le curseur apres, c'est vraiment inutilisable
+
+
+- [ ] [web-mode] [smartparens] saisi attribut, une première cote saisie, la fermeture arrive tout de suite, il faut ensuite revenir une fois en arrière pour saisir la valeur entre les quotes.
+       Du coup ce plugin ne sert absolument à rien. (Je préfère saisir une double quote manuellement ça va plus vite)
+- [ ] Helm -> Setter une hauteur max, car sur un écran la liste peut faire ralentir
+- [ ] Helm -> Désactiver absolument l'auto preview
+
+
+
+
+
+
 - [x] [bloquant] [js2-mode] [validation] Lorsque l'on saisie du texte, la validation se déclenche automatiquement.
       Il faut empêcher ça pour éviter d'avoir du texte qui scintille au moment de la saisie.
 
