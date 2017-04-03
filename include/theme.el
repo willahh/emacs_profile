@@ -122,7 +122,7 @@
 (set-face-attribute 'default nil :foreground "#e6fbfb" :box nil)
 (set-face-attribute 'fringe nil :background "#212121")
 (set-face-attribute 'linum nil :background "#212121")
-(set-face-attribute 'sp-pair-overlay-face nil :foreground "#fff" :background "#212121")
+;; (set-face-attribute 'sp-pair-overlay-face nil :foreground "#fff" :background "#212121")
 (set-face-attribute 'trailing-whitespace nil :background "#171717")
 
 
@@ -284,7 +284,8 @@
 ;; (set-face-attribute 'highlight-symbol-face nil :foreground "#55fdbd" :background nil :box nil :overline nil)
 (set-face-attribute 'highlight-symbol-face nil :foreground "#fee233" :background nil :box nil :overline nil)
 
-(set-face-attribute 'evil-ex-lazy-highlight nil :foreground "#fff" :background "#212121")
+;; (set-face-attribute 'evil-ex-lazy-highlight nil :foreground "#fff" :background "#212121")
+(set-face-attribute 'evil-ex-lazy-highlight nil :foreground "#000" :background "#5ab1ea")
 
 
 ;; parenthesis

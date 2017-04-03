@@ -44,8 +44,10 @@
   async
   auto-complete
   highlight-symbol
-  ;; autopair
-  smartparens
+
+  autopair
+  ;; smartparens
+  
   avy
   avy-menu
   color-theme-buffer-local 

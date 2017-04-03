@@ -1598,7 +1598,7 @@
 
 
 ;; ---------------- helm
-(require 'helm)
+(require 'helm) 
 (require 'helm-config)
 
 ;;
@@ -1616,12 +1616,12 @@
       helm-echo-input-in-header-line t)
 
 ;; Size
-;; (setq helm-autoresize-max-height 500)
+(setq helm-autoresize-max-height 800)
 (setq helm-autoresize-min-height 600) ;; Important
 
 ;; Auto resize
 (helm-autoresize-mode 1)
-(setq helm-autoresize-max-height 70) ;; Utilisation de 70% de hauteur
+(setq helm-autoresize-max-height 40) ;; Utilisation de 40% de hauteur
 
 ;; helm locate
 (setq helm-locate-fuzzy-match t)
@@ -1634,10 +1634,9 @@
 
 ;; Don't follow
 ;; (setq helm-follow-mode-persistent nil)
-(custom-set-variables
- '(helm-follow-mode-persistent nil))
-
-(setq helm-follow-mode-persistent nil)
+;; (custom-set-variables
+;;  '(helm-follow-mode-persistent nil))
+;; (setq helm-follow-mode-persistent nil)
 
 
 
@@ -1867,16 +1866,21 @@
 ;; @todo ce package ne se telecharge pas
 ;; Update ce package est quand meme tres pratique, reactivation
 ;; Update 2 : En fait utilisation de smartparens plutot
+;; Update 3 : Re-passage sur ce package suite a un test avec le package
+;; autopair qui ne me convenait pas. (Mauvaise fermeture de simple quote dans
+;; concatenation de chaine javascript)
+;; Tout semble bien fonctionner.
 
-;; (require 'autopair)
-;; (autopair-global-mode 1)
+(require 'autopair)
+(autopair-global-mode 1)
 
 ;; smart-parens
-(require 'smartparens-config)
+;; Probleme avec des concatenations javascript et l insertion de simple quote.
+;; Impossible de changer la configuration pour desactiver l auto insertio nde simple quote.
+;; Desactivation du package
 
-(add-hook 'prog-mode-hook #'smartparens-mode)
-
-
+;; (require 'smartparens-config)
+;; (add-hook 'prog-mode-hook #'smartparens-mode)
 
 
 

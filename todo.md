@@ -44,21 +44,22 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 ## A ranger
 
 ## Bloquant
-- [ ] Error in process sentine: Selecting deleted buffer
-- [ ] [smart-parens] Desactiver smartparens pour les quotes, c'est vraiment pas utiles
+- [x] [smart-parens] Desactiver smartparens pour les quotes, c'est vraiment pas utiles
+- [x] [smart-parens] [web-mode] [html] : La saisie d'un nouvel attribu dans un noeud html ouvre et ferme directement la double quote, et place le curseur apres, c'est vraiment inutilisable
 - [ ] [vc-diff] : Ne pas ouvrir les resultats dans une nouvelle fenêtre !
        command diff-goto-source, diff-mode-shared-map
-- [ ] [ido-switch-buffer] : Afficher le chemin des fichiers
-- [ ] [web-mode] [html] : La saisie d'un nouvel attribu dans un noeud html ouvre et ferme directement la double quote, et place le curseur apres, c'est vraiment inutilisable
-
 
 - [ ] [web-mode] [smartparens] saisi attribut, une première cote saisie, la fermeture arrive tout de suite, il faut ensuite revenir une fois en arrière pour saisir la valeur entre les quotes.
        Du coup ce plugin ne sert absolument à rien. (Je préfère saisir une double quote manuellement ça va plus vite)
-- [ ] Helm -> Setter une hauteur max, car sur un écran la liste peut faire ralentir
-- [ ] Helm -> Désactiver absolument l'auto preview
 
 
+- [ ] [ido-switch-buffer] : Afficher le chemin des fichiers
 
+- [x] Error in process sentine: Selecting deleted buffer
+      -> Peut provenir du fait que ternjs est actif sur web-mode et js2-mode
+- [x] Helm -> Setter une hauteur max, car sur un écran la liste peut faire ralentir
+- [x] Helm -> Désactiver absolument l'auto preview
+     C-c C-f
 
 
 
