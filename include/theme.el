@@ -164,11 +164,9 @@
 ;; ------ Flycheck
 ;; (set-face-attribute 'flycheck-warning nil :foreground "#f86c6d" :background nil :underline nil)
 ;; (set-face-attribute 'flycheck-error nil :foreground "#f86c6d" :background nil :underline nil)
-;; (set-face-attribute 'dired-directory nil :foreground "#56b0ec" :background nil :underline nil)
-
 ;; (set-face-attribute 'flycheck-warning nil :foreground "#fff" :background "#e68700" :underline nil)
 ;; (set-face-attribute 'flycheck-error nil :foreground "#fff" :background "#ff5370" :underline nil)
-;; (set-face-attribute 'dired-directory nil :foreground "#56b0ec" :background nil :underline nil)
+
 
 (set-face-attribute 'flycheck-warning nil :foreground nil :background nil :underline nil)
 (set-face-attribute 'flycheck-error nil :foreground nil :background nil :underline nil)
@@ -178,6 +176,7 @@
 
 ;; ------ Dired
 (set-face-attribute 'dired-header nil :foreground "#56b0ec" :background nil)
+(set-face-attribute 'dired-directory nil :foreground "#56b0ec" :background nil)
 
 ;; ------ js2-mode
 (set-face-attribute 'js2-function-call nil :foreground "#82aaff")
@@ -224,6 +223,7 @@
 
 ;; ------- Compilation
 (set-face-attribute 'compilation-info nil :foreground "#bfee79" :background nil)
+
 
 ;; ------- css
 ;; (set-face-attribute 'css-selector nil :foreground "#f07178")
