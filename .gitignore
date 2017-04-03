@@ -17,6 +17,10 @@ url/*
 .cache
 tmp/*
 semanticdb
+TAGS
+ido.last
+smex-items
+
 
 .emacs_workgroups
 .emacs_workgroups~
