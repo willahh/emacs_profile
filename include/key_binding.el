@@ -314,6 +314,7 @@
 (global-set-key (kbd "π") 'helm-projectile-find-file) ;; ALT+P
 
 (global-set-key (kbd "M-π") 'helm-projectile-switch-project) ;; (commande + alt + p)
+(global-set-key (kbd "C-;") 'projectile-find-file-dwim) ;; (ctrl + ;)
 
 (global-set-key (kbd "M-q") 'ask-before-closing)
 (global-set-key (kbd "M-s") 'save-buffer)
