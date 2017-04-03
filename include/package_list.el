@@ -24,6 +24,11 @@
   ;; flymake-jshint
   ;; neotree
 
+  smex
+  ido
+  ido-ubiquitous
+  ido-vertical-mode
+
   php-mode
   php-refactor-mode
   php-auto-yasnippets

@@ -1573,6 +1573,30 @@
 
 
 
+;; ---------------- ido / smex
+(require 'smex)
+(require 'ido)
+(require 'ido-ubiquitous)
+
+(ido-mode 1)
+(ido-everywhere 1)
+(ido-ubiquitous-mode 1)
+
+;; smex
+(require 'smex) ; Not needed if you use package.el
+(smex-initialize) ; Can be omitted. This might cause a (minimal) delay
+                  ; when Smex is auto-initialized on its first run.
+
+;; ido-vertical-mode
+(require 'ido-vertical-mode)
+(ido-mode 1)
+(ido-vertical-mode 1)
+
+(setq ido-vertical-define-keys 'C-n-and-C-p-only)
+
+
+
+
 ;; ---------------- helm
 (require 'helm)
 (require 'helm-config)

@@ -88,8 +88,8 @@
 (evil-leader/set-key "ms" 'magit-status)
 
 ;; -- Projectile
-(evil-leader/set-key "pp" 'helm-projectile-switch-project)
-(evil-leader/set-key "pf" 'helm-projectile-find-file)
+;; (evil-leader/set-key "pp" 'helm-projectile-switch-project)
+;; (evil-leader/set-key "pf" 'helm-projectile-find-file)
 
 ;; -- (evil-leader/set-key "br" 'helm-recentf)
 (evil-leader/set-key "r" 'helm-swoop)
@@ -308,14 +308,28 @@
 ;; (global-set-key (kbd "C-M-n") 'move-line-region-down)
 (global-set-key [(meta shift 1)] 'delete-other-windows)
 
-(global-set-key [(meta shift p)] 'helm-M-x)
+
+
+
+
+;; (global-set-key [(meta shift p)] 'helm-M-x)
+(global-set-key [(meta shift p)] 'smex)
+
+(global-set-key (kbd "M-x") 'smex)
+;; (global-set-key (kbd "M-X") 'smex-major-mode-commands)
+;; ;; This is your old M-x.
+;; (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+
+
+
 
 ;; Sublime Text go to anything
 ;; (global-set-key (kbd "π") 'helm-projectile-find-file) ;; ALT+P
 ;; (global-set-key (kbd "π") 'helm-projectile-find-file-dwim) ;; ALT+P
 (global-set-key (kbd "π") 'helm-projectile-find-file) ;; ALT+P
 
-(global-set-key (kbd "M-π") 'helm-projectile-switch-project) ;; (commande + alt + p)
+
+(global-set-key (kbd "M-π") 'projectile-switch-project) ;; (commande + alt + p)
 (global-set-key (kbd "C-;") 'projectile-find-file-dwim) ;; (ctrl + ;)
 
 (global-set-key (kbd "M-q") 'ask-before-closing)
@@ -337,10 +351,13 @@
 (global-set-key (kbd "®") 'helm-imenu-anywhere) ;; alt + r
 
 ;; Files / Browse files / Browse buffer 
-(global-set-key (kbd "M-o")  'helm-find-files)
+;; (global-set-key (kbd "M-o")  'helm-find-files)
+(global-set-key (kbd "M-o")  'ido-find-file)
 (global-set-key (kbd "œ")  'projectile-dired) ;; alt+o
 (global-set-key (kbd "M-œ")  'neotree-find) ;; CMD+ALT+o
-(global-set-key [(meta shift o)]  'helm-mini)
+
+;; (global-set-key [(meta shift o)]  'helm-mini)
+(global-set-key [(meta shift o)] 'ivy-switch-buffer)
 
 
 
