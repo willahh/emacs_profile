@@ -210,6 +210,8 @@
 ;; Dired
 (define-key dired-mode-map (kbd "<mouse-1>") 'dired-find-file)
 ;; (define-key dired-mode-map (kbd "<mouse-2>") 'dired-find-file)
+(define-key dired-mode-map (kbd "<tab>") 'dired-find-file)
+(define-key dired-mode-map (kbd "<S-tab>") 'dired-up-directory)
 
 ;; ---------------- Dolor theme
 (set-face-attribute 'lazy-highlight nil :background "green")
