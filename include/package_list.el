@@ -69,13 +69,15 @@
   eyebrowse
   general
   git-gutter
+  
   helm
   helm-ag
   helm-anything
   helm-company
   helm-core
-  helm-projectile
+  ;; helm-projectile
   helm-swoop
+
   imenu-anywhere
   js-comint
   js-doc
@@ -97,9 +99,14 @@
   skewer-mode
   smart-forward
   ;; smart-tab
-  sml-mode         
+
+  counsel
+  sml-mode
+  swiper
   swiper-helm
   tern
+
+
   tern-auto-complete
   undo-tree
   use-package

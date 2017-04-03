@@ -44,53 +44,42 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 ## A ranger
 
 ## Bloquant
-- [x] [smart-parens] Desactiver smartparens pour les quotes, c'est vraiment pas utiles
-- [x] [smart-parens] [web-mode] [html] : La saisie d'un nouvel attribu dans un noeud html ouvre et ferme directement la double quote, et place le curseur apres, c'est vraiment inutilisable
-- [ ] [vc-diff] : Ne pas ouvrir les resultats dans une nouvelle fenêtre !
-       command diff-goto-source, diff-mode-shared-map
-
-- [ ] [web-mode] [smartparens] saisi attribut, une première cote saisie, la fermeture arrive tout de suite, il faut ensuite revenir une fois en arrière pour saisir la valeur entre les quotes.
-       Du coup ce plugin ne sert absolument à rien. (Je préfère saisir une double quote manuellement ça va plus vite)
-
-
 - [ ] [ido-switch-buffer] : Afficher le chemin des fichiers
-
-- [x] Error in process sentine: Selecting deleted buffer
-      -> Peut provenir du fait que ternjs est actif sur web-mode et js2-mode
-- [x] Helm -> Setter une hauteur max, car sur un écran la liste peut faire ralentir
-- [x] Helm -> Désactiver absolument l'auto preview
-     C-c C-f
-
-
-
-- [x] [bloquant] [js2-mode] [validation] Lorsque l'on saisie du texte, la validation se déclenche automatiquement.
-      Il faut empêcher ça pour éviter d'avoir du texte qui scintille au moment de la saisie.
-
-- [ ] [Multi-cursor] paste dans une sélection multitple
+- [ ] [swiper] Fuzzy match
 
 - [ ] Attention dans magit TAB n est plus fonctionnel (toggle)
-- [ ] [important] Ne pas mettre de preview auto du fichier lors de la navigation avec Helm
-       Pas necessaire (et genere potentillement pas mal de pb (creation de thread ternjs lors de chaque preview d un fichier javascript))
-
-- [ ] [dired] Plus de couleurs par default (premiere ligne en blue)
-- [ ] [multi-cursor] Intégration le Meta+mouse1 click pour avoir un curseur multiple
+- [ ] [multi-cursor] Integrer le Meta+mouse1 click pour avoir un curseur multiple
 
 - [ ] [IMPORTANT] Fonction get file name to clipboard (très utilisé)
 - [ ] [vc-dir] Faire une fonction pour activer un vc-version-diff avec les paramètres older revision : "base", newer revision : "head"
 - [ ] [vc-dir] N'affiche pas les fichiers supprimés localement, mais non envoyé à svn (svn remove)
 - [ ] [vc-dir] Check Compare with base revision (vc dir menu)
+- [ ] Indent : 2 or 4 spaces
+- [ ] Ouverture fichier : avoir de meilleurs perfs
 
-- [ ] Js mode + Smartparens  : 
+- [x] [Multi-cursor] paste dans une sélection multiple
+      -> Il faut utiliser la fonction native yank (C-y)
+- [x] [vc-diff] : Ne pas ouvrir les resultats dans une nouvelle fenêtre !
+       command diff-goto-source, diff-mode-shared-map
+- [x] [web-mode] [smartparens] saisi attribut, une première cote saisie, la fermeture arrive tout de suite, il faut ensuite revenir une fois en arrière pour saisir la valeur entre les quotes.
+       Du coup ce plugin ne sert absolument à rien. (Je préfère saisir une double quote manuellement ça va plus vite)
+- [x] [smart-parens] Desactiver smartparens pour les quotes, c'est vraiment pas utiles
+- [x] [smart-parens] [web-mode] [html] : La saisie d'un nouvel attribu dans un noeud html ouvre et ferme directement la double quote, et place le curseur apres, c'est vraiment inutilisable
+- [x] Error in process sentine: Selecting deleted buffer
+      -> Peut provenir du fait que ternjs est actif sur web-mode et js2-mode
+- [x] Helm -> Setter une hauteur max, car sur un écran la liste peut faire ralentir
+- [x] Helm -> Désactiver absolument l'auto preview
+     C-c C-f
+- [x] [bloquant] [js2-mode] [validation] Lorsque l'on saisie du texte, la validation se déclenche automatiquement.
+      Il faut empêcher ça pour éviter d'avoir du texte qui scintille au moment de la saisie.
+- [x] [important] Ne pas mettre de preview auto du fichier lors de la navigation avec Helm
+       Pas necessaire (et genere potentillement pas mal de pb (creation de thread ternjs lors de chaque preview d un fichier javascript))
+- [x] [dired] Plus de couleurs par default (premiere ligne en blue)
+
+- [x] Js mode + Smartparens  : 
       Fichier echantillons/template_html.js
       Dans la chaine suivante sHtml += ' <li data-value=""><a href="#">text</a></li>';
       Lors de la saisie d une single quote dans l attribut data-value le curseur se place en fin de chaine
-
-- [ ] Indent : 2 or 4 spaces
-- [ ] Revoir toutes les couleurs pour avoir les mêmes que dans Sublime
-      Le profile colorimétrique utilisé par Photoshop n'était pas bon ... ... ...
-
-- [ ] Ouverture fichier : avoir de meilleurs perfs
-
 - [x] [important] ag buffer] Rester sur la meme window !!
 - [x] [bloquant] [web-mode] [php-mode] Php language support (words, snippets, completion, ...)
 - [x] [ag] keybinding : ENTER ---> rester sur la meme fenetre
@@ -128,7 +117,6 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
       Si la fichier courant contient une indentation en tabulation, indent = tab, si 2 space, indent = 2, etc
       (Comportement Sublime Text)
 
-
 - [ ] Tooltip : Voir pour faire des tooltips comme dans Sublime
 
 - [ ] Web mode > HTML : Couleurs sont presques identiques a celle du theme Sublime mais moins pétante, il faut mettre les memes
@@ -140,7 +128,8 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [theme] js color var 
 - [ ] [theme] Ajouter des differenciations sur certains mot clee comme "$", "=", ".", "'", "(", ")", "+", "-", certains mots clés php "var_dump", "PHP_EOL", etc
               Voir package "highlight-chars"
-
+- [ ] [theme] Revoir toutes les couleurs pour avoir les mêmes que dans Sublime
+      Le profile colorimétrique utilisé par Photoshop n'était pas bon ... ... ...
 - [ ] [perf] helm-projectile pas suffisamment rapide
 - [ ] [util] F5 revert buffer ?
 - [ ] [util] Sublime go to definition - CTRL+MOUSE CLICK - Add new context menu first entry : "Goto Definition"
@@ -155,7 +144,6 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 - [ ] [util] Voir si il est possible de faire un (CMD+P + touche @) (file.php@methode_name)
 - [ ] [theme] php mode : Plus de couleurs
-      pour avoir une complétion des méthodes direct sans entrer dans le fichier
 - [ ] Faire une fonction "Merge lines" pour supprimer les linebreak/whitespace
 - [ ] Terminer la fonction file:duplicate pour n'avoir qu'un seul prompt -> celui du nom du fichier target
 - [ ] theme > diff : Se rapproche au max des couleurs du theme Sublime 
@@ -199,8 +187,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] Refresh semantic apres modification source (rien d'urgent)
 - [ ] Custom theme, se baser sur les couleurs suivantes "images/theme.png"
          http://blog.pabuisson.com/2014/07/vim-vundle-gestion-plugins/
-- [ ] Ne pas fermer automatiquement les quotes lors d'un yank (coller)
-- [ ] ag --> ignore hudge file (ST behaviour) (aucun problème dans, à mon avis, 99% des cas)  (il peut être utile de faire des recherches dans des fichieux volumineux, mais pour ca la recherche peut être faite de manière spécifique (paramètres supplémentaire, utilisation directement depuis ligne de commande ...)
+
 - [ ] svn ignore rules to add :
   - .ac-php-conf.json
   - logs
@@ -211,6 +198,9 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] helm imenu autofocus !!!!!!!
 - [ ] helm directory first
 
+- [x] Ne pas fermer automatiquement les quotes lors d'un yank (coller)
+- [x] ag --> ignore hudge file (ST behaviour) (aucun problème dans, à mon avis, 99% des cas)  (il peut être utile de faire des recherches dans des fichieux volumineux, mais pour ca la recherche peut être faite de manière spécifique (paramètres supplémentaire, utilisation directement depuis ligne de commande ...)
+      -> Ne me semble pas poser de probleme
       
 ##  Mineur 
 - [ ] nlinum in fringe ? Pouvoir afficher les vc diff plus loin que le contenu

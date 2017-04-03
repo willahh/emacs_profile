@@ -4,6 +4,7 @@
 (setq mc/cmds-to-run-for-all
       '(
       autopair-insert-opening
+      autopair-insert-or-skip-quote
       autopair-newline
       backward-sentence
       backward-sexp

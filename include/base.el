@@ -243,3 +243,13 @@ scroll-step 1)
 ;; http://emacs.stackexchange.com/a/26219
 (defvar display-buffer-same-window-commands
   '(occur-mode-goto-occurrence compile-goto-error))
+
+
+
+
+
+
+
+
+
+

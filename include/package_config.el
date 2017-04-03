@@ -262,8 +262,8 @@
 
 
 ;; helm-projectile
-(require 'helm-projectile)
-(helm-projectile-on)
+;; (require 'helm-projectile)
+;; (helm-projectile-on)
 
 
 ;; ;; ;; ----- perspective
@@ -1573,8 +1573,9 @@
 
 
 
-;; ---------------- ido / smex
+;; ---------------- ido / smex / ivy
 (require 'smex)
+(require 'ivy)
 (require 'ido)
 (require 'ido-ubiquitous)
 
@@ -1594,6 +1595,20 @@
 
 (setq ido-vertical-define-keys 'C-n-and-C-p-only)
 
+;; ivy conf
+(setq ivy-virtual-abbreviate 'full)
+
+;; set ivy height
+(setq ivy-height 10)
+
+;; make sure it always stays that high
+(setq ivy-fixed-height-minibuffer t)
+
+;; virtual buffers - combines many good things into one command
+;; (setq ivy-use-virtual-buffers t)
+
+;; full file names - useful when multiple files have same names
+(setq ivy-virtual-abbreviate 'full)
 
 
 
@@ -1639,34 +1654,67 @@
 ;; (setq helm-follow-mode-persistent nil)
 
 
+;; ---------------- swiper
+(require 'swiper)
+(use-package counsel
+  :ensure t
+  )
+
+(use-package swiper
+  :ensure try
+  :config
+  (progn
+    (ivy-mode 1)
+    (setq ivy-use-virtual-buffers t)
+    (global-set-key "\C-s" 'swiper)
+    ;; (global-set-key (kbd "C-c C-r") 'ivy-resume)
+    ;; (global-set-key (kbd "<f6>") 'ivy-resume)
+    (global-set-key (kbd "M-x") 'counsel-M-x)
+    (global-set-key (kbd "C-x C-f") 'counsel-find-file)
+    (global-set-key (kbd "<f1> f") 'counsel-describe-function)
+    (global-set-key (kbd "<f1> v") 'counsel-describe-variable)
+    (global-set-key (kbd "<f1> l") 'counsel-load-library)
+    (global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
+    (global-set-key (kbd "<f2> u") 'counsel-unicode-char)
+    (global-set-key (kbd "C-c g") 'counsel-git)
+    (global-set-key (kbd "C-c j") 'counsel-git-grep)
+    (global-set-key (kbd "C-c k") 'counsel-ag)
+    (global-set-key (kbd "C-x l") 'counsel-locate)
+    (global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
+    (define-key read-expression-map (kbd "C-r") 'counsel-expression-history)
+    ))
+
+
+
+
 
 ;; ---------------- helm-swoop
-(require 'helm-swoop)
-(setq helm-split-window-in-side-p t
-      helm-always-two-windows nil)
+;; (require 'helm-swoop)
+;; (setq helm-split-window-in-side-p t
+;;       helm-always-two-windows nil)
 
-;; Split the curent window (solve lot of problems (buffer show in wrong place sometimes (inside neotree for example)))
-(setq helm-swoop-split-with-multiple-windows t)
+;; ;; Split the curent window (solve lot of problems (buffer show in wrong place sometimes (inside neotree for example)))
+;; (setq helm-swoop-split-with-multiple-windows t)
 
-;; Keep buffer colorized, if slow, go back to nil value
-(setq helm-swoop-speed-or-color t)
+;; ;; Keep buffer colorized, if slow, go back to nil value
+;; (setq helm-swoop-speed-or-color t)
 
-;; If you prefer fuzzy matching (yes i do) - update : (no i don't want tro peut precis)
-(setq helm-swoop-use-fuzzy-match nil)
+;; ;; If you prefer fuzzy matching (yes i do) - update : (no i don't want tro peut precis)
+;; (setq helm-swoop-use-fuzzy-match nil)
 
-;; Disable pre-input (most of the time annoying) - 
-;; Update 1 : keep default
-;; Update 2 : yes it is annoying
-
-(setq helm-swoop-pre-input-function
-      (lambda () ""))
+;; ;; Disable pre-input (most of the time annoying) - 
+;; ;; Update 1 : keep default
+;; ;; Update 2 : yes it is annoying
 
 ;; (setq helm-swoop-pre-input-function
-;;       (lambda () (thing-at-point 'symbol)))
+;;       (lambda () ""))
 
-;; If nil, you can slightly boost invoke speed in exchange for text color
-;; Update : Feels better without colours (and faster)
-(setq helm-swoop-speed-or-color nil)
+;; ;; (setq helm-swoop-pre-input-function
+;; ;;       (lambda () (thing-at-point 'symbol)))
+
+;; ;; If nil, you can slightly boost invoke speed in exchange for text color
+;; ;; Update : Feels better without colours (and faster)
+;; (setq helm-swoop-speed-or-color nil)
 
 ;; ---------------- resize-window
 (require 'resize-window)
@@ -1874,10 +1922,12 @@
 (require 'autopair)
 (autopair-global-mode 1)
 
+
+
 ;; smart-parens
 ;; Probleme avec des concatenations javascript et l insertion de simple quote.
-;; Impossible de changer la configuration pour desactiver l auto insertio nde simple quote.
-;; Desactivation du package
+;; Impossible de changer la configuration pour desactiver l auto insertion de simple quote.
+;; Desactivation du package, retour sur autopair
 
 ;; (require 'smartparens-config)
 ;; (add-hook 'prog-mode-hook #'smartparens-mode)
@@ -1891,3 +1941,48 @@
 (add-hook 'prog-mode-hook (goto-address-mode 1))
 (add-hook 'emacs-lisp-mode-hook (goto-address-mode 1))
 (add-hook 'js2-mode-hook (goto-address-mode 1))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;; Override emacs diff-goto-source defun
+;; Change "pop-to-buffer" to "pop-to-buffer-same-window"
+;; Edit : Je n ai pas trouve moyen de configurer ce comportement
+;; Il faudrait plutot passer par des modificateurs pour modifier
+;; la fonction plutot que de la reecrire, je ne sais pas encore
+;; comment faire.
+;; Note : Cette partie ne peut pas etre presente dans le fichier
+;; base.el, sinon la surcharge ne fonctionne pas
+(defun diff-goto-source (&optional other-file event)
+  "Jump to the corresponding source line.
+`diff-jump-to-old-file' (or its opposite if the OTHER-FILE prefix arg
+is given) determines whether to jump to the old or the new file.
+If the prefix arg is bigger than 8 (for example with \\[universal-argument] \\[universal-argument])
+then `diff-jump-to-old-file' is also set, for the next invocations."
+  (interactive (list current-prefix-arg last-input-event))
+  ;; When pointing at a removal line, we probably want to jump to
+  ;; the old location, and else to the new (i.e. as if reverting).
+  ;; This is a convenient detail when using smerge-diff.
+  (if event (posn-set-point (event-end event)))
+  (let ((rev (not (save-excursion (beginning-of-line) (looking-at "[-<]")))))
+    (pcase-let ((`(,buf ,line-offset ,pos ,src ,_dst ,switched)
+                 (diff-find-source-location other-file rev)))
+      (pop-to-buffer-same-window buf)
+      (goto-char (+ (car pos) (cdr src)))
+      (diff-hunk-status-msg line-offset (diff-xor rev switched) t))))
