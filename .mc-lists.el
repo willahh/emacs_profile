@@ -47,6 +47,7 @@
       avy-goto-word-1-below
       delete-window
       describe-key
+      dired-find-file
       dired-unmark-backward
       emmet-expand-line
       evil-buffer-new
