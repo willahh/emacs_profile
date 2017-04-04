@@ -45,6 +45,15 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [php-mode] completion add current buffer keyword candidates
 - [ ] [php-mode] Meta shift e est surcharge
 
+- [ ] [projectile-find-file] Paramétrer pour que la recherche soit fuzzy
+- [ ] [counsel] [switch-to-project] Fuzzy !
+- [ ] Change keybinding zz and ZZ (fuzzy word)
+- [ ] [counsel-find-file] Augmenter la hauteur min
+- [ ] [counsel] Escape : Leave
+- [ ] [counsel] C-a : got beginning
+- [ ] [counsel] C-e : got end
+- [ ] [ag] Modifier comportement, pour le suivant : Auto recentrer apres go to line
+- [ ] [imenu] Modifier comportement : Auto recentrer apres go to line
 
 
 ## Bloquant
@@ -57,7 +66,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [IMPORTANT] Fonction get file name to clipboard (très utilisé)
 - [ ] [vc-dir] Faire une fonction pour activer un vc-version-diff avec les paramètres older revision : "base", newer revision : "head"
 - [ ] [vc-dir] N'affiche pas les fichiers supprimés localement, mais non envoyé à svn (svn remove)
-- [ ] [vc-dir] Check Compare with base revision (vc dir menu)
+- [x] [vc-dir] Check Compare with base revision (vc dir menu)
 - [ ] Indent : 2 or 4 spaces
 - [ ] Ouverture fichier : avoir de meilleurs perfs
 
