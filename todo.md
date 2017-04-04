@@ -42,6 +42,10 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
   
 
 ## A ranger
+- [ ] [php-mode] completion add current buffer keyword candidates
+- [ ] [php-mode] Meta shift e est surcharge
+
+
 
 ## Bloquant
 - [ ] [ido-switch-buffer] : Afficher le chemin des fichiers
