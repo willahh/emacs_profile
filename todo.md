@@ -40,29 +40,14 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
   
 
 ## A ranger
-- [ ] [php-mode] completion add current buffer keyword candidates
-- [ ] [php-mode] Meta shift e est surcharge
 
-- [ ] [ivy switch buffer] Dired first in list
-- [ ] Auto center :
-      [ag] 
-      [imenu]
-      
-- [x] Change keybinding zz and ZZ (fuzzy word)
-- [x] [ido] Escape : Leave
-- [x] [ido] C-a : got beginning
-- [x] [counsel] C-e : got end
-      -> use M-a M-e instead
-- [x] [counsel-find-file] Augmenter la hauteur min
-- [x] [projectile-find-file] Paramétrer pour que la recherche soit fuzzy
-- [x] [counsel] [switch-to-project] Fuzzy !
 
 
 ## Bloquant
 - [ ] [ido-switch-buffer] : Afficher le chemin des fichiers
-- [x] [swiper] Fuzzy match
 
-- [ ] Attention dans magit TAB n est plus fonctionnel (toggle)
+- [ ] [magit] [key TAB] La fonction toggle est surchargee, il faut la remettre
+
 - [ ] [multi-cursor] Integrer le Meta+mouse1 click pour avoir un curseur multiple
 
 - [ ] [IMPORTANT] Fonction get file name to clipboard (très utilisé)
@@ -71,8 +56,30 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] Indent : 2 or 4 spaces
 - [ ] Ouverture fichier : avoir de meilleurs perfs
 
+- [x] Change keybinding zz and ZZ (fuzzy word)
+- [x] [ido] Escape : Leave
+- [x] [ido] C-a : got beginning
+- [x] [counsel] C-e : got end
+      -> use M-a M-e instead
+- [x] [counsel-find-file] Augmenter la hauteur min
+- [x] [projectile-find-file] Paramétrer pour que la recherche soit fuzzy
+- [x] [counsel] [switch-to-project] Fuzzy !
+- [x] [swiper] Fuzzy match
 
 ## Majeur
+- [ ] Ivy : Possibilité de boucler
+- [ ] Ivy : Utiliser TAB pour valider (au lieu de saisir /)
+
+- [ ] [php-mode] completion add current buffer keyword candidates
+- [ ] [php-mode] Meta shift e est surcharge
+
+- [ ] [ivy switch buffer] Dired first in list
+- [ ] Auto center :
+      [ag] 
+      [imenu]
+      
+
+
 - [ ] [misc] Copier : Ne pas embarquer la couleur
       -> Cibler uniquement certains buffers
         -> mini buffer

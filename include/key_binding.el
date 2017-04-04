@@ -431,6 +431,9 @@
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
 
+;; Rebind tab car sinon elle est surchargee
+(define-key magit-status-mode-map (kbd "<tab>") 'magit-section-toggle)
+
 
 
 

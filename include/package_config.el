@@ -1639,6 +1639,13 @@
 ;; (setq ido-max-prospects 40)
 
 
+;; ---------------- ivy_buffer_extend
+;; Extend the ivy buffer
+;; Source : https://gist.github.com/frostidaho/bc3a7b1be32f916dc65d
+;; Post : https://github.com/abo-abo/swiper/issues/256
+(require 'ivy_buffer_extend)
+
+
 ;; ---------------- helm
 (require 'helm) 
 (require 'helm-config)
@@ -2013,7 +2020,3 @@ then `diff-jump-to-old-file' is also set, for the next invocations."
       (pop-to-buffer-same-window buf)
       (goto-char (+ (car pos) (cdr src)))
       (diff-hunk-status-msg line-offset (diff-xor rev switched) t))))
-
-
-
-
