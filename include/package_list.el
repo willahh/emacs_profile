@@ -24,7 +24,7 @@
   ;; flymake-jshint
   ;; neotree
 
-  smex
+  ;; smex
   ido
   ido-ubiquitous
   ido-vertical-mode
@@ -57,6 +57,8 @@
   dsvn
   emmet-mode
   epl
+
+
   evil
   evil-easymotion
   evil-leader
@@ -64,6 +66,8 @@
   evil-nerd-commenter 
   evil-surround   
   evil-visualstar
+  evil-snipe
+
   exec-path-from-shell
   expand-region
   eyebrowse

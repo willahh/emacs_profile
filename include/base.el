@@ -172,9 +172,8 @@ scroll-step 1)
 (setq line-number-mode t)
 (setq column-number-mode t)
 
-
-;; (setq set-mark-command-repeat-pop t)
-
+;; Mini window height
+(setq max-mini-window-height 0.4) ;; default 0.25
 
 ;; Replace selection by text
 ;; Utilisation du comportement des editeurs modernes :
@@ -182,8 +181,7 @@ scroll-step 1)
 ;;   - delete selection, - insert command
 (delete-selection-mode 1)
 
-
-
+;;
 (setq save-interprogram-paste-before-kill t)
 ;; (setq x-select-enable-clipboard 1)
 
@@ -243,10 +241,6 @@ scroll-step 1)
 ;; http://emacs.stackexchange.com/a/26219
 (defvar display-buffer-same-window-commands
   '(occur-mode-goto-occurrence compile-goto-error))
-
-
-
-
 
 
 

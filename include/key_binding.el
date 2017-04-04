@@ -5,6 +5,10 @@
   (global-unset-key key))
 
 
+;; Escape key for keyboard-quit command (Escape is capslock in my system settings)
+(define-key key-translation-map (kbd "ESC") (kbd "C-g"))
+(define-key ivy-minibuffer-map (kbd "<escape>") 'minibuffer-keyboard-quit)
+
 (defun vc-diff-conf ()
  "For use in 'vc-diff-mode-hook"
  (local-set-key [(meta shift p)] 'helm-M-x)
@@ -17,33 +21,6 @@
 (add-hook 'diff-mode-hook 'ag-mode-conf)
 
 
-
-;;(eval-after-load "web-mode"
-  ;; (unbind-key "C-M-p" 'web-mode-map)
-;;  '(define-key web-mode-map (kbd "C-M-p") nil)
-;;)
-
-
-;;(eval-after-load 'markdown
-;;  (progn
-;;    (define-key markdown-mode-map (kbd "M-p") nil)
-;;)
-
-;;(use-package markdown-mode
-;; :defer t ;;don't access `markdown-mode-map' until `markdown-mode' is loaded
-;; :config (define-key (kbd "M-p") 'nil markdown-mode-map)
-;; )
-
-
-
-
-
-
-;; (use-package markdown-mode
-;;   :bind ("M-p" . nil)
-;; )
-
-
 (use-package evil-mc
   :bind (:map evil-mc-key-map
               ("\M-p" . nil)
@@ -51,28 +28,6 @@
         )
 )
 
-
-
-;; (eval-after-load "evil-mc"
-;;   '(progn
-;;      (define-key evil-mc-key-map "\C-p" 'nil)
-;;      (define-key evil-mc-key-map "C-p" 'nil)
-;;      ))
-
-
-
-;;(use-package markdown-mode
-;; :bind (:map markdown-mode-map
-;;           ("M-p" . nil)))
-
-;;(use-package term
-;;  :bind (:map term-mode-map
-;;         ("M-p" . term-send-up)
-;;         ("M-n" . term-send-down)
-;;         :map term-raw-map
-;;         ("M-o" . other-window)
-;;         ("M-p" . term-send-up)
-;;         ("M-n" . term-send-down)))
 
 
 
@@ -174,8 +129,6 @@
 ;; (key-chord-define-global "az" 'avy-goto-word-1-above)
 (key-chord-define-global "qs" 'avy-goto-word-1-below)
 (key-chord-define-global "az" 'avy-goto-char-2)
-
-
 ;;
 (key-chord-define-global "xc" 'er/expand-region)
 (key-chord-define-global "wx" 'er/contract-region)
@@ -183,8 +136,8 @@
 (key-chord-define-global "ji" 'ace-window) ;; cannot be jk (vim up/right)
 (key-chord-define-global ";:" 'highlight-symbol-mode)
 (key-chord-define-global "qs" 'toggle-php-flavor-mode) 
-(key-chord-define-global "zz" 'zop-to-char) 
-(key-chord-define-global "ZZ" 'zop-up-to-char) 
+;; (key-chord-define-global "zz" 'zop-to-char) 
+;; (key-chord-define-global "ZZ" 'zop-up-to-char) 
 
 
 
@@ -223,7 +176,7 @@
 
 ;; Main binds
 (global-set-key (kbd "<f5>") 'eval-buffer)
-(global-set-key (kbd "<C-escape>") 'keyboard-quit)
+
 
 ;; Mouse key binding
 (global-set-key (kbd "<S-wheel-left>") '(lambda ()
@@ -384,6 +337,7 @@
 ;; et affiche les resultats dans le meme buffer tout comme dans Sublime Text.
 ;; Le raccourcis utilise est COMMAND+ALT+f ("M-ƒ" sur osx)
 
+
 ;; Les deux plus utiles (selon moi)
 (global-set-key (kbd "ƒ") 'helm-ag) ;; (alt + f)
 (global-set-key (kbd "M-ƒ") 'ag-project) ;; (cmd + alt  + f)
@@ -430,7 +384,7 @@
 
 (global-set-key [C-S-tab] 'previous-buffer)
 (global-set-key [C-tab] 'next-buffer) 
-
+;; 
 
 ;; easy-motion
 (evilem-default-keybindings "ù")
@@ -467,6 +421,11 @@
 ;; replace zap-to-char functionaity with the more powerful zop-to-char
 ;; (global-set-key (kbd "M-z") 'zop-up-to-char)
 ;; (global-set-key (kbd "M-Z") 'zop-to-char)
+
+(global-set-key [(control meta s)] 'zop-to-char)
+(global-set-key [(control meta shift s)] 'zop-up-to-char)
+
+
 
 ;; Magit
 (global-set-key (kbd "C-x g") 'magit-status)

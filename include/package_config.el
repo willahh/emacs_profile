@@ -361,15 +361,17 @@
 ;;lors de la saisie de texte
 
 (require 'company)
-;; (setq company-idle-delay 0.1)
-(setq company-idle-delay 0.5)
 (setq company-show-numbers t)
 ;; (setq company-minimum-prefix-length 2)
 (setq company-minimum-prefix-length 1)
 
 (setq company-dabbrev-downcase 0)
+
 ;; (setq company-idle-delay 0)
-(setq company-idle-delay 0.35)
+;; (setq company-idle-delay 0.1)
+;; (setq company-idle-delay 0.5)
+;; (setq company-idle-delay 0.35)
+(setq company-idle-delay 0.25)
 
 ;; Test de saisie de text
 ;; Test de saisie de text
@@ -1476,8 +1478,9 @@
 (global-evil-visualstar-mode)
 
 ;; evil-snipe
-;; (require 'evil-snipe)
-;; (evil-snipe-mode 1)
+;; Update : reactivation, peut etre pratique pour se deplacer rapidement
+;; Au sein d une ligne.
+
 
 ;; ;; evil-multiedit
 ;; (require 'evil-multiedit)
@@ -1550,6 +1553,11 @@
 ;; evil-easymotion
 (require 'evil-easymotion)
 
+
+
+(require 'evil-snipe)
+(evil-snipe-mode 1)
+
 ;; Cursor / caret state color
 ;; (setq evil-emacs-state-cursor '("#9ecf00" bar))
 (setq evil-emacs-state-cursor '("#f1c70a" bar))
@@ -1573,30 +1581,31 @@
 
 
 
-
-
 ;; ---------------- ido / smex / ivy
-(require 'smex)
+;; (require 'smex)
 (require 'ivy)
+
+;; ----- ido
 (require 'ido)
 (require 'ido-ubiquitous)
 
-(ido-mode 1)
-(ido-everywhere 1)
-(ido-ubiquitous-mode 1)
+;; (setq ido-)
+(setq ido-max-prospects 40)
 
-;; smex
-(require 'smex) ; Not needed if you use package.el
-(smex-initialize) ; Can be omitted. This might cause a (minimal) delay
-                  ; when Smex is auto-initialized on its first run.
 
-;; ido-vertical-mode
+;; ----- ido-vertical-mode
 (require 'ido-vertical-mode)
 (ido-mode 1)
 (ido-vertical-mode 1)
-
 (setq ido-vertical-define-keys 'C-n-and-C-p-only)
 
+
+;; ---- smex
+;; (require 'smex) ; Not needed if you use package.el
+;; (smex-initialize) ; Can be omitted. This might cause a (minimal) delay
+;;                   ; when Smex is auto-initialized on its first run.
+
+;; ---- ivy
 ;; ivy conf
 (setq ivy-virtual-abbreviate 'full)
 
@@ -1617,6 +1626,18 @@
 
 ;;
 (setq ivy-count-format "(%d/%d) ")
+
+(setq ivy-height 25)
+
+
+;; ido conf
+(setq ido-mode 1)
+(setq ido-everywhere 1)
+(setq ido-ubiquitous-mode 1)
+(setq ido-enable-flex-matching 1)
+;; (setq ido-enable-regexp t)
+;; (setq ido-max-prospects 40)
+
 
 ;; ---------------- helm
 (require 'helm) 

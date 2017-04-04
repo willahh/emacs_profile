@@ -25,8 +25,6 @@
   - Make sure tsconfig.json or jsconfig.json is present in the root folder of the project.
 
 
-
-
 ## Notes :
   - Comportement native lorsques de longues lignes de textes sont presentes sans retour a la ligne
     https://www.emacswiki.org/emacs/FindLongLines
@@ -45,20 +43,24 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [php-mode] completion add current buffer keyword candidates
 - [ ] [php-mode] Meta shift e est surcharge
 
-- [ ] [projectile-find-file] Paramétrer pour que la recherche soit fuzzy
-- [ ] [counsel] [switch-to-project] Fuzzy !
-- [ ] Change keybinding zz and ZZ (fuzzy word)
-- [ ] [counsel-find-file] Augmenter la hauteur min
-- [ ] [counsel] Escape : Leave
-- [ ] [counsel] C-a : got beginning
-- [ ] [counsel] C-e : got end
-- [ ] [ag] Modifier comportement, pour le suivant : Auto recentrer apres go to line
-- [ ] [imenu] Modifier comportement : Auto recentrer apres go to line
+- [ ] [ivy switch buffer] Dired first in list
+- [ ] Auto center :
+      [ag] 
+      [imenu]
+      
+- [x] Change keybinding zz and ZZ (fuzzy word)
+- [x] [ido] Escape : Leave
+- [x] [ido] C-a : got beginning
+- [x] [counsel] C-e : got end
+      -> use M-a M-e instead
+- [x] [counsel-find-file] Augmenter la hauteur min
+- [x] [projectile-find-file] Paramétrer pour que la recherche soit fuzzy
+- [x] [counsel] [switch-to-project] Fuzzy !
 
 
 ## Bloquant
 - [ ] [ido-switch-buffer] : Afficher le chemin des fichiers
-- [ ] [swiper] Fuzzy match
+- [x] [swiper] Fuzzy match
 
 - [ ] Attention dans magit TAB n est plus fonctionnel (toggle)
 - [ ] [multi-cursor] Integrer le Meta+mouse1 click pour avoir un curseur multiple
@@ -66,52 +68,9 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [IMPORTANT] Fonction get file name to clipboard (très utilisé)
 - [ ] [vc-dir] Faire une fonction pour activer un vc-version-diff avec les paramètres older revision : "base", newer revision : "head"
 - [ ] [vc-dir] N'affiche pas les fichiers supprimés localement, mais non envoyé à svn (svn remove)
-- [x] [vc-dir] Check Compare with base revision (vc dir menu)
 - [ ] Indent : 2 or 4 spaces
 - [ ] Ouverture fichier : avoir de meilleurs perfs
 
-- [x] [Multi-cursor] paste dans une sélection multiple
-      -> Il faut utiliser la fonction native yank (C-y)
-- [x] [vc-diff] : Ne pas ouvrir les resultats dans une nouvelle fenêtre !
-       command diff-goto-source, diff-mode-shared-map
-- [x] [web-mode] [smartparens] saisi attribut, une première cote saisie, la fermeture arrive tout de suite, il faut ensuite revenir une fois en arrière pour saisir la valeur entre les quotes.
-       Du coup ce plugin ne sert absolument à rien. (Je préfère saisir une double quote manuellement ça va plus vite)
-- [x] [smart-parens] Desactiver smartparens pour les quotes, c'est vraiment pas utiles
-- [x] [smart-parens] [web-mode] [html] : La saisie d'un nouvel attribu dans un noeud html ouvre et ferme directement la double quote, et place le curseur apres, c'est vraiment inutilisable
-- [x] Error in process sentine: Selecting deleted buffer
-      -> Peut provenir du fait que ternjs est actif sur web-mode et js2-mode
-- [x] Helm -> Setter une hauteur max, car sur un écran la liste peut faire ralentir
-- [x] Helm -> Désactiver absolument l'auto preview
-     C-c C-f
-- [x] [bloquant] [js2-mode] [validation] Lorsque l'on saisie du texte, la validation se déclenche automatiquement.
-      Il faut empêcher ça pour éviter d'avoir du texte qui scintille au moment de la saisie.
-- [x] [important] Ne pas mettre de preview auto du fichier lors de la navigation avec Helm
-       Pas necessaire (et genere potentillement pas mal de pb (creation de thread ternjs lors de chaque preview d un fichier javascript))
-- [x] [dired] Plus de couleurs par default (premiere ligne en blue)
-
-- [x] Js mode + Smartparens  : 
-      Fichier echantillons/template_html.js
-      Dans la chaine suivante sHtml += ' <li data-value=""><a href="#">text</a></li>';
-      Lors de la saisie d une single quote dans l attribut data-value le curseur se place en fin de chaine
-- [x] [important] ag buffer] Rester sur la meme window !!
-- [x] [bloquant] [web-mode] [php-mode] Php language support (words, snippets, completion, ...)
-- [x] [ag] keybinding : ENTER ---> rester sur la meme fenetre
-
-- [x] [web-mode indent] [important] Web-mode auto indent after paste
-- [x] [bloquant] [web mode] [auto indentation] ml.json.php
-- [x] [bloquant] [web-mode] Paste : auto indent slow
-- [x] [important] Web-mode auto indent after paste
-      Supprimer ce comportemt, l'auto indent ne doit pas se faire apres un paste
-- [x] [web-mode indent] Indent dans un gros fichier en web-mode = long
-
-- [x] [ag] Ajouter une touche très rapide a "ag-projectile" (le plus proche de la recherche de Sublime)
-- [x] [Multi-cursor] Pouvoir faire un copier de toutes les chaines selectionnees
-      Permet d'extraire des strings (Sublime text)
-      -> La copie se retrouve dans le rectangle ring -> pour l utiliser : C-x r y 
-      
-- [x] Ouverture fichier : avoir de meilleurs perfs
-      -> Désactivation de ternjs automatiquement (le lancer manuellement lorue necessaire)
-      -> Augmentation du temps avant rendu des couleurs des textes
 
 ## Majeur
 - [ ] [misc] Copier : Ne pas embarquer la couleur
@@ -248,6 +207,53 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 
 ## Corrige 
+
+- [x] [vc-dir] Check Compare with base revision (vc dir menu)
+- [x] [Multi-cursor] paste dans une sélection multiple
+      -> Il faut utiliser la fonction native yank (C-y)
+- [x] [vc-diff] : Ne pas ouvrir les resultats dans une nouvelle fenêtre !
+       command diff-goto-source, diff-mode-shared-map
+- [x] [web-mode] [smartparens] saisi attribut, une première cote saisie, la fermeture arrive tout de suite, il faut ensuite revenir une fois en arrière pour saisir la valeur entre les quotes.
+       Du coup ce plugin ne sert absolument à rien. (Je préfère saisir une double quote manuellement ça va plus vite)
+- [x] [smart-parens] Desactiver smartparens pour les quotes, c'est vraiment pas utiles
+- [x] [smart-parens] [web-mode] [html] : La saisie d'un nouvel attribu dans un noeud html ouvre et ferme directement la double quote, et place le curseur apres, c'est vraiment inutilisable
+- [x] Error in process sentine: Selecting deleted buffer
+      -> Peut provenir du fait que ternjs est actif sur web-mode et js2-mode
+- [x] Helm -> Setter une hauteur max, car sur un écran la liste peut faire ralentir
+- [x] Helm -> Désactiver absolument l'auto preview
+     C-c C-f
+- [x] [bloquant] [js2-mode] [validation] Lorsque l'on saisie du texte, la validation se déclenche automatiquement.
+      Il faut empêcher ça pour éviter d'avoir du texte qui scintille au moment de la saisie.
+- [x] [important] Ne pas mettre de preview auto du fichier lors de la navigation avec Helm
+       Pas necessaire (et genere potentillement pas mal de pb (creation de thread ternjs lors de chaque preview d un fichier javascript))
+- [x] [dired] Plus de couleurs par default (premiere ligne en blue)
+
+- [x] Js mode + Smartparens  : 
+      Fichier echantillons/template_html.js
+      Dans la chaine suivante sHtml += ' <li data-value=""><a href="#">text</a></li>';
+      Lors de la saisie d une single quote dans l attribut data-value le curseur se place en fin de chaine
+- [x] [important] ag buffer] Rester sur la meme window !!
+- [x] [bloquant] [web-mode] [php-mode] Php language support (words, snippets, completion, ...)
+- [x] [ag] keybinding : ENTER ---> rester sur la meme fenetre
+
+- [x] [web-mode indent] [important] Web-mode auto indent after paste
+- [x] [bloquant] [web mode] [auto indentation] ml.json.php
+- [x] [bloquant] [web-mode] Paste : auto indent slow
+- [x] [important] Web-mode auto indent after paste
+      Supprimer ce comportemt, l'auto indent ne doit pas se faire apres un paste
+- [x] [web-mode indent] Indent dans un gros fichier en web-mode = long
+
+- [x] [ag] Ajouter une touche très rapide a "ag-projectile" (le plus proche de la recherche de Sublime)
+- [x] [Multi-cursor] Pouvoir faire un copier de toutes les chaines selectionnees
+      Permet d'extraire des strings (Sublime text)
+      -> La copie se retrouve dans le rectangle ring -> pour l utiliser : C-x r y 
+      
+- [x] Ouverture fichier : avoir de meilleurs perfs
+      -> Désactivation de ternjs automatiquement (le lancer manuellement lorue necessaire)
+      -> Augmentation du temps avant rendu des couleurs des textes
+      
+      
+      
 - [x] Directory completion : Possibilite d'avoir de l'auto completion lors de la saisie d'un chemin.
 - [x] Auto complete : Deuxième ouverture instantane
 - [x] [important] Helm mini ---> preview file when over (Comme dans Sublime)
