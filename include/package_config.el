@@ -371,7 +371,9 @@
 ;; (setq company-idle-delay 0.1)
 ;; (setq company-idle-delay 0.5)
 ;; (setq company-idle-delay 0.35)
-(setq company-idle-delay 0.25)
+;; (setq company-idle-delay 0.25) ;; Note : Re-test avec un delai rapide (comme dans Sublime)
+;; (setq company-idle-delay 0.1)
+(setq company-idle-delay 0)
 
 ;; Test de saisie de text
 ;; Test de saisie de text
@@ -511,11 +513,9 @@
 
 ;; yasnippet
 (require 'yasnippet)
-;; (add-to-list 'yas-snippet-dirs "/Users/willahh/.emacs.d/snippets/willahh")
-;; (add-to-list 'yas-snippet-dirs "/Users/willahh/.emacs.d/snippets/willahh/js-mode")
-
 (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/willahh/")
-(add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/snippets/es6-snippets")
+;; (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/snippets/es6-snippets")
+(add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/apgwoz/")
 
 
 (setq yas/indent-line nil)
@@ -1131,9 +1131,35 @@
 
 
 
-;; php-
-(require 'php-auto-yasnippets)
-(setq php-auto-yasnippet-php-program "~/.emacs.d/plugins/php-auto-yasnippets/Create-PHP-YASnippet.php")
+
+;; Add yasnippet support for all company backends
+;; https://github.com/syl20bnr/spacemacs/pull/179
+;; (defvar company-mode/enable-yas t
+;;   "Enable yasnippet for all backends.")
+
+;; (defun company-mode/backend-with-yas (backend)
+;;   (if (or (not company-mode/enable-yas) (and (listp backend) (member 'company-yasnippet backend)))
+;;       backend
+;;     (append (if (consp backend) backend (list backend))
+;;             '(:with company-yasnippet))))
+
+;; (setq company-backends (mapcar #'company-mode/backend-with-yas company-backends))
+
+
+
+
+
+;; ;; php-auto-yasnippets
+;; (require 'php-auto-yasnippets)
+;; La generation ne semble pas bien fonctionner.
+
+;; ;; (setq php-auto-yasnippet-php-program "~/.emacs.d/plugins/php-auto-yasnippets/Create-PHP-YASnippet.php")
+;; ;; (setq php-auto-yasnippet-php-program "")
+;; (setq php-auto-yasnippet-php-program "/Users/willahh/.emacs.d/plugins/php-auto-yasnippets/Create-PHP-YASnippet.php")
+
+
+
+
 ;; (define-key php-mode-map (kbd "C-c C-y") 'yas/create-php-snippet)
 ;; (payas/ac-setup)
 

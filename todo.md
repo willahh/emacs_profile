@@ -40,6 +40,9 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
   
 
 ## A ranger
+- [ ] Move / copy file : Utiliser ivy en back
+- [ ] Ivy : Possibilité de boucler
+- [ ] Ivy : Utiliser TAB pour valider (au lieu de saisir /)
 
 
 
@@ -66,9 +69,6 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [x] [swiper] Fuzzy match
 
 ## Majeur
-- [ ] Ivy : Possibilité de boucler
-- [ ] Ivy : Utiliser TAB pour valider (au lieu de saisir /)
-
 - [ ] [php-mode] completion add current buffer keyword candidates
 - [ ] [php-mode] Meta shift e est surcharge
 

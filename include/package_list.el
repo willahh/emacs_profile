@@ -32,6 +32,7 @@
   php-mode
   php-refactor-mode
   php-auto-yasnippets
+
   company-php
   ac-php
   php-eldoc

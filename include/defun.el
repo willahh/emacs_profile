@@ -94,6 +94,7 @@ there's a region, all lines that region covers will be duplicated."
 ;; Besoin initial :
 ;;   Pouvoir copier le chemin du buffer actuel dans le clipboard
 ;; Source : http://stackoverflow.com/a/2417617
+;; Update : add w- prefix for quicker find in m-x command
 (defun copy-file-path ()
   "Copy current file path into clipboard"
   (interactive)
@@ -105,6 +106,11 @@ there's a region, all lines that region covers will be duplicated."
         (insert filename)
         (clipboard-kill-region (point-min) (point-max)))
       (message filename))))
+
+;; Shorthand : ([c]opy-[f]ile-[p]ath)
+(defun cfp () 
+  (interactive)
+  (copy-file-path))
 
 ;; copy-file-name-to-clipboard
 ;; Source : http://emacsredux.com/blog/2013/03/27/copy-filename-to-the-clipboard/
