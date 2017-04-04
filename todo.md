@@ -46,8 +46,6 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 ## Bloquant
 - [ ] [ido-switch-buffer] : Afficher le chemin des fichiers
 
-- [ ] [magit] [key TAB] La fonction toggle est surchargee, il faut la remettre
-
 - [ ] [multi-cursor] Integrer le Meta+mouse1 click pour avoir un curseur multiple
 
 - [ ] [IMPORTANT] Fonction get file name to clipboard (très utilisé)
@@ -56,6 +54,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] Indent : 2 or 4 spaces
 - [ ] Ouverture fichier : avoir de meilleurs perfs
 
+- [x] [magit] [key TAB] La fonction toggle est surchargee, il faut la remettre
 - [x] Change keybinding zz and ZZ (fuzzy word)
 - [x] [ido] Escape : Leave
 - [x] [ido] C-a : got beginning
