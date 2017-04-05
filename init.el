@@ -19,16 +19,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
 ;; test
 ;; Syntax entry for web mode doesnt work actualy
 ;; https://github.com/fxbois/web-mode/issues/149
