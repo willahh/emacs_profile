@@ -1,3 +1,8 @@
+;; iy-go-to-char
+(require 'iy-go-to-char)
+
+;; change-inner
+(require 'change-inner)
 
 
 
@@ -951,8 +956,12 @@
 (require 'emmet-mode)
 (add-hook 'sgml-mode-hook 'emmet-mode)
 (add-hook 'css-mode-hook  'emmet-mode)
+
 (add-hook 'web-mode-hook 'emmet-mode)
+(add-hook 'web-mode-hook 'emmet-preview-mode)
+
 (add-hook 'php-mode-hook  'emmet-mode) ;; Edit : peut poser des problemes, a voir
+(add-hook 'php-mode-hook 'emmet-preview-mode)
 
 
 

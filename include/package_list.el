@@ -128,11 +128,18 @@
 
   all-the-icons
   js2-refactor
+  ace-jump-mode
   ;;emacs-powerline
   ;;web-mode
   whole-line-or-region
   neotree
-  
+
+
+
+  iy-go-to-char
+  change-inner
+
+
 
   ))
 ; 

@@ -128,7 +128,8 @@
 ;; (key-chord-define-global "az" 'avy-goto-word-1)
 ;; (key-chord-define-global "az" 'avy-goto-word-1-above)
 (key-chord-define-global "qs" 'avy-goto-word-1-below)
-(key-chord-define-global "az" 'avy-goto-char-2)
+(key-chord-define-global "AZ" 'avy-goto-char-2)
+(key-chord-define-global "az" 'ace-jump-mode)
 ;;
 (key-chord-define-global "xc" 'er/expand-region)
 (key-chord-define-global "wx" 'er/contract-region)
@@ -313,7 +314,8 @@
 ;; Files / Browse files / Browse buffer 
 ;; (global-set-key (kbd "M-o")  'helm-find-files)
 ;; (global-set-key (kbd "M-o")  'ido-find-file)
-(global-set-key (kbd "M-o")  'counsel-find-file)
+;; (global-set-key (kbd "M-o")  'counsel-find-file)
+(global-set-key (kbd "C-x o")  'counsel-find-file)
 (global-set-key (kbd "œ")  'projectile-dired) ;; alt+o
 (global-set-key (kbd "M-œ")  'neotree-find) ;; CMD+ALT+o
 
@@ -340,6 +342,7 @@
 
 ;; Les deux plus utiles (selon moi)
 (global-set-key (kbd "ƒ") 'helm-ag) ;; (alt + f)
+;; (global-set-key (kbd "ƒ") 'counsel-ag) ;; (alt + f)
 (global-set-key (kbd "M-ƒ") 'ag-project) ;; (cmd + alt  + f)
 
 ;; Puis celle ci
@@ -413,7 +416,8 @@
 
 (global-set-key [(meta π)] 'projectile-switch-project) ;; (commande + alt + p
 
-
+;; Sorting
+;;(global-set-key (kbd "M-s l") 'sort-lines) 
 
 ;; Align your code in a pretty way.
 (global-set-key (kbd "C-x \\") 'align-regexp)
@@ -426,10 +430,56 @@
 (global-set-key [(control meta shift s)] 'zop-up-to-char)
 
 
+;; Browse the kill ring
+(global-set-key (kbd "C-x C-y") 'browse-kill-ring)
+
+;; Display and edit occurances of regexp in buffer
+(global-set-key (kbd "C-c o") 'occur)
+
+
+
+
+
+
+
+;; Webjump let's you quickly search google, wikipedia, emacs wiki
+(global-set-key (kbd "C-x g") 'webjump)
+(global-set-key (kbd "C-x M-g") 'browse-url-at-point)
+
+
+
+;; iy-go-to-char - like f in Vim
+;; (global-set-key (kbd "M-m") 'jump-char-forward)
+;; (global-set-key (kbd "M-M") 'jump-char-backward)
+;; (global-set-key (kbd "s-m") 'jump-char-backward)
+
+
+
+
+
+;; iy-go-to-char (awesoooooome VIM LIKE "f")
+(global-set-key (kbd "C-c f") 'iy-go-to-char)
+(global-set-key (kbd "C-c F") 'iy-go-to-char-backward)
+
+
+;; change-inner like VIM ci 
+(global-set-key (kbd "M-i") 'change-inner)
+(global-set-key (kbd "M-o") 'change-outer)
+
+
+;; Transpose stuff with M-t
+(global-unset-key (kbd "M-t")) ;; which used to be transpose-words
+(global-set-key (kbd "M-t l") 'transpose-lines)
+(global-set-key (kbd "M-t w") 'transpose-words)
+(global-set-key (kbd "M-t s") 'transpose-sexps)
+(global-set-key (kbd "M-t p") 'transpose-params)
+
 
 ;; Magit
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
+
+
 
 ;; Rebind tab car sinon elle est surchargee
 (require 'magit)
