@@ -459,7 +459,7 @@
 
 ;; iy-go-to-char (awesoooooome VIM LIKE "f")
 (global-set-key (kbd "C-c f") 'iy-go-to-char)
-(global-set-key (kbd "C-c F") 'iy-go-to-char-backward)
+(global-set-key (kbd "C-c F") 'iy-go-to-char-b)
 
 
 ;; change-inner like VIM ci 

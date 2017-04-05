@@ -18,12 +18,20 @@
 ;; Don't write nwe line at end of document
 (setq mode-require-final-newline nil)
 
+;; "Real emacs knights don't use shift to mark things"
+;; Arrrrrghh (try to stop this habit)
+(setq shift-select-mode nil)
+
 ;; Do startup message
 (setq inhibit-startup-screen t)
 (setq initial-scratch-message "")
 
 ;; Display current file path in title
 (setq frame-title-format "%b")
+
+;; 80 chars is a good width.
+;; Update : Voir ce que c est precisemment
+;; (set-default 'fill-column 80)
 
 ;; Select whole word when separated with _
 (modify-syntax-entry ?_ "w")
@@ -247,3 +255,11 @@ scroll-step 1)
 
 
 
+;; ---------------- Dired
+(require 'dired)
+(require 'dash)
+
+;; Make dired less verbose
+(require 'dired-details)
+(setq-default dired-details-hidden-string "--- ")
+(dired-details-install)

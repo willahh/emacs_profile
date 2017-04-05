@@ -139,6 +139,8 @@
   iy-go-to-char
   change-inner
 
+  dired-details
+  flx-ido
 
 
   ))

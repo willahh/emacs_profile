@@ -1624,8 +1624,14 @@
 (require 'ido)
 (require 'ido-ubiquitous)
 
-;; (setq ido-)
-(setq ido-max-prospects 40)
+(setq ido-enable-prefix nil
+      ido-enable-flex-matching t
+      ido-case-fold nil
+      ido-auto-merge-work-directories-length -1
+      ido-create-new-buffer 'always
+      ido-use-filename-at-point nil
+      ido-max-prospects 40)
+
 
 
 ;; ----- ido-vertical-mode
@@ -1633,6 +1639,14 @@
 (ido-mode 1)
 (ido-vertical-mode 1)
 (setq ido-vertical-define-keys 'C-n-and-C-p-only)
+
+;; Try out flx-ido for better flex matching between words
+(require 'flx-ido)
+(flx-ido-mode 1)
+
+;; C-n/p is more intuitive in vertical layout
+(setq ido-vertical-define-keys 'C-n-C-p-up-down-left-right)
+
 
 
 ;; ---- smex
