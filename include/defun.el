@@ -572,3 +572,15 @@ That is, a string used to represent it on the tab bar."
                       (set-window-configuration wnd))))
       (error "no more than 2 files should be marked"))))
 (define-key dired-mode-map "e" 'ora-ediff-files)
+
+
+
+
+
+;; Get the current file name from bufer file path
+(defun get-curent-file-name ()
+  (interactive)
+  (defvar buffer-file-name-split (split-string buffer-file-name "/")) // Split file path
+  (defvar split (last buffer-file-name-split)) // Get last entry
+  (mapconcat 'identity split " ")) ;; Convert list of one element to string
+

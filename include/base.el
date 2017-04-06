@@ -20,7 +20,7 @@
 
 ;; "Real emacs knights don't use shift to mark things"
 ;; Arrrrrghh (try to stop this habit)
-(setq shift-select-mode nil)
+(setq shift-select-mode 1)
 
 ;; Do startup message
 (setq inhibit-startup-screen t)
@@ -260,6 +260,10 @@ scroll-step 1)
 (require 'dash)
 
 ;; Make dired less verbose
-(require 'dired-details)
-(setq-default dired-details-hidden-string "--- ")
-(dired-details-install)
+;; Update : Non available on Melpa
+
+;; (require 'dired-details)
+;; (setq-default dired-details-hidden-string "--- ")
+;; (dired-details-install)
+
+

@@ -40,18 +40,9 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
   
 
 ## A ranger
-- [x] Highlight next / prev : Recentrer la ligne sur le centre de l'écran
-- [ ] Auto center :
-      [x] [Highlight next / prev]
-      [ ] [imenu]
-- [ ] CSS Validateur !!
-- [ ] JS Validateur : Mieux distinguer la ligne en erreur
-
-- [ ] Move / copy file : Utiliser ivy en back
-- [ ] Ivy : Possibilité de boucler
 - [ ] Ivy : Utiliser TAB pour valider (au lieu de saisir /)
-
-
+- [ ] (plugin pour le liste) : Ne pas mettre les fichiers .svn dans la liste
+- [ ] [plugin] [change inner] Ajoute rl'option Change Inner Tag
 
 ## Bloquant
 - [ ] [ido-switch-buffer] : Afficher le chemin des fichiers
@@ -61,29 +52,28 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [IMPORTANT] Fonction get file name to clipboard (très utilisé)
 - [ ] [vc-dir] Faire une fonction pour activer un vc-version-diff avec les paramètres older revision : "base", newer revision : "head"
 - [ ] [vc-dir] N'affiche pas les fichiers supprimés localement, mais non envoyé à svn (svn remove)
-- [ ] Indent : 2 or 4 spaces
-- [ ] Ouverture fichier : avoir de meilleurs perfs
 
-- [x] [magit] [key TAB] La fonction toggle est surchargee, il faut la remettre
-- [x] Change keybinding zz and ZZ (fuzzy word)
-- [x] [ido] Escape : Leave
-- [x] [ido] C-a : got beginning
-- [x] [counsel] C-e : got end
-      -> use M-a M-e instead
-- [x] [counsel-find-file] Augmenter la hauteur min
-- [x] [projectile-find-file] Paramétrer pour que la recherche soit fuzzy
-- [x] [counsel] [switch-to-project] Fuzzy !
-- [x] [swiper] Fuzzy match
+
+- [ ] Indent : 2 or 4 spaces
+- [ ] Ouverture fichier : Avoir de meilleurs perfs
+
 
 ## Majeur
+- [ ] Auto center :
+      [x] [Highlight next / prev]
+      [ ] [imenu]
+      [ ] [ag] Search result buffer
+
+- [ ] [web-mode] Commentaire : Le script de commentaire ne semble pas bien
+- [ ] CSS Validateur !!
+- [ ] JS Validateur : Mieux distinguer la ligne en erreur
+
+- [ ] Move / copy file : Utiliser ivy en back
+- [ ] Ivy : Possibilité de boucler
+
 - [ ] [php-mode] completion add current buffer keyword candidates
 - [ ] [php-mode] Meta shift e est surcharge
 
-- [ ] [misc] Copier : Ne pas embarquer la couleur
-      -> Cibler uniquement certains buffers
-        -> mini buffer
-        -> fundamental
-      
 - [ ] echantillon/fract.js long a l ouverture
 
 - [ ] No JSCS configuration round. Set 'flycheck-jscsrc' for JSCS
@@ -180,7 +170,14 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [x] ag --> ignore hudge file (ST behaviour) (aucun problème dans, à mon avis, 99% des cas)  (il peut être utile de faire des recherches dans des fichieux volumineux, mais pour ca la recherche peut être faite de manière spécifique (paramètres supplémentaire, utilisation directement depuis ligne de commande ...)
       -> Ne me semble pas poser de probleme
       
+      
 ##  Mineur 
+- [ ] [misc] Copier : Ne pas embarquer la couleur
+      -> Cibler uniquement certains buffers
+        -> mini buffer
+        -> fundamental
+
+
 - [ ] nlinum in fringe ? Pouvoir afficher les vc diff plus loin que le contenu
 - [ ] [vc-dir] Ne pas afficher les lignes dossiers (les lignes qui sont grisées)
 - [ ] Voir pour utiliser une largeur max lors de la saisie de long texte
@@ -213,6 +210,18 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 
 ## Corrige 
+- [x] [magit] [key TAB] La fonction toggle est surchargee, il faut la remettre
+- [x] Change keybinding zz and ZZ (fuzzy word)
+- [x] [ido] Escape : Leave
+- [x] [ido] C-a : got beginning
+- [x] [counsel] C-e : got end
+      -> use M-a M-e instead
+- [x] [counsel-find-file] Augmenter la hauteur min
+- [x] [projectile-find-file] Paramétrer pour que la recherche soit fuzzy
+- [x] [counsel] [switch-to-project] Fuzzy !
+- [x] [swiper] Fuzzy match
+
+
 
 - [x] [vc-dir] Check Compare with base revision (vc dir menu)
 - [x] [Multi-cursor] paste dans une sélection multiple

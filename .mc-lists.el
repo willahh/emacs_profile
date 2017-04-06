@@ -70,4 +70,6 @@
       previous-buffer
       previous-multiframe-window
       resize-window
+      vc-dir-mark
+      vc-dir-previous-line
       ))

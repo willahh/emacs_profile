@@ -375,7 +375,9 @@
 ;; (setq company-idle-delay 0.1)
 ;; (setq company-idle-delay 0) ;; Note : Re-test avec un delai rapide (comme dans Sublime)
 ;; (setq company-idle-delay 0.25) ;; ... impossible affichage trop lent
-(setq company-idle-delay 0.3)
+;; (setq company-idle-delay 0.3) ;; Update en mode css, un retour raîde serait bien.
+;; (setq company-idle-delay 0.15)
+(setq company-idle-delay 0) ;; @todo : Mettre la valeur 0 pour le CSS mode only
 
 ;; Test de saisie de text
 ;; Test de saisie de texte rapide
@@ -953,10 +955,10 @@
 (add-hook 'css-mode-hook  'emmet-mode)
 
 (add-hook 'web-mode-hook 'emmet-mode)
-(add-hook 'web-mode-hook 'emmet-preview-mode)
+;; (add-hook 'web-mode-hook 'emmet-preview-mode)
 
 (add-hook 'php-mode-hook  'emmet-mode) ;; Edit : peut poser des problemes, a voir
-(add-hook 'php-mode-hook 'emmet-preview-mode)
+;; (add-hook 'php-mode-hook 'emmet-preview-mode)
 
 
 
@@ -2068,3 +2070,24 @@ then `diff-jump-to-old-file' is also set, for the next invocations."
       (pop-to-buffer-same-window buf)
       (goto-char (+ (car pos) (cdr src)))
       (diff-hunk-status-msg line-offset (diff-xor rev switched) t))))
+
+
+
+;; (defun my-compile-goto-error (&optional event)
+;;   "Visit the source for the error message at point.
+;; Use this command in a compilation log buffer."
+;;   (interactive (list last-input-event))
+;;   (if event (posn-set-point (event-end event)))
+;;   (or (compilation-buffer-p (current-buffer))
+;;       (error "Not in a compilation buffer"))
+;;   (compilation--ensure-parse (point))
+;;   (if (get-text-property (point) 'compilation-directory)
+;;       ;; (dired-other-window
+;;       (dired
+;;        (car (get-text-property (point) 'compilation-directory))
+;;        (recenter))
+;;     (setq compilation-current-error (point))
+;;     (next-error-internal)))
+
+
+;; (define-key compilation-button-map (kbd "RET") 'my-compile-goto-error)

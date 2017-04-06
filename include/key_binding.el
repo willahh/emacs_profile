@@ -128,8 +128,8 @@
 ;; (key-chord-define-global "az" 'avy-goto-word-1)
 ;; (key-chord-define-global "az" 'avy-goto-word-1-above)
 (key-chord-define-global "qs" 'avy-goto-word-1-below)
-(key-chord-define-global "AZ" 'avy-goto-char-2)
-(key-chord-define-global "az" 'ace-jump-mode)
+(key-chord-define-global "az" 'avy-goto-char-2)
+(key-chord-define-global "AZ" 'ace-jump-mode)
 ;;
 (key-chord-define-global "xc" 'er/expand-region)
 (key-chord-define-global "wx" 'er/contract-region)
