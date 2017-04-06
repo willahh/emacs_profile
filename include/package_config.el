@@ -1,3 +1,8 @@
+;; iy-go-to-char
+(require 'iy-go-to-char)
+
+;; change-inner
+(require 'change-inner)
 
 
 
@@ -366,14 +371,14 @@
 ;; (setq company-idle-delay 0.1)
 ;; (setq company-idle-delay 0.5)
 ;; (setq company-idle-delay 0.35)
-;; (setq company-idle-delay 0.25) ;; Note : Re-test avec un delai rapide (comme dans Sublime)
+;; (setq company-idle-delay 0.25)
 ;; (setq company-idle-delay 0.1)
-(setq company-idle-delay 0)
+;; (setq company-idle-delay 0) ;; Note : Re-test avec un delai rapide (comme dans Sublime)
+;; (setq company-idle-delay 0.25) ;; ... impossible affichage trop lent
+(setq company-idle-delay 0.3)
 
 ;; Test de saisie de text
-;; Test de saisie de text
-;; Test de saisie de text
-
+;; Test de saisie de texte rapide
 
 
 
@@ -946,8 +951,12 @@
 (require 'emmet-mode)
 (add-hook 'sgml-mode-hook 'emmet-mode)
 (add-hook 'css-mode-hook  'emmet-mode)
+
 (add-hook 'web-mode-hook 'emmet-mode)
+(add-hook 'web-mode-hook 'emmet-preview-mode)
+
 (add-hook 'php-mode-hook  'emmet-mode) ;; Edit : peut poser des problemes, a voir
+(add-hook 'php-mode-hook 'emmet-preview-mode)
 
 
 
@@ -1614,8 +1623,14 @@
 (require 'ido)
 (require 'ido-ubiquitous)
 
-;; (setq ido-)
-(setq ido-max-prospects 40)
+(setq ido-enable-prefix nil
+      ido-enable-flex-matching t
+      ido-case-fold nil
+      ido-auto-merge-work-directories-length -1
+      ido-create-new-buffer 'always
+      ido-use-filename-at-point nil
+      ido-max-prospects 40)
+
 
 
 ;; ----- ido-vertical-mode
@@ -1623,6 +1638,14 @@
 (ido-mode 1)
 (ido-vertical-mode 1)
 (setq ido-vertical-define-keys 'C-n-and-C-p-only)
+
+;; Try out flx-ido for better flex matching between words
+(require 'flx-ido)
+(flx-ido-mode 1)
+
+;; C-n/p is more intuitive in vertical layout
+(setq ido-vertical-define-keys 'C-n-C-p-up-down-left-right)
+
 
 
 ;; ---- smex
