@@ -95,7 +95,7 @@
   monokai-theme
   multiple-cursors
   nlinum
-  nlinum-relative
+  ;; nlinum-relative
   pkg-info
   popup
   projectile

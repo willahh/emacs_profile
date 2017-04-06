@@ -158,25 +158,17 @@
 ;; Update 2 : laisse l'indentation en temps reel, si des ralentissements surviennent
 ;; Utiliser le racourcis ;: pour switcher en toggle on off
 
+;; Update 3 : Trop de ralentissements, desactivation du mode auto
+
 (require 'highlight-symbol)
-(highlight-symbol-mode 0)
+(highlight-symbol-mode 1)
 
-(setq highlight-symbol-idle-delay 0)
-;; (setq highlight-symbol-idle-delay 1)
-
-;; (highlight-symbol-mode 1)
-;; (setq highlight-symbol-idle-delay 1)
+(setq highlight-symbol-idle-delay 1)
 
 (add-hook 'prog-mode-hook 'highlight-symbol-mode)
 (add-hook 'prog-mode-hook 'highlight-symbol-nav-mode)
 
 
-;; (add-hook 'web-mode-hook 'highlight-symbol-mode)
-;; (add-hook 'web-mode-hook 'highlight-symbol-nav-mode)
-
-;; (add-hook 'js2-mode-hook 'highlight-symbol-mode)
-;; (add-hook 'php-mode-hook 'highlight-symbol-mode)
-;; (add-hook 'emacs-lisp-mode 'highlight-symbol-mode)
 
 
 
@@ -191,37 +183,40 @@
 
 
 
+;; ----- nlinum
+(require 'nlinum)
+(add-hook 'prog-mode-hook 'nlinum-mode)
+;; (add-hook 'html-mode-hook 'nlinum-mode 1) 
+;; (add-hook 'actionscript-mode-hook 'nlinum-mode 1)
+(add-hook 'fundamental-mode 'nlinum-mode 1)
+(add-hook 'fundamental-mode-abbrev-table 'nlinum-mode 1)
 
 
+;; ----- nlinum-relative
+;; Update : remove nlinum-relative (lower performance)
 
+;; (require 'nlinum-relative)
+;; (nlinum-relative-setup-evil)
 
-
-
-
-
-;; nlinum
-(require 'nlinum-relative)
-(nlinum-relative-setup-evil)
-
-;; Enable nlinum-relative with html mode
-(add-hook 'html-mode-hook 'nlinum-relative-mode 1) 
-(add-hook 'actionscript-mode-hook 'nlinum-relative-mode 1)
-(add-hook 'fundamental-mode 'nlinum-relative-mode 1)
-(add-hook 'fundamental-mode-abbrev-table 'nlinum-relative-mode 1)
+;; ;; Enable nlinum-relative with html mode
+;; (add-hook 'html-mode-hook 'nlinum-relative-mode 1) 
+;; (add-hook 'actionscript-mode-hook 'nlinum-relative-mode 1)
+;; (add-hook 'fundamental-mode 'nlinum-relative-mode 1)
+;; (add-hook 'fundamental-mode-abbrev-table 'nlinum-relative-mode 1)
  
-
-
 ;; setup for evil
-(add-hook 'prog-mode-hook 'nlinum-relative-mode)
-(setq nlinum-relative-redisplay-delay 0)      ;; delay
-(setq nlinum-relative-current-symbol "->")      ;; or "" for display current line number
-(setq nlinum-relative-offset 0)                 ;; 1 if you want 0, 2, 3...
+;; (add-hook 'prog-mode-hook 'nlinum-relative-mode)
+;; (setq nlinum-relative-redisplay-delay 0)      ;; delay
+;; (setq nlinum-relative-current-symbol "->")      ;; or "" for display current line number
+;; (setq nlinum-relative-offset 0)                 ;; 1 if you want 0, 2, 3...
 
-;; Smart modde line
+
+
+
+;; ----- Smart modde line
 ;; (setq sml/no-confirm-load-theme t)
 ;; (setq sml/theme 'dark)
 ;; (sml/setup)
-
 
 
 ;; helm-ag
@@ -1201,13 +1196,17 @@
 ;; est ouvert. Lors d une exploration de plein de fichiers, trop de process sont ouvert
 ;; et font freezer l ensemble.
 ;; Update 2 : tres pratique lors d une utlisation sur project contenant pas trop de fichiers
+;; Update 3 : Trop d erreurs possibles 
 
-(autoload 'tern-mode "tern.el" nil t)
-(add-hook 'js-mode-hook (lambda () (tern-mode t)))
-(add-hook 'js2-mode-hook (lambda () (tern-mode t)))
-(add-hook 'js2-mode-hook 'tern-mode)
-(add-hook 'typescript-mode-hook (lambda () (tern-mode t)))
-(add-hook 'web-mode-hook (lambda () (tern-mode t))) ;; Update : utile aussi en web mode !
+
+;; <comment>
+;; (autoload 'tern-mode "tern.el" nil t)
+;; (add-hook 'js-mode-hook (lambda () (tern-mode t)))
+;; (add-hook 'js2-mode-hook (lambda () (tern-mode t)))
+;; (add-hook 'js2-mode-hook 'tern-mode)
+;; (add-hook 'typescript-mode-hook (lambda () (tern-mode t)))
+;; (add-hook 'web-mode-hook (lambda () (tern-mode t))) ;; Update : utile aussi en web mode !
+;; </comment>
 
 ;; Don't create .tern-project automatically
 ;; ~/.tern-config file is used globally instead

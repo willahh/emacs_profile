@@ -40,6 +40,13 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
   
 
 ## A ranger
+- [x] Highlight next / prev : Recentrer la ligne sur le centre de l'écran
+- [ ] Auto center :
+      [x] [Highlight next / prev]
+      [ ] [imenu]
+- [ ] CSS Validateur !!
+- [ ] JS Validateur : Mieux distinguer la ligne en erreur
+
 - [ ] Move / copy file : Utiliser ivy en back
 - [ ] Ivy : Possibilité de boucler
 - [ ] Ivy : Utiliser TAB pour valider (au lieu de saisir /)
@@ -71,13 +78,6 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 ## Majeur
 - [ ] [php-mode] completion add current buffer keyword candidates
 - [ ] [php-mode] Meta shift e est surcharge
-
-- [ ] [ivy switch buffer] Dired first in list
-- [ ] Auto center :
-      [ag] 
-      [imenu]
-      
-
 
 - [ ] [misc] Copier : Ne pas embarquer la couleur
       -> Cibler uniquement certains buffers

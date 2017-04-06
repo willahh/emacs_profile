@@ -12,6 +12,7 @@
       c-electric-delete-forward
       c-electric-semi&comma
       clean-aindent--bsunindent
+      duplicate-start-of-line-or-region
       electric-newline-and-maybe-indent
       eval-last-sexp
       evil-a-word
@@ -38,6 +39,7 @@
       indent-for-tab-command
       kill-region
       mouse-set-region
+      smart-open-line-above
       tab-indent-or-complete
       tern-ac-dot-complete
       untab-region

@@ -26,9 +26,6 @@
 
 
 
-
-
-
 ;; test
 ;; Syntax entry for web mode doesnt work actualy
 ;; https://github.com/fxbois/web-mode/issues/149
@@ -126,3 +123,45 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:background "#212121")))))
+
+
+
+
+
+
+ ;; Override : Add recenter command at the end
+ ;; @todo Voir pour surcharger sans reecrire toute la fonction de base
+ ;; Voir advice https://www.gnu.org/software/emacs/manual/html_node/elisp/Advising-Functions.html
+(defun highlight-symbol-jump (dir)
+  "Jump to the next or previous occurence of the symbol at point.
+DIR has to be 1 or -1."
+  (let ((symbol (highlight-symbol-get-symbol)))
+    (if symbol
+        (let* ((case-fold-search nil)
+               (msg (member 'navigation highlight-symbol-occurrence-message))
+               (bounds (bounds-of-thing-at-point 'symbol))
+               (offset (- (point) (if (< 0 dir) (cdr bounds) (car bounds)))))
+          (unless (eq last-command 'highlight-symbol-jump)
+            (push-mark))
+          ;; move a little, so we don't find the same instance again
+          (goto-char (- (point) offset))
+          (let ((target (re-search-forward symbol nil t dir)))
+            (unless target
+              (goto-char (if (< 0 dir) (point-min) (point-max)))
+              (unless msg
+                (message "Continued from beginning of buffer"))
+              (setq target (re-search-forward symbol nil nil dir)))
+            (goto-char (+ target offset)))
+          (when msg
+            (highlight-symbol-count symbol t))
+          (setq this-command 'highlight-symbol-jump)
+          (recenter)
+          )
+      (error "No symbol at point"))))
+
+;; (defun my-highlight-symbol-jump (dir)
+;;   (recenter))
+
+;; (add-function :after (highlight-symbol-jump dir) #'my-highlight-symbol-jump)
+
+
