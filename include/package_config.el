@@ -4,6 +4,18 @@
 ;; change-inner
 (require 'change-inner)
 
+;; ---------------- Dired
+;; (require 'dired)
+;; (require 'dash)
+;; 
+;; ;; Make dired less verbose
+;; ;; Update : Non available on Melpa
+;; 
+;; (require 'dired-details)
+;; (setq-default dired-details-hidden-string "--- ")
+;; (dired-details-install)
+;; 
+;; (dired-hide-details-mode)
 
 
 ;; highlight-chars
@@ -224,22 +236,6 @@
 ;; (sml/setup)
 
 
-;; helm-ag
-;; (custom-set-variables
-;;  '(helm-ag-base-command "ag --nocolor --nogroup --ignore-case --exclude=*.svn-base")
-;;  '(helm-ag-command-option "--all-text")
-;;  '(helm-ag-insert-at-point 'symbol)
-;;  '(helm-ag-ignore-buffer-patterns '("\\.txt\\'" "\\.min.js\\'" "\\.svn-base\\'")))
-
-
-;; (setq helm-ag-ignore-patterns '("*.svn-base"))
-;; (customize-set-variable 'grep-find-ignored-directories (list "SCCS" "RCS" "CVS" "MCVS" ".svn" ".git" ".hg" ".bzr" "_MTN" "_darcs" "{arch}" "objects" "build" "bin" "out" "lib" "svn-base"))
-;; (customize-set-variable '(helm-ag-ignore-buffer-patterns (list "SCCS" "RCS" "CVS" "MCVS" ".svn" ".git" ".hg" ".bzr" "_MTN" "_darcs" "{arch}" "objects" "build" "bin" "out" "lib" "svn-base"))
-
-
-
-
-
 ;; ----- eyebrowse
 (require 'eyebrowse)    
 (eyebrowse-mode t)
@@ -260,10 +256,6 @@
 
 
 
-
-;; helm-projectile
-;; (require 'helm-projectile)
-;; (helm-projectile-on)
 
 
 ;; ;; ;; ----- perspective
@@ -677,11 +669,6 @@
 
 
 
-;; helm-hunks
-;; Update : ne semble pas fonctionner avec un buffer type "*vc-diff*" (from vc)
-;; (require 'helm-hunks)
-
-
 ;; psvn
 (load-file "~/.emacs.d/plugins/psvn/psvn.el")
 (require 'psvn)
@@ -777,7 +764,6 @@
 
 
 
-;; Note : "*Help*" rentre en conflit avec les buffer helm (buffer helm en full height)
 ;; @todo : les buffers *magit-diff-popup ne devrait pas etre dans la regle *magit-diff*
 ;; (setq display-buffer-alist
 ;; '(
@@ -786,7 +772,6 @@
 ;;   ("*Buffer List*"       . (display-buffer-same-window . nil))
 ;;   ("*ag*"                . (display-buffer-same-window . nil))
 ;;   ;;("*vc-dir*"            . (display-buffer-same-window . nil)) ;; Toujours mettre le buffer vc-dir dans la fenetre actuelle, trop bordelique autrement - Update 2 :  test sans : Tres pratique d avoir une nouvelle window lorsque l on affiche un buffer de type vc-diff
-;;   ;; ("*helm-ag-edit*"      . (display-buffer-same-window . nil)) ;; ko nil = le buffer prend la place de helm (tout petit)
 ;;   ;; ("*Backtrace*"         . (display-buffer-same-window . nil)) ;; En commentaire pour voir
 ;;   ;; ("*magit-revision*"    . (display-buffer-same-window . nil)) ;; En commentaire pour voir
 ;;   ;; ("*magit-diff*"        . (display-buffer-same-window . nil)) ;; En commentaire, car dans ce buffer ipossible d avoir acces aux racourcis pour switch, du coup bloque ici
@@ -1625,19 +1610,22 @@
 (require 'ido)
 (require 'ido-ubiquitous)
 
+
 (setq ido-enable-prefix nil
       ido-enable-flex-matching t
       ido-case-fold nil
       ido-auto-merge-work-directories-length -1
       ido-create-new-buffer 'always
       ido-use-filename-at-point nil
-      ido-max-prospects 40)
+      ido-max-prospects 40
+      ido-everywhere t
+      ido-mode 1)
 
 
 
 ;; ----- ido-vertical-mode
 (require 'ido-vertical-mode)
-(ido-mode 1)
+;; (ido-mode 1)
 (ido-vertical-mode 1)
 (setq ido-vertical-define-keys 'C-n-and-C-p-only)
 
@@ -1678,6 +1666,15 @@
 (setq ivy-count-format "(%d/%d) ")
 
 (setq ivy-height 25)
+
+;; ivy config
+;; https://oremacs.com/2016/01/06/ivy-flx/
+(setq ivy-re-builders-alist
+      '((ivy-switch-buffer . ivy--regex-plus)
+        (t . ivy--regex-fuzzy)))
+
+(setq ivy-initial-inputs-alist nil)
+
 
 
 ;; ido conf
@@ -1728,16 +1725,6 @@
 ;; Truncate lines
 (setq helm-truncate-lines 1)
 
-;; Slower performance
-;; (setq helm-candidate-number-limit 10000)
-
-;; Don't follow
-;; (setq helm-follow-mode-persistent nil)
-;; (custom-set-variables
-;;  '(helm-follow-mode-persistent nil))
-;; (setq helm-follow-mode-persistent nil)
-
-
 ;; ---------------- swiper
 (require 'swiper)
 (use-package counsel
@@ -1772,33 +1759,6 @@
 
 
 
-;; ---------------- helm-swoop
-;; (require 'helm-swoop)
-;; (setq helm-split-window-in-side-p t
-;;       helm-always-two-windows nil)
-
-;; ;; Split the curent window (solve lot of problems (buffer show in wrong place sometimes (inside neotree for example)))
-;; (setq helm-swoop-split-with-multiple-windows t)
-
-;; ;; Keep buffer colorized, if slow, go back to nil value
-;; (setq helm-swoop-speed-or-color t)
-
-;; ;; If you prefer fuzzy matching (yes i do) - update : (no i don't want tro peut precis)
-;; (setq helm-swoop-use-fuzzy-match nil)
-
-;; ;; Disable pre-input (most of the time annoying) - 
-;; ;; Update 1 : keep default
-;; ;; Update 2 : yes it is annoying
-
-;; (setq helm-swoop-pre-input-function
-;;       (lambda () ""))
-
-;; ;; (setq helm-swoop-pre-input-function
-;; ;;       (lambda () (thing-at-point 'symbol)))
-
-;; ;; If nil, you can slightly boost invoke speed in exchange for text color
-;; ;; Update : Feels better without colours (and faster)
-;; (setq helm-swoop-speed-or-color nil)
 
 ;; ---------------- resize-window
 (require 'resize-window)

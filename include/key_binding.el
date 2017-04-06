@@ -9,16 +9,16 @@
 (define-key key-translation-map (kbd "ESC") (kbd "C-g"))
 (define-key ivy-minibuffer-map (kbd "<escape>") 'minibuffer-keyboard-quit)
 
-(defun vc-diff-conf ()
- "For use in 'vc-diff-mode-hook"
- (local-set-key [(meta shift p)] 'helm-M-x)
-)
-(add-hook 'diff-mode-hook 'vc-diff-conf)
+;; (defun vc-diff-conf ()
+;;  "For use in 'vc-diff-mode-hook"
+;;  (local-set-key [(meta shift p)] 'helm-M-x)
+;; )
+;; (add-hook 'diff-mode-hook 'vc-diff-conf)
 
-(defun ag-mode-conf ()
- (local-set-key (kbd "k") 'helm-M-x)
-)
-(add-hook 'diff-mode-hook 'ag-mode-conf)
+;; (defun ag-mode-conf ()
+;;  (local-set-key (kbd "k") 'helm-M-x)
+;; )
+;; (add-hook 'diff-mode-hook 'ag-mode-conf)
 
 
 (use-package evil-mc
@@ -35,24 +35,11 @@
 ;; -- Evil leader key commands
 (evil-leader/set-leader "<SPC>")
 
-;; -- M-x
-(evil-leader/set-key "<SPC>" 'helm-M-x) ;; Double space for main emacs menu
-;; (evil-leader/set-key "x" 'helm-M-x) 
 
 ;; -- magit
 (evil-leader/set-key "ms" 'magit-status)
 
-;; -- Projectile
-;; (evil-leader/set-key "pp" 'helm-projectile-switch-project)
-;; (evil-leader/set-key "pf" 'helm-projectile-find-file)
-
-;; -- (evil-leader/set-key "br" 'helm-recentf)
-;; (evil-leader/set-key "r" 'helm-swoop)
-;; (evil-leader/set-key "e" 'swiper-helm) ;; Alternative to helm-swoop, lets see with time which is better
-
 (evil-leader/set-key "e" 'imenu-anywhere)
-(evil-leader/set-key "ff" 'helm-find-files)
-(evil-leader/set-key "fa" 'helm-ag)
 
 (evil-leader/set-key "fq" 'ag-files)
 
@@ -81,7 +68,6 @@
 (evil-leader/set-key "vrd" 'vc-root-diff)
       
 ;; -- Buffer [b]
-(evil-leader/set-key "bl" 'helm-mini)
 (evil-leader/set-key "bb" 'list-buffers)
 (evil-leader/set-key "bn" 'evil-buffer-new)
 (evil-leader/set-key "bk" 'kill-this-buffer)
@@ -235,30 +221,19 @@
 
 ;; Helm
 (global-set-key (kbd "C-c h") 'helm-command-prefix)
-(global-set-key (kbd "C-x C-d") 'duplicate-current-line-or-region)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
-;; (global-set-key (kbd "C-x C-p") 'helm-projectile)
 (global-set-key (kbd "C-x b") 'helm-mini)
+
+;; ---
 (global-set-key (kbd "M-c") 'kill-ring-save)
 (global-set-key (kbd "M-c") 'kill-ring-save)
 (global-set-key (kbd "M-Ò") 'save-some-buffers) ;; (command + alt + s)
-
-;; (global-set-key (kbd "M-c") 'whole-line-or-region-copy-region-as-kill)
-;; (global-set-key (kbd "C-M-j") 'move-line-region-down)
-;; (global-set-key (kbd "C-M-k") 'move-line-region-up)
-;; (global-set-key (kbd "C-M-n") 'move-line-region-down)
-;; (global-set-key (kbd "C-M-p") 'move-line-region-up)
+(global-set-key (kbd "C-x C-d") 'duplicate-current-line-or-region)
 
 (global-set-key (kbd "C-M-J") 'drag-stuff-down)
 (global-set-key (kbd "C-M-k") 'drag-stuff-up)
 (define-key php-mode-map (kbd "C-M-J") 'drag-stuff-down) ;; override php mode map cmj
 
-;; (add-hook 'php-mode-hook
-;;           (interactive)
-;;           (global-set-key (kbd "C-M-J") 'drag-stuff-down)
-;; (global-set-key (kbd "C-M-k") 'drag-stuff-up)
-
-;; )
 
 
 ;; (global-set-key (kbd "C-M-n") 'move-line-region-down)
@@ -268,23 +243,16 @@
 
 
 
-;; (global-set-key [(meta shift p)] 'helm-M-x)
 ;; (global-set-key [(meta shift p)] 'smex)
 (global-set-key [(meta shift p)] 'counsel-M-x)
 
 ;; (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-x") 'counsel-M-x)
-;; (global-set-key (kbd "M-X") 'smex-major-mode-commands)
-;; ;; This is your old M-x.
-;; (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
 
 
 
 ;; Sublime Text go to anything
-;; (global-set-key (kbd "π") 'helm-projectile-find-file) ;; ALT+P
-;; (global-set-key (kbd "π") 'helm-projectile-find-file-dwim) ;; ALT+P
-;; (global-set-key (kbd "π") 'helm-projectile-find-file) ;; ALT+P
 (global-set-key (kbd "π") 'projectile-find-file) ;; ALT+P
 
 
@@ -296,35 +264,26 @@
 
 ;; 
 (global-set-key (kbd "M-v") 'yank)
-;; (global-set-key (kbd "M-v") 'whole-line-or-region-yank)
-(global-set-key [(meta shift v)] 'helm-show-kill-ring)
 
-;; (global-set-key (kbd "M-x") 'kill-whole-line)
 (global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
 (global-set-key (kbd "M-z") 'undo-tree-undo)
 (global-set-key (kbd "M-w")  'kill-this-buffer)
 
 ;; Filter buffer / Get buffer definitions
-;; (global-set-key [(meta r)]  'helm-semantic-or-imenu) ;; command + r
 (global-set-key [(meta r)]  'counsel-imenu) ;; command + r
-;; (global-set-key [(meta shift r)] 'helm-swoop) ;; command + shift + r
 (global-set-key [(meta shift r)] 'swiper) ;; command + shift + r : Update : Switch to swiper (lighter / faster)
-(global-set-key (kbd "®") 'helm-imenu-anywhere) ;; alt + r
 
 ;; Files / Browse files / Browse buffer 
-;; (global-set-key (kbd "M-o")  'helm-find-files)
 ;; (global-set-key (kbd "M-o")  'ido-find-file)
 ;; (global-set-key (kbd "M-o")  'counsel-find-file)
 (global-set-key (kbd "C-x o")  'counsel-find-file)
 (global-set-key (kbd "œ")  'projectile-dired) ;; alt+o
 (global-set-key (kbd "M-œ")  'neotree-find) ;; CMD+ALT+o
 
-;; (global-set-key [(meta shift o)]  'helm-mini)
 (global-set-key [(meta shift o)] 'ivy-switch-buffer)
 
 
 
-;; (global-set-key (kbd "M-d")  'mc/mark-next-like-this) ;; Cannot be setted, (emacs backward delete word)
 
 ;; Edit : Desactivation, il m arrive trop souvent de faire des M-n
 ;; pour scroller
@@ -349,7 +308,6 @@
 (global-set-key (kbd "M-·") 'helm-do-grep-ag) ;; (cmd + alt + shift + f)
 
 ;; window
-;; (global-set-key [(meta x)] 'helm-M-x) ;; Doesn t work
 (global-set-key [(meta shift w)] 'delete-window)
 
 ;; comment
@@ -372,18 +330,6 @@
 (global-set-key [(meta control shift a)] 'mark-whole-buffer)
 
 
-;; (global-set-key (kbd "M-y") 'helm-show-kill-ring) ;; Update : Pas forcement tip top
-;; (global-set-key [(meta shift d)] 'duplicate-line)
-;;(global-set-key (kbd "M-d") 'mc/mark-next-like-this) ;; Cannot be setted, because meta+d means delete word in emacs (and it is very usefull)
-;;(global-set-key (kbd "M-q") 'save-buffers-kill-terminal)
-
-
-;; tab nav
-;; update : navigation through tabbar plugin
-;; update 2 : go back to default vanilla prev / next buffer
-;; (global-set-key [M-s-left] 'tabbar-backward)
-;; (global-set-key [M-s-right] 'tabbar-forward)
-
 
 (global-set-key [C-S-tab] 'previous-buffer)
 (global-set-key [C-tab] 'next-buffer) 
@@ -399,25 +345,14 @@
 ;; open line
 (global-set-key [(M shift return)] 'smart-open-line-above)
 (global-set-key [(M return)] 'smart-open-line)
-;; (global-set-key [(M shift return)] 'evil-open-above)
-;; (global-set-key [(M return)] 'evil-open-above)
 
 ;; avy go to word
 (global-set-key (kbd "C-x C-s") 'avy-goto-word-or-subword-1)
 
 
-;; magit
-;; (define-key magit-mode-map "C-c a" 'magit-section-toggle)
-
-
-;; (define-key magit-popup-mode-map (kbd "C-c h") 'magit-section-toggle)
-;; (define-key magit-popup-mode-map (kbd "C-c h") 'magit-section-toggle)
-
 
 (global-set-key [(meta π)] 'projectile-switch-project) ;; (commande + alt + p
 
-;; Sorting
-;;(global-set-key (kbd "M-s l") 'sort-lines) 
 
 ;; Align your code in a pretty way.
 (global-set-key (kbd "C-x \\") 'align-regexp)

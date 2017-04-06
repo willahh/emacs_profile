@@ -40,7 +40,10 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
   
 
 ## A ranger
-- [ ] Ivy : Utiliser TAB pour valider (au lieu de saisir /)
+- [x] Ivy : Meilleur support  fuzzy
+- [x] Ivy mettre le matche le plus proche en premier
+      https://www.reddit.com/r/emacs/comments/3xzas3/help_with_ivycounsel_fuzzy_matching_and_sorting/
+- [ ] Voir pour faire des opérations avec les fichiers / dossiers 
 - [ ] (plugin pour le liste) : Ne pas mettre les fichiers .svn dans la liste
 - [ ] [plugin] [change inner] Ajoute rl'option Change Inner Tag
 

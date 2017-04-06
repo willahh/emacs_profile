@@ -255,15 +255,6 @@ scroll-step 1)
 
 
 
-;; ---------------- Dired
-(require 'dired)
-(require 'dash)
 
-;; Make dired less verbose
-;; Update : Non available on Melpa
-
-;; (require 'dired-details)
-;; (setq-default dired-details-hidden-string "--- ")
-;; (dired-details-install)
 
 
