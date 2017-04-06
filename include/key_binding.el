@@ -132,7 +132,7 @@
 
 
 ;; (global-set-key (kbd "C-M-b") 'backward-sexp) ; rebind backward-sexp (default)
-;; (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
+(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
 ;; (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB work in terminal
 ;; (define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
 
@@ -381,7 +381,7 @@
 
 ;; iy-go-to-char (awesoooooome VIM LIKE "f")
 (global-set-key (kbd "C-c f") 'iy-go-to-char)
-(global-set-key (kbd "C-c F") 'iy-go-to-char-b)
+(global-set-key (kbd "C-c F") 'iy-go-to-char-backward)
 
 
 ;; change-inner like VIM ci 

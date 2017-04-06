@@ -40,17 +40,41 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
   
 
 ## A ranger
-- [x] Ivy : Meilleur support  fuzzy
-- [x] Ivy mettre le matche le plus proche en premier
-      https://www.reddit.com/r/emacs/comments/3xzas3/help_with_ivycounsel_fuzzy_matching_and_sorting/
-- [ ] Voir pour faire des opérations avec les fichiers / dossiers 
+- [x] ctrl+s --> La regex ne convient pas du tout
+
+- [ ] Auto center :
+      [x] [Highlight next / prev]
+      [ ] [helm-ag] Go to
+      [x] [swiper]
+      [ ] [imenu]
+      [ ] [ag] Search result buffer
+      [ ] [highlight-nav]
+
+
+- [ ] mini buffer ivy - CTRL+l to back up
+      Exemple : customize g
+
+
 - [ ] (plugin pour le liste) : Ne pas mettre les fichiers .svn dans la liste
 - [ ] [plugin] [change inner] Ajoute rl'option Change Inner Tag
 
-## Bloquant
-- [ ] [ido-switch-buffer] : Afficher le chemin des fichiers
 
-- [ ] [multi-cursor] Integrer le Meta+mouse1 click pour avoir un curseur multiple
+- [x] iy-go-to-char-b ne fonctionne pas 
+- [x] Ivy tab auto complete
+- [x] helm-mode semble utilisé partout, voir pour le remplacer par ivy
+- [x] Ivy : Meilleur support  fuzzy
+- [x] Ivy mettre le matche le plus proche en premier
+      https://www.reddit.com/r/emacs/comments/3xzas3/help_with_ivycounsel_fuzzy_matching_and_sorting/
+- [x] Voir pour faire des opérations avec les fichiers / dossiers 
+
+
+## Bloquant
+
+
+
+
+## Majeur
+- [ ] [ido-switch-buffer] : Afficher le chemin des fichiers
 
 - [ ] [IMPORTANT] Fonction get file name to clipboard (très utilisé)
 - [ ] [vc-dir] Faire une fonction pour activer un vc-version-diff avec les paramètres older revision : "base", newer revision : "head"
@@ -61,11 +85,10 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] Ouverture fichier : Avoir de meilleurs perfs
 
 
-## Majeur
-- [ ] Auto center :
-      [x] [Highlight next / prev]
-      [ ] [imenu]
-      [ ] [ag] Search result buffer
+- [ ] M-x Ajouter les entrees récentes en haut
+- [ ] [multi-cursor] Integrer le Meta+mouse1 click pour avoir un curseur multiple
+
+
 
 - [ ] [web-mode] Commentaire : Le script de commentaire ne semble pas bien
 - [ ] CSS Validateur !!
@@ -76,6 +99,9 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 - [ ] [php-mode] completion add current buffer keyword candidates
 - [ ] [php-mode] Meta shift e est surcharge
+
+
+
 
 - [ ] echantillon/fract.js long a l ouverture
 

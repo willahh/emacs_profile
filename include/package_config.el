@@ -1622,6 +1622,9 @@
 (ido-vertical-mode 1)
 (setq ido-vertical-define-keys 'C-n-and-C-p-only)
 
+(require 'flx)
+
+
 ;; Try out flx-ido for better flex matching between words
 (require 'flx-ido)
 (flx-ido-mode 1)
@@ -1662,12 +1665,28 @@
 
 ;; ivy config
 ;; https://oremacs.com/2016/01/06/ivy-flx/
-(setq ivy-re-builders-alist
-      '((ivy-switch-buffer . ivy--regex-plus)
-        (t . ivy--regex-fuzzy)))
+;; (setq ivy-re-builders-alist
+;;       '((ivy-switch-buffer . ivy--regex-plus)
+;;         (t . ivy--regex-fuzzy)))
+
+;; https://www.reddit.com/r/emacs/comments/51lqn9/helm_or_ivy/d7d34il/
+;; (setq ivy-re-builders-alist '((t . ivy--regex-fuzzy)))
 
 (setq ivy-initial-inputs-alist nil)
 
+
+; Use Enter on a directory to navigate into the directory, not open it with dired.
+(define-key ivy-minibuffer-map (kbd "C-m") 'ivy-alt-done)
+(define-key ivy-minibuffer-map (kbd "<tab>") 'ivy-alt-done)
+;; (define-key ivy-minibuffer-map (kbd "C-b") 'ivy-previous-history-element)
+;; (define-key ivy-minibuffer-map (kbd "C-b") 'ivy-previous-line)
+;; (define-key ivy-minibuffer-map (kbd "C-b") 'ivy-previous-line-and-call)
+
+
+;; (ivy-pra)
+
+; Let projectile use ivy
+(setq projectile-completion-system 'ivy)
 
 
 ;; ido conf
@@ -1749,8 +1768,20 @@
     (define-key read-expression-map (kbd "C-r") 'counsel-expression-history)
     ))
 
+;; advise swiper to recenter on exit
+(defun bjm-swiper-recenter (&rest args)
+  "recenter display after swiper"
+  (recenter))
+
+(advice-add 'swiper :after #'bjm-swiper-recenter)
 
 
+
+;; Echec
+;; (defun compile-goto-error-recenter (&optional EVENT)
+;;   (recenter))
+
+;; (advice-add 'compile-goto-error :after #'compile-goto-error-recenter)
 
 
 
