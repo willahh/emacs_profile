@@ -19,7 +19,7 @@
 
 
 ;; highlight-chars
-(require 'highlight-chars)
+;; (require 'highlight-chars)
 
 
 ;; (defun my-find-file-check-make-large-file-read-only-hook ()
@@ -200,13 +200,6 @@
 
 
 
-;; ----- nlinum
-(require 'nlinum)
-(add-hook 'prog-mode-hook 'nlinum-mode)
-;; (add-hook 'html-mode-hook 'nlinum-mode 1) 
-;; (add-hook 'actionscript-mode-hook 'nlinum-mode 1)
-(add-hook 'fundamental-mode 'nlinum-mode 1)
-(add-hook 'fundamental-mode-abbrev-table 'nlinum-mode 1)
 
 
 ;; ----- nlinum-relative
@@ -278,7 +271,7 @@
 
 
 ;; imenu-anywhere
-(require 'imenu-anywhere)
+;; (require 'imenu-anywhere)
 
 
 
@@ -1208,10 +1201,10 @@
 ;; ~/.tern-config file is used globally instead
 (setq tern-command '("tern" "--no-port-file"))
 
-(eval-after-load 'tern
-   '(progn
-      (require 'tern-auto-complete)
-      (tern-ac-setup)))
+;; (eval-after-load 'tern
+;;    '(progn
+;;       (require 'tern-auto-complete)
+;;       (tern-ac-setup)))
 
 
 
@@ -1404,12 +1397,12 @@
 ;; smart-forward
 ;; Javascript smart navigation
 ;; A voir ...
-(require 'smart-forward)
+;; (require 'smart-forward)
 
-(global-set-key (kbd "M-<up>") 'smart-up)
-(global-set-key (kbd "M-<down>") 'smart-down)
-(global-set-key (kbd "M-<left>") 'smart-backward)
-(global-set-key (kbd "M-<right>") 'smart-forward)
+;; (global-set-key (kbd "M-<up>") 'smart-up)
+;; (global-set-key (kbd "M-<down>") 'smart-down)
+;; (global-set-key (kbd "M-<left>") 'smart-backward)
+;; (global-set-key (kbd "M-<right>") 'smart-forward)
 
 ;; evil mode    
 (require 'evil)
@@ -1694,24 +1687,25 @@
 
 
 ;; ---------------- helm
-(require 'helm) 
+;; (require 'helm) 
 (require 'helm-config)
+(require 'helm-ag)
 
 ;;
-(helm-mode 1)
+;; (helm-mode 1)
 
 ;; -
-(when (executable-find "curl")
-  (setq helm-google-suggest-use-curl-p t))
+;; (when (executable-find "curl")
+;;   (setq helm-google-suggest-use-curl-p t))
 
-(setq helm-split-window-in-side-p           t ; open helm buffer inside current window, not occupy whole other window
-      helm-move-to-line-cycle-in-source     t ; move to end or beginning of source when reaching top or bottom of source.
-      helm-ff-search-library-in-sexp        t ; search for library in `require' and `declare-function' sexp.
-      helm-scroll-amount                    8 ; scroll 8 lines other window using M-<next>/M-<prior>
-      helm-ff-file-name-history-use-recentf t
-      helm-echo-input-in-header-line t)
+;; (setq helm-split-window-in-side-p           t ; open helm buffer inside current window, not occupy whole other window
+;;       helm-move-to-line-cycle-in-source     t ; move to end or beginning of source when reaching top or bottom of source.
+;;       helm-ff-search-library-in-sexp        t ; search for library in `require' and `declare-function' sexp.
+;;       helm-scroll-amount                    8 ; scroll 8 lines other window using M-<next>/M-<prior>
+;;       helm-ff-file-name-history-use-recentf t
+;;       helm-echo-input-in-header-line t)
 
-;; Size
+;; ;; Size
 (setq helm-autoresize-max-height 800)
 (setq helm-autoresize-min-height 600) ;; Important
 
@@ -2051,3 +2045,15 @@ then `diff-jump-to-old-file' is also set, for the next invocations."
 
 
 ;; (define-key compilation-button-map (kbd "RET") 'my-compile-goto-error)
+
+
+;; ----- nlinum
+(require 'nlinum)
+
+;; (add-hook 'prog-mode-hook 'nlinum-mode)
+;; (add-hook 'html-mode-hook 'nlinum-mode 1) 
+;; (add-hook 'actionscript-mode-hook 'nlinum-mode 1)
+;; (add-hook 'fundamental-mode 'nlinum-mode 1)
+;; (add-hook 'fundamental-mode-abbrev-table 'nlinum-mode 1)
+
+(add-hook 'prog-mode-hook 'nlinum-mode)

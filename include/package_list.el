@@ -2,7 +2,8 @@
 (setq package-list '(
   ;; helm-hunks                     
   ;; evil-snipe
-   powerline
+  powerline
+  undo-tree
   ;; perspective
   ;; smart-mode-line ;; (sml -> activated)
   ;; spaceline
@@ -14,7 +15,7 @@
   json-mode
   company-tern
   company-quickhelp
-  highlight-chars
+  ;; highlight-chars
   drag-stuff
   clean-aindent-mode
   actionscript-mode
@@ -40,8 +41,9 @@
   ;; golden-ratio
   ace-window
   ag
-  rainbow-delimiters
-  anything
+  
+  ;; rainbow-delimiters
+  ;;anything
   async
   auto-complete
   highlight-symbol
@@ -51,7 +53,8 @@
   
   avy
   avy-menu
-  color-theme-buffer-local 
+
+  ;; color-theme-buffer-local 
   dash
   diff-hl
   doom-themes
@@ -72,23 +75,23 @@
   exec-path-from-shell
   expand-region
   eyebrowse
-  general
+  ;; general
   git-gutter
   
-  helm
-  helm-ag
-  helm-anything
-  helm-company
-  helm-core
-  ;; helm-projectile
-  helm-swoop
+  ;; helm
+  ;; helm-ag
+  ;; helm-anything
+  ;; helm-company
+  ;; helm-core
+  ;; ;; helm-projectile
+  ;; helm-swoop
 
-  imenu-anywhere
+  ;;imenu-anywhere
   js-comint
-  js-doc
+  ;; js-doc
   js2-mode
   key-chord
-  leuven-theme
+  ;; leuven-theme
   magit
   magit-popup
   markdown-mode
@@ -102,20 +105,19 @@
   ;; psvn
   resize-window
   skewer-mode
-  smart-forward
+  ;; smart-forward
   ;; smart-tab
 
   counsel
 
   sml-mode
   swiper
-  swiper-helm
+  ;; swiper-helm
   tern
 
   zop-to-char
 
-  tern-auto-complete
-  undo-tree
+  ;; tern-auto-complete
   use-package
   web-beautify
   which-key
@@ -126,7 +128,7 @@
 
 
 
-  all-the-icons
+  ;; all-the-icons
   js2-refactor
   ace-jump-mode
   ;;emacs-powerline
@@ -143,7 +145,10 @@
 
 
   ))
-; 
+;
+(add-to-list 'load-path "~/.emacs.d/plugins/emacs-async")
+(add-to-list 'load-path "~/.emacs.d/plugins/helm")
+(add-to-list 'load-path "~/.emacs.d/plugins/emacs-helm-ag")
 (add-to-list 'load-path "~/.emacs.d/plugins/alltheicons/")
 (add-to-list 'load-path "~/.emacs.d/plugins/emacs-powerline")
 (add-to-list 'load-path "~/.emacs.d/plugins/webmode")

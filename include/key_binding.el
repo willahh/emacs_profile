@@ -9,17 +9,6 @@
 (define-key key-translation-map (kbd "ESC") (kbd "C-g"))
 (define-key ivy-minibuffer-map (kbd "<escape>") 'minibuffer-keyboard-quit)
 
-;; (defun vc-diff-conf ()
-;;  "For use in 'vc-diff-mode-hook"
-;;  (local-set-key [(meta shift p)] 'helm-M-x)
-;; )
-;; (add-hook 'diff-mode-hook 'vc-diff-conf)
-
-;; (defun ag-mode-conf ()
-;;  (local-set-key (kbd "k") 'helm-M-x)
-;; )
-;; (add-hook 'diff-mode-hook 'ag-mode-conf)
-
 
 (use-package evil-mc
   :bind (:map evil-mc-key-map
@@ -39,12 +28,12 @@
 ;; -- magit
 (evil-leader/set-key "ms" 'magit-status)
 
-(evil-leader/set-key "e" 'imenu-anywhere)
+;;(evil-leader/set-key "e" 'imenu-anywhere)
 
 (evil-leader/set-key "fq" 'ag-files)
 
 ;; -- window [w]
-(evil-leader/set-key "w" 'resize-window)
+;; (evil-leader/set-key "w" 'resize-window)
 
 ;; -- Shell [s]
 (evil-leader/set-key "ss" 'shell) 
@@ -59,13 +48,12 @@
 (evil-leader/set-key "ve" 'vc-ediff) 
 (evil-leader/set-key "vve" 'vc-version-ediff) 
 (evil-leader/set-key "vvd" 'vc-version-diff) 
-(evil-leader/set-key "vrd" 'vc-root-diff)
 (evil-leader/set-key "vrl" 'vc-print-root-log)
 (evil-leader/set-key "vc" 'vc-next-action) ;; Command for commit 80% of the time
 (evil-leader/set-key "vrr" 'vc-revert)
 (evil-leader/set-key "vl" 'vc-print-log)
 (evil-leader/set-key "vu" 'vc-update)
-(evil-leader/set-key "vrd" 'vc-root-diff)
+;; (evil-leader/set-key "vrd" 'vc-root-diff)
       
 ;; -- Buffer [b]
 (evil-leader/set-key "bb" 'list-buffers)
@@ -144,9 +132,9 @@
 
 
 ;; (global-set-key (kbd "C-M-b") 'backward-sexp) ; rebind backward-sexp (default)
-(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
-(define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB work in terminal
-(define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
+;; (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
+;; (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB work in terminal
+;; (define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
 
 
 ;; Dired
@@ -220,9 +208,9 @@
 
 
 ;; Helm
-(global-set-key (kbd "C-c h") 'helm-command-prefix)
-(global-set-key (kbd "C-x C-f") 'helm-find-files)
-(global-set-key (kbd "C-x b") 'helm-mini)
+;; (global-set-key (kbd "C-c h") 'helm-command-prefix)
+;; (global-set-key (kbd "C-x C-f") 'helm-find-files)
+;; (global-set-key (kbd "C-x b") 'helm-mini)
 
 ;; ---
 (global-set-key (kbd "M-c") 'kill-ring-save)
@@ -301,7 +289,6 @@
 
 ;; Les deux plus utiles (selon moi)
 (global-set-key (kbd "ƒ") 'helm-ag) ;; (alt + f)
-;; (global-set-key (kbd "ƒ") 'counsel-ag) ;; (alt + f)
 (global-set-key (kbd "M-ƒ") 'ag-project) ;; (cmd + alt  + f)
 
 ;; Puis celle ci
