@@ -927,20 +927,6 @@
 
 
 
-;; Emmet
-(require 'emmet-mode)
-(add-hook 'sgml-mode-hook 'emmet-mode)
-(add-hook 'css-mode-hook  'emmet-mode)
-
-(add-hook 'web-mode-hook 'emmet-mode)
-;; (add-hook 'web-mode-hook 'emmet-preview-mode)
-
-(add-hook 'php-mode-hook  'emmet-mode) ;; Edit : peut poser des problemes, a voir
-;; (add-hook 'php-mode-hook 'emmet-preview-mode)
-
-
-
-
 
 
 
@@ -1169,6 +1155,10 @@
 
 
 
+
+
+
+
 ;; php-refactor
 ;; (require 'php-refactor-mode)
 ;; (add-hook 'php-mode-hook 'php-refactor-mode)
@@ -1215,6 +1205,8 @@
 (add-to-list 'company-backends 'company-tern)
 
 
+(require 'company-web)
+(require 'company-web-html)
 
 
 
@@ -2088,3 +2080,20 @@ then `diff-jump-to-old-file' is also set, for the next invocations."
 ;; (add-hook 'fundamental-mode-abbrev-table 'nlinum-mode 1)
 
 (add-hook 'prog-mode-hook 'nlinum-mode)
+
+
+
+
+
+
+
+
+
+
+
+;; Emmet
+(require 'emmet-mode)
+(add-hook 'sgml-mode-hook 'emmet-mode)
+(add-hook 'css-mode-hook  'emmet-mode)
+(add-hook 'web-mode-hook 'emmet-mode)
+(add-hook 'php-mode-hook  'emmet-mode) ;; Edit : peut poser des problemes, a voir

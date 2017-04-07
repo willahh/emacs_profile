@@ -15,6 +15,7 @@
   json-mode
   company-tern
   company-quickhelp
+  company-web
   ;; highlight-chars
   drag-stuff
   clean-aindent-mode

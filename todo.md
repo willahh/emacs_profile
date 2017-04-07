@@ -40,9 +40,14 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
   
 
 ## A ranger
+- [ ] [web-mode] [company] Add php keyword ($_POST etc)
+- [ ] [highlight-mode] N est plus present (ainsi que highlight-nav-mode)
 - [x] ctrl+s --> La regex ne convient pas du tout
-
+- [ ] Nouvelle ligne dans un bloc de commentaire : Commencer avec une *
+- [ ] Activer les urls clicable dans les differents modes
+- [ ] Emmet mode in [web-mode]
 - [ ] Auto center :
+      [ ] [go to line (M-g M-g]
       [x] [Highlight next / prev]
       [ ] [helm-ag] Go to
       [x] [swiper]
