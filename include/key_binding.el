@@ -298,7 +298,14 @@
 (global-set-key [(meta shift w)] 'delete-window)
 
 ;; comment
+;; Update : evilnc-comment-or-uncomment-lines  fait des commentaires bizarres (en mode html plusieurs imbrications de commentaire html au lieu d un seul)
+;; Update : comment-region ne fonctionne pas bien en mode css
+
+;; (global-set-key [(meta /)] 'evilnc-comment-or-uncomment-lines)
+;; (global-set-key [(meta /)] 'comment-region)
 (global-set-key [(meta /)] 'evilnc-comment-or-uncomment-lines)
+
+
 ;; (global-set-key [(meta shift d)] 'duplicate-current-line-or-region)
 (global-set-key [(meta shift d)] 'duplicate-start-of-line-or-region)
 (global-set-key [(meta shift z)] 'undo-tree-redo)

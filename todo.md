@@ -39,13 +39,17 @@ http://ecb.sourceforge.net/
 https://www.youtube.com/watch?v=KoRNCrx9pak
   
 
-## A ranger
-- [ ] [web-mode] [company] Add php keyword ($_POST etc)
+
+## Bloquant
+- [ ] Emmet mode in [web-mode]
 - [ ] [highlight-mode] N est plus present (ainsi que highlight-nav-mode)
-- [x] ctrl+s --> La regex ne convient pas du tout
+
+
+## A ranger
+- [ ] M-DEL --> Suppression de tous les caracteres vides
+- [ ] [web-mode] [company] Add php keyword ($_POST etc)
 - [ ] Nouvelle ligne dans un bloc de commentaire : Commencer avec une *
 - [ ] Activer les urls clicable dans les differents modes
-- [ ] Emmet mode in [web-mode]
 - [ ] Auto center :
       [ ] [go to line (M-g M-g]
       [x] [Highlight next / prev]
@@ -62,19 +66,6 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 - [ ] (plugin pour le liste) : Ne pas mettre les fichiers .svn dans la liste
 - [ ] [plugin] [change inner] Ajoute rl'option Change Inner Tag
-
-
-- [x] iy-go-to-char-b ne fonctionne pas 
-- [x] Ivy tab auto complete
-- [x] helm-mode semble utilisé partout, voir pour le remplacer par ivy
-- [x] Ivy : Meilleur support  fuzzy
-- [x] Ivy mettre le matche le plus proche en premier
-      https://www.reddit.com/r/emacs/comments/3xzas3/help_with_ivycounsel_fuzzy_matching_and_sorting/
-- [x] Voir pour faire des opérations avec les fichiers / dossiers 
-
-
-## Bloquant
-
 
 
 
@@ -243,7 +234,18 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] git-svn
 
 
+
 ## Corrige 
+- [x] ctrl+s --> La regex ne convient pas du tout
+- [x] iy-go-to-char-b ne fonctionne pas 
+- [x] Ivy tab auto complete
+- [x] helm-mode semble utilisé partout, voir pour le remplacer par ivy
+- [x] Ivy : Meilleur support  fuzzy
+- [x] Ivy mettre le matche le plus proche en premier
+      https://www.reddit.com/r/emacs/comments/3xzas3/help_with_ivycounsel_fuzzy_matching_and_sorting/
+- [x] Voir pour faire des opérations avec les fichiers / dossiers 
+
+
 - [x] [magit] [key TAB] La fonction toggle est surchargee, il faut la remettre
 - [x] Change keybinding zz and ZZ (fuzzy word)
 - [x] [ido] Escape : Leave
