@@ -377,7 +377,7 @@
 
 
 
-(add-hook 'after-init-hook 'global-company-mode)
+(add-hook 'after-init-hook 'global-company-mode) ;
 
 
 
@@ -986,6 +986,12 @@
 (define-key php-mode-map [tab] #'tab-indent-or-complete)
 (define-key php-mode-map [(meta shift e)] #'forward-sentence)
 
+;; Add compay-ac-php for company backend
+(add-to-list 'company-backends 'company-ac-php-backend)
+
+;; Add M-. key for jump to definition
+(define-key php-mode-map (kbd "M-.") 'ac-php-find-symbol-at-point)
+
 
 
 ;; php-eldoc
@@ -1014,11 +1020,16 @@
 ;;              (add-to-list 'company-backends 'company-ac-php-backend )))
 
 
-(add-hook 'php-mode-hook
-          '(lambda ()
-             (require 'company-php)
-             (company-mode t)
-             (ac-php-core-eldoc-setup ))) ;; enable eldoc
+;; (add-hook 'php-mode-hook
+;;           '(lambda ()
+;;              (require 'company-php)
+;;              (company-mode t)
+;;              (ac-php-core-eldoc-setup ))) ;; enable eldoc
+
+
+
+
+
 
 
 
@@ -1381,8 +1392,11 @@
 ;; (setq mc/always-run-for-all 1)
 (setq mc/always-run-for-all nil)
 
-
-
+;; Multiple-curspr with mouse
+;; http://pragmaticemacs.com/emacs/add-multiple-cursors-with-mouse-clicks/
+(use-package multiple-cursors
+  :ensure t
+  :bind (("C-S-<mouse-1>" . mc/add-cursor-on-click)))
 
 
 

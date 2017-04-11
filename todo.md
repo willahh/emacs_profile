@@ -6,13 +6,13 @@
 
 
 ## Utils
-- C-x r t (string rectangle) : Voir plus en détail
+- C-x r t (string rectangle)
 - evil mode : ":new file.extension" -> Create new buffer/file/window
 - evil mode : "gf" ("go to file")
 - Sublime merge lines -> Evil gJ
 - [M+S+;] ---> xref-find-definitions (natif) 
 - dired-jump (C-x C-j) : Jump directly to dired from file
-
+- New line with comment M-j
 - Revert hunk (depuis vc-diff) :
   - C-c C-r (diff-reverse-direction)
   - C-C C-a (diff-apply-hunk)
@@ -26,9 +26,6 @@
 
 
 ## Notes :
-  - Comportement native lorsques de longues lignes de textes sont presentes sans retour a la ligne
-    https://www.emacswiki.org/emacs/FindLongLines
-
 PHP checker
 http://daniel-bush.blogspot.fr/2014/12/emacs-flycheck-and-jshint-and-other.html
 phpcs
@@ -49,7 +46,8 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 ## A ranger
 - [ ] [counsel] m-x : Changer la regexp dans ce mode
 - [x] [web-mode] [company] Add php keyword ($_POST etc)
-- [ ] Nouvelle ligne dans un bloc de commentaire : Commencer avec une *
+- [x] Nouvelle ligne dans un bloc de commentaire : Commencer avec une *
+      -> Natif : M-j
 - [ ] Activer les urls clicable dans les differents modes
 - [ ] Auto center :
       [ ] [go to line (M-g M-g]
@@ -64,10 +62,8 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] mini buffer ivy - CTRL+l to back up
       Exemple : customize g
 
-
 - [ ] (plugin pour le liste) : Ne pas mettre les fichiers .svn dans la liste
 - [ ] [plugin] [change inner] Ajoute rl'option Change Inner Tag
-
 
 
 ## Majeur
@@ -83,7 +79,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 
 - [ ] M-x Ajouter les entrees récentes en haut
-- [ ] [multi-cursor] Integrer le Meta+mouse1 click pour avoir un curseur multiple
+- [x] [multi-cursor] Integrer le Meta+mouse1 click pour avoir un curseur multiple
 
 
 
