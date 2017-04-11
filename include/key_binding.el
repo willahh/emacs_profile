@@ -292,7 +292,8 @@
 (global-set-key (kbd "M-ƒ") 'ag-project) ;; (cmd + alt  + f)
 
 ;; Puis celle ci
-(global-set-key (kbd "M-·") 'helm-do-grep-ag) ;; (cmd + alt + shift + f)
+;; (global-set-key (kbd "M-·") 'helm-do-grep-ag) ;; (cmd + alt + shift + f)
+(global-set-key (kbd "M-·") 'helm-ag-project-root) ;; (cmd + alt + shift + f)
 
 ;; window
 (global-set-key [(meta shift w)] 'delete-window)
