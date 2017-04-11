@@ -723,6 +723,13 @@
 
 
 
+;; rainbow-mode (css color)
+(require 'rainbow-mode)
+
+;;; Colourise CSS colour 
+(dolist (hook '(css-mode-hook html-mode-hook sass-mode-hook))
+    (add-hook hook 'rainbow-mode))
+
 
 ;; dsvn conf
 ;; Besoin : Avoir des commandes svn non disponible par default comme svn status
@@ -928,8 +935,13 @@
 ;; Disable auto indent in web mode (can be very slow)
 (setq web-mode-enable-auto-indentation nil)
 
-
-
+;; web-mode indentation (needed)
+(setq web-mode-markup-indent-offset 4)
+(setq web-mode-css-indent-offset 4)
+(setq web-mode-code-indent-offset 4)
+(setq web-mode-style-padding 4)
+(setq web-mode-script-padding 4)
+(setq web-mode-block-padding 4)
 
 
 
@@ -1288,6 +1300,7 @@
 
 (add-hook 'js2-mode-hook 'flycheck-mode)
 (add-hook 'php-mode-hook 'flycheck-mode)
+(add-hook 'css-mode-hook 'flycheck-mode)
 ;; (add-hook 'web-mode-hook 'flycheck-mode)
 
 ;; (setq flycheck-highlighting-mode 'lines)

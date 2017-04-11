@@ -39,17 +39,16 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 ## Bloquant
 - [ ] Ivy - Highlight current line plus visible
-- [x] Emmet mode in [web-mode]
-- [x] [highlight-mode] N est plus present (ainsi que highlight-nav-mode)
-- [ ] [counsel] M-x : "web-mode" ne se place en premier resultat
+- [ ] [counsel] M-x : "web-mode" ne se place en premier resultat 
+- [ ] [counsel] M-x : Changer la regexp dans ce mode
+- [ ] [counsel] M-x : Possibilité d'avoir un historique des commandes précédentes
+- [ ] [flycheck] : Mieux distinguer la ligne en erreur
 
 
 ## A ranger
-- [ ] [web-mode] [javascript] [completion] : 4 spaces
-- [ ] [counsel] m-x : Changer la regexp dans ce mode
-- [x] [web-mode] [company] Add php keyword ($_POST etc)
-- [x] Nouvelle ligne dans un bloc de commentaire : Commencer avec une *
-      -> Natif : M-j
+- [ ] [web-mode] [javascript] [company] Add javascript keywords to company backend
+- [ ] [refactor] emacs.d conf a ranger, voir modele suivant : https://github.com/purcell/emacs.d
+- [x] [web-mode] [javascript] [completion] : 4 spaces
 - [ ] Activer les urls clicable dans les differents modes
 - [ ] Auto center :
       [ ] [go to line (M-g M-g]
@@ -59,59 +58,31 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
       [ ] [imenu]
       [ ] [ag] Search result buffer
       [ ] [highlight-nav]
+- [ ] [ivy] [mini buffer] CTRL+l to back up
 
 
-- [ ] mini buffer ivy - CTRL+l to back up
-      Exemple : customize g
-
-- [ ] (plugin pour le liste) : Ne pas mettre les fichiers .svn dans la liste
-- [ ] [plugin] [change inner] Ajoute rl'option Change Inner Tag
+- [x] [web-mode] [company] Add php keyword ($_POST etc)
+- [x] Nouvelle ligne dans un bloc de commentaire : Commencer avec une *
+      -> Natif : M-j
+- [x] Emmet mode in [web-mode]
+- [x] [highlight-mode] N est plus present (ainsi que highlight-nav-mode) 
 
 
 ## Majeur
 - [ ] M-DEL --> Suppression de tous les caracteres vides
-
 - [ ] [IMPORTANT] Fonction get file name to clipboard (très utilisé)
 - [ ] [vc-dir] Faire une fonction pour activer un vc-version-diff avec les paramètres older revision : "base", newer revision : "head"
 - [ ] [vc-dir] N'affiche pas les fichiers supprimés localement, mais non envoyé à svn (svn remove)
-
-
 - [ ] Indent : 2 or 4 spaces
-- [ ] Ouverture fichier : Avoir de meilleurs perfs
-
-
 - [ ] M-x Ajouter les entrees récentes en haut
-- [x] [multi-cursor] Integrer le Meta+mouse1 click pour avoir un curseur multiple
-
-
-
 - [ ] [web-mode] Commentaire : Le script de commentaire ne semble pas bien
-- [ ] CSS Validateur !!
-- [ ] JS Validateur : Mieux distinguer la ligne en erreur
-
-- [x] Move / copy file : Utiliser ivy en back
 - [ ] Ivy : Possibilité de boucler
-
-- [x] [php-mode] completion add current buffer keyword candidates
 - [ ] [php-mode] Meta shift e est surcharge
-
-
-
-
 - [ ] echantillon/fract.js long a l ouverture
-
-- [x] No JSCS configuration round. Set 'flycheck-jscsrc' for JSCS
-- [x] Quickly ediff files from dired
-      https://oremacs.com/2017/03/18/dired-ediff/
-      
-
 - [ ] Indent according to current file
       Si la fichier courant contient une indentation en tabulation, indent = tab, si 2 space, indent = 2, etc
       (Comportement Sublime Text)
-
 - [ ] Tooltip : Voir pour faire des tooltips comme dans Sublime
-
-
 - [ ] [util] Revert buffer : keep current line position 
 - [ ] [theme] Mettre plus en avant le buffer actif 
 - [ ] [theme] css mode couleurs horribles
@@ -120,19 +91,14 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
               Voir package "highlight-chars"
 - [ ] [theme] Revoir toutes les couleurs pour avoir les mêmes que dans Sublime
       Le profile colorimétrique utilisé par Photoshop n'était pas bon ... ... ...
-- [x] [perf] helm-projectile pas suffisamment rapide
-      -> Switch sur ivy
 - [ ] [util] F5 revert buffer ?
 - [ ] [util] Sublime go to definition - CTRL+MOUSE CLICK - Add new context menu first entry : "Goto Definition"
 - [ ] [vc-dir] en mode evil
-- [x] [dired] TAB -> go to
 - [ ] [dired] delete folder very slow
 - [ ] [dired] > mkdir : refresh slow
 - [ ] [magit-diff] M-w didn't work
 - [ ] [vc-dir] Faire une fonction toggle des hunk comme dans magit
-
 - [ ] [util] helm imenu autofocus !!!!!!!
-
 - [ ] [util] Voir si il est possible de faire un (CMD+P + touche @) (file.php@methode_name)
 - [ ] [theme] php mode : Plus de couleurs
 - [ ] Faire une fonction "Merge lines" pour supprimer les linebreak/whitespace
@@ -155,8 +121,6 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
       -> Impossible de trouver la raison sur cette commande, utiliser helm-ag a la place
 
 - [ ] Faire une fonction copy file from project
-- [ ] la selection avec la souris doit aller loin avant de prendre en compte la deuxieme ligne
-      (Comportement de selection legerement different a celui de Sublime)
 - [ ] ag search result buffer : highlight search words
 - [ ] (command+r pour reload vc-dir) - M-r ----> vc-dir-refresh
 
@@ -185,16 +149,28 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
   - .DS_Store
 - [ ] Installer / configurer php mode | ac-php (auto completion php)
 
-- [ ] helm evil mode
-- [ ] helm imenu autofocus !!!!!!!
-- [ ] helm directory first
 
+- [x] Ouverture fichier : Avoir de meilleurs perfs
+- [x] [multi-cursor] Integrer le Meta+mouse1 click pour avoir un curseur multiple
+- [x] CSS Validateur !!
+- [x] Move / copy file : Utiliser ivy en back
+- [x] [php-mode] completion add current buffer keyword candidates
+- [x] No JSCS configuration round. Set 'flycheck-jscsrc' for JSCS
+- [x] Quickly ediff files from dired
+      https://oremacs.com/2017/03/18/dired-ediff/
+- [x] [perf] helm-projectile pas suffisamment rapide
+      -> Switch sur ivy
+- [x] [dired] TAB -> go to
 - [x] Ne pas fermer automatiquement les quotes lors d'un yank (coller)
 - [x] ag --> ignore hudge file (ST behaviour) (aucun problème dans, à mon avis, 99% des cas)  (il peut être utile de faire des recherches dans des fichieux volumineux, mais pour ca la recherche peut être faite de manière spécifique (paramètres supplémentaire, utilisation directement depuis ligne de commande ...)
       -> Ne me semble pas poser de probleme
       
       
 ##  Mineur 
+- [ ] la selection avec la souris doit aller loin avant de prendre en compte la deuxieme ligne
+      (Comportement de selection legerement different a celui de Sublime)
+- [ ] (plugin pour le liste) : Ne pas mettre les fichiers .svn dans la liste
+- [ ] [plugin] [change inner] Ajoute rl'option Change Inner Tag
 - [ ] [misc] Copier : Ne pas embarquer la couleur
       -> Cibler uniquement certains buffers
         -> mini buffer
