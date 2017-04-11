@@ -987,10 +987,18 @@
 (define-key php-mode-map [(meta shift e)] #'forward-sentence)
 
 ;; Add compay-ac-php for company backend
-(add-to-list 'company-backends 'company-ac-php-backend)
+;; (add-to-list 'company-backends 'company-ac-php-backend)
+(add-hook 'php-mode-hook
+            (lambda ()
+              (set (make-local-variable 'company-backends) '(company-ac-php-backend))))
+
+;; (add-hook 'web-mode-hook
+;;             (lambda ()
+;;               (add-to-list 'company-backends 'company-ac-php-backend)))
+
 
 ;; Add M-. key for jump to definition
-(define-key php-mode-map (kbd "M-.") 'ac-php-find-symbol-at-point)
+(define-key php-mode-map (kbd "M-.") 'ac-php-symbol-at-point)
 
 
 
@@ -1279,6 +1287,9 @@
 ;; Update : fonctionel avec flycheck-mode
 
 (add-hook 'js2-mode-hook 'flycheck-mode)
+(add-hook 'php-mode-hook 'flycheck-mode)
+;; (add-hook 'web-mode-hook 'flycheck-mode)
+
 ;; (setq flycheck-highlighting-mode 'lines)
 
 ;; (setq flycheck-highlighting-mode nil)

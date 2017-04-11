@@ -38,12 +38,14 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 
 ## Bloquant
+- [ ] Ivy - Highlight current line plus visible
 - [x] Emmet mode in [web-mode]
 - [x] [highlight-mode] N est plus present (ainsi que highlight-nav-mode)
 - [ ] [counsel] M-x : "web-mode" ne se place en premier resultat
 
 
 ## A ranger
+- [ ] [web-mode] [javascript] [completion] : 4 spaces
 - [ ] [counsel] m-x : Changer la regexp dans ce mode
 - [x] [web-mode] [company] Add php keyword ($_POST etc)
 - [x] Nouvelle ligne dans un bloc de commentaire : Commencer avec une *
