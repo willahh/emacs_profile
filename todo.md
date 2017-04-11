@@ -41,13 +41,14 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 
 ## Bloquant
-- [ ] Emmet mode in [web-mode]
-- [ ] [highlight-mode] N est plus present (ainsi que highlight-nav-mode)
+- [x] Emmet mode in [web-mode]
+- [x] [highlight-mode] N est plus present (ainsi que highlight-nav-mode)
+- [ ] [counsel] M-x : "web-mode" ne se place en premier resultat
 
 
 ## A ranger
-- [ ] M-DEL --> Suppression de tous les caracteres vides
-- [ ] [web-mode] [company] Add php keyword ($_POST etc)
+- [ ] [counsel] m-x : Changer la regexp dans ce mode
+- [x] [web-mode] [company] Add php keyword ($_POST etc)
 - [ ] Nouvelle ligne dans un bloc de commentaire : Commencer avec une *
 - [ ] Activer les urls clicable dans les differents modes
 - [ ] Auto center :
@@ -70,7 +71,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 
 ## Majeur
-- [ ] [ido-switch-buffer] : Afficher le chemin des fichiers
+- [ ] M-DEL --> Suppression de tous les caracteres vides
 
 - [ ] [IMPORTANT] Fonction get file name to clipboard (très utilisé)
 - [ ] [vc-dir] Faire une fonction pour activer un vc-version-diff avec les paramètres older revision : "base", newer revision : "head"
@@ -90,10 +91,10 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] CSS Validateur !!
 - [ ] JS Validateur : Mieux distinguer la ligne en erreur
 
-- [ ] Move / copy file : Utiliser ivy en back
+- [x] Move / copy file : Utiliser ivy en back
 - [ ] Ivy : Possibilité de boucler
 
-- [ ] [php-mode] completion add current buffer keyword candidates
+- [x] [php-mode] completion add current buffer keyword candidates
 - [ ] [php-mode] Meta shift e est surcharge
 
 
@@ -101,8 +102,8 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 - [ ] echantillon/fract.js long a l ouverture
 
-- [ ] No JSCS configuration round. Set 'flycheck-jscsrc' for JSCS
-- [ ] Quickly ediff files from dired
+- [x] No JSCS configuration round. Set 'flycheck-jscsrc' for JSCS
+- [x] Quickly ediff files from dired
       https://oremacs.com/2017/03/18/dired-ediff/
       
 
@@ -112,8 +113,6 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 - [ ] Tooltip : Voir pour faire des tooltips comme dans Sublime
 
-- [ ] Web mode > HTML : Couleurs sont presques identiques a celle du theme Sublime mais moins pétante, il faut mettre les memes
-- [ ] Helm mini : Voir pour n'avoir que du gris + highlight, c'est trop folklo là
 
 - [ ] [util] Revert buffer : keep current line position 
 - [ ] [theme] Mettre plus en avant le buffer actif 
@@ -123,11 +122,12 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
               Voir package "highlight-chars"
 - [ ] [theme] Revoir toutes les couleurs pour avoir les mêmes que dans Sublime
       Le profile colorimétrique utilisé par Photoshop n'était pas bon ... ... ...
-- [ ] [perf] helm-projectile pas suffisamment rapide
+- [x] [perf] helm-projectile pas suffisamment rapide
+      -> Switch sur ivy
 - [ ] [util] F5 revert buffer ?
 - [ ] [util] Sublime go to definition - CTRL+MOUSE CLICK - Add new context menu first entry : "Goto Definition"
 - [ ] [vc-dir] en mode evil
-- [ ] [dired] TAB -> go to
+- [x] [dired] TAB -> go to
 - [ ] [dired] delete folder very slow
 - [ ] [dired] > mkdir : refresh slow
 - [ ] [magit-diff] M-w didn't work
@@ -206,7 +206,8 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] nlinum in fringe ? Pouvoir afficher les vc diff plus loin que le contenu
 - [ ] [vc-dir] Ne pas afficher les lignes dossiers (les lignes qui sont grisées)
 - [ ] Voir pour utiliser une largeur max lors de la saisie de long texte
-- [ ] Auto complete > 2eme boite > Afficher instantanement
+- [x] Auto complete > 2eme boite > Afficher instantanement
+      -> Impossible
 - [ ] web mode : refresh colors after yank
 - [ ] tabbar : hide bad icons
 

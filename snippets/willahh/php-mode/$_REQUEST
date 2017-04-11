@@ -1,0 +1,3 @@
+#name : $_REQUEST
+# --
+$_REQUEST[$1]$2

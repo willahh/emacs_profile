@@ -1,0 +1,3 @@
+#name : $_COOKIE
+# --
+$_COOKIE[$1]$2
