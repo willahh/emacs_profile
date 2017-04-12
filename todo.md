@@ -39,13 +39,21 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 ## Bloquant
 - [ ] Ivy - Highlight current line plus visible
-- [ ] [counsel] M-x : "web-mode" ne se place en premier resultat 
+- [ ] [counsel] M-x Les resultats suivants ne se placent pas en premiere position suite a la saisie (ils devraient)
+      - "web-mode"
+      - "profiler-report"
+      - "pack install"
 - [ ] [counsel] M-x : Changer la regexp dans ce mode
 - [ ] [counsel] M-x : Possibilité d'avoir un historique des commandes précédentes
-- [ ] [flycheck] : Mieux distinguer la ligne en erreur
 
 
 ## A ranger
+- [ ] [flycheck] : Mieux distinguer la ligne en erreur
+- [ ] [php-mode] Voir pour implementer quick type hierarchy
+- [ ] [php-mode] [ac-php] [company] La boite d'informatinos supplémentaire ne contient pas les php doc
+- [ ] [php-mode] [ac-php] Faire fonctionner Location jump
+- [ ] [php-mode] Saisie de /** + ENTER -> Creation d un php doc pre rempli
+- [ ] [swiper] Extract result
 - [ ] [web-mode] [javascript] [company] Add javascript keywords to company backend
 - [ ] [refactor] emacs.d conf a ranger, voir modele suivant : https://github.com/purcell/emacs.d
 - [x] [web-mode] [javascript] [completion] : 4 spaces

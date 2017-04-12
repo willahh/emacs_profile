@@ -365,19 +365,18 @@
 (setq company-idle-delay 0) ;; @todo : Mettre la valeur 0 pour le CSS mode only
 (setq company-idle-delay 0.3) ;; Impossible, trop lent, il faut l activer pour CSS only
 
-;; Test de saisie de text
-;; Test de saisie de texte rapide
-;; Test de saisie de text moins rapidement
+;; Idle delay a 0 en mode css
+(add-hook 'css-mode-hook
+            (lambda ()
+              (set (make-local-variable 'company-idle-delay 0))))
 
-
-
-;; COmpany-quickhelp
+;; Company-quickhelp
 (company-quickhelp-mode 1)
 
+;; 
+(add-hook 'after-init-hook 'global-company-mode)
 
 
-
-(add-hook 'after-init-hook 'global-company-mode) ;
 
 
 
@@ -916,6 +915,18 @@
 (setq web-mode-enable-css-colorization t)
 (setq web-mode-enable-current-element-highlight t)    
 (setq web-mode-enable-current-column-highlight t)
+
+
+;; Add auto-pair
+(setq web-mode-extra-auto-pairs
+      '(("erb"  . (("beg" "end")))
+        ("php"  . (("beg" "end")
+                   ("beg" "end")))
+       ))
+
+;; css colorization
+(setq web-mode-enable-css-colorization t) 
+
 
 
 ;; From : http://www.blogbyben.com/2016/08/emacs-php-modern-and-far-more-complete.html
