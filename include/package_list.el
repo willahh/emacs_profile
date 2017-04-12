@@ -42,6 +42,7 @@
   ;; golden-ratio
   ace-window
   ag
+  rainbow-mode
   
   ;; rainbow-delimiters
   ;;anything

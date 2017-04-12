@@ -363,9 +363,11 @@
 ;; (setq company-idle-delay 0.3) ;; Update en mode css, un retour raîde serait bien.
 ;; (setq company-idle-delay 0.15)
 (setq company-idle-delay 0) ;; @todo : Mettre la valeur 0 pour le CSS mode only
+(setq company-idle-delay 0.3) ;; Impossible, trop lent, il faut l activer pour CSS only
 
 ;; Test de saisie de text
 ;; Test de saisie de texte rapide
+;; Test de saisie de text moins rapidement
 
 
 
@@ -375,7 +377,7 @@
 
 
 
-(add-hook 'after-init-hook 'global-company-mode)
+(add-hook 'after-init-hook 'global-company-mode) ;
 
 
 
@@ -500,9 +502,9 @@
 
 ;; yasnippet
 (require 'yasnippet)
-(add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/willahh/")
 ;; (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/snippets/es6-snippets")
 (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/apgwoz/")
+(add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/willahh/")
 
 
 (setq yas/indent-line nil)
@@ -525,10 +527,11 @@
 
 
 ;; Ajoute la liste des snippets dans les resultats de autocomplete
-(defun my-prog-mode-hook ()
-  (push 'ac-source-yasnippet ac-sources))
+;; Update ac-sources semble non defini
+;; (defun my-prog-mode-hook ()
+;;   (push 'ac-source-yasnippet ac-sources))
 
-(add-hook 'prog-mode-hook 'my-prog-mode-hook)
+;; (add-hook 'prog-mode-hook 'my-prog-mode-hook)
 
 
 
@@ -719,6 +722,13 @@
 
 
 
+
+;; rainbow-mode (css color)
+(require 'rainbow-mode)
+
+;;; Colourise CSS colour 
+(dolist (hook '(css-mode-hook html-mode-hook sass-mode-hook))
+    (add-hook hook 'rainbow-mode))
 
 
 ;; dsvn conf
@@ -925,8 +935,13 @@
 ;; Disable auto indent in web mode (can be very slow)
 (setq web-mode-enable-auto-indentation nil)
 
-
-
+;; web-mode indentation (needed)
+(setq web-mode-markup-indent-offset 4)
+(setq web-mode-css-indent-offset 4)
+(setq web-mode-code-indent-offset 4)
+(setq web-mode-style-padding 4)
+(setq web-mode-script-padding 4)
+(setq web-mode-block-padding 4)
 
 
 
@@ -983,6 +998,20 @@
 (define-key php-mode-map [tab] #'tab-indent-or-complete)
 (define-key php-mode-map [(meta shift e)] #'forward-sentence)
 
+;; Add compay-ac-php for company backend
+;; (add-to-list 'company-backends 'company-ac-php-backend)
+(add-hook 'php-mode-hook
+            (lambda ()
+              (set (make-local-variable 'company-backends) '(company-ac-php-backend))))
+
+;; (add-hook 'web-mode-hook
+;;             (lambda ()
+;;               (add-to-list 'company-backends 'company-ac-php-backend)))
+
+
+;; Add M-. key for jump to definition
+(define-key php-mode-map (kbd "M-.") 'ac-php-symbol-at-point)
+
 
 
 ;; php-eldoc
@@ -1011,11 +1040,16 @@
 ;;              (add-to-list 'company-backends 'company-ac-php-backend )))
 
 
-(add-hook 'php-mode-hook
-          '(lambda ()
-             (require 'company-php)
-             (company-mode t)
-             (ac-php-core-eldoc-setup ))) ;; enable eldoc
+;; (add-hook 'php-mode-hook
+;;           '(lambda ()
+;;              (require 'company-php)
+;;              (company-mode t)
+;;              (ac-php-core-eldoc-setup ))) ;; enable eldoc
+
+
+
+
+
 
 
 
@@ -1028,6 +1062,7 @@
 
 ;; set default `company-backends'
 ;; Source : http://emacs.stackexchange.com/a/17548
+;; Update : En commentaire test pour avoir une completion en php-mode qui fonctionne avec yassnippet
 
 ;; (setq company-backends
 ;;       '((company-files          ; files & directory
@@ -1039,63 +1074,51 @@
 ;;         (company-abbrev company-dabbrev)
 ;;         ))
 
-(add-hook 'python-mode-hook
-          (lambda ()
-            (add-to-list (make-local-variable 'company-backends)
-                         'company-anaconda)))
+;; (add-hook 'python-mode-hook
+;;           (lambda ()
+;;             (add-to-list (make-local-variable 'company-backends)
+;;                          'company-anaconda)))
 
-(dolist (hook '(js-mode-hook
-                js2-mode-hook
-                js3-mode-hook
-                inferior-js-mode-hook
-                ))
+;; (dolist (hook '(js-mode-hook
+;;                 js2-mode-hook
+;;                 js3-mode-hook
+;;                 inferior-js-mode-hook
+;;                 ))
 
-  (add-hook hook
-            (lambda ()
-              (tern-mode t)
+;;   (add-hook hook
+;;             (lambda ()
+;;               (tern-mode t)
 
-              (add-to-list (make-local-variable 'company-backends)
-                           'company-tern)
-              )))
-
-(add-hook 'php-mode-hook
-          (lambda ()
-            (add-to-list (make-local-variable 'company-backends)
-                         'company-ac-php-backend)))
+;;               (add-to-list (make-local-variable 'company-backends)
+;;                            'company-tern)
+;;               )))
 
 ;; (add-hook 'php-mode-hook
 ;;           (lambda ()
 ;;             (add-to-list (make-local-variable 'company-backends)
-;;                          'company-keywords))) 
-                         
-
-;;;_. company-mode support like auto-complete in web-mode
-
-;; Enable CSS completion between <style>...</style>
-(defadvice company-css (before web-mode-set-up-ac-sources activate)
-  "Set CSS completion based on current language before running `company-css'."
-  (if (equal major-mode 'web-mode)
-      (let ((web-mode-cur-language (web-mode-language-at-pos)))
-        (if (string= web-mode-cur-language "css")
-            (unless css-mode (css-mode))))))
-
-;; Enable JavaScript completion between <script>...</script> etc.
-(defadvice company-tern (before web-mode-set-up-ac-sources activate)
-  "Set `tern-mode' based on current language before running `company-tern'."
-  (if (equal major-mode 'web-mode)
-      (let ((web-mode-cur-language (web-mode-language-at-pos)))
-        (if (or (string= web-mode-cur-language "javascript")
-               (string= web-mode-cur-language "jsx"))
-            (unless tern-mode (tern-mode))
-          ;; (if tern-mode (tern-mode))
-          ))))
+;;                          'company-ac-php-backend)))
 
 
-;; (defadvice company-ac-php-backend (before web-mode-set-up-ac-sources activate)
+
+;; ;; Enable CSS completion between <style>...</style>
+;; (defadvice company-css (before web-mode-set-up-ac-sources activate)
+;;   "Set CSS completion based on current language before running `company-css'."
 ;;   (if (equal major-mode 'web-mode)
 ;;       (let ((web-mode-cur-language (web-mode-language-at-pos)))
-;;         (if (string= web-mode-cur-language "php")
-;;             (unless php-mode (php-mode))))))
+;;         (if (string= web-mode-cur-language "css")
+;;             (unless css-mode (css-mode))))))
+
+;; ;; Enable JavaScript completion between <script>...</script> etc.
+;; (defadvice company-tern (before web-mode-set-up-ac-sources activate)
+;;   "Set `tern-mode' based on current language before running `company-tern'."
+;;   (if (equal major-mode 'web-mode)
+;;       (let ((web-mode-cur-language (web-mode-language-at-pos)))
+;;         (if (or (string= web-mode-cur-language "javascript")
+;;                (string= web-mode-cur-language "jsx"))
+;;             (unless tern-mode (tern-mode))
+;;           ;; (if tern-mode (tern-mode))
+;;           ))))
+
 
 
 
@@ -1104,16 +1127,24 @@
 
 ;; Add yasnippet support for all company backends
 ;; https://github.com/syl20bnr/spacemacs/pull/179
-;; (defvar company-mode/enable-yas t
-;;   "Enable yasnippet for all backends.")
+;; Update cette partie etait en commentaire
+;; Update 2 : Le besoin est d avoir yassnippet en completion en plus, mais cela
+;; ne semble pas fonctionner
+;; Update 3 : fonctione en web-mode
+;; Update 4 : OK, fonctionne bien
 
-;; (defun company-mode/backend-with-yas (backend)
-;;   (if (or (not company-mode/enable-yas) (and (listp backend) (member 'company-yasnippet backend)))
-;;       backend
-;;     (append (if (consp backend) backend (list backend))
-;;             '(:with company-yasnippet))))
+;; Add yasnippet support for all company backends
+;; https://github.com/syl20bnr/spacemacs/pull/179
+(defvar company-mode/enable-yas t "Enable yasnippet for all backends.")
 
-;; (setq company-backends (mapcar #'company-mode/backend-with-yas company-backends))
+(defun company-mode/backend-with-yas (backend)
+  (if (or (not company-mode/enable-yas) (and (listp backend)    (member 'company-yasnippet backend)))
+  backend
+(append (if (consp backend) backend (list backend))
+        '(:with company-yasnippet))))
+
+(setq company-backends (mapcar #'company-mode/backend-with-yas company-backends))
+
 
 
 
@@ -1268,6 +1299,10 @@
 ;; Update : fonctionel avec flycheck-mode
 
 (add-hook 'js2-mode-hook 'flycheck-mode)
+(add-hook 'php-mode-hook 'flycheck-mode)
+(add-hook 'css-mode-hook 'flycheck-mode)
+;; (add-hook 'web-mode-hook 'flycheck-mode)
+
 ;; (setq flycheck-highlighting-mode 'lines)
 
 ;; (setq flycheck-highlighting-mode nil)
@@ -1381,8 +1416,11 @@
 ;; (setq mc/always-run-for-all 1)
 (setq mc/always-run-for-all nil)
 
-
-
+;; Multiple-curspr with mouse
+;; http://pragmaticemacs.com/emacs/add-multiple-cursors-with-mouse-clicks/
+(use-package multiple-cursors
+  :ensure t
+  :bind (("C-S-<mouse-1>" . mc/add-cursor-on-click)))
 
 
 
@@ -2097,3 +2135,4 @@ then `diff-jump-to-old-file' is also set, for the next invocations."
 (add-hook 'css-mode-hook  'emmet-mode)
 (add-hook 'web-mode-hook 'emmet-mode)
 (add-hook 'php-mode-hook  'emmet-mode) ;; Edit : peut poser des problemes, a voir
+
