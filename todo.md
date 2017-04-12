@@ -63,7 +63,6 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] mini buffer ivy - CTRL+l to back up
       Exemple : customize g
 
-
 - [ ] (plugin pour le liste) : Ne pas mettre les fichiers .svn dans la liste
 - [ ] [plugin] [change inner] Ajoute rl'option Change Inner Tag
 
