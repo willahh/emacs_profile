@@ -52,6 +52,7 @@
       '(
       avy-goto-word-1-below
       c-end-of-statement
+      counsel-M-x
       delete-window
       describe-key
       dired-find-file

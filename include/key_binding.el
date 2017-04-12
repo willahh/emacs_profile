@@ -138,7 +138,6 @@
 
 
 ;; Dired
-(define-key dired-mode-map (kbd "<mouse-1>") 'dired-find-file)
 ;; (define-key dired-mode-map (kbd "<mouse-2>") 'dired-find-file)
 (define-key dired-mode-map (kbd "<tab>") 'dired-find-file)
 (define-key dired-mode-map (kbd "<S-tab>") 'dired-up-directory)
@@ -339,7 +338,15 @@
 
 ;; open line
 (global-set-key [(M shift return)] 'smart-open-line-above)
+(global-set-key [(M shift j)] 'smart-open-line-above)
+
 (global-set-key [(M return)] 'smart-open-line)
+(global-set-key [(M j)] 'smart-open-line)
+
+
+
+
+
 
 ;; avy go to word
 (global-set-key (kbd "C-x C-s") 'avy-goto-word-or-subword-1)
@@ -416,50 +423,6 @@
 (define-key magit-status-mode-map (kbd "<tab>") 'magit-section-toggle)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-;; (defmacro prelude-install-search-engine (search-engine-name search-engine-url search-engine-prompt)
-;;   "Given some information regarding a search engine, install the interactive command to search through them"
-;;   `(defun ,(intern (format "prelude-%s" search-engine-name)) ()
-;;        ,(format "Search %s with a query or region if any." search-engine-name)
-;;        (interactive)
-;;        (prelude-search ,search-engine-url ,search-engine-prompt)))
-
-;; (prelude-install-search-engine "google"     "http://www.google.com/search?q="              "Google: ")
-;; (prelude-install-search-engine "youtube"    "http://www.youtube.com/results?search_query=" "Search YouTube: ")
-;; (prelude-install-search-engine "github"     "https://github.com/search?q="                 "Search GitHub: ")
-;; (prelude-install-search-engine "duckduckgo" "https://duckduckgo.com/?t=lm&q="              "Search DuckDuckGo: ")
-
-
-
-
-
-
-
-
-;; (define-key map (kbd "C-c g") 'prelude-google)
-
-
-
-;; (define-key map (kbd "C-c g") 'prelude-google)
-;; (define-key map (kbd "C-c G") 'prelude-github)
-;; (define-key map (kbd "C-c y") 'prelude-youtube)
-;; (define-key map (kbd "C-c U") 'prelude-duckduckgo)
+;; Emmet --> Override key to get the standard emacs C-j
+(define-key emmet-mode-keymap (kbd "C-j") 'electric-newline-and-maybe-indent)
 
