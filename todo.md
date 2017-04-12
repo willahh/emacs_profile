@@ -48,11 +48,12 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 
 ## A ranger
-- [ ] [flycheck] : Mieux distinguer la ligne en erreur
-- [ ] [php-mode] Voir pour implementer quick type hierarchy
 - [ ] [php-mode] [ac-php] [company] La boite d'informatinos supplémentaire ne contient pas les php doc
+- [ ] [php-mode] Voir pour implementer quick type hierarchy
 - [ ] [php-mode] [ac-php] Faire fonctionner Location jump
 - [ ] [php-mode] Saisie de /** + ENTER -> Creation d un php doc pre rempli
+
+- [ ] [flycheck] : Mieux distinguer la ligne en erreur
 - [ ] [swiper] Extract result
 - [ ] [web-mode] [javascript] [company] Add javascript keywords to company backend
 - [ ] [refactor] emacs.d conf a ranger, voir modele suivant : https://github.com/purcell/emacs.d
@@ -67,11 +68,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
       [ ] [ag] Search result buffer
       [ ] [highlight-nav]
 - [ ] [ivy] [mini buffer] CTRL+l to back up
-
-
-- [ ] mini buffer ivy - CTRL+l to back up
-      Exemple : customize g
-- [ ] (plugin pour le liste) : Ne pas mettre les fichiers .svn dans la liste
+- [ ] [ivy] : Ne pas mettre les fichiers .svn dans la liste
 - [ ] [plugin] [change inner] Ajoute rl'option Change Inner Tag
 
 

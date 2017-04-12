@@ -43,6 +43,8 @@
   ace-window
   ag
   rainbow-mode
+
+  eclim
   
   ;; rainbow-delimiters
   ;;anything

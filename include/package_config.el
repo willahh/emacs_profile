@@ -414,7 +414,9 @@
       (backward-char 1)
       (if (looking-at "\\.") t
     (backward-char 1)
-    (if (looking-at "->") t nil)))))
+    (if (looking-at "->") t nil)
+    (if (looking-at "::") t nil) ;; Update wra : add "::" for php support
+    ))))
 
 (defun do-yas-expand ()
   (let ((yas/fallback-behavior 'return-nil))
@@ -1013,7 +1015,9 @@
 ;; (add-to-list 'company-backends 'company-ac-php-backend)
 (add-hook 'php-mode-hook
             (lambda ()
-              (set (make-local-variable 'company-backends) '(company-ac-php-backend))))
+              (set (make-local-variable 'company-backends) '(company-ac-php-backend))
+              (ac-php-core-eldoc-setup)
+              ))
 
 ;; (add-hook 'web-mode-hook
 ;;             (lambda ()
@@ -1021,8 +1025,18 @@
 
 
 ;; Add M-. key for jump to definition
-(define-key php-mode-map (kbd "M-.") 'ac-php-symbol-at-point)
+;; (define-key php-mode-map (kbd "M-.") 'ac-php-symbol-at-point)
+(define-key php-mode-map (kbd "M-.") 'ac-php-find-symbol-at-point)
+(define-key php-mode-map (kbd "<C-268632091>") 'ac-php-find-symbol-at-point) ;; goto define (C-])
+(define-key php-mode-map (kbd "C-t") 'ac-php-location-stack-back) ;; go back
 
+;; Remake tags after save in php mode only
+(defun a-test-save-hook()
+  (ac-php-remake-tags)
+)
+(add-hook 'php-mode-hook
+          (lambda () 
+             (add-hook 'after-save-hook 'a-test-save-hook nil 'make-it-local)))
 
 
 ;; php-eldoc
@@ -2150,3 +2164,18 @@ then `diff-jump-to-old-file' is also set, for the next invocations."
 
 ;; Unbind C-j for emmet to use the default emacs C-j
 (define-key emmet-mode-keymap (kbd "C-j") 'electric-newline-and-maybe-indent)
+
+
+
+
+;; eclim
+;; Note : premiers pas, configuration non reussis pour le moment
+;; A suivre (En commentaire pour le moment)
+;; (require 'eclim)
+;; (setq eclimd-autostart t)
+;; (global-eclim-mode)
+
+;; (custom-set-variables
+;;   '(eclim-eclipse-dirs '("/Applications/eclipse/Eclipse.app/Contents/Eclipse"))
+;;   '(eclim-executable "/Applications/eclipse/Eclipse.app/Contents/Eclipse/eclim"))
+  
