@@ -2131,8 +2131,11 @@ then `diff-jump-to-old-file' is also set, for the next invocations."
 
 ;; Emmet
 (require 'emmet-mode)
+
 (add-hook 'sgml-mode-hook 'emmet-mode)
 (add-hook 'css-mode-hook  'emmet-mode)
 (add-hook 'web-mode-hook 'emmet-mode)
 (add-hook 'php-mode-hook  'emmet-mode) ;; Edit : peut poser des problemes, a voir
 
+;; Unbind C-j for emmet to use the default emacs C-j
+(define-key emmet-mode-keymap (kbd "C-j") 'electric-newline-and-maybe-indent)

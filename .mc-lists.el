@@ -12,6 +12,7 @@
       c-electric-delete-forward
       c-electric-semi&comma
       clean-aindent--bsunindent
+      dired-jump
       duplicate-start-of-line-or-region
       electric-newline-and-maybe-indent
       eval-last-sexp
