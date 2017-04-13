@@ -2079,4 +2079,6 @@ then `diff-jump-to-old-file' is also set, for the next invocations."
 ;;             (php-completion-mode t)
 ;;             (define-key php-mode-map (kbd "C-o") 'phpcmp-complete))
 
-
+;; editorconfig
+(require 'editorconfig)
+(editorconfig-mode 1)

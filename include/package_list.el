@@ -39,6 +39,7 @@
   ;; ac-php
   php-eldoc
   php-extras
+  editorconfig
   ;; php-completion
 
   ;; auto-complete-exuberant-ctags
