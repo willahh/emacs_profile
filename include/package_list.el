@@ -39,6 +39,8 @@
   ;; ac-php
   php-eldoc
   php-extras
+  ;; php-completion
+
   ;; auto-complete-exuberant-ctags
   ;; golden-ratio
   ace-window

@@ -234,10 +234,13 @@
 
 
 ;; (global-set-key [(meta shift p)] 'smex)
-(global-set-key [(meta shift p)] 'counsel-M-x)
+;; (global-set-key [(meta shift p)] 'counsel-M-x)
+(global-set-key [(meta shift p)] 'helm-M-x)
+
 
 ;; (global-set-key (kbd "M-x") 'smex)
-(global-set-key (kbd "M-x") 'counsel-M-x)
+;; (global-set-key (kbd "M-x") 'counsel-M-x)
+(global-set-key (kbd "M-x") 'helm-M-x)
 
 
 
@@ -260,7 +263,8 @@
 (global-set-key (kbd "M-w")  'kill-this-buffer)
 
 ;; Filter buffer / Get buffer definitions
-(global-set-key [(meta r)]  'counsel-imenu) ;; command + r
+;; (global-set-key [(meta r)]  'counsel-imenu) ;; command + r
+(global-set-key [(meta r)]  'helm-imenu) ;; command + r
 (global-set-key [(meta shift r)] 'swiper) ;; command + shift + r : Update : Switch to swiper (lighter / faster)
 
 ;; Files / Browse files / Browse buffer 

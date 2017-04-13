@@ -2072,3 +2072,11 @@ then `diff-jump-to-old-file' is also set, for the next invocations."
 ;; php-extras
 (require 'php-extras)
 
+;; php-completion
+;; (add-hook 'php-mode-hook
+;;           (lambda ()
+;;             (require 'php-completion)
+;;             (php-completion-mode t)
+;;             (define-key php-mode-map (kbd "C-o") 'phpcmp-complete))
+
+
