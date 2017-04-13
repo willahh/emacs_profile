@@ -16,6 +16,7 @@
 - Revert hunk (depuis vc-diff) :
   - C-c C-r (diff-reverse-direction)
   - C-C C-a (diff-apply-hunk)
+- [web-mode] Element wrap (from "word" to -> "<strong>word</strong>")
 
 - Php ide mode
   - Create ".ac-php-conf.json" file at project root
@@ -38,6 +39,8 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 
 ## Bloquant
+- [ ] [counsel] M-x : Faire fonctionner les raccourcis C-a C-e
+- [ ] [css-mode] [comany] Idle delay a 0
 - [ ] Ivy - Highlight current line plus visible
 - [ ] [counsel] M-x Les resultats suivants ne se placent pas en premiere position suite a la saisie (ils devraient)
       - "web-mode"

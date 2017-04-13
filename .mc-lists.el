@@ -46,6 +46,7 @@
       untab-region
       web-mode-comment-indent-new-line
       whole-line-or-region-kill-region
+      yank-rectangle
       ))
 
 (setq mc/cmds-to-run-once
