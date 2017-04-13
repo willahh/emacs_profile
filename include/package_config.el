@@ -408,6 +408,8 @@
 
 
 ;; Source : http://emacs.stackexchange.com/a/7925
+;; @todo ajouter la completion en php apres :: (la ligne en commentaire empeche
+;; la completion apres ->
 (defun check-expansion ()
   (save-excursion
     (if (looking-at "\\_>") t
@@ -415,7 +417,7 @@
       (if (looking-at "\\.") t
     (backward-char 1)
     (if (looking-at "->") t nil)
-    (if (looking-at "::") t nil) ;; Update wra : add "::" for php support
+    ;; (if (looking-at "::") t nil) ;; Update wra : add "::" for php support
     ))))
 
 (defun do-yas-expand ()
@@ -995,48 +997,38 @@
 (require 'php-mode)
 
 
-;; ac-php
-;; (add-hook 'php-mode-hook
-;;             '(lambda ()
-;;                ;; (auto-complete-mode t)
-;;                (require 'ac-php)
-;;                (setq ac-sources  '(ac-source-php ) )
-;;                (yas-global-mode 1)
-;;                (define-key php-mode-map  (kbd "C-]") 'ac-php-find-symbol-at-point)   ;goto define
-;;                (define-key php-mode-map  (kbd "C-t") 'ac-php-location-stack-back   ) ;go back
-;;                (payas/ac-setup) ;; wra add (don't work)
-;;                ))
-
 ;; Rebind php mode map tab to get tab-indent-or-complete like everywhere
 (define-key php-mode-map [tab] #'tab-indent-or-complete)
 (define-key php-mode-map [(meta shift e)] #'forward-sentence)
 
-;; Add compay-ac-php for company backend
-;; (add-to-list 'company-backends 'company-ac-php-backend)
+
+;; ac-php
+;; Update : ac-php en commentaire pour le moment
+;; Configuration / test de GGtags (semble juste l'outil parfait)
+
+
+
+;; ;; Add compay-ac-php for company backend
 (add-hook 'php-mode-hook
             (lambda ()
               (set (make-local-variable 'company-backends) '(company-ac-php-backend))
+              (eldoc-mode)
               (ac-php-core-eldoc-setup)
               ))
 
-;; (add-hook 'web-mode-hook
-;;             (lambda ()
-;;               (add-to-list 'company-backends 'company-ac-php-backend)))
 
+;; ;; Add M-. key for jump to definition
+;; (define-key php-mode-map (kbd "M-.") 'ac-php-find-symbol-at-point)
+;; (define-key php-mode-map (kbd "<C-268632091>") 'ac-php-find-symbol-at-point) ;; goto define (C-])
+;; (define-key php-mode-map (kbd "C-t") 'ac-php-location-stack-back) ;; go back
 
-;; Add M-. key for jump to definition
-;; (define-key php-mode-map (kbd "M-.") 'ac-php-symbol-at-point)
-(define-key php-mode-map (kbd "M-.") 'ac-php-find-symbol-at-point)
-(define-key php-mode-map (kbd "<C-268632091>") 'ac-php-find-symbol-at-point) ;; goto define (C-])
-(define-key php-mode-map (kbd "C-t") 'ac-php-location-stack-back) ;; go back
-
-;; Remake tags after save in php mode only
-(defun a-test-save-hook()
-  (ac-php-remake-tags)
-)
-(add-hook 'php-mode-hook
-          (lambda () 
-             (add-hook 'after-save-hook 'a-test-save-hook nil 'make-it-local)))
+;; ;; Remake tags after save in php mode only
+;; (defun a-test-save-hook()
+;;   (ac-php-remake-tags)
+;; )
+;; (add-hook 'php-mode-hook
+;;           (lambda () 
+;;              (add-hook 'after-save-hook 'a-test-save-hook nil 'make-it-local)))
 
 
 ;; php-eldoc
@@ -1050,99 +1042,6 @@
 
 ;; ac-php
 
-
-
-
-
-
-
-;; #########################################
-;; (add-hook 'php-mode-hook
-;;           '(lambda ()
-;;              (require 'company-php)
-;;              (company-mode t)
-;;              (ac-php-core-eldoc-setup ) ;; enable eldoc
-;;              (add-to-list 'company-backends 'company-ac-php-backend )))
-
-
-;; (add-hook 'php-mode-hook
-;;           '(lambda ()
-;;              (require 'company-php)
-;;              (company-mode t)
-;;              (ac-php-core-eldoc-setup ))) ;; enable eldoc
-
-
-
-
-
-
-
-
-
-;; word1 word2 word3
-
-
-
-
-
-;; set default `company-backends'
-;; Source : http://emacs.stackexchange.com/a/17548
-;; Update : En commentaire test pour avoir une completion en php-mode qui fonctionne avec yassnippet
-
-;; (setq company-backends
-;;       '((company-files          ; files & directory
-;;          company-keywords       ; keywords
-;;          company-capf
-;;          company-yasnippet
-;;          company-ac-php-backend
-;;          )
-;;         (company-abbrev company-dabbrev)
-;;         ))
-
-;; (add-hook 'python-mode-hook
-;;           (lambda ()
-;;             (add-to-list (make-local-variable 'company-backends)
-;;                          'company-anaconda)))
-
-;; (dolist (hook '(js-mode-hook
-;;                 js2-mode-hook
-;;                 js3-mode-hook
-;;                 inferior-js-mode-hook
-;;                 ))
-
-;;   (add-hook hook
-;;             (lambda ()
-;;               (tern-mode t)
-
-;;               (add-to-list (make-local-variable 'company-backends)
-;;                            'company-tern)
-;;               )))
-
-;; (add-hook 'php-mode-hook
-;;           (lambda ()
-;;             (add-to-list (make-local-variable 'company-backends)
-;;                          'company-ac-php-backend)))
-
-
-
-;; ;; Enable CSS completion between <style>...</style>
-;; (defadvice company-css (before web-mode-set-up-ac-sources activate)
-;;   "Set CSS completion based on current language before running `company-css'."
-;;   (if (equal major-mode 'web-mode)
-;;       (let ((web-mode-cur-language (web-mode-language-at-pos)))
-;;         (if (string= web-mode-cur-language "css")
-;;             (unless css-mode (css-mode))))))
-
-;; ;; Enable JavaScript completion between <script>...</script> etc.
-;; (defadvice company-tern (before web-mode-set-up-ac-sources activate)
-;;   "Set `tern-mode' based on current language before running `company-tern'."
-;;   (if (equal major-mode 'web-mode)
-;;       (let ((web-mode-cur-language (web-mode-language-at-pos)))
-;;         (if (or (string= web-mode-cur-language "javascript")
-;;                (string= web-mode-cur-language "jsx"))
-;;             (unless tern-mode (tern-mode))
-;;           ;; (if tern-mode (tern-mode))
-;;           ))))
 
 
 
@@ -1172,30 +1071,10 @@
 
 
 
-
-
-
-;; ;; php-auto-yasnippets
-;; (require 'php-auto-yasnippets)
-;; La generation ne semble pas bien fonctionner.
-
-;; ;; (setq php-auto-yasnippet-php-program "~/.emacs.d/plugins/php-auto-yasnippets/Create-PHP-YASnippet.php")
-;; ;; (setq php-auto-yasnippet-php-program "")
-;; (setq php-auto-yasnippet-php-program "/Users/willahh/.emacs.d/plugins/php-auto-yasnippets/Create-PHP-YASnippet.php")
-
-
-
-
-;; (define-key php-mode-map (kbd "C-c C-y") 'yas/create-php-snippet)
-;; (payas/ac-setup)
-
-;; (add-hook 'php-mode-hook 'payas/ac-setup)
-
-;; ;; Ajoute la liste des snippets dans les resultats de autocomplete
-;; (defun my-php-mode-hook ()
-;;   (push 'ac-source-yasnippet ac-sources))
-
-;; (add-hook 'php-mode-hook 'my-php-mode-hook)
+;; (add-hook 'php-mode-hook
+;;             (lambda ()
+;;               (set (make-local-variable 'company-backends)
+;;                    '((php-extras-company company-dabbrev) company-capf company-files))))
 
 
 
@@ -1215,9 +1094,6 @@
 
 
 
-;; php-refactor
-;; (require 'php-refactor-mode)
-;; (add-hook 'php-mode-hook 'php-refactor-mode)
 
 
 
@@ -2180,3 +2056,19 @@ then `diff-jump-to-old-file' is also set, for the next invocations."
 ;;   '(eclim-eclipse-dirs '("/Applications/eclipse/Eclipse.app/Contents/Eclipse"))
 ;;   '(eclim-executable "/Applications/eclipse/Eclipse.app/Contents/Eclipse/eclim"))
   
+
+
+;; ggtags
+(require 'ggtags)
+(add-hook 'php-mode-hook 'ggtags-mode)
+
+
+;; ;; auto-complete-exuberant-ctags
+;; (require 'auto-complete-exuberant-ctags)
+;; (ac-exuberant-ctags-setup)
+
+
+
+;; php-extras
+(require 'php-extras)
+

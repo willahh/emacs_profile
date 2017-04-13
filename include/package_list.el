@@ -36,9 +36,10 @@
   php-auto-yasnippets
 
   company-php
-  ac-php
+  ;; ac-php
   php-eldoc
-
+  php-extras
+  ;; auto-complete-exuberant-ctags
   ;; golden-ratio
   ace-window
   ag
@@ -65,6 +66,8 @@
   dsvn
   emmet-mode
   epl
+
+  ggtags
 
 
   evil

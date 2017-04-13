@@ -161,6 +161,8 @@ Language tools
 <!-- - ispell - brew install ispell --witch-lang-fr -->
 
 Tags tools
+ - brew install global --with-pygments --with-ctags --with-exuberant-ctags
+
 <!-- - tags https://github.com/leoliu/ggtags/wiki/Install-Global-with-support-for-exuberant-ctags -->
 <!-- - gtags - brew install global (gtags) -->
 <!-- - ctags - brew install --HEAD ctags -->

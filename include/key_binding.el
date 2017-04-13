@@ -98,12 +98,15 @@
 
 ;; avy
 ;; Update : az pour goto char 2 (plus de precision)
+;; Update 2 : az goto-char (semble plus naturel)
 
+;; (key-chord-define-global "AZ" 'ace-jump-mode)
 ;; (key-chord-define-global "az" 'avy-goto-word-1)
 ;; (key-chord-define-global "az" 'avy-goto-word-1-above)
+;; (key-chord-define-global "az" 'avy-goto-char-2)
 (key-chord-define-global "qs" 'avy-goto-word-1-below)
-(key-chord-define-global "az" 'avy-goto-char-2)
-(key-chord-define-global "AZ" 'ace-jump-mode)
+;; (key-chord-define-global "az" 'avy-goto-char)
+(key-chord-define-global "az" 'avy-goto-word-or-subword-1)
 ;;
 (key-chord-define-global "xc" 'er/expand-region)
 (key-chord-define-global "wx" 'er/contract-region)
