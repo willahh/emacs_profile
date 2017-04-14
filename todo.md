@@ -42,18 +42,19 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [counsel] M-x : Faire fonctionner les raccourcis C-a C-e
 - [ ] [css-mode] [comany] Idle delay a 0
 - [ ] Ivy - Highlight current line plus visible
-- [ ] [counsel] M-x Les resultats suivants ne se placent pas en premiere position suite a la saisie (ils devraient)
+- [x] [counsel] M-x Les resultats suivants ne se placent pas en premiere position suite a la saisie (ils devraient)
       - "web-mode"
       - "profiler-report"
       - "pack install"
-- [ ] [counsel] M-x : Changer la regexp dans ce mode
-- [ ] [counsel] M-x : Possibilité d'avoir un historique des commandes précédentes
-
+- [x] [counsel] M-x : Changer la regexp dans ce mode
+- [x] [counsel] M-x : Possibilité d'avoir un historique des commandes précédentes
+       -> Back to helm
 
 ## A ranger
 - [ ] [php-mode] [ac-php] [company] La boite d'informatinos supplémentaire ne contient pas les php doc
 - [ ] [php-mode] Voir pour implementer quick type hierarchy
-- [ ] [php-mode] [ac-php] Faire fonctionner Location jump
+- [x] [php-mode] [ac-php] Faire fonctionner Location jump
+      -> OK, utilisation de gtags 
 - [ ] [php-mode] Saisie de /** + ENTER -> Creation d un php doc pre rempli
 
 - [ ] [flycheck] : Mieux distinguer la ligne en erreur
