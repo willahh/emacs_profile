@@ -39,27 +39,29 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 
 ## Bloquant
+- [ ] [ivy] [mini buffer] Add C-l keybinding   
 - [ ] [dired] Date format lisible
-- [ ] [counsel] M-x : Faire fonctionner les raccourcis C-a C-e
 - [ ] [css-mode] [comany] Idle delay a 0
 - [ ] Ivy - Highlight current line plus visible
 - [ ] [counsel] M-x Les resultats suivants ne se placent pas en premiere position suite a la saisie (ils devraient)
       - "web-mode"
       - "profiler-report"
       - "pack install"
-- [ ] [counsel] M-x : Changer la regexp dans ce mode
-- [ ] [counsel] M-x : Possibilité d'avoir un historique des commandes précédentes
+
+- [x] [counsel] M-x : Faire fonctionner les raccourcis C-a C-e
+- [x] [counsel] M-x : Changer la regexp dans ce mode
+- [x] [counsel] M-x : Possibilité d'avoir un historique des commandes précédentes
+   -> Back to helm problem solved
 
 
 ## A ranger
-- [ ] [comment-block] Creer des boites de commentaire type /** */ (comment-box)
+- [ ] [comment-block] Creer des boites de commentaire type /** */ (comment-boxc)
 - [ ] [php-mode] [ac-php] [company] La boite d'informatinos supplémentaire ne contient pas les php doc
 - [ ] [php-mode] Voir pour implementer quick type hierarchy
 - [ ] [php-mode] [ac-php] Faire fonctionner Location jump
 - [ ] [php-mode] Saisie de /** + ENTER -> Creation d un php doc pre rempli
 
 - [ ] [flycheck] : Mieux distinguer la ligne en erreur
-- [ ] [swiper] Extract result
 - [ ] [web-mode] [javascript] [company] Add javascript keywords to company backend
 - [ ] [refactor] emacs.d conf a ranger, voir modele suivant : https://github.com/purcell/emacs.d
 - [x] [web-mode] [javascript] [completion] : 4 spaces
@@ -77,6 +79,8 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [plugin] [change inner] Ajoute rl'option Change Inner Tag
 
 
+- [x] [swiper] Extract result
+      -> Back to helm, problem solved
 - [x] [web-mode] [company] Add php keyword ($_POST etc)
 - [x] Nouvelle ligne dans un bloc de commentaire : Commencer avec une *
       -> Natif : M-j

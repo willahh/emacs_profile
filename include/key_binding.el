@@ -1,6 +1,4 @@
 ;;;; key_binding: --- some default / package keybindings
-;; (dolist (key '("\M-x" "\M-z" "\M-v" "\M-p" "\C-\M-p" "\C-\M-j"))
-;; (dolist (key '("\M-x" "\M-z" "\M-v" "\M-p" "\C-\M-p"))
 (dolist (key '("\M-x" "\M-z" "\M-v" "\C-\M-p"))
   (global-unset-key key))
 
@@ -328,6 +326,7 @@
 
 ;; (global-set-key [(meta shift d)] 'duplicate-current-line-or-region)
 (global-set-key [(meta shift d)] 'duplicate-start-of-line-or-region)
+(global-set-key [(meta z)] 'undo-tree-undo)
 (global-set-key [(meta shift z)] 'undo-tree-redo)
 
 (global-set-key [C-M-tab] 'other-window)
