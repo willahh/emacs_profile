@@ -107,6 +107,9 @@
 
 
 
+;; ------ cursor
+(setf cursor-type 'bar)
+(setq cursor-type '(bar . 4))
 
 
 
@@ -118,8 +121,9 @@
 
 ;; ------ Override theme
 (custom-set-faces `(default ((t (:background "#212121")))))
-(set-face-attribute 'fringe nil :background "#212121")
 (set-face-attribute 'default nil :foreground "#e6fbfb" :box nil)
+;; (set-face-attribute 'default nil :foreground "#fff" :box nil)
+(set-face-attribute 'fringe nil :background "#212121")
 (set-face-attribute 'fringe nil :background "#212121")
 (set-face-attribute 'linum nil :background "#212121")
 ;; (set-face-attribute 'sp-pair-overlay-face nil :foreground "#fff" :background "#212121")
@@ -227,15 +231,16 @@
 
 
 ;; ------- css
-;; (set-face-attribute 'css-selector nil :foreground "#f07178")
-;; (set-face-attribute 'css-property nil :foreground "#b2ccd6")
-;; (set-face-attribute 'css-proprietary-property nil :foreground "#c792ea")
+(require 'css-mode)
+(set-face-attribute 'css-selector nil :foreground "#f07178")
+(set-face-attribute 'css-property nil :foreground "#b2ccd6")
+(set-face-attribute 'css-proprietary-property nil :foreground "#c792ea")
 
-;; (add-hook 'css-mode-hook
-;;           (set-face-attribute 'css-selector nil :foreground "#f07178")
-;;           (set-face-attribute 'css-property nil :foreground "#b2ccd6")
-;;           (set-face-attribute 'css-proprietary-property nil :foreground "#c792ea")
-;; )
+(add-hook 'css-mode-hook
+          (set-face-attribute 'css-selector nil :foreground "#f07178")
+          (set-face-attribute 'css-property nil :foreground "#b2ccd6")
+          (set-face-attribute 'css-proprietary-property nil :foreground "#c792ea")
+)
 
 
 ;; powerline
@@ -276,24 +281,36 @@
 ;; Text selection
 ;; (set-face-attribute 'region nil :background "#0d7aa6" :foreground "#eeffff" :box nil)
 ;; (set-face-attribute 'region nil :background "red" :foreground "#eeffff" :box nil)
-(set-face-attribute 'region nil :background "#ffe400" :foreground "#000" :box nil)
+;; (set-face-attribute 'region nil :background "#ffe400" :foreground "#000" :box nil)
+(set-face-attribute 'region nil :background "#fff" :foreground "#000" :box nil)
+;; (set-face-attribute 'region nil :background "#999" :foreground "#000" :box nil)
 
 ;; (set-face-attribute 'highlight-symbol-face nil :foreground "#fff" :background "#026a88")
 ;; (set-face-attribute 'highlight-symbol-face nil :foreground "#8fddfb" :background "#212121" :box nil)
 ;; (set-face-attribute 'highlight-symbol-face nil :foreground "#fff" :background "#4e3742" :box nil)
 ;; (set-face-attribute 'highlight-symbol-face nil :foreground "#fff" :background "#e6de00" :box nil :overline nil)
 ;; (set-face-attribute 'highlight-symbol-face nil :foreground "#55fdbd" :background nil :box nil :overline nil)
-(set-face-attribute 'highlight-symbol-face nil :foreground "#fee233" :background nil :box nil :overline nil)
+;; (set-face-attribute 'highlight-symbol-face nil :foreground "#fee233" :background nil :box nil :overline nil)
+(set-face-attribute 'highlight-symbol-face nil :foreground "#00deff" :background "#000" :box nil :overline nil)
 
 ;; (set-face-attribute 'evil-ex-lazy-highlight nil :foreground "#fff" :background "#212121")
 ;; (set-face-attribute 'evil-ex-lazy-highlight nil :foreground "#000" :background "#5ab1ea")
 ;; (set-face-attribute 'evil-ex-lazy-highlight nil :foreground "#000" :background "#b3b3b3")
-(set-face-attribute 'evil-ex-lazy-highlight nil :foreground "#000" :background "#7aade1")
+;; (set-face-attribute 'evil-ex-lazy-highlight nil :foreground "#000" :background "#7aade1")
+;; (set-face-attribute 'evil-ex-lazy-highlight nil :foreground "#fff" :background "#008bb3")
+;; (set-face-attribute 'evil-ex-lazy-highlight nil :foreground "#fff" :background "#0d7aa6")
+;; (set-face-attribute 'evil-ex-lazy-highlight nil :foreground "#fff" :background "#4fb5c7")
+;; (set-face-attribute 'evil-ex-lazy-highlight nil :foreground "#fff" :background "#8b8b8b")
+(set-face-attribute 'evil-ex-lazy-highlight nil :foreground "#000" :background "#b1b1b1")
+;; (set-face-attribute 'evil-ex-lazy-highlight nil :foreground "#000" :background "#be93ee")
 
 
 ;; parenthesis
-(set-face-foreground 'show-paren-match "#b5ff05")
-(set-face-background 'show-paren-match "#0a63ae")
+;; (set-face-foreground 'show-paren-match "#b5ff05")
+;; (set-face-background 'show-paren-match "#0a63ae")
+
+(set-face-foreground 'show-paren-match "#fff")
+(set-face-background 'show-paren-match "#9a00ff")
 
 
 
@@ -314,29 +331,49 @@
 
 
 ;; ;; ----- vc-ediff color custom
-(set-face-attribute 'ediff-current-diff-A nil :foreground "#fff" :background nil)
+(set-face-attribute 'ediff-current-diff-A nil :foreground "#c792ea" :background "#161616")
 (set-face-attribute 'ediff-current-diff-Ancestor nil :foreground "#fff" :background "#fc5572")
-(set-face-attribute 'ediff-current-diff-B nil :foreground "#fff" :background "#c4e791")
-(set-face-attribute 'ediff-current-diff-C nil :foreground "#fff" :background nil)
+(set-face-attribute 'ediff-current-diff-B nil :foreground "#c792ea" :background "#161616")
+(set-face-attribute 'ediff-current-diff-C nil :foreground "#c792ea" :background nil)
 
-(set-face-attribute 'ediff-even-diff-A nil :foreground "#000" :background "#fc5572")
-(set-face-attribute 'ediff-even-diff-Ancestor nil :foreground "#000" :background "red")
-(set-face-attribute 'ediff-even-diff-B nil :foreground "#000" :background "#c4e791")
-(set-face-attribute 'ediff-even-diff-C nil :foreground "#fff" :background nil)
+;; 
+(set-face-attribute 'ediff-even-diff-A nil :foreground "#c792ea" :background "#161616")
+(set-face-attribute 'ediff-even-diff-Ancestor nil :foreground "#fff" :background "161616")
+(set-face-attribute 'ediff-even-diff-B nil :foreground "#c792ea" :background "#161616")
+(set-face-attribute 'ediff-even-diff-C nil :foreground "#c792ea" :background "#161616")
 
 (set-face-attribute 'ediff-fine-diff-A nil :foreground "#000" :background "#fc5572")
 (set-face-attribute 'ediff-fine-diff-Ancestor nil :foreground "#fff" :background "red")
-(set-face-attribute 'ediff-fine-diff-B nil :foreground "#000" :background "#c4e791")
-(set-face-attribute 'ediff-fine-diff-C nil :foreground "#000" :background "#56b0ec")
+(set-face-attribute 'ediff-fine-diff-B nil :foreground "#000" :background "#c792ea")
+(set-face-attribute 'ediff-fine-diff-C nil :foreground "#000" :background "#c792ea")
 
-(set-face-attribute 'ediff-odd-diff-A nil :foreground "#fff" :background "#2b323c" :box nil)
-(set-face-attribute 'ediff-odd-diff-Ancestor nil :foreground "#fff" :background "#2b323c" :box nil)
-(set-face-attribute 'ediff-odd-diff-B nil :foreground "#fff" :background "#2b323c" :box nil)
-(set-face-attribute 'ediff-odd-diff-C nil :foreground "#fff" :background "#2b323c" :box nil)
+(set-face-attribute 'ediff-odd-diff-A nil :foreground "#c792ea" :background nil :box nil)
+(set-face-attribute 'ediff-odd-diff-Ancestor nil :foreground "#fff" :background nil :box nil)
+(set-face-attribute 'ediff-odd-diff-B nil :foreground "#c792ea" :background nil :box nil)
+(set-face-attribute 'ediff-odd-diff-C nil :foreground "#c792ea" :background "#161616" :box nil)
 
 ;; --- yas
 (set-face-attribute 'yas--field-debug-face nil :foreground "#fff" :background nil)
 (set-face-attribute 'yas-field-highlight-face nil :foreground "#fff" :background nil)
+
+
+;; ;; ----- smerge
+(set-face-attribute 'smerge-markers nil :foreground "#fff" :background "#0f0f0f")
+(set-face-attribute 'smerge-mine nil :foreground "#fff" :background "#3c161e")
+(set-face-attribute 'smerge-other nil :foreground "#fff" :background "#163c33")
+(set-face-attribute 'smerge-refined-added nil :foreground "#fff" :background "#02944d")
+
+
+
+
+;; ;; ----- smerge
+;; (set-face-attribute 'magit-diff-hunk-heading-highlight nil :foreground nil :background "#161616" :box "#8fddfb")
+;; (set-face-attribute 'magit-diff-removed-highlight nil :foreground nil :background "#3c161e")
+;; (set-face-attribute 'magit-diff-added-highlight nil :foreground nil :background "#163c2b")
+;; (set-face-attribute 'magit-diff-context-highlight nil :foreground nil :background nil)
+(set-face-attribute 'magit-diff-added-highlight nil :foreground nil :background "#163c2c")
+
+
 
 
 ;; powerline theme

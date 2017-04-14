@@ -38,7 +38,7 @@
   company-php
   ;; ac-php
   php-eldoc
-  php-extras
+  ; php-extras
   editorconfig
   ;; php-completion
 
@@ -49,7 +49,8 @@
   rainbow-mode
 
   eclim
-  
+  point-undo
+
   ;; rainbow-delimiters
   ;;anything
   async

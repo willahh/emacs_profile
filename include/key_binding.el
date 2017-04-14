@@ -1,6 +1,4 @@
 ;;;; key_binding: --- some default / package keybindings
-;; (dolist (key '("\M-x" "\M-z" "\M-v" "\M-p" "\C-\M-p" "\C-\M-j"))
-;; (dolist (key '("\M-x" "\M-z" "\M-v" "\M-p" "\C-\M-p"))
 (dolist (key '("\M-x" "\M-z" "\M-v" "\C-\M-p"))
   (global-unset-key key))
 
@@ -143,6 +141,7 @@
 ;; Dired
 ;; (define-key dired-mode-map (kbd "<mouse-2>") 'dired-find-file)
 (define-key dired-mode-map (kbd "<tab>") 'dired-find-file)
+(define-key dired-mode-map (kbd "C-j") 'dired-find-file) ;; Add a "standard" C-j (go) binding to dired
 (define-key dired-mode-map (kbd "<S-tab>") 'dired-up-directory)
 
 ;; ---------------- Dolor theme
@@ -199,8 +198,8 @@
 ;; window
 ;; (global-set-key (kbd "M-C-w") 'resize-window)
 (global-set-key (kbd "M-à") 'resize-window)
-(global-set-key (kbd "<C-M-268632091>") 'split-window-below) ;; CTRL+ALT+COMMAND + ° (caractere a droite du 0)
-(global-set-key (kbd "<C-M-268632095>") 'split-window-right) ;; CTRL+ALT+COMMAND + - (caractere a droite du 0 + 1)
+;; (global-set-key (kbd "<C-M-268632091>") 'split-window-below) ;; CTRL+ALT+COMMAND + ° (caractere a droite du 0)
+;; (global-set-key (kbd "<C-M-268632095>") 'split-window-right) ;; CTRL+ALT+COMMAND + - (caractere a droite du 0 + 1)
 (global-set-key [(meta shift control h)] 'evil-window-left)
 (global-set-key [(meta shift control l)] 'evil-window-right)
 (global-set-key [(meta shift control j)] 'evil-window-down)
@@ -217,7 +216,7 @@
 ;; ---
 (global-set-key (kbd "M-c") 'kill-ring-save)
 (global-set-key (kbd "M-c") 'kill-ring-save)
-(global-set-key (kbd "M-Ò") 'save-some-buffers) ;; (command + alt + s)
+;; (global-set-key (kbd "M-Ò") 'save-some-buffers) ;; (command + alt + s)
 (global-set-key (kbd "C-x C-d") 'duplicate-current-line-or-region)
 
 (global-set-key (kbd "C-M-J") 'drag-stuff-down)
@@ -239,8 +238,8 @@
 
 
 ;; (global-set-key (kbd "M-x") 'smex)
-;; (global-set-key (kbd "M-x") 'counsel-M-x)
-(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "M-x") 'counsel-M-x) ;; counsel in M-x 
+;; (global-set-key (kbd "M-x") 'helm-M-x)
 
 
 
@@ -258,9 +257,13 @@
 ;; 
 (global-set-key (kbd "M-v") 'yank)
 
-(global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
-(global-set-key (kbd "M-z") 'undo-tree-undo)
-(global-set-key (kbd "M-w")  'kill-this-buffer)
+;; (global-set-key (kbd "M-x") 'whole-line-or-region-kill-region) ;; Update no need ? (m-x is realy standard in emacs)
+;; (global-set-key (kbd "M-w")  'kill-this-buffer) ;;
+;; (global-set-key [(meta control x)] 'whole-line-or-region-kill-region) ;; Update no need ? (m-x is realy standard in emacs)
+;; (global-set-key (kbd "C-M-x") 'whole-line-or-region-kill-region) ;; Update no need ? (m-x is realy standard in emacs)
+
+(global-set-key [(control shift x)] 'kill-whole-line)
+
 
 ;; Filter buffer / Get buffer definitions
 ;; (global-set-key [(meta r)]  'counsel-imenu) ;; command + r
@@ -275,6 +278,14 @@
 (global-set-key (kbd "M-œ")  'neotree-find) ;; CMD+ALT+o
 
 (global-set-key [(meta shift o)] 'ivy-switch-buffer)
+
+
+
+;; swiper
+(global-set-key [(meta shift s)] 'swiper)
+
+
+
 
 
 
@@ -315,6 +326,7 @@
 
 ;; (global-set-key [(meta shift d)] 'duplicate-current-line-or-region)
 (global-set-key [(meta shift d)] 'duplicate-start-of-line-or-region)
+(global-set-key [(meta z)] 'undo-tree-undo)
 (global-set-key [(meta shift z)] 'undo-tree-redo)
 
 (global-set-key [C-M-tab] 'other-window)
@@ -397,6 +409,10 @@
 ;; (global-set-key (kbd "M-M") 'jump-char-backward)
 ;; (global-set-key (kbd "s-m") 'jump-char-backward)
 
+;; 
+
+
+;;
 
 
 
@@ -425,11 +441,16 @@
 
 
 
-;; Rebind tab car sinon elle est surchargee
+;; Rebind [yo2] car sinon [yo] est surchargee
 (require 'magit)
 (define-key magit-status-mode-map (kbd "<tab>") 'magit-section-toggle)
 
 
 ;; Emmet --> Override key to get the standard emacs C-j
 (define-key emmet-mode-keymap (kbd "C-j") 'electric-newline-and-maybe-indent)
+
+
+;;  undo redo [remove 1 one word (add this sentence)]
+(define-key global-map (kbd "C-<") 'point-undo)
+(define-key global-map (kbd "C->") 'point-redo)
 

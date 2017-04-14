@@ -177,10 +177,13 @@
 
 ;; Update 3 : Trop de ralentissements, desactivation du mode auto
 
-(require 'highlight-symbol)
-(highlight-symbol-mode 1)
+;; Update 4 : Reactivation automatique pour le moment, car vraiment pratique
+;; @todo  Il faudrait implementer l activation a la selection comme ca a pu etre deja fait 
 
-(setq highlight-symbol-idle-delay 1)
+(require 'highlight-symbol)
+;; (highlight-symbol-mode 0)
+
+;; (setq highlight-symbol-idle-delay 0)
 
 (add-hook 'prog-mode-hook 'highlight-symbol-mode)
 (add-hook 'prog-mode-hook 'highlight-symbol-nav-mode)
@@ -727,11 +730,12 @@
 
 
 ;; rainbow-mode (css color)
-(require 'rainbow-mode)
+;; (require 'rainbow-mode)
 
-;;; Colourise CSS colour 
-(dolist (hook '(css-mode-hook html-mode-hook sass-mode-hook))
-    (add-hook hook 'rainbow-mode))
+;;; Colourise CSS colour
+;; Update : trop de couleurs
+;; (dolist (hook '(css-mode-hook html-mode-hook sass-mode-hook))
+;;     (add-hook hook 'rainbow-mode))
 
 
 ;; dsvn conf
@@ -1657,12 +1661,13 @@
 ;;       helm-echo-input-in-header-line t)
 
 ;; ;; Size
-(setq helm-autoresize-max-height 800)
-(setq helm-autoresize-min-height 600) ;; Important
+(setq helm-autoresize-max-height 500)
+(setq helm-autoresize-min-height 100) ;; Important
 
 ;; Auto resize
-(helm-autoresize-mode 1)
-(setq helm-autoresize-max-height 40) ;; Utilisation de 40% de hauteur
+(helm-autoresize-mode nil)
+;; (setq helm-autoresize-max-height 40) ;; Utilisation de 40% de hauteur
+(setq helm-autoresize-max-height 10)
 
 ;; helm locate
 (setq helm-locate-fuzzy-match t)
@@ -1676,29 +1681,29 @@
   :ensure t
   )
 
-(use-package swiper
-  :ensure try
-  :config
-  (progn
-    (ivy-mode 1)
-    (setq ivy-use-virtual-buffers t)
-    (global-set-key "\C-s" 'swiper)
-    ;; (global-set-key (kbd "C-c C-r") 'ivy-resume)
-    ;; (global-set-key (kbd "<f6>") 'ivy-resume)
-    (global-set-key (kbd "M-x") 'counsel-M-x)
-    (global-set-key (kbd "C-x C-f") 'counsel-find-file)
-    (global-set-key (kbd "<f1> f") 'counsel-describe-function)
-    (global-set-key (kbd "<f1> v") 'counsel-describe-variable)
-    (global-set-key (kbd "<f1> l") 'counsel-load-library)
-    (global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
-    (global-set-key (kbd "<f2> u") 'counsel-unicode-char)
-    (global-set-key (kbd "C-c g") 'counsel-git)
-    (global-set-key (kbd "C-c j") 'counsel-git-grep)
-    (global-set-key (kbd "C-c k") 'counsel-ag)
-    (global-set-key (kbd "C-x l") 'counsel-locate)
-    (global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
-    (define-key read-expression-map (kbd "C-r") 'counsel-expression-history)
-    ))
+;; (use-package swiper
+;;   :ensure try
+;;   :config
+;;   (progn
+;;     (ivy-mode 1)
+;;     (setq ivy-use-virtual-buffers t)
+;;     (global-set-key "\C-s" 'swiper)
+;;     ;; (global-set-key (kbd "C-c C-r") 'ivy-resume)
+;;     ;; (global-set-key (kbd "<f6>") 'ivy-resume)
+;;     (global-set-key (kbd "M-x") 'counsel-M-x)
+;;     (global-set-key (kbd "C-x C-f") 'counsel-find-file)
+;;     (global-set-key (kbd "<f1> f") 'counsel-describe-function)
+;;     (global-set-key (kbd "<f1> v") 'counsel-describe-variable)
+;;     (global-set-key (kbd "<f1> l") 'counsel-load-library)
+;;     (global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
+;;     (global-set-key (kbd "<f2> u") 'counsel-unicode-char)
+;;     (global-set-key (kbd "C-c g") 'counsel-git)
+;;     (global-set-key (kbd "C-c j") 'counsel-git-grep)
+;;     (global-set-key (kbd "C-c k") 'counsel-ag)
+;;     (global-set-key (kbd "C-x l") 'counsel-locate)
+;;     (global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
+;;     (define-key read-expression-map (kbd "C-r") 'counsel-expression-history)
+;;     ))
 
 ;; advise swiper to recenter on exit
 (defun bjm-swiper-recenter (&rest args)
@@ -2070,7 +2075,8 @@ then `diff-jump-to-old-file' is also set, for the next invocations."
 
 
 ;; php-extras
-(require 'php-extras)
+; (require 'php-extras)
+;; Update : not found in elpa/melpa ?
 
 ;; php-completion
 ;; (add-hook 'php-mode-hook
@@ -2082,3 +2088,8 @@ then `diff-jump-to-old-file' is also set, for the next invocations."
 ;; editorconfig
 (require 'editorconfig)
 (editorconfig-mode 1)
+
+;; point-undo
+(require 'point-undo)
+
+
