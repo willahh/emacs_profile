@@ -262,6 +262,12 @@
 ;; A bit margin left
 (set-window-margins nil 5)
 
+(set-face-background 'vertical-border "gray")
+(set-face-foreground 'vertical-border (face-background 'vertical-border))
+
+;; (set-face-background 'horizontal-border "gray")
+;; (set-face-foreground 'horizontal-border (face-background 'horizontal-border))
+
 
 ;; ------- Custom theme
 (set-frame-font "Fira mono:antialias=1") ;; Don't work ?
@@ -277,13 +283,6 @@
 
 ;; Current line highlight
 (set-face-background 'hl-line "#161616")
-
-;; Text selection
-;; (set-face-attribute 'region nil :background "#0d7aa6" :foreground "#eeffff" :box nil)
-;; (set-face-attribute 'region nil :background "red" :foreground "#eeffff" :box nil)
-;; (set-face-attribute 'region nil :background "#ffe400" :foreground "#000" :box nil)
-(set-face-attribute 'region nil :background "#fff" :foreground "#000" :box nil)
-;; (set-face-attribute 'region nil :background "#999" :foreground "#000" :box nil)
 
 ;; (set-face-attribute 'highlight-symbol-face nil :foreground "#fff" :background "#026a88")
 ;; (set-face-attribute 'highlight-symbol-face nil :foreground "#8fddfb" :background "#212121" :box nil)
@@ -303,6 +302,19 @@
 ;; (set-face-attribute 'evil-ex-lazy-highlight nil :foreground "#fff" :background "#8b8b8b")
 (set-face-attribute 'evil-ex-lazy-highlight nil :foreground "#000" :background "#b1b1b1")
 ;; (set-face-attribute 'evil-ex-lazy-highlight nil :foreground "#000" :background "#be93ee")
+
+
+;; Text selection
+;; (set-face-attribute 'region nil :background "#0d7aa6" :foreground "#eeffff" :box nil)
+;; (set-face-attribute 'region nil :background "red" :foreground "#eeffff" :box nil)
+;; (set-face-attribute 'region nil :background "#ffe400" :foreground "#000" :box nil)
+;; (set-face-attribute 'region nil :background "#fff" :foreground "#000" :box nil)
+;; (set-face-attribute 'region nil :background "#fdb92c" :foreground "#000" :box nil)
+;; (set-face-attribute 'region nil :background "#000" :box nil)
+;; (set-face-attribute 'region nil :background "#999" :foreground "#000" :box nil)
+(set-face-attribute 'region nil :background "#fdb92c" :foreground "#000" :box nil)
+
+
 
 
 ;; parenthesis
@@ -410,6 +422,22 @@
 (add-hook 'evil-insert-state-entry-hook 'powerline-theme-insert)
 (add-hook 'evil-emacs-state-entry-hook 'powerline-theme-emacs)
 
+
+
+;; Cursor / caret state color
+;; (setq evil-emacs-state-cursor '("#9ecf00" bar))
+(setq evil-emacs-state-cursor '("#f1c70a" bar))
+(setq evil-normal-state-cursor '("#56b0ec" box))
+;; (setq evil-visual-state-cursor '("#ffba00" box))
+(setq evil-visual-state-cursor '("#fff" box))
+(setq evil-insert-state-cursor '("red" bar))
+(setq evil-replace-state-cursor '("red" bar))
+(setq evil-operator-state-cursor '("red" hollow))
+
+
+
+
+;; powerline
 (powerline-theme-normal)
 
 

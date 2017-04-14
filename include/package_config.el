@@ -1507,16 +1507,6 @@
 (require 'evil-snipe)
 (evil-snipe-mode 1)
 
-;; Cursor / caret state color
-;; (setq evil-emacs-state-cursor '("#9ecf00" bar))
-(setq evil-emacs-state-cursor '("#f1c70a" bar))
-(setq evil-normal-state-cursor '("#56b0ec" box))
-;; (setq evil-visual-state-cursor '("#ffba00" box))
-(setq evil-visual-state-cursor '("#fff" box))
-(setq evil-insert-state-cursor '("red" bar))
-(setq evil-replace-state-cursor '("red" bar))
-(setq evil-operator-state-cursor '("red" hollow))
-
 ;; eyebrowse
 (require 'eyebrowse)    
 (eyebrowse-mode t)

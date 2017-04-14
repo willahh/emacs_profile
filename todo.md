@@ -39,31 +39,20 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 
 ## Bloquant
-- [ ] [ivy] [mini buffer] Add C-l keybinding   
-- [ ] [dired] Date format lisible
+- [ ] [ivy] [mini buffer] Add C-l keybinding
 - [ ] [css-mode] [comany] Idle delay a 0
 - [ ] Ivy - Highlight current line plus visible
-- [x] [counsel] M-x Les resultats suivants ne se placent pas en premiere position suite a la saisie (ils devraient)
-      - "web-mode"
-      - "profiler-report"
-      - "pack install"
-- [x] [counsel] M-x : Faire fonctionner les raccourcis C-a C-e
-- [x] [counsel] M-x : Changer la regexp dans ce mode
-- [x] [counsel] M-x : Possibilité d'avoir un historique des commandes précédentes
-         -> Back to helm problem solved
 
 ## A ranger
+- [ ] [dired] Date format lisible
 - [ ] [comment-block] Creer des boites de commentaire type /** */ (comment-boxc)
 - [ ] [php-mode] [ac-php] [company] La boite d'informatinos supplémentaire ne contient pas les php doc
 - [ ] [php-mode] Voir pour implementer quick type hierarchy
-- [x] [php-mode] [ac-php] Faire fonctionner Location jump
-      -> OK, utilisation de gtags 
 - [ ] [php-mode] Saisie de /** + ENTER -> Creation d un php doc pre rempli
 
 - [ ] [flycheck] : Mieux distinguer la ligne en erreur
 - [ ] [web-mode] [javascript] [company] Add javascript keywords to company backend
 - [ ] [refactor] emacs.d conf a ranger, voir modele suivant : https://github.com/purcell/emacs.d
-- [x] [web-mode] [javascript] [completion] : 4 spaces
 - [ ] Activer les urls clicable dans les differents modes
 - [ ] Auto center :
       [ ] [go to line (M-g M-g]
@@ -86,7 +75,19 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [x] Emmet mode in [web-mode]
 - [x] [highlight-mode] N est plus present (ainsi que highlight-nav-mode) 
 
+- [x] [counsel] M-x Les resultats suivants ne se placent pas en premiere position suite a la saisie (ils devraient)
+      - "web-mode"
+      - "profiler-report"
+      - "pack install"
+- [x] [counsel] M-x : Faire fonctionner les raccourcis C-a C-e
+- [x] [counsel] M-x : Changer la regexp dans ce mode
+- [x] [counsel] M-x : Possibilité d'avoir un historique des commandes précédentes
+         -> Back to helm problem solved
 
+
+- [x] [web-mode] [javascript] [completion] : 4 spaces
+- [x] [php-mode] [ac-php] Faire fonctionner Location jump
+      -> OK, utilisation de gtags 
 
 ## Majeur
 - [ ] M-DEL --> Suppression de tous les caracteres vides

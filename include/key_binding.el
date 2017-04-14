@@ -1,5 +1,5 @@
 ;;;; key_binding: --- some default / package keybindings
-(dolist (key '("\M-x" "\M-z" "\M-v" "\C-\M-p"))
+(dolist (key '("\M-x" "\M-z" "\C-\M-p"))
   (global-unset-key key))
 
 
@@ -255,7 +255,7 @@
 (global-set-key (kbd "M-s") 'save-buffer)
 
 ;; 
-(global-set-key (kbd "M-v") 'yank)
+;; (global-set-key (kbd "M-v") 'yank) ;; Keep standard emacs keybinding (C-Y)
 
 ;; (global-set-key (kbd "M-x") 'whole-line-or-region-kill-region) ;; Update no need ? (m-x is realy standard in emacs)
 ;; (global-set-key (kbd "M-w")  'kill-this-buffer) ;;
@@ -282,10 +282,12 @@
 
 
 ;; swiper
-(global-set-key [(meta shift s)] 'swiper)
+;; (global-set-key [(meta shift s)] 'swiper)
+(global-set-key [(control shift s)] 'swiper)
 
 
-
+;; emacs srolling
+(global-set-key ""  'evil-buffer-new)
 
 
 
@@ -294,7 +296,10 @@
 ;; pour scroller
 ;; Edit 2 : Tant pis, vraiment pratique
 ;; (global-set-key (kbd "M-n")  'evil-buffer-new)
-(global-set-key [(meta shift n)]  'evil-buffer-new)
+
+;; (global-set-key (kbd "C-v") 'halfscrollbottom)
+;; (global-set-key (kbd "M-v") 'halfscrolltop)
+
 
 
 ;; search
@@ -350,6 +355,11 @@
 
 ;; easy-motion
 (evilem-default-keybindings "ù")
+
+
+(global-set-key (kbd "C-v") 'evil-scroll-down)
+(global-set-key (kbd "M-v") 'evil-scroll-up)
+
 
 ;; web mode
 (define-key web-mode-map [(meta shift j)] 'web-mode-tag-next)
