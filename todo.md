@@ -39,6 +39,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 
 ## Bloquant
+- [ ] [dired] Date format lisible
 - [ ] [counsel] M-x : Faire fonctionner les raccourcis C-a C-e
 - [ ] [css-mode] [comany] Idle delay a 0
 - [ ] Ivy - Highlight current line plus visible
@@ -51,6 +52,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 
 ## A ranger
+- [ ] [comment-block] Creer des boites de commentaire type /** */ (comment-box)
 - [ ] [php-mode] [ac-php] [company] La boite d'informatinos supplémentaire ne contient pas les php doc
 - [ ] [php-mode] Voir pour implementer quick type hierarchy
 - [ ] [php-mode] [ac-php] Faire fonctionner Location jump

@@ -107,6 +107,9 @@
 
 
 
+;; ------ cursor
+(setf cursor-type 'bar)
+(setq cursor-type '(bar . 4))
 
 
 
@@ -118,8 +121,9 @@
 
 ;; ------ Override theme
 (custom-set-faces `(default ((t (:background "#212121")))))
-(set-face-attribute 'fringe nil :background "#212121")
 (set-face-attribute 'default nil :foreground "#e6fbfb" :box nil)
+;; (set-face-attribute 'default nil :foreground "#fff" :box nil)
+(set-face-attribute 'fringe nil :background "#212121")
 (set-face-attribute 'fringe nil :background "#212121")
 (set-face-attribute 'linum nil :background "#212121")
 ;; (set-face-attribute 'sp-pair-overlay-face nil :foreground "#fff" :background "#212121")
@@ -227,15 +231,16 @@
 
 
 ;; ------- css
-;; (set-face-attribute 'css-selector nil :foreground "#f07178")
-;; (set-face-attribute 'css-property nil :foreground "#b2ccd6")
-;; (set-face-attribute 'css-proprietary-property nil :foreground "#c792ea")
+(require 'css-mode)
+(set-face-attribute 'css-selector nil :foreground "#f07178")
+(set-face-attribute 'css-property nil :foreground "#b2ccd6")
+(set-face-attribute 'css-proprietary-property nil :foreground "#c792ea")
 
-;; (add-hook 'css-mode-hook
-;;           (set-face-attribute 'css-selector nil :foreground "#f07178")
-;;           (set-face-attribute 'css-property nil :foreground "#b2ccd6")
-;;           (set-face-attribute 'css-proprietary-property nil :foreground "#c792ea")
-;; )
+(add-hook 'css-mode-hook
+          (set-face-attribute 'css-selector nil :foreground "#f07178")
+          (set-face-attribute 'css-property nil :foreground "#b2ccd6")
+          (set-face-attribute 'css-proprietary-property nil :foreground "#c792ea")
+)
 
 
 ;; powerline
@@ -276,24 +281,36 @@
 ;; Text selection
 ;; (set-face-attribute 'region nil :background "#0d7aa6" :foreground "#eeffff" :box nil)
 ;; (set-face-attribute 'region nil :background "red" :foreground "#eeffff" :box nil)
-(set-face-attribute 'region nil :background "#ffe400" :foreground "#000" :box nil)
+;; (set-face-attribute 'region nil :background "#ffe400" :foreground "#000" :box nil)
+(set-face-attribute 'region nil :background "#fff" :foreground "#000" :box nil)
+;; (set-face-attribute 'region nil :background "#999" :foreground "#000" :box nil)
 
 ;; (set-face-attribute 'highlight-symbol-face nil :foreground "#fff" :background "#026a88")
 ;; (set-face-attribute 'highlight-symbol-face nil :foreground "#8fddfb" :background "#212121" :box nil)
 ;; (set-face-attribute 'highlight-symbol-face nil :foreground "#fff" :background "#4e3742" :box nil)
 ;; (set-face-attribute 'highlight-symbol-face nil :foreground "#fff" :background "#e6de00" :box nil :overline nil)
 ;; (set-face-attribute 'highlight-symbol-face nil :foreground "#55fdbd" :background nil :box nil :overline nil)
-(set-face-attribute 'highlight-symbol-face nil :foreground "#fee233" :background nil :box nil :overline nil)
+;; (set-face-attribute 'highlight-symbol-face nil :foreground "#fee233" :background nil :box nil :overline nil)
+(set-face-attribute 'highlight-symbol-face nil :foreground "#00deff" :background "#000" :box nil :overline nil)
 
 ;; (set-face-attribute 'evil-ex-lazy-highlight nil :foreground "#fff" :background "#212121")
 ;; (set-face-attribute 'evil-ex-lazy-highlight nil :foreground "#000" :background "#5ab1ea")
 ;; (set-face-attribute 'evil-ex-lazy-highlight nil :foreground "#000" :background "#b3b3b3")
-(set-face-attribute 'evil-ex-lazy-highlight nil :foreground "#000" :background "#7aade1")
+;; (set-face-attribute 'evil-ex-lazy-highlight nil :foreground "#000" :background "#7aade1")
+;; (set-face-attribute 'evil-ex-lazy-highlight nil :foreground "#fff" :background "#008bb3")
+;; (set-face-attribute 'evil-ex-lazy-highlight nil :foreground "#fff" :background "#0d7aa6")
+;; (set-face-attribute 'evil-ex-lazy-highlight nil :foreground "#fff" :background "#4fb5c7")
+;; (set-face-attribute 'evil-ex-lazy-highlight nil :foreground "#fff" :background "#8b8b8b")
+(set-face-attribute 'evil-ex-lazy-highlight nil :foreground "#000" :background "#b1b1b1")
+;; (set-face-attribute 'evil-ex-lazy-highlight nil :foreground "#000" :background "#be93ee")
 
 
 ;; parenthesis
-(set-face-foreground 'show-paren-match "#b5ff05")
-(set-face-background 'show-paren-match "#0a63ae")
+;; (set-face-foreground 'show-paren-match "#b5ff05")
+;; (set-face-background 'show-paren-match "#0a63ae")
+
+(set-face-foreground 'show-paren-match "#fff")
+(set-face-background 'show-paren-match "#9a00ff")
 
 
 

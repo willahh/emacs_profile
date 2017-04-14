@@ -17,6 +17,7 @@
       electric-newline-and-maybe-indent
       eval-last-sexp
       evil-a-word
+      evil-append
       evil-backward-char
       evil-backward-word-begin
       evil-change
@@ -31,6 +32,7 @@
       evil-next-line-1-first-non-blank
       evil-normal-state
       evil-previous-line
+      evil-visual-char
       evil-window-down
       evilnc-comment-or-uncomment-lines
       forward-sentence
@@ -51,6 +53,7 @@
 
 (setq mc/cmds-to-run-once
       '(
+      ace-window
       avy-goto-word-1-below
       c-end-of-statement
       counsel-M-x
