@@ -39,11 +39,13 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 
 ## Bloquant
+
+
+## A ranger
 - [ ] [ivy] [mini buffer] Add C-l keybinding
 - [ ] [css-mode] [comany] Idle delay a 0
 - [ ] Ivy - Highlight current line plus visible
 
-## A ranger
 - [ ] [dired] Date format lisible
 - [ ] [comment-block] Creer des boites de commentaire type /** */ (comment-boxc)
 - [ ] [php-mode] [ac-php] [company] La boite d'informatinos supplémentaire ne contient pas les php doc

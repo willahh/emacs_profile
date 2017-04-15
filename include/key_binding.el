@@ -460,6 +460,7 @@
 
 ;; Emmet --> Override key to get the standard emacs C-j
 (define-key emmet-mode-keymap (kbd "C-j") 'electric-newline-and-maybe-indent)
+(define-key emmet-mode-keymap [(control shift j)] 'emmet-expand-line)
 
 
 ;;  undo redo [remove 1 one word (add this sentence)]
@@ -469,3 +470,15 @@
 
 ;; ---------------- vc-diff
 (define-key diff-mode-shared-map (kbd "C-j") 'diff-goto-source)
+
+
+;; ---------------- keyboard layout from alt key
+;; Transpose some characters for quicker access
+
+;; ALT + j
+(define-key global-map (kbd "Ï") (lambda () (interactive) (insert "_")))
+
+;; ALT + k
+(define-key global-map (kbd "È") (lambda () (interactive) (insert "-")))
+
+
