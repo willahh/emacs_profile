@@ -212,8 +212,10 @@
 ;; (global-set-key (kbd "C-c h") 'helm-command-prefix)
 ;; (global-set-key (kbd "C-x C-f") 'helm-find-files)
 ;; (global-set-key (kbd "C-x b") 'helm-mini)
+; ---
+(global-set-key (kbd "C-c f") 'counsel-recentf)
 
-;; ---
+
 (global-set-key (kbd "M-c") 'kill-ring-save)
 (global-set-key (kbd "M-c") 'kill-ring-save)
 ;; (global-set-key (kbd "M-Ò") 'save-some-buffers) ;; (command + alt + s)
@@ -464,3 +466,6 @@
 (define-key global-map (kbd "C-<") 'point-undo)
 (define-key global-map (kbd "C->") 'point-redo)
 
+
+;; ---------------- vc-diff
+(define-key diff-mode-shared-map (kbd "C-j") 'diff-goto-source)
