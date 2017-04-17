@@ -82,7 +82,7 @@
   evil-surround   
   evil-visualstar
   evil-snipe
-
+  evil-matchit
   exec-path-from-shell
   expand-region
   eyebrowse

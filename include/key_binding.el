@@ -464,8 +464,11 @@
 
 
 ;;  undo redo [remove 1 one word (add this sentence)]
-(define-key global-map (kbd "C-<") 'point-undo)
-(define-key global-map (kbd "C->") 'point-redo)
+;; (define-key global-map (kbd "C-<") 'point-undo)
+;; (define-key global-map (kbd "C->") 'point-redo)
+
+(define-key global-map (kbd "C-$") 'point-undo)
+(define-key global-map (kbd "C-*") 'point-redo)
 
 
 ;; ---------------- vc-diff
@@ -474,11 +477,7 @@
 
 ;; ---------------- keyboard layout from alt key
 ;; Transpose some characters for quicker access
-
-;; ALT + j
-(define-key global-map (kbd "Ï") (lambda () (interactive) (insert "_")))
-
-;; ALT + k
-(define-key global-map (kbd "È") (lambda () (interactive) (insert "-")))
-
+(define-key global-map (kbd "È") (lambda () (interactive) (insert "_"))) ;; ALT + j
+(define-key global-map (kbd "Ï") (lambda () (interactive) (insert "-"))) ;; ALT + k
+;; (define-key global-map (kbd "ﬁ") (lambda () (interactive) (insert ""))) ;; ALT + g
 

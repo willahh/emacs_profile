@@ -44,7 +44,7 @@
 ;; (add-hook 'php-mode-hook 'rainbow-delimiters-mode)
 ;; (add-hook 'emacs-lisp-mode 'rainbow-delimiters-mode)
 
-; diffstat
+                                        ; diffstat
 ;; Enhanced version of diff
 ;; (require 'diffstat)
 (add-hook 'diff-mode-hook (lambda () (local-set-key "\C-c\C-l" 'diffstat)))
@@ -81,18 +81,18 @@
 
 ;; https://www.emacswiki.org/emacs/LsLispToggleVerbosity
 (defun leo-toggle-ls-lisp-verbosity ()
-      (interactive)
-      (if (memq 'uid ls-lisp-verbosity)
-          (progn
-            (setq ls-lisp-verbosity (delq 'uid ls-lisp-verbosity))
-            (setq ls-lisp-verbosity (delq 'gid ls-lisp-verbosity))
-            (revert-buffer)
-            (message "uid & gid hidden"))
-        (progn
-          (add-to-list 'ls-lisp-verbosity 'uid)
-          (add-to-list 'ls-lisp-verbosity 'gid)
-          (revert-buffer)
-          (message "uid & gid visible"))))
+  (interactive)
+  (if (memq 'uid ls-lisp-verbosity)
+      (progn
+        (setq ls-lisp-verbosity (delq 'uid ls-lisp-verbosity))
+        (setq ls-lisp-verbosity (delq 'gid ls-lisp-verbosity))
+        (revert-buffer)
+        (message "uid & gid hidden"))
+    (progn
+      (add-to-list 'ls-lisp-verbosity 'uid)
+      (add-to-list 'ls-lisp-verbosity 'gid)
+      (revert-buffer)
+      (message "uid & gid visible"))))
 
 ;; (custom-set-variables
 ;;  '(ls-lisp-verbosity nil))
@@ -216,7 +216,7 @@
 ;; (add-hook 'actionscript-mode-hook 'nlinum-relative-mode 1)
 ;; (add-hook 'fundamental-mode 'nlinum-relative-mode 1)
 ;; (add-hook 'fundamental-mode-abbrev-table 'nlinum-relative-mode 1)
- 
+
 ;; setup for evil
 ;; (add-hook 'prog-mode-hook 'nlinum-relative-mode)
 ;; (setq nlinum-relative-redisplay-delay 0)      ;; delay
@@ -370,8 +370,8 @@
 
 ;; Idle delay a 0 en mode css
 (add-hook 'css-mode-hook
-            (lambda ()
-              (set (make-local-variable 'company-idle-delay 0))))
+          (lambda ()
+            (set (make-local-variable 'company-idle-delay 0))))
 
 ;; Company-quickhelp
 (company-quickhelp-mode 1)
@@ -418,10 +418,10 @@
     (if (looking-at "\\_>") t
       (backward-char 1)
       (if (looking-at "\\.") t
-    (backward-char 1)
-    (if (looking-at "->") t nil)
-    ;; (if (looking-at "::") t nil) ;; Update wra : add "::" for php support
-    ))))
+        (backward-char 1)
+        (if (looking-at "->") t nil)
+        ;; (if (looking-at "::") t nil) ;; Update wra : add "::" for php support
+        ))))
 
 (defun do-yas-expand ()
   (let ((yas/fallback-behavior 'return-nil))
@@ -435,35 +435,35 @@
    (t
     (indent-for-tab-command)
     (if (or (not yas/minor-mode)
-        (null (do-yas-expand)))
-    (if (check-expansion)
-        (progn
-          (company-manual-begin)
-          (if (null company-candidates)
-          (progn
-            (company-abort)
-            (indent-for-tab-command)))))))))
+            (null (do-yas-expand)))
+        (if (check-expansion)
+            (progn
+              (company-manual-begin)
+              (if (null company-candidates)
+                  (progn
+                    (company-abort)
+                    (indent-for-tab-command)))))))))
 
 (defun tab-complete-or-next-field ()
   (interactive)
   (if (or (not yas/minor-mode)
-      (null (do-yas-expand)))
+          (null (do-yas-expand)))
       (if company-candidates
-      (company-complete-selection)
-    (if (check-expansion)
-      (progn
-        (company-manual-begin)
-        (if (null company-candidates)
-        (progn
-          (company-abort)
-          (yas-next-field))))
-      (yas-next-field)))))
+          (company-complete-selection)
+        (if (check-expansion)
+            (progn
+              (company-manual-begin)
+              (if (null company-candidates)
+                  (progn
+                    (company-abort)
+                    (yas-next-field))))
+          (yas-next-field)))))
 
 (defun expand-snippet-or-complete-selection ()
   (interactive)
   (if (or (not yas/minor-mode)
-      (null (do-yas-expand))
-      (company-abort))
+          (null (do-yas-expand))
+          (company-abort))
       (company-complete-selection)))
 
 (defun abort-company-or-yas ()
@@ -601,7 +601,7 @@
 
 
 ;; magit
-; (require 'magit)
+                                        ; (require 'magit)
 
 
 
@@ -626,9 +626,9 @@
 ;; (add-hook 'isearch-mode-end-hook 'recenter)
 ;; (add-hook 'isearch-mode-end-hook 'recenter-top-bottom)
 
-  
-   
-   
+
+
+
 ;;
 (set-face-background 'git-gutter:modified "#ff7200")
 (set-face-foreground 'git-gutter:modified "#ff7200")
@@ -642,8 +642,8 @@
 (add-hook 'dired-mode-hook 'diff-hl-dired-mode)
 (add-hook 'prog-mode-hook 'diff-hl-mode)
 
-                                   
-      
+
+
 
 ;; ;; tabbar
 ;; (require 'tabbar)
@@ -697,8 +697,8 @@
 (global-set-key [(control x) (v) (e)] 'svn-status)
 
 (defun my-svn-log-edit-mode-setup ()
-(setq ispell-local-dictionary "american")
-(flyspell-mode))
+  (setq ispell-local-dictionary "american")
+  (flyspell-mode))
 
 (add-hook 'svn-log-edit-mode-hook 'my-svn-log-edit-mode-setup)
 
@@ -748,13 +748,13 @@
 (autoload 'svn-status "dsvn" "Run `svn status'." t)
 (autoload 'svn-update "dsvn" "Run `svn update'." t)
 
- 
+
 
 ;; Show white space
 ;; Source : http://ergoemacs.org/emacs/whitespace-mode.html
 ;; (global-whitespace-mode 1)
 (progn
- ;; Make whitespace-mode with very basic background coloring for whitespaces.
+  ;; Make whitespace-mode with very basic background coloring for whitespaces.
   ;; http://ergoemacs.org/emacs/whitespace-mode.html
   (setq whitespace-style (quote (face spaces tabs newline space-mark tab-mark newline-mark )))
   )
@@ -767,8 +767,8 @@
 
 
 ;; Add path where "js-beautify" is in, add it to the emacs env PATH
- (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
-    (setq exec-path (append exec-path '("/usr/local/bin")))
+(setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
+(setq exec-path (append exec-path '("/usr/local/bin")))
 
 (setenv "PATH" (shell-command-to-string "source ~/.bashrc; echo -n $PATH"))
 
@@ -802,11 +802,11 @@
 
 ;; Update pour avoir ag et vc dir dans la meme window : plutot pratique
 (setq display-buffer-alist
-  '(  
-   ("*ag*"                                  . (display-buffer-same-window . nil))
-   ("*vc-dir*"                              . (display-buffer-same-window . nil))
-   ("*shell*"                               . (display-buffer-same-window . nil))
-))
+      '(  
+        ("*ag*"                                  . (display-buffer-same-window . nil))
+        ("*vc-dir*"                              . (display-buffer-same-window . nil))
+        ("*shell*"                               . (display-buffer-same-window . nil))
+        ))
 
 
 ;; Use the same window for compile-goto-error mode (ag result list too (herited))
@@ -930,7 +930,7 @@
       '(("erb"  . (("beg" "end")))
         ("php"  . (("beg" "end")
                    ("beg" "end")))
-       ))
+        ))
 
 ;; css colorization
 (setq web-mode-enable-css-colorization t) 
@@ -948,8 +948,8 @@
          )
         ((string= mode-name "Web")
          (php-mode))
-         (add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
-         ))
+        (add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
+        ))
 
 ;; Disable auto indent in web mode (can be very slow)
 (setq web-mode-enable-auto-indentation nil)
@@ -971,9 +971,9 @@
 ;; html-mode
 ;;(require 'html-mode)
 (add-hook 'html-mode-hook
-        (lambda ()
-          ;; Default indentation is usually 2 spaces, changing to 4.
-          (set (make-local-variable 'sgml-basic-offset) 4)))
+          (lambda ()
+            ;; Default indentation is usually 2 spaces, changing to 4.
+            (set (make-local-variable 'sgml-basic-offset) 4)))
 
 ;; javascript mode
 (require 'js2-mode)
@@ -1014,11 +1014,11 @@
 
 ;; ;; Add compay-ac-php for company backend
 (add-hook 'php-mode-hook
-            (lambda ()
-              (set (make-local-variable 'company-backends) '(company-ac-php-backend))
-              (eldoc-mode)
-              (ac-php-core-eldoc-setup)
-              ))
+          (lambda ()
+            (set (make-local-variable 'company-backends) '(company-ac-php-backend))
+            (eldoc-mode)
+            (ac-php-core-eldoc-setup)
+            ))
 
 
 ;; ;; Add M-. key for jump to definition
@@ -1067,9 +1067,9 @@
 
 (defun company-mode/backend-with-yas (backend)
   (if (or (not company-mode/enable-yas) (and (listp backend)    (member 'company-yasnippet backend)))
-  backend
-(append (if (consp backend) backend (list backend))
-        '(:with company-yasnippet))))
+      backend
+    (append (if (consp backend) backend (list backend))
+            '(:with company-yasnippet))))
 
 (setq company-backends (mapcar #'company-mode/backend-with-yas company-backends))
 
@@ -1163,12 +1163,12 @@
       wg-mode-line-decor-divider ":")
 
 
-      
-      
-      
-      
-      
-      
+
+
+
+
+
+
 ;; flymake
 ;; (add-hook 'js2-mode-hook 'flymake-mode)
 
@@ -1185,19 +1185,19 @@
 
 ;; ;; I want to see all errors for the line.
 ;; (setq flymake-number-of-errors-to-display nil)
-      
 
 
 
 
 
 
-      
+
+
 ;; flycheck     
 ;; http://codewinds.com/blog/2015-04-02-emacs-flycheck-eslint-jsx.html
 ;; Note : attention flycheck fat ralentir web mode sur des gros fichiers
 (require 'flycheck)      
-      
+
 ;; Note : doit etre active de maniere globale, je n arrive pas
 ;; a l activer avec un hook sur js2mode (pour le moment)      
 ;; (global-flycheck-mode)
@@ -1216,7 +1216,7 @@
 
 ;; (setq flycheck-javascript-esline-executable 'eslint) ;; Ne semble pas fonctionner
 ;; (setq-default flycheck-disabled-checkers '(javascript-jscs))
-      
+
 ;; (add-hook 'js2-mode-hook 'flycheck-mode)
 
 ;; turn on flychecking globally
@@ -1225,47 +1225,47 @@
 
 ;; disable jshint since we prefer eslint checking
 (setq-default flycheck-disabled-checkers
-  (append flycheck-disabled-checkers
-    '(javascript-jshint)))
+              (append flycheck-disabled-checkers
+                      '(javascript-jshint)))
 
 ;; use eslint with web-mode for jsx files
 (flycheck-add-mode 'javascript-eslint 'web-mode)
 
 ;; customize flycheck temp file prefix
 (setq-default flycheck-temp-prefix ".flycheck")                   
-              
+
 ;; disable json-jsonlist checking for json files
 (setq-default flycheck-disabled-checkers
-  (append flycheck-disabled-checkers
-    '(json-jsonlist)))                   
-    
+              (append flycheck-disabled-checkers
+                      '(json-jsonlist)))                   
+
 ;; for better jsx syntax-highlighting in web-mode
 ;; - courtesy of Patrick @halbtuerke
 (defadvice web-mode-highlight-part (around tweak-jsx activate)
   (if (equal web-mode-content-type "jsx")
-    (let ((web-mode-enable-part-face nil))
-      ad-do-it)
+      (let ((web-mode-enable-part-face nil))
+        ad-do-it)
     ad-do-it))
-    
-                       
+
+
 ;;  flymake-jshint 
 ;; (require 'flymake-jshint) 
 ;; (add-to-list 'load-path "~/.emacs.d/elpa/flymake-jshint-20140319.1500/") ;; @todo voir si utile ou non
 ;; (setq jshint-configuration-path "~/.emacs/jshint.json")
 ;; (flycheck-def-config-file-var flycheck-jscsrc javascript-jscs "~/.emacs.d/.jscsrc"
 ;;   :safe #'stringp)
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+
+
+
+
+
+
+
+
+
+
+
+
 ;; Auto-refresh dired on file change
 ;; Source : http://superuser.com/a/566401
 (add-hook 'dired-mode-hook 'auto-revert-mode)
@@ -1408,7 +1408,7 @@
     (evil-delete (point-at-bol) (point))))`
 
 ;; Recenter after search
- (defadvice evil-ex-search-next (after advice-for-evil-ex-search-next activate)
+(defadvice evil-ex-search-next (after advice-for-evil-ex-search-next activate)
   (evil-scroll-line-to-center (line-number-at-pos))) 
 
 
@@ -1601,7 +1601,7 @@
 (setq ivy-initial-inputs-alist nil)
 
 
-; Use Enter on a directory to navigate into the directory, not open it with dired.
+                                        ; Use Enter on a directory to navigate into the directory, not open it with dired.
 (define-key ivy-minibuffer-map (kbd "C-m") 'ivy-alt-done)
 (define-key ivy-minibuffer-map (kbd "<tab>") 'ivy-alt-done)
 ;; (define-key ivy-minibuffer-map (kbd "C-b") 'ivy-previous-history-element)
@@ -1611,7 +1611,7 @@
 
 ;; (ivy-pra)
 
-; Let projectile use ivy
+                                        ; Let projectile use ivy
 (setq projectile-completion-system 'ivy)
 
 
@@ -1855,12 +1855,12 @@
 ;;          (interactive)
 ;;           (global-set-key (kbd "RET") 'custom-newline)
 ;; )
-  
+
 ;; (add-hook 'fundamental-mode
 ;;          (interactive)
 ;;           (global-set-key (kbd "RET") 'default-indent-new-line)
 ;; )
-        
+
 ;; (add-hook 'emacs-lisp-mode-hook
 ;;           (interactive)
 ;;           (global-set-key (kbd "RET") 'default-indent-new-line)
@@ -1870,15 +1870,17 @@
 
 
 
-        
-        
-        
+
+
+
 (defadvice evil-ex-search-next (after advice-for-evil-ex-search-next activate)
   (evil-scroll-line-to-center (line-number-at-pos)))        
 
 
 
-
+;; evil-matchit
+(require 'evil-matchit)
+(global-evil-matchit-mode 1)
 
 
 ;; Expand region
@@ -2050,7 +2052,7 @@ then `diff-jump-to-old-file' is also set, for the next invocations."
 ;; (custom-set-variables
 ;;   '(eclim-eclipse-dirs '("/Applications/eclipse/Eclipse.app/Contents/Eclipse"))
 ;;   '(eclim-executable "/Applications/eclipse/Eclipse.app/Contents/Eclipse/eclim"))
-  
+
 
 
 ;; ggtags
@@ -2065,7 +2067,7 @@ then `diff-jump-to-old-file' is also set, for the next invocations."
 
 
 ;; php-extras
-; (require 'php-extras)
+                                        ; (require 'php-extras)
 ;; Update : not found in elpa/melpa ?
 
 ;; php-completion

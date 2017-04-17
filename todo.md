@@ -42,6 +42,8 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 
 ## A ranger
+- [ ] Creation de tableaux directement par texte
+- [ ] Couper la saisie de texte automatiquement 
 - [ ] [ivy] [mini buffer] Add C-l keybinding
 - [ ] [css-mode] [comany] Idle delay a 0
 - [ ] Ivy - Highlight current line plus visible
