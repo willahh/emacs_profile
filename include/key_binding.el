@@ -264,7 +264,9 @@
 ;; (global-set-key [(meta control x)] 'whole-line-or-region-kill-region) ;; Update no need ? (m-x is realy standard in emacs)
 ;; (global-set-key (kbd "C-M-x") 'whole-line-or-region-kill-region) ;; Update no need ? (m-x is realy standard in emacs)
 
+;; (global-set-key [(meta control x)] 'whole-line-or-region-kill-region) ;; Update no need ? (m-x is realy standard in emacs)
 (global-set-key [(control shift x)] 'kill-whole-line)
+(global-set-key [(meta shift x)] 'kill-whole-line) ;; Update : cmd+shift+x plutot que ctrl+shift+x
 
 
 ;; Filter buffer / Get buffer definitions
@@ -459,8 +461,12 @@
 
 
 ;; Emmet --> Override key to get the standard emacs C-j
-(define-key emmet-mode-keymap (kbd "C-j") 'electric-newline-and-maybe-indent)
+;; (define-key emmet-mode-keymap (kbd "C-j") 'electric-newline-and-maybe-indent)
+;; (define-key emmet-mode-keymap (kbd "C-j") 'autopair-newline)
 (define-key emmet-mode-keymap [(control shift j)] 'emmet-expand-line)
+
+(define-key emmet-mode-keymap (kbd "C-j") 'newline-and-indent)
+;; (define-key emmet-mode-keymap (kbd "C-j") 'autopair-newline)
 
 
 ;;  undo redo [remove 1 one word (add this sentence)]

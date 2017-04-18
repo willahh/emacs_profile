@@ -64,6 +64,7 @@
       emmet-expand-line
       evil-buffer-new
       evil-emacs-state
+      evil-window-split
       helm-mini
       helm-projectile-ag
       helm-projectile-find-file
