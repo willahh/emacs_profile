@@ -475,6 +475,13 @@
 
 (define-key global-map (kbd "C-$") 'point-undo)
 (define-key global-map (kbd "C-*") 'point-redo)
+(define-key global-map (kbd "C-c C-f") 'counsel-recentf)
+
+
+;; ---------------- counsel
+;; (define-key ivy-k "C-j") 'diff-goto-source)
+
+
 
 
 ;; ---------------- vc-diff
