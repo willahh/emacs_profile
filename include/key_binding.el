@@ -372,9 +372,11 @@
 ;; open line
 (global-set-key [(M shift return)] 'smart-open-line-above)
 (global-set-key [(M shift j)] 'smart-open-line-above)
+(define-key web-mode-map [(meta shift j)] 'smart-open-line-above)
 
 (global-set-key [(M return)] 'smart-open-line)
 (global-set-key [(M j)] 'smart-open-line)
+(define-key web-mode-map [(meta j)] 'smart-open-line)
 
 
 
@@ -465,8 +467,8 @@
 ;; (define-key emmet-mode-keymap (kbd "C-j") 'autopair-newline)
 (define-key emmet-mode-keymap [(control shift j)] 'emmet-expand-line)
 
-(define-key emmet-mode-keymap (kbd "C-j") 'newline-and-indent)
 ;; (define-key emmet-mode-keymap (kbd "C-j") 'autopair-newline)
+(define-key emmet-mode-keymap (kbd "C-j") 'newline-and-indent)
 
 
 ;;  undo redo [remove 1 one word (add this sentence)]
