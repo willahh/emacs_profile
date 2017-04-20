@@ -95,7 +95,7 @@
   ;; helm-company
   ;; helm-core
   ;; ;; helm-projectile
-  ;; helm-swoop
+  helm-swoop
 
   ;;imenu-anywhere
   js-comint

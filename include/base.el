@@ -1,3 +1,4 @@
+
 ;; Turn truncate lines off by default (like in many modern tools)
 (set-default 'truncate-lines t)
 
@@ -111,32 +112,36 @@
 ;; scroll-conservatively 9999
 ;; scroll-step 1)
 
-(setq scroll-margin 8
-scroll-conservatively 9999
-scroll-step 1)
-
-
-
 ;; (setq auto-window-vscroll 1)
 ;; (setq scroll-conservatively 0)
-
-
-
-
-
-
-;; Mouse wheel behaviour -> Add acceleration like Sublime
-(setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil)))
-(setq mouse-wheel-progressive-speed 10)
 
 ;; (setq mouse-wheel-scroll-amount '(0.01))
 ;; (setq mouse-wheel-progressive-speed 1)
 
+;; Update : Une marge de 8 peut paraître plus pratique (pour la lisibilitée),
+;; en revenche des problèmes surviennent lorue l'on clic avec la souris dans la partie du haut
+;; le buffer scroll automatiquement.
+;; Une valeur a 0 (par defaut) est préférable.
+
+;; (setq scroll-margin 8)
+(setq scroll-margin 0)
+(setq scroll-conservatively 9999)
+(setq scroll-step 1)
+
+
+;; Mouse wheel behaviour -> Add acceleration like Sublime
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil)))
+(setq mouse--progressive-speed 10)
+
+
 (setq mouse-wheel-scroll-amount '(0.022))
 (setq mouse-wheel-progressive-speed 0)
 
-
-
+;; "Modern" copy / paste (dont put the selection on the markring)
+;; https://www.emacswiki.org/emacs/Comments_on_CopyAndPaste
+(setq mouse-drag-copy-region nil)  ; stops selection with a mouse being immediately injected to the kill ring
+(setq x-select-enable-primary nil)  ; stops killing/yanking interacting with primary X11 selection
+(setq x-select-enable-clipboard t)  ; makes killing/yanking interact with clipboard X11 selection
 
 ;; Remove bip relou
 (setq visible-bell t)
@@ -258,3 +263,9 @@ scroll-step 1)
 
 
 
+;; https://emacs.stackexchange.com/a/10432
+;; (defadvice isearch-update (before my-isearch-reposite activate)
+;;   (sit-for 0)
+;;   (recenter 1))
+
+;; (setq isearch-allow-scroll t)

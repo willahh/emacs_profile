@@ -223,7 +223,9 @@
 
 (global-set-key (kbd "C-M-J") 'drag-stuff-down)
 (global-set-key (kbd "C-M-k") 'drag-stuff-up)
+
 (define-key php-mode-map (kbd "C-M-J") 'drag-stuff-down) ;; override php mode map cmj
+(define-key compilation-button-map (kbd "C-J") 'compile-goto-error) ;; override php mode map cmj
 
 
 
@@ -467,6 +469,7 @@
 ;; (define-key emmet-mode-keymap (kbd "C-j") 'electric-newline-and-maybe-indent)
 ;; (define-key emmet-mode-keymap (kbd "C-j") 'autopair-newline)
 (define-key emmet-mode-keymap [(control shift j)] 'emmet-expand-line)
+(global-set-key [(control shift j)] 'smart-open-line-above)
 
 ;; (define-key emmet-mode-keymap (kbd "C-j") 'autopair-newline)
 (define-key emmet-mode-keymap (kbd "C-j") 'newline-and-indent)
