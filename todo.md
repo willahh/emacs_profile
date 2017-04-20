@@ -39,6 +39,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 
 ## Bloquant
+- [ ] Helm doit rester dans le context de la page
 - [ ] C-j ---> Le comportement n est pas le même que "<enter>" (visible en mode css) 
 - [ ] Binder l'équivalent des M-enter, M-S-enter sur C-j, C-S-j 
 

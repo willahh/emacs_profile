@@ -306,22 +306,23 @@
 
 
 
-;; search
+;; ----- search
 ;; Update : Apres pas mal d essais, la commande "ag-project" me convient le mieux.
 ;; Cette commande permet de faire une recherche globale depuis le projet (retrouve via .projectile ou .svn .git)
 ;; et affiche les resultats dans le meme buffer tout comme dans Sublime Text.
 ;; Le raccourcis utilise est COMMAND+ALT+f ("M-ƒ" sur osx)
-
+;; Update 3 : Switch helm-ag et helm-ag-project-root (helm-ag sur le racourcis le plus simple)
+;; Update 4 : Re inversement de ces 2 la, trop souvent de mauvais candidats sur le helm-ag-project-root
 
 ;; Les deux plus utiles (selon moi)
-(global-set-key (kbd "ƒ") 'helm-ag) ;; (alt + f)
 (global-set-key (kbd "M-ƒ") 'ag-project) ;; (cmd + alt  + f)
 
-;; Puis celle ci
-;; (global-set-key (kbd "M-·") 'helm-do-grep-ag) ;; (cmd + alt + shift + f)
+(global-set-key (kbd "ƒ") 'helm-ag) ;; (alt + f)
 (global-set-key (kbd "M-·") 'helm-ag-project-root) ;; (cmd + alt + shift + f)
 
-;; window
+
+
+;; ---- window
 (global-set-key [(meta shift w)] 'delete-window)
 
 ;; comment
