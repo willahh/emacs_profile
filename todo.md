@@ -52,7 +52,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 - [ ] [dired] Date format lisible
 - [ ] [comment-block] Creer des boites de commentaire type /** */ (comment-boxc)
-- [ ] [php-mode] [ac-php] [company] La boite d'informatinos supplémentaire ne contient pas les php doc
+- [ ] [php-mode] [ac-php] [company] La boite d'information supplémentaire ne contient pas les php doc
 - [ ] [php-mode] Voir pour implementer quick type hierarchy
 - [ ] [php-mode] Saisie de /** + ENTER -> Creation d un php doc pre rempli
 

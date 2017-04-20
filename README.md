@@ -170,7 +170,6 @@ Tags tools
 <!-- - Global - brew install global --with-exuberant-ctags -->
 
 
-### Recommanded
-- Capslock remapped to ESCAPE key
-- Key press delay (until repeat) : 200ms
-- Key press repeat : 25ms
+### Utils
+- Change System keyboard capslock behaviour : (osx : Karabiner)
+  - Single touch : espace, long press : CTRL (must have !!!)
