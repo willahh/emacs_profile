@@ -69,6 +69,7 @@
       helm-projectile-ag
       helm-projectile-find-file
       helm-projectile-switch-project
+      highlight-symbol-next
       keyboard-quit
       mark-whole-buffer
       mc/mark-next-lines
@@ -76,6 +77,7 @@
       next-buffer
       previous-buffer
       previous-multiframe-window
+      projectile-find-file-dwim
       resize-window
       vc-dir-mark
       vc-dir-previous-line

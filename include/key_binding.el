@@ -323,6 +323,10 @@
 (global-set-key (kbd "M-·") 'helm-ag-project-root) ;; (cmd + alt + shift + f)
 
 
+;; (define-key helm-ag-mode-map (kbd "C-j") 'helm-ag-mode-jump)
+;; (define-key helm-find-files-map (kbd "C-j") 'helm-maybe-exit-minibuffer)
+
+
 
 ;; ---- window
 (global-set-key [(meta shift w)] 'delete-window)

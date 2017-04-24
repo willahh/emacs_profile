@@ -221,8 +221,6 @@
 
 
 
-
-
 ;; OH MY GOD -------> SPEED IMPROVMENT !!! (deffer font rendering)
 ;; thanks http://tsengf.blogspot.fr/2012/11/slow-scrolling-speed-in-emacs.html !!!!!!!!!!!!!!!!!!
 ;; Avec une valeur de 1, des problemes de font lock couleur surviennent.
@@ -258,14 +256,29 @@
 
 
 
+;; Auto wrapping isearch
+;; http://stackoverflow.com/a/287067
+(defadvice isearch-repeat (after isearch-no-fail activate)
+  (unless isearch-success
+    (ad-disable-advice 'isearch-repeat 'after 'isearch-no-fail)
+    (ad-activate 'isearch-repeat)
+    (isearch-repeat (if isearch-forward 'forward))
+    (ad-enable-advice 'isearch-repeat 'after 'isearch-no-fail)
+    (ad-activate 'isearch-repeat)))
 
 
 
 
+;; Auto re-center after after isearch
+(defadvice
+  isearch-repeat-forward
+  (after isearch-repeat-forward-recenter activate)
+  (recenter))
 
-;; https://emacs.stackexchange.com/a/10432
-;; (defadvice isearch-update (before my-isearch-reposite activate)
-;;   (sit-for 0)
-;;   (recenter 1))
+(defadvice
+  isearch-repeat-backward
+  (after isearch-repeat-backward-recenter activate)
+  (recenter))
 
-;; (setq isearch-allow-scroll t)
+(ad-activate 'isearch-repeat-forward)
+(ad-activate 'isearch-repeat-backward)

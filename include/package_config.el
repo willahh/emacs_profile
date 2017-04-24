@@ -1667,7 +1667,7 @@
 
 
 ;; ---------------- swoop
-(require 'helm-swoop) ;; Not found in elpa for the moment
+;;(require 'helm-swoop) ;; Not found in elpa for the moment
 
 
 

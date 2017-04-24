@@ -18,8 +18,6 @@
 
 
 
-
-
 ;; test
 ;; Syntax entry for web mode doesnt work actualy
 ;; https://github.com/fxbois/web-mode/issues/149
@@ -67,7 +65,7 @@
  '(magit-dispatch-arguments nil)
  '(package-selected-packages
  (quote
-  (helm-swoop evil-matchit point-undo editorconfig php-completion php-extras auto-complete-exuberant-ctags company-php eclim rainbow-mode company-web helm helm-ag flx-ido dired-details ace-jump-mode change-inner iy-go-to-char evil-snipe zop-to-char try counsel autopair ido-vertical-mode ido-ubiquitous php-eldoc smart-tab json-mode company-quickhelp company-tern highlight-chars smooth-scrolling drag-stuff evil-tutor clean-aindent-mode rainbow-delimiters tide typescript-mode js2-refactor dumb-jump flymake-jshint helm-hunks yascroll actionscript-mode perspective workgroups2 php-mode polymode web-mode mmm-mode multi-web-mode load-theme-buffer-local 0blayout use-package tabbar color-theme-buffer-local leuven-theme js-doc smart-forward js-comint php-auto-yasnippets smart-newline resize-window php-refactor-mode ac-php general popwin evil-surround window-numbering eyebrowse which-key evil edit-server neotree elfeed logview monokai-theme material-theme noctilux-theme nlinum crosshairs dumb-mode theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord flymake-mode ggtags less-css-mode ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn highlight-symbol zerodark-theme markdown-mode+ emmet-mode company web-beautify multiple-cursors other-frame-window desktop+ undo-tree expand-region avy-menu auto-complete ace-window magit)))
+  (evil-matchit point-undo editorconfig php-completion php-extras auto-complete-exuberant-ctags company-php eclim rainbow-mode company-web helm helm-ag flx-ido dired-details ace-jump-mode change-inner iy-go-to-char evil-snipe zop-to-char try counsel autopair ido-vertical-mode ido-ubiquitous php-eldoc smart-tab json-mode company-quickhelp company-tern highlight-chars smooth-scrolling drag-stuff evil-tutor clean-aindent-mode rainbow-delimiters tide typescript-mode js2-refactor dumb-jump flymake-jshint helm-hunks yascroll actionscript-mode perspective workgroups2 php-mode polymode web-mode mmm-mode multi-web-mode load-theme-buffer-local 0blayout use-package tabbar color-theme-buffer-local leuven-theme js-doc smart-forward js-comint php-auto-yasnippets smart-newline resize-window php-refactor-mode ac-php general popwin evil-surround window-numbering eyebrowse which-key evil edit-server neotree elfeed logview monokai-theme material-theme noctilux-theme nlinum crosshairs dumb-mode theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord flymake-mode ggtags less-css-mode ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn highlight-symbol zerodark-theme markdown-mode+ emmet-mode company web-beautify multiple-cursors other-frame-window desktop+ undo-tree expand-region avy-menu auto-complete ace-window magit)))
  '(safe-local-variable-values (quote ((no-byte-compile t))))
  '(tabbar-separator (quote (1)) t)
  '(vc-annotate-background "#181e26")
@@ -94,29 +92,18 @@
  '(vc-annotate-very-old-color nil)
  '(yas-global-mode t))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:background "#212121")))))
+
+
+
+
+
+
 
 
 
@@ -161,3 +148,22 @@ DIR has to be 1 or -1."
 
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
+
+
+
+
+
+
+
+
+
+
+
+
+
+;; "Modern" copy / paste (dont put the selection on the markring)
+;; https://www.emacswiki.org/emacs/Comments_on_CopyAndPaste
+;; Update : copie de ce bloc en derniere parti de la conf car non fonctionel autrement
+(setq mouse-drag-copy-region nil)  ; stops selection with a mouse being immediately injected to the kill ring
+(setq x-select-enable-primary nil)  ; stops killing/yanking interacting with primary X11 selection
+(setq x-select-enable-clipboard t)  ; makes killing/yanking interact with clipboard X11 selection

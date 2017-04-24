@@ -40,12 +40,15 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 ## Bloquant
 - [x] Double click + paste, -> Voir pour eviter de faire : ctrl-y + cmd-y a chaque fois
-- [x] Helm doit rester dans le context de la page
+- [x] Helm doit rester dans le contexte de la page
+- [ ] [flycheck] Activer flycheck pour les fichiers CSS (important)
+- [ ] [helm-ag] Valider avec c-j, puis auto recentrer une fois le focus effectué  
 - [ ] C-j ---> Le comportement n est pas le même que "<enter>" (visible en mode css) 
 - [ ] Binder l'équivalent des M-enter, M-S-enter sur C-j, C-S-j 
 
+
 ## A ranger
-- [ ] Creation de tableaux directement par texte
+- [ ] Création de tableaux directement par texte
 - [ ] Couper la saisie de texte automatiquement 
 - [ ] [ivy] [mini buffer] Add C-l keybinding
 - [ ] [css-mode] [comany] Idle delay a 0
@@ -62,6 +65,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [refactor] emacs.d conf a ranger, voir modele suivant : https://github.com/purcell/emacs.d
 - [ ] Activer les urls clicable dans les differents modes
 - [ ] Auto center :
+      [x] [i-search]
       [ ] [go to line (M-g M-g]
       [x] [Highlight next / prev]
       [ ] [helm-ag] Go to
@@ -72,29 +76,6 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [ivy] [mini buffer] CTRL+l to back up
 - [ ] [ivy] : Ne pas mettre les fichiers .svn dans la liste
 - [ ] [plugin] [change inner] Ajoute rl'option Change Inner Tag
-
-
-- [x] [swiper] Extract result
-      -> Back to helm, problem solved
-- [x] [web-mode] [company] Add php keyword ($_POST etc)
-- [x] Nouvelle ligne dans un bloc de commentaire : Commencer avec une *
-      -> Natif : M-j
-- [x] Emmet mode in [web-mode]
-- [x] [highlight-mode] N est plus present (ainsi que highlight-nav-mode) 
-
-- [x] [counsel] M-x Les resultats suivants ne se placent pas en premiere position suite a la saisie (ils devraient)
-      - "web-mode"
-      - "profiler-report"
-      - "pack install"
-- [x] [counsel] M-x : Faire fonctionner les raccourcis C-a C-e
-- [x] [counsel] M-x : Changer la regexp dans ce mode
-- [x] [counsel] M-x : Possibilité d'avoir un historique des commandes précédentes
-         -> Back to helm problem solved
-
-
-- [x] [web-mode] [javascript] [completion] : 4 spaces
-- [x] [php-mode] [ac-php] Faire fonctionner Location jump
-      -> OK, utilisation de gtags 
 
 ## Majeur
 - [ ] M-DEL --> Suppression de tous les caracteres vides
@@ -239,6 +220,31 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 
 ## Corrige 
+- [x] [swiper] Extract result
+      -> Back to helm, problem solved
+- [x] [web-mode] [company] Add php keyword ($_POST etc)
+- [x] Nouvelle ligne dans un bloc de commentaire : Commencer avec une *
+      -> Natif : M-j
+- [x] Emmet mode in [web-mode]
+- [x] [highlight-mode] N est plus present (ainsi que highlight-nav-mode) 
+
+- [x] [counsel] M-x Les resultats suivants ne se placent pas en premiere position suite a la saisie (ils devraient)
+      - "web-mode"
+      - "profiler-report"
+      - "pack install"
+- [x] [counsel] M-x : Faire fonctionner les raccourcis C-a C-e
+- [x] [counsel] M-x : Changer la regexp dans ce mode
+- [x] [counsel] M-x : Possibilité d'avoir un historique des commandes précédentes
+         -> Back to helm problem solved
+
+
+- [x] [web-mode] [javascript] [completion] : 4 spaces
+- [x] [php-mode] [ac-php] Faire fonctionner Location jump
+      -> OK, utilisation de gtags 
+      
+      
+      
+      
 - [x] ctrl+s --> La regex ne convient pas du tout
 - [x] iy-go-to-char-b ne fonctionne pas 
 - [x] Ivy tab auto complete
