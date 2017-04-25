@@ -494,7 +494,7 @@
 
 ;; PERFFFECT.
 (define-key key-translation-map (kbd "C-j") (kbd "RET"))
-
+(define-key global-map (kbd "C-c RET") 'dired-jump)
 
 
 
