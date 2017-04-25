@@ -47,6 +47,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] Binder l'équivalent des M-enter, M-S-enter sur C-j, C-S-j 
 
 
+- [x] [ivy] Re
 - [x] C-j ---> Le comportement n est pas le même que "<enter>" (visible en mode css) 
 - [x] Double click + paste, -> Voir pour eviter de faire : ctrl-y + cmd-y a chaque fois
 - [x] Helm doit rester dans le contexte de la page
@@ -69,7 +70,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [flycheck] : Mieux distinguer la ligne en erreur
 - [ ] [web-mode] [javascript] [company] Add javascript keywords to company backend
 - [ ] [refactor] emacs.d conf a ranger, voir modele suivant : https://github.com/purcell/emacs.d
-- [ ] Activer les urls clicable dans les differents modes
+- [ ] Activer les url cliquable dans les differents modes
 - [ ] Auto center :
       [x] [i-search]
       [ ] [go to line (M-g M-g]

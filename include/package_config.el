@@ -1523,7 +1523,6 @@
 
 ;; ---------------- ido / smex / ivy
 ;; (require 'smex)
-(require 'ivy)
 
 ;; ----- ido
 (require 'ido)
@@ -1566,6 +1565,10 @@
 ;;                   ; when Smex is auto-initialized on its first run.
 
 ;; ---- ivy
+(require 'ivy)
+(ivy-mode)
+
+
 ;; ivy conf
 (setq ivy-virtual-abbreviate 'full)
 
@@ -1599,6 +1602,11 @@
 ;; (setq ivy-re-builders-alist '((t . ivy--regex-fuzzy)))
 
 (setq ivy-initial-inputs-alist nil)
+
+
+(setq ivy-re-builders-alist
+      '((ivy-switch-buffer . ivy--regex-plus)
+        (t . ivy--regex-fuzzy)))
 
 
                                         ; Use Enter on a directory to navigate into the directory, not open it with dired.
