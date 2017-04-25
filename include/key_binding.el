@@ -141,7 +141,7 @@
 ;; Dired
 ;; (define-key dired-mode-map (kbd "<mouse-2>") 'dired-find-file)
 (define-key dired-mode-map (kbd "<tab>") 'dired-find-file)
-(define-key dired-mode-map (kbd "C-j") 'dired-find-file) ;; Add a "standard" C-j (go) binding to dired
+;; (define-key dired-mode-map (kbd "C-j") 'dired-find-file) ;; Add a "standard" C-j (go) binding to dired
 (define-key dired-mode-map (kbd "<S-tab>") 'dired-up-directory)
 
 ;; ---------------- Dolor theme
@@ -225,7 +225,7 @@
 (global-set-key (kbd "C-M-k") 'drag-stuff-up)
 
 (define-key php-mode-map (kbd "C-M-J") 'drag-stuff-down) ;; override php mode map cmj
-(define-key compilation-button-map (kbd "C-J") 'compile-goto-error) ;; override php mode map cmj
+;; (define-key compilation-button-map (kbd "C-J") 'compile-goto-error) ;; override php mode map cmj
 
 
 
@@ -405,7 +405,9 @@
 ;; (global-set-key (kbd "M-z") 'zop-up-to-char)
 ;; (global-set-key (kbd "M-Z") 'zop-to-char)
 
-(global-set-key [(control meta s)] 'zop-to-char)
+;; (global-set-key [(control meta s)] 'zop-to-char)
+;; Impossible utilise pour isearch regexp
+
 (global-set-key [(control meta shift s)] 'zop-up-to-char)
 
 
@@ -468,15 +470,36 @@
 (require 'magit)
 (define-key magit-status-mode-map (kbd "<tab>") 'magit-section-toggle)
 
-
-;; Emmet --> Override key to get the standard emacs C-j
 ;; (define-key emmet-mode-keymap (kbd "C-j") 'electric-newline-and-maybe-indent)
 ;; (define-key emmet-mode-keymap (kbd "C-j") 'autopair-newline)
 (define-key emmet-mode-keymap [(control shift j)] 'emmet-expand-line)
 (global-set-key [(control shift j)] 'smart-open-line-above)
 
 ;; (define-key emmet-mode-keymap (kbd "C-j") 'autopair-newline)
-(define-key emmet-mode-keymap (kbd "C-j") 'newline-and-indent)
+;; (define-key emmet-mode-keymap (kbd "C-j") 'newline-and-indent)
+
+;; (define-key emmet-mode-keymap (kbd "C-j") 'electric-newline-and-maybe-indent)
+;; (define-key emmet-mode-keymap (kbd "C-j" 'my-cj-newline-and-indent))
+;; (global-set-key (kbd "C-j") 'my-cj-newline-and-indent)
+
+
+;; (define-key global-map (kbd "C-j") 'autopair-newline)
+
+;; (define-key emmet-mode-keymap (kbd "C-j") 'electric-newline-and-maybe-indent)
+
+
+;; (define-key emmet-mode-keymap (kbd "C-j") 'autopair-newline)
+
+
+
+;; PERFFFECT.
+(define-key key-translation-map (kbd "C-j") (kbd "RET"))
+
+
+
+
+;; (require 'profiler)
+;; (define-key profiler-report-mode-map (kbd "C-j") 'profiler-report-toggle-entry)
 
 
 ;;  undo redo [remove 1 one word (add this sentence)]
@@ -495,7 +518,7 @@
 
 
 ;; ---------------- vc-diff
-(define-key diff-mode-shared-map (kbd "C-j") 'diff-goto-source)
+;; (define-key diff-mode-shared-map (kbd "C-j") 'diff-goto-source)
 
 
 ;; ---------------- keyboard layout from alt key
