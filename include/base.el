@@ -122,9 +122,14 @@
 ;; en revenche des problèmes surviennent lorue l'on clic avec la souris dans la partie du haut
 ;; le buffer scroll automatiquement.
 ;; Une valeur a 0 (par defaut) est préférable.
+;; Update : Un compromis doit être fait, avoir une marge en bas et en haut
+;; semble plus naturel, notamment lorsque l'on écrit du texte en bas de page.
+;; (Recentrage manuel utilisé instinctivement beaucoup plus de fois)
+;; Switch sur une valeur de 8
 
 ;; (setq scroll-margin 8)
-(setq scroll-margin 0)
+;; (setq scroll-margin 0)
+(setq scroll-margin 8)
 (setq scroll-conservatively 9999)
 (setq scroll-step 1)
 
