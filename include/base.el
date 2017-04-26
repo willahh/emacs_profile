@@ -259,8 +259,6 @@
   '(occur-mode-goto-occurrence compile-goto-error))
 
 
-
-
 ;; Auto wrapping isearch
 ;; http://stackoverflow.com/a/287067
 (defadvice isearch-repeat (after isearch-no-fail activate)
@@ -270,8 +268,6 @@
     (isearch-repeat (if isearch-forward 'forward))
     (ad-enable-advice 'isearch-repeat 'after 'isearch-no-fail)
     (ad-activate 'isearch-repeat)))
-
-
 
 
 ;; Auto re-center after after isearch

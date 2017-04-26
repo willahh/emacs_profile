@@ -39,7 +39,8 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 
 ## Bloquant
-- [ ] Emmet mode en css mode (Une erreur est peut êtrep présent dans les emacs.d conf et ne démarre pas emmet en mode css
+- [ ] [Swiper] Changer la regexp dans ce mode
+- [x] Emmet mode en css mode (Une erreur est peut êtrep présent dans les emacs.d conf et ne démarre pas emmet en mode css
 - [ ] [i-search] : Recentrer l'écran
 - [ ] [flycheck] Activer flycheck pour les fichiers CSS (important)
 - [ ] [helm-ag] Valider avec c-j
