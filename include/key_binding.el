@@ -251,7 +251,8 @@
 ;; swiper
 ;; (global-set-key [(meta shift s)] 'swiper)
 ;; (global-set-key [(control shift s)] 'swiper)
-(global-set-key [(control shift s)] 'helm-swoop)
+;; (global-set-key [(control shift s)] 'helm-swoop)
+(global-set-key (kbd "C-x p") 'helm-swoop)
 
 
 ;; emacs srolling
@@ -412,6 +413,18 @@
 (define-key global-map (kbd "È") (lambda () (interactive) (insert "_"))) ;; ALT + j
 (define-key global-map (kbd "Ï") (lambda () (interactive) (insert "-"))) ;; ALT + k
 ;; (define-key global-map (kbd "ﬁ") (lambda () (interactive) (insert ""))) ;; ALT + g
+
+
+;; ---------------- windows OSX key binding
+(global-set-key (kbd "C-x à") 'delete-window) ;; C-x 0
+(global-set-key (kbd "C-x &") 'delete-other-windows) ;; C-x 1
+(global-set-key (kbd "C-x é") 'split-window-below) ;; C-x 2
+(global-set-key (kbd "C-x \"") 'split-window-right) ;; C-x 3
+
+
+
+
+
 
 ;; Multi cursor stuf
 ;; Dilemme : Retirer le M-d natif de emacs pour avoir le M-d de Sublime (que j utilise tout le temps...)
