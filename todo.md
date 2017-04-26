@@ -39,7 +39,9 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 
 ## Bloquant
-- [ ] [Swiper] Changer la regexp dans ce mode
+- [x] [Swiper] Changer la regexp dans ce mode
+      - Update : Retour aarrière sur helm-swoop
+      - Update : Retour arrière sur helm-swoop
 - [x] Emmet mode en css mode (Une erreur est peut êtrep présent dans les emacs.d conf et ne démarre pas emmet en mode css
 - [ ] [i-search] : Recentrer l'écran
 - [ ] [flycheck] Activer flycheck pour les fichiers CSS (important)

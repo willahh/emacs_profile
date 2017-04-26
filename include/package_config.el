@@ -1678,8 +1678,10 @@
 (setq helm-follow-mode-persistent t)
 
 ;; ---------------- swoop
-;;(require 'helm-swoop) ;; Not found in elpa for the moment
+(require 'helm-swoop) ;; Not found in elpa for the moment
 
+;; If this value is t, split window inside the current window
+(setq helm-swoop-split-with-multiple-windows t)
 
 
 

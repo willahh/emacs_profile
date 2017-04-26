@@ -16,6 +16,10 @@
 )
 
 
+;; https://sites.google.com/site/steveyegge2/effective-emacs
+(global-set-key "\C-w" 'backward-kill-word)
+(global-set-key "\C-x\C-k" 'kill-region)
+(global-set-key "\C-c\C-k" 'kill-region)
 
 
 ;; ---------------- Key binding leader
@@ -108,10 +112,38 @@
 ;;
 (key-chord-define-global "xc" 'er/expand-region)
 (key-chord-define-global "wx" 'er/contract-region)
-(key-chord-define-global "<w" 'mc/mark-all-like-this)
+;; (key-chord-define-global "<w" 'mc/mark-all-like-this)
 (key-chord-define-global "ji" 'ace-window) ;; cannot be jk (vim up/right)
 (key-chord-define-global ";:" 'highlight-symbol-mode)
-(key-chord-define-global "qs" 'toggle-php-flavor-mode) 
+(key-chord-define-global "qs" 'toggle-php-flavor-mode)
+
+;; Evil state switcher binding
+;;
+;; De base la touche escape est utlisée pour ça
+;; celle-ci est trop éloignée de base des claviers modernes
+;; 
+;; Update 1 : Préconisation des utilisateurs de vim: 
+;; Remapper caps-lock pour utiliser escape : OK
+;;
+;; Update 2 : Préconisation des utilisateurs de emacs :
+;; Remmaper caps-lock sur ctrl : OK
+;;
+;; Update 3 : Les deux sont très bien un choix doit être fait
+;;
+;; Update 4 : Possibiltée de modifier le comportement de la touche caps-lock
+;; pour sortir un escape sur une pression normale et agir en tant que ctrl
+;; lorsque la touche est enfoncée : OK
+;;
+;; Update 5 : Cette solution est bancale, et le switch entre les modes
+;; arrive très souvent sans le vouloir.
+;; -> Utilisation de caps-lock en touche de CONTROL.
+;; -> Utilisation de key-chord pour switcher entre les modes ("jk")
+;; (Solution alternative officielle http://vim.wikia.com/wiki/Avoid_the_escape_key)
+
+(key-chord-define evil-emacs-state-map "jk" 'evil-normal-state)
+(key-chord-define evil-normal-state-map "jk" 'evil-emacs-state)
+(key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
+
 ;; (key-chord-define-global "zz" 'zop-to-char) 
 ;; (key-chord-define-global "ZZ" 'zop-up-to-char) 
 
@@ -289,7 +321,8 @@
 
 ;; swiper
 ;; (global-set-key [(meta shift s)] 'swiper)
-(global-set-key [(control shift s)] 'swiper)
+;; (global-set-key [(control shift s)] 'swiper)
+(global-set-key [(control shift s)] 'helm-swoop)
 
 
 ;; emacs srolling
