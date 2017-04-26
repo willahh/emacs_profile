@@ -240,6 +240,12 @@
 (global-set-key (kbd "M-œ")  'neotree-find) ;; CMD+ALT+o
 
 
+;; Used for OSX keyboard
+(global-set-key (kbd "M-S-+")  'evilnc-comment-or-uncomment-lines) ;; (Meta + shift + / on US International keyboard)
+(global-set-key (kbd "M-.") 'beginning-of-buffer) ;; Meta + < on US Keyboard
+(global-set-key (kbd "M-/") 'end-of-buffer) ;; Meta + > on US Keyboard
+
+
 
 
 ;; swiper
