@@ -55,6 +55,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 
 ## A ranger
+- [ ] [vc-diff] g (refresh) --> Remettre la bonne position y
 - [ ] Création de tableaux directement par texte
 - [ ] Couper la saisie de texte automatiquement 
 - [ ] [ivy] [mini buffer] Add C-l keybinding
