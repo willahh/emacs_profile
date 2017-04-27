@@ -191,9 +191,6 @@
 ;; (global-set-key (kbd "M-<mouse-1>") 'mc/add-cursor-on-click) ;; Mouse
 (global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click) ;; Mouse
 
-;; window
-;; (global-set-key (kbd "M-C-w") 'resize-window)
-(global-set-key (kbd "M-à") 'resize-window)
 
 
 
@@ -416,14 +413,19 @@
 
 
 ;; ---------------- windows OSX key binding
-(global-set-key (kbd "C-x à") 'delete-window) ;; C-x 0
-(global-set-key (kbd "C-x &") 'delete-other-windows) ;; C-x 1
-(global-set-key (kbd "C-x é") 'split-window-below) ;; C-x 2
-(global-set-key (kbd "C-x \"") 'split-window-right) ;; C-x 3
+;; (global-set-key (kbd "C-x à") 'delete-window) ;; C-x 0
+;; (global-set-key (kbd "C-x &") 'delete-other-windows) ;; C-x 1
+;; (global-set-key (kbd "C-x é") 'split-window-below) ;; C-x 2
+;; (global-set-key (kbd "C-x \"") 'split-window-right) ;; C-x 3
 
 
-
-
+;; easy keys to split window. Key based on ErgoEmacs keybinding
+;; http://ergoemacs.org/emacs/effective_emacs.html
+(global-set-key (kbd "M-à") 'delete-window) ; close current pane
+(global-set-key (kbd "M-&") 'delete-other-windows) ; expand current pane
+(global-set-key (kbd "M-é") 'split-window-below) ; split pane top/bottom
+(global-set-key (kbd "M-\"") 'split-window-right) ; split pane top/bottom
+(global-set-key (kbd "M-ç") 'resize-window)
 
 
 ;; Multi cursor stuf
