@@ -271,10 +271,10 @@
 ;; Update 4 : Re inversement de ces 2 la, trop souvent de mauvais candidats sur le helm-ag-project-root
 
 ;; Les deux plus utiles (selon moi)
-(global-set-key (kbd "M-ƒ") 'ag-project) ;; (cmd + alt  + f)
+(global-set-key (kbd "M-Ò") 'ag-project) ;; (cmd + alt  + s)
 
-(global-set-key (kbd "ƒ") 'helm-ag) ;; (alt + f)
-(global-set-key (kbd "M-·") 'helm-ag-project-root) ;; (cmd + alt + shift + f)
+(global-set-key (kbd "Ò") 'helm-ag) ;; (alt + s)
+(global-set-key (kbd "M-∑") 'helm-ag-project-root) ;; (cmd + alt + shift + s)
 
 
 ;; (define-key helm-ag-mode-map (kbd "C-j") 'helm-ag-mode-jump)
@@ -421,11 +421,23 @@
 
 ;; easy keys to split window. Key based on ErgoEmacs keybinding
 ;; http://ergoemacs.org/emacs/effective_emacs.html
-(global-set-key (kbd "M-à") 'delete-window) ; close current pane
-(global-set-key (kbd "M-&") 'delete-other-windows) ; expand current pane
-(global-set-key (kbd "M-é") 'split-window-below) ; split pane top/bottom
-(global-set-key (kbd "M-\"") 'split-window-right) ; split pane top/bottom
-(global-set-key (kbd "M-ç") 'resize-window)
+;; (global-set-key (kbd "M-à") 'delete-window) ; close current pane
+;; (global-set-key (kbd "M-&") 'delete-other-windows) ; expand current pane
+;; (global-set-key (kbd "M-é") 'split-window-below) ; split pane top/bottom
+;; (global-set-key (kbd "M-\"") 'split-window-right) ; split pane top/bottom
+;; (global-set-key (kbd "M-ç") 'resize-window)
+
+(global-set-key (kbd "M-0") 'delete-window)
+(global-set-key (kbd "M-1") 'delete-other-windows)
+(global-set-key (kbd "M-2") 'split-window-below)
+(global-set-key (kbd "M-3") 'split-window-right)
+(global-set-key (kbd "M-9") 'resize-window)
+
+;; (global-set-key (kbd "M-o") 'other-window)
+;; (global-set-key (kbd "M-S-o") 'previous-multiframe-window)
+
+(global-set-key [(meta o)] 'other-window)
+(global-set-key [(meta shift o)] 'previous-multiframe-window)
 
 
 ;; Multi cursor stuf

@@ -1475,8 +1475,8 @@
 (require 'evil-nerd-commenter)
 
 ;; window-numbering
-(require 'window-numbering)
-(window-numbering-mode)            
+;; (require 'window-numbering)
+;; (window-numbering-mode)            
 
 ;; Spaceline
 ;; Note : power line stylee, mais je n arrive pas a la faire fonctionner
@@ -1512,10 +1512,6 @@
 ;; eyebrowse
 (require 'eyebrowse)    
 (eyebrowse-mode t)
-
-;; window-numbering
-(require 'window-numbering)
-(window-numbering-mode)            
 
 ;; Which-key
 (require 'which-key)

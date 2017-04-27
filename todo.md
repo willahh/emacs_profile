@@ -39,21 +39,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 
 ## Bloquant
-- [x] [flycheck] Activer flycheck pour les fichiers CSS (important)
-- [ ] [helm-ag] Valider avec c-j
-- [ ] [helm-ag] auto recentrer une fois le focus effectué  
-- [ ] Binder l'équivalent des M-enter, M-S-enter sur C-j, C-S-j 
-
-- [x] [Swiper] Changer la regexp dans ce mode
-      - Update : Retour aarrière sur helm-swoop
-      - Update : Retour arrière sur helm-swoop
-- [x] Emmet mode en css mode (Une erreur est peut êtrep présent dans les emacs.d conf et ne démarre pas emmet en mode css
-- [x] [ivy] Re
-- [x] C-j ---> Le comportement n est pas le même que "<enter>" (visible en mode css) 
-- [x] Double click + paste, -> Voir pour eviter de faire : ctrl-y + cmd-y a chaque fois
-- [x] Helm doit rester dans le contexte de la page
-- [x] [counsel] Il faut vraiment sortir les meillleurs résultast plus haut
-
+- [ ] [helm-ag] auto recentrer une fois le focus effectué
 
 ## A ranger
 - [ ] Création de tableaux directement par texte
@@ -84,6 +70,22 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [ivy] [mini buffer] CTRL+l to back up
 - [ ] [ivy] : Ne pas mettre les fichiers .svn dans la liste
 - [ ] [plugin] [change inner] Ajoute rl'option Change Inner Tag
+
+
+- [x] Binder l'équivalent des M-enter, M-S-enter sur C-j, C-S-j 
+- [x] [flycheck] Activer flycheck pour les fichiers CSS (important)
+- [x] [helm-ag] Valider avec c-j
+
+- [x] [Swiper] Changer la regexp dans ce mode
+      - Update : Retour aarrière sur helm-swoop
+      - Update : Retour arrière sur helm-swoop
+- [x] Emmet mode en css mode (Une erreur est peut êtrep présent dans les emacs.d conf et ne démarre pas emmet en mode css
+- [x] [ivy] Re
+- [x] C-j ---> Le comportement n est pas le même que "<enter>" (visible en mode css) 
+- [x] Double click + paste, -> Voir pour eviter de faire : ctrl-y + cmd-y a chaque fois
+- [x] Helm doit rester dans le contexte de la page
+- [x] [counsel] Il faut vraiment sortir les meillleurs résultast plus haut
+
 
 ## Majeur
 - [ ] M-DEL --> Suppression de tous les caracteres vides
