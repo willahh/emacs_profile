@@ -39,14 +39,15 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 
 ## Bloquant
-- [ ] Emmet mode en css mode (Une erreur est peut êtrep présent dans les emacs.d conf et ne démarre pas emmet en mode css
-- [ ] [i-search] : Recentrer l'écran
-- [ ] [flycheck] Activer flycheck pour les fichiers CSS (important)
+- [x] [flycheck] Activer flycheck pour les fichiers CSS (important)
 - [ ] [helm-ag] Valider avec c-j
 - [ ] [helm-ag] auto recentrer une fois le focus effectué  
 - [ ] Binder l'équivalent des M-enter, M-S-enter sur C-j, C-S-j 
 
-
+- [x] [Swiper] Changer la regexp dans ce mode
+      - Update : Retour aarrière sur helm-swoop
+      - Update : Retour arrière sur helm-swoop
+- [x] Emmet mode en css mode (Une erreur est peut êtrep présent dans les emacs.d conf et ne démarre pas emmet en mode css
 - [x] [ivy] Re
 - [x] C-j ---> Le comportement n est pas le même que "<enter>" (visible en mode css) 
 - [x] Double click + paste, -> Voir pour eviter de faire : ctrl-y + cmd-y a chaque fois

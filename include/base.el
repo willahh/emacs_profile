@@ -122,9 +122,14 @@
 ;; en revenche des problèmes surviennent lorue l'on clic avec la souris dans la partie du haut
 ;; le buffer scroll automatiquement.
 ;; Une valeur a 0 (par defaut) est préférable.
+;; Update : Un compromis doit être fait, avoir une marge en bas et en haut
+;; semble plus naturel, notamment lorsque l'on écrit du texte en bas de page.
+;; (Recentrage manuel utilisé instinctivement beaucoup plus de fois)
+;; Switch sur une valeur de 8
 
 ;; (setq scroll-margin 8)
-(setq scroll-margin 0)
+;; (setq scroll-margin 0)
+(setq scroll-margin 8)
 (setq scroll-conservatively 9999)
 (setq scroll-step 1)
 
@@ -254,8 +259,6 @@
   '(occur-mode-goto-occurrence compile-goto-error))
 
 
-
-
 ;; Auto wrapping isearch
 ;; http://stackoverflow.com/a/287067
 (defadvice isearch-repeat (after isearch-no-fail activate)
@@ -267,18 +270,17 @@
     (ad-activate 'isearch-repeat)))
 
 
-
-
 ;; Auto re-center after after isearch
-(defadvice
-  isearch-repeat-forward
-  (after isearch-repeat-forward-recenter activate)
-  (recenter))
 
-(defadvice
-  isearch-repeat-backward
-  (after isearch-repeat-backward-recenter activate)
-  (recenter))
+;; (defadvice
+;;   isearch-repeat-forward
+;;   (after isearch-repeat-forward-recenter activate)
+;;   (recenter))
 
-(ad-activate 'isearch-repeat-forward)
-(ad-activate 'isearch-repeat-backward)
+;; (defadvice
+;;   isearch-repeat-backward
+;;   (after isearch-repeat-backward-recenter activate)
+;;   (recenter))
+
+;; (ad-activate 'isearch-repeat-forward)
+;; (ad-activate 'isearch-repeat-backward)

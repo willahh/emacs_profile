@@ -369,9 +369,12 @@
 (setq company-idle-delay 0.3) ;; Impossible, trop lent, il faut l activer pour CSS only
 
 ;; Idle delay a 0 en mode css
-(add-hook 'css-mode-hook
-          (lambda ()
-            (set (make-local-variable 'company-idle-delay 0))))
+;; Il est possible que cette partie ne fonctionne pas bien
+;; et empeche l'utilisation de emmet en mode css
+;; Update : oui cette partie bloque les autres css hook
+;; (add-hook 'css-mode-hook
+;;           (lambda ()
+;;             (set (make-local-variable 'company-idle-delay 0))))
 
 ;; Company-quickhelp
 (company-quickhelp-mode 1)
@@ -1202,7 +1205,6 @@
 ;; a l activer avec un hook sur js2mode (pour le moment)      
 ;; (global-flycheck-mode)
 ;; Update : fonctionel avec flycheck-mode
-
 (add-hook 'js2-mode-hook 'flycheck-mode)
 (add-hook 'php-mode-hook 'flycheck-mode)
 (add-hook 'css-mode-hook 'flycheck-mode)
@@ -1673,10 +1675,13 @@
 ;; Truncate lines
 (setq helm-truncate-lines 1)
 
+(setq helm-follow-mode-persistent t)
 
 ;; ---------------- swoop
-;;(require 'helm-swoop) ;; Not found in elpa for the moment
+(require 'helm-swoop) ;; Not found in elpa for the moment
 
+;; If this value is t, split window inside the current window
+(setq helm-swoop-split-with-multiple-windows t)
 
 
 
