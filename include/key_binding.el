@@ -100,9 +100,11 @@
 
 ;; -------- key chords binding
 ;; avy
+;; Update : az ne peut pas etre utilise car trop fréquemment utilisé ("localization", ...)
 (key-chord-define-global "qs" 'avy-goto-word-1-below)
 ;; (key-chord-define-global "az" 'avy-goto-char)
-(key-chord-define-global "az" 'avy-goto-word-or-subword-1)
+;; (key-chord-define-global "az" 'avy-goto-word-or-subword-1)
+;; (key-chord-define-global "az" 'avy-goto-word-or-subword-1)
 ;;
 (key-chord-define-global "xc" 'er/expand-region)
 (key-chord-define-global "wx" 'er/contract-region)
@@ -427,11 +429,11 @@
 ;; (global-set-key (kbd "M-\"") 'split-window-right) ; split pane top/bottom
 ;; (global-set-key (kbd "M-ç") 'resize-window)
 
-(global-set-key (kbd "M-0") 'delete-window)
-(global-set-key (kbd "M-1") 'delete-other-windows)
-(global-set-key (kbd "M-2") 'split-window-below)
-(global-set-key (kbd "M-3") 'split-window-right)
-(global-set-key (kbd "M-9") 'resize-window)
+(global-set-key (kbd "M-ç") 'delete-window) ;; M-0
+(global-set-key (kbd "M-&") 'delete-other-windows) ;; M-1
+(global-set-key (kbd "M-é") 'split-window-below) ;; M-2
+(global-set-key (kbd "M-\"") 'split-window-right) ;; M-3
+(global-set-key (kbd "M-ç") 'resize-window) ;; M-9
 
 ;; (global-set-key (kbd "M-o") 'other-window)
 ;; (global-set-key (kbd "M-S-o") 'previous-multiframe-window)
