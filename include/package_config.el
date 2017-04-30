@@ -477,38 +477,13 @@
     (company-abort)))
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+;; Custom wra
+;; New line and indent for tab
+(defun new-line-and-indent-for-tab ()
+  (interactive)
+  (autopair-newline)
+  (indent-for-tab-command)
+)
 
 ;; yasnippet
 (require 'yasnippet)

@@ -172,12 +172,12 @@
 
 
 ;; Dired
-;; (define-key dired-mode-map (kbd "<mouse-2>") 'dired-find-file)
 (define-key dired-mode-map (kbd "<tab>") 'dired-find-file)
-;; (define-key dired-mode-map (kbd "C-j") 'dired-find-file) ;; Add a "standard" C-j (go) binding to dired
 (define-key dired-mode-map (kbd "<S-tab>") 'dired-up-directory)
+(define-key php-mode-map [(control c) (control m)] 'dired-jump)
+(define-key web-mode-map [(control c) (control m)] 'dired-jump)
 
-;; ---------------- Dolor theme
+;; ---------------- Color theme
 (set-face-attribute 'lazy-highlight nil :background "green")
 
 
@@ -215,9 +215,6 @@
 
 ;; Helm
 ; ---
-(global-set-key (kbd "C-c f") 'counsel-recentf)
-
-
 (global-set-key (kbd "M-c") 'kill-ring-save)
 (global-set-key (kbd "M-c") 'kill-ring-save)
 (global-set-key (kbd "C-x C-d") 'duplicate-current-line-or-region)
@@ -241,6 +238,7 @@
 
 (global-set-key (kbd "M-q") 'ask-before-closing)
 (global-set-key (kbd "M-s") 'save-buffer)
+(global-set-key (kbd "C-c C-k") 'kill-this-buffer)
 
 
 ;; Filter buffer / Get buffer definitions
@@ -309,8 +307,6 @@
 (global-set-key (kbd "M-∑") 'helm-ag-project-root) ;; (cmd + alt + shift + s)
 
 
-;; (define-key helm-ag-mode-map (kbd "C-j") 'helm-ag-mode-jump)
-;; (define-key helm-find-files-map (kbd "C-j") 'helm-maybe-exit-minibuffer)
 
 
 
@@ -422,21 +418,27 @@
 ;; Rebind [yo2] car sinon [yo] est surchargee
 (require 'magit)
 (define-key magit-status-mode-map (kbd "<tab>") 'magit-section-toggle)
-
-;; (define-key emmet-mode-keymap (kbd "C-j") 'electric-newline-and-maybe-indent)
-;; (define-key emmet-mode-keymap (kbd "C-j") 'autopair-newline)
 (define-key emmet-mode-keymap [(control shift j)] 'emmet-expand-line)
 (global-set-key [(control shift j)] 'smart-open-line-above)
 
-;; PERFFFECT.
+;; Use of c-j to act as a RET key
 (define-key key-translation-map (kbd "C-j") (kbd "RET"))
+
+;; (define-key global-map (kbd "C-j") 'new-line-and-indent-for-tab)
+;; (global-set-key (kbd "C-j") 'new-line-and-indent-for-tab)
+;; (global-set-key (kbd "\r") 'new-line-and-indent-for-tab)
+;; (global-set-key (kbd "RET") 'new-line-and-indent-for-tab)
+;; (global-set-key (kbd "C-k") 'new-line-and-indent-for-tab)
+;; (define-key autop "\r" 'new-line-and-indent-for-tab)
+
 (define-key global-map (kbd "C-c RET") 'dired-jump)
 (define-key php-mode-map (kbd "C-c C-j") 'dired-jump)
 (define-key web-mode-map (kbd "C-c C-j") 'dired-jump)
 
 (define-key global-map (kbd "C-$") 'point-undo)
 (define-key global-map (kbd "C-*") 'point-redo)
-(define-key global-map (kbd "C-c C-f") 'counsel-recentf)
+(define-key global-map (kbd "C-c C-r") 'ivy-recentf)
+;; (global-set-key (kbd "C-c f") 'counsel-recentf)
 
 
 ;; ---------------- keyboard layout from alt key
@@ -477,7 +479,9 @@
 ;; (global-set-key (kbd "M-o") 'other-window)
 ;; (global-set-key (kbd "M-S-o") 'previous-multiframe-window)
 
-(global-set-key (kbd "M-o") 'other-window) ;; Overrided by ctag ?
+(global-set-key (kbd "M-o") 'other-window)
+(define-key ggtags-navigation-map (kbd "M-o") 'other-window) ;; Need to override ggtags map
+
 (global-set-key [(meta o)] 'other-window)
 (global-set-key [(meta shift o)] 'previous-multiframe-window)
 
@@ -523,6 +527,13 @@
 ;; (global-set-key (kbd "C-c h") 'helm-command-prefix)
 ;; (global-set-key (kbd "C-x C-f") 'helm-find-files)
 ;; (global-set-key (kbd "C-x b") 'helm-mini)
+
+;; (define-key dired-mode-map (kbd "C-j") 'dired-find-file) ;; Add a "standard" C-j (go) binding to dired
+;; (define-key dired-mode-map (kbd "<mouse-2>") 'dired-find-file)
+;; (define-key helm-ag-mode-map (kbd "C-j") 'helm-ag-mode-jump)
+;; (define-key helm-find-files-map (kbd "C-j") 'helm-maybe-exit-minibuffer)
+;; (define-key emmet-mode-keymap (kbd "C-j") 'electric-newline-and-maybe-indent)
+;; (define-key emmet-mode-keymap (kbd "C-j") 'autopair-newline)
 
 ;; (define-key compilation-button-map (kbd "C-J") 'compile-goto-error) ;; override php mode map cmj
 

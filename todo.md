@@ -39,9 +39,11 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 
 ## Bloquant
-- [ ] [helm-ag] auto recentrer une fois le focus effectué
+- [ ] [php-mode] C-j Dired jump
+- [ ] [recentf] 
 
 ## A ranger
+- [ ] [helm-ag] auto recentrer une fois le focus effectué
 - [ ] Création de tableaux directement par texte
 - [ ] Couper la saisie de texte automatiquement 
 - [ ] [ivy] [mini buffer] Add C-l keybinding
