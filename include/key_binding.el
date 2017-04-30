@@ -196,15 +196,16 @@
                                           (interactive)
                                           (scroll-left 4)))
 
-
-(global-set-key (kbd "∂") 'mc/mark-next-like-this-word) ;; ALT+d
-(global-set-key (kbd "∆") 'mc/mark-previous-like-this-word) ;; ALT+SHIFT+d
+;; Multi cursor stuf
+;; Update : Utilisation de la lettre o plutot qutôt que de la lettre d
+;; car celle-ci est utiise pour faire des é
+(global-set-key (kbd "œ") 'mc/mark-next-like-this-word) ;; ALT+o
+(global-set-key (kbd "Œ") 'mc/mark-previous-like-this-word) ;; ALT+SHIFT+o
 (global-set-key [(meta control g)] 'mc/mark-all-dwim) ;; CTRL+META+G - Update c-m-g est utilise pour activer desactiver le highlight auto
 (global-set-key (kbd "ı") 'mc/mark-next-lines) ;; ALT+SHIFT+n 
 (global-set-key (kbd "∏") 'mc/mark-previous-lines) ;; ALT+SHIFT+n
 
-;; (global-unset-key (kbd "M-<down-mouse-1>")) ;; Mouse
-;; (global-set-key (kbd "M-<mouse-1>") 'mc/add-cursor-on-click) ;; Mouse
+
 (global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click) ;; Mouse
 
 
@@ -219,7 +220,6 @@
 
 (global-set-key (kbd "M-c") 'kill-ring-save)
 (global-set-key (kbd "M-c") 'kill-ring-save)
-;; (global-set-key (kbd "M-Ò") 'save-some-buffers) ;; (command + alt + s)
 (global-set-key (kbd "C-x C-d") 'duplicate-current-line-or-region)
 
 (global-set-key (kbd "C-M-J") 'drag-stuff-down)
@@ -236,7 +236,7 @@
 ;; Update : Utilsation des standards emacs (C-c p f)
 ;; (global-set-key (kbd "π") 'projectile-find-file) ;; ALT+P
 
-(global-set-key (kbd "M-π") 'projectile-switch-project) ;; (commande + alt + p)
+;; (global-set-key (kbd "M-π") 'projectile-switch-project) ;; (commande + alt + p)
 (global-set-key (kbd "C-;") 'projectile-find-file-dwim) ;; (ctrl + ;)
 
 (global-set-key (kbd "M-q") 'ask-before-closing)
@@ -250,8 +250,12 @@
 
 
 (global-set-key (kbd "C-x o")  'counsel-find-file)
-(global-set-key (kbd "œ")  'projectile-dired) ;; alt+o
-(global-set-key (kbd "M-œ")  'neotree-find) ;; CMD+ALT+o
+
+;; Update : Utilisation du racourcis de base C-c p D
+;; (global-set-key (kbd "œ")  'projectile-dired) ;; alt+
+
+;; 
+;; (global-set-key (kbd "M-œ")  'neotree-find) ;; CMD+ALT+o
 
 
 ;; Used for OSX keyboard
@@ -266,11 +270,22 @@
 ;; (global-set-key [(meta shift s)] 'swiper)
 ;; (global-set-key [(control shift s)] 'swiper)
 ;; (global-set-key [(control shift s)] 'helm-swoop)
-(global-set-key (kbd "C-x p") 'helm-swoop)
+;; (global-set-key (kbd "C-x p") 'helm-swoop)
 
+;; (global-set-key (kbd "C-c C-c s") 'helm-swoop)
+;; (global-set-key (kbd "C-c C-c f") 'swiper)
+
+(global-set-key (kbd "C-c C-s") 'helm-swoop)
+(define-key js2-mode-map (kbd "C-c C-s") 'helm-swoop)
+(define-key php-mode-map (kbd "C-c C-s") 'helm-swoop)
+(define-key web-mode-map (kbd "C-c C-s") 'helm-swoop)
+
+(global-set-key (kbd "C-c C-p") 'swiper)
+(global-set-key (kbd "C-c C-p") 'swiper)
+(global-set-key (kbd "C-c C-p") 'swiper)
 
 ;; emacs srolling
-(global-set-key ""  'evil-buffer-new)
+;; (global-set-key ""  'evil-buffer-new)
 
 
 
@@ -426,8 +441,8 @@
 
 ;; ---------------- keyboard layout from alt key
 ;; Transpose some characters for quicker access
-(define-key global-map (kbd "È") (lambda () (interactive) (insert "_"))) ;; ALT + j
-(define-key global-map (kbd "Ï") (lambda () (interactive) (insert "-"))) ;; ALT + k
+;; (define-key global-map (kbd "È") (lambda () (interactive) (insert "_"))) ;; ALT + j
+;; (define-key global-map (kbd "Ï") (lambda () (interactive) (insert "-"))) ;; ALT + k
 ;; (define-key global-map (kbd "ﬁ") (lambda () (interactive) (insert ""))) ;; ALT + g
 
 
@@ -619,3 +634,10 @@
 ;; (key-chord-define-global "az" 'avy-goto-word-1)
 ;; (key-chord-define-global "az" 'avy-goto-word-1-above)
 ;; (key-chord-define-global "az" 'avy-goto-char-2)
+
+
+
+
+;; (global-unset-key (kbd "M-<down-mouse-1>")) ;; Mouse
+;; (global-set-key (kbd "M-<mouse-1>") 'mc/add-cursor-on-click) ;; Mouse
+;; (global-set-key (kbd "M-Ò") 'save-some-buffers) ;; (command + alt + s)

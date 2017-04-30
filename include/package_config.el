@@ -354,7 +354,7 @@
 ;; (setq company-minimum-prefix-length 1)
 (setq company-minimum-prefix-length 5)
 
-(setq company-dabbrev-downcase 0)
+(setq company-dabbrev-downcase nil)
 
 ;; (setq company-idle-delay 0)
 ;; (setq company-idle-delay 0.1)
@@ -1618,7 +1618,7 @@
 
 ;; (ivy-pra)
 
-                                        ; Let projectile use ivy
+; Let projectile use ivy
 (setq projectile-completion-system 'ivy)
 
 
@@ -1636,6 +1636,11 @@
 ;; Source : https://gist.github.com/frostidaho/bc3a7b1be32f916dc65d
 ;; Post : https://github.com/abo-abo/swiper/issues/256
 (require 'ivy_buffer_extend)
+
+
+;; ---------------- ivy-hydra
+(require 'ivy-hydra)
+
 
 
 ;; ---------------- helm

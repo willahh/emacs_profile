@@ -154,6 +154,7 @@
   dired-details
   flx-ido
 
+  ivy-hydra
 
   ))
 ;

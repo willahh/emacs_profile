@@ -70,6 +70,7 @@
       helm-projectile-find-file
       helm-projectile-switch-project
       highlight-symbol-next
+      ivy-switch-buffer
       keyboard-quit
       mark-whole-buffer
       mc/mark-next-lines
