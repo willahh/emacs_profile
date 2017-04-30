@@ -118,7 +118,8 @@
 (key-chord-define-global "qs" 'avy-goto-word-1-below)
 ;; (key-chord-define-global "az" 'avy-goto-char)
 ;; (key-chord-define-global "az" 'avy-goto-word-or-subword-1)
-;; (key-chord-define-global "az" 'avy-goto-word-or-subword-1)
+(global-set-key (kbd "C-;") 'avy-goto-word-or-subword-1)
+
 ;;
 (key-chord-define-global "xc" 'er/expand-region)
 (key-chord-define-global "wx" 'er/contract-region)

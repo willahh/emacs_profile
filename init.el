@@ -62,7 +62,7 @@
  '(helm-ag-insert-at-point (quote symbol))
  '(helm-source-names-using-follow
  (quote
-  ("Search at ~/.emacs.d/elpa/" "Search at ~/.emacs.d/include/" "Search at ~/.emacs.d/" "Imenu")))
+  ("Search at ~/www/projects_other/gandalf_api/app/Exceptions/" "Search at ~/.emacs.d/elpa/" "Search at ~/.emacs.d/include/" "Search at ~/.emacs.d/" "Imenu")))
  '(ido-enable-flex-matching t)
  '(magit-dispatch-arguments nil)
  '(package-selected-packages

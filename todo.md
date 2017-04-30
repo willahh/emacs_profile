@@ -39,8 +39,10 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 
 ## Bloquant
-- [ ] [php-mode] C-j Dired jump
+- [x] [php-mode] C-j Dired jump
 - [ ] [recentf] 
+- [ ] [projectile] Auto invalidate cache after new/edit/delete files
+
 
 ## A ranger
 - [ ] [helm-ag] auto recentrer une fois le focus effectué
