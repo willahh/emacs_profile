@@ -346,12 +346,13 @@
 
 ;; Company
 ;; Valeur idle delay a 0.35 car les valeurs (0 | 0.1 | 025) font ralentir 
-;;lors de la saisie de texte
+;; lors de la saisie de texte.
 
 (require 'company)
 (setq company-show-numbers t)
 ;; (setq company-minimum-prefix-length 2)
-(setq company-minimum-prefix-length 1)
+;; (setq company-minimum-prefix-length 1)
+(setq company-minimum-prefix-length 5)
 
 (setq company-dabbrev-downcase 0)
 

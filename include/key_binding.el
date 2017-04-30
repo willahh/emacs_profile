@@ -1,5 +1,5 @@
 ;; key_binding: --- some default / package keybindings
-(dolist (key '("\M-x" "\M-z" "\C-\M-p"))
+(dolist (key '("\M-x" "\M-z" "\C-\M-p" "\C-z"))
   (global-unset-key key))
 
 
@@ -15,11 +15,25 @@
         )
 )
 
-
 ;; https://sites.google.com/site/steveyegge2/effective-emacs
-(global-set-key "\C-w" 'backward-kill-word)
-(global-set-key "\C-x\C-k" 'kill-region)
-(global-set-key "\C-c\C-k" 'kill-region)
+;; Update : Utilisation de c-z pour avoir le meme emplacement clavier que sur un clavier qwerty
+;; (global-set-key "\C-z" 'backward-kill-word)
+;; (global-set-key "\C-z" 'backward-kill-word)
+;; (global-set-key (kbd "C-z") 'backward-kill-word)
+;; (global-set-key [(control z)]'backward-kill-word)
+;; (define-key evil-normal-state-map "C-z" 'backward-kill-word)
+
+;; Kill / cut commands
+(define-key evil-emacs-state-map (kbd "C-z") nil)
+
+(global-set-key [(control z)] 'delete-backward-char)
+(global-set-key [(control shift z)] 'backward-kill-word)
+
+(global-set-key (kbd "C-w") 'whole-line-or-region-kill-region)
+
+;; (define-key evil-normal-state-map (kbd "C-z") 'backward-kill-word)
+;; (global-set-key "\C-x\C-k" 'kill-region)
+;; (global-set-key "\C-c\C-k" 'kill-region)
 ;; (global-set-key [(control shift w)] 'kill-whole-line)
 (global-set-key [(control shift k)] 'kill-whole-line) ;; Override default emacs kill sentence but i don't use it
 
@@ -192,6 +206,7 @@
 ;; (global-unset-key (kbd "M-<down-mouse-1>")) ;; Mouse
 ;; (global-set-key (kbd "M-<mouse-1>") 'mc/add-cursor-on-click) ;; Mouse
 (global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click) ;; Mouse
+
 
 
 
@@ -401,6 +416,8 @@
 ;; PERFFFECT.
 (define-key key-translation-map (kbd "C-j") (kbd "RET"))
 (define-key global-map (kbd "C-c RET") 'dired-jump)
+(define-key php-mode-map (kbd "C-c C-j") 'dired-jump)
+(define-key web-mode-map (kbd "C-c C-j") 'dired-jump)
 
 (define-key global-map (kbd "C-$") 'point-undo)
 (define-key global-map (kbd "C-*") 'point-redo)
@@ -429,15 +446,23 @@
 ;; (global-set-key (kbd "M-\"") 'split-window-right) ; split pane top/bottom
 ;; (global-set-key (kbd "M-ç") 'resize-window)
 
-(global-set-key (kbd "M-ç") 'delete-window) ;; M-0
-(global-set-key (kbd "M-&") 'delete-other-windows) ;; M-1
-(global-set-key (kbd "M-é") 'split-window-below) ;; M-2
-(global-set-key (kbd "M-\"") 'split-window-right) ;; M-3
-(global-set-key (kbd "M-ç") 'resize-window) ;; M-9
+;; (global-set-key (kbd "M-ç") 'delete-window) ;; M-0
+;; (global-set-key (kbd "M-&") 'delete-other-windows) ;; M-1
+;; (global-set-key (kbd "M-é") 'split-window-below) ;; M-2
+;; (global-set-key (kbd "M-\"") 'split-window-right) ;; M-3
+;; (global-set-key (kbd "M-ç") 'resize-window) ;; M-9
+
+
+(global-set-key (kbd "M-0") 'delete-window) ;; M-0
+(global-set-key (kbd "M-1") 'delete-other-windows) ;; M-1
+(global-set-key (kbd "M-2") 'split-window-below) ;; M-2
+(global-set-key (kbd "M-3") 'split-window-right) ;; M-3
+(global-set-key (kbd "M-9") 'resize-window) ;; M-9
 
 ;; (global-set-key (kbd "M-o") 'other-window)
 ;; (global-set-key (kbd "M-S-o") 'previous-multiframe-window)
 
+(global-set-key (kbd "M-o") 'other-window) ;; Overrided by ctag ?
 (global-set-key [(meta o)] 'other-window)
 (global-set-key [(meta shift o)] 'previous-multiframe-window)
 
