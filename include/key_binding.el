@@ -481,6 +481,8 @@
 (global-set-key [(meta o)] 'other-window)
 (global-set-key [(meta shift o)] 'previous-multiframe-window)
 
+(global-set-key [(meta shift i)] 'previous-buffer)
+(global-set-key [(meta i)] 'next-buffer)
 
 ;; Multi cursor stuf
 ;; Dilemme : Retirer le M-d natif de emacs pour avoir le M-d de Sublime (que j utilise tout le temps...)
