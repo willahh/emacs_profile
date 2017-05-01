@@ -39,18 +39,21 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 
 ## Bloquant
+- [ ] [helm] Directory first
+- [ ] [helm] C-z -> Delete back 
+- [ ] [multi-cursor] C-g leave multi-cursor state 
+- [ ] [highlight-symbol] [ggtags] [web-mode] Les couleurs disparaissent lorsque les modes web-mode ggtags sont presents highlight-mode est active
 - [x] [php-mode] C-j Dired jump
-- [ ] [recentf] 
-- [ ] [projectile] Auto invalidate cache after new/edit/delete files
-
+- [ ] [projectile] Auto invalidate cache after create/rename/delete files
+  - [ ] create
+  - [ ] rename
+  - [x] delete
 
 ## A ranger
 - [ ] [helm-ag] auto recentrer une fois le focus effectué
-- [ ] Création de tableaux directement par texte
-- [ ] Couper la saisie de texte automatiquement 
 - [ ] [ivy] [mini buffer] Add C-l keybinding
 - [ ] [css-mode] [comany] Idle delay a 0
-- [ ] Ivy - Highlight current line plus visible
+- [ ] [ivy] - Highlight current line plus visible
 
 - [ ] [dired] Date format lisible
 - [ ] [comment-block] Creer des boites de commentaire type /** */ (comment-boxc)

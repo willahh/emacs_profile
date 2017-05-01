@@ -202,7 +202,8 @@
 ;; car celle-ci est utiise pour faire des é
 (global-set-key (kbd "œ") 'mc/mark-next-like-this-word) ;; ALT+o
 (global-set-key (kbd "Œ") 'mc/mark-previous-like-this-word) ;; ALT+SHIFT+o
-(global-set-key [(meta control g)] 'mc/mark-all-dwim) ;; CTRL+META+G - Update c-m-g est utilise pour activer desactiver le highlight auto
+;; (global-set-key [(meta control g)] 'mc/mark-all-dwim) ;; CTRL+META+G - Update c-m-g est utilise pour activer desactiver le highlight auto
+(global-set-key (kbd "<C-268632079>") 'mc/mark-all-dwim) ;; CTRL+alt+a
 (global-set-key (kbd "ı") 'mc/mark-next-lines) ;; ALT+SHIFT+n 
 (global-set-key (kbd "∏") 'mc/mark-previous-lines) ;; ALT+SHIFT+n
 
@@ -226,7 +227,8 @@
 (define-key php-mode-map (kbd "C-M-J") 'drag-stuff-down) ;; override php mode map cmj
 
 
-(global-set-key (kbd "M-x") 'counsel-M-x) ;; counsel in M-x 
+;; (global-set-key (kbd "M-x") 'counsel-M-x)
+(global-set-key (kbd "M-x") 'helm-M-x)
 
 
 
@@ -248,7 +250,8 @@
 (global-set-key [(meta shift r)] 'swiper) ;; command + shift + r : Update : Switch to swiper (lighter / faster)
 
 
-(global-set-key (kbd "C-x o")  'counsel-find-file)
+;; (global-set-key (kbd "C-x o")  'counsel-find-file)
+(global-set-key (kbd "C-x o")  'helm-find-files)
 
 ;; Update : Utilisation du racourcis de base C-c p D
 ;; (global-set-key (kbd "œ")  'projectile-dired) ;; alt+
@@ -432,10 +435,11 @@
 ;; (global-set-key (kbd "RET") 'new-line-and-indent-for-tab)
 ;; (global-set-key (kbd "C-k") 'new-line-and-indent-for-tab)
 ;; (define-key autop "\r" 'new-line-and-indent-for-tab)
-
+(require 'nxml-mode)
 (define-key global-map (kbd "C-c RET") 'dired-jump)
 (define-key php-mode-map (kbd "C-c C-j") 'dired-jump)
 (define-key web-mode-map (kbd "C-c C-j") 'dired-jump)
+(define-key nxml-mode-map "\C-c\C-m" 'dired-jump)
 
 (define-key global-map (kbd "C-$") 'point-undo)
 (define-key global-map (kbd "C-*") 'point-redo)

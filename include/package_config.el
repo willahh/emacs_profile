@@ -178,17 +178,20 @@
 ;; Update 3 : Trop de ralentissements, desactivation du mode auto
 
 ;; Update 4 : Reactivation automatique pour le moment, car vraiment pratique
-;; @todo  Il faudrait implementer l activation a la selection comme ca a pu etre deja fait 
+;; @todo  Il faudrait implementer l activation a la selection
+
+;; Update 5 : Utilisation de [i-search] ou [evil mode search] a la place
+;; Ces deux modes activent un highlight qui s integre parfaitement
+;; highlight-symbol-nav-mode est conserve pour une navigation rapide avec
+;; M-n et M-p
 
 (require 'highlight-symbol)
 ;; (highlight-symbol-mode 0)
 
 ;; (setq highlight-symbol-idle-delay 0)
 
-(add-hook 'prog-mode-hook 'highlight-symbol-mode)
+;; (add-hook 'prog-mode-hook 'highlight-symbol-mode)
 (add-hook 'prog-mode-hook 'highlight-symbol-nav-mode)
-
-
 
 
 
