@@ -498,6 +498,8 @@
 (global-set-key [(meta shift i)] 'previous-buffer)
 (global-set-key [(meta i)] 'next-buffer)
 
+(define-key ggtags-navigation-map (kbd "M-n") 'highlight-symbol-next)
+(define-key ggtags-navigation-map (kbd "M-n") 'highlight-symbol-prev)
 ;; Multi cursor stuf
 ;; Dilemme : Retirer le M-d natif de emacs pour avoir le M-d de Sublime (que j utilise tout le temps...)
 ;; (Default M-d = delete word back)
