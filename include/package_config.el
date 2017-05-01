@@ -893,7 +893,8 @@
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.css\\'" . css-mode)) ;; .css file should be assigned to css-mode for nice emmet support
-(add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
+;; (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
 ;; (add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
 (add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-mode))
 ;; (add-to-list 'auto-mode-alist '(".ts" . typescript-mode))
@@ -917,7 +918,6 @@
 
 
 ;; From : http://www.blogbyben.com/2016/08/emacs-php-modern-and-far-more-complete.html
-;; @todo ajouter le changement lors de l ouverture du prochain fichier php
 (defun toggle-php-flavor-mode ()
   (interactive)
   "Toggle mode between PHP & Web-Mode Helper modes"
@@ -2052,6 +2052,7 @@ then `diff-jump-to-old-file' is also set, for the next invocations."
 ;; ggtags
 (require 'ggtags)
 (add-hook 'php-mode-hook 'ggtags-mode)
+(add-hook 'web-mode-hook 'ggtags-mode)
 
 
 ;; ;; auto-complete-exuberant-ctags

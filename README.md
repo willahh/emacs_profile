@@ -169,7 +169,3 @@ Tags tools
 <!-- - cscope - brew install cscope -->
 <!-- - Global - brew install global --with-exuberant-ctags -->
 
-
-### Utils
-- Change System keyboard capslock behaviour : (osx : Karabiner)
-  - Single touch : espace, long press : CTRL (must have !!!)

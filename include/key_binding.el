@@ -240,7 +240,7 @@
 (global-set-key (kbd "M-q") 'ask-before-closing)
 (global-set-key (kbd "M-s") 'save-buffer)
 (global-set-key (kbd "C-c C-k") 'kill-this-buffer)
-
+(define-key markdown-mode-map (kbd "C-c C-k") 'kill-this-buffer)
 
 ;; Filter buffer / Get buffer definitions
 ;; (global-set-key [(meta r)]  'counsel-imenu) ;; command + r
@@ -278,6 +278,7 @@
 (define-key js2-mode-map (kbd "C-c C-s") 'helm-swoop)
 (define-key php-mode-map (kbd "C-c C-s") 'helm-swoop)
 (define-key web-mode-map (kbd "C-c C-s") 'helm-swoop)
+(define-key markdown-mode-map (kbd "C-c C-s") 'helm-swoop)
 
 (global-set-key (kbd "C-c C-p") 'swiper)
 (global-set-key (kbd "C-c C-p") 'swiper)
@@ -438,9 +439,13 @@
 
 (define-key global-map (kbd "C-$") 'point-undo)
 (define-key global-map (kbd "C-*") 'point-redo)
-(define-key global-map (kbd "C-c C-r") 'ivy-recentf)
-;; (global-set-key (kbd "C-c f") 'counsel-recentf)
 
+
+;; (global-set-key (kbd "C-c f") 'counsel-recentf)
+;; (define-key global-map (kbd "C-c C-r") 'ivy-recentf)
+;; (define-key php-mode-map (kbd "C-c C-r") 'ivy-recentf)
+(define-key global-map (kbd "C-c C-r") 'helm-recentf)
+(define-key php-mode-map (kbd "C-c C-r") 'helm-recentf)
 
 ;; ---------------- keyboard layout from alt key
 ;; Transpose some characters for quicker access
