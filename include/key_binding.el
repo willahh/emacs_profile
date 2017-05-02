@@ -15,12 +15,20 @@
         )
 )
 
-;; https://sites.google.com/site/steveyegge2/effective-emacs
-;; Update : Utilisation de c-z pour avoir le meme emplacement clavier que sur un clavier qwerty
+;; Custom abor-recursive-edit
+;; Utilise comme substitut a C-g (keyboard-quit)
+;; Interet :
+;;  - C-S-q est plus accessible que C-g (proche des C-x C-c C-v)
+;;  - my-abort-recursive-edit permet entre autre de sortir en un fois
+;;    d une edition avec cursor-multiple (Il faut faire 2 fois c-g autrement)
+;;    et d'annuler la selection active
+(defun my-abort-recursive-edit()
+  (interactive)
+  (deactivate-mark)
+  (abort-recursive-edit))
 
-
-
-
+;; (global-set-key [(control shift q)] 'abort-recursive-edit)
+(global-set-key [(control shift q)] 'my-abort-recursive-edit)
 
 
 ;; Kill / cut commands

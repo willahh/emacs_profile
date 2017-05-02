@@ -3,6 +3,7 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+      abort-recursive-edit
       autopair-insert-opening
       autopair-insert-or-skip-quote
       autopair-newline
@@ -43,6 +44,7 @@
       kill-region
       kill-sentence
       mouse-set-region
+      my-abort-recursive-edit
       smart-open-line-above
       tab-indent-or-complete
       tern-ac-dot-complete
