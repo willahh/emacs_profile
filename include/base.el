@@ -1,4 +1,3 @@
-
 ;; Turn truncate lines off by default (like in many modern tools)
 (set-default 'truncate-lines t)
 
@@ -29,6 +28,10 @@
 
 ;; Display current file path in title
 (setq frame-title-format "%b")
+
+;; Hide some mini buffer message
+(let ((inhibit-message t))
+  (message "Listen to me, you!"))
 
 ;; 80 chars is a good width.
 ;; Update : Voir ce que c est precisemment
@@ -284,3 +287,5 @@
 
 ;; (ad-activate 'isearch-repeat-forward)
 ;; (ad-activate 'isearch-repeat-backward)
+
+

@@ -132,7 +132,7 @@
   use-package
   web-beautify
   which-key
-  window-numbering
+  ;; window-numbering
   yasnippet
   ;; yascroll
   zerodark-theme
@@ -154,6 +154,7 @@
   dired-details
   flx-ido
 
+  ivy-hydra
 
   ))
 ;

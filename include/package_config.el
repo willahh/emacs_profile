@@ -178,17 +178,20 @@
 ;; Update 3 : Trop de ralentissements, desactivation du mode auto
 
 ;; Update 4 : Reactivation automatique pour le moment, car vraiment pratique
-;; @todo  Il faudrait implementer l activation a la selection comme ca a pu etre deja fait 
+;; @todo  Il faudrait implementer l activation a la selection
+
+;; Update 5 : Utilisation de [i-search] ou [evil mode search] a la place
+;; Ces deux modes activent un highlight qui s integre parfaitement
+;; highlight-symbol-nav-mode est conserve pour une navigation rapide avec
+;; M-n et M-p
 
 (require 'highlight-symbol)
 ;; (highlight-symbol-mode 0)
 
 ;; (setq highlight-symbol-idle-delay 0)
 
-(add-hook 'prog-mode-hook 'highlight-symbol-mode)
+;; (add-hook 'prog-mode-hook 'highlight-symbol-mode)
 (add-hook 'prog-mode-hook 'highlight-symbol-nav-mode)
-
-
 
 
 
@@ -346,14 +349,15 @@
 
 ;; Company
 ;; Valeur idle delay a 0.35 car les valeurs (0 | 0.1 | 025) font ralentir 
-;;lors de la saisie de texte
+;; lors de la saisie de texte.
 
 (require 'company)
 (setq company-show-numbers t)
 ;; (setq company-minimum-prefix-length 2)
-(setq company-minimum-prefix-length 1)
+;; (setq company-minimum-prefix-length 1)
+(setq company-minimum-prefix-length 5)
 
-(setq company-dabbrev-downcase 0)
+(setq company-dabbrev-downcase nil)
 
 ;; (setq company-idle-delay 0)
 ;; (setq company-idle-delay 0.1)
@@ -476,38 +480,13 @@
     (company-abort)))
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+;; Custom wra
+;; New line and indent for tab
+(defun new-line-and-indent-for-tab ()
+  (interactive)
+  (autopair-newline)
+  (indent-for-tab-command)
+)
 
 ;; yasnippet
 (require 'yasnippet)
@@ -917,7 +896,8 @@
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.css\\'" . css-mode)) ;; .css file should be assigned to css-mode for nice emmet support
-(add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
+;; (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
 ;; (add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
 (add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-mode))
 ;; (add-to-list 'auto-mode-alist '(".ts" . typescript-mode))
@@ -941,7 +921,6 @@
 
 
 ;; From : http://www.blogbyben.com/2016/08/emacs-php-modern-and-far-more-complete.html
-;; @todo ajouter le changement lors de l ouverture du prochain fichier php
 (defun toggle-php-flavor-mode ()
   (interactive)
   "Toggle mode between PHP & Web-Mode Helper modes"
@@ -1475,8 +1454,8 @@
 (require 'evil-nerd-commenter)
 
 ;; window-numbering
-(require 'window-numbering)
-(window-numbering-mode)            
+;; (require 'window-numbering)
+;; (window-numbering-mode)            
 
 ;; Spaceline
 ;; Note : power line stylee, mais je n arrive pas a la faire fonctionner
@@ -1512,10 +1491,6 @@
 ;; eyebrowse
 (require 'eyebrowse)    
 (eyebrowse-mode t)
-
-;; window-numbering
-(require 'window-numbering)
-(window-numbering-mode)            
 
 ;; Which-key
 (require 'which-key)
@@ -1621,7 +1596,7 @@
 
 ;; (ivy-pra)
 
-                                        ; Let projectile use ivy
+; Let projectile use ivy
 (setq projectile-completion-system 'ivy)
 
 
@@ -1639,6 +1614,11 @@
 ;; Source : https://gist.github.com/frostidaho/bc3a7b1be32f916dc65d
 ;; Post : https://github.com/abo-abo/swiper/issues/256
 (require 'ivy_buffer_extend)
+
+
+;; ---------------- ivy-hydra
+(require 'ivy-hydra)
+
 
 
 ;; ---------------- helm
@@ -2075,6 +2055,7 @@ then `diff-jump-to-old-file' is also set, for the next invocations."
 ;; ggtags
 (require 'ggtags)
 (add-hook 'php-mode-hook 'ggtags-mode)
+(add-hook 'web-mode-hook 'ggtags-mode)
 
 
 ;; ;; auto-complete-exuberant-ctags

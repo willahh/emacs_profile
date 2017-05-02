@@ -1,5 +1,5 @@
 ;; key_binding: --- some default / package keybindings
-(dolist (key '("\M-x" "\M-z" "\C-\M-p"))
+(dolist (key '("\M-x" "\M-z" "\C-\M-p" "\C-z"))
   (global-unset-key key))
 
 
@@ -15,11 +15,25 @@
         )
 )
 
-
 ;; https://sites.google.com/site/steveyegge2/effective-emacs
-(global-set-key "\C-w" 'backward-kill-word)
-(global-set-key "\C-x\C-k" 'kill-region)
-(global-set-key "\C-c\C-k" 'kill-region)
+;; Update : Utilisation de c-z pour avoir le meme emplacement clavier que sur un clavier qwerty
+;; (global-set-key "\C-z" 'backward-kill-word)
+;; (global-set-key "\C-z" 'backward-kill-word)
+;; (global-set-key (kbd "C-z") 'backward-kill-word)
+;; (global-set-key [(control z)]'backward-kill-word)
+;; (define-key evil-normal-state-map "C-z" 'backward-kill-word)
+
+;; Kill / cut commands
+(define-key evil-emacs-state-map (kbd "C-z") nil)
+
+(global-set-key [(control z)] 'delete-backward-char)
+(global-set-key [(control shift z)] 'backward-kill-word)
+
+(global-set-key (kbd "C-w") 'whole-line-or-region-kill-region)
+
+;; (define-key evil-normal-state-map (kbd "C-z") 'backward-kill-word)
+;; (global-set-key "\C-x\C-k" 'kill-region)
+;; (global-set-key "\C-c\C-k" 'kill-region)
 ;; (global-set-key [(control shift w)] 'kill-whole-line)
 (global-set-key [(control shift k)] 'kill-whole-line) ;; Override default emacs kill sentence but i don't use it
 
@@ -100,9 +114,12 @@
 
 ;; -------- key chords binding
 ;; avy
+;; Update : az ne peut pas etre utilise car trop fréquemment utilisé ("localization", ...)
 (key-chord-define-global "qs" 'avy-goto-word-1-below)
 ;; (key-chord-define-global "az" 'avy-goto-char)
-(key-chord-define-global "az" 'avy-goto-word-or-subword-1)
+;; (key-chord-define-global "az" 'avy-goto-word-or-subword-1)
+(global-set-key (kbd "C-;") 'avy-goto-word-or-subword-1)
+
 ;;
 (key-chord-define-global "xc" 'er/expand-region)
 (key-chord-define-global "wx" 'er/contract-region)
@@ -156,12 +173,12 @@
 
 
 ;; Dired
-;; (define-key dired-mode-map (kbd "<mouse-2>") 'dired-find-file)
 (define-key dired-mode-map (kbd "<tab>") 'dired-find-file)
-;; (define-key dired-mode-map (kbd "C-j") 'dired-find-file) ;; Add a "standard" C-j (go) binding to dired
 (define-key dired-mode-map (kbd "<S-tab>") 'dired-up-directory)
+(define-key php-mode-map [(control c) (control m)] 'dired-jump)
+(define-key web-mode-map [(control c) (control m)] 'dired-jump)
 
-;; ---------------- Dolor theme
+;; ---------------- Color theme
 (set-face-attribute 'lazy-highlight nil :background "green")
 
 
@@ -180,32 +197,28 @@
                                           (interactive)
                                           (scroll-left 4)))
 
-
-(global-set-key (kbd "∂") 'mc/mark-next-like-this-word) ;; ALT+d
-(global-set-key (kbd "∆") 'mc/mark-previous-like-this-word) ;; ALT+SHIFT+d
-(global-set-key [(meta control g)] 'mc/mark-all-dwim) ;; CTRL+META+G - Update c-m-g est utilise pour activer desactiver le highlight auto
+;; Multi cursor stuf
+;; Update : Utilisation de la lettre o plutot qutôt que de la lettre d
+;; car celle-ci est utiise pour faire des é
+(global-set-key (kbd "œ") 'mc/mark-next-like-this-word) ;; ALT+o
+(global-set-key (kbd "Œ") 'mc/mark-previous-like-this-word) ;; ALT+SHIFT+o
+;; (global-set-key [(meta control g)] 'mc/mark-all-dwim) ;; CTRL+META+G - Update c-m-g est utilise pour activer desactiver le highlight auto
+(global-set-key (kbd "<C-268632079>") 'mc/mark-all-dwim) ;; CTRL+alt+a
 (global-set-key (kbd "ı") 'mc/mark-next-lines) ;; ALT+SHIFT+n 
 (global-set-key (kbd "∏") 'mc/mark-previous-lines) ;; ALT+SHIFT+n
 
-;; (global-unset-key (kbd "M-<down-mouse-1>")) ;; Mouse
-;; (global-set-key (kbd "M-<mouse-1>") 'mc/add-cursor-on-click) ;; Mouse
+
 (global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click) ;; Mouse
 
-;; window
-;; (global-set-key (kbd "M-C-w") 'resize-window)
-(global-set-key (kbd "M-à") 'resize-window)
+
 
 
 
 
 ;; Helm
 ; ---
-(global-set-key (kbd "C-c f") 'counsel-recentf)
-
-
 (global-set-key (kbd "M-c") 'kill-ring-save)
 (global-set-key (kbd "M-c") 'kill-ring-save)
-;; (global-set-key (kbd "M-Ò") 'save-some-buffers) ;; (command + alt + s)
 (global-set-key (kbd "C-x C-d") 'duplicate-current-line-or-region)
 
 (global-set-key (kbd "C-M-J") 'drag-stuff-down)
@@ -214,7 +227,8 @@
 (define-key php-mode-map (kbd "C-M-J") 'drag-stuff-down) ;; override php mode map cmj
 
 
-(global-set-key (kbd "M-x") 'counsel-M-x) ;; counsel in M-x 
+;; (global-set-key (kbd "M-x") 'counsel-M-x)
+(global-set-key (kbd "M-x") 'helm-M-x)
 
 
 
@@ -222,12 +236,13 @@
 ;; Update : Utilsation des standards emacs (C-c p f)
 ;; (global-set-key (kbd "π") 'projectile-find-file) ;; ALT+P
 
-(global-set-key (kbd "M-π") 'projectile-switch-project) ;; (commande + alt + p)
+;; (global-set-key (kbd "M-π") 'projectile-switch-project) ;; (commande + alt + p)
 (global-set-key (kbd "C-;") 'projectile-find-file-dwim) ;; (ctrl + ;)
 
 (global-set-key (kbd "M-q") 'ask-before-closing)
 (global-set-key (kbd "M-s") 'save-buffer)
-
+(global-set-key (kbd "C-c C-k") 'kill-this-buffer)
+(define-key markdown-mode-map (kbd "C-c C-k") 'kill-this-buffer)
 
 ;; Filter buffer / Get buffer definitions
 ;; (global-set-key [(meta r)]  'counsel-imenu) ;; command + r
@@ -235,9 +250,14 @@
 (global-set-key [(meta shift r)] 'swiper) ;; command + shift + r : Update : Switch to swiper (lighter / faster)
 
 
-(global-set-key (kbd "C-x o")  'counsel-find-file)
-(global-set-key (kbd "œ")  'projectile-dired) ;; alt+o
-(global-set-key (kbd "M-œ")  'neotree-find) ;; CMD+ALT+o
+;; (global-set-key (kbd "C-x o")  'counsel-find-file)
+(global-set-key (kbd "C-x o")  'helm-find-files)
+
+;; Update : Utilisation du racourcis de base C-c p D
+;; (global-set-key (kbd "œ")  'projectile-dired) ;; alt+
+
+;; 
+;; (global-set-key (kbd "M-œ")  'neotree-find) ;; CMD+ALT+o
 
 
 ;; Used for OSX keyboard
@@ -252,11 +272,23 @@
 ;; (global-set-key [(meta shift s)] 'swiper)
 ;; (global-set-key [(control shift s)] 'swiper)
 ;; (global-set-key [(control shift s)] 'helm-swoop)
-(global-set-key (kbd "C-x p") 'helm-swoop)
+;; (global-set-key (kbd "C-x p") 'helm-swoop)
 
+;; (global-set-key (kbd "C-c C-c s") 'helm-swoop)
+;; (global-set-key (kbd "C-c C-c f") 'swiper)
+
+(global-set-key (kbd "C-c C-s") 'helm-swoop)
+(define-key js2-mode-map (kbd "C-c C-s") 'helm-swoop)
+(define-key php-mode-map (kbd "C-c C-s") 'helm-swoop)
+(define-key web-mode-map (kbd "C-c C-s") 'helm-swoop)
+(define-key markdown-mode-map (kbd "C-c C-s") 'helm-swoop)
+
+(global-set-key (kbd "C-c C-p") 'swiper)
+(global-set-key (kbd "C-c C-p") 'swiper)
+(global-set-key (kbd "C-c C-p") 'swiper)
 
 ;; emacs srolling
-(global-set-key ""  'evil-buffer-new)
+;; (global-set-key ""  'evil-buffer-new)
 
 
 
@@ -274,14 +306,12 @@
 ;; Update 4 : Re inversement de ces 2 la, trop souvent de mauvais candidats sur le helm-ag-project-root
 
 ;; Les deux plus utiles (selon moi)
-(global-set-key (kbd "M-ƒ") 'ag-project) ;; (cmd + alt  + f)
+(global-set-key (kbd "M-Ò") 'ag-project) ;; (cmd + alt  + s)
 
-(global-set-key (kbd "ƒ") 'helm-ag) ;; (alt + f)
-(global-set-key (kbd "M-·") 'helm-ag-project-root) ;; (cmd + alt + shift + f)
+(global-set-key (kbd "Ò") 'helm-ag) ;; (alt + s)
+(global-set-key (kbd "M-∑") 'helm-ag-project-root) ;; (cmd + alt + shift + s)
 
 
-;; (define-key helm-ag-mode-map (kbd "C-j") 'helm-ag-mode-jump)
-;; (define-key helm-find-files-map (kbd "C-j") 'helm-maybe-exit-minibuffer)
 
 
 
@@ -393,43 +423,74 @@
 ;; Rebind [yo2] car sinon [yo] est surchargee
 (require 'magit)
 (define-key magit-status-mode-map (kbd "<tab>") 'magit-section-toggle)
-
-;; (define-key emmet-mode-keymap (kbd "C-j") 'electric-newline-and-maybe-indent)
-;; (define-key emmet-mode-keymap (kbd "C-j") 'autopair-newline)
 (define-key emmet-mode-keymap [(control shift j)] 'emmet-expand-line)
 (global-set-key [(control shift j)] 'smart-open-line-above)
 
-;; PERFFFECT.
+;; Use of c-j to act as a RET key
 (define-key key-translation-map (kbd "C-j") (kbd "RET"))
+
+;; (define-key global-map (kbd "C-j") 'new-line-and-indent-for-tab)
+;; (global-set-key (kbd "C-j") 'new-line-and-indent-for-tab)
+;; (global-set-key (kbd "\r") 'new-line-and-indent-for-tab)
+;; (global-set-key (kbd "RET") 'new-line-and-indent-for-tab)
+;; (global-set-key (kbd "C-k") 'new-line-and-indent-for-tab)
+;; (define-key autop "\r" 'new-line-and-indent-for-tab)
+(require 'nxml-mode)
 (define-key global-map (kbd "C-c RET") 'dired-jump)
+(define-key php-mode-map (kbd "C-c C-j") 'dired-jump)
+(define-key web-mode-map (kbd "C-c C-j") 'dired-jump)
+(define-key nxml-mode-map "\C-c\C-m" 'dired-jump)
 
 (define-key global-map (kbd "C-$") 'point-undo)
 (define-key global-map (kbd "C-*") 'point-redo)
-(define-key global-map (kbd "C-c C-f") 'counsel-recentf)
 
+
+;; (global-set-key (kbd "C-c f") 'counsel-recentf)
+;; (define-key global-map (kbd "C-c C-r") 'ivy-recentf)
+;; (define-key php-mode-map (kbd "C-c C-r") 'ivy-recentf)
+(define-key global-map (kbd "C-c C-r") 'helm-recentf)
+(define-key php-mode-map (kbd "C-c C-r") 'helm-recentf)
 
 ;; ---------------- keyboard layout from alt key
 ;; Transpose some characters for quicker access
-(define-key global-map (kbd "È") (lambda () (interactive) (insert "_"))) ;; ALT + j
-(define-key global-map (kbd "Ï") (lambda () (interactive) (insert "-"))) ;; ALT + k
+;; (define-key global-map (kbd "È") (lambda () (interactive) (insert "_"))) ;; ALT + j
+;; (define-key global-map (kbd "Ï") (lambda () (interactive) (insert "-"))) ;; ALT + k
 ;; (define-key global-map (kbd "ﬁ") (lambda () (interactive) (insert ""))) ;; ALT + g
 
 
-;; ;; ---------------- windows OSX key binding
-;; (global-set-key (kbd "C-x à") 'delete-window) ;; C-x 0
-;; (global-set-key (kbd "C-x &") 'delete-other-windows) ;; C-x 1
-;; (global-set-key (kbd "C-x é") 'split-window-below) ;; C-x 2
-;; (global-set-key (kbd "C-x \"") 'split-window-right) ;; C-x 3
-
-;; Utilisation de meta plutot qu'un prefix c-x 
-(global-set-key (kbd "M-à") 'delete-window) ;; C-x 0
-(global-set-key (kbd "M-&") 'delete-other-windows) ;; C-x 1
-(global-set-key (kbd "M-é") 'split-window-below) ;; C-x 2
-(global-set-key (kbd "M-\"") 'split-window-right) ;; C-x 3
+;; ---------------- windows OSX key binding
 
 
+;; easy keys to split window. Key based on ErgoEmacs keybinding
+;; http://ergoemacs.org/emacs/effective_emacs.html
+
+;; (global-set-key (kbd "M-ç") 'delete-window) ;; M-0
+;; (global-set-key (kbd "M-&") 'delete-other-windows) ;; M-1
+;; (global-set-key (kbd "M-é") 'split-window-below) ;; M-2
+;; (global-set-key (kbd "M-\"") 'split-window-right) ;; M-3
+;; (global-set-key (kbd "M-ç") 'resize-window) ;; M-9
 
 
+(global-set-key (kbd "M-0") 'delete-window) ;; M-0
+(global-set-key (kbd "M-1") 'delete-other-windows) ;; M-1
+(global-set-key (kbd "M-2") 'split-window-below) ;; M-2
+(global-set-key (kbd "M-3") 'split-window-right) ;; M-3
+(global-set-key (kbd "M-9") 'resize-window) ;; M-9
+
+;; (global-set-key (kbd "M-o") 'other-window)
+;; (global-set-key (kbd "M-S-o") 'previous-multiframe-window)
+
+(global-set-key (kbd "M-o") 'other-window)
+(define-key ggtags-navigation-map (kbd "M-o") 'other-window) ;; Need to override ggtags map
+
+(global-set-key [(meta o)] 'other-window)
+(global-set-key [(meta shift o)] 'previous-multiframe-window)
+
+(global-set-key [(meta shift i)] 'previous-buffer)
+(global-set-key [(meta i)] 'next-buffer)
+
+(define-key ggtags-navigation-map (kbd "M-n") 'highlight-symbol-next)
+(define-key ggtags-navigation-map (kbd "M-n") 'highlight-symbol-prev)
 ;; Multi cursor stuf
 ;; Dilemme : Retirer le M-d natif de emacs pour avoir le M-d de Sublime (que j utilise tout le temps...)
 ;; (Default M-d = delete word back)
@@ -469,6 +530,13 @@
 ;; (global-set-key (kbd "C-c h") 'helm-command-prefix)
 ;; (global-set-key (kbd "C-x C-f") 'helm-find-files)
 ;; (global-set-key (kbd "C-x b") 'helm-mini)
+
+;; (define-key dired-mode-map (kbd "C-j") 'dired-find-file) ;; Add a "standard" C-j (go) binding to dired
+;; (define-key dired-mode-map (kbd "<mouse-2>") 'dired-find-file)
+;; (define-key helm-ag-mode-map (kbd "C-j") 'helm-ag-mode-jump)
+;; (define-key helm-find-files-map (kbd "C-j") 'helm-maybe-exit-minibuffer)
+;; (define-key emmet-mode-keymap (kbd "C-j") 'electric-newline-and-maybe-indent)
+;; (define-key emmet-mode-keymap (kbd "C-j") 'autopair-newline)
 
 ;; (define-key compilation-button-map (kbd "C-J") 'compile-goto-error) ;; override php mode map cmj
 
@@ -592,3 +660,10 @@
 ;; (key-chord-define-global "az" 'avy-goto-word-1)
 ;; (key-chord-define-global "az" 'avy-goto-word-1-above)
 ;; (key-chord-define-global "az" 'avy-goto-char-2)
+
+
+
+
+;; (global-unset-key (kbd "M-<down-mouse-1>")) ;; Mouse
+;; (global-set-key (kbd "M-<mouse-1>") 'mc/add-cursor-on-click) ;; Mouse
+;; (global-set-key (kbd "M-Ò") 'save-some-buffers) ;; (command + alt + s)
