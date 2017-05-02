@@ -6,7 +6,7 @@
 
 
 ## Utils
-- C-x r t (string rectangle)
+
 - evil mode : ":new file.extension" -> Create new buffer/file/window
 - evil mode : "gf" ("go to file")
 - Sublime merge lines -> Evil gJ
@@ -27,6 +27,9 @@
 
 
 ## Notes :
+- [ ] Voir https://github.com/NicolasPetton/Indium
+  Javascript connexion to current browser, inspector, debugger etc
+
 PHP checker
 http://daniel-bush.blogspot.fr/2014/12/emacs-flycheck-and-jshint-and-other.html
 phpcs
@@ -581,11 +584,5 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 
 
-
-
-
-
-
-
-
-
+Bonobo – Duals
+verdin - forgotten memories

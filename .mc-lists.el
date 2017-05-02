@@ -41,6 +41,7 @@
       highlight-symbol-mode
       indent-for-tab-command
       kill-region
+      kill-sentence
       mouse-set-region
       smart-open-line-above
       tab-indent-or-complete
@@ -56,6 +57,7 @@
       ace-window
       avy-goto-word-1-below
       c-end-of-statement
+      company-complete-common
       counsel-M-x
       delete-window
       describe-key

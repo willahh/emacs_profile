@@ -165,6 +165,7 @@
 (add-to-list 'load-path "~/.emacs.d/plugins/webmode")
 (add-to-list 'load-path "~/.emacs.d/plugins/emacspowerline")
 (add-to-list 'load-path "~/.emacs.d/plugins/ivy_buffer_extend")
+(add-to-list 'load-path "~/.emacs.d/plugins/helm-swoop")
 
 
 

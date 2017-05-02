@@ -415,13 +415,17 @@
 ;; (define-key global-map (kbd "ﬁ") (lambda () (interactive) (insert ""))) ;; ALT + g
 
 
-;; ---------------- windows OSX key binding
-(global-set-key (kbd "C-x à") 'delete-window) ;; C-x 0
-(global-set-key (kbd "C-x &") 'delete-other-windows) ;; C-x 1
-(global-set-key (kbd "C-x é") 'split-window-below) ;; C-x 2
-(global-set-key (kbd "C-x \"") 'split-window-right) ;; C-x 3
+;; ;; ---------------- windows OSX key binding
+;; (global-set-key (kbd "C-x à") 'delete-window) ;; C-x 0
+;; (global-set-key (kbd "C-x &") 'delete-other-windows) ;; C-x 1
+;; (global-set-key (kbd "C-x é") 'split-window-below) ;; C-x 2
+;; (global-set-key (kbd "C-x \"") 'split-window-right) ;; C-x 3
 
-
+;; Utilisation de meta plutot qu'un prefix c-x 
+(global-set-key (kbd "M-à") 'delete-window) ;; C-x 0
+(global-set-key (kbd "M-&") 'delete-other-windows) ;; C-x 1
+(global-set-key (kbd "M-é") 'split-window-below) ;; C-x 2
+(global-set-key (kbd "M-\"") 'split-window-right) ;; C-x 3
 
 
 
