@@ -132,7 +132,8 @@
 
 ;; (setq scroll-margin 8)
 ;; (setq scroll-margin 0)
-(setq scroll-margin 8)
+;; (setq scroll-margin 8)
+(setq scroll-margin 3)
 (setq scroll-conservatively 9999)
 (setq scroll-step 1)
 
