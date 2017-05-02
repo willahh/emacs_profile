@@ -65,6 +65,7 @@
       evil-buffer-new
       evil-emacs-state
       evil-window-split
+      ggtags-navigation-mode-done
       helm-mini
       helm-projectile-ag
       helm-projectile-find-file
