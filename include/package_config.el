@@ -1617,7 +1617,7 @@
 
 
 ;; ---------------- ivy-hydra
-(require 'ivy-hydra)
+;; (require 'ivy-hydra) ;; Not found on elpa/melpa
 
 
 

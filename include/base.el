@@ -234,10 +234,14 @@
 ;; Avec une valeur de 1, des problemes de font lock couleur surviennent.
 ;; (Couleurs de textes qui n apparaissent plus, etc)
 ;; 0.1 semble correct
+;;
+;; Update : La mise a jour des couleurs n'est pas fluide
+;; retour sur une valeur de 0
 
 ;; (setq jit-lock-defer-time 0.05)
 ;; (setq jit-lock-defer-time 1)
-(setq jit-lock-defer-time 0.1)
+;; (setq jit-lock-defer-time 0.1)
+(setq jit-lock-defer-time 0)
 
 
 ;; Some settings from https://github.com/technomancy/better-defaults/blob/master/better-defaults.el

@@ -6,7 +6,7 @@
 
 
 ## Utils
-- C-x r t (string rectangle)
+
 - evil mode : ":new file.extension" -> Create new buffer/file/window
 - evil mode : "gf" ("go to file")
 - Sublime merge lines -> Evil gJ
@@ -27,6 +27,9 @@
 
 
 ## Notes :
+- [ ] Voir https://github.com/NicolasPetton/Indium
+  Javascript connexion to current browser, inspector, debugger etc
+
 PHP checker
 http://daniel-bush.blogspot.fr/2014/12/emacs-flycheck-and-jshint-and-other.html
 phpcs
@@ -39,6 +42,20 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 
 ## Bloquant
+- [ ] [js2-mode] Colorization redraw slow
+- [ ] [multi-cursor] Remettre la possibilité d'ajouter un command click de la souris pour ajouter un nouveau caret
+- [ ] [auto bracket] Ne pas l utiliser sur tous les buffer et notamment pas dans le minibuffer
+- [ ] M-z devrait fonctionner lorsqu'une sélection est présente
+- [ ] C-q pour un emacs leave (C-g) (Plus accessible)
+
+- [ ] [projectile] Find file - Traitement lent lorsqu'il y a beaucoup de fichiers
+- [ ] [auto bracket] Dont use autobraket partout
+- [ ] M-z devrait fonctionner lorsqu'une sélection est présente
+- [ ] C-q pour un emacs leave (C-g) (Plus accessible)
+
+
+
+
 - [ ] [helm] Directory first
 - [ ] [helm] C-z -> Delete back 
 - [ ] [multi-cursor] C-g leave multi-cursor state 
@@ -50,6 +67,9 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
   - [x] delete
 
 ## A ranger
+- [ ] [vc-diff] g (refresh) --> Remettre la bonne position y
+- [ ] Création de tableaux directement par texte
+- [ ] Couper la saisie de texte automatiquement
 - [ ] [helm-ag] auto recentrer une fois le focus effectué
 - [ ] [ivy] [mini buffer] Add C-l keybinding
 - [ ] [css-mode] [comany] Idle delay a 0
@@ -589,11 +609,5 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 
 
-
-
-
-
-
-
-
-
+Bonobo – Duals
+verdin - forgotten memories

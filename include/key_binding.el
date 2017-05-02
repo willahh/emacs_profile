@@ -200,10 +200,11 @@
 ;; Multi cursor stuf
 ;; Update : Utilisation de la lettre o plutot qutôt que de la lettre d
 ;; car celle-ci est utiise pour faire des é
-(global-set-key (kbd "œ") 'mc/mark-next-like-this-word) ;; ALT+o
-(global-set-key (kbd "Œ") 'mc/mark-previous-like-this-word) ;; ALT+SHIFT+o
+(global-set-key (kbd "‡") 'mc/mark-next-like-this-word) ;; ALT+q
+(global-set-key (kbd "Ω") 'mc/mark-previous-like-this-word) ;; ALT+SHIFT+q
 ;; (global-set-key [(meta control g)] 'mc/mark-all-dwim) ;; CTRL+META+G - Update c-m-g est utilise pour activer desactiver le highlight auto
-(global-set-key (kbd "<C-268632079>") 'mc/mark-all-dwim) ;; CTRL+alt+a
+;; (global-set-key (kbd "<C-268632083>") 'mc/mark-all-dwim) ;; CTRL+alt+q
+(global-set-key (kbd "<C-268632081>") 'mc/mark-all-dwim) ;; CTRL+alt+q
 (global-set-key (kbd "ı") 'mc/mark-next-lines) ;; ALT+SHIFT+n 
 (global-set-key (kbd "∏") 'mc/mark-previous-lines) ;; ALT+SHIFT+n
 
@@ -459,19 +460,10 @@
 
 
 ;; ---------------- windows OSX key binding
-;; (global-set-key (kbd "C-x à") 'delete-window) ;; C-x 0
-;; (global-set-key (kbd "C-x &") 'delete-other-windows) ;; C-x 1
-;; (global-set-key (kbd "C-x é") 'split-window-below) ;; C-x 2
-;; (global-set-key (kbd "C-x \"") 'split-window-right) ;; C-x 3
 
 
 ;; easy keys to split window. Key based on ErgoEmacs keybinding
 ;; http://ergoemacs.org/emacs/effective_emacs.html
-;; (global-set-key (kbd "M-à") 'delete-window) ; close current pane
-;; (global-set-key (kbd "M-&") 'delete-other-windows) ; expand current pane
-;; (global-set-key (kbd "M-é") 'split-window-below) ; split pane top/bottom
-;; (global-set-key (kbd "M-\"") 'split-window-right) ; split pane top/bottom
-;; (global-set-key (kbd "M-ç") 'resize-window)
 
 ;; (global-set-key (kbd "M-ç") 'delete-window) ;; M-0
 ;; (global-set-key (kbd "M-&") 'delete-other-windows) ;; M-1
@@ -633,6 +625,16 @@
 
 
 ;; (define-key emmet-mode-keymap (kbd "C-j") 'autopair-newline)
+
+
+
+
+;; PERFFFECT.
+(define-key key-translation-map (kbd "C-j") (kbd "RET"))
+(define-key global-map (kbd "C-c RET") 'dired-jump)
+(define-key web-mode-map (kbd "C-c RET") 'dired-jump)
+
+
 
 ;; (require 'profiler)
 ;; (define-key profiler-report-mode-map (kbd "C-j") 'profiler-report-toggle-entry)
