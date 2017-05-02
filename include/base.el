@@ -6,6 +6,20 @@
 ;; (global-font-lock-mode 0)
 ;; (setq bidi-display-reordering nil)
 
+
+
+
+
+;; (setq font-lock-support-mode 'jit-lock-mode)
+;; (setq jit-lock-stealth-time 16
+;;        jit-lock-defer-contextually t
+;;        jit-lock-stealth-nice 0.5)
+;; (setq-default font-lock-multiline t)
+
+
+
+
+
 ;; Display function, didn't see real changes
 (setq-default bidi-display-reordering nil)
 

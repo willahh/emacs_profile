@@ -33,7 +33,8 @@
 ;; Kill / cut commands
 (define-key evil-emacs-state-map (kbd "C-z") nil)
 (global-set-key [(control z)] 'delete-backward-char)
-(global-set-key [(control shift z)] 'backward-kill-word)
+;; (global-set-key [(control shift z)] 'backward-kill-word)
+(global-set-key [(control shift z)] 'clean-aindent--bsunindent)
 (global-set-key (kbd "C-w") 'whole-line-or-region-kill-region)
 (global-set-key [(control shift k)] 'kill-whole-line) ;; Override default emacs kill sentence but i don't use it
 
@@ -179,12 +180,11 @@
 (global-set-key (kbd "‡") 'mc/mark-next-like-this-word) ;; ALT+q
 (global-set-key (kbd "Ω") 'mc/mark-previous-like-this-word) ;; ALT+SHIFT+q
 (global-set-key (kbd "<C-268632081>") 'mc/mark-all-dwim) ;; CTRL+alt+q
-(global-set-key (kbd "ı") 'mc/mark-next-lines) ;; ALT+SHIFT+n 
-(global-set-key (kbd "∏") 'mc/mark-previous-lines) ;; ALT+SHIFT+n
+(global-set-key (kbd "ñ") 'mc/mark-next-lines) ;; ALT+p
+(global-set-key (kbd "π") 'mc/mark-previous-lines) ;; ALT+n
 (global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click) ;; Mouse
 
 ;; Helm
-; ---
 (global-set-key (kbd "M-c") 'kill-ring-save)
 (global-set-key (kbd "M-c") 'kill-ring-save)
 (global-set-key (kbd "C-x C-d") 'duplicate-current-line-or-region)
@@ -198,6 +198,7 @@
 (global-set-key (kbd "C-;") 'projectile-find-file-dwim) ;; (ctrl + ;)
 (global-set-key (kbd "M-q") 'ask-before-closing)
 (global-set-key (kbd "C-c C-k") 'kill-this-buffer)
+(global-set-key (kbd "C-c t") 'toggle-truncate-lines)
 (define-key markdown-mode-map (kbd "C-c C-k") 'kill-this-buffer)
 
 ;; Filter buffer / Get buffer definitions
@@ -206,16 +207,19 @@
 (global-set-key (kbd "C-x o")  'helm-find-files)
 
 ;; Used for OSX keyboard
-(global-set-key (kbd "M-S-+")  'evilnc-comment-or-uncomment-lines) ;; (Meta + shift + / on US International keyboard)
-(global-set-key (kbd "M-.") 'beginning-of-buffer) ;; Meta + < on US Keyboard
-(global-set-key (kbd "M-/") 'end-of-buffer) ;; Meta + > on US Keyboard
+;; (global-set-key (kbd "M-S-+")  'evilnc-comment-or-uncomment-lines) ;; (Meta + shift + / on US International keyboard)
+;; (global-set-key (kbd "M-.") 'beginning-of-buffer) ;; Meta + < on US Keyboard
+;; (global-set-key (kbd "M-/") 'end-of-buffer) ;; Meta + > on US Keyboard
+(global-set-key (kbd "M-/") 'evilnc-comment-or-uncomment-lines)
 
+;; swoop
 (global-set-key (kbd "C-c C-s") 'helm-swoop)
 (define-key js2-mode-map (kbd "C-c C-s") 'helm-swoop)
 (define-key php-mode-map (kbd "C-c C-s") 'helm-swoop)
 (define-key web-mode-map (kbd "C-c C-s") 'helm-swoop)
 (define-key markdown-mode-map (kbd "C-c C-s") 'helm-swoop)
 
+;; Swiper
 (global-set-key (kbd "C-c C-p") 'swiper)
 (global-set-key (kbd "C-c C-p") 'swiper)
 (global-set-key (kbd "C-c C-p") 'swiper)

@@ -62,7 +62,7 @@
  '(helm-ag-insert-at-point (quote symbol))
  '(helm-source-names-using-follow
  (quote
-  ("Search at ~/www/project/arsia/arsia_standard_310/mediadata/src/app/" "Search at ~/.emacs.d/include/" "Search at ~/.emacs.d/" "Imenu")))
+  ("Search at ~/.emacs.d_hlissner/" "Search at ~/www/project/arsia/arsia_standard_310/mediadata/src/app/" "Search at ~/.emacs.d/include/" "Search at ~/.emacs.d/" "Imenu")))
  '(ido-enable-flex-matching t)
  '(magit-dispatch-arguments nil)
  '(package-selected-packages
