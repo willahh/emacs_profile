@@ -200,10 +200,10 @@
 ;; Multi cursor stuf
 ;; Update : Utilisation de la lettre o plutot qutôt que de la lettre d
 ;; car celle-ci est utiise pour faire des é
-(global-set-key (kbd "œ") 'mc/mark-next-like-this-word) ;; ALT+o
-(global-set-key (kbd "Œ") 'mc/mark-previous-like-this-word) ;; ALT+SHIFT+o
+(global-set-key (kbd "‡") 'mc/mark-next-like-this-word) ;; ALT+q
+(global-set-key (kbd "Ω") 'mc/mark-previous-like-this-word) ;; ALT+SHIFT+q
 ;; (global-set-key [(meta control g)] 'mc/mark-all-dwim) ;; CTRL+META+G - Update c-m-g est utilise pour activer desactiver le highlight auto
-(global-set-key (kbd "<C-268632079>") 'mc/mark-all-dwim) ;; CTRL+alt+a
+(global-set-key (kbd "<C-268632083>") 'mc/mark-all-dwim) ;; CTRL+alt+q
 (global-set-key (kbd "ı") 'mc/mark-next-lines) ;; ALT+SHIFT+n 
 (global-set-key (kbd "∏") 'mc/mark-previous-lines) ;; ALT+SHIFT+n
 

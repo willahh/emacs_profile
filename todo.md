@@ -42,6 +42,10 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 
 ## Bloquant
+- [ ] [auto bracket] Dont use autobraket partout
+- [ ] M-z devrait fonctionner lorsqu'une sélection est présente
+- [ ] C-q pour un emacs leave (C-g) (Plus accessible)
+
 - [ ] [helm] Directory first
 - [ ] [helm] C-z -> Delete back 
 - [ ] [multi-cursor] C-g leave multi-cursor state 
