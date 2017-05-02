@@ -42,9 +42,19 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 
 ## Bloquant
+- [ ] [js2-mode] Colorization redraw slow
+- [ ] [multi-cursor] Remettre la possibilité d'ajouter un command click de la souris pour ajouter un nouveau caret
+- [ ] [auto bracket] Ne pas l utiliser sur tous les buffer et notamment pas dans le minibuffer
+- [ ] M-z devrait fonctionner lorsqu'une sélection est présente
+- [ ] C-q pour un emacs leave (C-g) (Plus accessible)
+
+- [ ] [projectile] Find file - Traitement lent lorsqu'il y a beaucoup de fichiers
 - [ ] [auto bracket] Dont use autobraket partout
 - [ ] M-z devrait fonctionner lorsqu'une sélection est présente
 - [ ] C-q pour un emacs leave (C-g) (Plus accessible)
+
+
+
 
 - [ ] [helm] Directory first
 - [ ] [helm] C-z -> Delete back 
@@ -59,7 +69,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 ## A ranger
 - [ ] [vc-diff] g (refresh) --> Remettre la bonne position y
 - [ ] Création de tableaux directement par texte
-- [ ] Couper la saisie de texte automatiquement =======
+- [ ] Couper la saisie de texte automatiquement
 - [ ] [helm-ag] auto recentrer une fois le focus effectué
 - [ ] [ivy] [mini buffer] Add C-l keybinding
 - [ ] [css-mode] [comany] Idle delay a 0
