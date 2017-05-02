@@ -30,36 +30,21 @@
 ;; (global-set-key [(control shift q)] 'abort-recursive-edit)
 (global-set-key [(control shift q)] 'my-abort-recursive-edit)
 
-
 ;; Kill / cut commands
 (define-key evil-emacs-state-map (kbd "C-z") nil)
-
 (global-set-key [(control z)] 'delete-backward-char)
 (global-set-key [(control shift z)] 'backward-kill-word)
-
 (global-set-key (kbd "C-w") 'whole-line-or-region-kill-region)
-
-
-
-
-
 (global-set-key [(control shift k)] 'kill-whole-line) ;; Override default emacs kill sentence but i don't use it
-
 
 ;; ---------------- Key binding leader
 ;; -- Evil leader key commands
 (evil-leader/set-leader "<SPC>")
 
-
 ;; -- magit
 (evil-leader/set-key "ms" 'magit-status)
-
-
-
 (evil-leader/set-key "fq" 'ag-files)
-
 ;; -- window [w]
-
 
 ;; -- Shell [s]
 (evil-leader/set-key "ss" 'shell) 
@@ -79,7 +64,6 @@
 (evil-leader/set-key "vrr" 'vc-revert)
 (evil-leader/set-key "vl" 'vc-print-log)
 (evil-leader/set-key "vu" 'vc-update)
-
       
 ;; -- Buffer [b]
 (evil-leader/set-key "bb" 'list-buffers)
@@ -92,7 +76,6 @@
 (evil-leader/set-key "hs" 'eval-last-sexp) ;; Meaning : [h]val-last-[s]exp
 
 ;; -- Web-mode
-
 (evil-leader/set-key "j" 'web-mode-tag-next)
 (evil-leader/set-key "k" 'web-mode-tag-previous)
 
@@ -113,19 +96,14 @@
 
 ;; avy
 
-
-
 ;; Code folding
 (evil-leader/set-key "zs" 'hs-show-block)
 (evil-leader/set-key "zh" 'hs-hide-block)
-
 
 ;; -------- key chords binding
 ;; avy
 ;; Update : az ne peut pas etre utilise car trop fréquemment utilisé ("localization", ...)
 (key-chord-define-global "qs" 'avy-goto-word-1-below)
-
-
 (global-set-key (kbd "C-;") 'avy-goto-word-or-subword-1)
 
 ;;
@@ -162,11 +140,6 @@
 (key-chord-define evil-normal-state-map "jk" 'evil-emacs-state)
 (key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
 
-
-
-
-
-
 ;; ---------------- Key binding evil normal mode
 (with-eval-after-load 'evil-maps
   (define-key evil-normal-state-map (kbd "M-a") 'mark-whole-buffer)
@@ -175,10 +148,8 @@
 
 (define-key evil-normal-state-map (kbd "M-n") 'evil-buffer-new)
 
-
 ;; ---------------- Key binding
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
-
 
 ;; Dired
 (define-key dired-mode-map (kbd "<tab>") 'dired-find-file)
@@ -189,12 +160,9 @@
 ;; ---------------- Color theme
 (set-face-attribute 'lazy-highlight nil :background "green")
 
-
 ;; --------- key binding
-
 ;; Main binds
 (global-set-key (kbd "<f5>") 'eval-buffer)
-
 
 ;; Mouse key binding
 (global-set-key (kbd "<S-wheel-left>") '(lambda ()
@@ -210,83 +178,37 @@
 ;; car celle-ci est utiise pour faire des é
 (global-set-key (kbd "‡") 'mc/mark-next-like-this-word) ;; ALT+q
 (global-set-key (kbd "Ω") 'mc/mark-previous-like-this-word) ;; ALT+SHIFT+q
-
-
 (global-set-key (kbd "<C-268632081>") 'mc/mark-all-dwim) ;; CTRL+alt+q
 (global-set-key (kbd "ı") 'mc/mark-next-lines) ;; ALT+SHIFT+n 
 (global-set-key (kbd "∏") 'mc/mark-previous-lines) ;; ALT+SHIFT+n
-
-
 (global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click) ;; Mouse
-
-
-
-
-
 
 ;; Helm
 ; ---
 (global-set-key (kbd "M-c") 'kill-ring-save)
 (global-set-key (kbd "M-c") 'kill-ring-save)
 (global-set-key (kbd "C-x C-d") 'duplicate-current-line-or-region)
-
 (global-set-key (kbd "C-M-J") 'drag-stuff-down)
 (global-set-key (kbd "C-M-k") 'drag-stuff-up)
-
 (define-key php-mode-map (kbd "C-M-J") 'drag-stuff-down) ;; override php mode map cmj
-
-
-
 (global-set-key (kbd "M-x") 'helm-M-x)
-
-
 
 ;; Sublime Text go to anything
 ;; Update : Utilsation des standards emacs (C-c p f)
-
-
-
 (global-set-key (kbd "C-;") 'projectile-find-file-dwim) ;; (ctrl + ;)
-
 (global-set-key (kbd "M-q") 'ask-before-closing)
-
-
-
 (global-set-key (kbd "C-c C-k") 'kill-this-buffer)
 (define-key markdown-mode-map (kbd "C-c C-k") 'kill-this-buffer)
 
 ;; Filter buffer / Get buffer definitions
-
 (global-set-key [(meta r)]  'helm-imenu) ;; command + r
 (global-set-key [(meta shift r)] 'swiper) ;; command + shift + r : Update : Switch to swiper (lighter / faster)
-
-
-
 (global-set-key (kbd "C-x o")  'helm-find-files)
-
-;; Update : Utilisation du racourcis de base C-c p D
-
-
-;; 
-
-
 
 ;; Used for OSX keyboard
 (global-set-key (kbd "M-S-+")  'evilnc-comment-or-uncomment-lines) ;; (Meta + shift + / on US International keyboard)
 (global-set-key (kbd "M-.") 'beginning-of-buffer) ;; Meta + < on US Keyboard
 (global-set-key (kbd "M-/") 'end-of-buffer) ;; Meta + > on US Keyboard
-
-
-
-
-;; swiper
-
-
-
-
-
-
-
 
 (global-set-key (kbd "C-c C-s") 'helm-swoop)
 (define-key js2-mode-map (kbd "C-c C-s") 'helm-swoop)
@@ -298,16 +220,6 @@
 (global-set-key (kbd "C-c C-p") 'swiper)
 (global-set-key (kbd "C-c C-p") 'swiper)
 
-;; emacs srolling
-
-
-
-
-
-
-
-
-
 ;; ----- search
 ;; Update : Apres pas mal d essais, la commande "ag-project" me convient le mieux.
 ;; Cette commande permet de faire une recherche globale depuis le projet (retrouve via .projectile ou .svn .git)
@@ -315,16 +227,10 @@
 ;; Le raccourcis utilise est COMMAND+ALT+f ("M-ƒ" sur osx)
 ;; Update 3 : Switch helm-ag et helm-ag-project-root (helm-ag sur le racourcis le plus simple)
 ;; Update 4 : Re inversement de ces 2 la, trop souvent de mauvais candidats sur le helm-ag-project-root
-
 ;; Les deux plus utiles (selon moi)
 (global-set-key (kbd "M-Ò") 'ag-project) ;; (cmd + alt  + s)
-
 (global-set-key (kbd "Ò") 'helm-ag) ;; (alt + s)
 (global-set-key (kbd "M-∑") 'helm-ag-project-root) ;; (cmd + alt + shift + s)
-
-
-
-
 
 ;; ---- window
 (global-set-key [(meta shift w)] 'delete-window)
@@ -332,12 +238,7 @@
 ;; comment
 ;; Update : evilnc-comment-or-uncomment-lines  fait des commentaires bizarres (en mode html plusieurs imbrications de commentaire html au lieu d un seul)
 ;; Update : comment-region ne fonctionne pas bien en mode css
-
-
-
 (global-set-key [(meta /)] 'evilnc-comment-or-uncomment-lines)
-
-
 
 (global-set-key [(meta shift d)] 'duplicate-start-of-line-or-region)
 (global-set-key [(meta z)] 'undo-tree-undo)
@@ -351,24 +252,15 @@
 
 (global-set-key [escape] 'evil-exit-emacs-state)
 
-
 ;; Update : Impossible car meta shift a est utilisée
-
-
-
-
-
 (global-set-key [C-S-tab] 'previous-buffer)
 (global-set-key [C-tab] 'next-buffer) 
-;; 
 
 ;; easy-motion
 (evilem-default-keybindings "ù")
 
-
 (global-set-key (kbd "C-v") 'evil-scroll-down)
 (global-set-key (kbd "M-v") 'evil-scroll-up)
-
 
 ;; web mode
 (define-key web-mode-map [(meta shift j)] 'web-mode-tag-next)
@@ -382,12 +274,6 @@
 (global-set-key [(M return)] 'smart-open-line)
 (global-set-key [(M j)] 'smart-open-line)
 (define-key web-mode-map [(meta j)] 'smart-open-line)
-
-
-
-
-
-
 
 ;; avy go to word
 ;; (global-set-key (kbd "C-x C-s") 'avy-goto-word-or-subword-1)
@@ -403,8 +289,6 @@
 ;; Display and edit occurances of regexp in buffer
 (global-set-key (kbd "C-c o") 'occur)
 
-
-
 ;; Webjump let's you quickly search google, wikipedia, emacs wiki
 (global-set-key (kbd "C-x g") 'webjump)
 (global-set-key (kbd "C-x M-g") 'browse-url-at-point)
@@ -413,11 +297,9 @@
 (global-set-key (kbd "C-c f") 'iy-go-to-char)
 (global-set-key (kbd "C-c F") 'iy-go-to-char-backward)
 
-
 ;; change-inner like VIM ci 
 (global-set-key (kbd "M-i") 'change-inner)
 (global-set-key (kbd "M-o") 'change-outer)
-
 
 ;; Transpose stuff with M-t
 (global-unset-key (kbd "M-t")) ;; which used to be transpose-words
@@ -430,22 +312,12 @@
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
 
-
-
 ;; Rebind [yo2] car sinon [yo] est surchargee
 (require 'magit)
 (define-key magit-status-mode-map (kbd "<tab>") 'magit-section-toggle)
 (define-key emmet-mode-keymap [(control shift j)] 'emmet-expand-line)
 (global-set-key [(control shift j)] 'smart-open-line-above)
-
-
 (define-key key-translation-map (kbd "C-j") (kbd "RET"))
-
-
-
-
-
-
 
 (require 'nxml-mode)
 (define-key global-map (kbd "C-c RET") 'dired-jump)
@@ -456,40 +328,14 @@
 (define-key global-map (kbd "C-$") 'point-undo)
 (define-key global-map (kbd "C-*") 'point-redo)
 
-
-
-
-
 (define-key global-map (kbd "C-c C-r") 'helm-recentf)
 (define-key php-mode-map (kbd "C-c C-r") 'helm-recentf)
-
-
-
-
-
-
-
-
-
-
-
-;; http://ergoemacs.org/emacs/effective_emacs.html
-
-
-
-
-
-
-
 
 (global-set-key (kbd "M-0") 'delete-window) ;; M-0
 (global-set-key (kbd "M-1") 'delete-other-windows) ;; M-1
 (global-set-key (kbd "M-2") 'split-window-below) ;; M-2
 (global-set-key (kbd "M-3") 'split-window-right) ;; M-3
 (global-set-key (kbd "M-9") 'resize-window) ;; M-9
-
-
-
 
 (global-set-key (kbd "M-o") 'other-window)
 (define-key ggtags-navigation-map (kbd "M-o") 'other-window) ;; Need to override ggtags map
@@ -502,179 +348,8 @@
 
 (define-key ggtags-navigation-map (kbd "M-p") 'highlight-symbol-next)
 (define-key ggtags-navigation-map (kbd "M-n") 'highlight-symbol-prev)
-;; Multi cursor stuf
-;; Dilemme : Retirer le M-d natif de emacs pour avoir le M-d de Sublime (que j utilise tout le temps...)
-;; (Default M-d = delete word back)
-;; Non faisaible, M-d par default est trop utile
-;; Alternative tres proche : ALT+d (et ALD+SHIFT+d)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-;; Update : cmd+shift+x plutot que ctrl+
-;; Update 2 : Utilisation de control shift w
-
-
-
-;; Files / Browse files / Browse buffer 
-
-
-
-
-
-
-;; Edit : Desactivation, il m arrive trop souvent de faire des M-n
-;; pour scroller
-;; Edit 2 : Tant pis, vraiment pratique
-
-
-
-
-
-
-
-;; replace zap-to-char functionaity with the more powerful zop-to-char
-
-
-
-
-;; Impossible utilise pour isearch regexp
-
-
-
-;; iy-go-to-char - like f in Vim
-
-
-
-
-;; 
-
-
-;;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ;; PERFFFECT.
 (define-key key-translation-map (kbd "C-j") (kbd "RET"))
 (define-key global-map (kbd "C-c RET") 'dired-jump)
 (define-key web-mode-map (kbd "C-c RET") 'dired-jump)
-
-
-
-;; (require 'profiler)
-
-
-
-;;  undo redo [remove 1 one word (add this sentence)]
-
-
-
-;; ---------------- counsel
-
-
-
-
-
-;; ---------------- vc-diff
-
-
-
-;; Update : az pour goto char 2 (plus de precision)
-;; Update 2 : az goto-char (semble plus naturel)
-
-
-
-
-
-
-
-
-
-
-
-
