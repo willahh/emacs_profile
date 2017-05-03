@@ -222,13 +222,10 @@
 ;; (setq x-select-enable-clipboard 1)
 
 
-
-
 ;; Launch in fullscreen
 ;; Source: http://emacs.stackexchange.com/a/3008
 ;; (add-to-list 'default-frame-alist '(fullscreen . maximized)
-(add-to-list 'initial-frame-alist '(fullscreen . maximized))
-(add-to-list 'default-frame-alist '(fullscreen . fullheight))
+;; (add-to-list 'default-frame-alist '(fullscreen . fullheight))
 
 ;; Enable gtags
 (setq load-path (cons "/usr/local/share/gtags" load-path))

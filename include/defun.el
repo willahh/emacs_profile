@@ -686,16 +686,6 @@ That is, a string used to represent it on the tab bar."
      
 
 
-(global-set-key (kbd "C-c w")         (quote copy-word))
-(global-set-key (kbd "C-c l")         (quote copy-line))
-(global-set-key (kbd "C-c p")         (quote copy-paragraph))
-(global-set-key (kbd "C-c s")         (quote thing-copy-string-to-mark))
-(global-set-key (kbd "C-c a")         (quote thing-copy-parenthesis-to-mark))
-
-
-
-
-
 
 ;; Projectile auto invalidate cache after delete file
 ;; http://cupfullofcode.com/blog/2014/10/06/invalidate-projectile-cache-on-delete/index.html
@@ -708,3 +698,22 @@ That is, a string used to represent it on the tab bar."
             (projectile-purge-file-from-cache relative-filename)))))
   
 (ad-activate 'delete-file)
+
+
+
+
+
+;; New centered frame
+(defun create-new-centered-frame ()
+  (interactive)
+
+  ;; New frame
+  (make-frame-command)
+
+  ;; update frame position
+  (set-frame-position (selected-frame) 500 500)
+
+  ;; New buffer inside
+  ;;  then Select this buffer @todo
+  (switch-to-buffer (generate-new-buffer "*new*"))
+)
