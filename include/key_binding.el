@@ -210,7 +210,7 @@
 ;; (global-set-key (kbd "M-S-+")  'evilnc-comment-or-uncomment-lines) ;; (Meta + shift + / on US International keyboard)
 ;; (global-set-key (kbd "M-.") 'beginning-of-buffer) ;; Meta + < on US Keyboard
 ;; (global-set-key (kbd "M-/") 'end-of-buffer) ;; Meta + > on US Keyboard
-(global-set-key (kbd "M-/") 'evilnc-comment-or-uncomment-lines)
+;; (global-set-key (kbd "M-/") 'evilnc-comment-or-uncomment-lines)
 
 ;; swoop
 (global-set-key (kbd "C-c C-s") 'helm-swoop)
@@ -245,6 +245,9 @@
 (global-set-key [(meta /)] 'evilnc-comment-or-uncomment-lines)
 
 (global-set-key [(meta shift d)] 'duplicate-start-of-line-or-region)
+
+;; Undo redo
+;; Update : Use default binding
 (global-set-key [(meta z)] 'undo-tree-undo)
 (global-set-key [(meta shift z)] 'undo-tree-redo)
 
@@ -316,7 +319,6 @@
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
 
-;; Rebind [yo2] car sinon [yo] est surchargee
 (require 'magit)
 (define-key magit-status-mode-map (kbd "<tab>") 'magit-section-toggle)
 (define-key emmet-mode-keymap [(control shift j)] 'emmet-expand-line)
@@ -329,8 +331,8 @@
 (define-key web-mode-map (kbd "C-c C-j") 'dired-jump)
 (define-key nxml-mode-map "\C-c\C-m" 'dired-jump)
 
-(define-key global-map (kbd "C-$") 'point-undo)
-(define-key global-map (kbd "C-*") 'point-redo)
+;; (define-key global-map (kbd "C-$") 'point-undo)
+;; (define-key global-map (kbd "C-*") 'point-redo)
 
 (define-key global-map (kbd "C-c C-r") 'helm-recentf)
 (define-key php-mode-map (kbd "C-c C-r") 'helm-recentf)

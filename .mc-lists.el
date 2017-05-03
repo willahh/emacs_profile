@@ -12,6 +12,9 @@
       backward-sexp
       c-electric-delete-forward
       c-electric-semi&comma
+      c-electric-slash
+      c-electric-star
+      c-indent-new-comment-line
       clean-aindent--bsunindent
       dired-jump
       duplicate-start-of-line-or-region
