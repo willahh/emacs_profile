@@ -1,9 +1,12 @@
 (require 'package)
 (setq package-list '(
-  ;; helm-hunks                     
+  ;; helm-hunks
   ;; evil-snipe
   powerline
   undo-tree
+
+  back-button
+
   ;; perspective
   ;; smart-mode-line ;; (sml -> activated)
   ;; spaceline
@@ -59,11 +62,11 @@
 
   autopair
   ;; smartparens
-  
+
   avy
   avy-menu
 
-  ;; color-theme-buffer-local 
+  ;; color-theme-buffer-local
   dash
   diff-hl
   doom-themes
@@ -78,8 +81,8 @@
   evil-easymotion
   evil-leader
   ;; evil-multiedit
-  evil-nerd-commenter 
-  evil-surround   
+  evil-nerd-commenter
+  evil-surround
   evil-visualstar
   evil-snipe
   evil-matchit
@@ -88,7 +91,7 @@
   eyebrowse
   ;; general
   git-gutter
-  
+
   ;; helm
   ;; helm-ag
   ;; helm-anything
@@ -167,7 +170,4 @@
 (add-to-list 'load-path "~/.emacs.d/plugins/emacspowerline")
 (add-to-list 'load-path "~/.emacs.d/plugins/ivy_buffer_extend")
 (add-to-list 'load-path "~/.emacs.d/plugins/helm-swoop")
-
-
-
-
+(add-to-list 'load-path "~/.emacs.d/plugins/psvn")

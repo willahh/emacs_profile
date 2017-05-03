@@ -7,14 +7,14 @@
 ;; ---------------- Dired
 ;; (require 'dired)
 ;; (require 'dash)
-;; 
+;;
 ;; ;; Make dired less verbose
 ;; ;; Update : Non available on Melpa
-;; 
+;;
 ;; (require 'dired-details)
 ;; (setq-default dired-details-hidden-string "--- ")
 ;; (dired-details-install)
-;; 
+;;
 ;; (dired-hide-details-mode)
 
 
@@ -100,15 +100,15 @@
 ;;  (defadvice ls-lisp-format (around my-ls-lisp-format
 ;;   (file-name file-attr file-size switches time-index now))
 ;;   "Advice definition which removes unnecessary information
-;; during file listing in dired. For such purposes 
-;; `ls-lisp-verbosity' customized variable can be used, but 
-;; even if it is equal to nil dired will display file 
-;; permissions field like \"drwxrwxrwx\".\. So here we just 
-;; get full control to what dired shows and leave only those 
+;; during file listing in dired. For such purposes
+;; `ls-lisp-verbosity' customized variable can be used, but
+;; even if it is equal to nil dired will display file
+;; permissions field like \"drwxrwxrwx\".\. So here we just
+;; get full control to what dired shows and leave only those
 ;; fields which we need."
 ;;   (progn
 ;;     ad-do-it
-;;     (setq ad-return-value (concat 
+;;     (setq ad-return-value (concat
 ;;       (substring ad-return-value 0 1)
 ;;       (substring ad-return-value 13)))))
 
@@ -215,7 +215,7 @@
 ;; (nlinum-relative-setup-evil)
 
 ;; ;; Enable nlinum-relative with html mode
-;; (add-hook 'html-mode-hook 'nlinum-relative-mode 1) 
+;; (add-hook 'html-mode-hook 'nlinum-relative-mode 1)
 ;; (add-hook 'actionscript-mode-hook 'nlinum-relative-mode 1)
 ;; (add-hook 'fundamental-mode 'nlinum-relative-mode 1)
 ;; (add-hook 'fundamental-mode-abbrev-table 'nlinum-relative-mode 1)
@@ -236,7 +236,7 @@
 
 
 ;; ----- eyebrowse
-(require 'eyebrowse)    
+(require 'eyebrowse)
 (eyebrowse-mode t)
 
 
@@ -348,7 +348,7 @@
 ;; http://emacs.stackexchange.com/a/758
 
 ;; Company
-;; Valeur idle delay a 0.35 car les valeurs (0 | 0.1 | 025) font ralentir 
+;; Valeur idle delay a 0.35 car les valeurs (0 | 0.1 | 025) font ralentir
 ;; lors de la saisie de texte.
 
 (require 'company)
@@ -383,7 +383,7 @@
 ;; Company-quickhelp
 (company-quickhelp-mode 1)
 
-;; 
+;;
 (add-hook 'after-init-hook 'global-company-mode)
 
 
@@ -601,7 +601,7 @@
 ;; If you would like to use git-gutter.el and linum-mode
 (git-gutter:linum-setup)
 
-;; Tentative de recentrer l ecran apres certaines actions        
+;; Tentative de recentrer l ecran apres certaines actions
 ;; (add-hook 'git-gutter:next-hunk 'recenter)
 ;; (add-hook 'git-gutter:post-command-hook 'recenter)
 ;; (add-hook 'goto-char 'recenter)
@@ -618,14 +618,6 @@
 (set-face-foreground 'git-gutter:added "#92de37")
 (set-face-background 'git-gutter:deleted "#f82167")
 (set-face-foreground 'git-gutter:deleted "#f82167")
-
-;; diff-hl
-(global-diff-hl-mode t)
-(add-hook 'dired-mode-hook 'diff-hl-dired-mode)
-(add-hook 'prog-mode-hook 'diff-hl-mode)
-
-
-
 
 ;; ;; tabbar
 ;; (require 'tabbar)
@@ -654,7 +646,6 @@
 
 
 ;; psvn
-(load-file "~/.emacs.d/plugins/psvn/psvn.el")
 (require 'psvn)
 
 
@@ -684,13 +675,10 @@
 
 (add-hook 'svn-log-edit-mode-hook 'my-svn-log-edit-mode-setup)
 
-
-
-
-
-
-
-
+;; diff-hl
+;; (global-diff-hl-mode t)
+;; (add-hook 'dired-mode-hook 'diff-hl-dired-mode)
+;; (add-hook 'prog-mode-hook 'diff-hl-mode)
 
 ;; markdown-mode
 (require 'markdown-mode)
@@ -707,9 +695,6 @@
 ;; AG
 ;; http://agel.readthedocs.io/en/latest/installation.html
 (require 'ag)
-
-
-
 
 ;; rainbow-mode (css color)
 ;; (require 'rainbow-mode)
@@ -774,7 +759,7 @@
 ;;   ))
 
 ;; (setq display-buffer-alist
-;;   '(  
+;;   '(
 ;;   ("*vc-dir*"                              . (display-buffer-same-window . nil))
 ;;   ("*Buffer List*"                         . (display-buffer-same-window . nil))
 ;;   ("*ag*"                                  . (display-buffer-same-window . nil))
@@ -784,7 +769,7 @@
 
 ;; Update pour avoir ag et vc dir dans la meme window : plutot pratique
 (setq display-buffer-alist
-      '(  
+      '(
         ("*ag*"                                  . (display-buffer-same-window . nil))
         ("*vc-dir*"                              . (display-buffer-same-window . nil))
         ("*shell*"                               . (display-buffer-same-window . nil))
@@ -798,9 +783,6 @@
                (display-buffer-reuse-window
                 display-buffer-same-window)
                (inhibit-same-window . nil)))
-
-
-
 
 
 ;; --------------- Type scrip support
@@ -892,7 +874,7 @@
 ;; Perf improvement !
 (setq web-mode-enable-block-partial-invalidation t)
 
-;; 
+;;
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.css\\'" . css-mode)) ;; .css file should be assigned to css-mode for nice emmet support
@@ -904,7 +886,7 @@
 ;; (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
 
 (setq web-mode-enable-css-colorization t)
-(setq web-mode-enable-current-element-highlight t)    
+(setq web-mode-enable-current-element-highlight t)
 (setq web-mode-enable-current-column-highlight t)
 
 
@@ -916,7 +898,7 @@
         ))
 
 ;; css colorization
-(setq web-mode-enable-css-colorization t) 
+(setq web-mode-enable-css-colorization t)
 
 
 
@@ -1013,7 +995,7 @@
 ;;   (ac-php-remake-tags)
 ;; )
 ;; (add-hook 'php-mode-hook
-;;           (lambda () 
+;;           (lambda ()
 ;;              (add-hook 'after-save-hook 'a-test-save-hook nil 'make-it-local)))
 
 
@@ -1093,7 +1075,7 @@
 ;; est ouvert. Lors d une exploration de plein de fichiers, trop de process sont ouvert
 ;; et font freezer l ensemble.
 ;; Update 2 : tres pratique lors d une utlisation sur project contenant pas trop de fichiers
-;; Update 3 : Trop d erreurs possibles 
+;; Update 3 : Trop d erreurs possibles
 
 
 ;; <comment>
@@ -1175,13 +1157,13 @@
 
 
 
-;; flycheck     
+;; flycheck
 ;; http://codewinds.com/blog/2015-04-02-emacs-flycheck-eslint-jsx.html
 ;; Note : attention flycheck fat ralentir web mode sur des gros fichiers
-(require 'flycheck)      
+(require 'flycheck)
 
 ;; Note : doit etre active de maniere globale, je n arrive pas
-;; a l activer avec un hook sur js2mode (pour le moment)      
+;; a l activer avec un hook sur js2mode (pour le moment)
 ;; (global-flycheck-mode)
 ;; Update : fonctionel avec flycheck-mode
 (add-hook 'js2-mode-hook 'flycheck-mode)
@@ -1192,7 +1174,7 @@
 ;; (setq flycheck-highlighting-mode 'lines)
 
 ;; (setq flycheck-highlighting-mode nil)
-;; (setq flycheck-check-syntax-automatically '(save mode-enabled)) 
+;; (setq flycheck-check-syntax-automatically '(save mode-enabled))
 
 
 ;; (setq flycheck-javascript-esline-executable 'eslint) ;; Ne semble pas fonctionner
@@ -1213,12 +1195,12 @@
 (flycheck-add-mode 'javascript-eslint 'web-mode)
 
 ;; customize flycheck temp file prefix
-(setq-default flycheck-temp-prefix ".flycheck")                   
+(setq-default flycheck-temp-prefix ".flycheck")
 
 ;; disable json-jsonlist checking for json files
 (setq-default flycheck-disabled-checkers
               (append flycheck-disabled-checkers
-                      '(json-jsonlist)))                   
+                      '(json-jsonlist)))
 
 ;; for better jsx syntax-highlighting in web-mode
 ;; - courtesy of Patrick @halbtuerke
@@ -1229,8 +1211,8 @@
     ad-do-it))
 
 
-;;  flymake-jshint 
-;; (require 'flymake-jshint) 
+;;  flymake-jshint
+;; (require 'flymake-jshint)
 ;; (add-to-list 'load-path "~/.emacs.d/elpa/flymake-jshint-20140319.1500/") ;; @todo voir si utile ou non
 ;; (setq jshint-configuration-path "~/.emacs/jshint.json")
 ;; (flycheck-def-config-file-var flycheck-jscsrc javascript-jscs "~/.emacs.d/.jscsrc"
@@ -1320,7 +1302,7 @@
 ;; (global-set-key (kbd "M-<left>") 'smart-backward)
 ;; (global-set-key (kbd "M-<right>") 'smart-forward)
 
-;; evil mode    
+;; evil mode
 (require 'evil)
 
 ;; Enable evil mode
@@ -1342,16 +1324,16 @@
 ;; Define some mode that should be initialized on emacs mode
 (evil-set-initial-state 'org-mode 'emacs)
 ;; (evil-set-initial-state 'dired-mode 'emacs) ;; Note : pas besoin en principe
-(evil-set-initial-state 'log-edit-files 'emacs) 
+(evil-set-initial-state 'log-edit-files 'emacs)
 (evil-set-initial-state 'help-mode 'emacs)
-(evil-set-initial-state 'diff-mode 'emacs) 
+(evil-set-initial-state 'diff-mode 'emacs)
 (evil-set-initial-state 'text-mode 'emacs) ;; Mode utilise pour saisir des messages depuis magit
 (evil-set-initial-state 'log-edit-mode 'emacs) ;; Mode utilise pour saisir des messages depuis vc
-;; (evil-set-initial-state 'markdown-mode 'emacs) ;; Update laisse en evil mode 
-(evil-set-initial-state 'ag-mode 'emacs) 
+;; (evil-set-initial-state 'markdown-mode 'emacs) ;; Update laisse en evil mode
+(evil-set-initial-state 'ag-mode 'emacs)
 ;; (evil-set-initial-state 'neotree 'emacs)
 ;; (evil-set-initial-state 'neotree-mode 'emacs) ;; neotree doesnt work maybe neotree-mode ? -> update ok, works -> Update laisse en evil mode
-;;(evil-set-initial-state 'vc-dir-mode' 'normal) 
+;;(evil-set-initial-state 'vc-dir-mode' 'normal)
 (evil-set-initial-state 'vc-dir-mode 'normal)
 (evil-set-initial-state 'profiler-mode 'emacs)
 (evil-set-initial-state 'profiler-report-mode 'emacs)
@@ -1363,7 +1345,7 @@
 
 
 
-;; Remove all keybindings from insert-state keymap (insert mode behavior like emacs) 
+;; Remove all keybindings from insert-state keymap (insert mode behavior like emacs)
 (setcdr evil-insert-state-map nil)
 
 (define-key evil-normal-state-map [escape] 'keyboard-quit)
@@ -1390,7 +1372,7 @@
 
 ;; Recenter after search
 (defadvice evil-ex-search-next (after advice-for-evil-ex-search-next activate)
-  (evil-scroll-line-to-center (line-number-at-pos))) 
+  (evil-scroll-line-to-center (line-number-at-pos)))
 
 
 ;; switch to emacs state mouse click
@@ -1455,7 +1437,7 @@
 
 ;; window-numbering
 ;; (require 'window-numbering)
-;; (window-numbering-mode)            
+;; (window-numbering-mode)
 
 ;; Spaceline
 ;; Note : power line stylee, mais je n arrive pas a la faire fonctionner
@@ -1489,12 +1471,12 @@
 (evil-snipe-mode 1)
 
 ;; eyebrowse
-(require 'eyebrowse)    
+(require 'eyebrowse)
 (eyebrowse-mode t)
 
 ;; Which-key
 (require 'which-key)
-(which-key-mode)    
+(which-key-mode)
 
 
 
@@ -1622,7 +1604,7 @@
 
 
 ;; ---------------- helm
-;; (require 'helm) 
+;; (require 'helm)
 (require 'helm-config)
 (require 'helm-ag)
 
@@ -1747,7 +1729,7 @@
 (setq neo-theme 'icons) ;; Set the neotree theme before show
 ;; (neotreezshow)
 
-;; dont ask 
+;; dont ask
 (setq neo-force-change-root t)
 
 ;; Every time when the neotree window is opened, let it find current file and jump to node.
@@ -1840,10 +1822,10 @@
 ;; -> Utilisation d une indentation type "js" en mode web
 ;; -> Update : Indentation pas clean dans bcp de cacs
 ;;    -> Trouver/faire une fonction indent en se basant uniquement sur les info de la ligne courante (pas de parcours de toute la page)
-;; -> Update 2 : OK, utilisation de indent-relative ---> Une indentation simple qui fonctionne (pas aussi avancee que les autres, mais couvre 75, 80% de mon utilisation)      
+;; -> Update 2 : OK, utilisation de indent-relative ---> Une indentation simple qui fonctionne (pas aussi avancee que les autres, mais couvre 75, 80% de mon utilisation)
 ;; @todo : RET ne doit pas etre defini en global
 ;; -> Update 3 : Utilisation de clean auto indent (spacemac utilise ca)
-;;              
+;;
 ;; (defun custom-newline ()
 ;;    (interactive)
 ;;    (newline)
@@ -1874,7 +1856,7 @@
 
 
 (defadvice evil-ex-search-next (after advice-for-evil-ex-search-next activate)
-  (evil-scroll-line-to-center (line-number-at-pos)))        
+  (evil-scroll-line-to-center (line-number-at-pos)))
 
 
 
@@ -2011,7 +1993,7 @@ then `diff-jump-to-old-file' is also set, for the next invocations."
 (require 'nlinum)
 
 ;; (add-hook 'prog-mode-hook 'nlinum-mode)
-;; (add-hook 'html-mode-hook 'nlinum-mode 1) 
+;; (add-hook 'html-mode-hook 'nlinum-mode 1)
 ;; (add-hook 'actionscript-mode-hook 'nlinum-mode 1)
 ;; (add-hook 'fundamental-mode 'nlinum-mode 1)
 ;; (add-hook 'fundamental-mode-abbrev-table 'nlinum-mode 1)
@@ -2083,3 +2065,5 @@ then `diff-jump-to-old-file' is also set, for the next invocations."
 (require 'point-undo)
 
 
+;; back-button
+;; (require 'back-button)

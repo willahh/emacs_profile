@@ -449,19 +449,19 @@ That is, a string used to represent it on the tab bar."
     (message-position-point)))
 
 
-;; Shorthand - file:revert 
-(defun file:revert()
-  "VC: (File) Revert"
-  (interactive)
-  (vc-revert)
-  )
+;; ;; Shorthand - file:revert 
+;; (defun file:revert()
+;;   "VC: (File) Revert"
+;;   (interactive)
+;;   (vc-revert)
+;;   )
 
-;; Shorthand - file:duplicate
-(defun file:duplicate()
-  "File: Duplicate"
-  (interactive)
-  (copy-file)
-  )
+;; ;; Shorthand - file:duplicate
+;; (defun file:duplicate()
+;;   "File: Duplicate"
+;;   (interactive)
+;;   (copy-file)
+;;   )
 
 
 

@@ -10,7 +10,7 @@
 - evil mode : ":new file.extension" -> Create new buffer/file/window
 - evil mode : "gf" ("go to file")
 - Sublime merge lines -> Evil gJ
-- [M+S+;] ---> xref-find-definitions (natif) 
+- [M+S+;] ---> xref-find-definitions (natif)
 - dired-jump (C-x C-j) : Jump directly to dired from file
 - New line with comment M-j
 - Revert hunk (depuis vc-diff) :
@@ -38,27 +38,22 @@ phpmd
 Semantic PHP parser with ECB
 http://ecb.sourceforge.net/
 https://www.youtube.com/watch?v=KoRNCrx9pak
-  
+
 
 
 ## Bloquant
+- [ ] [diff-hl] Ne fonctionne plus (package casse ?)
+
+
+## A ranger
 - [ ] [js2-mode] Colorization redraw slow
 - [ ] [multi-cursor] Remettre la possibilité d'ajouter un command click de la souris pour ajouter un nouveau caret
 - [ ] [auto bracket] Ne pas l utiliser sur tous les buffer et notamment pas dans le minibuffer
 - [ ] M-z devrait fonctionner lorsqu'une sélection est présente
-- [ ] C-q pour un emacs leave (C-g) (Plus accessible)
-
 - [ ] [projectile] Find file - Traitement lent lorsqu'il y a beaucoup de fichiers
-- [ ] [auto bracket] Dont use autobraket partout
-- [ ] M-z devrait fonctionner lorsqu'une sélection est présente
-- [ ] C-q pour un emacs leave (C-g) (Plus accessible)
-
-
-
-
 - [ ] [helm] Directory first
-- [ ] [helm] C-z -> Delete back 
-- [ ] [multi-cursor] C-g leave multi-cursor state 
+- [ ] [helm] C-z -> Delete back
+- [ ] [multi-cursor] C-g leave multi-cursor state
 - [ ] [highlight-symbol] [ggtags] [web-mode] Les couleurs disparaissent lorsque les modes web-mode ggtags sont presents highlight-mode est active
 - [x] [php-mode] C-j Dired jump
 - [ ] [projectile] Auto invalidate cache after create/rename/delete files
@@ -66,17 +61,14 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
   - [ ] rename
   - [x] delete
 
-## A ranger
 - [ ] [vc-diff] g (refresh) --> Remettre la bonne position y
 - [ ] Création de tableaux directement par texte
 - [ ] Couper la saisie de texte automatiquement
 - [ ] [helm-ag] auto recentrer une fois le focus effectué
 - [ ] [ivy] [mini buffer] Add C-l keybinding
-- [ ] [css-mode] [comany] Idle delay a 0
 - [ ] [ivy] - Highlight current line plus visible
 
-- [ ] [dired] Date format lisible
-- [ ] [comment-block] Creer des boites de commentaire type /** */ (comment-boxc)
+- [x] [dired] Date format lisible
 - [ ] [php-mode] [ac-php] [company] La boite d'information supplémentaire ne contient pas les php doc
 - [ ] [php-mode] Voir pour implementer quick type hierarchy
 - [ ] [php-mode] Saisie de /** + ENTER -> Creation d un php doc pre rempli
@@ -99,7 +91,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [plugin] [change inner] Ajoute rl'option Change Inner Tag
 
 
-- [x] Binder l'équivalent des M-enter, M-S-enter sur C-j, C-S-j 
+- [x] Binder l'équivalent des M-enter, M-S-enter sur C-j, C-S-j
 - [x] [flycheck] Activer flycheck pour les fichiers CSS (important)
 - [x] [helm-ag] Valider avec c-j
 
@@ -108,7 +100,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
       - Update : Retour arrière sur helm-swoop
 - [x] Emmet mode en css mode (Une erreur est peut êtrep présent dans les emacs.d conf et ne démarre pas emmet en mode css
 - [x] [ivy] Re
-- [x] C-j ---> Le comportement n est pas le même que "<enter>" (visible en mode css) 
+- [x] C-j ---> Le comportement n est pas le même que "<enter>" (visible en mode css)
 - [x] Double click + paste, -> Voir pour eviter de faire : ctrl-y + cmd-y a chaque fois
 - [x] Helm doit rester dans le contexte de la page
 - [x] [counsel] Il faut vraiment sortir les meillleurs résultast plus haut
@@ -129,10 +121,10 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
       Si la fichier courant contient une indentation en tabulation, indent = tab, si 2 space, indent = 2, etc
       (Comportement Sublime Text)
 - [ ] Tooltip : Voir pour faire des tooltips comme dans Sublime
-- [ ] [util] Revert buffer : keep current line position 
-- [ ] [theme] Mettre plus en avant le buffer actif 
+- [ ] [util] Revert buffer : keep current line position
+- [ ] [theme] Mettre plus en avant le buffer actif
 - [ ] [theme] css mode couleurs horribles
-- [ ] [theme] js color var 
+- [ ] [theme] js color var
 - [ ] [theme] Ajouter des differenciations sur certains mot clee comme "$", "=", ".", "'", "(", ")", "+", "-", certains mots clés php "var_dump", "PHP_EOL", etc
               Voir package "highlight-chars"
 - [ ] [theme] Revoir toutes les couleurs pour avoir les mêmes que dans Sublime
@@ -149,7 +141,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [theme] php mode : Plus de couleurs
 - [ ] Faire une fonction "Merge lines" pour supprimer les linebreak/whitespace
 - [ ] Terminer la fonction file:duplicate pour n'avoir qu'un seul prompt -> celui du nom du fichier target
-- [ ] theme > diff : Se rapproche au max des couleurs du theme Sublime 
+- [ ] theme > diff : Se rapproche au max des couleurs du theme Sublime
 - [ ] Delete file : ne pas re demander le chemin alors que l'on a deja le focus
 - [ ] [theme] nlinum : highlight current line number
 - [ ] Ajouter une méthode copy file name pour retourner uniquement le nom du fichier
@@ -157,7 +149,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
         Il faudrait garder que la derniere partie apres le /
 - [ ] delete-file
       - dont prompt for path
-      - kill buffer 
+      - kill buffer
 - [ ] ag/helm-ag/helm-ag-... : Ignore les regles suivantes :
     - "*.min.js"
     - "*.svn-base"
@@ -171,7 +163,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] (command+r pour reload vc-dir) - M-r ----> vc-dir-refresh
 
 - [ ] [theme] Voir pour avoir une font plus lisible (aliasing different --> Se rapprocher du rendu de Sublime (la font est bien la meme))
-- [ ] [Neotree] > after load > Open first file > focus to other window 
+- [ ] [Neotree] > after load > Open first file > focus to other window
 
 - [ ] unbind key on some mode :
     - [ ] M-w magit
@@ -210,9 +202,9 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [x] Ne pas fermer automatiquement les quotes lors d'un yank (coller)
 - [x] ag --> ignore hudge file (ST behaviour) (aucun problème dans, à mon avis, 99% des cas)  (il peut être utile de faire des recherches dans des fichieux volumineux, mais pour ca la recherche peut être faite de manière spécifique (paramètres supplémentaire, utilisation directement depuis ligne de commande ...)
       -> Ne me semble pas poser de probleme
-      
-      
-##  Mineur 
+
+
+##  Mineur
 - [ ] la selection avec la souris doit aller loin avant de prendre en compte la deuxieme ligne
       (Comportement de selection legerement different a celui de Sublime)
 - [ ] (plugin pour le liste) : Ne pas mettre les fichiers .svn dans la liste
@@ -256,14 +248,14 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 
 
-## Corrige 
+## Corrige
 - [x] [swiper] Extract result
       -> Back to helm, problem solved
 - [x] [web-mode] [company] Add php keyword ($_POST etc)
 - [x] Nouvelle ligne dans un bloc de commentaire : Commencer avec une *
       -> Natif : M-j
 - [x] Emmet mode in [web-mode]
-- [x] [highlight-mode] N est plus present (ainsi que highlight-nav-mode) 
+- [x] [highlight-mode] N est plus present (ainsi que highlight-nav-mode)
 
 - [x] [counsel] M-x Les resultats suivants ne se placent pas en premiere position suite a la saisie (ils devraient)
       - "web-mode"
@@ -277,19 +269,19 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 - [x] [web-mode] [javascript] [completion] : 4 spaces
 - [x] [php-mode] [ac-php] Faire fonctionner Location jump
-      -> OK, utilisation de gtags 
-      
-      
-      
-      
+      -> OK, utilisation de gtags
+
+
+
+
 - [x] ctrl+s --> La regex ne convient pas du tout
-- [x] iy-go-to-char-b ne fonctionne pas 
+- [x] iy-go-to-char-b ne fonctionne pas
 - [x] Ivy tab auto complete
 - [x] helm-mode semble utilisé partout, voir pour le remplacer par ivy
 - [x] Ivy : Meilleur support  fuzzy
 - [x] Ivy mettre le matche le plus proche en premier
       https://www.reddit.com/r/emacs/comments/3xzas3/help_with_ivycounsel_fuzzy_matching_and_sorting/
-- [x] Voir pour faire des opérations avec les fichiers / dossiers 
+- [x] Voir pour faire des opérations avec les fichiers / dossiers
 
 
 - [x] [magit] [key TAB] La fonction toggle est surchargee, il faut la remettre
@@ -325,7 +317,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
        Pas necessaire (et genere potentillement pas mal de pb (creation de thread ternjs lors de chaque preview d un fichier javascript))
 - [x] [dired] Plus de couleurs par default (premiere ligne en blue)
 
-- [x] Js mode + Smartparens  : 
+- [x] Js mode + Smartparens  :
       Fichier echantillons/template_html.js
       Dans la chaine suivante sHtml += ' <li data-value=""><a href="#">text</a></li>';
       Lors de la saisie d une single quote dans l attribut data-value le curseur se place en fin de chaine
@@ -343,14 +335,14 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [x] [ag] Ajouter une touche très rapide a "ag-projectile" (le plus proche de la recherche de Sublime)
 - [x] [Multi-cursor] Pouvoir faire un copier de toutes les chaines selectionnees
       Permet d'extraire des strings (Sublime text)
-      -> La copie se retrouve dans le rectangle ring -> pour l utiliser : C-x r y 
-      
+      -> La copie se retrouve dans le rectangle ring -> pour l utiliser : C-x r y
+
 - [x] Ouverture fichier : avoir de meilleurs perfs
       -> Désactivation de ternjs automatiquement (le lancer manuellement lorue necessaire)
       -> Augmentation du temps avant rendu des couleurs des textes
-      
-      
-      
+
+
+
 - [x] Directory completion : Possibilite d'avoir de l'auto completion lors de la saisie d'un chemin.
 - [x] Auto complete : Deuxième ouverture instantane
 - [x] [important] Helm mini ---> preview file when over (Comme dans Sublime)
@@ -369,8 +361,8 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [x] Multi cursor : add bottom : S initialise avec trop de lignes
 - [x] Web mode > Paste dans un html indente d une facon inconuu reformate tout, il faut bloquer ça (pas de reformatage automatique)
       -> Semble ok
-      
-      
+
+
 - [x] Neotree auto find when buffer open without focus
 - [x] emacs --> save a cursor place ?
 - [x] Enable emmet by default for web files
@@ -383,19 +375,19 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [x] Disable web mode disable auto indent
       qui ne conviennt pas
       Je pense qu il faut laisser cette fonctionalitee, et plutot voir les quelques cas
-      
+
 
 
 - [x] TAB dans le vide : ne pas déployer le menu (js mode)
 - [x] [IMPORTANT] CTRL+ALT+C --> console.log
       -> yassnippet configure, "cl" + TAB
-- [x] [util] CMD+SHIFT+A (emacs mode) -> select all 
+- [x] [util] CMD+SHIFT+A (emacs mode) -> select all
 - [x] [vc-dir] Hide up to date by default
        --> key binding : "x"
 - [x] [urgent] Trouver comment avoir un copier / coller qui fonctionne en interne/interne externe/interne comme sur les éditeurs modernes
                (kill + coller) (très chiant)  Action 1 : "DIS(" - Action 2 : "M-v" --> La première action fait un kill, la partie dans le presse papier n'est plus bonne
                Update : il faut passer par le system interne de emacs (kill-ring, mark-ring) --> paste -> yank-pop
-               
+
 
 - [x] ctrl+a en mode evil > default ne fonctionne pas
 - [x] [theme] Voir si il est possible d'avoir une bordure autour de la selection (comme dans Sublime))
@@ -403,7 +395,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [x] Attention voir si la modif des word separator n agit pas sur evil
 - [x] highlight symbol : Mettre 0 delai d attente pour la surbrillance des autres symboles
 - [x] [theme] Changer la couleur de la scrollbar (yascroll)
-- [x] [multi-cursor] [IMPORTANT] cursor paste 
+- [x] [multi-cursor] [IMPORTANT] cursor paste
       -> C+v - M+y
 - [x] [multi-cursor] [IMPORTANT] S'arrête de fonctionner lorsque la touche RET est invoquée ("nouvelle ligne")
       Voir https://github.com/magnars/multiple-cursors.el Unknown commands
@@ -461,7 +453,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [x] [IMPORTANT] Changer la couleur de auto highlight pour avoir qqchoze de très visible tout de suite (c'est important)
 
 - [x] [IMPORTANT] Implementer une navigation next/prev depuis la selection courante (comme dans sublime, CMD+D scroll focus)
-      -> normal de mode : "*" 
+      -> normal de mode : "*"
 
 - [x] Selected all same occurrence than current selection 
 - [x] Neotree margin
@@ -483,7 +475,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [x] M-alt-o --> Déclenher une fonction qui rammene sur le dired du current project
 - [x] [en cours]  click souris coupe entre les "_" (web mode, javascript mode)
        c'est majeur parceque toute les méthodes privée en js commencent avec un _
-- [x] Double click word on web mode : prendre le garder le "_" en tant que mot 
+- [x] Double click word on web mode : prendre le garder le "_" en tant que mot
 - [x] Faire fonctionner le theme neotree (get all-the-icons ?)
 - [x] Bind shift mouse wheel pour scroller horizontalement
 - [x] Il faut mettre en place le CMD+D à tout prix (dans tous les modes)
@@ -496,7 +488,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 - [x] helm-ag buffer height plus haute
 - [x] M-a regression --> ne selectionne plus l integralite du buffer
-- [x] Mode emacs par default pour les mode majeur suivants 
+- [x] Mode emacs par default pour les mode majeur suivants
     - [x] *log-edit-files*
     - [x] - COMMIT_EDITMSG
     - [x] - *Help*
@@ -531,7 +523,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [x] \n on save (exemple file : "pdpm.php")
 - [x] [MAJEUR] Double clic sur un mot : highlight tous les autres
 - [x] Add key : [spc G] : refresh current buffer (for color (exemple))
-- [x] Emacs mode : 
+- [x] Emacs mode :
   - [x] "*Helm find files*"
   - [x] "ag search text:......"
 - [x] add new keybidining : M-n : new buffer
@@ -546,7 +538,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [x] melange tab space (exemple file : "pdpm.php")
       Edit : tout semble ok ?
 - [x] Ajouter la commande : "VC: (File) Revert"
-- [x] webmode backtab --> indent back 
+- [x] webmode backtab --> indent back
 - [x] Changer la couleur de powerline en fonction du mode courant (normal, insert, emacs, visual)
 
 

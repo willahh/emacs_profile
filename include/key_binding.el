@@ -3,6 +3,7 @@
   (global-unset-key key))
 
 
+
 ;; Escape key for keyboard-quit command (Escape is capslock in my system settings)
 (define-key key-translation-map (kbd "ESC") (kbd "C-g"))
 (define-key ivy-minibuffer-map (kbd "<escape>") 'minibuffer-keyboard-quit)
@@ -48,24 +49,24 @@
 ;; -- window [w]
 
 ;; -- Shell [s]
-(evil-leader/set-key "ss" 'shell) 
+(evil-leader/set-key "ss" 'shell)
 
 ;; -- Jump []]
-(evil-leader/set-key "]" 'evil-jump-to-tag) 
+(evil-leader/set-key "]" 'evil-jump-to-tag)
 
 ;; -- VC [v]
 (evil-leader/set-key "vp" 'vc-dir)
 (evil-leader/set-key "vg" 'vc-dir-refresh)
 (evil-leader/set-key "vd" 'vc-diff)
-(evil-leader/set-key "ve" 'vc-ediff) 
-(evil-leader/set-key "vve" 'vc-version-ediff) 
-(evil-leader/set-key "vvd" 'vc-version-diff) 
+(evil-leader/set-key "ve" 'vc-ediff)
+(evil-leader/set-key "vve" 'vc-version-ediff)
+(evil-leader/set-key "vvd" 'vc-version-diff)
 (evil-leader/set-key "vrl" 'vc-print-root-log)
 (evil-leader/set-key "vc" 'vc-next-action) ;; Command for commit 80% of the time
 (evil-leader/set-key "vrr" 'vc-revert)
 (evil-leader/set-key "vl" 'vc-print-log)
 (evil-leader/set-key "vu" 'vc-update)
-      
+
 ;; -- Buffer [b]
 (evil-leader/set-key "bb" 'list-buffers)
 (evil-leader/set-key "bn" 'evil-buffer-new)
@@ -89,7 +90,7 @@
 ;; -- Linum [l]
 (evil-leader/set-key "lt" 'web-mode-surround) ;; Meaning "[l]inum [t]oggle"
 
-;; -- toggle [t] Toggle + command 
+;; -- toggle [t] Toggle + command
 (evil-leader/set-key "tw" 'whitespace-mode) ;; Meaning "[l]inum [t]oggle                      "
 (evil-leader/set-key "tt" 'toggle-truncate-lines) ;; Meaning "[t]oggle-truncate-[lines
 (evil-leader/set-key "tc" 'evilnc-comment-or-uncomment-lines) ;; Meaning [t]oggle [c]omment
@@ -118,8 +119,8 @@
 ;; -------- Evil state switcher binding
 ;; De base la touche escape est utlisée pour ça
 ;; celle-ci est trop éloignée de base des claviers modernes
-;; 
-;; Update 1 : Préconisation des utilisateurs de vim: 
+;;
+;; Update 1 : Préconisation des utilisateurs de vim:
 ;; Remapper caps-lock pour utiliser escape : OK
 ;;
 ;; Update 2 : Préconisation des utilisateurs de emacs :
@@ -176,6 +177,7 @@
 ;; -- Buffer / frames / main
 ;; Frames
 (global-set-key [(meta control shift n)] 'create-new-centered-frame)
+(global-set-key [(meta control shift a)] 'mark-whole-buffer)
 (global-set-key (kbd "M-q") 'ask-before-closing)
 
 ;; Buffer
@@ -281,7 +283,7 @@
 
 ;; Update : Impossible car meta shift a est utilisée
 (global-set-key [C-S-tab] 'previous-buffer)
-(global-set-key [C-tab] 'next-buffer) 
+(global-set-key [C-tab] 'next-buffer)
 
 ;; easy-motion
 (evilem-default-keybindings "ù")
@@ -324,7 +326,7 @@
 (global-set-key (kbd "C-c f") 'iy-go-to-char)
 (global-set-key (kbd "C-c F") 'iy-go-to-char-backward)
 
-;; change-inner like VIM ci 
+;; change-inner like VIM ci
 (global-set-key (kbd "M-i") 'change-inner)
 (global-set-key (kbd "M-o") 'change-outer)
 
