@@ -31,13 +31,27 @@
 ;; (global-set-key [(control shift q)] 'abort-recursive-edit)
 (global-set-key [(control shift q)] 'my-abort-recursive-edit)
 
+
+
 ;; Kill / cut commands
-(define-key evil-emacs-state-map (kbd "C-z") nil)
-(global-set-key [(control z)] 'delete-backward-char)
+;; (define-key evil-emacs-state-map (kbd "C-z") nil)
+;; (global-set-key [(control z)] 'delete-backward-char)
 ;; (global-set-key [(control shift z)] 'backward-kill-word)
+
 (global-set-key [(control shift z)] 'clean-aindent--bsunindent)
 (global-set-key (kbd "C-w") 'whole-line-or-region-kill-region)
+(global-set-key (kbd "C-h") 'delete-backward-char)
+(global-set-key (kbd "M-h") 'clean-aindent--bsunindent)
+
+;; (global-set-key (kbd "C-w") 'backward-kill-word)
+
 (global-set-key [(control shift k)] 'kill-whole-line) ;; Override default emacs kill sentence but i don't use it
+
+;; ---------------- Help
+;; Move the help cimmand to C-x h
+(global-set-key [?\C-x ?h] 'help-command)
+
+
 
 ;; ---------------- Key binding leader
 ;; -- Evil leader key commands
