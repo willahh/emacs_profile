@@ -173,6 +173,16 @@
 (global-set-key (kbd "<S-wheel-right>") '(lambda ()
                                           (interactive)
                                           (scroll-left 4)))
+;; -- Buffer / frames / main
+;; Frames
+(global-set-key [(meta control shift n)] 'create-new-centered-frame)
+(global-set-key (kbd "M-q") 'ask-before-closing)
+
+;; Buffer
+(global-set-key [(meta shift n)] 'evil-buffer-new)
+(global-set-key (kbd "C-c C-k") 'kill-this-buffer)
+(define-key markdown-mode-map (kbd "C-c C-k") 'kill-this-buffer)
+
 
 ;; Multi cursor stuf
 ;; Update : Utilisation de la lettre o plutot qutôt que de la lettre d
@@ -184,22 +194,23 @@
 (global-set-key (kbd "π") 'mc/mark-previous-lines) ;; ALT+n
 (global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click) ;; Mouse
 
-;; Helm
+;; kill-ring
 (global-set-key (kbd "M-c") 'kill-ring-save)
 (global-set-key (kbd "M-c") 'kill-ring-save)
+
+;; Line operations
 (global-set-key (kbd "C-x C-d") 'duplicate-current-line-or-region)
 (global-set-key (kbd "C-M-J") 'drag-stuff-down)
 (global-set-key (kbd "C-M-k") 'drag-stuff-up)
 (define-key php-mode-map (kbd "C-M-J") 'drag-stuff-down) ;; override php mode map cmj
+
+;; Helm
 (global-set-key (kbd "M-x") 'helm-M-x)
 
 ;; Sublime Text go to anything
 ;; Update : Utilsation des standards emacs (C-c p f)
 (global-set-key (kbd "C-;") 'projectile-find-file-dwim) ;; (ctrl + ;)
-(global-set-key (kbd "M-q") 'ask-before-closing)
-(global-set-key (kbd "C-c C-k") 'kill-this-buffer)
 (global-set-key (kbd "C-c t") 'toggle-truncate-lines)
-(define-key markdown-mode-map (kbd "C-c C-k") 'kill-this-buffer)
 
 ;; Filter buffer / Get buffer definitions
 (global-set-key [(meta r)]  'helm-imenu) ;; command + r
@@ -223,6 +234,15 @@
 (global-set-key (kbd "C-c C-p") 'swiper)
 (global-set-key (kbd "C-c C-p") 'swiper)
 (global-set-key (kbd "C-c C-p") 'swiper)
+
+;; -- Text operations
+;; Copy operations
+(global-set-key (kbd "C-c w") (quote copy-word))
+(global-set-key (kbd "C-c l") (quote copy-line))
+(global-set-key (kbd "C-c p") (quote copy-paragraph))
+(global-set-key (kbd "C-c s") (quote thing-copy-string-to-mark))
+(global-set-key (kbd "C-c a") (quote thing-copy-parenthesis-to-mark))
+
 
 ;; ----- search
 ;; Update : Apres pas mal d essais, la commande "ag-project" me convient le mieux.
