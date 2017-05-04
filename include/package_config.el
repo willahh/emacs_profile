@@ -193,6 +193,7 @@
 ;; (setq highlight-symbol-idle-delay 0)
 
 (add-hook 'prog-mode-hook 'highlight-symbol-mode)
+(add-hook 'typescript-mode-hook 'highlight-symbol-nav-mode)
 
 ;; (add-hook 'web-mode-hook 'highlight-symbol-nav-mode)
 ;; (add-hook ' 'highlight-symbol-nav-mode)

@@ -49,7 +49,7 @@
 ;; ---------------- Help
 ;; Move the help cimmand to C-x h
 ;; (global-set-key [?\C-x ?h] 'help-command)
-(global-set-key (kbd "C-x h") 'help-command)
+(global-set-key (kbd "C-c c h") 'help-command)
 
 
 
@@ -322,6 +322,7 @@
 
 ;; avy go to word
 ;; (global-set-key (kbd "C-x C-s") 'avy-goto-word-or-subword-1)
+(global-set-key (kbd "C-c c s") 'avy-goto-word-or-subword-1)
 ;; (global-set-key [(meta π)] 'projectile-switch-project) ;; (commande + alt + p
 
 ;; Align your code in a pretty way.
