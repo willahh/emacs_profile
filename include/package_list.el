@@ -29,6 +29,8 @@
   ;; flymake-jshint
   ;; neotree
 
+  google-this
+
   ;; smex
   ido
   ido-ubiquitous

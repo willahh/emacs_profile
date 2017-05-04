@@ -48,7 +48,8 @@
 
 ;; ---------------- Help
 ;; Move the help cimmand to C-x h
-(global-set-key [?\C-x ?h] 'help-command)
+;; (global-set-key [?\C-x ?h] 'help-command)
+(global-set-key (kbd "C-x h") 'help-command)
 
 
 
@@ -229,7 +230,10 @@
 ;; Filter buffer / Get buffer definitions
 (global-set-key [(meta r)]  'helm-imenu) ;; command + r
 (global-set-key [(meta shift r)] 'swiper) ;; command + shift + r : Update : Switch to swiper (lighter / faster)
-(global-set-key (kbd "C-x o")  'helm-find-files)
+
+;; Update to use counsel-find-file instead of helm-find-file
+;; (global-set-key (kbd "C-x o")  'helm-find-files)
+(global-set-key (kbd "C-x o")  'counsel-find-file)
 
 ;; Used for OSX keyboard
 ;; (global-set-key (kbd "M-S-+")  'evilnc-comment-or-uncomment-lines) ;; (Meta + shift + / on US International keyboard)
@@ -251,11 +255,11 @@
 
 ;; -- Text operations
 ;; Copy operations
-(global-set-key (kbd "C-c w") (quote copy-word))
-(global-set-key (kbd "C-c l") (quote copy-line))
-(global-set-key (kbd "C-c p") (quote copy-paragraph))
-(global-set-key (kbd "C-c s") (quote thing-copy-string-to-mark))
-(global-set-key (kbd "C-c a") (quote thing-copy-parenthesis-to-mark))
+(global-set-key (kbd "C-c c w") (quote copy-word))
+(global-set-key (kbd "C-c c l") (quote copy-line))
+(global-set-key (kbd "C-c c p") (quote copy-paragraph))
+(global-set-key (kbd "C-c c s") (quote thing-copy-string-to-mark))
+(global-set-key (kbd "C-c c a") (quote thing-copy-parenthesis-to-mark))
 
 
 ;; ----- search
@@ -372,12 +376,23 @@
 (define-key php-mode-map (kbd "C-c C-r") 'helm-recentf)
 
 (global-set-key (kbd "M-0") 'delete-window) ;; M-0
+(define-key diff-mode-map (kbd "M-0") 'delete-window)
+
 (global-set-key (kbd "M-1") 'delete-other-windows) ;; M-1
+(define-key diff-mode-map (kbd "M-1") 'delete-other-windows)
+
 (global-set-key (kbd "M-2") 'split-window-below) ;; M-2
+(define-key diff-mode-map (kbd "M-2") 'split-window-below)
+
 (global-set-key (kbd "M-3") 'split-window-right) ;; M-3
+(define-key diff-mode-map (kbd "M-3") 'split-window-right)
+
 (global-set-key (kbd "M-9") 'resize-window) ;; M-9
+(define-key diff-mode-map (kbd "M-9") 'resize-window)
 
 (global-set-key (kbd "M-o") 'other-window)
+(define-key diff-mode-map (kbd "M-o") 'other-window)
+
 (define-key ggtags-navigation-map (kbd "M-o") 'other-window) ;; Need to override ggtags map
 
 (global-set-key [(meta o)] 'other-window)

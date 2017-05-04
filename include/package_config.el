@@ -184,14 +184,18 @@
 ;; Ces deux modes activent un highlight qui s integre parfaitement
 ;; highlight-symbol-nav-mode est conserve pour une navigation rapide avec
 ;; M-n et M-p
+;; Update : Utilisation de hook separes plutot que prog-mode-hook
+;; Car les fichier typescript gerent deja l auto highlight
 
 (require 'highlight-symbol)
 ;; (highlight-symbol-mode 0)
 
 ;; (setq highlight-symbol-idle-delay 0)
 
-;; (add-hook 'prog-mode-hook 'highlight-symbol-mode)
-(add-hook 'prog-mode-hook 'highlight-symbol-nav-mode)
+(add-hook 'prog-mode-hook 'highlight-symbol-mode)
+
+;; (add-hook 'web-mode-hook 'highlight-symbol-nav-mode)
+;; (add-hook ' 'highlight-symbol-nav-mode)
 
 
 
@@ -809,7 +813,9 @@
 
 ;; formats the buffer before saving
 ;; (add-hook 'before-save-hook 'tide-format-before-save)
+
 ;; (add-hook 'typescript-mode-hook #'setup-tide-mode)
+(add-hook 'typescript-mode-hook 'setup-tide-mode)
 
 
 ;; tsx support
@@ -821,7 +827,7 @@
 
 ;; js support
 ;; Update : Fichier js ne doivent pas etre en tide-mode
-;; Update 2 : Il faut que ca soit activer pour avoir un support avance
+;; Update 2 : Il faut que ca soit active pour avoir un support avance
 ;; Update 3 : Pas si sure, tide devrait etre utilise uniquement pour du typescript
 ;; (add-hook 'js2-mode-hook #'setup-tide-mode)
 
@@ -2067,3 +2073,8 @@ then `diff-jump-to-old-file' is also set, for the next invocations."
 
 ;; back-button
 ;; (require 'back-button)
+
+
+(require 'google-this)
+(add-hook 'prog-mode-hook 'google-this-mode)
+(add-hook 'dired-mode-hook 'google-this-mode)

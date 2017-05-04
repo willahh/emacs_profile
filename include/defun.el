@@ -624,24 +624,28 @@ That is, a string used to represent it on the tab bar."
 
 (defun copy-word (&optional arg)
       "Copy words at point into kill-ring"
-       (interactive "P")
+       (interactive)
        (copy-thing 'backward-word 'forward-word arg)
+       (message "copy-word")
        ;;(paste-to-mark arg)
      )
 
 
  (defun copy-line (&optional arg)
       "Save current line into Kill-Ring without mark the line "
-       (interactive "P")
+       (interactive)
        (copy-thing 'beginning-of-line 'end-of-line arg)
        ;; (paste-to-mark arg)
+       (message "copy-line")
      )
 
 
  (defun copy-paragraph (&optional arg)
       "Copy paragraphes at point"
-       (interactive "P")
+       ;; (interactive "P")
+       (interactive)
        (copy-thing 'backward-paragraph 'forward-paragraph arg)
+       (message "copy-paragraph")
        ;; (paste-to-mark arg)
      )
 
