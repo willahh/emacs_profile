@@ -33,19 +33,18 @@
 
 
 
-;; Kill / cut commands
+;; Kill / cut command
+(global-set-key (kbd "C-w") 'clean-aindent--bsunindent)
+(global-set-key [(control shift w)] 'whole-line-or-region-kill-region)
+(global-set-key (kbd "C-h") 'delete-backward-char)
+(global-set-key [(control shift k)] 'kill-whole-line) ;; Override default emacs kill sentence but i don't use it
+
 ;; (define-key evil-emacs-state-map (kbd "C-z") nil)
 ;; (global-set-key [(control z)] 'delete-backward-char)
 ;; (global-set-key [(control shift z)] 'backward-kill-word)
-
-(global-set-key [(control shift z)] 'clean-aindent--bsunindent)
-(global-set-key (kbd "C-w") 'whole-line-or-region-kill-region)
-(global-set-key (kbd "C-h") 'delete-backward-char)
-(global-set-key (kbd "M-h") 'clean-aindent--bsunindent)
-
+;;(global-set-key [(control shift z)] 'clean-aindent--bsunindent)
+;; (global-set-key (kbd "M-h") 'clean-aindent--bsunindent)
 ;; (global-set-key (kbd "C-w") 'backward-kill-word)
-
-(global-set-key [(control shift k)] 'kill-whole-line) ;; Override default emacs kill sentence but i don't use it
 
 ;; ---------------- Help
 ;; Move the help cimmand to C-x h
@@ -122,7 +121,6 @@
 (key-chord-define-global "qs" 'avy-goto-word-1-below)
 (global-set-key (kbd "C-;") 'avy-goto-word-or-subword-1)
 
-;;
 (key-chord-define-global "xc" 'er/expand-region)
 (key-chord-define-global "wx" 'er/contract-region)
 

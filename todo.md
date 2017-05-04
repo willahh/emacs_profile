@@ -42,10 +42,14 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 
 ## Bloquant
+- [ ] [custom] Faire une fonction custom delete backword or region
+      C-w doit appeler clean-aindent--bsunindent ou "whole-line-or-region-kill-region"
+- [ ] Ajouter des bind system sur C-h et C-w C-w https://blog.sensible.io/2012/10/19/mac-os-x-emacs-style-keybindings-everywhere.html
 - [ ] [diff-hl] Ne fonctionne plus (package casse ?)
 
 
 ## A ranger
+- [ ] Open file from system in new emacs frame (Right click open in)
 - [ ] [js2-mode] Colorization redraw slow
 - [ ] [multi-cursor] Remettre la possibilité d'ajouter un command click de la souris pour ajouter un nouveau caret
 - [ ] [auto bracket] Ne pas l utiliser sur tous les buffer et notamment pas dans le minibuffer
