@@ -52,7 +52,7 @@
 
 
 
-;; ---------------- Key binding leader
+;; ---------------- key binding leader
 ;; -- Evil leader key commands
 (evil-leader/set-leader "<SPC>")
 

@@ -45,7 +45,11 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [custom] Faire une fonction custom delete backword or region
       C-w doit appeler clean-aindent--bsunindent ou "whole-line-or-region-kill-region"
 - [ ] Ajouter des bind system sur C-h et C-w C-w https://blog.sensible.io/2012/10/19/mac-os-x-emacs-style-keybindings-everywhere.html
+      - [ ] C-j new line
+      - [ ] C-w delete back word
+      - [ ] M-b back word
 - [ ] [diff-hl] Ne fonctionne plus (package casse ?)
+
 
 
 ## A ranger
