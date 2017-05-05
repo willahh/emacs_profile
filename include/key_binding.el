@@ -197,7 +197,7 @@
 (define-key dired-mode-map (kbd "<S-tab>") 'dired-up-directory)
 (define-key php-mode-map [(control c) (control m)] 'dired-jump)
 (define-key web-mode-map [(control c) (control m)] 'dired-jump)
-(define-key dired-mode-map [(command shift n)] 'mkdir)
+;; (define-key dired-mode-map [(command shift n)] 'mkdir)
 
 ;; Multi cursor stuf
 ;; Update : Utilisation de la lettre o plutot qutôt que de la lettre d
@@ -210,7 +210,6 @@
 (global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click) ;; Mouse
 
 ;; kill-ring
-(global-set-key (kbd "M-c") 'kill-ring-save)
 (global-set-key (kbd "M-c") 'kill-ring-save)
 
 ;; Line operations

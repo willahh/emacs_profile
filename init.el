@@ -1,6 +1,3 @@
-        
-        
-
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
@@ -19,7 +16,6 @@
 
 
 
-;; test
 ;; Syntax entry for web mode doesnt work actualy
 ;; https://github.com/fxbois/web-mode/issues/149
 ;; Select whole word when separated with _

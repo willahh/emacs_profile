@@ -225,17 +225,16 @@
 (set-face-attribute 'yas-field-highlight-face nil :foreground "#fff" :background nil)
 
 ;; ;; ----- smerge
-(set-face-attribute 'smerge-markers nil :foreground "#fff" :background "#0f0f0f")
-(set-face-attribute 'smerge-mine nil :foreground "#fff" :background "#3c161e")
-(set-face-attribute 'smerge-other nil :foreground "#fff" :background "#163c33")
-(set-face-attribute 'smerge-refined-added nil :foreground "#fff" :background "#02944d")
+;; smerge not defined
+;; (set-face-attribute 'smerge-markers nil :foreground "#fff" :background "#0f0f0f")
+;; (set-face-attribute 'smerge-mine nil :foreground "#fff" :background "#3c161e")
+;; (set-face-attribute 'smerge-other nil :foreground "#fff" :background "#163c33")
+;; (set-face-attribute 'smerge-refined-added nil :foreground "#fff" :background "#02944d")
 
-;; ;; ----- smerge
-;; (set-face-attribute 'magit-diff-hunk-heading-highlight nil :foreground nil :background "#161616" :box "#8fddfb")
-;; (set-face-attribute 'magit-diff-removed-highlight nil :foreground nil :background "#3c161e")
-;; (set-face-attribute 'magit-diff-added-highlight nil :foreground nil :background "#163c2b")
-;; (set-face-attribute 'magit-diff-context-highlight nil :foreground nil :background nil)
-(set-face-attribute 'magit-diff-added-highlight nil :foreground nil :background "#163c2c")
+
+;; ----- magit
+;; magit not defined - Not included ?
+;; (set-face-attribute 'magit-diff-added-highlight nil :foreground nil :background "#163c2c")
 
 ;; powerline theme
 (defun powerline-theme-emacs()
