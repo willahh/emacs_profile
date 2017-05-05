@@ -194,6 +194,7 @@
 
 (add-hook 'prog-mode-hook 'highlight-symbol-mode)
 (add-hook 'typescript-mode-hook 'highlight-symbol-nav-mode)
+(add-hook 'emacs-lisp-mode 'highlight-symbol-nav-mode)
 
 ;; (add-hook 'web-mode-hook 'highlight-symbol-nav-mode)
 ;; (add-hook ' 'highlight-symbol-nav-mode)
@@ -2087,3 +2088,6 @@ then `diff-jump-to-old-file' is also set, for the next invocations."
 
 (global-set-key "\C-ct" 'google-translate-at-point)
 (global-set-key "\C-cT" 'google-translate-query-translate)
+
+;; simple-httpd
+(require 'simple-httpd)

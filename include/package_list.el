@@ -174,3 +174,4 @@
 (add-to-list 'load-path "~/.emacs.d/plugins/ivy_buffer_extend")
 (add-to-list 'load-path "~/.emacs.d/plugins/helm-swoop")
 (add-to-list 'load-path "~/.emacs.d/plugins/psvn")
+(add-to-list 'load-path "~/.emacs.d/plugins/simple-httpd")

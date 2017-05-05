@@ -120,7 +120,8 @@
 ;; avy
 ;; Update : az ne peut pas etre utilise car trop fréquemment utilisé ("localization", ...)
 (key-chord-define-global "qs" 'avy-goto-word-1-below)
-(global-set-key (kbd "C-;") 'avy-goto-word-or-subword-1)
+;; (global-set-key (kbd "C-;") 'avy-goto-word-or-subword-1)
+(global-set-key (kbd "C-c j") 'avy-goto-word-or-subword-1)
 
 (key-chord-define-global "xc" 'er/expand-region)
 (key-chord-define-global "wx" 'er/contract-region)
@@ -195,9 +196,14 @@
 ;; ---------------- Dired
 (define-key dired-mode-map (kbd "<tab>") 'dired-find-file)
 (define-key dired-mode-map (kbd "<S-tab>") 'dired-up-directory)
-(define-key php-mode-map [(control c) (control m)] 'dired-jump)
-(define-key web-mode-map [(control c) (control m)] 'dired-jump)
+(define-key php-mode-map [(control x) (control j)] 'dired-jump)
+(define-key web-mode-map [(control x) (control j)] 'dired-jump)
+
+
 ;; (define-key dired-mode-map [(command shift n)] 'mkdir)
+(define-key dired-mode-map (kbd "M-N") 'mkdir)
+(define-key dired-mode-map (kbd "M-n") 'evil-buffer-new)
+
 
 ;; Multi cursor stuf
 ;; Update : Utilisation de la lettre o plutot qutôt que de la lettre d
@@ -220,6 +226,8 @@
 
 ;; Helm
 (global-set-key (kbd "M-x") 'helm-M-x)
+(define-key helm-map (kbd "C-h") 'delete-backward-char)
+(define-key helm-map (kbd "C-w") 'clean-aindent--bsunindent)
 
 ;; Sublime Text go to anything
 ;; Update : Utilsation des standards emacs (C-c p f)
@@ -246,6 +254,8 @@
 (define-key php-mode-map (kbd "C-c C-s") 'helm-swoop)
 (define-key web-mode-map (kbd "C-c C-s") 'helm-swoop)
 (define-key markdown-mode-map (kbd "C-c C-s") 'helm-swoop)
+
+;; (define-key conf-space-mode-map (kbd "C-c C-s") 'helm-swoop)
 
 ;; Swiper
 (global-set-key (kbd "C-c C-p") 'swiper)
@@ -353,21 +363,37 @@
 (global-set-key (kbd "M-t s") 'transpose-sexps)
 (global-set-key (kbd "M-t p") 'transpose-params)
 
+
+
+
+;; ---------------- Shell
+;; Start eshell or switch to it if it's active.
+(global-set-key (kbd "C-x m") 'eshell)
+
+;; Start a new eshell even if one is active.
+(global-set-key (kbd "C-x M") (lambda () (interactive) (eshell t)))
+
+;; Start a regular shell if you prefer that.
+(global-set-key (kbd "C-x M-m") 'shell)
+
+
+;; ---------------- Magit
+(require 'magit)
+
 ;; Magit
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
 
-(require 'magit)
 (define-key magit-status-mode-map (kbd "<tab>") 'magit-section-toggle)
 (define-key emmet-mode-keymap [(control shift j)] 'emmet-expand-line)
 (global-set-key [(control shift j)] 'smart-open-line-above)
 (define-key key-translation-map (kbd "C-j") (kbd "RET"))
 
 (require 'nxml-mode)
-(define-key global-map (kbd "C-c RET") 'dired-jump)
-(define-key php-mode-map (kbd "C-c C-j") 'dired-jump)
-(define-key web-mode-map (kbd "C-c C-j") 'dired-jump)
-(define-key nxml-mode-map "\C-c\C-m" 'dired-jump)
+(define-key global-map (kbd "C-x RET") 'dired-jump)
+(define-key php-mode-map (kbd "C-x C-j") 'dired-jump)
+(define-key web-mode-map (kbd "C-x C-j") 'dired-jump)
+(define-key nxml-mode-map "\C-x\C-j" 'dired-jump)
 
 ;; (define-key global-map (kbd "C-$") 'point-undo)
 ;; (define-key global-map (kbd "C-*") 'point-redo)
@@ -406,5 +432,5 @@
 
 ;; PERFFFECT.
 (define-key key-translation-map (kbd "C-j") (kbd "RET"))
-(define-key global-map (kbd "C-c RET") 'dired-jump)
-(define-key web-mode-map (kbd "C-c RET") 'dired-jump)
+(define-key global-map (kbd "C-x RET") 'dired-jump)
+(define-key web-mode-map (kbd "C-x RET") 'dired-jump)
