@@ -30,6 +30,7 @@
   ;; neotree
 
   google-this
+  google-translate
 
   ;; smex
   ido

@@ -778,6 +778,7 @@
         ("*ag*"                                  . (display-buffer-same-window . nil))
         ("*vc-dir*"                              . (display-buffer-same-window . nil))
         ("*shell*"                               . (display-buffer-same-window . nil))
+        ("*Google Translate*"                    . (display-buffer-same-window . nil))
         ))
 
 
@@ -2079,3 +2080,10 @@ then `diff-jump-to-old-file' is also set, for the next invocations."
 (require 'google-this)
 (add-hook 'prog-mode-hook 'google-this-mode)
 (add-hook 'dired-mode-hook 'google-this-mode)
+
+;; google-translate
+(require 'google-translate)
+(require 'google-translate-default-ui)
+
+(global-set-key "\C-ct" 'google-translate-at-point)
+(global-set-key "\C-cT" 'google-translate-query-translate)

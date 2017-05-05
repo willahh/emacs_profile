@@ -42,6 +42,9 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 
 ## Bloquant
+- [ ] [dired] Rename file : Possibilité de préciser un chemin contenant des dossiers
+      N'existant pas, ces dossier seront créés automatiquement à la validation
+
 - [ ] [custom] Faire une fonction custom delete backword or region
       C-w doit appeler clean-aindent--bsunindent ou "whole-line-or-region-kill-region"
 - [ ] Ajouter des bind system sur C-h et C-w C-w https://blog.sensible.io/2012/10/19/mac-os-x-emacs-style-keybindings-everywhere.html

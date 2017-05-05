@@ -166,12 +166,6 @@
 ;; ---------------- Key binding
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
 
-;; Dired
-(define-key dired-mode-map (kbd "<tab>") 'dired-find-file)
-(define-key dired-mode-map (kbd "<S-tab>") 'dired-up-directory)
-(define-key php-mode-map [(control c) (control m)] 'dired-jump)
-(define-key web-mode-map [(control c) (control m)] 'dired-jump)
-
 ;; ---------------- Color theme
 (set-face-attribute 'lazy-highlight nil :background "green")
 
@@ -198,6 +192,12 @@
 (global-set-key (kbd "C-c C-k") 'kill-this-buffer)
 (define-key markdown-mode-map (kbd "C-c C-k") 'kill-this-buffer)
 
+;; ---------------- Dired
+(define-key dired-mode-map (kbd "<tab>") 'dired-find-file)
+(define-key dired-mode-map (kbd "<S-tab>") 'dired-up-directory)
+(define-key php-mode-map [(control c) (control m)] 'dired-jump)
+(define-key web-mode-map [(control c) (control m)] 'dired-jump)
+(define-key dired-mode-map [(command shift n)] 'mkdir)
 
 ;; Multi cursor stuf
 ;; Update : Utilisation de la lettre o plutot qutôt que de la lettre d
