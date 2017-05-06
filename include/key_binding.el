@@ -440,3 +440,14 @@
 (define-key key-translation-map (kbd "C-j") (kbd "RET"))
 (define-key global-map (kbd "C-x RET") 'dired-jump)
 (define-key web-mode-map (kbd "C-x RET") 'dired-jump)
+
+;; evil-snipe for eamcs
+(global-set-key (kbd "C-c s F") 'evil-snipe-F)
+(global-set-key (kbd "C-c s S") 'evil-snipe-S)
+(global-set-key (kbd "C-c s T") 'evil-snipe-T)
+(global-set-key (kbd "C-c s X") 'evil-snipe-X)
+
+(global-set-key (kbd "C-c s f") 'evil-snipe-f)
+(global-set-key (kbd "C-c s s") 'evil-snipe-s)
+(global-set-key (kbd "C-c s t") 'evil-snipe-t)
+(global-set-key (kbd "C-c s x") 'evil-snipe-x)

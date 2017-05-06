@@ -59,3 +59,4 @@
 ;; js-comint
 ;; Javascript live interpreter nice to test regexp on fly
 (require 'js-comint)
+

@@ -57,6 +57,7 @@
 ;; ------ Dired
 (set-face-attribute 'dired-header nil :foreground "#56b0ec" :background nil)
 (set-face-attribute 'dired-directory nil :foreground "#56b0ec" :background nil)
+(set-face-attribute 'dired-perm-write nil :foreground "#56b0ec" :background nil)
 
 ;; ------ js2-mode
 (set-face-attribute 'js2-function-call nil :foreground "#82aaff")
