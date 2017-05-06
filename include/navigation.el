@@ -40,7 +40,22 @@
 (add-hook 'typescript-mode-hook 'highlight-symbol-nav-mode)
 (add-hook 'emacs-lisp-mode 'highlight-symbol-nav-mode)
 
-;; (add-hook 'web-mode-hook 'highlight-symbol-nav-mode)
+(add-hook 'prog-mode-hook
+          (highlight-symbol-nav-mode)
+          (define-key evil-normal-state-map (kbd "M-n") 'highlight-symbol-next)
+          (define-key evil-normal-state-map (kbd "M-p") 'highlight-symbol-prev)
+)
+(add-hook 'typscript-mode-hook
+          (highlight-symbol-nav-mode)
+          (define-key evil-normal-state-map (kbd "M-n") 'highlight-symbol-next)
+          (define-key evil-normal-state-map (kbd "M-p") 'highlight-symbol-prev)
+)
+(add-hook 'emacs-lisp-mode-hook
+          (highlight-symbol-nav-mode)
+          (define-key evil-normal-state-map (kbd "M-n") 'highlight-symbol-next)
+          (define-key evil-normal-state-map (kbd "M-p") 'highlight-symbol-prev)
+)
+
 ;; (add-hook ' 'highlight-symbol-nav-mode)
 
 

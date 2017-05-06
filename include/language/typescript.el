@@ -70,3 +70,11 @@
 ;; (add-hook 'tide-mode-hook
 ;;           (defun tide--hl-highlight (response))
 ;;           )
+
+
+
+
+(add-hook 'typescript-mode-hook
+          (define-key evil-normal-state-map (kbd "M-]") 'tide-jump-to-definition)
+          (define-key evil-normal-state-map (kbd "M-[") 'tide-jump-back)
+)
