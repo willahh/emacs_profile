@@ -38,12 +38,9 @@
 ;; Mouse click to open in current window
 (define-key dired-mode-map [mouse-2] 'dired-find-file)
 
-
 ;; Auto-refresh dired on file change
 ;; Source : http://superuser.com/a/566401
 (add-hook 'dired-mode-hook 'auto-revert-mode)
-
-;; auto write
 
 ;; Quickly copy/move file in Emacs Dired
 ;; Source : http://emacs.stackexchange.com/q/5603

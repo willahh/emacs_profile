@@ -198,6 +198,7 @@
 (define-key dired-mode-map (kbd "<S-tab>") 'dired-up-directory)
 (define-key php-mode-map [(control x) (control j)] 'dired-jump)
 (define-key web-mode-map [(control x) (control j)] 'dired-jump)
+(define-key dired-mode-map (kbd "C-x w") 'wdired-change-to-wdired-mode)
 
 
 ;; (define-key dired-mode-map [(command shift n)] 'mkdir)
