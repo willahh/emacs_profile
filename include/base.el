@@ -1,3 +1,4 @@
+
 ;; Turn truncate lines off by default (like in many modern tools)
 (set-default 'truncate-lines t)
 
@@ -107,8 +108,8 @@
  
 ;; disable auto save
 (setq auto-save-default nil)
-            
-;; No backup file    
+
+;; No backup file
 (setq make-backup-files nil)
 
 ;; Always load newest byte code
