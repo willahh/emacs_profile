@@ -213,7 +213,11 @@
 (global-set-key (kbd "<C-268632081>") 'mc/mark-all-dwim) ;; CTRL+alt+q
 (global-set-key (kbd "ñ") 'mc/mark-next-lines) ;; ALT+p
 (global-set-key (kbd "π") 'mc/mark-previous-lines) ;; ALT+n
-(global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click) ;; Mouse
+
+;; Mouse
+(global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click)
+(global-set-key (kbd "<double-wheel-left>") 'scroll-right)
+(global-set-key (kbd "<double-wheel-right>") 'scroll-left)
 
 ;; kill-ring
 (global-set-key (kbd "M-c") 'kill-ring-save)
@@ -284,14 +288,15 @@
 (global-set-key (kbd "M-∑") 'helm-ag-project-root) ;; (cmd + alt + shift + s)
 
 ;; ---- window
-(global-set-key [(meta shift w)] 'delete-window)
+(define-key typescript-mode-map (kbd "M-j") 'c-indent-new-comment-line)
 
 ;; comment
 ;; Update : evilnc-comment-or-uncomment-lines  fait des commentaires bizarres (en mode html plusieurs imbrications de commentaire html au lieu d un seul)
 ;; Update : comment-region ne fonctionne pas bien en mode css
 (global-set-key [(meta /)] 'evilnc-comment-or-uncomment-lines)
-
 (global-set-key [(meta shift d)] 'duplicate-start-of-line-or-region)
+(global-set-key (kbd "Ò") 'helm-ag) ;; (alt + s)
+
 
 ;; Undo redo
 ;; Update : Use default binding

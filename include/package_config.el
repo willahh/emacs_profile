@@ -192,7 +192,7 @@
 
 ;; (setq highlight-symbol-idle-delay 0)
 
-(add-hook 'prog-mode-hook 'highlight-symbol-mode)
+(add-hook 'prog-mode-hook 'highlight-symbol-nav-mode)
 (add-hook 'typescript-mode-hook 'highlight-symbol-nav-mode)
 (add-hook 'emacs-lisp-mode 'highlight-symbol-nav-mode)
 
@@ -683,8 +683,8 @@
 
 ;; diff-hl
 ;; (global-diff-hl-mode t)
-;; (add-hook 'dired-mode-hook 'diff-hl-dired-mode)
-;; (add-hook 'prog-mode-hook 'diff-hl-mode)
+;;(add-hook 'dired-mode-hook 'diff-hl-dired-mode)
+;;(add-hook 'prog-mode-hook 'diff-hl-mode)
 
 ;; markdown-mode
 (require 'markdown-mode)
@@ -1761,109 +1761,6 @@
 (evil-define-key 'normal neotree-mode-map (kbd "RET") 'neotree-enter)
 
 
-
-
-;; Custom hook :
-;; Focus sur le fichier a la sauvegarde uniquement si
-;; neotree est ouvert
-;; (defun my-after-save-actions ()
-;;   "Used in `after-save-hook'."
-
-;;   (interactive)
-;;   (if (neo-global--window-exists-p)
-;;       (neotree-find)
-;;     )
-;; )
-
-;; (add-hook 'after-save-hook 'my-after-save-actions)
-
-
-
-
-
-
-
-;; Auto resize neotree when changing root / opening node
-;; https://www.bountysource.com/issues/23676794-automatically-resize-neotree-window-to-contents
-;; Seems broken ? (Donne une largeur debile a neotree)
-
-;; (defun neotree-resize-window (&rest _args)
-;;     "Resize neotree window.
-;; https://github.com/jaypei/emacs-neotree/pull/110"
-;;     (interactive)
-;;     (neo-buffer--with-resizable-window
-;;      (let ((fit-window-to-buffer-horizontally t))
-;;        (fit-window-to-buffer))))
-
-;;   (add-hook 'neo-change-root-hook #'neotree-resize-window)
-;;   (add-hook 'neo-enter-hook #'neotree-resize-window)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-;; color-theme-buffer-local
-
-;; (add-hook 'text-mode-hook (lambda () (set-fill-column 72)))
-;; (add-hook 'markdown-mode-hook (lambda () (load-theme-buffer-local 'leuven))
-;; (add-hook 'markdown-mode-hook (lambda () (load-theme-buffer-local 'whiteboard))
-
-
-
-;; Custom new line function
-;; EN mode web sur des fichiers très gros problemes suivants :
-;; - Default emacs default-indent-new-line : Tres lent
-;; - Autopair mode active : autopairmode new line : Tres lent
-;; - js2 indent line fonctionne tres bien et sur portions de php/html/css
-;; -> Utilisation d une indentation type "js" en mode web
-;; -> Update : Indentation pas clean dans bcp de cacs
-;;    -> Trouver/faire une fonction indent en se basant uniquement sur les info de la ligne courante (pas de parcours de toute la page)
-;; -> Update 2 : OK, utilisation de indent-relative ---> Une indentation simple qui fonctionne (pas aussi avancee que les autres, mais couvre 75, 80% de mon utilisation)
-;; @todo : RET ne doit pas etre defini en global
-;; -> Update 3 : Utilisation de clean auto indent (spacemac utilise ca)
-;;
-;; (defun custom-newline ()
-;;    (interactive)
-;;    (newline)
-;;    (indent-relative)
-;;     )
-
-;; (global-set-key (kbd "RET") 'custom-newline)
-;; (add-hook 'web-mode-hook
-;;          (interactive)
-;;           (global-set-key (kbd "RET") 'custom-newline)
-;; )
-
-;; (add-hook 'fundamental-mode
-;;          (interactive)
-;;           (global-set-key (kbd "RET") 'default-indent-new-line)
-;; )
-
-;; (add-hook 'emacs-lisp-mode-hook
-;;           (interactive)
-;;           (global-set-key (kbd "RET") 'default-indent-new-line)
-;; )
-
-
-
-
-
-
-
-
 (defadvice evil-ex-search-next (after advice-for-evil-ex-search-next activate)
   (evil-scroll-line-to-center (line-number-at-pos)))
 
@@ -1934,22 +1831,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ;; Override emacs diff-goto-source defun
 ;; Change "pop-to-buffer" to "pop-to-buffer-same-window"
 ;; Edit : Je n ai pas trouve moyen de configurer ce comportement
@@ -1975,27 +1856,6 @@ then `diff-jump-to-old-file' is also set, for the next invocations."
       (pop-to-buffer-same-window buf)
       (goto-char (+ (car pos) (cdr src)))
       (diff-hunk-status-msg line-offset (diff-xor rev switched) t))))
-
-
-
-;; (defun my-compile-goto-error (&optional event)
-;;   "Visit the source for the error message at point.
-;; Use this command in a compilation log buffer."
-;;   (interactive (list last-input-event))
-;;   (if event (posn-set-point (event-end event)))
-;;   (or (compilation-buffer-p (current-buffer))
-;;       (error "Not in a compilation buffer"))
-;;   (compilation--ensure-parse (point))
-;;   (if (get-text-property (point) 'compilation-directory)
-;;       ;; (dired-other-window
-;;       (dired
-;;        (car (get-text-property (point) 'compilation-directory))
-;;        (recenter))
-;;     (setq compilation-current-error (point))
-;;     (next-error-internal)))
-
-
-;; (define-key compilation-button-map (kbd "RET") 'my-compile-goto-error)
 
 
 ;; ----- nlinum
