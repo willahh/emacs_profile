@@ -77,4 +77,10 @@
 (add-hook 'typescript-mode-hook
           (define-key evil-normal-state-map (kbd "M-]") 'tide-jump-to-definition)
           (define-key evil-normal-state-map (kbd "M-[") 'tide-jump-back)
+
+          ;; (setq company-minimum-prefix-length 1)
+          ;; (setq company-idle-delay 0.3)
 )
+
+;; (set (make-local-variable 'company-minimum-prefix-length) 1)
+;; (set (make-local-variable 'company-idle-delay) 0.3)

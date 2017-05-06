@@ -11,12 +11,11 @@
 ;; Update : lets stay on vim like by default
 ;; Update 2 : Retour sur emacs state par default (par rapport a mon utilisation)
 ;; Update 3 : Retour sur normal state : Il m arrive encore d ecrire des actions dans les buffers au lieu de faire des raccourcis
-;; Update 4 : emacs
-;; Update 5 : normal
 
 ;; (setq evil-default-state 'normal)
 ;; (setq evil-default-state 'emacs)
-(setq evil-default-state 'normal)
+;; (setq evil-default-state 'normal)
+(setq evil-default-state 'emacs)
 
 
 ;; Define some mode that should be initialized on emacs mode

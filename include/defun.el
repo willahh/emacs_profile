@@ -580,13 +580,9 @@ That is, a string used to represent it on the tab bar."
 ;; Get the current file name from bufer file path
 (defun get-curent-file-name ()
   (interactive)
-  (defvar buffer-file-name-split (split-string buffer-file-name "/")) // Split file path
-  (defvar split (last buffer-file-name-split)) // Get last entry
+  (defvar buffer-file-name-split (split-string buffer-file-name "/")) ;; Split file path
+  (defvar split (last buffer-file-name-split)) ;; Get last entry
   (mapconcat 'identity split " ")) ;; Convert list of one element to string
-
-
-
-
 
 
 
@@ -820,3 +816,29 @@ That is, a string used to represent it on the tab bar."
   (autopair-newline)
   (indent-for-tab-command)
 )
+
+
+
+;; (defun env-typescript ()
+;;   (interactive)
+
+;;   ;; Left window
+;;   (projectile-dired)
+
+;;   ;; Right top window
+;;   (split-window-right)
+;;   (other-window 1)
+;;   (tide-mode)
+;;   (tide-project-errors-mode)
+
+;;   ;; RIght bottom window
+;;   (split-window-below)
+;;   (other-window 1)
+;;   (magit-status)
+
+;;   ;; (other-window)
+;;   ;; (vc-dir)
+
+;;   ;; (other-window)
+;; )
+
