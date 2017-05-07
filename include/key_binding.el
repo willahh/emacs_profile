@@ -247,6 +247,9 @@
 ;; (global-set-key (kbd "C-x o")  'helm-find-files)
 (global-set-key (kbd "C-x o")  'counsel-find-file)
 
+;; mark
+(global-set-key (kbd "C-c C-SPC") 'helm-all-mark-rings)
+
 ;; Used for OSX keyboard
 ;; (global-set-key (kbd "M-S-+")  'evilnc-comment-or-uncomment-lines) ;; (Meta + shift + / on US International keyboard)
 ;; (global-set-key (kbd "M-.") 'beginning-of-buffer) ;; Meta + < on US Keyboard
@@ -369,8 +372,8 @@
 (global-set-key (kbd "M-t s") 'transpose-sexps)
 (global-set-key (kbd "M-t p") 'transpose-params)
 
-
-
+;; vc
+(global-set-key (kbd "C-x v d") 'vc-diff)
 
 ;; ---------------- Shell
 ;; Start eshell or switch to it if it's active.

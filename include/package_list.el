@@ -5,7 +5,7 @@
   powerline
   undo-tree
 
-  back-button
+  ;; back-button
 
   ;; perspective
   ;; smart-mode-line ;; (sml -> activated)
@@ -31,6 +31,8 @@
 
   google-this
   google-translate
+
+  ;; indium
 
   ;; smex
   ido
