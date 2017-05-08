@@ -129,6 +129,8 @@
 (key-chord-define-global "ji" 'ace-window) ;; cannot be jk (vim up/right)
 (key-chord-define-global ";:" 'highlight-symbol-mode)
 (key-chord-define-global "qs" 'toggle-php-flavor-mode)
+(key-chord-define-global "kf" 'avy-goto-word-or-subword-1)
+(key-chord-define-global "fk" 'avy-goto-word-or-subword-1)
 
 ;; -------- Evil state switcher binding
 ;; De base la touche escape est utlisée pour ça
