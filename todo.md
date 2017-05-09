@@ -1,3 +1,4 @@
+
 - Resources
   https://github.com/epsil
   https://github.com/djangoliv/conf
@@ -42,6 +43,11 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 
 ## Bloquant
+- [ ] Multiple emacs config management propositions : http://stackoverflow.com/questions/17483598/maintaining-multiple-emacs-configurations-at-the-same-time
+- [ ] [Emacs-Lisp] [Hight light mode nav]
+- [ ] [Helm] C-h ne fonctionne pas
+- [ ] [C-x o] Case insentive !
+- [ ] [M-n] Hightlight-new-occurence in elisp files
 - [ ] [dired] Rename file : Possibilité de préciser un chemin contenant des dossiers
       N'existant pas, ces dossier seront créés automatiquement à la validation
 
@@ -66,7 +72,6 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [helm] C-z -> Delete back
 - [ ] [multi-cursor] C-g leave multi-cursor state
 - [ ] [highlight-symbol] [ggtags] [web-mode] Les couleurs disparaissent lorsque les modes web-mode ggtags sont presents highlight-mode est active
-- [x] [php-mode] C-j Dired jump
 - [ ] [projectile] Auto invalidate cache after create/rename/delete files
   - [ ] create
   - [ ] rename
@@ -79,7 +84,6 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [ivy] [mini buffer] Add C-l keybinding
 - [ ] [ivy] - Highlight current line plus visible
 
-- [x] [dired] Date format lisible
 - [ ] [php-mode] [ac-php] [company] La boite d'information supplémentaire ne contient pas les php doc
 - [ ] [php-mode] Voir pour implementer quick type hierarchy
 - [ ] [php-mode] Saisie de /** + ENTER -> Creation d un php doc pre rempli
@@ -100,21 +104,6 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [ivy] [mini buffer] CTRL+l to back up
 - [ ] [ivy] : Ne pas mettre les fichiers .svn dans la liste
 - [ ] [plugin] [change inner] Ajoute rl'option Change Inner Tag
-
-
-- [x] Binder l'équivalent des M-enter, M-S-enter sur C-j, C-S-j
-- [x] [flycheck] Activer flycheck pour les fichiers CSS (important)
-- [x] [helm-ag] Valider avec c-j
-
-- [x] [Swiper] Changer la regexp dans ce mode
-      - Update : Retour aarrière sur helm-swoop
-      - Update : Retour arrière sur helm-swoop
-- [x] Emmet mode en css mode (Une erreur est peut êtrep présent dans les emacs.d conf et ne démarre pas emmet en mode css
-- [x] [ivy] Re
-- [x] C-j ---> Le comportement n est pas le même que "<enter>" (visible en mode css)
-- [x] Double click + paste, -> Voir pour eviter de faire : ctrl-y + cmd-y a chaque fois
-- [x] Helm doit rester dans le contexte de la page
-- [x] [counsel] Il faut vraiment sortir les meillleurs résultast plus haut
 
 
 ## Majeur
@@ -260,6 +249,23 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 
 ## Corrige
+- [x] [php-mode] C-j Dired jump
+- [x] [dired] Date format lisible
+- [x] Binder l'équivalent des M-enter, M-S-enter sur C-j, C-S-j
+- [x] [flycheck] Activer flycheck pour les fichiers CSS (important)
+- [x] [helm-ag] Valider avec c-j
+
+- [x] [Swiper] Changer la regexp dans ce mode
+      - Update : Retour aarrière sur helm-swoop
+      - Update : Retour arrière sur helm-swoop
+- [x] Emmet mode en css mode (Une erreur est peut êtrep présent dans les emacs.d conf et ne démarre pas emmet en mode css
+- [x] [ivy] Re
+- [x] C-j ---> Le comportement n est pas le même que "<enter>" (visible en mode css)
+- [x] Double click + paste, -> Voir pour eviter de faire : ctrl-y + cmd-y a chaque fois
+- [x] Helm doit rester dans le contexte de la page
+- [x] [counsel] Il faut vraiment sortir les meillleurs résultast plus haut
+
+
 - [x] [swiper] Extract result
       -> Back to helm, problem solved
 - [x] [web-mode] [company] Add php keyword ($_POST etc)

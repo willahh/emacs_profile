@@ -22,7 +22,7 @@
 ;; Update : Besoin d ajouter des hook pour certains mode
 ;; Je n ai pas reussis a setter cette propriete de maniere globale
 
-(defun update-syntax-entry () 
+(defun update-syntax-entry ()
       (modify-syntax-entry ?_ "w")
 )
 (update-syntax-entry)

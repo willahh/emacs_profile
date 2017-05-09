@@ -195,6 +195,8 @@
 (add-hook 'prog-mode-hook 'highlight-symbol-mode)
 (add-hook 'typescript-mode-hook 'highlight-symbol-nav-mode)
 
+(add-hook 'emacs-lisp-mode 'highlight-symbol-nav-mode) ;; @todo ne fonctione pas
+
 ;; (add-hook 'web-mode-hook 'highlight-symbol-nav-mode)
 ;; (add-hook ' 'highlight-symbol-nav-mode)
 
@@ -1684,6 +1686,18 @@
 ;;     (global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
 ;;     (define-key read-expression-map (kbd "C-r") 'counsel-expression-history)
 ;;     ))
+
+;; Counsel case insensitive
+;; https://www.mail-archive.com/emacs-elpa-diffs@gnu.org/msg10038.html
+;; Commande plus lente mais case insensitive ...
+;; Ne semble pas fonctionner (mauvaise exploitation surement ...)
+
+;; (defcustom counsel-grep-base-command "grep -nE '%s' %s")
+(defcustom counsel-grep-base-command "grep -nE --ignore-case \"%s\" %s"
+  "Format string to use in `cousel-grep-function' to construct
+the command."
+  :type 'string
+  :group 'ivy)
 
 ;; advise swiper to recenter on exit
 (defun bjm-swiper-recenter (&rest args)
