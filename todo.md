@@ -69,7 +69,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] M-z devrait fonctionner lorsqu'une sélection est présente
 - [ ] [projectile] Find file - Traitement lent lorsqu'il y a beaucoup de fichiers
 - [ ] [helm] Directory first
-- [ ] [helm] C-z -> Delete back
+- [x] [helm] C-z -> Delete back
 - [ ] [multi-cursor] C-g leave multi-cursor state
 - [ ] [highlight-symbol] [ggtags] [web-mode] Les couleurs disparaissent lorsque les modes web-mode ggtags sont presents highlight-mode est active
 - [ ] [projectile] Auto invalidate cache after create/rename/delete files

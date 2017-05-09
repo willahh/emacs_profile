@@ -4,11 +4,38 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
+
+;; (add-to-list 'load-path (expand-file-name "include" user-emacs-directory))
+
 (load-file "~/.emacs.d/include/defun.el")
 (load-file "~/.emacs.d/include/base.el")
 (load-file "~/.emacs.d/include/package_list.el")
 (load-file "~/.emacs.d/include/package_installer.el")
-(load-file "~/.emacs.d/include/package_config.el")
+(load-file "~/.emacs.d/include/project.el")
+(load-file "~/.emacs.d/include/evil.el")
+(load-file "~/.emacs.d/include/use_package.el")
+(load-file "~/.emacs.d/include/navigation.el")
+(load-file "~/.emacs.d/include/dired.el")
+(load-file "~/.emacs.d/include/misc.el")
+(load-file "~/.emacs.d/include/ui.el")
+(load-file "~/.emacs.d/include/completion.el")
+(load-file "~/.emacs.d/include/yas.el")
+(load-file "~/.emacs.d/include/vc.el")
+(load-file "~/.emacs.d/include/markdown.el")
+(load-file "~/.emacs.d/include/search.el")
+(load-file "~/.emacs.d/include/system.el")
+(load-file "~/.emacs.d/include/buffer.el")
+(load-file "~/.emacs.d/include/web_mode.el")
+(load-file "~/.emacs.d/include/syntax_checker.el")
+(load-file "~/.emacs.d/include/emmet.el")
+(load-file "~/.emacs.d/include/eclim.el")
+(load-file "~/.emacs.d/include/tags.el")
+(load-file "~/.emacs.d/include/indentation.el")
+(load-file "~/.emacs.d/include/simple_httpd.el")
+(load-file "~/.emacs.d/include/language/typescript.el")
+(load-file "~/.emacs.d/include/language/html.el")
+(load-file "~/.emacs.d/include/language/javascript.el")
+(load-file "~/.emacs.d/include/language/php.el")
 (load-file "~/.emacs.d/include/key_binding.el")
 (load-file "~/.emacs.d/include/theme.el")
 
@@ -59,13 +86,13 @@
  '(helm-ag-insert-at-point (quote symbol))
  '(helm-source-names-using-follow
  (quote
-  ("Search at ~/www/projects_other/pnpm/src/" "Search at ~/.emacs.d_hlissner/" "Search at ~/www/project/arsia/arsia_standard_310/mediadata/src/app/" "Search at ~/.emacs.d/include/" "Search at ~/.emacs.d/" "Imenu")))
+  ("mark-ring" "global-mark-ring" "Search at ~/.emacs.d_ergoemacs/" "Search at ~/www/projects_other/pnpm/src/" "Search at ~/.emacs.d_hlissner/" "Search at ~/www/project/arsia/arsia_standard_310/mediadata/src/app/" "Search at ~/.emacs.d/include/" "Search at ~/.emacs.d/" "Imenu")))
  '(ido-enable-flex-matching t)
  '(magit-dispatch-arguments nil)
  '(org-agenda-files (quote ("~/Documents/utils/Notes/todo.org")))
  '(package-selected-packages
  (quote
-  (google-translate google-this helm-projectile ivy-hydra helm-swoop evil-matchit point-undo editorconfig php-completion php-extras company-php eclim rainbow-mode company-web helm helm-ag flx-ido dired-details ace-jump-mode change-inner iy-go-to-char evil-snipe zop-to-char try counsel autopair ido-vertical-mode ido-ubiquitous php-eldoc smart-tab json-mode company-quickhelp company-tern highlight-chars smooth-scrolling drag-stuff evil-tutor clean-aindent-mode rainbow-delimiters tide typescript-mode js2-refactor dumb-jump flymake-jshint helm-hunks yascroll actionscript-mode perspective workgroups2 php-mode polymode web-mode mmm-mode multi-web-mode load-theme-buffer-local 0blayout use-package tabbar color-theme-buffer-local leuven-theme js-doc smart-forward js-comint php-auto-yasnippets smart-newline resize-window php-refactor-mode ac-php general popwin evil-surround window-numbering eyebrowse which-key evil edit-server neotree elfeed logview monokai-theme material-theme noctilux-theme nlinum crosshairs dumb-mode theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord flymake-mode ggtags less-css-mode ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn highlight-symbol zerodark-theme markdown-mode+ emmet-mode company web-beautify multiple-cursors other-frame-window desktop+ undo-tree expand-region avy-menu auto-complete ace-window magit)))
+  (indium google-translate google-this helm-projectile ivy-hydra helm-swoop evil-matchit point-undo editorconfig php-completion php-extras company-php eclim rainbow-mode company-web helm helm-ag flx-ido dired-details ace-jump-mode change-inner iy-go-to-char evil-snipe zop-to-char try counsel autopair ido-vertical-mode ido-ubiquitous php-eldoc smart-tab json-mode company-quickhelp company-tern highlight-chars smooth-scrolling drag-stuff evil-tutor clean-aindent-mode rainbow-delimiters tide typescript-mode js2-refactor dumb-jump flymake-jshint helm-hunks yascroll actionscript-mode perspective workgroups2 php-mode polymode web-mode mmm-mode multi-web-mode load-theme-buffer-local 0blayout use-package tabbar color-theme-buffer-local leuven-theme js-doc smart-forward js-comint php-auto-yasnippets smart-newline resize-window php-refactor-mode ac-php general popwin evil-surround window-numbering eyebrowse which-key evil edit-server neotree elfeed logview monokai-theme material-theme noctilux-theme nlinum crosshairs dumb-mode theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord flymake-mode ggtags less-css-mode ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn highlight-symbol zerodark-theme markdown-mode+ emmet-mode company web-beautify multiple-cursors other-frame-window desktop+ undo-tree expand-region avy-menu auto-complete ace-window magit)))
  '(safe-local-variable-values (quote ((no-byte-compile t))))
  '(tabbar-separator (quote (1)) t)
  '(vc-annotate-background "#181e26")
@@ -167,3 +194,4 @@ DIR has to be 1 or -1."
 (setq mouse-drag-copy-region nil)  ; stops selection with a mouse being immediately injected to the kill ring
 (setq x-select-enable-primary nil)  ; stops killing/yanking interacting with primary X11 selection
 (setq x-select-enable-clipboard t)  ; makes killing/yanking interact with clipboard X11 selection
+(put 'scroll-left 'disabled nil)

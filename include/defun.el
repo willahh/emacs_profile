@@ -580,13 +580,9 @@ That is, a string used to represent it on the tab bar."
 ;; Get the current file name from bufer file path
 (defun get-curent-file-name ()
   (interactive)
-  (defvar buffer-file-name-split (split-string buffer-file-name "/")) // Split file path
-  (defvar split (last buffer-file-name-split)) // Get last entry
+  (defvar buffer-file-name-split (split-string buffer-file-name "/")) ;; Split file path
+  (defvar split (last buffer-file-name-split)) ;; Get last entry
   (mapconcat 'identity split " ")) ;; Convert list of one element to string
-
-
-
-
 
 
 
@@ -747,3 +743,102 @@ That is, a string used to represent it on the tab bar."
 
 (advice-add 'c-indent-new-comment-line :around #'my-prettify-c-block-comment)
 ;; (advice-remove 'c-indent-new-comment-line #'my-prettify-c-block-comment)
+
+
+
+;; Source : http://emacs.stackexchange.com/a/7925
+;; @todo ajouter la completion en php apres :: (la ligne en commentaire empeche
+;; la completion apres ->
+(defun check-expansion ()
+  (save-excursion
+    (if (looking-at "\\_>") t
+      (backward-char 1)
+      (if (looking-at "\\.") t
+        (backward-char 1)
+        (if (looking-at "->") t nil)
+        ;; (if (looking-at "::") t nil) ;; Update wra : add "::" for php support
+        ))))
+
+(defun do-yas-expand ()
+  (let ((yas/fallback-behavior 'return-nil))
+    (yas/expand)))
+
+(defun tab-indent-or-complete ()
+  (interactive)
+  (cond
+   ((minibufferp)
+    (minibuffer-complete))
+   (t
+    (indent-for-tab-command)
+    (if (or (not yas/minor-mode)
+            (null (do-yas-expand)))
+        (if (check-expansion)
+            (progn
+              (company-manual-begin)
+              (if (null company-candidates)
+                  (progn
+                    (company-abort)
+                    (indent-for-tab-command)))))))))
+
+(defun tab-complete-or-next-field ()
+  (interactive)
+  (if (or (not yas/minor-mode)
+          (null (do-yas-expand)))
+      (if company-candidates
+          (company-complete-selection)
+        (if (check-expansion)
+            (progn
+              (company-manual-begin)
+              (if (null company-candidates)
+                  (progn
+                    (company-abort)
+                    (yas-next-field))))
+          (yas-next-field)))))
+
+(defun expand-snippet-or-complete-selection ()
+  (interactive)
+  (if (or (not yas/minor-mode)
+          (null (do-yas-expand))
+          (company-abort))
+      (company-complete-selection)))
+
+(defun abort-company-or-yas ()
+  (interactive)
+  (if (null company-candidates)
+      (yas-abort-snippet)
+    (company-abort)))
+
+
+;; Custom wra
+;; New line and indent for tab
+(defun new-line-and-indent-for-tab ()
+  (interactive)
+  (autopair-newline)
+  (indent-for-tab-command)
+)
+
+
+
+;; (defun env-typescript ()
+;;   (interactive)
+
+;;   ;; Left window
+;;   (projectile-dired)
+
+;;   ;; Right top window
+;;   (split-window-right)
+;;   (other-window 1)
+;;   (tide-mode)
+;;   (tide-project-errors-mode)
+
+;;   ;; RIght bottom window
+;;   (split-window-below)
+;;   (other-window 1)
+;;   (magit-status)
+
+;;   ;; (other-window)
+;;   ;; (vc-dir)
+
+;;   ;; (other-window)
+;; )
+
