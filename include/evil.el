@@ -31,7 +31,8 @@
 ;; (evil-set-initial-state 'neotree 'emacs)
 ;; (evil-set-initial-state 'neotree-mode 'emacs) ;; neotree doesnt work maybe neotree-mode ? -> update ok, works -> Update laisse en evil mode
 ;;(evil-set-initial-state 'vc-dir-mode' 'normal)
-(evil-set-initial-state 'vc-dir-mode 'normal)
+;; (evil-set-initial-state 'vc-dir-mode 'normal)
+(evil-set-initial-state 'vc-dir-mode 'emacs)
 (evil-set-initial-state 'profiler-mode 'emacs)
 (evil-set-initial-state 'profiler-report-mode 'emacs)
 

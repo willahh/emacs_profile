@@ -1,12 +1,19 @@
 
-;;;; Git gutter
+;; ;;;; Git gutter
 (require 'git-gutter)
-;;
-;;;; If you enable global minor mode
-(global-git-gutter-mode t)
+;; ;;
+;; ;;;; If you enable global minor mode
+;; ;; (global-git-gutter-mode t)
 
-;; If you would like to use git-gutter.el and linum-mode
-(git-gutter:linum-setup)
+;; ;; If you would like to use git-gutter.el and linum-mode
+;; (git-gutter:linum-setup)
+
+;; ;; Use for 'Git'(`git`), 'Mercurial'(`hg`), 'Bazaar'(`bzr`), and 'Subversion'(`svn`) projects
+;; (custom-set-variables
+;;  '(git-gutter:handled-backends '(git hg bzr svn)))
+
+;;  (custom-set-variables
+;;  '(git-gutter:visual-line t))
 
 ;; Tentative de recentrer l ecran apres certaines actions
 ;; (add-hook 'git-gutter:next-hunk 'recenter)

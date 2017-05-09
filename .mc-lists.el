@@ -52,6 +52,7 @@
       smart-open-line-above
       tab-indent-or-complete
       tern-ac-dot-complete
+      typescript-insert-and-indent
       untab-region
       web-mode-comment-indent-new-line
       whole-line-or-region-kill-region

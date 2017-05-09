@@ -43,25 +43,20 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 
 ## Bloquant
-- [ ] Multiple emacs config management propositions : http://stackoverflow.com/questions/17483598/maintaining-multiple-emacs-configurations-at-the-same-time
-- [ ] [Emacs-Lisp] [Hight light mode nav]
-- [ ] [Helm] C-h ne fonctionne pas
-- [ ] [C-x o] Case insentive !
-- [ ] [M-n] Hightlight-new-occurence in elisp files
+- [ ] [diff-hl] Ne fonctionne plus (package casse ?)
+- [ ] [custom] Faire une fonction custom delete backward or region
+      C-w doit appeler clean-aindent--bsunindent ou "whole-line-or-region-kill-region"
+
+## A ranger
 - [ ] [dired] Rename file : Possibilité de préciser un chemin contenant des dossiers
       N'existant pas, ces dossier seront créés automatiquement à la validation
-
-- [ ] [custom] Faire une fonction custom delete backword or region
-      C-w doit appeler clean-aindent--bsunindent ou "whole-line-or-region-kill-region"
 - [ ] Ajouter des bind system sur C-h et C-w C-w https://blog.sensible.io/2012/10/19/mac-os-x-emacs-style-keybindings-everywhere.html
       - [ ] C-j new line
       - [ ] C-w delete back word
       - [ ] M-b back word
-- [ ] [diff-hl] Ne fonctionne plus (package casse ?)
+- [ ] Multiple emacs config management propositions : http://stackoverflow.com/questions/17483598/maintaining-multiple-emacs-configurations-at-the-same-time
+- [ ] [C-x o] Case insentive !
 
-
-
-## A ranger
 - [ ] Open file from system in new emacs frame (Right click open in)
 - [ ] [js2-mode] Colorization redraw slow
 - [ ] [multi-cursor] Remettre la possibilité d'ajouter un command click de la souris pour ajouter un nouveau caret
@@ -69,7 +64,6 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] M-z devrait fonctionner lorsqu'une sélection est présente
 - [ ] [projectile] Find file - Traitement lent lorsqu'il y a beaucoup de fichiers
 - [ ] [helm] Directory first
-- [x] [helm] C-z -> Delete back
 - [ ] [multi-cursor] C-g leave multi-cursor state
 - [ ] [highlight-symbol] [ggtags] [web-mode] Les couleurs disparaissent lorsque les modes web-mode ggtags sont presents highlight-mode est active
 - [ ] [projectile] Auto invalidate cache after create/rename/delete files
@@ -249,6 +243,10 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 
 ## Corrige
+- [x] [M-n] Hightlight-new-occurence in elisp files
+- [x] [Emacs-Lisp] [Hight light mode nav]
+- [x] [Helm] C-h ne fonctionne pas
+- [x] [helm] C-z -> Delete back
 - [x] [php-mode] C-j Dired jump
 - [x] [dired] Date format lisible
 - [x] Binder l'équivalent des M-enter, M-S-enter sur C-j, C-S-j
