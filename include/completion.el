@@ -69,7 +69,7 @@
 ;; (setq company-idle-delay 0.15)
 (setq company-idle-delay 0) ;; @todo : Mettre la valeur 0 pour le CSS mode only
 ;; (setq company-idle-delay 0.3) ;; Impossible, trop lent, il faut l activer pour CSS only
-(setq company-idle-delay 0.2) ;; Impossible, trop lent, il faut l activer pour CSS only
+(setq company-idle-delay 0.3)
 
 ;; Idle delay a 0 en mode css
 ;; Il est possible que cette partie ne fonctionne pas bien

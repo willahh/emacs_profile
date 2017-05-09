@@ -281,7 +281,7 @@
 ;; (setq evil-emacs-state-cursor '("#9ecf00" bar))
 ;; (setq evil-emacs-state-cursor '("#f1c70a" bar))
 ;; (setq evil-emacs-state-cursor '("#ff00fc" bar))
-(setq evil-emacs-state-cursor '("#ff00fc" bar))
+(setq evil-emacs-state-cursor '("#ff00fc" box))
 (setq evil-normal-state-cursor '("#56b0ec" box))
 ;; (setq evil-visual-state-cursor '("#ffba00" box))
 (setq evil-visual-state-cursor '("#fff" box))
