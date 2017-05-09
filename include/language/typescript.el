@@ -1,6 +1,4 @@
-
-
-;; --------------- Type scrip support
+;; --------------- Type script support
 ;; typescript
 (require 'typescript-mode)
 
@@ -57,22 +55,6 @@
           (lambda ()
             (when (string-equal "ts" (file-name-extension buffer-file-name))
               (setup-tide-mode))))
-
-
-;; Disable tide auto formatting before save (override with an empty function)
-;; Update : il suffisait de desactiver 2 lignes de conf copiees depuis le site
-;; (defun tide-format-before-save ())
-;; (defun tide-format ())
-
-;; Disable tide auto highlight (override with an empty function)
-;; (defun tide--hl-set-timer ())
-;; (defun tide--hl-highlight (response))
-;; (add-hook 'tide-mode-hook
-;;           (defun tide--hl-highlight (response))
-;;           )
-
-
-
 
 (add-hook 'typescript-mode-hook
           (define-key evil-normal-state-map (kbd "M-]") 'tide-jump-to-definition)

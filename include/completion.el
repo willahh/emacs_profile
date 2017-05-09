@@ -52,7 +52,8 @@
 (setq company-show-numbers t)
 ;; (setq company-minimum-prefix-length 2)
 ;; (setq company-minimum-prefix-length 1)
-(setq company-minimum-prefix-length 5)
+;; (setq company-minimum-prefix-length 5)
+(setq company-minimum-prefix-length 3)
 
 (setq company-dabbrev-downcase nil)
 
@@ -67,7 +68,8 @@
 ;; (setq company-idle-delay 0.3) ;; Update en mode css, un retour raîde serait bien.
 ;; (setq company-idle-delay 0.15)
 (setq company-idle-delay 0) ;; @todo : Mettre la valeur 0 pour le CSS mode only
-(setq company-idle-delay 0.3) ;; Impossible, trop lent, il faut l activer pour CSS only
+;; (setq company-idle-delay 0.3) ;; Impossible, trop lent, il faut l activer pour CSS only
+(setq company-idle-delay 0.2) ;; Impossible, trop lent, il faut l activer pour CSS only
 
 ;; Idle delay a 0 en mode css
 ;; Il est possible que cette partie ne fonctionne pas bien

@@ -14,8 +14,8 @@
 (setq-default line-spacing 0)
 
 ;; ------ cursor
-(setf cursor-type 'bar)
-(setq cursor-type '(bar . 4))
+;; (setq cursor-type '(bar . 4))
+(setq cursor-type 'box)
 
 ;; ------ Override theme
 (custom-set-faces `(default ((t (:background "#212121")))))
@@ -26,8 +26,8 @@
 (set-face-attribute 'linum nil :background "#212121")
 ;; (set-face-attribute 'sp-pair-overlay-face nil :foreground "#fff" :background "#212121")
 ;; (set-face-attribute 'trailing-whitespace nil :background "#171717")
-(set-face-attribute 'trailing-whitespace nil :background "#ff5370")
-
+;; (set-face-attribute 'trailing-whitespace nil :background "#ff5370")
+(set-face-attribute 'trailing-whitespace nil :background "#000")
 ;; ------ Font
 (set-face-attribute 'font-lock-doc-face nil :foreground "#4a4a4a")
 ;; (set-face-attribute 'font-lock-comment-face nil :foreground "#4a4a4a")
@@ -240,10 +240,16 @@
 ;; powerline theme
 (defun powerline-theme-emacs()
   (set-face-attribute 'mode-line nil
-                      :foreground "#000"
-                      :background "#9ecf00"
+                      :foreground "#fff"
+                      :background "#212121"
                       :box nil)
 )
+;; (defun powerline-theme-emacs()
+;;   (set-face-attribute 'mode-line nil
+;;                       :foreground "#000"
+;;                       :background "#9ecf00"
+;;                       :box nil)
+;; )
 
 (defun powerline-theme-visual()
   (set-face-attribute 'mode-line nil
@@ -274,6 +280,7 @@
 ;; Cursor / caret state color
 ;; (setq evil-emacs-state-cursor '("#9ecf00" bar))
 ;; (setq evil-emacs-state-cursor '("#f1c70a" bar))
+;; (setq evil-emacs-state-cursor '("#ff00fc" bar))
 (setq evil-emacs-state-cursor '("#ff00fc" bar))
 (setq evil-normal-state-cursor '("#56b0ec" box))
 ;; (setq evil-visual-state-cursor '("#ffba00" box))

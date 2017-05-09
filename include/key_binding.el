@@ -1,5 +1,6 @@
 ;; key_binding: --- some default / package keybindings
-(dolist (key '("\M-x" "\M-z" "\C-\M-p" "\C-z"))
+;; (dolist (key '("\M-x" "\M-z" "\C-\M-p" "\C-z"))
+(dolist (key '("\M-z" "\C-z"))
   (global-unset-key key))
 
 
@@ -123,8 +124,8 @@
 ;; (global-set-key (kbd "C-;") 'avy-goto-word-or-subword-1)
 (global-set-key (kbd "C-c j") 'avy-goto-word-or-subword-1)
 
-(key-chord-define-global "xc" 'er/expand-region)
-(key-chord-define-global "wx" 'er/contract-region)
+;; (key-chord-define-global "xc" 'er/expand-region)
+;; (key-chord-define-global "wx" 'er/contract-region)
 
 (key-chord-define-global "ji" 'ace-window) ;; cannot be jk (vim up/right)
 (key-chord-define-global ";:" 'highlight-symbol-mode)
@@ -187,7 +188,7 @@
 ;; -- Buffer / frames / main
 ;; Frames
 (global-set-key [(meta control shift n)] 'create-new-centered-frame)
-(global-set-key [(meta control shift a)] 'mark-whole-buffer)
+;; (global-set-key [(meta control shift a)] 'mark-whole-buffer)
 (global-set-key (kbd "M-q") 'ask-before-closing)
 
 ;; Buffer
@@ -233,8 +234,14 @@
 
 ;; Helm
 (global-set-key (kbd "M-x") 'helm-M-x)
+;; (global-set-key (kbd "C-x C-m") 'helm-M-x)
+;; (global-set-key (kbd "C-c C-m") 'helm-M-x)
+
+;; char
 (define-key helm-map (kbd "C-h") 'delete-backward-char)
 (define-key helm-map (kbd "C-w") 'clean-aindent--bsunindent)
+(define-key company-active-map (kbd "C-w") 'clean-aindent--bsunindent)
+(define-key company-active-map (kbd "C-h") 'delete-backward-char)
 
 ;; Sublime Text go to anything
 ;; Update : Utilsation des standards emacs (C-c p f)
@@ -242,8 +249,9 @@
 (global-set-key (kbd "C-c t") 'toggle-truncate-lines)
 
 ;; Filter buffer / Get buffer definitions
-(global-set-key [(meta r)]  'helm-imenu) ;; command + r
-(global-set-key [(meta shift r)] 'swiper) ;; command + shift + r : Update : Switch to swiper (lighter / faster)
+;; (global-set-key [(meta r)]  'helm-imenu) ;; command + r
+;; (global-set-key [(meta shift r)] 'swiper) ;; command + shift + r : Update : Switch to swiper (lighter / faster)
+(global-set-key (kbd "C-x C-i") 'helm-imenu)
 
 ;; Update to use counsel-find-file instead of helm-find-file
 ;; (global-set-key (kbd "C-x o")  'helm-find-files)
@@ -268,8 +276,6 @@
 ;; (define-key conf-space-mode-map (kbd "C-c C-s") 'helm-swoop)
 
 ;; Swiper
-(global-set-key (kbd "C-c C-p") 'swiper)
-(global-set-key (kbd "C-c C-p") 'swiper)
 (global-set-key (kbd "C-c C-p") 'swiper)
 
 ;; -- Text operations
@@ -299,8 +305,14 @@
 ;; comment
 ;; Update : evilnc-comment-or-uncomment-lines  fait des commentaires bizarres (en mode html plusieurs imbrications de commentaire html au lieu d un seul)
 ;; Update : comment-region ne fonctionne pas bien en mode css
-(global-set-key [(meta /)] 'evilnc-comment-or-uncomment-lines)
+;; Update : Utilisation du racourcis natif C-x C-; bien plus
+;; ergonomique
+;; (global-set-key [(meta /)] 'evilnc-comment-or-uncomment-lines)
+
+;; text operation : duplication
 (global-set-key [(meta shift d)] 'duplicate-start-of-line-or-region)
+
+;; helm-ag
 (global-set-key (kbd "Ò") 'helm-ag) ;; (alt + s)
 
 
@@ -328,17 +340,20 @@
 (global-set-key (kbd "M-v") 'evil-scroll-up)
 
 ;; web mode
-(define-key web-mode-map [(meta shift j)] 'web-mode-tag-next)
-(define-key web-mode-map [(meta shift k)] 'web-mode-tag-previous)
+;; (define-key web-mode-map [(meta shift j)] 'web-mode-tag-next)
+;; (define-key web-mode-map [(meta shift k)] 'web-mode-tag-previous)
 
 ;; open line
-(global-set-key [(M shift return)] 'smart-open-line-above)
-(global-set-key [(M shift j)] 'smart-open-line-above)
-(define-key web-mode-map [(meta shift j)] 'smart-open-line-above)
+;; (global-set-key [(M shift return)] 'smart-open-line-above)
+;; (global-set-key [(M shift j)] 'smart-open-line-above)
+;; (define-key web-mode-map [(meta shift j)] 'smart-open-line-above)
 
-(global-set-key [(M return)] 'smart-open-line)
-(global-set-key [(M j)] 'smart-open-line)
-(define-key web-mode-map [(meta j)] 'smart-open-line)
+(global-set-key [(control shift j)] 'smart-open-line-above)
+(define-key web-mode-map [(control shift j)] 'smart-open-line-above)
+
+;; (global-set-key [(M return)] 'smart-open-line)
+;; (global-set-key [(M j)] 'smart-open-line)
+;; (define-key web-mode-map [(meta j)] 'smart-open-line)
 
 ;; avy go to word
 ;; (global-set-key (kbd "C-x C-s") 'avy-goto-word-or-subword-1)
@@ -347,7 +362,7 @@
 
 ;; Align your code in a pretty way.
 (global-set-key (kbd "C-x \\") 'align-regexp)
-(global-set-key [(control meta shift s)] 'zop-up-to-char)
+;; (global-set-key [(control meta shift s)] 'zop-up-to-char)
 
 ;; Browse the kill ring
 (global-set-key (kbd "C-x C-y") 'browse-kill-ring)
@@ -387,6 +402,9 @@
 ;; Start a regular shell if you prefer that.
 (global-set-key (kbd "C-x M-m") 'shell)
 
+;; expand-region
+(global-set-key (kbd "C-=") 'er/expand-region)
+(global-set-key (kbd "C-+") 'er/contract-region)
 
 ;; ---------------- Magit
 (require 'magit)
@@ -396,9 +414,20 @@
 (global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
 
 (define-key magit-status-mode-map (kbd "<tab>") 'magit-section-toggle)
-(define-key emmet-mode-keymap [(control shift j)] 'emmet-expand-line)
 (global-set-key [(control shift j)] 'smart-open-line-above)
 (define-key key-translation-map (kbd "C-j") (kbd "RET"))
+
+;; Emmet
+;; (global-set-key (kbd "é") 'emmet-expand-line) ;; ALT + j
+(global-set-key (kbd "C-c k") 'emmet-expand-line)
+;; (define-key emmet-mode-keymap "é" 'emmet-expand-line)
+;; (define-key web-mode-map "é" 'emmet-expand-line)
+;; (define-key emmet-mode-keymap "C-c RET" 'emmet-expand-line)
+;; (add-hook 'web-mode-hook
+;;           (lambda ()
+;;             (define-key emmet-mode-keymap "C-c RET" 'emmet-expand-line)))
+
+(define-key web-mode-map "C-c C-j" 'emmet-expand-line)
 
 (require 'nxml-mode)
 (define-key global-map (kbd "C-x RET") 'dired-jump)
@@ -457,3 +486,7 @@
 (global-set-key (kbd "C-c s s") 'evil-snipe-s)
 (global-set-key (kbd "C-c s t") 'evil-snipe-t)
 (global-set-key (kbd "C-c s x") 'evil-snipe-x)
+
+
+;; google
+(global-set-key (kbd "C-c / j") 'helm-google-suggest)

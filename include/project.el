@@ -36,3 +36,5 @@
 (setq wg-emacs-exit-save-behavior           'save)      ; Options: 'save 'ask nil
 (setq wg-workgroups-mode-exit-save-behavior 'save)      ; Options: 'save 'ask nil
 
+
+
