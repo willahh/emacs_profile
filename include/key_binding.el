@@ -251,7 +251,8 @@
 ;; Filter buffer / Get buffer definitions
 ;; (global-set-key [(meta r)]  'helm-imenu) ;; command + r
 ;; (global-set-key [(meta shift r)] 'swiper) ;; command + shift + r : Update : Switch to swiper (lighter / faster)
-(global-set-key (kbd "C-x C-i") 'helm-imenu)
+;; (global-set-key (kbd "C-x C-i") 'helm-imenu)
+(global-set-key (kbd "C-x C-i") 'counsel-imenu)
 
 ;; Update to use counsel-find-file instead of helm-find-file
 ;; (global-set-key (kbd "C-x o")  'helm-find-files)

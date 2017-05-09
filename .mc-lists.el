@@ -73,6 +73,7 @@
       emmet-expand-line
       evil-buffer-new
       evil-emacs-state
+      evil-find-char-to
       evil-window-split
       ggtags-navigation-mode-done
       helm-mini
@@ -91,6 +92,7 @@
       previous-multiframe-window
       projectile-find-file-dwim
       resize-window
+      undefined
       vc-dir-mark
       vc-dir-previous-line
       ))

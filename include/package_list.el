@@ -4,6 +4,10 @@
   ;; evil-snipe
   powerline
   undo-tree
+  sr-speedbar
+  wgrep
+  wgrep-ag
+  iedit
 
   ;; back-button
 
