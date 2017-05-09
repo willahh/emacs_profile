@@ -375,7 +375,7 @@
 (global-set-key (kbd "M-t p") 'transpose-params)
 
 ;; vc
-(global-set-key (kbd "C-x v d") 'vc-diff)
+;; (global-set-key (kbd "C-x v d") 'vc-diff)
 
 ;; ---------------- Shell
 ;; Start eshell or switch to it if it's active.
@@ -412,6 +412,7 @@
 (define-key global-map (kbd "C-c C-r") 'helm-recentf)
 (define-key php-mode-map (kbd "C-c C-r") 'helm-recentf)
 
+;; (global-set-key [(command shift w)] 'delete-window)
 (global-set-key (kbd "M-0") 'delete-window) ;; M-0
 (define-key diff-mode-map (kbd "M-0") 'delete-window)
 
