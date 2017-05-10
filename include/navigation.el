@@ -422,7 +422,13 @@
 ;; autopair qui ne me convenait pas. (Mauvaise fermeture de simple quote dans
 ;; concatenation de chaine javascript)
 ;; Tout semble bien fonctionner.
-
+;;
+;; Update 4 : Test du package paredit, celui-ci peut entrer en conflit avec
+;; certaines commandes de autopair, desactivation temporaire
+;;
+;; Update 5 : Trop pratique lors de, par exemple, l'ouverture
+;; d'une accolade en javascript, puis d'un retour à la ligne
+;; 
 (require 'autopair)
 (autopair-global-mode 1)
 
@@ -475,3 +481,16 @@
 
 ;; speedbar
 (require 'sr-speedbar)
+
+;;paredit
+(require 'paredit)
+(add-hook 'prog-mode-hook 'paredit-mode)
+;; (global-set-key "{" 'paredit-open-curly)
+
+;; (add-hook 'php-mode-hook 'paredit-mode)
+;; (add-hook 'web-mode-hook 'paredit-mode)
+
+;; (require 'paredit-everywhere)
+;; (add-hook 'prog-mode-hook 'paredit-everywhere)
+
+(require 'avy)

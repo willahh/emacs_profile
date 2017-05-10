@@ -50,6 +50,12 @@
       my-abort-recursive-edit
       org-cycle
       org-self-insert-command
+      paredit-doublequote
+      paredit-forward
+      paredit-forward-delete
+      paredit-kill
+      paredit-meta-doublequote
+      paredit-semicolon
       smart-open-line-above
       tab-indent-or-complete
       tern-ac-dot-complete

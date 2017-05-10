@@ -130,8 +130,8 @@
 (key-chord-define-global "ji" 'ace-window) ;; cannot be jk (vim up/right)
 (key-chord-define-global ";:" 'highlight-symbol-mode)
 (key-chord-define-global "qs" 'toggle-php-flavor-mode)
-(key-chord-define-global "kf" 'avy-goto-word-or-subword-1)
-(key-chord-define-global "fk" 'avy-goto-word-or-subword-1)
+;; (key-chord-define-global "kf" 'avy-goto-word-or-subword-1)
+;; (key-chord-define-global "fk" 'avy-goto-word-or-subword-1)
 
 ;; -------- Evil state switcher binding
 ;; De base la touche escape est utlisée pour ça
@@ -187,7 +187,10 @@
                                           (scroll-left 4)))
 ;; -- Buffer / frames / main
 ;; Frames
-(global-set-key [(meta control shift n)] 'create-new-centered-frame)
+;; 
+;; (global-set-key [(meta control shift n)] 'create-new-centered-frame)
+
+
 ;; (global-set-key [(meta control shift a)] 'mark-whole-buffer)
 (global-set-key (kbd "M-q") 'ask-before-closing)
 
@@ -268,6 +271,7 @@
 ;; (global-set-key (kbd "M-/") 'evilnc-comment-or-uncomment-lines)
 
 ;; swoop
+(require 'org)
 (global-set-key (kbd "C-c C-s") 'helm-swoop)
 (define-key js2-mode-map (kbd "C-c C-s") 'helm-swoop)
 (define-key php-mode-map (kbd "C-c C-s") 'helm-swoop)
@@ -359,8 +363,10 @@
 
 ;; avy go to word
 ;; (global-set-key (kbd "C-x C-s") 'avy-goto-word-or-subword-1)
-(global-set-key (kbd "C-c c s") 'avy-goto-word-or-subword-1)
-;; (global-set-key [(meta π)] 'projectile-switch-project) ;; (commande + alt + p
+;; (global-set-key (kbd "C-c c s") 'avy-goto-word-or-subword-1)
+;; (global-set-key (kbd "C-'") 'avy-goto-word-or-subword-1)
+(global-set-key (kbd "C-'") 'avy-goto-char-2)
+(define-key isearch-mode-map (kbd "C-'") 'avy-isearch)
 
 ;; Align your code in a pretty way.
 (global-set-key (kbd "C-x \\") 'align-regexp)
@@ -392,7 +398,7 @@
 (global-set-key (kbd "M-t p") 'transpose-params)
 
 ;; vc
-;; (global-set-key (kbd "C-x v d") 'vc-diff)
+(global-set-key (kbd "C-x v f") 'vc-diff)
 
 ;; ---------------- Shell
 ;; Start eshell or switch to it if it's active.

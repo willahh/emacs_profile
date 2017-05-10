@@ -9,6 +9,8 @@
   wgrep-ag
   iedit
   hydra
+  paredit
+  paredit-everywhere
 
   ;; back-button
 

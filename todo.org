@@ -53,7 +53,6 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
       - [ ] M-b back word
 - [ ] Multiple emacs config management propositions : http://stackoverflow.com/questions/17483598/maintaining-multiple-emacs-configurations-at-the-same-time
 - [ ] [C-x o] Case insentive !
-
 - [ ] Open file from system in new emacs frame (Right click open in)
 - [ ] [js2-mode] Colorization redraw slow
 - [ ] [multi-cursor] Remettre la possibilité d'ajouter un command click de la souris pour ajouter un nouveau caret
@@ -234,7 +233,6 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] mysql integration 
 - [ ] Markdown in white theme
 - [ ] git-svn
-
 
 ** Corrige
 - [x] [M-n] Hightlight-new-occurence in elisp files
