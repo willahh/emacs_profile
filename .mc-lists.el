@@ -48,6 +48,7 @@
       kill-sentence
       mouse-set-region
       my-abort-recursive-edit
+      org-cycle
       org-self-insert-command
       smart-open-line-above
       tab-indent-or-complete

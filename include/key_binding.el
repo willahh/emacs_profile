@@ -273,6 +273,7 @@
 (define-key php-mode-map (kbd "C-c C-s") 'helm-swoop)
 (define-key web-mode-map (kbd "C-c C-s") 'helm-swoop)
 (define-key markdown-mode-map (kbd "C-c C-s") 'helm-swoop)
+(define-key org-mode-map (kbd "C-c C-s") 'helm-swoop)
 
 ;; (define-key conf-space-mode-map (kbd "C-c C-s") 'helm-swoop)
 

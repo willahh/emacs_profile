@@ -1,13 +1,10 @@
-
-- Resources
+* todo
+** Resources
   https://github.com/epsil
   https://github.com/djangoliv/conf
   https://github.com/hlissner/.emacs.d
 
-
-
-## Utils
-
+** Utils
 - evil mode : ":new file.extension" -> Create new buffer/file/window
 - evil mode : "gf" ("go to file")
 - Sublime merge lines -> Evil gJ
@@ -26,8 +23,7 @@
 - Typescript ide mode
   - Make sure tsconfig.json or jsconfig.json is present in the root folder of the project.
 
-
-## Notes :
+** Notes :
 - [ ] Voir https://github.com/NicolasPetton/Indium
   Javascript connexion to current browser, inspector, debugger etc
 
@@ -40,9 +36,7 @@ Semantic PHP parser with ECB
 http://ecb.sourceforge.net/
 https://www.youtube.com/watch?v=KoRNCrx9pak
 
-
-
-## Bloquant
+** Bloquant
 - [ ] Integrer hydra and ace window  https://www.youtube.com/watch?v=_qZliI1BKzI
 - [ ] [doc-block] La fonction custom doc bloc ne fonctionne pas ni en php-mode
       ni en typescript mode
@@ -50,7 +44,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [custom] Faire une fonction custom delete backward or region
       C-w doit appeler clean-aindent--bsunindent ou "whole-line-or-region-kill-region"
 
-## A ranger
+** A ranger
 - [ ] [dired] Rename file : Possibilité de préciser un chemin contenant des dossiers
       N'existant pas, ces dossier seront créés automatiquement à la validation
 - [ ] Ajouter des bind system sur C-h et C-w C-w https://blog.sensible.io/2012/10/19/mac-os-x-emacs-style-keybindings-everywhere.html
@@ -102,8 +96,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [ivy] : Ne pas mettre les fichiers .svn dans la liste
 - [ ] [plugin] [change inner] Ajoute rl'option Change Inner Tag
 
-
-## Majeur
+** Majeur
 - [ ] M-DEL --> Suppression de tous les caracteres vides
 - [ ] [IMPORTANT] Fonction get file name to clipboard (très utilisé)
 - [ ] [vc-dir] Faire une fonction pour activer un vc-version-diff avec les paramètres older revision : "base", newer revision : "head"
@@ -200,8 +193,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [x] ag --> ignore hudge file (ST behaviour) (aucun problème dans, à mon avis, 99% des cas)  (il peut être utile de faire des recherches dans des fichieux volumineux, mais pour ca la recherche peut être faite de manière spécifique (paramètres supplémentaire, utilisation directement depuis ligne de commande ...)
       -> Ne me semble pas poser de probleme
 
-
-##  Mineur
+**  Mineur
 - [ ] la selection avec la souris doit aller loin avant de prendre en compte la deuxieme ligne
       (Comportement de selection legerement different a celui de Sublime)
 - [ ] (plugin pour le liste) : Ne pas mettre les fichiers .svn dans la liste
@@ -244,8 +236,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] git-svn
 
 
-
-## Corrige
+** Corrige
 - [x] [M-n] Hightlight-new-occurence in elisp files
 - [x] [Emacs-Lisp] [Hight light mode nav]
 - [x] [Helm] C-h ne fonctionne pas
