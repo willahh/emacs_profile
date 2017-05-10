@@ -45,7 +45,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 ## Bloquant
 - [ ] [doc-block] La fonction custom doc bloc ne fonctionne pas ni en php-mode
       ni en typescript mode
-- [ ] [diff-hl] Ne fonctionne plus (package casse ?)
+- [ ] [diff-hl] Ne fonctionne plus (Problème avec le package)
 - [ ] [custom] Faire une fonction custom delete backward or region
       C-w doit appeler clean-aindent--bsunindent ou "whole-line-or-region-kill-region"
 

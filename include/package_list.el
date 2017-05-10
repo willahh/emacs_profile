@@ -8,6 +8,7 @@
   wgrep
   wgrep-ag
   iedit
+  hydra
 
   ;; back-button
 
