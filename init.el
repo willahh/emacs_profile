@@ -194,3 +194,9 @@
 (setq x-select-enable-primary nil)  ; stops killing/yanking interacting with primary X11 selection
 (setq x-select-enable-clipboard t)  ; makes killing/yanking interact with clipboard X11 selection
 (put 'scroll-left 'disabled nil)
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:background "#212121")))))
