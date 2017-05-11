@@ -122,7 +122,8 @@
 ;; Update : az ne peut pas etre utilise car trop fréquemment utilisé ("localization", ...)
 (key-chord-define-global "qs" 'avy-goto-word-1-below)
 ;; (global-set-key (kbd "C-;") 'avy-goto-word-or-subword-1)
-(global-set-key (kbd "C-c j") 'avy-goto-word-or-subword-1)
+;; (global-set-key (kbd "C-c j") 'avy-goto-word-or-subword-1)
+(global-set-key (kbd "C-c j") 'avy-goto-char-2)
 
 ;; (key-chord-define-global "xc" 'er/expand-region)
 ;; (key-chord-define-global "wx" 'er/contract-region)

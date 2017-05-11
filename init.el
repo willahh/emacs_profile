@@ -49,16 +49,16 @@
 ;; Update : Besoin d ajouter des hook pour certains mode
 ;; Je n ai pas reussis a setter cette propriete de maniere globale
 
-(defun update-syntax-entry ()
-      (modify-syntax-entry ?_ "w")
-)
-(update-syntax-entry)
+;; (defun update-syntax-entry ()
+;;       (modify-syntax-entry ?_ "w")
+;; )
+;; (update-syntax-entry)
 
-(add-hook 'web-mode-hook (lambda () (update-syntax-entry)))
-(add-hook 'emacs-lisp-mode (lambda () (update-syntax-entry)))
-(add-hook 'php-mode-hook (lambda () (update-syntax-entry)))
-(add-hook 'css-mode-hook (lambda () (update-syntax-entry)))
-(add-hook 'js2-mode-hook (lambda () (update-syntax-entry)))
+;; (add-hook 'web-mode-hook (lambda () (update-syntax-entry)))
+;; (add-hook 'emacs-lisp-mode (lambda () (update-syntax-entry)))
+;; (add-hook 'php-mode-hook (lambda () (update-syntax-entry)))
+;; (add-hook 'css-mode-hook (lambda () (update-syntax-entry)))
+;; (add-hook 'js2-mode-hook (lambda () (update-syntax-entry)))
 
 
 ;; -------------- custom-set-variables
@@ -114,12 +114,12 @@
  '(vc-annotate-very-old-color nil)
  '(yas-global-mode t))
 
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:background "#212121")))))
+;; (custom-set-faces
+;;  ;; custom-set-faces was added by Custom.
+;;  ;; If you edit it by hand, you could mess it up, so be careful.
+;;  ;; Your init file should contain only one such instance.
+;;  ;; If there is more than one, they won't work right.
+;;  '(default ((t (:background "#212121")))))
 
 
 
@@ -132,35 +132,39 @@
 
 
 
- ;; Override : Add recenter command at the end
- ;; @todo Voir pour surcharger sans reecrire toute la fonction de base
- ;; Voir advice https://www.gnu.org/software/emacs/manual/html_node/elisp/Advising-Functions.html
-(defun highlight-symbol-jump (dir)
-  "Jump to the next or previous occurence of the symbol at point.
-DIR has to be 1 or -1."
-  (let ((symbol (highlight-symbol-get-symbol)))
-    (if symbol
-        (let* ((case-fold-search nil)
-               (msg (member 'navigation highlight-symbol-occurrence-message))
-               (bounds (bounds-of-thing-at-point 'symbol))
-               (offset (- (point) (if (< 0 dir) (cdr bounds) (car bounds)))))
-          (unless (eq last-command 'highlight-symbol-jump)
-            (push-mark))
-          ;; move a little, so we don't find the same instance again
-          (goto-char (- (point) offset))
-          (let ((target (re-search-forward symbol nil t dir)))
-            (unless target
-              (goto-char (if (< 0 dir) (point-min) (point-max)))
-              (unless msg
-                (message "Continued from beginning of buffer"))
-              (setq target (re-search-forward symbol nil nil dir)))
-            (goto-char (+ target offset)))
-          (when msg
-            (highlight-symbol-count symbol t))
-          (setq this-command 'highlight-symbol-jump)
-          (recenter)
-          )
-      (error "No symbol at point"))))
+;; Override : Add recenter command at the end
+;; @todo Voir pour surcharger sans reecrire toute la fonction de base
+;; Voir advice https://www.gnu.org/software/emacs/manual/html_node/elisp/Advising-Functions.html
+;;
+;; Update : L'auto recentrage apres un highlight n'est pas toujours
+;; agreable, desactivation
+;;
+;; (defun highlight-symbol-jump (dir)
+;;   "Jump to the next or previous occurence of the symbol at point.
+;; DIR has to be 1 or -1."
+;;   (let ((symbol (highlight-symbol-get-symbol)))
+;;     (if symbol
+;;         (let* ((case-fold-search nil)
+;;                (msg (member 'navigation highlight-symbol-occurrence-message))
+;;                (bounds (bounds-of-thing-at-point 'symbol))
+;;                (offset (- (point) (if (< 0 dir) (cdr bounds) (car bounds)))))
+;;           (unless (eq last-command 'highlight-symbol-jump)
+;;             (push-mark))
+;;           ;; move a little, so we don't find the same instance again
+;;           (goto-char (- (point) offset))
+;;           (let ((target (re-search-forward symbol nil t dir)))
+;;             (unless target
+;;               (goto-char (if (< 0 dir) (point-min) (point-max)))
+;;               (unless msg
+;;                 (message "Continued from beginning of buffer"))
+;;               (setq target (re-search-forward symbol nil nil dir)))
+;;             (goto-char (+ target offset)))
+;;           (when msg
+;;             (highlight-symbol-count symbol t))
+;;           (setq this-command 'highlight-symbol-jump)
+;;           (recenter)
+;;           )
+;;       (error "No symbol at point"))))
 
 ;; (defun my-highlight-symbol-jump (dir)
 ;;   (recenter))
@@ -168,8 +172,8 @@ DIR has to be 1 or -1."
 ;; (add-function :after (highlight-symbol-jump dir) #'my-highlight-symbol-jump)
 
 
-(put 'upcase-region 'disabled nil)
-(put 'downcase-region 'disabled nil)
+;; (put 'upcase-region 'disabled nil)
+;; (put 'downcase-region 'disabled nil)
 
 
 

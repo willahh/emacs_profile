@@ -842,3 +842,40 @@ That is, a string used to represent it on the tab bar."
 ;;   ;; (other-window)
 ;; )
 
+
+;; 
+;; http://stackoverflow.com/a/14539202
+;; (defun unpop-to-mark-command ()
+;;   "Unpop off mark ring. Does nothing if mark ring is empty."
+;;   (interactive)
+;;       (when mark-ring
+;;         (setq mark-ring (cons (copy-marker (mark-marker)) mark-ring))
+;;         (set-marker (mark-marker) (car (last mark-ring)) (current-buffer))
+;;         (when (null (mark t)) (ding))
+;;         (setq mark-ring (nbutlast mark-ring))
+;;         (goto-char (marker-position (car (last mark-ring))))))
+
+
+;; http://stackoverflow.com/a/3399064/8000017
+(defmacro my-unpop-to-mark-advice ()
+  "Enable reversing direction with un/pop-to-mark."
+  `(defadvice ,(key-binding (kbd "C-SPC")) (around my-unpop-to-mark activate)
+     "Unpop-to-mark with negative arg"
+     (let* ((arg (ad-get-arg 0))
+            (num (prefix-numeric-value arg)))
+       (cond
+        ;; Enabled repeated un-pops with C-SPC
+        ((eq last-command 'unpop-to-mark-command)
+         (if (and arg (> num 0) (<= num 4))
+             ad-do-it ;; C-u C-SPC reverses back to normal direction
+           ;; Otherwise continue to un-pop
+           (setq this-command 'unpop-to-mark-command)
+           (unpop-to-mark-command)))
+        ;; Negative argument un-pops: C-- C-SPC
+        ((< num 0)
+         (setq this-command 'unpop-to-mark-command)
+         (unpop-to-mark-command))
+        (t
+         ad-do-it)))))
+         
+(my-unpop-to-mark-advice)
