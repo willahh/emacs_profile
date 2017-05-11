@@ -197,7 +197,7 @@
 ;; Buffer
 (global-set-key [(meta shift n)] 'evil-buffer-new)
 (global-set-key (kbd "C-c C-k") 'kill-this-buffer)
-(define-key markdown-mode-map (kbd "C-c C-k") 'kill-this-buffer)
+(define-key global-map (kbd "C-x k") 'kill-this-buffer)
 
 ;; ---------------- Dired
 (define-key dired-mode-map (kbd "<tab>") 'dired-find-file)
@@ -324,8 +324,8 @@
 
 ;; Undo redo
 ;; Update : Use default binding
-(global-set-key [(meta z)] 'undo-tree-undo)
-(global-set-key [(meta shift z)] 'undo-tree-redo)
+;; (global-set-key [(meta z)] 'undo-tree-undo)
+;; (global-set-key [(meta shift z)] 'undo-tree-redo)
 
 (global-set-key [C-M-tab] 'other-window)
 (global-set-key [C-M-S-tab] 'previous-multiframe-window)
