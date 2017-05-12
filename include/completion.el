@@ -71,6 +71,8 @@
 ;; (setq company-idle-delay 0.3) ;; Impossible, trop lent, il faut l activer pour CSS only
 (setq company-idle-delay 0.3)
 
+
+
 ;; Idle delay a 0 en mode css
 ;; Il est possible que cette partie ne fonctionne pas bien
 ;; et empeche l'utilisation de emmet en mode css
@@ -118,7 +120,9 @@
 ;; company-tern
 ;; Add tern support for company
 (require 'company-tern)
-(add-to-list 'company-backends 'company-tern)
+(add-hook 'tern-mode-hook
+          (lambda ()
+            (add-to-list 'company-backends 'company-tern)))
 
 
 (require 'company-web)

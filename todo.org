@@ -1,9 +1,4 @@
 * todo
-** Resources
-  https://github.com/epsil
-  https://github.com/djangoliv/conf
-  https://github.com/hlissner/.emacs.d
-
 ** Utils
 - evil mode : ":new file.extension" -> Create new buffer/file/window
 - evil mode : "gf" ("go to file")
@@ -22,8 +17,11 @@
 
 - Typescript ide mode
   - Make sure tsconfig.json or jsconfig.json is present in the root folder of the project.
-
-** Notes :
+*** Links
+  https://github.com/epsil
+  https://github.com/djangoliv/conf
+  https://github.com/hlissner/.emacs.d
+*** Notes :
 - [ ] Voir https://github.com/NicolasPetton/Indium
   Javascript connexion to current browser, inspector, debugger etc
 
@@ -37,12 +35,15 @@ http://ecb.sourceforge.net/
 https://www.youtube.com/watch?v=KoRNCrx9pak
 
 ** Bloquant
+- [ ] Il n'y a plus de hightlight du même symbole
+- [ ] [css-mode] L'édition css n'est pas très pratique, il faudrait :
+     - [ ] Completion css instantannée
+     - [ ] Emmet doit fonctionner
 - [ ] [diff-hl] Ne fonctionne plus (Problème avec le package)
 - [ ] [paredit] Lorsque l'on saisie une parenthèse, un espace vient s'ajouter avant celle-ci, il faut bloquer ça
 - [ ] [doc-block] La fonction custom doc bloc ne fonctionne pas ni en php-mode
       ni en typescript mode
 
-  
 ** A ranger
 - [ ] [dired] Rename file : Possibilité de préciser un chemin contenant des dossiers
       N'existant pas, ces dossier seront créés automatiquement à la validation
@@ -94,7 +95,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [ivy] : Ne pas mettre les fichiers .svn dans la liste
 - [ ] [plugin] [change inner] Ajoute rl'option Change Inner Tag
 
-** Majeure
+** Majeur
 - [ ] [el-doc] Voir pour integrer une popin comme sur les IDE moderne
 - [ ] Integrer hydra and ace window  https://www.youtube.com/watch?v=_qZliI1BKzI
 - [ ] [php-mode] Autocompletion, ajouter les entrés du buffer courant dans la liste des completions
@@ -225,7 +226,6 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] Markdown in white theme
 - [ ] git-svn
   
-
 ** Corrige
 - [x] [M-n] Hightlight-new-occurence in elisp files
 - [x] [Emacs-Lisp] [Hight light mode nav]
@@ -602,3 +602,5 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 Bonobo – Duals
 verdin - forgotten memories
+
+

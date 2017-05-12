@@ -199,6 +199,7 @@
 (global-set-key [(meta shift n)] 'evil-buffer-new)
 (global-set-key (kbd "C-c C-k") 'kill-this-buffer)
 (define-key global-map (kbd "C-x k") 'kill-this-buffer)
+(define-key global-map (kbd "C-x C-r") 'revert-buffer-no-confirm)
 
 ;; ---------------- Dired
 (define-key dired-mode-map (kbd "<tab>") 'dired-find-file)
@@ -271,13 +272,17 @@
 ;; (global-set-key (kbd "M-/") 'end-of-buffer) ;; Meta + > on US Keyboard
 ;; (global-set-key (kbd "M-/") 'evilnc-comment-or-uncomment-lines)
 
-;; swoop
+;; org
 (require 'org)
+(define-key org-mode-map (kbd "C-x C-i") 'helm-org-in-buffer-headings)
+
+;; swoop
 (global-set-key (kbd "C-c C-s") 'helm-swoop)
 (define-key js2-mode-map (kbd "C-c C-s") 'helm-swoop)
 (define-key php-mode-map (kbd "C-c C-s") 'helm-swoop)
 (define-key web-mode-map (kbd "C-c C-s") 'helm-swoop)
 (define-key markdown-mode-map (kbd "C-c C-s") 'helm-swoop)
+
 
 (require 'conf-mode)
 (define-key conf-mode-map (kbd "C-c C-s") 'helm-swoop)
@@ -430,7 +435,8 @@
 
 ;; Emmet
 ;; (global-set-key (kbd "é") 'emmet-expand-line) ;; ALT + j
-(global-set-key (kbd "C-c k") 'emmet-expand-line)
+;; (global-set-key (kbd "C-c k") 'emmet-expand-line)
+(global-set-key (kbd "C-c TAB") 'emmet-expand-line)
 ;; (define-key emmet-mode-keymap "é" 'emmet-expand-line)
 ;; (define-key web-mode-map "é" 'emmet-expand-line)
 ;; (define-key emmet-mode-keymap "C-c RET" 'emmet-expand-line)
