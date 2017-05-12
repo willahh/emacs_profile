@@ -37,13 +37,12 @@ http://ecb.sourceforge.net/
 https://www.youtube.com/watch?v=KoRNCrx9pak
 
 ** Bloquant
-- [ ] Integrer hydra and ace window  https://www.youtube.com/watch?v=_qZliI1BKzI
+- [ ] [diff-hl] Ne fonctionne plus (Problème avec le package)
+- [ ] [paredit] Lorsque l'on saisie une parenthèse, un espace vient s'ajouter avant celle-ci, il faut bloquer ça
 - [ ] [doc-block] La fonction custom doc bloc ne fonctionne pas ni en php-mode
       ni en typescript mode
-- [ ] [diff-hl] Ne fonctionne plus (Problème avec le package)
-- [ ] [custom] Faire une fonction custom delete backward or region
-      C-w doit appeler clean-aindent--bsunindent ou "whole-line-or-region-kill-region"
 
+  
 ** A ranger
 - [ ] [dired] Rename file : Possibilité de préciser un chemin contenant des dossiers
       N'existant pas, ces dossier seront créés automatiquement à la validation
@@ -95,7 +94,14 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [ivy] : Ne pas mettre les fichiers .svn dans la liste
 - [ ] [plugin] [change inner] Ajoute rl'option Change Inner Tag
 
-** Majeur
+** Majeure
+- [ ] [el-doc] Voir pour integrer une popin comme sur les IDE moderne
+- [ ] Integrer hydra and ace window  https://www.youtube.com/watch?v=_qZliI1BKzI
+- [ ] [php-mode] Autocompletion, ajouter les entrés du buffer courant dans la liste des completions
+- [ ] [custom] Faire une fonction custom delete backward or region
+      C-w doit appeler clean-aindent--bsunindent ou "whole-line-or-region-kill-region"
+
+
 - [ ] [dired] delete folder very slow
 - [ ] [IMPORTANT] Fonction get file name to clipboard (très utilisé)
 - [ ] [vc-dir] Faire une fonction pour activer un vc-version-diff avec les paramètres older revision : "base", newer revision : "head"
