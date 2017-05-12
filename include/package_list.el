@@ -11,6 +11,7 @@
   hydra
   paredit
   paredit-everywhere
+  syslog-mode
 
   ;; back-button
 

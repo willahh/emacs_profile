@@ -814,7 +814,7 @@ That is, a string used to represent it on the tab bar."
 (defun new-line-and-indent-for-tab ()
   (interactive)
   (autopair-newline)
-  (indent-for-tab-command)
+  (indent-for-tab-command))
 
 
 ;; ----------------------------
