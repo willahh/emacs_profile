@@ -278,9 +278,11 @@
 (define-key php-mode-map (kbd "C-c C-s") 'helm-swoop)
 (define-key web-mode-map (kbd "C-c C-s") 'helm-swoop)
 (define-key markdown-mode-map (kbd "C-c C-s") 'helm-swoop)
+
+(require 'conf-mode)
 (define-key conf-mode-map (kbd "C-c C-s") 'helm-swoop)
 
-;; (define-key conf-space-mode-map (kbd "C-c C-s") 'helm-swoop)
+(define-key conf-space-mode-map (kbd "C-c C-s") 'helm-swoop)
 
 ;; Swiper
 (global-set-key (kbd "C-c C-p") 'swiper)

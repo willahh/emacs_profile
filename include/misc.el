@@ -354,3 +354,20 @@ _n_: Navigate           _._: mark position _/_: jump to mark
 
 (add-hook 'auto-revert-tail-mode-hook 'etc-log-tail-handler)
 
+
+
+
+
+
+
+
+
+
+;; (require 'visible-mark)
+;; (global-visible-mark-mode 1)
+
+;; (defface visible-mark-active ;; put this before (require 'visible-mark)
+;;   '((((type tty) (class mono)))
+;;     (t (:background "magenta"))) "")
+;; (setq visible-mark-max 2)
+;; (setq visible-mark-faces `(visible-mark-face1 visible-mark-face2))
