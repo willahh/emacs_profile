@@ -81,7 +81,7 @@
  '(helm-ag-insert-at-point (quote symbol))
  '(helm-source-names-using-follow
  (quote
-  ("Search at ~/.emacs.d/elpa/expand-region-20170222.343/" "mark-ring" "global-mark-ring" "Search at ~/.emacs.d_ergoemacs/" "Search at ~/www/projects_other/pnpm/src/" "Search at ~/.emacs.d_hlissner/" "Search at ~/www/project/arsia/arsia_standard_310/mediadata/src/app/" "Search at ~/.emacs.d/include/" "Search at ~/.emacs.d/" "Imenu")))
+  ("Recentf" "Search at ~/.emacs.d/elpa/expand-region-20170222.343/" "mark-ring" "global-mark-ring" "Search at ~/.emacs.d_ergoemacs/" "Search at ~/www/projects_other/pnpm/src/" "Search at ~/.emacs.d_hlissner/" "Search at ~/www/project/arsia/arsia_standard_310/mediadata/src/app/" "Search at ~/.emacs.d/include/" "Search at ~/.emacs.d/" "Imenu")))
  '(ido-enable-flex-matching t)
  '(magit-dispatch-arguments nil)
  '(org-agenda-files (quote ("~/Documents/utils/Notes/todo.org")))

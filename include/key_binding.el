@@ -124,8 +124,8 @@
 ;; (global-set-key (kbd "C-;") 'avy-goto-word-or-subword-1)
 (global-set-key (kbd "C-c j") 'avy-goto-word-or-subword-1)
 
-;; (key-chord-define-global "xc" 'er/expand-region)
-;; (key-chord-define-global "wx" 'er/contract-region)
+(key-chord-define-global "xc" 'er/expand-region)
+(key-chord-define-global "wx" 'er/contract-region)
 
 (key-chord-define-global "ji" 'ace-window) ;; cannot be jk (vim up/right)
 (key-chord-define-global ";:" 'highlight-symbol-mode)
@@ -208,8 +208,8 @@
 
 
 ;; (define-key dired-mode-map [(command shift n)] 'mkdir)
-(define-key dired-mode-map (kbd "M-N") 'mkdir)
-(define-key dired-mode-map (kbd "M-n") 'evil-buffer-new)
+(define-key dired-mode-map (kbd "M-N") 'evil-buffer-new)
+(define-key dired-mode-map (kbd "M-n") 'mkdir)
 
 
 ;; Multi cursor stuf
@@ -449,9 +449,10 @@
 (define-key global-map (kbd "C-c C-r") 'helm-recentf)
 (define-key php-mode-map (kbd "C-c C-r") 'helm-recentf)
 
-;; (global-set-key [(command shift w)] 'delete-window)
 (global-set-key (kbd "M-0") 'delete-window) ;; M-0
 (define-key diff-mode-map (kbd "M-0") 'delete-window)
+;; (global-set-key [(command shift w)] 'delete-window)
+(global-set-key (kbd "M-W") 'delete-window)
 
 (global-set-key (kbd "M-1") 'delete-other-windows) ;; M-1
 (define-key diff-mode-map (kbd "M-1") 'delete-other-windows)
@@ -498,3 +499,5 @@
 
 ;; google
 (global-set-key (kbd "C-c / j") 'helm-google-suggest)
+(define-key google-this-mode-map (kbd "C-c / t") 'google-translate-at-point)
+
