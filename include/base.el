@@ -91,6 +91,10 @@
 ;; -----
 (setq transient-mark-mode 1)
 
+;; Permet de naviguer via le mark ring en faisant C-u C-SPC une fois, puis C-SPC C-SPC..
+;; au lieu de C-u C-SPC C-u C-SPC C-u C-SPC ...
+(setq set-mark-command-repeat-pop t)
+
 ;; Show matching parenthesis
 (show-paren-mode)
 

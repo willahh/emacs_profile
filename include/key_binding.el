@@ -122,7 +122,8 @@
 ;; Update : az ne peut pas etre utilise car trop fréquemment utilisé ("localization", ...)
 (key-chord-define-global "qs" 'avy-goto-word-1-below)
 ;; (global-set-key (kbd "C-;") 'avy-goto-word-or-subword-1)
-(global-set-key (kbd "C-c j") 'avy-goto-word-or-subword-1)
+;; (global-set-key (kbd "C-c j") 'avy-goto-word-or-subword-1)
+(global-set-key (kbd "C-c j") 'avy-goto-char-2)
 
 (key-chord-define-global "xc" 'er/expand-region)
 (key-chord-define-global "wx" 'er/contract-region)
@@ -197,7 +198,7 @@
 ;; Buffer
 (global-set-key [(meta shift n)] 'evil-buffer-new)
 (global-set-key (kbd "C-c C-k") 'kill-this-buffer)
-(define-key markdown-mode-map (kbd "C-c C-k") 'kill-this-buffer)
+(define-key global-map (kbd "C-x k") 'kill-this-buffer)
 
 ;; ---------------- Dired
 (define-key dired-mode-map (kbd "<tab>") 'dired-find-file)
@@ -324,8 +325,8 @@
 
 ;; Undo redo
 ;; Update : Use default binding
-(global-set-key [(meta z)] 'undo-tree-undo)
-(global-set-key [(meta shift z)] 'undo-tree-redo)
+;; (global-set-key [(meta z)] 'undo-tree-undo)
+;; (global-set-key [(meta shift z)] 'undo-tree-redo)
 
 (global-set-key [C-M-tab] 'other-window)
 (global-set-key [C-M-S-tab] 'previous-multiframe-window)

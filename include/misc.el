@@ -319,3 +319,38 @@ _n_: Navigate           _._: mark position _/_: jump to mark
 ;; (global-set-key (kbd "C-S-s") 'goto/body)
 (global-set-key (kbd "C-S-s") 'avy-goto-char-in-line)
 
+
+
+
+
+;; sy
+(require 'syslog-mode)
+
+;; https://emacs.stackexchange.com/a/13010
+(defun etc-log-tail-handler ()
+  (end-of-buffer)
+  (make-variable-buffer-local 'auto-revert-interval)
+  (setq auto-revert-interval 1)
+  (auto-revert-set-timer)
+  (make-variable-buffer-local 'auto-revert-verbose)
+  (setq auto-revert-verbose nil)
+  (read-only-mode t)
+  (font-lock-mode 0)
+  (when (fboundp 'show-smartparens-mode)
+    (show-smartparens-mode 0))
+  (syslog-mode)
+  (editorconfig-mode 0)
+  (yas-global-mode 0)
+  (yas-minor-mode 0)
+  (company-mode 0)
+  (google-this-mode 0)
+  (evil-snipe-mode 0)
+  (ivy-mode 0))
+
+;; automagically tail log files
+(add-to-list 'auto-mode-alist '("\\`/log/" . auto-revert-tail-mode))
+(add-to-list 'auto-mode-alist '("\\.log\\'" . auto-revert-tail-mode))
+(add-to-list 'auto-mode-alist '("/var/log.*\\'" . auto-revert-tail-mode))
+
+(add-hook 'auto-revert-tail-mode-hook 'etc-log-tail-handler)
+

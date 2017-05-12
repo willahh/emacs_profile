@@ -815,30 +815,82 @@ That is, a string used to represent it on the tab bar."
   (interactive)
   (autopair-newline)
   (indent-for-tab-command)
-)
 
 
+;; ----------------------------
+;; Move forward and backward between mark ring
+;; ----------------------------
+;; http://stackoverflow.com/a/14539202
+(defun unpop-to-mark-command ()
+  "Unpop off mark ring. Does nothing if mark ring is empty."
+  (interactive)
+      (when mark-ring
+        (setq mark-ring (cons (copy-marker (mark-marker)) mark-ring))
+        (set-marker (mark-marker) (car (last mark-ring)) (current-buffer))
+        (when (null (mark t)) (ding))
+        (setq mark-ring (nbutlast mark-ring))
+        (goto-char (marker-position (car (last mark-ring))))))
 
-;; (defun env-typescript ()
-;;   (interactive)
+;; http://stackoverflow.com/a/3399064/8000017
+(defmacro my-unpop-to-mark-advice ()
+  "Enable reversing direction with un/pop-to-mark."
+  `(defadvice ,(key-binding (kbd "C-SPC")) (around my-unpop-to-mark activate)
+     "Unpop-to-mark with negative arg"
+     (let* ((arg (ad-get-arg 0))
+            (num (prefix-numeric-value arg)))
+       (cond
+        ;; Enabled repeated un-pops with C-SPC
+        ((eq last-command 'unpop-to-mark-command)
+         (if (and arg (> num 0) (<= num 4))
+             ad-do-it ;; C-u C-SPC reverses back to normal direction
+           ;; Otherwise continue to un-pop
+           (setq this-command 'unpop-to-mark-command)
+           (unpop-to-mark-command)))
+        ;; Negative argument un-pops: C-- C-SPC
+        ((< num 0)
+         (setq this-command 'unpop-to-mark-command)
+         (unpop-to-mark-command))
+        (t
+         ad-do-it)))))
+         
+(my-unpop-to-mark-advice)
 
-;;   ;; Left window
-;;   (projectile-dired)
 
-;;   ;; Right top window
-;;   (split-window-right)
-;;   (other-window 1)
-;;   (tide-mode)
-;;   (tide-project-errors-mode)
+;; ----------------------------
+;; Deplacement entre les global mark ring, ne fonctionne pas bien
+;; ----------------------------
+(defun marker-is-point-p (marker)
+  "test if marker is current point"
+  (and (eq (marker-buffer marker) (current-buffer))
+       (= (marker-position marker) (point))))
 
-;;   ;; RIght bottom window
-;;   (split-window-below)
-;;   (other-window 1)
-;;   (magit-status)
+(defun push-mark-maybe () 
+  "push mark onto `global-mark-ring' if mark head or tail is not current location"
+  (if (not global-mark-ring) (error "global-mark-ring empty")
+    (unless (or (marker-is-point-p (car global-mark-ring))
+                (marker-is-point-p (car (reverse global-mark-ring))))
+      (push-mark))))
 
-;;   ;; (other-window)
-;;   ;; (vc-dir)
 
-;;   ;; (other-window)
-;; )
+(defun backward-global-mark () 
+  "use `pop-global-mark', pushing current point if not on ring."
+  (interactive)
+  (push-mark-maybe)
+  (when (marker-is-point-p (car global-mark-ring))
+    (call-interactively 'pop-global-mark))
+  (call-interactively 'pop-global-mark))
+
+(defun forward-global-mark ()
+  "hack `pop-global-mark' to go in reverse, pushing current point if not on ring."
+  (interactive)
+  (push-mark-maybe)
+  (setq global-mark-ring (nreverse global-mark-ring))
+  (when (marker-is-point-p (car global-mark-ring))
+    (call-interactively 'pop-global-mark))
+  (call-interactively 'pop-global-mark)
+  (setq global-mark-ring (nreverse global-mark-ring)))
+
+(global-set-key [M-left] (quote backward-global-mark))
+(global-set-key [M-right] (quote forward-global-mark))
+
 
