@@ -233,10 +233,15 @@
 
 ;; Line operations
 (global-set-key (kbd "C-x C-d") 'duplicate-current-line-or-region)
-(global-set-key (kbd "C-M-J") 'drag-stuff-down)
-(global-set-key (kbd "C-M-k") 'drag-stuff-up)
-(define-key php-mode-map (kbd "C-M-J") 'drag-stuff-down) ;; override php mode map cmj
 
+;; (global-set-key (kbd "C-M-J") 'drag-stuff-down)
+;; (global-set-key (kbd "C-M-k") 'drag-stuff-up)
+;; (define-key php-mode-map (kbd "C-M-J") 'drag-stuff-down) ;; override php mode map cmj
+
+(global-set-key (kbd "<C-S-268632074>") 'drag-stuff-up) ;; control+alt+shiftj
+(global-set-key (kbd "<C-268632074>") 'drag-stuff-down) ;; control+alt+j
+
+;; (global-set-key [control meta k] 'drag-stuff-up)
 ;; Helm
 (global-set-key (kbd "M-x") 'helm-M-x)
 ;; (global-set-key (kbd "C-x C-m") 'helm-M-x)
@@ -395,9 +400,9 @@
 (global-set-key (kbd "C-c f") 'iy-go-to-char)
 (global-set-key (kbd "C-c F") 'iy-go-to-char-backward)
 
-;; change-inner like VIM ci
-(global-set-key (kbd "M-i") 'change-inner)
-(global-set-key (kbd "M-o") 'change-outer)
+;; ;; change-inner like VIM ci
+;; (global-set-key (kbd "M-i") 'change-inner)
+;; (global-set-key (kbd "M-o") 'change-outer)
 
 ;; Transpose stuff with M-t
 (global-unset-key (kbd "M-t")) ;; which used to be transpose-words
@@ -440,7 +445,6 @@
 ;; Emmet
 ;; (global-set-key (kbd "é") 'emmet-expand-line) ;; ALT + j
 ;; (global-set-key (kbd "C-c k") 'emmet-expand-line)
-(global-set-key (kbd "C-c TAB") 'emmet-expand-line)
 ;; (define-key emmet-mode-keymap "é" 'emmet-expand-line)
 ;; (define-key web-mode-map "é" 'emmet-expand-line)
 ;; (define-key emmet-mode-keymap "C-c RET" 'emmet-expand-line)
@@ -448,7 +452,12 @@
 ;;           (lambda ()
 ;;             (define-key emmet-mode-keymap "C-c RET" 'emmet-expand-line)))
 
-(define-key web-mode-map "C-c C-j" 'emmet-expand-line)
+;; (global-set-key (kbd "C-c TAB") 'emmet-expand-line)
+;; (define-key web-mode-map "C-c C-j" 'emmet-expand-line)
+
+(global-set-key [control command shift j] 'emmet-expand-line)
+(define-key web-mode-map [control command shift j] 'emmet-expand-line)
+(define-key web-mode-map (kbd "C-M-S-j") 'emmet-expand-line)
 
 (require 'nxml-mode)
 (define-key global-map (kbd "C-x RET") 'dired-jump)

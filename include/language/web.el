@@ -15,7 +15,7 @@
               (if (null company-candidates)
                   (progn
                     (company-abort)
-                    (emmet-expand-line nil)
+                    (message web-mode-engine)
                     (indent-for-tab-command)))))))))
 
 ;;(require 'html-mode)
@@ -28,6 +28,10 @@
 
             ;; Enable emmet-mode
             (emmet-mode)
+
+            ;; Disable highlight symbol, too slow on web-mode mode
+            ;; highlight-symbol-nav-mode still enabled
+            (highlight-symbol-mode 0)
 
             ;; Company backend
             ;; (set (make-local-variable 'company-backends) '(company-css company-dabbrev))
