@@ -273,7 +273,7 @@
 ;; Some settings from https://github.com/technomancy/better-defaults/blob/master/better-defaults.el
 (progn
 (setq x-select-enable-clipboard t
-        x-select-enable-primary t
+        ;; x-select-enable-primary t
         save-interprogram-paste-before-kill t
         apropos-do-all t
         mouse-yank-at-point t

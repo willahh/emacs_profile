@@ -82,6 +82,9 @@
   ;; color-theme-buffer-local
   dash
   ;;diff-hl
+  
+
+
   doom-themes
   dsvn
   emmet-mode
@@ -186,3 +189,4 @@
 (add-to-list 'load-path "~/.emacs.d/plugins/psvn")
 (add-to-list 'load-path "~/.emacs.d/plugins/simple-httpd")
 (add-to-list 'load-path "~/.emacs.d/plugins/diff-hl")
+(add-to-list 'load-path "~/.emacs.d/plugins/doom-themeoos")

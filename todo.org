@@ -35,14 +35,15 @@ http://ecb.sourceforge.net/
 https://www.youtube.com/watch?v=KoRNCrx9pak
 
 ** Bloquant
-- [ ] [js2-mode] Lorsque l'on saisie une parenthàse, un espace est inséré juste avant, il ne faut surtout pas
-- [ ] [js2-mode] Activer un highlight symbol en temps réel pour ce mode
+- [ ] save recent files history
+- [X] [js2-mode] Lorsque l'on saisie une parenthàse, un espace est inséré juste avant, il ne faut surtout pas
+- [X] [js2-mode] Activer un highlight symbol en temps réel pour ce mode
 - [ ] Il n'y a plus de hightlight du même symbole
 - [X] [css-mode] L'édition css n'est pas très pratique, il faudrait :
   - [X] Completion css instantannée
   - [X] Emmet doit fonctionner
 - [ ] [diff-hl] Ne fonctionne plus (Problème avec le package)
-- [ ] [paredit] Lorsque l'on saisie une parenthèse, un espace vient s'ajouter avant celle-ci, il faut bloquer ça
+- [X] [paredit] Lorsque l'on saisie une parenthèse, un espace vient s'ajouter avant celle-ci, il faut bloquer ça
 - [ ] [doc-block] La fonction custom doc bloc ne fonctionne pas ni en php-mode
       ni en typescript mode
 
