@@ -35,19 +35,27 @@ http://ecb.sourceforge.net/
 https://www.youtube.com/watch?v=KoRNCrx9pak
 
 ** Bloquant
-- [ ] save recent files history
+- [ ] System : bind c-j 
+- [ ] [ffap] Si un seul résultat, go to direct sans demander
+- [X] Sauvegarder automatiquement les fichiers récentes (recentf)
+- [X] [i-search] [key] Ajouter les key suivants : C-h (delete backward)
+- [ ] [doc-block] La fonction custom doc bloc ne fonctionne pas ni en php-mode
+      ni en typescript mode- [ ] [theme] [highlight-symbol] Mettre une couleur moins flashy
+- [ ] [theme] [highlight-symbol] Peut fonctionner avec hl-line si bien configuré (fonctionne bien avec le thème leuven)
+- [ ] [theme] [ediff] Trouver comment avoir les bons code couleurs, les couleurs parfaitement implémentées avec avec le thème leuven
+- [ ] Associer les fichiers .htaccess au mode conf-mode
 - [X] [js2-mode] Lorsque l'on saisie une parenthàse, un espace est inséré juste avant, il ne faut surtout pas
 - [X] [js2-mode] Activer un highlight symbol en temps réel pour ce mode
-- [ ] Il n'y a plus de hightlight du même symbole
+- [X] Il n'y a plus de hightlight du même symbole
 - [X] [css-mode] L'édition css n'est pas très pratique, il faudrait :
   - [X] Completion css instantannée
   - [X] Emmet doit fonctionner
 - [ ] [diff-hl] Ne fonctionne plus (Problème avec le package)
 - [X] [paredit] Lorsque l'on saisie une parenthèse, un espace vient s'ajouter avant celle-ci, il faut bloquer ça
-- [ ] [doc-block] La fonction custom doc bloc ne fonctionne pas ni en php-mode
-      ni en typescript mode
 
+  
 ** A ranger
+- [ ] Save recent files history
 - [ ] [dired] Rename file : Possibilité de préciser un chemin contenant des dossiers
       N'existant pas, ces dossier seront créés automatiquement à la validation
 - [ ] Ajouter des bind system sur C-h et C-w C-w https://blog.sensible.io/2012/10/19/mac-os-x-emacs-style-keybindings-everywhere.html

@@ -238,7 +238,7 @@
 ;; (global-set-key (kbd "C-M-k") 'drag-stuff-up)
 ;; (define-key php-mode-map (kbd "C-M-J") 'drag-stuff-down) ;; override php mode map cmj
 
-(global-set-key (kbd "<C-S-268632074>") 'drag-stuff-up) ;; control+alt+shiftj
+(global-set-key (kbd "<C-S-268632074>") 'drag-stuff-up) ;; control+alt+shift+j
 (global-set-key (kbd "<C-268632074>") 'drag-stuff-down) ;; control+alt+j
 
 ;; (global-set-key [control meta k] 'drag-stuff-up)
@@ -255,8 +255,8 @@
 
 ;; Sublime Text go to anything
 ;; Update : Utilsation des standards emacs (C-c p f)
-(global-set-key (kbd "C-;") 'projectile-find-file-dwim) ;; (ctrl + ;)
 (global-set-key (kbd "C-c t") 'toggle-truncate-lines)
+(global-set-key (kbd "C-x f") 'projectile-find-file)
 
 ;; Filter buffer / Get buffer definitions
 ;; (global-set-key [(meta r)]  'helm-imenu) ;; command + r
@@ -380,7 +380,11 @@
 ;; (global-set-key (kbd "C-c c s") 'avy-goto-word-or-subword-1)
 ;; (global-set-key (kbd "C-'") 'avy-goto-word-or-subword-1)
 (global-set-key (kbd "C-'") 'avy-goto-char-2)
+
+;; i-search
 (define-key isearch-mode-map (kbd "C-'") 'avy-isearch)
+(define-key isearch-mode-map (kbd "C-h") 'isearch-delete-char)
+(define-key isearch-mode-map (kbd "C-S-j") 'avy-isearch)
 
 ;; Align your code in a pretty way.
 (global-set-key (kbd "C-x \\") 'align-regexp)
@@ -470,6 +474,7 @@
 
 (define-key global-map (kbd "C-c C-r") 'helm-recentf)
 (define-key php-mode-map (kbd "C-c C-r") 'helm-recentf)
+(define-key web-mode-map (kbd "C-c C-r") 'helm-recentf)
 
 (global-set-key (kbd "M-0") 'delete-window) ;; M-0
 (define-key diff-mode-map (kbd "M-0") 'delete-window)
@@ -522,4 +527,9 @@
 ;; google
 (global-set-key (kbd "C-c / j") 'helm-google-suggest)
 (define-key google-this-mode-map (kbd "C-c / t") 'google-translate-at-point)
+
+;; Find file at point
+;; (global-set-key (kbd "C-c .") 'ffap)
+(global-set-key (kbd "C-.") 'ffap)
+(global-set-key (kbd "C-;") 'projectile-find-file-dwim) ;; (ctrl + ;)
 

@@ -348,18 +348,6 @@ _n_: Navigate           _._: mark position _/_: jump to mark
 
 (add-hook 'auto-revert-tail-mode-hook 'etc-log-tail-handler)
 
-
-
-
-
-
-
-
-
-
-;; (require 'visible-mark)
-;; (global-visible-mark-mode 1)
-
 ;; (defface visible-mark-active ;; put this before (require 'visible-mark)
 ;;   '((((type tty) (class mono)))
 ;;     (t (:background "magenta"))) "")
@@ -367,6 +355,25 @@ _n_: Navigate           _._: mark position _/_: jump to mark
 ;; (setq visible-mark-faces `(visible-mark-face1 visible-mark-face2))
 
 
-
 ;; (require 'hl-line+)
 ;; (setq hl-line-overlay-priority -50)
+
+
+;; dumb-jump
+(require 'dumb-jump)
+(add-hook 'prog-mode-hook
+          (interactive)
+
+          (dumb-jump-mode)
+)
+
+
+
+;; recent files
+(require 'recentf)
+(setq recentf-max-saved-items 200
+      recentf-max-menu-items 15)
+
+;; (recentf-mode +1)
+(recentf-mode 1)
+(setq-default recent-save-file "~/.emacs.d/recentf")
