@@ -108,15 +108,6 @@
 
 (setq company-backends (mapcar #'company-mode/backend-with-yas company-backends))
 
-
-
-;; (add-hook 'php-mode-hook
-;;             (lambda ()
-;;               (set (make-local-variable 'company-backends)
-;;                    '((php-extras-company company-dabbrev) company-capf company-files))))
-
-
-
 ;; company-tern
 ;; Add tern support for company
 (require 'company-tern)
@@ -127,16 +118,3 @@
 
 (require 'company-web)
 (require 'company-web-html)
-
-
-
-;; php-extras
-                                        ; (require 'php-extras)
-;; Update : not found in elpa/melpa ?
-
-;; php-completion
-;; (add-hook 'php-mode-hook
-;;           (lambda ()
-;;             (require 'php-completion)
-;;             (php-completion-mode t)
-;;             (define-key php-mode-map (kbd "C-o") 'phpcmp-complete))

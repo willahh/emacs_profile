@@ -29,7 +29,6 @@
 (load-file "~/.emacs.d/include/syntax_checker.el")
 (load-file "~/.emacs.d/include/emmet.el")
 (load-file "~/.emacs.d/include/eclim.el")
-(load-file "~/.emacs.d/include/tags.el")
 (load-file "~/.emacs.d/include/indentation.el")
 (load-file "~/.emacs.d/include/simple_httpd.el")
 (load-file "~/.emacs.d/include/language/typescript.el")
@@ -42,6 +41,7 @@
 (load-file "~/.emacs.d/include/theme-dark.el")
 ;; (load-file "~/.emacs.d/include/theme-light.el")
 (load-file "~/.emacs.d/include/browser.el")
+
 
 ;; Syntax entry for web mode doesnt work actualy
 ;; https://github.com/fxbois/web-mode/issues/149
@@ -84,7 +84,7 @@
  '(helm-ag-insert-at-point (quote symbol))
  '(helm-source-names-using-follow
  (quote
-  ("Recentf" "Search at ~/.emacs.d/elpa/expand-region-20170222.343/" "mark-ring" "global-mark-ring" "Search at ~/.emacs.d_ergoemacs/" "Search at ~/www/projects_other/pnpm/src/" "Search at ~/.emacs.d_hlissner/" "Search at ~/www/project/arsia/arsia_standard_310/mediadata/src/app/" "Search at ~/.emacs.d/include/" "Search at ~/.emacs.d/" "Imenu")))
+  ("Search at ~/.emacs.d/elpa/expand-region-20170222.343/" "mark-ring" "global-mark-ring" "Search at ~/.emacs.d_ergoemacs/" "Search at ~/www/projects_other/pnpm/src/" "Search at ~/.emacs.d_hlissner/" "Search at ~/www/project/arsia/arsia_standard_310/mediadata/src/app/" "Search at ~/.emacs.d/include/" "Search at ~/.emacs.d/" "Imenu")))
  '(ido-enable-flex-matching t)
  '(magit-dispatch-arguments nil)
  '(org-agenda-files (quote ("~/Documents/utils/Notes/todo.org")))

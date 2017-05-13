@@ -17,6 +17,8 @@
       c-indent-new-comment-line
       clean-aindent--bsunindent
       dired-jump
+      drag-stuff-down
+      drag-stuff-up
       duplicate-start-of-line-or-region
       electric-newline-and-maybe-indent
       eval-last-sexp

@@ -1,28 +1,38 @@
-
-
-;; php mode
 (require 'cl)
 (require 'php-mode)
-
-
-;; Rebind php mode map tab to get tab-indent-or-complete like everywhere
-(define-key php-mode-map [tab] #'tab-indent-or-complete)
-(define-key php-mode-map [(meta shift e)] #'forward-sentence)
-
+(require 'ggtags)
+(require 'ac-php)
 
 ;; ac-php
 ;; Update : ac-php en commentaire pour le moment
 ;; Configuration / test de GGtags (semble juste l'outil parfait)
-
-
+;; Non : la completion n'est pas bonne
 
 ;; ;; Add compay-ac-php for company backend
 (add-hook 'php-mode-hook
           (lambda ()
+            ;; ac-php
+            (ac-php-mode)
+
+            ;; Company backend
             (set (make-local-variable 'company-backends) '(company-ac-php-backend))
+
+            ;; el-doc
             (eldoc-mode)
+
+            ;; ac-php
             (ac-php-core-eldoc-setup)
+
+            ;; ggtags-mode
+            (ggtags-mode 1)
+
+            ;; flycheck-mode
+            (flycheck-mode)
             ))
+
+;; Rebind php mode map tab to get tab-indent-or-complete like everywhere
+(define-key php-mode-map [tab] #'tab-indent-or-complete)
+(define-key php-mode-map [(meta shift e)] #'forward-sentence)
 
 
 ;; ;; Add M-. key for jump to definition

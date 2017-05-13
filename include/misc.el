@@ -360,12 +360,11 @@ _n_: Navigate           _._: mark position _/_: jump to mark
 
 
 ;; dumb-jump
-(require 'dumb-jump)
-(add-hook 'prog-mode-hook
-          (interactive)
-
-          (dumb-jump-mode)
-)
+;;(require 'dumb-jump)
+;;(add-hook 'prog-mode-hook
+;;          (interactive)
+;;
+;;          (dumb-jump-mode))
 
 
 

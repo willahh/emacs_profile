@@ -1,3 +1,5 @@
+(require 'ggtags)
+
 ;; key_binding: --- some default / package keybindings
 ;; (dolist (key '("\M-x" "\M-z" "\C-\M-p" "\C-z"))
 (dolist (key '("\M-z" "\C-z"))
@@ -532,4 +534,5 @@
 ;; (global-set-key (kbd "C-c .") 'ffap)
 (global-set-key (kbd "C-.") 'ffap)
 (global-set-key (kbd "C-;") 'projectile-find-file-dwim) ;; (ctrl + ;)
+(define-key php-mode-map [(control .)] 'ffap)
 

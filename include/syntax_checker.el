@@ -33,7 +33,7 @@
 ;; (global-flycheck-mode)
 ;; Update : fonctionel avec flycheck-mode
 (add-hook 'js2-mode-hook 'flycheck-mode)
-(add-hook 'php-mode-hook 'flycheck-mode)
+;; (add-hook 'php-mode-hook 'flycheck-mode) ;; (in php.el)
 (add-hook 'css-mode-hook 'flycheck-mode)
 ;; (add-hook 'web-mode-hook 'flycheck-mode)
 

@@ -7,8 +7,7 @@
 (setq cursor-type 'box)
 
 ;; ------ Override theme
-(custom-set-faces `(default ((t (:background "#212121")))))
-(set-face-attribute 'default nil :foreground "#e6fbfb" :box nil)
+(set-face-attribute 'default nil :background "#212121" :foreground "#e6fbfb" :box nil)
 (set-face-attribute 'fringe nil :background "#212121")
 (set-face-attribute 'fringe nil :background "#212121")
 (set-face-attribute 'linum nil :background "#212121")
@@ -181,8 +180,8 @@
 ;; powerline theme
 (defun powerline-theme-emacs()
   (set-face-attribute 'mode-line nil
-                      :foreground "#fff"
-                      :background "#212121"
+                      :foreground "#000"
+                      :background "#98cf15"
                       :box nil)
 )
 

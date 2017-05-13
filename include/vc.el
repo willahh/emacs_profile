@@ -1,31 +1,6 @@
-
-;; ;;;; Git gutter
+;; Git gutter
 (require 'git-gutter)
-;; ;;
-;; ;;;; If you enable global minor mode
-;; ;; (global-git-gutter-mode t)
 
-;; ;; If you would like to use git-gutter.el and linum-mode
-;; (git-gutter:linum-setup)
-
-;; ;; Use for 'Git'(`git`), 'Mercurial'(`hg`), 'Bazaar'(`bzr`), and 'Subversion'(`svn`) projects
-;; (custom-set-variables
-;;  '(git-gutter:handled-backends '(git hg bzr svn)))
-
-;;  (custom-set-variables
-;;  '(git-gutter:visual-line t))
-
-;; Tentative de recentrer l ecran apres certaines actions
-;; (add-hook 'git-gutter:next-hunk 'recenter)
-;; (add-hook 'git-gutter:post-command-hook 'recenter)
-;; (add-hook 'goto-char 'recenter)
-;; (add-hook 'isearch-mode-end-hook 'recenter)
-;; (add-hook 'isearch-mode-end-hook 'recenter-top-bottom)
-
-
-
-
-;;
 (set-face-background 'git-gutter:modified "#ff7200")
 (set-face-foreground 'git-gutter:modified "#ff7200")
 (set-face-background 'git-gutter:added "#92de37")
@@ -33,13 +8,8 @@
 (set-face-background 'git-gutter:deleted "#f82167")
 (set-face-foreground 'git-gutter:deleted "#f82167")
 
-
-
-
-
 ;; psvn
 (require 'psvn)
-
 
 
 ;; Psvn conf source : http://www.generation-nt.com/reponses/emacs-svn-entraide-3776751.html

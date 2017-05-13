@@ -52,7 +52,7 @@
   php-auto-yasnippets
 
   company-php
-  ;; ac-php
+  ac-php
   php-eldoc
   ; php-extras
   editorconfig

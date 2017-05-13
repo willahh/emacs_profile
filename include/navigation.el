@@ -490,10 +490,7 @@
 ;;paredit
 (require 'paredit)
 (add-hook 'prog-mode-hook 'paredit-mode)
-;; (global-set-key "{" 'paredit-open-curly)
 
-;; (add-hook 'php-mode-hook 'paredit-mode)
-;; (add-hook 'web-mode-hook 'paredit-mode)
 
 ;; (require 'paredit-everywhere)
 ;; (add-hook 'prog-mode-hook 'paredit-everywhere)
