@@ -371,3 +371,8 @@ _n_: Navigate           _._: mark position _/_: jump to mark
 ;;     (t (:background "magenta"))) "")
 ;; (setq visible-mark-max 2)
 ;; (setq visible-mark-faces `(visible-mark-face1 visible-mark-face2))
+
+
+
+;; (require 'hl-line+)
+;; (setq hl-line-overlay-priority -50)

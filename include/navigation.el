@@ -34,6 +34,11 @@
 (require 'highlight-symbol)
 ;; (highlight-symbol-mode 0)
 
+(add-hook 'prog-mode-hook 'highlight-symbol-mode)
+(add-hook 'emacs-lisp-mode 'highlight-symbol-mode)
+(setq highlight-symbol-idle-delay .3)
+
+
 ;; (setq highlight-symbol-idle-delay 0)
 
 (add-hook 'prog-mode-hook 'highlight-symbol-nav-mode)
@@ -492,5 +497,17 @@
 
 ;; (require 'paredit-everywhere)
 ;; (add-hook 'prog-mode-hook 'paredit-everywhere)
+
+
+;; fix pour utilisation de paredit dans des languages autre que du
+;; elisp, lisp (qui sont des languagess fortement bases sur les parentèses.
+;; @todo : Il faut ajouter des tests pour que cette modification soit
+;; effective uniquement sur certains modes http://stackoverflow.com/a/913823
+(defun paredit-space-for-delimiter-p (endp delimiter)
+  (and (not (if endp (eobp) (bobp)))
+       (memq (char-syntax (if endp (char-after) (char-before)))
+             (list ?\"  ;; REMOVED ?w ?_
+                   (let ((matching (matching-paren delimiter)))
+                     (and matching (char-syntax matching)))))))
 
 (require 'avy)

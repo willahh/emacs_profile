@@ -29,10 +29,10 @@
             ;; Enable emmet-mode
             (emmet-mode)
 
-            ;; Compnay backend
+            ;; Company backend
             (set (make-local-variable 'company-backends) '(company-css company-dabbrev))
 
-            ;; Som key binding
+            ;; Some key binding
             ;; (define-key css-mode-map (kbd "<tab>") 'wlh-tab-indent-or-complete-css)
             (define-key css-mode-map [tab] 'wlh-tab-indent-or-complete-css)
             ;; (define-key css-mode-map (kbd "[?\t]") 'wlh-tab-indent-or-complete-css)

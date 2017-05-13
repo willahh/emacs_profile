@@ -145,7 +145,16 @@
  (face-list))
 
 ;; Current line highlight
-(set-face-background 'hl-line "#161616")
+;; Note : La propriete foreground doit etre definie pour avoir une compatibilite
+;; avec highlight-symbol-mode
+;; (set-face-background 'hl-line "#161616")
+;; (set-face-background 'hl-line nil)
+;; (set-face-background 'hl-line "#161616")
+;; (set-face-attribute 'hl-line nil :foreground "#fff" :background "#161616")
+(set-face-attribute 'hl-line nil :foreground nil :background "#161616")
+(set-face-attribute 'hl-line nil :foreground nil :background nil)
+
+;; (set-face-attribute 'hl-line nil :background "#000")
 
 ;; (set-face-attribute 'highlight-symbol-face nil :foreground "#fff" :background "#026a88")
 ;; (set-face-attribute 'highlight-symbol-face nil :foreground "#8fddfb" :background "#212121" :box nil)
@@ -153,7 +162,8 @@
 ;; (set-face-attribute 'highlight-symbol-face nil :foreground "#fff" :background "#e6de00" :box nil :overline nil)
 ;; (set-face-attribute 'highlight-symbol-face nil :foreground "#55fdbd" :background nil :box nil :overline nil)
 ;; (set-face-attribute 'highlight-symbol-face nil :foreground "#fee233" :background nil :box nil :overline nil)
-(set-face-attribute 'highlight-symbol-face nil :foreground "#00deff" :background "#000" :box nil :overline nil)
+;; (set-face-attribute 'highlight-symbol-face nil :foreground "#00deff" :background "#000" :box nil :overline nil)
+(set-face-attribute 'highlight-symbol-face nil :foreground "#000" :background "#56b0ec")
 
 ;; (set-face-attribute 'evil-ex-lazy-highlight nil :foreground "#fff" :background "#212121")
 ;; (set-face-attribute 'evil-ex-lazy-highlight nil :foreground "#000" :background "#5ab1ea")

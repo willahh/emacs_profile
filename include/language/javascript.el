@@ -1,4 +1,3 @@
-
 ;; javascript mode
 (require 'js2-mode)
 
@@ -50,11 +49,79 @@
 
 ;; js2-refactor
 (require 'js2-refactor)
-(add-hook 'js2-mode-hook #'js2-refactor-mode)
+;; (add-hook 'js2-mode-hook #'js2-refactor-mode)
 
 
+(defun whl-js2-mode-hook ()
+  (interactive)
 
+  (message "HOOK baby")
 
+  ;; Fast completion
+  (set (make-local-variable 'company-minimum-prefix-length) 0)
+  ;; (set (make-local-variable 'company-idle-delay) 0)
+  (set (make-local-variable 'company-idle-delay) 0)
+
+  (set (make-local-variable 'paredit-space-for-delimiter-predicates) 0)
+
+  ;; Enable js2-refactor-mode
+  (js2-refactor-mode)
+
+  ;; ;; Enable highlight symbol
+  ;; (highlight-symbol-mode)
+  ;; (set (make-local-variable 'highlight-symbol-idle-delay) .3)
+  ;; (set-face-attribute 'highlight-symbol-face nil :foreground "#000" :background "#56b0ec")
+  ;; (set-face-attribute 'hl-line nil :foreground nil :background nil)
+  
+
+  ;; @todo : terminer le hook suivant :
+  ;; Check si le caret est positionne actuellement dans une zone de commentaire
+  ;; si oui : Il faut mettre un delai a autocomplete-mode,
+  ;; si non : Mettre un delai rapide
+  ;;
+  ;; (add-hook 'post-command-hook
+  ;;           (lambda ()
+  ;;             (if (nth 4 (syntax-ppss)))
+  ;;             ;; (if (< 4 5)
+  ;;                 (message "c est vrai")
+  ;;               (message "C est faux")
+  ;;               ) nil 'make-it-local)
+  
+  ;; Enable tern
+  (tern-mode t))
+
+;; (remove-hook 'js2-mode-hook 'whl-js2-mode-hook)
+(add-hook 'js2-mode-hook 'whl-js2-mode-hook)
+;; (remove-hook 'js2-mode-hook 'whl-js2-mode-hook)
+
+;; (add-hook 'js2-mode-hook
+;;           (lambda ()
+
+;;             ;; Fast completion
+;;             (set (make-local-variable 'company-minimum-prefix-length) 0)
+;;             (set (make-local-variable 'company-idle-delay) 0)
+
+;;             (set (make-local-variable 'paredit-space-for-delimiter-predicates) 0)
+
+;;             ;; Enable js2-refactor-mode
+;;             (js2-refactor-mode)
+
+;;             ;; Enable highlight symbol
+;;             (highlight-symbol-mode)
+;;             (set (make-local-variable 'highlight-symbol-idle-delay) 0)
+;;             (set-face-attribute 'highlight-symbol-face nil :foreground "#000" :background "#56b0ec")
+
+;;             ;; (nth 4 (syntax-ppss))
+
+;;             (add-hook 'post-command-hook
+;;                       (lambda ()
+;;                         (if ((nth 4 (syntax-ppss)))
+;;                             (message "c est vrai")
+;;                             (message "C est faux")
+;;                         ) nil 'make-it-local))
+
+;;             ;; Enable tern
+;;             (tern-mode t))
 
 ;; js-comint
 ;; Javascript live interpreter nice to test regexp on fly
