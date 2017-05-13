@@ -423,6 +423,9 @@
 (global-set-key (kbd "C-=") 'er/expand-region)
 (global-set-key (kbd "C-+") 'er/contract-region)
 
+(global-set-key [(control meta l)] 'er/expand-region)
+(global-set-key [(control meta shift l)] 'er/contract-region)
+
 ;; ---------------- Magit
 (require 'magit)
 

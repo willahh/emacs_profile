@@ -82,11 +82,11 @@
 ;; Show white space
 ;; Source : http://ergoemacs.org/emacs/whitespace-mode.html
 ;; (global-whitespace-mode 1)
-(progn
-  ;; Make whitespace-mode with very basic background coloring for whitespaces.
-  ;; http://ergoemacs.org/emacs/whitespace-mode.html
-  (setq whitespace-style (quote (face spaces tabs newline space-mark tab-mark newline-mark )))
-  )
+;; (progn
+;;   ;; Make whitespace-mode with very basic background coloring for whitespaces.
+;;   ;; http://ergoemacs.org/emacs/whitespace-mode.html
+;;   (setq whitespace-style (quote (face spaces tabs newline space-mark tab-mark newline-mark )))
+;;   )
 
 
 

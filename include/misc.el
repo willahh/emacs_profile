@@ -11,12 +11,6 @@
 
 
 
-;; (setq whitespace-style '(face tabs))
-;; (whitespace-mode)
-
-
-
-
 ;; https://www.emacswiki.org/emacs/LsLispToggleVerbosity
 (defun leo-toggle-ls-lisp-verbosity ()
   (interactive)

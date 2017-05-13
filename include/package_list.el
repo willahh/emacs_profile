@@ -82,7 +82,7 @@
   ;; color-theme-buffer-local
   dash
   ;;diff-hl
-  
+  load-theme-buffer-local
 
 
   doom-themes
