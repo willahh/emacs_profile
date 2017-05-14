@@ -251,7 +251,7 @@
 
 ;; char
 (define-key helm-map (kbd "C-h") 'delete-backward-char)
-(define-key ahelm-map (kbd "C-w") 'clean-aindent--bsunindent)
+(define-key helm-map (kbd "C-w") 'clean-aindent--bsunindent)
 
 (define-key company-active-map (kbd "C-w") 'clean-aindent--bsunindent)
 (define-key company-active-map (kbd "C-h") 'delete-backward-char)

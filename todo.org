@@ -1,5 +1,14 @@
 * todo
 ** Utils
+- Osx keyboard input delay :
+   - default values :
+     - defaults read NSGlobalDomain KeyRepeat 2
+     - defaults read NSGlobalDomain InitialKeyRepeat 15
+
+   - My values :
+     - defaults write NSGlobalDomain KeyRepeat 1
+     - defaults write NSGlobalDomain InitialKeyRepeat 8
+
 - Refactoring : 
   - Ag at point (C-c s A)
   - wgrep-change-to-wgrep-mode (C-c C-p)
@@ -57,7 +66,7 @@ http://ecb.sourceforge.net/
 https://www.youtube.com/watch?v=KoRNCrx9pak
 
 ** Bloquant
-- [ ] [i-search] La mauvaise couleur est réapparu
+- [X] [i-search] La mauvaise couleur est réapparu
 - [ ] [système] Augmenter la vitesse de déplacement du curseur (actuellement limité dans osx)
 - [ ] Implementer le menu semantique (je n'ai plus le nom) et l'afficher a gauche ou faire un toggle a voir
       Cette fonction est déjà présente dans emacs mais apparait dans une autre frame, un package existe pour

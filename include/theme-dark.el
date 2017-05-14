@@ -74,15 +74,12 @@
 
 ;; ------- css
 (require 'css-mode)
-(set-face-attribute 'css-selector nil :foreground "#f07178")
-(set-face-attribute 'css-property nil :foreground "#b2ccd6")
-(set-face-attribute 'css-proprietary-property nil :foreground "#c792ea")
 
-(add-hook 'css-mode-hook
-          (set-face-attribute 'css-selector nil :foreground "#f07178")
-          (set-face-attribute 'css-property nil :foreground "#b2ccd6")
-          (set-face-attribute 'css-proprietary-property nil :foreground "#c792ea")
-)
+
+(add-hook 'css-mode-hook (lambda ()
+                           (set-face-attribute 'css-selector nil :foreground "#f07178")
+                           (set-face-attribute 'css-property nil :foreground "#b2ccd6")
+                           (set-face-attribute 'css-proprietary-property nil :foreground "#c792ea")))
 
 ;; powerline
 (setq powerline-color1 "#21242b")
