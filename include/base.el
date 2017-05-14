@@ -27,7 +27,8 @@
 
 ;; Enable blink cursor
 ;; (blink-cursor-mode 1)
-(blink-cursor-mode 0)
+;; (blink-cursor-mode 0)
+(blink-cursor-mode 1)
 
 ;; Don't write nwe line at end of document
 (setq mode-require-final-newline nil)

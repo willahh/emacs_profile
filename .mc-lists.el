@@ -50,7 +50,9 @@
       kill-sentence
       mouse-set-region
       my-abort-recursive-edit
+      org-beginning-of-line
       org-cycle
+      org-end-of-line
       org-self-insert-command
       paredit-doublequote
       paredit-forward
@@ -65,6 +67,7 @@
       untab-region
       web-mode-comment-indent-new-line
       whole-line-or-region-kill-region
+      wlh-tab-indent-or-complete-web
       yank-rectangle
       ))
 

@@ -251,9 +251,14 @@
 
 ;; char
 (define-key helm-map (kbd "C-h") 'delete-backward-char)
-(define-key helm-map (kbd "C-w") 'clean-aindent--bsunindent)
+(define-key ahelm-map (kbd "C-w") 'clean-aindent--bsunindent)
+
 (define-key company-active-map (kbd "C-w") 'clean-aindent--bsunindent)
 (define-key company-active-map (kbd "C-h") 'delete-backward-char)
+
+(require 'iedit)
+(define-key iedit-mode-keymap (kbd "C-w") 'clean-aindent--bsunindent)
+(define-key iedit-mode-keymap (kbd "C-h") 'delete-backward-char)
 
 ;; Sublime Text go to anything
 ;; Update : Utilsation des standards emacs (C-c p f)
@@ -317,9 +322,28 @@
 ;; Update 3 : Switch helm-ag et helm-ag-project-root (helm-ag sur le racourcis le plus simple)
 ;; Update 4 : Re inversement de ces 2 la, trop souvent de mauvais candidats sur le helm-ag-project-root
 ;; Les deux plus utiles (selon moi)
-(global-set-key (kbd "M-Ò") 'ag-project) ;; (cmd + alt  + s)
-(global-set-key (kbd "Ò") 'helm-ag) ;; (alt + s)
-(global-set-key (kbd "M-∑") 'helm-ag-project-root) ;; (cmd + alt + shift + s)
+;;
+;;
+;; Update 5 : Switch sur un autre principe de key binding :
+;; C-c s n : Usermap key binding (C-c) + Prefix [s]earch + mnemotic keys
+;; Avantage : accessible facilement, possibilte d'ajouter beaucoup de racourcis
+
+;; (global-set-key (kbd "M-Ò") 'ag-project) ;; (cmd + alt  + s)
+;; (global-set-key (kbd "Ò") 'helm-ag) ;; (alt + s)
+;; (global-set-key (kbd "M-∑") 'helm-ag-project-root) ;; (cmd + alt + shift + s)
+
+;; Note : Je ne vois pas la difference entre ag-project
+;; et projectile-ag
+
+;; (global-set-key (kbd "C-c s p") 'ag-project)
+(global-set-key (kbd "C-c s A") 'ag)
+;; (global-set-key (kbd "C-c s a") 'ag-project-at-point)
+(global-set-key (kbd "C-c s p") 'projectile-ag)
+(global-set-key (kbd "C-c s s") 'helm-ag)
+(global-set-key (kbd "C-c s S") 'helm-ag-project-root)
+
+
+
 
 ;; ---- window
 (define-key typescript-mode-map (kbd "M-j") 'c-indent-new-comment-line)
@@ -474,9 +498,15 @@
 ;; (define-key global-map (kbd "C-$") 'point-undo)
 ;; (define-key global-map (kbd "C-*") 'point-redo)
 
-(define-key global-map (kbd "C-c C-r") 'helm-recentf)
-(define-key php-mode-map (kbd "C-c C-r") 'helm-recentf)
-(define-key web-mode-map (kbd "C-c C-r") 'helm-recentf)
+;; (define-key global-map (kbd "C-c C-r") 'helm-recentf)
+;; (define-key php-mode-map (kbd "C-c C-r") 'helm-recentf)
+;; (define-key web-mode-map (kbd "C-c C-r") 'helm-recentf)
+;; (define-key org-mode-map (kbd "C-c C-r") 'helm-recentf)
+
+(define-key global-map (kbd "C-c r") 'helm-recentf)
+(define-key php-mode-map (kbd "C-c r") 'helm-recentf)
+(define-key web-mode-map (kbd "C-c r") 'helm-recentf)
+(define-key org-mode-map (kbd "C-c r") 'helm-recentf)
 
 (global-set-key (kbd "M-0") 'delete-window) ;; M-0
 (define-key diff-mode-map (kbd "M-0") 'delete-window)
@@ -515,15 +545,15 @@
 (define-key web-mode-map (kbd "C-x RET") 'dired-jump)
 
 ;; evil-snipe for eamcs
-(global-set-key (kbd "C-c s F") 'evil-snipe-F)
-(global-set-key (kbd "C-c s S") 'evil-snipe-S)
-(global-set-key (kbd "C-c s T") 'evil-snipe-T)
-(global-set-key (kbd "C-c s X") 'evil-snipe-X)
+;; (global-set-key (kbd "C-c s F") 'evil-snipe-F)
+;; (global-set-key (kbd "C-c s S") 'evil-snipe-S)
+;; (global-set-key (kbd "C-c s T") 'evil-snipe-T)
+;; (global-set-key (kbd "C-c s X") 'evil-snipe-X)
 
-(global-set-key (kbd "C-c s f") 'evil-snipe-f)
-(global-set-key (kbd "C-c s s") 'evil-snipe-s)
-(global-set-key (kbd "C-c s t") 'evil-snipe-t)
-(global-set-key (kbd "C-c s x") 'evil-snipe-x)
+;; (global-set-key (kbd "C-c s f") 'evil-snipe-f)
+;; (global-set-key (kbd "C-c s s") 'evil-snipe-s)
+;; (global-set-key (kbd "C-c s t") 'evil-snipe-t)
+;; (global-set-key (kbd "C-c s x") 'evil-snipe-x)
 
 
 ;; google
@@ -533,5 +563,9 @@
 ;; Find file at point
 ;; (global-set-key (kbd "C-c .") 'ffap)
 (global-set-key (kbd "C-.") 'ffap)
-(global-set-key (kbd "C-;") 'projectile-find-file-dwim) ;; (ctrl + ;)
+
+;; Raccourcis déjà utilisé par Emacs par iedit
+;; (global-set-key (kbd "C-;") 'projectile-find-file-dwim) ;; (ctrl + ;)
+
+
 (define-key php-mode-map [(control .)] 'ffap)

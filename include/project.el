@@ -6,7 +6,7 @@
 
 ;; ---- Projectile
 (projectile-global-mode)
-(add-hook 'ruby-mode-hook' projectile-mode)
+;; (add-hook 'ruby-mode-hook' projectile-mode)
 
 (setq projectile-enable-caching t)
 

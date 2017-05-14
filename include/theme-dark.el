@@ -17,7 +17,8 @@
 
 ;; ------ Font
 (set-face-attribute 'font-lock-doc-face nil :foreground "#4a4a4a")
-(set-face-attribute 'font-lock-comment-face nil :foreground "#676767")
+;; (set-face-attribute 'font-lock-comment-face nil :foreground "#676767")
+(set-face-attribute 'font-lock-comment-face nil :foreground "#8a8a8a")
 (set-face-attribute 'font-lock-doc-face nil :foreground "#676767")
 (set-face-attribute 'font-lock-string-face nil :foreground "#bfee79")
 (set-face-attribute 'font-lock-keyword-face nil :foreground "#c792ea")
@@ -121,6 +122,9 @@
 ;; (set-face-attribute 'evil-ex-lazy-highlight nil :foreground "#000" :background "#b1b1b1")
 
 ;; Text selection
+;; (set-face-attribute 'region nil :background "#fdb92c" :foreground "#000" :box nil)
+;; (set-face-attribute 'region nil :background "#000" :foreground nil :box nil)
+;; (set-face-attribute 'region nil :background "#fdb92c" :foreground nil :box nil)
 (set-face-attribute 'region nil :background "#fdb92c" :foreground "#000" :box nil)
 
 ;; parenthesis
@@ -212,7 +216,8 @@
 (add-hook 'evil-emacs-state-entry-hook 'powerline-theme-emacs)
 
 ;; Cursor / caret state color
-(setq evil-emacs-state-cursor '("#56b0ec" box))
+;; (setq evil-emacs-state-cursor '("#56b0ec" box))
+(setq evil-emacs-state-cursor '("#fff" box))
 (setq evil-normal-state-cursor '("#98cf15" box))
 (setq evil-visual-state-cursor '("#fff" box))
 (setq evil-insert-state-cursor '("red" bar))
@@ -222,10 +227,11 @@
 ;; powerline
 (powerline-theme-normal)
 
-
 ;; ------ Helm
 (set-face-attribute 'header-line nil :background "#212121" :foreground "#ffffff")
-(set-face-attribute 'helm-M-x-key nil :background "#56b0ec" :foreground "#000000")
+
+;; error: Invalid face, helm-M-x-key
+;; (set-face-attribute 'helm-M-x-key nil :background "#56b0ec" :foreground "#000000")
 (set-face-attribute 'helm-selection nil :background "#4d5f6b" :foreground "#ffffff")
 
 ;; ------ Swoop
@@ -233,7 +239,10 @@
 (set-face-attribute 'helm-swoop-target-line-face nil :background "#000000" :foreground "#ffffff")
 
 ;; ------ Isearch
-(set-face-attribute 'isearch nil :background "#fff" :foreground "#000")
-(set-face-attribute 'isearch-lazy-highlight-face nil :background nil :foreground "#fff" :underline t)
+(set-face-attribute 'isearch nil :background "#56b0ec" :foreground "#000")
+;; (set-face-attribute 'isearch-lazy-highlight-face nil :background "#225680" :foreground "#fff")
+(set-face-attribute 'isearch-lazy-highlight-face nil :background "#225680" :foreground "#fff")
+
+
 
 

@@ -1,14 +1,36 @@
 * todo
 ** Utils
+- Refactoring : 
+  - Ag at point (C-c s A)
+  - wgrep-change-to-wgrep-mode (C-c C-p)
+  - iedit-mode (C-;)
+  - Some changes ...
+  - wgrep-finish-edit (C-x C-s) (or abort C-c C-k)
+
+- Narrow to (region, defun, ...)
+  (C-x n n), (C-x n ...), ...
+  Très utile pour travailler sur des portions de code de façon indepdendante
+
+- [i-edit] (C-;) : Modification de portions de texte identiques 
+  -> Assez proche de Sublime command+control+g
+  -> Très pratique pour des petits modifications rapides
+
 - evil mode : ":new file.extension" -> Create new buffer/file/window
+
 - evil mode : "gf" ("go to file")
+
 - Sublime merge lines -> Evil gJ
+
 - [M+S+;] ---> xref-find-definitions (natif)
+
 - dired-jump (C-x C-j) : Jump directly to dired from file
+
 - New line with comment M-j
+
 - Revert hunk (depuis vc-diff) :
   - C-c C-r (diff-reverse-direction)
   - C-C C-a (diff-apply-hunk)
+
 - [web-mode] Element wrap (from "word" to -> "<strong>word</strong>")
 
 - Php ide mode
@@ -35,7 +57,8 @@ http://ecb.sourceforge.net/
 https://www.youtube.com/watch?v=KoRNCrx9pak
 
 ** Bloquant
-- [ ] [theme] Helm : Changer la couleur de la bande du haut et de la bande du bas pour mettre un gris neutre
+- [ ] [i-search] La mauvaise couleur est réapparu
+- [ ] [système] Augmenter la vitesse de déplacement du curseur (actuellement limité dans osx)
 - [ ] Implementer le menu semantique (je n'ai plus le nom) et l'afficher a gauche ou faire un toggle a voir
       Cette fonction est déjà présente dans emacs mais apparait dans une autre frame, un package existe pour
       L'afficher dans la même frame mais je n'ai pas réussis à bien l'implèmenter
@@ -43,8 +66,9 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [doc-block] La fonction custom doc bloc ne fonctionne pas ni en php-mode
       ni en typescript mode- [ ] [theme] [highlight-symbol] Mettre une couleur moins flashy
 - [ ] [ffap] Si un seul résultat, go to direct sans demander
-- [X] [diff-hl] Ne fonctionne plus (Problème avec le package)
 - [ ] [theme] [ediff] Trouver comment avoir les bons code couleurs, les couleurs parfaitement implémentées avec avec le thème leuven
+- [X] [theme] Helm : Changer la couleur de la bande du haut et de la bande du bas pour mettre un gris neutre
+- [X] [diff-hl] Ne fonctionne plus (Problème avec le package)
 - [X] [js2-mode] Lorsque l'on saisie une parenthàse, un espace est inséré juste avant, il ne faut surtout pas
 - [X] [js2-mode] Activer un highlight symbol en temps réel pour ce mode
 - [X] [theme] Remettre le système de couleur dans le petit label en bas a gauche de chaque window

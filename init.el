@@ -116,3 +116,5 @@
    (360 . "#5B6268"))))
  '(vc-annotate-very-old-color nil)
  '(yas-global-mode t))
+(put 'narrow-to-page 'disabled nil)
+(put 'narrow-to-region 'disabled nil)
