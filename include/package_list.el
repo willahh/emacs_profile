@@ -191,3 +191,5 @@
 (add-to-list 'load-path "~/.emacs.d/plugins/diff-hl")
 (add-to-list 'load-path "~/.emacs.d/plugins/doom-themeoos")
 (add-to-list 'load-path "~/.emacs.d/plugins/dumb-jump")
+(add-to-list 'load-path "~/.emacs.d/plugins/Indium")
+(add-to-list 'load-path "~/.emacs.d/plugins/restclient")

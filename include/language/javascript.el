@@ -1,6 +1,7 @@
 ;; javascript mode
 (require 'js2-mode)
 
+
 (js2-imenu-extras-mode)
 
 (setq js2-mode-show-parse-errors nil)
@@ -55,7 +56,8 @@
 (defun whl-js2-mode-hook ()
   (interactive)
 
-  (message "HOOK baby")
+  ;; indium
+  (require 'indium)
 
   ;; Fast completion
   (set (make-local-variable 'company-minimum-prefix-length) 0)
