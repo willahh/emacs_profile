@@ -40,9 +40,17 @@
 
 
 ;; diff-hl
+;; Update : global-diff-hl-mode ainsi que diff-hl-dired-mode
+;; ne fonctionne plus pour le moment
+;; Le package semble casse sur melpa
+
+;; (diff-hl-mode)
 ;; (global-diff-hl-mode t)
 ;;(add-hook 'dired-mode-hook 'diff-hl-dired-mode)
-;;(add-hook 'prog-mode-hook 'diff-hl-mode)
+
+;; (require diff-hl)
+;; (add-hook 'prog-mode-hook 'diff-hl-mode)
+
 
 
 

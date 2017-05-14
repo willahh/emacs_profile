@@ -35,7 +35,6 @@ http://ecb.sourceforge.net/
 https://www.youtube.com/watch?v=KoRNCrx9pak
 
 ** Bloquant
-- [X] [theme] Remettre le système de couleur dans le petit label en bas a gauche de chaque window
 - [ ] Implementer le menu semantique (je n'ai plus le nom) et l'afficher a gauche ou faire un toggle a voir
       Cette fonction est déjà présente dans emacs mais apparait dans une autre frame, un package existe pour
       L'afficher dans la même frame mais je n'ai pas réussis à bien l'implèmenter
@@ -43,22 +42,21 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [doc-block] La fonction custom doc bloc ne fonctionne pas ni en php-mode
       ni en typescript mode- [ ] [theme] [highlight-symbol] Mettre une couleur moins flashy
 - [ ] [ffap] Si un seul résultat, go to direct sans demander
-- [ ] [diff-hl] Ne fonctionne plus (Problème avec le package)
+- [X] [diff-hl] Ne fonctionne plus (Problème avec le package)
+- [ ] [theme] [ediff] Trouver comment avoir les bons code couleurs, les couleurs parfaitement implémentées avec avec le thème leuven
+- [X] [js2-mode] Lorsque l'on saisie une parenthàse, un espace est inséré juste avant, il ne faut surtout pas
+- [X] [js2-mode] Activer un highlight symbol en temps réel pour ce mode
+- [X] [theme] Remettre le système de couleur dans le petit label en bas a gauche de chaque window
 - [X] Sauvegarder automatiquement les fichiers récentes (recentf)
 - [X] [i-search] [key] Ajouter les key suivants : C-h (delete backward)
 - [X] [theme] [highlight-symbol] Peut fonctionner avec hl-line si bien configuré (fonctionne bien avec le thème leuven)
-- [ ] [theme] [ediff] Trouver comment avoir les bons code couleurs, les couleurs parfaitement implémentées avec avec le thème leuven
-- [ ] Associer les fichiers .htaccess au mode conf-mode
-- [X] [js2-mode] Lorsque l'on saisie une parenthàse, un espace est inséré juste avant, il ne faut surtout pas
-- [X] [js2-mode] Activer un highlight symbol en temps réel pour ce mode
 - [X] Il n'y a plus de hightlight du même symbole
 - [X] [css-mode] L'édition css n'est pas très pratique, il faudrait :
   - [X] Completion css instantannée
   - [X] Emmet doit fonctionner
 - [X] [paredit] Lorsque l'on saisie une parenthèse, un espace vient s'ajouter avant celle-ci, il faut bloquer ça
-
-  
 ** A ranger
+- [ ] Associer les fichiers .htaccess au mode conf-mode
 - [X] Save recent files history
 - [ ] [dired] Rename file : Possibilité de préciser un chemin contenant des dossiers
       N'existant pas, ces dossier seront créés automatiquement à la validation
@@ -111,6 +109,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [plugin] [change inner] Ajoute rl'option Change Inner Tag
 
 ** Majeur
+- [ ] [diff-hl] Le package est casse sur melpa il ne compile pas bien,
 - [ ] [el-doc] Voir pour integrer une popin comme sur les IDE moderne
 - [ ] Integrer hydra and ace window  https://www.youtube.com/watch?v=_qZliI1BKzI
 - [ ] [php-mode] Autocompletion, ajouter les entrés du buffer courant dans la liste des completions
@@ -152,12 +151,8 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
   - "*.log"
 - [ ] helm-do-grep-ag -> Ignjorer les fichier "*.svn-base"
       -> helm-ag-ignore-buffer-patterns (conf ajoutee, non testee, maj : ne fonctionne pas, voir pour mettre la bonne regle)
-  -> Impossible de trouver la raison sur cette commande, utiliser helm-ag a la place
-
+      -> Impossible de trouver la raison sur cette commande, utiliser helm-ag a la place
 - [ ] ag search result buffer : highlight search words
-      --> g
-- [ ] [theme] Voir pour avoir une font plus lisible (aliasing different --> Se rapprocher du rendu de Sublime (la font est bien la meme))
-
 - [ ] Ajouter hook pour recentrer sur la ligne courante après les actions suivantes :
  (recenter)
   - [ ] git-gutter next / prev
@@ -171,8 +166,45 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
   - .ac-php-conf.json
   - logs
   - .DS_Store
-- [ ] Installer / configurer php mode | ac-php (auto completion php)
+** Mineur
+- [ ] la selection avec la souris doit aller loin avant de prendre en compte la deuxieme ligne
+      (Comportement de selection legerement different a celui de Sublime)
+- [ ] (plugin pour le liste) : Ne pas mettre les fichiers .svn dans la liste
+- [ ] [plugin] [change inner] Ajoute rl'option Change Inner Tag
+- [ ] [misc] Copier : Ne pas embarquer la couleur
+      -> Cibler uniquement certains buffers
+        -> mini buffer
+        -> fundamental
+- [ ] nlinum in fringe ? Pouvoir afficher les vc diff plus loin que le contenu
+- [ ] [vc-dir] Ne pas afficher les lignes dossiers (les lignes qui sont grisées)
+- [ ] Voir pour utiliser une largeur max lors de la saisie de long texte
+      -> Impossible
+- [ ] web mode : refresh colors after yank
+- [ ] tabbar : hide bad icons
+- [ ] git-svn
+- [ ] Fichiers markdown mette toutes les windows en centré
+      (Creation de differences inutiles sur la toute dernière ligne de certains fichiers)
+- [ ] Markdown mode style like in Sublime (background white, text black, column width limit, center inside)
+- [X] Faire tourner "create-tags" (ctags doit etre lu par emacs)
+- [ ] JS auto doc
+- [ ] Dired : remove folder is very slow
+- [ ] Don't prompt for delete recursivly (code available in prelude)
+- [ ] Enable evil easy motion to work like vim easy motion  https://github.com/easymotion/vim-easymotion
+- [ ] Bottom line
+  - [ ] Show current mode in color
+  - [ ] Show current VC system used
+  - [ ] Show current encoding
+- [ ] Display current encoding 
+- [ ] Correcteur orthographique 
+- [ ] Markdown in white theme
+- [ ] Parcourir partage smb 
+- [ ] [theme] Color in shell mode 
+- [ ] [theme] Les couleurs ne sont pas assez décomposé comme dans Sublime (« var » colorA, = colorB, …) 
+- [ ] Markdown in white theme
+- [ ] git-svn
+** Corrige
 
+- [X] Installer / configurer php mode | ac-php (auto completion php)
 - [x] Ouverture fichier : Avoir de meilleurs perfs
 - [x] [multi-cursor] Integrer le Meta+mouse1 click pour avoir un curseur multiple
 - [x] CSS Validateur !!
@@ -200,48 +232,8 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
   - M-. M-,
 - [X] [util] helm imenu autofocus !!!!!!!
 - [X] theme > diff : Se rapproche au max des couleurs du theme Sublime
-** Mineur
-- [ ] la selection avec la souris doit aller loin avant de prendre en compte la deuxieme ligne
-      (Comportement de selection legerement different a celui de Sublime)
-- [ ] (plugin pour le liste) : Ne pas mettre les fichiers .svn dans la liste
-- [ ] [plugin] [change inner] Ajoute rl'option Change Inner Tag
-- [ ] [misc] Copier : Ne pas embarquer la couleur
-      -> Cibler uniquement certains buffers
-        -> mini buffer
-        -> fundamental
 
 
-- [ ] nlinum in fringe ? Pouvoir afficher les vc diff plus loin que le contenu
-- [ ] [vc-dir] Ne pas afficher les lignes dossiers (les lignes qui sont grisées)
-- [ ] Voir pour utiliser une largeur max lors de la saisie de long texte
-      -> Impossible
-- [ ] web mode : refresh colors after yank
-- [ ] tabbar : hide bad icons
-
-- [ ] git-svn
-- [ ] Fichiers markdown mette toutes les windows en centré
-      (Creation de differences inutiles sur la toute dernière ligne de certains fichiers)
-- [ ] Markdown mode style like in Sublime (background white, text black, column width limit, center inside)
-- [ ] Faire tourner "create-tags" (ctags doit etre lu par emacs)
-- [ ] JS auto doc
-- [ ] Dired : remove folder is very slow
-- [ ] Don't prompt for delete recursivly (code available in prelude)
-- [ ] Enable evil easy motion to work like vim easy motion  https://github.com/easymotion/vim-easymotion
-- [ ] Bottom line
-  - [ ] Show current mode in color
-  - [ ] Show current VC system used
-  - [ ] Show current encoding
-- [ ] Display current encoding 
-- [ ] Correcteur orthographique 
-- [ ] Markdown in white theme
-- [ ] Parcourir partage smb 
-- [ ] [theme] Color in shell mode 
-- [ ] [theme] Les couleurs ne sont pas assez décomposé comme dans Sublime (« var » colorA, = colorB, …) 
-- [ ] mysql integration 
-- [ ] Markdown in white theme
-- [ ] git-svn
-  
-** Corrige
 - [x] [M-n] Hightlight-new-occurence in elisp files
 - [x] [Emacs-Lisp] [Hight light mode nav]
 - [x] [Helm] C-h ne fonctionne pas

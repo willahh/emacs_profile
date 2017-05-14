@@ -14,7 +14,13 @@
   (tide-hl-identifier-mode +1)
   ;; company is an optional dependency. You have to
   ;; install it separately via package-install
-  ;; `M-x package-install [ret] company`
+  ;; `M-x package-install [ret] company`  
+
+  ;; Some key bindingds
+  (define-key typescript-mode-map (kbd "M-[") 'tide-jump-to-definition)
+  (define-key typescript-mode-map (kbd "M-]") 'tide-jump-back)
+
+  ;; company mode
   (company-mode +1))
 
 ;; aligns annotation to the right hand side
