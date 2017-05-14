@@ -101,6 +101,7 @@
       previous-multiframe-window
       projectile-find-file-dwim
       resize-window
+      toggle-truncate-lines
       undefined
       vc-dir-mark
       vc-dir-previous-line

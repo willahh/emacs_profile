@@ -535,4 +535,3 @@
 (global-set-key (kbd "C-.") 'ffap)
 (global-set-key (kbd "C-;") 'projectile-find-file-dwim) ;; (ctrl + ;)
 (define-key php-mode-map [(control .)] 'ffap)
-

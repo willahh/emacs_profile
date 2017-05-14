@@ -116,4 +116,3 @@
    (360 . "#5B6268"))))
  '(vc-annotate-very-old-color nil)
  '(yas-global-mode t))
-

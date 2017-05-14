@@ -181,7 +181,7 @@
 (defun powerline-theme-emacs()
   (set-face-attribute 'mode-line nil
                       :foreground "#000"
-                      :background "#98cf15"
+                      :background "#56b0ec"
                       :box nil)
 )
 
@@ -202,7 +202,7 @@
 (defun powerline-theme-normal()
   (set-face-attribute 'mode-line nil
                       :foreground "#000"
-                      :background "#56b0ec"
+                      :background "#98cf15"
                       :box nil)
 )
 
@@ -212,8 +212,8 @@
 (add-hook 'evil-emacs-state-entry-hook 'powerline-theme-emacs)
 
 ;; Cursor / caret state color
-(setq evil-emacs-state-cursor '("#ff00fc" box))
-(setq evil-normal-state-cursor '("#56b0ec" box))
+(setq evil-emacs-state-cursor '("#56b0ec" box))
+(setq evil-normal-state-cursor '("#98cf15" box))
 (setq evil-visual-state-cursor '("#fff" box))
 (setq evil-insert-state-cursor '("red" bar))
 (setq evil-replace-state-cursor '("red" bar))
@@ -221,3 +221,19 @@
 
 ;; powerline
 (powerline-theme-normal)
+
+
+;; ------ Helm
+(set-face-attribute 'header-line nil :background "#212121" :foreground "#ffffff")
+(set-face-attribute 'helm-M-x-key nil :background "#56b0ec" :foreground "#000000")
+(set-face-attribute 'helm-selection nil :background "#4d5f6b" :foreground "#ffffff")
+
+;; ------ Swoop
+(set-face-attribute 'helm-swoop-target-word-face nil :background "#ffffff" :foreground "#000000")
+(set-face-attribute 'helm-swoop-target-line-face nil :background "#000000" :foreground "#ffffff")
+
+;; ------ Isearch
+(set-face-attribute 'isearch nil :background "#fff" :foreground "#000")
+(set-face-attribute 'isearch-lazy-highlight-face nil :background nil :foreground "#fff" :underline t)
+
+

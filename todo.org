@@ -35,6 +35,7 @@ http://ecb.sourceforge.net/
 https://www.youtube.com/watch?v=KoRNCrx9pak
 
 ** Bloquant
+- [ ] [theme] Helm : Changer la couleur de la bande du haut et de la bande du bas pour mettre un gris neutre
 - [ ] Implementer le menu semantique (je n'ai plus le nom) et l'afficher a gauche ou faire un toggle a voir
       Cette fonction est déjà présente dans emacs mais apparait dans une autre frame, un package existe pour
       L'afficher dans la même frame mais je n'ai pas réussis à bien l'implèmenter

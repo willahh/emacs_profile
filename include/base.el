@@ -7,9 +7,7 @@
 ;; (global-font-lock-mode 0)
 ;; (setq bidi-display-reordering nil)
 
-
-
-
+;; (setq ns-right-option-modifier 'super)
 
 ;; (setq font-lock-support-mode 'jit-lock-mode)
 ;; (setq jit-lock-stealth-time 16
