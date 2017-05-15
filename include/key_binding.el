@@ -284,7 +284,8 @@
 ;; (global-set-key [(meta shift r)] 'swiper) ;; command + shift + r : Update : Switch to swiper (lighter / faster)
 ;; (global-set-key (kbd "C-x C-i") 'helm-imenu)
 ;; (global-set-key (kbd "C-x TAB") 'counsel-imenu)
-(global-set-key (kbd "C-x TAB") 'helm-imenu)
+;; (global-set-key (kbd "C-x TAB") 'helm-imenu)
+(global-set-key (kbd "C-x <C-i>") 'helm-imenu)
 
 ;; Update to use counsel-find-file instead of helm-find-file
 ;; (global-set-key (kbd "C-x o")  'helm-find-files)
@@ -301,7 +302,7 @@
 
 ;; org
 (require 'org)
-(define-key org-mode-map (kbd "C-x C-i") 'helm-org-in-buffer-headings)
+(define-key org-mode-map (kbd "C-x <C-i>") 'helm-org-in-buffer-headings)
 
 ;; swoop
 (global-set-key (kbd "C-c C-s") 'helm-swoop)

@@ -66,14 +66,9 @@ http://ecb.sourceforge.net/
 https://www.youtube.com/watch?v=KoRNCrx9pak
 
 ** Bloquant
-- [ ] [multi-cursor] Le yank puis copy rectangle ne fonctionne plus ?
-      -> Selection multiple
-      -> Yank (M-w)
-      -> Yank-rectangle (C-x r y)
-  
+- [ ] [multi-cursor] Faire fonctionner le binding sur C-m
 - [ ] [vc-diff mode] Voir si il est possible de lancer des commandes de type ediff
        Depuis  le vc-diff
-- [X] [i-search] La mauvaise couleur est réapparu
 - [ ] [système] Augmenter la vitesse de déplacement du curseur (actuellement limité dans osx)
 - [ ] Implementer le menu semantique (je n'ai plus le nom) et l'afficher a gauche ou faire un toggle a voir
       Cette fonction est déjà présente dans emacs mais apparait dans une autre frame, un package existe pour
@@ -83,6 +78,8 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
       ni en typescript mode- [ ] [theme] [highlight-symbol] Mettre une couleur moins flashy
 - [ ] [ffap] Si un seul résultat, go to direct sans demander
 - [ ] [theme] [ediff] Trouver comment avoir les bons code couleurs, les couleurs parfaitement implémentées avec avec le thème leuven
+
+- [X] [i-search] La mauvaise couleur est réapparu
 - [X] [theme] Helm : Changer la couleur de la bande du haut et de la bande du bas pour mettre un gris neutre
 - [X] [diff-hl] Ne fonctionne plus (Problème avec le package)
 - [X] [js2-mode] Lorsque l'on saisie une parenthàse, un espace est inséré juste avant, il ne faut surtout pas
@@ -106,7 +103,6 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
   - [ ] C-w delete back word
   - [ ] M-b back word
 - [ ] Multiple emacs config management propositions : http://stackoverflow.com/questions/17483598/maintaining-multiple-emacs-configurations-at-the-same-time
-- [ ] [C-x o] Case insentive ! --> ?
 - [ ] Open file from system in new emacs frame (Right click open in)
 - [ ] [js2-mode] Colorization redraw slow
 - [ ] [multi-cursor] Remettre la possibilité d'ajouter un command click de la souris pour ajouter un nouveau caret
