@@ -951,3 +951,43 @@ is already narrowed."
           (lambda ()
             (define-key LaTeX-mode-map "\C-xn"
               nil)))
+
+
+
+
+
+;; http://endlessparentheses.com/faster-pop-to-mark-command.html
+;; Prevent emacs from adding same entries in the mark ring... usefull !
+(defun modi/multi-pop-to-mark (orig-fun &rest args)
+  "Call ORIG-FUN until the cursor moves.
+Try the repeated popping up to 10 times."
+  (let ((p (point)))
+    (dotimes (i 10)
+      (when (= p (point))
+        (apply orig-fun args)))))
+
+(advice-add 'pop-to-mark-command :around
+            #'modi/multi-pop-to-mark)
+
+
+
+
+;;;###autoload
+(defun avy-goto-word-1-above (char &optional arg)
+  "Jump to the currently visible CHAR at a word start.
+This is a scoped version of `avy-goto-word-1', where the scope is
+the visible part of the current buffer up to point. "
+  (interactive (list (read-char "char: " t)
+                     current-prefix-arg))
+  (avy-with avy-goto-word-1
+    (avy-goto-word-1 char arg (window-start) (point))))
+
+;;;###autoload
+(defun avy-goto-word-1-below (char &optional arg)
+  "Jump to the currently visible CHAR at a word start.
+This is a scoped version of `avy-goto-word-1', where the scope is
+the visible part of the current buffer following point. "
+  (interactive (list (read-char "char: " t)
+                     current-prefix-arg))
+  (avy-with avy-goto-word-1
+    (avy-goto-word-1 char arg (point) (window-end (selected-window) t))))

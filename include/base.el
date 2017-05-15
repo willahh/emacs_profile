@@ -164,16 +164,22 @@
 
 
 (setq mouse-wheel-scroll-amount '(0.022))
-(setq mouse-wheel-progressive-speed 0)
+(setq mouse-wheel-progressive-speed 0) 
 
 ;; "Modern" copy / paste (dont put the selection on the markring)
 ;; https://www.emacswiki.org/emacs/Comments_on_CopyAndPaste
 ;; Update : Retour sur le mode par default de emacs pour la selection
 ;; Le fait de placer toute les selections directement dans le kill ring
 ;; s'avère très pratique dans beaucoup de cas
+;; 
+;; Update : Retour sur le mode x-select-enable-primary nil car sinon
+;; impossible de copier coller avec multi cursor
+;; 
 (setq mouse-drag-copy-region nil)  ; stops selection with a mouse being immediately injected to the kill ring
 ;; (setq x-select-enable-primary nil)  ; stops killing/yanking interacting with primary X11 selectisetqon
-(setq x-select-enable-primary t)
+
+;; (setq x-select-enable-primary t)
+(setq x-select-enable-primary nil)
 (setq x-select-enable-clipboard t)  ; makes killing/yanking interact with clipboard X11 selection
 
 ;; Remove bip relou

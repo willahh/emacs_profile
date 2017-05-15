@@ -1,9 +1,11 @@
 (require 'ggtags)
+(require 'magit)
 
 ;; key_binding: --- some default / package keybindings
 ;; (dolist (key '("\M-x" "\M-z" "\C-\M-p" "\C-z"))
-(dolist (key '("\M-z" "\C-z"))
-  (global-unset-key key))
+
+;; (dolist (key '("\M-z" "\C-z"))
+;;   (global-unset-key key))
 
 
 
@@ -122,13 +124,11 @@
 ;; -------- key chords binding
 ;; avy
 ;; Update : az ne peut pas etre utilise car trop fréquemment utilisé ("localization", ...)
-(key-chord-define-global "qs" 'avy-goto-word-1-below)
-;; (global-set-key (kbd "C-;") 'avy-goto-word-or-subword-1)
-;; (global-set-key (kbd "C-c j") 'avy-goto-word-or-subword-1)
-(global-set-key (kbd "C-c j") 'avy-goto-char-2)
+;; (key-chord-define-global "qs" 'avy-goto-word-1-below)
 
-(key-chord-define-global "xc" 'er/expand-region)
-(key-chord-define-global "wx" 'er/contract-region)
+;; Update to use the author default C= and a custom one C-M-l
+;; (key-chord-define-global "xc" 'er/expand-region)
+;; (key-chord-define-global "wx" 'er/contract-region)
 
 (key-chord-define-global "ji" 'ace-window) ;; cannot be jk (vim up/right)
 (key-chord-define-global ";:" 'highlight-symbol-mode)
@@ -217,13 +217,27 @@
 
 
 ;; Multi cursor stuf
-;; Update : Utilisation de la lettre o plutot qutôt que de la lettre d
-;; car celle-ci est utiise pour faire des é
+;; Update : Utilisation de la lettre o plutot qutôt que de
+;; la lettre d car celle-ci est utiise pour faire des é.
+;;
+;; Update : Utilisation de control m pour le multi curseur
+;; Au detriment du C-m natif qui est new-line-and-indent
+;; new-line-and-indent est rebinde sur C-M-j donc toujours
+;; accessible.
+;; Note : Les raccourcis sur la touche alt tordent les doigts
+;; et ne sont pas agreables
+
 (global-set-key (kbd "‡") 'mc/mark-next-like-this-word) ;; ALT+q
 (global-set-key (kbd "Ω") 'mc/mark-previous-like-this-word) ;; ALT+SHIFT+q
 (global-set-key (kbd "<C-268632081>") 'mc/mark-all-dwim) ;; CTRL+alt+q
+
 (global-set-key (kbd "ñ") 'mc/mark-next-lines) ;; ALT+p
 (global-set-key (kbd "π") 'mc/mark-previous-lines) ;; ALT+n
+
+(global-set-key [(control m)] 'mc/mark-next-like-this-word)
+(global-set-key [(control shift m)] 'mc/mark-previous-like-this-word)
+(global-set-key [(control meta shift m)] 'mc/mark-all-words-like-this)
+
 
 ;; Mouse
 (global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click)
@@ -402,10 +416,44 @@
 ;; (define-key web-mode-map [(meta j)] 'smart-open-line)
 
 ;; avy go to word
+;; Update : avy-goto-char-2 n est pas si utile par rapport a avy-goto-char
+;; car il propose souvent le meme nombre de caracteres a taper une fois dans le mode
 ;; (global-set-key (kbd "C-x C-s") 'avy-goto-word-or-subword-1)
 ;; (global-set-key (kbd "C-c c s") 'avy-goto-word-or-subword-1)
 ;; (global-set-key (kbd "C-'") 'avy-goto-word-or-subword-1)
-(global-set-key (kbd "C-'") 'avy-goto-char-2)
+;; (global-set-key (kbd "C-'") 'avy-goto-char)
+(global-set-key (kbd "C-'") 'avy-goto-word-1)
+
+;; (global-set-key (kbd "C-;") 'avy-goto-word-or-subword-1)
+;; (global-set-key (kbd "C-c j") 'avy-goto-word-or-subword-1)
+;; (global-set-key (kbd "C-c j") 'avy-goto-char-2)
+;; (global-set-key (kbd "C-c j") 'avy-goto-char)
+(global-set-key (kbd "C-c j") 'avy-goto-word-1)
+
+;; (global-set-key (kbd "C-i") 'avy-goto-word-1-above)
+;; (global-set-key (kbd "C-I") 'avy-goto-word-1-below)
+
+;; (global-set-key (kbd "C-i") 'avy-goto-char-2-above)
+;; (global-set-key (kbd "C-I") 'avy-goto-char-2-below)
+
+
+;; Nouveau bindings pou avy C-i and C-S-i
+;; Besoin de les definir dans pas mal de mode
+;; pour avoir un bon support
+
+;; Tricks pour pouvoir utiliser control-i et tab séparément
+(define-key input-decode-map [?\C-i] [C-i])
+(define-key input-decode-map [?\C-\S-i] [C-S-i])
+
+(global-set-key (kbd "<C-i>") 'avy-goto-char-2-below)
+(define-key magit-status-mode-map (kbd "<C-i>") 'avy-goto-char-2-below)
+(define-key help-mode-map (kbd "<C-i>") 'avy-goto-char-2-below)
+(define-key diff-mode-map (kbd "<C-i>") 'avy-goto-char-2-below)
+
+(global-set-key (kbd "<C-S-i>") 'avy-goto-char-2-above)
+(define-key magit-status-mode-map (kbd "<C-S-i>") 'avy-goto-char-2-above)
+(define-key help-mode-map (kbd "<C-S-i>") 'avy-goto-char-2-above)
+(define-key diff-mode-map (kbd "<C-S-i>") 'avy-goto-char-2-above)
 
 ;; i-search
 (define-key isearch-mode-map (kbd "C-'") 'avy-isearch)
@@ -425,6 +473,7 @@
 ;; Webjump let's you quickly search google, wikipedia, emacs wiki
 (global-set-key (kbd "C-x g") 'webjump)
 (global-set-key (kbd "C-x M-g") 'browse-url-at-point)
+(global-set-key (kbd "M-s h h") 'highlight-symbol-at-point)
 
 ;; iy-go-to-char (awesoooooome VIM LIKE "f")
 (global-set-key (kbd "C-c f") 'iy-go-to-char)
@@ -468,9 +517,12 @@
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
 
-(define-key magit-status-mode-map (kbd "<tab>") 'magit-section-toggle)
+(define-key magit-status-mode-map (kbd "M-w") 'kill-ring-save)
+
+;; ---------------- open line
 (global-set-key [(control shift j)] 'smart-open-line-above)
 (define-key key-translation-map (kbd "C-j") (kbd "RET"))
+(global-set-key (kbd "C-M-j") 'newline-and-indent)
 
 ;; Emmet
 ;; (global-set-key (kbd "é") 'emmet-expand-line) ;; ALT + j

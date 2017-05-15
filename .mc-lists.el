@@ -16,6 +16,7 @@
       c-electric-star
       c-indent-new-comment-line
       clean-aindent--bsunindent
+      comment-line
       dired-jump
       drag-stuff-down
       drag-stuff-up
@@ -57,6 +58,7 @@
       paredit-doublequote
       paredit-forward
       paredit-forward-delete
+      paredit-forward-kill-word
       paredit-kill
       paredit-meta-doublequote
       paredit-semicolon

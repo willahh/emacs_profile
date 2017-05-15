@@ -240,6 +240,12 @@
 ;; (set-face-attribute 'isearch-lazy-highlight-face nil :background "#225680" :foreground "#fff")
 (set-face-attribute 'isearch-lazy-highlight-face nil :background "#225680" :foreground "#fff")
 
+;; ------ avy
+(set-face-attribute 'avy-lead-face nil :background "#fff" :foreground "#000" :underline "#ff00ff")
+(set-face-attribute 'avy-lead-face-0 nil :background "#fff" :foreground "#000" :underline "#ff00ff")
+(set-face-attribute 'avy-lead-face-1 nil :background "#fff" :foreground "#000" :underline "#ff00ff")
+(set-face-attribute 'avy-lead-face-2 nil :background "#fff" :foreground "#000" :underline "#ff00ff")
+
 
 
 

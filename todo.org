@@ -66,6 +66,11 @@ http://ecb.sourceforge.net/
 https://www.youtube.com/watch?v=KoRNCrx9pak
 
 ** Bloquant
+- [ ] [multi-cursor] Le yank puis copy rectangle ne fonctionne plus ?
+      -> Selection multiple
+      -> Yank (M-w)
+      -> Yank-rectangle (C-x r y)
+  
 - [ ] [vc-diff mode] Voir si il est possible de lancer des commandes de type ediff
        Depuis  le vc-diff
 - [X] [i-search] La mauvaise couleur est réapparu

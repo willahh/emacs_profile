@@ -21,7 +21,6 @@
 
 ;; Update : bind un keybinding to yas expand
 ;; Because yas + autocomplete (when auto start) are always in conflict (with my yas keywords)
-(global-set-key (kbd "<C-return>") 'yas-expand)
 
 
 
@@ -34,17 +33,22 @@
 
 
 
-(global-set-key [tab] 'tab-indent-or-complete)
-(global-set-key (kbd "TAB") 'tab-indent-or-complete)
-(global-set-key [(control return)] 'company-complete-common)
 
-(define-key company-active-map [tab] 'expand-snippet-or-complete-selection)
-(define-key company-active-map (kbd "TAB") 'expand-snippet-or-complete-selection)
 
-(define-key yas-minor-mode-map [tab] nil)
-(define-key yas-minor-mode-map (kbd "TAB") nil)
+; (global-set-key (kbd "<C-return>") 'yas-expand)
 
-(define-key yas-keymap [tab] 'tab-complete-or-next-field)
-(define-key yas-keymap (kbd "TAB") 'tab-complete-or-next-field)
-(define-key yas-keymap [(control tab)] 'yas-next-field)
-(define-key yas-keymap (kbd "C-g") 'abort-company-or-yas)
+
+; (global-set-key [tab] 'tab-indent-or-complete)
+; (global-set-key (kbd "TAB") 'tab-indent-or-complete)
+; (global-set-key [(control return)] 'company-complete-common)
+
+; (define-key company-active-map [tab] 'expand-snippet-or-complete-selection)
+; (define-key company-active-map (kbd "TAB") 'expand-snippet-or-complete-selection)
+
+; (define-key yas-minor-mode-map [tab] nil)
+; (define-key yas-minor-mode-map (kbd "TAB") nil)
+
+; (define-key yas-keymap [tab] 'tab-complete-or-next-field)
+; (define-key yas-keymap (kbd "TAB") 'tab-complete-or-next-field)
+; (define-key yas-keymap [(control tab)] 'yas-next-field)
+; (define-key yas-keymap (kbd "C-g") 'abort-company-or-yas)
