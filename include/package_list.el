@@ -12,6 +12,7 @@
   paredit
   paredit-everywhere
   syslog-mode
+  ;; load-theme-buffer-local
 
   ;; back-button
 
@@ -82,7 +83,6 @@
   ;; color-theme-buffer-local
   dash
   ;;diff-hl
-  load-theme-buffer-local
 
 
   doom-themes
