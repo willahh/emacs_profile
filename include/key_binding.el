@@ -199,6 +199,7 @@
 
 ;; (global-set-key [(meta control shift a)] 'mark-whole-buffer)
 (global-set-key (kbd "M-q") 'ask-before-closing)
+(global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;; Buffer
 (global-set-key [(meta shift n)] 'evil-buffer-new)
@@ -638,5 +639,5 @@
 
 
 ;; ---------------- text
-(define-key js-mode-map (kbd "C-M-:") "\C-e;")
-(define-key typescript-mode-map (kbd "C-M-:") "\C-e;")
+(define-key js-mode-map (kbd "C-:") "\C-e;")
+(define-key typescript-mode-map (kbd "C-:") "\C-e;")
