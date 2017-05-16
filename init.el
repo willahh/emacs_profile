@@ -84,7 +84,7 @@
  '(helm-ag-insert-at-point (quote symbol))
  '(helm-source-names-using-follow
  (quote
-  ("Search at ~/.emacs.d/elpa/expand-region-20170222.343/" "mark-ring" "global-mark-ring" "Search at ~/.emacs.d_ergoemacs/" "Search at ~/www/projects_other/pnpm/src/" "Search at ~/.emacs.d_hlissner/" "Search at ~/www/project/arsia/arsia_standard_310/mediadata/src/app/" "Search at ~/.emacs.d/include/" "Search at ~/.emacs.d/" "Imenu")))
+  ("Search at ~/www/projects/willahh/dev/" "Search at ~/.emacs.d/elpa/expand-region-20170222.343/" "mark-ring" "global-mark-ring" "Search at ~/.emacs.d_ergoemacs/" "Search at ~/www/projects_other/pnpm/src/" "Search at ~/.emacs.d_hlissner/" "Search at ~/www/project/arsia/arsia_standard_310/mediadata/src/app/" "Search at ~/.emacs.d/include/" "Search at ~/.emacs.d/" "Imenu")))
  '(ido-enable-flex-matching t)
  '(magit-dispatch-arguments nil)
  '(org-agenda-files (quote ("~/Documents/utils/Notes/todo.org")))
@@ -119,3 +119,9 @@
 (put 'narrow-to-page 'disabled nil)
 (put 'narrow-to-region 'disabled nil)
 (put 'set-goal-column 'disabled nil)
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

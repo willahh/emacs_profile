@@ -269,6 +269,7 @@
 
 (define-key company-active-map (kbd "C-w") 'clean-aindent--bsunindent)
 (define-key company-active-map (kbd "C-h") 'delete-backward-char)
+(define-key company-active-map (kbd "<tab>") 'company-complete-selection)
 
 (require 'iedit)
 (define-key iedit-mode-keymap (kbd "C-w") 'clean-aindent--bsunindent)
@@ -616,6 +617,7 @@
 ;; Find file at point
 ;; (global-set-key (kbd "C-c .") 'ffap)
 (global-set-key (kbd "C-.") 'ffap)
+(global-set-key (kbd "C->") 'projectile-find-file-dwim)
 
 ;; Raccourcis déjà utilisé par Emacs par iedit
 ;; (global-set-key (kbd "C-;") 'projectile-find-file-dwim) ;; (ctrl + ;)
