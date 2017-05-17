@@ -1,5 +1,9 @@
 * todo
 ** Utils
+- View pdf
+  https://emacs.stackexchange.com/a/22591/15824
+  https://emacs.stackexchange.com/questions/13314/install-pdf-tools-on-emacs-macosx
+
 - Find files in project
   - C-x C-o js (find JS files)
   - C-x C-o ph (find php files)

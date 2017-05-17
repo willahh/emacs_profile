@@ -52,3 +52,5 @@
 ;; Quickly copy/move file in Emacs Dired
 ;; Source : http://emacs.stackexchange.com/q/5603
 (setq dired-dwim-target t)
+
+

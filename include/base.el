@@ -250,12 +250,11 @@
 (setq load-path (cons "/usr/local/share/gtags" load-path))
 (autoload 'gtags-mode "gtags" "" t)
 
-;; Remember the cursor position of files when reopening them        
-(setq save-place-file "~/.emacs.d/saveplace")
-(setq-default save-place t)
+;; Remember the cursor position of files when reopening them
+;; Save point position between sessions
 (require 'saveplace)
-
-
+(setq-default save-place t)
+(setq save-place-file (expand-file-name ".places" user-emacs-directory))
 
 
 

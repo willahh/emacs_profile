@@ -1042,6 +1042,10 @@ the visible part of the current buffer following point. "
                 (ffip-create-pattern-file-finder "*.jsp"))
 (global-set-key (kbd "C-x C-o ph")
                 (ffip-create-pattern-file-finder "*.php"))
+(global-set-key (kbd "C-x C-o pd")
+                (ffip-create-pattern-file-finder "*.pdf"))
+(global-set-key (kbd "C-x C-o jon")
+                (ffip-create-pattern-file-finder "*.json"))
 
 ;; Join lines
 ;; http://whattheemacsd.com/
@@ -1100,3 +1104,50 @@ the visible part of the current buffer following point. "
         (delete-file filename)
         (kill-buffer buffer)
         (message "File '%s' successfully removed" filename)))))
+
+;; For some reason, renaming the current buffer file is a multi-step process in Emacs.
+;; http://whattheemacsd.com/
+(defun rename-current-buffer-file ()
+  "Renames current buffer and file it is visiting."
+  (interactive)
+  (let ((name (buffer-name))
+        (filename (buffer-file-name)))
+    (if (not (and filename (file-exists-p filename)))
+        (error "Buffer '%s' is not visiting a file!" name)
+      (let ((new-name (read-file-name "New name: " filename)))
+        (if (get-buffer new-name)
+            (error "A buffer named '%s' already exists!" new-name)
+          (rename-file filename new-name 1)
+          (rename-buffer new-name)
+          (set-visited-file-name new-name)
+          (set-buffer-modified-p nil)
+          (message "File '%s' successfully renamed to '%s'"
+                   name (file-name-nondirectory new-name)))))))
+
+(defun open-line-below ()
+  (interactive)
+  (end-of-line)
+  (newline)
+  (indent-for-tab-command))
+
+(defun open-line-above ()
+  (interactive)
+  (beginning-of-line)
+  (newline)
+  (forward-line -1)
+  (indent-for-tab-command))
+
+
+
+;; full screen magit-status
+;; http://whattheemacsd.com/
+(defadvice magit-status (around magit-fullscreen activate)
+  (window-configuration-to-register :magit-fullscreen)
+  ad-do-it
+  (delete-other-windows))
+
+(defun magit-quit-session ()
+  "Restores the previous window configuration and kills the magit buffer"
+  (interactive)
+  (kill-buffer)
+  (jump-to-register :magit-fullscreen))

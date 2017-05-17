@@ -110,3 +110,9 @@
 ;; (add-hook 'fundamental-mode-abbrev-table 'nlinum-mode 1)
 
 (add-hook 'prog-mode-hook 'nlinum-mode)
+
+
+;; Diminish modeline clutter
+(require 'diminish)
+(diminish 'wrap-region-mode)
+(diminish 'yas/minor-mode)

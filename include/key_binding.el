@@ -200,6 +200,7 @@
 ;; (global-set-key [(meta control shift a)] 'mark-whole-buffer)
 (global-set-key (kbd "M-q") 'ask-before-closing)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
+(global-set-key (kbd "C-x C-r") 'rename-current-buffer-file)
 
 ;; Buffer
 (global-set-key [(meta shift n)] 'evil-buffer-new)
@@ -263,6 +264,9 @@
 (global-set-key (kbd "<C-268632074>") 'drag-stuff-down) ;; control+alt+j
 
 ;; (global-set-key [control meta k] 'drag-stuff-up)
+
+(global-set-key (kbd "<C-return>") 'open-line-below)
+(global-set-key (kbd "<C-S-return>") 'open-line-above)
 ;; Helm
 (global-set-key (kbd "M-x") 'helm-M-x)
 ;; (global-set-key (kbd "C-x C-m") 'helm-M-x)
@@ -533,6 +537,7 @@
 (global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
 
 (define-key magit-status-mode-map (kbd "M-w") 'kill-ring-save)
+(define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
 
 ;; ---------------- open line
 (global-set-key [(control shift j)] 'smart-open-line-above)
