@@ -13,6 +13,7 @@
   paredit-everywhere
   syslog-mode
   ;; load-theme-buffer-local
+  find-file-in-project
 
   ;; back-button
 
@@ -170,7 +171,7 @@
   iy-go-to-char
   change-inner
 
-  dired-details
+  ;; dired-details
   flx-ido
 
   ;;ivy-hydra

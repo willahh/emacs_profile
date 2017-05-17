@@ -991,3 +991,112 @@ the visible part of the current buffer following point. "
                      current-prefix-arg))
   (avy-with avy-goto-word-1
     (avy-goto-word-1 char arg (point) (window-end (selected-window) t))))
+
+
+;; Keep region when undoing in region
+;; from http://whattheemacsd.com/
+(defadvice undo-tree-undo (around keep-region activate)
+  (if (use-region-p)
+      (let ((m (set-marker (make-marker) (mark)))
+            (p (set-marker (make-marker) (point))))
+        ad-do-it
+        (goto-char p)
+        (set-mark m)
+        (set-marker p nil)
+        (set-marker m nil))
+    ad-do-it))
+
+;; In dired, M-> and M- never take me where I want to go.
+;; http://whattheemacsd.com/
+(defun dired-back-to-top ()
+  (interactive)
+  (beginning-of-buffer)
+  (dired-next-line 4))
+
+(define-key dired-mode-map
+  (vector 'remap 'beginning-of-buffer) 'dired-back-to-top)
+
+(defun dired-jump-to-bottom ()
+  (interactive)
+  (end-of-buffer)
+  (dired-next-line -1))
+
+(define-key dired-mode-map
+  (vector 'remap 'end-of-buffer) 'dired-jump-to-bottom)
+
+;; Function to create new functions that look for a specific pattern
+(defun ffip-create-pattern-file-finder (&rest patterns)
+  (lexical-let ((patterns patterns))
+    (lambda ()
+      (interactive)
+      (let ((ffip-patterns patterns))
+        (find-file-in-project)))))
+
+;; Find file in project, with specific patterns
+(global-unset-key (kbd "C-x C-o"))
+(global-set-key (kbd "C-x C-o ja")
+                (ffip-create-pattern-file-finder "*.java"))
+(global-set-key (kbd "C-x C-o js")
+                (ffip-create-pattern-file-finder "*.js"))
+(global-set-key (kbd "C-x C-o jp")
+                (ffip-create-pattern-file-finder "*.jsp"))
+(global-set-key (kbd "C-x C-o ph")
+                (ffip-create-pattern-file-finder "*.php"))
+
+;; Join lines
+;; http://whattheemacsd.com/
+;; Awesome !!
+(defun wlh-join-lines ()
+  (interactive)
+  (join-line -1))
+
+
+;; making paredit work with delete-selection-mode
+;; Update : Pas trouvé le fonctionnement exact
+;; (put 'paredit-forward-delete 'delete-selection 'supersede)
+;; (put 'paredit-backward-delete 'delete-selection 'supersede)
+;; (put 'paredit-open-round 'delete-selection t)
+;; (put 'paredit-open-square 'delete-selection t)
+;; (put 'paredit-doublequote 'delete-selection t)
+;; (put 'paredit-newline 'delete-selection t)
+
+
+(defun toggle-window-split ()
+  (interactive)
+  (if (= (count-windows) 2)
+      (let* ((this-win-buffer (window-buffer))
+             (next-win-buffer (window-buffer (next-window)))
+             (this-win-edges (window-edges (selected-window)))
+             (next-win-edges (window-edges (next-window)))
+             (this-win-2nd (not (and (<= (car this-win-edges)
+                                         (car next-win-edges))
+                                     (<= (cadr this-win-edges)
+                                         (cadr next-win-edges)))))
+             (splitter
+              (if (= (car this-win-edges)
+                     (car (window-edges (next-window))))
+                  'split-window-horizontally
+                'split-window-vertically)))
+        (delete-other-windows)
+        (let ((first-win (selected-window)))
+          (funcall splitter)
+          (if this-win-2nd (other-window 1))
+          (set-window-buffer (selected-window) this-win-buffer)
+          (set-window-buffer (next-window) next-win-buffer)
+          (select-window first-win)
+          (if this-win-2nd (other-window 1))))))
+
+;; Kill the buffer and the associated file
+;; http://whattheemacsd.com/
+(defun delete-current-buffer-file ()
+  "Removes file connected to current buffer and kills buffer."
+  (interactive)
+  (let ((filename (buffer-file-name))
+        (buffer (current-buffer))
+        (name (buffer-name)))
+    (if (not (and filename (file-exists-p filename)))
+        (ido-kill-buffer)
+      (when (yes-or-no-p "Are you sure you want to remove this file? ")
+        (delete-file filename)
+        (kill-buffer buffer)
+        (message "File '%s' successfully removed" filename)))))

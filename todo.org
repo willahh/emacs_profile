@@ -1,5 +1,9 @@
 * todo
 ** Utils
+- Find files in project
+  - C-x C-o js (find JS files)
+  - C-x C-o ph (find php files)
+
 - Osx keyboard input delay :
    - default values :
      - defaults read NSGlobalDomain KeyRepeat 2
@@ -66,9 +70,11 @@ http://ecb.sourceforge.net/
 https://www.youtube.com/watch?v=KoRNCrx9pak
 
 ** Bloquant
-- [ ] [ffap] Ffap doit fonctionner avec ce genre de lignes :
-      - require_once(dirname(__FILE__) . '/file.inc.php');
+- [ ] [ido] [mini-buffer] Ajouter un bind C-k pour supprimer tout le texte
+
 - [ ] [dired] Delete dir slow, piste : Tester sans 
+- [ ] [ffap] Ffap doit fonctionner avec ce genre de lignes :
+  - require_once(dirname(__FILE__) . '/file.inc.php');
 - [ ] Fichiers .sql mode log edit
 - [ ] [dired] Voir comment lancer une recherche depuis plusieurs dossier selectionnes
 - [ ] [multi-cursor] Faire fonctionner le binding sur C-m
@@ -82,9 +88,10 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [doc-block] La fonction custom doc bloc ne fonctionne pas ni en php-mode
       ni en typescript mode
 - [ ] [theme] [highlight-symbol] Mettre une couleur moins flashy
-- [ ] [ffap] Si un seul résultat, go to direct sans demander
 - [ ] [theme] [ediff] Trouver comment avoir les bons code couleurs, les couleurs parfaitement implémentées avec avec le thème leuven
 
+- [X] [ffap] Si un seul résultat, go to direct sans demander
+      -> Utilisation de find "find-file-in-project-by-selected"
 - [X] [i-search] La mauvaise couleur est réapparu
 - [X] [theme] Helm : Changer la couleur de la bande du haut et de la bande du bas pour mettre un gris neutre
 - [X] [diff-hl] Ne fonctionne plus (Problème avec le package)

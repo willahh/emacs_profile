@@ -203,9 +203,10 @@
 
 ;; Buffer
 (global-set-key [(meta shift n)] 'evil-buffer-new)
-(global-set-key (kbd "C-c C-k") 'kill-this-buffer)
+;; (global-set-key (kbd "C-c C-k") 'kill-this-buffer)
 (define-key global-map (kbd "C-x k") 'kill-this-buffer)
 (define-key global-map (kbd "C-x C-r") 'revert-buffer-no-confirm)
+(global-set-key (kbd "C-x C-k") 'delete-current-buffer-file)
 
 ;; ---------------- Dired
 (define-key dired-mode-map (kbd "<tab>") 'dired-find-file)
@@ -628,16 +629,24 @@
 
 ;; Find file at point
 ;; (global-set-key (kbd "C-c .") 'ffap)
+;; Update to use find-file-in-project-by-selected
 (global-set-key (kbd "C->") 'ffap)
-(global-set-key (kbd "C-.") 'projectile-find-file-dwim)
+;; (global-set-key (kbd "C-.") 'projectile-find-file-dwim)
+(global-set-key (kbd "C-.") 'find-file-in-project-by-selected)
+(define-key php-mode-map [(control .)] 'find-file-in-project-by-selected)
+
 
 ;; Raccourcis déjà utilisé par Emacs par iedit
 ;; (global-set-key (kbd "C-;") 'projectile-find-file-dwim) ;; (ctrl + ;)
 
 
-(define-key php-mode-map [(control .)] 'ffap)
 
 
 ;; ---------------- text
 (define-key js-mode-map (kbd "C-:") "\C-e;")
 (define-key typescript-mode-map (kbd "C-:") "\C-e;")
+
+
+
+(global-set-key (kbd "C-c RET") 'wlh-join-lines)
+(define-key web-mode-map (kbd "C-c RET") 'wlh-join-lines)

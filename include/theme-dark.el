@@ -16,10 +16,10 @@
 (set-face-attribute 'trailing-whitespace nil :background "#000")
 
 ;; ------ Font
-(set-face-attribute 'font-lock-doc-face nil :foreground "#4a4a4a")
-;; (set-face-attribute 'font-lock-comment-face nil :foreground "#676767")
-(set-face-attribute 'font-lock-comment-face nil :foreground "#8a8a8a")
-(set-face-attribute 'font-lock-doc-face nil :foreground "#676767")
+(set-face-attribute 'font-lock-doc-face nil :foreground "#848484")
+;; (set-face-attribute 'font-lock-comment-face nil :foreground "#848484")
+(set-face-attribute 'font-lock-comment-face nil :foreground "#848484")
+(set-face-attribute 'font-lock-doc-face nil :foreground "#848484")
 (set-face-attribute 'font-lock-string-face nil :foreground "#bfee79")
 (set-face-attribute 'font-lock-keyword-face nil :foreground "#c792ea")
 (set-face-attribute 'font-lock-type-face nil :foreground "#fecc6a")

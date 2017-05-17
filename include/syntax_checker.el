@@ -89,6 +89,6 @@
 
 
 ;; editorconfig
-(require 'editorconfig)
+;; (require 'editorconfig)
 (add-hook 'prog-mode-hook 'editorconfig-mode)
 

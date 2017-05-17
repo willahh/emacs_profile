@@ -6,7 +6,7 @@
 ;; ;; Make dired less verbose
 ;; ;; Update : Non available on Melpa
 ;;
-;; (require 'dired-details)
+
 ;; (setq-default dired-details-hidden-string "--- ")
 ;; (dired-details-install)
 ;;
@@ -26,10 +26,17 @@
 
 ;; (add-hook 'find-file-hook 'my-find-file-check-make-large-file-read-only-hook)
 
-
+;; No need since emacs 24
+;; (require 'dired-details)
+;; (setq-default dired-details-hidden-string "--- ")
+;; (dired-details-install)
 
 ;; ------- dired conf
 (require 'dired-x)
+
+
+(add-hook 'dired-mode-hook
+          (lambda () (dired-hide-details-mode +1)))
 
 ;; Hide dot files (.svn, .git, ...)
 ;; (setq dired-omit-files "^\\...+$")
