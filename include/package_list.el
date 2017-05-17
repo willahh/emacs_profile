@@ -14,6 +14,7 @@
   syslog-mode
   ;; load-theme-buffer-local
   find-file-in-project
+  yaml-mode
 
   ;; back-button
 

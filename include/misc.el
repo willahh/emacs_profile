@@ -376,3 +376,6 @@ _n_: Navigate           _._: mark position _/_: jump to mark
 ;; (recentf-mode +1)
 (recentf-mode 1)
 (setq-default recent-save-file "~/.emacs.d/recentf")
+
+
+(require 'yaml-mode)
