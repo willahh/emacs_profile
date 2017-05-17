@@ -122,6 +122,12 @@
 (evil-leader/set-key "zh" 'hs-hide-block)
 
 ;; -------- key chords binding
+(key-chord-define-global "ji" 'ace-window) ;; cannot be jk (vim up/right)
+(key-chord-define-global ";:" 'highlight-symbol-mode)
+(key-chord-define-global "qs" 'toggle-php-flavor-mode)
+;; (key-chord-define js-mode-map ";;" "\C-e;") ;; paredit a deja un bind sur ;
+
+
 ;; avy
 ;; Update : az ne peut pas etre utilise car trop fréquemment utilisé ("localization", ...)
 ;; (key-chord-define-global "qs" 'avy-goto-word-1-below)
@@ -130,9 +136,6 @@
 ;; (key-chord-define-global "xc" 'er/expand-region)
 ;; (key-chord-define-global "wx" 'er/contract-region)
 
-(key-chord-define-global "ji" 'ace-window) ;; cannot be jk (vim up/right)
-(key-chord-define-global ";:" 'highlight-symbol-mode)
-(key-chord-define-global "qs" 'toggle-php-flavor-mode)
 ;; (key-chord-define-global "kf" 'avy-goto-word-or-subword-1)
 ;; (key-chord-define-global "fk" 'avy-goto-word-or-subword-1)
 
@@ -196,6 +199,7 @@
 
 ;; (global-set-key [(meta control shift a)] 'mark-whole-buffer)
 (global-set-key (kbd "M-q") 'ask-before-closing)
+(global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;; Buffer
 (global-set-key [(meta shift n)] 'evil-buffer-new)
@@ -352,6 +356,7 @@
 ;; et projectile-ag
 
 ;; (global-set-key (kbd "C-c s p") 'ag-project)
+(global-set-key (kbd "C-c s a") 'ag-project)
 (global-set-key (kbd "C-c s A") 'ag)
 ;; (global-set-key (kbd "C-c s a") 'ag-project-at-point)
 (global-set-key (kbd "C-c s p") 'projectile-ag)
@@ -512,6 +517,13 @@
 (global-set-key [(control meta l)] 'er/expand-region)
 (global-set-key [(control meta shift l)] 'er/contract-region)
 
+
+(defun m-eshell-hook ()
+  (define-key eshell-mode-map (kbd "C-M-l") 'er/contract-region)
+)
+
+(add-hook 'eshell-mode-hook 'm-eshell-hook)
+
 ;; ---------------- Magit
 (require 'magit)
 
@@ -624,3 +636,8 @@
 
 
 (define-key php-mode-map [(control .)] 'ffap)
+
+
+;; ---------------- text
+(define-key js-mode-map (kbd "C-:") "\C-e;")
+(define-key typescript-mode-map (kbd "C-:") "\C-e;")

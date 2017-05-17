@@ -70,6 +70,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
       - require_once(dirname(__FILE__) . '/file.inc.php');
 - [ ] [dired] Delete dir slow, piste : Tester sans 
 - [ ] Fichiers .sql mode log edit
+- [ ] [dired] Voir comment lancer une recherche depuis plusieurs dossier selectionnes
 - [ ] [multi-cursor] Faire fonctionner le binding sur C-m
 - [ ] [vc-diff mode] Voir si il est possible de laAncer des commandes de type ediff
        Depuis  le vc-diff
@@ -79,7 +80,8 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
       L'afficher dans la même frame mais je n'ai pas réussis à bien l'implèmenter
 - [ ] System : bind c-j 
 - [ ] [doc-block] La fonction custom doc bloc ne fonctionne pas ni en php-mode
-      ni en typescript mode- [ ] [theme] [highlight-symbol] Mettre une couleur moins flashy
+      ni en typescript mode
+- [ ] [theme] [highlight-symbol] Mettre une couleur moins flashy
 - [ ] [ffap] Si un seul résultat, go to direct sans demander
 - [ ] [theme] [ediff] Trouver comment avoir les bons code couleurs, les couleurs parfaitement implémentées avec avec le thème leuven
 

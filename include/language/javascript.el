@@ -60,7 +60,10 @@
   (require 'indium)
 
   ;; Fast completion
-  (set (make-local-variable 'company-minimum-prefix-length) 0)
+  ;; Update to 3 refix min because some yasnippet cannot be triggered
+  
+  ;; (set (make-local-variable 'company-minimum-prefix-length) 0)
+  (set (make-local-variable 'company-minimum-prefix-length) 3)
   ;; (set (make-local-variable 'company-idle-delay) 0)
   (set (make-local-variable 'company-idle-delay) 0)
 
