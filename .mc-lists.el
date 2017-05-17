@@ -53,6 +53,7 @@
       my-abort-recursive-edit
       org-beginning-of-line
       org-cycle
+      org-delete-char
       org-end-of-line
       org-self-insert-command
       paredit-doublequote
