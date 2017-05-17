@@ -24,13 +24,9 @@
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.css\\'" . css-mode)) ;; .css file should be assigned to css-mode for nice emmet support
-;; (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
-;; (add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
-;; (add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
 (add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
 (add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-mode))
 ;; (add-to-list 'auto-mode-alist '(".ts" . typescript-mode))
-;; (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
 
 (setq web-mode-enable-css-colorization t)
 (setq web-mode-enable-current-element-highlight t)
@@ -55,11 +51,11 @@
   "Toggle mode between PHP & Web-Mode Helper modes"
   (cond ((string= mode-name "PHP")
          (web-mode)
-         (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
+         ;; (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
          )
         ((string= mode-name "Web")
          (php-mode))
-        (add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
+        ;; (add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
         ))
 
 ;; Disable auto indent in web mode (can be very slow)

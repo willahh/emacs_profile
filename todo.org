@@ -66,8 +66,12 @@ http://ecb.sourceforge.net/
 https://www.youtube.com/watch?v=KoRNCrx9pak
 
 ** Bloquant
+- [ ] [ffap] Ffap doit fonctionner avec ce genre de lignes :
+      - require_once(dirname(__FILE__) . '/file.inc.php');
+- [ ] [dired] Delete dir slow, piste : Tester sans 
+- [ ] Fichiers .sql mode log edit
 - [ ] [multi-cursor] Faire fonctionner le binding sur C-m
-- [ ] [vc-diff mode] Voir si il est possible de lancer des commandes de type ediff
+- [ ] [vc-diff mode] Voir si il est possible de laAncer des commandes de type ediff
        Depuis  le vc-diff
 - [ ] [système] Augmenter la vitesse de déplacement du curseur (actuellement limité dans osx)
 - [ ] Implementer le menu semantique (je n'ai plus le nom) et l'afficher a gauche ou faire un toggle a voir
