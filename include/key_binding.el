@@ -259,7 +259,8 @@
 (global-set-key (kbd "<double-wheel-right>") 'scroll-left)
 
 ;; kill-ring
-(global-set-key (kbd "M-c") 'kill-ring-save)
+;; Update : Retour sur le racourcis natif d Emacs (M-w)
+;; (global-set-key (kbd "M-c") 'kill-ring-save)
 
 ;; Line operations
 (global-set-key (kbd "C-x C-d") 'duplicate-current-line-or-region)

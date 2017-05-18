@@ -16,6 +16,10 @@
   ;;find-file-in-project
   yaml-mode
   slime
+  cider
+  clojurescript-mode
+
+
   ;; backe-button
 
   ;; perspective
@@ -70,7 +74,7 @@
   eclim
   point-undo
 
-  ;; rainbow-delimiters
+  rainbow-delimiters
   ;;anything
   async
   auto-complete

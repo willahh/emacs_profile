@@ -379,3 +379,7 @@ _n_: Navigate           _._: mark position _/_: jump to mark
 
 
 (require 'yaml-mode)
+
+;; rainbow-delimiters
+(require 'rainbow-delimiters)
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
