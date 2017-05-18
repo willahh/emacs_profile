@@ -140,9 +140,11 @@
 (set-face-attribute 'diff-removed nil :foreground "#ff5370" :background nil)
 (set-face-attribute 'diff-indicator-removed nil :foreground "#89ddff" :background nil)
 
-(set-face-attribute 'diff-refine-removed nil :foreground "#000" :background "#fc5572")
-(set-face-attribute 'diff-refine-added nil :foreground "#000" :background "#c4e791")
-;; (set-face-attribute 'diff-hunk-header nil :foreground "#eeffff")
+;; (set-face-attribute 'diff-refine-removed nil :foreground "#000" :background "#fc5572")
+;; (set-face-attribute 'diff-refine-added nil :foreground "#000" :background "#c4e791")
+
+(set-face-attribute 'diff-refine-removed nil :foreground "#000" :background nil)
+(set-face-attribute 'diff-refine-added nil :foreground "#000" :background nil)
 
 ;; ;; ----- vc-ediff color custom
 (require 'ediff)
@@ -247,5 +249,9 @@
 (set-face-attribute 'avy-lead-face-2 nil :background "#fff" :foreground "#000" :underline "#ff00ff")
 
 
-
-
+;; ------ org mode
+(set-face-attribute 'org-checkbox nil :foreground "#56b0ec")
+(set-face-attribute 'org-level-1 nil :foreground "#ec6073")
+(set-face-attribute 'org-level-2 nil :foreground "#ec6073")
+(set-face-attribute 'org-level-3 nil :foreground "#ec6073")
+(set-face-attribute 'org-level-4 nil :foreground "#ec6073")

@@ -2,11 +2,10 @@
 (require 'js2-mode)
 
 
-(js2-imenu-extras-mode)
 
-(setq js2-mode-show-parse-errors nil)
-(setq js2-mode-show-strict-warnings nil)
-(setq js2-mode-show-warnings nil)
+;; (setq js2-mode-show-parse-errors nil)
+;; (setq js2-mode-show-strict-warnings nil)
+;; (setq js2-mode-show-warnings nil)
 
 ;; (js2-mode-show-parse-errors)
 ;; (js2-)
@@ -57,7 +56,9 @@
   (interactive)
 
   ;; indium
-  (require 'indium)
+  ;; (require 'indium)
+
+  (js2-imenu-extras-mode)
 
   ;; Fast completion
   ;; Update to 3 refix min because some yasnippet cannot be triggered
@@ -71,6 +72,9 @@
 
   ;; Enable js2-refactor-mode
   (js2-refactor-mode)
+
+  ;; flycheck-mode
+  (flycheck-mode)
 
   ;; ;; Enable highlight symbol
   ;; (highlight-symbol-mode)

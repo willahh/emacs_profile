@@ -74,13 +74,18 @@ http://ecb.sourceforge.net/
 https://www.youtube.com/watch?v=KoRNCrx9pak
 
 ** Bloquant
-- [ ] [ido] [mini-buffer] Ajouter un bind C-k pour supprimer tout le texte
-
+- [ ] Kill texte : Ne pas ajouter dans le kill ring
+      --> L'ajout dans le kill ring ne se fait que depuis M-w si possible
+- [ ] M-S-n sur buffer vc-diff ne fonctionne pas 
+- [X] C-s a ag-project-at-point
+- [X] js2 Reactiver flycheck mode error et warning non presents
+- [ ] OSX Unbind C-M-4 : Impossible actuellement de faire du query replace
+- [ ] JS2 mode, le refresh du display est lent
+- [ ] [counsel-find-file] [mini-buffer] Ajouter un bind C-k pour supprimer tout le texte
 - [ ] [dired] Delete dir slow, piste : Tester sans 
 - [ ] [ffap] Ffap doit fonctionner avec ce genre de lignes :
   - require_once(dirname(__FILE__) . '/file.inc.php');
 - [ ] Fichiers .sql mode log edit
-- [ ] [dired] Voir comment lancer une recherche depuis plusieurs dossier selectionnes
 - [ ] [multi-cursor] Faire fonctionner le binding sur C-m
 - [ ] [vc-diff mode] Voir si il est possible de laAncer des commandes de type ediff
        Depuis  le vc-diff

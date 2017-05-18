@@ -361,7 +361,7 @@
 ;; et projectile-ag
 
 ;; (global-set-key (kbd "C-c s p") 'ag-project)
-(global-set-key (kbd "C-c s a") 'ag-project)
+(global-set-key (kbd "C-c s a") 'ag-project-at-point)
 (global-set-key (kbd "C-c s A") 'ag)
 ;; (global-set-key (kbd "C-c s a") 'ag-project-at-point)
 (global-set-key (kbd "C-c s p") 'projectile-ag)

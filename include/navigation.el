@@ -305,6 +305,8 @@
   :ensure t
   )
 
+;; (define-key counsel-find-file-map (kbd "C-k") 'ivy-alt-done)
+
 ;; (use-package swiper
 ;;   :ensure try
 ;;   :config
@@ -320,7 +322,7 @@
 ;;     (global-set-key (kbd "<f1> v") 'counsel-describe-variable)
 ;;     (global-set-key (kbd "<f1> l") 'counsel-load-library)
 ;;     (global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
-;;     (global-set-key (kbd "<f2> u") 'counsel-unicode-char)
+  ;;     (global-set-key (kbd "<f2> u") 'counsel-unicode-char)
 ;;     (global-set-key (kbd "C-c g") 'counsel-git)
 ;;     (global-set-key (kbd "C-c j") 'counsel-git-grep)
 ;;     (global-set-key (kbd "C-c k") 'counsel-ag)
