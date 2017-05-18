@@ -11,4 +11,8 @@ g;;; Install epdfinfo via 'brew install pdf-tools' and then install the
     '(pdf-tools-handle-upgrades nil)) ; Use brew upgrade pdf-tools instead.
   (setq pdf-info-epdfinfo-program "epdfinfo"))
 
+
+(require 'pdf-tools)
+(setq build-directory "~/.emacs.d/build")
+
 (pdf-tools-install)
