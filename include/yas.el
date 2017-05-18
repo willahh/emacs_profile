@@ -1,10 +1,7 @@
-
-;; yasnippet
 (require 'yasnippet)
 ;; (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/snippets/es6-snippets")
 (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/apgwoz/")
 (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/willahh/")
-
 
 (setq yas/indent-line nil)
 ;; (yas-global-mode 1)
@@ -22,8 +19,6 @@
 ;; Update : bind un keybinding to yas expand
 ;; Because yas + autocomplete (when auto start) are always in conflict (with my yas keywords)
 
-
-
 ;; Ajoute la liste des snippets dans les resultats de autocomplete
 ;; Update ac-sources semble non defini
 ;; (defun my-prog-mode-hook ()
@@ -31,12 +26,7 @@
 
 ;; (add-hook 'prog-mode-hook 'my-prog-mode-hook)
 
-
-
-
-
 ; (global-set-key (kbd "<C-return>") 'yas-expand)
-
 
 ; (global-set-key [tab] 'tab-indent-or-complete)
 ; (global-set-key (kbd "TAB") 'tab-indent-or-complete)

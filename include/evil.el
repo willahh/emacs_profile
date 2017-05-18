@@ -132,12 +132,8 @@
 ;; ;; Ex command that allows you to invoke evil-multiedit with a regular expression, e.g.
 ;; (evil-ex-define-cmd "ie[dit]" 'evil-multiedit-ex-match)
 
-
-
 ;; evil-nerd-commenter
 (require 'evil-nerd-commenter)
-
-
 
 ;; Evil key leader (should be set before evil mode)
 (require 'evil-leader)
@@ -146,12 +142,8 @@
 ;; evil-easymotion
 (require 'evil-easymotion)
 
-
-
 (require 'evil-snipe)
 (evil-snipe-mode 1)
-
-
 
 ;; evil-matchit
 (require 'evil-matchit)

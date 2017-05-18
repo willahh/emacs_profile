@@ -1,8 +1,5 @@
-
-;; all-the-icons
-(require 'all-the-icons)
-
-
+;; ;; all-the-icons
+;; (require 'all-the-icons)
 
 ;;
 ;; Besoin : Afficher le chemin du fichier complet dans le title de la frame courante
@@ -39,19 +36,10 @@
 ;; (setq nlinum-relative-current-symbol "->")      ;; or "" for display current line number
 ;; (setq nlinum-relative-offset 0)                 ;; 1 if you want 0, 2, 3...
 
-
-
-
 ;; ----- Smart modde line
 ;; (setq sml/no-confirm-load-theme t)
 ;; (setq sml/theme 'dark)
 ;; (sml/setup)
-
-
-
-
-
-
 
 ;; ;; tabbar
 ;; (require 'tabbar)

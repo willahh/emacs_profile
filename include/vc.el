@@ -37,8 +37,6 @@
 
 (add-hook 'svn-log-edit-mode-hook 'my-svn-log-edit-mode-setup)
 
-
-
 ;; diff-hl
 ;; Update : global-diff-hl-mode ainsi que diff-hl-dired-mode
 ;; ne fonctionne plus pour le moment
@@ -64,11 +62,8 @@
 (autoload 'svn-status "dsvn" "Run `svn status'." t)
 (autoload 'svn-update "dsvn" "Run `svn update'." t)
 
-
-
 ;; Ediff setup
 (winner-mode)
-
 
 ;; Show character-level diff
 ;; http://emacs.stackexchange.com/q/7362
@@ -80,15 +75,12 @@
 ;; Display ediff vertical by default
 (advice-add 'ediff-quit :around #'disable-y-or-n-p)
 
-
 ;; Add vc hooks to enable ediff checking
 (eval-after-load "vc-hooks"
   '(define-key vc-prefix-map "=" 'vc-ediff))
 
-
 ;; Close neotree before show
 (add-hook 'ediff-before-setup-windows-hook 'neotree-hide)
-
 
 ;; Override emacs diff-goto-source defun
 ;; Change "pop-to-buffer" to "pop-to-buffer-same-window"
@@ -115,4 +107,3 @@ then `diff-jump-to-old-file' is also set, for the next invocations."
       (pop-to-buffer-same-window buf)
       (goto-char (+ (car pos) (cdr src)))
       (diff-hunk-status-msg line-offset (diff-xor rev switched) t))))
-

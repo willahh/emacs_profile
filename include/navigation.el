@@ -4,13 +4,10 @@
 ;; change-inner
 (require 'change-inner)
 
-
 ;; whole-line-or-region
 ;; Ce package ou cette fonction n est pas disponible
 ;; est elle importante ?
 (require 'whole-line-or-region)
-
-
 
 ;; highlight-symbol
 ;; Update : L activation automatique en temps reel n est pas possible
@@ -37,8 +34,6 @@
 (add-hook 'prog-mode-hook 'highlight-symbol-mode)
 (add-hook 'emacs-lisp-mode 'highlight-symbol-mode)
 (setq highlight-symbol-idle-delay .3)
-
-
 ;; (setq highlight-symbol-idle-delay 0)
 
 (add-hook 'prog-mode-hook 'highlight-symbol-nav-mode)
@@ -61,29 +56,14 @@
           (define-key evil-normal-state-map (kbd "M-p") 'highlight-symbol-prev)
 )
 
-;; (add-hook ' 'highlight-symbol-nav-mode)
-
-
-
-
-;; imenu-anywhere
-;; (require 'imenu-anywhere)
-
-
-
-
-
 ;; Key chords commands
 ;; From http://emacsrocks.com/e07.html
 (require 'key-chord)
 (key-chord-mode 1)
 
-
 ;; Max time delay between two key presses to be considered a key
 (setq key-chord-two-keys-delay 0.1) ; default 0.1
 (setq key-chord-one-key-delay 0.2) ; default 0.2
-
-
 
 ;; multiple-cursors
 (require 'multiple-cursors)
@@ -98,8 +78,6 @@
   :ensure t
   :bind (("C-S-<mouse-1>" . mc/add-cursor-on-click)))
 
-
-
 ;; smart-forward
 ;; Javascript smart navigation
 ;; A voir ...
@@ -110,13 +88,9 @@
 ;; (global-set-key (kbd "M-<left>") 'smart-backward)
 ;; (global-set-key (kbd "M-<right>") 'smart-forward)
 
-
-
 ;; Which-key
 (require 'which-key)
 (which-key-mode)
-
-
 
 ;; eyebrowse
 (require 'eyebrowse)
@@ -126,14 +100,12 @@
 (require 'which-key)
 (which-key-mode)
 
-
 ;; ---------------- ido / smex / ivy
 ;; (require 'smex)
 
 ;; ----- ido
 (require 'ido)
 (require 'ido-ubiquitous)
-
 
 (setq ido-enable-prefix nil
       ido-enable-flex-matching t
@@ -145,16 +117,14 @@
       ido-everywhere t
       ido-mode 1)
 
-
-
 ;; ----- ido-vertical-mode
 (require 'ido-vertical-mode)
 ;; (ido-mode 1)
 (ido-vertical-mode 1)
 (setq ido-vertical-define-keys 'C-n-and-C-p-only)
 
+;; flx
 (require 'flx)
-
 
 ;; Try out flx-ido for better flex matching between words
 (require 'flx-ido)
@@ -162,8 +132,6 @@
 
 ;; C-n/p is more intuitive in vertical layout
 (setq ido-vertical-define-keys 'C-n-C-p-up-down-left-right)
-
-
 
 ;; ---- smex
 ;; (require 'smex) ; Not needed if you use package.el
@@ -173,7 +141,6 @@
 ;; ---- ivy
 (require 'ivy)
 (ivy-mode)
-
 
 ;; ivy conf
 (setq ivy-virtual-abbreviate 'full)
@@ -188,14 +155,11 @@
 ;; (setq ivy-use-virtual-buffers t)
 
 ;; full file names - useful when multiple files have same names
-(setq ivy-virtual-abbreviate 'full)
-
-;;
+(setq ivy-virtual-abbreviate 'full);;
 (setq ivy-use-virtual-buffers t)
 
 ;;
 (setq ivy-count-format "(%d/%d) ")
-
 (setq ivy-height 25)
 
 ;; ivy config
@@ -208,27 +172,21 @@
 ;; (setq ivy-re-builders-alist '((t . ivy--regex-fuzzy)))
 
 (setq ivy-initial-inputs-alist nil)
-
-
 (setq ivy-re-builders-alist
       '((ivy-switch-buffer . ivy--regex-plus)
         (t . ivy--regex-fuzzy)))
 
-
-                                        ; Use Enter on a directory to navigate into the directory, not open it with dired.
+;; Use Enter on a directory to navigate into the directory, not open it with dired.
 (define-key ivy-minibuffer-map (kbd "C-m") 'ivy-alt-done)
 (define-key ivy-minibuffer-map (kbd "<tab>") 'ivy-alt-done)
 ;; (define-key ivy-minibuffer-map (kbd "C-b") 'ivy-previous-history-element)
 ;; (define-key ivy-minibuffer-map (kbd "C-b") 'ivy-previous-line)
 ;; (define-key ivy-minibuffer-map (kbd "C-b") 'ivy-previous-line-and-call)
 
-
-
 ;; (ivy-pra)
 
 ; Let projectile use ivy
 (setq projectile-completion-system 'ivy)
-
 
 ;; ido conf
 (setq ido-mode 1)
@@ -238,18 +196,14 @@
 ;; (setq ido-enable-regexp t)
 ;; (setq ido-max-prospects 40)
 
-
 ;; ---------------- ivy_buffer_extend
 ;; Extend the ivy buffer
 ;; Source : https://gist.github.com/frostidaho/bc3a7b1be32f916dc65d
 ;; Post : https://github.com/abo-abo/swiper/issues/256
 (require 'ivy_buffer_extend)
 
-
 ;; ---------------- ivy-hydra
 ;; (require 'ivy-hydra) ;; Not found on elpa/melpa
-
-
 
 ;; ---------------- helm
 ;; (require 'helm)
@@ -287,17 +241,11 @@
 
 (setq helm-follow-mode-persistent t)
 
-
-
-
 ;; ---------------- swoop
 (require 'helm-swoop) ;; Not found in elpa for the moment
 
 ;; If this value is t, split window inside the current window
 (setq helm-swoop-split-with-multiple-windows t)
-
-
-
 
 ;; ---------------- swiper
 (require 'swiper)
@@ -338,16 +286,11 @@
 
 (advice-add 'swiper :after #'bjm-swiper-recenter)
 
-
-
 ;; Echec
 ;; (defun compile-goto-error-recenter (&optional EVENT)
 ;;   (recenter))
 
 ;; (advice-add 'compile-goto-error :after #'compile-goto-error-recenter)
-
-
-
 
 ;; ---------------- resize-window
 (require 'resize-window)
@@ -377,7 +320,6 @@
 ;;   "List of actions for `resize-window-dispatch-default.
 ;; Main data structure of the dispatcher with the form:
 ;; \(char function documentation match-capitals\)")
-
 
 ;; ---------------- neotree
 (require 'neotree)
@@ -410,16 +352,8 @@
 (defadvice evil-ex-search-next (after advice-for-evil-ex-search-next activate)
   (evil-scroll-line-to-center (line-number-at-pos)))
 
-
-
-
-  
 ;; Expand region
 (require 'expand-region)
-
-
-
-
 
 ;; Auto close parenthesis brackets, ...
 ;; @todo ce package ne se telecharge pas
@@ -439,8 +373,6 @@
 (require 'autopair)
 (autopair-global-mode 1)
 
-
-
 ;; smart-parens
 ;; Probleme avec des concatenations javascript et l insertion de simple quote.
 ;; Impossible de changer la configuration pour desactiver l auto insertion de simple quote.
@@ -449,35 +381,23 @@
 ;; (require 'smartparens-config)
 ;; (add-hook 'prog-mode-hook #'smartparens-mode)
 
-
-
 ;; -------- url
 ;; Enable jump to url quickly for all buffers
 (add-hook 'prog-mode-hook (goto-address-mode 1))
 (add-hook 'emacs-lisp-mode-hook (goto-address-mode 1))
 (add-hook 'js2-mode-hook (goto-address-mode 1))
 
-
-
-
 ;; point-undo
 (require 'point-undo)
-
-
 
 ;; back-button
 ;; (require 'back-button)
 ;; (require 'back-button)
 ;; (back-button-mode 1)
 
-
-
-
 (require 'google-this)
 (add-hook 'prog-mode-hook 'google-this-mode)
 (add-hook 'dired-mode-hook 'google-this-mode)
-
-
 
 ;; google-translate
 (require 'google-translate)
@@ -493,10 +413,8 @@
 (require 'paredit)
 (add-hook 'prog-mode-hook 'paredit-mode)
 
-
 ;; (require 'paredit-everywhere)
 ;; (add-hook 'prog-mode-hook 'paredit-everywhere)
-
 
 ;; fix pour utilisation de paredit dans des languages autre que du
 ;; elisp, lisp (qui sont des languagess fortement bases sur les parentèses.

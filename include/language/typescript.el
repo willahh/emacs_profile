@@ -32,7 +32,6 @@
 ;; (add-hook 'typescript-mode-hook #'setup-tide-mode)
 (add-hook 'typescript-mode-hook 'setup-tide-mode)
 
-
 ;; tsx support
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
 (add-hook 'web-mode-hook
@@ -45,7 +44,6 @@
 ;; Update 2 : Il faut que ca soit active pour avoir un support avance
 ;; Update 3 : Pas si sure, tide devrait etre utilise uniquement pour du typescript
 ;; (add-hook 'js2-mode-hook #'setup-tide-mode)
-
 
 ;; jsx support
 ;; Update voir si ca rentre pas en conflit avec les fichiers ".js"
@@ -69,6 +67,3 @@
           ;; (setq company-minimum-prefix-length 1)
           ;; (setq company-idle-delay 0.3)
 )
-
-;; (set (make-local-variable 'company-minimum-prefix-length) 1)
-;; (set (make-local-variable 'company-idle-delay) 0.3)

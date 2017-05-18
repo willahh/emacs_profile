@@ -1,4 +1,3 @@
-;; ------- Indentation stuff
 ;; clean-aindent-mode
 (require 'clean-aindent-mode)
 (define-key global-map (kbd "RET") 'newline-and-indent)

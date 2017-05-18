@@ -1,4 +1,3 @@
-
 ;; flymake
 ;; (add-hook 'js2-mode-hook 'flymake-mode)
 
@@ -15,12 +14,6 @@
 
 ;; ;; I want to see all errors for the line.
 ;; (setq flymake-number-of-errors-to-display nil)
-
-
-
-
-
-
 
 
 ;; flycheck
@@ -91,4 +84,3 @@
 ;; editorconfig
 ;; (require 'editorconfig)
 (add-hook 'prog-mode-hook 'editorconfig-mode)
-

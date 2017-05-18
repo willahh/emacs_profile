@@ -1,4 +1,3 @@
-
 ;; Turn truncate lines off by default (like in many modern tools)
 (set-default 'truncate-lines t)
 
@@ -14,10 +13,6 @@
 ;;        jit-lock-defer-contextually t
 ;;        jit-lock-stealth-nice 0.5)
 ;; (setq-default font-lock-multiline t)
-
-
-
-
 
 ;; Display function, didn't see real changes
 (setq-default bidi-display-reordering nil)
@@ -256,23 +251,17 @@
 (setq-default save-place t)
 (setq save-place-file (expand-file-name ".places" user-emacs-directory))
 
-
-
-
 ;; OH MY GOD -------> SPEED IMPROVMENT !!! (deffer font rendering)
 ;; thanks http://tsengf.blogspot.fr/2012/11/slow-scrolling-speed-in-emacs.html !!!!!!!!!!!!!!!!!!
 ;; Avec une valeur de 1, des problemes de font lock couleur surviennent.
 ;; (Couleurs de textes qui n apparaissent plus, etc)
 ;; 0.1 semble correct
-;;
 ;; Update : La mise a jour des couleurs n'est pas fluide
-;; retour sur une valeur de 0
-
+;; Update : retour sur une valeur de 0
 ;; (setq jit-lock-defer-time 0.05)
 ;; (setq jit-lock-defer-time 1)
 ;; (setq jit-lock-defer-time 0.1)
 (setq jit-lock-defer-time 0)
-
 
 ;; Some settings from https://github.com/technomancy/better-defaults/blob/master/better-defaults.el
 (progn
@@ -295,7 +284,6 @@
 (defvar display-buffer-same-window-commands
   '(occur-mode-goto-occurrence compile-goto-error))
 
-
 ;; Auto wrapping isearch
 ;; http://stackoverflow.com/a/287067
 (defadvice isearch-repeat (after isearch-no-fail activate)
@@ -305,7 +293,6 @@
     (isearch-repeat (if isearch-forward 'forward))
     (ad-enable-advice 'isearch-repeat 'after 'isearch-no-fail)
     (ad-activate 'isearch-repeat)))
-
 
 ;; Auto re-center after after isearch
 
@@ -329,8 +316,4 @@
 ;;                                  (tramp-parse-sconfig "~/.ssh/config")))
 
 (setq tramp-default-method "ssh")
-
-;; (defun connect-remote ()
-;;   (interactive)
-;;   (dired "/willahh@localhost:/"))
 

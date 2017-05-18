@@ -232,6 +232,8 @@
 ;; accessible.
 ;; Note : Les raccourcis sur la touche alt tordent les doigts
 ;; et ne sont pas agreables
+;;
+;; Update : Les définition mc/mark-next-like-this-word ... sont definies dans un hook sinon autopair prend le pas
 
 (global-set-key (kbd "‡") 'mc/mark-next-like-this-word) ;; ALT+q
 (global-set-key (kbd "Ω") 'mc/mark-previous-like-this-word) ;; ALT+SHIFT+q
@@ -240,9 +242,15 @@
 (global-set-key (kbd "ñ") 'mc/mark-next-lines) ;; ALT+p
 (global-set-key (kbd "π") 'mc/mark-previous-lines) ;; ALT+n
 
-(global-set-key [(control m)] 'mc/mark-next-like-this-word)
-(global-set-key [(control shift m)] 'mc/mark-previous-like-this-word)
-(global-set-key [(control meta shift m)] 'mc/mark-all-words-like-this)
+;; Separate C-m from RETURN key
+(define-key input-decode-map [?\C-m] [C-m])
+
+(defun wlh-set-bind-for-mc ()
+  (global-set-key (kbd "<C-m>") 'mc/mark-next-like-this-word)
+  (global-set-key [(control shift m)] 'mc/mark-previous-like-this-word)
+  (global-set-key [(control meta shift m)] 'mc/mark-all-words-like-this))
+
+(add-hook 'autopair-mode-hook 'wlh-set-bind-for-mc)
 
 
 ;; Mouse

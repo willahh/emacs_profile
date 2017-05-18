@@ -1,6 +1,3 @@
-
-
-;; ;; Web mod
 (require 'web-mode)
 ;; Remarques
 ;; Update : .php sur php pour avoir une vrai navigation et de vrai definitions
@@ -26,12 +23,10 @@
 (add-to-list 'auto-mode-alist '("\\.css\\'" . css-mode)) ;; .css file should be assigned to css-mode for nice emmet support
 (add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
 (add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-mode))
-;; (add-to-list 'auto-mode-alist '(".ts" . typescript-mode))
 
 (setq web-mode-enable-css-colorization t)
 (setq web-mode-enable-current-element-highlight t)
 (setq web-mode-enable-current-column-highlight t)
-
 
 ;; Add auto-pair
 (setq web-mode-extra-auto-pairs
@@ -42,8 +37,6 @@
 
 ;; css colorization
 (setq web-mode-enable-css-colorization t)
-
-
 
 ;; From : http://www.blogbyben.com/2016/08/emacs-php-modern-and-far-more-complete.html
 (defun toggle-php-flavor-mode ()

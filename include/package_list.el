@@ -15,8 +15,8 @@
   ;; load-theme-buffer-local
   ;;find-file-in-project
   yaml-mode
-
-  ;; back-button
+  slime
+  ;; backe-button
 
   ;; perspective
   ;; smart-mode-line ;; (sml -> activated)
@@ -196,4 +196,3 @@
 (add-to-list 'load-path "~/.emacs.d/plugins/Indium")
 (add-to-list 'load-path "~/.emacs.d/plugins/restclient")
 (add-to-list 'load-path "~/.emacs.d/plugins/diff-hl")
-
