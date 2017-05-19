@@ -597,11 +597,11 @@
 (global-set-key (kbd "M-1") 'delete-other-windows) ;; M-1
 (define-key diff-mode-map (kbd "M-1") 'delete-other-windows)
 
-(global-set-key (kbd "M-2") 'split-window-below) ;; M-2
-(define-key diff-mode-map (kbd "M-2") 'split-window-below)
+(global-set-key (kbd "M-2") 'hrs/split-window-below-and-switch) ;; M-2
+(define-key diff-mode-map (kbd "M-2") 'hrs/split-window-below-and-switch)
 
-(global-set-key (kbd "M-3") 'split-window-right) ;; M-3
-(define-key diff-mode-map (kbd "M-3") 'split-window-right)
+(global-set-key (kbd "M-3") 'hrs/split-window-right-and-switch) ;; M-3
+(define-key diff-mode-map (kbd "M-3") 'hrs/split-window-right-and-switch)
 
 (global-set-key (kbd "M-9") 'resize-window) ;; M-9
 (define-key diff-mode-map (kbd "M-9") 'resize-window)

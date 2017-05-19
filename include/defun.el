@@ -1151,3 +1151,19 @@ the visible part of the current buffer following point. "
   (interactive)
   (kill-buffer)
   (jump-to-register :magit-fullscreen))
+
+;; Switch and rebalance windows when splitting
+;; https://github.com/hrs/dotfiles/blob/master/emacs.d/configuration.org
+(defun hrs/split-window-below-and-switch ()
+  "Split the window horizontally, then switch to the new pane."
+  (interactive)
+  (split-window-below)
+  (balance-windows)
+  (other-window 1))
+
+(defun hrs/split-window-right-and-switch ()
+  "Split the window vertically, then switch to the new pane."
+  (interactive)
+  (split-window-right)
+  (balance-windows)
+  (other-window 1))
