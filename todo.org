@@ -74,6 +74,23 @@ http://ecb.sourceforge.net/
 https://www.youtube.com/watch?v=KoRNCrx9pak
 
 ** Bloquant
+- [ ] [system] [osx] Autoriser le F5 dans Emacs (revert-buffer)
+- [ ] Rebind les scroll to other window pour avoir un scroll sur la fenetre a cote mais d'une demie page seulement
+      C-M-S-v runs the command scroll-other-window-down (found in
+      global-map), which is an interactive compiled Lisp function in
+      ‘window.el’.
+
+      It is bound to <M-prior>, C-M-S-v, ESC <prior>.
+
+      (scroll-other-window-down &optional LINES)
+
+      Scroll the "other window" down.
+      For more details, see the documentation for ‘scroll-other-window’.
+
+- [ ] [php-mode] [company-mode] Ajouter les snippets de php
+      Peut sont-il déjas fournis depuis ac-php
+      
+- [ ] Ne pas embarquer les couleurs lors de la copie d'un texte
 - [ ] Kill texte : Ne pas ajouter dans le kill ring
       --> L'ajout dans le kill ring ne doit se faire que depuis M-w si possible
 - [ ] M-S-n sur buffer vc-diff ne fonctionne pas 

@@ -99,8 +99,7 @@
       ivy-switch-buffer
       keyboard-quit
       mark-whole-buffer
-      ;; mc/mark-next-lines
-      ;; mc/mark-previous-lines
+      mc/mark-next-lines
       mouse-drag-vertical-line
       next-buffer
       previous-buffer
