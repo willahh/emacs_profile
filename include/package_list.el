@@ -17,7 +17,7 @@
   yaml-mode
   slime
   cider
-  clojurescript-mode
+  ;; clojurescript-mode
 
 
   ;; backe-button
@@ -190,6 +190,7 @@
 (add-to-list 'load-path "~/.emacs.d/plugins/emacs-powerline")
 (add-to-list 'load-path "~/.emacs.d/plugins/webmode")
 (add-to-list 'load-path "~/.emacs.d/plugins/emacspowerline")
+(add-to-list 'load-path "~/.emacs.d/plugins/find-file-in-project")
 (add-to-list 'load-path "~/.emacs.d/plugins/ivy_buffer_extend")
 (add-to-list 'load-path "~/.emacs.d/plugins/helm-swoop")
 (add-to-list 'load-path "~/.emacs.d/plugins/psvn")

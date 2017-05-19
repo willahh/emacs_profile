@@ -645,6 +645,7 @@
 ;; (global-set-key (kbd "C-c .") 'ffap)
 ;; Update to use find-file-in-project-by-selected
 (global-set-key (kbd "C->") 'ffap)
+
 ;; (global-set-key (kbd "C-.") 'projectile-find-file-dwim)
 (global-set-key (kbd "C-.") 'find-file-in-project-by-selected)
 (define-key php-mode-map [(control .)] 'find-file-in-project-by-selected)
