@@ -17,6 +17,7 @@
   yaml-mode
   slime
   cider
+  impatient-mode
   ;; clojurescript-mode
 
 

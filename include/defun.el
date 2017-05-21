@@ -1,6 +1,3 @@
-
-
-;; ------------------------- Defun
 ;; yank-pop-forwards
 (defun yank-pop-forwards (arg)
       (interactive "p")
@@ -1167,3 +1164,38 @@ the visible part of the current buffer following point. "
   (split-window-right)
   (balance-windows)
   (other-window 1))
+
+
+;; (defun xah-dired-sort ()
+;;   "Sort dired dir listing in different ways.
+;; Prompt for a choice.
+;; URL `http://ergoemacs.org/emacs/dired_sort.html'
+;; Version 2015-07-30"
+;;   (interactive)
+;;   (let (-sort-by -arg)
+;;     (setq -sort-by (ido-completing-read "Sort by:" '( "date" "size" "name" "dir")))
+;;     (cond
+;;      ((equal -sort-by "name") (setq -arg "-Al --si --time-style long-iso "))
+;;      ((equal -sort-by "date") (setq -arg "-Al --si --time-style long-iso -t"))
+;;      ((equal -sort-by "size") (setq -arg "-Al --si --time-style long-iso -S"))
+;;      ((equal -sort-by "dir") (setq -arg "-Al --si --time-style long-iso --group-directories-first"))
+;;      (t (error "logic error 09535" )))
+;;     (dired-sort-other -arg )))
+;;     (define-key dired-mode-map (kbd "s") 'xah-dired-sort)
+
+
+;; https://www.emacswiki.org/emacs/DiredSortCriterias?
+(defun dired-sort-criteria (criteria)
+  "sort-dired by different criteria by Robert Gloeckner "
+  (interactive 
+   (list 
+    (or (completing-read "criteria [name]: "
+			 '("size(S)" "extension(X)" "creation-time(ct)"
+			   "access-time(ut)" "time(t)" "name()"))
+	"")))
+  (string-match ".*(\\(.*\\))" criteria)
+  (dired-sort-other
+   (concat dired-listing-switches 
+	   (match-string 1 criteria))))
+
+(define-key dired-mode-map (kbd "s") 'dired-sort-criteria)

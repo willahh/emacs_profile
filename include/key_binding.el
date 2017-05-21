@@ -296,7 +296,8 @@
 ;; Sublime Text go to anything
 ;; Update : Utilsation des standards emacs (C-c p f)
 (global-set-key (kbd "C-c t") 'toggle-truncate-lines)
-(global-set-key (kbd "C-x f") 'projectile-find-file)
+;; (global-set-key (kbd "C-x f") 'projectile-find-file)
+(global-set-key (kbd "C-c C-p") 'projectile-find-file)
 
 ;; Filter buffer / Get buffer definitions
 ;; (global-set-key [(meta r)]  'helm-imenu) ;; command + r
@@ -337,7 +338,7 @@
 (define-key conf-space-mode-map (kbd "C-c C-s") 'helm-swoop)
 
 ;; Swiper
-(global-set-key (kbd "C-c C-p") 'swiper)
+;; (global-set-key (kbd "C-c C-p") 'swiper)
 
 ;; -- Text operations
 ;; Copy operations
@@ -584,10 +585,10 @@
 ;; (define-key web-mode-map (kbd "C-c C-r") 'helm-recentf)
 ;; (define-key org-mode-map (kbd "C-c C-r") 'helm-recentf)
 
-(define-key global-map (kbd "C-c r") 'helm-recentf)
-(define-key php-mode-map (kbd "C-c r") 'helm-recentf)
-(define-key web-mode-map (kbd "C-c r") 'helm-recentf)
-(define-key org-mode-map (kbd "C-c r") 'helm-recentf)
+(define-key global-map (kbd "C-c <C-m>") 'helm-recentf)
+(define-key php-mode-map (kbd "C-c <C-m>") 'helm-recentf)
+(define-key web-mode-map (kbd "C-c <C-m>") 'helm-recentf)
+(define-key org-mode-map (kbd "C-c <C-m>") 'helm-recentf)
 
 (global-set-key (kbd "M-0") 'delete-window) ;; M-0
 (define-key diff-mode-map (kbd "M-0") 'delete-window)

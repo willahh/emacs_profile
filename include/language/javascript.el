@@ -17,7 +17,7 @@
   (interactive)
 
   ;; indium
-  ;; (require 'indium)
+  (require 'indium)
 
   (js2-imenu-extras-mode)
 

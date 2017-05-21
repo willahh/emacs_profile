@@ -25,8 +25,11 @@
 ;; (blink-cursor-mode 0)
 (blink-cursor-mode 1)
 
-;; Don't write nwe line at end of document
+;; Don't write new line at end of document
 (setq mode-require-final-newline nil)
+
+;; Dont't wire new line after snippet
+(setq require-final-newline nil)
 
 ;; "Real emacs knights don't use shift to mark things"
 ;; Arrrrrghh (try to stop this habit)
@@ -270,7 +273,7 @@
         save-interprogram-paste-before-kill t
         apropos-do-all t
         mouse-yank-at-point t
-        require-final-newline t
+        ;; require-final-newline t
         visible-bell t
         load-prefer-newer t
         ediff-window-setup-function 'ediff-setup-windows-plain
