@@ -108,12 +108,14 @@
 
 (setq company-backends (mapcar #'company-mode/backend-with-yas company-backends))
 
-;; company-tern
-;; Add tern support for company
-(require 'company-tern)
-(add-hook 'tern-mode-hook
-          (lambda ()
-            (add-to-list 'company-backends 'company-tern)))
+;; ;; company-tern
+;; ;; Add tern support for company
+;; Deplace dans la partie language/javascript.el
+;; 
+;; (require 'company-tern)
+;; (add-hook 'tern-mode-hook
+;;           (lambda ()
+;;             (add-to-list 'company-backends 'company-tern)))
 
 
 (require 'company-web)

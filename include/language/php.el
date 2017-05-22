@@ -10,18 +10,36 @@
 
 ;; ;; Add compay-ac-php for company backend
 (add-hook 'php-mode-hook
-          (lambda ()
+          '(lambda ()
+            (require 'company-php)
+            (require 'php-extras)
+
+            (company-mode t)
+
             ;; ac-php
             (ac-php-mode)
 
             ;; Company backend
-            (set (make-local-variable 'company-backends) '(company-ac-php-backend))
+            ;; (set (make-local-variable 'company-backends) '(company-ac-php-backend))
+            ;; (set (make-local-variable 'company-backends) '(php-extras-company))
+
+            ;; Company backend
+            ;; (set (make-local-variable 'company-backends) '(company-ac-php-backend))
+            
+            ;; (add-to-list (make-local-variable 'company-backends)
+            ;;              'php-extras-company)
+
+            (add-to-list (make-local-variable 'company-backends)
+                         'company-ac-php-backend)
 
             ;; el-doc
             (eldoc-mode)
 
-            ;; ac-php
-            (ac-php-core-eldoc-setup)
+            ;; ac php eldoc
+            ;; (ac-php-core-eldoc-setup)
+            ;; (make-local-variable 'company-backends)
+            ;; (add-to-list 'company-backends 'company-ac-php-backend)
+            ;; (add-to-list 'company-backends 'company-ac-php-backend)
 
             ;; ggtags-mode
             (ggtags-mode 1)

@@ -62,6 +62,7 @@
   company-php
   ac-php
   php-eldoc
+  ;; php-extras
   ; php-extras
   editorconfig
   ;; php-completion

@@ -51,6 +51,10 @@
   ;;               ) nil 'make-it-local)
 
   ;; Enable tern
-  (tern-mode t))
+  (tern-mode t)
+
+  ;; Add tern backend to company
+  (add-to-list (make-local-variable 'company-backends)
+                         'company-tern))
 
 (add-hook 'js2-mode-hook 'whl-js2-mode-hook)

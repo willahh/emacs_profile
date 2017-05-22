@@ -89,6 +89,8 @@
 
 
 ;; ----- nlinum
+;; Update : Desactivation de nlinum, cause trop de leges ralentsi
+;; Pas indispensable
 (require 'nlinum)
 
 ;; (add-hook 'prog-mode-hook 'nlinum-mode)
@@ -97,7 +99,7 @@
 ;; (add-hook 'fundamental-mode 'nlinum-mode 1)
 ;; (add-hook 'fundamental-mode-abbrev-table 'nlinum-mode 1)
 
-(add-hook 'prog-mode-hook 'nlinum-mode)
+;; (add-hook 'prog-mode-hook 'nlinum-mode)
 
 
 ;; Diminish modeline clutter
