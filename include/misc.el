@@ -1,4 +1,104 @@
 
+
+
+
+
+
+
+;; https://oremacs.com/2015/02/04/pre-hydra-post/
+(global-set-key
+ (kbd "C-M-o")
+ (defhydra hydra-window ()
+   "window"
+   ("h" windmove-left)
+   ("j" windmove-down)
+   ("k" windmove-up)
+   ("l" windmove-right)
+   ("a" (lambda ()
+          (interactive)
+          (ace-window 1)
+          (add-hook 'ace-window-end-once-hook
+                    'hydra-window/body)
+          (throw 'hydra-disable t))
+        "ace")
+   ("v" (lambda ()
+          (interactive)
+          (split-window-right)
+          (windmove-right))
+        "vert")
+   ("x" (lambda ()
+          (interactive)
+          (split-window-below)
+          (windmove-down))
+        "horz")
+   ("s" (lambda ()
+          (interactive)
+          (ace-window 4)
+          (add-hook 'ace-window-end-once-hook
+                    'hydra-window/body)
+          (throw 'hydra-disable t))
+        "swap")
+   ("t" transpose-frame "'")
+   ("d" (lambda ()
+          (interactive)
+          (ace-window 16)
+          (add-hook 'ace-window-end-once-hook
+                    'hydra-window/body)
+          (throw 'hydra-disable t))
+        "del")
+   ("o" delete-other-windows "one" :color blue)("o" delete-other-windows "one" :color blue)
+   ("i" ace-maximize-window "ace-one" :color blue)
+   ("q" nil "cancel")))
+
+
+;; (defhydra hydra-test (global-map "M-g")
+;;   ("g" goto-line "goto-line"))
+
+
+;; Pure blasphemy
+;; Look at me i'm doing modal editing :x :p ;P
+(define-key evil-emacs-state-map (kbd "C-z") nil)
+(global-set-key (kbd "C-z") (defhydra hydra-vi ()
+   "vi"
+
+   ;; Visual mode
+   ("v" evil-visual-char)
+
+   ;; Search
+   ("s" evil-snipe-s)
+   ("S" evil-snipe-S)
+   ("f" evil-find-char)
+   ("F" evil-find-char-backward)
+   (";" evil-repeat-find-char)
+   ("," evil-repeat-find-char-reverse)
+
+   ;; Scrolling
+   ("C-u" evil-scroll-up)
+   ("C-d" evil-scroll-down)
+   ("zt" evil-scroll-line-to-top)
+   ("zz" evil-scroll-line-to-center)
+   ("zb" evil-scroll-line-to-bottom)
+
+   ;; Navigation
+   ("l" forward-char)
+   ("w" evil-forward-word-begin)
+   ("W" evil-forward-WORD-begin)
+   ("b" evil-backward-word-begin)
+   ("B" evil-backward-WORD-begin)
+   ("l" forward-char)
+   ("h" backward-char)
+   ("j" next-line)
+   ("k" previous-line)
+   
+))
+
+
+
+
+
+
+
+
                                         ; diffstat
 ;; Enhanced version of diff
 ;; (require 'diffstat)
@@ -308,6 +408,7 @@ _n_: Navigate           _._: mark position _/_: jump to mark
   ("m" helm-mini)
   ("R" helm-recentf)
   ("n" hydra-navigate/body))
+
 
 ;; (global-set-key (kbd "s-g") 'goto/body)
 ;; (global-set-key (kbd "C-S-s") 'goto/body)

@@ -255,3 +255,7 @@
 (set-face-attribute 'org-level-2 nil :foreground "#ec6073")
 (set-face-attribute 'org-level-3 nil :foreground "#ec6073")
 (set-face-attribute 'org-level-4 nil :foreground "#ec6073")
+(set-face-attribute 'org-level-4 nil :foreground "#ec6073")
+
+;; ------ anzu
+(set-face-attribute 'anzu-mode-line nil :foreground "#000" :background nil :height 125)

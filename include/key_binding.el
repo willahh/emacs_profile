@@ -54,7 +54,16 @@
 ;; ---------------- Help
 ;; Move the help cimmand to C-x h
 ;; (global-set-key [?\C-x ?h] 'help-command)
-(global-set-key (kbd "C-c c h") 'help-command)
+;; (global-set-key (kbd "C-c c h") 'help-command)
+(global-set-key (kbd "C-S-h") 'help)
+
+
+;; ---------------- evaluation
+(define-key emacs-lisp-mode-map (kbd "C-c C-r") 'eval-region)
+(define-key emacs-lisp-mode-map (kbd "C-c C-e") 'rr/eval-and-replace)
+(define-key emacs-lisp-mode-map (kbd "C-c C-v") 'eval-buffer)
+(global-set-key (kbd "C-c C-v") 'eval-buffer)
+
 
 
 
@@ -373,7 +382,6 @@
 ;; (global-set-key (kbd "C-c s p") 'ag-project)
 (global-set-key (kbd "C-c s a") 'ag-project-at-point)
 (global-set-key (kbd "C-c s A") 'ag)
-;; (global-set-key (kbd "C-c s a") 'ag-project-at-point)
 (global-set-key (kbd "C-c s p") 'projectile-ag)
 (global-set-key (kbd "C-c s s") 'helm-ag)
 (global-set-key (kbd "C-c s S") 'helm-ag-project-root)
@@ -381,7 +389,8 @@
 
 
 
-;; ---- window
+
+;; ---- WINDOW
 (define-key typescript-mode-map (kbd "M-j") 'c-indent-new-comment-line)
 
 ;; comment
@@ -488,6 +497,7 @@
 
 ;; Browse the kill ring
 (global-set-key (kbd "C-x C-y") 'browse-kill-ring)
+(global-set-key (kbd "C-S-y") 'helm-show-kill-ring)
 
 ;; Display and edit occurances of regexp in buffer
 (global-set-key (kbd "C-c o") 'occur)

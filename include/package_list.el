@@ -48,6 +48,7 @@
   google-this
   google-translate
 
+  anzu
   ;; indium
 
   ;; smex
