@@ -74,6 +74,12 @@ http://ecb.sourceforge.net/
 https://www.youtube.com/watch?v=KoRNCrx9pak
 
 ** Bloquant
+- [ ] Nouvelle window : Ne pas reequilibrer les fenetres....
+- [ ] JS2 trop de couleurs
+
+
+
+- [ ] Voir pour installer le plugin pour lancer des mode en "fullscreen", vu sur un blog d'un autre
 - [ ] [system] [osx] Autoriser le F5 dans Emacs (revert-buffer)
 - [ ] Rebind les scroll to other window pour avoir un scroll sur la fenetre a cote mais d'une demie page seulement
       C-M-S-v runs the command scroll-other-window-down (found in
