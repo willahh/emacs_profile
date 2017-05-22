@@ -46,6 +46,16 @@
       forward-sexp
       helm-M-x
       highlight-symbol-mode
+      hydra-vi/body
+      hydra-vi/evil-backward-WORD-begin
+      hydra-vi/evil-backward-word-begin
+      hydra-vi/evil-digit-argument-or-evil-beginning-of-line
+      hydra-vi/evil-find-char
+      hydra-vi/evil-forward-WORD-begin
+      hydra-vi/evil-forward-WORD-end
+      hydra-vi/evil-forward-word-begin
+      hydra-vi/evil-forward-word-end
+      hydra-vi/evil-next-line-1-first-non-blank
       indent-for-tab-command
       kill-region
       kill-sentence
@@ -100,6 +110,7 @@
       keyboard-quit
       mark-whole-buffer
       mc/mark-next-lines
+      mc/mark-previous-lines
       mouse-drag-vertical-line
       next-buffer
       previous-buffer

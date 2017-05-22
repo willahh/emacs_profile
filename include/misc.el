@@ -67,29 +67,74 @@
    ;; Search
    ("s" evil-snipe-s)
    ("S" evil-snipe-S)
-   ("f" evil-find-char)
-   ("F" evil-find-char-backward)
    (";" evil-repeat-find-char)
    ("," evil-repeat-find-char-reverse)
 
    ;; Scrolling
-   ("C-u" evil-scroll-up)
-   ("C-d" evil-scroll-down)
    ("zt" evil-scroll-line-to-top)
    ("zz" evil-scroll-line-to-center)
    ("zb" evil-scroll-line-to-bottom)
 
-   ;; Navigation
+   ;; Editing
+   ("u" undo-tree-undo)
+   ("C-r" undo-tree-redo)
+   ("." evil-repeat)
+
+   ;; Inserting
+   ("i" evil-insert)
+   ("I" evil-insert-line)
+   ("a" evil-append)
+   ("A" evil-append-line)
+   ("o" evil-open-below)
+   ("O" evil-open-above)
+
+   ;; Changing
+   ;; @todo a completer
+   ("r" evil-replace)
+   ("R" evil-replace-state)
+   ;; ("s" )
+
+   ;; Deleting
+   ("yy" evil-yank-line)
+   ("Y" evil-yank)
+   ("dd" evil-delete)
+
+   ;; >>
    ("l" forward-char)
+   ("e" evil-forward-word-end)
+   ("E" evil-forward-WORD-end)
    ("w" evil-forward-word-begin)
    ("W" evil-forward-WORD-begin)
+   ("t" evil-find-char-to)
+   ("f" evil-find-char)
+   ("$" evil-end-of-line)
+
+   ;; <<
+   ("h" evil-backward-char)
+   ("ge" evil-backward-word-end)
+   ("gE" evil-backward-WORD-end)
    ("b" evil-backward-word-begin)
    ("B" evil-backward-WORD-begin)
-   ("l" forward-char)
-   ("h" backward-char)
-   ("j" next-line)
+   ("T" evil-find-char-to-backward)
+   ("F" evil-find-char-backward)
+   ("_" evil-next-line-1-first-non-blank)
+   ("0" evil-digit-argument-or-evil-beginning-of-line)
+
+   ;; ^^
+   ("gg" evil-goto-first-line)
+   ;; ("C-b" evil-scroll-page-up)
+   ("C-u" evil-scroll-up)
+   ("H" evil-window-top)
+   ("{" evil-backward-paragraph)
    ("k" previous-line)
-   
+
+   ;; ;;
+   ("j" next-line)
+   ("}" evil-forward-paragraph)
+   ("L" evil-window-bottom)
+   ;; ("C-f" evil-scroll-page-down)
+   ("G" evil-goto-line)
+   ;; ("C-d" evil-scroll-down)
 ))
 
 
@@ -484,3 +529,23 @@ _n_: Navigate           _._: mark position _/_: jump to mark
 ;; rainbow-delimiters
 (require 'rainbow-delimiters)
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
