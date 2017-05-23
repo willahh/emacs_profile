@@ -38,9 +38,8 @@
 ;; (global-set-key (kbd "C-x M-S-z") ')
 
 ;; M-s (sub command menu) -> "save"
-(global-set-key (kbd "M-s") 'save-buffer)
-(define-key paredit-mode-map (kbd "M-s") 'save-buffer)
-
+;; (global-set-key (kbd "M-s") 'save-buffer)
+;; (define-key paredit-mode-map (kbd "M-s") 'save-buffer)
 
 ;; ---
 (define-key key-translation-map (kbd "ESC") (kbd "C-g"))
