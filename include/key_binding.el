@@ -7,9 +7,42 @@
 ;; (dolist (key '("\M-z" "\C-z"))
 ;;   (global-unset-key key))
 
+;; Rebind copy paste cut undo redo like modern editors
+;; Suite a beaucoup de test en fonctionnement natif
+;; (C-y, M-w, etc...)
+;; Mon utilsation priviligie l'utilisation de raccourcis
+;; Plus modernes.
+;;
+;; On commence par la base : le raccourcis M-x qui est un des points
+;; central de Emacs.
 
 
-;; Escape key for keyboard-quit command (Escape is capslock in my system settings)
+;; M-x (M-x main command) -> "cut"
+(global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
+(global-set-key (kbd "C-x <C-m>") 'helm-M-x)
+
+;; M-c (capitalize-word) -> "copy"
+(global-set-key (kbd "M-c") 'kill-ring-save)
+(global-set-key (kbd "C-x M-c") 'capitalize-word)
+
+;; M-v (capitalize-word) -> "paste"
+(global-set-key (kbd "M-v") 'yank)
+(global-set-key (kbd "C-x M-v") 'evil-scroll-up)
+
+;; M-z (zap-to-char) -> "undo"
+(global-set-key [meta z] 'undo-tree-undo)
+(global-set-key (kbd "C-x M-z") 'zap-to-char)
+
+;; M-S-z () -> "redo"
+(global-set-key [(meta shift z)] 'undo-tree-redo)
+;; (global-set-key (kbd "C-x M-S-z") ')
+
+;; M-s (sub command menu) -> "save"
+(global-set-key (kbd "M-s") 'save-buffer)
+(define-key paredit-mode-map (kbd "M-s") 'save-buffer)
+
+
+;; ---
 (define-key key-translation-map (kbd "ESC") (kbd "C-g"))
 (define-key ivy-minibuffer-map (kbd "<escape>") 'minibuffer-keyboard-quit)
 
@@ -111,7 +144,7 @@
 
 ;; -- Git gutter
 (evil-leader/set-key "," 'git-gutter:next-hunk)
-(evil-leader/set-key ";" 'git-gutter:previous-hunk)
+(evil-leader/set-key ";" 'git-gutter:previous-hunk) ;
 (evil-leader/set-key "gr" 'git-gutter:revert-hunk)
 (evil-leader/set-key "g" 'git-gutter:revert-hunk)
 
@@ -286,7 +319,7 @@
 (global-set-key (kbd "<C-return>") 'open-line-below)
 (global-set-key (kbd "<C-S-return>") 'open-line-above)
 ;; Helm
-(global-set-key (kbd "M-x") 'helm-M-x)
+;; (global-set-key (kbd "M-x") 'helm-M-x)
 ;; (global-set-key (kbd "C-x C-m") 'helm-M-x)
 ;; (global-set-key (kbd "C-c C-m") 'helm-M-x)
 

@@ -74,6 +74,8 @@
    ("zt" evil-scroll-line-to-top)
    ("zz" evil-scroll-line-to-center)
    ("zb" evil-scroll-line-to-bottom)
+   ("C-e" evil-scroll-line-down)
+   ("C-y" evil-scroll-line-up)
 
    ;; Editing
    ("u" undo-tree-undo)
@@ -134,7 +136,7 @@
    ("L" evil-window-bottom)
    ;; ("C-f" evil-scroll-page-down)
    ("G" evil-goto-line)
-   ;; ("C-d" evil-scroll-down)
+   ("C-d" evil-scroll-down)
 ))
 
 
@@ -529,23 +531,3 @@ _n_: Navigate           _._: mark position _/_: jump to mark
 ;; rainbow-delimiters
 (require 'rainbow-delimiters)
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

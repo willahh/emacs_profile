@@ -74,10 +74,7 @@ http://ecb.sourceforge.net/
 https://www.youtube.com/watch?v=KoRNCrx9pak
 
 ** Bloquant
-- [ ] Nouvelle window : Ne pas reequilibrer les fenetres....
-- [ ] JS2 trop de couleurs
-
-
+- [ ] Faire une fonction mark paragraph TOP et la binder sur M-S-H
 
 - [ ] Voir pour installer le plugin pour lancer des mode en "fullscreen", vu sur un blog d'un autre
 - [ ] [system] [osx] Autoriser le F5 dans Emacs (revert-buffer)
@@ -93,22 +90,22 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
       Scroll the "other window" down.
       For more details, see the documentation for ‘scroll-other-window’.
 
-- [ ] [php-mode] [company-mode] Ajouter les snippets de php
-      Peut sont-il déjas fournis depuis ac-php
+- [X] [php-mode] [company-mode] Ajouter les snippets de php
+      Peut sont-il déjas fournis depuis ac-php -> Oui
       
 - [ ] Ne pas embarquer les couleurs lors de la copie d'un texte
 - [ ] Kill texte : Ne pas ajouter dans le kill ring
       --> L'ajout dans le kill ring ne doit se faire que depuis M-w si possible
 - [ ] M-S-n sur buffer vc-diff ne fonctionne pas 
-- [ ] JS2 mode, le refresh du display est lent
+- [X] JS2 mode, le refresh du display est lent
+      -> Passage sur JS-mode tout court
 - [ ] [counsel-find-file] [mini-buffer] Ajouter un bind C-k pour supprimer tout le texte
 - [ ] [dired] Delete dir slow, piste : Tester sans 
 - [ ] [ffap] Ffap doit fonctionner avec ce genre de lignes :
   - require_once(dirname(__FILE__) . '/file.inc.php');
-- [ ] [multi-cursor] Faire fonctionner le binding sur C-m
+- [X] [multi-cursor] Faire fonctionner le binding sur C-m
 - [ ] [vc-diff mode] Voir si il est possible de laAncer des commandes de type ediff
        Depuis  le vc-diff
-- [ ] [système] Augmenter la vitesse de déplacement du curseur (actuellement limité dans osx)
 - [ ] Implementer le menu semantique (je n'ai plus le nom) et l'afficher a gauche ou faire un toggle a voir
       Cette fonction est déjà présente dans emacs mais apparait dans une autre frame, un package existe pour
       L'afficher dans la même frame mais je n'ai pas réussis à bien l'implèmenter
@@ -149,8 +146,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] Open file from system in new emacs frame (Right click open in)
 - [ ] [js2-mode] Colorization redraw slow
 - [ ] [multi-cursor] Remettre la possibilité d'ajouter un command click de la souris pour ajouter un nouveau caret
-- [ ] [auto bracket] Ne pas l utiliser sur tous les buffer et notamment pas dans le minibuffer
-- [ ] M-z devrait fonctionner lorsqu'une sélection est présente
+- [X] M-z devrait fonctionner lorsqu'une sélection est présente
 - [ ] [projectile] Find file - Traitement lent lorsqu'il y a beaucoup de fichiers
 - [ ] [helm] Directory first
 - [ ] [multi-cursor] C-g leave multi-cursor state
@@ -187,7 +183,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [ivy] [mini buffer] CTRL+l to back up
 - [ ] [ivy] : Ne pas mettre les fichiers .svn dans la liste
 - [ ] [plugin] [change inner] Ajoute rl'option Change Inner Tag
-
+  
 ** Majeur
 - [ ] [diff-hl] Le package est casse sur melpa il ne compile pas bien,
 - [ ] [el-doc] Voir pour integrer une popin comme sur les IDE moderne
