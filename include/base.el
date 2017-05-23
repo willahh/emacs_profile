@@ -234,6 +234,9 @@
 ;;   - delete selection, - insert command
 (delete-selection-mode 1)
 
+;; Don't prompt for recursive delete
+(setq dired-recursive-deletes 'always)
+
 ;;
 (setq save-interprogram-paste-before-kill t)
 ;; (setq x-select-enable-clipboard 1)

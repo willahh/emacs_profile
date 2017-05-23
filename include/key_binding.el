@@ -27,9 +27,12 @@
 
 ;; M-v (capitalize-word) -> "paste"
 (global-set-key (kbd "M-v") 'yank)
+(global-set-key [(meta v)] 'yank)
+(global-set-key [(meta shift v)] 'yank-pop)
 (global-set-key (kbd "C-x M-v") 'evil-scroll-up)
 
 ;; M-z (zap-to-char) -> "undo"
+(global-set-key (kbd "M-z") 'undo-tree-undo)
 (global-set-key [meta z] 'undo-tree-undo)
 (global-set-key (kbd "C-x M-z") 'zap-to-char)
 
@@ -316,8 +319,6 @@
 
 (global-set-key (kbd "C-é") 'drag-stuff-down) ;; control+alt+j
 
-;; (global-set-key [control meta k] 'drag-stuff-up)
-
 (global-set-key (kbd "<C-return>") 'open-line-below)
 (global-set-key (kbd "<C-S-return>") 'open-line-above)
 ;; Helm
@@ -428,9 +429,17 @@
 ;; Acces direct aux raccourcis les plus utiles
 ;; 2 en commande standard Combo Meta + Control + s ou + (S)
 ;; 1 en commande avec la touche alt + s
-(global-set-key (kbd "C-M-s") 'ag-project-at-point)
-(global-set-key (kbd "C-M-S") 'ag-project)
-(global-set-key (kbd "Ò") 'helm-ag) ;; (alt + s)
+
+(global-set-key [control meta s] 'ag-project-at-point)
+(global-set-key [control meta shift s] 'ag-project)
+(global-set-key (kbd "Ò") 'helm-ag)
+
+
+
+
+
+;; (global-set-key (kbd "C-M-s") 'ag-project-at-point)
+;; (global-set-key (kbd "C-M-S") 'ag-project)
 
 
 
@@ -467,8 +476,8 @@
 ;; easy-motion
 (evilem-default-keybindings "ù")
 
-(global-set-key (kbd "C-v") 'evil-scroll-down)
-(global-set-key (kbd "M-v") 'evil-scroll-up)
+;; (global-set-key (kbd "C-v") 'evil-scroll-down)
+;; (global-set-key (kbd "M-v") 'evil-scroll-up)
 
 ;; web mode
 ;; (define-key web-mode-map [(meta shift j)] 'web-mode-tag-next)

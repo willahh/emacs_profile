@@ -74,17 +74,14 @@ http://ecb.sourceforge.net/
 https://www.youtube.com/watch?v=KoRNCrx9pak
 
 ** Bloquant
-- [ ] Faire une fonction mark paragraph TOP et la binder sur M-S-H
+- [ ] [diff-hl] Le package est casse sur melpa il ne compile pas bien,
+- [ ] [doc-block] La fonction ne fonctionne pas correctement
+  - [ ] [php-mode]
+  - [ ] [typescript-mode]
+  - [ ] [css-mode-mode]
 - [ ] [all] Drag line ne fonctionne plus
-- [ ] [all] Ne pas ajouter dabbrev dans company par default
-- [ ] [css-mode] Virer company dabbrev de css mode
-- [ ] [css-mode] Le script de commentaire ne fonctionne pas dans ce mode
-
-
-- [X] Shift + mouse doit prolonger la sélection de la souris
-- [X] Nouvelle window : Ne pas reequilibrer les fenetres....
-
-
+      -> Fonctionnel @home
+** A ranger
 - [ ] Voir pour installer le plugin pour lancer des mode en "fullscreen", vu sur un blog d'un autre
 - [ ] [system] [osx] Autoriser le F5 dans Emacs (revert-buffer)
 - [ ] Rebind les scroll to other window pour avoir un scroll sur la fenetre a cote mais d'une demie page seulement
@@ -99,53 +96,27 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
       Scroll the "other window" down.
       For more details, see the documentation for ‘scroll-other-window’.
 
-- [X] [php-mode] [company-mode] Ajouter les snippets de php
-      Peut sont-il déjas fournis depuis ac-php -> Oui
-      
 - [ ] Ne pas embarquer les couleurs lors de la copie d'un texte
 - [ ] Kill texte : Ne pas ajouter dans le kill ring
       --> L'ajout dans le kill ring ne doit se faire que depuis M-w si possible
 - [ ] M-S-n sur buffer vc-diff ne fonctionne pas 
-- [X] JS2 mode, le refresh du display est lent
-      -> Passage sur JS-mode tout court
-     - Le mode est lent, switch pour utilisation de js-mode
 - [ ] [counsel-find-file] [mini-buffer] Ajouter un bind C-k pour supprimer tout le texte
 - [ ] [dired] Delete dir slow, piste : Tester sans 
 - [ ] [ffap] Ffap doit fonctionner avec ce genre de lignes :
   - require_once(dirname(__FILE__) . '/file.inc.php');
-- [X] [multi-cursor] Faire fonctionner le binding sur C-m
-- [ ] [vc-diff mode] Voir si il est possible de laAncer des commandes de type ediff
+- [ ] [vc-diff mode] Voir si il est possible de lancer des commandes de type ediff
        Depuis  le vc-diff
 - [ ] Implementer le menu semantique (je n'ai plus le nom) et l'afficher a gauche ou faire un toggle a voir
       Cette fonction est déjà présente dans emacs mais apparait dans une autre frame, un package existe pour
       L'afficher dans la même frame mais je n'ai pas réussis à bien l'implèmenter
-- [ ] System : bind c-j 
-- [ ] [doc-block] La fonction custom doc bloc ne fonctionne pas ni en php-mode
-      ni en typescript mode
-- [X] [theme] [highlight-symbol] Mettre une couleur moins flashy
+- [ ] System : bind c-j
+- [ ] [all] Ne pas ajouter dabbrev dans company par default
+     - [ ] [css-mode] Virer company dabbrev de css mode
 - [ ] [theme] [ediff] Trouver comment avoir les bons code couleur,des couleurs parfaitement implémentées comme avec avec le thème leuven
 
-- [X] C-s a ag-project-at-point
-- [X] js2 Reactiver flycheck mode error et warning non presents
-- [X] [ffap] Si un seul résultat, go to direct sans demander
-      -> Utilisation de find "find-file-in-project-by-selected"
-- [X] [i-search] La mauvaise couleur est réapparu
-- [X] [theme] Helm : Changer la couleur de la bande du haut et de la bande du bas pour mettre un gris neutre
-- [X] [diff-hl] Ne fonctionne plus (Problème avec le package)
-- [X] [js2-mode] Lorsque l'on saisie une parenthàse, un espace est inséré juste avant, il ne faut surtout pas
-- [X] [js2-mode] Activer un highlight symbol en temps réel pour ce mode
-- [X] [theme] Remettre le système de couleur dans le petit label en bas a gauche de chaque window
-- [X] Sauvegarder automatiquement les fichiers récentes (recentf)
-- [X] [i-search] [key] Ajouter les key suivants : C-h (delete backward)
-- [X] [theme] [highlight-symbol] Peut fonctionner avec hl-line si bien configuré (fonctionne bien avec le thème leuven)
-- [X] Il n'y a plus de hightlight du même symbole
-- [X] [css-mode] L'édition css n'est pas très pratique, il faudrait :
-  - [X] Completion css instantannée
-  - [X] Emmet doit fonctionner
-- [X] [paredit] Lorsque l'on saisie une parenthèse, un espace vient s'ajouter avant celle-ci, il faut bloquer ça
-** A ranger
+
+- [ ] Faire une fonction mark paragraph TOP et la binder sur M-S-H
 - [ ] Associer les fichiers .htaccess au mode conf-mode
-- [X] Save recent files history
 - [ ] [dired] Rename file : Possibilité de préciser un chemin contenant des dossiers
       N'existant pas, ces dossier seront créés automatiquement à la validation
 - [ ] Ajouter des bind system sur C-h et C-w C-w https://blog.sensible.io/2012/10/19/mac-os-x-emacs-style-keybindings-everywhere.html
@@ -154,13 +125,10 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
   - [ ] M-b back word
 - [ ] Multiple emacs config management propositions : http://stackoverflow.com/questions/17483598/maintaining-multiple-emacs-configurations-at-the-same-time
 - [ ] Open file from system in new emacs frame (Right click open in)
-- [X] [js2-mode] Colorization redraw slow
-      - Le mode est lent, swith to js-mode
 - [ ] [multi-cursor] Remettre la possibilité d'ajouter un command click de la souris pour ajouter un nouveau caret
-- [X] M-z devrait fonctionner lorsqu'une sélection est présente
 - [ ] [projectile] Find file - Traitement lent lorsqu'il y a beaucoup de fichiers
 - [ ] [helm] Directory first
-- [ ] [multi-cursor] C-g leave multi-cursor state
+- [X] [multi-cursor] C-g leave multi-cursor state
 - [ ] [highlight-symbol] [ggtags] [web-mode] Les couleurs disparaissent lorsque les modes web-mode ggtags sont presents highlight-mode est active
 - [ ] [projectile] Auto invalidate cache after create/rename/delete files
   - [ ] create
@@ -194,15 +162,11 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [ivy] [mini buffer] CTRL+l to back up
 - [ ] [ivy] : Ne pas mettre les fichiers .svn dans la liste
 - [ ] [plugin] [change inner] Ajoute rl'option Change Inner Tag
-  
 ** Majeur
-- [ ] [diff-hl] Le package est casse sur melpa il ne compile pas bien,
-- [ ] [el-doc] Voir pour integrer une popin comme sur les IDE moderne
 - [ ] Integrer hydra and ace window  https://www.youtube.com/watch?v=_qZliI1BKzI
 - [ ] [php-mode] Autocompletion, ajouter les entrés du buffer courant dans la liste des completions
 - [ ] [custom] Faire une fonction custom delete backward or region
       C-w doit appeler clean-aindent--bsunindent ou "whole-line-or-region-kill-region"
-
 
 - [ ] [dired] delete folder very slow
 - [ ] [IMPORTANT] Fonction get file name to clipboard (très utilisé)
@@ -254,10 +218,6 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
   - logs
   - .DS_Store
 ** Mineur
-- [ ] la selection avec la souris doit aller loin avant de prendre en compte la deuxieme ligne
-      (Comportement de selection legerement different a celui de Sublime)
-- [ ] (plugin pour le liste) : Ne pas mettre les fichiers .svn dans la liste
-- [ ] [plugin] [change inner] Ajoute rl'option Change Inner Tag
 - [ ] [misc] Copier : Ne pas embarquer la couleur
       -> Cibler uniquement certains buffers
         -> mini buffer
@@ -267,29 +227,57 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] Voir pour utiliser une largeur max lors de la saisie de long texte
       -> Impossible
 - [ ] web mode : refresh colors after yank
-- [ ] tabbar : hide bad icons
 - [ ] git-svn
 - [ ] Fichiers markdown mette toutes les windows en centré
       (Creation de differences inutiles sur la toute dernière ligne de certains fichiers)
 - [ ] Markdown mode style like in Sublime (background white, text black, column width limit, center inside)
-- [X] Faire tourner "create-tags" (ctags doit etre lu par emacs)
-- [ ] JS auto doc
 - [ ] Dired : remove folder is very slow
-- [ ] Don't prompt for delete recursivly (code available in prelude)
-- [ ] Enable evil easy motion to work like vim easy motion  https://github.com/easymotion/vim-easymotion
-- [ ] Bottom line
-  - [ ] Show current mode in color
-  - [ ] Show current VC system used
-  - [ ] Show current encoding
-- [ ] Display current encoding 
-- [ ] Correcteur orthographique 
+- [ ] Display current encoding
 - [ ] Markdown in white theme
 - [ ] Parcourir partage smb 
 - [ ] [theme] Color in shell mode 
 - [ ] [theme] Les couleurs ne sont pas assez décomposé comme dans Sublime (« var » colorA, = colorB, …) 
 - [ ] Markdown in white theme
 - [ ] git-svn
+- [X] Don't prompt for delete recursivly (code available in prelude)
+  - [ ] Show current mode in color
+  - [ ] Show current VC system used
+  - [ ] Show current encoding
 ** Corrige
+- [X] Correcteur orthographique
+- [X] JS auto doc
+- [X] Shift + mouse doit prolonger la sélection de la souris
+- [X] Nouvelle window : Ne pas reequilibrer les fenetres....
+- [X] [php-mode] [company-mode] Ajouter les snippets de php
+      Peut sont-il déjas fournis depuis ac-php -> Oui
+- [X] JS2 mode, le refresh du display est lent
+      -> Passage sur JS-mode tout court
+     - Le mode est lent, switch pour utilisation de js-mode
+- [X] [multi-cursor] Faire fonctionner le binding sur C-m
+- [X] [theme] [highlight-symbol] Mettre une couleur moins flashy
+- [X] C-s a ag-project-at-point
+- [X] js2 Reactiver flycheck mode error et warning non presents
+- [X] [ffap] Si un seul résultat, go to direct sans demander
+      -> Utilisation de find "find-file-in-project-by-selected"
+- [X] [i-search] La mauvaise couleur est réapparu
+- [X] [theme] Helm : Changer la couleur de la bande du haut et de la bande du bas pour mettre un gris neutre
+- [X] [diff-hl] Ne fonctionne plus (Problème avec le package)
+- [X] [js2-mode] Lorsque l'on saisie une parenthàse, un espace est inséré juste avant, il ne faut surtout pas
+- [X] [js2-mode] Activer un highlight symbol en temps réel pour ce mode
+- [X] [theme] Remettre le système de couleur dans le petit label en bas a gauche de chaque window
+- [X] Sauvegarder automatiquement les fichiers récentes (recentf)
+- [X] [i-search] [key] Ajouter les key suivants : C-h (delete backward)
+- [X] [theme] [highlight-symbol] Peut fonctionner avec hl-line si bien configuré (fonctionne bien avec le thème leuven)
+- [X] Il n'y a plus de hightlight du même symbole
+- [X] [css-mode] L'édition css n'est pas très pratique, il faudrait :
+  - [X] Completion css instantannée
+  - [X] Emmet doit fonctionner
+- [X] [paredit] Lorsque l'on saisie une parenthèse, un espace vient s'ajouter avant celle-ci, il faut bloquer ça
+- [X] Save recent files history
+- [X] [js2-mode] Colorization redraw slow
+      - Le mode est lent, swith to js-mode
+- [X] M-z devrait fonctionner lorsqu'une sélection est présente
+- [X] Faire tourner "create-tags" (ctags doit etre lu par emacs)
 
 - [X] Installer / configurer php mode | ac-php (auto completion php)
 - [x] Ouverture fichier : Avoir de meilleurs perfs
@@ -686,15 +674,4 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [x] Find next occurence from highlight 
 - [x] Highlight color (http://stackoverflow.com/questions/385661/how
 - [x] Indent html.  —> web beautify html 
-- [x] Installer ag  
-
-
-
-
-
-
-
-Bonobo – Duals
-verdin - forgotten memories
-
-
+- [x] Installer ag
