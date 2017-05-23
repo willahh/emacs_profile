@@ -46,11 +46,26 @@
                     'hydra-window/body)
           (throw 'hydra-disable t))
         "del")
-   ("o" delete-other-windows "one" :color blue)("o" delete-other-windows "one" :color blue)
+   
+   ("o" delete-other-windows "one" :color blue)
+   ;; ("o" evil-window-next "other-window" :color blue)
    ("i" ace-maximize-window "ace-one" :color blue)
-   ("q" nil "cancel")))
+   ("q" nil "cancel")
+
+   ("H" evil-window-move-far-left "evil-window-move-far-left")
+   ("J" evil-window-move-very-bottom "evil-window-move-very-bottom")
+   ("K" evil-window-move-very-top "evil-window-move-very-top")
+   ("L" evil-window-move-far-right "evil-window-move-far-right")
+
+   ("n" (resize-window--enlarge-down) "resize-window--enlarge-down")
+   ("p" (resize-window--enlarge-up) "resize-window--enlarge-up")
+   ("f" (resize-window--enlarge-horizontally) "resize-window--enlarge-horizontally")
+   ("b" (resize-window--shrink-horizontally) "resize-window--shrink-horizontally")
+   ))
 
 
+
+   
 ;; (defhydra hydra-test (global-map "M-g")
 ;;   ("g" goto-line "goto-line"))
 

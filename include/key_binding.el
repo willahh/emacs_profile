@@ -279,11 +279,11 @@
 ;;
 ;; Update : Les définition mc/mark-next-like-this-word ... sont definies dans un hook sinon autopair prend le pas
 
-(global-set-key (kbd "‡") 'mc/mark-next-like-this-word) ;; ALT+q
-(global-set-key (kbd "Ω") 'mc/mark-previous-like-this-word) ;; ALT+SHIFT+q
-(global-set-key (kbd "<C-268632081>") 'mc/mark-all-dwim) ;; CTRL+alt+q
+;; (global-set-key (kbd "‡") 'mc/mark-next-like-this-word) ;; ALT+q
+;; (global-set-key (kbd "Ω") 'mc/mark-previous-like-this-word) ;; ALT+SHIFT+q
+;; (global-set-key (kbd "<C-268632081>") 'mc/mark-all-dwim) ;; CTRL+alt+q
 
-(global-set-key (kbd "ñ") 'mc/mark-next-lines) ;; ALT+p
+a(global-set-key (kbd "ñ") 'mc/mark-next-lines) ;; ALT+p
 (global-set-key (kbd "π") 'mc/mark-previous-lines) ;; ALT+n
 
 ;; Separate C-m from RETURN key
@@ -430,6 +430,7 @@
 ;; 2 en commande standard Combo Meta + Control + s ou + (S)
 ;; 1 en commande avec la touche alt + s
 
+(global-set-key (kbd "C-M-s") 'ag-project-at-point)
 (global-set-key [control meta s] 'ag-project-at-point)
 (global-set-key [control meta shift s] 'ag-project)
 (global-set-key (kbd "Ò") 'helm-ag)
@@ -525,15 +526,15 @@
 (define-key input-decode-map [?\C-i] [C-i])
 (define-key input-decode-map [?\C-\S-i] [C-S-i])
 
-(global-set-key (kbd "<C-i>") 'avy-goto-char-2-below)
-(define-key magit-status-mode-map (kbd "<C-i>") 'avy-goto-char-2-below)
-(define-key help-mode-map (kbd "<C-i>") 'avy-goto-char-2-below)
-(define-key diff-mode-map (kbd "<C-i>") 'avy-goto-char-2-below)
+(global-set-key (kbd "<C-i>") 'avy-goto-word-1-below)
+(define-key magit-status-mode-map (kbd "<C-i>") 'avy-goto-word-1-below)
+(define-key help-mode-map (kbd "<C-i>") 'avy-goto-word-1-below)
+(define-key diff-mode-map (kbd "<C-i>") 'avy-goto-word-1-below)
 
-(global-set-key (kbd "<C-S-i>") 'avy-goto-char-2-above)
-(define-key magit-status-mode-map (kbd "<C-S-i>") 'avy-goto-char-2-above)
-(define-key help-mode-map (kbd "<C-S-i>") 'avy-goto-char-2-above)
-(define-key diff-mode-map (kbd "<C-S-i>") 'avy-goto-char-2-above)
+(global-set-key (kbd "<C-S-i>") 'avy-goto-word-1-above)
+(define-key magit-status-mode-map (kbd "<C-S-i>") 'avy-goto-word-1-above)
+(define-key help-mode-map (kbd "<C-S-i>") 'avy-goto-word-1-above)
+(define-key diff-mode-map (kbd "<C-S-i>") 'avy-goto-word-1-above)
 
 ;; i-search
 (define-key isearch-mode-map (kbd "C-'") 'avy-isearch)

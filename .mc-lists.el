@@ -22,6 +22,7 @@
       drag-stuff-up
       duplicate-start-of-line-or-region
       electric-newline-and-maybe-indent
+      eval-defun
       eval-last-sexp
       evil-a-word
       evil-append
