@@ -283,7 +283,7 @@
 ;; (global-set-key (kbd "Ω") 'mc/mark-previous-like-this-word) ;; ALT+SHIFT+q
 ;; (global-set-key (kbd "<C-268632081>") 'mc/mark-all-dwim) ;; CTRL+alt+q
 
-a(global-set-key (kbd "ñ") 'mc/mark-next-lines) ;; ALT+p
+(global-set-key (kbd "ñ") 'mc/mark-next-lines) ;; ALT+p
 (global-set-key (kbd "π") 'mc/mark-previous-lines) ;; ALT+n
 
 ;; Separate C-m from RETURN key
