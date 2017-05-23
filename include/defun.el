@@ -1155,14 +1155,12 @@ the visible part of the current buffer following point. "
   "Split the window horizontally, then switch to the new pane."
   (interactive)
   (split-window-below)
-  (balance-windows)
   (other-window 1))
 
 (defun hrs/split-window-right-and-switch ()
   "Split the window vertically, then switch to the new pane."
   (interactive)
   (split-window-right)
-  (balance-windows)
   (other-window 1))
 
 

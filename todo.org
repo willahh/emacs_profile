@@ -75,6 +75,15 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 ** Bloquant
 - [ ] Faire une fonction mark paragraph TOP et la binder sur M-S-H
+- [ ] [all] Drag line ne fonctionne plus
+- [ ] [all] Ne pas ajouter dabbrev dans company par default
+- [ ] [css-mode] Virer company dabbrev de css mode
+- [ ] [css-mode] Le script de commentaire ne fonctionne pas dans ce mode
+
+
+- [X] Shift + mouse doit prolonger la sélection de la souris
+- [X] Nouvelle window : Ne pas reequilibrer les fenetres....
+
 
 - [ ] Voir pour installer le plugin pour lancer des mode en "fullscreen", vu sur un blog d'un autre
 - [ ] [system] [osx] Autoriser le F5 dans Emacs (revert-buffer)
@@ -99,6 +108,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] M-S-n sur buffer vc-diff ne fonctionne pas 
 - [X] JS2 mode, le refresh du display est lent
       -> Passage sur JS-mode tout court
+     - Le mode est lent, switch pour utilisation de js-mode
 - [ ] [counsel-find-file] [mini-buffer] Ajouter un bind C-k pour supprimer tout le texte
 - [ ] [dired] Delete dir slow, piste : Tester sans 
 - [ ] [ffap] Ffap doit fonctionner avec ce genre de lignes :
@@ -144,7 +154,8 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
   - [ ] M-b back word
 - [ ] Multiple emacs config management propositions : http://stackoverflow.com/questions/17483598/maintaining-multiple-emacs-configurations-at-the-same-time
 - [ ] Open file from system in new emacs frame (Right click open in)
-- [ ] [js2-mode] Colorization redraw slow
+- [X] [js2-mode] Colorization redraw slow
+      - Le mode est lent, swith to js-mode
 - [ ] [multi-cursor] Remettre la possibilité d'ajouter un command click de la souris pour ajouter un nouveau caret
 - [X] M-z devrait fonctionner lorsqu'une sélection est présente
 - [ ] [projectile] Find file - Traitement lent lorsqu'il y a beaucoup de fichiers

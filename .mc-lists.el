@@ -106,8 +106,10 @@
       helm-projectile-find-file
       helm-projectile-switch-project
       highlight-symbol-next
+      iedit-mode
       ivy-switch-buffer
       keyboard-quit
+      mac-mwheel-scroll
       mark-whole-buffer
       mc/mark-next-lines
       mc/mark-previous-lines

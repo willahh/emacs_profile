@@ -299,6 +299,7 @@
 (global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click)
 (global-set-key (kbd "<double-wheel-left>") 'scroll-right)
 (global-set-key (kbd "<double-wheel-right>") 'scroll-left)
+(define-key global-map (kbd "<S-down-mouse-1>") 'mouse-save-then-kill)
 
 ;; kill-ring
 ;; Update : Retour sur le racourcis natif d Emacs (M-w)
@@ -313,6 +314,8 @@
 
 (global-set-key (kbd "<C-S-268632074>") 'drag-stuff-up) ;; control+alt+shift+j
 (global-set-key (kbd "<C-268632074>") 'drag-stuff-down) ;; control+alt+j
+
+(global-set-key (kbd "C-é") 'drag-stuff-down) ;; control+alt+j
 
 ;; (global-set-key [control meta k] 'drag-stuff-up)
 
@@ -332,6 +335,7 @@
 (define-key company-active-map (kbd "<tab>") 'company-complete-selection)
 
 (require 'iedit)
+(require 'org)
 (define-key iedit-mode-keymap (kbd "C-w") 'clean-aindent--bsunindent)
 (define-key iedit-mode-keymap (kbd "C-h") 'delete-backward-char)
 
@@ -340,6 +344,7 @@
 (global-set-key (kbd "C-c t") 'toggle-truncate-lines)
 ;; (global-set-key (kbd "C-x f") 'projectile-find-file)
 (global-set-key (kbd "C-c C-p") 'projectile-find-file)
+(define-key org-mode-map (kbd "C-c C-p") 'projectile-find-file)
 
 ;; Filter buffer / Get buffer definitions
 ;; (global-set-key [(meta r)]  'helm-imenu) ;; command + r
@@ -390,16 +395,15 @@
 (global-set-key (kbd "C-c c s") (quote thing-copy-string-to-mark))
 (global-set-key (kbd "C-c c a") (quote thing-copy-parenthesis-to-mark))
 
-
 ;; ----- search
 ;; Update : Apres pas mal d essais, la commande "ag-project" me convient le mieux.
 ;; Cette commande permet de faire une recherche globale depuis le projet (retrouve via .projectile ou .svn .git)
 ;; et affiche les resultats dans le meme buffer tout comme dans Sublime Text.
 ;; Le raccourcis utilise est COMMAND+ALT+f ("M-ƒ" sur osx)
+;; 
 ;; Update 3 : Switch helm-ag et helm-ag-project-root (helm-ag sur le racourcis le plus simple)
 ;; Update 4 : Re inversement de ces 2 la, trop souvent de mauvais candidats sur le helm-ag-project-root
 ;; Les deux plus utiles (selon moi)
-;;
 ;;
 ;; Update 5 : Switch sur un autre principe de key binding :
 ;; C-c s n : Usermap key binding (C-c) + Prefix [s]earch + mnemotic keys
@@ -413,13 +417,21 @@
 ;; et projectile-ag
 
 ;; (global-set-key (kbd "C-c s p") 'ag-project)
+
+;; Update : Ajout d'un ensemble de raccourcis sur le table de prefix C-c s
+;; Les racourcis les plus utiles ont un acces direct, voir plus bas
 (global-set-key (kbd "C-c s a") 'ag-project-at-point)
 (global-set-key (kbd "C-c s A") 'ag)
 (global-set-key (kbd "C-c s p") 'projectile-ag)
 (global-set-key (kbd "C-c s s") 'helm-ag)
 (global-set-key (kbd "C-c s S") 'helm-ag-project-root)
 
-
+;; Acces direct aux raccourcis les plus utiles
+;; 2 en commande standard Combo Meta + Control + s ou + (S)
+;; 1 en commande avec la touche alt + s
+(global-set-key (kbd "C-M-s") 'ag-project-at-point)
+(global-set-key (kbd "C-M-S") 'ag-project)
+(global-set-key (kbd "Ò") 'helm-ag) ;; (alt + s)
 
 
 
@@ -435,10 +447,6 @@
 
 ;; text operation : duplication
 (global-set-key [(meta shift d)] 'duplicate-start-of-line-or-region)
-
-;; helm-ag
-(global-set-key (kbd "Ò") 'helm-ag) ;; (alt + s)
-
 
 ;; Undo redo
 ;; Update : Use default binding

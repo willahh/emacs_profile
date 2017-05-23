@@ -39,12 +39,6 @@
             (when (string-equal "tsx" (file-name-extension buffer-file-name))
               (setup-tide-mode))))
 
-;; js support
-;; Update : Fichier js ne doivent pas etre en tide-mode
-;; Update 2 : Il faut que ca soit active pour avoir un support avance
-;; Update 3 : Pas si sure, tide devrait etre utilise uniquement pour du typescript
-;; (add-hook 'js2-mode-hook #'setup-tide-mode)
-
 ;; jsx support
 ;; Update voir si ca rentre pas en conflit avec les fichiers ".js"
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . typescript-mode))

@@ -13,7 +13,7 @@
 ;; javascript live interpreter nice to test regexp on fly
 (require 'js-comint)
 
-(defun whl-js2-mode-hook ()
+(defun whl-js-mode-hook ()
   (interactive)
 
   ;; indium
@@ -57,4 +57,5 @@
   (add-to-list (make-local-variable 'company-backends)
                          'company-tern))
 
-(add-hook 'js2-mode-hook 'whl-js2-mode-hook)
+(add-hook 'js2-mode-hook 'whl-js-mode-hook)
+(add-hook 'js-mode-hook 'whl-js-mode-hook)
