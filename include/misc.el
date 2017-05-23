@@ -134,7 +134,7 @@
    ("L" evil-window-bottom)
    ;; ("C-f" evil-scroll-page-down)
    ("G" evil-goto-line)
-   ;; ("C-d" evil-scroll-down)
+   ("C-d" evil-scroll-down)
 ))
 
 

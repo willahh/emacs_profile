@@ -57,13 +57,6 @@
       (modify-syntax-entry ?_ "w")
 )
 (update-syntax-entry)
-
-;; (add-hook 'web-mode-hook (lambda () (update-syntax-entry)))
-;; (add-hook 'emacs-lisp-mode (lambda () (update-syntax-entry)))
-;; (add-hook 'php-mode-hook (lambda () (update-syntax-entry)))
-;; (add-hook 'css-mode-hook (lambda () (update-syntax-entry)))
-;; (add-hook 'js2-mode-hook (lambda () (update-syntax-entry)))
-
 (add-hook 'prog-mode-hook (lambda () (update-syntax-entry)))
 
 
