@@ -342,3 +342,9 @@
       scroll-step 1
       scroll-conservatively 10000
       scroll-preserve-screen-position nil)
+
+;; Save emacs history
+;; https://stackoverflow.com/a/1230877
+(savehist-mode 1)
+(setq savehist-additional-variables '(kill-ring search-ring regexp-search-ring))
+(setq savehist-file "~/.emacs.d/tmp/savehist")

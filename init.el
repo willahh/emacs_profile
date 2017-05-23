@@ -32,6 +32,7 @@
 (load-file "~/.emacs.d/include/indentation.el")
 (load-file "~/.emacs.d/include/simple_httpd.el")
 (load-file "~/.emacs.d/include/org.el")
+(load-file "~/.emacs.d/include/pdf.el")
 (load-file "~/.emacs.d/include/language/typescript.el")
 (load-file "~/.emacs.d/include/language/html.el")
 (load-file "~/.emacs.d/include/language/javascript.el")
