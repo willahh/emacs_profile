@@ -1,5 +1,7 @@
 * todo
 ** Utils
+- Implementer https://github.com/abo-abo/hydra/wiki/Twittering
+
 - View pdf
   https://emacs.stackexchange.com/a/22591/15824
   https://emacs.stackexchange.com/questions/13314/install-pdf-tools-on-emacs-macosx
@@ -72,7 +74,6 @@ phpmd
 Semantic PHP parser with ECB
 http://ecb.sourceforge.net/
 https://www.youtube.com/watch?v=KoRNCrx9pak
-
 
 ** Bloquant
 - [ ] [diff-hl] Le package est casse sur melpa il ne compile pas bien,

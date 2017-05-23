@@ -657,3 +657,127 @@ _n_: Navigate           _._: mark position _/_: jump to mark
 
 
 
+
+(defhydra hydra-move
+   (:body-pre (next-line))
+   "move"
+   ("n" next-line)
+   ("p" previous-line)
+   ("f" forward-char)
+   ("b" backward-char)
+   ("a" beginning-of-line)
+   ("e" move-end-of-line)
+   ("v" scroll-up-command)
+   ;; Converting M-v to V here by analogy.
+   ("V" scroll-down-command)
+   ("l" recenter-top-bottom))
+
+(defhydra hydra-move-top
+   (:body-pre (previous-line))
+   "move"
+   ("n" next-line)
+   ("p" previous-line)
+   ("f" forward-char)
+   ("b" backward-char)
+   ("a" beginning-of-line)
+   ("e" move-end-of-line)
+   ("v" scroll-up-command)
+   ;; Converting M-v to V here by analogy.
+   ("V" scroll-down-command)
+   ("l" recenter-top-bottom))
+
+(global-set-key (kbd "C-n") 'hydra-move/body)
+(global-set-key (kbd "C-p") 'hydra-move-top/body)
+
+
+
+
+
+
+
+
+
+
+(defhydra hydra-outline (:color pink :hint nil)
+  "
+^Hide^             ^Show^           ^Move
+^^^^^^------------------------------------------------------
+_q_: sublevels     _a_: all         _u_: up
+_t_: body          _e_: entry       _n_: next visible
+_o_: other         _i_: children    _p_: previous visible
+_c_: entry         _k_: branches    _f_: forward same level
+_l_: leaves        _s_: subtree     _b_: backward same level
+_d_: subtree
+
+"
+  ;; Hide
+  ("q" hide-sublevels)    ; Hide everything but the top-level headings
+  ("t" hide-body)         ; Hide everything but headings (all body lines)
+  ("o" hide-other)        ; Hide other branches
+  ("c" hide-entry)        ; Hide this entry's body
+  ("l" hide-leaves)       ; Hide body lines in this entry and sub-entries
+  ("d" hide-subtree)      ; Hide everything in this entry and sub-entries
+  ;; Show
+  ("a" show-all)          ; Show (expand) everything
+  ("e" show-entry)        ; Show this heading's body
+  ("i" show-children)     ; Show this heading's immediate child sub-headings
+  ("k" show-branches)     ; Show all sub-headings under this heading
+  ("s" show-subtree)      ; Show (expand) everything in this heading & below
+  ;; Move
+  ("u" outline-up-heading)                ; Up
+  ("n" outline-next-visible-heading)      ; Next
+  ("p" outline-previous-visible-heading)  ; Previous
+  ("f" outline-forward-same-level)        ; Forward - same level
+  ("b" outline-backward-same-level)       ; Backward - same level
+  ("z" nil "leave"))
+
+(global-set-key (kbd "C-c #") 'hydra-outline/body) ; by example
+
+
+
+
+
+
+
+
+
+
+
+(defun occur-dwim ()
+  "Call `occur' with a sane default, chosen as the thing under point or selected region"
+  (interactive)
+  (push (if (region-active-p)
+            (buffer-substring-no-properties
+             (region-beginning)
+             (region-end))
+          (let ((sym (thing-at-point 'symbol)))
+            (when (stringp sym)
+              (regexp-quote sym))))
+        regexp-history)
+  (call-interactively 'occur))
+
+;; Keeps focus on *Occur* window, even when when target is visited via RETURN key.
+;; See hydra-occur-dwim for more options.
+(defadvice occur-mode-goto-occurrence (after occur-mode-goto-occurrence-advice activate)
+  (other-window 1)
+  (hydra-occur-dwim/body))
+
+;; Focus on *Occur* window right away.
+(add-hook 'occur-hook (lambda () (other-window 1)))
+
+(defun reattach-occur ()
+  (if (get-buffer "*Occur*")
+    (switch-to-buffer-other-window "*Occur*")
+    (hydra-occur-dwim/body) ))
+
+;; Used in conjunction with occur-mode-goto-occurrence-advice this helps keep
+;; focus on the *Occur* window and hides upon request in case needed later.
+(defhydra hydra-occur-dwim ()
+  "Occur mode"
+  ("o" occur-dwim "Start occur-dwim" :color red)
+  ("j" occur-next "Next" :color red)
+  ("k" occur-prev "Prev":color red)
+  ("h" delete-window "Hide" :color blue)
+  ("r" (reattach-occur) "Re-attach" :color red))
+
+(global-set-key (kbd "C-x o") 'hydra-occur-dwim/body)
