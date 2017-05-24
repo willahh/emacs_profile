@@ -44,6 +44,18 @@
 ;; (global-set-key (kbd "M-s") 'save-buffer)
 ;; (define-key paredit-mode-map (kbd "M-s") 'save-buffer)
 
+;; M-w (kil-ring-save) -> "close window"
+(global-set-key (kbd "M-w") 'delete-window)
+(global-set-key (kbd "C-x M-w") 'kill-ring-save)
+
+;; Toggle fullscreen
+(global-set-key (kbd "C-x C-M-f") 'toggle-frame-fullscreen)
+
+;; New frame
+(global-set-key [meta shift w] 'delete-frame)
+(global-set-key (kbd "M-W") 'delete-frame)
+(global-set-key (kbd "M-S-w") 'delete-frame)
+
 ;; ---
 (define-key key-translation-map (kbd "ESC") (kbd "C-g"))
 (define-key ivy-minibuffer-map (kbd "<escape>") 'minibuffer-keyboard-quit)
@@ -246,8 +258,33 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "C-x C-r") 'rename-current-buffer-file)
 
-;; Buffer
-(global-set-key [(meta shift n)] 'evil-buffer-new)
+;; -------- Buffer
+(defun xah-new-empty-buffer ()
+  "Create a new empty buffer.
+New buffer will be named “untitled” or “untitled<2>”, “untitled<3>”, etc.
+
+URL `http://ergoemacs.org/emacs/emacs_new_empty_buffer.html'
+Version 2016-12-27"
+  (interactive)
+  (let ((-buf (generate-new-buffer "untitled")))
+    (switch-to-buffer -buf)
+    (funcall initial-major-mode)
+    (setq buffer-offer-save t)))
+
+(defun wlh-new-frame-new-buffer (&optional arg)
+  (interactive)
+  (new-frame)
+  (xah-new-empty-buffer)
+)
+
+;; New buffer
+;; (global-set-key [(meta shift n)] 'evil-buffer-new)
+(global-set-key (kbd "M-n") 'evil-buffer-new)
+(define-key highlight-symbol-nav-mode-map (kbd "M-n") 'evil-buffer-new)
+
+;; New frame
+(global-set-key (kbd "M-N") 'wlh-new-frame-new-buffer)
+
 ;; (global-set-key (kbd "C-c C-k") 'kill-this-buffer)
 (define-key global-map (kbd "C-x k") 'kill-this-buffer)
 (define-key global-map (kbd "C-x C-r") 'revert-buffer-no-confirm)
