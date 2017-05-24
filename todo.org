@@ -1,5 +1,7 @@
 * todo
 ** Utils
+- [dired] "o" Ouvre le fichier dans un nouveau buffer et donne le focus à ce buffer
+
 - Implementer https://github.com/abo-abo/hydra/wiki/Twittering
 
 - View pdf
@@ -77,6 +79,8 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 ** Bloquant
 - [ ] Ajouter un fichier vide tmp/savehist
+- [ ] [Helm] Masquer la première ligne
+- [ ] Back to previous window highlight current line comme lorque l'on fait un M-; en typescript-mode
 - [ ] [company] Voir pour utiliser autre chose que company pour la complétion des mots car cela peut être lent
 
 - [ ] [swoop] Faire des M-v dans le prompt

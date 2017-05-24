@@ -209,3 +209,4 @@
 (add-to-list 'load-path "~/.emacs.d/plugins/diff-hl")
 (add-to-list 'load-path "~/.emacs.d/plugins/org-mouse")
 (add-to-list 'load-path "~/.emacs.d/plugins/clean-aindent-mode")
+(add-to-list 'load-path "~/.emacs.d/plugins/workgroups2")
