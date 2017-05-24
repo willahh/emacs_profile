@@ -672,22 +672,23 @@ _n_: Navigate           _._: mark position _/_: jump to mark
    ("V" scroll-down-command)
    ("l" recenter-top-bottom))
 
-(defhydra hydra-move-top
-   (:body-pre (previous-line))
-   "move"
-   ("n" next-line)
-   ("p" previous-line)
-   ("f" forward-char)
-   ("b" backward-char)
-   ("a" beginning-of-line)
-   ("e" move-end-of-line)
-   ("v" scroll-up-command)
-   ;; Converting M-v to V here by analogy.
-   ("V" scroll-down-command)
-   ("l" recenter-top-bottom))
+;; Impossible trop de conflit avec par exemple la lettre f
+;; (defhydra hydra-move-top
+;;    (:body-pre (previous-line))
+;;    "move"
+;;    ("n" next-line)
+;;    ("p" previous-line)
+;;    ("f" forward-char)
+;;    ("b" backward-char)
+;;    ("a" beginning-of-line)
+;;    ("e" move-end-of-line)
+;;    ("v" scroll-up-command)
+;;    ;; Converting M-v to V here by analogy.
+;;    ("V" scroll-down-command)
+;;    ("l" recenter-top-bottom))
 
 (global-set-key (kbd "C-n") 'hydra-move/body)
-(global-set-key (kbd "C-p") 'hydra-move-top/body)
+;; (global-set-key (kbd "C-p") 'hydra-move-top/body)
 
 
 

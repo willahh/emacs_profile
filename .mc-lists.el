@@ -103,6 +103,7 @@
       evil-find-char-to
       evil-window-split
       ggtags-navigation-mode-done
+      handle-switch-frame
       helm-mini
       helm-projectile-ag
       helm-projectile-find-file

@@ -76,6 +76,16 @@ http://ecb.sourceforge.net/
 https://www.youtube.com/watch?v=KoRNCrx9pak
 
 ** Bloquant
+- [ ] [swoop] Faire des M-v dans le prompt
+- [ ] [swoop] Ne pas initialiser avec le texte sous le curseur
+- [ ] [org] Lancer org mode avec certains titre ouvert fermé
+      - (conf en tête de fichier)
+- [ ] Mouse shift click supprimer la sélection bizarre...
+- [ ] Intégrer le M-s pour save plutôt que C-x C-s
+- [X] M-W ne ferme plus la frame
+- [ ] M-n dans un buffer dired doit faire un nouveau buffer
+- [ ] [org-mode] Le toggle des headline doit se faire en deux fois pour que tout fonctionne bien
+- [ ] !!! [hydra][helm mini nav] Ne pas activer Hydra moves dans helm
 - [ ] [diff-hl] Le package est casse sur melpa il ne compile pas bien,
 - [ ] [doc-block] La fonction ne fonctionne pas correctement
   - [ ] [php-mode]

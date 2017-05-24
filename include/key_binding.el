@@ -483,8 +483,11 @@ Version 2016-12-27"
 
 
 
-;; ---- WINDOW
+;; ---- window
 (define-key typescript-mode-map (kbd "M-j") 'c-indent-new-comment-line)
+
+;; ---- Comment lines
+(global-set-key (kbd "M-/") 'comment-line)
 
 ;; comment
 ;; Update : evilnc-comment-or-uncomment-lines  fait des commentaires bizarres (en mode html plusieurs imbrications de commentaire html au lieu d un seul)
@@ -692,7 +695,7 @@ Version 2016-12-27"
 (global-set-key (kbd "M-0") 'delete-window) ;; M-0
 (define-key diff-mode-map (kbd "M-0") 'delete-window)
 ;; (global-set-key [(command shift w)] 'delete-window)
-(global-set-key (kbd "M-W") 'delete-window)
+;; (global-set-key (kbd "M-W") 'delete-window)
 
 (global-set-key (kbd "M-1") 'delete-other-windows) ;; M-1
 (define-key diff-mode-map (kbd "M-1") 'delete-other-windows)
