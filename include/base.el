@@ -323,18 +323,14 @@
 
 (setq tramp-default-method "ssh")
 
-
-
 ;; Set the default comment column to 70
 (setq-default comment-column 70)
 
 ;; Every time a window is started, make sure it get maximized
-(add-to-list 'default-frame-alist '(fullscreen . maximized))
+;; (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 ;; Avoid hiding with M-h
 (setq mac-pass-command-to-system nil)
-
-
 
 ;; smooth scroling!
 (setq redisplay-dont-pause t

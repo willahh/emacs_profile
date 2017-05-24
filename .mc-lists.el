@@ -66,6 +66,7 @@
       org-cycle
       org-delete-char
       org-end-of-line
+      org-kill-line
       org-self-insert-command
       paredit-doublequote
       paredit-forward
