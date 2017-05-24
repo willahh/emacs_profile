@@ -70,7 +70,7 @@
 
   ;; auto-complete-exuberant-ctags
   ;; golden-ratio
-  ace-window
+  ;; ace-window ;; Deplacee dans vendor suite a un bug sur une version plus recente
   ag
   rainbow-mode
 
@@ -86,8 +86,8 @@
   autopair
   ;; smartparens
 
-  avy
-  avy-menu
+  ;; avy ;; Deplacee dans vendor suite a un bug sur une version plus recente
+  ;; avy-menu ;; Deplacee dans vendor suite a un bug sur une version plus recente
 
   pdf-tools
 
@@ -191,6 +191,9 @@
 
 (add-to-list 'load-path "~/.emacs.d/vendor/emacs-async")
 (add-to-list 'load-path "~/.emacs.d/vendor/helm")
+(add-to-list 'load-path "~/.emacs.d/vendor/avy")
+(add-to-list 'load-path "~/.emacs.d/vendor/avy-menu")
+(add-to-list 'load-path "~/.emacs.d/vendor/ace-window")
 (add-to-list 'load-path "~/.emacs.d/vendor/emacs-helm-ag")
 (add-to-list 'load-path "~/.emacs.d/vendor/emacs-powerline")
 (add-to-list 'load-path "~/.emacs.d/vendor/webmode")

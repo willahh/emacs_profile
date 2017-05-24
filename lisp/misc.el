@@ -673,19 +673,19 @@ _n_: Navigate           _._: mark position _/_: jump to mark
 
 
 
-(defhydra hydra-move
-   (:body-pre (next-line))
-   "move"
-   ("n" next-line)
-   ("p" previous-line)
-   ("f" forward-char)
-   ("b" backward-char)
-   ("a" beginning-of-line)
-   ("e" move-end-of-line)
-   ("v" scroll-up-command)
-   ;; Converting M-v to V here by analogy.
-   ("V" scroll-down-command)
-   ("l" recenter-top-bottom))
+;; (defhydra hydra-move
+;;    (:body-pre (next-line))
+;;    "move"
+;;    ("n" next-line)
+;;    ("p" previous-line)
+;;    ("f" forward-char)
+;;    ("b" backward-char)
+;;    ("a" beginning-of-line)
+;;    ("e" move-end-of-line)
+;;    ("v" scroll-up-command)
+;;    ;; Converting M-v to V here by analogy.
+;;    ("V" scroll-down-command)
+;;    ("l" recenter-top-bottom))
 
 ;; Impossible trop de conflit avec par exemple la lettre f
 ;; (defhydra hydra-move-top
@@ -702,7 +702,7 @@ _n_: Navigate           _._: mark position _/_: jump to mark
 ;;    ("V" scroll-down-command)
 ;;    ("l" recenter-top-bottom))
 
-(global-set-key (kbd "C-n") 'hydra-move/body)
+;; (global-set-key (kbd "C-n") 'hydra-move/body)
 ;; (global-set-key (kbd "C-p") 'hydra-move-top/body)
 
 
@@ -797,3 +797,11 @@ _d_: subtree
   ("r" (reattach-occur) "Re-attach" :color red))
 
 (global-set-key (kbd "C-x o") 'hydra-occur-dwim/body)
+
+
+
+
+
+
+
+ ;; (eval-after-load 'image-dired+ '(image-diredx-async-mode 1))

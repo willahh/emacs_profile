@@ -24,7 +24,7 @@
 ;; et sur le systeme, et depuis elpa
 
 
-;;(pdf-tools-install)
+(pdf-tools-install)
 
 
 

@@ -261,6 +261,14 @@
 (global-set-key (kbd "C-x C-r") 'rename-current-buffer-file)
 
 ;; -------- Buffer
+;; https://stackoverflow.com/a/25792276
+(defun lunaryorn-new-buffer-frame ()
+  "Create a new frame with a new empty buffer."
+  (interactive)
+  (let ((buffer (generate-new-buffer "untitled")))
+    (set-buffer-major-mode buffer)
+    (display-buffer buffer '(display-buffer-pop-up-frame . nil))))
+
 (defun xah-new-empty-buffer ()
   "Create a new empty buffer.
 New buffer will be named “untitled” or “untitled<2>”, “untitled<3>”, etc.
@@ -273,19 +281,12 @@ Version 2016-12-27"
     (funcall initial-major-mode)
     (setq buffer-offer-save t)))
 
-(defun wlh-new-frame-new-buffer (&optional arg)
-  (interactive)
-  (new-frame)
-  (xah-new-empty-buffer)
-)
-
 ;; New buffer
-;; (global-set-key [(meta shift n)] 'evil-buffer-new)
-(global-set-key (kbd "M-n") 'evil-buffer-new)
-(define-key highlight-symbol-nav-mode-map (kbd "M-n") 'evil-buffer-new)
+(global-set-key (kbd "C-c C-n") 'xah-new-empty-buffer)
+(define-key highlight-symbol-nav-mode-map (kbd "C-c C-n") 'xah-new-empty-buffer)
 
 ;; New frame
-(global-set-key (kbd "M-N") 'wlh-new-frame-new-buffer)
+(global-set-key (kbd "M-N") 'lunaryorn-new-buffer-frame)
 
 ;; (global-set-key (kbd "C-c C-k") 'kill-this-buffer)
 (define-key global-map (kbd "C-x k") 'kill-this-buffer)

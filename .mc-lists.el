@@ -68,6 +68,7 @@
       org-end-of-line
       org-kill-line
       org-self-insert-command
+      paredit-backward
       paredit-doublequote
       paredit-forward
       paredit-forward-delete
@@ -84,6 +85,7 @@
       whole-line-or-region-kill-region
       wlh-tab-indent-or-complete-web
       yank-rectangle
+      yas-expand
       ))
 
 (setq mc/cmds-to-run-once
