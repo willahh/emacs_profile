@@ -84,6 +84,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [all] Drag line ne fonctionne plus
       -> Fonctionnel @home
 ** A ranger
+- [ ] [org-mode] Mouse-1 pour toggler un header
 - [ ] Voir pour installer le plugin pour lancer des mode en "fullscreen", vu sur un blog d'un autre
 - [ ] [system] [osx] Autoriser le F5 dans Emacs (revert-buffer)
 - [ ] Rebind les scroll to other window pour avoir un scroll sur la fenetre a cote mais d'une demie page seulement

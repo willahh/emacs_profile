@@ -42,8 +42,8 @@
 (load-file "~/.emacs.d/include/language/lisp.el")
 (load-file "~/.emacs.d/include/language/clojure.el")
 (load-file "~/.emacs.d/include/key_binding.el")
-(load-file "~/.emacs.d/include/theme-dark.el")
-;; (load-file "~/.emacs.d/include/theme-light.el")
+;; (load-file "~/.emacs.d/include/theme-dark.el")
+(load-file "~/.emacs.d/include/theme-light.el")
 (load-file "~/.emacs.d/include/browser.el")
 
 

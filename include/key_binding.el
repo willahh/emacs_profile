@@ -47,6 +47,8 @@
 ;; M-w (kil-ring-save) -> "close window"
 (global-set-key (kbd "M-w") 'delete-window)
 (global-set-key (kbd "C-x M-w") 'kill-ring-save)
+(global-set-key (kbd "M-X") 'other-frame) ;; Same keybinding from osx habits
+
 
 ;; Toggle fullscreen
 (global-set-key (kbd "C-x C-M-f") 'toggle-frame-fullscreen)
@@ -249,7 +251,7 @@
                                           (scroll-left 4)))
 ;; -- Buffer / frames / main
 ;; Frames
-;; 
+;;
 ;; (global-set-key [(meta control shift n)] 'create-new-centered-frame)
 
 
@@ -299,7 +301,7 @@ Version 2016-12-27"
 
 
 ;; (define-key dired-mode-map [(command shift n)] 'mkdir)
-(define-key dired-mode-map (kbd "M-N") 'evil-buffer-new)
+;; (define-key dired-mode-map (kbd "M-N") 'evil-buffer-new)
 (define-key dired-mode-map (kbd "M-n") 'mkdir)
 
 
