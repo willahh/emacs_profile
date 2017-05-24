@@ -2,7 +2,7 @@
 (require 'iy-go-to-char)
 
 ;; change-inner
-(require 'change-inner)
+;; (require 'change-inner) ;; Non disponible sur MELPA stable
 
 ;; whole-line-or-region
 ;; Ce package ou cette fonction n est pas disponible
@@ -388,7 +388,7 @@
 (add-hook 'js2-mode-hook (goto-address-mode 1))
 
 ;; point-undo
-(require 'point-undo)
+;; (require 'point-undo) ;; Non disponible sur MELPA stable
 
 ;; back-button
 ;; (require 'back-button)

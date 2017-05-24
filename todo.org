@@ -76,6 +76,7 @@ http://ecb.sourceforge.net/
 https://www.youtube.com/watch?v=KoRNCrx9pak
 
 ** Bloquant
+- [ ] Ajouter un fichier vide tmp/savehist
 - [ ] [company] Voir pour utiliser autre chose que company pour la complétion des mots car cela peut être lent
 
 - [ ] [swoop] Faire des M-v dans le prompt

@@ -22,7 +22,9 @@
 ;; L'utilisation de (pdf-tools-install) uniquement fonctionne bine
 ;; Il faut tout de meme que la package soit installe correctement
 ;; et sur le systeme, et depuis elpa
-(pdf-tools-install)
+
+
+;;(pdf-tools-install)
 
 
 

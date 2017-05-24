@@ -37,7 +37,7 @@
   company-web
   ;; highlight-chars
   drag-stuff
-  clean-aindent-mode
+  ;; clean-aindent-mode ;; not found in melpa
   actionscript-mode
   typescript-mode
   tide
@@ -57,12 +57,12 @@
   ido-vertical-mode
 
   php-mode
-  php-refactor-mode
+  ;;php-refactor-mode ;; Not found in Melpa
   php-auto-yasnippets
 
   company-php
   ac-php
-  php-eldoc
+  ;; php-eldoc ;; Not found in Melpa
   ;; php-extras
   ; php-extras
   editorconfig
@@ -75,7 +75,7 @@
   rainbow-mode
 
   eclim
-  point-undo
+  ;; point-undo ;; Not found in Melpa
 
   rainbow-delimiters
   ;;anything
@@ -89,12 +89,14 @@
   avy
   avy-menu
 
+  pdf-tools
+
   ;; color-theme-buffer-local
   dash
   ;;diff-hl
 
 
-  doom-themes
+  ;; doom-themes ;; Dependant du package ‘font-lock+-0’ non disponible sur MELPA stable
   dsvn
   emmet-mode
   epl
@@ -103,7 +105,7 @@
 
 
   evil
-  evil-easymotion
+  ;; evil-easymotion ;; Non disponible sur MELPA stable
   evil-leader
   ;; evil-multiedit
   evil-nerd-commenter
@@ -163,7 +165,7 @@
   ;; window-numbering
   yasnippet
   ;; yascroll
-  zerodark-theme
+  ;; zerodark-theme ;; Dependant du package ‘font-lock+-0’ non disponible sur MELPA stable
 
 
 
@@ -177,7 +179,7 @@
 
 
   iy-go-to-char
-  change-inner
+  ;; change-inner Non disponible sur MELPA stable
 
   ;; dired-details
   flx-ido
@@ -189,13 +191,14 @@
 (add-to-list 'load-path "~/.emacs.d/plugins/emacs-async")
 (add-to-list 'load-path "~/.emacs.d/plugins/helm")
 (add-to-list 'load-path "~/.emacs.d/plugins/emacs-helm-ag")
-(add-to-list 'load-path "~/.emacs.d/plugins/alltheicons/")
+
 (add-to-list 'load-path "~/.emacs.d/plugins/emacs-powerline")
 (add-to-list 'load-path "~/.emacs.d/plugins/webmode")
 (add-to-list 'load-path "~/.emacs.d/plugins/emacspowerline")
 (add-to-list 'load-path "~/.emacs.d/plugins/find-file-in-project")
 (add-to-list 'load-path "~/.emacs.d/plugins/ivy_buffer_extend")
 (add-to-list 'load-path "~/.emacs.d/plugins/helm-swoop")
+(add-to-list 'load-path "~/.emacs.d/plugins/evil-easymotion")
 (add-to-list 'load-path "~/.emacs.d/plugins/psvn")
 (add-to-list 'load-path "~/.emacs.d/plugins/simple-httpd")
 (add-to-list 'load-path "~/.emacs.d/plugins/diff-hl")
@@ -205,3 +208,4 @@
 (add-to-list 'load-path "~/.emacs.d/plugins/restclient")
 (add-to-list 'load-path "~/.emacs.d/plugins/diff-hl")
 (add-to-list 'load-path "~/.emacs.d/plugins/org-mouse")
+(add-to-list 'load-path "~/.emacs.d/plugins/clean-aindent-mode")
