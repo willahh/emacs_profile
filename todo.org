@@ -76,11 +76,13 @@ http://ecb.sourceforge.net/
 https://www.youtube.com/watch?v=KoRNCrx9pak
 
 ** Bloquant
+- [ ] [company] Voir pour utiliser autre chose que company pour la complétion des mots car cela peut être lent
+
 - [ ] [swoop] Faire des M-v dans le prompt
 - [ ] [swoop] Ne pas initialiser avec le texte sous le curseur
 - [ ] [org] Lancer org mode avec certains titre ouvert fermé
       - (conf en tête de fichier)
-- [ ] Mouse shift click supprimer la sélection bizarre...
+- [ ] Mouse shift click kill la sélection bizarre...
 - [ ] Intégrer le M-s pour save plutôt que C-x C-s
 - [X] M-W ne ferme plus la frame
 - [ ] M-n dans un buffer dired doit faire un nouveau buffer
@@ -94,6 +96,11 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [all] Drag line ne fonctionne plus
       -> Fonctionnel @home
 ** A ranger
+
+
+
+
+
 - [ ] [org-mode] Mouse-1 pour toggler un header
 - [ ] Voir pour installer le plugin pour lancer des mode en "fullscreen", vu sur un blog d'un autre
 - [ ] [system] [osx] Autoriser le F5 dans Emacs (revert-buffer)

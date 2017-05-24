@@ -231,6 +231,21 @@
 ;; Voir pour trouver la raison et remettre ce package, mais je peux m'en passer
 ;; Update : desktop (emacs native) est utile pour sauvegarder l etat actuel.
 ;; Utilise avec eyebrowe fonctionne a merveille pour restaurer des "workspace".
+;; (desktop-save-mode 1)
+
+;; Default timeout at 30 seconds ?
+;; (desktop-auto-save-timeout)
+
+;; Automatically save and restore sessions
+;; https://stackoverflow.com/a/4485083
+(setq desktop-dirname             "~/.emacs.d/desktop/"
+      desktop-base-file-name      "emacs.desktop"
+      desktop-base-lock-name      "lock"
+      desktop-path                (list desktop-dirname)
+      desktop-save                t
+      desktop-files-not-to-save   "^$" ;reload tramp paths
+      desktop-load-locked-desktop nil
+      desktop-auto-save-timeout   10)
 (desktop-save-mode 1)
 
 
