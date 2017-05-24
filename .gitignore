@@ -26,3 +26,4 @@ tmp/savehist
 tramp
 url/*
 desktop/emacs.desktop
+desktop/lock
