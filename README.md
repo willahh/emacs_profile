@@ -9,11 +9,8 @@
 ```{r, engine='bash', count_lines}
 brew install --with-cocoa --srgb emacs
 git clone --recursive https://github.com/willahh/emacs_profile ~/.emacs.d
-cd ~/.emacs.d
-mkdir tmp
 ```
-- Install icons from ~/.emacs.d/plugins/all-the-icons/fonts/
-- Use font "Meslo LG S" - size : 12 -  ~/.emacs.d/fonts/meslo (Menu > option > set default font)
+- Use font "fira-monoS" - size : 12 -  ~/.emacs.d/fonts/meslo (Menu > option > set default font)
 - Install below dependencies globaly
 - Create a .tern-project file in ~/ directory for a global javascript ES6 support
 ```{r, engine='bash', count_lines}
