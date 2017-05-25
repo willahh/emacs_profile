@@ -65,13 +65,7 @@
 
 
 
-   
-;; (defhydra hydra-test (global-map "M-g")
-;;   ("g" goto-line "goto-line"))
-
-
-;; Pure blasphemy
-;; Look at me i'm doing modal editing :x :p ;P
+;; Not really vi not really Emacs
 (define-key evil-emacs-state-map (kbd "C-z") nil)
 (global-set-key (kbd "C-z") (defhydra hydra-vi ()
    "vi"
@@ -91,6 +85,12 @@
    ("zb" evil-scroll-line-to-bottom)
    ("C-e" evil-scroll-line-down)
    ("C-y" evil-scroll-line-up)
+
+   ("C-S-e" evil-scroll-line-up) ;; Not vi command
+   ("C-S-d" evil-scroll-up) ;; Not vi command
+   ("C-l" recenter-top-bottom) ;; Not vi command
+
+
 
    ;; Editing
    ("u" undo-tree-undo)
@@ -795,7 +795,6 @@ _d_: subtree
   ("h" delete-window "Hide" :color blue)
   ("r" (reattach-occur) "Re-attach" :color red))
 
-(global-set-key (kbd "C-x o") 'hydra-occur-dwim/body)
 
 
 

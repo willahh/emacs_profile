@@ -52,6 +52,7 @@
 
 ;; Toggle fullscreen
 (global-set-key (kbd "C-x C-M-f") 'toggle-frame-fullscreen)
+(global-set-key (kbd "C-x M-f") 'toggle-frame-maximized)
 
 ;; New frame
 (global-set-key [meta shift w] 'delete-frame)
@@ -399,8 +400,9 @@ Version 2016-12-27"
 (global-set-key (kbd "C-x <C-i>") 'helm-imenu)
 
 ;; Update to use counsel-find-file instead of helm-find-file
+;; Update : Non utilisé
 ;; (global-set-key (kbd "C-x o")  'helm-find-files)
-(global-set-key (kbd "C-x o")  'counsel-find-file)
+;; (global-set-key (kbd "C-x o")  'counsel-find-file)
 
 ;; mark
 (global-set-key (kbd "C-c C-SPC") 'helm-all-mark-rings)
@@ -548,7 +550,8 @@ Version 2016-12-27"
 ;; (global-set-key (kbd "C-c j") 'avy-goto-word-or-subword-1)
 ;; (global-set-key (kbd "C-c j") 'avy-goto-char-2)
 ;; (global-set-key (kbd "C-c j") 'avy-goto-char)
-(global-set-key (kbd "C-c j") 'avy-goto-word-1)
+;; (global-set-key (kbd "C-c j") 'avy-goto-word-1)
+(global-set-key (kbd "C-c <C-i>") 'avy-goto-word-1)
 
 ;; (global-set-key (kbd "C-i") 'avy-goto-word-1-above)
 ;; (global-set-key (kbd "C-I") 'avy-goto-word-1-below)
@@ -771,14 +774,14 @@ Version 2016-12-27"
 (define-key js-mode-map (kbd "C-:") "\C-e;")
 (define-key typescript-mode-map (kbd "C-:") "\C-e;")
 
-
-
 (global-set-key (kbd "C-c RET") 'wlh-join-lines)
 (define-key web-mode-map (kbd "C-c RET") 'wlh-join-lines)
 
 ;; (hydra-macro/body)
 (global-set-key (kbd "‡") 'hydra-macro/body) ;; ALT+q
 
-
 ;; PDF
 (define-key pdf-view-mode-map (kbd ".") 'hydra-pdftools/body)
+
+;; Hydra
+(global-set-key (kbd "C-x o") 'hydra-occur-dwim/body)
