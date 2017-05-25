@@ -77,13 +77,17 @@
 ;;  - my-abort-recursive-edit permet entre autre de sortir en un fois
 ;;    d une edition avec cursor-multiple (Il faut faire 2 fois c-g autrement)
 ;;    et d'annuler la selection active
+;;
+;; Update : Changement de control shift q vers control q tout court
+;; Le raccourcis control q natif est place en control shift q
 (defun my-abort-recursive-edit()
   (interactive)
   (deactivate-mark)
   (abort-recursive-edit))
 
 ;; (global-set-key [(control shift q)] 'abort-recursive-edit)
-(global-set-key [(control shift q)] 'my-abort-recursive-edit)
+(global-set-key [(control shift q)] 'quoted-insert)
+(global-set-key [(control q)] 'my-abort-recursive-edit)
 
 
 
