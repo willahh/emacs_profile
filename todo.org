@@ -78,7 +78,17 @@ http://ecb.sourceforge.net/
 https://www.youtube.com/watch?v=KoRNCrx9pak
 
 ** Bloquant
-- [ ] [C-i] [C-S-i] Ne fonctionne plus
+
+- [ ] Mouse shift click kill la sélection bizarre...
+- [ ] Intégrer le M-s pour save plutôt que C-x C-s
+- [ ] [diff-hl] Le package est casse sur melpa il ne compile pas bien,
+- [ ] [doc-block] La fonction ne fonctionne pas correctementé
+  - [ ] [php-mode]
+  - [ ] [typescript-mode]
+  - [ ] [css-mode-mode]
+- [ ] [all] Drag line ne fonctionne plus
+      -> Fonctionnel @home
+** A ranger
 - [ ] [Helm] Masquer la première ligne
 - [ ] Back to previous window highlight current line comme lorque l'on fait un M-; en typescript-mode
 - [ ] [company] Voir pour utiliser autre chose que company pour la complétion des mots car cela peut être lent
@@ -87,21 +97,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [swoop] Ne pas initialiser avec le texte sous le curseur
 - [ ] [org] Lancer org mode avec certains titre ouvert fermé
   - (conf en tête de fichier)
-- [ ] Mouse shift click kill la sélection bizarre...
-- [ ] Intégrer le M-s pour save plutôt que C-x C-s
-- [X] M-W ne ferme plus la frame
-- [ ] M-n dans un buffer dired doit faire un nouveau buffer
 - [ ] [org-mode] Le toggle des headline doit se faire en deux fois pour que tout fonctionne bien
-- [X] !!! [hydra][helm mini nav] Ne pas activer Hydra moves dans helm
-- [ ] [diff-hl] Le package est casse sur melpa il ne compile pas bien,
-- [ ] [doc-block] La fonction ne fonctionne pas correctement
-  - [ ] [php-mode]
-  - [ ] [typescript-mode]
-  - [ ] [css-mode-mode]
-- [ ] [all] Drag line ne fonctionne plus
-      -> Fonctionnel @home
-** A ranger
-
 
 
 
@@ -188,18 +184,13 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [ivy] : Ne pas mettre les fichiers .svn dans la liste
 - [ ] [plugin] [change inner] Ajoute rl'option Change Inner Tag
 ** Majeur
-- [ ] Integrer hydra and ace window  https://www.youtube.com/watch?v=_qZliI1BKzI
+- [X] Integrer hydra and ace window  https://www.youtube.com/watch?v=_qZliI1BKzI
 - [ ] [php-mode] Autocompletion, ajouter les entrés du buffer courant dans la liste des completions
 - [ ] [custom] Faire une fonction custom delete backward or region
       C-w doit appeler clean-aindent--bsunindent ou "whole-line-or-region-kill-region"
 
-- [ ] [dired] delete folder very slow
-- [ ] [IMPORTANT] Fonction get file name to clipboard (très utilisé)
 - [ ] [vc-dir] Faire une fonction pour activer un vc-version-diff avec les paramètres older revision : "base", newer revision : "head"
-- [ ] [vc-dir] N'affiche pas les fichiers supprimés localement, mais non envoyé à svn (svn remove)
-  - C-x C-; 
-- [ ] Ivy : Possibilité de boucler
-- [ ] echantillon/fract.js long a l ouverture
+
 - [ ] [util] Revert buffer : keep current line position
 - [ ] [theme] Mettre plus en avant le buffer actif
 - [ ] [theme] js color var
@@ -243,6 +234,13 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
   - logs
   - .DS_Store
 ** Mineur
+- [ ] [dired] delete folder very slow
+- [ ] Ivy : Possibilité de boucler
+
+- [ ] [IMPORTANT] Fonction get file name to clipboard (très utilisé)
+- [ ] [vc-dir] N'affiche pas les fichiers supprimés localement, mais non envoyé à svn (svn remove)
+
+
 - [ ] [misc] Copier : Ne pas embarquer la couleur
       -> Cibler uniquement certains buffers
         -> mini buffer
@@ -269,6 +267,10 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
   - [ ] Show current VC system used
   - [ ] Show current encoding
 ** Corrige
+- [X] M-W ne ferme plus la frame
+- [X] !!! [hydra][helm mini nav] Ne pas activer Hydra moves dans helm
+- [X] [C-i] [C-S-i] Ne fonctionne plus
+
 - [X] Correcteur orthographique
 - [X] JS auto doc
 - [X] Shift + mouse doit prolonger la sélection de la souris

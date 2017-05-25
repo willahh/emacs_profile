@@ -169,16 +169,27 @@ Tags tools
 
 ### Display PDF in Emacs on OSX
 
-#### Dependencies
-  - pdf-tools : https://github.com/politza/pdf-tools
-  - clisp : Common Lisp interpreter
-
 #### Links
   - https://emacs.stackexchange.com/a/22591/15824
   - https://emacs.stackexchange.com/questions/13314/install-pdf-tools-on-emacs-macosx
+
+#### Dependencies
+  - pdf-tools : https://github.com/politza/pdf-tools
+  - clisp : Common Lisp interpreter
 
 #### Installation
 ```{r, engine='bash', count_lines}
 brew install pdf-tools
 brew install clisp
 ```
+
+
+### Latex support
+#### Links
+  - https://www.latex-project.org/get/
+#### Installation on OSX
+  - Full support : MacTeX : http://www.tug.org/mactex/
+  - Light support : BasicTeX : http://www.tug.org/mactex/morepackages.html
+
+
+

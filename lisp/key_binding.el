@@ -282,8 +282,8 @@ Version 2016-12-27"
     (setq buffer-offer-save t)))
 
 ;; New buffer
-(global-set-key (kbd "C-c C-n") 'xah-new-empty-buffer)
-(define-key highlight-symbol-nav-mode-map (kbd "C-c C-n") 'xah-new-empty-buffer)
+(global-set-key (kbd "C-x C-n") 'xah-new-empty-buffer)
+;; (define-key highlight-symbol-nav-mode-map (kbd "C-c C-n") 'xah-new-empty-buffer)
 
 ;; New frame
 (global-set-key (kbd "M-N") 'lunaryorn-new-buffer-frame)
@@ -410,14 +410,6 @@ Version 2016-12-27"
 ;; org
 (require 'org)
 (define-key org-mode-map (kbd "C-x <C-i>") 'helm-org-in-buffer-headings)
-
-;; swoop
-(global-set-key (kbd "C-c C-s") 'helm-swoop)
-(define-key js2-mode-map (kbd "C-c C-s") 'helm-swoop)
-(define-key php-mode-map (kbd "C-c C-s") 'helm-swoop)
-(define-key web-mode-map (kbd "C-c C-s") 'helm-swoop)
-(define-key markdown-mode-map (kbd "C-c C-s") 'helm-swoop)
-
 
 (require 'conf-mode)
 (define-key conf-mode-map (kbd "C-c C-s") 'helm-swoop)
@@ -583,6 +575,16 @@ Version 2016-12-27"
 (define-key isearch-mode-map (kbd "C-'") 'avy-isearch)
 (define-key isearch-mode-map (kbd "C-h") 'isearch-delete-char)
 (define-key isearch-mode-map (kbd "C-S-j") 'avy-isearch)
+
+;; Search in line
+(global-set-key (kbd "C-c C-s") 'avy-goto-char-in-line)
+
+;; swoop
+(global-set-key (kbd "C-S-s") 'helm-swoop)
+(define-key js2-mode-map (kbd "C-S-s") 'helm-swoop)
+(define-key php-mode-map (kbd "C-S-s") 'helm-swoop)
+(define-key web-mode-map (kbd "C-S-s") 'helm-swoop)
+(define-key markdown-mode-map (kbd "C-S-s") 'helm-swoop)
 
 ;; Align your code in a pretty way.
 (global-set-key (kbd "C-x \\") 'align-regexp)
@@ -769,3 +771,10 @@ Version 2016-12-27"
 
 (global-set-key (kbd "C-c RET") 'wlh-join-lines)
 (define-key web-mode-map (kbd "C-c RET") 'wlh-join-lines)
+
+;; (hydra-macro/body)
+(global-set-key (kbd "‡") 'hydra-macro/body) ;; ALT+q
+
+
+;; PDF
+(define-key pdf-view-mode-map (kbd ".") 'hydra-pdftools/body)

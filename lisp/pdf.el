@@ -81,4 +81,3 @@
         ("l" image-forward-hscroll :color red)
         ("h" image-backward-hscroll :color red))
 
-;; (define-key pdf-view-mode-hook (kbd ".") 'hydra-pdftools)

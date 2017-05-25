@@ -47,6 +47,7 @@
       forward-sexp
       helm-M-x
       highlight-symbol-mode
+      hydra-macro/nil
       hydra-vi/body
       hydra-vi/evil-backward-WORD-begin
       hydra-vi/evil-backward-word-begin
