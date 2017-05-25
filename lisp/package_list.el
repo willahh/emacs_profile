@@ -118,6 +118,7 @@
   eyebrowse
   ;; general
   git-gutter
+  sx
 
   ;; helm
   ;; helm-ag

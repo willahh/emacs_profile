@@ -27,3 +27,5 @@ tramp
 url/*
 desktop/emacs.desktop
 desktop/lock
+.sx
+todo.tex

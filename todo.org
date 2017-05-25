@@ -78,7 +78,8 @@ http://ecb.sourceforge.net/
 https://www.youtube.com/watch?v=KoRNCrx9pak
 
 ** Bloquant
-
+- [ ] [org mode] [yas] Ajouter un snippet pour faire des nouvelles lignes de todo ("- [ ] ")
+- [ ] Ibuffer sort by recent by default
 - [ ] Mouse shift click kill la sélection bizarre...
 - [ ] Intégrer le M-s pour save plutôt que C-x C-s
 - [ ] [diff-hl] Le package est casse sur melpa il ne compile pas bien,
