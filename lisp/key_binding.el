@@ -291,7 +291,7 @@ Version 2016-12-27"
 ;; (define-key highlight-symbol-nav-mode-map (kbd "C-c C-n") 'xah-new-empty-buffer)
 
 ;; New frame
-;; (global-set-key (kbd "M-N") 'lunaryorn-new-buffer-fcreate-new-centered-frame)
+(global-set-key (kbd "M-N") 'create-new-centered-frame)
 
 ;; (global-set-key (kbd "C-c C-k") 'kill-this-buffer)
 (define-key global-map (kbd "C-x k") 'kill-this-buffer)
