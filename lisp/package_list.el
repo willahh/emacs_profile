@@ -19,6 +19,7 @@
   cider
   impatient-mode
   ;; clojurescript-mode
+  image-dired+
 
 
   ;; backe-button
@@ -102,6 +103,7 @@
   epl
 
   ggtags
+  ;; google-maps
 
 
   evil

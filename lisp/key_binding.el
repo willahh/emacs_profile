@@ -184,7 +184,7 @@
 (evil-leader/set-key "zs" 'hs-show-block)
 (evil-leader/set-key "zh" 'hs-hide-block)
 
-;; -------- key chords binding
+;; ---------------- key-hord
 (key-chord-define-global "ji" 'ace-window) ;; cannot be jk (vim up/right)
 (key-chord-define-global ";:" 'highlight-symbol-mode)
 (key-chord-define-global "qs" 'toggle-php-flavor-mode)
@@ -196,13 +196,15 @@
 ;; (key-chord-define-global "qs" 'avy-goto-word-1-below)
 
 ;; Update to use the author default C= and a custom one C-M-l
-;; (key-chord-define-global "xc" 'er/expand-region)
-;; (key-chord-define-global "wx" 'er/contract-region)
+;; Update 2 : Enable both key-chord and key binding standard
+;; Key-chords are used when only left hand on the keyboard (right on the mouse)
+(key-chord-define-global "xc" 'er/expand-region)
+(key-chord-define-global "wx" 'er/contract-region)
 
 ;; (key-chord-define-global "kf" 'avy-goto-word-or-subword-1)
 ;; (key-chord-define-global "fk" 'avy-goto-word-or-subword-1)
 
-;; -------- Evil state switcher binding
+;; ---------------- Evil state switcher binding
 ;; De base la touche escape est utlisée pour ça
 ;; celle-ci est trop éloignée de base des claviers modernes
 ;;
@@ -242,7 +244,7 @@
 ;; ---------------- Color theme
 (set-face-attribute 'lazy-highlight nil :background "green")
 
-;; --------- key binding
+;; ---------------- key binding
 ;; Main binds
 (global-set-key (kbd "<f5>") 'eval-buffer)
 
@@ -267,12 +269,12 @@
 
 ;; -------- Buffer
 ;; https://stackoverflow.com/a/25792276
-(defun lunaryorn-new-buffer-frame ()
-  "Create a new frame with a new empty buffer."
-  (interactive)
-  (let ((buffer (generate-new-buffer "untitled")))
-    (set-buffer-major-mode buffer)
-    (display-buffer buffer '(display-buffer-pop-up-frame . nil))))
+;; (defun lunaryorn-new-buffer-frame ()
+;;   "Create a new frame with a new empty buffer."
+;;   (interactive)
+;;   (let ((buffer (generate-new-buffer "untitled")))
+;;     (set-buffer-major-mode buffer)
+;;     (display-buffer buffer '(display-buffer-pop-up-frame . nil))))
 
 (defun xah-new-empty-buffer ()
   "Create a new empty buffer.
@@ -292,7 +294,7 @@ Version 2016-12-27"
 ;; (define-key highlight-symbol-nav-mode-map (kbd "C-c C-n") 'xah-new-empty-buffer)
 
 ;; New frame
-(global-set-key (kbd "M-N") 'lunaryorn-new-buffer-frame)
+(global-set-key (kbd "M-N") 'create-new-centered-frame)
 
 ;; (global-set-key (kbd "C-c C-k") 'kill-this-buffer)
 (define-key global-map (kbd "C-x k") 'kill-this-buffer)
@@ -782,7 +784,10 @@ Version 2016-12-27"
 (global-set-key (kbd "‡") 'hydra-macro/body) ;; ALT+q
 
 ;; PDF
-(define-key pdf-view-mode-map (kbd ".") 'hydra-pdftools/body)
+(defun wlh-pdf-view-mode-hook ()
+  (define-key pdf-view-mode-map (kbd ".") 'hydra-pdftools/body)
+)
+(add-hook 'pdf-view-mode 'wlh-pdf-view-mode-hook)
 
 ;; Hydra
 (global-set-key (kbd "C-x o") 'hydra-occur-dwim/body)

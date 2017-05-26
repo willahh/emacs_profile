@@ -182,6 +182,7 @@ Tags tools
 brew install pdf-tools
 brew install clisp
 ```
+From Emacs : launch "pdf-tools-install"
 
 
 ### Latex support

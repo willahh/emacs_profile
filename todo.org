@@ -1,3 +1,4 @@
+#+STARTUP: content
 * todo
 ** Utils
 - [dired] "o" Ouvre le fichier dans un nouveau buffer et donne le focus à ce buffer
@@ -78,9 +79,14 @@ http://ecb.sourceforge.net/
 https://www.youtube.com/watch?v=KoRNCrx9pak
 
 ** Bloquant
-- [ ] [org-mode] C-c n 
+:VISIBILITY: all
+- [ ] Utiliser smartparens plutot que ParEdit pour autre que lisp
+- [ ] [org-mode] C-c n
 - [ ] [org] Sauvegarder l'état des toggles
 - [ ] [occur] Centrer la ligne
+- [ ] [helm] [mini-buffer] Ajouter la possibilité de faire du M-v dabs le mini-buffer
+- [X] [fundamental] Ajouter le mode projectile
+- [X] [new frame] Center frame
 - [ ] [org mode] [yas] Ajouter un snippet pour faire des nouvelles lignes de todo ("- [ ] ")
 - [ ] Ibuffer sort by recent by default
 - [ ] Mouse shift click kill la sélection bizarre...
