@@ -376,6 +376,7 @@ Version 2016-12-27"
 ;; char
 (define-key helm-map (kbd "C-h") 'delete-backward-char)
 (define-key helm-map (kbd "C-w") 'clean-aindent--bsunindent)
+(define-key helm-map (kbd "M-v") 'yank)
 
 (define-key company-active-map (kbd "C-w") 'clean-aindent--bsunindent)
 (define-key company-active-map (kbd "C-h") 'delete-backward-char)

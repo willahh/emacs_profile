@@ -80,7 +80,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 ** Bloquant
 :VISIBILITY: all
-- [ ] [helm] [mini-buffer] Ajouter la possibilité de faire du M-v dabs le mini-buffer
+- [X] [helm] [mini-buffer] Ajouter la possibilité de faire du M-v dans le mini-buffer
 - [X] [fundamental] Ajouter le mode projectile
 - [X] [new frame] Center frame
 - [ ] [org mode] [yas] Ajouter un snippet pour faire des nouvelles lignes de todo ("- [ ] ")
@@ -88,7 +88,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] Mouse shift click kill la sélection bizarre...
 - [ ] Intégrer le M-s pour save plutôt que C-x C-s
 - [ ] [diff-hl] Le package est casse sur melpa il ne compile pas bien,
-- [ ] [doc-block] La fonction ne fonctionne pas correctementé
+- [ ] [doc-block] La fonction ne fonctionne pas correctement
   - [ ] [php-mode]
   - [ ] [typescript-mode]
   - [ ] [css-mode-mode]
@@ -99,7 +99,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] Back to previous window highlight current line comme lorque l'on fait un M-; en typescript-mode
 - [ ] [company] Voir pour utiliser autre chose que company pour la complétion des mots car cela peut être lent
 
-- [ ] [swoop] Faire des M-v dans le prompt
+- [X] [swoop] Faire des M-v dans le prompt
 - [ ] [swoop] Ne pas initialiser avec le texte sous le curseur
 - [ ] [org] Lancer org mode avec certains titre ouvert fermé
   - (conf en tête de fichier)
