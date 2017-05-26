@@ -19,6 +19,7 @@
   cider
   impatient-mode
   ;; clojurescript-mode
+  image-dired+
 
 
   ;; backe-button

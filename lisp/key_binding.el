@@ -781,7 +781,10 @@ Version 2016-12-27"
 (global-set-key (kbd "‡") 'hydra-macro/body) ;; ALT+q
 
 ;; PDF
-(define-key pdf-view-mode-map (kbd ".") 'hydra-pdftools/body)
+(defun wlh-pdf-view-mode-hook ()
+  (define-key pdf-view-mode-map (kbd ".") 'hydra-pdftools/body)
+)
+(add-hook 'pdf-view-mode 'wlh-pdf-view-mode-hook)
 
 ;; Hydra
 (global-set-key (kbd "C-x o") 'hydra-occur-dwim/body)
