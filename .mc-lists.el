@@ -92,6 +92,7 @@
 (setq mc/cmds-to-run-once
       '(
       ace-window
+      avy-goto-word-1-above
       avy-goto-word-1-below
       c-end-of-statement
       company-complete-common
@@ -112,6 +113,7 @@
       helm-projectile-find-file
       helm-projectile-switch-project
       highlight-symbol-next
+      hrs/split-window-right-and-switch
       iedit-mode
       ivy-switch-buffer
       keyboard-quit

@@ -78,6 +78,9 @@ http://ecb.sourceforge.net/
 https://www.youtube.com/watch?v=KoRNCrx9pak
 
 ** Bloquant
+- [ ] [org-mode] C-c n 
+- [ ] [org] Sauvegarder l'état des toggles
+- [ ] [occur] Centrer la ligne
 - [ ] [org mode] [yas] Ajouter un snippet pour faire des nouvelles lignes de todo ("- [ ] ")
 - [ ] Ibuffer sort by recent by default
 - [ ] Mouse shift click kill la sélection bizarre...
@@ -96,14 +99,14 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 - [ ] [swoop] Faire des M-v dans le prompt
 - [ ] [swoop] Ne pas initialiser avec le texte sous le curseur
-- [ ] [org] Lancer org mode avec certains titre ouvert fermé
+     - [ ] [org] Lancer org mode avec certains titre ouvert fermé
   - (conf en tête de fichier)
 - [ ] [org-mode] Le toggle des headline doit se faire en deux fois pour que tout fonctionne bien
 
 
 
 
-- [ ] [org-mode] Mouse-1 pour toggler un header
+           - [ ] [org-mode] Mouse-1 pour toggler un header
 - [ ] Voir pour installer le plugin pour lancer des mode en "fullscreen", vu sur un blog d'un autre
 - [ ] [system] [osx] Autoriser le F5 dans Emacs (revert-buffer)
 - [ ] Rebind les scroll to other window pour avoir un scroll sur la fenetre a cote mais d'une demie page seulement
@@ -456,9 +459,9 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [x] Auto complete : Deuxième ouverture instantane
 - [x] [important] Helm mini ---> preview file when over (Comme dans Sublime)
 - [x] Faire fonctionner flycher avec eslint
-      http://eslint.org/docs/user-guide/integrations
+            http://eslint.org/docs/user-guide/integrations
       http://codewinds.com/blog/2015-04-02-emacs-flycheck-eslint-jsx.html
-      http://www.flycheck.org/en/latest/languages.html#javascript
+     http://www.flycheck.org/en/latest/languages.html#javascript
 
 
 - [x] Auto complete fait ramer lors d une saisie rapide
@@ -624,7 +627,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [x] vc ediff : Customiser mieux le theme
 - [x] helm-ag truncate lines
 - [x] Certains gros fichiers impossibe à ouvrir
-- [x] tabbar organiser par group de fichiers et par mode
+       - [x] tabbar organiser par group de fichiers et par mode
       (by by tabbar, trop relou)
 
 - [x] Le double click sur un mot ne selectionne pas tout le mot (il coupe la sélection si il y a des "_")
@@ -703,3 +706,10 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [x] Highlight color (http://stackoverflow.com/questions/385661/how
 - [x] Indent html.  —> web beautify html 
 - [x] Installer ag
+
+
+
+
+
+
+
