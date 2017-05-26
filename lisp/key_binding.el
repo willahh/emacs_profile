@@ -184,7 +184,7 @@
 (evil-leader/set-key "zs" 'hs-show-block)
 (evil-leader/set-key "zh" 'hs-hide-block)
 
-;; -------- key chords binding
+;; ---------------- key-hord
 (key-chord-define-global "ji" 'ace-window) ;; cannot be jk (vim up/right)
 (key-chord-define-global ";:" 'highlight-symbol-mode)
 (key-chord-define-global "qs" 'toggle-php-flavor-mode)
@@ -196,13 +196,15 @@
 ;; (key-chord-define-global "qs" 'avy-goto-word-1-below)
 
 ;; Update to use the author default C= and a custom one C-M-l
-;; (key-chord-define-global "xc" 'er/expand-region)
-;; (key-chord-define-global "wx" 'er/contract-region)
+;; Update 2 : Enable both key-chord and key binding standard
+;; Key-chords are used when only left hand on the keyboard (right on the mouse)
+(key-chord-define-global "xc" 'er/expand-region)
+(key-chord-define-global "wx" 'er/contract-region)
 
 ;; (key-chord-define-global "kf" 'avy-goto-word-or-subword-1)
 ;; (key-chord-define-global "fk" 'avy-goto-word-or-subword-1)
 
-;; -------- Evil state switcher binding
+;; ---------------- Evil state switcher binding
 ;; De base la touche escape est utlisée pour ça
 ;; celle-ci est trop éloignée de base des claviers modernes
 ;;
@@ -242,7 +244,7 @@
 ;; ---------------- Color theme
 (set-face-attribute 'lazy-highlight nil :background "green")
 
-;; --------- key binding
+;; ---------------- key binding
 ;; Main binds
 (global-set-key (kbd "<f5>") 'eval-buffer)
 

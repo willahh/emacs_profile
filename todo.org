@@ -1,5 +1,4 @@
 #+STARTUP: content
-
 * todo
 ** Utils
 - [dired] "o" Ouvre le fichier dans un nouveau buffer et donne le focus à ce buffer
@@ -81,6 +80,8 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 ** Bloquant
 :VISIBILITY: all
+- [ ] [helm] [mini-buffer] Ajouter la possibilité de faire du M-v dabs le mini-buffer
+- [X] [fundamental] Ajouter le mode projectile
 - [X] [new frame] Center frame
 - [ ] [org mode] [yas] Ajouter un snippet pour faire des nouvelles lignes de todo ("- [ ] ")
 - [ ] Ibuffer sort by recent by default
