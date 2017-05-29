@@ -479,7 +479,9 @@ Version 2016-12-27"
 ;; 2 en commande standard Combo Meta + Control + s ou + (S)
 ;; 1 en commande avec la touche alt + s
 
-(global-set-key (kbd "C-M-s") 'ag-project-at-point)
+;; (global-set-key (kbd "C-M-s") 'ag-project-at-point)
+(global-set-key (kbd "C-M-s") 'ag)
+
 (global-set-key [control meta s] 'ag-project-at-point)
 (global-set-key [control meta shift s] 'ag-project)
 (global-set-key (kbd "Ò") 'helm-ag)
