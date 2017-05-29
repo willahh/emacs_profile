@@ -41,8 +41,8 @@
 ;; (global-set-key (kbd "C-x M-S-z") ')
 
 ;; M-s (sub command menu) -> "save"
-;; (global-set-key (kbd "M-s") 'save-buffer)
-;; (define-key paredit-mode-map (kbd "M-s") 'save-buffer)
+(global-set-key (kbd "M-s") 'save-buffer)
+(define-key paredit-mode-map (kbd "M-s") 'save-buffer)
 
 ;; M-w (kil-ring-save) -> "close window"
 (global-set-key (kbd "M-w") 'delete-window)
@@ -288,12 +288,19 @@ Version 2016-12-27"
     (funcall initial-major-mode)
     (setq buffer-offer-save t)))
 
+(defun wil-create-new-centered-frame ()
+  (interactive)
+  (create-new-centered-frame)
+  (funcall initial-major-mode)
+)
+
 ;; New buffer
 (global-set-key (kbd "C-x C-n") 'xah-new-empty-buffer)
 ;; (define-key highlight-symbol-nav-mode-map (kbd "C-c C-n") 'xah-new-empty-buffer)
 
 ;; New frame
-(global-set-key (kbd "M-N") 'create-new-centered-frame)
+;; (global-set-key (kbd "M-N") 'create-new-centered-frame)
+(global-set-key (kbd "M-N") 'wil-create-new-centered-frame)
 
 ;; (global-set-key (kbd "C-c C-k") 'kill-this-buffer)
 (define-key global-map (kbd "C-x k") 'kill-this-buffer)
@@ -610,7 +617,7 @@ Version 2016-12-27"
 ;; Webjump let's you quickly search google, wikipedia, emacs wiki
 (global-set-key (kbd "C-x g") 'webjump)
 (global-set-key (kbd "C-x M-g") 'browse-url-at-point)
-(global-set-key (kbd "M-s h h") 'highlight-symbol-at-point)
+;; (global-set-key (kbd "M-s h h") 'highlight-symbol-at-point)
 
 ;; iy-go-to-char (awesoooooome VIM LIKE "f")
 (global-set-key (kbd "C-c f") 'iy-go-to-char)
