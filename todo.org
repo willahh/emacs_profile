@@ -1,5 +1,5 @@
 #+STARTUP: content
-* todo
+* Emacs TODO
 ** Utils
 - [dired] "o" Ouvre le fichier dans un nouveau buffer et donne le focus à ce buffer
 
@@ -82,27 +82,29 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 :VISIBILITY: all
 - [ ] Utiliser smartparens plutot que ParEdit pour des fichiers  autre que lisp
 - [ ] [org] Sauvegarder l'état des toggles
+- [ ] [swoop] C-w ne fonctionne pas
+- [ ] Utiliser smartparens plutot que ParEdit pour autre que lisp
+- [ ] [org-mode] C-c n
 - [ ] [occur] Centrer la ligne
 - [ ] [helm] [mini-buffer] Ajouter la possibilité de faire du M-v dabs le mini-buffer
-- [X] [fundamental] Ajouter le mode projectile
-- [X] [new frame] Center frame
+- [ ] mysql.server start on startup
 - [ ] [org mode] [yas] Ajouter un snippet pour faire des nouvelles lignes de todo ("- [ ] ")
 - [ ] Ibuffer sort by recent by default
 - [ ] Mouse shift click kill la sélection bizarre...
-- [ ] Intégrer le M-s pour save plutôt que C-x C-s
 - [ ] [diff-hl] Le package est casse sur melpa il ne compile pas bien,
-- [ ] [doc-block] La fonction ne fonctionne pas correctementé
+- [ ] [doc-block] La fonction ne fonctionne pas correctement
   - [ ] [php-mode]
   - [ ] [typescript-mode]
   - [ ] [css-mode-mode]
 - [ ] [all] Drag line ne fonctionne plus
       -> Fonctionnel @home
+
 ** A ranger
 - [ ] [Helm] Masquer la première ligne
 - [ ] Back to previous window highlight current line comme lorque l'on fait un M-; en typescript-mode
 - [ ] [company] Voir pour utiliser autre chose que company pour la complétion des mots car cela peut être lent
 
-- [ ] [swoop] Faire des M-v dans le prompt
+- [X] [swoop] Faire des M-v dans le prompt
 - [ ] [swoop] Ne pas initialiser avec le texte sous le curseur
      - [ ] [org] Lancer org mode avec certains titre ouvert fermé
   - (conf en tête de fichier)
@@ -276,6 +278,13 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
   - [ ] Show current VC system used
   - [ ] Show current encoding
 ** Corrige
+- [X] Intégrer le M-s pour save plutôt que C-x C-s
+- [X] [new frame] Center frame
+- [X] [fundamental] Ajouter le mode projectile
+- [X] [org] Sauvegarder l'état des toggles
+- [X] [helm] [mini-buffer] Ajouter la possibilité de faire du M-v dans le mini-buffer
+
+
 - [X] M-W ne ferme plus la frame
 - [X] !!! [hydra][helm mini nav] Ne pas activer Hydra moves dans helm
 - [X] [C-i] [C-S-i] Ne fonctionne plus
