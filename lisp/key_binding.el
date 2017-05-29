@@ -296,6 +296,7 @@ Version 2016-12-27"
 
 ;; New buffer
 (global-set-key (kbd "C-x C-n") 'xah-new-empty-buffer)
+(define-key org-mode-map (kbd "C-x C-n") 'xah-new-empty-buffer)
 ;; (define-key highlight-symbol-nav-mode-map (kbd "C-c C-n") 'xah-new-empty-buffer)
 
 ;; New frame
@@ -735,7 +736,7 @@ Version 2016-12-27"
 (define-key ggtags-navigation-map (kbd "M-o") 'other-window) ;; Need to override ggtags map
 
 (global-set-key [(meta o)] 'other-window)
-(global-set-key [(meta shift o)] 'previous-multiframe-window)
+;; (global-set-key [(meta shift o)] 'previous-multiframe-window) ;; No no no
 
 (global-set-key [(meta shift i)] 'previous-buffer)
 (global-set-key [(meta i)] 'next-buffer)
@@ -798,3 +799,15 @@ Version 2016-12-27"
 
 ;; Hydra
 (global-set-key (kbd "C-x o") 'hydra-occur-dwim/body)
+
+;; Occur mode
+;; Recenter line when occur-mode-goto-occurrence
+(add-hook 'occur-mode-find-occurrence-hook 'recenter)
+
+
+
+
+
+
+
+

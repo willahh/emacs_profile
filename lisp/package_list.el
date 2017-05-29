@@ -103,6 +103,7 @@
   epl
 
   ggtags
+  ;; google-maps
 
 
   evil

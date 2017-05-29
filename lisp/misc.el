@@ -845,3 +845,6 @@ _d_: subtree
   ("'" kmacro-edit-macro)
   ("," edit-kbd-macro)
   ("q" nil :color blue))
+
+;; google-maps
+;; (require 'google-maps)
