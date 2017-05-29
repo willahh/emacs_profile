@@ -1,5 +1,5 @@
 #+STARTUP: content
-* todo
+* Emacs TODO
 ** Utils
 - [dired] "o" Ouvre le fichier dans un nouveau buffer et donne le focus à ce buffer
 
@@ -80,25 +80,22 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 ** Bloquant
 :VISIBILITY: all
-- [X] [helm] [mini-buffer] Ajouter la possibilité de faire du M-v dans le mini-buffer
 - [ ] Utiliser smartparens plutot que ParEdit pour autre que lisp
 - [ ] [org-mode] C-c n
-- [ ] [org] Sauvegarder l'état des toggles
 - [ ] [occur] Centrer la ligne
 - [ ] [helm] [mini-buffer] Ajouter la possibilité de faire du M-v dabs le mini-buffer
-- [X] [fundamental] Ajouter le mode projectile
-- [X] [new frame] Center frame
+- [ ] mysql.server start on startup
 - [ ] [org mode] [yas] Ajouter un snippet pour faire des nouvelles lignes de todo ("- [ ] ")
 - [ ] Ibuffer sort by recent by default
 - [ ] Mouse shift click kill la sélection bizarre...
 - [ ] [diff-hl] Le package est casse sur melpa il ne compile pas bien,
-- [X] Intégrer le M-s pour save plutôt que C-x C-s
 - [ ] [doc-block] La fonction ne fonctionne pas correctement
   - [ ] [php-mode]
   - [ ] [typescript-mode]
   - [ ] [css-mode-mode]
 - [ ] [all] Drag line ne fonctionne plus
       -> Fonctionnel @home
+
 ** A ranger
 - [ ] [Helm] Masquer la première ligne
 - [ ] Back to previous window highlight current line comme lorque l'on fait un M-; en typescript-mode
@@ -278,6 +275,13 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
   - [ ] Show current VC system used
   - [ ] Show current encoding
 ** Corrige
+- [X] Intégrer le M-s pour save plutôt que C-x C-s
+- [X] [new frame] Center frame
+- [X] [fundamental] Ajouter le mode projectile
+- [X] [org] Sauvegarder l'état des toggles
+- [X] [helm] [mini-buffer] Ajouter la possibilité de faire du M-v dans le mini-buffer
+
+
 - [X] M-W ne ferme plus la frame
 - [X] !!! [hydra][helm mini nav] Ne pas activer Hydra moves dans helm
 - [X] [C-i] [C-S-i] Ne fonctionne plus
