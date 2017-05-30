@@ -84,6 +84,8 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [org-mode] Ne pas faire de traitement special sur la touche tab 
 - [ ] [org-mode] Splitter en deux panneaux, le second contient juste un recap
       https://emacs.stackexchange.com/questions/9530/how-can-i-get-an-org-mode-outline-in-a-2nd-buffer-as-a-dynamic-table-of-contents
+- [ ] Utiliser smartparens plutot que ParEdit pour des fichiers  autre que lisp
+- [ ] [org] Sauvegarder l'état des toggles
 - [ ] [swoop] C-w ne fonctionne pas
 - [ ] Utiliser smartparens plutot que ParEdit pour autre que lisp
 - [ ] [org-mode] C-c n

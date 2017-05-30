@@ -846,6 +846,8 @@ _d_: subtree
   ("," edit-kbd-macro)
   ("q" nil :color blue))
 
+(global-set-key (kbd "C-c q") 'hydra-macro/body)
+
 ;; google-maps
 ;; (require 'google-maps)
 
