@@ -308,7 +308,7 @@
 
 
 ;; magit
-                                        ; (require 'magit)
+;; (require 'magit)
 
 
 
@@ -746,7 +746,9 @@ _d_: subtree
   ("b" outline-backward-same-level)       ; Backward - same level
   ("z" nil "leave"))
 
-(global-set-key (kbd "C-c #") 'hydra-outline/body) ; by example
+(require 'diff-mode)
+(require 'smerge-mode)
+(define-key diff-mode-map (kbd ".") 'hydra-outline/body)
 
 
 
@@ -925,3 +927,21 @@ _d_: subtree
 
 ;; (add-hook 'org-mode-hook 'wil-org-mode-hook)
 
+
+
+
+
+
+
+
+
+
+;; Do not show ^M in files containing mixed UNIX and DOS line endings.
+;; https://stackoverflow.com/a/750933
+(defun remove-dos-eol ()
+  "Do not show ^M in files containing mixed UNIX and DOS line endings."
+  (interactive)
+  (setq buffer-display-table (make-display-table))
+  (aset buffer-display-table ?\^M []))
+
+(remove-dos-eol)
