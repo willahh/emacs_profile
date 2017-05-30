@@ -83,8 +83,6 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] Utiliser smartparens plutot que ParEdit pour des fichiers  autre que lisp
 - [ ] [org] Sauvegarder l'état des toggles
 - [ ] [swoop] C-w ne fonctionne pas
-- [ ] Utiliser smartparens plutot que ParEdit pour autre que lisp
-- [ ] [org-mode] C-c n
 - [ ] [occur] Centrer la ligne
 - [ ] [helm] [mini-buffer] Ajouter la possibilité de faire du M-v dabs le mini-buffer
 - [ ] mysql.server start on startup
