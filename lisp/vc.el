@@ -37,6 +37,15 @@
 
 (add-hook 'svn-log-edit-mode-hook 'my-svn-log-edit-mode-setup)
 
+
+;; Diff mode hook
+(defun wil-diff-mode-hook ()
+  (outline-minor-mode)
+)
+(add-hook 'diff-mode-hook 'wil-diff-mode-hook)
+
+
+
 ;; diff-hl
 ;; Update : global-diff-hl-mode ainsi que diff-hl-dired-mode
 ;; ne fonctionne plus pour le moment

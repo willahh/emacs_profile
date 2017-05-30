@@ -20,6 +20,7 @@
   impatient-mode
   ;; clojurescript-mode
   image-dired+
+  imenu-list
 
 
   ;; backe-button

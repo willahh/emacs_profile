@@ -308,7 +308,7 @@
 
 
 ;; magit
-                                        ; (require 'magit)
+;; (require 'magit)
 
 
 
@@ -746,7 +746,9 @@ _d_: subtree
   ("b" outline-backward-same-level)       ; Backward - same level
   ("z" nil "leave"))
 
-(global-set-key (kbd "C-c #") 'hydra-outline/body) ; by example
+(require 'diff-mode)
+(require 'smerge-mode)
+(define-key diff-mode-map (kbd ".") 'hydra-outline/body)
 
 
 
@@ -850,3 +852,96 @@ _d_: subtree
 
 ;; google-maps
 ;; (require 'google-maps)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;; https://emacs.stackexchange.com/a/14987
+(defun my/open-tree-view ()
+  "Open a clone of the current buffer to the left, resize it to 30 columns, and bind <mouse-1> to jump to the same position in the base buffer."
+  (interactive)
+  (let ((new-buffer-name (concat "<tree>" (buffer-name))))
+    ;; Create tree buffer
+    (split-window-right 30)
+    (evil-window-move-far-right)
+    (enlarge-window-horizontally -30)
+    (if (get-buffer new-buffer-name)
+        (switch-to-buffer new-buffer-name)  ; Use existing tree buffer
+      ;; Make new tree buffer
+      (progn  (clone-indirect-buffer new-buffer-name nil t)
+              (switch-to-buffer new-buffer-name)
+              (read-only-mode)
+              (hide-body)
+              (toggle-truncate-lines)
+
+              ;; Do this twice in case the point is in a hidden line
+              (dotimes (_ 2 (forward-line 0)))
+
+              ;; Map keys
+              (use-local-map (copy-keymap outline-mode-map))
+              (local-set-key (kbd "q") 'delete-window)
+              (mapc (lambda (key) (local-set-key (kbd key) 'my/jump-to-point-and-show))
+                    '("<mouse-1>" "RET"))))))
+
+(defun my/jump-to-point-and-show ()
+  "Switch to a cloned buffer's base buffer and move point to the cursor position in the clone."
+  (interactive)
+  (let ((buf (buffer-base-buffer)))
+    (unless buf
+      (error "You need to be in a cloned buffer!"))
+    (let ((pos (point))
+          (win (car (get-buffer-window-list buf))))
+      (if win
+          (select-window win)
+        (other-window 1)
+        (switch-to-buffer buf))
+      (goto-char pos)
+      (when (invisible-p (point))
+        (show-branches)))))
+
+;; (defun wil-org-mode-hook ()
+;;   (interactive)
+;;   (my/open-tree-view)
+;; )
+
+;; (add-hook 'org-mode-hook 'wil-org-mode-hook)
+
+
+
+
+
+
+
+
+
+
+;; Do not show ^M in files containing mixed UNIX and DOS line endings.
+;; https://stackoverflow.com/a/750933
+(defun remove-dos-eol ()
+  "Do not show ^M in files containing mixed UNIX and DOS line endings."
+  (interactive)
+  (setq buffer-display-table (make-display-table))
+  (aset buffer-display-table ?\^M []))
+
+(remove-dos-eol)

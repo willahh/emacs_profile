@@ -781,8 +781,6 @@ Version 2016-12-27"
 ;; (global-set-key (kbd "C-;") 'projectile-find-file-dwim) ;; (ctrl + ;)
 
 
-
-
 ;; ---------------- text
 (define-key js-mode-map (kbd "C-:") "\C-e;")
 (define-key typescript-mode-map (kbd "C-:") "\C-e;")
@@ -807,9 +805,5 @@ Version 2016-12-27"
 (add-hook 'occur-mode-find-occurrence-hook 'recenter)
 
 
-
-
-
-
-
-
+;; ---------------- Function keys
+(global-set-key (kbd "<f2>") 'my/open-tree-view)

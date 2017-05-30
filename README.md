@@ -116,7 +116,7 @@ Tags tools
 <!-- - Global -->
 <!-- - gtags -->
 
-#### global bin 
+#### global bin
 VC
 - svn
 - git
@@ -132,7 +132,7 @@ PHP tools
 Javascript tools
 - Nodejs
   https://nodejs.org/en/
-  
+
 - Node package manager
   https://www.npmjs.com/
 
@@ -194,3 +194,7 @@ From Emacs : launch "pdf-tools-install"
 
 
 
+### Excel, Word support
+```{r, engine='bash', count_lines}
+brew install ghostscript
+```
