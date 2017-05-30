@@ -80,6 +80,12 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 ** Bloquant
 :VISIBILITY: all
+- [ ] [org] Voir regrouper tous les fichiers todo.org ensembles
+      De façon à retrouver les projets / notes importantes facilement
+- [ ] [custom] Faire une fonction recenter and enlarge frame
+      - Agrandis la frame courante sur un ratio de 16:9
+      - Re centre la frame
+      - Binder sur C-x M-j
 - [ ] [doc-view] Faire fonctionner doc-view (Lire des fichiers excel, doc, word, etc)
 - [ ] Scrolling commands C-z C-d C-S-d Ne fonctionnne pas bien
 - [ ] Google talk : Intégrer Google Talk dans Emacs
