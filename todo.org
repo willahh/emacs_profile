@@ -3,7 +3,8 @@
 ** Utils
 - [dired] "o" Ouvre le fichier dans un nouveau buffer et donne le focus à ce buffer
 
-- Implementer https://github.com/abo-abo/hydra/wiki/Twittering
+- Twitter
+  - Implementer https://github.com/abo-abo/hydra/wiki/Twittering
 
 - View pdf
   https://emacs.stackexchange.com/a/22591/15824
@@ -14,11 +15,10 @@
   - C-x C-o ph (find php files)
 
 - Osx keyboard input delay :
-   - default values :
-     - defaults read NSGlobalDomain KeyRepeat 2
-     - defaults read NSGlobalDomain InitialKeyRepeat 15
-
-   - My values :
+  - default values :
+    - defaults read NSGlobalDomain KeyRepeat 2
+    - defaults read NSGlobalDomain InitialKeyRepeat 15
+  - My values :
      - defaults write NSGlobalDomain KeyRepeat 1
      - defaults write NSGlobalDomain InitialKeyRepeat 8
 
@@ -80,36 +80,52 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 ** Bloquant
 :VISIBILITY: all
+- [ ] [i-search] M-v dans isearch
+- [ ] [org-mode] TAB est surcharge par org mode
+- [ ] 
+- [ ] [syslog] Truncate line off
+- [ ] [ag buffer] Placer le caret sur le premier résultat à l'ouverture
+- [ ] [vc-dir] Ne pas afficher les lignes dossier grises
+- [ ] [vc-diff] M-S-n ne fonctionne pas dans ce mode
+- [ ] [projectile-find-file] Autoriser le COMMAND+v dans ce mode (mini buffer like)
+
 - [ ] [svn-log-view] Faire des ediff depuis ce mode
-- [ ] [org] Voir regrouper tous les fichiers todo.org ensembles
-      De façon à retrouver les projets / notes importantes facilement
-- [ ] [custom] Faire une fonction recenter and enlarge frame
-  - Agrandis la frame courante sur un ratio de 16:9
-  - Re centre la frame
-  - Binder sur C-x M-j
-- [ ] [doc-view] Faire fonctionner doc-view (Lire des fichiers excel, doc, word, etc)
+
+- [ ] Remettre les couleurs du monde courant sur le curseur et le mode line
 - [ ] Scrolling commands C-z C-d C-S-d Ne fonctionnne pas bien
-- [ ] Google talk : Intégrer Google Talk dans Emacs
-      https://www.emacswiki.org/emacs/GoogleTalk
+
+- [ ] [org-mode] Titre de niveau 1 : Changer la font
+- [ ] [org] Organiser les fichiers org
+  http://sachachua.com/blog/2013/08/emacs-how-i-organize-my-org-files/
+  Voir regrouper tous les fichiers todo.org ensembles
+  De façon à retrouver les projets / notes importantes facilement
 - [ ] [org-mode] Ne pas faire de traitement special sur la touche tab
 - [ ] [org-mode] Splitter en deux panneaux, le second contient juste un recap
-      https://emacs.stackexchange.com/questions/9530/how-can-i-get-an-org-mode-outline-in-a-2nd-buffer-as-a-dynamic-table-of-contents
+  https://emacs.stackexchange.com/questions/9530/how-can-i-get-an-org-mode-outline-in-a-2nd-buffer-as-a-dynamic-table-of-contents
+- [ ] Utiliser la touche clavier mac <> comme touche SUPER/HYPER
+- [ ] [doc-view] Faire fonctionner doc-view (Lire des fichiers excel, doc, word, etc)
+- [ ] Google talk : Intégrer Google Talk dans Emacs
+  https://www.emacswiki.org/emacs/GoogleTalk
 - [ ] Utiliser smartparens plutot que ParEdit pour des fichiers  autre que lisp
-- [ ] [org] Sauvegarder l'état des toggles
 - [ ] [swoop] C-w ne fonctionne pas
 - [ ] [occur] Centrer la ligne
 - [ ] [helm] [mini-buffer] Ajouter la possibilité de faire du M-v dabs le mini-buffer
-- [ ] mysql.server start on startup
-- [ ] [org mode] [yas] Ajouter un snippet pour faire des nouvelles lignes de todo ("- [ ] ")
-- [ ] Ibuffer sort by recent by default
+- [ ] [system] mysql.server start on startup
+- [ ] [Ibuffer] sort by recent by default
 - [ ] Mouse shift click kill la sélection bizarre...
 - [ ] [diff-hl] Le package est casse sur melpa il ne compile pas bien,
+- [ ] [vc-dir] key M-< && M-> : Faire pointer sur le vrai début/fin de ligne
+  Comme la fonction custom du mode Dired end start
 - [ ] [doc-block] La fonction ne fonctionne pas correctement
   - [ ] [php-mode]
   - [ ] [typescript-mode]
   - [ ] [css-mode-mode]
-- [ ] [all] Drag line ne fonctionne plus
-      -> Fonctionnel @home
+- [X] [all] Drag line ne fonctionne plus
+- [X] [custom] Faire une fonction recenter and enlarge frame
+- [X] [org] Sauvegarder l'état des toggles
+- [X] [org mode] [yas] Ajouter un snippet pour faire des nouvelles lignes de todo ("- [ ] ")
+- [X] [org-mode] [C-S-j] Le caret est mal positionne
+- [X] F5 : Revert-buffer
 
 ** A ranger
 - [ ] [Helm] Masquer la première ligne

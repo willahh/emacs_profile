@@ -53,6 +53,7 @@
 ;; Toggle fullscreen
 (global-set-key (kbd "C-x C-M-f") 'toggle-frame-fullscreen)
 (global-set-key (kbd "C-x M-f") 'toggle-frame-maximized)
+(global-set-key (kbd "C-x M-F") 'wil-frame-large)
 
 ;; New frame
 (global-set-key [meta shift w] 'delete-frame)
@@ -246,7 +247,7 @@
 
 ;; ---------------- key binding
 ;; Main binds
-(global-set-key (kbd "<f5>") 'eval-buffer)
+(global-set-key (kbd "<f5>") 'revert-buffer)
 
 ;; Mouse key binding
 (global-set-key (kbd "<S-wheel-left>") '(lambda ()
@@ -538,14 +539,6 @@ Version 2016-12-27"
 ;; (define-key web-mode-map [(meta shift j)] 'web-mode-tag-next)
 ;; (define-key web-mode-map [(meta shift k)] 'web-mode-tag-previous)
 
-;; open line
-;; (global-set-key [(M shift return)] 'smart-open-line-above)
-;; (global-set-key [(M shift j)] 'smart-open-line-above)
-;; (define-key web-mode-map [(meta shift j)] 'smart-open-line-above)
-
-(global-set-key [(control shift j)] 'smart-open-line-above)
-(define-key web-mode-map [(control shift j)] 'smart-open-line-above)
-
 ;; (global-set-key [(M return)] 'smart-open-line)
 ;; (global-set-key [(M j)] 'smart-open-line)
 ;; (define-key web-mode-map [(meta j)] 'smart-open-line)
@@ -678,6 +671,29 @@ Version 2016-12-27"
 (global-set-key [(control shift j)] 'smart-open-line-above)
 (define-key key-translation-map (kbd "C-j") (kbd "RET"))
 (global-set-key (kbd "C-M-j") 'newline-and-indent)
+
+(global-set-key [(control shift j)] 'smart-open-line-above)
+(define-key web-mode-map [(control shift j)] 'smart-open-line-above)
+
+
+
+(defun wil-org-open-line-above ()
+  (interactive)
+  (open-line-above)
+  (beginning-of-line)
+  (kill-line)
+)
+(define-key org-mode-map [(control shift j)] 'wil-org-open-line-above)
+
+(defun wil-org-open-line-below ()
+  (interactive)
+  (open-line-below)
+  (beginning-of-line)
+  (kill-line)
+)
+(define-key org-mode-map (kbd "C-M-j") 'wil-org-open-line-below)
+;; (define-key org-mode-map [(command control j)] 'wil-org-open-line-below)
+
 
 ;; Emmet
 ;; (global-set-key (kbd "é") 'emmet-expand-line) ;; ALT + j
