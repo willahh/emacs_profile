@@ -399,13 +399,21 @@ Version 2016-12-27"
 ;; Sublime Text go to anything
 ;; Update : Utilsation des standards emacs (C-c p f)
 (global-set-key (kbd "C-c t") 'toggle-truncate-lines)
+
+;; Update : Reactivation de C-x f
 ;; (global-set-key (kbd "C-x f") 'projectile-find-file)
+(global-set-key (kbd "C-x C-f") 'counsel-find-file)
+
 (global-set-key (kbd "C-c C-p") 'projectile-find-file)
 (define-key org-mode-map (kbd "C-c C-p") 'projectile-find-file)
+(define-key ivy-minibuffer-map (kbd "M-v") 'yank) ; Add yank to ivy mini map
+
+;; projectile-find-file
+
 
 ;; Filter buffer / Get buffer definitions
-;; (global-set-key [(meta r)]  'helm-imenu) ;; command + r
-;; (global-set-key [(meta shift r)] 'swiper) ;; command + shift + r : Update : Switch to swiper (lighter / faster)
+;; (global-set-key [(meta r)]  'helm-imenu) ; command + r
+;; (global-set-key [(meta shift r)] 'swiper) ; command + shift + r : Update : Switch to swiper (lighter / faster)
 ;; (global-set-key (kbd "C-x C-i") 'helm-imenu)
 ;; (global-set-key (kbd "C-x TAB") 'counsel-imenu)
 ;; (global-set-key (kbd "C-x TAB") 'helm-imenu)
@@ -588,8 +596,9 @@ Version 2016-12-27"
 (define-key isearch-mode-map (kbd "C-'") 'avy-isearch)
 (define-key isearch-mode-map (kbd "C-h") 'isearch-delete-char)
 (define-key isearch-mode-map (kbd "C-S-j") 'avy-isearch)
+(define-key isearch-mode-map (kbd "M-v") 'isearch-yank-pop)
 
-;; Search in line
+;; search in line
 (global-set-key (kbd "C-c C-s") 'avy-goto-char-in-line)
 
 ;; swoop
@@ -598,6 +607,8 @@ Version 2016-12-27"
 (define-key php-mode-map (kbd "C-S-s") 'helm-swoop)
 (define-key web-mode-map (kbd "C-S-s") 'helm-swoop)
 (define-key markdown-mode-map (kbd "C-S-s") 'helm-swoop)
+(define-key helm-swoop-map (kbd "C-w") 'helm-swoop)
+
 
 ;; Align your code in a pretty way.
 (global-set-key (kbd "C-x \\") 'align-regexp)
@@ -820,6 +831,13 @@ Version 2016-12-27"
 ;; Recenter line when occur-mode-goto-occurrence
 (add-hook 'occur-mode-find-occurrence-hook 'recenter)
 
-
 ;; ---------------- Function keys
 (global-set-key (kbd "<f2>") 'my/open-tree-view)
+
+;; ---------------- Super keys
+(global-set-key (kbd "s-s") 'avy-goto-char-in-line)
+(global-set-key (kbd "s-f") 'evil-find-char)
+(global-set-key (kbd "s-F") 'evil-find-char-to-backward)
+(global-set-key (kbd "s-;") 'evil-repeat-find-char)
+(global-set-key (kbd "s-,") 'evil-repeat-find-char-reverse)
+

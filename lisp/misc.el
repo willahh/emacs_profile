@@ -496,6 +496,10 @@ _n_: Navigate           _._: mark position _/_: jump to mark
 
 ;; sy
 (require 'syslog-mode)
+(add-hook 'syslog-mode-hook
+          (lambda ()
+            (toggle-truncate-lines 0)))
+
 
 ;; https://emacs.stackexchange.com/a/13010
 (defun etc-log-tail-handler ()

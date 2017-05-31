@@ -206,8 +206,7 @@
 ;; Update 2:
 ;;  bracket {} cant be typed if alt is used as meta key...
 
-(
- setq mac-option-key-is-meta nil
+(setq mac-option-key-is-meta nil
      mac-command-key-is-meta t
      mac-command-modifier 'meta
      mac-option-modifier 'none)
@@ -215,8 +214,19 @@
 (setq mac-control-modifier 'control)
 (setq ns-function-modifier 'control) ;; mbp FN and CTRL system switch 
 
+;; set keys for Apple keyboard, for emacs in OS X
+;; http://ergoemacs.org/emacs/emacs_hyper_super_keys.html
+(setq mac-command-modifier 'meta) ; make cmd key do Meta
+;; (setq mac-option-modifier 'super) ; make opt key do Super
+(setq mac-control-modifier 'control) ; make Control key do Control
+(setq ns-function-modifier 'hyper)  ; make Fn key do Hyper
 
-;; bash profile
+;; Keep right alt for accents
+;; (setq mac-right-option-modifier nil)
+(setq mac-right-command-modifier 'super)
+
+
+ ;; bash profile
 (setq shell-file-name "bash")
 (setq shell-command-switch "-ic")
 

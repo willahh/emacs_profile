@@ -55,3 +55,6 @@
 
 ;; powerline
 (powerline-theme-normal)
+
+;; ;; ------ Font
+;; (set-face-attribute 'org-level-1 nil :foreground "#848484")

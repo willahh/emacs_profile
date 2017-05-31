@@ -1,6 +1,6 @@
+#+TITLE: Emacs TODO
 #+STARTUP: content
-* Emacs TODO
-** Utils
+* Utils
 - [dired] "o" Ouvre le fichier dans un nouveau buffer et donne le focus à ce buffer
 
 - Twitter
@@ -61,11 +61,11 @@
 
 - Typescript ide mode
   - Make sure tsconfig.json or jsconfig.json is present in the root folder of the project.
-*** Links
+** Links
   https://github.com/epsil
   https://github.com/djangoliv/conf
   https://github.com/hlissner/.emacs.d
-*** Notes :
+** Notes :
 - [ ] Voir https://github.com/NicolasPetton/Indium
   Javascript connexion to current browser, inspector, debugger etc
 
@@ -78,38 +78,24 @@ Semantic PHP parser with ECB
 http://ecb.sourceforge.net/
 https://www.youtube.com/watch?v=KoRNCrx9pak
 
-** Bloquant
+* Bloquant
 :VISIBILITY: all
-- [ ] [i-search] M-v dans isearch
-- [ ] [org-mode] TAB est surcharge par org mode
-- [ ] 
-- [ ] [syslog] Truncate line off
+- [ ] M-S-o ne fonctionne plus
 - [ ] [ag buffer] Placer le caret sur le premier résultat à l'ouverture
 - [ ] [vc-dir] Ne pas afficher les lignes dossier grises
-- [ ] [vc-diff] M-S-n ne fonctionne pas dans ce mode
-- [ ] [projectile-find-file] Autoriser le COMMAND+v dans ce mode (mini buffer like)
 
 - [ ] [svn-log-view] Faire des ediff depuis ce mode
 
-- [ ] Remettre les couleurs du monde courant sur le curseur et le mode line
 - [ ] Scrolling commands C-z C-d C-S-d Ne fonctionnne pas bien
 
-- [ ] [org-mode] Titre de niveau 1 : Changer la font
-- [ ] [org] Organiser les fichiers org
-  http://sachachua.com/blog/2013/08/emacs-how-i-organize-my-org-files/
-  Voir regrouper tous les fichiers todo.org ensembles
-  De façon à retrouver les projets / notes importantes facilement
-- [ ] [org-mode] Ne pas faire de traitement special sur la touche tab
-- [ ] [org-mode] Splitter en deux panneaux, le second contient juste un recap
-  https://emacs.stackexchange.com/questions/9530/how-can-i-get-an-org-mode-outline-in-a-2nd-buffer-as-a-dynamic-table-of-contents
-- [ ] Utiliser la touche clavier mac <> comme touche SUPER/HYPER
 - [ ] [doc-view] Faire fonctionner doc-view (Lire des fichiers excel, doc, word, etc)
 - [ ] Google talk : Intégrer Google Talk dans Emacs
   https://www.emacswiki.org/emacs/GoogleTalk
+
 - [ ] Utiliser smartparens plutot que ParEdit pour des fichiers  autre que lisp
 - [ ] [swoop] C-w ne fonctionne pas
 - [ ] [occur] Centrer la ligne
-- [ ] [helm] [mini-buffer] Ajouter la possibilité de faire du M-v dabs le mini-buffer
+- [ ] [helm] [mini-buffer] Ajouter la possibilité de faire du M-v dans le mini-buffer
 - [ ] [system] mysql.server start on startup
 - [ ] [Ibuffer] sort by recent by default
 - [ ] Mouse shift click kill la sélection bizarre...
@@ -120,6 +106,25 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
   - [ ] [php-mode]
   - [ ] [typescript-mode]
   - [ ] [css-mode-mode]
+
+- [ ] [org] Organiser les fichiers org
+  http://sachachua.com/blog/2013/08/emacs-how-i-organize-my-org-files/
+  Voir regrouper tous les fichiers todo.org ensembles
+  De façon à retrouver les projets / notes importantes facilement
+- [ ] [org-mode] Ne pas faire de traitement special sur la touche tab
+
+- [ ] Previous/Next buffer : Utiliser la liste de ibuffer trier par ordre recent
+- [X] Utiliser la touche SUPER : Bindée sur RIGHT COMMAND
+- [X] Remettre les couleurs du monde courant sur le curseur et le mode line
+- [X] [projectile-find-file] Autoriser le COMMAND+v dans ce mode (mini buffer like)
+- [X] [syslog] Truncate line off
+- [X] [i-search] M-v dans isearch
+- [X] [Swoop] Ne pas pré-initialiser avec le texte sous le curseur
+
+- [X] [org-mode] Splitter en deux panneaux, le second contient juste un recap
+  https://emacs.stackexchange.com/questions/9530/how-can-i-get-an-org-mode-outline-in-a-2nd-buffer-as-a-dynamic-table-of-contents
+  - F2
+
 - [X] [all] Drag line ne fonctionne plus
 - [X] [custom] Faire une fonction recenter and enlarge frame
 - [X] [org] Sauvegarder l'état des toggles
@@ -127,7 +132,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [X] [org-mode] [C-S-j] Le caret est mal positionne
 - [X] F5 : Revert-buffer
 
-** A ranger
+* A ranger
 - [ ] [Helm] Masquer la première ligne
 - [ ] Back to previous window highlight current line comme lorque l'on fait un M-; en typescript-mode
 - [ ] [company] Voir pour utiliser autre chose que company pour la complétion des mots car cela peut être lent
@@ -222,7 +227,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [ivy] [mini buffer] CTRL+l to back up
 - [ ] [ivy] : Ne pas mettre les fichiers .svn dans la liste
 - [ ] [plugin] [change inner] Ajoute rl'option Change Inner Tag
-** Majeur
+* Majeur
 - [X] Integrer hydra and ace window  https://www.youtube.com/watch?v=_qZliI1BKzI
 - [ ] [php-mode] Autocompletion, ajouter les entrés du buffer courant dans la liste des completions
 - [ ] [custom] Faire une fonction custom delete backward or region
@@ -272,7 +277,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
   - .ac-php-conf.json
   - logs
   - .DS_Store
-** Mineur
+* Mineur
 - [ ] [dired] delete folder very slow
 - [ ] Ivy : Possibilité de boucler
 
@@ -305,7 +310,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
   - [ ] Show current mode in color
   - [ ] Show current VC system used
   - [ ] Show current encoding
-** Corrige
+* Corrige
 - [X] Intégrer le M-s pour save plutôt que C-x C-s
 - [X] [new frame] Center frame
 - [X] [fundamental] Ajouter le mode projectile

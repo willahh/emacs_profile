@@ -684,19 +684,6 @@ That is, a string used to represent it on the tab bar."
 
 
 
-;; Projectile auto invalidate cache after delete file
-;; http://cupfullofcode.com/blog/2014/10/06/invalidate-projectile-cache-on-delete/index.html
-(defadvice delete-file (before purge-from-projectile-cache (filename &optional trash))
-  (if (and (projectile-project-p) projectile-enable-caching)
-      (let* ((project-root (projectile-project-root))
-             (true-filename (file-truename filename))
-             (relative-filename (file-relative-name true-filename project-root)))
-        (if (projectile-file-cached-p relative-filename project-root)
-            (projectile-purge-file-from-cache relative-filename)))))
-  
-(ad-activate 'delete-file)
-
-
 
 
 
