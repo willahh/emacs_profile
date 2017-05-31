@@ -80,13 +80,10 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 * Bloquant
 :VISIBILITY: all
-- [ ] M-S-o ne fonctionne plus
+- [X] M-S-o ne fonctionne plus
 - [ ] [ag buffer] Placer le caret sur le premier résultat à l'ouverture
-- [ ] [vc-dir] Ne pas afficher les lignes dossier grises
 
 - [ ] [svn-log-view] Faire des ediff depuis ce mode
-
-- [ ] Scrolling commands C-z C-d C-S-d Ne fonctionnne pas bien
 
 - [ ] [doc-view] Faire fonctionner doc-view (Lire des fichiers excel, doc, word, etc)
 - [ ] Google talk : Intégrer Google Talk dans Emacs
@@ -98,9 +95,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [helm] [mini-buffer] Ajouter la possibilité de faire du M-v dans le mini-buffer
 - [ ] [system] mysql.server start on startup
 - [ ] [Ibuffer] sort by recent by default
-- [ ] Mouse shift click kill la sélection bizarre...
 - [ ] [diff-hl] Le package est casse sur melpa il ne compile pas bien,
-- [ ] [vc-dir] key M-< && M-> : Faire pointer sur le vrai début/fin de ligne
   Comme la fonction custom du mode Dired end start
 - [ ] [doc-block] La fonction ne fonctionne pas correctement
   - [ ] [php-mode]
@@ -113,7 +108,13 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
   De façon à retrouver les projets / notes importantes facilement
 - [ ] [org-mode] Ne pas faire de traitement special sur la touche tab
 
+- [ ] [vc-dir] Ne pas afficher les lignes dossier grises
+- [ ] [vc-dir] key M-< && M-> : Faire pointer sur le vrai début/fin de ligne
+
 - [ ] Previous/Next buffer : Utiliser la liste de ibuffer trier par ordre recent
+
+
+- [X] Mouse shift click kill la sélection bizarre...
 - [X] Utiliser la touche SUPER : Bindée sur RIGHT COMMAND
 - [X] Remettre les couleurs du monde courant sur le curseur et le mode line
 - [X] [projectile-find-file] Autoriser le COMMAND+v dans ce mode (mini buffer like)

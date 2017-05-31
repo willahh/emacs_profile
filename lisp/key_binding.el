@@ -540,7 +540,9 @@ Version 2016-12-27"
 ;; easy-motion
 (evilem-default-keybindings "ù")
 
+;; Update C-v evil-scroll-down actif (le comportement est plus clean (re center auto))
 ;; (global-set-key (kbd "C-v") 'evil-scroll-down)
+(global-set-key (kbd "C-v") 'evil-scroll-down)
 ;; (global-set-key (kbd "M-v") 'evil-scroll-up)
 
 ;; web mode
@@ -765,7 +767,9 @@ Version 2016-12-27"
 (define-key ggtags-navigation-map (kbd "M-o") 'other-window) ;; Need to override ggtags map
 
 (global-set-key [(meta o)] 'other-window)
-;; (global-set-key [(meta shift o)] 'previous-multiframe-window) ;; No no no
+;; No no no
+;; Pourquoi no no no ????, très utile pour la navigation entre les buffers !
+(global-set-key [(meta shift o)] 'previous-multiframe-window)
 
 (global-set-key [(meta shift i)] 'previous-buffer)
 (global-set-key [(meta i)] 'next-buffer)
@@ -835,9 +839,17 @@ Version 2016-12-27"
 (global-set-key (kbd "<f2>") 'my/open-tree-view)
 
 ;; ---------------- Super keys
+;; Line navigation commands
 (global-set-key (kbd "s-s") 'avy-goto-char-in-line)
 (global-set-key (kbd "s-f") 'evil-find-char)
 (global-set-key (kbd "s-F") 'evil-find-char-to-backward)
 (global-set-key (kbd "s-;") 'evil-repeat-find-char)
 (global-set-key (kbd "s-,") 'evil-repeat-find-char-reverse)
 
+;; Browse comands
+(global-set-key (kbd "s-p") 'projectile-find-file)
+(global-set-key (kbd "s-m") 'helm-recentf)
+(global-set-key (kbd "s-q") 'my-abort-recursive-edit)
+
+;; Scroll commands
+(global-set-key (kbd "s-v") 'evil-scroll-up)
