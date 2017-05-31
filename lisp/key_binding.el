@@ -853,3 +853,10 @@ Version 2016-12-27"
 
 ;; Scroll commands
 (global-set-key (kbd "s-v") 'evil-scroll-up)
+(global-set-key (kbd "s-x") 'helm-M-x)
+
+;; Text commandes
+(global-set-key (kbd "s-c") 'capitalize-word)
+(global-set-key (kbd "s-u") 'upcase-word)
+(global-set-key (kbd "s-l") 'downcase-word)
+(global-set-key (kbd "s-g") 'magit-status)
