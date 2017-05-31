@@ -692,7 +692,7 @@ Version 2016-12-27"
   (kill-line)
 )
 (define-key org-mode-map (kbd "C-M-j") 'wil-org-open-line-below)
-(define-key org-mode-map [(command control j)] 'wil-org-open-line-below)
+;; (define-key org-mode-map [(command control j)] 'wil-org-open-line-below)
 
 
 ;; Emmet

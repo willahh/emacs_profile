@@ -80,7 +80,12 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 ** Bloquant
 :VISIBILITY: all
+- [ ] [i-search] M-v dans isearch
+- [ ] [org-mode] TAB est surcharge par org mode
+- [ ] 
+- [ ] [syslog] Truncate line off
 - [ ] [ag buffer] Placer le caret sur le premier résultat à l'ouverture
+- [ ] [vc-dir] Ne pas afficher les lignes dossier grises
 - [ ] [vc-diff] M-S-n ne fonctionne pas dans ce mode
 - [ ] [projectile-find-file] Autoriser le COMMAND+v dans ce mode (mini buffer like)
 
