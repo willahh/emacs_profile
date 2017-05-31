@@ -80,6 +80,10 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 ** Bloquant
 :VISIBILITY: all
+- [ ] [ag buffer] Placer le caret sur le premier résultat à l'ouverture
+- [ ] [vc-diff] M-S-n ne fonctionne pas dans ce mode
+- [ ] [projectile-find-file] Autoriser le COMMAND+v dans ce mode (mini buffer like)
+
 - [ ] [svn-log-view] Faire des ediff depuis ce mode
 
 - [ ] Remettre les couleurs du monde courant sur le curseur et le mode line
@@ -105,6 +109,8 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [Ibuffer] sort by recent by default
 - [ ] Mouse shift click kill la sélection bizarre...
 - [ ] [diff-hl] Le package est casse sur melpa il ne compile pas bien,
+- [ ] [vc-dir] key M-< && M-> : Faire pointer sur le vrai début/fin de ligne
+  Comme la fonction custom du mode Dired end start
 - [ ] [doc-block] La fonction ne fonctionne pas correctement
   - [ ] [php-mode]
   - [ ] [typescript-mode]
