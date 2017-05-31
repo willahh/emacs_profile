@@ -3,7 +3,8 @@
 ** Utils
 - [dired] "o" Ouvre le fichier dans un nouveau buffer et donne le focus à ce buffer
 
-- Implementer https://github.com/abo-abo/hydra/wiki/Twittering
+- Twitter
+  - Implementer https://github.com/abo-abo/hydra/wiki/Twittering
 
 - View pdf
   https://emacs.stackexchange.com/a/22591/15824
@@ -14,11 +15,10 @@
   - C-x C-o ph (find php files)
 
 - Osx keyboard input delay :
-   - default values :
-     - defaults read NSGlobalDomain KeyRepeat 2
-     - defaults read NSGlobalDomain InitialKeyRepeat 15
-
-   - My values :
+  - default values :
+    - defaults read NSGlobalDomain KeyRepeat 2
+    - defaults read NSGlobalDomain InitialKeyRepeat 15
+  - My values :
      - defaults write NSGlobalDomain KeyRepeat 1
      - defaults write NSGlobalDomain InitialKeyRepeat 8
 
@@ -80,17 +80,23 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 ** Bloquant
 :VISIBILITY: all
+- [ ] [svn-log-view] Faire des ediff depuis ce mode
+
+- [ ] Remettre les couleurs du monde courant sur le curseur et le mode line
 - [ ] Scrolling commands C-z C-d C-S-d Ne fonctionnne pas bien
-- [ ] [org] Voir regrouper tous les fichiers todo.org ensembles
-      De façon à retrouver les projets / notes importantes facilement
+
+- [ ] [org-mode] Titre de niveau 1 : Changer la font
+- [ ] [org] Organiser les fichiers org
+  http://sachachua.com/blog/2013/08/emacs-how-i-organize-my-org-files/
+  Voir regrouper tous les fichiers todo.org ensembles
+  De façon à retrouver les projets / notes importantes facilement
 - [ ] [org-mode] Ne pas faire de traitement special sur la touche tab
 - [ ] [org-mode] Splitter en deux panneaux, le second contient juste un recap
-      https://emacs.stackexchange.com/questions/9530/how-can-i-get-an-org-mode-outline-in-a-2nd-buffer-as-a-dynamic-table-of-contents
+  https://emacs.stackexchange.com/questions/9530/how-can-i-get-an-org-mode-outline-in-a-2nd-buffer-as-a-dynamic-table-of-contents
 - [ ] Utiliser la touche clavier mac <> comme touche SUPER/HYPER
-- [ ] [svn-log-view] Faire des ediff depuis ce mode
 - [ ] [doc-view] Faire fonctionner doc-view (Lire des fichiers excel, doc, word, etc)
 - [ ] Google talk : Intégrer Google Talk dans Emacs
-      https://www.emacswiki.org/emacs/GoogleTalk
+  https://www.emacswiki.org/emacs/GoogleTalk
 - [ ] Utiliser smartparens plutot que ParEdit pour des fichiers  autre que lisp
 - [ ] [swoop] C-w ne fonctionne pas
 - [ ] [occur] Centrer la ligne
