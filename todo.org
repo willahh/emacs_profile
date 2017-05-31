@@ -80,38 +80,35 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 ** Bloquant
 :VISIBILITY: all
-- [ ] [svn-log-view] Faire des ediff depuis ce mode
+- [ ] Scrolling commands C-z C-d C-S-d Ne fonctionnne pas bien
 - [ ] [org] Voir regrouper tous les fichiers todo.org ensembles
       De façon à retrouver les projets / notes importantes facilement
-- [ ] [custom] Faire une fonction recenter and enlarge frame
-  - Agrandis la frame courante sur un ratio de 16:9
-  - Re centre la frame
-  - Binder sur C-x M-j
-- [ ] [doc-view] Faire fonctionner doc-view (Lire des fichiers excel, doc, word, etc)
-- [ ] Scrolling commands C-z C-d C-S-d Ne fonctionnne pas bien
-- [ ] Google talk : Intégrer Google Talk dans Emacs
-      https://www.emacswiki.org/emacs/GoogleTalk
 - [ ] [org-mode] Ne pas faire de traitement special sur la touche tab
 - [ ] [org-mode] Splitter en deux panneaux, le second contient juste un recap
       https://emacs.stackexchange.com/questions/9530/how-can-i-get-an-org-mode-outline-in-a-2nd-buffer-as-a-dynamic-table-of-contents
+- [ ] Utiliser la touche clavier mac <> comme touche SUPER/HYPER
+- [ ] [svn-log-view] Faire des ediff depuis ce mode
+- [ ] [doc-view] Faire fonctionner doc-view (Lire des fichiers excel, doc, word, etc)
+- [ ] Google talk : Intégrer Google Talk dans Emacs
+      https://www.emacswiki.org/emacs/GoogleTalk
 - [ ] Utiliser smartparens plutot que ParEdit pour des fichiers  autre que lisp
-- [ ] [org] Sauvegarder l'état des toggles
 - [ ] [swoop] C-w ne fonctionne pas
-- [ ] Utiliser smartparens plutot que ParEdit pour autre que lisp
-- [ ] [org-mode] C-c n
 - [ ] [occur] Centrer la ligne
 - [ ] [helm] [mini-buffer] Ajouter la possibilité de faire du M-v dabs le mini-buffer
-- [ ] mysql.server start on startup
-- [ ] [org mode] [yas] Ajouter un snippet pour faire des nouvelles lignes de todo ("- [ ] ")
-- [ ] Ibuffer sort by recent by default
+- [ ] [system] mysql.server start on startup
+- [ ] [Ibuffer] sort by recent by default
 - [ ] Mouse shift click kill la sélection bizarre...
 - [ ] [diff-hl] Le package est casse sur melpa il ne compile pas bien,
 - [ ] [doc-block] La fonction ne fonctionne pas correctement
   - [ ] [php-mode]
   - [ ] [typescript-mode]
   - [ ] [css-mode-mode]
-- [ ] [all] Drag line ne fonctionne plus
-      -> Fonctionnel @home
+- [X] [all] Drag line ne fonctionne plus
+- [X] [custom] Faire une fonction recenter and enlarge frame
+- [X] [org] Sauvegarder l'état des toggles
+- [X] [org mode] [yas] Ajouter un snippet pour faire des nouvelles lignes de todo ("- [ ] ")
+- [X] [org-mode] [C-S-j] Le caret est mal positionne
+- [X] F5 : Revert-buffer
 
 ** A ranger
 - [ ] [Helm] Masquer la première ligne

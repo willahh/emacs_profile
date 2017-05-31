@@ -945,3 +945,18 @@ _d_: subtree
   (aset buffer-display-table ?\^M []))
 
 (remove-dos-eol)
+
+
+
+
+
+
+
+;; Enlarge frame
+(defun wil-frame-large ()
+  (interactive)
+  (set-frame-width (selected-frame) 220)
+  (set-frame-height (selected-frame) 55)
+  (set-frame-position (selected-frame) 500 400)
+)
+
