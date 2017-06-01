@@ -82,7 +82,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 :VISIBILITY: all
 - [ ] [i-search] M-v dans isearch
 - [ ] [org-mode] TAB est surcharge par org mode
-- [ ] 
+- [ ] [multi-cursor] [M-s] Ne fonctionne plus
 - [ ] [syslog] Truncate line off
 - [ ] [ag buffer] Placer le caret sur le premier résultat à l'ouverture
 - [ ] [vc-dir] Ne pas afficher les lignes dossier grises
