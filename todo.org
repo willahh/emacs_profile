@@ -80,13 +80,15 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 * Bloquant
 :VISIBILITY: all
+- [X] [i-search] C-q pour quitter i-search
 - [ ] [ag] Ouvrir les resultats dans la même fenêtre
+  - Semble bon @home
 - [X] [recenter]
   - [X] Jump to mark
   - [X] i-search (Comme dans Sublime)
 - [X] [org-mode] Truncate line by default
 - [ ] [pdf-mode] Mouse Scroll page next/prev
-- [ ] [vc-dir] Déclencher le vc-dir en mode fullscreen avec la touche
+- [ ] [vc-dir] Déclencher le vc-dir en mode fullscreen avec la touche semble
   ESCAPE pour revenir sur le layout précédent comme dans magit
   Un plugin existe pour çâ
 - [ ] [vc-dir] Faire un Hydra pour ce mode sur la touch "."

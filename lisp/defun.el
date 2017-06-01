@@ -688,14 +688,18 @@ That is, a string used to represent it on the tab bar."
 
 
 ;; New centered frame
-(defun create-new-centered-frame ()
+(defun wil-create-new-centered-frame ()
   (interactive)
 
   ;; New frame
   (make-frame-command)
 
   ;; update frame position
-  (set-frame-position (selected-frame) 500 500)
+  ;; (set-frame-position (selected-frame) 500 500)
+  (setq x (- (/ (x-display-pixel-width) 2) (/ 580 2)))
+  (setq y (- (/ (x-display-pixel-height) 2) (/ 500 2)))
+
+  (set-frame-position (selected-frame) x y)
 
   ;; New buffer inside
   ;;  then Select this buffer @todo
@@ -1240,6 +1244,20 @@ the visible part of the current buffer following point. "
 
 ;; Recenter after paredit-backward
 (advice-add 'paredit-backward
+            :after
+            (lambda (&rest args)
+              "Recenter"
+              (recenter)))
+
+;; Recenter after highlight-symbol-next
+(advice-add 'highlight-symbol-next
+            :after
+            (lambda (&rest args)
+              "Recenter"
+              (recenter)))
+
+;; Recenter after highlight-symbol-prev
+(advice-add 'highlight-symbol-prev
             :after
             (lambda (&rest args)
               "Recenter"

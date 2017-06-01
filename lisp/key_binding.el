@@ -270,7 +270,7 @@
 ;; -- Buffer / frames / main
 ;; Frames
 ;;
-;; (global-set-key [(meta control shift n)] 'create-new-centered-frame)
+;; (global-set-key [(meta control shift n)] 'wil-create-new-centered-frame)
 
 
 ;; (global-set-key [(meta control shift a)] 'mark-whole-buffer)
@@ -299,10 +299,11 @@ Version 2016-12-27"
     (funcall initial-major-mode)
     (setq buffer-offer-save t)))
 
-(defun wil-create-new-centered-frame ()
+(defun wil-wil-create-new-centered-frame ()
   (interactive)
-  (create-new-centered-frame)
-  (funcall initial-major-mode)
+  (wil-create-new-centered-frame)
+  (text-mode)
+  ;; (funcall initial-major-mode)
 )
 
 ;; New buffer
@@ -311,7 +312,7 @@ Version 2016-12-27"
 ;; (define-key highlight-symbol-nav-mode-map (kbd "C-c C-n") 'xah-new-empty-buffer)
 
 ;; New frame
-;; (global-set-key (kbd "M-N") 'create-new-centered-frame)
+;; (global-set-key (kbd "M-N") 'wil-create-new-centered-frame)
 (global-set-key (kbd "M-N") 'wil-create-new-centered-frame)
 
 ;; (global-set-key (kbd "C-c C-k") 'kill-this-buffer)
@@ -613,6 +614,7 @@ Version 2016-12-27"
 (define-key isearch-mode-map (kbd "C-S-j") 'avy-isearch)
 (define-key isearch-mode-map (kbd "M-v") 'isearch-yank-pop)
 (define-key isearch-mode-map (kbd "C-v") 'isearch-yank-pop)
+(define-key isearch-mode-map (kbd "C-q") 'isearch-exit)
 
 ;; search in line
 (global-set-key (kbd "C-c C-s") 'avy-goto-char-in-line)
