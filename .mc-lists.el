@@ -112,6 +112,7 @@
       helm-projectile-ag
       helm-projectile-find-file
       helm-projectile-switch-project
+      help
       highlight-symbol-next
       hrs/split-window-right-and-switch
       iedit-mode

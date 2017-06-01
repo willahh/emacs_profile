@@ -15,9 +15,10 @@
 
 (defun whl-js-mode-hook ()
   (interactive)
-
+  
   ;; indium
-  (require 'indium)
+  ;; Fais planter la suite
+  ;; (require 'indium)
 
   (js2-imenu-extras-mode)
 
@@ -58,4 +59,5 @@
                          'company-tern))
 
 (add-hook 'js2-mode-hook 'whl-js-mode-hook)
-(add-hook 'js-mode-hook 'whl-js-mode-hook)
+;; (add-hook 'js-mode-hook 'whl-js-mode-hook)
+

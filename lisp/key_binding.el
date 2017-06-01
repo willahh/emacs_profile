@@ -94,6 +94,12 @@
 
 
 ;; Kill / cut command
+(defun wil-delete-back-word-or-region ()
+  (interactive)
+  
+)
+
+
 (global-set-key (kbd "C-w") 'clean-aindent--bsunindent)
 (global-set-key [(control shift w)] 'whole-line-or-region-kill-region)
 (global-set-key (kbd "C-h") 'delete-backward-char)
@@ -346,13 +352,16 @@ Version 2016-12-27"
 (global-set-key (kbd "ñ") 'mc/mark-next-lines) ;; ALT+p
 (global-set-key (kbd "π") 'mc/mark-previous-lines) ;; ALT+n
 
+
+
 ;; Separate C-m from RETURN key
 (define-key input-decode-map [?\C-m] [C-m])
 
 (defun wlh-set-bind-for-mc ()
   (global-set-key (kbd "<C-m>") 'mc/mark-next-like-this-word)
   (global-set-key [(control shift m)] 'mc/mark-previous-like-this-word)
-  (global-set-key [(control meta shift m)] 'mc/mark-all-words-like-this))
+  (global-set-key [(control meta shift m)] 'mc/mark-all-words-like-this)
+  (define-key mc/keymap (kbd "M-v") 'yank))
 
 (add-hook 'autopair-mode-hook 'wlh-set-bind-for-mc)
 

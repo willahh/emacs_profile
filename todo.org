@@ -80,36 +80,23 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 * Bloquant
 :VISIBILITY: all
-- [ ] [js2] Désactiver Paredit pour le mode js2
 - [ ] [ag] Ouvrir les resultats dans la même fenêtre
-- [ ] [recenter]
-  - [ ] Jump to mark
-  - [ ] i-search (Comme dans Sublime)
-- [ ] [yas] Ne fonctionne plus
-- [ ] [multi-cursor] Autoriser le [M-v]
-- [ ] [org-mode] Truncate line by default
-- [ ] [pdf-mode] Scroll page next/prev
+- [X] [recenter]
+  - [X] Jump to mark
+  - [X] i-search (Comme dans Sublime)
+- [X] [org-mode] Truncate line by default
+- [ ] [pdf-mode] Mouse Scroll page next/prev
 - [ ] [vc-dir] Déclencher le vc-dir en mode fullscreen avec la touche
   ESCAPE pour revenir sur le layout précédent comme dans magit
   Un plugin existe pour çâ
 - [ ] [vc-dir] Faire un Hydra pour ce mode sur la touch "."
 - [ ] [vc-dir] Ne pas afficher les "up-to-date"
-- [ ] [org-mode] YAS n'est pas chargé
-- [ ] [css-mode] Ne pas ajouter les entrées de DABREV
-      (Mélange lorsqu'un pdf est ouvert)
-- [ ] [multi-cursor] [M-s] Ne fonctionne plus
-- [X] M-S-o ne fonctionne plus
-- [ ] [ag buffer] Placer le caret sur le premier résultat à l'ouverture
 
 - [ ] [svn-log-view] Faire des ediff depuis ce mode
 
-- [ ] [doc-view] Faire fonctionner doc-view (Lire des fichiers excel, doc, word, etc)
-- [ ] Google talk : Intégrer Google Talk dans Emacs
-  https://www.emacswiki.org/emacs/GoogleTalk
-
-- [ ] Utiliser smartparens plutot que ParEdit pour des fichiers  autre que lisp
+- [ ] Utiliser smartparens plutot que ParEdit pour des fichiers autre que lisp
 - [ ] [swoop] C-w ne fonctionne pas
-- [ ] [occur] Centrer la ligne
+- [X] [occur] Centrer la ligne
 - [ ] [helm] [mini-buffer] Ajouter la possibilité de faire du M-v dans le mini-buffer
 - [ ] [system] mysql.server start on startup
 - [ ] [Ibuffer] sort by recent by default
@@ -129,8 +116,17 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [vc-dir] Ne pas afficher les lignes dossier grises
 - [ ] [vc-dir] key M-< && M-> : Faire pointer sur le vrai début/fin de ligne
 
+- [ ] [js/js2] Désactiver Paredit pour le mode js/js2
 - [ ] Previous/Next buffer : Utiliser la liste de ibuffer trier par ordre recent
 
+
+- [X] [org-mode] YAS n'est pas chargé
+- [X] [css-mode] Ne pas ajouter les entrées de DABREV
+      (Mélange lorsqu'un pdf est ouvert)
+- [X] M-S-o ne fonctionne plus
+- [X] [yas] Ne fonctionne plus
+- [X] [multi-cursor] Autoriser le [M-v]
+- [X] [css] Déclencher company css sur tab
 
 - [X] Mouse shift click kill la sélection bizarre...
 - [X] Utiliser la touche SUPER : Bindée sur RIGHT COMMAND
@@ -152,6 +148,10 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [X] F5 : Revert-buffer
 
 * A ranger
+- [ ] [doc-view] Faire fonctionner doc-view (Lire des fichiers excel, doc, word, etc)
+- [ ] [Google talk] : Intégrer Google Talk dans Emacs
+  https://www.emacswiki.org/emacs/GoogleTalk
+
 - [ ] [Helm] Masquer la première ligne
 - [ ] Back to previous window highlight current line comme lorque l'on fait un M-; en typescript-mode
 - [ ] [company] Voir pour utiliser autre chose que company pour la complétion des mots car cela peut être lent
@@ -261,11 +261,11 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
               Voir package "highlight-chars"
 - [ ] [theme] Revoir toutes les couleurs pour avoir les mêmes que dans Sublime
       Le profile colorimétrique utilisé par Photoshop n'était pas bon ... ... ...
-- [ ] [util] F5 revert buffer ?
-- [ ] [dired] > mkdir : refresh slow
-- [ ] [vc-dir] Faire une fonction toggle des hunk comme dans magit
-- [ ] [util] Voir si il est possible de faire un (CMD+P + touche @) (file.php@methode_name)
 - [ ] [theme] php mode : Plus de couleurs
+
+- [X] [util] F5 revert buffer ?
+- [ ] [util] Voir si il est possible de faire un (CMD+P + touche @) (file.php@methode_name)
+- [ ] [vc-dir] Faire une fonction toggle des hunk comme dans magit
 - [ ] Faire une fonction "Merge lines" pour supprimer les linebreak/whitespace
 - [ ] Delete file : ne pas re demander le chemin alors que l'on a deja le focus
 - [ ] [theme] nlinum : highlight current line number

@@ -1,6 +1,19 @@
-;; Definition du comportement tab avec dans l'odre les elements suivants :
-;; indentation standard, yas, company, emmet
-(defun wlh-tab-indent-or-complete-css ()
+;; wil-css-mode.el
+;; Temporary minor mode
+(defvar wil-css-mode-map (make-sparse-keymap)
+  "Keymap while wil-css-mode is active.")
+
+;;;###autoload
+(define-minor-mode wil-css-mode
+  "A temporary minor mode to be activated only specific to a buffer."
+  nil
+  :lighter " wil-css"
+  wil-css-mode-map)
+
+(provide 'wil-css-mode)
+
+;; Tab behaviour
+(defun wil-tab-indent-or-complete-css ()
   (interactive)
   (cond
    ((minibufferp)
@@ -9,19 +22,17 @@
     (indent-for-tab-command)
     (if (or (not yas/minor-mode)
             (null (do-yas-expand)))
-        (if (check-expansion)
             (progn
               (company-manual-begin)
               (if (null company-candidates)
                   (progn
                     (company-abort)
                     (emmet-expand-line nil)
-                    (indent-for-tab-command)))))))))
+                    (indent-for-tab-command))))))))
 
-;;(require 'html-mode)
-(add-hook 'css-mode-hook
+
+(add-hook 'wil-css-mode-hook
           (lambda ()
-
             ;; Fast completion
             (set (make-local-variable 'company-minimum-prefix-length) 2)
             (set (make-local-variable 'company-idle-delay) 1)
@@ -32,8 +43,13 @@
             ;; Company backend
             (set (make-local-variable 'company-backends) '(company-css company-dabbrev))
 
-            ;; Some key binding
-            ;; (define-key css-mode-map (kbd "<tab>") 'wlh-tab-indent-or-complete-css)
-            (define-key css-mode-map [tab] 'wlh-tab-indent-or-complete-css)
-            ;; (define-key css-mode-map (kbd "[?\t]") 'wlh-tab-indent-or-complete-css)
+            ;; Local key map
+            (define-key wil-css-mode-map (kbd "<tab>") 'wil-tab-indent-or-complete-css)))
+
+
+(add-hook 'css-mode-hook
+          (lambda ()
+            ;; Wil css minor mode
+            (wil-css-mode)
             ))
+
