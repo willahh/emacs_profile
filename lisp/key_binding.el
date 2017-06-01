@@ -815,6 +815,8 @@ Version 2016-12-27"
 ;; ---------------- text
 (define-key js-mode-map (kbd "C-:") "\C-e;")
 (define-key typescript-mode-map (kbd "C-:") "\C-e;")
+(define-key php-mode-map (kbd "C-:") "\C-e;")
+(define-key web-mode-map (kbd "C-:") "\C-e;")
 
 (global-set-key (kbd "C-c RET") 'wlh-join-lines)
 (define-key web-mode-map (kbd "C-c RET") 'wlh-join-lines)

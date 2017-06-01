@@ -1184,3 +1184,12 @@ the visible part of the current buffer following point. "
 	   (match-string 1 criteria))))
 
 (define-key dired-mode-map (kbd "s") 'dired-sort-criteria)
+
+
+
+
+
+
+
+
+
