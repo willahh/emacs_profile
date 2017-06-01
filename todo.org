@@ -80,6 +80,23 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 * Bloquant
 :VISIBILITY: all
+- [ ] [js2] Désactiver Paredit pour le mode js2
+- [ ] [ag] Ouvrir les resultats dans la même fenêtre
+- [ ] [recenter]
+  - [ ] Jump to mark
+  - [ ] i-search (Comme dans Sublime)
+- [ ] [yas] Ne fonctionne plus
+- [ ] [multi-cursor] Autoriser le [M-v]
+- [ ] [org-mode] Truncate line by default
+- [ ] [pdf-mode] Scroll page next/prev
+- [ ] [vc-dir] Déclencher le vc-dir en mode fullscreen avec la touche
+  ESCAPE pour revenir sur le layout précédent comme dans magit
+  Un plugin existe pour çâ
+- [ ] [vc-dir] Faire un Hydra pour ce mode sur la touch "."
+- [ ] [vc-dir] Ne pas afficher les "up-to-date"
+- [ ] [org-mode] YAS n'est pas chargé
+- [ ] [css-mode] Ne pas ajouter les entrées de DABREV
+      (Mélange lorsqu'un pdf est ouvert)
 - [ ] [multi-cursor] [M-s] Ne fonctionne plus
 - [X] M-S-o ne fonctionne plus
 - [ ] [ag buffer] Placer le caret sur le premier résultat à l'ouverture
