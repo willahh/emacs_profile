@@ -186,9 +186,14 @@
 (evil-leader/set-key "zh" 'hs-hide-block)
 
 ;; ---------------- key-hord
-(key-chord-define-global "ji" 'ace-window) ;; cannot be jk (vim up/right)
-(key-chord-define-global ";:" 'highlight-symbol-mode)
+;; Note : Ralentis beaucoup la saisie
+;; Ne pas trop utiliser
 (key-chord-define-global "qs" 'toggle-php-flavor-mode)
+(key-chord-define-global "xc" 'er/expand-region)
+(key-chord-define-global "wx" 'er/contract-region)
+
+;; (key-chord-define-global "ji" 'ace-window) ;; cannot be jk (vim up/right)
+;; (key-chord-define-global ";:" 'highlight-symbol-mode)
 ;; (key-chord-define js-mode-map ";;" "\C-e;") ;; paredit a deja un bind sur ;
 
 
@@ -199,8 +204,7 @@
 ;; Update to use the author default C= and a custom one C-M-l
 ;; Update 2 : Enable both key-chord and key binding standard
 ;; Key-chords are used when only left hand on the keyboard (right on the mouse)
-(key-chord-define-global "xc" 'er/expand-region)
-(key-chord-define-global "wx" 'er/contract-region)
+
 
 ;; (key-chord-define-global "kf" 'avy-goto-word-or-subword-1)
 ;; (key-chord-define-global "fk" 'avy-goto-word-or-subword-1)
@@ -599,6 +603,7 @@ Version 2016-12-27"
 (define-key isearch-mode-map (kbd "C-h") 'isearch-delete-char)
 (define-key isearch-mode-map (kbd "C-S-j") 'avy-isearch)
 (define-key isearch-mode-map (kbd "M-v") 'isearch-yank-pop)
+(define-key isearch-mode-map (kbd "C-v") 'isearch-yank-pop)
 
 ;; search in line
 (global-set-key (kbd "C-c C-s") 'avy-goto-char-in-line)
@@ -681,12 +686,20 @@ Version 2016-12-27"
 (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
 
 ;; ---------------- open line
-(global-set-key [(control shift j)] 'smart-open-line-above)
+;; Standard new line
 (define-key key-translation-map (kbd "C-j") (kbd "RET"))
-(global-set-key (kbd "C-M-j") 'newline-and-indent)
 
+;; Above
+(global-set-key [(control shift j)] 'smart-open-line-above)
+(global-set-key (kbd "C-M-j") 'newline-and-indent)
 (global-set-key [(control shift j)] 'smart-open-line-above)
 (define-key web-mode-map [(control shift j)] 'smart-open-line-above)
+
+;; Below
+(global-set-key (kbd "C-M-S-j") 'open-line-below)
+; (global-set-key [(control command shift j)] 'open-line-below)
+
+
 
 
 
@@ -841,6 +854,9 @@ Version 2016-12-27"
 (global-set-key (kbd "<f2>") 'my/open-tree-view)
 
 ;; ---------------- Super keys
+;; Comment
+(global-set-key (kbd "s-/") 'comment-line)
+
 ;; Line navigation commands
 (global-set-key (kbd "s-s") 'avy-goto-char-in-line)
 (global-set-key (kbd "s-f") 'evil-find-char)
@@ -851,6 +867,7 @@ Version 2016-12-27"
 ;; Browse comands
 (global-set-key (kbd "s-p") 'projectile-find-file)
 (global-set-key (kbd "s-m") 'helm-recentf)
+(global-set-key (kbd "s-r") 'helm-recentf)
 (global-set-key (kbd "s-q") 'my-abort-recursive-edit)
 
 ;; Scroll commands
@@ -862,3 +879,6 @@ Version 2016-12-27"
 (global-set-key (kbd "s-u") 'upcase-word)
 (global-set-key (kbd "s-l") 'downcase-word)
 (global-set-key (kbd "s-g") 'magit-status)
+
+(global-set-key (kbd "s-D") 'projectile-dired)
+(global-set-key (kbd "s-j") 'emmet-expand-line)

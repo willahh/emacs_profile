@@ -131,4 +131,5 @@
       undefined
       vc-dir-mark
       vc-dir-previous-line
+      wgrep-finish-edit
       ))
