@@ -242,10 +242,12 @@
 (setq helm-follow-mode-persistent t)
 
 ;; ---------------- swoop
-(require 'helm-swoop) ;; Not found in elpa for the moment
+(require 'helm-swoop)
 
 ;; If this value is t, split window inside the current window
 (setq helm-swoop-split-with-multiple-windows t)
+(setq helm-swoop-pre-input-function (lambda () nil))
+
 
 ;; ---------------- swiper
 (require 'swiper)

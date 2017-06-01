@@ -45,6 +45,9 @@
 ;; Mouse click to open in current window
 (define-key dired-mode-map [mouse-2] 'dired-find-file)
 
+;; https://stackoverflow.com/q/11176853
+(define-key global-map (kbd "<S-mouse-1>") 'mouse-set-point)
+
 ;; Auto-refresh dired on file change
 ;; Source : http://superuser.com/a/566401
 (add-hook 'dired-mode-hook 'auto-revert-mode)

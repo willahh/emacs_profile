@@ -15,6 +15,7 @@
 (yas-reload-all)
 (add-hook 'prog-mode-hook #'yas-minor-mode)
 (add-hook 'web-mode-hook #'yas-minor-mode)
+(add-hook 'org-mode-hook #'yas-minor-mode)
 
 ;; Update : bind un keybinding to yas expand
 ;; Because yas + autocomplete (when auto start) are always in conflict (with my yas keywords)
