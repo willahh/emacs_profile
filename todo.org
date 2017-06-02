@@ -79,7 +79,15 @@ http://ecb.sourceforge.net/
 https://www.youtube.com/watch?v=KoRNCrx9pak
 
 * Bloquant
-:VISIBILITY: all
+:VISIBILITY: 
+- [ ] [IDE] Ajouter un bind sur F3 pour afficher le panneau flycheck-list-errors tout en bas
+- [ ] [IDE] Ajouter un bind sur F3 : Faire un hydra :
+- [ ] [web-mode] Ne pas remplacer les fin de ligne windows par des fins de ligne unix
+- [X] [emacs-osxs] new centered frame : Le buffer de la frame précédente est changé
+- [ ] [emacs-osxs] new centered frame : Le mode par default devrait être le mode text
+- [ ] [emacs-osxs] Vérifier les keybindings sur les touches alt (alt+n alt+p, etc)
+
+
 - [X] [i-search] C-q pour quitter i-search
 - [ ] [ag] Ouvrir les resultats dans la même fenêtre
   - Semble bon @home

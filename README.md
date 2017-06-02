@@ -5,6 +5,7 @@
 ### Mac Os X
 - Mac Os X >= 10.11
 - emacs >= 25
+- Use of emacs-osx for osx instead of the default brew emacs
 
 ```{r, engine='bash', count_lines}
 brew install --with-cocoa --srgb emacs
@@ -12,6 +13,44 @@ git clone --recursive https://github.com/willahh/emacs_profile ~/.emacs.d
 ```
 - Use font "fira-monoS" - size : 12 -  ~/.emacs.d/fonts/meslo (Menu > option > set default font)
 - Install below dependencies globaly
+
+
+TODO : Changer ce fichier pour avoir un fichier .org !!!!!!!
+- sudo npm install -g csslint
+- sudo npm install -g jscs
+- Ajouter .jscsrc dans ~
+
+
+{
+    "requireCurlyBraces": [ "if", "else", "for", "while", "do" ],
+    "requireSpaceAfterKeywords": [ "if", "else", "for", "while", "do", "switch", "return" ],
+    "requireSpacesInFunctionExpression": {
+        "beforeOpeningCurlyBrace": true
+    },
+    "disallowSpacesInFunctionExpression": {
+        "beforeOpeningRoundBrace": true
+    },
+    "requireMultipleVarDecl": true,
+    "requireSpacesInsideObjectBrackets": "all",
+    "requireSpacesInsideArrayBrackets": "all",
+    "disallowLeftStickedOperators": [ "?", "-", "/", "*", "=", "==", "===", "!=", "!==", ">", ">=", "<", "<=" ],
+    "disallowRightStickedOperators": [ "?", "/", "*", ":", "=", "==", "===", "!=", "!==", ">", ">=", "<", "<="],
+    "requireSpaceBeforeBinaryOperators": ["+", "-", "/", "*", "=", "==", "===", "!=", "!=="],
+    "disallowSpaceAfterPrefixUnaryOperators": ["++", "--", "+", "-"],
+    "disallowSpaceBeforePostfixUnaryOperators": ["++", "--"],
+    "requireRightStickedOperators": [ "!" ],
+    "requireLeftStickedOperators": [ "," ],
+    "disallowKeywords": [ "with" ],
+    "disallowMultipleLineBreaks": true,
+    "disallowKeywordsOnNewLine": [ "else" ],
+    "requireLineFeedAtFileEnd": true,
+    "disallowSpaceAfterObjectKeys": true,
+    "validateLineBreaks": "LF"
+}
+
+
+
+
 - Create a .tern-project file in ~/ directory for a global javascript ES6 support
 ```{r, engine='bash', count_lines}
 {

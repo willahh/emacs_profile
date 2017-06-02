@@ -964,3 +964,11 @@ _d_: subtree
   (set-frame-position (selected-frame) 500 400)
 )
 
+
+
+;; IDE Mode
+(defun wil-IDE ()
+  (interactive)
+  (flycheck-list-errors)
+  (other-window 1)
+  (evil-window-move-very-bottom))

@@ -25,6 +25,7 @@
 (add-to-list 'auto-mode-alist '("\\.css\\'" . css-mode)) ;; .css file should be assigned to css-mode for nice emmet support
 (add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
 (add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-mode))
+(add-to-list 'auto-mode-alist '("\\.jade\\'" . jade-mode))
 
 (setq web-mode-enable-css-colorization t)
 (setq web-mode-enable-current-element-highlight t)

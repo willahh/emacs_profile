@@ -692,18 +692,20 @@ That is, a string used to represent it on the tab bar."
   (interactive)
 
   ;; New frame
-  (make-frame-command)
+  ;; (make-frame-command)
+  (new-frame)
+  ;; (xah-new-empty-buffer)
 
   ;; update frame position
   ;; (set-frame-position (selected-frame) 500 500)
-  (setq x (- (/ (x-display-pixel-width) 2) (/ 580 2)))
-  (setq y (- (/ (x-display-pixel-height) 2) (/ 500 2)))
+  ;; (setq x (- (/ (x-display-pixel-width) 2) (/ 580 2)))
+  ;; (setq y (- (/ (x-display-pixel-height) 2) (/ 500 2)))
 
-  (set-frame-position (selected-frame) x y)
+  ;; (set-frame-position (selected-frame) x y)
 
   ;; New buffer inside
   ;;  then Select this buffer @todo
-  (switch-to-buffer (generate-new-buffer "*new*"))
+  ;; (switch-to-buffer (generate-new-buffer "*new*"))
 )
 
 ;; Block comment auto close

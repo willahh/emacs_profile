@@ -21,6 +21,7 @@
   ;; clojurescript-mode
   image-dired+
   imenu-list
+  jade-mode
 
 
   ;; backe-button
