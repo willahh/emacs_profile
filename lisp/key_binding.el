@@ -359,12 +359,20 @@ Version 2016-12-27"
 (define-key input-decode-map [?\C-m] [C-m])
 
 (defun wlh-set-bind-for-mc ()
+  ;; Bind sur Meta q
+  (global-set-key (kbd "<M-q>") 'mc/mark-next-like-this-word)
+  (global-set-key (kbd "<M-Q>") 'mc/mark-previous-like-this-word)
+
+  ;; Bind sur Control m / Control shift m
   (global-set-key (kbd "<C-m>") 'mc/mark-next-like-this-word)
   (global-set-key [(control shift m)] 'mc/mark-previous-like-this-word)
   (global-set-key [(control meta shift m)] 'mc/mark-all-words-like-this)
+
+  ;; Multi cursor map
   (define-key mc/keymap (kbd "M-v") 'yank))
 
 (add-hook 'autopair-mode-hook 'wlh-set-bind-for-mc)
+(add-hook 'paredit-mode-map 'wlh-set-bind-for-mc)
 
 
 ;; Mouse

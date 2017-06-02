@@ -80,6 +80,16 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 * Bloquant
 :VISIBILITY: 
+- [ ] [vc-change-log] Truncate line on by default
+- [ ] [magit mode] Truncate line on by default
+- [ ] Helm imenu : Add advice recenter line
+- [ ] POMME + click = add multi cursor
+- [ ] [projectile find file] Auto centrer la ligne une fois le goto dans le fichier
+- [ ] [projectile find file] Possibilité de saisir des espaces dans le regexp
+- [ ] Vc dir same window
+- [ ] New frame : centrer la frame
+- [ ] New frame : Mettre un nouveau buffer de type texte dedans
+- [ ] F4 : Faire un hydra sur la touche F4 pour la gestion des window
 - [ ] [IDE] Ajouter un bind sur F3 pour afficher le panneau flycheck-list-errors tout en bas
 - [ ] [IDE] Ajouter un bind sur F3 : Faire un hydra :
 - [ ] [web-mode] Ne pas remplacer les fin de ligne windows par des fins de ligne unix
