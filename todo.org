@@ -80,6 +80,8 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 * Bloquant
 :VISIBILITY: 
+- [ ] Rebinder s-A ()
+- [ ] [ace-window] Faire fonctionner ace window
 - [ ] [vc-change-log] Truncate line on by default
 - [ ] [magit mode] Truncate line on by default
 - [ ] Helm imenu : Add advice recenter line

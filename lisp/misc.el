@@ -972,3 +972,5 @@ _d_: subtree
   (flycheck-list-errors)
   (other-window 1)
   (evil-window-move-very-bottom))
+
+
