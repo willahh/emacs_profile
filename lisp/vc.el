@@ -33,6 +33,8 @@
 
 (defun my-svn-log-edit-mode-setup ()
   (setq ispell-local-dictionary "american")
+  ;; (toggle-truncate-lines 0)
+
   (flyspell-mode))
 
 (add-hook 'svn-log-edit-mode-hook 'my-svn-log-edit-mode-setup)
@@ -40,9 +42,19 @@
 
 ;; Diff mode hook
 (defun wil-diff-mode-hook ()
+  (interactive)
+  (toggle-truncate-lines)
   (outline-minor-mode)
+  ;; (hydra-outline/body)
 )
 (add-hook 'diff-mode-hook 'wil-diff-mode-hook)
+
+;; Magit hook
+(defun wil-magit-status-mode-hook ()
+  (toggle-truncate-lines)
+  (outline-minor-mode)
+)
+(add-hook 'magit-status-mode-hook 'wil-magit-status-mode-hook)
 
 
 
@@ -116,3 +128,42 @@ then `diff-jump-to-old-file' is also set, for the next invocations."
       (pop-to-buffer-same-window buf)
       (goto-char (+ (car pos) (cdr src)))
       (diff-hunk-status-msg line-offset (diff-xor rev switched) t))))
+
+
+;; fullframe
+(require 'fullframe)
+(fullframe vc-dir quit-window)
+(fullframe ediff quit-window)
+
+;; wil-vc-dir
+(defun wil-vc-dir ()
+  (interactive)
+  (vc-dir (projectile-project-root))
+
+  (define-key vc-dir-mode-map (kbd "e") 'vc-ediff)
+  (define-key vc-dir-mode-map (kbd "d") 'vc-diff)
+)
+
+
+
+
+
+
+
+
+
+
+;; (defun ediff-current-buffer-revision () 
+;;   "Run Ediff to diff current buffer's file against VC depot. 
+;; Uses `vc.el' or `rcs.el' depending on `ediff-version-control-package'." 
+;;   (interactive) 
+;;   (let ((file (or (buffer-file-name) 
+;;           (error "Current buffer is not visiting a file")))) 
+;; (if (and (buffer-modified-p) 
+;;      (y-or-n-p (message "Buffer %s is modified. Save buffer? " 
+;;                 (buffer-name)))) 
+;;     (save-buffer (current-buffer))) 
+;; (ediff-load-version-control) 
+;; (funcall 
+;;  (intern (format "ediff-%S-internal" ediff-version-control-package)) 
+;;  "" "" nil))) 

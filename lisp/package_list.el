@@ -153,6 +153,7 @@
   skewer-mode
   ;; smart-forward
   ;; smart-tab
+  fullframe
 
   counsel
 

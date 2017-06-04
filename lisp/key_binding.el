@@ -369,7 +369,12 @@ Version 2016-12-27"
   (global-set-key [(control meta shift m)] 'mc/mark-all-words-like-this)
 
   ;; Multi cursor map
-  (define-key mc/keymap (kbd "M-v") 'yank))
+  (define-key mc/keymap (kbd "M-v") 'yank)
+
+  ;; Mouse
+  ;;(define-key (kbd "M-down-mouse-1) 'mc/add-cursor-on-click)
+  (global-set-key (kbd "<M-down-mouse-1>") 'mc/add-cursor-on-click)
+  )
 
 (add-hook 'autopair-mode-hook 'wlh-set-bind-for-mc)
 (add-hook 'paredit-mode-map 'wlh-set-bind-for-mc)
@@ -871,13 +876,14 @@ Version 2016-12-27"
 
 ;; ---------------- Function keys
 (global-set-key (kbd "<f2>") 'my/open-tree-view)
+(global-set-key (kbd "<f12>") 'wil-vc-dir)
 
 ;; ---------------- Super keys
 ;; Comment
 (global-set-key (kbd "s-/") 'comment-line)
 
 ;; Line navigation commands
-(global-set-key (kbd "s-s") 'avy-goto-char-in-line)
+(global-set-key (kbd "s-S") 'avy-goto-char-in-line)
 (global-set-key (kbd "s-f") 'evil-find-char)
 (global-set-key (kbd "s-F") 'evil-find-char-to-backward)
 (global-set-key (kbd "s-;") 'evil-repeat-find-char)
@@ -901,3 +907,6 @@ Version 2016-12-27"
 
 (global-set-key (kbd "s-D") 'projectile-dired)
 (global-set-key (kbd "s-j") 'emmet-expand-line)
+
+(global-set-key (kbd "s-a") 'mark-whole-buffer)
+(global-set-key (kbd "s-s") 'helm-swoop)

@@ -62,6 +62,7 @@
       kill-region
       kill-sentence
       mouse-set-region
+      mouse-start-secondary
       my-abort-recursive-edit
       org-beginning-of-line
       org-cycle
