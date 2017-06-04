@@ -122,7 +122,6 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [X] [Vc-dir] same window
 
 
-
 * A ranger
 - [ ] [org] Organiser les fichiers org
   http://sachachua.com/blog/2013/08/emacs-how-i-organize-my-org-files/

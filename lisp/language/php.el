@@ -12,7 +12,7 @@
 (add-hook 'php-mode-hook
           '(lambda ()
             (require 'company-php)
-            (require 'php-extras)
+            ;; (require 'php-extras)
 
             (company-mode t)
 

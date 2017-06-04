@@ -1265,3 +1265,10 @@ the visible part of the current buffer following point. "
               "Recenter"
               (recenter)))
 
+;; Recenter after compile-goto-error
+(advice-add 'compile-goto-error
+            :after
+            (lambda (&rest args)
+              "Recenter"
+              (recenter)))
+

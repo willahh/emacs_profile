@@ -67,7 +67,6 @@
   ac-php
   ;; php-eldoc ;; Not found in Melpa
   ;; php-extras
-  ; php-extras
   editorconfig
   ;; php-completion
 

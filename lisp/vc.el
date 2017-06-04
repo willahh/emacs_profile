@@ -67,7 +67,9 @@
 (require 'diff-hl)
 (diff-hl-mode)
 (global-diff-hl-mode t)
-(add-hook 'dired-mode-hook 'diff-hl-dired-mode)
+
+;; Ne fonctionne pas
+;; (add-hook 'dired-mode-hook 'diff-hl-dired-mode)
 
 ;; (require diff-hl)
 ;; (add-hook 'prog-mode-hook 'diff-hl-mode)

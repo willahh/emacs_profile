@@ -882,6 +882,9 @@ Version 2016-12-27"
 ;; Comment
 (global-set-key (kbd "s-/") 'comment-line)
 
+;; Find
+(global-set-key (kbd "s-f") 'counsel-find-file)
+
 ;; Line navigation commands
 (global-set-key (kbd "s-S") 'avy-goto-char-in-line)
 (global-set-key (kbd "s-f") 'evil-find-char)
