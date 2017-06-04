@@ -46,6 +46,7 @@
   (toggle-truncate-lines)
   (outline-minor-mode)
   ;; (hydra-outline/body)
+  
 )
 (add-hook 'diff-mode-hook 'wil-diff-mode-hook)
 
@@ -63,9 +64,10 @@
 ;; ne fonctionne plus pour le moment
 ;; Le package semble casse sur melpa
 
-;; (diff-hl-mode)
-;; (global-diff-hl-mode t)
-;;(add-hook 'dired-mode-hook 'diff-hl-dired-mode)
+(require 'diff-hl)
+(diff-hl-mode)
+(global-diff-hl-mode t)
+(add-hook 'dired-mode-hook 'diff-hl-dired-mode)
 
 ;; (require diff-hl)
 ;; (add-hook 'prog-mode-hook 'diff-hl-mode)
@@ -140,13 +142,36 @@ then `diff-jump-to-old-file' is also set, for the next invocations."
   (interactive)
   (vc-dir (projectile-project-root))
 
+  ;; (vc-dir-next-line 1)
+
+  ;; Some key binding
   (define-key vc-dir-mode-map (kbd "e") 'vc-ediff)
+  (define-key vc-dir-mode-map (kbd "E") 'wil-vc-version-ediff-base-head)
   (define-key vc-dir-mode-map (kbd "d") 'vc-diff)
+  (define-key vc-dir-mode-map (kbd "D") 'wil-vc-version-diff-base-head)
+)
+
+
+(defun wil-vc-version-diff-base-head ()
+  ;; Quick call vc-version-diff to compare the base and head version
+  (interactive)
+  (vc-version-diff (vc-deduce-fileset t) "base" "head")
+)
+
+(defun wil-vc-version-ediff-base-head ()
+  ;; Quick call vc-version-ediff to compare the base and head version
+  (interactive)
+  ;; (vc-version-ediff (vc-deduce-fileset t) "base" "head")
+  (vc-version-ediff (cadr (vc-deduce-fileset t)) "base" "head")
 )
 
 
 
-
+;; Recenter after forward-sentence
+;; (advice-add 'vc-dir
+;;             :after
+;;             (lambda (&rest args)
+;;               (vc-dir-next-line 1)))
 
 
 
@@ -166,4 +191,9 @@ then `diff-jump-to-old-file' is also set, for the next invocations."
 ;; (ediff-load-version-control) 
 ;; (funcall 
 ;;  (intern (format "ediff-%S-internal" ediff-version-control-package)) 
-;;  "" "" nil))) 
+;;  "" "" nil)))
+
+
+
+
+

@@ -79,15 +79,13 @@ http://ecb.sourceforge.net/
 https://www.youtube.com/watch?v=KoRNCrx9pak
 
 * Bloquant
-  :VISIBILITY:
+:VISIBILITY:
 - [ ] [projectile find file] Auto centrer la ligne une fois le goto dans le fichier
 - [ ] [projectile find file] Possibilité de saisir des espaces dans le regexp
-- [ ] Vc dir same window
 - [ ] New frame : centrer la frame
 - [ ] New frame : Mettre un nouveau buffer de type texte dedans
 - [ ] F4 : Faire un hydra sur la touche F4 pour la gestion des window
 - [ ] [IDE] Ajouter un bind sur F3 pour afficher le panneau flycheck-list-errors tout en bas
-- [ ] [IDE] Ajouter un bind sur F3 : Faire un hydra :
 - [ ] [web-mode] Ne pas remplacer les fin de ligne windows par des fins de ligne unix
 - [ ] [emacs-osxs] new centered frame : Le mode par default devrait être le mode text
 - [ ] [emacs-osxs] Vérifier les keybindings sur les touches alt (alt+n alt+p, etc)
@@ -95,9 +93,6 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [ace-window] Faire fonctionner ace window
 - [ ] [ag] Ouvrir les resultats dans la même fenêtre
   - Semble bon @home
-- [ ] [vc-dir] Déclencher le vc-dir en mode fullscreen avec la touche semble
-  ESCAPE pour revenir sur le layout précédent comme dans magit
-  Un plugin existe pour ça
 - [ ] [vc-dir] Faire un Hydra pour ce mode sur la touche "."
 - [ ] [vc-dir] Ne pas afficher les "up-to-date"
 
@@ -108,18 +103,11 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [helm] [mini-buffer] Ajouter la possibilité de faire du M-v dans le mini-buffer
 - [ ] [system] mysql.server start on startup
 - [ ] [Ibuffer] sort by recent by default
-- [ ] [diff-hl] Le package est casse sur melpa il ne compile pas bien,
   Comme la fonction custom du mode Dired end start
 - [ ] [doc-block] La fonction ne fonctionne pas correctement
   - [ ] [php-mode]
   - [ ] [typescript-mode]
   - [ ] [css-mode-mode]
-
-- [ ] [org] Organiser les fichiers org
-  http://sachachua.com/blog/2013/08/emacs-how-i-organize-my-org-files/
-  Voir regrouper tous les fichiers todo.org ensembles
-  De façon à retrouver les projets / notes importantes facilement
-- [ ] [org-mode] Ne pas faire de traitement special sur la touche tab
 
 - [ ] [vc-dir] Ne pas afficher les lignes dossier grises
 - [ ] [vc-dir] key M-< && M-> : Faire pointer sur le vrai début/fin de ligne
@@ -127,10 +115,25 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [js/js2] Désactiver Paredit pour le mode js/js2
 - [ ] Previous/Next buffer : Utiliser la liste de ibuffer trier par ordre recent
 
+- [X] [diff-hl] Le package est casse sur melpa il ne compile pas bien,
+- [X] [vc-dir] Déclencher le vc-dir en mode fullscreen avec la touche
+  ESCAPE pour revenir sur le layout précédent comme dans magit
+  Un plugin existe pour ça
+- [X] [Vc-dir] same window
 
 
-  
+
 * A ranger
+- [ ] [org] Organiser les fichiers org
+  http://sachachua.com/blog/2013/08/emacs-how-i-organize-my-org-files/
+  Voir regrouper tous les fichiers todo.org ensembles
+  De façon à retrouver les projets / notes importantes facilement
+- [ ] [org-mode] Ne pas faire de traitement special sur la touche tab
+
+
+
+
+
 - [ ] [doc-view] Faire fonctionner doc-view (Lire des fichiers excel, doc, word, etc)
 - [ ] [Google talk] : Intégrer Google Talk dans Emacs
   https://www.emacswiki.org/emacs/GoogleTalk

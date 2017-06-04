@@ -752,7 +752,8 @@ _d_: subtree
 
 (require 'diff-mode)
 (require 'smerge-mode)
-(define-key diff-mode-map (kbd ".") 'hydra-outline/body)
+;; (define-key diff-mode-map (kbd ".") 'hydra-outline/body)
+(define-key diff-mode-map (kbd "/") 'hydra-outline/body)
 
 
 

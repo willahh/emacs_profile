@@ -96,7 +96,7 @@
 
   ;; color-theme-buffer-local
   dash
-  ;;diff-hl
+  ;;diff-hl ;; Package casse depuis un moment, deplace dans vendor
 
 
   ;; doom-themes ;; Dependant du package ‘font-lock+-0’ non disponible sur MELPA stable
@@ -210,12 +210,11 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/evil-easymotion")
 (add-to-list 'load-path "~/.emacs.d/vendor/psvn")
 (add-to-list 'load-path "~/.emacs.d/vendor/simple-httpd")
-(add-to-list 'load-path "~/.emacs.d/vendor/diff-hl")
 (add-to-list 'load-path "~/.emacs.d/vendor/doom-themeoos")
 (add-to-list 'load-path "~/.emacs.d/vendor/dumb-jump")
 (add-to-list 'load-path "~/.emacs.d/vendor/Indium")
 (add-to-list 'load-path "~/.emacs.d/vendor/restclient")
-(add-to-list 'load-path "~/.emacs.d/vendor/diff-hl")
+(add-to-list 'load-path "~/.emacs.d/vendor/diff-hl-1.8.4")
 (add-to-list 'load-path "~/.emacs.d/vendor/org-mouse")
 (add-to-list 'load-path "~/.emacs.d/vendor/clean-aindent-mode")
 (add-to-list 'load-path "~/.emacs.d/vendor/workgroups2")
