@@ -430,3 +430,6 @@
                      (and matching (char-syntax matching)))))))
 
 (require 'avy)
+
+(require 'ace-window)
+

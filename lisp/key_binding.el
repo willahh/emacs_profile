@@ -116,7 +116,7 @@
 ;; Move the help cimmand to C-x h
 ;; (global-set-key [?\C-x ?h] 'help-command)
 ;; (global-set-key (kbd "C-c c h") 'help-command)
-(global-set-key (kbd "C-S-h") 'help)
+;; (global-set-key (kbd "C-S-h") 'help)
 
 
 ;; ---------------- evaluation
@@ -431,9 +431,15 @@ Version 2016-12-27"
 ;; (global-set-key (kbd "C-x f") 'projectile-find-file)
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 
-(global-set-key (kbd "C-c C-p") 'projectile-find-file)
-(define-key org-mode-map (kbd "C-c C-p") 'projectile-find-file)
+;; (global-set-key (kbd "C-c C-p") 'projectile-find-file)
+;; (define-key org-mode-map (kbd "C-c C-p") 'projectile-find-file)
 (define-key ivy-minibuffer-map (kbd "M-v") 'yank) ; Add yank to ivy mini map
+
+(global-set-key (kbd "C-c C-n") 'diff-hl-next-hunk)
+(global-set-key (kbd "C-c C-p") 'diff-hl-previous-hunk)
+
+; (global-set-key (kbd "c-c c-n") 'diff-hl-next-hunk)
+; (global-set-key (kbd "c-c c-p") 'diff-hl-previous-hunk)
 
 ;; projectile-find-file
 
@@ -594,7 +600,8 @@ Version 2016-12-27"
 ;; (global-set-key (kbd "C-c j") 'avy-goto-char-2)
 ;; (global-set-key (kbd "C-c j") 'avy-goto-char)
 ;; (global-set-key (kbd "C-c j") 'avy-goto-word-1)
-(global-set-key (kbd "C-c <C-i>") 'avy-goto-word-1)
+;; (global-set-key (kbd "C-c <C-i>") 'avy-goto-word-1) ; Utilise pour imenu-list
+
 
 ;; (global-set-key (kbd "C-i") 'avy-goto-word-1-above)
 ;; (global-set-key (kbd "C-I") 'avy-goto-word-1-below)
@@ -640,7 +647,6 @@ Version 2016-12-27"
 (define-key markdown-mode-map (kbd "C-S-s") 'helm-swoop)
 (define-key helm-swoop-map (kbd "C-w") 'helm-swoop)
 
-
 ;; Align your code in a pretty way.
 (global-set-key (kbd "C-x \\") 'align-regexp)
 ;; (global-set-key [(control meta shift s)] 'zop-up-to-char)
@@ -651,6 +657,9 @@ Version 2016-12-27"
 
 ;; Display and edit occurances of regexp in buffer
 (global-set-key (kbd "C-c o") 'occur)
+
+;; imenu-list
+(global-set-key (kbd "C-c <C-i>") 'imenu-list)
 
 ;; Webjump let's you quickly search google, wikipedia, emacs wiki
 (global-set-key (kbd "C-x g") 'webjump)
@@ -798,12 +807,20 @@ Version 2016-12-27"
 (global-set-key (kbd "M-9") 'resize-window) ;; M-9
 (define-key diff-mode-map (kbd "M-9") 'resize-window)
 
-(global-set-key (kbd "M-o") 'other-window)
-(define-key diff-mode-map (kbd "M-o") 'other-window)
+;; ;; other window
+;; (global-set-key (kbd "M-o") 'other-window)
+;; (define-key diff-mode-map (kbd "M-o") 'other-window)
+;; (define-key ggtags-navigation-map (kbd "M-o") 'other-window) ;; Need to override ggtags map
+;; (global-set-key [(meta o)] 'other-window)
 
-(define-key ggtags-navigation-map (kbd "M-o") 'other-window) ;; Need to override ggtags map
+;; other window
+(global-set-key (kbd "M-o") 'hydra-window/body)
+(define-key diff-mode-map (kbd "M-o") 'hydra-window/body)
+(define-key ggtags-navigation-map (kbd "M-o") 'hydra-window/body) ;; Need to override ggtags map
+(global-set-key [(meta o)] 'hydra-window/body)
 
-(global-set-key [(meta o)] 'other-window)
+
+
 ;; No no no
 ;; Pourquoi no no no ????, très utile pour la navigation entre les buffers !
 (global-set-key [(meta shift o)] 'previous-multiframe-window)
@@ -874,28 +891,37 @@ Version 2016-12-27"
 ;; Recenter line when occur-mode-goto-occurrence
 (add-hook 'occur-mode-find-occurrence-hook 'recenter)
 
+(global-set-key (kbd "C-c C-b") 'projectile-ibuffer)
+(global-set-key (kbd "C-c b") 'projectile-switch-to-buffer)
+
 ;; ---------------- Function keys
 (global-set-key (kbd "<f2>") 'my/open-tree-view)
 (global-set-key (kbd "<f12>") 'wil-vc-dir)
+(global-set-key (kbd "<f11>") 'wil-IDE)
 
 ;; ---------------- Super keys
 ;; Comment
 (global-set-key (kbd "s-/") 'comment-line)
 
+;; Help
+(global-set-key (kbd "s-h") 'help)
+
 ;; Find
 (global-set-key (kbd "s-f") 'counsel-find-file)
 
 ;; Line navigation commands
-(global-set-key (kbd "s-S") 'avy-goto-char-in-line)
-(global-set-key (kbd "s-f") 'evil-find-char)
-(global-set-key (kbd "s-F") 'evil-find-char-to-backward)
-(global-set-key (kbd "s-;") 'evil-repeat-find-char)
-(global-set-key (kbd "s-,") 'evil-repeat-find-char-reverse)
+;; (global-set-key (kbd "s-S") 'avy-goto-char-in-line)
+(global-set-key (kbd "s-l") 'avy-goto-char-in-line)
+;; (global-set-key (kbd "s-f") 'evil-find-char)
+;; (global-set-key (kbd "s-F") 'evil-find-char-to-backward)
+;; (global-set-key (kbd "s-;") 'evil-repeat-find-char)
+;; (global-set-key (kbd "s-,") 'evil-repeat-find-char-reverse)
 
 ;; Browse comands
 (global-set-key (kbd "s-p") 'projectile-find-file)
 (global-set-key (kbd "s-m") 'helm-recentf)
-(global-set-key (kbd "s-r") 'helm-recentf)
+(global-set-key (kbd "s-r") 'projectile-recentf)
+(global-set-key (kbd "s-R") 'helm-recentf)
 (global-set-key (kbd "s-q") 'my-abort-recursive-edit)
 
 ;; Scroll commands
@@ -913,3 +939,9 @@ Version 2016-12-27"
 
 (global-set-key (kbd "s-a") 'mark-whole-buffer)
 (global-set-key (kbd "s-s") 'helm-swoop)
+
+(global-set-key (kbd "s-w") 'vc-diff)
+(global-set-key (kbd "s-W") 'vc-ediff)
+
+;; avy
+(global-set-key (kbd "s-i") 'avy-goto-word-1)

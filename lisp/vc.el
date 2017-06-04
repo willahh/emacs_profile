@@ -88,14 +88,14 @@
 (autoload 'svn-update "dsvn" "Run `svn update'." t)
 
 ;; Ediff setup
-(winner-mode)
+;; (winner-mode)
 
 ;; Show character-level diff
 ;; http://emacs.stackexchange.com/q/7362
 (setq-default ediff-forward-word-function 'forward-char)
 
 ;; Restore windows after quit
-(add-hook 'ediff-after-quit-hook-internal 'winner-undo)
+;; (add-hook 'ediff-after-quit-hook-internal 'winner-undo)
 
 ;; Display ediff vertical by default
 (advice-add 'ediff-quit :around #'disable-y-or-n-p)
@@ -105,7 +105,7 @@
   '(define-key vc-prefix-map "=" 'vc-ediff))
 
 ;; Close neotree before show
-(add-hook 'ediff-before-setup-windows-hook 'neotree-hide)
+;; (add-hook 'ediff-before-setup-windows-hook 'neotree-hide)
 
 ;; Override emacs diff-goto-source defun
 ;; Change "pop-to-buffer" to "pop-to-buffer-same-window"
@@ -132,6 +132,23 @@ then `diff-jump-to-old-file' is also set, for the next invocations."
       (pop-to-buffer-same-window buf)
       (goto-char (+ (car pos) (cdr src)))
       (diff-hunk-status-msg line-offset (diff-xor rev switched) t))))
+
+
+
+;; https://emacs.stackexchange.com/a/17089
+(defvar my-ediff-last-windows nil)
+
+(defun my-store-pre-ediff-winconfig ()
+  (setq my-ediff-last-windows (current-window-configuration)))
+
+(defun my-restore-pre-ediff-winconfig ()
+  (set-window-configuration my-ediff-last-windows))
+
+(add-hook 'ediff-before-setup-hook #'my-store-pre-ediff-winconfig)
+(add-hook 'ediff-quit-hook #'my-restore-pre-ediff-winconfig)
+
+
+
 
 
 ;; fullframe

@@ -1230,26 +1230,26 @@ the visible part of the current buffer following point. "
               "Recenter"
               (recenter)))
 
-;; Recenter after forward-sentence
-(advice-add 'forward-sentence
-            :after
-            (lambda (&rest args)
-              "Recenter"
-              (recenter)))
+;; ;; Recenter after forward-sentence
+;; (advice-add 'forward-sentence
+;;             :after
+;;             (lambda (&rest args)
+;;               "Recenter"
+;;               (recenter)))
 
-;; Recenter after paredit-forward
-(advice-add 'paredit-forward
-            :after
-            (lambda (&rest args)
-              "Recenter"
-              (recenter)))
+;; ;; Recenter after paredit-forward
+;; (advice-add 'paredit-forward
+;;             :after
+;;             (lambda (&rest args)
+;;               "Recenter"
+;;               (recenter)))
 
-;; Recenter after paredit-backward
-(advice-add 'paredit-backward
-            :after
-            (lambda (&rest args)
-              "Recenter"
-              (recenter)))
+;; ;; Recenter after paredit-backward
+;; (advice-add 'paredit-backward
+;;             :after
+;;             (lambda (&rest args)
+;;               "Recenter"
+;;               (recenter)))
 
 ;; Recenter after highlight-symbol-next
 (advice-add 'highlight-symbol-next
@@ -1267,6 +1267,13 @@ the visible part of the current buffer following point. "
 
 ;; Recenter after compile-goto-error
 (advice-add 'compile-goto-error
+            :after
+            (lambda (&rest args)
+              "Recenter"
+              (recenter)))
+
+;; Recenter after diff-hl-next-hunk
+(advice-add 'diff-hl-next-hunk
             :after
             (lambda (&rest args)
               "Recenter"
