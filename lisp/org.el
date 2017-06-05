@@ -20,7 +20,12 @@
 ;; https://www.reddit.com/r/emacs/comments/43vfl1/enable_wordwrap_in_orgmode/czmaj7n/
 (add-hook 'text-mode-hook 'turn-on-visual-line-mode)
 (add-hook 'text-mode-hook 'flyspell-mode)
+(add-hook 'text-mode-hook 'turn-on-auto-fill)
+(add-hook 'prog-mode-hook 'auto-fill-mode t)
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
+
+(auto-fill-mode 1)
+(setq comment-auto-fill-only-comments t)
 
 ;; (add-hook 'org-mode-hook
 ;;           ;; (toggle-word-wrap)
@@ -45,6 +50,7 @@
 
           ;; Enable source code block edition in org files
           (org-src-mode)
+
           ;; Cette partie cree une erreur d'execution
           ;; (define-key global-map (kbd "C-c c") 'org-capture)
 )
