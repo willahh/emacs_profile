@@ -1279,3 +1279,14 @@ the visible part of the current buffer following point. "
               "Recenter"
               (recenter)))
 
+
+(defun wil-find-org-files ()
+  ;; Find org files in user directory
+  (interactive)
+  (find-name-dired "~/" "*.org")
+)
+(defun wil-find-dsstore ()
+  ;; Find .DS_Store files in user directory
+  (interactive)
+  (find-name-dired "~/" "*.DS_Store")
+)

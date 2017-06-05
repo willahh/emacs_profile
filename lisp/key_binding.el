@@ -636,6 +636,12 @@ Version 2016-12-27"
 (define-key isearch-mode-map (kbd "C-v") 'isearch-yank-pop)
 (define-key isearch-mode-map (kbd "C-q") 'isearch-exit)
 
+;; help
+(define-key help-mode-map (kbd "n") 'next-line)
+(define-key help-mode-map (kbd "p") 'previous-line)
+(define-key help-mode-map (kbd "f") 'forward-char)
+(define-key help-mode-map (kbd "b") 'backward-char)
+
 ;; search in line
 (global-set-key (kbd "C-c C-s") 'avy-goto-char-in-line)
 
@@ -807,17 +813,17 @@ Version 2016-12-27"
 (global-set-key (kbd "M-9") 'resize-window) ;; M-9
 (define-key diff-mode-map (kbd "M-9") 'resize-window)
 
-;; ;; other window
-;; (global-set-key (kbd "M-o") 'other-window)
-;; (define-key diff-mode-map (kbd "M-o") 'other-window)
-;; (define-key ggtags-navigation-map (kbd "M-o") 'other-window) ;; Need to override ggtags map
-;; (global-set-key [(meta o)] 'other-window)
-
 ;; other window
-(global-set-key (kbd "M-o") 'hydra-window/body)
-(define-key diff-mode-map (kbd "M-o") 'hydra-window/body)
-(define-key ggtags-navigation-map (kbd "M-o") 'hydra-window/body) ;; Need to override ggtags map
-(global-set-key [(meta o)] 'hydra-window/body)
+(global-set-key (kbd "M-o") 'other-window)
+(define-key diff-mode-map (kbd "M-o") 'other-window)
+(define-key ggtags-navigation-map (kbd "M-o") 'other-window) ;; Need to override ggtags map
+(global-set-key [(meta o)] 'other-window)
+
+;; ;; other window
+;; (global-set-key (kbd "M-o") 'hydra-window/body)
+;; (define-key diff-mode-map (kbd "M-o") 'hydra-window/body)
+;; (define-key ggtags-navigation-map (kbd "M-o") 'hydra-window/body) ;; Need to override ggtags map
+;; (global-set-key [(meta o)] 'hydra-window/body)
 
 
 
@@ -892,7 +898,10 @@ Version 2016-12-27"
 (add-hook 'occur-mode-find-occurrence-hook 'recenter)
 
 (global-set-key (kbd "C-c C-b") 'projectile-ibuffer)
+(define-key org-mode-map (kbd "C-c C-b") 'projectile-ibuffer)
+
 (global-set-key (kbd "C-c b") 'projectile-switch-to-buffer)
+(define-key org-mode-map (kbd "C-c C-b") 'projectile-switch-to-buffer)
 
 ;; ---------------- Function keys
 (global-set-key (kbd "<f2>") 'my/open-tree-view)
@@ -945,3 +954,6 @@ Version 2016-12-27"
 
 ;; avy
 (global-set-key (kbd "s-i") 'avy-goto-word-1)
+
+;; dired
+(global-set-key (kbd "s-d") 'projectile-dired)

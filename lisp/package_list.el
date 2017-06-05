@@ -116,6 +116,8 @@
   evil-visualstar
   evil-snipe
   evil-matchit
+  evil-magit
+
   exec-path-from-shell
   expand-region
   eyebrowse
