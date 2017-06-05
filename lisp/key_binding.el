@@ -905,6 +905,7 @@ Version 2016-12-27"
 (global-set-key (kbd "C-c b") 'projectile-switch-to-buffer)
 (define-key org-mode-map (kbd "C-c C-b") 'projectile-switch-to-buffer)
 
+
 ;; ---------------- Function keys
 (global-set-key (kbd "<f2>") 'my/open-tree-view)
 (global-set-key (kbd "<f12>") 'wil-vc-dir)
@@ -973,3 +974,7 @@ Version 2016-12-27"
 (define-key org-mode-map (kbd "H-p") 'org-metaup) ;; Hyper + p
 (define-key org-mode-map (kbd "H-n") 'org-metadown) ;; Hyper + n
 (define-key org-mode-map (kbd "M-J") 'org-insert-todo-heading)
+
+;; ispell (H-$ instead of M-$, cause osx handle M-$ at os level)
+(global-set-key (kbd "H-$") 'ispell-word)
+

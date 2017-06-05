@@ -3,6 +3,11 @@
 
 :TOC:
 
+* Introduction
+** General rules
+- Only stable packages are used from Elpa package manager
+- Non stable packages are moved into vendor directory
+
 * Installation
   :PROPERTIES:
   :CUSTOM_ID: installation
@@ -16,7 +21,10 @@
 -  emacs >= 25
 -  Use of emacs-osx for osx instead of the default brew emacs
 
-={r, engine='bash', count_lines} brew install --with-cocoa --srgb emacs git clone --recursive https://github.com/willahh/emacs_profile ~/.emacs.d=
+@todo Ajouter la formulaire pour installer la version OSX ()
+#+BEGIN_SRC bash
+##brew install --with-cocoa --srgb emacs git clone --recursive https://github.com/willahh/emacs_profile ~/.emacs.d=
+#+END_SRC
 - Use font "fira-monoS" - size : 12 - ~/.emacs.d/fonts/meslo (Menu >
 option > set default font) - Install below dependencies globaly
 
@@ -136,15 +144,37 @@ Tags tools - global (gtags) - brew install global --with-pygments
 #+BEGIN_HTML
   <!-- - Global - brew install global --with-exuberant-ctags -->
 #+END_HTML
+* Language support : sass
+** Resources :
+[[http://sass-lang.com/install][sass]]-lang.com
+** Tools : sass
+*** OSX
+#+BEGIN_SRC sh
+gem install sass
+#+END_SRC
+* Language support : php
+** Tools
+*** php
+http://php.net/
+*** php REPL : psysh
+A REPL for PHP https://github.com/bobthecow/psysh
+Used for debug php interactively.
+There is no need to have psysh installed to execute code inside #+BEGIN_SRC php
 
-* Configuration
-** General rules
-- Only stable packages are used from Elpa package manager
-- Non stable packages are moved into vendor directory
-* Display PDF in Emacs on OSX
+Installation : http://php.net/
+#+BEGIN_SRC sh
+wget https://git.io/psysh
+chmod +x psysh
+./psysh
+#+END_SRC
+
+psysh should be accessible on your $PATH dir.
+
+* Mode : PDF
     :PROPERTIES:
     :CUSTOM_ID: display-pdf-in-emacs-on-osx
     :END:
+Display PDF in Emacs on OSX
 ** Resources
      :PROPERTIES:
      :CUSTOM_ID: links
@@ -169,11 +199,11 @@ Tags tools - global (gtags) - brew install global --with-pygments
 ={r, engine='bash', count_lines} brew install pdf-tools brew install clisp=
 From Emacs : launch "pdf-tools-install"
 
-* Latex support
+* Mode : LaTeX
     :PROPERTIES:
     :CUSTOM_ID: latex-support
     :END:
-
+Latex support
 *** Links
      :PROPERTIES:
      :CUSTOM_ID: links-1
@@ -184,9 +214,9 @@ From Emacs : launch "pdf-tools-install"
 -  Light support : BasicTeX :
    http://www.tug.org/mactex/morepackages.html
 
-* Excel, Word support
+* Mode : Office Documents
     :PROPERTIES:
     :CUSTOM_ID: excel-word-support
     :END:
-
+Excel, Word support
 ={r, engine='bash', count_lines} brew install ghostscript=

@@ -70,6 +70,8 @@
   editorconfig
   ;; php-completion
 
+  psysh ; Seems to be the true PHP REPL https://github.com/zonuexe/psysh.el
+
   ;; auto-complete-exuberant-ctags
   ;; golden-ratio
   ;; ace-window ;; Deplacee dans vendor suite a un bug sur une version plus recente
@@ -221,5 +223,6 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/org-mouse")
 (add-to-list 'load-path "~/.emacs.d/vendor/clean-aindent-mode")
 (add-to-list 'load-path "~/.emacs.d/vendor/workgroups2")
+(add-to-list 'load-path "~/.emacs.d/vendor/ob-php")
 ;; (add-to-list 'load-path "~/.emacs.d/vendor/google-this-1.11")
 ;; (add-to-list 'load-path "~/.emacs.d/vendor/google-translate-0.11.13")

@@ -80,6 +80,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 * Bloquant
 :VISIBILITY: all
+- [ ] Sauvegarder la position du curseur dans le buffer
 - [ ] Ajouter des entrées avec Dabrev
 - [ ] [C-w] Soit trouver comment utiliser backward delete word ou
   suppression de la sélection courante,

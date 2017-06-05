@@ -1,0 +1,8 @@
+/vendor/
+*.swp
+boris.phar
+.token
+
+# Testing #
+###########
+/reports/

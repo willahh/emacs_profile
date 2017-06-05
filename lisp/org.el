@@ -3,6 +3,7 @@
 ;; (setq org-set-startup-visibility 'showeverything)
 
 ;; https://github.com/takaxp/org-mode/blob/master/lisp/org-mouse.el
+(require 'org)
 (require 'org-mouse)
 
 ;; http://orgmode.org/worg/org-tutorials/org-latex-export.html
@@ -35,4 +36,29 @@
 ;; (setq org-default-notes-file (concat org-directory "~/Documents/org/main.org"))
 ;; (setq org-default-notes-file (concat org-directory "/Users/willahh/Documents/org/main.org"))
 (setq org-default-notes-file "~/Documents/org/main.org")
-(define-key global-map "\C-cc" 'org-capture)
+
+(require 'org)
+
+(add-hook 'org-mode-hook ()
+          (interactive)
+
+          ;; Cette partie cree une erreur d'execution
+          ;; (define-key global-map (kbd "C-c c") 'org-capture)
+)
+
+;; Add org babel langages support
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((sh         . t)
+   (js         . t)
+   (emacs-lisp . t)
+   (perl       . t)
+   (scala      . t)
+   (sass       . t)
+   (clojure    . t)
+   (php        . t)
+   (python     . t)
+   (ruby       . t)
+   (dot        . t)
+   (css        . t)
+   (plantuml   . t)))
