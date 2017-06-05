@@ -39,9 +39,12 @@
 
 (require 'org)
 
+(setq org-src-window-setup 'current-window)
 (add-hook 'org-mode-hook ()
           (interactive)
 
+          ;; Enable source code block edition in org files
+          (org-src-mode)
           ;; Cette partie cree une erreur d'execution
           ;; (define-key global-map (kbd "C-c c") 'org-capture)
 )
@@ -53,6 +56,7 @@
    (js         . t)
    (emacs-lisp . t)
    (perl       . t)
+   ;; (html       . t)
    (scala      . t)
    (sass       . t)
    (clojure    . t)
@@ -62,3 +66,8 @@
    (dot        . t)
    (css        . t)
    (plantuml   . t)))
+
+;; org syntax highlight code
+(setq org-confirm-babel-evaluate nil
+      org-src-fontify-natively t
+      org-src-tab-acts-natively t)

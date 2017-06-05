@@ -1,6 +1,8 @@
 #+TITLE: Emacs TODO
 #+STARTUP: content
 * Utils
+- [org-mode] Editer un bloc de code : "C-'"
+
 - [dired] "o" Ouvre le fichier dans un nouveau buffer et donne le focus à ce buffer
 
 - Twitter
@@ -80,6 +82,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 * Bloquant
 :VISIBILITY: all
+- [ ] [expand-region] Ne pas ajouter d'entrées dans le mark ring
 - [ ] Sauvegarder la position du curseur dans le buffer
 - [ ] Ajouter des entrées avec Dabrev
 - [ ] [C-w] Soit trouver comment utiliser backward delete word ou
@@ -134,7 +137,6 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
   ESCAPE pour revenir sur le layout précédent comme dans magit
   Un plugin existe pour ça
 - [X] [Vc-dir] same window
-
 
 * A ranger
 - [ ] [org] Organiser les fichiers org

@@ -921,7 +921,13 @@ Version 2016-12-27"
 ;; Find
 (global-set-key (kbd "s-f") 'counsel-find-file)
 
-;; Line navigation commands
+;; ---------------- Navigation
+;; From Sacha.org
+;; (bind-key "C-x p" 'pop-to-mark-command)
+;; (setq set-mark-command-repeat-pop t)
+
+
+;; ---------------- Line navigation commands
 ;; (global-set-key (kbd "s-S") 'avy-goto-char-in-line)
 (global-set-key (kbd "s-l") 'avy-goto-char-in-line)
 ;; (global-set-key (kbd "s-f") 'evil-find-char)
@@ -974,6 +980,7 @@ Version 2016-12-27"
 (define-key org-mode-map (kbd "H-p") 'org-metaup) ;; Hyper + p
 (define-key org-mode-map (kbd "H-n") 'org-metadown) ;; Hyper + n
 (define-key org-mode-map (kbd "M-J") 'org-insert-todo-heading)
+
 
 ;; ispell (H-$ instead of M-$, cause osx handle M-$ at os level)
 (global-set-key (kbd "H-$") 'ispell-word)

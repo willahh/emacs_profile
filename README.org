@@ -144,7 +144,7 @@ Tags tools - global (gtags) - brew install global --with-pygments
 #+BEGIN_HTML
   <!-- - Global - brew install global --with-exuberant-ctags -->
 #+END_HTML
-* Language support : sass
+* Support : sass
 ** Resources :
 [[http://sass-lang.com/install][sass]]-lang.com
 ** Tools : sass
@@ -152,10 +152,10 @@ Tags tools - global (gtags) - brew install global --with-pygments
 #+BEGIN_SRC sh
 gem install sass
 #+END_SRC
-* Language support : php
+* Support : php
 ** Tools
 *** php
-http://php.net/
+    http://php.net/
 *** php REPL : psysh
 A REPL for PHP https://github.com/bobthecow/psysh
 Used for debug php interactively.
@@ -170,6 +170,14 @@ chmod +x psysh
 
 psysh should be accessible on your $PATH dir.
 
+* Support : html
+** Tools
+*** phantomjs
+http://phantomjs.org/
+**** osx
+#+BEGIN_SRC bash
+brew install phantomjs
+#+END_SRC
 * Mode : PDF
     :PROPERTIES:
     :CUSTOM_ID: display-pdf-in-emacs-on-osx
