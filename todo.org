@@ -80,6 +80,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 * Bloquant
 :VISIBILITY: all
+- [ ] 
 - [ ] [js2-mode] [company] Add Yas snippnet dans la liste des possibiltées
 - [ ] Utiliser Projectile recent previous next comme fonction pour next previous buffer (C-tab / C-S-tab)
 - [ ] Hydra for help
