@@ -693,15 +693,25 @@ That is, a string used to represent it on the tab bar."
 
   ;; New frame
   ;; (make-frame-command)
+  ;; (setq x (- (/ (x-display-pixel-width) 2) (/ 580 2)))
+  ;; (setq y (- (/ (x-display-pixel-height) 2) (/ 500 2)))
+
+  ;; (let (myframe)
+  ;;   (setq myframe (new-frame))
+  ;;   (set-frame-width (myframe) 800)
+  ;;   )
+  
   (new-frame)
+
+  ;; (new-frame ((width . 100)
+  ;;             (height . 100)))
+
   ;; (xah-new-empty-buffer)
 
   ;; update frame position
   ;; (set-frame-position (selected-frame) 500 500)
-  ;; (setq x (- (/ (x-display-pixel-width) 2) (/ 580 2)))
-  ;; (setq y (- (/ (x-display-pixel-height) 2) (/ 500 2)))
-
-  ;; (set-frame-position (selected-frame) x y)
+  
+  (set-frame-position (selected-frame) x y)
 
   ;; New buffer inside
   ;;  then Select this buffer @todo

@@ -83,6 +83,11 @@
   (kbd "D") 'vc-root-diff
   )
 
+;; dired evil mode
+(evil-define-key 'normal dired-mode-map (kbd "j") 'dired-next-line
+  (kbd "k") 'dired-previous-line
+  )
+
 ;; help
 (evil-define-key 'normal help-mode-map (kbd "q") 'quit-window)
 
