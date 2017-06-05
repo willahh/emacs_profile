@@ -246,6 +246,8 @@
   (define-key evil-normal-state-map (kbd "M-a") 'mark-whole-buffer)
   )
 (evil-define-key 'normal 'dired-mode (kbd "TAB") 'dired-find-file)
+(evil-define-key 'normal org-mode-map (kbd "q") 'quit-window)
+
 
 (define-key evil-normal-state-map (kbd "M-n") 'evil-buffer-new)
 

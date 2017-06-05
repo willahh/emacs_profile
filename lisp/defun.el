@@ -1290,3 +1290,8 @@ the visible part of the current buffer following point. "
   (interactive)
   (find-name-dired "~/" "*.DS_Store")
 )
+(defun wil-find-pdf ()
+  ;; Find pdf files in user directory
+  (interactive)
+  (find-name-dired "~/" "*.pdf")
+)

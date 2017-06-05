@@ -24,7 +24,13 @@
 
 ;; (evil-set-initial-state 'dired-mode 'emacs) ;; Note : pas besoin en principe
 (evil-set-initial-state 'log-edit-files 'emacs)
-(evil-set-initial-state 'help-mode 'emacs)
+
+
+;; (evil-set-initial-state 'help-mode 'emacs)
+(evil-set-initial-state 'help-mode 'normal)
+
+
+
 (evil-set-initial-state 'diff-mode 'emacs)
 (evil-set-initial-state 'text-mode 'emacs) ;; Mode utilise pour saisir des messages depuis magit
 (evil-set-initial-state 'log-edit-mode 'emacs) ;; Mode utilise pour saisir des messages depuis vc
@@ -55,27 +61,30 @@
 
 ;; vc-dir evil mode
 (evil-define-key 'normal vc-dir-mode-map (kbd "d") 'vc-diff
-                                             (kbd "j") 'vc-dir-next-line
-                                             (kbd "k") 'vc-dir-previous-line
-                                             (kbd "D") 'wil-vc-version-diff-base-head
-                                             (kbd "e") 'vc-ediff
-                                             (kbd "E") 'wil-vc-version-ediff-base-head
-                                             (kbd "x") 'vc-revert
-                                             (kbd "l") 'vc-print-log
-                                             (kbd "L") 'vc-print-root-log
-                                             (kbd "q") 'quit-window
-                                             (kbd "m") 'vc-dir-mark
-                                             (kbd "v") 'vc-next-action
-                                             (kbd "+") 'vc-update
-                                             (kbd "g") 'revert-buffer
-                                             (kbd "C-j") 'vc-dir-find-file
-                                             (kbd "M") 'vc-dir-mark-all-files
-                                             (kbd "u") 'vc-dir-unmark
-                                             (kbd "U") 'vc-dir-unmark-all-files
-                                             (kbd "C-o") 'vc-dir-display-file
-                                             (kbd "RET") 'vc-dir-find-file
-                                             (kbd "D") 'vc-root-diff
-                                             )
+  (kbd "j") 'vc-dir-next-line
+  (kbd "k") 'vc-dir-previous-line
+  (kbd "D") 'wil-vc-version-diff-base-head
+  (kbd "e") 'vc-ediff
+  (kbd "E") 'wil-vc-version-ediff-base-head
+  (kbd "x") 'vc-revert
+  (kbd "l") 'vc-print-log
+  (kbd "L") 'vc-print-root-log
+  (kbd "q") 'quit-window
+  (kbd "m") 'vc-dir-mark
+  (kbd "v") 'vc-next-action
+  (kbd "+") 'vc-update
+  (kbd "g") 'revert-buffer
+  (kbd "C-j") 'vc-dir-find-file
+  (kbd "M") 'vc-dir-mark-all-files
+  (kbd "u") 'vc-dir-unmark
+  (kbd "U") 'vc-dir-unmark-all-files
+  (kbd "C-o") 'vc-dir-display-file
+  (kbd "RET") 'vc-dir-find-file
+  (kbd "D") 'vc-root-diff
+  )
+
+;; help
+(evil-define-key 'normal help-mode-map (kbd "q") 'quit-window)
 
 
 ;; Remove all keybindings from insert-state keymap (insert mode behavior like emacs)
