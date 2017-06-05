@@ -221,6 +221,8 @@
 (setq mac-control-modifier 'control) ; make Control key do Control
 (setq ns-function-modifier 'hyper)  ; make Fn key do Hyper
 
+(setq mac-right-option-modifier 'hyper) ; make right option key do Hyper
+
 ;; Keep right alt for accents
 ;; (setq mac-right-option-modifier nil)
 (setq mac-right-command-modifier 'super)
@@ -354,3 +356,8 @@
 (savehist-mode 1)
 (setq savehist-additional-variables '(kill-ring search-ring regexp-search-ring))
 (setq savehist-file "~/.emacs.d/tmp/savehist")
+
+;; Dabrev
+(setq abbrev-file-name "~/.emacs.d/abbrev_defs")
+(setq save-abbrevs t) ;; save abbrevs when files are saved
+;; you will be asked before the abbreviations are saved

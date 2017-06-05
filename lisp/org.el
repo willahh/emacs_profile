@@ -27,3 +27,12 @@
 
 ;; (add-hook 'org-mode-hook #'toggle-word-wrap)
 ;; (setq org-startup-truncated nil)
+
+(require 'toc-org)
+(add-hook 'org-mode-hook 'toc-org-enable)
+
+;; Capture
+;; (setq org-default-notes-file (concat org-directory "~/Documents/org/main.org"))
+;; (setq org-default-notes-file (concat org-directory "/Users/willahh/Documents/org/main.org"))
+(setq org-default-notes-file "~/Documents/org/main.org")
+(define-key global-map "\C-cc" 'org-capture)

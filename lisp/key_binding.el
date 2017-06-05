@@ -393,14 +393,11 @@ Version 2016-12-27"
 ;; (global-set-key (kbd "M-c") 'kill-ring-save)
 
 ;; Line operations
-(global-set-key (kbd "C-x C-d") 'duplicate-current-line-or-region)
+;; (global-set-key (kbd "C-x C-d") 'duplicate-current-line-or-region)
 
 ;; (global-set-key (kbd "C-M-J") 'drag-stuff-down)
 ;; (global-set-key (kbd "C-M-k") 'drag-stuff-up)
-;; (define-key php-mode-map (kbd "C-M-J") 'drag-stuff-down) ;; override php mode map cmj
-
-(global-set-key (kbd "<C-S-268632074>") 'drag-stuff-up) ;; control+alt+shift+j
-(global-set-key (kbd "<C-268632074>") 'drag-stuff-down) ;; control+alt+j
+;; (define-key php-mode-map (kbd "C-M-J") 'drag-stuff-down) ;; override php mode map cmd
 
 (global-set-key (kbd "C-é") 'drag-stuff-down) ;; control+alt+j
 
@@ -471,6 +468,7 @@ Version 2016-12-27"
 ;; org
 (require 'org)
 (define-key org-mode-map (kbd "C-x <C-i>") 'helm-org-in-buffer-headings)
+(define-key org-mode-map (kbd "M-j") 'org-meta-return)
 
 (require 'conf-mode)
 (define-key conf-mode-map (kbd "C-c C-s") 'helm-swoop)
@@ -528,7 +526,9 @@ Version 2016-12-27"
 
 (global-set-key [control meta s] 'ag-project-at-point)
 (global-set-key [control meta shift s] 'ag-project)
-(global-set-key (kbd "Ò") 'helm-ag)
+
+;; Desactive, utilise via la touche hyper
+;; (global-set-key (kbd "Ò") 'helm-ag)
 
 
 
@@ -857,8 +857,8 @@ Version 2016-12-27"
 
 
 ;; google
-(global-set-key (kbd "C-c / j") 'helm-google-suggest)
-(define-key google-this-mode-map (kbd "C-c / t") 'google-translate-at-point)
+; (global-set-key (kbd "C-c / j") 'helm-google-suggest)
+; (define-key google-this-mode-map (kbd "C-c / t") 'google-translate-at-point)
 
 ;; Find file at point
 ;; (global-set-key (kbd "C-c .") 'ffap)
@@ -959,3 +959,17 @@ Version 2016-12-27"
 
 ;; dired
 (global-set-key (kbd "s-d") 'projectile-dired)
+
+
+;; ---------------- Hyper key
+;; New free key bidings yeeeeea
+(global-set-key (kbd "H-p") 'drag-stuff-up) ;; Hyper + p
+(global-set-key (kbd "H-n") 'drag-stuff-down) ;; Hyper + n
+
+;; Search
+(global-set-key (kbd "H-s") 'helm-ag)
+
+;; org
+(define-key org-mode-map (kbd "H-p") 'org-metaup) ;; Hyper + p
+(define-key org-mode-map (kbd "H-n") 'org-metadown) ;; Hyper + n
+(define-key org-mode-map (kbd "M-J") 'org-insert-todo-heading)

@@ -518,7 +518,7 @@ _n_: Navigate           _._: mark position _/_: jump to mark
   (yas-global-mode 0)
   (yas-minor-mode 0)
   (company-mode 0)
-  (google-this-mode 0)
+  ;; (google-this-mode 0)
   (evil-snipe-mode 0)
   (ivy-mode 0))
 

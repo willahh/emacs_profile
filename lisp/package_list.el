@@ -48,8 +48,8 @@
   ;; flymake-jshint
   ;; neotree
 
-  google-this
-  google-translate
+  ;; google-this ; Deplace dans vendor
+  ;; google-translate ; Deplace dans vendor
 
   anzu
   ;; indium
@@ -118,9 +118,11 @@
   evil-matchit
   evil-magit
 
+  toc-org
+
   exec-path-from-shell
   expand-region
-  eyebrowse
+  ;; eyebrowse ;; Non utilises
   ;; general
   git-gutter
   sx
@@ -219,3 +221,5 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/org-mouse")
 (add-to-list 'load-path "~/.emacs.d/vendor/clean-aindent-mode")
 (add-to-list 'load-path "~/.emacs.d/vendor/workgroups2")
+;; (add-to-list 'load-path "~/.emacs.d/vendor/google-this-1.11")
+;; (add-to-list 'load-path "~/.emacs.d/vendor/google-translate-0.11.13")

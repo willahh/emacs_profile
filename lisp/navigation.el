@@ -92,9 +92,10 @@
 (require 'which-key)
 (which-key-mode)
 
-;; eyebrowse
-(require 'eyebrowse)
-(eyebrowse-mode t)
+;; ;; eyebrowse
+;; Non utilse et entre en conflit avec org mode sur certains key
+;; (require 'eyebrowse)
+;; (eyebrowse-mode t)
 
 ;; Which-key
 (require 'which-key)
@@ -397,16 +398,16 @@
 ;; (require 'back-button)
 ;; (back-button-mode 1)
 
-(require 'google-this)
-(add-hook 'prog-mode-hook 'google-this-mode)
-(add-hook 'dired-mode-hook 'google-this-mode)
+;; (require 'google-this)
+;; (add-hook 'prog-mode-hook 'google-this-mode)
+;; (add-hook 'dired-mode-hook 'google-this-mode)
 
-;; google-translate
-(require 'google-translate)
-(require 'google-translate-default-ui)
+;; ;; google-translate
+;; (require 'google-translate)
+;; (require 'google-translate-default-ui)
 
-(global-set-key "\C-ct" 'google-translate-at-point)
-(global-set-key "\C-cT" 'google-translate-query-translate)
+;; (global-set-key "\C-ct" 'google-translate-at-point)
+;; (global-set-key "\C-cT" 'google-translate-query-translate)
 
 ;; speedbar
 (require 'sr-speedbar)
