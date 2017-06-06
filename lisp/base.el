@@ -160,9 +160,8 @@
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil)))
 (setq mouse--progressive-speed 10)
 
-
 (setq mouse-wheel-scroll-amount '(0.022))
-(setq mouse-wheel-progressive-speed 0) 
+(setq mouse-wheel-progressive-speed 0)
 
 ;; "Modern" copy / paste (dont put the selection on the markring)
 ;; https://www.emacswiki.org/emacs/Comments_on_CopyAndPaste

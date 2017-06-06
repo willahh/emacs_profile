@@ -28,36 +28,6 @@
 #+END_SRC
 - Use font "fira-monoS" - size : 12 - ~/.emacs.d/fonts/meslo (Menu >
 option > set default font) - Install below dependencies globaly
-
-*** CSS
-
-install -g csslint - sudo npm install -g jscs - Ajouter .jscsrc dans ~
-
-{ "requireCurlyBraces": [ "if", "else", "for", "while", "do" ],
-"requireSpaceAfterKeywords": [ "if", "else", "for", "while", "do",
-"switch", "return" ], "requireSpacesInFunctionExpression": {
-"beforeOpeningCurlyBrace": true }, "disallowSpacesInFunctionExpression":
-{ "beforeOpeningRoundBrace": true }, "requireMultipleVarDecl": true,
-"requireSpacesInsideObjectBrackets": "all",
-"requireSpacesInsideArrayBrackets": "all",
-"disallowLeftStickedOperators": [ "?", "-", "/", "*", "=", "==", "===",
-"!=", "!==", ">", ">=", "<", "<=" ], "disallowRightStickedOperators": [
-"?", "/", "*", ":", "=", "==", "===", "!=", "!==", ">", ">=", "<",
-"<="], "requireSpaceBeforeBinaryOperators": ["+", "-", "/", "*", "=",
-"==", "===", "!=", "!=="], "disallowSpaceAfterPrefixUnaryOperators":
-["++", "--", "+", "-"], "disallowSpaceBeforePostfixUnaryOperators":
-["++", "--"], "requireRightStickedOperators": [ "!" ],
-"requireLeftStickedOperators": [ "," ], "disallowKeywords": [ "with" ],
-"disallowMultipleLineBreaks": true, "disallowKeywordsOnNewLine": [
-"else" ], "requireLineFeedAtFileEnd": true,
-"disallowSpaceAfterObjectKeys": true, "validateLineBreaks": "LF" }
-
--  Create a .tern-project file in ~/ directory for a global javascript
-   ES6 support
-   ={r, engine='bash', count_lines} {   "ecmaVersion": 6,   "libs": [ "browser"   ],   "loadEagerly": [ "path/to/your/js/**/*.js"   ],   "dontLoad": [ "node_modules/**", "path/to/your/js/**/*.js"   ],   "plugins": { "modules": {}, "es_modules": {}, "node": {}, "doc_comment": {   "fullDocs": true,   "strong": true }   } }=
--  Create a ..eslintrc file in ~/ directory for a global javascript
-   checker
-   ={r, engine='bash', count_lines} {   "parser": "babel-eslint",   "plugins": [ "react" ],   "env": { "browser": true, "es6": true, "node": true   },   "ecmaFeatures": { "arrowFunctions": true, "blockBindings": true, "classes": true, "defaultParams": true, "destructuring": true, "forOf": true, "generators": true, "modules": true, "spread": true, "templateStrings": true, "jsx": true   },   "rules": { "consistent-return": [0], "key-spacing": [0], "quotes": [0], "new-cap": [0], "no-multi-spaces": [0], "no-shadow": [0], "no-unused-vars": [1], "no-use-before-define": [2, "nofunc"], "react/jsx-no-undef": 1, "react/jsx-uses-react": 1, "react/jsx-uses-vars": 1   } }=
 ** Windows
     :PROPERTIES:
     :CUSTOM_ID: windows
@@ -184,6 +154,45 @@ http://phantomjs.org/
 **** osx
 #+BEGIN_SRC bash
 brew install phantomjs
+#+END_SRC
+* Support : javascript
+** Tools
+*** eslint
+http://eslint.org/
+http://eslint.org/docs/user-guide/getting-started
+
+Installation :
+
+#+BEGIN_SRC shell
+npm install -g eslint
+#+END_SRC
+
+Create .jscsrc file into user dir
+
+#+BEGIN_SRC json
+  {
+      "maxErrors": Infinity,
+      "requireCurlyBraces": [ "if", "else", "for", "while", "do" ],
+      "requireSpaceAfterKeywords": [ "if", "else", "for", "while", "do", "switch", "return" ],
+      "requireSpacesInFunctionExpression": {
+          "beforeOpeningCurlyBrace": true
+      },
+      "disallowSpacesInFunctionExpression": {
+          "beforeOpeningRoundBrace": true
+      },
+      "requireMultipleVarDecl": true,
+      "requireSpacesInsideObjectBrackets": "all",
+      "requireSpacesInsideArrayBrackets": "all",
+      "requireSpaceBeforeBinaryOperators": ["+", "-", "/", "*", "=", "==", "===", "!=", "!=="],
+      "requireRightStickedOperators": [ "!" ],
+      "requireLeftStickedOperators": [ "," ],
+      "disallowKeywords": [ "with" ],
+      "disallowMultipleLineBreaks": true,
+      "disallowKeywordsOnNewLine": [ "else" ],
+      "requireLineFeedAtFileEnd": true,
+      "disallowSpaceAfterObjectKeys": true,
+      "validateLineBreaks": "LF"
+  }
 #+END_SRC
 * Mode : PDF
     :PROPERTIES:

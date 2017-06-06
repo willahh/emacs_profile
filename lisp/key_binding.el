@@ -435,6 +435,7 @@ Version 2016-12-27"
 (define-key ivy-minibuffer-map (kbd "M-v") 'yank) ; Add yank to ivy mini map
 
 (global-set-key (kbd "C-c C-n") 'diff-hl-next-hunk)
+(define-key web-mode-map (kbd "C-c C-n") 'diff-hl-next-hunk)
 (global-set-key (kbd "C-c C-p") 'diff-hl-previous-hunk)
 
 ; (global-set-key (kbd "c-c c-n") 'diff-hl-next-hunk)
