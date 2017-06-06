@@ -21,7 +21,10 @@
 (add-hook 'text-mode-hook 'turn-on-visual-line-mode)
 (add-hook 'text-mode-hook 'flyspell-mode)
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
-(add-hook 'prog-mode-hook 'auto-fill-mode t)
+
+;; Note : ne pas activer ce mode, pose trop de problèmes
+;; (add-hook 'prog-mode-hook 'auto-fill-mode t)
+
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 
 (auto-fill-mode 1)

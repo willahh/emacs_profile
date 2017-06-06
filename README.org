@@ -145,6 +145,12 @@ Tags tools - global (gtags) - brew install global --with-pygments
 #+BEGIN_HTML
   <!-- - Global - brew install global --with-exuberant-ctags -->
 #+END_HTML
+* Support : Language
+** Tools : ispell
+*** OSX
+#+BEGIN_SRC
+brew install ispell
+#+END_SRC
 * Support : sass
 ** Resources :
 [[http://sass-lang.com/install][sass]]-lang.com

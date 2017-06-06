@@ -967,6 +967,8 @@ Version 2016-12-27"
 ;; dired
 (global-set-key (kbd "s-d") 'projectile-dired)
 
+;; Search
+(global-set-key (kbd "s-S") 'helm-ag)
 
 ;; ---------------- Hyper key
 ;; New free key bidings yeeeeea
@@ -974,7 +976,7 @@ Version 2016-12-27"
 (global-set-key (kbd "H-n") 'drag-stuff-down) ;; Hyper + n
 
 ;; Search
-(global-set-key (kbd "H-s") 'helm-ag)
+;; (global-set-key (kbd "H-s") 'helm-ag)
 
 ;; org
 (define-key org-mode-map (kbd "H-p") 'org-metaup) ;; Hyper + p
