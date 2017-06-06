@@ -259,7 +259,7 @@
 
 ;; ---------------- key binding
 ;; Main binds
-(global-set-key (kbd "<f5>") 'revert-buffer)
+(global-set-key (kbd "<f5>") 'revert-buffer-no-confirm)
 
 ;; Mouse key binding
 (global-set-key (kbd "<S-wheel-left>") '(lambda ()

@@ -274,11 +274,15 @@
 ;; (Couleurs de textes qui n apparaissent plus, etc)
 ;; 0.1 semble correct
 ;; Update : La mise a jour des couleurs n'est pas fluide
-;; Update : retour sur une valeur de 0
+;; Update : Retour sur une valeur de 0
+;; Update : Retour sur une valeur de 0.1 voir si on peut avoir quelque
+;; chose de plus fluide
+
 ;; (setq jit-lock-defer-time 0.05)
 ;; (setq jit-lock-defer-time 1)
 ;; (setq jit-lock-defer-time 0.1)
-(setq jit-lock-defer-time 0)
+;; (setq jit-lock-defer-time 0)
+(setq jit-lock-defer-time 0.1)
 
 ;; Some settings from https://github.com/technomancy/better-defaults/blob/master/better-defaults.el
 (progn

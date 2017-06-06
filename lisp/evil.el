@@ -53,7 +53,9 @@
 ;; (evil-set-initial-state 'dired 'normal)
 
 ;; (evil-set-initial-state 'dired-mode 'emacs)
-(evil-set-initial-state 'dired-mode 'normal)
+;; (evil-set-initial-state 'dired-mode 'normal)
+
+(evil-set-initial-state 'dired-mode 'emacs)
 
 (evil-set-initial-state 'dired-find-file 'emacs)
 (evil-set-initial-state 'find-file 'emacs)
