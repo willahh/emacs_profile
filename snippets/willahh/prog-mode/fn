@@ -1,6 +1,0 @@
-## -*- mode: snippet -*-
-#name : func
-# --
-$1: function($2) {
-        console.log('$1', $2);
-    }$3

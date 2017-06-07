@@ -110,9 +110,14 @@
 ;; Current line highlight
 ;; Note : La propriete foreground doit etre definie pour avoir une compatibilite
 ;; avec highlight-symbol-mode
-(set-face-attribute 'hl-line nil :foreground nil :background "#161616")
-(set-face-attribute 'hl-line nil :foreground nil :background nil)
+;; Ralenti l affichage, en commentaire pour le moment
 
+
+;; (set-face-attribute 'hl-line nil :foreground nil :background "#161616")
+;; (set-face-attribute 'hl-line nil :foreground nil :background nil)
+
+
+;;
 ;; (set-face-attribute 'highlight-symbol-face nil :foreground "#000" :background "#56b0ec")
 
 ;; (set-face-attribute 'evil-ex-lazy-highlight nil :foreground "#000" :background "#b1b1b1")

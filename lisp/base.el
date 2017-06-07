@@ -98,8 +98,9 @@
 ;; New line and indent by default
 (global-set-key (kbd "RET") 'newline-and-indent)
 
-;; 
-(global-hl-line-mode)
+;; Hihglight la ligne courante
+;; Update : ralentis un peu l affichage, en commentaire pour le moment 
+;; (global-hl-line-mode)
 
 ;;
 (winner-mode t)
@@ -268,8 +269,8 @@
 (setq-default save-place t)
 (setq save-place-file (expand-file-name ".places" user-emacs-directory))
 
-;; OH MY GOD -------> SPEED IMPROVMENT !!! (deffer font rendering)
-;; thanks http://tsengf.blogspot.fr/2012/11/slow-scrolling-speed-in-emacs.html !!!!!!!!!!!!!!!!!!
+;; Deferring font rendering
+;; thanks http://tsengf.blogspot.fr/2012/11/slow-scrolling-speed-in-emacs.html
 ;; Avec une valeur de 1, des problemes de font lock couleur surviennent.
 ;; (Couleurs de textes qui n apparaissent plus, etc)
 ;; 0.1 semble correct
@@ -282,7 +283,9 @@
 ;; (setq jit-lock-defer-time 1)
 ;; (setq jit-lock-defer-time 0.1)
 ;; (setq jit-lock-defer-time 0)
-(setq jit-lock-defer-time 0.1)
+;; (setq jit-lock-defer-time 0.1)
+;; (setq jit-lock-defer-time 0.5)
+(setq jit-lock-defer-time 0.25)
 
 ;; Some settings from https://github.com/technomancy/better-defaults/blob/master/better-defaults.el
 (progn
@@ -364,3 +367,13 @@
 (setq abbrev-file-name "~/.emacs.d/abbrev_defs")
 (setq save-abbrevs t) ;; save abbrevs when files are saved
 ;; you will be asked before the abbreviations are saved
+
+
+;; Disable mini buffer messages
+;; https://emacs.stackexchange.com/a/19747
+(defun my-command-error-function (data context caller)
+  "Ignore the buffer-read-only signal; pass the rest to the default handler."
+  (when (not (eq (car data) 'buffer-read-only))
+    (command-error-default-function data context caller)))
+
+(setq command-error-function #'my-command-error-function)

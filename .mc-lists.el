@@ -18,6 +18,7 @@
       c-indent-new-comment-line
       clean-aindent--bsunindent
       comment-line
+      company-indent-or-complete-common
       dired-jump
       drag-stuff-down
       drag-stuff-up

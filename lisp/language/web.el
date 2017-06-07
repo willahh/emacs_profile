@@ -23,7 +23,8 @@
           (lambda ()
 
             ;; Slow completion
-            (set (make-local-variable 'company-minimum-prefix-length) 3)
+            ;; (set (make-local-variable 'company-minimum-prefix-length) 3)
+            (set (make-local-variable 'company-minimum-prefix-length) 2)
             (set (make-local-variable 'company-idle-delay) 1)
 
             ;; Enable emmet-mode

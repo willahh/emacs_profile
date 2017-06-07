@@ -415,10 +415,17 @@ Version 2016-12-27"
 
 (define-key company-active-map (kbd "C-w") 'clean-aindent--bsunindent)
 (define-key company-active-map (kbd "C-h") 'delete-backward-char)
-(define-key company-active-map (kbd "<tab>") 'company-complete-selection)
+(define-key company-active-map (kbd "<tab>") 'company-complète-selection)
+
 
 (require 'iedit)
 (require 'org)
+
+;; yas-expand
+(global-set-key (kbd "C-;") 'yas-expand)
+(define-key iedit-mode-keymap (kbd "C-;") 'yas-expand)
+
+;;
 (define-key iedit-mode-keymap (kbd "C-w") 'clean-aindent--bsunindent)
 (define-key iedit-mode-keymap (kbd "C-h") 'delete-backward-char)
 

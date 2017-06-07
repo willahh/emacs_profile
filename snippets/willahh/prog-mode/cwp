@@ -1,4 +1,0 @@
-## -*- mode: snippet -*-
-#name : console.warn (console.warn "plus")
-# --
-console.warn('$1', $1);

@@ -56,6 +56,7 @@
 (setq company-minimum-prefix-length 3)
 
 (setq company-dabbrev-downcase nil)
+(setq company-dabbrev-downcase 0) ; Usefull !
 
 ;; (setq company-idle-delay 0)
 ;; (setq company-idle-delay 0.1)
@@ -106,15 +107,16 @@
 
 ;; Add yasnippet support for all company backends
 ;; https://github.com/syl20bnr/spacemacs/pull/179
-(defvar company-mode/enable-yas t "Enable yasnippet for all backends.")
+;; Update : Configuration manuelle de company pour chaque mode
+;; (defvar company-mode/enable-yas t "Enable yasnippet for all backends.")
 
-(defun company-mode/backend-with-yas (backend)
-  (if (or (not company-mode/enable-yas) (and (listp backend)    (member 'company-yasnippet backend)))
-      backend
-    (append (if (consp backend) backend (list backend))
-            '(:with company-yasnippet))))
+;; (defun company-mode/backend-with-yas (backend)
+;;   (if (or (not company-mode/enable-yas) (and (listp backend)    (member 'company-yasnippet backend)))
+;;       backend
+;;     (append (if (consp backend) backend (list backend))
+;;             '(:with company-yasnippet))))
 
-(setq company-backends (mapcar #'company-mode/backend-with-yas company-backends))
+;; (setq company-backends (mapcar #'company-mode/backend-with-yas company-backends))
 
 ;; ;; company-tern
 ;; ;; Add tern support for company

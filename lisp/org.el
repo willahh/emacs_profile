@@ -25,7 +25,9 @@
 ;; Note : ne pas activer ce mode, pose trop de problèmes
 ;; (add-hook 'prog-mode-hook 'auto-fill-mode t)
 
-(add-hook 'prog-mode-hook 'flyspell-prog-mode)
+;; Update : Des demandes de corrections de mots apparaissent sans arrets dans des fonctions des variables etc,
+;; desactivation.
+;; (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 
 (auto-fill-mode 1)
 (setq comment-auto-fill-only-comments t)

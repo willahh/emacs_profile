@@ -42,6 +42,9 @@
             ;; Enable emmet-mode
             (emmet-mode)
 
+            ;; Only words in the current buffer
+            (set (make-local-variable 'company-dabbrev-other-buffers) 't)
+
             ;; Company backend
             (set (make-local-variable 'company-backends) '(company-css company-dabbrev))
 

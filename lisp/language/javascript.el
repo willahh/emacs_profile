@@ -10,11 +10,11 @@
   :lighter " wil-js"
   wil-js-mode-map)
 
-(defun company-mode/backend-with-yas (backend)
-  (if (or (not company-mode/enable-yas) (and (listp backend)    (member 'company-yasnippet backend)))
-      backend
-    (append (if (consp backend) backend (list backend))
-            '(:with company-yasnippet))))
+;; (defun company-mode/backend-with-yas (backend)
+;;   (if (or (not company-mode/enable-yas) (and (listp backend)    (member 'company-yasnippet backend)))
+;;       backend
+;;     (append (if (consp backend) backend (list backend))
+;;             '(:with company-yasnippet))))
 
 (provide 'wil-js-mode)
 
@@ -31,31 +31,42 @@
 ;; ~/.tern-config file is used globally instead
 (setq tern-command '("tern" "--no-port-file"))
 
+
+;; (defun wil-js-tab ()
+;;   (interactive)
+;;   (if (null '(company-indent-or-complete-common))
+;;       (progn
+;;         (company-abort)
+;;         (company-yasnippet))))
+
+
+           
+
 ;; Tab behaviour
-(defun wil-tab-indent-or-complete-js ()
-  (interactive)
-  (cond
-   ((minibufferp)
-    (minibuffer-complete))
-   (t
-    (indent-for-tab-command)
-    (if (or (not yas/minor-mode)
-            (null (do-yas-expand)))
-            (progn
-              (company-manual-begin)
-              (if (null company-candidates)
-                  (progn
-                    (company-abort)
-                    ;; (emmet-expand-line nil)
-                    (indent-for-tab-command))))))))
+;; (defun wil-tab-indent-or-complete-js ()
+;;   (interactive)
+;;   (cond
+;;    ((minibufferp)
+;;     (minibuffer-complete))
+;;    (t
+;;     (indent-for-tab-command)
+;;     (if (or (not yas/minor-mode)
+;;             (null (do-yas-expand)))
+;;             (progn
+;;               (company-manual-begin)
+;;               (if (null company-candidates)
+;;                   (progn
+;;                     (company-abort)
+;;                     ;; (emmet-expand-line nil)
+;;                     (indent-for-tab-command))))))))
 
 
-(add-hook 'wil-js-mode-hook
-          (lambda ()
 
+(defun wil-my-js-mode-hook ()
             ;; jquery-doc
-            (require 'jquery-doc)
-            (jquery-doc-setup)
+            ;; Update : Pas du tout utile
+            ;; (require 'jquery-doc)
+            ;; (jquery-doc-setup)
 
             ;; js2-imenu-extras-mode
             (js2-imenu-extras-mode)
@@ -70,7 +81,8 @@
             
             ;; (set (make-local-variable 'company-minimum-prefix-length) 1)
             (set (make-local-variable 'company-minimum-prefix-length) 2)
-            (set (make-local-variable 'company-idle-delay) 0)
+            ;; (set (make-local-variable 'company-idle-delay) 0)
+            (set (make-local-variable 'company-idle-delay) 1)
 
             ;; js2-refactor-mode
             ;; (js2-refactor-mode)
@@ -111,10 +123,56 @@
             
             ;; (set (make-local-variable 'company-backends) '((company-tern :with company-yasnippet :with company-dabbrev)))
 
-            (set (make-local-variable 'company-backends) '((company-tern :with company-yasnippet :with company-dabbrev :with company-jquery)))
+            ;; (set (make-local-variable 'company-backends) '((company-tern :with company-yasnippet :with company-dabbrev :with company-jquery)))
+            
+            ;; (set (make-local-variable 'company-backends) '((company-tern :with company-yasnippet :with company-dabbrev)))
+            
+            (set (make-local-variable 'company-backends) '((company-tern)))
             
             ;; Local key map
-            (define-key wil-js-mode-map (kbd "<tab>") 'wil-tab-indent-or-complete-js)))
+            ;; (define-key wil-js-mode-map (kbd "<tab>") 'wil-tab-indent-or-complete-js)
+
+            (define-key wil-js-mode-map (kbd "<tab>") 'company-indent-or-complete-common)
+            ;; (define-key wil-js-mode-map (kbd "<tab>") 'wil-js-tab)
+            ;; (define-key wil-js-mode-map (kbd "s-j") 'yas-expand)
+            ;; (define-key wil-js-mode-map (kbd "s-J") 'company-yasnippet)
+
+)
+
+;; (defun company-yasnippet-or-completion ()
+;;   (interactive)
+;;   (let ((yas-fallback-behavior nil))
+;;     (unless (yas-expand)
+;;       (call-interactively #'company-complete-common))))
+
+
+;; (defun check-expansion ()
+;;   (save-excursion
+;;     (if (looking-at "\\_>") t
+;;       (backward-char 1)
+;;       (if (looking-at "\\.") t
+;; 	(backward-char 1)
+;; 	(if (looking-at "->") t nil)))))
+
+;; (defun do-yas-expand ()
+;;   (let ((yas/fallback-behavior 'return-nil))
+;;     (yas/expand)))
+
+;; (defun tab-indent-or-complete ()
+;;   (interactive)
+;;   (if (minibufferp)
+;;       (minibuffer-complete)
+;;     (if (or (not yas/minor-mode)
+;; 	    (null (do-yas-expand)))
+;; 	(if (check-expansion)
+;; 	    (company-complete-common)
+;; 	  (indent-for-tab-command)))))
+
+
+;; (global-set-key [tab] 'tab-indent-or-complete)
+
+
+(add-hook 'wil-js-mode-hook 'wil-my-js-mode-hook)
 
 
 (add-hook 'js2-mode-hook
