@@ -224,5 +224,6 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/clean-aindent-mode")
 (add-to-list 'load-path "~/.emacs.d/vendor/workgroups2")
 (add-to-list 'load-path "~/.emacs.d/vendor/ob-php")
+(add-to-list 'load-path "~/.emacs.d/vendor/jquery-doc")
 ;; (add-to-list 'load-path "~/.emacs.d/vendor/google-this-1.11")
 ;; (add-to-list 'load-path "~/.emacs.d/vendor/google-translate-0.11.13")

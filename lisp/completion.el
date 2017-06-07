@@ -88,6 +88,14 @@
 (add-hook 'after-init-hook 'global-company-mode)
 
 
+
+;; yas config
+(require 'yasnippet)
+
+;; Auto indent yas snippet 
+(setq yas-indent-line 'auto)
+
+
 ;; Add yasnippet support for all company backends
 ;; https://github.com/syl20bnr/spacemacs/pull/179
 ;; Update cette partie etait en commentaire
@@ -120,3 +128,4 @@
 
 (require 'company-web)
 (require 'company-web-html)
+
