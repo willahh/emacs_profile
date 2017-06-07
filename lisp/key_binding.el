@@ -415,7 +415,7 @@ Version 2016-12-27"
 
 (define-key company-active-map (kbd "C-w") 'clean-aindent--bsunindent)
 (define-key company-active-map (kbd "C-h") 'delete-backward-char)
-(define-key company-active-map (kbd "<tab>") 'company-complète-selection)
+(define-key company-active-map (kbd "<tab>") 'company-complete-selection)
 
 
 (require 'iedit)
