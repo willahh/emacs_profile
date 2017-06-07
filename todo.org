@@ -80,6 +80,9 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 * Bloquant
 :VISIBILITY: 
+- [ ] Ajouter des onglets, les onglet doivent reprenseter les buffers
+  ouvert ouvert du projet courant (projectile)
+- [ ] Commande : Commentaire sans retour à la ligne, binder sur C-/  
 - [ ] Help mode evil : add q binding pour quitter
 - [ ] Helm imenu : Add advice recenter line
 - [X] POMME + click = add multi cursor
