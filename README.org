@@ -223,6 +223,8 @@ Display PDF in Emacs on OSX
 ={r, engine='bash', count_lines} brew install pdf-tools brew install clisp=
 From Emacs : launch "pdf-tools-install"
 
+In Emacs, the commands pdf-tools-install need to be launched.
+
 * Mode : LaTeX
     :PROPERTIES:
     :CUSTOM_ID: latex-support
