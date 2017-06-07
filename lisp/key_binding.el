@@ -974,6 +974,7 @@ Version 2016-12-27"
 ;; Drag line
 (global-set-key (kbd "C-s-p") 'drag-stuff-up) ;; Super + Control + p
 (global-set-key (kbd "C-s-n") 'drag-stuff-down) ;; Super + Control + n
+
 ;; ---------------- Hyper key
 ;; New free key bidings yeeeeea
 ;; (global-set-key (kbd "H-p") 'drag-stuff-up) ;; Hyper + p
