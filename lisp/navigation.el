@@ -102,7 +102,7 @@
 (which-key-mode)
 
 ;; ---------------- ido / smex / ivy
-;; (require 'smex)
+(require 'smex)
 
 ;; ----- ido
 (require 'ido)
@@ -121,8 +121,9 @@
 ;; ----- ido-vertical-mode
 (require 'ido-vertical-mode)
 ;; (ido-mode 1)
-(ido-vertical-mode 1)
-(setq ido-vertical-define-keys 'C-n-and-C-p-only)
+
+;; (ido-vertical-mode 1)
+;; (setq ido-vertical-define-keys 'C-n-and-C-p-only)
 
 ;; flx
 (require 'flx)
@@ -247,7 +248,9 @@
 
 ;; If this value is t, split window inside the current window
 (setq helm-swoop-split-with-multiple-windows t)
-(setq helm-swoop-pre-input-function (lambda () nil))
+
+;;
+;; (setq helm-swoop-pre-input-function (lambda () nil))
 
 
 ;; ---------------- swiper

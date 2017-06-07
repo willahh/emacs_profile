@@ -952,7 +952,8 @@ Version 2016-12-27"
 
 ;; Scroll commands
 (global-set-key (kbd "s-v") 'evil-scroll-up)
-(global-set-key (kbd "s-x") 'helm-M-x)
+;; (global-set-key (kbd "s-x") 'helm-M-x)
+(global-set-key (kbd "s-x") 'smex)
 
 ;; Text commandes
 (global-set-key (kbd "s-c") 'capitalize-word)

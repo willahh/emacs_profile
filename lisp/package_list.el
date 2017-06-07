@@ -54,7 +54,8 @@
   anzu
   ;; indium
 
-  ;; smex
+  smex
+
   ido
   ido-ubiquitous
   ido-vertical-mode
