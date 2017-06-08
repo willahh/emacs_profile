@@ -51,9 +51,10 @@
 
 
 ;; Toggle fullscreen
-(global-set-key (kbd "C-x C-M-f") 'toggle-frame-fullscreen)
-(global-set-key (kbd "C-x M-f") 'toggle-frame-maximized)
-(global-set-key (kbd "C-x M-F") 'wil-frame-large)
+(global-set-key (kbd "C-c C-M-f") 'toggle-frame-fullscreen)
+(global-set-key (kbd "C-c M-f") 'toggle-frame-maximized)
+(global-set-key (kbd "C-c M-F") 'wil-frame-large)
+(global-set-key (kbd "C-c M-c") 'wil-frame-center)
 
 ;; New frame
 (global-set-key [meta shift w] 'delete-frame)
@@ -352,8 +353,12 @@ Version 2016-12-27"
 ;; (global-set-key (kbd "Ω") 'mc/mark-previous-like-this-word) ;; ALT+SHIFT+q
 ;; (global-set-key (kbd "<C-268632081>") 'mc/mark-all-dwim) ;; CTRL+alt+q
 
-(global-set-key (kbd "ñ") 'mc/mark-next-lines) ;; ALT+p
-(global-set-key (kbd "π") 'mc/mark-previous-lines) ;; ALT+n
+
+;; ---------------- Alt key binding
+(global-set-key (kbd "ñ") 'mc/mark-next-lines) ; ALT+p
+(global-set-key (kbd "π") 'mc/mark-previous-lines) ; ALT+n
+(global-set-key (kbd "Ò") 'helm-swoop) ; ALT+s
+(global-set-key (kbd "∑") 'helm-ag-project-root) ; ALT+SHIFT+s
 
 
 
@@ -952,8 +957,8 @@ Version 2016-12-27"
 
 ;; Scroll commands
 (global-set-key (kbd "s-v") 'evil-scroll-up)
-;; (global-set-key (kbd "s-x") 'helm-M-x)
-(global-set-key (kbd "s-x") 'smex)
+(global-set-key (kbd "s-x") 'helm-M-x)
+;; (global-set-key (kbd "s-x") 'smex)
 
 ;; Text commandes
 (global-set-key (kbd "s-c") 'capitalize-word)
@@ -1000,3 +1005,4 @@ Version 2016-12-27"
 ;; ispell (H-$ instead of M-$, cause osx handle M-$ at os level)
 (global-set-key (kbd "H-$") 'ispell-word)
 
+ 

@@ -44,7 +44,8 @@
 (evil-set-initial-state 'ag-mode 'emacs)
 
 ;; (evil-set-initial-state 'vc-dir-mode 'emacs)
-(evil-set-initial-state 'vc-dir-mode 'normal)
+;; (evil-set-initial-state 'vc-dir-mode 'normal)
+(evil-set-initial-state 'vc-dir-mode 'emacs)
 
 (evil-set-initial-state 'profiler-mode 'emacs)
 (evil-set-initial-state 'profiler-report-mode 'emacs)

@@ -57,9 +57,15 @@
 )
 (add-hook 'magit-status-mode-hook 'wil-magit-status-mode-hook)
 
+;; ag hook
+(defun wil-ag-mode-hook ()
+  (toggle-truncate-lines)
+)
+(add-hook 'ag-mode-hook 'wil-ag-mode-hook)
 
 
-;; diff-hl
+
+;; Diff-hl
 ;; Update : global-diff-hl-mode ainsi que diff-hl-dired-mode
 ;; ne fonctionne plus pour le moment
 ;; Le package semble casse sur melpa

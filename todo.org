@@ -80,6 +80,9 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 * Bloquant
 :VISIBILITY: 
+- [ ] Ediff depuis vc-dir : Apres avoir quitter : Revenir sur la
+  disposition precedente : Voir pour mettre un handler before ediff
+  save current layout, after ediff set previous layout
 - [ ] Ajouter des onglets, les onglet doivent reprenseter les buffers
   ouvert ouvert du projet courant (projectile)
 - [ ] Commande : Commentaire sans retour à la ligne, binder sur C-/  
@@ -354,7 +357,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
   - [ ] Show current mode in color
   - [ ] Show current VC system used
   - [ ] Show current encoding
-* Corrige
+p* Corrige
 - [X] Intégrer le M-s pour save plutôt que C-x C-s
 - [X] [new frame] Center frame
 - [X] [fundamental] Ajouter le mode projectile
@@ -797,3 +800,4 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [x] Highlight color (http://stackoverflow.com/questions/385661/how
 - [x] Indent html.  —> web beautify html 
 - [x] Installer ag
+  
