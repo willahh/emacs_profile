@@ -79,7 +79,11 @@ http://ecb.sourceforge.net/
 https://www.youtube.com/watch?v=KoRNCrx9pak
 
 * Bloquant
-:VISIBILITY: 
+:VISIBILITY:
+- [ ] [vc-dir] N et P pour se déplacer en evitant les dossiers
+
+
+
 - [ ] Ediff depuis vc-dir : Apres avoir quitter : Revenir sur la
   disposition precedente : Voir pour mettre un handler before ediff
   save current layout, after ediff set previous layout

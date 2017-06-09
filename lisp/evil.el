@@ -202,5 +202,5 @@
 (global-evil-matchit-mode 1)
 
 ;; evil-magit
-(require 'evil-magit)
+;; (require 'evil-magit)
 
