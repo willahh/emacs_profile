@@ -277,7 +277,10 @@
 
 
 ;; (global-set-key [(meta control shift a)] 'mark-whole-buffer)
-(global-set-key (kbd "M-q") 'ask-before-closing)
+
+;; Update keep  default M-q
+;; (global-set-key (kbd "M-q") 'ask-before-closing)
+
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "C-x C-r") 'rename-current-buffer-file)
 
@@ -357,9 +360,16 @@ Version 2016-12-27"
 ;; ---------------- Alt key binding
 (global-set-key (kbd "ñ") 'mc/mark-next-lines) ; ALT+p
 (global-set-key (kbd "π") 'mc/mark-previous-lines) ; ALT+n
-(global-set-key (kbd "Ò") 'helm-swoop) ; ALT+s
-(global-set-key (kbd "∑") 'helm-ag-project-root) ; ALT+SHIFT+s
 
+
+;; (global-set-key (kbd "Ò") 'helm-swoop) ; ALT+s
+;; ;; (global-set-key (kbd "∑") 'helm-ag-project-root) ; ALT+SHIFT+s
+;; (global-set-key (kbd "∑") 'helm-ag) ; ALT+SHIFT+s
+;; (global-set-key (kbd "C-∑") 'helm-ag-project-root) ; CONTROL+ALT+SHIFT+s
+
+(global-set-key (kbd "Ò") 'helm-swoop) ; ALT+s
+(global-set-key (kbd "∑") 'helm-ag)           ; ALT+SHIFT+s
+(global-set-key [(control shift ∑)] 'helm-ag-project-root)   ; CONTROL+ALT+SHIFT+s
 
 
 ;; Separate C-m from RETURN key
@@ -651,6 +661,11 @@ Version 2016-12-27"
 (define-key isearch-mode-map (kbd "C-v") 'isearch-yank-pop)
 (define-key isearch-mode-map (kbd "C-q") 'isearch-exit)
 
+;; Like isearch, but adds region (if any) to history and deactivates mark
+(global-set-key (kbd "C-s") 'isearch-forward-use-region)
+(global-set-key (kbd "C-r") 'isearch-backward-use-region)
+
+
 ;; help
 (define-key help-mode-map (kbd "n") 'next-line)
 (define-key help-mode-map (kbd "p") 'previous-line)
@@ -917,6 +932,10 @@ Version 2016-12-27"
 
 (global-set-key (kbd "C-c b") 'projectile-switch-to-buffer)
 (define-key org-mode-map (kbd "C-c C-b") 'projectile-switch-to-buffer)
+
+;; zoom
+(global-set-key (kbd "s--") 'text-scale-decrease)
+(global-set-key (kbd "s-+") 'text-scale-increase)
 
 
 ;; ---------------- Function keys
