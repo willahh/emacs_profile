@@ -119,7 +119,7 @@
   evil-visualstar
   evil-snipe
   evil-matchit
-  evil-magit
+  ;; evil-magit
 
   toc-org
 

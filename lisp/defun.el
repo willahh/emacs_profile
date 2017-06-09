@@ -700,8 +700,11 @@ That is, a string used to represent it on the tab bar."
   ;;   (setq myframe (new-frame))
   ;;   (set-frame-width (myframe) 800)
   ;;   )
-  
+
   (new-frame)
+  ;; (setq frame (new-frame)
+  ;;       (wil-frame-center (frame))
+  ;; )
 
   ;; (new-frame ((width . 100)
   ;;             (height . 100)))
@@ -711,7 +714,7 @@ That is, a string used to represent it on the tab bar."
   ;; update frame position
   ;; (set-frame-position (selected-frame) 500 500)
   
-  (set-frame-position (selected-frame) x y)
+  ;; (set-frame-position (selected-frame) x y)
 
   ;; New buffer inside
   ;;  then Select this buffer @todo

@@ -965,6 +965,14 @@ _d_: subtree
   (set-frame-position (selected-frame) 500 400)
 )
 
+;; Center frame
+;; x-display-width / 4 because of retinata double ratio (should be / 2)
+;; Only works in emacs-osx build
+(defun wil-frame-center ()
+  (interactive)
+  (set-frame-position (selected-frame) (- (/ (x-display-pixel-width) 4) (/ (frame-pixel-width) 2)) (- (/ (x-display-pixel-width) 4) (frame-pixel-height)))
+)
+
 
 
 ;; IDE Mode
