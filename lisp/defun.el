@@ -1212,26 +1212,26 @@ the visible part of the current buffer following point. "
 
 ;; Recenter after isearch
 ;; https://stackoverflow.com/a/36896945
-(advice-add 'isearch-search
-            :after
-            (lambda (&rest args)
-              "Recenter"
-              (when isearch-success
-                (recenter))))
+;; (advice-add 'isearch-search
+;;             :after
+;;             (lambda (&rest args)
+;;               "Recenter"
+;;               (when isearch-success
+;;                 (recenter))))
 
 ;; Recenter after pop to mark
-(advice-add 'pop-to-mark-command
-            :after
-            (lambda (&rest args)
-              "Recenter"
-              (recenter)))
+;; (advice-add 'pop-to-mark-command
+;;             :after
+;;             (lambda (&rest args)
+;;               "Recenter"
+;;               (recenter)))
 
 ;; Recenter after unpop to mark
-(advice-add 'unpop-to-mark-command
-            :after
-            (lambda (&rest args)
-              "Recenter"
-              (recenter)))
+;; (advice-add 'unpop-to-mark-command
+;;             :after
+;;             (lambda (&rest args)
+;;               "Recenter"
+;;               (recenter)))
 
 ;; Recenter after avy
 (advice-add 'avy--generic-jump
