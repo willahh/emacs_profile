@@ -26,6 +26,7 @@
   volatile-highlights
   ov ; Utlise pour quelques fonctions utils de prelude
   ibuffer-vc
+  flycheck-pos-tip
 
 
   ;; backe-button

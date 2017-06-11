@@ -662,8 +662,8 @@ Version 2016-12-27"
 (define-key isearch-mode-map (kbd "C-q") 'isearch-exit)
 
 ;; Like isearch, but adds region (if any) to history and deactivates mark
-(global-set-key (kbd "C-s") 'isearch-forward-use-region)
-(global-set-key (kbd "C-r") 'isearch-backward-use-region)
+;; (global-set-key (kbd "C-s") 'isearch-forward-use-region)
+;; (global-set-key (kbd "C-r") 'isearch-backward-use-region)
 
 
 ;; help

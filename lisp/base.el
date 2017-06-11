@@ -86,7 +86,7 @@
 
 
 ;; -----
-(setq transient-mark-mode 1)
+(setq transient-mark-mode t)
 
 ;; Permet de naviguer via le mark ring en faisant C-u C-SPC une fois, puis C-SPC C-SPC..
 ;; au lieu de C-u C-SPC C-u C-SPC C-u C-SPC ...

@@ -1325,22 +1325,20 @@ the visible part of the current buffer following point. "
 
 
 
-(defun my-goto-match-beginning ()
-  (when (and isearch-forward isearch-other-end)
-    (goto-char isearch-other-end)))
+;; (defun my-goto-match-beginning ()
+;;   (when (and isearch-forward isearch-other-end)
+;;     (goto-char isearch-other-end)))
 
-(defadvice isearch-exit (after my-goto-match-beginning activate)
-  "Go to beginning of match."
-  (when (and isearch-forward isearch-other-end)
-    (goto-char isearch-other-end)))
+;; (defadvice isearch-exit (after my-goto-match-beginning activate)
+;;   "Go to beginning of match."
+;;   (when (and isearch-forward isearch-other-end)
+;;     (goto-char isearch-other-end)))
   
-(defun my-goto-match-beginning ()
-  (when (and isearch-forward isearch-other-end (not isearch-mode-end-hook-quit))
-    (goto-char isearch-other-end)))
+;; (defun my-goto-match-beginning ()
+;;   (when (and isearch-forward isearch-other-end (not isearch-mode-end-hook-quit))
+;;     (goto-char isearch-other-end)))
 
-(add-hook 'isearch-mode-end-hook 'my-goto-match-beginning)
-
-
+;; (add-hook 'isearch-mode-end-hook 'my-goto-match-beginning)
 
 
 
@@ -1348,41 +1346,43 @@ the visible part of the current buffer following point. "
 
 
 
-(defun region-as-string ()
-  (buffer-substring (region-beginning)
-                    (region-end)))
-
-(defun isearch-forward-use-region ()
-  (interactive)
-  (when (region-active-p)
-    (add-to-history 'search-ring (region-as-string))
-    (deactivate-mark))
-  (call-interactively 'isearch-forward))
-
-(defun isearch-backward-use-region ()
-  (interactive)
-  (when (region-active-p)
-    (add-to-history 'search-ring (region-as-string))
-    (deactivate-mark))
-  (call-interactively 'isearch-backward))
-
-(eval-after-load "multiple-cursors"
-  '(progn
-     (unsupported-cmd isearch-forward-use-region ".")
-     (unsupported-cmd isearch-backward-use-region ".")))
 
 
+;; (defun region-as-string ()
+;;   (buffer-substring (region-beginning)
+;;                     (region-end)))
+
+;; (defun isearch-forward-use-region ()
+;;   (interactive)
+;;   (when (region-active-p)
+;;     (add-to-history 'search-ring (region-as-string))
+;;     (deactivate-mark))
+;;   (call-interactively 'isearch-forward))
+
+;; (defun isearch-backward-use-region ()
+;;   (interactive)
+;;   (when (region-active-p)
+;;     (add-to-history 'search-ring (region-as-string))
+;;     (deactivate-mark))
+;;   (call-interactively 'isearch-backward))
+
+;; (eval-after-load "multiple-cursors"
+;;   '(progn
+;;      (unsupported-cmd isearch-forward-use-region ".")
+;;      (unsupported-cmd isearch-backward-use-region ".")))
 
 
 
 
-(add-hook 'isearch-mode-end-hook
-          #'endless/goto-match-beginning)
-(defun endless/goto-match-beginning ()
-  "Go to the start of current isearch match.
-Use in `isearch-mode-end-hook'."
-  (when (and isearch-forward
-             (number-or-marker-p isearch-other-end)
-             (not mark-active)
-             (not isearch-mode-end-hook-quit))
-    (goto-char isearch-other-end)))
+
+
+;; (add-hook 'isearch-mode-end-hook
+;;           #'endless/goto-match-beginning)
+;; (defun endless/goto-match-beginning ()
+;;   "Go to the start of current isearch match.
+;; Use in `isearch-mode-end-hook'."
+;;   (when (and isearch-forward
+;;              (number-or-marker-p isearch-other-end)
+;;              (not mark-active)
+;;              (not isearch-mode-end-hook-quit))
+;;     (goto-char isearch-other-end)))

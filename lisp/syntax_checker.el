@@ -2,14 +2,21 @@
 ;; http://codewinds.com/blog/2015-04-02-emacs-flycheck-eslint-jsx.html
 ;; Note : attention flycheck fat ralentir web mode sur des gros fichiers
 (require 'flycheck)
+(require 'flycheck-pos-tip)
 
 ;; Note : doit etre active de maniere globale, je n arrive pas
 ;; a l activer avec un hook sur js2mode (pour le moment)
 ;; (global-flycheck-mode)
 ;; Update : fonctionel avec flycheck-mode
+
+(add-hook 'php-mode-hook 'flycheck-mode)
+(add-hook 'php-mode-hook 'flycheck-pos-tip-mode)
+
 (add-hook 'js2-mode-hook 'flycheck-mode)
+(add-hook 'css-mode-hook 'flycheck-pos-tip-mode)
 
 (add-hook 'css-mode-hook 'flycheck-mode)
+(add-hook 'css-mode-hook 'flycheck-pos-tip-mode)
 
 ;; disable jshint since we prefer eslint checking
 (setq-default flycheck-disabled-checkers
