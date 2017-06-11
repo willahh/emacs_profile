@@ -931,7 +931,9 @@ Version 2016-12-27"
 (define-key org-mode-map (kbd "C-c C-b") 'projectile-ibuffer)
 
 (global-set-key (kbd "C-c b") 'projectile-switch-to-buffer)
-(define-key org-mode-map (kbd "C-c C-b") 'projectile-switch-to-buffer)
+
+;; (define-key org-mode-map (kbd "C-c C-b") 'projectile-switch-to-buffer)
+(define-key org-mode-map (kbd "C-c C-b") 'org-backward-heading-same-level)
 
 ;; zoom
 (global-set-key (kbd "s--") 'text-scale-decrease)

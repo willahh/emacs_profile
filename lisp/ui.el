@@ -103,6 +103,16 @@
 ;; (add-hook 'prog-mode-hook 'nlinum-mode)
 
 
+;; ;; make the left fringe 4 pixels wide and the right disappear
+;; (fringe-mode '(8 . 0))
+
+;; (setq nlinum-format "%4d \u2502 ")
+
+;; ;; A bit margin left
+;; (set-window-margins nil 5)
+
+
+
 ;; Diminish modeline clutter
 (require 'diminish)
 (diminish 'wrap-region-mode)
