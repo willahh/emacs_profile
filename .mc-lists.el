@@ -81,6 +81,7 @@
       paredit-meta-doublequote
       paredit-semicolon
       smart-open-line-above
+      smarter-move-beginning-of-line
       tab-indent-or-complete
       tern-ac-dot-complete
       typescript-insert-and-indent

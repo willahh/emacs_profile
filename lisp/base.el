@@ -411,3 +411,6 @@
 
  (add-hook 'text-mode-hook 'remove-dos-eol)
  (add-hook 'prog-mode-hook 'remove-dos-eol)
+
+;; Always give focus to the help window when invoked
+(setq help-window-select t)
