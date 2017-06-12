@@ -218,9 +218,9 @@ Create .jscsrc file into user dir
           "beforeOpeningCurlyBrace": true
       },
       "disallowSpacesInFunctionExpression": {
-          "beforeOpeningRoundBrace": true
+          "beforeOpeningRoundBrace": false
       },
-      "requireMultipleVarDecl": true,
+      "requireMultipleVarDecl": false,
       "requireSpacesInsideObjectBrackets": "all",
       "requireSpacesInsideArrayBrackets": "all",
       "requireSpaceBeforeBinaryOperators": ["+", "-", "/", "*", "=", "==", "===", "!=", "!=="],
