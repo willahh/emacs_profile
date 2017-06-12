@@ -81,7 +81,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 * Bloquant
 :VISIBILITY:
 - [ ] [vc-dir] N et P pour se déplacer en evitant les dossiers
-
+  - [ ] Installation https://www.languagetool.org/
 
 
 - [ ] Ediff depuis vc-dir : Apres avoir quitter : Revenir sur la
@@ -361,7 +361,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
   - [ ] Show current mode in color
   - [ ] Show current VC system used
   - [ ] Show current encoding
-p* Corrige
+* Corrige
 - [X] Intégrer le M-s pour save plutôt que C-x C-s
 - [X] [new frame] Center frame
 - [X] [fundamental] Ajouter le mode projectile
@@ -373,7 +373,7 @@ p* Corrige
 - [X] !!! [hydra][helm mini nav] Ne pas activer Hydra moves dans helm
 - [X] [C-i] [C-S-i] Ne fonctionne plus
 
-- [X] Correcteur orthographique
+
 - [X] JS auto doc
 - [X] Shift + mouse doit prolonger la sélection de la souris
 - [X] Nouvelle window : Ne pas reequilibrer les fenetres....

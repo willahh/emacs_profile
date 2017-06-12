@@ -848,6 +848,7 @@ Version 2016-12-27"
 (define-key diff-mode-map (kbd "M-o") 'other-window)
 (define-key ggtags-navigation-map (kbd "M-o") 'other-window) ;; Need to override ggtags map
 (global-set-key [(meta o)] 'other-window)
+(define-key ibuffer-mode-map (kbd "M-o") 'other-window)
 
 ;; ;; other window
 ;; (global-set-key (kbd "M-o") 'hydra-window/body)
@@ -1026,4 +1027,7 @@ Version 2016-12-27"
 ;; ispell (H-$ instead of M-$, cause osx handle M-$ at os level)
 (global-set-key (kbd "H-$") 'ispell-word)
 
- 
+
+(define-key text-mode-map (kbd "C-c ; s i") 'ispell)
+(define-key text-mode-map (kbd "C-c ; s l") 'langtool-check)
+(define-key text-mode-map (kbd "C-c ; s c") 'langtool-correct-buffer)
