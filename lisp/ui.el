@@ -92,15 +92,12 @@
 ;; Update : Desactivation de nlinum, cause trop de leges ralentsi
 ;; Pas indispensable
 ;; Update 2 : Pratique dans certains cas
-(require 'nlinum)
-
-(add-hook 'prog-mode-hook 'nlinum-mode)
-;; (add-hook 'html-mode-hook 'nlinum-mode 1)
-;; (add-hook 'actionscript-mode-hook 'nlinum-mode 1)
-;; (add-hook 'fundamental-mode 'nlinum-mode 1)
-;; (add-hook 'fundamental-mode-abbrev-table 'nlinum-mode 1)
+;; Update 3 : Ralentis trop Emacs
+;; 
+;; (require 'nlinum)
 
 ;; (add-hook 'prog-mode-hook 'nlinum-mode)
+
 
 
 ;; ;; make the left fringe 4 pixels wide and the right disappear

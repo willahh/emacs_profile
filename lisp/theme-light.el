@@ -45,10 +45,12 @@
 
 ;; Cursor / caret state color
 ;; (setq evil-emacs-state-cursor '("#56b0ec" box))
-(setq evil-emacs-state-cursor '("#ff00d2" box))
+;; (setq evil-emacs-state-cursor '("#ff00d2" box))
 ;; (setq evil-emacs-state-cursor '("#52b033" box))
 ;; (setq evil-emacs-state-cursor '("#52b033" box))
 ;; (setq evil-emacs-state-cursor '("#0096ff" box))
+;; (setq evil-emacs-state-cursor '("#ff00d2" box))
+(setq evil-emacs-state-cursor '("#ff00d2" bar))
 
 (setq evil-normal-state-cursor '("#98cf15" box))
 (setq evil-visual-state-cursor '("#fff" box))
