@@ -1155,6 +1155,16 @@ the visible part of the current buffer following point. "
   (kill-buffer)
   (jump-to-register :magit-fullscreen))
 
+(defun wil-vc-ediff ()
+  (interactive)
+  (window-configuration-to-register :wil2)
+  (vc-ediff nil)
+)
+(defun wil-vc-ediff-quit ()
+  (interactive)
+  (ediff-quit t)
+  (jump-to-register :wil2))
+
 ;; Switch and rebalance windows when splitting
 ;; https://github.com/hrs/dotfiles/blob/master/emacs.d/configuration.org
 (defun hrs/split-window-below-and-switch ()

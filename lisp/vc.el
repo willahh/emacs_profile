@@ -160,7 +160,7 @@ then `diff-jump-to-old-file' is also set, for the next invocations."
 ;; fullframe
 (require 'fullframe)
 (fullframe vc-dir quit-window)
-(fullframe ediff quit-window)
+;; (fullframe ediff quit-window)
 (fullframe ibuffer quit-window)
 
 ;; wil-vc-dir
@@ -171,7 +171,8 @@ then `diff-jump-to-old-file' is also set, for the next invocations."
   ;; (vc-dir-next-line 1)
 
   ;; Some key binding
-  (define-key vc-dir-mode-map (kbd "e") 'vc-ediff)
+  ;; (define-key vc-dir-mode-map (kbd "e") 'vc-ediff)
+  (define-key vc-dir-mode-map (kbd "e") 'wil-vc-ediff)
   (define-key vc-dir-mode-map (kbd "E") 'wil-vc-version-ediff-base-head)
   (define-key vc-dir-mode-map (kbd "d") 'vc-diff)
   (define-key vc-dir-mode-map (kbd "D") 'wil-vc-version-diff-base-head)

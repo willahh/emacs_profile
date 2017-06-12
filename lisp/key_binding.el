@@ -943,6 +943,16 @@ Version 2016-12-27"
 (global-set-key (kbd "s--") 'text-scale-decrease)
 (global-set-key (kbd "s-+") 'text-scale-increase)
 
+;; ediff
+;; (require 'ediff)
+(defun wil-ediff-hook ()
+  (ediff-setup-keymap)
+  (define-key ediff-mode-map (kbd "q") 'wil-vc-ediff-quit)
+)
+
+
+;; (define-key ediff-mode-map (kbd "q") 'wil-vc-ediff-quit)
+(add-hook 'ediff-mode-hook 'wil-ediff-hook)
 
 ;; ---------------- Function keys
 (global-set-key (kbd "<f2>") 'my/open-tree-view)
