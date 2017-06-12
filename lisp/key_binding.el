@@ -358,7 +358,8 @@ Version 2016-12-27"
 (global-set-key (kbd "ñ") 'mc/mark-next-lines) ; ALT+p
 (global-set-key (kbd "π") 'mc/mark-previous-lines) ; ALT+n
 (global-set-key (kbd "Ò") 'helm-swoop) ; ALT+s
-(global-set-key (kbd "∑") 'helm-ag-project-root) ; ALT+SHIFT+s
+(global-set-key (kbd "∑") 'helm-ag) ; ALT+SHIFT+s
+(global-set-key (kbd "C-∑") 'helm-ag-project-root) ; CONTROL+ALT+SHIFT+s
 
 
 

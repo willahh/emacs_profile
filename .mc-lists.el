@@ -117,6 +117,7 @@
       helm-projectile-ag
       helm-projectile-find-file
       helm-projectile-switch-project
+      helm-swoop
       help
       highlight-symbol-next
       hrs/split-window-right-and-switch
