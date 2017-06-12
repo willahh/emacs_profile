@@ -5,10 +5,8 @@
 
 
 * Introduction
-** General rules
 - Only stable packages are used from Elpa package manager
 - Non stable packages are moved into vendor directory
-
 * Installation
   :PROPERTIES:
   :CUSTOM_ID: installation
@@ -21,11 +19,24 @@
 -  Mac Os X >= 10.11
 -  emacs >= 25
 -  Use of emacs-osx for osx instead of the default brew emacs
+   https://github.com/railwaycat/homebrew-emacsmacport
 
-@todo Ajouter la formulaire pour installer la version OSX ()
+Emacs installation :
+
 #+BEGIN_SRC bash
-##brew install --with-cocoa --srgb emacs git clone --recursive https://github.com/willahh/emacs_profile ~/.emacs.d=
+brew tap railwaycat/emacsmacport
+brew install emacs-mac
+
+##brew install --with-cocoa --srgb emacs
 #+END_SRC
+
+
+Configuration installation :
+
+#+BEGIN_SRC bash
+git clone https://github.com/willahh/emacs_profile ~/.emacs.d
+#+END_SRC
+
 - Use font "fira-monoS" - size : 12 - ~/.emacs.d/fonts/meslo (Menu >
 option > set default font) - Install below dependencies globaly
 ** Windows
@@ -36,8 +47,8 @@ option > set default font) - Install below dependencies globaly
 -  Gnutls
 -  htftp://ftp.gnutls.org/gcrypt/gnutls/w32/
 
-*** bin (global)
-     :PROPERTIES:
+* bin (global)
+:PROPERTIES:
      :CUSTOM_ID: bin-global
      :END:
 
@@ -47,8 +58,6 @@ load .bashrc (~/.bash\_profile should be copied .bashrc)
 VC - svn - git
 
 Search tools - ag (lightning search)
-
-PHP tools - php - composer
 
 Javascript tools - tern - eslint - babel-eslint - eslint-plugin-react -
 js-beautify
@@ -61,7 +70,7 @@ Tags tools @@html:<!-- - ctags -->@@ @@html:<!-- - tags -->@@
 @@html:<!-- - cscope -->@@ @@html:<!-- - Global -->@@
 @@html:<!-- - gtags -->@@
 
-*** global bin
+** global bin
      :PROPERTIES:
      :CUSTOM_ID: global-bin
      :END:

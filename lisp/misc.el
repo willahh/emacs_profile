@@ -1,4 +1,7 @@
 
+(require 'thingatpt)
+(require 'dash)
+(require 'ov)
 
 
 
@@ -981,5 +984,45 @@ _d_: subtree
   (flycheck-list-errors)
   (other-window 1)
   (evil-window-move-very-bottom))
+
+
+
+
+
+
+
+
+
+;; crux
+(require 'crux)
+
+;; volatile-highlights
+(require 'volatile-highlights)
+
+(volatile-highlights-mode t)
+;; (diminish 'volatile-highlights-mode)
+
+
+
+
+
+(defun prelude-todo-ov-evaporate (_ov _after _beg _end &optional _length)
+  (let ((inhibit-modification-hooks t))
+    (if _after (ov-reset _ov))))
+
+(defun prelude-annotate-todo ()
+  "Put fringe marker on TODO: lines in the curent buffer."
+  (interactive)
+  (ov-set (format "[[:space:]]*%s+[[:space:]]*TODO:" comment-start)
+          'before-string
+          (propertize (format "A")
+                      'display '(left-fringe right-triangle))
+          'modification-hooks '(prelude-todo-ov-evaporate)))
+
+
+
+;; ibuffer-vc
+(require 'ibuffer-vc)
+
 
 

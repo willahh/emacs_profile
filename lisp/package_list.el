@@ -22,6 +22,11 @@
   image-dired+
   imenu-list
   jade-mode
+  crux
+  volatile-highlights
+  ov ; Utlise pour quelques fonctions utils de prelude
+  ibuffer-vc
+  flycheck-pos-tip
 
 
   ;; backe-button
@@ -129,6 +134,7 @@
   ;; general
   git-gutter
   sx
+  
 
   ;; helm
   ;; helm-ag

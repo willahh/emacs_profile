@@ -161,6 +161,7 @@ then `diff-jump-to-old-file' is also set, for the next invocations."
 (require 'fullframe)
 (fullframe vc-dir quit-window)
 (fullframe ediff quit-window)
+(fullframe ibuffer quit-window)
 
 ;; wil-vc-dir
 (defun wil-vc-dir ()
@@ -218,6 +219,11 @@ then `diff-jump-to-old-file' is also set, for the next invocations."
 ;; (funcall 
 ;;  (intern (format "ediff-%S-internal" ediff-version-control-package)) 
 ;;  "" "" nil)))
+
+;; Dont hide elements in ediff
+;; Useful when ediffing a .org file
+;; https://emacs.stackexchange.com/a/21336
+(add-hook 'ediff-prepare-buffer-hook #'show-all)
 
 
 

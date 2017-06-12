@@ -86,7 +86,7 @@
 
 
 ;; -----
-(setq transient-mark-mode 1)
+(setq transient-mark-mode t)
 
 ;; Permet de naviguer via le mark ring en faisant C-u C-SPC une fois, puis C-SPC C-SPC..
 ;; au lieu de C-u C-SPC C-u C-SPC C-u C-SPC ...
@@ -332,6 +332,29 @@
 
 ;; (ad-activate 'isearch-repeat-forward)
 ;; (ad-activate 'isearch-repeat-backward)
+
+;; https://www.emacswiki.org/emacs/IncrementalSearch#toc4
+(add-hook 'isearch-mode-end-hook 'my-goto-match-beginning)
+(defun my-goto-match-beginning ()
+  (when (and isearch-forward isearch-other-end)
+    (goto-char isearch-other-end)))
+
+(defadvice isearch-exit (after my-goto-match-beginning activate)
+      "Go to beginning of match."
+      (when (and isearch-forward isearch-other-end)
+        (goto-char isearch-other-end)))
+
+(defun my-goto-match-beginning ()
+  (when (and isearch-forward isearch-other-end (not isearch-mode-end-hook-quit))
+    (goto-char isearch-other-end)))
+
+
+
+
+
+(setq search-whitespace-regexp nil)
+
+
 
 
 ;; ;; ssh
