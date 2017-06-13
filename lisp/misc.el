@@ -1026,3 +1026,27 @@ _d_: subtree
 
 
 
+
+;; langtool
+(require 'langtool)
+
+;; (setq langtool-language-tool-jar "/path/to/languagetool-commandline.jar")
+(setq langtool-language-tool-jar "~/bin/languagetool/languagetool-commandline.jar")
+
+;; (setq langtool-default-language "en-US")
+(setq langtool-default-language "fr")
+(setq ispell-program-name (executable-find "hunspell"))
+(setq ispell-dictionary "fr")
+
+
+(defun langtool-autoshow-detail-popup (overlays)
+  (when (require 'popup nil t)
+    ;; Do not interrupt current popup
+    (unless (or popup-instances
+                ;; suppress popup after type `C-g` .
+                (memq last-command '(keyboard-quit)))
+      (let ((msg (langtool-details-error-message overlays)))
+        (popup-tip msg)))))
+
+(setq langtool-autoshow-message-function
+      'langtool-autoshow-detail-popup)

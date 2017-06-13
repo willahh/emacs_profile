@@ -80,24 +80,15 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 * Bloquant
 :VISIBILITY:
-- [ ] JS HINT : ne pas afficher certains warning
 - [ ] [vc-dir] N et P pour se déplacer en evitant les dossiers
 - [ ] Recenter after go to line number
 
 
-
-- [ ] Ediff depuis vc-dir : Apres avoir quitter : Revenir sur la
-  disposition precedente : Voir pour mettre un handler before ediff
-  save current layout, after ediff set previous layout
-- [ ] Ajouter des onglets, les onglet doivent reprenseter les buffers
-  ouvert ouvert du projet courant (projectile)
 - [ ] Commande : Commentaire sans retour à la ligne, binder sur C-/  
 - [ ] Help mode evil : add q binding pour quitter
 - [ ] Helm imenu : Add advice recenter line
-- [X] POMME + click = add multi cursor
 - [ ] [projectile find file] Auto centrer la ligne une fois le goto dans le fichier
 - [ ] [projectile find file] Possibilité de saisir des espaces dans le regexp
-- [X] Vc dir same window
 - [ ] New frame : centrer la frame
 - [ ] New frame : Mettre un nouveau buffer de type texte dedans
 - [ ] [web-mode] Ne pas remplacer les fin de ligne windows par des fins de ligne unix
@@ -139,6 +130,18 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 - [ ] [js/js2] Désactiver Paredit pour le mode js/js2
 - [ ] Previous/Next buffer : Utiliser la liste de ibuffer trier par ordre recent
+
+
+
+
+
+- [X] JS HINT : ne pas afficher certains warning
+- [X] Ediff depuis vc-dir : Apres avoir quitter : Revenir sur la
+  disposition precedente : Voir pour mettre un handler before ediff
+  save current layout, after ediff set previous layout
+- [X] POMME + click = add multi cursor
+- [X] Vc dir same window
+
 
 
 - [X] [occur] Centrer la ligne
@@ -363,7 +366,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
   - [ ] Show current mode in color
   - [ ] Show current VC system used
   - [ ] Show current encoding
-p* Corrige
+* Corrige
 - [X] Intégrer le M-s pour save plutôt que C-x C-s
 - [X] [new frame] Center frame
 - [X] [fundamental] Ajouter le mode projectile
@@ -375,7 +378,7 @@ p* Corrige
 - [X] !!! [hydra][helm mini nav] Ne pas activer Hydra moves dans helm
 - [X] [C-i] [C-S-i] Ne fonctionne plus
 
-- [X] Correcteur orthographique
+
 - [X] JS auto doc
 - [X] Shift + mouse doit prolonger la sélection de la souris
 - [X] Nouvelle window : Ne pas reequilibrer les fenetres....

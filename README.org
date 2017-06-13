@@ -31,7 +31,7 @@ brew install emacs-mac
 #+END_SRC
 
 
-Configuration installation :
+Configuration :
 
 #+BEGIN_SRC bash
 git clone https://github.com/willahh/emacs_profile ~/.emacs.d
@@ -124,12 +124,42 @@ Tags tools - global (gtags) - brew install global --with-pygments
 #+BEGIN_HTML
   <!-- - Global - brew install global --with-exuberant-ctags -->
 #+END_HTML
-* Support : Language
+* Support : Language checker
 ** Tools : ispell
 *** OSX
 #+BEGIN_SRC
 brew install ispell
 #+END_SRC
+** Tools : hunspell
+Links
+ - https://wiki.openoffice.org/wiki/Dictionaries .
+ - https://cgit.freedesktop.org/libreoffice/dictionaries/tree/fr_FR
+
+Install hunspell :
+#+BEGIN_SRC shell
+brew instsall hunspell
+#+END_SRC
+
+Install dictionary :
+
+Copy
+  - .emacs.d/resources/dictionary/fr.aff
+  - .emacs.d/resources/dictionary/fr.dic
+
+to ~/Library/Spelling/
+
+------------------
+
+From "man hunspell" :
+Dictionary files (*.aff and *.dic) should be placed in
+~/Library/Spelling/ or /Library/Spelling/.  Homebrew itself
+provides no dictionaries for Hunspell, but you can download
+compatible dictionaries from other sources, such as
+
+** Tools : languagetools
+ @todo Used for grammar check
+ https://www.languagetool.org
+
 * Support : sass
 ** Resources :
 [[http://sass-lang.com/install][sass]]-lang.com
@@ -203,7 +233,7 @@ Create .jscsrc file into user dir
       "validateLineBreaks": "LF"
   }
 #+END_SRC
-* Mode : PDF
+* Support : PDF
     :PROPERTIES:
     :CUSTOM_ID: display-pdf-in-emacs-on-osx
     :END:
@@ -234,7 +264,7 @@ From Emacs : launch "pdf-tools-install"
 
 In Emacs, the commands pdf-tools-install need to be launched.
 
-* Mode : LaTeX
+* Support : LaTeX
     :PROPERTIES:
     :CUSTOM_ID: latex-support
     :END:
@@ -249,7 +279,7 @@ Latex support
 -  Light support : BasicTeX :
    http://www.tug.org/mactex/morepackages.html
 
-* Mode : Office Documents
+* Support : Office Documents
     :PROPERTIES:
     :CUSTOM_ID: excel-word-support
     :END:

@@ -152,7 +152,8 @@
 ;; (setq scroll-margin 0)
 ;; (setq scroll-margin 8)
 ;; (setq scroll-margin 3)
-(setq scroll-margin 8)
+;; (setq scroll-margin 8)
+(setq scroll-margin 5)
 (setq scroll-conservatively 9999)
 (setq scroll-step 1)
 
@@ -375,7 +376,7 @@
 
 ;; smooth scroling!
 (setq redisplay-dont-pause t
-      scroll-margin 1
+      ;; scroll-margin 1
       scroll-step 1
       scroll-conservatively 10000
       scroll-preserve-screen-position nil)
@@ -410,3 +411,6 @@
 
  (add-hook 'text-mode-hook 'remove-dos-eol)
  (add-hook 'prog-mode-hook 'remove-dos-eol)
+
+;; Always give focus to the help window when invoked
+(setq help-window-select t)

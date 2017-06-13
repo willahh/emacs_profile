@@ -358,12 +358,16 @@ Version 2016-12-27"
 
 
 ;; ---------------- Alt key binding
-(global-set-key (kbd "ñ") 'mc/mark-next-lines) ; ALT+p
-(global-set-key (kbd "π") 'mc/mark-previous-lines) ; ALT+n
+(global-set-key (kbd "ı") 'mc/mark-next-lines) ; ALT+SHIFT+p
+(global-set-key (kbd "∏") 'mc/mark-previous-lines) ; ALT+SHIFT+n
 
 (global-set-key (kbd "Ò") 'helm-swoop) ; ALT+s
 (global-set-key (kbd "∑") 'helm-ag) ; ALT+SHIFT+s
 (global-set-key (kbd "C-∑") 'helm-ag-project-root) ; CONTROL+ALT+SHIFT+s
+
+;; Drag line
+;; (global-set-key (kbd "π") 'drag-stuff-up) ; ALT+p
+;; (global-set-key (kbd "ñ") 'drag-stuff-down) ; ALT+n
 
 ;; (global-set-key (kbd "Ò") 'helm-swoop) ; ALT+s
 ;; ;; (global-set-key (kbd "∑") 'helm-ag-project-root) ; ALT+SHIFT+s
@@ -386,7 +390,7 @@ Version 2016-12-27"
   ;; Bind sur Control m / Control shift m
   (global-set-key (kbd "<C-m>") 'mc/mark-next-like-this-word)
   (global-set-key [(control shift m)] 'mc/mark-previous-like-this-word)
-  (global-set-key [(control meta shift m)] 'mc/mark-all-words-like-this)
+  ;; (global-set-key [(control meta shift m)] 'mc/mark-all-words-like-this)
 
   ;; Multi cursor map
   (define-key mc/keymap (kbd "M-v") 'yank)
@@ -398,6 +402,8 @@ Version 2016-12-27"
 
 (add-hook 'autopair-mode-hook 'wlh-set-bind-for-mc)
 (add-hook 'paredit-mode-map 'wlh-set-bind-for-mc)
+
+(global-set-key (kbd "M-L") 'mc/mark-all-words-like-this)
 
 
 ;; Mouse
@@ -851,6 +857,7 @@ Version 2016-12-27"
 (define-key diff-mode-map (kbd "M-o") 'other-window)
 (define-key ggtags-navigation-map (kbd "M-o") 'other-window) ;; Need to override ggtags map
 (global-set-key [(meta o)] 'other-window)
+(define-key ibuffer-mode-map (kbd "M-o") 'other-window)
 
 ;; ;; other window
 ;; (global-set-key (kbd "M-o") 'hydra-window/body)
@@ -942,6 +949,16 @@ Version 2016-12-27"
 (global-set-key (kbd "s--") 'text-scale-decrease)
 (global-set-key (kbd "s-+") 'text-scale-increase)
 
+;; ediff
+;; (require 'ediff)
+(defun wil-ediff-hook ()
+  (ediff-setup-keymap)
+  (define-key ediff-mode-map (kbd "q") 'wil-vc-ediff-quit)
+)
+
+
+;; (define-key ediff-mode-map (kbd "q") 'wil-vc-ediff-quit)
+(add-hook 'ediff-mode-hook 'wil-ediff-hook)
 
 ;; ---------------- Function keys
 (global-set-key (kbd "<f2>") 'my/open-tree-view)
@@ -1009,8 +1026,8 @@ Version 2016-12-27"
 (global-set-key (kbd "s-S") 'helm-ag)
 
 ;; Drag line
-(global-set-key (kbd "C-s-p") 'drag-stuff-up) ;; Super + Control + p
-(global-set-key (kbd "C-s-n") 'drag-stuff-down) ;; Super + Control + n
+;; (global-set-key (kbd "C-s-p") 'drag-stuff-up) ;; Super + Control + p
+;; (global-set-key (kbd "C-s-n") 'drag-stuff-down) ;; Super + Control + n
 
 ;; ---------------- Hyper key
 ;; New free key bidings yeeeeea
@@ -1029,4 +1046,7 @@ Version 2016-12-27"
 ;; ispell (H-$ instead of M-$, cause osx handle M-$ at os level)
 (global-set-key (kbd "H-$") 'ispell-word)
 
- 
+
+(define-key text-mode-map (kbd "C-c ; s i") 'ispell)
+(define-key text-mode-map (kbd "C-c ; s l") 'langtool-check)
+(define-key text-mode-map (kbd "C-c ; s c") 'langtool-correct-buffer)
