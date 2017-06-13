@@ -414,3 +414,11 @@
 
 ;; Always give focus to the help window when invoked
 (setq help-window-select t)
+
+
+;; Don't replace line ending (Windows, Unix, Windows+Unix)
+;; Just keep diverses line ending... it is not a real problem
+;; Problem is when all line endings are changed automatically (default behaviour)
+;; then the diff when commit is on ALL lines... this IS bad.
+;; https://stackoverflow.com/a/10845302
+(setq inhibit-eol-conversion t)

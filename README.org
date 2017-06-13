@@ -160,6 +160,9 @@ compatible dictionaries from other sources, such as
  @todo Used for grammar check
  https://www.languagetool.org
 
+ - Download the "Stand alone for desktop" version.
+ - Move the folder to "~/bin/" 
+
 * Support : sass
 ** Resources :
 [[http://sass-lang.com/install][sass]]-lang.com
