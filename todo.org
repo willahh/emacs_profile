@@ -80,14 +80,27 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 * Bloquant
 :VISIBILITY:
+- [X] Coller sur une selectione ne fontionne plus (option native)
+- [X] Delete backspace ne fonctionne plus
+- [ ] AG mettre en mode emacs et non pas evil normal
+- [ ] org mode : > yas snippet new checkbox ne fonctionne plus
+
 - [ ] ALT+n ALT+p ne fonctionne pas (drag line)
 - [ ] Multi cursor : Voir pour afficher un caret non box
+
+
+- [ ] Paredit ET web-mode : Retirer la fonction qui escape automatiquement les
+  doubles quote dans les chaines car en principe ca ne marche pas bien
+  en web mode
+
+
+
 
 
 
 - [ ] [vc-dir] N et P pour se déplacer en evitant les dossiers
 - [ ] Recenter after go to line number
-
+  
 
 - [ ] Commande : Commentaire sans retour à la ligne, binder sur C-/  
 - [ ] Help mode evil : add q binding pour quitter
@@ -188,7 +201,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [X] [org mode] [yas] Ajouter un snippet pour faire des nouvelles lignes de todo ("- [ ] ")
 - [X] [org-mode] [C-S-j] Le caret est mal positionne
 - [X] F5 : Revert-buffer
-
+  
 * A ranger
 - [ ] [doc-view] Faire fonctionner doc-view (Lire des fichiers excel, doc, word, etc)
 - [ ] [Google talk] : Intégrer Google Talk dans Emacs

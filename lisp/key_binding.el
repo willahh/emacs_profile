@@ -52,9 +52,16 @@
 
 ;; Toggle fullscreen
 (global-set-key (kbd "C-c C-M-f") 'toggle-frame-fullscreen)
+(define-key org-mode-map (kbd "C-c C-M-f") 'toggle-frame-fullscreen)
+
 (global-set-key (kbd "C-c M-f") 'toggle-frame-maximized)
+(define-key org-mode-map (kbd "C-c M-f") 'toggle-frame-maximized)
+
 (global-set-key (kbd "C-c M-F") 'wil-frame-large)
+(define-key org-mode-map (kbd "C-c M-F") 'wil-frame-large)
+
 (global-set-key (kbd "C-c M-c") 'wil-frame-center)
+(define-key org-mode-map (kbd "C-c M-c") 'wil-frame-center)
 
 ;; New frame
 (global-set-key [meta shift w] 'delete-frame)
@@ -366,8 +373,8 @@ Version 2016-12-27"
 (global-set-key (kbd "C-∑") 'helm-ag-project-root) ; CONTROL+ALT+SHIFT+s
 
 ;; Drag line
-;; (global-set-key (kbd "π") 'drag-stuff-up) ; ALT+p
-;; (global-set-key (kbd "ñ") 'drag-stuff-down) ; ALT+n
+(global-set-key (kbd "π") 'drag-stuff-up) ; ALT+p
+(global-set-key (kbd "ñ") 'drag-stuff-down) ; ALT+n
 
 ;; (global-set-key (kbd "Ò") 'helm-swoop) ; ALT+s
 ;; ;; (global-set-key (kbd "∑") 'helm-ag-project-root) ; ALT+SHIFT+s
@@ -555,6 +562,11 @@ Version 2016-12-27"
 
 ;; (global-set-key (kbd "C-M-s") 'ag-project-at-point)
 (global-set-key (kbd "C-M-s") 'ag)
+; (global-set-key (kbd "M-S") 'ag)
+
+; (define-key paredit-mode-map (kbd "M-s") 'ag)
+
+;; (global-set-key [command shift s] 'ag)
 
 (global-set-key [control meta s] 'ag-project-at-point)
 (global-set-key [control meta shift s] 'ag-project)
