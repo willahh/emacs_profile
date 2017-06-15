@@ -369,17 +369,6 @@ Version 2016-12-27"
 
 
 ;; ---------------- Alt key binding
-(global-set-key (kbd "ı") 'mc/mark-next-lines) ; ALT+SHIFT+p
-(global-set-key (kbd "∏") 'mc/mark-previous-lines) ; ALT+SHIFT+n
-
-(global-set-key (kbd "Ò") 'helm-swoop) ; ALT+s
-(global-set-key (kbd "∑") 'helm-ag) ; ALT+SHIFT+s
-(global-set-key (kbd "C-∑") 'helm-ag-project-root) ; CONTROL+ALT+SHIFT+s
-
-;; Drag line
-(global-set-key (kbd "π") 'drag-stuff-up) ; ALT+p
-(global-set-key (kbd "ñ") 'drag-stuff-down) ; ALT+n
-
 ;; (global-set-key (kbd "Ò") 'helm-swoop) ; ALT+s
 ;; ;; (global-set-key (kbd "∑") 'helm-ag-project-root) ; ALT+SHIFT+s
 ;; (global-set-key (kbd "∑") 'helm-ag) ; ALT+SHIFT+s
@@ -389,7 +378,30 @@ Version 2016-12-27"
 ;; (global-set-key (kbd "∑") 'helm-ag)           ; ALT+SHIFT+s
 ;; (global-set-key [(control shift ∑)] 'helm-ag-project-root)   ; CONTROL+ALT+SHIFT+s
 
+(global-set-key (kbd "ı") 'mc/mark-next-lines) ; ALT+SHIFT+p
+(global-set-key (kbd "∏") 'mc/mark-previous-lines) ; ALT+SHIFT+n
 
+
+(global-set-key (kbd "Ò") 'helm-swoop) ; ALT+s
+(global-set-key (kbd "∑") 'helm-ag) ; ALT+SHIFT+s
+(global-set-key (kbd "C-∑") 'projectile-ag) ; CONTROL+ALT+SHIFT+s
+
+;; (global-set-key [(Ò)] 'helm-swoop)           ; ALT+s
+;; (global-set-key [(shift Ò)] 'helm-ag) ; ALT+SHIFT+s
+;; ;; (global-set-key [(control shift Ò)] 'helm-ag-project-root) ; CONTROL+ALT+SHIFT+s
+;; (global-set-key [(control shift Ò)] 'projectile-ag) ; CONTROL+ALT+SHIFT+s
+
+
+;; Drag line
+;; top
+(global-set-key (kbd "π") 'drag-stuff-up) ; ALT+p
+(define-key org-mode-map (kbd "π") 'org-metaup) ; ALT+p
+
+;; Bottom
+(global-set-key (kbd "ñ") 'drag-stuff-down) ; ALT+n
+
+
+;; ---------------- 
 ;; Separate C-m from RETURN key
 (define-key input-decode-map [?\C-m] [C-m])
 
@@ -554,37 +566,41 @@ Version 2016-12-27"
 
 ;; Update : Ajout d'un ensemble de raccourcis sur le table de prefix C-c s
 ;; Les racourcis les plus utiles ont un acces direct, voir plus bas
-(global-set-key (kbd "C-c s a") 'ag-project-at-point)
-(global-set-key (kbd "C-c s A") 'ag)
-(global-set-key (kbd "C-c s p") 'projectile-ag)
-(global-set-key (kbd "C-c s s") 'helm-ag)
-(global-set-key (kbd "C-c s S") 'helm-ag-project-root)
+
 
 ;; Acces direct aux raccourcis les plus utiles
 ;; 2 en commande standard Combo Meta + Control + s ou + (S)
 ;; 1 en commande avec la touche alt + s
 
 ;; (global-set-key (kbd "C-M-s") 'ag-project-at-point)
-(global-set-key (kbd "C-M-s") 'ag)
-; (global-set-key (kbd "M-S") 'ag)
-
 ; (define-key paredit-mode-map (kbd "M-s") 'ag)
-
 ;; (global-set-key [command shift s] 'ag)
-
-(global-set-key [control meta s] 'ag-project-at-point)
-(global-set-key [control meta shift s] 'ag-project)
+; (global-set-key (kbd "M-S") 'ag)
 
 ;; Desactive, utilise via la touche hyper
 ;; (global-set-key (kbd "Ò") 'helm-ag)
 
-
-
+;; (global-set-key (kbd "C-M-s") 'ag-project-at-point)
+;; (global-set-key (kbd "C-M-S") 'ag-project)
+;; Desactive, utilise via la touche hyper
+;; (global-set-key (kbd "Ò") 'helm-ag)
 
 
 ;; (global-set-key (kbd "C-M-s") 'ag-project-at-point)
 ;; (global-set-key (kbd "C-M-S") 'ag-project)
 
+(global-set-key (kbd "C-c s a") 'ag-project-at-point)
+(global-set-key (kbd "C-c s A") 'ag)
+(global-set-key (kbd "C-c s p") 'projectile-ag)
+(global-set-key (kbd "C-c s s") 'helm-ag)
+(global-set-key (kbd "C-c s S") 'helm-ag-project-root)
+
+;; Il faut projectile-ag pour avoir le moins de key a saisir
+;; ag est utilise plus rarament
+;; (global-set-key (kbd "C-M-s") 'ag)
+(global-set-key (kbd "C-M-s") 'projectile-ag)
+(global-set-key [control meta s] 'ag-project-at-point)
+(global-set-key [control meta shift s] 'ag-project)
 
 
 ;; ---- window
@@ -626,6 +642,7 @@ Version 2016-12-27"
 ;; Update C-v evil-scroll-down actif (le comportement est plus clean (re center auto))
 ;; (global-set-key (kbd "C-v") 'evil-scroll-down)
 (global-set-key (kbd "C-v") 'evil-scroll-down)
+(global-set-key (kbd "◊") 'evil-scroll-up) ; ALT+v
 ;; (global-set-key (kbd "M-v") 'evil-scroll-up)
 
 ;; web mode
@@ -1054,8 +1071,8 @@ Version 2016-12-27"
 ;; (global-set-key (kbd "H-s") 'helm-ag)
 
 ;; org
-(define-key org-mode-map (kbd "H-p") 'org-metaup) ;; Hyper + p
-(define-key org-mode-map (kbd "H-n") 'org-metadown) ;; Hyper + n
+;; (define-key org-mode-map (kbd "H-p") 'org-metaup) ;; Hyper + p
+;; (define-key org-mode-map (kbd "H-n") 'org-metadown) ;; Hyper + n
 (define-key org-mode-map (kbd "M-J") 'org-insert-todo-heading)
 
 

@@ -80,6 +80,11 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 * Bloquant
 :VISIBILITY:
+- [ ] Terminer intégration de hunspell @work
+- [ ] Mini buffer > M-p : Ne pas afficher de message beginning of
+  buffer bla bla
+- [ ] Trouver un raccourcis pour multi cursor
+
 - [ ] AG mettre en mode emacs et non pas evil normal
 - [ ] org mode : > yas snippet new checkbox ne fonctionne plus
 
@@ -87,8 +92,6 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] Paredit ET web-mode : Retirer la fonction qui escape automatiquement les
   doubles quote dans les chaines car en principe ca ne marche pas bien
   en web mode
-
-
 
 
 
@@ -144,63 +147,6 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] Previous/Next buffer : Utiliser la liste de ibuffer trier par ordre recent
 
 
-
-
-- [X] ALT+n ALT+p ne fonctionne pas (drag line)
-- [X] Multi cursor : Voir pour afficher un caret non box
-     - Non faisable
-
-- [X] Coller sur une selectione ne fontionne plus (option native)
-- [X] Delete backspace ne fonctionne plus
-
-- [X] JS HINT : ne pas afficher certains warning
-- [X] Ediff depuis vc-dir : Apres avoir quitter : Revenir sur la
-  disposition precedente : Voir pour mettre un handler before ediff
-  save current layout, after ediff set previous layout
-- [X] POMME + click = add multi cursor
-- [X] Vc dir same window
-
-
-
-- [X] [occur] Centrer la ligne
-- [X] [recenter]
-  - [X] Jump to mark
-  - [X] i-search (Comme dans Sublime)
-- [X] [org-mode] Truncate line by default
-- [X] [i-search] C-q pour quitter i-search
-- [X] [emacs-osxs] new centered frame : Le buffer de la frame précédente est changé
-- [X] Rebinder s-A ()
-- [X] [ace-window] Faire fonctionner ace window
-- [X] [vc-change-log] Truncate line on by default
-- [X] [magit mode] Truncate line on by default
-
-
-- [X] [org-mode] YAS n'est pas chargé
-- [X] [css-mode] Ne pas ajouter les entrées de DABREV
-      (Mélange lorsqu'un pdf est ouvert)
-- [X] M-S-o ne fonctionne plus
-- [X] [yas] Ne fonctionne plus
-- [X] [multi-cursor] Autoriser le [M-v]
-- [X] [css] Déclencher company css sur tab
-
-- [X] Mouse shift click kill la sélection bizarre...
-- [X] Utiliser la touche SUPER : Bindée sur RIGHT COMMAND
-- [X] Remettre les couleurs du monde courant sur le curseur et le mode line
-- [X] [projectile-find-file] Autoriser le COMMAND+v dans ce mode (mini buffer like)
-- [X] [syslog] Truncate line off
-- [X] [i-search] M-v dans isearch
-- [X] [Swoop] Ne pas pré-initialiser avec le texte sous le curseur
-
-- [X] [org-mode] Splitter en deux panneaux, le second contient juste un recap
-  https://emacs.stackexchange.com/questions/9530/how-can-i-get-an-org-mode-outline-in-a-2nd-buffer-as-a-dynamic-table-of-contents
-  - F2
-
-- [X] [all] Drag line ne fonctionne plus
-- [X] [custom] Faire une fonction recenter and enlarge frame
-- [X] [org] Sauvegarder l'état des toggles
-- [X] [org mode] [yas] Ajouter un snippet pour faire des nouvelles lignes de todo ("- [ ] ")
-- [X] [org-mode] [C-S-j] Le caret est mal positionne
-- [X] F5 : Revert-buffer
   
 * A ranger
 - [ ] [doc-view] Faire fonctionner doc-view (Lire des fichiers excel, doc, word, etc)
@@ -211,7 +157,6 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] Back to previous window highlight current line comme lorque l'on fait un M-; en typescript-mode
 - [ ] [company] Voir pour utiliser autre chose que company pour la complétion des mots car cela peut être lent
 
-- [X] [swoop] Faire des M-v dans le prompt
 - [ ] [swoop] Ne pas initialiser avec le texte sous le curseur
      - [ ] [org] Lancer org mode avec certains titre ouvert fermé
   - (conf en tête de fichier)
@@ -266,8 +211,6 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] Open file from system in new emacs frame (Right click open in)
 - [ ] [multi-cursor] Remettre la possibilité d'ajouter un command click de la souris pour ajouter un nouveau caret
 - [ ] [projectile] Find file - Traitement lent lorsqu'il y a beaucoup de fichiers
-- [ ] [helm] Directory first
-- [X] [multi-cursor] C-g leave multi-cursor state
 - [ ] [highlight-symbol] [ggtags] [web-mode] Les couleurs disparaissent lorsque les modes web-mode ggtags sont presents highlight-mode est active
 - [ ] [projectile] Auto invalidate cache after create/rename/delete files
   - [ ] create
@@ -302,7 +245,6 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [ivy] : Ne pas mettre les fichiers .svn dans la liste
 - [ ] [plugin] [change inner] Ajoute rl'option Change Inner Tag
 * Majeur
-- [X] Integrer hydra and ace window  https://www.youtube.com/watch?v=_qZliI1BKzI
 - [ ] [php-mode] Autocompletion, ajouter les entrés du buffer courant dans la liste des completions
 - [ ] [custom] Faire une fonction custom delete backward or region
       C-w doit appeler clean-aindent--bsunindent ou "whole-line-or-region-kill-region"
@@ -318,7 +260,6 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
       Le profile colorimétrique utilisé par Photoshop n'était pas bon ... ... ...
 - [ ] [theme] php mode : Plus de couleurs
 
-- [X] [util] F5 revert buffer ?
 - [ ] [util] Voir si il est possible de faire un (CMD+P + touche @) (file.php@methode_name)
 - [ ] [vc-dir] Faire une fonction toggle des hunk comme dans magit
 - [ ] Faire une fonction "Merge lines" pour supprimer les linebreak/whitespace
@@ -385,6 +326,69 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
   - [ ] Show current VC system used
   - [ ] Show current encoding
 * Corrige
+- [X] [swoop] Faire des M-v dans le prompt
+- [X] [multi-cursor] C-g leave multi-cursor state- [ ] [helm] Directory first
+
+- [X] Integrer hydra and ace window  https://www.youtube.com/watch?v=_qZliI1BKzI
+- [X] [util] F5 revert buffer ?
+
+- [X] ALT+n ALT+p ne fonctionne pas (drag line)
+- [X] Multi cursor : Voir pour afficher un caret non box
+     - Non faisable
+
+- [X] Coller sur une selectione ne fontionne plus (option native)
+- [X] Delete backspace ne fonctionne plus
+
+- [X] JS HINT : ne pas afficher certains warning
+- [X] Ediff depuis vc-dir : Apres avoir quitter : Revenir sur la
+  disposition precedente : Voir pour mettre un handler before ediff
+  save current layout, after ediff set previous layout
+- [X] POMME + click = add multi cursor
+- [X] Vc dir same window
+
+
+
+- [X] [occur] Centrer la ligne
+- [X] [recenter]
+  - [X] Jump to mark
+  - [X] i-search (Comme dans Sublime)
+- [X] [org-mode] Truncate line by default
+- [X] [i-search] C-q pour quitter i-search
+- [X] [emacs-osxs] new centered frame : Le buffer de la frame précédente est changé
+- [X] Rebinder s-A ()
+- [X] [ace-window] Faire fonctionner ace window
+- [X] [vc-change-log] Truncate line on by default
+- [X] [magit mode] Truncate line on by default
+
+
+- [X] [org-mode] YAS n'est pas chargé
+- [X] [css-mode] Ne pas ajouter les entrées de DABREV
+      (Mélange lorsqu'un pdf est ouvert)
+- [X] M-S-o ne fonctionne plus
+- [X] [yas] Ne fonctionne plus
+- [X] [multi-cursor] Autoriser le [M-v]
+- [X] [css] Déclencher company css sur tab
+
+- [X] Mouse shift click kill la sélection bizarre...
+- [X] Utiliser la touche SUPER : Bindée sur RIGHT COMMAND
+- [X] Remettre les couleurs du monde courant sur le curseur et le mode line
+- [X] [projectile-find-file] Autoriser le COMMAND+v dans ce mode (mini buffer like)
+- [X] [syslog] Truncate line off
+- [X] [i-search] M-v dans isearch
+- [X] [Swoop] Ne pas pré-initialiser avec le texte sous le curseur
+
+- [X] [org-mode] Splitter en deux panneaux, le second contient juste un recap
+  https://emacs.stackexchange.com/questions/9530/how-can-i-get-an-org-mode-outline-in-a-2nd-buffer-as-a-dynamic-table-of-contents
+  - F2
+
+- [X] [all] Drag line ne fonctionne plus
+- [X] [custom] Faire une fonction recenter and enlarge frame
+- [X] [org] Sauvegarder l'état des toggles
+- [X] [org mode] [yas] Ajouter un snippet pour faire des nouvelles lignes de todo ("- [ ] ")
+- [X] [org-mode] [C-S-j] Le caret est mal positionne
+- [X] F5 : Revert-buffer
+
+
 - [X] Intégrer le M-s pour save plutôt que C-x C-s
 - [X] [new frame] Center frame
 - [X] [fundamental] Ajouter le mode projectile

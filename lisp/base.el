@@ -60,7 +60,7 @@
 (tool-bar-mode -1)
 
 ;; Disable scrollbar
-(scroll-bar-mode -1)
+;; (scroll-bar-mode -1)
 
 ;; ?
 (set-default 'cursor-type 'bar)
