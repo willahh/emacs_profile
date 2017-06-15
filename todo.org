@@ -88,6 +88,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 
 
+
 - [ ] Terminer intégration de hunspell @work
 - [ ] Mini buffer > M-p : Ne pas afficher de message beginning of
   buffer bla bla
@@ -154,8 +155,6 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [js/js2] Désactiver Paredit pour le mode js/js2
 - [ ] Previous/Next buffer : Utiliser la liste de ibuffer trier par ordre recent
 
-
-  
 * A ranger
 - [ ] [doc-view] Faire fonctionner doc-view (Lire des fichiers excel, doc, word, etc)
 - [ ] [Google talk] : Intégrer Google Talk dans Emacs
