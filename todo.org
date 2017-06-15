@@ -80,7 +80,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 * Bloquant
 :VISIBILITY:
-  
+- [ ] Associer les fichiers .pdf au mode PDFView
 - [ ] Faire un fichier org nomme main.org Lorsqu'une nouvelle frame
   est crée, initialiser sur ce fichier. Ce fichier contient des liens
   vers tous les projets courant ainsi que vers tous les fichiers les
