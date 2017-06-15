@@ -295,7 +295,7 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "C-x C-r") 'rename-current-buffer-file)
 
-;; -------- Buffer
+;; ----------------- Buffer
 ;; https://stackoverflow.com/a/25792276
 ;; (defun lunaryorn-new-buffer-frame ()
 ;;   "Create a new frame with a new empty buffer."
@@ -401,13 +401,14 @@ Version 2016-12-27"
 (global-set-key (kbd "ñ") 'drag-stuff-down) ; ALT+n
 
 
-;; ---------------- 
+;; ----------------
 ;; Separate C-m from RETURN key
 (define-key input-decode-map [?\C-m] [C-m])
 
 (defun wlh-set-bind-for-mc ()
   ;; Bind sur Meta q
-  (global-set-key (kbd "<M-q>") 'mc/mark-next-like-this-word)
+
+  ;; Previous
   (global-set-key (kbd "<M-Q>") 'mc/mark-previous-like-this-word)
 
   ;; Bind sur Control m / Control shift m
@@ -423,8 +424,15 @@ Version 2016-12-27"
   (global-set-key (kbd "<M-down-mouse-1>") 'mc/add-cursor-on-click)
   )
 
-(add-hook 'autopair-mode-hook 'wlh-set-bind-for-mc)
-(add-hook 'paredit-mode-map 'wlh-set-bind-for-mc)
+;; Next
+(global-set-key (kbd "<M-q>") 'mc/mark-next-like-this-word)
+(define-key paredit-mode-map (kbd "M-q") 'mc/mark-next-like-this-word)
+  
+
+(add-hook 'text-mode 'wlh-set-bind-for-mc)
+(add-hook 'prog-mode 'wlh-set-bind-for-mc)
+;; (add-hook 'autopair-mode-hook 'wlh-set-bind-for-mc)
+;; (add-hook 'paredit-mode-map 'wlh-set-bind-for-mc)
 
 (global-set-key (kbd "M-L") 'mc/mark-all-words-like-this)
 
@@ -541,7 +549,7 @@ Version 2016-12-27"
 (global-set-key (kbd "C-c c s") (quote thing-copy-string-to-mark))
 (global-set-key (kbd "C-c c a") (quote thing-copy-parenthesis-to-mark))
 
-;; ----- search
+;; ---------------- search
 ;; Update : Apres pas mal d essais, la commande "ag-project" me convient le mieux.
 ;; Cette commande permet de faire une recherche globale depuis le projet (retrouve via .projectile ou .svn .git)
 ;; et affiche les resultats dans le meme buffer tout comme dans Sublime Text.
@@ -603,10 +611,10 @@ Version 2016-12-27"
 (global-set-key [control meta shift s] 'ag-project)
 
 
-;; ---- window
+;; ---------------- window
 (define-key typescript-mode-map (kbd "M-j") 'c-indent-new-comment-line)
 
-;; ---- Comment lines
+;; ---------------- Comment lines
 (global-set-key (kbd "M-/") 'comment-line)
 
 ;; comment
@@ -998,9 +1006,13 @@ Version 2016-12-27"
 (global-set-key (kbd "<f12>") 'wil-vc-dir)
 (global-set-key (kbd "<f11>") 'wil-IDE)
 
-;; ---------------- Super keys
+;; --------------- Super keys
 ;; Comment
 (global-set-key (kbd "s-/") 'comment-line)
+
+;; Kill
+(global-set-key (kbd "s-k") 'kill-paragraph)
+(global-set-key (kbd "s-K") 'backward-kill-paragraph)
 
 ;; Help
 (global-set-key (kbd "s-h") 'help)
@@ -1008,13 +1020,13 @@ Version 2016-12-27"
 ;; Find
 (global-set-key (kbd "s-f") 'counsel-find-file)
 
-;; ---------------- Navigation
+;; ------- Navigation
 ;; From Sacha.org
 ;; (bind-key "C-x p" 'pop-to-mark-command)
 ;; (setq set-mark-command-repeat-pop t)
 
 
-;; ---------------- Line navigation commands
+;; ------- Line navigation commands
 ;; (global-set-key (kbd "s-S") 'avy-goto-char-in-line)
 (global-set-key (kbd "s-l") 'avy-goto-char-in-line)
 ;; (global-set-key (kbd "s-f") 'evil-find-char)
@@ -1046,7 +1058,7 @@ Version 2016-12-27"
 (global-set-key (kbd "s-a") 'mark-whole-buffer)
 (global-set-key (kbd "s-s") 'helm-swoop)
 
-(global-set-key (kbd "s-w") 'vc-diff)
+(global-set-key (kbd "s-w") 'wil-vc-diff-same-window)
 (global-set-key (kbd "s-W") 'vc-ediff)
 
 ;; avy

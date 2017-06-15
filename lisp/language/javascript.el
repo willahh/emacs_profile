@@ -22,6 +22,34 @@
 ;; javascript mode
 (require 'js2-mode)
 
+
+;; Modification of endlessparenthesis narrow-or-widen for javascript
+;; to use the nice js2-narrow-to-defun
+;; http://endlessparentheses.com/emacs-narrow-or-widen-dwim.html
+(defun wil-js-narrow-or-widen-dwim (p)
+  "Widen if buffer is narrowed, narrow-dwim otherwise.
+Dwim means: region, org-src-block, org-subtree, or
+defun, whichever applies first. Narrowing to
+org-src-block actually calls `org-edit-src-code'.
+
+With prefix P, don't widen, just narrow even if buffer
+is already narrowed."
+  (interactive "P")
+  (declare (interactive-only))
+  (cond ((and (buffer-narrowed-p) (not p)) (widen))
+        ((js2-narrow-to-defun))
+        ((derived-mode-p 'org-mode)
+         ;; `org-edit-src-code' is not a real narrowing
+         ;; command. Remove this first conditional if
+         ;; you don't want it.
+         (cond ((ignore-errors (org-edit-src-code) t)
+                (delete-other-windows))
+               ((ignore-errors (org-narrow-to-block) t))
+               (t (org-narrow-to-subtree))))
+        ((derived-mode-p 'latex-mode)
+         (LaTeX-narrow-to-environment))
+        (t (js2-narrow-to-defun))))
+
 ;; js-comint
 ;; javascript live interpreter nice to test regexp on fly
 ;; (require 'js-comint)
@@ -133,6 +161,8 @@
             ;; (define-key wil-js-mode-map (kbd "<tab>") 'wil-tab-indent-or-complete-js)
 
             (define-key wil-js-mode-map (kbd "<tab>") 'company-indent-or-complete-common)
+            (define-key wil-js-mode-map (kbd "C-x n") 'wil-js-narrow-or-widen-dwim)
+
             ;; (define-key wil-js-mode-map (kbd "<tab>") 'wil-js-tab)
             ;; (define-key wil-js-mode-map (kbd "s-j") 'yas-expand)
             ;; (define-key wil-js-mode-map (kbd "s-J") 'company-yasnippet)

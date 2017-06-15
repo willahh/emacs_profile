@@ -1336,6 +1336,11 @@ the visible part of the current buffer following point. "
   (interactive)
   (find-name-dired "~/" "*.org")
 )
+(defun wil-find-org-files-in-directory ()
+  ;; Find org files in current directory
+  (interactive)
+  (find-name-dired default-directory "*.org")
+)
 (defun wil-find-dsstore ()
   ;; Find .DS_Store files in user directory
   (interactive)
@@ -1346,6 +1351,12 @@ the visible part of the current buffer following point. "
   (interactive)
   (find-name-dired "~/" "*.pdf")
 )
+(defun wil-open-projectile-bookmarks ()
+  ;; Find pdf files in user directory
+  (interactive)
+  (find-file "~/.emacs.d/projectile-bookmarks.eld")
+)
+
 
 
 
@@ -1424,3 +1435,16 @@ the visible part of the current buffer following point. "
 ;;              (not mark-active)
 ;;              (not isearch-mode-end-hook-quit))
 ;;     (goto-char isearch-other-end)))
+
+
+;;
+;; https://stackoverflow.com/a/5194568
+;; (defun backward-up-sexp (arg)
+;;   (interactive "p")
+;;   (let ((ppss (syntax-ppss)))
+;;     (cond ((elt ppss 3)
+;;            (goto-char (elt ppss 8))
+;;            (backward-up-sexp (1- arg)))
+;;           ((backward-up-list arg)))))
+
+;; (global-set-key [remap backward-up-list] 'backward-up-sexp)

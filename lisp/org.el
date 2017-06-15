@@ -6,6 +6,9 @@
 (require 'org)
 (require 'org-mouse)
 
+(setq org-agenda-files (quote ("~/org/main.org")))
+
+
 ;; http://orgmode.org/worg/org-tutorials/org-latex-export.html
 (require 'ox-latex)
 (unless (boundp 'org-latex-classes)

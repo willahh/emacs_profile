@@ -288,7 +288,8 @@
 ;; (setq jit-lock-defer-time 0)
 ;; (setq jit-lock-defer-time 0.1)
 ;; (setq jit-lock-defer-time 0.5)
-(setq jit-lock-defer-time 0.25)
+;; (setq jit-lock-defer-time 0.25)
+(setq jit-lock-defer-time 0.125)
 
 ;; Some settings from https://github.com/technomancy/better-defaults/blob/master/better-defaults.el
 (progn
