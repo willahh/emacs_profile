@@ -77,6 +77,9 @@
 (define-key ivy-minibuffer-map (kbd "<escape>") 'minibuffer-keyboard-quit)
 
 
+(define-key key-translation-map "\C-q" "\C-g")
+
+
 (use-package evil-mc
   :bind (:map evil-mc-key-map
               ("\M-p" . nil)
@@ -101,7 +104,8 @@
 
 ;; (global-set-key [(control shift q)] 'abort-recursive-edit)
 (global-set-key [(control shift q)] 'quoted-insert)
-(global-set-key [(control q)] 'my-abort-recursive-edit)
+
+;; (global-set-key [(control q)] 'my-abort-recursive-edit)
 
 
 
@@ -895,10 +899,10 @@ Version 2016-12-27"
 (global-set-key (kbd "M-3") 'hrs/split-window-right-and-switch) ;; M-3
 (define-key diff-mode-map (kbd "M-3") 'hrs/split-window-right-and-switch)
 
-(global-set-key (kbd "M-9") 'resize-window) ;; M-9
-(define-key diff-mode-map (kbd "M-9") 'resize-window)
+;; (global-set-key (kbd "M-9") 'resize-window) ;; M-9
+;; (define-key diff-mode-map (kbd "M-9") 'resize-window)
 
-;; other window
+;; other Window
 (global-set-key (kbd "M-o") 'other-window)
 (define-key diff-mode-map (kbd "M-o") 'other-window)
 (define-key ggtags-navigation-map (kbd "M-o") 'other-window) ;; Need to override ggtags map
@@ -1006,6 +1010,10 @@ Version 2016-12-27"
 ;; (define-key ediff-mode-map (kbd "q") 'wil-vc-ediff-quit)
 (add-hook 'ediff-mode-hook 'wil-ediff-hook)
 
+(global-set-key (kbd "M-9") 'xah-toggle-letter-case)
+(global-set-key (kbd "M-8") 'string-inflection-all-cycle)
+
+
 ;; ---------------- Function keys
 (global-set-key (kbd "<f2>") 'my/open-tree-view)
 (global-set-key (kbd "<f12>") 'wil-vc-dir)
@@ -1050,9 +1058,10 @@ Version 2016-12-27"
 ;; (global-set-key (kbd "s-x") 'smex)
 
 ;; Text commandes
-(global-set-key (kbd "s-c") 'capitalize-word)
-(global-set-key (kbd "s-u") 'upcase-word)
-(global-set-key (kbd "s-l") 'downcase-word)
+;; (global-set-key (kbd "s-c") 'capitalize-word)
+;; (global-set-key (kbd "s-u") 'upcase-word)
+;; (global-set-key (kbd "s-l") 'downcase-word)
+
 (global-set-key (kbd "s-g") 'magit-status)
 
 (global-set-key (kbd "s-D") 'projectile-dired)

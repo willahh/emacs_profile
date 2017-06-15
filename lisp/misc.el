@@ -1050,3 +1050,7 @@ _d_: subtree
 
 (setq langtool-autoshow-message-function
       'langtool-autoshow-detail-popup)
+
+
+
+(require 'string-inflection)

@@ -63,6 +63,7 @@
       indent-for-tab-command
       kill-region
       kill-sentence
+      mark-sexp
       mouse-set-region
       mouse-start-secondary
       my-abort-recursive-edit
@@ -89,6 +90,7 @@
       web-mode-comment-indent-new-line
       whole-line-or-region-kill-region
       wlh-tab-indent-or-complete-web
+      xah-toggle-letter-case
       yank-rectangle
       yas-expand
       ))
