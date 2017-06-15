@@ -60,7 +60,7 @@
 (tool-bar-mode -1)
 
 ;; Disable scrollbar
-(scroll-bar-mode -1)
+;; (scroll-bar-mode -1)
 
 ;; ?
 (set-default 'cursor-type 'bar)
@@ -98,9 +98,11 @@
 ;; New line and indent by default
 (global-set-key (kbd "RET") 'newline-and-indent)
 
-;; Hihglight la ligne courante
-;; Update : ralentis un peu l affichage, en commentaire pour le moment 
-;; (global-hl-line-mode)
+;; Hihglight la ligne courante Update : Ralentis un peu l affichage,
+;; en commentaire pour le moment Update 2 : Il faut un repere visuel
+;; pour savoir tout de suite ou se situe le caret, juste le caret ne
+;; suffit pas.
+(global-hl-line-mode)
 
 ;;
 (winner-mode t)
@@ -414,3 +416,11 @@
 
 ;; Always give focus to the help window when invoked
 (setq help-window-select t)
+
+
+;; Don't replace line ending (Windows, Unix, Windows+Unix)
+;; Just keep diverses line ending... it is not a real problem
+;; Problem is when all line endings are changed automatically (default behaviour)
+;; then the diff when commit is on ALL lines... this IS bad.
+;; https://stackoverflow.com/a/10845302
+(setq inhibit-eol-conversion t)
