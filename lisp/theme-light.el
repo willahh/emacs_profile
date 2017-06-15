@@ -1,7 +1,7 @@
 (load-theme 'leuven t)
 
 
-
+(set-frame-font "Fira mono:antialias=1")
 
 
 

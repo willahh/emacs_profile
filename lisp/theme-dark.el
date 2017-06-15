@@ -98,7 +98,7 @@
 
 
 ;; ------- Custom theme
-(set-frame-font "Fira mono:antialias=1") ;; Don't work ?
+(set-frame-font "Fira mono:antialias=1")
 
 
 ;; Disable bold ---> seems to work !

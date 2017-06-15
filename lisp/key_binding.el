@@ -407,34 +407,39 @@ Version 2016-12-27"
 
 (defun wlh-set-bind-for-mc ()
   ;; Bind sur Meta q
-
-  ;; Previous
-  (global-set-key (kbd "<M-Q>") 'mc/mark-previous-like-this-word)
-
-  ;; Bind sur Control m / Control shift m
-  (global-set-key (kbd "<C-m>") 'mc/mark-next-like-this-word)
-  (global-set-key [(control shift m)] 'mc/mark-previous-like-this-word)
-  ;; (global-set-key [(control meta shift m)] 'mc/mark-all-words-like-this)
-
-  ;; Multi cursor map
-  (define-key mc/keymap (kbd "M-v") 'yank)
-
-  ;; Mouse
-  ;;(define-key (kbd "M-down-mouse-1) 'mc/add-cursor-on-click)
-  (global-set-key (kbd "<M-down-mouse-1>") 'mc/add-cursor-on-click)
   )
 
-;; Next
-(global-set-key (kbd "<M-q>") 'mc/mark-next-like-this-word)
-(define-key paredit-mode-map (kbd "M-q") 'mc/mark-next-like-this-word)
-  
+;; Bind sur Control m / Control shift m
+;; (global-set-key (kbd "<C-m>") 'mc/mark-next-like-this-word)
+;; (global-set-key [(control shift m)] 'mc/mark-previous-like-this-word)
 
-(add-hook 'text-mode 'wlh-set-bind-for-mc)
-(add-hook 'prog-mode 'wlh-set-bind-for-mc)
+
+
+;; ------ Multi cursor binding
+;; Multi cursor map
+(define-key mc/keymap (kbd "M-v") 'yank)
+
+;; Mouse
+(global-set-key (kbd "<M-down-mouse-1>") 'mc/add-cursor-on-click)
+
+;; All
+(global-set-key (kbd "M-L") 'mc/mark-all-words-like-this) ; Like in VS Code
+
+;; Next
+(global-set-key (kbd "°") 'mc/mark-next-like-this-word) ; ALT+d
+(define-key paredit-mode-map (kbd "°") 'mc/mark-next-like-this-word) ; ALT+d
+
+;; Previous
+(global-set-key (kbd "Δ") 'mc/mark-previous-like-this-word) ; ALT+SHIFT+q
+(define-key paredit-mode-map (kbd "Δ") 'mc/mark-previous-like-this-word) ; ALT+SHIFT+q
+
+  
+;; (add-hook 'text-mode 'wlh-set-bind-for-mc)
+;; (add-hook 'prog-mode 'wlh-set-bind-for-mc)
 ;; (add-hook 'autopair-mode-hook 'wlh-set-bind-for-mc)
 ;; (add-hook 'paredit-mode-map 'wlh-set-bind-for-mc)
 
-(global-set-key (kbd "M-L") 'mc/mark-all-words-like-this)
+
 
 
 ;; Mouse
@@ -963,7 +968,7 @@ Version 2016-12-27"
 (define-key web-mode-map (kbd "C-c RET") 'wlh-join-lines)
 
 ;; (hydra-macro/body)
-(global-set-key (kbd "‡") 'hydra-macro/body) ;; ALT+q
+;; (global-set-key (kbd "‡") 'hydra-macro/body) ;; ALT+q
 
 ;; PDF
 (defun wlh-pdf-view-mode-hook ()
@@ -1036,9 +1041,7 @@ Version 2016-12-27"
 
 ;; Browse comands
 (global-set-key (kbd "s-p") 'projectile-find-file)
-(global-set-key (kbd "s-m") 'helm-recentf)
 (global-set-key (kbd "s-r") 'projectile-recentf)
-(global-set-key (kbd "s-R") 'helm-recentf)
 (global-set-key (kbd "s-q") 'my-abort-recursive-edit)
 
 ;; Scroll commands
@@ -1058,7 +1061,7 @@ Version 2016-12-27"
 (global-set-key (kbd "s-a") 'mark-whole-buffer)
 (global-set-key (kbd "s-s") 'helm-swoop)
 
-(global-set-key (kbd "s-w") 'wil-vc-diff-same-window)
+(global-set-key (kbd "s-w") 'vc-diff)
 (global-set-key (kbd "s-W") 'vc-ediff)
 
 ;; avy
@@ -1086,6 +1089,7 @@ Version 2016-12-27"
 ;; (define-key org-mode-map (kbd "H-p") 'org-metaup) ;; Hyper + p
 ;; (define-key org-mode-map (kbd "H-n") 'org-metadown) ;; Hyper + n
 (define-key org-mode-map (kbd "M-J") 'org-insert-todo-heading)
+(global-set-key (kbd "H-r") 'helm-recentf)
 
 
 ;; ispell (H-$ instead of M-$, cause osx handle M-$ at os level)
