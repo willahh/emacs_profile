@@ -80,6 +80,14 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 * Bloquant
 :VISIBILITY:
+  
+- [ ] Faire un fichier org nomme main.org Lorsqu'une nouvelle frame
+  est crée, initialiser sur ce fichier. Ce fichier contient des liens
+  vers tous les projets courant ainsi que vers tous les fichiers les
+  plus souvents utilises.
+
+
+
 - [ ] Terminer intégration de hunspell @work
 - [ ] Mini buffer > M-p : Ne pas afficher de message beginning of
   buffer bla bla
