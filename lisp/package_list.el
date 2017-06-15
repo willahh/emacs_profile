@@ -222,7 +222,7 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/evil-easymotion")
 (add-to-list 'load-path "~/.emacs.d/vendor/psvn")
 (add-to-list 'load-path "~/.emacs.d/vendor/simple-httpd")
-(add-to-list 'load-path "~/.emacs.d/vendor/doom-themeoos")
+(add-to-list 'load-path "~/.emacs.d/vendor/doom-themes")
 (add-to-list 'load-path "~/.emacs.d/vendor/dumb-jump")
 (add-to-list 'load-path "~/.emacs.d/vendor/Indium")
 (add-to-list 'load-path "~/.emacs.d/vendor/restclient")

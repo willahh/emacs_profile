@@ -42,9 +42,11 @@
 (load-file "~/.emacs.d/lisp/language/lisp.el")
 (load-file "~/.emacs.d/lisp/language/clojure.el")
 (load-file "~/.emacs.d/lisp/key_binding.el")
-;; (load-file "~/.emacs.d/lisp/theme-dark.el")
-(load-file "~/.emacs.d/lisp/theme-light.el")
 (load-file "~/.emacs.d/lisp/browser.el")
+
+(load-file "~/.emacs.d/lisp/theme-dark.el")
+;; (load-file "~/.emacs.d/lisp/theme-light.el")
+
 
 
 ;; Syntax entry for web mode doesnt work actualy

@@ -1,3 +1,5 @@
+(require 'doom-themes)
+
 (load-theme 'doom-one t)
 
 (setq-default line-spacing 0)
@@ -9,7 +11,7 @@
 (set-face-attribute 'default nil :background "#212121" :foreground "#e6fbfb" :box nil)
 (set-face-attribute 'fringe nil :background "#212121")
 (set-face-attribute 'fringe nil :background "#212121")
-(set-face-attribute 'linum nil :background "#212121")
+;; (set-face-attribute 'linum nil :background "#212121")
 
 
 (set-face-attribute 'trailing-whitespace nil :background "#000")
@@ -85,9 +87,8 @@
 (setq powerline-color2 "#21242b")
 
 ;; make the left fringe 4 pixels wide and the right disappear
-(fringe-mode '(8 . 0))
-
-(setq nlinum-format "%4d \u2502 ")
+;; (fringe-mode '(8 . 0))
+;; (setq nlinum-format "%4d \u2502 ")
 
 ;; A bit margin left
 (set-window-margins nil 5)
