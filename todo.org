@@ -80,19 +80,13 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 * Bloquant
 :VISIBILITY:
-- [X] Coller sur une selectione ne fontionne plus (option native)
-- [X] Delete backspace ne fonctionne plus
 - [ ] AG mettre en mode emacs et non pas evil normal
 - [ ] org mode : > yas snippet new checkbox ne fonctionne plus
 
-- [ ] ALT+n ALT+p ne fonctionne pas (drag line)
-- [ ] Multi cursor : Voir pour afficher un caret non box
-
-
+- [ ] ag bufer : hihglight search string
 - [ ] Paredit ET web-mode : Retirer la fonction qui escape automatiquement les
   doubles quote dans les chaines car en principe ca ne marche pas bien
   en web mode
-
 
 
 
@@ -152,6 +146,12 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 
 
+- [X] ALT+n ALT+p ne fonctionne pas (drag line)
+- [X] Multi cursor : Voir pour afficher un caret non box
+     - Non faisable
+
+- [X] Coller sur une selectione ne fontionne plus (option native)
+- [X] Delete backspace ne fonctionne plus
 
 - [X] JS HINT : ne pas afficher certains warning
 - [X] Ediff depuis vc-dir : Apres avoir quitter : Revenir sur la

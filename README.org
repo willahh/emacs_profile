@@ -59,12 +59,6 @@ VC - svn - git
 
 Search tools - ag (lightning search)
 
-Javascript tools - tern - eslint - babel-eslint - eslint-plugin-react -
-js-beautify
-
-CSS tools - csslint (Syntax checker)
-
-Language tools @@html:<!-- - ispell -->@@
 
 Tags tools @@html:<!-- - ctags -->@@ @@html:<!-- - tags -->@@
 @@html:<!-- - cscope -->@@ @@html:<!-- - Global -->@@
@@ -78,26 +72,6 @@ Tags tools @@html:<!-- - ctags -->@@ @@html:<!-- - tags -->@@
 VC - svn - git
 
 Search tools - ag (lightning search)
-
-PHP tools - php https://secure.php.net/ (brew install
-homebrew/php/php56)
-
-Javascript tools - Nodejs https://nodejs.org/en/
-
--  Node package manager https://www.npmjs.com/
-
--  tern http://ternjs.net/
-
--  eslint http://eslint.org/docs/user-guide/getting-started (sudo npm -g
-   install eslint)
-
--  babel-eslint (sudo npm install babel-eslint -g)
-
--  eslint-plugin-react (sudo npm install eslint-plugin-react -g)
-
--  js-beautify (npm install -g js-beautify)
-
-CSS tools - csslint (sudo npm -g install csslint)
 
 Language tools
 @@html:<!-- - ispell - brew install ispell --witch-lang-fr -->@@
@@ -171,6 +145,58 @@ compatible dictionaries from other sources, such as
 #+BEGIN_SRC sh
 gem install sass
 #+END_SRC
+* Support : css
+** Tools : csslint (Syntax checker)
+https://github.com/gajus/css-lint
+https://github.com/CSSLint/csslint/wiki/Command-line-interface
+
+Installation
+
+#+BEGIN_SRC sh
+sudo npm install -g csslint
+#+END_SRC
+
+Configuration
+
+.csslintrc file
+#+BEGIN_SRC json
+  {
+      "adjoining-classes": false,
+      "box-model": false,
+      "order-alphabetical": false,
+      "box-sizing": false,
+      "bulletproof-font-face": false,
+      "compatible-vendor-prefixes": false,
+      "display-property-grouping": false,
+      "duplicate-background-images": false,
+      "duplicate-properties": false,
+      "empty-rules": false,
+      "fallback-colors": false,
+      "floats": false,
+      "font-faces": false,
+      "font-sizes": false,
+      "gradients": false,
+      "ids": false,
+      "import": false,
+      "important": false,
+      "known-properties": false,
+      "non-link-hover": false,
+      "outline-none": false,
+      "overqualified-elements": false,
+      "qualified-headings": false,
+      "regex-selectors": false,
+      "shorthand": false,
+      "star-property-hack": false,
+      "text-indent": false,
+      "underscore-property-hack": false,
+      "vendor-prefix": false,
+      "unique-headings": false,
+      "universal-selector": false,
+      "unqualified-attributes": false,
+      "zero-units": false
+  }
+#+END_SRC
+
 * Support : php
 ** Tools
 *** php
@@ -188,6 +214,14 @@ chmod +x psysh
 #+END_SRC
 
 psysh should be accessible on your $PATH dir.
+
+
+*** A ranger
+
+
+
+PHP tools - php https://secure.php.net/ (brew install
+homebrew/php/php56)
 
 * Support : html
 ** Tools
@@ -236,6 +270,27 @@ Create .jscsrc file into user dir
       "validateLineBreaks": "LF"
   }
 #+END_SRC
+*** todo
+
+
+Javascript tools - Nodejs https://nodejs.org/en/
+
+-  Node package manager https://www.npmjs.com/
+
+-  tern http://ternjs.net/
+
+-  eslint http://eslint.org/docs/user-guide/getting-started (sudo npm -g
+   install eslint)
+
+-  babel-eslint (sudo npm install babel-eslint -g)
+
+-  eslint-plugin-react (sudo npm install eslint-plugin-react -g)
+
+-  js-beautify (npm install -g js-beautify)
+   
+Javascript tools - tern - eslint - babel-eslint - eslint-plugin-react -
+js-beautify
+
 * Support : PDF
     :PROPERTIES:
     :CUSTOM_ID: display-pdf-in-emacs-on-osx
