@@ -790,8 +790,13 @@ Version 2016-12-27"
 (global-set-key (kbd "C-x M-m") 'shell)
 
 ;; expand-region
-(global-set-key (kbd "C-=") 'er/expand-region)
-(global-set-key (kbd "C-+") 'er/contract-region)
+;; (global-set-key (kbd "C-=") 'er/expand-region)
+;; (global-set-key (kbd "C-+") 'er/contract-region)
+
+;; Remove native M-l binding (lowercase) Lowercase, uppercase,
+;; camelcase are moved into "string-inflection-all-cycle" function
+(global-set-key (kbd "M-l") 'er/expand-region)
+(global-set-key (kbd "M-L") 'er/contract-region)
 
 
 (defun m-eshell-hook ()

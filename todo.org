@@ -80,10 +80,12 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 * Bloquant
 :VISIBILITY:
+  - [ ] flyspell mode ne doit pas etre actif par default car il
+    consomme beaucoup
 - [ ] M-w ne ferme plus la frame courante
 - [ ] mshell / shell + Abbrev autocomplete :
-  Possibilité d'avoir une complétion case insensitve.
-  L'option était présente au départ mais à été retirée pour avoir une
+  possibilité d'avoir une complétion case insensitve.
+  l'option était présente au départ mais à été retirée pour avoir une
   completion plus rapide sur des fichiers dev
 - [ ] General : Utiliser le package general et jouer une touche sur
   super-spc ou hyper-spc

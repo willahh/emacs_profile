@@ -495,36 +495,15 @@ js-beautify
 
 ** PDF
   Display PDF in Emacs on OSX
-*** Resources
--  https://emacs.stackexchange.com/a/22591/15824
--  https://emacs.stackexchange.com/questions/13314/install-pdf-tools-on-emacs-macosx
-
-*** Dependencies
-
--  pdf-tools : https://github.com/politza/pdf-tools
--  clisp : Common Lisp interpreter
-
-*** Installation
-
-={r, engine='bash', count_lines} brew install pdf-tools brew install clisp=
-From Emacs : launch "pdf-tools-install"
-
-In Emacs, the commands pdf-tools-install need to be launched.
-
 ** LaTeX
-    :PROPERTIES:
-    :CUSTOM_ID: latex-support
-    :END:
-Latex support
 **** Links
-     :PROPERTIES:
-     :CUSTOM_ID: links-1
-     :END:
+     https://www.latex-project.org/get/ #### Installation on OSX
+     
+     - Full support : MacTeX : http://www.tug.org/mactex/
+     - Light support : BasicTeX :
+       http://www.tug.org/mactex/morepackages.html
 
--  https://www.latex-project.org/get/ #### Installation on OSX
--  Full support : MacTeX : http://www.tug.org/mactex/
--  Light support : BasicTeX :
-   http://www.tug.org/mactex/morepackages.html
+     Full support is needed to export org file to LaTeX PDF file.
 
 ** Office Documents
     :PROPERTIES:
