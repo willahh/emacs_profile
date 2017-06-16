@@ -69,7 +69,7 @@
 
 ;; New frame
 (global-set-key [meta shift w] 'delete-frame)
-(global-set-key (kbd "M-W") 'delete-frame)
+;; (global-set-key (kbd "M-W") 'delete-frame)
 (global-set-key (kbd "M-S-w") 'delete-frame)
 
 ;; ---
@@ -793,9 +793,6 @@ Version 2016-12-27"
 (global-set-key (kbd "C-=") 'er/expand-region)
 (global-set-key (kbd "C-+") 'er/contract-region)
 
-(global-set-key [(control meta l)] 'er/expand-region)
-(global-set-key [(control meta shift l)] 'er/contract-region)
-
 
 (defun m-eshell-hook ()
   (define-key eshell-mode-map (kbd "C-M-l") 'er/contract-region)
@@ -1033,6 +1030,11 @@ Version 2016-12-27"
 ;; Find
 (global-set-key (kbd "s-f") 'counsel-find-file)
 
+;; Expand / Contract region
+(global-set-key (kbd "s-;") 'er/expand-region)
+(global-set-key (kbd "s-,") 'er/contract-region)
+
+
 ;; ------- Navigation
 ;; From Sacha.org
 ;; (bind-key "C-x p" 'pop-to-mark-command)
@@ -1087,6 +1089,10 @@ Version 2016-12-27"
 ;; (global-set-key (kbd "C-s-n") 'drag-stuff-down) ;; Super + Control + n
 
 ;; ---------------- Hyper key
+(global-set-key (kbd "H-p") 'projectile-switch-project)
+(global-set-key (kbd "H-s") 'mark-end-of-sentence)
+
+
 ;; New free key bidings yeeeeea
 ;; (global-set-key (kbd "H-p") 'drag-stuff-up) ;; Hyper + p
 ;; (global-set-key (kbd "H-n") 'drag-stuff-down) ;; Hyper + n

@@ -234,6 +234,8 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/ob-php")
 (add-to-list 'load-path "~/.emacs.d/vendor/emacs-langtool")
 (add-to-list 'load-path "~/.emacs.d/vendor/string-inflection-1.0.5")
+(add-to-list 'load-path "~/.emacs.d/vendor/easy-kill-0.9.3")
+(add-to-list 'load-path "~/.emacs.d/vendor/general")
 ;; (add-to-list 'load-path "~/.emacs.d/vendor/jquery-doc")
 ;; (add-to-list 'load-path "~/.emacs.d/vendor/google-this-1.11")
 ;; (add-to-list 'load-path "~/.emacs.d/vendor/google-translate-0.11.13")

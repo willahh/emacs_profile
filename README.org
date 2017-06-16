@@ -4,24 +4,27 @@
 :TOC:
 
 
-* Introduction
-- Only stable packages are used from Elpa package manager
-- Non stable packages are moved into vendor directory
+* Description
+  This is my Emacs configuration i use and tweak every day. Mainly
+  used from OSX system. The installation can be done quickly, however
+  a lot of functionnalities depends on external tools. Theses are
+  describes into the "Support" section.
+
+** Rules
+  Packages :
+  - Only stable packages are used from Elpa package manager
+  - Non stable packages are moved into vendor directory
 * Installation
   :PROPERTIES:
   :CUSTOM_ID: installation
   :END:
 ** Mac Os X
-    :PROPERTIES:
-    :CUSTOM_ID: mac-os-x
-    :END:
-
--  Mac Os X >= 10.11
--  emacs >= 25
--  Use of emacs-osx for osx instead of the default brew emacs
+ -  Mac Os X >= 10.11
+ -  emacs >= 25
+ -  Use of emacs-osx for osx instead of the default brew emacs
    https://github.com/railwaycat/homebrew-emacsmacport
 
-Emacs installation :
+  Emacs installation :
 
 #+BEGIN_SRC bash
 brew tap railwaycat/emacsmacport
@@ -31,14 +34,15 @@ brew install emacs-mac
 #+END_SRC
 
 
-Configuration :
+  Emacs personal Configuration :
 
 #+BEGIN_SRC bash
 git clone https://github.com/willahh/emacs_profile ~/.emacs.d
 #+END_SRC
 
-- Use font "fira-monoS" - size : 12 - ~/.emacs.d/fonts/meslo (Menu >
-option > set default font) - Install below dependencies globaly
+  Font :
+    - Use font "fira-monoS" - size : 12 - ~/.emacs.d/fonts/meslo (Menu
+      > option > set default font)
 ** Windows
     :PROPERTIES:
     :CUSTOM_ID: windows
@@ -47,22 +51,17 @@ option > set default font) - Install below dependencies globaly
 -  Gnutls
 -  htftp://ftp.gnutls.org/gcrypt/gnutls/w32/
 
-* bin (global)
-:PROPERTIES:
-     :CUSTOM_ID: bin-global
-     :END:
+* Requirements
+  All binaries should be accessible from emacs. In osx by default emacs
+  VC - svn - git
 
-All binaries should be accessible from emacs. In osx by default emacs
-load .bashrc (~/.bash\_profile should be copied .bashrc)
+  load .bashrc (~/.bash\_profile should be copied .bashrc)
 
-VC - svn - git
+  Search tools - ag (lightning search)
 
-Search tools - ag (lightning search)
-
-
-Tags tools @@html:<!-- - ctags -->@@ @@html:<!-- - tags -->@@
-@@html:<!-- - cscope -->@@ @@html:<!-- - Global -->@@
-@@html:<!-- - gtags -->@@
+  Tags tools @@html:<!-- - ctags -->@@ @@html:<!-- - tags -->@@
+  @@html:<!-- - cscope -->@@ @@html:<!-- - Global -->@@
+  @@html:<!-- - gtags -->@@
 
 ** global bin
      :PROPERTIES:
@@ -98,13 +97,14 @@ Tags tools - global (gtags) - brew install global --with-pygments
 #+BEGIN_HTML
   <!-- - Global - brew install global --with-exuberant-ctags -->
 #+END_HTML
-* Support : Language checker
-** Tools : ispell
-*** OSX
+* Support
+** Language checker
+*** Tools : ispell
+**** OSX
 #+BEGIN_SRC
 brew install ispell
 #+END_SRC
-** Tools : hunspell
+*** Tools : hunspell
 Links
  - https://wiki.openoffice.org/wiki/Dictionaries .
  - https://cgit.freedesktop.org/libreoffice/dictionaries/tree/fr_FR
@@ -117,36 +117,38 @@ brew instsall hunspell
 Install dictionary :
 
 Copy
-  - .emacs.d/resources/dictionary/fr.aff
-  - .emacs.d/resources/dictionary/fr.dic
+  - .emacs.d/resources/dictionary/*
 
 to ~/Library/Spelling/
 
 ------------------
+**** Documentation
+#+BEGIN_SRC bash
+man hunspell
+#+END_SRC
 
-From "man hunspell" :
-Dictionary files (*.aff and *.dic) should be placed in
+"... Dictionary files (*.aff and *.dic) should be placed in
 ~/Library/Spelling/ or /Library/Spelling/.  Homebrew itself
 provides no dictionaries for Hunspell, but you can download
-compatible dictionaries from other sources, such as
+compatible dictionaries from other sources, such as ..."
 
-** Tools : languagetools
- @todo Used for grammar check
- https://www.languagetool.org
+*** Tools : languagetools
+  @todo Used for grammar check
+  https://www.languagetool.org
 
- - Download the "Stand alone for desktop" version.
- - Move the folder to "~/bin/" 
+  - Download the "Stand alone for desktop" version.
+  - Move the folder to "~/bin/"
 
-* Support : sass
-** Resources :
+** Sass
+*** Resources :
 [[http://sass-lang.com/install][sass]]-lang.com
-** Tools : sass
-*** OSX
+*** Tools : sass
+**** OSX
 #+BEGIN_SRC sh
 gem install sass
 #+END_SRC
-* Support : css
-** Tools : csslint (Syntax checker)
+** CSS
+*** Tools : csslint (Syntax checker)
 https://github.com/gajus/css-lint
 https://github.com/CSSLint/csslint/wiki/Command-line-interface
 
@@ -197,11 +199,11 @@ Configuration
   }
 #+END_SRC
 
-* Support : php
-** Tools
-*** php
-    http://php.net/
-*** php REPL : psysh
+** PHP
+*** Tools
+**** php
+     http://php.net/
+**** php REPL : psysh
 A REPL for PHP https://github.com/bobthecow/psysh
 Used for debug php interactively.
 There is no need to have psysh installed to execute code inside #+BEGIN_SRC php
@@ -215,32 +217,28 @@ chmod +x psysh
 
 psysh should be accessible on your $PATH dir.
 
-
-*** A ranger
-
-
-
+**** @todo
 PHP tools - php https://secure.php.net/ (brew install
 homebrew/php/php56)
 
-* Support : html
-** Tools
-*** phantomjs
+** HTML
+*** Tools
+**** phantomjs
 http://phantomjs.org/
-**** osx
+***** osx
 #+BEGIN_SRC bash
 brew install phantomjs
 #+END_SRC
-* Support : javascript
+** Javascript
 
 @todo : Le support le plus récent et avancé est eslint.
 Il me semble qu actuellement ma conf n utilise que jscs.
 Le fichier à éditer est donc .jscsrc
 
-** Tools
-** jscs
+*** Tools
+*** jscs
 
-*** eslint
+**** eslint
 http://eslint.org/
 http://eslint.org/docs/user-guide/getting-started
 
@@ -474,7 +472,7 @@ https://gist.github.com/cletusw/e01a85e399ab563b1236
     }
   }
 #+END_SRC
-*** todo
+**** todo
 
 
 Javascript tools - Nodejs https://nodejs.org/en/
@@ -491,47 +489,34 @@ Javascript tools - Nodejs https://nodejs.org/en/
 -  eslint-plugin-react (sudo npm install eslint-plugin-react -g)
 
 -  js-beautify (npm install -g js-beautify)
-   
+
 Javascript tools - tern - eslint - babel-eslint - eslint-plugin-react -
 js-beautify
 
-* Support : PDF
-    :PROPERTIES:
-    :CUSTOM_ID: display-pdf-in-emacs-on-osx
-    :END:
-Display PDF in Emacs on OSX
-** Resources
-     :PROPERTIES:
-     :CUSTOM_ID: links
-     :END:
-
+** PDF
+  Display PDF in Emacs on OSX
+*** Resources
 -  https://emacs.stackexchange.com/a/22591/15824
 -  https://emacs.stackexchange.com/questions/13314/install-pdf-tools-on-emacs-macosx
 
-** Dependencies
-     :PROPERTIES:
-     :CUSTOM_ID: dependencies
-     :END:
+*** Dependencies
 
 -  pdf-tools : https://github.com/politza/pdf-tools
 -  clisp : Common Lisp interpreter
 
-** Installation
-     :PROPERTIES:
-     :CUSTOM_ID: installation-1
-     :END:
+*** Installation
 
 ={r, engine='bash', count_lines} brew install pdf-tools brew install clisp=
 From Emacs : launch "pdf-tools-install"
 
 In Emacs, the commands pdf-tools-install need to be launched.
 
-* Support : LaTeX
+** LaTeX
     :PROPERTIES:
     :CUSTOM_ID: latex-support
     :END:
 Latex support
-*** Links
+**** Links
      :PROPERTIES:
      :CUSTOM_ID: links-1
      :END:
@@ -541,9 +526,28 @@ Latex support
 -  Light support : BasicTeX :
    http://www.tug.org/mactex/morepackages.html
 
-* Support : Office Documents
+** Office Documents
     :PROPERTIES:
     :CUSTOM_ID: excel-word-support
     :END:
 Excel, Word support
 ={r, engine='bash', count_lines} brew install ghostscript=
+* Utils
+* Convert Markdown to org
+** Links
+ - http://pandoc.org/
+
+** Documentation
+#+BEGIN_SRC man
+man pandoc
+#+END_SRC
+
+** Installation
+ - http://pandoc.org/installing.html
+
+** Simple example
+Convert .md file to .org file with :
+
+#+BEGIN_SRC shell
+pandoc -o README.md README.org
+#+END_SRC

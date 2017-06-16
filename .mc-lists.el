@@ -23,6 +23,8 @@
       drag-stuff-down
       drag-stuff-up
       duplicate-start-of-line-or-region
+      easy-kill
+      easy-mark
       electric-newline-and-maybe-indent
       eval-defun
       eval-last-sexp
@@ -83,6 +85,7 @@
       paredit-semicolon
       smart-open-line-above
       smarter-move-beginning-of-line
+      string-inflection-all-cycle
       tab-indent-or-complete
       tern-ac-dot-complete
       typescript-insert-and-indent

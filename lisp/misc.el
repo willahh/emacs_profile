@@ -1052,5 +1052,39 @@ _d_: subtree
       'langtool-autoshow-detail-popup)
 
 
-
+;; Magnifique !!
 (require 'string-inflection)
+
+;; Magnifique !!
+(require 'easy-kill)
+(global-set-key [remap kill-ring-save] 'easy-kill)
+;; (global-set-key [remap mark-sexp] 'easy-mark)
+
+;; general
+(require 'general)
+
+(setq my-leader1 "H-<SPC>")
+
+
+;; without :keymaps, general-define-key acts similarly to global-set-key
+;; bind "C-c a" and "C-c b" globally
+(general-define-key :prefix my-leader1
+                    "a" 'some-command
+                    "b" 'another-command)
+
+;; or without a prefix
+;; (general-define-key
+;;  "C-c a" 'some-command
+;;  "C-c b" 'another-command)
+
+;; bind a key in a specific keymap (keymaps must be quoted)
+;; (general-define-key :keymaps 'org-mode-map
+;;                     "TAB" 'org-cycle)
+
+;; ;; if you prefer an explicit (kbd) or don't want (kbd) at all:
+;; (setq general-implicit-kbd nil)
+
+;; (general-define-key
+;;  (kbd "C-c a") 'some-command
+;;  (kbd "C-c b") 'another-command)
+

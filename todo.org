@@ -80,6 +80,13 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 * Bloquant
 :VISIBILITY:
+- [ ] M-w ne ferme plus la frame courante
+- [ ] mshell / shell + Abbrev autocomplete :
+  Possibilité d'avoir une complétion case insensitve.
+  L'option était présente au départ mais à été retirée pour avoir une
+  completion plus rapide sur des fichiers dev
+- [ ] General : Utiliser le package general et jouer une touche sur
+  super-spc ou hyper-spc
 - [ ] Associer les fichiers .pdf au mode PDFView
 - [ ] Faire un fichier org nomme main.org Lorsqu'une nouvelle frame
   est crée, initialiser sur ce fichier. Ce fichier contient des liens
@@ -92,7 +99,6 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] Terminer intégration de hunspell @work
 - [ ] Mini buffer > M-p : Ne pas afficher de message beginning of
   buffer bla bla
-- [ ] Trouver un raccourcis pour multi cursor
 
 - [ ] AG mettre en mode emacs et non pas evil normal
 - [ ] org mode : > yas snippet new checkbox ne fonctionne plus
@@ -333,6 +339,10 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
   - [ ] Show current VC system used
   - [ ] Show current encoding
 * Corrige
+- [X] Trouver un raccourcis pour multi cursor
+  -> ALT+d, ALT+SHIFT+d
+
+
 - [X] [swoop] Faire des M-v dans le prompt
 - [X] [multi-cursor] C-g leave multi-cursor state- [ ] [helm] Directory first
 
