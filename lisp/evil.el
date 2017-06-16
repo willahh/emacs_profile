@@ -204,3 +204,5 @@
 ;; evil-magit
 ;; (require 'evil-magit)
 
+;; evil-org
+(require 'evil-org)

@@ -237,7 +237,6 @@ Le fichier à éditer est donc .jscsrc
 
 *** Tools
 *** jscs
-
 **** eslint
 http://eslint.org/
 http://eslint.org/docs/user-guide/getting-started
@@ -512,21 +511,24 @@ js-beautify
 Excel, Word support
 ={r, engine='bash', count_lines} brew install ghostscript=
 * Utils
-* Convert Markdown to org
-** Links
- - http://pandoc.org/
+** Convert Markdown to org
+*** Links
+  - http://pandoc.org/
 
-** Documentation
+*** Documentation
 #+BEGIN_SRC man
 man pandoc
 #+END_SRC
 
-** Installation
- - http://pandoc.org/installing.html
+*** Installation
+  - http://pandoc.org/installing.html
 
-** Simple example
+*** Simple example
 Convert .md file to .org file with :
 
 #+BEGIN_SRC shell
 pandoc -o README.md README.org
 #+END_SRC
+
+* Key bindings
+  

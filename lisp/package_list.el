@@ -126,6 +126,7 @@
   evil-snipe
   evil-matchit
   ;; evil-magit
+  evil-org
 
   toc-org
 
@@ -135,6 +136,7 @@
   ;; general
   git-gutter
   sx
+
   
 
   ;; helm
