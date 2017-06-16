@@ -1,22 +1,6 @@
 (require 'ggtags)
 (require 'magit)
 
-;; key_binding: --- some default / package keybindings
-;; (dolist (key '("\M-x" "\M-z" "\C-\M-p" "\C-z"))
-
-;; (dolist (key '("\M-z" "\C-z"))
-;;   (global-unset-key key))
-
-;; Rebind copy paste cut undo redo like modern editors
-;; Suite a beaucoup de test en fonctionnement natif
-;; (C-y, M-w, etc...)
-;; Mon utilsation priviligie l'utilisation de raccourcis
-;; Plus modernes.
-;;
-;; On commence par la base : le raccourcis M-x qui est un des points
-;; central de Emacs.
-
-
 ;; M-x (M-x main command) -> "cut"
 (global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
 (global-set-key (kbd "C-x <C-m>") 'helm-M-x)
@@ -121,26 +105,11 @@
 (global-set-key (kbd "C-h") 'delete-backward-char)
 (global-set-key [(control shift k)] 'kill-whole-line) ;; Override default emacs kill sentence but i don't use it
 
-;; (define-key evil-emacs-state-map (kbd "C-z") nil)
-;; (global-set-key [(control z)] 'delete-backward-char)
-;; (global-set-key [(control shift z)] 'backward-kill-word)
-;;(global-set-key [(control shift z)] 'clean-aindent--bsunindent)
-;; (global-set-key (kbd "M-h") 'clean-aindent--bsunindent)
-;; (global-set-key (kbd "C-w") 'backward-kill-word)
-
-;; ---------------- Help
-;; Move the help cimmand to C-x h
-;; (global-set-key [?\C-x ?h] 'help-command)
-;; (global-set-key (kbd "C-c c h") 'help-command)
-;; (global-set-key (kbd "C-S-h") 'help)
-
-
 ;; ---------------- evaluation
 (define-key emacs-lisp-mode-map (kbd "C-c C-r") 'eval-region)
 (define-key emacs-lisp-mode-map (kbd "C-c C-e") 'rr/eval-and-replace)
 (define-key emacs-lisp-mode-map (kbd "C-c C-v") 'eval-buffer)
 (global-set-key (kbd "C-c C-v") 'eval-buffer)
-
 
 
 
@@ -214,45 +183,6 @@
 (key-chord-define-global "xc" 'er/expand-region)
 (key-chord-define-global "wx" 'er/contract-region)
 
-;; (key-chord-define-global "ji" 'ace-window) ;; cannot be jk (vim up/right)
-;; (key-chord-define-global ";:" 'highlight-symbol-mode)
-;; (key-chord-define js-mode-map ";;" "\C-e;") ;; paredit a deja un bind sur ;
-
-
-;; avy
-;; Update : az ne peut pas etre utilise car trop fréquemment utilisé ("localization", ...)
-;; (key-chord-define-global "qs" 'avy-goto-word-1-below)
-
-;; Update to use the author default C= and a custom one C-M-l
-;; Update 2 : Enable both key-chord and key binding standard
-;; Key-chords are used when only left hand on the keyboard (right on the mouse)
-
-
-;; (key-chord-define-global "kf" 'avy-goto-word-or-subword-1)
-;; (key-chord-define-global "fk" 'avy-goto-word-or-subword-1)
-
-;; ---------------- Evil state switcher binding
-;; De base la touche escape est utlisée pour ça
-;; celle-ci est trop éloignée de base des claviers modernes
-;;
-;; Update 1 : Préconisation des utilisateurs de vim:
-;; Remapper caps-lock pour utiliser escape : OK
-;;
-;; Update 2 : Préconisation des utilisateurs de emacs :
-;; Remmaper caps-lock sur ctrl : OK
-;;
-;; Update 3 : Les deux sont très bien un choix doit être fait
-;;
-;; Update 4 : Possibiltée de modifier le comportement de la touche caps-lock
-;; pour sortir un escape sur une pression normale et agir en tant que ctrl
-;; lorsque la touche est enfoncée : OK
-;;
-;; Update 5 : Cette solution est bancale, et le switch entre les modes
-;; arrive très souvent sans le vouloir.
-;; -> Utilisation de caps-lock en touche de CONTROL.
-;; -> Utilisation de key-chord pour switcher entre les modes ("jk")
-;; (Solution alternative officielle http://vim.wikia.com/wiki/Avoid_the_escape_key)
-
 (key-chord-define evil-emacs-state-map "jk" 'evil-normal-state)
 (key-chord-define evil-normal-state-map "jk" 'evil-emacs-state)
 (key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
@@ -287,27 +217,11 @@
                                           (scroll-left 4)))
 ;; -- Buffer / frames / main
 ;; Frames
-;;
-;; (global-set-key [(meta control shift n)] 'wil-create-new-centered-frame)
-
-
-;; (global-set-key [(meta control shift a)] 'mark-whole-buffer)
-
-;; Update keep  default M-q
-;; (global-set-key (kbd "M-q") 'ask-before-closing)
-
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "C-x C-r") 'rename-current-buffer-file)
 
 ;; ----------------- Buffer
 ;; https://stackoverflow.com/a/25792276
-;; (defun lunaryorn-new-buffer-frame ()
-;;   "Create a new frame with a new empty buffer."
-;;   (interactive)
-;;   (let ((buffer (generate-new-buffer "untitled")))
-;;     (set-buffer-major-mode buffer)
-;;     (display-buffer buffer '(display-buffer-pop-up-frame . nil))))
-
 (defun xah-new-empty-buffer ()
   "Create a new empty buffer.
 New buffer will be named “untitled” or “untitled<2>”, “untitled<3>”, etc.
@@ -353,48 +267,13 @@ Version 2016-12-27"
 ;; (define-key dired-mode-map (kbd "M-N") 'evil-buffer-new)
 (define-key dired-mode-map (kbd "M-n") 'mkdir)
 
-
 ;; Multi cursor stuf
-;; Update : Utilisation de la lettre o plutot qutôt que de
-;; la lettre d car celle-ci est utiise pour faire des é.
-;;
-;; Update : Utilisation de control m pour le multi curseur
-;; Au detriment du C-m natif qui est new-line-and-indent
-;; new-line-and-indent est rebinde sur C-M-j donc toujours
-;; accessible.
-;; Note : Les raccourcis sur la touche alt tordent les doigts
-;; et ne sont pas agreables
-;;
-;; Update : Les définition mc/mark-next-like-this-word ... sont definies dans un hook sinon autopair prend le pas
-
-;; (global-set-key (kbd "‡") 'mc/mark-next-like-this-word) ;; ALT+q
-;; (global-set-key (kbd "Ω") 'mc/mark-previous-like-this-word) ;; ALT+SHIFT+q
-;; (global-set-key (kbd "<C-268632081>") 'mc/mark-all-dwim) ;; CTRL+alt+q
-
-
-;; ---------------- Alt key binding
-;; (global-set-key (kbd "Ò") 'helm-swoop) ; ALT+s
-;; ;; (global-set-key (kbd "∑") 'helm-ag-project-root) ; ALT+SHIFT+s
-;; (global-set-key (kbd "∑") 'helm-ag) ; ALT+SHIFT+s
-;; (global-set-key (kbd "C-∑") 'helm-ag-project-root) ; CONTROL+ALT+SHIFT+s
-
-;; (global-set-key (kbd "Ò") 'helm-swoop) ; ALT+s
-;; (global-set-key (kbd "∑") 'helm-ag)           ; ALT+SHIFT+s
-;; (global-set-key [(control shift ∑)] 'helm-ag-project-root)   ; CONTROL+ALT+SHIFT+s
-
 (global-set-key (kbd "ı") 'mc/mark-next-lines) ; ALT+SHIFT+p
 (global-set-key (kbd "∏") 'mc/mark-previous-lines) ; ALT+SHIFT+n
-
 
 (global-set-key (kbd "Ò") 'helm-swoop) ; ALT+s
 (global-set-key (kbd "∑") 'helm-ag) ; ALT+SHIFT+s
 (global-set-key (kbd "C-∑") 'projectile-ag) ; CONTROL+ALT+SHIFT+s
-
-;; (global-set-key [(Ò)] 'helm-swoop)           ; ALT+s
-;; (global-set-key [(shift Ò)] 'helm-ag) ; ALT+SHIFT+s
-;; ;; (global-set-key [(control shift Ò)] 'helm-ag-project-root) ; CONTROL+ALT+SHIFT+s
-;; (global-set-key [(control shift Ò)] 'projectile-ag) ; CONTROL+ALT+SHIFT+s
-
 
 ;; Drag line
 ;; top
@@ -412,10 +291,6 @@ Version 2016-12-27"
 (defun wlh-set-bind-for-mc ()
   ;; Bind sur Meta q
   )
-
-;; Bind sur Control m / Control shift m
-;; (global-set-key (kbd "<C-m>") 'mc/mark-next-like-this-word)
-;; (global-set-key [(control shift m)] 'mc/mark-previous-like-this-word)
 
 
 
@@ -437,14 +312,6 @@ Version 2016-12-27"
 (global-set-key (kbd "Δ") 'mc/mark-previous-like-this-word) ; ALT+SHIFT+q
 (define-key paredit-mode-map (kbd "Δ") 'mc/mark-previous-like-this-word) ; ALT+SHIFT+q
 
-  
-;; (add-hook 'text-mode 'wlh-set-bind-for-mc)
-;; (add-hook 'prog-mode 'wlh-set-bind-for-mc)
-;; (add-hook 'autopair-mode-hook 'wlh-set-bind-for-mc)
-;; (add-hook 'paredit-mode-map 'wlh-set-bind-for-mc)
-
-
-
 
 ;; Mouse
 (global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click)
@@ -452,19 +319,8 @@ Version 2016-12-27"
 (global-set-key (kbd "<double-wheel-right>") 'scroll-left)
 (define-key global-map (kbd "<S-down-mouse-1>") 'mouse-save-then-kill)
 
-;; kill-ring
-;; Update : Retour sur le racourcis natif d Emacs (M-w)
-;; (global-set-key (kbd "M-c") 'kill-ring-save)
-
 ;; Line operations
-;; (global-set-key (kbd "C-x C-d") 'duplicate-current-line-or-region)
-
-;; (global-set-key (kbd "C-M-J") 'drag-stuff-down)
-;; (global-set-key (kbd "C-M-k") 'drag-stuff-up)
-;; (define-key php-mode-map (kbd "C-M-J") 'drag-stuff-down) ;; override php mode map cmd
-
 (global-set-key (kbd "C-é") 'drag-stuff-down) ;; control+alt+j
-
 (global-set-key (kbd "<C-return>") 'open-line-below)
 (global-set-key (kbd "<C-S-return>") 'open-line-above)
 ;; Helm
@@ -480,7 +336,6 @@ Version 2016-12-27"
 (define-key company-active-map (kbd "C-w") 'clean-aindent--bsunindent)
 (define-key company-active-map (kbd "C-h") 'delete-backward-char)
 (define-key company-active-map (kbd "<tab>") 'company-complete-selection)
-
 
 (require 'iedit)
 (require 'org)
