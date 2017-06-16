@@ -277,7 +277,7 @@ Version 2016-12-27"
 
 ;; Drag line
 ;; top
-(global-set-key (kbd "π") 'drag-stuff-up) ; ALT+p
+(global-set-key (kbd "ö") 'drag-stuff-up) ; ALT+p
 (define-key org-mode-map (kbd "π") 'org-metaup) ; ALT+p
 
 ;; Bottom
@@ -891,8 +891,7 @@ Version 2016-12-27"
 (global-set-key (kbd "s-f") 'counsel-find-file)
 
 ;; Expand / Contract region
-(global-set-key (kbd "s-;") 'er/expand-region)
-(global-set-key (kbd "s-,") 'er/contract-region)
+
 
 
 ;; ------- Navigation
@@ -945,17 +944,10 @@ Version 2016-12-27"
 (global-set-key (kbd "s-S") 'helm-ag)
 
 ;; Drag line
-;; (global-set-key (kbd "C-s-p") 'drag-stuff-up) ;; Super + Control + p
-;; (global-set-key (kbd "C-s-n") 'drag-stuff-down) ;; Super + Control + n
 
 ;; ---------------- Hyper key
 (global-set-key (kbd "H-p") 'projectile-switch-project)
 (global-set-key (kbd "H-s") 'mark-end-of-sentence)
-
-
-;; New free key bidings yeeeeea
-;; (global-set-key (kbd "H-p") 'drag-stuff-up) ;; Hyper + p
-;; (global-set-key (kbd "H-n") 'drag-stuff-down) ;; Hyper + n
 
 ;; Search
 ;; (global-set-key (kbd "H-s") 'helm-ag)
