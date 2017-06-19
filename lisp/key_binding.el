@@ -55,6 +55,7 @@
 (global-set-key [meta shift w] 'delete-frame)
 ;; (global-set-key (kbd "M-W") 'delete-frame)
 (global-set-key (kbd "M-S-w") 'delete-frame)
+(global-set-key (kbd "M-W") 'delete-frame)
 
 ;; ---
 (define-key key-translation-map (kbd "ESC") (kbd "C-g"))
@@ -277,7 +278,7 @@ Version 2016-12-27"
 
 ;; Drag line
 ;; top
-(global-set-key (kbd "ö") 'drag-stuff-up) ; ALT+p
+(global-set-key (kbd "π") 'drag-stuff-up) ; ALT+p
 (define-key org-mode-map (kbd "π") 'org-metaup) ; ALT+p
 
 ;; Bottom

@@ -230,10 +230,10 @@ http://phantomjs.org/
 brew install phantomjs
 #+END_SRC
 ** Javascript
-
-@todo : Le support le plus récent et avancé est eslint.
-Il me semble qu actuellement ma conf n utilise que jscs.
-Le fichier à éditer est donc .jscsrc
+   
+   @todo : Le support le plus récent et avancé est eslint. Il me
+semble qu actuellement ma conf n utilise que jscs. Le fichier à éditer
+est donc .jscsrc
 
 *** Tools
 *** jscs
@@ -493,7 +493,7 @@ Javascript tools - tern - eslint - babel-eslint - eslint-plugin-react -
 js-beautify
 
 ** PDF
-  Display PDF in Emacs on OSX
+   Display PDF in Emacs on OSX
 ** LaTeX
 **** Links
      https://www.latex-project.org/get/ #### Installation on OSX
