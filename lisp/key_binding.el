@@ -272,6 +272,7 @@ Version 2016-12-27"
 (global-set-key (kbd "ı") 'mc/mark-next-lines) ; ALT+SHIFT+p
 (global-set-key (kbd "∏") 'mc/mark-previous-lines) ; ALT+SHIFT+n
 
+;; Search with alt key
 (global-set-key (kbd "Ò") 'helm-swoop) ; ALT+s
 (global-set-key (kbd "∑") 'helm-ag) ; ALT+SHIFT+s
 (global-set-key (kbd "C-∑") 'projectile-ag) ; CONTROL+ALT+SHIFT+s
@@ -878,6 +879,13 @@ Version 2016-12-27"
 (global-set-key (kbd "<f11>") 'wil-IDE)
 
 ;; --------------- Super keys
+;; Search with super key
+(global-set-key (kbd "s-s") 'helm-swoop) ; Super+s
+(global-set-key (kbd "C-s-s") 'helm-ag) ; Super+Contral+s
+(global-set-key (kbd "C-M-s-s") 'projectile-ag) ; Control+Meta+Super+s
+
+
+
 ;; Comment
 (global-set-key (kbd "s-/") 'comment-line)
 
@@ -912,6 +920,7 @@ Version 2016-12-27"
 ;; Browse comands
 (global-set-key (kbd "s-p") 'projectile-find-file)
 (global-set-key (kbd "s-r") 'projectile-recentf)
+(global-set-key (kbd "s-R") 'helm-recentf)
 (global-set-key (kbd "s-q") 'my-abort-recursive-edit)
 
 ;; Scroll commands
@@ -956,8 +965,9 @@ Version 2016-12-27"
 ;; org
 ;; (define-key org-mode-map (kbd "H-p") 'org-metaup) ;; Hyper + p
 ;; (define-key org-mode-map (kbd "H-n") 'org-metadown) ;; Hyper + n
+
 (define-key org-mode-map (kbd "M-J") 'org-insert-todo-heading)
-(global-set-key (kbd "H-r") 'helm-recentf)
+;; (global-set-key (kbd "H-r") 'helm-recentf)
 
 
 ;; ispell (H-$ instead of M-$, cause osx handle M-$ at os level)

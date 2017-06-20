@@ -2,6 +2,18 @@
 ;; http://agel.readthedocs.io/en/latest/installation.html
 (require 'ag)
 
+(setq ag-highlight-search t)
+(setq ag-reuse-buffers t)
+;; (setq ag-reuse-window t)
+(setq ag-reuse-window nil)
+
+(defun wil-ag-hook ()
+  (interactive)
+  (set (make-local-variable 'truncate-lines) 't)
+)
+
+(add-hook 'ag-mode-hook 'wil-ag-mode-hook)
+
 ;; find-file-in-project
 (require 'find-file-in-project)
 

@@ -59,6 +59,9 @@
           ;; Enable source code block edition in org files
           (org-src-mode)
 
+          ;; Disable autopair mode
+          ; (autopair-global-mode nil)
+
           ;; Cette partie cree une erreur d'execution
           ;; (define-key global-map (kbd "C-c c") 'org-capture)
 )
