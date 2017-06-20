@@ -61,9 +61,20 @@
 
 ;; Disable scrollbar
 ;; (scroll-bar-mode -1)
+;; Enable scrollbar
+(scroll-bar-mode 1)
+
+;; make the left fringe 4 pixels wide and the right disappear
+(fringe-mode '(10 . 0))
+
+;; restore the default sizes
+(fringe-mode nil)
 
 ;; ?
 (set-default 'cursor-type 'bar)
+
+(setq window-divider-mode t)
+
 
 ;; Paste without source font lock
 ;; 
