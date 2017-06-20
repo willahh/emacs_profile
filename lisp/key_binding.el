@@ -284,6 +284,7 @@ Version 2016-12-27"
 
 ;; Bottom
 (global-set-key (kbd "ñ") 'drag-stuff-down) ; ALT+n
+(define-key org-mode-map (kbd "ñ") 'org-metadown) ; ALT+n
 
 
 ;; ----------------
@@ -953,7 +954,6 @@ Version 2016-12-27"
 ;; Search
 (global-set-key (kbd "s-S") 'helm-ag)
 
-;; Drag line
 
 ;; ---------------- Hyper key
 (global-set-key (kbd "H-p") 'projectile-switch-project)
