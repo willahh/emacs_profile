@@ -3,7 +3,7 @@
 (require 'ag)
 
 (setq ag-highlight-search t)
-(setq ag-reuse-buffers t)
+(setq ag-reuse-buffers nil)
 ;; (setq ag-reuse-window t)
 (setq ag-reuse-window nil)
 
