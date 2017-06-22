@@ -1,4 +1,4 @@
-#+TITLE: Emacs TODO
+#+TITLE: TODO.org
 #+STARTUP: content
 * Utils
 - [dired] "o" Ouvre le fichier dans un nouveau buffer et donne le focus à ce buffer
@@ -80,9 +80,21 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 * Bloquant
 :VISIBILITY:
-- [ ] Ajouter 
+- [X] [ag] truncate line off
+- [ ] [ag] Ne pas lancer la recherche avec les caracteres sur le curseur
+- [ ] [ag] Auto recenter after go to
+- [X] [ag] refresh highlight
 
-- [ ] Ajouter un right
+- [ ] [man] Autofocus sur la fenêtre
+
+- [ ] [common] M-v -> Paste and indent ?
+
+- [ ] Activer par défaut window divider : bottom and right
+- [ ] Activer par défaul : Fringe : left only
+- [ ] Activer par défaut : Scrollbar horizontales
+
+
+
 - [ ] flyspell mode ne doit pas etre actif par default car il
     consomme beaucoup
 - [ ] M-w ne ferme plus la frame courante
@@ -176,16 +188,11 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [company] Voir pour utiliser autre chose que company pour la complétion des mots car cela peut être lent
 
 - [ ] [swoop] Ne pas initialiser avec le texte sous le curseur
-     - [ ] [org] Lancer org mode avec certains titre ouvert fermé
-  - (conf en tête de fichier)
-- [ ] [org-mode] Le toggle des headline doit se faire en deux fois pour que tout fonctionne bien
-
-
-
-
-           - [ ] [org-mode] Mouse-1 pour toggler un header
-- [ ] Voir pour installer le plugin pour lancer des mode en "fullscreen", vu sur un blog d'un autre
-- [ ] [system] [osx] Autoriser le F5 dans Emacs (revert-buffer)
+  - [ ] [org] Lancer org mode avec certains titre ouvert fermé
+- (conf en tête de fichier)
+  - [ ] [org-mode] Mouse-1 pour toggler un header
+- [X] Voir pour installer le plugin pour lancer des mode en "fullscreen", vu sur un blog d'un autre
+- [X] [system] [osx] Autoriser le F5 dans Emacs (revert-buffer)
 - [ ] Rebind les scroll to other window pour avoir un scroll sur la fenetre a cote mais d'une demie page seulement
       C-M-S-v runs the command scroll-other-window-down (found in
       global-map), which is an interactive compiled Lisp function in
@@ -198,7 +205,6 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
       Scroll the "other window" down.
       For more details, see the documentation for ‘scroll-other-window’.
 
-- [ ] Ne pas embarquer les couleurs lors de la copie d'un texte
 - [ ] Kill texte : Ne pas ajouter dans le kill ring
       --> L'ajout dans le kill ring ne doit se faire que depuis M-w si possible
 - [ ] M-S-n sur buffer vc-diff ne fonctionne pas 
@@ -212,8 +218,8 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
       Cette fonction est déjà présente dans emacs mais apparait dans une autre frame, un package existe pour
       L'afficher dans la même frame mais je n'ai pas réussis à bien l'implèmenter
 - [ ] System : bind c-j
-- [ ] [all] Ne pas ajouter dabbrev dans company par default
-     - [ ] [css-mode] Virer company dabbrev de css mode
+- [X] [all] Ne pas ajouter dabbrev dans company par default
+  - [X] [css-mode] Virer company dabbrev de css mode
 - [ ] [theme] [ediff] Trouver comment avoir les bons code couleur,des couleurs parfaitement implémentées comme avec avec le thème leuven
 
 
@@ -250,15 +256,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [web-mode] [javascript] [company] Add javascript keywords to company backend
 - [ ] [refactor] emacs.d conf a ranger, voir modele suivant : https://github.com/purcell/emacs.d
 - [ ] Activer les url cliquable dans les differents modes
-- [ ] Auto center :
-      [x] [i-search]
-      [ ] [go to line (M-g M-g]
-      [x] [Highlight next / prev]
-      [ ] [helm-ag] Go to
-      [x] [swiper]
-      [ ] [imenu]
-      [ ] [ag] Search result buffer
-      [ ] [highlight-nav]
+
 - [ ] [ivy] [mini buffer] CTRL+l to back up
 - [ ] [ivy] : Ne pas mettre les fichiers .svn dans la liste
 - [ ] [plugin] [change inner] Ajoute rl'option Change Inner Tag

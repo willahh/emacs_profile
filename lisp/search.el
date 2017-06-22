@@ -7,12 +7,15 @@
 ;; (setq ag-reuse-window t)
 (setq ag-reuse-window nil)
 
-(defun wil-ag-hook ()
-  (interactive)
-  (set (make-local-variable 'truncate-lines) 't)
-)
+; (defun wil-ag-hook ()
+;   (interactive)
+;   (setq truncate-lines nil)
+; )
 
-(add-hook 'ag-mode-hook 'wil-ag-mode-hook)
+; (add-hook 'ag-mode-hook 'wil-ag-mode-hook)
+(add-hook 'ag-mode-hook
+          (lambda () 
+             (setq truncate-lines nil)))
 
 ;; find-file-in-project
 (require 'find-file-in-project)

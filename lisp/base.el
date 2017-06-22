@@ -320,8 +320,10 @@
 
 ;; Display ag result in the same window
 ;; http://emacs.stackexchange.com/a/26219
-(defvar display-buffer-same-window-commands
-  '(occur-mode-goto-occurrence compile-goto-error))
+;; Update pour ne pas le faire
+
+;; (defvar display-buffer-same-window-commands
+;;   '(occur-mode-goto-occurrence compile-goto-error))
 
 ;; Auto wrapping isearch
 ;; http://stackoverflow.com/a/287067

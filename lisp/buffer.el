@@ -12,9 +12,9 @@
         ))
 
 ;; Use the same window for compile-goto-error mode (ag result list too (herited))
-(add-to-list 'display-buffer-alist
-             '((lambda (&rest _)
-                 (memq this-command display-buffer-same-window-commands))
-               (display-buffer-reuse-window
-                display-buffer-same-window)
-               (inhibit-same-window . nil)))
+; (add-to-list 'display-buffer-alist
+;              '((lambda (&rest _)
+;                  (memq this-command display-buffer-same-window-commands))
+;                (display-buffer-reuse-window
+;                 display-buffer-same-window)
+;                (inhibit-same-window . nil)))

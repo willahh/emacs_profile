@@ -1281,6 +1281,13 @@ the visible part of the current buffer following point. "
               "Recenter"
               (recenter)))
 
+;; Recenter after compile-goto-error
+(advice-add 'compile-goto-error
+            :after
+            (lambda (&rest args)
+              "Recenter"
+              (recenter)))
+
 ;; ;; Recenter after forward-sentence
 ;; (advice-add 'forward-sentence
 ;;             :after
@@ -1320,8 +1327,8 @@ the visible part of the current buffer following point. "
 (advice-add 'compile-goto-error
             :after
             (lambda (&rest args)
-              "Recenter"
-              (recenter)))
+              "evil-scroll-line-to-top "
+              (evil-scroll-line-to-top)))
 
 ;; Recenter after diff-hl-next-hunk
 (advice-add 'diff-hl-next-hunk
