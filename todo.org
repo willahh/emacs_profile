@@ -80,18 +80,38 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 * Bloquant
 :VISIBILITY:
-- [X] [ag] truncate line off
+- [ ] Remettre le comportemment normal pour la touche supr
+- [ ] [fram layout] Activer par défaut : window divider : bottom and right
+- [ ] [fram layout] Activer par défaut : Fringe : left only
+- [ ] [fram layout] Activer par défaut : Scrollbar horizontales
+
+- [ ] org mode : > yas snippet new checkbox ne fonctionne plus
+
+- [ ] Multi-cursor : KP ENTER -> Meme comportement que ENTER
+
+- [ ] Paredit-mode : l'auto protection de quote lorsque l'on saisie du
+  texte dans une chaine de caractere est plus contraignante qu'autre
+  chose, il faut retirer ça
+ 
+  Paredit ET web-mode : Retirer la fonction qui escape automatiquement les
+  doubles quote dans les chaines car en principe ca ne marche pas bien
+  en web mode
+
 - [ ] [ag] Ne pas lancer la recherche avec les caracteres sur le curseur
 - [ ] [ag] Auto recenter after go to
+
 - [X] [ag] refresh highlight
+- [X] [ag] truncate line off
+- [X] High light symbol mode in web mode
+- [X] TOUCHE SUPR qui ne fonctionne pas correctement
 
 - [ ] [man] Autofocus sur la fenêtre
-
+  
 - [ ] [common] M-v -> Paste and indent ?
 
-- [ ] Activer par défaut window divider : bottom and right
-- [ ] Activer par défaul : Fringe : left only
-- [ ] Activer par défaut : Scrollbar horizontales
+
+
+
 
 
 
@@ -118,12 +138,8 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
   buffer bla bla
 
 - [ ] AG mettre en mode emacs et non pas evil normal
-- [ ] org mode : > yas snippet new checkbox ne fonctionne plus
 
 - [ ] ag bufer : hihglight search string
-- [ ] Paredit ET web-mode : Retirer la fonction qui escape automatiquement les
-  doubles quote dans les chaines car en principe ca ne marche pas bien
-  en web mode
 
 
 
@@ -143,9 +159,6 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [emacs-osxs] Vérifier les keybindings sur les touches alt (alt+n alt+p, etc)
 
 
-- [ ] [ag] Ouvrir les resultats dans la même fenêtre
-  - Semble bon @home
-- [ ] [pdf-mode] Mouse Scroll page next/prev
 - [ ] [vc-dir] Déclencher le vc-dir en mode fullscreen avec la touche semble
   ESCAPE pour revenir sur le layout précédent comme dans magit
   Un plugin existe pour çâ
@@ -154,7 +167,6 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 - [ ] [svn-log-view] Faire des ediff depuis ce mode
 
-- [ ] Utiliser smartparens plutot que ParEdit pour des fichiers autre que lisp
 - [ ] [swoop] C-w ne fonctionne pas
 - [ ] [helm] [mini-buffer] Ajouter la possibilité de faire du M-v dans le mini-buffer
 - [ ] [system] mysql.server start on startup
@@ -175,7 +187,6 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [vc-dir] Ne pas afficher les lignes dossier grises
 - [ ] [vc-dir] key M-< && M-> : Faire pointer sur le vrai début/fin de ligne
 
-- [ ] [js/js2] Désactiver Paredit pour le mode js/js2
 - [ ] Previous/Next buffer : Utiliser la liste de ibuffer trier par ordre recent
 
 * A ranger

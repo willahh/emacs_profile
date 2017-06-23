@@ -787,6 +787,9 @@ Version 2016-12-27"
 (define-key ggtags-navigation-map (kbd "M-p") 'highlight-symbol-next)
 (define-key ggtags-navigation-map (kbd "M-n") 'highlight-symbol-prev)
 
+(global-set-key (kbd "<delete>") 'autopair-backspace)
+(define-key paredit-mode-map (kbd "<delete>") 'autopair-backspace)
+
 ;; PERFFFECT.
 (define-key key-translation-map (kbd "C-j") (kbd "RET"))
 (define-key global-map (kbd "C-x RET") 'dired-jump)

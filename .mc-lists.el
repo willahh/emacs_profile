@@ -92,6 +92,7 @@
       untab-region
       web-mode-comment-indent-new-line
       whole-line-or-region-kill-region
+      wil-tab-indent-or-complete-css
       wlh-tab-indent-or-complete-web
       xah-toggle-letter-case
       yank-rectangle
