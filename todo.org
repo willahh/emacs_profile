@@ -80,12 +80,13 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 * Bloquant
 :VISIBILITY:
-- [ ] Remettre le comportemment normal pour la touche supr
-- [ ] [fram layout] Activer par défaut : window divider : bottom and right
-- [ ] [fram layout] Activer par défaut : Fringe : left only
-- [ ] [fram layout] Activer par défaut : Scrollbar horizontales
+- [X] Remettre le comportemment normal pour la touche supr
+- [X] [fram layout] Activer par défaut : window divider : bottom and right
+- [X] [fram layout] Activer par défaut : Fringe : left only
+- [X] [fram layout] Activer par défaut : Scrollbar horizontales
 
 - [ ] org mode : > yas snippet new checkbox ne fonctionne plus
+  - Retrouver le racourcis de base plutot
 
 - [ ] Multi-cursor : KP ENTER -> Meme comportement que ENTER
 
@@ -117,7 +118,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 - [ ] flyspell mode ne doit pas etre actif par default car il
     consomme beaucoup
-- [ ] M-w ne ferme plus la frame courante
+- [X] M-w ne ferme plus la frame courante
 - [ ] mshell / shell + Abbrev autocomplete :
   possibilité d'avoir une complétion case insensitve.
   l'option était présente au départ mais à été retirée pour avoir une

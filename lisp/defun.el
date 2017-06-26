@@ -1363,6 +1363,12 @@ the visible part of the current buffer following point. "
   (interactive)
   (find-file "~/.emacs.d/projectile-bookmarks.eld")
 )
+(defun wil-delete-backspace ()
+  ;; delete the selection or forward-char
+  (interactive)
+  (if (region-active-p) (delete-region (region-beginning) (region-end)) (delete-forward-char 1))
+)
+
 
 ;; Non finalise
 (defun wil-yank-and-indent-region ()
