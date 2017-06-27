@@ -1,4 +1,4 @@
-#+TITLE: Emacs TODO
+#+TITLE: TODO.org
 #+STARTUP: content
 * Utils
 - [dired] "o" Ouvre le fichier dans un nouveau buffer et donne le focus à ce buffer
@@ -80,7 +80,41 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 * Bloquant
 :VISIBILITY:
-- [ ] Ajouter 
+- [X] Remettre le comportemment normal pour la touche supr
+- [X] [fram layout] Activer par défaut : window divider : bottom and right
+- [X] [fram layout] Activer par défaut : Fringe : left only
+- [X] [fram layout] Activer par défaut : Scrollbar horizontales
+
+- [ ] org mode : > yas snippet new checkbox ne fonctionne plus
+  - Retrouver le racourcis de base plutot
+
+- [ ] Multi-cursor : KP ENTER -> Meme comportement que ENTER
+
+- [ ] Paredit-mode : l'auto protection de quote lorsque l'on saisie du
+  texte dans une chaine de caractere est plus contraignante qu'autre
+  chose, il faut retirer ça
+ 
+  Paredit ET web-mode : Retirer la fonction qui escape automatiquement les
+  doubles quote dans les chaines car en principe ca ne marche pas bien
+  en web mode
+
+- [ ] [ag] Ne pas lancer la recherche avec les caracteres sur le curseur
+- [ ] [ag] Auto recenter after go to
+
+- [X] [ag] refresh highlight
+- [X] [ag] truncate line off
+- [X] High light symbol mode in web mode
+- [X] TOUCHE SUPR qui ne fonctionne pas correctement
+
+- [ ] [man] Autofocus sur la fenêtre
+  
+- [ ] [common] M-v -> Paste and indent ?
+
+
+
+
+
+
 
 - [ ] flyspell mode ne doit pas etre actif par default car il
     consomme beaucoup
@@ -105,12 +139,8 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
   buffer bla bla
 
 - [ ] AG mettre en mode emacs et non pas evil normal
-- [ ] org mode : > yas snippet new checkbox ne fonctionne plus
 
 - [ ] ag bufer : hihglight search string
-- [ ] Paredit ET web-mode : Retirer la fonction qui escape automatiquement les
-  doubles quote dans les chaines car en principe ca ne marche pas bien
-  en web mode
 
 
 
@@ -130,9 +160,6 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [emacs-osxs] Vérifier les keybindings sur les touches alt (alt+n alt+p, etc)
 
 
-- [ ] [ag] Ouvrir les resultats dans la même fenêtre
-  - Semble bon @home
-- [ ] [pdf-mode] Mouse Scroll page next/prev
 - [ ] [vc-dir] Déclencher le vc-dir en mode fullscreen avec la touche semble
   ESCAPE pour revenir sur le layout précédent comme dans magit
   Un plugin existe pour çâ
@@ -141,7 +168,6 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 - [ ] [svn-log-view] Faire des ediff depuis ce mode
 
-- [ ] Utiliser smartparens plutot que ParEdit pour des fichiers autre que lisp
 - [ ] [swoop] C-w ne fonctionne pas
 - [ ] [helm] [mini-buffer] Ajouter la possibilité de faire du M-v dans le mini-buffer
 - [ ] [system] mysql.server start on startup
@@ -162,7 +188,6 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [vc-dir] Ne pas afficher les lignes dossier grises
 - [ ] [vc-dir] key M-< && M-> : Faire pointer sur le vrai début/fin de ligne
 
-- [ ] [js/js2] Désactiver Paredit pour le mode js/js2
 - [ ] Previous/Next buffer : Utiliser la liste de ibuffer trier par ordre recent
 
 * A ranger
@@ -175,16 +200,11 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [company] Voir pour utiliser autre chose que company pour la complétion des mots car cela peut être lent
 
 - [ ] [swoop] Ne pas initialiser avec le texte sous le curseur
-     - [ ] [org] Lancer org mode avec certains titre ouvert fermé
-  - (conf en tête de fichier)
-- [ ] [org-mode] Le toggle des headline doit se faire en deux fois pour que tout fonctionne bien
-
-
-
-
-           - [ ] [org-mode] Mouse-1 pour toggler un header
-- [ ] Voir pour installer le plugin pour lancer des mode en "fullscreen", vu sur un blog d'un autre
-- [ ] [system] [osx] Autoriser le F5 dans Emacs (revert-buffer)
+  - [ ] [org] Lancer org mode avec certains titre ouvert fermé
+- (conf en tête de fichier)
+  - [ ] [org-mode] Mouse-1 pour toggler un header
+- [X] Voir pour installer le plugin pour lancer des mode en "fullscreen", vu sur un blog d'un autre
+- [X] [system] [osx] Autoriser le F5 dans Emacs (revert-buffer)
 - [ ] Rebind les scroll to other window pour avoir un scroll sur la fenetre a cote mais d'une demie page seulement
       C-M-S-v runs the command scroll-other-window-down (found in
       global-map), which is an interactive compiled Lisp function in
@@ -197,7 +217,6 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
       Scroll the "other window" down.
       For more details, see the documentation for ‘scroll-other-window’.
 
-- [ ] Ne pas embarquer les couleurs lors de la copie d'un texte
 - [ ] Kill texte : Ne pas ajouter dans le kill ring
       --> L'ajout dans le kill ring ne doit se faire que depuis M-w si possible
 - [ ] M-S-n sur buffer vc-diff ne fonctionne pas 
@@ -211,8 +230,8 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
       Cette fonction est déjà présente dans emacs mais apparait dans une autre frame, un package existe pour
       L'afficher dans la même frame mais je n'ai pas réussis à bien l'implèmenter
 - [ ] System : bind c-j
-- [ ] [all] Ne pas ajouter dabbrev dans company par default
-     - [ ] [css-mode] Virer company dabbrev de css mode
+- [X] [all] Ne pas ajouter dabbrev dans company par default
+  - [X] [css-mode] Virer company dabbrev de css mode
 - [ ] [theme] [ediff] Trouver comment avoir les bons code couleur,des couleurs parfaitement implémentées comme avec avec le thème leuven
 
 
@@ -249,15 +268,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] [web-mode] [javascript] [company] Add javascript keywords to company backend
 - [ ] [refactor] emacs.d conf a ranger, voir modele suivant : https://github.com/purcell/emacs.d
 - [ ] Activer les url cliquable dans les differents modes
-- [ ] Auto center :
-      [x] [i-search]
-      [ ] [go to line (M-g M-g]
-      [x] [Highlight next / prev]
-      [ ] [helm-ag] Go to
-      [x] [swiper]
-      [ ] [imenu]
-      [ ] [ag] Search result buffer
-      [ ] [highlight-nav]
+
 - [ ] [ivy] [mini buffer] CTRL+l to back up
 - [ ] [ivy] : Ne pas mettre les fichiers .svn dans la liste
 - [ ] [plugin] [change inner] Ajoute rl'option Change Inner Tag

@@ -63,17 +63,19 @@
 ;; (scroll-bar-mode -1)
 ;; Enable scrollbar
 (scroll-bar-mode 1)
+(horizontal-scroll-bar-mode 1)
 
 ;; make the left fringe 4 pixels wide and the right disappear
-(fringe-mode '(10 . 0))
+(fringe-mode '(16 . 0))
 
 ;; restore the default sizes
-(fringe-mode nil)
+;; (fringe-mode nil)
 
 ;; ?
 (set-default 'cursor-type 'bar)
 
-(setq window-divider-mode t)
+(setq window-divider-mode 1)
+(setq window-divider-default-places t)
 
 
 ;; Paste without source font lock
@@ -320,8 +322,10 @@
 
 ;; Display ag result in the same window
 ;; http://emacs.stackexchange.com/a/26219
-(defvar display-buffer-same-window-commands
-  '(occur-mode-goto-occurrence compile-goto-error))
+;; Update pour ne pas le faire
+
+;; (defvar display-buffer-same-window-commands
+;;   '(occur-mode-goto-occurrence compile-goto-error))
 
 ;; Auto wrapping isearch
 ;; http://stackoverflow.com/a/287067

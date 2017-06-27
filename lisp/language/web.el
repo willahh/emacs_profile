@@ -31,8 +31,10 @@
             (emmet-mode)
 
             ;; Disable highlight symbol, too slow on web-mode mode
-            ;; highlight-symbol-nav-mode still enabled
-            (highlight-symbol-mode 0)
+            ;; highlight-symbol-nav-mode still enabled Update : Suite
+            ;; a l utilisation de Emacs version osx, tout semble plus
+            ;; fluide
+            ;; (highlight-symbol-mode 0)
 
             ;; Company backend
             ;; (set (make-local-variable 'company-backends) '(company-css company-dabbrev))

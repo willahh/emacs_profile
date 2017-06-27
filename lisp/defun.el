@@ -1281,6 +1281,13 @@ the visible part of the current buffer following point. "
               "Recenter"
               (recenter)))
 
+;; Recenter after compile-goto-error
+(advice-add 'compile-goto-error
+            :after
+            (lambda (&rest args)
+              "Recenter"
+              (recenter)))
+
 ;; ;; Recenter after forward-sentence
 ;; (advice-add 'forward-sentence
 ;;             :after
@@ -1320,8 +1327,8 @@ the visible part of the current buffer following point. "
 (advice-add 'compile-goto-error
             :after
             (lambda (&rest args)
-              "Recenter"
-              (recenter)))
+              "evil-scroll-line-to-top "
+              (evil-scroll-line-to-top)))
 
 ;; Recenter after diff-hl-next-hunk
 (advice-add 'diff-hl-next-hunk
@@ -1356,7 +1363,49 @@ the visible part of the current buffer following point. "
   (interactive)
   (find-file "~/.emacs.d/projectile-bookmarks.eld")
 )
+(defun wil-delete-backspace ()
+  ;; delete the selection or forward-char
+  (interactive)
+  (if (region-active-p) (delete-region (region-beginning) (region-end)) (delete-forward-char 1))
+)
 
+
+;; Non finalise
+(defun wil-yank-and-indent-region ()
+  ;; Yank and indent region
+  (interactive)
+  (yank)
+  (call-interactively 'indent-region)
+)
+
+;; https://www.emacswiki.org/emacs/AutoIndentation
+;; (defadvice yank (around html-yank-indent)
+;;   "Indents after yanking."
+;;   (let ((point-before (point)))
+;;     ad-do-it
+;;     (when (eq major-mode 'html-mode) ;; check what mode we're in
+;;       (indent-region point-before (point)))))
+
+;; (ad-activate 'yank)
+
+
+;; https://www.emacswiki.org/emacs/AutoIndentation
+;; (defadvice kill-line (before check-position activate)
+;;   (if (and (eolp) (not (bolp)))
+;;       (progn (forward-char 1)
+;;              (just-one-space 0)
+;;              (backward-char 1))))
+
+;; (defun kill-and-join-forward (&optional arg)
+;;    "If at end of line, join with following; otherwise kill line.
+;;  Deletes whitespace at join."
+;;    (interactive "P")
+;;    (if (and (eolp) (not (bolp)))
+;;        (progn
+;;   (delete-indentation t)
+;;   (if (looking-at " $")
+;;      	(delete-char 1)))
+;;      (kill-line arg)))
 
 
 

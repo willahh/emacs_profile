@@ -167,6 +167,9 @@ is already narrowed."
             ;; (define-key wil-js-mode-map (kbd "s-j") 'yas-expand)
             ;; (define-key wil-js-mode-map (kbd "s-J") 'company-yasnippet)
 
+            ;; Highlight-mode
+            (set (make-local-variable 'highlight-symbol-mode) 't)
+
 )
 
 ;; (defun company-yasnippet-or-completion ()
