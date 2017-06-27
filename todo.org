@@ -82,10 +82,9 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 :VISIBILITY:
 - [ ] Ajouter 
 
-- [ ] Ajouter un right
 - [ ] flyspell mode ne doit pas etre actif par default car il
     consomme beaucoup
-- [ ] M-w ne ferme plus la frame courante
+- [X] M-w ne ferme plus la frame courante
 - [ ] mshell / shell + Abbrev autocomplete :
   possibilité d'avoir une complétion case insensitve.
   l'option était présente au départ mais à été retirée pour avoir une
