@@ -464,16 +464,19 @@ Version 2016-12-27"
 ;; (global-set-key (kbd "C-M-s") 'ag-project-at-point)
 ;; (global-set-key (kbd "C-M-S") 'ag-project)
 
-(global-set-key (kbd "C-c s a") 'ag-project-at-point)
-(global-set-key (kbd "C-c s A") 'ag)
+;; (global-set-key (kbd "C-c s a") 'ag-project-at-point)
+(global-set-key (kbd "C-c s a") 'ag)
 (global-set-key (kbd "C-c s p") 'projectile-ag)
 (global-set-key (kbd "C-c s s") 'helm-ag)
 (global-set-key (kbd "C-c s S") 'helm-ag-project-root)
 
-;; Il faut projectile-ag pour avoir le moins de key a saisir
-;; ag est utilise plus rarament
-;; (global-set-key (kbd "C-M-s") 'ag)
-(global-set-key (kbd "C-M-s") 'projectile-ag)
+;; Il faut projectile-ag pour avoir le moins de key a saisir ag est
+;; utilise plus rarament Updat : projectile-ag ne fonctionne pas sur
+;; le repertoire courant mais sur tout le projet, il faut utiliser ag
+;; tout court
+
+;; (global-set-key (kbd "C-M-s") 'ag) (global-set-key (kbd "C-M-s") 'projectile-ag)
+(global-set-key (kbd "C-M-s") 'ag)
 (global-set-key [control meta s] 'ag-project-at-point)
 (global-set-key [control meta shift s] 'ag-project)
 

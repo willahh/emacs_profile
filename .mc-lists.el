@@ -12,6 +12,7 @@
       backward-sexp
       c-electric-colon
       c-electric-delete-forward
+      c-electric-pound
       c-electric-semi&comma
       c-electric-slash
       c-electric-star
@@ -66,6 +67,7 @@
       kill-region
       kill-sentence
       mark-sexp
+      mouse-save-then-kill
       mouse-set-region
       mouse-start-secondary
       my-abort-recursive-edit
@@ -92,6 +94,7 @@
       untab-region
       web-mode-comment-indent-new-line
       whole-line-or-region-kill-region
+      wil-delete-backspace
       wil-tab-indent-or-complete-css
       wlh-tab-indent-or-complete-web
       xah-toggle-letter-case

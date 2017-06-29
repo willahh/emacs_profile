@@ -85,6 +85,21 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [X] [fram layout] Activer par défaut : Fringe : left only
 - [X] [fram layout] Activer par défaut : Scrollbar horizontales
 
+- [ ] Activer le highlight en mode php
+
+- [ ] @work Warning (flycheck): Syntax checker css-csslint reported too many
+  errors (1415) and is disabled. 
+
+
+
+- [ ] Ediff depuis un fichier, la commande q ne rétablie pas bien les
+  buffers
+- [ ] Wndow divider bottom right ne fonctionne pas
+
+- [ ] [helm] Plugin helm utiisable avec la souris
+
+- [ ] Remettre trailing whitespace sauf pour eww
+
 - [ ] org mode : > yas snippet new checkbox ne fonctionne plus
   - Retrouver le racourcis de base plutot
 
