@@ -79,7 +79,7 @@ http://ecb.sourceforge.net/
 https://www.youtube.com/watch?v=KoRNCrx9pak
 
 * Bloquant
-:VISIBILITY:
+:VISIBILITY: all
 - [ ] Réduire la hauteur du bandeau du bas
 
 - [ ] Paredit-mode : l'auto protection de quote lorsque l'on saisie du
@@ -91,7 +91,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
   en web mode
 
   Retirer les binds de paredit suivants sur tous les modes autre que
-  lisp emac lisp clojure : ' " 
+  lisp emac lisp clojure : ' " backspace delete
 
 #+BEGIN_SRC lisp
 (eval-after-load "paredit"
