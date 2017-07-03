@@ -25,6 +25,12 @@
 (require 'anzu)
 (global-anzu-mode +1)
 
+;; I-search
+(setq-default
+ isearch-allow-scroll t
+ lazy-highlight-cleanup nil
+ lazy-highlight-initial-delay 0)
+
 ;; Occur from isearch
 ;; https://www.emacswiki.org/emacs/OccurFromIsearch
 (defun isearch-occur ()
