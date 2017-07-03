@@ -80,6 +80,26 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 * Bloquant
 :VISIBILITY:
+- [ ] Réduire la hauteur du bandeau du bas
+
+- [ ] Paredit-mode : l'auto protection de quote lorsque l'on saisie du
+  texte dans une chaine de caractere est plus contraignante qu'autre
+  chose, il faut retirer ça
+ 
+  Paredit ET web-mode : Retirer la fonction qui escape automatiquement les
+  doubles quote dans les chaines car en principe ca ne marche pas bien
+  en web mode
+
+  Retirer les binds de paredit suivants sur tous les modes autre que
+  lisp emac lisp clojure : ' " 
+
+#+BEGIN_SRC lisp
+(eval-after-load "paredit"
+  '(progn
+    (define-key paredit-mode-map (kbd "C-M-f") nil)))
+#+END_SRC
+
+
 - [X] Remettre le comportemment normal pour la touche supr
 - [X] [fram layout] Activer par défaut : window divider : bottom and right
 - [X] [fram layout] Activer par défaut : Fringe : left only
@@ -89,7 +109,6 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 - [ ] @work Warning (flycheck): Syntax checker css-csslint reported too many
   errors (1415) and is disabled. 
-
 
 
 - [ ] Ediff depuis un fichier, la commande q ne rétablie pas bien les
@@ -104,14 +123,6 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
   - Retrouver le racourcis de base plutot
 
 - [ ] Multi-cursor : KP ENTER -> Meme comportement que ENTER
-
-- [ ] Paredit-mode : l'auto protection de quote lorsque l'on saisie du
-  texte dans une chaine de caractere est plus contraignante qu'autre
-  chose, il faut retirer ça
- 
-  Paredit ET web-mode : Retirer la fonction qui escape automatiquement les
-  doubles quote dans les chaines car en principe ca ne marche pas bien
-  en web mode
 
 - [ ] [ag] Ne pas lancer la recherche avec les caracteres sur le curseur
 - [ ] [ag] Auto recenter after go to
