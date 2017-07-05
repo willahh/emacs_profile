@@ -67,15 +67,21 @@
 
 ;; make the left fringe 4 pixels wide and the right disappear
 (fringe-mode '(16 . 0))
+;; (fringe-mode '(32 . 0))
 
 ;; restore the default sizes
 ;; (fringe-mode nil)
 
 ;; ?
 (set-default 'cursor-type 'bar)
-
 (setq window-divider-mode 1)
+
+;; Set window divider bottom and right 
+(setq window-divider-mode t)
 (setq window-divider-default-places t)
+; (setq window-divider-default-places t)
+;; (setq window-divider-mode 1)
+;; (setq window-divider-default-places 'right-only)
 
 
 ;; Paste without source font lock

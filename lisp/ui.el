@@ -87,6 +87,12 @@
       wg-mode-line-decor-divider ":")
 
 
+;; Mode line height
+
+(- (elt (window-pixel-edges) 3) 
+   (elt (window-inside-pixel-edges) 3))
+
+
 
 ;; ----- nlinum
 ;; Update : Desactivation de nlinum, cause trop de leges ralentsi
