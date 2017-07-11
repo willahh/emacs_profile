@@ -461,7 +461,7 @@ That is, a string used to represent it on the tab bar."
 
 
 
-;; Dont start commit message with bullshit
+;; Initialize commit message empty
 ;; Source : http://emacs.stackexchange.com/a/3031
 (load "log-edit")
 (defun log-edit-insert-message-template ()
@@ -1249,30 +1249,36 @@ the visible part of the current buffer following point. "
 
 
 
-
+;; Update : Le vrai comportement devrait être de re-centrer unniquement si la ligne n est pas visible a l ecran
 
 ;; Recenter after isearch
 ;; https://stackoverflow.com/a/36896945
-;; (advice-add 'isearch-search
-;;             :after
-;;             (lambda (&rest args)
-;;               "Recenter"
-;;               (when isearch-success
-;;                 (recenter))))
+;; Update : desactivation
+;; Update : Reactivation
+(advice-add 'isearch-search
+            :after
+            (lambda (&rest args)
+              "Recenter"
+              (when isearch-success
+                (recenter))))
 
 ;; Recenter after pop to mark
-;; (advice-add 'pop-to-mark-command
-;;             :after
-;;             (lambda (&rest args)
-;;               "Recenter"
-;;               (recenter)))
+;; Update : desactivation
+;; Update : Reactivation
+(advice-add 'pop-to-mark-command
+            :after
+            (lambda (&rest args)
+              "Recenter"
+              (recenter)))
 
 ;; Recenter after unpop to mark
-;; (advice-add 'unpop-to-mark-command
-;;             :after
-;;             (lambda (&rest args)
-;;               "Recenter"
-;;               (recenter)))
+;; Update : desativation
+;; Update : reactivation
+(advice-add 'unpop-to-mark-command
+            :after
+            (lambda (&rest args)
+              "Recenter"
+              (recenter)))
 
 ;; Recenter after avy
 (advice-add 'avy--generic-jump
@@ -1377,6 +1383,11 @@ the visible part of the current buffer following point. "
   (yank)
   (call-interactively 'indent-region)
 )
+
+(defun wil-svn-up-recursive ()
+  "Svn update recursivly"
+  (interactive)
+  (shell-command "svn_up_recursive"))
 
 ;; https://www.emacswiki.org/emacs/AutoIndentation
 ;; (defadvice yank (around html-yank-indent)

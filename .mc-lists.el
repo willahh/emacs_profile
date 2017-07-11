@@ -77,6 +77,7 @@
       org-end-of-line
       org-kill-line
       org-self-insert-command
+      org-todo
       paredit-backslash
       paredit-backward
       paredit-doublequote

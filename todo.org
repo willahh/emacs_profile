@@ -80,6 +80,8 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 * Bloquant
 :VISIBILITY: all
+- [ ] Faire fonctionner les ALT+DELETE et ALT+shift+DELEte
+
 - [X] Réduire la hauteur du bandeau du bas
 - [X] Les splitters verticaux et horizontaux ne sont de nouveaux plus accessibles
 - [X] Wndow divider bottom right ne fonctionne pas
