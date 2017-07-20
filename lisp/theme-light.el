@@ -7,9 +7,11 @@
 
 
 
-
 ;; Some custom rules
 ;; powerline theme
+(custom-set-faces
+  '(mode-line ((t (:box (:line-width 0))))))
+
 (defun powerline-theme-emacs()
   (set-face-attribute 'mode-line nil
                       :foreground "#000"
@@ -60,6 +62,8 @@
 
 ;; powerline
 (powerline-theme-normal)
+
+(set-face-attribute 'lazy-highlight nil :background "#ffff33")
 
 ;; ;; ------ Font
 ;; (set-face-attribute 'org-level-1 nil :foreground "#848484")

@@ -77,6 +77,8 @@
       org-end-of-line
       org-kill-line
       org-self-insert-command
+      org-todo
+      paredit-backslash
       paredit-backward
       paredit-doublequote
       paredit-forward
@@ -109,6 +111,7 @@
       avy-goto-word-1-below
       c-end-of-statement
       company-complete-common
+      compilation-next-error
       compilation-previous-error
       counsel-M-x
       delete-window

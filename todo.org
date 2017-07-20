@@ -79,7 +79,56 @@ http://ecb.sourceforge.net/
 https://www.youtube.com/watch?v=KoRNCrx9pak
 
 * Bloquant
-:VISIBILITY:
+:VISIBILITY: all
+- [X] Réduire la hauteur du bandeau du bas
+- [ ] Faire fonctionner les ALT+DELETE et ALT+shift+delete
+- [X] rebind Sépartions verticales et horizontales sur clavier azerty
+- [ ] Ajouter un bind ALT + arrow up / down sur drag
+
+
+
+- [ ] Les caractères ^M sont de nouveau visibles en mode php (vue
+  certains en mode lisp aussi mais moins dérangeant)
+- [ ] Rétablir auto complete path pour avoir une completion des
+  chemins de fichier
+
+- [ ] Paredit-mode : l'auto protection de quote lorsque l'on saisie du
+  texte dans une chaine de caractere est plus contraignante qu'autre
+  chose, il faut retirer ça
+ 
+  Paredit ET web-mode : Retirer la fonction qui escape automatiquement les
+  doubles quote dans les chaines car en principe ca ne marche pas bien
+  en web mode
+
+  Retirer les binds de paredit suivants sur tous les modes autre que
+  lisp emac lisp clojure : ' " backspace delete
+
+#+BEGIN_SRC lisp
+(eval-after-load "paredit"
+  '(progn
+    (define-key paredit-mode-map (kbd "C-M-f") nil)))
+#+END_SRC
+
+
+- [ ] Remettre trailing whitespace sauf pour eww
+
+
+
+- [ ] [AG] C-j : Open in same window
+  C-o Open in new window
+
+
+
+
+
+- [X] Les splitters verticaux et horizontaux ne sont de nouveaux plus accessibles
+- [X] Wndow divider bottom right ne fonctionne pas
+
+
+
+
+
+
 - [X] Remettre le comportemment normal pour la touche supr
 - [X] [fram layout] Activer par défaut : window divider : bottom and right
 - [X] [fram layout] Activer par défaut : Fringe : left only
@@ -91,27 +140,15 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
   errors (1415) and is disabled. 
 
 
-
 - [ ] Ediff depuis un fichier, la commande q ne rétablie pas bien les
   buffers
-- [ ] Wndow divider bottom right ne fonctionne pas
 
 - [ ] [helm] Plugin helm utiisable avec la souris
-
-- [ ] Remettre trailing whitespace sauf pour eww
 
 - [ ] org mode : > yas snippet new checkbox ne fonctionne plus
   - Retrouver le racourcis de base plutot
 
 - [ ] Multi-cursor : KP ENTER -> Meme comportement que ENTER
-
-- [ ] Paredit-mode : l'auto protection de quote lorsque l'on saisie du
-  texte dans une chaine de caractere est plus contraignante qu'autre
-  chose, il faut retirer ça
- 
-  Paredit ET web-mode : Retirer la fonction qui escape automatiquement les
-  doubles quote dans les chaines car en principe ca ne marche pas bien
-  en web mode
 
 - [ ] [ag] Ne pas lancer la recherche avec les caracteres sur le curseur
 - [ ] [ag] Auto recenter after go to
