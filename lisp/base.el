@@ -235,9 +235,9 @@
 (setq mac-command-modifier 'meta) ; make cmd key do Meta
 ;; (setq mac-option-modifier 'super) ; make opt key do Super
 (setq mac-control-modifier 'control) ; make Control key do Control
-(setq ns-function-modifier 'hyper)  ; make Fn key do Hyper
+;; (setq ns-function-modifier 'hyper)  ; make Fn key do Hyper ;; Update : trop peut utilisee
 
-(setq mac-right-option-modifier 'hyper) ; make right option key do Hyper
+;; (setq mac-right-option-modifier 'hyper) ; make right option key do Hyper
 
 ;; Keep right alt for accents
 ;; (setq mac-right-option-modifier nil)
