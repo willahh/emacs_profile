@@ -62,7 +62,7 @@
 (define-key ivy-minibuffer-map (kbd "<escape>") 'minibuffer-keyboard-quit)
 
 
-(define-key key-translation-map "\C-q" "\C-g")
+;; (define-key key-translation-map "\C-q" "\C-g")
 
 
 (use-package evil-mc
@@ -282,9 +282,15 @@ Version 2016-12-27"
 (global-set-key (kbd "π") 'drag-stuff-up) ; ALT+p
 (define-key org-mode-map (kbd "π") 'org-metaup) ; ALT+p
 
+(global-set-key (kbd "È") 'drag-stuff-up) ; ALT+k
+(define-key org-mode-map (kbd "È") 'org-metaup) ; ALT+k
+
 ;; Bottom
 (global-set-key (kbd "ñ") 'drag-stuff-down) ; ALT+n
-(define-key org-mode-map (kbd "ñ") 'org-metadown) ; ALT+n
+(define-key org-mode-map (kbd "ñ") 'org-down) ; ALT+n
+
+(global-set-key (kbd "Ï") 'drag-stuff-down) ; ALT+j
+(define-key org-mode-map (kbd "Ï") 'org-metdownaup) ; ALT+j
 
 
 ;; ----------------
@@ -309,7 +315,9 @@ Version 2016-12-27"
 
 ;; Next
 (global-set-key (kbd "°") 'mc/mark-next-like-this-word) ; ALT+d
+(global-set-key (kbd "∂") 'mc/mark-next-like-this-word) ; ALT+d
 (define-key paredit-mode-map (kbd "°") 'mc/mark-next-like-this-word) ; ALT+d
+(define-key paredit-mode-map (kbd "∂") 'mc/mark-next-like-this-word) ; ALT+d
 
 ;; Previous
 (global-set-key (kbd "Δ") 'mc/mark-previous-like-this-word) ; ALT+SHIFT+q
@@ -579,7 +587,7 @@ Version 2016-12-27"
 (define-key isearch-mode-map (kbd "C-S-j") 'avy-isearch)
 (define-key isearch-mode-map (kbd "M-v") 'isearch-yank-pop)
 (define-key isearch-mode-map (kbd "C-v") 'isearch-yank-pop)
-(define-key isearch-mode-map (kbd "C-q") 'isearch-exit)
+;; (define-key isearch-mode-map (kbd "C-q") 'isearch-exit)
 
 ;; Like isearch, but adds region (if any) to history and deactivates mark
 ;; (global-set-key (kbd "C-s") 'isearch-forward-use-region)
@@ -750,8 +758,6 @@ Version 2016-12-27"
 
 (global-set-key (kbd "M-0") 'delete-window) ;; M-0
 (define-key diff-mode-map (kbd "M-0") 'delete-window)
-;; (global-set-key [(command shift w)] 'delete-window)
-;; (global-set-key (kbd "M-W") 'delete-window)
 
 (global-set-key (kbd "M-1") 'delete-other-windows) ;; M-1
 (define-key diff-mode-map (kbd "M-1") 'delete-other-windows)
@@ -932,6 +938,7 @@ Version 2016-12-27"
 (global-set-key (kbd "s-r") 'projectile-recentf)
 (global-set-key (kbd "s-R") 'helm-recentf)
 (global-set-key (kbd "s-q") 'my-abort-recursive-edit)
+(global-set-key (kbd "C-s-p") 'find-file-in-current-directory)
 
 ;; Scroll commands
 (global-set-key (kbd "s-v") 'evil-scroll-up)

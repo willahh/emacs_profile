@@ -415,9 +415,27 @@
 ;; speedbar
 (require 'sr-speedbar)
 
+
+
 ;;paredit
 (require 'paredit)
 (add-hook 'prog-mode-hook 'paredit-mode)
+; (add-hook 'emacs-lisp-mode-hook 'paredit-mode)
+
+
+;; https://truongtx.me/2014/02/22/emacs-using-paredit-with-non-lisp-mode
+; (defun my-paredit-nonlisp ()
+;   "Turn on paredit mode for non-lisps."
+;   (interactive)
+;   (set (make-local-variable 'paredit-space-for-delimiter-predicates)
+;        '((lambda (endp delimiter) nil)))
+;   (paredit-mode 1))
+
+; (add-hook 'js-mode-hook 'my-paredit-nonlisp)
+; (add-hook 'my-paredit-nonlisp)
+
+
+
 
 ;; (require 'paredit-everywhere)
 ;; (add-hook 'prog-mode-hook 'paredit-everywhere)

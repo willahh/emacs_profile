@@ -28,7 +28,7 @@
 (add-to-list 'auto-mode-alist '("\\.jade\\'" . jade-mode))
 
 (setq web-mode-enable-css-colorization t)
-(setq web-mode-enable-current-element-highlight t)
+;; (setq web-mode-enable-current-element-highlight t) ;; Update : L effet visuel n est pas reelement convaincant
 (setq web-mode-enable-current-column-highlight t)
 
 ;; Add auto-pair

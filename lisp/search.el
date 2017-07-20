@@ -27,6 +27,7 @@
 (require 'anzu)
 (global-anzu-mode +1)
 
+
 ;; I-search
 (setq-default
  isearch-allow-scroll t

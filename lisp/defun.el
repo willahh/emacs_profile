@@ -1255,12 +1255,13 @@ the visible part of the current buffer following point. "
 ;; https://stackoverflow.com/a/36896945
 ;; Update : desactivation
 ;; Update : Reactivation
-(advice-add 'isearch-search
-            :after
-            (lambda (&rest args)
-              "Recenter"
-              (when isearch-success
-                (recenter))))
+;; Update : desactivation
+;; (advice-add 'isearch-search
+;;             :after
+;;             (lambda (&rest args)
+;;               "Recenter"
+;;               (when isearch-success
+;;                 (recenter))))
 
 ;; Recenter after pop to mark
 ;; Update : desactivation

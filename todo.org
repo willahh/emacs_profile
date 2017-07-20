@@ -80,17 +80,15 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 * Bloquant
 :VISIBILITY: all
-- [ ] Faire fonctionner les ALT+DELETE et ALT+shift+DELEte
-
 - [X] Réduire la hauteur du bandeau du bas
-- [X] Les splitters verticaux et horizontaux ne sont de nouveaux plus accessibles
-- [X] Wndow divider bottom right ne fonctionne pas
+- [ ] Faire fonctionner les ALT+DELETE et ALT+shift+delete
+- [X] rebind Sépartions verticales et horizontales sur clavier azerty
+- [ ] Ajouter un bind ALT + arrow up / down sur drag
 
-- [ ] [AG] C-j : Open in same window
-  C-o Open in new window
 
-- [ ] Undo / Redo : Recentrer sur la ligne concernée
 
+- [ ] Les caractères ^M sont de nouveau visibles en mode php (vue
+  certains en mode lisp aussi mais moins dérangeant)
 - [ ] Rétablir auto complete path pour avoir une completion des
   chemins de fichier
 
@@ -116,6 +114,15 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 
 
+- [ ] [AG] C-j : Open in same window
+  C-o Open in new window
+
+
+
+
+
+- [X] Les splitters verticaux et horizontaux ne sont de nouveaux plus accessibles
+- [X] Wndow divider bottom right ne fonctionne pas
 
 
 
