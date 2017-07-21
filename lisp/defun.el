@@ -729,7 +729,8 @@ That is, a string used to represent it on the tab bar."
   ;;   (set-frame-width (myframe) 800)
   ;;   )
 
-  (new-frame)
+
+
   ;; (setq frame (new-frame)
   ;;       (wil-frame-center (frame))
   ;; )
@@ -747,6 +748,11 @@ That is, a string used to represent it on the tab bar."
   ;; New buffer inside
   ;;  then Select this buffer @todo
   ;; (switch-to-buffer (generate-new-buffer "*new*"))
+
+
+  (select-frame (make-frame))
+  (funcall #'switch-to-buffer (generate-new-buffer "*new*"))
+  (wil-frame-center)
 )
 
 ;; Block comment auto close
@@ -1374,6 +1380,18 @@ the visible part of the current buffer following point. "
   ;; delete the selection or forward-char
   (interactive)
   (if (region-active-p) (delete-region (region-beginning) (region-end)) (delete-forward-char 1))
+)
+(defun wil-open-goaland-org()
+  (interactive)
+  (select-frame (make-frame))
+  (funcall #'find-file "~/org/wra_goaland/goaland.org")
+  (wil-frame-center)
+)
+(defun wil-open-emacs-todo-org()
+  (interactive)
+  (select-frame (make-frame))
+  (funcall #'find-file "~/.emacs.d/todo.org")
+  (wil-frame-center)
 )
 
 

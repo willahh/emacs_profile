@@ -98,7 +98,7 @@ Tags tools - global (gtags) - brew install global --with-pygments
   <!-- - Global - brew install global --with-exuberant-ctags -->
 #+END_HTML
 * Support
-** Language checker
+** Spell checker
 *** Tools : ispell
 **** OSX
 #+BEGIN_SRC

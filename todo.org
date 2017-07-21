@@ -84,7 +84,12 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 - [ ] Faire fonctionner les ALT+DELETE et ALT+shift+delete
 - [X] rebind Sépartions verticales et horizontales sur clavier azerty
 - [ ] Ajouter un bind ALT + arrow up / down sur drag
-
+- [ ] M-z lorsqu'une sélection est présente = cela ne fonctionne pas
+- [ ] Faire fonctionner company dans des fichiers js avec des lignes
+  dans le style suivant : 
+require('./../goa/widget/inputSuggest/InputSuggest.js');
+- [ ] Activer Paredit sur le racourcis C-h (delete backward)
+- [ ] Remettre le binding par default C-q
 
 
 - [ ] Les caractères ^M sont de nouveau visibles en mode php (vue
