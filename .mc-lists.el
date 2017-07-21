@@ -106,6 +106,7 @@
 
 (setq mc/cmds-to-run-once
       '(
+      abbrev-prefix-mark
       ace-window
       avy-goto-word-1-above
       avy-goto-word-1-below

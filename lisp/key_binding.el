@@ -897,6 +897,7 @@ Version 2016-12-27"
 ;; --------------- Super keys
 ;; Search with super key
 (global-set-key (kbd "s-s") 'helm-swoop) ; Super+s
+(global-set-key (kbd "s-e") 'kmacro-end-and-call-macro) ; Super+e
 (global-set-key (kbd "C-s-s") 'helm-ag) ; Super+Contral+s
 (global-set-key (kbd "C-M-s-s") 'projectile-ag) ; Control+Meta+Super+s
 

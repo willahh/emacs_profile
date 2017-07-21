@@ -155,7 +155,7 @@ is already narrowed."
             
             ;; (set (make-local-variable 'company-backends) '((company-tern :with company-yasnippet :with company-dabbrev)))
             
-            (set (make-local-variable 'company-backends) '((company-tern)))
+            (set (make-local-variable 'company-backends) '((company-tern :with company-files)))
             
             ;; Local key map
             ;; (define-key wil-js-mode-map (kbd "<tab>") 'wil-tab-indent-or-complete-js)
