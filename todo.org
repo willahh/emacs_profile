@@ -89,13 +89,11 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
   dans le style suivant : 
 require('./../goa/widget/inputSuggest/InputSuggest.js');
 - [ ] Activer Paredit sur le racourcis C-h (delete backward)
-- [ ] Remettre le binding par default C-q
+- [X] Remettre le binding par default C-q
 
 
 - [ ] Les caractères ^M sont de nouveau visibles en mode php (vue
   certains en mode lisp aussi mais moins dérangeant)
-- [ ] Rétablir auto complete path pour avoir une completion des
-  chemins de fichier
 
 - [ ] Paredit-mode : l'auto protection de quote lorsque l'on saisie du
   texte dans une chaine de caractere est plus contraignante qu'autre
