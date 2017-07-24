@@ -87,8 +87,8 @@
 
 ;; Key
 ;; https://emacs.stackexchange.com/a/2990
-; (with-eval-after-load 'company
-;   (define-key company-active-map (kbd "M-v") 'yank)
+;; (with-eval-after-load 'company
+  ;; (define-key company-active-map (kbd "M-v") 'yank)
 
 ;;
 (add-hook 'after-init-hook 'global-company-mode)
