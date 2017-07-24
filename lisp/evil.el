@@ -20,14 +20,16 @@
 
 ;; Define some mode that should be initialized on emacs mode
 ;; (evil-set-initial-state 'org-mode 'emacs)
-(evil-set-initial-state 'org-mode 'normal)
+;; (evil-set-initial-state 'org-mode 'normal)
+(evil-set-initial-state 'org-mode 'emacs)
 
 ;; (evil-set-initial-state 'dired-mode 'emacs) ;; Note : pas besoin en principe
 (evil-set-initial-state 'log-edit-files 'emacs)
 
 
 ;; (evil-set-initial-state 'help-mode 'emacs)
-(evil-set-initial-state 'help-mode 'normal)
+;; (evil-set-initial-state 'help-mode 'normal)
+(evil-set-initial-state 'help-mode 'emacs)
 
 
 

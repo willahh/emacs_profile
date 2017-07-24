@@ -66,8 +66,9 @@
 (horizontal-scroll-bar-mode 1)
 
 ;; make the left fringe 4 pixels wide and the right disappear
-(fringe-mode '(16 . 0))
 ;; (fringe-mode '(32 . 0))
+;; (fringe-mode '(16 . 0))
+(fringe-mode '(12 . 0))
 
 ;; restore the default sizes
 ;; (fringe-mode nil)

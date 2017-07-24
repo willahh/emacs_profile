@@ -6,7 +6,9 @@
 (require 'org)
 (require 'org-mouse)
 
+;; org-directory "~/org"
 (setq org-agenda-files (quote ("~/org/main.org")))
+(setq org-default-notes-file (concat org-directory "/main.org"))
 
 
 ;; http://orgmode.org/worg/org-tutorials/org-latex-export.html

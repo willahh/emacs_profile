@@ -88,9 +88,9 @@
 
 
 ;; Mode line height
-
-(- (elt (window-pixel-edges) 3) 
-   (elt (window-inside-pixel-edges) 3))
+;; Update : pas sure que cela soit fonctionnel
+(- (elt (window-pixel-edges) 1) 
+   (elt (window-inside-pixel-edges) 1))
 
 
 

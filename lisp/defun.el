@@ -1272,11 +1272,12 @@ the visible part of the current buffer following point. "
 ;; Recenter after pop to mark
 ;; Update : desactivation
 ;; Update : Reactivation
-(advice-add 'pop-to-mark-command
-            :after
-            (lambda (&rest args)
-              "Recenter"
-              (recenter)))
+;; Update : desactivation
+;; (advice-add 'pop-to-mark-command
+;;             :after
+;;             (lambda (&rest args)
+;;               "Recenter"
+;;               (recenter)))
 
 ;; Recenter after unpop to mark
 ;; Update : desativation

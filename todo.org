@@ -81,6 +81,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 * Bloquant
 :VISIBILITY: all
 - [X] Réduire la hauteur du bandeau du bas
+- [ ] Mini buffer : Ne pas afficher lde scrollbar
 - [ ] Faire fonctionner les ALT+DELETE et ALT+shift+delete
 - [X] rebind Sépartions verticales et horizontales sur clavier azerty
 - [ ] Ajouter un bind ALT + arrow up / down sur drag
@@ -91,6 +92,7 @@ require('./../goa/widget/inputSuggest/InputSuggest.js');
 - [ ] Activer Paredit sur le racourcis C-h (delete backward)
 - [X] Remettre le binding par default C-q
 
+ 
 
 - [ ] Les caractères ^M sont de nouveau visibles en mode php (vue
   certains en mode lisp aussi mais moins dérangeant)
@@ -115,7 +117,7 @@ require('./../goa/widget/inputSuggest/InputSuggest.js');
 
 - [ ] Remettre trailing whitespace sauf pour eww
 
-
+- [ ] Remettre un bind pour org mode pour faire des checkbox
 
 - [ ] [AG] C-j : Open in same window
   C-o Open in new window
