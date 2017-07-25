@@ -50,7 +50,7 @@
 ;; Capture
 ;; (setq org-default-notes-file (concat org-directory "~/Documents/org/main.org"))
 ;; (setq org-default-notes-file (concat org-directory "/Users/willahh/Documents/org/main.org"))
-(setq org-default-notes-file "~/Documents/org/main.org")
+;; (setq org-default-notes-file "~/Documents/org/main.org")
 
 (require 'org)
 

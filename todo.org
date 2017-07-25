@@ -80,19 +80,32 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 * Bloquant
 :VISIBILITY: all
-- [X] Réduire la hauteur du bandeau du bas
-- [ ] Mini buffer : Ne pas afficher lde scrollbar
-- [ ] Faire fonctionner les ALT+DELETE et ALT+shift+delete
-- [X] rebind Sépartions verticales et horizontales sur clavier azerty
-- [ ] Ajouter un bind ALT + arrow up / down sur drag
+- [ ] Ag result buffer : C-o : Open in new window
 - [ ] M-z lorsqu'une sélection est présente = cela ne fonctionne pas
+- [ ] Réduire la hauteur du bandeau du bas
+- [ ] Faire fonctionner les ALT+DELETE et ALT+shift+delete
+
+- [ ] Activer le highlight en mode php
+- [ ] Remettre trailing whitespace sauf pour eww
+- [ ] Remettre un bind pour org mode pour faire des checkbox
+
+
+- [ ] Tester l'alternative a AG pour la recherche (le plus récent)
+- [ ] Mini buffer : Ne pas afficher lde scrollbar
+- [ ] Ajouter un bind ALT + arrow up / down sur drags
 - [ ] Faire fonctionner company dans des fichiers js avec des lignes
   dans le style suivant : 
 require('./../goa/widget/inputSuggest/InputSuggest.js');
 - [ ] Activer Paredit sur le racourcis C-h (delete backward)
-- [X] Remettre le binding par default C-q
 
  
+
+
+
+- [X] rebind Sépartions verticales et horizontales sur clavier azerty
+- [X] Remettre le binding par default C-q
+
+
 
 - [ ] Les caractères ^M sont de nouveau visibles en mode php (vue
   certains en mode lisp aussi mais moins dérangeant)
@@ -115,12 +128,6 @@ require('./../goa/widget/inputSuggest/InputSuggest.js');
 #+END_SRC
 
 
-- [ ] Remettre trailing whitespace sauf pour eww
-
-- [ ] Remettre un bind pour org mode pour faire des checkbox
-
-- [ ] [AG] C-j : Open in same window
-  C-o Open in new window
 
 
 
@@ -131,40 +138,23 @@ require('./../goa/widget/inputSuggest/InputSuggest.js');
 
 
 
-
-
-
 - [X] Remettre le comportemment normal pour la touche supr
 - [X] [fram layout] Activer par défaut : window divider : bottom and right
 - [X] [fram layout] Activer par défaut : Fringe : left only
 - [X] [fram layout] Activer par défaut : Scrollbar horizontales
 
-- [ ] Activer le highlight en mode php
+
 
 - [ ] @work Warning (flycheck): Syntax checker css-csslint reported too many
   errors (1415) and is disabled. 
-
-
 - [ ] Ediff depuis un fichier, la commande q ne rétablie pas bien les
   buffers
-
 - [ ] [helm] Plugin helm utiisable avec la souris
-
 - [ ] org mode : > yas snippet new checkbox ne fonctionne plus
   - Retrouver le racourcis de base plutot
-
 - [ ] Multi-cursor : KP ENTER -> Meme comportement que ENTER
-
 - [ ] [ag] Ne pas lancer la recherche avec les caracteres sur le curseur
-- [ ] [ag] Auto recenter after go to
-
-- [X] [ag] refresh highlight
-- [X] [ag] truncate line off
-- [X] High light symbol mode in web mode
-- [X] TOUCHE SUPR qui ne fonctionne pas correctement
-
 - [ ] [man] Autofocus sur la fenêtre
-  
 - [ ] [common] M-v -> Paste and indent ?
 
 
@@ -172,10 +162,16 @@ require('./../goa/widget/inputSuggest/InputSuggest.js');
 
 
 
+- [X] [ag] refresh highlight
+- [X] [ag] truncate line off
+- [X] High light symbol mode in web mode
+- [X] TOUCHE SUPR qui ne fonctionne pas correctement
+- [X] M-w ne ferme plus la frame courante
+
+
 
 - [ ] flyspell mode ne doit pas etre actif par default car il
     consomme beaucoup
-- [X] M-w ne ferme plus la frame courante
 - [ ] mshell / shell + Abbrev autocomplete :
   possibilité d'avoir une complétion case insensitve.
   l'option était présente au départ mais à été retirée pour avoir une
@@ -194,10 +190,8 @@ require('./../goa/widget/inputSuggest/InputSuggest.js');
 - [ ] Terminer intégration de hunspell @work
 - [ ] Mini buffer > M-p : Ne pas afficher de message beginning of
   buffer bla bla
-
 - [ ] AG mettre en mode emacs et non pas evil normal
-
-- [ ] ag bufer : hihglight search string
+- [X] ag bufer : hihglight search string
 
 
 

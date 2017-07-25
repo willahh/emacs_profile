@@ -177,10 +177,11 @@
 (evil-leader/set-key "zs" 'hs-show-block)
 (evil-leader/set-key "zh" 'hs-hide-block)
 
-;; ---------------- key-hord
-;; Note : Ralentis beaucoup la saisie
-;; Ne pas trop utiliser
-(key-chord-define-global "qs" 'toggle-php-flavor-mode)
+;; ---------------- key-hord Note : Ralentis beaucoup la saisie Ne pas
+;; trop utiliser Update pour passer de qs a QS car la suite de
+;; caractere qs est utilise dans le francais
+;; (key-chord-define-global "qs" 'toggle-php-flavor-mode)
+(key-chord-define-global "QS" 'toggle-php-flavor-mode)
 (key-chord-define-global "xc" 'er/expand-region)
 (key-chord-define-global "wx" 'er/contract-region)
 
@@ -347,6 +348,8 @@ Version 2016-12-27"
 (define-key company-active-map (kbd "C-w") 'clean-aindent--bsunindent)
 (define-key company-active-map (kbd "C-h") 'delete-backward-char)
 (define-key company-active-map (kbd "<tab>") 'company-complete-selection)
+
+(global-set-key (kbd "C-,") 'company-files)
 
 (require 'iedit)
 (require 'org)
