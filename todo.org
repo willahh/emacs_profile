@@ -80,6 +80,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 * Bloquant
 :VISIBILITY: all
+- [ ] Voir pour retirer les onglets du haut
 - [ ] Ag result buffer : C-o : Open in new window
 - [ ] M-z lorsqu'une sélection est présente = cela ne fonctionne pas
 - [ ] Réduire la hauteur du bandeau du bas
