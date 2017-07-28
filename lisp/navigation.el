@@ -420,6 +420,7 @@
 ;;paredit
 (require 'paredit)
 (add-hook 'prog-mode-hook 'paredit-mode)
+(add-hook 'php-mode-hook 'paredit-mode)
 ; (add-hook 'emacs-lisp-mode-hook 'paredit-mode)
 
 

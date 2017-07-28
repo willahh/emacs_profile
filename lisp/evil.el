@@ -27,7 +27,8 @@
 
 
 ;; (evil-set-initial-state 'help-mode 'emacs)
-(evil-set-initial-state 'help-mode 'normal)
+;; (evil-set-initial-state 'help-mode 'normal)
+(evil-set-initial-state 'help-mode 'emacs)
 
 
 

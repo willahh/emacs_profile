@@ -101,9 +101,9 @@
 )
 
 
-(global-set-key (kbd "C-w") 'clean-aindent--bsunindent)
 (global-set-key [(control shift w)] 'whole-line-or-region-kill-region)
-(global-set-key (kbd "C-h") 'delete-backward-char)
+;; (global-set-key (kbd "C-h") 'delete-backward-char)
+(global-set-key (kbd "C-h") 'paredit-backward-delete)
 (global-set-key [(control shift k)] 'kill-whole-line) ;; Override default emacs kill sentence but i don't use it
 
 ;; ---------------- evaluation
@@ -339,25 +339,38 @@ Version 2016-12-27"
 ;; (global-set-key (kbd "C-x C-m") 'helm-M-x)
 ;; (global-set-key (kbd "C-c C-m") 'helm-M-x)
 
-;; char
-(define-key helm-map (kbd "C-h") 'delete-backward-char)
-(define-key helm-map (kbd "C-w") 'clean-aindent--bsunindent)
+;; delete
+;; (define-key helm-map (kbd "C-h") 'delete-backward-char)
+
+(global-set-key (kbd "C-w") 'paredit-backward-kill-word)
+; (define-key iedit-mode-keymap (kbd "C-w") 'paredit-backward-kill-word)
+(define-key helm-map (kbd "C-w") 'paredit-backward-kill-word)
+(define-key company-active-map (kbd "C-w") 'paredit-backward-kill-word)
+(define-key helm-swoop-map (kbd "C-w") 'helm-swoop)
+
+;; (global-set-key (kbd "C-w") 'clean-aindent--bsunindent)
+;; (define-key iedit-mode-keymap (kbd "C-w") 'clean-aindent--bsunindent)
+;; (define-key helm-map (kbd "C-w") 'clean-aindent--bsunindent)
+;; (define-key company-active-map (kbd "C-w") 'clean-aindent--bsunindent)
+;; (define-key helm-swoop-map (kbd "C-w") 'helm-swoop)
+
+(define-key helm-map (kbd "C-h") 'paredit-backward-delete)
 (define-key helm-map (kbd "M-v") 'yank)
 
-(define-key company-active-map (kbd "C-w") 'clean-aindent--bsunindent)
-(define-key company-active-map (kbd "C-h") 'delete-backward-char)
+;; (define-key company-active-map (kbd "C-h") 'delete-backward-char)
+(define-key company-active-map (kbd "C-h") 'paredit-backward-delete)
 (define-key company-active-map (kbd "<tab>") 'company-complete-selection)
 
 (require 'iedit)
 (require 'org)
 
 ;; yas-expand
-(global-set-key (kbd "C-;") 'yas-expand)
-(define-key iedit-mode-keymap (kbd "C-;") 'yas-expand)
+(global-set-key (kbd "C-,") 'yas-expand)
+(define-key iedit-mode-keymap (kbd "C-,") 'yas-expand)
 
 ;;
-(define-key iedit-mode-keymap (kbd "C-w") 'clean-aindent--bsunindent)
-(define-key iedit-mode-keymap (kbd "C-h") 'delete-backward-char)
+;; (define-key iedit-mode-keymap (kbd "C-h") 'delete-backward-char)
+(define-key iedit-mode-keymap (kbd "C-h") 'paredit-backward-delete)
 
 ;; Sublime Text go to anything
 ;; Update : Utilsation des standards emacs (C-c p f)
@@ -387,7 +400,8 @@ Version 2016-12-27"
 ;; (global-set-key (kbd "C-x C-i") 'helm-imenu)
 ;; (global-set-key (kbd "C-x TAB") 'counsel-imenu)
 ;; (global-set-key (kbd "C-x TAB") 'helm-imenu)
-(global-set-key (kbd "C-x <C-i>") 'helm-imenu)
+;; (global-set-key (kbd "C-x <C-i>") 'helm-imenu)
+(global-set-key (kbd "C-x C-i") 'helm-imenu)
 
 ;; Update to use counsel-find-file instead of helm-find-file
 ;; Update : Non utilisé
@@ -567,19 +581,34 @@ Version 2016-12-27"
 ;; Besoin de les definir dans pas mal de mode
 ;; pour avoir un bon support
 
-;; Tricks pour pouvoir utiliser control-i et tab séparément
+;; Tricks pour pouvoir utiliser control-i et tab séparément Update :
+;; Actuellement, pouvoir faire des tab directement depuis C-i est un
+;; bon comportement par default, mise en commentaire et désactivation
+;; du bind C-i
+;; Update : Remise a dispo de C-i, bind de C-i sur une fonction unique : yas expand
+;; 
 (define-key input-decode-map [?\C-i] [C-i])
 (define-key input-decode-map [?\C-\S-i] [C-S-i])
 
-(global-set-key (kbd "<C-i>") 'avy-goto-word-1-below)
-(define-key magit-status-mode-map (kbd "<C-i>") 'avy-goto-word-1-below)
-(define-key help-mode-map (kbd "<C-i>") 'avy-goto-word-1-below)
-(define-key diff-mode-map (kbd "<C-i>") 'avy-goto-word-1-below)
+(global-set-key (kbd "<C-i>") 'yas-expand)
+(define-key magit-status-mode-map (kbd "<C-i>") 'yas-expand)
+(define-key help-mode-map (kbd "<C-i>") 'yas-expand)
+(define-key diff-mode-map (kbd "<C-i>") 'yas-expand)
+
+;; (global-set-key (kbd "<C-i>") 'avy-goto-word-1-below)
+;; (define-key magit-status-mode-map (kbd "<C-i>") 'avy-goto-word-1-below)
+;; (define-key help-mode-map (kbd "<C-i>") 'avy-goto-word-1-below)
+;; (define-key diff-mode-map (kbd "<C-i>") 'avy-goto-word-1-below)
 
 (global-set-key (kbd "<C-S-i>") 'avy-goto-word-1-above)
 (define-key magit-status-mode-map (kbd "<C-S-i>") 'avy-goto-word-1-above)
 (define-key help-mode-map (kbd "<C-S-i>") 'avy-goto-word-1-above)
 (define-key diff-mode-map (kbd "<C-S-i>") 'avy-goto-word-1-above)
+
+(global-set-key (kbd "<C-M-i>") 'avy-goto-word-1-above)
+(define-key magit-status-mode-map (kbd "<C-M-i>") 'avy-goto-word-1-above)
+(define-key help-mode-map (kbd "<C-M-i>") 'avy-goto-word-1-above)
+(define-key diff-mode-map (kbd "<C-M-i>") 'avy-goto-word-1-above)
 
 ;; i-search
 (define-key isearch-mode-map (kbd "C-'") 'avy-isearch)
@@ -609,7 +638,7 @@ Version 2016-12-27"
 (define-key php-mode-map (kbd "C-S-s") 'helm-swoop)
 (define-key web-mode-map (kbd "C-S-s") 'helm-swoop)
 (define-key markdown-mode-map (kbd "C-S-s") 'helm-swoop)
-(define-key helm-swoop-map (kbd "C-w") 'helm-swoop)
+
 
 ;; Align your code in a pretty way.
 (global-set-key (kbd "C-x \\") 'align-regexp)
