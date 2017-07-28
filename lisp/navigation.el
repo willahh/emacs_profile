@@ -32,7 +32,9 @@
 ;; (highlight-symbol-mode 0)
 
 (add-hook 'prog-mode-hook 'highlight-symbol-mode)
+(add-hook 'php-mode-hook 'highlight-symbol-mode)
 (add-hook 'emacs-lisp-mode 'highlight-symbol-mode)
+
 (setq highlight-symbol-idle-delay .3)
 ;; (setq highlight-symbol-idle-delay 0)
 

@@ -38,18 +38,22 @@
 (global-set-key (kbd "C-c C-M-f") 'toggle-frame-fullscreen)
 (define-key org-mode-map (kbd "C-c C-M-f") 'toggle-frame-fullscreen)
 (define-key php-mode-map (kbd "C-c C-M-f") 'toggle-frame-fullscreen)
+(define-key ggtags-mode-map (kbd "C-c C-M-f") 'toggle-frame-fullscreen)
 
 (global-set-key (kbd "C-c M-f") 'toggle-frame-maximized)
 (define-key org-mode-map (kbd "C-c M-f") 'toggle-frame-maximized)
 (define-key php-mode-map (kbd "C-c M-f") 'toggle-frame-maximized)
+(define-key ggtags-mode-map (kbd "C-c M-f") 'toggle-frame-maximized)
 
 (global-set-key (kbd "C-c M-F") 'wil-frame-large)
 (define-key org-mode-map (kbd "C-c M-F") 'wil-frame-large)
 (define-key php-mode-map (kbd "C-c M-F") 'wil-frame-large)
+(define-key ggtags-mode-map (kbd "C-c M-F") 'wil-frame-large)
 
 (global-set-key (kbd "C-c M-c") 'wil-frame-center)
 (define-key org-mode-map (kbd "C-c M-c") 'wil-frame-center)
 (define-key php-mode-map (kbd "C-c M-c") 'wil-frame-center)
+(define-key ggtags-mode-map (kbd "C-c M-c") 'wil-frame-center)
 
 ;; New frame
 (global-set-key [meta shift w] 'delete-frame)
@@ -376,7 +380,11 @@ Version 2016-12-27"
 
 (global-set-key (kbd "C-c C-n") 'diff-hl-next-hunk)
 (define-key web-mode-map (kbd "C-c C-n") 'diff-hl-next-hunk)
+(define-key php-mode-map (kbd "C-c C-n") 'diff-hl-next-hunk)
+
 (global-set-key (kbd "C-c C-p") 'diff-hl-previous-hunk)
+(define-key web-mode-map (kbd "C-c C-p") 'diff-hl-previous-hunk)
+(define-key php-mode-map (kbd "C-c C-p") 'diff-hl-previous-hunk)
 
 ; (global-set-key (kbd "c-c c-n") 'diff-hl-next-hunk)
 ; (global-set-key (kbd "c-c c-p") 'diff-hl-previous-hunk)
@@ -906,6 +914,7 @@ Version 2016-12-27"
 (global-set-key (kbd "s-e") 'kmacro-end-and-call-macro) ; Super+e
 (global-set-key (kbd "C-s-s") 'helm-ag) ; Super+Contral+s
 (global-set-key (kbd "C-M-s-s") 'projectile-ag) ; Control+Meta+Super+s
+(global-set-key (kbd "s-c") 'org-capture)
 
 
 

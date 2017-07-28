@@ -1394,6 +1394,10 @@ the visible part of the current buffer following point. "
   (funcall #'find-file "~/.emacs.d/todo.org")
   (wil-frame-center)
 )
+(defun wil-open-logs
+  (interactive)
+  (dired "~/www/logs")
+)
 
 
 ;; Non finalise

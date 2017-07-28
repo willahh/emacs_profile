@@ -83,9 +83,12 @@
  '(helm-ag-insert-at-point (quote symbol))
  '(helm-source-names-using-follow
  (quote
-  ("Recentf" "Imenu" "Search at ~/.emacs.d_jwiegley/" "key_binding.el" "Search at ~/www/project/rb_3d/rb_3d_1.0/dev/module/" "Search at ~/www/project/arsia/arsia_standard_300/dev/data2print/admin/module/flatplanReorder_new/js/" "Search at ~/www/project/easy3p/easy3p_3.1/dev/module/flatplan/js/process/conception/" "Search at ~/.emacs.d/lisp/language/" "Search at ~/www/project/easy3p/easy3p_3.1/dev/module/vvisual/list/js/view/" "Search at ~/www/project/easy3p/easy3p_3.1/dev/module/vvisual/" "Search at ~/.emacs.d/elpa/expand-region-20170222.343/" "mark-ring" "global-mark-ring" "Search at ~/.emacs.d_ergoemacs/" "Search at ~/www/projects_other/pnpm/src/" "Search at ~/.emacs.d_hlissner/" "Search at ~/www/project/arsia/arsia_standard_310/mediadata/src/app/" "Search at ~/.emacs.d/lisp/" "Search at ~/.emacs.d/")))
+  ("Search at ~/www/project/easy3p/easy3p_3.2/dev/" "Imenu" "Search at ~/.emacs.d_jwiegley/" "key_binding.el" "Search at ~/www/project/rb_3d/rb_3d_1.0/dev/module/" "Search at ~/www/project/arsia/arsia_standard_300/dev/data2print/admin/module/flatplanReorder_new/js/" "Search at ~/www/project/easy3p/easy3p_3.1/dev/module/flatplan/js/process/conception/" "Search at ~/.emacs.d/lisp/language/" "Search at ~/www/project/easy3p/easy3p_3.1/dev/module/vvisual/list/js/view/" "Search at ~/www/project/easy3p/easy3p_3.1/dev/module/vvisual/" "Search at ~/.emacs.d/elpa/expand-region-20170222.343/" "mark-ring" "global-mark-ring" "Search at ~/.emacs.d_ergoemacs/" "Search at ~/www/projects_other/pnpm/src/" "Search at ~/.emacs.d_hlissner/" "Search at ~/www/project/arsia/arsia_standard_310/mediadata/src/app/" "Search at ~/.emacs.d/lisp/" "Search at ~/.emacs.d/")))
  '(ido-enable-flex-matching t)
  '(magit-dispatch-arguments nil)
+ '(org-agenda-files
+ (quote
+  ("~/org/main.org" "~/www/project/arsia/arsia_standard_310/mediadata_310.org")))
  '(package-selected-packages
  (quote
   (relative-line-numbers evil-org easy-kill string-inflection flycheck-pos-tip ibuffer-vc ov volatile-highlights crux smex psysh toc-org evil-magit fullframe jade-mode ecb imenu-list google-maps smartparens sx image-dired+ anzu impatient-mode find-file-in-project clojurescript-mode cider slime yaml-mode pdf-tools restclient helm-w3m w3 hl-line+ syslog-mode paredit-everywhere paredit wgrep-ag iedit wgrep sr-speedbar indium google-translate helm-projectile ivy-hydra helm-swoop evil-matchit point-undo editorconfig php-completion php-extras company-php eclim rainbow-mode company-web helm helm-ag flx-ido ace-jump-mode change-inner iy-go-to-char evil-snipe zop-to-char try counsel autopair ido-vertical-mode ido-ubiquitous php-eldoc smart-tab json-mode company-quickhelp company-tern highlight-chars smooth-scrolling drag-stuff evil-tutor clean-aindent-mode rainbow-delimiters tide typescript-mode js2-refactor dumb-jump flymake-jshint helm-hunks yascroll actionscript-mode perspective workgroups2 php-mode polymode web-mode mmm-mode multi-web-mode load-theme-buffer-local 0blayout use-package tabbar color-theme-buffer-local leuven-theme js-doc smart-forward js-comint php-auto-yasnippets smart-newline resize-window php-refactor-mode ac-php general popwin evil-surround window-numbering eyebrowse which-key evil edit-server neotree elfeed logview monokai-theme material-theme noctilux-theme nlinum crosshairs dumb-mode theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord flymake-mode ggtags less-css-mode ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn highlight-symbol zerodark-theme markdown-mode+ emmet-mode company web-beautify multiple-cursors other-frame-window desktop+ undo-tree expand-region avy-menu auto-complete ace-window magit)))
@@ -123,7 +126,15 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(mode-line ((t (:box (:line-width 0))))))
+ '(mode-line ((t (:box (:line-width 0)))))
+ '(rainbow-delimiters-depth-1-face ((t (:foreground "deep sky blue"))))
+ '(rainbow-delimiters-depth-2-face ((t (:foreground "deep pink"))))
+ '(rainbow-delimiters-depth-3-face ((t (:foreground "#0000ff"))))
+ '(rainbow-delimiters-depth-4-face ((t (:foreground "dark orange"))))
+ '(rainbow-delimiters-depth-5-face ((t (:foreground "#009900"))))
+ '(rainbow-delimiters-depth-6-face ((t (:foreground "#336699"))))
+ '(rainbow-delimiters-depth-7-face ((t (:foreground "#fa75e2"))))
+ '(rainbow-delimiters-depth-8-face ((t (:foreground "#55bdf0")))))
 (put 'scroll-left 'disabled nil)
 (put 'upcase-region 'disabled nil)
 (put 'dired-find-alternate-file 'disabled nil)

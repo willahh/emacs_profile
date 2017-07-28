@@ -567,7 +567,10 @@ _n_: Navigate           _._: mark position _/_: jump to mark
 ;; rainbow-delimiters
 (require 'rainbow-delimiters)
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+(add-hook 'eshell-mode-hook #'rainbow-delimiters-mode)
 
+(add-hook 'eww-mode #'rainbow-delimiters-mode)
+(add-hook 'eww-mode #'rainbow-mode)
 
 
 
