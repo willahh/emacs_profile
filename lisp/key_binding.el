@@ -38,18 +38,22 @@
 (global-set-key (kbd "C-c C-M-f") 'toggle-frame-fullscreen)
 (define-key org-mode-map (kbd "C-c C-M-f") 'toggle-frame-fullscreen)
 (define-key php-mode-map (kbd "C-c C-M-f") 'toggle-frame-fullscreen)
+(define-key ggtags-mode-map (kbd "C-c C-M-f") 'toggle-frame-fullscreen)
 
 (global-set-key (kbd "C-c M-f") 'toggle-frame-maximized)
 (define-key org-mode-map (kbd "C-c M-f") 'toggle-frame-maximized)
 (define-key php-mode-map (kbd "C-c M-f") 'toggle-frame-maximized)
+(define-key ggtags-mode-map (kbd "C-c M-f") 'toggle-frame-maximized)
 
 (global-set-key (kbd "C-c M-F") 'wil-frame-large)
 (define-key org-mode-map (kbd "C-c M-F") 'wil-frame-large)
 (define-key php-mode-map (kbd "C-c M-F") 'wil-frame-large)
+(define-key ggtags-mode-map (kbd "C-c M-F") 'wil-frame-large)
 
 (global-set-key (kbd "C-c M-c") 'wil-frame-center)
 (define-key org-mode-map (kbd "C-c M-c") 'wil-frame-center)
 (define-key php-mode-map (kbd "C-c M-c") 'wil-frame-center)
+(define-key ggtags-mode-map (kbd "C-c M-c") 'wil-frame-center)
 
 ;; New frame
 (global-set-key [meta shift w] 'delete-frame)
@@ -177,10 +181,11 @@
 (evil-leader/set-key "zs" 'hs-show-block)
 (evil-leader/set-key "zh" 'hs-hide-block)
 
-;; ---------------- key-hord
-;; Note : Ralentis beaucoup la saisie
-;; Ne pas trop utiliser
-(key-chord-define-global "qs" 'toggle-php-flavor-mode)
+;; ---------------- key-hord Note : Ralentis beaucoup la saisie Ne pas
+;; trop utiliser Update pour passer de qs a QS car la suite de
+;; caractere qs est utilise dans le francais
+;; (key-chord-define-global "qs" 'toggle-php-flavor-mode)
+(key-chord-define-global "QS" 'toggle-php-flavor-mode)
 (key-chord-define-global "xc" 'er/expand-region)
 (key-chord-define-global "wx" 'er/contract-region)
 
@@ -361,6 +366,8 @@ Version 2016-12-27"
 (define-key company-active-map (kbd "C-h") 'paredit-backward-delete)
 (define-key company-active-map (kbd "<tab>") 'company-complete-selection)
 
+(global-set-key (kbd "C-,") 'company-files)
+
 (require 'iedit)
 (require 'org)
 
@@ -386,7 +393,11 @@ Version 2016-12-27"
 
 (global-set-key (kbd "C-c C-n") 'diff-hl-next-hunk)
 (define-key web-mode-map (kbd "C-c C-n") 'diff-hl-next-hunk)
+(define-key php-mode-map (kbd "C-c C-n") 'diff-hl-next-hunk)
+
 (global-set-key (kbd "C-c C-p") 'diff-hl-previous-hunk)
+(define-key web-mode-map (kbd "C-c C-p") 'diff-hl-previous-hunk)
+(define-key php-mode-map (kbd "C-c C-p") 'diff-hl-previous-hunk)
 
 ; (global-set-key (kbd "c-c c-n") 'diff-hl-next-hunk)
 ; (global-set-key (kbd "c-c c-p") 'diff-hl-previous-hunk)
@@ -718,10 +729,14 @@ Version 2016-12-27"
 (define-key key-translation-map (kbd "C-j") (kbd "RET"))
 
 ;; Above
+(global-set-key (kbd "C-M-j") 'smart-open-line-above)
+(define-key php-mode-map (kbd "C-M-j") 'smart-open-line-above)
+
 (global-set-key [(control shift j)] 'smart-open-line-above)
-(global-set-key (kbd "C-M-j") 'newline-and-indent)
 (global-set-key [(control shift j)] 'smart-open-line-above)
 (define-key web-mode-map [(control shift j)] 'smart-open-line-above)
+;; (global-set-key (kbd "C-M-j") 'newline-and-indent)
+(global-set-key (kbd "C-M-j") 'smart-open-line-above)
 
 ;; Below
 (global-set-key (kbd "C-M-S-j") 'open-line-below)
@@ -929,6 +944,7 @@ Version 2016-12-27"
 (global-set-key (kbd "s-e") 'kmacro-end-and-call-macro) ; Super+e
 (global-set-key (kbd "C-s-s") 'helm-ag) ; Super+Contral+s
 (global-set-key (kbd "C-M-s-s") 'projectile-ag) ; Control+Meta+Super+s
+(global-set-key (kbd "s-c") 'org-capture)
 
 
 

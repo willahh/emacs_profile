@@ -78,26 +78,30 @@ Semantic PHP parser with ECB
 http://ecb.sourceforge.net/
 https://www.youtube.com/watch?v=KoRNCrx9pak
 
-* Bloquant
+* Tasks
 :VISIBILITY: all
-- [X] Réduire la hauteur du bandeau du bas
-- [ ] Faire fonctionner les ALT+DELETE et ALT+shift+delete
-- [X] rebind Sépartions verticales et horizontales sur clavier azerty
-- [ ] Ajouter un bind ALT + arrow up / down sur drag
-- [ ] M-z lorsqu'une sélection est présente = cela ne fonctionne pas
-- [ ] Faire fonctionner company dans des fichiers js avec des lignes
+** TODO em : Nouvelle frame : Mettre le mode projectile sur le buffer actif
+   [2017-07-28 Fri]
+   [[file:~/.Trash]]
+** TODO Voir pour retirer les onglets du haut
+** TODO Ag result buffer : C-o : Open in new window
+** TODO M-z lorsqu'une sélection est présente = cela ne fonctionne pas
+** TODO Réduire la hauteur du bandeau du bas
+** TODO Faire fonctionner les ALT+DELETE et ALT+shift+delete
+** TODO Activer le highlight en mode php
+** TODO Remettre trailing whitespace sauf pour eww
+** TODO Remettre un bind pour org mode pour faire des checkbox
+** TODO Tester l'alternative a AG pour la recherche (le plus récent)
+** TODO Mini buffer : Ne pas afficher lde scrollbar
+** TODO Ajouter un bind ALT + arrow up / down sur drags
+** TODO Faire fonctionner company dans des fichiers js avec des lignes
   dans le style suivant : 
 require('./../goa/widget/inputSuggest/InputSuggest.js');
-- [ ] Activer Paredit sur le racourcis C-h (delete backward)
-- [ ] Remettre le binding par default C-q
-
-
-- [ ] Les caractères ^M sont de nouveau visibles en mode php (vue
+** TODO Activer Paredit sur le racourcis C-h (delete backward)
+** TODO Les caractères ^M sont de nouveau visibles en mode php (vue
   certains en mode lisp aussi mais moins dérangeant)
-- [ ] Rétablir auto complete path pour avoir une completion des
-  chemins de fichier
 
-- [ ] Paredit-mode : l'auto protection de quote lorsque l'on saisie du
+** TODO Paredit-mode : l'auto protection de quote lorsque l'on saisie du
   texte dans une chaine de caractere est plus contraignante qu'autre
   chose, il faut retirer ça
  
@@ -115,154 +119,92 @@ require('./../goa/widget/inputSuggest/InputSuggest.js');
 #+END_SRC
 
 
-- [ ] Remettre trailing whitespace sauf pour eww
 
 
-
-- [ ] [AG] C-j : Open in same window
-  C-o Open in new window
-
-
-
-
-
-- [X] Les splitters verticaux et horizontaux ne sont de nouveaux plus accessibles
-- [X] Wndow divider bottom right ne fonctionne pas
-
-
-
-
-
-
-- [X] Remettre le comportemment normal pour la touche supr
-- [X] [fram layout] Activer par défaut : window divider : bottom and right
-- [X] [fram layout] Activer par défaut : Fringe : left only
-- [X] [fram layout] Activer par défaut : Scrollbar horizontales
-
-- [ ] Activer le highlight en mode php
-
-- [ ] @work Warning (flycheck): Syntax checker css-csslint reported too many
+** TODO @work Warning (flycheck): Syntax checker css-csslint reported too many
   errors (1415) and is disabled. 
-
-
-- [ ] Ediff depuis un fichier, la commande q ne rétablie pas bien les
+** TODO Ediff depuis un fichier, la commande q ne rétablie pas bien les
   buffers
-
-- [ ] [helm] Plugin helm utiisable avec la souris
-
-- [ ] org mode : > yas snippet new checkbox ne fonctionne plus
+** TODO [helm] Plugin helm utiisable avec la souris
+** TODO org mode : > yas snippet new checkbox ne fonctionne plus
   - Retrouver le racourcis de base plutot
-
-- [ ] Multi-cursor : KP ENTER -> Meme comportement que ENTER
-
-- [ ] [ag] Ne pas lancer la recherche avec les caracteres sur le curseur
-- [ ] [ag] Auto recenter after go to
-
-- [X] [ag] refresh highlight
-- [X] [ag] truncate line off
-- [X] High light symbol mode in web mode
-- [X] TOUCHE SUPR qui ne fonctionne pas correctement
-
-- [ ] [man] Autofocus sur la fenêtre
-  
-- [ ] [common] M-v -> Paste and indent ?
-
-
-
-
-
-
-
-- [ ] flyspell mode ne doit pas etre actif par default car il
+** TODO Multi-cursor : KP ENTER -> Meme comportement que ENTER
+** TODO [ag] Ne pas lancer la recherche avec les caracteres sur le curseur
+** TODO [man] Autofocus sur la fenêtre
+** TODO [common] M-v -> Paste and indent ?
+** TODO flyspell mode ne doit pas etre actif par default car il
     consomme beaucoup
-- [X] M-w ne ferme plus la frame courante
-- [ ] mshell / shell + Abbrev autocomplete :
+** TODO mshell / shell + Abbrev autocomplete :
   possibilité d'avoir une complétion case insensitve.
   l'option était présente au départ mais à été retirée pour avoir une
   completion plus rapide sur des fichiers dev
-- [ ] General : Utiliser le package general et jouer une touche sur
+** TODO General : Utiliser le package general et jouer une touche sur
   super-spc ou hyper-spc
-- [ ] Associer les fichiers .pdf au mode PDFView
-- [ ] Faire un fichier org nomme main.org Lorsqu'une nouvelle frame
+** TODO Associer les fichiers .pdf au mode PDFView
+** TODO Faire un fichier org nomme main.org Lorsqu'une nouvelle frame
   est crée, initialiser sur ce fichier. Ce fichier contient des liens
   vers tous les projets courant ainsi que vers tous les fichiers les
   plus souvents utilises.
 
 
 
-
-- [ ] Terminer intégration de hunspell @work
-- [ ] Mini buffer > M-p : Ne pas afficher de message beginning of
+** TODO Terminer intégration de hunspell @work
+** TODO Mini buffer > M-p : Ne pas afficher de message beginning of
   buffer bla bla
-
-- [ ] AG mettre en mode emacs et non pas evil normal
-
-- [ ] ag bufer : hihglight search string
-
-
-
-- [ ] [vc-dir] N et P pour se déplacer en evitant les dossiers
-- [ ] Recenter after go to line number
-  
-
-- [ ] Commande : Commentaire sans retour à la ligne, binder sur C-/  
-- [ ] Help mode evil : add q binding pour quitter
-- [ ] Helm imenu : Add advice recenter line
-- [ ] [projectile find file] Auto centrer la ligne une fois le goto dans le fichier
-- [ ] [projectile find file] Possibilité de saisir des espaces dans le regexp
-- [ ] New frame : centrer la frame
-- [ ] New frame : Mettre un nouveau buffer de type texte dedans
-- [ ] [web-mode] Ne pas remplacer les fin de ligne windows par des fins de ligne unix
-- [ ] [emacs-osxs] new centered frame : Le mode par default devrait être le mode text
-- [ ] [emacs-osxs] Vérifier les keybindings sur les touches alt (alt+n alt+p, etc)
-
-
-- [ ] [vc-dir] Déclencher le vc-dir en mode fullscreen avec la touche semble
+** TODO AG mettre en mode emacs et non pas evil normal
+** TODO [vc-dir] N et P pour se déplacer en evitant les dossiers
+** TODO Recenter after go to line number
+** TODO Commande : Commentaire sans retour à la ligne, binder sur C-/  
+** TODO Help mode evil : add q binding pour quitter
+** TODO Helm imenu : Add advice recenter line
+** TODO [projectile find file] Auto centrer la ligne une fois le goto dans le fichier
+** TODO [projectile find file] Possibilité de saisir des espaces dans le regexp
+** TODO New frame : centrer la frame
+** TODO New frame : Mettre un nouveau buffer de type texte dedans
+** TODO [web-mode] Ne pas remplacer les fin de ligne windows par des fins de ligne unix
+** TODO [emacs-osxs] new centered frame : Le mode par default devrait être le mode text
+** TODO [emacs-osxs] Vérifier les keybindings sur les touches alt (alt+n alt+p, etc)
+** TODO [vc-dir] Déclencher le vc-dir en mode fullscreen avec la touche semble
   ESCAPE pour revenir sur le layout précédent comme dans magit
   Un plugin existe pour çâ
-- [ ] [vc-dir] Faire un Hydra pour ce mode sur la touch "."
-- [ ] [vc-dir] Ne pas afficher les "up-to-date"
-
-- [ ] [svn-log-view] Faire des ediff depuis ce mode
-
-- [ ] [swoop] C-w ne fonctionne pas
-- [ ] [helm] [mini-buffer] Ajouter la possibilité de faire du M-v dans le mini-buffer
-- [ ] [system] mysql.server start on startup
-- [ ] [Ibuffer] sort by recent by default
-- [ ] [diff-hl] Le package est casse sur melpa il ne compile pas bien,
+** TODO [vc-dir] Faire un Hydra pour ce mode sur la touch "."
+** TODO [vc-dir] Ne pas afficher les "up-to-date"
+** TODO [svn-log-view] Faire des ediff depuis ce mode
+** TODO [swoop] C-w ne fonctionne pas
+** TODO [helm] [mini-buffer] Ajouter la possibilité de faire du M-v dans le mini-buffer
+** TODO [system] mysql.server start on startup
+** TODO [Ibuffer] sort by recent by default
+** TODO [diff-hl] Le package est casse sur melpa il ne compile pas bien,
   Comme la fonction custom du mode Dired end start
-- [ ] [doc-block] La fonction ne fonctionne pas correctement
-  - [ ] [php-mode]
-  - [ ] [typescript-mode]
-  - [ ] [css-mode-mode]
+** TODO [doc-block] La fonction ne fonctionne pas correctement
+  ** [php-mode]
+  ** [typescript-mode]
+  ** [css-mode-mode]
 
-- [ ] [org] Organiser les fichiers org
+** TODO [org] Organiser les fichiers org
   http://sachachua.com/blog/2013/08/emacs-how-i-organize-my-org-files/
   Voir regrouper tous les fichiers todo.org ensembles
   De façon à retrouver les projets / notes importantes facilement
-- [ ] [org-mode] Ne pas faire de traitement special sur la touche tab
-
-- [ ] [vc-dir] Ne pas afficher les lignes dossier grises
-- [ ] [vc-dir] key M-< && M-> : Faire pointer sur le vrai début/fin de ligne
-
-- [ ] Previous/Next buffer : Utiliser la liste de ibuffer trier par ordre recent
-
+** TODO [org-mode] Ne pas faire de traitement special sur la touche tab
+** TODO [vc-dir] Ne pas afficher les lignes dossier grises
+** TODO [vc-dir] key M-< && M-> : Faire pointer sur le vrai début/fin de ligne
+** TODO Previous/Next buffer : Utiliser la liste de ibuffer trier par ordre recent
 * A ranger
-- [ ] [doc-view] Faire fonctionner doc-view (Lire des fichiers excel, doc, word, etc)
-- [ ] [Google talk] : Intégrer Google Talk dans Emacs
+** TODO [doc-view] Faire fonctionner doc-view (Lire des fichiers excel, doc, word, etc)
+** TODO [Google talk] : Intégrer Google Talk dans Emacs
   https://www.emacswiki.org/emacs/GoogleTalk
 
-- [ ] [Helm] Masquer la première ligne
-- [ ] Back to previous window highlight current line comme lorque l'on fait un M-; en typescript-mode
-- [ ] [company] Voir pour utiliser autre chose que company pour la complétion des mots car cela peut être lent
+** TODO [Helm] Masquer la première ligne
+** TODO Back to previous window highlight current line comme lorque l'on fait un M-; en typescript-mode
+** TODO [company] Voir pour utiliser autre chose que company pour la complétion des mots car cela peut être lent
 
-- [ ] [swoop] Ne pas initialiser avec le texte sous le curseur
-  - [ ] [org] Lancer org mode avec certains titre ouvert fermé
+** [swoop] Ne pas initialiser avec le texte sous le curseur
+  ** [org] Lancer org mode avec certains titre ouvert fermé
 - (conf en tête de fichier)
-  - [ ] [org-mode] Mouse-1 pour toggler un header
+  ** [org-mode] Mouse-1 pour toggler un header
 - [X] Voir pour installer le plugin pour lancer des mode en "fullscreen", vu sur un blog d'un autre
 - [X] [system] [osx] Autoriser le F5 dans Emacs (revert-buffer)
-- [ ] Rebind les scroll to other window pour avoir un scroll sur la fenetre a cote mais d'une demie page seulement
+** TODO Rebind les scroll to other window pour avoir un scroll sur la fenetre a cote mais d'une demie page seulement
       C-M-S-v runs the command scroll-other-window-down (found in
       global-map), which is an interactive compiled Lisp function in
       ‘window.el’.
@@ -274,15 +216,16 @@ require('./../goa/widget/inputSuggest/InputSuggest.js');
       Scroll the "other window" down.
       For more details, see the documentation for ‘scroll-other-window’.
 
-- [ ] Kill texte : Ne pas ajouter dans le kill ring
+** TODO Kill texte : Ne pas ajouter dans le kill ring
       --> L'ajout dans le kill ring ne doit se faire que depuis M-w si possible
-- [ ] M-S-n sur buffer vc-diff ne fonctionne pas 
-- [ ] [counsel-find-file] [mini-buffer] Ajouter un bind C-k pour supprimer tout le texte
-- [ ] [dired] Delete dir slow, piste : Tester sans 
-- [ ] [ffap] Ffap doit fonctionner avec ce genre de lignes :
+** TODO M-S-n sur buffer vc-diff ne fonctionne pas 
+** TODO [counsel-find-file] [mini-buffer] Ajouter un bind C-k pour supprimer tout le texte
+** TODO [dired] Delete dir slow, piste : Tester sans 
+** TODO [ffap] Ffap doit fonctionner avec ce genre de lignes :
   - require_once(dirname(__FILE__) . '/file.inc.php');
-- [ ] [vc-diff mode] Voir si il est possible de lancer des commandes de type ediff
+** TODO [vc-diff mode] Voir si il est possible de lancer des commandes de type ediff
        Depuis  le vc-diff
+** TODO Autres tâches à mettre au format todo
 - [ ] Implementer le menu semantique (je n'ai plus le nom) et l'afficher a gauche ou faire un toggle a voir
       Cette fonction est déjà présente dans emacs mais apparait dans une autre frame, un package existe pour
       L'afficher dans la même frame mais je n'ai pas réussis à bien l'implèmenter
@@ -411,6 +354,30 @@ require('./../goa/widget/inputSuggest/InputSuggest.js');
   - [ ] Show current VC system used
   - [ ] Show current encoding
 * Corrige
+- [X] rebind Sépartions verticales et horizontales sur clavier azerty
+- [X] Remettre le binding par default C-q
+
+
+- [X] ag bufer : hihglight search string
+
+
+- [X] [ag] refresh highlight
+- [X] [ag] truncate line off
+- [X] High light symbol mode in web mode
+- [X] TOUCHE SUPR qui ne fonctionne pas correctement
+- [X] M-w ne ferme plus la frame courante
+
+
+- [X] Les splitters verticaux et horizontaux ne sont de nouveaux plus accessibles
+- [X] Wndow divider bottom right ne fonctionne pas
+
+
+- [X] Remettre le comportemment normal pour la touche supr
+- [X] [fram layout] Activer par défaut : window divider : bottom and right
+- [X] [fram layout] Activer par défaut : Fringe : left only
+- [X] [fram layout] Activer par défaut : Scrollbar horizontales
+
+
 - [X] Trouver un raccourcis pour multi cursor
   -> ALT+d, ALT+SHIFT+d
 
@@ -434,7 +401,6 @@ require('./../goa/widget/inputSuggest/InputSuggest.js');
   save current layout, after ediff set previous layout
 - [X] POMME + click = add multi cursor
 - [X] Vc dir same window
-
 
 
 - [X] [occur] Centrer la ligne
@@ -622,7 +588,6 @@ require('./../goa/widget/inputSuggest/InputSuggest.js');
 - [x] [swiper] Fuzzy match
 
 
-
 - [x] [vc-dir] Check Compare with base revision (vc dir menu)
 - [x] [Multi-cursor] paste dans une sélection multiple
       -> Il faut utiliser la fonction native yank (C-y)
@@ -666,7 +631,6 @@ require('./../goa/widget/inputSuggest/InputSuggest.js');
 - [x] Ouverture fichier : avoir de meilleurs perfs
       -> Désactivation de ternjs automatiquement (le lancer manuellement lorue necessaire)
       -> Augmentation du temps avant rendu des couleurs des textes
-
 
 
 - [x] Directory completion : Possibilite d'avoir de l'auto completion lors de la saisie d'un chemin.

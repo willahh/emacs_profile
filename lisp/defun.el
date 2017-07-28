@@ -1272,11 +1272,12 @@ the visible part of the current buffer following point. "
 ;; Recenter after pop to mark
 ;; Update : desactivation
 ;; Update : Reactivation
-(advice-add 'pop-to-mark-command
-            :after
-            (lambda (&rest args)
-              "Recenter"
-              (recenter)))
+;; Update : desactivation
+;; (advice-add 'pop-to-mark-command
+;;             :after
+;;             (lambda (&rest args)
+;;               "Recenter"
+;;               (recenter)))
 
 ;; Recenter after unpop to mark
 ;; Update : desativation
@@ -1381,17 +1382,21 @@ the visible part of the current buffer following point. "
   (interactive)
   (if (region-active-p) (delete-region (region-beginning) (region-end)) (delete-forward-char 1))
 )
-(defun wil-open-goaland-org()
+(defun wil-org-open-main()
   (interactive)
   (select-frame (make-frame))
-  (funcall #'find-file "~/org/wra_goaland/goaland.org")
+  (funcall #'find-file "~/org/main.org")
   (wil-frame-center)
 )
-(defun wil-open-emacs-todo-org()
+(defun wil-org-open-emacs()
   (interactive)
   (select-frame (make-frame))
   (funcall #'find-file "~/.emacs.d/todo.org")
   (wil-frame-center)
+)
+(defun wil-open-logs
+  (interactive)
+  (dired "~/www/logs")
 )
 
 
@@ -1573,6 +1578,11 @@ Version 2017-04-19"
 
 
 
+;; ;; Keyboard macros
+;; (fset 'wil-php-echo-string
+;;    (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ([101 99 104 111 32 39 5 39 32 46 33554464 80 72 80 S-backspace 80 95 69 79 76 59] 0 "%d")) arg)))
+(fset 'wil-php-concatstring
+   [?\C-a ?\C-  ?\C-e ?\s-x ?r ?e ?p ?l ?a ?c ?e ?  ?s ?t ?\C-w ?\C-h ?s ?t ?r ?i ?\C-j ?\' ?\C-j ?\\ ?\' ?\C-j ?\C-a ?$ ?s ?H ?l backspace ?t ?m ?l ?  ?. ?= ?  ?\' ?\C-d ?\' ?\C-  ?\C-f ?\C-h ?\C-e ?\' ?  ?. ?\S-  ?P ?P ?\C-h ?H ?P ?_ ?E ?O ?L ?\; ?\C-n])
 
 ;; automatically indenting yanked text if in programming-modes
 ;; http://trey-jackson.blogspot.fr/2008/03/emacs-tip-15-indent-yanked-code.html
@@ -1606,4 +1616,10 @@ Version 2017-04-19"
            (member major-mode yank-indent-modes))
     (let ((transient-mark-mode nil))
     (yank-advised-indent-function (region-beginning) (region-end)))))
+
+(fset 'wil-php-concatstring-off
+   [?\C-a ?\C-  ?\C-e ?\s-x ?r ?e ?p ?l ?a ?c ?e ?s ?t ?i ?r ?n ?g ?\C-h ?\C-h ?\C-h ?\C-h ?\C-j ?\\ ?\' ?\C-j ?\' ?\C-j ?\C-a ?\M-d ?\C-d ?\C-d ?\C-d ?\C-d ?\C-e ?\C-w ?\C-h ?\C-h ?\C-h ?\C-h ?\C-a ?\C-d ?\C-  ?\C-b ?\C-h ?\C-n])
+
+
+
 

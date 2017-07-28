@@ -3,15 +3,15 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleIdentifier</key>
-	<string>org.sil.ukelele.keyboardlayout.françaisw</string>
+	<string>org.sil.ukelele.keyboardlayout.frw2</string>
 	<key>CFBundleName</key>
-	<string>Français w</string>
+	<string>frw2</string>
 	<key>CFBundleVersion</key>
 	<string></string>
-	<key>KLInfo_Français w</key>
+	<key>KLInfo_frw2</key>
 	<dict>
 		<key>TISInputSourceID</key>
-		<string>org.sil.ukelele.keyboardlayout.françaisw.françaisw</string>
+		<string>org.sil.ukelele.keyboardlayout.frw2.frw2</string>
 		<key>TISIntendedLanguage</key>
 		<string>fr</string>
 	</dict>

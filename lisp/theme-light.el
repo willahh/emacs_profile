@@ -64,6 +64,24 @@
 (powerline-theme-normal)
 
 (set-face-attribute 'lazy-highlight nil :background "#ffff33")
+(set-face-attribute 'js2-external-variable nil :foreground nil :underline "wave")
+;; (set-face-attribute 'js2-external-variable nil :foreground "#ff0000" :underline (:color "#00ff00" :style "wave"))
 
 ;; ;; ------ Font
 ;; (set-face-attribute 'org-level-1 nil :foreground "#848484")
+
+
+
+
+
+
+;; Rainbow delimiter faces
+(custom-set-faces
+ '(rainbow-delimiters-depth-1-face ((t (:foreground "deep sky blue"))))
+ '(rainbow-delimiters-depth-2-face ((t (:foreground "deep pink"))))
+ '(rainbow-delimiters-depth-3-face ((t (:foreground "#0000ff"))))
+ '(rainbow-delimiters-depth-4-face ((t (:foreground "dark orange"))))
+ '(rainbow-delimiters-depth-5-face ((t (:foreground "#009900"))))
+ '(rainbow-delimiters-depth-6-face ((t (:foreground "#336699"))))
+ '(rainbow-delimiters-depth-7-face ((t (:foreground "#fa75e2"))))
+ '(rainbow-delimiters-depth-8-face ((t (:foreground "#55bdf0")))))
