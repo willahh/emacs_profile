@@ -77,6 +77,7 @@
       org-end-of-line
       org-kill-line
       org-metaleft
+      org-metaup
       org-self-insert-command
       org-todo
       paredit-backslash

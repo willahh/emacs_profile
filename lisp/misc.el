@@ -1091,3 +1091,5 @@ _d_: subtree
 ;;  (kbd "C-c a") 'some-command
 ;;  (kbd "C-c b") 'another-command)
 
+;; Gradle
+(require 'gradle-mode)

@@ -15,7 +15,7 @@
   ;; load-theme-buffer-local
   ;;find-file-in-project
   yaml-mode
-  slime
+  ;; slime
   cider
   impatient-mode
   ;; clojurescript-mode
@@ -69,6 +69,8 @@
   php-mode
   ;;php-refactor-mode ;; Not found in Melpa
   php-auto-yasnippets
+
+  gradle-mode
 
   company-php
   ac-php
@@ -238,6 +240,7 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/string-inflection-1.0.5")
 (add-to-list 'load-path "~/.emacs.d/vendor/easy-kill-0.9.3")
 (add-to-list 'load-path "~/.emacs.d/vendor/general")
+(add-to-list 'load-path "~/.emacs.d/vendor/slime")
 ;; (add-to-list 'load-path "~/.emacs.d/vendor/jquery-doc")
 ;; (add-to-list 'load-path "~/.emacs.d/vendor/google-this-1.11")
 ;; (add-to-list 'load-path "~/.emacs.d/vendor/google-translate-0.11.13")
