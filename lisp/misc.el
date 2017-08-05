@@ -171,9 +171,6 @@
 
 
 
-;; Show trailing whitespace White space
-(setq-default show-trailing-whitespace t)
-
 
 
 ;; https://www.emacswiki.org/emacs/LsLispToggleVerbosity

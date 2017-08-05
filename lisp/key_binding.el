@@ -413,6 +413,7 @@ Version 2016-12-27"
 ;; (global-set-key (kbd "C-x TAB") 'helm-imenu)
 ;; (global-set-key (kbd "C-x <C-i>") 'helm-imenu)
 (global-set-key (kbd "C-x C-i") 'helm-imenu)
+(global-set-key (kbd "C-x <C-i>") 'helm-imenu)
 
 ;; Update to use counsel-find-file instead of helm-find-file
 ;; Update : Non utilisé
@@ -724,9 +725,13 @@ Version 2016-12-27"
 (define-key magit-status-mode-map (kbd "M-w") 'kill-ring-save)
 (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
 
+
 ;; ---------------- open line
 ;; Standard new line
 (define-key key-translation-map (kbd "C-j") (kbd "RET"))
+
+(define-key prog-mode-map (kbd "RET") 'reindent-then-newline-and-indent)
+
 
 ;; Above
 (global-set-key (kbd "C-M-j") 'smart-open-line-above)

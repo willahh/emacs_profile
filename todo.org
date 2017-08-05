@@ -84,10 +84,6 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
    [2017-07-28 Fri]
    [[file:~/.Trash]]
 ** TODO Voir pour retirer les onglets du haut
-** TODO M-z lorsqu'une sélection est présente = cela ne fonctionne pas
-
-   Ma chérie c'est la plus jolie je l'aime et je vais l'épouser.
-
 ** TODO Ag result buffer : C-o : Open in new window
 ** TODO Réduire la hauteur du bandeau du bas
 ** TODO Activer le highlight en mode php
