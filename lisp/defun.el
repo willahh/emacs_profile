@@ -109,6 +109,11 @@ there's a region, all lines that region covers will be duplicated."
   (interactive)
   (copy-file-path))
 
+;; Copy file name 
+(defun wil-cfn ()
+  (interactive)
+  (kill-new (nth 0 (last (split-string (cfp) "/")))))
+
 ;; copy-file-name-to-clipboard
 ;; Source : http://emacsredux.com/blog/2013/03/27/copy-filename-to-the-clipboard/
 (defun copy-file-name-to-clipboard ()
