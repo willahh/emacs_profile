@@ -377,9 +377,11 @@
 ;;
 ;; Update 5 : Trop pratique lors de, par exemple, l'ouverture
 ;; d'une accolade en javascript, puis d'un retour à la ligne
+;;
+;; Update 6 : Desactivation, le package paredit s en charge
 ;; 
-(require 'autopair)
-(autopair-global-mode 1)
+;; (require 'autopair)
+;; (autopair-global-mode 1)
 
 ;; smart-parens
 ;; Probleme avec des concatenations javascript et l insertion de simple quote.
@@ -419,11 +421,32 @@
 
 
 
-;;paredit
+;; paredit
+;; Paredit pour les fichiers de type lisp uniquement, smartparens pour le reste
+;; Update : Smartparens lent, reactivation de paredit pour tous les modes prog
 (require 'paredit)
+;; (add-hook 'prog-mode-hook 'paredit-mode)
+;; (add-hook 'php-mode-hook 'paredit-mode)
+;; (add-hook 'emacs-lisp-mode-hook 'paredit-mode)
+;; (add-hook 'common-lisp-mode 'paredit-mode)
+
 (add-hook 'prog-mode-hook 'paredit-mode)
-(add-hook 'php-mode-hook 'paredit-mode)
-; (add-hook 'emacs-lisp-mode-hook 'paredit-mode)
+
+;; Smartparens
+;; Update : desactivation : des ralentissements sont
+;; visibles avec cette extension
+
+;; (require 'smartparens)
+;; (require 'smartparens-config)
+;; (setq sp-base-key-bindings 'paredit)
+;; (setq sp-autoskip-closing-pair 'always)
+;; (setq sp-hybrid-kill-entire-symbol nil)
+;; (sp-use-paredit-bindings)
+
+;; (add-hook 'php-mode-hook 'smartparens-mode)
+;; (add-hook 'web-mode-hook 'smartparens-mode)
+;; (add-hook 'js2-mode-hook 'smartparens-mode)
+;; (add-hook 'js-mode-hook 'smartparens-mode)
 
 
 ;; https://truongtx.me/2014/02/22/emacs-using-paredit-with-non-lisp-mode

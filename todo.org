@@ -80,7 +80,9 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 * Tasks
 :VISIBILITY: all
-
+** TODO EM : C-h dans mini buffer n'exécute pas la bonne action
+   [2017-08-08 Tue]
+   [[file:~/org/main.org::*Goaland][Goaland]]
 ** TODO em C-h ne fonctionne pas dans le mini panneau du bas (visible sur l'ouverture d'n fichier)
    [2017-08-07 Mon]
 ** TODO C-; ne déclenche plus yassnippet
