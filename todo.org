@@ -80,10 +80,25 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 * Tasks
 :VISIBILITY: all
+** TODO EM : C-h dans mini buffer n'exécute pas la bonne action
+   [2017-08-08 Tue]
+   [[file:~/org/main.org::*Goaland][Goaland]]
+** TODO em C-h ne fonctionne pas dans le mini panneau du bas (visible sur l'ouverture d'n fichier)
+   [2017-08-07 Mon]
+** TODO C-; ne déclenche plus yassnippet
+   [2017-08-07 Mon]
+   [[file:~/www/project/easy3p/easy3p_3.1/dev/module/vvisual/list/js/process/role/Role.js::cl]]
+
+
+
 ** TODO em : Nouvelle frame : Mettre le mode projectile sur le buffer actif
    [2017-07-28 Fri]
    [[file:~/.Trash]]
 ** TODO Voir pour retirer les onglets du haut
+** TODO M-z lorsqu'une sélection est présente = cela ne fonctionne pas
+
+
+
 ** TODO Ag result buffer : C-o : Open in new window
 ** TODO Réduire la hauteur du bandeau du bas
 ** TODO Activer le highlight en mode php

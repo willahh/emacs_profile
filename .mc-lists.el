@@ -82,6 +82,7 @@
       org-todo
       paredit-backslash
       paredit-backward
+      paredit-backward-kill-word
       paredit-doublequote
       paredit-forward
       paredit-forward-delete
@@ -110,6 +111,7 @@
       '(
       abbrev-prefix-mark
       ace-window
+      ag
       avy-goto-word-1-above
       avy-goto-word-1-below
       c-end-of-statement

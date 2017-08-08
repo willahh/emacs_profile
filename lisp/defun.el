@@ -109,6 +109,11 @@ there's a region, all lines that region covers will be duplicated."
   (interactive)
   (copy-file-path))
 
+;; Copy file name 
+(defun wil-cfn ()
+  (interactive)
+  (kill-new (nth 0 (last (split-string (cfp) "/")))))
+
 ;; copy-file-name-to-clipboard
 ;; Source : http://emacsredux.com/blog/2013/03/27/copy-filename-to-the-clipboard/
 (defun copy-file-name-to-clipboard ()
@@ -1090,16 +1095,6 @@ the visible part of the current buffer following point. "
 (defun wlh-join-lines ()
   (interactive)
   (join-line -1))
-
-
-;; making paredit work with delete-selection-mode
-;; Update : Pas trouvé le fonctionnement exact
-;; (put 'paredit-forward-delete 'delete-selection 'supersede)
-;; (put 'paredit-backward-delete 'delete-selection 'supersede)
-;; (put 'paredit-open-round 'delete-selection t)
-;; (put 'paredit-open-square 'delete-selection t)
-;; (put 'paredit-doublequote 'delete-selection t)
-;; (put 'paredit-newline 'delete-selection t)
 
 
 (defun toggle-window-split ()
