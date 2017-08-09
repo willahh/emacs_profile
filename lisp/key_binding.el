@@ -59,11 +59,13 @@
 (global-set-key [meta shift w] 'delete-frame)
 ;; (global-set-key (kbd "M-W") 'delete-frame)
 (global-set-key (kbd "M-S-w") 'delete-frame)
-(global-set-key (kbd "M-W") 'delete-frame)
+(global-set-key (kbd "M-W") 'delete-frame)        
 
 ;; ---
 (define-key key-translation-map (kbd "ESC") (kbd "C-g"))
 (define-key ivy-minibuffer-map (kbd "<escape>") 'minibuffer-keyboard-quit)
+(define-key ivy-minibuffer-map (kbd "C-h") 'delete-backward-char)
+(define-key ivy-minibuffer-map (kbd "C-w") 'delete-backward-char)
 
 
 ;; (define-key key-translation-map "\C-q" "\C-g")

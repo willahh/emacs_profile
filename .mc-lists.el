@@ -77,6 +77,7 @@
       org-end-of-line
       org-kill-line
       org-metaleft
+      org-metaright
       org-metaup
       org-self-insert-command
       org-todo
@@ -148,6 +149,7 @@
       mc/mark-previous-lines
       mouse-drag-vertical-line
       next-buffer
+      org-mouse-down-mouse
       previous-buffer
       previous-multiframe-window
       projectile-find-file-dwim

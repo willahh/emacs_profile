@@ -80,16 +80,8 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 * Tasks
 :VISIBILITY: all
-** TODO EM : C-h dans mini buffer n'exécute pas la bonne action
-   [2017-08-08 Tue]
-   [[file:~/org/main.org::*Goaland][Goaland]]
-** TODO em C-h ne fonctionne pas dans le mini panneau du bas (visible sur l'ouverture d'n fichier)
+** DONE em C-h ne fonctionne pas dans le mini panneau du bas (visible sur l'ouverture d'n fichier)
    [2017-08-07 Mon]
-** TODO C-; ne déclenche plus yassnippet
-   [2017-08-07 Mon]
-   [[file:~/www/project/easy3p/easy3p_3.1/dev/module/vvisual/list/js/process/role/Role.js::cl]]
-
-
 
 ** TODO em : Nouvelle frame : Mettre le mode projectile sur le buffer actif
    [2017-07-28 Fri]
@@ -107,10 +99,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 ** TODO Tester l'alternative a AG pour la recherche (le plus récent)
 ** TODO Mini buffer : Ne pas afficher lde scrollbar
 ** TODO Ajouter un bind ALT + arrow up / down sur drags
-** TODO Faire fonctionner company dans des fichiers js avec des lignes
-  dans le style suivant : 
-require('./../goa/widget/inputSuggest/InputSuggest.js');
-** TODO Activer Paredit sur le racourcis C-h (delete backward)
+** DONE Activer Paredit sur le racourcis C-h (delete backward)
 ** TODO Les caractères ^M sont de nouveau visibles en mode php (vue
   certains en mode lisp aussi mais moins dérangeant)
 

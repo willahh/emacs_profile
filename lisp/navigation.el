@@ -431,6 +431,8 @@
 ;; (add-hook 'common-lisp-mode 'paredit-mode)
 
 (add-hook 'prog-mode-hook 'paredit-mode)
+(add-hook 'css-mode-hook 'paredit-mode)
+(add-hook 'scss-mode-hook 'paredit-mode)
 
 ;; Smartparens
 ;; Update : desactivation : des ralentissements sont

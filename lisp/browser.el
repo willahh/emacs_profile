@@ -4,5 +4,6 @@
           (lambda () 
           ;; (load-theme-buffer-local 'leuven (current-buffer))
           ;; (setq show-trailing-whitespace nil)
-))
+            ))
+
 

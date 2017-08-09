@@ -449,6 +449,3 @@
 ;; https://stackoverflow.com/a/10845302
 (setq inhibit-eol-conversion t)
 
-
-;; Show trailing whitespace White space
-(setq show-trailing-whitespace t)

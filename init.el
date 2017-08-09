@@ -44,6 +44,10 @@
 (load-file "~/.emacs.d/lisp/key_binding.el")
 (load-file "~/.emacs.d/lisp/browser.el")
 
+;; Show trailing whitespace White space
+;; Note : Mise tout a la fin sinon ne fonctionne pas
+(setq show-trailing-whitespace t)
+
 ;; (load-file "~/.emacs.d/lisp/theme-dark.el")
 (load-file "~/.emacs.d/lisp/theme-light.el")
 
