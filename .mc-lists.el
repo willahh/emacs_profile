@@ -90,7 +90,9 @@
       paredit-forward-kill-word
       paredit-kill
       paredit-meta-doublequote
+      paredit-open-round
       paredit-semicolon
+      reindent-then-newline-and-indent
       smart-open-line-above
       smarter-move-beginning-of-line
       string-inflection-all-cycle
