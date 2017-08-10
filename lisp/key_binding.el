@@ -372,7 +372,9 @@ Version 2016-12-27"
 (global-set-key (kbd "C-h") 'backward-delete-char)
 (define-key lisp-mode-map (kbd "C-h") 'paredit-backward-delete)
 (define-key emacs-lisp-mode-map (kbd "C-h") 'paredit-backward-delete)
-(define-key common-lisp-mode-map (kbd "C-h") 'paredit-backward-delete)
+
+;; (define-key common-lisp-mode-map (kbd "C-h") 'paredit-backward-delete)
+
 (define-key helm-map (kbd "C-h") 'paredit-backward-delete)
 (define-key helm-map (kbd "M-v") 'yank)
 

@@ -8,6 +8,7 @@
       autopair-insert-or-skip-quote
       autopair-newline
       autopair-skip-close-maybe
+      backward-delete-char
       backward-sentence
       backward-sexp
       c-electric-colon
