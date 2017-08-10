@@ -1,5 +1,6 @@
 (require 'ggtags)
 (require 'magit)
+(require 'paredit)
 
 ;; M-x (M-x main command) -> "cut"
 (global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
@@ -25,6 +26,9 @@
 ;; (global-set-key (kbd "C-x M-S-z") ')
 
 ;; M-s (sub command menu) -> "save"
+;; Update : Keep M-s for splice, very usefull
+;; Update 2 : M-s for save, too much used keybinding,
+;; Move paredit-splice-sexp
 (global-set-key (kbd "M-s") 'save-buffer)
 (define-key paredit-mode-map (kbd "M-s") 'save-buffer)
 
@@ -109,7 +113,12 @@
 
 (global-set-key [(control shift w)] 'whole-line-or-region-kill-region)
 ;; (global-set-key (kbd "C-h") 'delete-backward-char)
-(global-set-key (kbd "C-h") 'paredit-backward-delete)
+
+
+;; Backward kill sexp
+(global-set-key [(control meta h)] 'backward-kill-sexp)
+
+
 (global-set-key [(control shift k)] 'kill-whole-line) ;; Override default emacs kill sentence but i don't use it
 
 ;; ---------------- evaluation
@@ -279,10 +288,17 @@ Version 2016-12-27"
 (global-set-key (kbd "ı") 'mc/mark-next-lines) ; ALT+SHIFT+p
 (global-set-key (kbd "∏") 'mc/mark-previous-lines) ; ALT+SHIFT+n
 
-;; Search with alt key
-(global-set-key (kbd "Ò") 'helm-swoop) ; ALT+s
-(global-set-key (kbd "∑") 'helm-ag) ; ALT+SHIFT+s
+;; Search with alt key Update : Search est sur super-s, ALT+s est
+;; maintenant utilise pour paredit splice s-exp
+
+;; (global-set-key (kbd "Ò") 'helm-swoop) ; ALT+s
+;; (global-set-key (kbd "∑") 'helm-ag) ; ALT+SHIFT+s
 (global-set-key (kbd "C-∑") 'projectile-ag) ; CONTROL+ALT+SHIFT+s
+
+(global-set-key (kbd "Ò") 'paredit-splice-sexp)
+(global-set-key (kbd "∑") 'helm-swoop) ; ALT+SHIFT+s
+
+
 
 ;; Drag line
 ;; top
@@ -348,19 +364,15 @@ Version 2016-12-27"
 
 ;; delete
 ;; (define-key helm-map (kbd "C-h") 'delete-backward-char)
-
 (global-set-key (kbd "C-w") 'paredit-backward-kill-word)
 ; (define-key iedit-mode-keymap (kbd "C-w") 'paredit-backward-kill-word)
 (define-key helm-map (kbd "C-w") 'paredit-backward-kill-word)
 (define-key company-active-map (kbd "C-w") 'paredit-backward-kill-word)
-(define-key helm-swoop-map (kbd "C-w") 'helm-swoop)
 
-;; (global-set-key (kbd "C-w") 'clean-aindent--bsunindent)
-;; (define-key iedit-mode-keymap (kbd "C-w") 'clean-aindent--bsunindent)
-;; (define-key helm-map (kbd "C-w") 'clean-aindent--bsunindent)
-;; (define-key company-active-map (kbd "C-w") 'clean-aindent--bsunindent)
-;; (define-key helm-swoop-map (kbd "C-w") 'helm-swoop)
-
+(global-set-key (kbd "C-h") 'backward-delete-char)
+(define-key lisp-mode-map (kbd "C-h") 'paredit-backward-delete)
+(define-key emacs-lisp-mode-map (kbd "C-h") 'paredit-backward-delete)
+(define-key common-lisp-mode-map (kbd "C-h") 'paredit-backward-delete)
 (define-key helm-map (kbd "C-h") 'paredit-backward-delete)
 (define-key helm-map (kbd "M-v") 'yank)
 
@@ -473,7 +485,7 @@ Version 2016-12-27"
 ;; Note : Je ne vois pas la difference entre ag-project
 ;; et projectile-ag
 
-;; (global-set-key (kbd "C-c s p") 'ag-project)
+;; (global-set-key (kbd "C-c s p") 'ag-project) 
 
 ;; Update : Ajout d'un ensemble de raccourcis sur le table de prefix C-c s
 ;; Les racourcis les plus utiles ont un acces direct, voir plus bas
@@ -952,6 +964,7 @@ Version 2016-12-27"
 (global-set-key (kbd "C-s-s") 'helm-ag) ; Super+Contral+s
 (global-set-key (kbd "C-M-s-s") 'projectile-ag) ; Control+Meta+Super+s
 (global-set-key (kbd "s-c") 'org-capture)
+(global-set-key (kbd "s-b") 'ivy-switch-buffer)
 
 
 

@@ -430,9 +430,16 @@
 ;; (add-hook 'emacs-lisp-mode-hook 'paredit-mode)
 ;; (add-hook 'common-lisp-mode 'paredit-mode)
 
-(add-hook 'prog-mode-hook 'paredit-mode)
-(add-hook 'css-mode-hook 'paredit-mode)
-(add-hook 'scss-mode-hook 'paredit-mode)
+;; (add-hook 'prog-mode-hook 'paredit-mode)
+;; (add-hook 'css-mode-hook 'paredit-mode)
+;; (add-hook 'scss-mode-hook 'paredit-mode)
+
+(add-hook 'emacs-lisp-mode-hook 'paredit-mode)
+(add-hook 'common-lisp-mode 'paredit-mode)
+(add-hook 'lisp-mode-hook 'paredit-mode)
+;; (add-hook 'prog-mode-hook )
+
+
 
 ;; Smartparens
 ;; Update : desactivation : des ralentissements sont

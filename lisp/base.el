@@ -20,6 +20,9 @@
 ;; Don't display "Reverting buffer ..." message
 (setq auto-revert-verbose nil)
 
+;; Auto close brackets
+(autopair-global-mode t)
+
 ;; Enable blink cursor
 ;; (blink-cursor-mode 1)
 ;; (blink-cursor-mode 0)
@@ -293,15 +296,18 @@
 (setq-default save-place t)
 (setq save-place-file (expand-file-name ".places" user-emacs-directory))
 
-;; Deferring font rendering
-;; thanks http://tsengf.blogspot.fr/2012/11/slow-scrolling-speed-in-emacs.html
-;; Avec une valeur de 1, des problemes de font lock couleur surviennent.
-;; (Couleurs de textes qui n apparaissent plus, etc)
-;; 0.1 semble correct
-;; Update : La mise a jour des couleurs n'est pas fluide
+;; Deferring font rendering thanks
+;; http://tsengf.blogspot.fr/2012/11/slow-scrolling-speed-in-emacs.html
+;; Avec une valeur de 1, des problemes de font lock couleur
+;; surviennent. (Couleurs de textes qui n apparaissent plus, etc) 0.1
+;; semble correct
+;; Update : La mise a jour des couleurs n'est pas
+;; fluide
 ;; Update : Retour sur une valeur de 0
-;; Update : Retour sur une valeur de 0.1 voir si on peut avoir quelque
-;; chose de plus fluide
+;; Update : Retour sur une
+;; valeur de 0.1 voir si on peut avoir quelque chose de plus fluide
+;; Update : Avec le build special osx (railtap way quelque chose) les
+;; problèmes de fonts /ralentissement ne sont presques plus visibles
 
 ;; (setq jit-lock-defer-time 0.05)
 ;; (setq jit-lock-defer-time 1)
@@ -310,7 +316,8 @@
 ;; (setq jit-lock-defer-time 0.1)
 ;; (setq jit-lock-defer-time 0.5)
 ;; (setq jit-lock-defer-time 0.25)
-(setq jit-lock-defer-time 0.125)
+;; (setq jit-lock-defer-time 0.125)
+(setq jit-lock-defer-time 0)
 
 ;; Some settings from https://github.com/technomancy/better-defaults/blob/master/better-defaults.el
 (progn
