@@ -88,6 +88,7 @@
       paredit-doublequote
       paredit-forward
       paredit-forward-delete
+      paredit-forward-down
       paredit-forward-kill-word
       paredit-kill
       paredit-meta-doublequote
