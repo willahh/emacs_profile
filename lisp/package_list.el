@@ -157,6 +157,7 @@
   ;; leuven-theme
   magit
   magit-popup
+  git-timemachine
   markdown-mode
   monokai-theme
   multiple-cursors
