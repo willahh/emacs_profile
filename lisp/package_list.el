@@ -242,6 +242,7 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/easy-kill-0.9.3")
 (add-to-list 'load-path "~/.emacs.d/vendor/general")
 (add-to-list 'load-path "~/.emacs.d/vendor/slime")
+(add-to-list 'load-path "~/.emacs.d/vendor/noctilux-theme")
 ;; (add-to-list 'load-path "~/.emacs.d/vendor/jquery-doc")
 ;; (add-to-list 'load-path "~/.emacs.d/vendor/google-this-1.11")
 ;; (add-to-list 'load-path "~/.emacs.d/vendor/google-translate-0.11.13")
