@@ -7,7 +7,8 @@
 (global-set-key (kbd "C-x <C-m>") 'helm-M-x)
 
 ;; M-c (capitalize-word) -> "copy"
-(global-set-key (kbd "M-c") 'kill-ring-save)
+;; (global-set-key (kbd "M-c") 'kill-ring-save)
+(global-set-key (kbd "M-c") 'wil-copy)
 (global-set-key (kbd "C-x M-c") 'capitalize-word)
 
 ;; M-v (capitalize-word) -> "paste"
@@ -372,6 +373,7 @@ Version 2016-12-27"
 (global-set-key (kbd "C-h") 'backward-delete-char)
 (define-key lisp-mode-map (kbd "C-h") 'paredit-backward-delete)
 (define-key emacs-lisp-mode-map (kbd "C-h") 'paredit-backward-delete)
+(define-key clojure-mode-map (kbd "C-h") 'paredit-backward-delete)
 
 ;; (define-key common-lisp-mode-map (kbd "C-h") 'paredit-backward-delete)
 

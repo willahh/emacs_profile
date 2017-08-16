@@ -1419,6 +1419,11 @@ the visible part of the current buffer following point. "
 ;; (ad-activate 'yank)
 
 
+(defun wil-copy ()
+  (interactive)
+  (easy-kill)
+  (deactivate-mark))
+
 ;; https://www.emacswiki.org/emacs/AutoIndentation
 ;; (defadvice kill-line (before check-position activate)
 ;;   (if (and (eolp) (not (bolp)))
