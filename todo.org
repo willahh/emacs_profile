@@ -87,8 +87,6 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
    [2017-07-28 Fri]
    [[file:~/.Trash]]
 ** TODO Voir pour retirer les onglets du haut
-** TODO M-z lorsqu'une sélection est présente = cela ne fonctionne pas
-
 
 
 ** TODO Ag result buffer : C-o : Open in new window
@@ -102,26 +100,6 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 ** DONE Activer Paredit sur le racourcis C-h (delete backward)
 ** TODO Les caractères ^M sont de nouveau visibles en mode php (vue
   certains en mode lisp aussi mais moins dérangeant)
-
-** TODO Paredit-mode : l'auto protection de quote lorsque l'on saisie du
-  texte dans une chaine de caractere est plus contraignante qu'autre
-  chose, il faut retirer ça
- 
-  Paredit ET web-mode : Retirer la fonction qui escape automatiquement les
-  doubles quote dans les chaines car en principe ca ne marche pas bien
-  en web mode
-
-  Retirer les binds de paredit suivants sur tous les modes autre que
-  lisp emac lisp clojure : ' " backspace delete
-
-#+BEGIN_SRC lisp
-(eval-after-load "paredit"
-  '(progn
-    (define-key paredit-mode-map (kbd "C-M-f") nil)))
-#+END_SRC
-
-
-
 
 ** TODO @work Warning (flycheck): Syntax checker css-csslint reported too many
   errors (1415) and is disabled. 
