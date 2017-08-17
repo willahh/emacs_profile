@@ -760,14 +760,15 @@ Version 2016-12-27"
 
 
 ;; Above
-(global-set-key (kbd "C-M-j") 'smart-open-line-above)
-(define-key php-mode-map (kbd "C-M-j") 'smart-open-line-above)
+(global-set-key (kbd "C-M-j") 'open-line-below)
+(global-set-key (kbd "C-M-j") 'open-line-below)
+(define-key php-mode-map (kbd "C-M-j") 'open-line-below)
 
 (global-set-key [(control shift j)] 'smart-open-line-above)
 (global-set-key [(control shift j)] 'smart-open-line-above)
 (define-key web-mode-map [(control shift j)] 'smart-open-line-above)
 ;; (global-set-key (kbd "C-M-j") 'newline-and-indent)
-(global-set-key (kbd "C-M-j") 'smart-open-line-above)
+
 
 ;; Below
 (global-set-key (kbd "C-M-S-j") 'open-line-below)

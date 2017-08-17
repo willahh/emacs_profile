@@ -67,6 +67,7 @@
       indent-for-tab-command
       kill-region
       kill-sentence
+      kill-sexp
       mark-sexp
       mouse-save-then-kill
       mouse-set-region
