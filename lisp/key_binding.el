@@ -579,6 +579,10 @@ Version 2016-12-27"
 (global-set-key (kbd "◊") 'evil-scroll-up) ; ALT+v
 ;; (global-set-key (kbd "M-v") 'evil-scroll-up)
 
+(global-set-key (kbd "C-x <tab>") 'indent-rigidly) ; Default emacs key binding
+(define-key indent-rigidly-map [(shift tab)] 'indent-rigidly-left-to-tab-stop)
+(define-key indent-rigidly-map [(tab)] 'indent-rigidly-right-to-tab-stop)
+
 ;; web mode
 ;; (define-key web-mode-map [(meta shift j)] 'web-mode-tag-next)
 ;; (define-key web-mode-map [(meta shift k)] 'web-mode-tag-previous)

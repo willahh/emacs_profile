@@ -1424,6 +1424,16 @@ the visible part of the current buffer following point. "
   (easy-kill)
   (deactivate-mark))
 
+
+(defun wil-html-to-concat ()
+  "Convert a string into a concation for php [WIP]"
+  (interactive)
+  (move-beginning-of-line 1)
+  (set-mark (point))
+  (move-end-of-line 1)
+  ;; (replace-string "dom "[x]")
+  )
+
 ;; https://www.emacswiki.org/emacs/AutoIndentation
 ;; (defadvice kill-line (before check-position activate)
 ;;   (if (and (eolp) (not (bolp)))
@@ -1632,3 +1642,48 @@ Version 2017-04-19"
     (pos-tip-show (apply 'format format-string args))))
 
 (setq eldoc-message-function #'my-eldoc-display-message)
+
+
+
+
+
+;; (defun my-indent-region (N)
+;;   (interactive "p")
+;;   (if (use-region-p)
+;;       (progn (indent-rigidly (region-beginning) (region-end) (* N 4))
+;;              (setq deactivate-mark nil))
+;;     (self-insert-command N)))
+
+;; (defun my-unindent-region (N)
+;;   (interactive "p")
+;;   (if (use-region-p)
+;;       (progn (indent-rigidly (region-beginning) (region-end) (* N -4))
+;;              (setq deactivate-mark nil))
+;;     (self-insert-command N)))
+
+
+
+
+
+
+
+;; (defun shift-text (distance)
+;;   (if (use-region-p)
+;;       (let ((mark (mark)))
+;;         (save-excursion
+;;           (indent-rigidly (region-beginning)
+;;                           (region-end)
+;;                           distance)
+;;           (push-mark mark t t)
+;;           (setq deactivate-mark nil)))
+;;     (indent-rigidly (line-beginning-position)
+;;                     (line-end-position)
+;;                     distance)))
+
+;; (defun shift-right (count)
+;;   (interactive "p")
+;;     (shift-text 4))
+
+;; (defun shift-left (count)
+;;   (interactive "p")
+;;   (shift-text (- 4)))
