@@ -66,7 +66,8 @@
 ;; (scroll-bar-mode -1)
 ;; Enable scrollbar
 (scroll-bar-mode 1)
-(horizontal-scroll-bar-mode 1)
+;; (horizontal-scroll-bar-mode 1)
+;; (horizontal-scroll-bar-mode nil)
 
 ;; make the left fringe 4 pixels wide and the right disappear
 ;; (fringe-mode '(32 . 0))
@@ -456,3 +457,9 @@
 ;; https://stackoverflow.com/a/10845302
 (setq inhibit-eol-conversion t)
 
+
+(setq-default horizontal-scroll-bar-mode nil)
+(setq horizontal-scroll-bar-mode nil)
+
+(setq-default horizontal-scroll-bar nil)
+(setq horizontal-scroll-bar nil)
