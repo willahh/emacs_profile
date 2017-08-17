@@ -1623,3 +1623,12 @@ Version 2017-04-19"
 
 
 
+
+;; eldoc at point
+;; https://www.topbug.net/blog/2016/11/03/emacs-display-function-or-variable-information-near-point-cursor/
+(defun my-eldoc-display-message (format-string &rest args)
+  "Display eldoc message near point."
+  (when format-string
+    (pos-tip-show (apply 'format format-string args))))
+
+(setq eldoc-message-function #'my-eldoc-display-message)
