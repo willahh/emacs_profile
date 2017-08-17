@@ -46,6 +46,9 @@
 
             ;; flycheck-mode
             (flycheck-mode)
+
+            ;; Highlight-mode
+            (set (make-local-variable 'highlight-symbol-mode) 't)
             ))
 
 ;; Rebind php mode map tab to get tab-indent-or-complete like everywhere

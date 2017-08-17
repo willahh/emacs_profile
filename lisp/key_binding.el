@@ -197,13 +197,14 @@
 ;; trop utiliser Update pour passer de qs a QS car la suite de
 ;; caractere qs est utilise dans le francais
 ;; (key-chord-define-global "qs" 'toggle-php-flavor-mode)
-(key-chord-define-global "QS" 'toggle-php-flavor-mode)
+;; (key-chord-define-global "QS" 'toggle-php-flavor-mode)
 (key-chord-define-global "xc" 'er/expand-region)
 (key-chord-define-global "wx" 'er/contract-region)
 
 (key-chord-define evil-emacs-state-map "jk" 'evil-normal-state)
 (key-chord-define evil-normal-state-map "jk" 'evil-emacs-state)
 (key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
+
 
 ;; ---------------- Key binding evil normal mode
 (with-eval-after-load 'evil-maps
@@ -298,6 +299,9 @@ Version 2016-12-27"
 
 (global-set-key (kbd "Ò") 'paredit-splice-sexp)
 (global-set-key (kbd "∑") 'helm-swoop) ; ALT+SHIFT+s
+
+(global-set-key (kbd "æ") 'mark-whole-buffer) ; ALT+a
+(global-set-key (kbd "Â") 'toggle-php-flavor-mode) ; ALT+z
 
 
 
