@@ -79,6 +79,9 @@
   editorconfig
   ;; php-completion
 
+  dracula-theme
+  indium
+
   psysh ; Seems to be the true PHP REPL https://github.com/zonuexe/psysh.el
 
   ;; auto-complete-exuberant-ctags
