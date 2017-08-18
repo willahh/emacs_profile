@@ -83,6 +83,15 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 ** DONE em C-h ne fonctionne pas dans le mini panneau du bas (visible sur l'ouverture d'n fichier)
    [2017-08-07 Mon]
 
+
+** TODO em : Parenthèses de toute les couleurs uniquement pour lisp elisp clisp
+   [2017-08-09 Wed]
+   [[file:~/www/project/rb_3d/rb_3d_1.0/dev/module/project/list.php]]
+** TODO em Remettre M-q original, paredit prend le pas
+   [2017-08-18 Fri]
+   [[file:~/www/project/rb_3d/rb_3d_1.0/dev/layout/style.css::/*%20Mauvais%20padding%20top%20lorsque%20logge%20sur%20la%20page%20configure%20en%20mobile%20*/][file:~/www/project/rb_3d/rb_3d_1.0/dev/layout/style.css::/* Mauvais
+   padding top lorsque logge sur la page configure en mobile */]]
+
 ** TODO em : Nouvelle frame : Mettre le mode projectile sur le buffer actif
    [2017-07-28 Fri]
    [[file:~/.Trash]]

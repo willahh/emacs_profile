@@ -4,6 +4,8 @@
 
 ;; M-x (M-x main command) -> "cut"
 (global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
+(global-set-key (kbd "M-q") 'fill-paragraph)
+(define-key paredit-mode-map (kbd "M-q") 'fill-paragraph)
 (global-set-key (kbd "C-x <C-m>") 'helm-M-x)
 
 ;; M-c (capitalize-word) -> "copy"
