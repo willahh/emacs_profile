@@ -70,7 +70,9 @@
 (define-key key-translation-map (kbd "ESC") (kbd "C-g"))
 (define-key ivy-minibuffer-map (kbd "<escape>") 'minibuffer-keyboard-quit)
 (define-key ivy-minibuffer-map (kbd "C-h") 'delete-backward-char)
-(define-key ivy-minibuffer-map (kbd "C-w") 'delete-backward-char)
+;; (define-key ivy-minibuffer-map (kbd "C-w") 'delete-backward-char)
+(define-key ivy-minibuffer-map (kbd "C-w") 'backward-kill-word)
+
 
 
 ;; (define-key key-translation-map "\C-q" "\C-g")

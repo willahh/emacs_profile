@@ -22,29 +22,35 @@
 
 ;; Generic backend implementation.
 
-;; Backends should define a new backend symbol using `indium-register-backend',
+;; Backends should define a new backend symbol using `indium-register-backend'.
+;; Once a connection to a JavaScript runtime is established by the backend, it
+;; should set `indium-current-connection'.
 
 ;;; Code:
 
 (require 'map)
 (require 'seq)
-(require 'indium-repl)
 (require 'indium-debugger-litable)
+(eval-and-compile (require 'indium-structs))
 
 (declare 'indium-debugger-unset-current-buffer)
 
-(defvar indium-connection nil
-  "Current connection to the browser tab.
+(defgroup indium-backend nil
+  "Indium backend."
+  :prefix "indium-backend-"
+  :group 'indium)
 
-A connection should be an alist with the following required keys:
-`backend' and `url'.  Other backend-specific keys might be used
-by backends.")
+(defcustom indium-connection-open-hook nil
+  "Hook called after a connection is open."
+  :group 'indium-backend
+  :type 'hook)
+
+(defcustom indium-connection-closed-hook nil
+  "Hook called after a connection is closed."
+  :group 'indium-backend
+  :type 'hook)
 
 (defvar indium-backends nil "List of registered backends.")
-
-(defun indium-backend ()
-  "Return the backend for the current connection."
-  (map-elt indium-connection 'backend))
 
 (defun indium-register-backend (backend)
   "Register a new BACKEND.
@@ -55,22 +61,25 @@ BACKEND should be a symbol."
   "Close the current connection and kill its REPL buffer if any.
 When called interactively, prompt for a confirmation first."
   (interactive)
-  (unless indium-connection
+  (unless-indium-connected
     (user-error "No active connection to close"))
   (when (or (not (called-interactively-p 'interactive))
             (y-or-n-p (format "Do you really want to close the connection to %s ? "
-                              (map-elt indium-connection 'url))))
-    (indium-backend-close-connection (indium-backend))
+                              (indium-current-connection-url))))
+    (indium-backend-close-connection (indium-current-connection-backend))
     (indium-backend-cleanup-buffers)
-    (setq indium-connection nil)))
+    (setq indium-current-connection nil)))
 
 (defun indium-reconnect ()
   "Try to re-establish a connection.
 The new connection is based on the current (usually closed) one."
   (interactive)
-  (unless indium-connection
+  (unless-indium-connected
     (user-error "No Indium connection to reconnect to"))
-  (indium-backend-reconnect (indium-backend)))
+  (indium-backend-reconnect (indium-current-connection-backend)))
+
+(declare-function indium-repl-get-buffer "indium-repl.el")
+(declare-function indium-debugger-unset-current-buffer "indium-debugger.el")
 
 (defun indium-backend-cleanup-buffers ()
   "Cleanup all Indium buffers."
@@ -82,19 +91,17 @@ The new connection is based on the current (usually closed) one."
   (when-let ((buf (indium-repl-get-buffer)))
     (kill-buffer buf)))
 
-;;; indium-connection methods
-
-(cl-defgeneric indium-backend-active-connection-p (backend)
+(cl-defgeneric indium-backend-active-connection-p (_backend)
   "Return non-nil if the current connection is active."
   t)
 
-(cl-defgeneric indium-backend-close-connection (backend)
+(cl-defgeneric indium-backend-close-connection (_backend)
   "Close the current connection.")
 
-(cl-defgeneric indium-backend-reconnect (backend)
+(cl-defgeneric indium-backend-reconnect (_backend)
   "Try to re-establish a connection.
 The new connection is created based on the current
-`indium-connection'.")
+`indium-current-connection'.")
 
 (cl-defgeneric indium-backend-evaluate (backend string &optional callback)
   "Evaluate STRING then call CALLBACK.
@@ -112,57 +119,19 @@ Evaluate CALLBACK on the filtered candidates.
 
 EXPRESSION should be a valid JavaScript expression string.")
 
-(cl-defgeneric indium-backend-add-breakpoint (backend file line &optional callback condition)
-  "Request the addition of a breakpoint.
-
-The breakpoint is addet to FILE on line LINE.  When CALLBACK is
-non-nil, evaluate it with the breakpoint's location and id.
+(cl-defgeneric indium-backend-add-breakpoint (backend breakpoint &optional callback)
+  "Request the addition of BREAKPOINT.
 
 Concrete implementations should call
-`indium-backend-register-breakpoint' once the addition has been
-performed.")
+`indium-current-connection-add-breakpoint' once the addition has
+been performed.")
 
 (cl-defgeneric indium-backend-remove-breakpoint (backend id)
   "Request the removal of the breakpoint with id ID.
 
 Concrete implementations should call
-`indium-backend-unregister-breakpoint' once the removal has been
-performed.")
-
-(defun indium-backend-remove-all-breakpoints-from-buffer (buffer)
-  "Remove all breakpoints from BUFFER."
-  (with-current-buffer buffer
-    (seq-do (lambda (brk)
-              (indium-backend-remove-breakpoint (indium-backend)
-                                                (map-elt brk 'id)))
-            (indium-backend-get-breakpoints-in-file buffer-file-name))))
-
-(defun indium-backend-register-breakpoint (id line file)
-  "Register the breakpoint with ID at LINE in FILE.
-
-Breakpoints are registered locally in the current connection so
-that if a buffer later visits FILE with `indium-interaction-mode'
-turned on, the breakpoint can be added back to the buffer."
-  (when (and indium-connection
-             (null (map-elt indium-connection 'breakpoints)))
-    (map-put indium-connection 'breakpoints (make-hash-table)))
-  (let ((breakpoint `((line . ,line)
-                      (file . ,file))))
-    (map-put (map-elt indium-connection 'breakpoints) id breakpoint)))
-
-(defun indium-backend-unregister-breakpoint (id)
-  "Remove the breakpoint with ID from the current connection."
-  (map-delete (map-elt indium-connection 'breakpoints) id))
-
-(defun indium-backend-get-breakpoints ()
-  "Return all breakpoints in the current connection.
-A breakpoint is an alist with the keys `id', `file', and `line'."
-  (let ((breakpoints (map-elt indium-connection 'breakpoints)))
-    (map-keys-apply (lambda (key)
-                      `((id . ,key)
-                        (file . ,(map-nested-elt breakpoints `(,key file)))
-                        (line . ,(map-nested-elt breakpoints `(,key line)))))
-                    breakpoints)))
+`indium-current-connection-remove-breakpoint' once the removal
+has been performed.")
 
 (cl-defgeneric indium-backend-deactivate-breakpoints (backend)
   "Deactivate all breakpoints.
@@ -173,13 +142,6 @@ The runtime will not pause on any breakpoint."
   "Deactivate all breakpoints.
 The runtime will not pause on any breakpoint."
   )
-
-(defun indium-backend-get-breakpoints-in-file (file)
-  "Return all breakpoints in FILE."
-  (let ((breakpoints (indium-backend-get-breakpoints)))
-    (seq-filter (lambda (brk)
-                  (string= (map-elt brk 'file) file))
-                breakpoints)))
 
 (cl-defgeneric indium-backend-set-script-source (backend url source &optional callback)
   "Update the contents of the script at URL to SOURCE.")
@@ -196,9 +158,6 @@ prototype chain of the remote object.")
   "Get the source of the script for FRAME.
 Evaluate CALLBACK with the result.")
 
-(cl-defgeneric indium-backend-get-script-url (backend frame)
-  "Return the url of the script for FRAME, or nil.")
-
 (cl-defgeneric indium-backend-resume (backend &optional callback)
   "Resume the debugger and evaluate CALLBACK if non-nil.")
 
@@ -212,8 +171,7 @@ Evaluate CALLBACK with the result.")
   "Step over the current stack frame and evaluate CALLBACK if non-nil.")
 
 (cl-defgeneric indium-backend-continue-to-location (backend location &optional callback)
-  "Continue to LOCATION and evaluate CALLBACK if non-nil.
-Location should be an alist with a `column' and `row' key.")
+  "Continue to LOCATION and evaluate CALLBACK if non-nil.")
 
 (defun indium-backend-object-reference-p (value)
   "Return non-nil if VALUE is a reference to a remote object."

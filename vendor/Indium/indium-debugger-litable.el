@@ -93,6 +93,20 @@
                                properties)))
       (indium-debugger-litable-add-value-overlay node property)))
 
+(defun indium-debugger-litable-add-exception-overlay (description)
+  "Add an overlay with the DESCRIPTION of an exception where an error occurs."
+  (let* ((inhibit-read-only t)
+         (ov (make-overlay (point-at-bol) (point-at-eol)))
+         (contents (indium-debugger-litable--overlay-string
+                    (format " %s" (car (split-string description "\n"))))))
+    (overlay-put ov 'indium-litable t)
+    (overlay-put ov 'indium-exception-description t)
+    (font-lock-prepend-text-property 1
+                                     (seq-length contents)
+                                     'face 'font-lock-warning-face
+                                     contents)
+    (overlay-put ov 'after-string contents)))
+
 (defun indium-debugger-litable-add-value-overlay (node property)
   "Add an overlay displaying the value of NODE for PROPERTY.
 Ignore if the object name of NODE is not in the current scope."
@@ -103,21 +117,24 @@ Ignore if the object name of NODE is not in the current scope."
           (contents (string-trim (indium-render-property-to-string property)))
           (name (map-elt property 'name)))
       (unless (seq-contains (overlay-get ov 'indium-properties) name)
-        (if-let ((existing-contents (overlay-get ov 'after-string)))
-            (setq contents (concat existing-contents ", " contents))
-          (setq contents (concat " " contents)))
-        (setq contents (indium-debugger-litable--overlay-string contents))
-        (font-lock-prepend-text-property 0
-                                         (seq-length contents)
-                                         'face
-                                         'indium-litable-face
-                                         contents)
-        (overlay-put ov
-                     'indium-properties
-                     (cons name (overlay-get ov 'indium-properties)))
-        (overlay-put ov
-                     'after-string
-                     contents)))))
+        ;; The overlay is already used to display exception details, so do not
+        ;; append anything to it.
+        (unless (overlay-get ov 'indium-exception-description)
+          (if-let ((existing-contents (overlay-get ov 'after-string)))
+              (setq contents (concat existing-contents ", " contents))
+            (setq contents (concat " " contents)))
+          (setq contents (indium-debugger-litable--overlay-string contents))
+          (font-lock-prepend-text-property 0
+                                           (seq-length contents)
+                                           'face
+                                           'indium-litable-face
+                                           contents)
+          (overlay-put ov
+                       'indium-properties
+                       (cons name (overlay-get ov 'indium-properties)))
+          (overlay-put ov
+                       'after-string
+                       contents))))))
 
 (defun indium-debugger-litable--overlay-string (string)
   "Return the STRING to be added to an overlay at the end of the line.

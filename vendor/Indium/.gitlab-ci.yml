@@ -1,10 +1,16 @@
-image: nicolaspetton/emacs:armhf
+image: nicolaspetton/emacs
 
 before_script:
  - cask install
+ - emacs --version
+ - curl -sL https://deb.nodesource.com/setup_7.x | bash -
+ - apt-get install -y nodejs
+
+lint:
+  script:
+    - ./run-lint.sh
 
 test:
   script:
-  - emacs --version
-  - cask exec ert-runner -L .
+    - ./run-tests.sh
   
