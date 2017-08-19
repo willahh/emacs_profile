@@ -1434,6 +1434,11 @@ the visible part of the current buffer following point. "
   ;; (replace-string "dom "[x]")
   )
 
+(defun wil-dired-new-dir (name)
+  (interactive "sName: ")
+  (mkdir name))
+
+
 ;; https://www.emacswiki.org/emacs/AutoIndentation
 ;; (defadvice kill-line (before check-position activate)
 ;;   (if (and (eolp) (not (bolp)))

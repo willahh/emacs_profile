@@ -51,10 +51,12 @@
 ;; Auto-refresh dired on file change
 ;; Source : http://superuser.com/a/566401
 (add-hook 'dired-mode-hook 'auto-revert-mode)
+(setq auto-revert-interval 1)
 
 ;; Quickly copy/move file in Emacs Dired
 ;; Source : http://emacs.stackexchange.com/q/5603
-(setq dired-dwim-target t)
+;; Update : nil 
+(setq dired-dwim-target nil)
 
 
 

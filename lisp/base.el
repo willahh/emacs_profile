@@ -463,3 +463,6 @@
 
 (setq-default horizontal-scroll-bar nil)
 (setq horizontal-scroll-bar nil)
+
+;; Delete move to trash
+(setq delete-by-moving-to-trash t)

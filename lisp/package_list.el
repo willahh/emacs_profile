@@ -27,6 +27,7 @@
   ov ; Utlise pour quelques fonctions utils de prelude
   ibuffer-vc
   flycheck-pos-tip
+  jabber
   
 
 

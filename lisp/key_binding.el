@@ -282,11 +282,11 @@ Version 2016-12-27"
 (define-key php-mode-map [(control x) (control j)] 'dired-jump)
 (define-key web-mode-map [(control x) (control j)] 'dired-jump)
 (define-key dired-mode-map (kbd "C-x w") 'wdired-change-to-wdired-mode)
-
-
 ;; (define-key dired-mode-map [(command shift n)] 'mkdir)
 ;; (define-key dired-mode-map (kbd "M-N") 'evil-buffer-new)
-(define-key dired-mode-map (kbd "M-n") 'mkdir)
+(define-key dired-mode-map (kbd "M-n") 'wil-dired-new-dir)
+(define-key dired-mode-map (kbd "M-c") 'dired-ranger-copy)
+(define-key dired-mode-map (kbd "M-v") 'dired-ranger-paste)
 
 ;; Multi cursor stuf
 (global-set-key (kbd "ı") 'mc/mark-next-lines) ; ALT+SHIFT+p
@@ -770,6 +770,7 @@ Version 2016-12-27"
 (global-set-key [(control shift j)] 'smart-open-line-above)
 (define-key web-mode-map [(control shift j)] 'smart-open-line-above)
 ;; (global-set-key (kbd "C-M-j") 'newline-and-indent)
+(global-set-key (kbd "C-o") 'smart-open-line-above)
 
 
 ;; Below
@@ -980,6 +981,7 @@ Version 2016-12-27"
 (global-set-key (kbd "C-M-s-s") 'projectile-ag) ; Control+Meta+Super+s
 (global-set-key (kbd "s-c") 'org-capture)
 (global-set-key (kbd "s-b") 'ivy-switch-buffer)
+(global-set-key (kbd "s-k") 'fixup-whitespace)
 
 
 
