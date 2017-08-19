@@ -436,6 +436,10 @@
 
 (setq command-error-function #'my-command-error-function)
 
+(add-hook 'eval-expression-minibuffer-setup-hook #'eldoc-mode)
+(add-hook 'eval-expression-minibuffer-setup-hook #'paredit-mode)
+
+
 
 (defun remove-dos-eol ()
   "Do not show ^M in files containing mixed UNIX and DOS line endings."
