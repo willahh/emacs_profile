@@ -179,15 +179,15 @@ prototype chain of the remote object."
 (cl-defmethod indium-backend-set-script-source ((_backend (eql v8)) url source &optional callback)
   (when-let ((script (indium-script-find-from-url url)))
     (indium-v8--send-request
-     `((method . "Runtime.compileScript")
-       (params . ((expression . ,source)
-                  (sourceURL . ,url)
-                  (persistScript . :json-false))))
+     `((method . "Debugger.setScriptSource")
+       (params . ((scriptId . ,(indium-script-id script))
+		  (scriptSource . ,source))))
      (lambda (_)
        (indium-v8--send-request
-        `((method . "Debugger.setScriptSource")
-          (params . ((scriptId . ,(indium-script-id script))
-                     (scriptSource . ,source))))
+	`((method . "Runtime.compileScript")
+	  (params . ((expression . ,source)
+		     (sourceURL . ,url)
+		     (persistScript . :json-false))))
         (lambda (_)
           (when callback
             (funcall callback))))))))
@@ -652,15 +652,23 @@ RESULT should be a reference to a remote object."
 
 (defun indium-v8--frames (list)
   "Return a list of frames built from LIST."
-  (seq-map (lambda (frame)
-	     (make-indium-frame
-	      :scope-chain (indium-v8--scope-chain frame)
-	      :location (indium-v8--convert-from-v8-location (map-elt frame 'location))
-	      :type (map-elt frame 'type)
-	      :script (indium-script-find-by-id (map-nested-elt frame '(location scriptId)))
-	      :function-name (map-elt frame 'functionName)
-	      :id (map-elt frame 'callFrameId)))
-           list))
+  (seq-filter #'identity
+	      (seq-map
+	       (lambda (frame)
+		 ;; For some reason, sometimes V8 will send frames with
+		 ;; a `scriptId' that was never parsed, so ignore these
+		 ;; stack frames
+		 (when-let ((script (indium-script-find-by-id
+				     (map-nested-elt frame '(location scriptId)))))
+		   (make-indium-frame
+		    :scope-chain (indium-v8--scope-chain frame)
+		    :location (indium-v8--convert-from-v8-location
+			       (map-elt frame 'location))
+		    :type (map-elt frame 'type)
+		    :script script
+		    :function-name (map-elt frame 'functionName)
+		    :id (map-elt frame 'callFrameId))))
+	       list)))
 
 (defvar indium-v8--request-id 0)
 (defun indium-v8--next-request-id ()

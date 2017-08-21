@@ -8,6 +8,7 @@
 ;; (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
 (load-file "~/.emacs.d/lisp/defun.el")
+(load-file "~/.emacs.d/lisp/system.el")
 (load-file "~/.emacs.d/lisp/base.el")
 (load-file "~/.emacs.d/lisp/package_list.el")
 (load-file "~/.emacs.d/lisp/package_installer.el")
@@ -23,7 +24,6 @@
 (load-file "~/.emacs.d/lisp/vc.el")
 (load-file "~/.emacs.d/lisp/markdown.el")
 (load-file "~/.emacs.d/lisp/search.el")
-(load-file "~/.emacs.d/lisp/system.el")
 (load-file "~/.emacs.d/lisp/buffer.el")
 (load-file "~/.emacs.d/lisp/web_mode.el")
 (load-file "~/.emacs.d/lisp/syntax_checker.el")
@@ -132,12 +132,12 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(mode-line ((t (:box (:line-width 0)))))
- '(rainbow-delimiters-depth-1-face ((t (:foreground "deep sky blue"))))
- '(rainbow-delimiters-depth-2-face ((t (:foreground "deep pink"))))
- '(rainbow-delimiters-depth-3-face ((t (:foreground "#0000ff"))))
- '(rainbow-delimiters-depth-4-face ((t (:foreground "dark orange"))))
- '(rainbow-delimiters-depth-5-face ((t (:foreground "#009900"))))
- '(rainbow-delimiters-depth-6-face ((t (:foreground "#336699"))))
+ '(rainbow-delimiters-depth-1-face ((t (:foreground "#5abeee"))))
+ '(rainbow-delimiters-depth-2-face ((t (:foreground "#ff00a0"))))
+ '(rainbow-delimiters-depth-3-face ((t (:foreground "#d2ff00"))))
+ '(rainbow-delimiters-depth-4-face ((t (:foreground "#ffa200"))))
+ '(rainbow-delimiters-depth-5-face ((t (:foreground "#907373"))))
+ '(rainbow-delimiters-depth-6-face ((t (:foreground "#cc99ff"))))
  '(rainbow-delimiters-depth-7-face ((t (:foreground "#fa75e2"))))
  '(rainbow-delimiters-depth-8-face ((t (:foreground "#55bdf0"))))
  '(scroll-bar ((t (:background "magenta")))))
@@ -203,3 +203,4 @@
                (save-excursion
                  (end-of-defun)
                  (point)))))
+

@@ -43,11 +43,6 @@
 (declare-function indium-backend-deactivate-breakpoints "indium-backend.el")
 (declare-function indium-workspace-make-url "indium-workspace.el")
 
-(defcustom indium-update-script-on-save nil
-  "When non-nil, update (hotswap) the script source with the contents of the buffer."
-  :type 'boolean
-  :group 'indium)
-
 (defvar indium-update-script-source-hook nil
   "Hook run when script source is updated.")
 
@@ -108,9 +103,16 @@ If PRINT is non-nil, print the output into the current buffer."
   (indium-interaction--ensure-connection)
   (js2-mode-wait-for-parse
    (lambda ()
-     (indium-eval (js2-node-string (indium-interaction-node-before-point))
-                  (lambda (result _error)
-                    (indium-inspector-inspect result))))))
+     (indium-inspect-expression
+      (js2-node-string (indium-interaction-node-before-point))))))
+
+(defun indium-inspect-expression (expression)
+  "Prompt for EXPRESSION to be inspected."
+  (interactive "sInspect expression: ")
+  (indium-interaction--ensure-connection)
+  (indium-eval expression
+	       (lambda (result _error)
+		 (indium-inspector-inspect result))))
 
 (defun indium-switch-to-repl-buffer ()
   "Switch to the repl buffer if any."
@@ -235,6 +237,7 @@ hitting a breakpoint."
     (define-key map (kbd "C-x C-e") #'indium-eval-last-node)
     (define-key map (kbd "C-M-x") #'indium-eval-defun)
     (define-key map (kbd "C-c M-i") #'indium-inspect-last-node)
+    (define-key map (kbd "C-c M-:") #'indium-inspect-expression)
     (define-key map (kbd "C-c C-z") #'indium-switch-to-repl-buffer)
     (define-key map (kbd "C-c C-k") #'indium-update-script-source)
     (define-key map (kbd "C-c b b") #'indium-add-breakpoint)
@@ -253,6 +256,7 @@ hitting a breakpoint."
         ("Evaluation"
          ["Evaluate last node" indium-eval-last-node]
          ["Inspect last node" indium-inspect-last-node]
+	 ["Inspect expression" indium-inspect-expression]
          ["Evaluate function" indium-eval-defun])
         "--"
         ("Breakpoints"
@@ -287,19 +291,20 @@ hitting a breakpoint."
 (defun indium-interaction-update ()
   "Update breakpoints and script source of the current buffer."
   (when (and indium-interaction-mode indium-current-connection)
-    (indium-breakpoint-update-breakpoints)
-    (when indium-update-script-on-save
-      (indium-update-script-source))))
+    (indium-update-script-source)))
 
 (defun indium-update-script-source ()
-  "Update the script source of the backend based on the current buffer."
+  "Update the script source of the backend from the current buffer.
+update all breakpoints set in the current buffer as well."
   (interactive)
   (when-let ((url (indium-workspace-make-url buffer-file-name)))
-    (indium-backend-set-script-source (indium-current-connection-backend)
-                                      url
-                                      (buffer-string)
-                                      (lambda ()
-                                        (run-hook-with-args 'indium-update-script-source-hook url)))))
+    (indium-backend-set-script-source
+     (indium-current-connection-backend)
+     url
+     (buffer-string)
+     (lambda ()
+       (indium-breakpoint-update-breakpoints)
+       (run-hook-with-args 'indium-update-script-source-hook url)))))
 
 (defun indium-interaction--guard-breakpoint-at-point ()
   "Signal an error if there is no breakpoint on the current line."

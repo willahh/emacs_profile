@@ -5,6 +5,7 @@
 ;; M-x (M-x main command) -> "cut"
 (global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
 (global-set-key (kbd "C-x <C-m>") 'helm-M-x)
+(global-set-key (kbd "C-;") "\C-e;") ;; Append ; at the end of a line
 
 ;; M-c (capitalize-word) -> "copy"
 ;; (global-set-key (kbd "M-c") 'kill-ring-save)
@@ -392,7 +393,7 @@ Version 2016-12-27"
 
 (global-set-key (kbd "C-,") 'company-files)
 
-(require 'iedit)
+;; (require 'iedit)
 (require 'org)
 
 ;; yas-expand
