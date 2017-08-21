@@ -497,6 +497,9 @@
 (define-key prog-mode-map (kbd "C-h") 'paredit-backward-delete)
 (define-key php-mode-map (kbd "C-h") 'paredit-backward-delete)
 
+(define-key php-mode-map (kbd "C-M-a") 'beginning-of-defun)
+(define-key php-mode-map (kbd "C-M-e") 'end-of-defun)
+
 
 
 
