@@ -86,6 +86,7 @@
       org-todo
       paredit-backslash
       paredit-backward
+      paredit-backward-down
       paredit-backward-kill-word
       paredit-doublequote
       paredit-forward

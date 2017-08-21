@@ -1,6 +1,7 @@
 (require 'ggtags)
 (require 'magit)
 (require 'paredit)
+(require 'iedit)
 
 ;; M-x (M-x main command) -> "cut"
 (global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
@@ -41,6 +42,8 @@
 (global-set-key (kbd "C-x M-w") 'kill-ring-save)
 (global-set-key (kbd "M-X") 'other-frame) ;; Same keybinding from osx habits
 
+
+(require 'php-mode)
 
 ;; Toggle fullscreen
 (global-set-key (kbd "C-c C-M-f") 'toggle-frame-fullscreen)
@@ -439,8 +442,10 @@ Version 2016-12-27"
 ;; (global-set-key (kbd "C-x TAB") 'counsel-imenu)
 ;; (global-set-key (kbd "C-x TAB") 'helm-imenu)
 ;; (global-set-key (kbd "C-x <C-i>") 'helm-imenu)
+
 (global-set-key (kbd "C-x C-i") 'helm-imenu)
 (global-set-key (kbd "C-x <C-i>") 'helm-imenu)
+
 
 ;; Update to use counsel-find-file instead of helm-find-file
 ;; Update : Non utilisé
@@ -629,14 +634,16 @@ Version 2016-12-27"
 ;; bon comportement par default, mise en commentaire et désactivation
 ;; du bind C-i
 ;; Update : Remise a dispo de C-i, bind de C-i sur une fonction unique : yas expand
-;; 
-(define-key input-decode-map [?\C-i] [C-i])
-(define-key input-decode-map [?\C-\S-i] [C-S-i])
+;; Update : Retour sur le comportement par default de C-i sur Emacs : tab
 
-(global-set-key (kbd "<C-i>") 'yas-expand)
-(define-key magit-status-mode-map (kbd "<C-i>") 'yas-expand)
-(define-key help-mode-map (kbd "<C-i>") 'yas-expand)
-(define-key diff-mode-map (kbd "<C-i>") 'yas-expand)
+;; (define-key input-decode-map [?\C-i] [C-i])
+;; (define-key input-decode-map [?\C-\S-i] [C-S-i])
+
+;;
+;; (global-set-key (kbd "<C-i>") 'yas-expand)
+;; (define-key magit-status-mode-map (kbd "<C-i>") 'yas-expand)
+;; (define-key help-mode-map (kbd "<C-i>") 'yas-expand)
+;; (define-key diff-mode-map (kbd "<C-i>") 'yas-expand)
 
 ;; (global-set-key (kbd "<C-i>") 'avy-goto-word-1-below)
 ;; (define-key magit-status-mode-map (kbd "<C-i>") 'avy-goto-word-1-below)

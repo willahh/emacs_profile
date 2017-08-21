@@ -466,6 +466,7 @@
 
 (require 'smartparens-config)
 (require 'smartparens-html)
+(require 'php-mode)
 
 (define-key prog-mode-map (kbd "C-M-f") 'sp-forward-sexp)
 (define-key php-mode-map (kbd "C-M-f") 'sp-forward-sexp)
@@ -499,6 +500,21 @@
 
 (define-key php-mode-map (kbd "C-M-a") 'beginning-of-defun)
 (define-key php-mode-map (kbd "C-M-e") 'end-of-defun)
+
+(define-key prog-mode-map (kbd "M-(") 'paredit-wrap-round)
+(define-key php-mode-map (kbd "M-(") 'paredit-wrap-round)
+
+(define-key prog-mode-map (kbd "M-{") 'paredit-wrap-curly)
+(define-key php-mode-map (kbd "M-{") 'paredit-wrap-curly)
+
+(define-key prog-mode-map (kbd "M-[") 'paredit-wrap-angled)
+(define-key php-mode-map (kbd "M-[") 'paredit-wrap-angled)
+
+(define-key prog-mode-map (kbd "<C-left>")'paredit-forward-barf-sexp)
+(define-key php-mode-map (kbd "<C-left>")'paredit-forward-barf-sexp)
+
+(define-key prog-mode-map (kbd "<C-right>")'paredit-forward-slurp-sexp)
+(define-key php-mode-map (kbd "<C-right>")'paredit-forward-slurp-sexp)
 
 
 
