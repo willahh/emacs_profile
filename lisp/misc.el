@@ -1090,3 +1090,90 @@ _d_: subtree
 
 ;; Gradle
 (require 'gradle-mode)
+
+
+;; Jabber
+;; (require 'jabber)
+
+(setq jabber-account-list 
+      '(("wravel@gmail.com"
+         (:network-server . "talk.google.com")
+         (:connection-type . ssl)
+         (:port . 443))))
+
+;; (setq jabber-username "wravel" ;; notice: leave off the @gmail.com
+;;       jabber-password ""
+;;       jabber-server "gmail.com"     ;; this is a part of your user ID, not a part of the server you will connect to.
+;;       jabber-network-server "talk.google.com"  ;; this is the actual server to connect to
+;;       jabber-port 5223
+;;       jabber-connection-type 'ssl)
+
+;; (setq jabber-account-list '("wravel@gmail.com"
+;;                             (
+;;                              :net-work-server . "talk.google.com")
+;;                             :connection-type . sll))
+
+;; (defun jabber ()
+;;   (interactive)
+;;   (jabber-connect)
+;;   (switch-to-buffer "*-jabber-*"))
+
+
+
+
+
+
+
+
+
+(use-package dired-ranger
+  :ensure t
+  :bind (:map dired-mode-map
+              ("W" . dired-ranger-copy)
+              ("X" . dired-ranger-move)
+              ("Y" . dired-ranger-paste)))
+
+;; http://pragmaticemacs.com/emacs/insert-todays-date/
+(defun insert-todays-date (arg)
+  (interactive "P")
+  (insert (if arg
+              (format-time-string "%d-%m-%Y")
+            (format-time-string "%Y-%m-%d"))))
+
+
+
+
+
+;; source: http://steve.yegge.googlepages.com/my-dot-emacs-file
+(defun rename-file-and-buffer (new-name)
+  "Renames both current buffer and file it's visiting to NEW-NAME."
+  (interactive "sNew name: ")
+  (let ((name (buffer-name))
+        (filename (buffer-file-name)))
+    (if (not filename)
+        (message "Buffer '%s' is not visiting a file!" name)
+      (if (get-buffer new-name)
+          (message "A buffer named '%s' already exists!" new-name)
+        (progn
+          (rename-file filename new-name 1)
+          (rename-buffer new-name)
+          (set-visited-file-name new-name)
+          (set-buffer-modified-p nil))))))
+
+(defun wil-dired-rename (new-name)
+  "Rename from dired"
+  (interactive "sNew name: ")
+  (let ((name (buffer-name))
+        (filename (buffer-file-name)))
+    (if (not filename)
+        (message "Buffer '%s' is not visiting a file!" name)
+      (if (get-buffer new-name)
+          (message "A buffer named '%s' already exists!" new-name)
+        (progn
+          (rename-file filename new-name 1)
+          (rename-buffer new-name)
+          (set-visited-file-name new-name)
+          (set-buffer-modified-p nil))))))
+
+
+

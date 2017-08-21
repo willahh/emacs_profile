@@ -72,7 +72,9 @@
 (define-key key-translation-map (kbd "ESC") (kbd "C-g"))
 (define-key ivy-minibuffer-map (kbd "<escape>") 'minibuffer-keyboard-quit)
 (define-key ivy-minibuffer-map (kbd "C-h") 'delete-backward-char)
-(define-key ivy-minibuffer-map (kbd "C-w") 'delete-backward-char)
+;; (define-key ivy-minibuffer-map (kbd "C-w") 'delete-backward-char)
+(define-key ivy-minibuffer-map (kbd "C-w") 'backward-kill-word)
+
 
 
 ;; (define-key key-translation-map "\C-q" "\C-g")
@@ -282,11 +284,11 @@ Version 2016-12-27"
 (define-key php-mode-map [(control x) (control j)] 'dired-jump)
 (define-key web-mode-map [(control x) (control j)] 'dired-jump)
 (define-key dired-mode-map (kbd "C-x w") 'wdired-change-to-wdired-mode)
-
-
 ;; (define-key dired-mode-map [(command shift n)] 'mkdir)
 ;; (define-key dired-mode-map (kbd "M-N") 'evil-buffer-new)
-(define-key dired-mode-map (kbd "M-n") 'mkdir)
+(define-key dired-mode-map (kbd "M-n") 'wil-dired-new-dir)
+(define-key dired-mode-map (kbd "M-c") 'dired-ranger-copy)
+(define-key dired-mode-map (kbd "M-v") 'dired-ranger-paste)
 
 ;; Multi cursor stuf
 (global-set-key (kbd "ı") 'mc/mark-next-lines) ; ALT+SHIFT+p
@@ -581,6 +583,10 @@ Version 2016-12-27"
 (global-set-key (kbd "◊") 'evil-scroll-up) ; ALT+v
 ;; (global-set-key (kbd "M-v") 'evil-scroll-up)
 
+(global-set-key (kbd "C-x <tab>") 'indent-rigidly) ; Default emacs key binding
+(define-key indent-rigidly-map [(shift tab)] 'indent-rigidly-left-to-tab-stop)
+(define-key indent-rigidly-map [(tab)] 'indent-rigidly-right-to-tab-stop)
+
 ;; web mode
 ;; (define-key web-mode-map [(meta shift j)] 'web-mode-tag-next)
 ;; (define-key web-mode-map [(meta shift k)] 'web-mode-tag-previous)
@@ -758,14 +764,16 @@ Version 2016-12-27"
 
 
 ;; Above
-(global-set-key (kbd "C-M-j") 'smart-open-line-above)
-(define-key php-mode-map (kbd "C-M-j") 'smart-open-line-above)
+(global-set-key (kbd "C-M-j") 'open-line-below)
+(global-set-key (kbd "C-M-j") 'open-line-below)
+(define-key php-mode-map (kbd "C-M-j") 'open-line-below)
 
 (global-set-key [(control shift j)] 'smart-open-line-above)
 (global-set-key [(control shift j)] 'smart-open-line-above)
 (define-key web-mode-map [(control shift j)] 'smart-open-line-above)
 ;; (global-set-key (kbd "C-M-j") 'newline-and-indent)
-(global-set-key (kbd "C-M-j") 'smart-open-line-above)
+(global-set-key (kbd "C-o") 'smart-open-line-above)
+
 
 ;; Below
 (global-set-key (kbd "C-M-S-j") 'open-line-below)
@@ -975,6 +983,7 @@ Version 2016-12-27"
 (global-set-key (kbd "C-M-s-s") 'projectile-ag) ; Control+Meta+Super+s
 (global-set-key (kbd "s-c") 'org-capture)
 (global-set-key (kbd "s-b") 'ivy-switch-buffer)
+(global-set-key (kbd "s-k") 'fixup-whitespace)
 
 
 

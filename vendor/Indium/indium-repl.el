@@ -24,11 +24,20 @@
 
 ;;; Code:
 
-(require 'company)
 (require 'indium-render)
 (require 'indium-faces)
+(require 'indium-backend)
+
+(require 'company)
+(require 'easymenu)
 (require 'map)
 (require 'js)
+
+(require 'subr-x)
+(require 'ansi-color)
+
+(declare-function indium-workspace-lookup-file-safe "indium-workspace.el")
+(declare-function indium-inspector-inspect "indium-inspector.el")
 
 (defgroup indium-repl nil
   "Interaction with the REPL."
@@ -37,6 +46,9 @@
 
 (defvar indium-repl-evaluate-hook nil
   "Hook run when input is evaluated in the repl.")
+
+(defvar indium-repl-switch-from-buffer nil
+  "The buffer from which repl was activated last time.")
 
 (defvar indium-repl-history nil "History of the REPL inputs.")
 (make-variable-buffer-local 'indium-repl-history)
@@ -70,7 +82,7 @@
   "*JS REPL*")
 
 (defun indium-repl-setup-buffer (buffer)
-  "Setup the REPL BUFFER"
+  "Setup the REPL BUFFER."
   (with-current-buffer buffer
     (indium-repl-mode)
     (indium-repl-setup-markers)
@@ -99,8 +111,8 @@ Doing this will also close all inspectors and debugger buffers
 connected to the process.
 
 ")
-   (map-elt indium-connection 'backend)
-   (map-elt indium-connection 'url)))
+   (indium-current-connection-backend)
+   (indium-current-connection-url)))
 
 
 (defun indium-repl-setup-markers ()
@@ -151,10 +163,10 @@ connected to the process.
 (defun indium-repl-inspect ()
   "Inspect the result of the evaluation of the input at point."
   (interactive)
-  (indium-backend-evaluate (indium-backend)
-                         (indium-repl--input-content)
-                         (lambda (result _error)
-                           (indium-inspector-inspect result))))
+  (indium-backend-evaluate (indium-current-connection-backend)
+			   (indium-repl--input-content)
+			   (lambda (result _error)
+			     (indium-inspector-inspect result))))
 
 (defun indium-repl--input-content ()
   "Return the content of the current input."
@@ -169,7 +181,7 @@ connected to the process.
 (defun indium-repl-evaluate (string)
   "Evaluate STRING in the browser tab and emit the output."
   (push string indium-repl-history)
-  (indium-backend-evaluate (indium-backend) string #'indium-repl-emit-value)
+  (indium-backend-evaluate (indium-current-connection-backend) string #'indium-repl-emit-value)
   ;; move the output markers so that output is put after the current prompt
   (save-excursion
     (goto-char (point-max))
@@ -299,6 +311,12 @@ DIRECTION is `forward' or `backard' (in the history list)."
       (goto-char (point-min))
       (delete-region (point) indium-repl-output-end-marker))))
 
+(defun indium-repl-pop-buffer ()
+  "Switch to the buffer from which repl was opened buffer if any."
+  (interactive)
+  (when indium-repl-switch-from-buffer
+    (pop-to-buffer indium-repl-switch-from-buffer t)))
+
 (defun indium-repl--handle-connection-closed ()
   "Display a message when the connection is closed."
   (when-let ((buf (indium-repl-get-buffer)))
@@ -348,7 +366,7 @@ Evaluate CALLBACK with the completion candidates."
                            (max bol prev-delimiter)
                          bol))
                      (point))))
-    (indium-backend-get-completions (indium-backend) expression arg callback)))
+    (indium-backend-get-completions (indium-current-connection-backend) expression arg callback)))
 
 (defun indium-repl--complete-or-indent ()
   "Complete or indent at point."
@@ -378,9 +396,19 @@ Evaluate CALLBACK with the completion candidates."
     (define-key map (kbd "C-<return>") #'newline)
     (define-key map (kbd "C-c M-i") #'indium-repl-inspect)
     (define-key map (kbd "C-c C-o") #'indium-repl-clear-output)
+    (define-key map (kbd "C-c C-z") #'indium-repl-pop-buffer)
     (define-key map (kbd "C-c C-q") #'indium-quit)
     (define-key map (kbd "M-p") #'indium-repl-previous-input)
     (define-key map (kbd "M-n") #'indium-repl-next-input)
+    (easy-menu-define indium-repl-mode-menu map
+      "Menu for Indium REPL"
+      '("Indium REPL"
+        ["Clear output" indium-repl-clear-output]
+        ["Inspect" indium-repl-inspect]
+        "--"
+        ["Switch to source buffer" indium-repl-pop-buffer]
+        "--"
+        ["Quit" indium-quit]))
     map))
 
 (define-derived-mode indium-repl-mode fundamental-mode "JS-REPL"

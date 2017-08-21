@@ -36,14 +36,19 @@ Adding and removing breakpoints
 You need to first make sure that Indium is set up correctly to use local files
 (see :ref:`local-files`).
 
-- ``C-c b b``: Toggle a breakpoint
-- ``C-u C-c b b``: Toggle a breakpoint with condition
+- ``C-c b b``: Add a breakpoint
+- ``C-c b c``: Add a conditional breakpoint
+- ``C-c b k``: Remove a breakpoint
 - ``C-c b K``: Remove all breakpoints from the current buffer
+- ``C-c b e``: Edit condition of a breakpoint
+- ``C-c b l``: List all breakpoints and easily jump to any breakpoint  
 - ``C-c b d``: Deactivate all breakpoints (the runtime won't pause when hitting a breakpoint)
 - ``C-c b a``: Activate all breakpoints (it has no effect if breakpoints have not been deactivated)
 
 Once a breakpoint is set, execution will stop when a breakpoint is hit, and the
 Indium debugger pops up (see :ref:`debugger`).
+
+Since Indium 0.7, breakpoints are supported in source files with an associated sourcemap, see :ref:`sourcemaps`.
 
 .. Note:: Breakpoints are persistent: if the connection is closed, when a new
           connection is made Indium will attempt to add back all breakpoints.
@@ -59,9 +64,10 @@ lexical closures.
 
 .. Note:: This feature currently in only available for Chrome & Chromium.
 
-.. Warning:: Stability issues have been reported when using this feature with
-             Chrome 57 and earlier.  We strongly encourage you to use Chrome >=
-             58 when using live code updates.
+.. Warning:: This feature is experimental and stability issues have been
+             reported.  If you experience issues with breakpoints when using
+             this feature, try disabling it.  Also, we strongly encourage you to
+             use Chrome >= 58 when using live code updates.
 
 To enable live updates, make sure Indium is set up to use local files (see
 :ref:`local-files`).

@@ -1424,6 +1424,21 @@ the visible part of the current buffer following point. "
   (easy-kill)
   (deactivate-mark))
 
+
+(defun wil-html-to-concat ()
+  "Convert a string into a concation for php [WIP]"
+  (interactive)
+  (move-beginning-of-line 1)
+  (set-mark (point))
+  (move-end-of-line 1)
+  ;; (replace-string "dom "[x]")
+  )
+
+(defun wil-dired-new-dir (name)
+  (interactive "sName: ")
+  (mkdir name))
+
+
 ;; https://www.emacswiki.org/emacs/AutoIndentation
 ;; (defadvice kill-line (before check-position activate)
 ;;   (if (and (eolp) (not (bolp)))
@@ -1619,6 +1634,67 @@ Version 2017-04-19"
 
 (fset 'wil-php-concatstring-off
    [?\C-a ?\C-  ?\C-e ?\s-x ?r ?e ?p ?l ?a ?c ?e ?s ?t ?i ?r ?n ?g ?\C-h ?\C-h ?\C-h ?\C-h ?\C-j ?\\ ?\' ?\C-j ?\' ?\C-j ?\C-a ?\M-d ?\C-d ?\C-d ?\C-d ?\C-d ?\C-e ?\C-w ?\C-h ?\C-h ?\C-h ?\C-h ?\C-a ?\C-d ?\C-  ?\C-b ?\C-h ?\C-n])
+
+
+
+
+
+;; eldoc at point
+;; https://www.topbug.net/blog/2016/11/03/emacs-display-function-or-variable-information-near-point-cursor/
+(defun my-eldoc-display-message (format-string &rest args)
+  "Display eldoc message near point."
+  (when format-string
+    (pos-tip-show (apply 'format format-string args))))
+
+(setq eldoc-message-function #'my-eldoc-display-message)
+(setq eldoc-idle-delay 1)
+
+
+
+
+
+;; (defun my-indent-region (N)
+;;   (interactive "p")
+;;   (if (use-region-p)
+;;       (progn (indent-rigidly (region-beginning) (region-end) (* N 4))
+;;              (setq deactivate-mark nil))
+;;     (self-insert-command N)))
+
+;; (defun my-unindent-region (N)
+;;   (interactive "p")
+;;   (if (use-region-p)
+;;       (progn (indent-rigidly (region-beginning) (region-end) (* N -4))
+;;              (setq deactivate-mark nil))
+;;     (self-insert-command N)))
+
+
+
+
+
+
+
+;; (defun shift-text (distance)
+;;   (if (use-region-p)
+;;       (let ((mark (mark)))
+;;         (save-excursion
+;;           (indent-rigidly (region-beginning)
+;;                           (region-end)
+;;                           distance)
+;;           (push-mark mark t t)
+;;           (setq deactivate-mark nil)))
+;;     (indent-rigidly (line-beginning-position)
+;;                     (line-end-position)
+;;                     distance)))
+
+;; (defun shift-right (count)
+;;   (interactive "p")
+;;     (shift-text 4))
+
+;; (defun shift-left (count)
+;;   (interactive "p")
+;;   (shift-text (- 4)))
+
+
 
 
 

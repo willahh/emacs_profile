@@ -8,9 +8,47 @@ Getting up and running
 NodeJS
 ------
 
-Nodejs >= ``7.0`` is required for Indium to work. 
+Nodejs >= ``8.x`` is required for Indium to work. 
 
-Start a node process with the ``--inspect`` flag: ::
+Installing a recent version of NodeJS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If your distribution ships an old version of NodeJS, you can install a more
+recent version using `nvm <https://github.com/creationix/nvm>`_: ::
+
+  $ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
+
+Once ``nvm`` is install, you can easily install and use the version of NodeJS
+you want: ::
+  
+  $ nvm install v8
+  $ nvm alias default v8
+  $ node --version
+
+If you install NodeJS using ``nvm``, chances are that Emacs won't have it in its
+``exec path``. A simple solution is to use the excellent `exec-path-from-shell
+<https://github.com/purcell/exec-path-from-shell>`_ package.
+  
+Executing NodeJS from Emacs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Indium can start NodeJS processes and connect to them automatically.
+This is the preferred way of using Indium with NodeJS.
+
+Start a process with ``M-x indium-run-node``.  Once the process is ready, Indium
+will connect to it and open a REPL buffer.
+
+The output from the NodeJS process is appended to the ``*nodejs process*`` buffer.
+
+.. NOTE:: Indium will append the ``--inspect`` and ``--debug-brk`` flags to the
+          command-line arguments automatically, so you do not need to provide
+          them.
+
+Connecting to a Nodejs process
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To connect to an existing NodeJS process, make sure that process was started
+with the ``--inspect`` flag: ::
 
     node --inspect myfile.js
     
@@ -34,7 +72,7 @@ the application code if you passed the CLI argument ``--debug-brk``.
 Chrome/Chromium
 ---------------
 
-Chrome/Chromium >= ``54.0`` is required for Indium to properly work (debugging
+Chrome/Chromium >= ``60.0`` is required for Indium to properly work (debugging
 protocol ``v1.2``).
 
 Start Chrome/Chromium with the ``--remote-debugging-port`` flag like the following:

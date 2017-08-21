@@ -18,17 +18,30 @@
 ;; You should have received a copy of the GNU General Public License
 ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+;;; Commentary:
+
+;; Minor mode for interacting with a JavaScript runtime.  This mode provides
+;; commands for managing breakpoints and evaluating code.
+
 ;;; Code:
 
 (require 'js2-mode)
 (require 'map)
 (require 'seq)
 (require 'subr-x)
+(require 'xref)
+(require 'easymenu)
+
 (require 'indium-backend)
 (require 'indium-inspector)
 (require 'indium-breakpoint)
 (require 'indium-repl)
 (require 'indium-render)
+(require 'indium-script)
+
+(declare-function indium-backend-activate-breakpoints "indium-backend.el")
+(declare-function indium-backend-deactivate-breakpoints "indium-backend.el")
+(declare-function indium-workspace-make-url "indium-workspace.el")
 
 (defcustom indium-update-script-on-save nil
   "When non-nil, update (hotswap) the script source with the contents of the buffer."
@@ -45,7 +58,7 @@ When CALLBACK is non-nil, evaluate CALLBACK with the result.
 When called interactively, prompt the user for the string to be
 evaluated."
   (interactive "sEvaluate JavaScript: ")
-  (indium-backend-evaluate (indium-backend) string callback))
+  (indium-backend-evaluate (indium-current-connection-backend) string callback))
 
 (defun indium-eval-buffer ()
   "Evaluate the accessible portion of current buffer."
@@ -87,7 +100,7 @@ If PRINT is non-nil, print the output into the current buffer."
   "Reload the page."
   (interactive)
   (indium-interaction--ensure-connection)
-  (indium-backend-evaluate (indium-backend) "window.location.reload()"))
+  (indium-backend-evaluate (indium-current-connection-backend) "window.location.reload()"))
 
 (defun indium-inspect-last-node ()
   "Evaluate and inspect the node before point."
@@ -103,16 +116,40 @@ If PRINT is non-nil, print the output into the current buffer."
   "Switch to the repl buffer if any."
   (interactive)
   (if-let ((buf (indium-repl-get-buffer)))
-      (switch-to-buffer buf)
+      (progn
+        (setq indium-repl-switch-from-buffer (current-buffer))
+        (pop-to-buffer buf t))
     (user-error "No REPL buffer open")))
 
-(defun indium-toggle-breakpoint (arg)
-  "Add a breakpoint at point."
-  (interactive "P")
-  (if (indium-breakpoint-on-current-line-p)
-      (indium-breakpoint-remove)
-    (indium-breakpoint-add
-     (when arg (read-from-minibuffer "Breakpoint condition: ")))))
+(defun indium-add-breakpoint ()
+  "Add a breakpoint on the current line.
+If there is already a breakpoint, signal an error."
+  (interactive)
+  (indium-interaction--guard-no-breakpoint-at-point)
+  (if-let ((location (indium-script-generated-location-at-point)))
+      (indium-breakpoint-add location)
+    (user-error "Cannot place a breakpoint here")))
+
+(defun indium-add-conditional-breakpoint ()
+  "Add a conditional breakpoint at point.
+If there is already a breakpoint, signal an error."
+  (interactive)
+  (indium-interaction--guard-no-breakpoint-at-point)
+  (indium-breakpoint-add (read-from-minibuffer "Breakpoint condition: ")))
+
+(defun indium-edit-breakpoint-condition ()
+  "Edit the condition of breakpoint at point.
+Signal an error if there is no breakpoint."
+  (interactive)
+  (indium-interaction--guard-breakpoint-at-point)
+  (indium-breakpoint-edit-condition))
+
+(defun indium-remove-breakpoint ()
+  "Remove the breakpoint at point.
+If there is no breakpoint, signal an error."
+  (interactive)
+  (indium-interaction--guard-breakpoint-at-point)
+  (indium-breakpoint-remove))
 
 (defun indium-remove-all-breakpoints-from-buffer ()
   "Remove all breakpoints from the current buffer."
@@ -124,14 +161,36 @@ If PRINT is non-nil, print the output into the current buffer."
 Breakpoints are not removed, but the runtime won't pause when
 hitting a breakpoint."
   (interactive)
-  (indium-backend-deactivate-breakpoints (indium-backend))
+  (indium-backend-deactivate-breakpoints (indium-current-connection-backend))
   (message "Breakpoints deactivated"))
 
 (defun indium-activate-breakpoints ()
   "Activate all breakpoints in all buffers."
   (interactive)
-  (indium-backend-activate-breakpoints (indium-backend))
+  (indium-backend-activate-breakpoints (indium-current-connection-backend))
   (message "Breakpoints activated"))
+
+(defun indium-list-breakpoints ()
+  "List all breakpoints in the current connection."
+  (interactive)
+  (xref--show-xrefs (indium--make-xrefs-from-breakpoints) nil))
+
+(defun indium--make-xrefs-from-breakpoints ()
+  "Return a list of xref objects from all breakpoints."
+  (map-values-apply (lambda (breakpoint)
+		      (xref-make (indium--get-breakpoint-xref-match breakpoint)
+				 (xref-make-file-location (map-elt breakpoint 'file)
+							  (1+ (map-elt breakpoint 'line))
+							  0)))
+		    (indium-current-connection-breakpoints)))
+
+(defun indium--get-breakpoint-xref-match (breakpoint)
+  "Return the source line where BREAKPOINT is set."
+  (with-current-buffer (find-file-noselect (map-elt breakpoint 'file))
+    (save-excursion
+      (goto-char (point-min))
+      (forward-line (map-elt breakpoint 'line))
+      (buffer-substring (point-at-bol) (point-at-eol)))))
 
 (defun indium-interaction-node-before-point ()
   "Return the node before point to be evaluated."
@@ -140,6 +199,8 @@ hitting a breakpoint."
     (while (looking-back "[:,]" nil)
       (backward-char 1))
     (backward-char 1)
+    (while (js2-empty-expr-node-p (js2-node-at-point))
+      (backward-char 1))
     (let* ((node (js2-node-at-point))
            (parent (js2-node-parent node)))
       ;; Heuristics for finding the node to evaluate: if the parent of the node
@@ -159,13 +220,14 @@ hitting a breakpoint."
                       (< (js2-node-abs-pos parent)
                          (js2-node-abs-pos node)))
                  (and (not (js2-function-node-p node))
+                      (not (js2-loop-node-p node))
                       (js2-block-node-p node)))
         (setq node parent))
       node)))
 
 (defun indium-interaction--ensure-connection ()
   "Signal an error if there is no indium connection."
-  (unless indium-connection
+  (unless-indium-connected
     (user-error "No Indium connection")))
 
 (defvar indium-interaction-mode-map
@@ -175,13 +237,34 @@ hitting a breakpoint."
     (define-key map (kbd "C-c M-i") #'indium-inspect-last-node)
     (define-key map (kbd "C-c C-z") #'indium-switch-to-repl-buffer)
     (define-key map (kbd "C-c C-k") #'indium-update-script-source)
-    (define-key map (kbd "C-c b b") #'indium-toggle-breakpoint)
+    (define-key map (kbd "C-c b b") #'indium-add-breakpoint)
+    (define-key map (kbd "C-c b c") #'indium-add-conditional-breakpoint)
+    (define-key map (kbd "C-c b e") #'indium-edit-breakpoint-condition)
+    (define-key map (kbd "C-c b k") #'indium-remove-breakpoint)
     (define-key map (kbd "C-c b K") #'indium-remove-all-breakpoints-from-buffer)
     (define-key map (kbd "C-c b a") #'indium-activate-breakpoints)
     (define-key map (kbd "C-c b d") #'indium-deactivate-breakpoints)
+    (define-key map (kbd "C-c b l") #'indium-list-breakpoints)
+    (easy-menu-define indium-interaction-mode-menu map
+      "Menu for Indium interaction mode"
+      '("Indium interaction"
+        ["Switch to REPL" indium-switch-to-repl-buffer]
+        "--"
+        ("Evaluation"
+         ["Evaluate last node" indium-eval-last-node]
+         ["Inspect last node" indium-inspect-last-node]
+         ["Evaluate function" indium-eval-defun])
+        "--"
+        ("Breakpoints"
+         ["Add breakpoint" indium-add-breakpoint]
+         ["Add conditional breakpoint" indium-add-conditional-breakpoint]
+         ["Remove breakpoint" indium-remove-breakpoint]
+         ["Remove all breakpoints" indium-remove-all-breakpoints-from-buffer]
+         ["Deactivate breakpoints" indium-deactivate-breakpoints]
+         ["Activate breakpoints" indium-activate-breakpoints]
+         ["List all breakpoints" indium-list-breakpoints])))
     map))
 
-;;;###autoload
 (define-minor-mode indium-interaction-mode
   "Mode for JavaScript evalution.
 
@@ -194,16 +277,16 @@ hitting a breakpoint."
 
 (defun indium-interaction-mode-on ()
   "Function to be evaluated when `indium-interaction-mode' is turned on."
-  (when indium-connection
+  (when-indium-connected
     (indium-breakpoint-add-breakpoints-to-buffer)))
 
 (defun indium-interaction-mode-off ()
   "Function to be evaluated when `indium-interaction-mode' is turned off."
-  (indium-breakpoint-remove-breakpoints-from-buffer))
+  (indium-breakpoint-remove-all-overlays))
 
 (defun indium-interaction-update ()
   "Update breakpoints and script source of the current buffer."
-  (when (and indium-interaction-mode indium-connection)
+  (when (and indium-interaction-mode indium-current-connection)
     (indium-breakpoint-update-breakpoints)
     (when indium-update-script-on-save
       (indium-update-script-source))))
@@ -212,11 +295,21 @@ hitting a breakpoint."
   "Update the script source of the backend based on the current buffer."
   (interactive)
   (when-let ((url (indium-workspace-make-url buffer-file-name)))
-    (indium-backend-set-script-source (indium-backend)
+    (indium-backend-set-script-source (indium-current-connection-backend)
                                       url
                                       (buffer-string)
                                       (lambda ()
                                         (run-hook-with-args 'indium-update-script-source-hook url)))))
+
+(defun indium-interaction--guard-breakpoint-at-point ()
+  "Signal an error if there is no breakpoint on the current line."
+  (unless (indium-breakpoint-at-point)
+    (user-error "No breakpoint on the current line")))
+
+(defun indium-interaction--guard-no-breakpoint-at-point ()
+  "Signal an error if there is a breakpoint on the current line."
+    (when (indium-breakpoint-at-point)
+      (user-error "There is already a breakpoint on the current line")))
 
 (add-hook 'after-save-hook #'indium-interaction-update)
 

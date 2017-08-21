@@ -1,4 +1,12 @@
-# Indium [![MELPA](https://melpa.org/packages/indium-badge.svg)](https://melpa.org/#/indium) [![build status](http://gitlab.petton.fr/nico/Indium/badges/master/build.svg)](http://gitlab.petton.fr/nico/Indium/commits/master) [![Documentation Status](https://readthedocs.org/projects/indium/badge/?version=latest)](http://indium.readthedocs.io/en/latest/?badge=latest) [![Gratipay Team](https://img.shields.io/gratipay/team/indium.svg?maxAge=2592000)](https://gratipay.com/indium/) [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/indium-emacs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) <img align="right" src="img/indium.png" alt="logo">
+# Indium
+[![MELPA](https://melpa.org/packages/indium-badge.svg)](https://melpa.org/#/indium)
+[![Emacs](https://img.shields.io/badge/Emacs-25-8e44bd.svg)](https://www.gnu.org/software/emacs/)
+[![build status](http://gitlab.petton.fr/nico/Indium/badges/master/build.svg)](http://gitlab.petton.fr/nico/Indium/commits/master)
+[![coverage report](https://gitlab.petton.fr/nico/Indium/badges/master/coverage.svg)](https://gitlab.petton.fr/nico/Indium/commits/master)
+[![Documentation Status](https://readthedocs.org/projects/indium/badge/?version=latest)](http://indium.readthedocs.io/en/latest/?badge=latest)
+[![Gratipay Team](https://img.shields.io/gratipay/team/indium.svg?maxAge=2592000)](https://gratipay.com/indium/)
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/indium-emacs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+<img align="right" src="img/indium.png" alt="logo">
 
 A JavaScript development environment for Emacs.
 
@@ -31,10 +39,6 @@ The inspector
 
 ![REPL](./screenshots/inspector.png)
 
-The stepping debugger, and an inspector on locals
-
-![REPL](./screenshots/debugger.png)
-
 ## Missing features
 
 Indium is young, here's a list of missing/wanted features
@@ -43,7 +47,7 @@ Indium is young, here's a list of missing/wanted features
 - ~~Adding breakpoints (to remove the need for `debugger` statements)~~
 - Network inspector (could get inspiration from restclient.el)
 - DOM inspector
-- Start processes (~~chromium~~, node, grunt, gulp, etc.) from Emacs and attach a
+- Start processes (~~chromium~~, ~~node~~, grunt, gulp, etc.) from Emacs and attach a
   indium connection to it.
 
 ## Backends

@@ -66,7 +66,8 @@
 ;; (scroll-bar-mode -1)
 ;; Enable scrollbar
 (scroll-bar-mode 1)
-(horizontal-scroll-bar-mode 1)
+;; (horizontal-scroll-bar-mode 1)
+;; (horizontal-scroll-bar-mode nil)
 
 ;; make the left fringe 4 pixels wide and the right disappear
 ;; (fringe-mode '(32 . 0))
@@ -435,6 +436,10 @@
 
 (setq command-error-function #'my-command-error-function)
 
+(add-hook 'eval-expression-minibuffer-setup-hook #'eldoc-mode)
+(add-hook 'eval-expression-minibuffer-setup-hook #'paredit-mode)
+
+
 
 (defun remove-dos-eol ()
   "Do not show ^M in files containing mixed UNIX and DOS line endings."
@@ -456,3 +461,12 @@
 ;; https://stackoverflow.com/a/10845302
 (setq inhibit-eol-conversion t)
 
+
+(setq-default horizontal-scroll-bar-mode nil)
+(setq horizontal-scroll-bar-mode nil)
+
+(setq-default horizontal-scroll-bar nil)
+(setq horizontal-scroll-bar nil)
+
+;; Delete move to trash
+(setq delete-by-moving-to-trash t)

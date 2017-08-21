@@ -21,12 +21,14 @@
   ;; clojurescript-mode
   image-dired+
   imenu-list
-  jade-mode
+  ;; jade-mode
   crux
   volatile-highlights
   ov ; Utlise pour quelques fonctions utils de prelude
   ibuffer-vc
   flycheck-pos-tip
+  jabber
+  general
   
 
 
@@ -78,6 +80,9 @@
   ;; php-extras
   editorconfig
   ;; php-completion
+
+  dracula-theme
+  ;; indium
 
   psysh ; Seems to be the true PHP REPL https://github.com/zonuexe/psysh.el
 
@@ -173,12 +178,16 @@
   ;; smart-tab
   fullframe
 
+  ;; websocket
+  ;; sourcemap
+
   counsel
 
   sml-mode
   swiper
   ;; swiper-helm
   tern
+  
 
   zop-to-char
 
@@ -191,7 +200,7 @@
   ;; yascroll
   ;; zerodark-theme ;; Dependant du package ‘font-lock+-0’ non disponible sur MELPA stable
 
-
+  ;; nodejs-repl
 
   ;; all-the-icons
   js2-refactor
@@ -243,6 +252,7 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/general")
 (add-to-list 'load-path "~/.emacs.d/vendor/slime")
 (add-to-list 'load-path "~/.emacs.d/vendor/noctilux-theme")
+;; (add-to-list 'load-path "~/.emacs.d/vendor/emacs-memoize")
 ;; (add-to-list 'load-path "~/.emacs.d/vendor/jquery-doc")
 ;; (add-to-list 'load-path "~/.emacs.d/vendor/google-this-1.11")
 ;; (add-to-list 'load-path "~/.emacs.d/vendor/google-translate-0.11.13")

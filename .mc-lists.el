@@ -65,8 +65,10 @@
       hydra-vi/evil-forward-word-end
       hydra-vi/evil-next-line-1-first-non-blank
       indent-for-tab-command
+      indent-rigidly
       kill-region
       kill-sentence
+      kill-sexp
       mark-sexp
       mouse-save-then-kill
       mouse-set-region
