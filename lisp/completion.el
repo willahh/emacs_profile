@@ -58,6 +58,10 @@
 (setq company-dabbrev-downcase nil)
 (setq company-dabbrev-downcase 0) ; Usefull !
 
+;; Update : Pas du tout, il faut que la completion soit case sensitive pour abbrev notamment 
+;; Voir pour utiliser cette conf que pour dabbrev
+(setq company-dabbrev-downcase nil)
+
 ;; (setq company-idle-delay 0)
 ;; (setq company-idle-delay 0.1)
 ;; (setq company-idle-delay 0.5)

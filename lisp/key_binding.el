@@ -923,6 +923,10 @@ Version 2016-12-27"
 ;; Update to use find-file-in-project-by-selected
 (global-set-key (kbd "C->") 'ffap)
 
+;;
+(global-set-key (kbd "C-c C-M-i") 'company-files)
+(global-set-key (kbd "C-c C-i") 'company-dabbrev)
+
 ;; (global-set-key (kbd "C-.") 'projectile-find-file-dwim)
 (global-set-key (kbd "C-.") 'find-file-in-project-by-selected)
 (define-key php-mode-map [(control .)] 'find-file-in-project-by-selected)

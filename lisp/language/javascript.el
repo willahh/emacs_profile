@@ -92,7 +92,7 @@ is already narrowed."
 
 (defun wil-my-js-mode-hook ()
   (require 'indium)
-  (indium-interaction-mode)
+  ;; (indium-interaction-mode)
 
   (setq js2-missing-semi-one-line-override 1)
   (setq js2-strict-missing-semi-warning nil)
@@ -153,6 +153,8 @@ is already narrowed."
   (set (make-local-variable 'company-backends) '((company-tern :with company-files)))
   
   (define-key wil-js-mode-map (kbd "<tab>") 'company-indent-or-complete-common)
+  ;; (define-key wil-js-mode-map (kbd "C-i") 'company-indent-or-complete-common)
+  (define-key wil-js-mode-map (kbd "C-i") 'tab-indent-or-complete)
   (define-key wil-js-mode-map (kbd "C-x n") 'wil-js-narrow-or-widen-dwim)
 
   
@@ -202,7 +204,7 @@ is already narrowed."
   (set (make-local-variable 'highlight-symbol-mode) 't)
 
 )
-
+(add-hook 'js-mode-hook #'indium-interaction-mode)
 ;; (defun company-yasnippet-or-completion ()
 ;;   (interactive)
 ;;   (let ((yas-fallback-behavior nil))
