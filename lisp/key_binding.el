@@ -558,6 +558,9 @@ Version 2016-12-27"
 
 ;; ---------------- Comment lines
 (define-key prog-mode-map(kbd "C-i") 'tab-indent-or-complete)
+
+(global-set-key [(meta shift d)] 'duplicate-start-of-line-or-region)
+
 (global-set-key [C-M-tab] 'other-window)
 (global-set-key [C-M-S-tab] 'previous-multiframe-window)
 
@@ -760,10 +763,11 @@ Version 2016-12-27"
 ;; Standard new line
 (define-key key-translation-map (kbd "C-j") (kbd "RET"))
 
-(define-key prog-mode-map (kbd "RET") 'reindent-then-newline-and-indent)
 
 
-;; Above
+
+
+;;
 (global-set-key (kbd "C-M-j") 'open-line-below)
 (global-set-key (kbd "C-M-j") 'open-line-below)
 (define-key php-mode-map (kbd "C-M-j") 'open-line-below)
