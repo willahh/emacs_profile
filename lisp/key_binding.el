@@ -287,8 +287,10 @@ Version 2016-12-27"
 ;; (define-key dired-mode-map [(command shift n)] 'mkdir)
 ;; (define-key dired-mode-map (kbd "M-N") 'evil-buffer-new)
 (define-key dired-mode-map (kbd "M-n") 'wil-dired-new-dir)
-(define-key dired-mode-map (kbd "M-c") 'dired-ranger-copy)
-(define-key dired-mode-map (kbd "M-v") 'dired-ranger-paste)
+
+;; Update : M-c doit etre utilise pour pouvoir copier du texte dans dired
+;; (define-key dired-mode-map (kbd "M-c") 'dired-ranger-copy)
+;; (define-key dired-mode-map (kbd "M-v") 'dired-ranger-paste)
 
 ;; Multi cursor stuf
 (global-set-key (kbd "ı") 'mc/mark-next-lines) ; ALT+SHIFT+p

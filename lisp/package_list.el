@@ -28,7 +28,7 @@
   ibuffer-vc
   flycheck-pos-tip
   jabber
-  general
+  ;; general
   
 
 
