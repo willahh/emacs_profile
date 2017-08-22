@@ -68,7 +68,7 @@ is already narrowed."
 ;;         (company-yasnippet))))
 
 
-           
+
 
 ;; Tab behaviour
 ;; (defun wil-tab-indent-or-complete-js ()
@@ -91,84 +91,112 @@ is already narrowed."
 
 
 (defun wil-my-js-mode-hook ()
-            ;; jquery-doc
-            ;; Update : Pas du tout utile
-            ;; (require 'jquery-doc)
-            ;; (jquery-doc-setup)
+  (require 'indium)
+  (indium-interaction-mode)
 
-            ;; js2-imenu-extras-mode
-            (js2-imenu-extras-mode)
+  ;; (require 'smartparens-config)
+  ;; (require 'smartparens-javascript)
 
-            ;; Paredit
-            ;; Prevent paredit from adding a space before delimiters
-            (set (make-local-variable 'paredit-space-for-delimiter-predicates) 0)
+  ;; (smartparens-strict-mode)
 
-            ;; Completion
-            ;; (set (make-local-variable 'company-minimum-prefix-length) 2)
-            ;; (set (make-local-variable 'company-idle-delay) 1)
-            
-            ;; (set (make-local-variable 'company-minimum-prefix-length) 1)
-            (set (make-local-variable 'company-minimum-prefix-length) 2)
-            ;; (set (make-local-variable 'company-idle-delay) 0)
-            (set (make-local-variable 'company-idle-delay) 1)
 
-            ;; js2-refactor-mode
-            ;; (js2-refactor-mode)
 
-            ;; Enable emmet-mode
-            ;; (emmet-mode)
+  ;; (require 'paredit-everywhere-mode)
+  ;; ('paredit-everywhere-mode)
 
-            ;; flycheck-mode
-            (flycheck-mode)
 
-            ;; Tern
-            (tern-mode t)
 
-            ;; Yas
-            ;; Auto indent yas snippet
-            (set (make-local-variable 'yas-indent-line) 'auto)
+  ;; jquery-doc
+  ;; Update : Pas du tout utile
+  ;; (require 'jquery-doc)
+  ;; (jquery-doc-setup)
 
-            ;; Company-dabbrev
-            ;; Only words in the current buffer
-            (set (make-local-variable 'company-dabbrev-other-buffers) 't)
+  ;; js2-imenu-extras-mode
+  (js2-imenu-extras-mode)
 
-            ;; Company backend
-            ;; (set (make-local-variable 'company-backends) '(company-yasnippet company-tern company-dabbrev))
-            ;; (set (make-local-variable 'company-backends) '(company-tern company-yasnippet company-dabbrev))
-            ;; (set (make-local-variable 'company-backends) '(company-yasnippet company-dabbrev))
-            ;; (set (make-local-variable 'company-backends) '(company-tern company-dabbrev :with company-yasnippet))
-            ;; (set (make-local-variable 'company-backends) '(company-tern :with company-yasnippet))
-            ;; (set (make-local-variable 'company-backends) '(company-tern))
-            ;; (set (make-local-variable 'company-backends) '(company-tern :separate company-yasnippet))
-            ;; (set (make-local-variable 'company-backends) '(company-tern :with company-yasnippet))
-            
-            ;; (set (make-local-variable 'company-backends) '((company-tern :with company-yasnippet)
-            ;;                                                (:with :with company-yasnippet)
-            ;;                                                (company-yasnippet :with company-yasnippet)))
-            
-            ;; (set (make-local-variable 'company-backends) '((company-tern :with company-yasnippet)
-            ;;                                                (company-yasnippet :with company-yasnippet)))
-            
-            ;; (set (make-local-variable 'company-backends) '((company-tern :with company-yasnippet :with company-dabbrev)))
+  ;; Paredit
+  ;; Prevent paredit from adding a space before delimiters
+  (set (make-local-variable 'paredit-space-for-delimiter-predicates) 0)
+  (set (make-local-variable 'autopair-mode) nil)
 
-            ;; (set (make-local-variable 'company-backends) '((company-tern :with company-yasnippet :with company-dabbrev :with company-jquery)))
-            
-            ;; (set (make-local-variable 'company-backends) '((company-tern :with company-yasnippet :with company-dabbrev)))
-            
-            (set (make-local-variable 'company-backends) '((company-tern :with company-files)))
-            
-            ;; Local key map
-            ;; (define-key wil-js-mode-map (kbd "<tab>") 'wil-tab-indent-or-complete-js)
+  ;; Completion
+  ;; (set (make-local-variable 'company-minimum-prefix-length) 2)
+  ;; (set (make-local-variable 'company-idle-delay) 1)
 
-            (define-key wil-js-mode-map (kbd "<tab>") 'company-indent-or-complete-common)
-            (define-key wil-js-mode-map (kbd "C-x n") 'wil-js-narrow-or-widen-dwim)
+  ;; (set (make-local-variable 'company-minimum-prefix-length) 1)
+  (set (make-local-variable 'company-minimum-prefix-length) 2)
+  ;; (set (make-local-variable 'company-idle-delay) 0)
+  (set (make-local-variable 'company-idle-delay) 1)
 
-            ;; (define-key wil-js-mode-map (kbd "<tab>") 'wil-js-tab)
-            ;; (define-key wil-js-mode-map (kbd "s-j") 'yas-expand)
-            ;; (define-key wil-js-mode-map (kbd "s-J") 'company-yasnippet)
+  ;; js2-refactor-mode
+  ;; (js2-refactor-mode)
 
-            ;; Highlight-mode
-            (set (make-local-variable 'highlight-symbol-mode) 't)
+  ;; Enable emmet-mode
+  ;; (emmet-mode)
+
+  ;; flycheck-mode
+  (flycheck-mode)
+
+  ;; Tern
+  (tern-mode t)
+
+  ;; Yas
+  ;; Auto indent yas snippet
+  (set (make-local-variable 'yas-indent-line) 'auto)
+
+  ;; Company-dabbrev
+  ;; Only words in the current buffer
+  (set (make-local-variable 'company-dabbrev-other-buffers) 't)
+  (set (make-local-variable 'company-backends) '((company-tern :with company-files)))
+  
+  (define-key wil-js-mode-map (kbd "<tab>") 'company-indent-or-complete-common)
+  (define-key wil-js-mode-map (kbd "C-x n") 'wil-js-narrow-or-widen-dwim)
+
+  
+  ;; (define-key wil-js-mode-map (kbd "C-M-f") 'sp-forward-sexp)
+  ;; (define-key wil-js-mode-map (kbd "C-M-b") 'sp-backward-sexp)
+  ;; (define-key wil-js-mode-map (kbd "C-M-u") 'sp-backward-up-sexp)
+  ;; (define-key wil-js-mode-map (kbd "C-M-d") 'sp-down-sexp)
+  ;; (define-key wil-js-mode-map (kbd "C-M-p") 'sp-backward-down-sexp)
+  ;; (define-key wil-js-mode-map (kbd "C-M-n") 'sp-up-sexp)
+
+  ;; Company backend
+  ;; (set (make-local-variable 'company-backends) '(company-yasnippet company-tern company-dabbrev))
+  ;; (set (make-local-variable 'company-backends) '(company-tern company-yasnippet company-dabbrev))
+  ;; (set (make-local-variable 'company-backends) '(company-yasnippet company-dabbrev))
+  ;; (set (make-local-variable 'company-backends) '(company-tern company-dabbrev :with company-yasnippet))
+  ;; (set (make-local-variable 'company-backends) '(company-tern :with company-yasnippet))
+  ;; (set (make-local-variable 'company-backends) '(company-tern))
+  ;; (set (make-local-variable 'company-backends) '(company-tern :separate company-yasnippet))
+  ;; (set (make-local-variable 'company-backends) '(company-tern :with company-yasnippet))
+
+  ;; (set (make-local-variable 'company-backends) '((company-tern :with company-yasnippet)
+  ;;                                                (:with :with company-yasnippet)
+  ;;                                                (company-yasnippet :with company-yasnippet)))
+
+  ;; (set (make-local-variable 'company-backends) '((company-tern :with company-yasnippet)
+  ;;                                                (company-yasnippet :with company-yasnippet)))
+
+  ;; (set (make-local-variable 'company-backends) '((company-tern :with company-yasnippet :with company-dabbrev)))
+
+  ;; (set (make-local-variable 'company-backends) '((company-tern :with company-yasnippet :with company-dabbrev :with company-jquery)))
+
+  ;; (set (make-local-variable 'company-backends) '((company-tern :with company-yasnippet :with company-dabbrev)))
+
+
+
+  ;; Local key map
+  ;; (define-key wil-js-mode-map (kbd "<tab>") 'wil-tab-indent-or-complete-js)
+
+
+  ;; (define-key wil-js-mode-map (kbd "C-M-p") 'sp-up-sexp)
+
+  ;; (define-key wil-js-mode-map (kbd "<tab>") 'wil-js-tab)
+  ;; (define-key wil-js-mode-map (kbd "s-j") 'yas-expand)
+  ;; (define-key wil-js-mode-map (kbd "s-J") 'company-yasnippet)
+
+  ;; Highlight-mode
+  (set (make-local-variable 'highlight-symbol-mode) 't)
 
 )
 
@@ -184,8 +212,8 @@ is already narrowed."
 ;;     (if (looking-at "\\_>") t
 ;;       (backward-char 1)
 ;;       (if (looking-at "\\.") t
-;; 	(backward-char 1)
-;; 	(if (looking-at "->") t nil)))))
+;;  (backward-char 1)
+;;  (if (looking-at "->") t nil)))))
 
 ;; (defun do-yas-expand ()
 ;;   (let ((yas/fallback-behavior 'return-nil))
@@ -196,10 +224,10 @@ is already narrowed."
 ;;   (if (minibufferp)
 ;;       (minibuffer-complete)
 ;;     (if (or (not yas/minor-mode)
-;; 	    (null (do-yas-expand)))
-;; 	(if (check-expansion)
-;; 	    (company-complete-common)
-;; 	  (indent-for-tab-command)))))
+;;      (null (do-yas-expand)))
+;;  (if (check-expansion)
+;;      (company-complete-common)
+;;    (indent-for-tab-command)))))
 
 
 ;; (global-set-key [tab] 'tab-indent-or-complete)

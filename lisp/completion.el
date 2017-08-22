@@ -68,9 +68,11 @@
 ;; (setq company-idle-delay 0.25) ;; ... impossible affichage trop lent
 ;; (setq company-idle-delay 0.3) ;; Update en mode css, un retour raîde serait bien.
 ;; (setq company-idle-delay 0.15)
-(setq company-idle-delay 0) ;; @todo : Mettre la valeur 0 pour le CSS mode only
+;; (setq company-idle-delay 0) ;; @todo : Mettre la valeur 0 pour le CSS mode only
 ;; (setq company-idle-delay 0.3) ;; Impossible, trop lent, il faut l activer pour CSS only
-(setq company-idle-delay 0.3)
+
+;; (setq company-idle-delay 0.3) ;; Trop lent
+(setq company-idle-delay 0.2)
 
 
 
