@@ -399,6 +399,7 @@ Version 2016-12-27"
 (define-key company-active-map (kbd "C-w") 'paredit-backward-kill-word)
 (define-key company-active-map (kbd "C-n") 'company-select-next)
 (define-key company-active-map (kbd "C-p") 'company-select-previous)
+(define-key company-active-map (kbd "C-i") 'company-complete-selection)
 
 (global-set-key (kbd "C-,") 'company-files)
 
@@ -555,23 +556,7 @@ Version 2016-12-27"
 (define-key typescript-mode-map (kbd "M-j") 'c-indent-new-comment-line)
 
 ;; ---------------- Comment lines
-(global-set-key (kbd "M-/") 'comment-line)
-
-;; comment
-;; Update : evilnc-comment-or-uncomment-lines  fait des commentaires bizarres (en mode html plusieurs imbrications de commentaire html au lieu d un seul)
-;; Update : comment-region ne fonctionne pas bien en mode css
-;; Update : Utilisation du racourcis natif C-x C-; bien plus
-;; ergonomique
-;; (global-set-key [(meta /)] 'evilnc-comment-or-uncomment-lines)
-
-;; text operation : duplication
-(global-set-key [(meta shift d)] 'duplicate-start-of-line-or-region)
-
-;; Undo redo
-;; Update : Use default binding
-;; (global-set-key [(meta z)] 'undo-tree-undo)
-;; (global-set-key [(meta shift z)] 'undo-tree-redo)
-
+(define-key prog-mode-map(kbd "C-i") 'tab-indent-or-complete)
 (global-set-key [C-M-tab] 'other-window)
 (global-set-key [C-M-S-tab] 'previous-multiframe-window)
 
@@ -926,6 +911,7 @@ Version 2016-12-27"
 ;;
 (global-set-key (kbd "C-c C-M-i") 'company-files)
 (global-set-key (kbd "C-c C-i") 'company-dabbrev)
+(global-set-key (kbd "C-c C-M-l") 'mark-defun)
 
 ;; (global-set-key (kbd "C-.") 'projectile-find-file-dwim)
 (global-set-key (kbd "C-.") 'find-file-in-project-by-selected)
@@ -1045,8 +1031,10 @@ Version 2016-12-27"
 
 ;; Scroll commands
 (global-set-key (kbd "s-v") 'evil-scroll-up)
+;; (global-set-key (kbd "s-x") 'smex)
 (global-set-key (kbd "s-x") 'helm-M-x)
 ;; (global-set-key (kbd "s-x") 'smex)
+
 
 ;; Text commandes
 ;; (global-set-key (kbd "s-c") 'capitalize-word)
