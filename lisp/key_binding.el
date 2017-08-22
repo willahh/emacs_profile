@@ -382,7 +382,6 @@ Version 2016-12-27"
 (global-set-key (kbd "C-w") 'paredit-backward-kill-word)
 ; (define-key iedit-mode-keymap (kbd "C-w") 'paredit-backward-kill-word)
 (define-key helm-map (kbd "C-w") 'paredit-backward-kill-word)
-(define-key company-active-map (kbd "C-w") 'paredit-backward-kill-word)
 
 (global-set-key (kbd "C-h") 'backward-delete-char)
 (define-key lisp-mode-map (kbd "C-h") 'paredit-backward-delete)
@@ -397,6 +396,9 @@ Version 2016-12-27"
 ;; (define-key company-active-map (kbd "C-h") 'delete-backward-char)
 (define-key company-active-map (kbd "C-h") 'paredit-backward-delete)
 (define-key company-active-map (kbd "<tab>") 'company-complete-selection)
+(define-key company-active-map (kbd "C-w") 'paredit-backward-kill-word)
+(define-key company-active-map (kbd "C-n") 'company-select-next)
+(define-key company-active-map (kbd "C-p") 'company-select-previous)
 
 (global-set-key (kbd "C-,") 'company-files)
 
