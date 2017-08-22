@@ -94,6 +94,9 @@ is already narrowed."
   (require 'indium)
   (indium-interaction-mode)
 
+  (setq js2-missing-semi-one-line-override 1)
+  (setq js2-strict-missing-semi-warning nil)
+
   ;; (require 'smartparens-config)
   ;; (require 'smartparens-javascript)
 
