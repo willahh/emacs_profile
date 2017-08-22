@@ -53,7 +53,8 @@
             (set (make-local-variable 'company-backends) '(company-css company-dabbrev))
 
             ;; Local key map
-            (define-key wil-css-mode-map (kbd "<tab>") 'wil-tab-indent-or-complete-css)))
+            (define-key wil-css-mode-map (kbd "<tab>") 'wil-tab-indent-or-complete-css)
+            (define-key wil-css-mode-map (kbd "C-i") 'wil-tab-indent-or-complete-css)))
 
 
 (add-hook 'css-mode-hook
