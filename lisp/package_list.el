@@ -29,6 +29,7 @@
   flycheck-pos-tip
   jabber
   ;; general
+  origami
   
 
 

@@ -1177,3 +1177,5 @@ _d_: subtree
 
 
 
+(require 'origami)
+(add-hook 'prog-mode-hook 'origami-mode-hook)

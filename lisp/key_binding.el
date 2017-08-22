@@ -42,6 +42,7 @@
 (global-set-key (kbd "C-x M-w") 'kill-ring-save)
 (global-set-key (kbd "M-X") 'other-frame) ;; Same keybinding from osx habits
 
+(global-set-key (kbd "C-c , f f") 'origami-toggle-all-nodes)
 
 (require 'php-mode)
 

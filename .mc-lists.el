@@ -100,7 +100,11 @@
       reindent-then-newline-and-indent
       smart-open-line-above
       smarter-move-beginning-of-line
+      sp-backward-down-sexp
       sp-backward-kill-sexp
+      sp-backward-sexp
+      sp-forward-sexp
+      sp-kill-hybrid-sexp
       string-inflection-all-cycle
       tab-indent-or-complete
       tern-ac-dot-complete

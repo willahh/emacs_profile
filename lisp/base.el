@@ -54,7 +54,8 @@
 ;; (set-default 'fill-column 80)
 
 ;; Select whole word when separated with _
-(modify-syntax-entry ?_ "w")
+;; Update : Commentaire
+;; (modify-syntax-entry ?_ "w")
 
 ;; Auto refresh buffers
 (global-auto-revert-mode 1)
@@ -106,8 +107,8 @@
 (setq js-indent-level 4)
 (setq sgml-basic-offset 4)
 
-
-
+;; enable for all programming modes
+(add-hook 'prog-mode-hook 'subword-mode)
 
 ;; -----
 (setq transient-mark-mode t)
