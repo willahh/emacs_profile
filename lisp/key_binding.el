@@ -689,6 +689,7 @@ Version 2016-12-27"
 ;; swoop
 (global-set-key (kbd "C-S-s") 'helm-swoop)
 (define-key js2-mode-map (kbd "C-S-s") 'helm-swoop)
+
 (define-key php-mode-map (kbd "C-S-s") 'helm-swoop)
 (define-key web-mode-map (kbd "C-S-s") 'helm-swoop)
 (define-key markdown-mode-map (kbd "C-S-s") 'helm-swoop)
@@ -749,6 +750,7 @@ Version 2016-12-27"
 ;; camelcase are moved into "string-inflection-all-cycle" function
 (global-set-key (kbd "M-l") 'er/expand-region)
 (global-set-key (kbd "M-L") 'er/contract-region)
+(global-set-key (kbd "C-M-l") 'mark-sexp)
 
 
 (defun m-eshell-hook ()
