@@ -30,6 +30,9 @@
   jabber
   ;; general
   origami
+  websocket
+  sourcemap
+  memoize
   
 
 

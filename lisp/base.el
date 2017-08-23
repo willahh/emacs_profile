@@ -108,7 +108,8 @@
 (setq sgml-basic-offset 4)
 
 ;; enable for all programming modes
-(add-hook 'prog-mode-hook 'subword-mode)
+;; Disable
+;; (add-hook 'prog-mode-hook 'subword-mode)
 
 ;; -----
 (setq transient-mark-mode t)
