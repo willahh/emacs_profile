@@ -29,10 +29,12 @@
   flycheck-pos-tip
   jabber
   ;; general
-  origami
+  ;; origami
   websocket
   sourcemap
   memoize
+  outline-toc
+  dired-subtree
   
 
 

@@ -40,9 +40,12 @@
 ;; M-w (kil-ring-save) -> "close window"
 (global-set-key (kbd "M-w") 'delete-window)
 (global-set-key (kbd "C-x M-w") 'kill-ring-save)
-(global-set-key (kbd "M-X") 'other-frame) ;; Same keybinding from osx habits
+(global-set-key (kbd "M-X") 'other-frame) ; Same keybinding from osx habits
 
-(global-set-key (kbd "C-c , f f") 'origami-toggle-all-nodes)
+(global-set-key (kbd "C-c , f s a") 'hs-show-all) ; (user key binding (C-c ,) + [f]olding [s]how [a]ll)
+(global-set-key (kbd "C-c , f h a") 'hs-hide-all) ; (user key binding (C-c ,) + [f]olding [h]ide [a]ll)
+(global-set-key (kbd "C-c , f s b") 'hs-show-block) ; (user key binding (C-c ,) + [f]olding [s]how [b]lock)
+(global-set-key (kbd "C-c , f h b") 'hs-hide-block) ; (user key binding (C-c ,) + [f]olding [h]ide [b]lock)
 
 (require 'php-mode)
 
@@ -284,14 +287,19 @@ Version 2016-12-27"
 (global-set-key (kbd "C-x C-k") 'delete-current-buffer-file)
 
 ;; ---------------- Dired
-(define-key dired-mode-map (kbd "<tab>") 'dired-find-file)
-(define-key dired-mode-map (kbd "<S-tab>") 'dired-up-directory)
+;; (define-key dired-mode-map (kbd "<tab>") 'dired-find-file)
+;; (define-key dired-mode-map (kbd "<S-tab>") 'dired-up-directory)
 (define-key php-mode-map [(control x) (control j)] 'dired-jump)
 (define-key web-mode-map [(control x) (control j)] 'dired-jump)
 (define-key dired-mode-map (kbd "C-x w") 'wdired-change-to-wdired-mode)
 ;; (define-key dired-mode-map [(command shift n)] 'mkdir)
 ;; (define-key dired-mode-map (kbd "M-N") 'evil-buffer-new)
 (define-key dired-mode-map (kbd "M-n") 'wil-dired-new-dir)
+
+(define-key dired-mode-map (kbd "C-i") 'dired-subtree-toggle)
+(define-key dired-mode-map (kbd "<tab>") 'dired-subtree-toggle)
+(define-key dired-mode-map (kbd "C-c C-p") 'dired-subtree-up)
+(define-key dired-mode-map (kbd "C-c C-n") 'dired-subtree-down)
 
 ;; Update : M-c doit etre utilise pour pouvoir copier du texte dans dired
 ;; (define-key dired-mode-map (kbd "M-c") 'dired-ranger-copy)
@@ -927,6 +935,7 @@ Version 2016-12-27"
 ;; Raccourcis déjà utilisé par Emacs par iedit
 ;; (global-set-key (kbd "C-;") 'projectile-find-file-dwim) ;; (ctrl + ;)
 
+(global-set-key (kbd "C-c p ' g") 'projectile-find-file-dwim-other-window) ;; (C-c p 4 g on azerty)
 
 ;; ---------------- text
 (define-key js-mode-map (kbd "C-:") "\C-e;")

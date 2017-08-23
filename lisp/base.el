@@ -55,7 +55,9 @@
 
 ;; Select whole word when separated with _
 ;; Update : Commentaire
-;; (modify-syntax-entry ?_ "w")
+;; Update 2 : Rollback (un double click sur un mot
+;; contenant un underscore ne  selectionne pas le mot en entier
+(modify-syntax-entry ?_ "w")
 
 ;; Auto refresh buffers
 (global-auto-revert-mode 1)

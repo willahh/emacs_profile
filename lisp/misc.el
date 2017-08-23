@@ -1177,11 +1177,23 @@ _d_: subtree
 
 
 
-(require 'origami)
-(add-hook 'prog-mode-hook 'origami-mode)
+;; (require 'origami)
+;; (add-hook 'prog-mode-hook 'origami-mode)
 
 ;; undotre
 (global-undo-tree-mode 1)
 (setq undo-tree-auto-save-history t)
 (setq undo-tree-history-directory-alist
       (quote (("" . "~/.emacs.d/undo_hist"))))
+
+(add-hook 'prog-mode-hook 'hs-minor-mode)
+
+
+
+
+
+
+
+
+
+

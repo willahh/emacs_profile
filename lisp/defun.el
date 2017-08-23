@@ -1449,6 +1449,13 @@ the visible part of the current buffer following point. "
     (insert ";")
     (goto-char (point))))
 
+(defun wil-ag-open-new-window ()
+  (interactive)
+
+  (progn (setq ag-reuse-window nil)
+         (compile-goto-error)
+         (setq ag-reuse-window t)))
+
 ;; https://www.emacswiki.org/emacs/AutoIndentation
 ;; (defadvice kill-line (before check-position activate)
 ;;   (if (and (eolp) (not (bolp)))

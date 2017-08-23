@@ -26,7 +26,9 @@
 
 ;; https://www.reddit.com/r/emacs/comments/43vfl1/enable_wordwrap_in_orgmode/czmaj7n/
 (add-hook 'text-mode-hook 'turn-on-visual-line-mode)
-(add-hook 'text-mode-hook 'flyspell-mode)
+
+;; Edit flyspell mode is slow, activate it only when needed
+;; (add-hook 'text-mode-hook 'flyspell-mode)
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 
 ;; Note : ne pas activer ce mode, pose trop de problèmes
