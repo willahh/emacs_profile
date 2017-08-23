@@ -177,6 +177,7 @@ then `diff-jump-to-old-file' is also set, for the next invocations."
   (define-key vc-dir-mode-map (kbd "d") 'vc-diff)
   (define-key vc-dir-mode-map (kbd "D") 'wil-vc-version-diff-base-head)
   (define-key vc-dir-mode-map (kbd "k") 'vc-revert)
+  (define-key vc-dir-mode-map (kbd "g") 'vc-dir-refresh)
 )
 
 
