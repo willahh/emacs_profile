@@ -1438,6 +1438,16 @@ the visible part of the current buffer following point. "
   (interactive "sName: ")
   (mkdir name))
 
+(defun wil-js-insert-semicon-end-of-sexp()
+  "Insert a semicon at the end of the next sexp"
+  (interactive)
+  (let ((x (point)))
+    (end-of-line)
+    (backward-char)
+    (sp-forward-sexp)
+    (move-end-of-line 1)
+    (insert ";")
+    (goto-char (point))))
 
 ;; https://www.emacswiki.org/emacs/AutoIndentation
 ;; (defadvice kill-line (before check-position activate)

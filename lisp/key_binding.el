@@ -42,6 +42,7 @@
 (global-set-key (kbd "C-x M-w") 'kill-ring-save)
 (global-set-key (kbd "M-X") 'other-frame) ;; Same keybinding from osx habits
 
+(global-set-key (kbd "C-c , f f") 'origami-toggle-all-nodes)
 
 (require 'php-mode)
 
@@ -382,7 +383,6 @@ Version 2016-12-27"
 (global-set-key (kbd "C-w") 'paredit-backward-kill-word)
 ; (define-key iedit-mode-keymap (kbd "C-w") 'paredit-backward-kill-word)
 (define-key helm-map (kbd "C-w") 'paredit-backward-kill-word)
-(define-key company-active-map (kbd "C-w") 'paredit-backward-kill-word)
 
 (global-set-key (kbd "C-h") 'backward-delete-char)
 (define-key lisp-mode-map (kbd "C-h") 'paredit-backward-delete)
@@ -397,6 +397,10 @@ Version 2016-12-27"
 ;; (define-key company-active-map (kbd "C-h") 'delete-backward-char)
 (define-key company-active-map (kbd "C-h") 'paredit-backward-delete)
 (define-key company-active-map (kbd "<tab>") 'company-complete-selection)
+(define-key company-active-map (kbd "C-w") 'paredit-backward-kill-word)
+(define-key company-active-map (kbd "C-n") 'company-select-next)
+(define-key company-active-map (kbd "C-p") 'company-select-previous)
+(define-key company-active-map (kbd "C-i") 'company-complete-selection)
 
 (global-set-key (kbd "C-,") 'company-files)
 
@@ -553,22 +557,9 @@ Version 2016-12-27"
 (define-key typescript-mode-map (kbd "M-j") 'c-indent-new-comment-line)
 
 ;; ---------------- Comment lines
-(global-set-key (kbd "M-/") 'comment-line)
+(define-key prog-mode-map(kbd "C-i") 'tab-indent-or-complete)
 
-;; comment
-;; Update : evilnc-comment-or-uncomment-lines  fait des commentaires bizarres (en mode html plusieurs imbrications de commentaire html au lieu d un seul)
-;; Update : comment-region ne fonctionne pas bien en mode css
-;; Update : Utilisation du racourcis natif C-x C-; bien plus
-;; ergonomique
-;; (global-set-key [(meta /)] 'evilnc-comment-or-uncomment-lines)
-
-;; text operation : duplication
 (global-set-key [(meta shift d)] 'duplicate-start-of-line-or-region)
-
-;; Undo redo
-;; Update : Use default binding
-;; (global-set-key [(meta z)] 'undo-tree-undo)
-;; (global-set-key [(meta shift z)] 'undo-tree-redo)
 
 (global-set-key [C-M-tab] 'other-window)
 (global-set-key [C-M-S-tab] 'previous-multiframe-window)
@@ -687,6 +678,7 @@ Version 2016-12-27"
 ;; swoop
 (global-set-key (kbd "C-S-s") 'helm-swoop)
 (define-key js2-mode-map (kbd "C-S-s") 'helm-swoop)
+
 (define-key php-mode-map (kbd "C-S-s") 'helm-swoop)
 (define-key web-mode-map (kbd "C-S-s") 'helm-swoop)
 (define-key markdown-mode-map (kbd "C-S-s") 'helm-swoop)
@@ -747,6 +739,7 @@ Version 2016-12-27"
 ;; camelcase are moved into "string-inflection-all-cycle" function
 (global-set-key (kbd "M-l") 'er/expand-region)
 (global-set-key (kbd "M-L") 'er/contract-region)
+(global-set-key (kbd "C-M-l") 'mark-sexp)
 
 
 (defun m-eshell-hook ()
@@ -770,10 +763,11 @@ Version 2016-12-27"
 ;; Standard new line
 (define-key key-translation-map (kbd "C-j") (kbd "RET"))
 
-(define-key prog-mode-map (kbd "RET") 'reindent-then-newline-and-indent)
 
 
-;; Above
+
+
+;;
 (global-set-key (kbd "C-M-j") 'open-line-below)
 (global-set-key (kbd "C-M-j") 'open-line-below)
 (define-key php-mode-map (kbd "C-M-j") 'open-line-below)
@@ -919,6 +913,11 @@ Version 2016-12-27"
 ;; Update to use find-file-in-project-by-selected
 (global-set-key (kbd "C->") 'ffap)
 
+;;
+(global-set-key (kbd "C-c C-M-i") 'company-files)
+(global-set-key (kbd "C-c C-i") 'company-dabbrev)
+(global-set-key (kbd "C-c C-M-l") 'mark-defun)
+
 ;; (global-set-key (kbd "C-.") 'projectile-find-file-dwim)
 (global-set-key (kbd "C-.") 'find-file-in-project-by-selected)
 (define-key php-mode-map [(control .)] 'find-file-in-project-by-selected)
@@ -1037,8 +1036,10 @@ Version 2016-12-27"
 
 ;; Scroll commands
 (global-set-key (kbd "s-v") 'evil-scroll-up)
+;; (global-set-key (kbd "s-x") 'smex)
 (global-set-key (kbd "s-x") 'helm-M-x)
 ;; (global-set-key (kbd "s-x") 'smex)
+
 
 ;; Text commandes
 ;; (global-set-key (kbd "s-c") 'capitalize-word)
