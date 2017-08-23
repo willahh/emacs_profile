@@ -102,7 +102,7 @@
   highlight-symbol
 
   autopair
-  ;; smartparens
+  smartparens
 
   ;; avy ;; Deplacee dans vendor suite a un bug sur une version plus recente
   ;; avy-menu ;; Deplacee dans vendor suite a un bug sur une version plus recente
