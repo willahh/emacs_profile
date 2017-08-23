@@ -451,7 +451,8 @@ Version 2016-12-27"
 
 (global-set-key (kbd "C-x C-i") 'helm-imenu)
 (global-set-key (kbd "C-x <C-i>") 'helm-imenu)
-
+(global-set-key (kbd "M-r") 'helm-imenu)
+(define-key paredit-mode-map (kbd "M-r") 'helm-imenu)
 
 ;; Update to use counsel-find-file instead of helm-find-file
 ;; Update : Non utilisé
