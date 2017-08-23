@@ -1099,3 +1099,9 @@ Version 2016-12-27"
 (define-key text-mode-map (kbd "C-c ; s i") 'ispell)
 (define-key text-mode-map (kbd "C-c ; s l") 'langtool-check)
 (define-key text-mode-map (kbd "C-c ; s c") 'langtool-correct-buffer)
+
+
+
+;; use hippie-expand instead of dabbrev
+;; (define-key key-translation-map "M-/" "M-:")
+(global-set-key (kbd "M-/") 'hippie-expand)
