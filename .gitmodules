@@ -1,3 +1,6 @@
 [submodule "include/emacs-helm-ag"]
 	path = include/emacs-helm-ag
 	url = https://github.com/syohex/emacs-helm-ag.git
+[submodule "y"]
+	path = vendor/lispy
+	url = https://github.com/abo-abo/lispy.git

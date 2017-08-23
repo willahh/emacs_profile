@@ -1214,3 +1214,9 @@ _d_: subtree
                                          try-complete-lisp-symbol-partially
                                          try-complete-lisp-symbol))
 
+
+
+
+
+(require 'lispy)
+(add-hook 'prog-mode-hook 'lispy-mode)
