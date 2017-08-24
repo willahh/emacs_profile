@@ -317,7 +317,8 @@ Version 2016-12-27"
 (global-set-key (kbd "C-∑") 'projectile-ag) ; CONTROL+ALT+SHIFT+s
 
 (global-set-key (kbd "Ò") 'paredit-splice-sexp)
-(global-set-key (kbd "∑") 'helm-swoop) ; ALT+SHIFT+s
+;; (global-set-key (kbd "∑") 'helm-swoop) ; ALT+SHIFT+s
+(global-set-key (kbd "∑") 'swiper) ; ALT+SHIFT+s
 
 (global-set-key (kbd "æ") 'mark-whole-buffer) ; ALT+a
 (global-set-key (kbd "Â") 'toggle-php-flavor-mode) ; ALT+z
@@ -482,9 +483,9 @@ Version 2016-12-27"
 (define-key org-mode-map (kbd "M-j") 'org-meta-return)
 
 (require 'conf-mode)
-(define-key conf-mode-map (kbd "C-c C-s") 'helm-swoop)
+;; (define-key conf-mode-map (kbd "C-c C-s") 'helm-swoop)
 
-(define-key conf-space-mode-map (kbd "C-c C-s") 'helm-swoop)
+;; (define-key conf-space-mode-map (kbd "C-c C-s") 'helm-swoop)
 
 ;; Swiper
 ;; (global-set-key (kbd "C-c C-p") 'swiper)
@@ -685,12 +686,18 @@ Version 2016-12-27"
 (global-set-key (kbd "C-c C-s") 'avy-goto-char-in-line)
 
 ;; swoop
-(global-set-key (kbd "C-S-s") 'helm-swoop)
-(define-key js2-mode-map (kbd "C-S-s") 'helm-swoop)
 
-(define-key php-mode-map (kbd "C-S-s") 'helm-swoop)
-(define-key web-mode-map (kbd "C-S-s") 'helm-swoop)
-(define-key markdown-mode-map (kbd "C-S-s") 'helm-swoop)
+;; (global-set-key (kbd "C-S-s") 'helm-swoop)
+;; (define-key js2-mode-map (kbd "C-S-s") 'helm-swoop)
+;; (define-key php-mode-map (kbd "C-S-s") 'helm-swoop)
+;; (define-key web-mode-map (kbd "C-S-s") 'helm-swoop)
+;; (define-key markdown-mode-map (kbd "C-S-s") 'helm-swoop)
+
+(global-set-key (kbd "C-S-s") 'swiper)
+(define-key js2-mode-map (kbd "C-S-s") 'swiper)
+(define-key php-mode-map (kbd "C-S-s") 'swiper)
+(define-key web-mode-map (kbd "C-S-s") 'swiper)
+(define-key markdown-mode-map (kbd "C-S-s") 'swiper)
 
 
 ;; Align your code in a pretty way.
@@ -996,7 +1003,8 @@ Version 2016-12-27"
 
 ;; --------------- Super keys
 ;; Search with super key
-(global-set-key (kbd "s-s") 'helm-swoop) ; Super+s
+;; (global-set-key (kbd "s-s") 'helm-swoop) ; Super+s
+(global-set-key (kbd "s-s") 'swiper) ; Super+s
 (global-set-key (kbd "s-e") 'kmacro-end-and-call-macro) ; Super+e
 (global-set-key (kbd "C-s-s") 'helm-ag) ; Super+Contral+s
 (global-set-key (kbd "C-M-s-s") 'projectile-ag) ; Control+Meta+Super+s

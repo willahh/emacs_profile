@@ -35,6 +35,7 @@
   memoize
   outline-toc
   dired-subtree
+  ido-at-point-mode
   
 
 
