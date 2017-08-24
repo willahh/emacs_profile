@@ -219,6 +219,7 @@
 (add-hook 'evil-insert-state-entry-hook 'powerline-theme-insert)
 (add-hook 'evil-emacs-state-entry-hook 'powerline-theme-emacs)
 
+
 ;; Cursor / caret state color
 ;; (setq evil-emacs-state-cursor '("#56b0ec" box))
 (setq evil-emacs-state-cursor '("#ff00d2" box))

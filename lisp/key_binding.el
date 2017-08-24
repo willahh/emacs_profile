@@ -1039,13 +1039,15 @@ Version 2016-12-27"
 
 ;; Browse comands
 (global-set-key (kbd "s-p") 'projectile-find-file)
-(global-set-key (kbd "s-r") 'projectile-recentf)
-(global-set-key (kbd "s-R") 'helm-recentf)
+;; (global-set-key (kbd "s-r") 'projectile-recentf)
+(global-set-key (kbd "s-r") 'helm-recentf)
+;; (global-set-key (kbd "s-R") 'helm-recentf)
 (global-set-key (kbd "s-q") 'my-abort-recursive-edit)
 (global-set-key (kbd "C-s-p") 'find-file-in-current-directory)
 
 ;; Scroll commands
 (global-set-key (kbd "s-v") 'evil-scroll-up)
+;; (global-set-key (kbd "C-M-s-v") 'scroll-other-window-down)
 ;; (global-set-key (kbd "s-x") 'smex)
 (global-set-key (kbd "s-x") 'helm-M-x)
 ;; (global-set-key (kbd "s-x") 'smex)
@@ -1103,5 +1105,9 @@ Version 2016-12-27"
 
 
 ;; use hippie-expand instead of dabbrev
-;; (define-key key-translation-map "M-/" "M-:")
-(global-set-key (kbd "M-/") 'hippie-expand)
+
+;; "Translate" key to behave like on us keyboard
+;; (define-key key-translation-map (kbd "M-/") (kbd "M-:"))
+(global-set-key (kbd "M-/") 'eval-expression)
+(global-set-key (kbd "M-:") 'hippie-expand)
+(global-set-key (kbd "M-i") 'hippie-expand)
