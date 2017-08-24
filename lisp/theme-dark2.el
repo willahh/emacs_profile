@@ -53,6 +53,21 @@
 
 (set-face-background 'show-paren-match "#9a00ff")
 
+;; (set-face-attribute 'yas--field-debug-face nil
+;;                     :foreground nil
+;;                     :background nil)
+
+;; (set-face-attribute 'flycheck-error nil
+;;                     :foreground "#fff")
+
+(set-face-attribute 'js2-error nil
+                    :foreground "#fff")
+
+(set-face-attribute 'yas-field-highlight-face nil
+                    :foreground "#fff"
+                    :background "#000")
+
+
 ;; Cursor / caret state color
 ;; (setq evil-emacs-state-cursor '("#56b0ec" box))
 (setq evil-emacs-state-cursor '("#ff00d2" box))
