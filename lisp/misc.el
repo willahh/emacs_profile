@@ -1218,5 +1218,5 @@ _d_: subtree
 
 
 
-(require 'lispy)
-(add-hook 'prog-mode-hook 'lispy-mode)
+; (require 'lispy)
+; (add-hook 'prog-mode-hook 'lispy-mode)
