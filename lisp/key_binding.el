@@ -714,6 +714,7 @@ Version 2016-12-27"
 ;; imenu-list
 (global-set-key (kbd "C-c <C-i>") 'imenu-list)
 
+
 ;; Webjump let's you quickly search google, wikipedia, emacs wiki
 (global-set-key (kbd "C-x g") 'webjump)
 (global-set-key (kbd "C-x M-g") 'browse-url-at-point)
@@ -1025,6 +1026,7 @@ Version 2016-12-27"
 (global-set-key (kbd "s-h") 'help)
 
 ;; Find
+;; (global-set-key (kbd "s-f") 'counsel-find-file)
 (global-set-key (kbd "s-f") 'counsel-find-file)
 
 ;; Expand / Contract region
@@ -1053,7 +1055,7 @@ Version 2016-12-27"
 (global-set-key (kbd "s-q") 'my-abort-recursive-edit)
 (global-set-key (kbd "C-s-p") 'find-file-in-current-directory)
 ;; (global-set-key (kbd "s-r") 'counsel-recentf)
-(global-set-key (kbd "s-r") 'crux-recentf-ido-find-file)g
+(global-set-key (kbd "s-r") 'crux-recentf-ido-find-file)
 
 ;; Scroll commands
 (global-set-key (kbd "s-v") 'evil-scroll-up)
@@ -1076,6 +1078,7 @@ Version 2016-12-27"
 
 (global-set-key (kbd "s-a") 'mark-whole-buffer)
 (global-set-key (kbd "s-s") 'helm-swoop)
+;; (global-set-key (kbd "s-s") 'swiper)
 
 (global-set-key (kbd "s-w") 'vc-diff)
 (global-set-key (kbd "s-W") 'vc-ediff)

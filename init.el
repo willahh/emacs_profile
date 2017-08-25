@@ -87,6 +87,7 @@
  '(helm-ag-command-option "--all-text")
  '(helm-ag-ignore-buffer-patterns (quote ("\\.txt\\'" "\\.min.js\\'")))
  '(helm-ag-insert-at-point (quote symbol))
+ '(helm-source-names-using-follow (quote ("Search at ~/.emacs.d/lisp/")))
  '(ido-enable-flex-matching t)
  '(magit-dispatch-arguments nil)
  '(package-selected-packages

@@ -7,6 +7,8 @@
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 
+(require ido)
+
 ;; activate all the packages (in particular autoloads)
 (package-initialize)
 

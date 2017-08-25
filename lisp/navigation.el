@@ -116,7 +116,8 @@
       ido-auto-merge-work-directories-length -1
       ido-create-new-buffer 'always
       ido-use-filename-at-point nil
-      ido-max-prospects 40
+      ;; ido-max-prospects 40
+      ido-max-prospects 10
       ido-everywhere t
       ido-mode 1)
 
