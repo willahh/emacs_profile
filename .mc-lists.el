@@ -106,6 +106,7 @@
       sp-backward-up-sexp
       sp-forward-sexp
       sp-kill-hybrid-sexp
+      sp-kill-sexp
       string-inflection-all-cycle
       tab-indent-or-complete
       tern-ac-dot-complete
@@ -133,6 +134,7 @@
       company-complete-common
       compilation-next-error
       compilation-previous-error
+      completion-at-point
       counsel-M-x
       delete-window
       describe-key

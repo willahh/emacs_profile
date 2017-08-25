@@ -317,7 +317,8 @@ Version 2016-12-27"
 (global-set-key (kbd "C-∑") 'projectile-ag) ; CONTROL+ALT+SHIFT+s
 
 (global-set-key (kbd "Ò") 'paredit-splice-sexp)
-(global-set-key (kbd "∑") 'helm-swoop) ; ALT+SHIFT+s
+;; (global-set-key (kbd "∑") 'helm-swoop) ; ALT+SHIFT+s
+(global-set-key (kbd "∑") 'swiper) ; ALT+SHIFT+s
 
 (global-set-key (kbd "æ") 'mark-whole-buffer) ; ALT+a
 (global-set-key (kbd "Â") 'toggle-php-flavor-mode) ; ALT+z
@@ -482,9 +483,9 @@ Version 2016-12-27"
 (define-key org-mode-map (kbd "M-j") 'org-meta-return)
 
 (require 'conf-mode)
-(define-key conf-mode-map (kbd "C-c C-s") 'helm-swoop)
+;; (define-key conf-mode-map (kbd "C-c C-s") 'helm-swoop)
 
-(define-key conf-space-mode-map (kbd "C-c C-s") 'helm-swoop)
+;; (define-key conf-space-mode-map (kbd "C-c C-s") 'helm-swoop)
 
 ;; Swiper
 ;; (global-set-key (kbd "C-c C-p") 'swiper)
@@ -685,12 +686,18 @@ Version 2016-12-27"
 (global-set-key (kbd "C-c C-s") 'avy-goto-char-in-line)
 
 ;; swoop
-(global-set-key (kbd "C-S-s") 'helm-swoop)
-(define-key js2-mode-map (kbd "C-S-s") 'helm-swoop)
 
-(define-key php-mode-map (kbd "C-S-s") 'helm-swoop)
-(define-key web-mode-map (kbd "C-S-s") 'helm-swoop)
-(define-key markdown-mode-map (kbd "C-S-s") 'helm-swoop)
+;; (global-set-key (kbd "C-S-s") 'helm-swoop)
+;; (define-key js2-mode-map (kbd "C-S-s") 'helm-swoop)
+;; (define-key php-mode-map (kbd "C-S-s") 'helm-swoop)
+;; (define-key web-mode-map (kbd "C-S-s") 'helm-swoop)
+;; (define-key markdown-mode-map (kbd "C-S-s") 'helm-swoop)
+
+(global-set-key (kbd "C-S-s") 'swiper)
+(define-key js2-mode-map (kbd "C-S-s") 'swiper)
+(define-key php-mode-map (kbd "C-S-s") 'swiper)
+(define-key web-mode-map (kbd "C-S-s") 'swiper)
+(define-key markdown-mode-map (kbd "C-S-s") 'swiper)
 
 
 ;; Align your code in a pretty way.
@@ -996,7 +1003,8 @@ Version 2016-12-27"
 
 ;; --------------- Super keys
 ;; Search with super key
-(global-set-key (kbd "s-s") 'helm-swoop) ; Super+s
+;; (global-set-key (kbd "s-s") 'helm-swoop) ; Super+s
+(global-set-key (kbd "s-s") 'swiper) ; Super+s
 (global-set-key (kbd "s-e") 'kmacro-end-and-call-macro) ; Super+e
 (global-set-key (kbd "C-s-s") 'helm-ag) ; Super+Contral+s
 (global-set-key (kbd "C-M-s-s") 'projectile-ag) ; Control+Meta+Super+s
@@ -1039,16 +1047,21 @@ Version 2016-12-27"
 
 ;; Browse comands
 (global-set-key (kbd "s-p") 'projectile-find-file)
-(global-set-key (kbd "s-r") 'projectile-recentf)
-(global-set-key (kbd "s-R") 'helm-recentf)
+;; (global-set-key (kbd "s-r") 'projectile-recentf)
+;; (global-set-key (kbd "s-r") 'helm-recentf)
+;; (global-set-key (kbd "s-R") 'helm-recentf)
 (global-set-key (kbd "s-q") 'my-abort-recursive-edit)
 (global-set-key (kbd "C-s-p") 'find-file-in-current-directory)
+;; (global-set-key (kbd "s-r") 'counsel-recentf)
+(global-set-key (kbd "s-r") 'crux-recentf-ido-find-file)
 
 ;; Scroll commands
 (global-set-key (kbd "s-v") 'evil-scroll-up)
+;; (global-set-key (kbd "C-M-s-v") 'scroll-other-window-down)
 ;; (global-set-key (kbd "s-x") 'smex)
-(global-set-key (kbd "s-x") 'helm-M-x)
+;; (global-set-key (kbd "s-x") 'helm-M-x)
 ;; (global-set-key (kbd "s-x") 'smex)
+(global-set-key (kbd "s-x") 'counsel-M-x)
 
 
 ;; Text commandes
@@ -1103,5 +1116,9 @@ Version 2016-12-27"
 
 
 ;; use hippie-expand instead of dabbrev
-;; (define-key key-translation-map "M-/" "M-:")
-(global-set-key (kbd "M-/") 'hippie-expand)
+
+;; "Translate" key to behave like on us keyboard
+;; (define-key key-translation-map (kbd "M-/") (kbd "M-:"))
+(global-set-key (kbd "M-/") 'eval-expression)
+(global-set-key (kbd "M-:") 'hippie-expand)
+(global-set-key (kbd "M-i") 'hippie-expand)

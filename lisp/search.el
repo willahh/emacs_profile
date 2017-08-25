@@ -31,7 +31,8 @@
 ;; I-search
 (setq-default
  isearch-allow-scroll t
- lazy-highlight-cleanup nil
+ ;; lazy-highlight-cleanup nil
+ lazy-highlight-cleanup t
  lazy-highlight-initial-delay 0)
 
 ;; Occur from isearch
@@ -44,3 +45,20 @@
 
 (define-key isearch-mode-map (kbd "C-o") 'isearch-occur)
 
+
+
+
+
+
+
+
+;; https://www.emacswiki.org/emacs/HighlightFromIsearch
+(defun isearch-highlight-phrase ()
+  "Invoke `highligh-phrase' from within isearch."
+  (interactive)
+  (let ((case-fold-search isearch-case-fold-search))
+    (highlight-phrase (if isearch-regexp
+                          isearch-string
+                        (regexp-quote isearch-string)))))
+
+(define-key isearch-mode-map (kbd "C-i") 'isearch-highlight-phrase)

@@ -128,9 +128,11 @@ is already narrowed."
   ;; (set (make-local-variable 'company-idle-delay) 1)
 
   ;; (set (make-local-variable 'company-minimum-prefix-length) 1)
-  (set (make-local-variable 'company-minimum-prefix-length) 2)
+  ;; (set (make-local-variable 'company-minimum-prefix-length) 2)
+  (set (make-local-variable 'company-minimum-prefix-length) 1)
   ;; (set (make-local-variable 'company-idle-delay) 0)
-  (set (make-local-variable 'company-idle-delay) 1)
+  ;; (set (make-local-variable 'company-idle-delay) 1)
+  (set (make-local-variable 'company-idle-delay) 0)
 
   ;; js2-refactor-mode
   ;; (js2-refactor-mode)
@@ -151,7 +153,8 @@ is already narrowed."
   ;; Company-dabbrev
   ;; Only words in the current buffer
   (set (make-local-variable 'company-dabbrev-other-buffers) 't)
-  (set (make-local-variable 'company-backends) '((company-tern :with company-files)))
+  ;; (set (make-local-variable 'company-backends) '((company-tern :with company-files)))
+  (set (make-local-variable 'company-backends) '((company-tern :with company-files :with company-dabbrev)))
   
   (define-key wil-js-mode-map (kbd "<tab>") 'company-indent-or-complete-common)
   ;; (define-key wil-js-mode-map (kbd "C-i") 'company-indent-or-complete-common)
