@@ -1,11 +1,13 @@
 #name : html
 # --
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-	<title>$1</title>
-</head>
-<body>
-    $2
-</body>
+    <head>
+        <meta charset="utf-8">
+	    <title>$1</title>
+        <meta name="description" content="$2">
+    </head>
+    <body>
+        $0
+    </body>
 </html>

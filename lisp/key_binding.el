@@ -1053,7 +1053,8 @@ Version 2016-12-27"
 (global-set-key (kbd "s-q") 'my-abort-recursive-edit)
 (global-set-key (kbd "C-s-p") 'find-file-in-current-directory)
 ;; (global-set-key (kbd "s-r") 'counsel-recentf)
-(global-set-key (kbd "s-r") 'crux-recentf-ido-find-file)
+;; (global-set-key (kbd "s-r") 'crux-recentf-ido-find-file)
+(global-set-key (kbd "s-r") 'counsel-recentf)
 
 ;; Scroll commands
 (global-set-key (kbd "s-v") 'evil-scroll-up)
