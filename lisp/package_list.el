@@ -36,11 +36,10 @@
   outline-toc
   dired-subtree
   ido-at-point
-  
-
+  react-snippets
+  ; rjsx
 
   ;; backe-button
-
   ;; perspective
   ;; smart-mode-line ;; (sml -> activated)
   ;; spaceline
@@ -62,74 +61,53 @@
   ;;js2-refactor ;; Available in plugins directory
   ;; flymake-jshint
   ;; neotree
-
   ;; google-this ; Deplace dans vendor
   ;; google-translate ; Deplace dans vendor
-
   anzu
   ;; indium
-
   smex
-
   ido
   ido-ubiquitous
   ido-vertical-mode
-
   php-mode
   ;;php-refactor-mode ;; Not found in Melpa
   php-auto-yasnippets
-
   gradle-mode
-
   company-php
   ac-php
   ;; php-eldoc ;; Not found in Melpa
   ;; php-extras
   editorconfig
   ;; php-completion
-
   dracula-theme
   ;; indium
-
   psysh ; Seems to be the true PHP REPL https://github.com/zonuexe/psysh.el
-
   ;; auto-complete-exuberant-ctags
   ;; golden-ratio
   ;; ace-window ;; Deplacee dans vendor suite a un bug sur une version plus recente
   ag
   rainbow-mode
-
   eclim
   ;; point-undo ;; Not found in Melpa
-
   rainbow-delimiters
   ;;anything
   async
   auto-complete
   highlight-symbol
-
   autopair
   smartparens
-
   ;; avy ;; Deplacee dans vendor suite a un bug sur une version plus recente
   ;; avy-menu ;; Deplacee dans vendor suite a un bug sur une version plus recente
-
   pdf-tools
-
   ;; color-theme-buffer-local
   dash
   ;;diff-hl ;; Package casse depuis un moment, deplace dans vendor
-
-
   ;; doom-themes ;; Dependant du package ‘font-lock+-0’ non disponible sur MELPA stable
   dsvn
   emmet-mode
   epl
-
   ggtags
   ;; google-maps
-
-
   evil
   ;; evil-easymotion ;; Non disponible sur MELPA stable
   evil-leader
@@ -141,17 +119,13 @@
   evil-matchit
   ;; evil-magit
   evil-org
-
   toc-org
-
   exec-path-from-shell
   expand-region
   ;; eyebrowse ;; Non utilises
   ;; general
   git-gutter
   sx
-
-  
 
   ;; helm
   ;; helm-ag
@@ -160,7 +134,6 @@
   ;; helm-core
   ;; ;; helm-projectile
   ;; helm-swoop
-
   ;;imenu-anywhere
   js-comint
   ;; js-doc
@@ -184,20 +157,15 @@
   ;; smart-forward
   ;; smart-tab
   fullframe
-
   ;; websocket
   ;; sourcemap
-
   counsel
-
   sml-mode
   swiper
   ;; swiper-helm
   tern
-  
 
   zop-to-char
-
   ;; tern-auto-complete
   use-package
   web-beautify
@@ -206,9 +174,7 @@
   yasnippet
   ;; yascroll
   ;; zerodark-theme ;; Dependant du package ‘font-lock+-0’ non disponible sur MELPA stable
-
   ;; nodejs-repl
-
   ;; all-the-icons
   js2-refactor
   ace-jump-mode
@@ -216,18 +182,12 @@
   ;;web-mode
   whole-line-or-region
   neotree
-
-
   iy-go-to-char
   ;; change-inner Non disponible sur MELPA stable
-
   ;; dired-details
   flx-ido
-
   ;;ivy-hydra
-
   ))
-;
 
 (add-to-list 'load-path "~/.emacs.d/vendor/emacs-async")
 (add-to-list 'load-path "~/.emacs.d/vendor/helm")

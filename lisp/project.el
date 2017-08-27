@@ -1,3 +1,4 @@
+
 ;; ----- desktop
 ;; Ajout de save mode auto
 ;; En commentaire pour le moment, car fait FREEZER emacs sur l ouverture d un gros fichier
