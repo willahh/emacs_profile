@@ -317,8 +317,8 @@ Version 2016-12-27"
 (global-set-key (kbd "C-∑") 'projectile-ag) ; CONTROL+ALT+SHIFT+s
 
 (global-set-key (kbd "Ò") 'paredit-splice-sexp)
-;; (global-set-key (kbd "∑") 'helm-swoop) ; ALT+SHIFT+s
-(global-set-key (kbd "∑") 'swiper) ; ALT+SHIFT+s
+(global-set-key (kbd "∑") 'helm-swoop) ; ALT+SHIFT+s
+;; (global-set-key (kbd "∑") 'swiper) ; ALT+SHIFT+s
 
 (global-set-key (kbd "æ") 'mark-whole-buffer) ; ALT+a
 (global-set-key (kbd "Â") 'toggle-php-flavor-mode) ; ALT+z
@@ -1057,7 +1057,8 @@ Version 2016-12-27"
 ;; (global-set-key (kbd "s-r") 'counsel-recentf)
 
 ;; (global-set-key (kbd "s-r") 'crux-recentf-ido-find-file)
-(global-set-key (kbd "s-r") 'counsel-recentf)
+(global-set-key (kbd "s-r") 'projectile-recentf)
+(global-set-key (kbd "C-s-r") 'counsel-recentf)
 
 ;; (global-set-key (kbd "s-r") 'crux-recentf-ido-find-file)
 
