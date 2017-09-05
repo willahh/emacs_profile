@@ -80,3 +80,6 @@
 ;; (set-face-attribute 'highlight-symbol-face nil :foreground "#000" :background "#56b0ec")
 (set-face-attribute 'highlight-symbol-face nil :foreground nil :background "#5d5e62")
 
+;; Text selection
+(set-face-attribute 'region nil :background "#275f99" :foreground nil :box nil)
+

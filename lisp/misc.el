@@ -1230,3 +1230,10 @@ _d_: subtree
   ;; don't muck with special buffers
   (setq uniquify-ignore-buffers-re "^\\*"))
 
+
+(use-package move-text
+  :ensure t
+  :bind
+  (([(meta control up)] . move-text-up)
+   ([(meta control down)] . move-text-down)))
+

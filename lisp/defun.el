@@ -1319,18 +1319,18 @@ the visible part of the current buffer following point. "
 ;;               (recenter)))
 
 ;; Recenter after highlight-symbol-next
-(advice-add 'highlight-symbol-next
-            :after
-            (lambda (&rest args)
-              "Recenter"
-              (recenter)))
+;; (advice-add 'highlight-symbol-next
+;;             :after
+;;             (lambda (&rest args)
+;;               "Recenter"
+;;               (recenter)))
 
 ;; Recenter after highlight-symbol-prev
-(advice-add 'highlight-symbol-prev
-            :after
-            (lambda (&rest args)
-              "Recenter"
-              (recenter)))
+;; (advice-add 'highlight-symbol-prev
+;;             :after
+;;             (lambda (&rest args)
+;;               "Recenter"
+;;               (recenter)))
 
 ;; Recenter after compile-goto-error
 (advice-add 'compile-goto-error
