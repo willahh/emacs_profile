@@ -77,5 +77,6 @@
 (setq evil-replace-state-cursor '("red" bar))
 (setq evil-operator-state-cursor '("red" hollow))
 
-
+;; (set-face-attribute 'highlight-symbol-face nil :foreground "#000" :background "#56b0ec")
+(set-face-attribute 'highlight-symbol-face nil :foreground nil :background "#5d5e62")
 
