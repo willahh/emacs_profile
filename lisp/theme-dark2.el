@@ -90,3 +90,5 @@
 ;; (set-face-attribute 'lazy-highlight nil :background "#1c6a6c" :foreground nil :box nil)
 (set-face-attribute 'isearch nil :background "#00ffec" :foreground "#000" :box nil)
 
+(set-face-attribute 'wgrep-face nil :background "#00ffec" :foreground "#000" :box nil)
+

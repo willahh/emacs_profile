@@ -334,6 +334,10 @@ Version 2016-12-27"
 (global-set-key (kbd "æ") 'mark-whole-buffer) ; ALT+a
 (global-set-key (kbd "Â") 'toggle-php-flavor-mode) ; ALT+z
 
+;; wgrep
+(define-key compilation-mode-map (kbd "C-x w") 'wgrep-change-to-wgrep-mode)
+(define-key compilation-mode-map (kbd "C-x s") 'wgrep-save-all-buffers)
+(define-key compilation-mode-map (kbd "C-c C-c") 'wgrep-finish-edit)
 
 
 ;; Drag line

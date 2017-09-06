@@ -65,28 +65,28 @@
 
 
 ;; vc-dir evil mode
-(evil-define-key 'normal vc-dir-mode-map (kbd "d") 'vc-diff
-  (kbd "j") 'vc-dir-next-line
-  (kbd "k") 'vc-dir-previous-line
-  (kbd "D") 'wil-vc-version-diff-base-head
-  (kbd "e") 'vc-ediff
-  (kbd "E") 'wil-vc-version-ediff-base-head
-  (kbd "x") 'vc-revert
-  (kbd "l") 'vc-print-log
-  (kbd "L") 'vc-print-root-log
-  (kbd "q") 'quit-window
-  (kbd "m") 'vc-dir-mark
-  (kbd "v") 'vc-next-action
-  (kbd "+") 'vc-update
-  (kbd "g") 'revert-buffer
-  (kbd "C-j") 'vc-dir-find-file
-  (kbd "M") 'vc-dir-mark-all-files
-  (kbd "u") 'vc-dir-unmark
-  (kbd "U") 'vc-dir-unmark-all-files
-  (kbd "C-o") 'vc-dir-display-file
-  (kbd "RET") 'vc-dir-find-file
-  (kbd "D") 'vc-root-diff
-  )
+;; (evil-define-key 'normal vc-dir-mode-map (kbd "d") 'vc-diff
+;;   (kbd "j") 'vc-dir-next-line
+;;   (kbd "k") 'vc-dir-previous-line
+;;   (kbd "D") 'wil-vc-version-diff-base-head
+;;   (kbd "e") 'vc-ediff
+;;   (kbd "E") 'wil-vc-version-ediff-base-head
+;;   (kbd "x") 'vc-revert
+;;   (kbd "l") 'vc-print-log
+;;   (kbd "L") 'vc-print-root-log
+;;   (kbd "q") 'quit-window
+;;   (kbd "m") 'vc-dir-mark
+;;   (kbd "v") 'vc-next-action
+;;   (kbd "+") 'vc-update
+;;   (kbd "g") 'revert-buffer
+;;   (kbd "C-j") 'vc-dir-find-file
+;;   (kbd "M") 'vc-dir-mark-all-files
+;;   (kbd "u") 'vc-dir-unmark
+;;   (kbd "U") 'vc-dir-unmark-all-files
+;;   (kbd "C-o") 'vc-dir-display-file
+;;   (kbd "RET") 'vc-dir-find-file
+;;   (kbd "D") 'vc-root-diff
+;;   )
 
 ;; dired evil mode
 (evil-define-key 'normal dired-mode-map (kbd "j") 'dired-next-line
