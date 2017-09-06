@@ -46,29 +46,40 @@
 (global-set-key (kbd "C-c , f h a") 'hs-hide-all) ; (user key binding (C-c ,) + [f]olding [h]ide [a]ll)
 (global-set-key (kbd "C-c , f s b") 'hs-show-block) ; (user key binding (C-c ,) + [f]olding [s]how [b]lock)
 (global-set-key (kbd "C-c , f h b") 'hs-hide-block) ; (user key binding (C-c ,) + [f]olding [h]ide [b]lock)
-
 (require 'php-mode)
 
+
 ;; Toggle fullscreen
-(global-set-key (kbd "C-c C-M-f") 'toggle-frame-fullscreen)
-(define-key org-mode-map (kbd "C-c C-M-f") 'toggle-frame-fullscreen)
-(define-key php-mode-map (kbd "C-c C-M-f") 'toggle-frame-fullscreen)
-(define-key ggtags-mode-map (kbd "C-c C-M-f") 'toggle-frame-fullscreen)
+;; Update : OSX : Utilisation de l outil iSpectacle
+;; Update : Maj pour utilsation des raccourcis avec prefix user (C-c ,)
 
-(global-set-key (kbd "C-c M-f") 'toggle-frame-maximized)
-(define-key org-mode-map (kbd "C-c M-f") 'toggle-frame-maximized)
-(define-key php-mode-map (kbd "C-c M-f") 'toggle-frame-maximized)
-(define-key ggtags-mode-map (kbd "C-c M-f") 'toggle-frame-maximized)
+;; (global-set-key (kbd "C-c C-M-f") 'toggle-frame-fullscreen)
+;; (define-key org-mode-map (kbd "C-c C-M-f") 'toggle-frame-fullscreen)
+;; (define-key ggtags-mode-map (kbd "C-c C-M-f") 'toggle-frame-fullscreen)
 
-(global-set-key (kbd "C-c M-F") 'wil-frame-large)
-(define-key org-mode-map (kbd "C-c M-F") 'wil-frame-large)
-(define-key php-mode-map (kbd "C-c M-F") 'wil-frame-large)
-(define-key ggtags-mode-map (kbd "C-c M-F") 'wil-frame-large)
+;; (define-key php-mode-map (kbd "C-c C-M-f") 'toggle-frame-fullscreen)
+(global-set-key (kbd "C-c , f f") 'toggle-frame-fullscreen)
 
-(global-set-key (kbd "C-c M-c") 'wil-frame-center)
-(define-key org-mode-map (kbd "C-c M-c") 'wil-frame-center)
-(define-key php-mode-map (kbd "C-c M-c") 'wil-frame-center)
-(define-key ggtags-mode-map (kbd "C-c M-c") 'wil-frame-center)
+;; (global-set-key (kbd "C-c M-f") 'toggle-frame-maximized)
+;; (define-key org-mode-map (kbd "C-c M-f") 'toggle-frame-maximized)
+;; (define-key php-mode-map (kbd "C-c M-f") 'toggle-frame-maximized)
+;; (define-key ggtags-mode-map (kbd "C-c M-f") 'toggle-frame-maximized)
+
+(global-set-key (kbd "C-c , f m") 'toggle-frame-maximized)
+
+;; (define-key org-mode-map (kbd "C-c M-F") 'wil-frame-large)
+;; (global-set-key (kbd "C-c M-F") 'wil-frame-large)
+;; (define-key php-mode-map (kbd "C-c M-F") 'wil-frame-large)
+;; (define-key ggtags-mode-map (kbd "C-c M-F") 'wil-frame-large)
+
+(global-set-key (kbd "C-c , f l") 'wil-frame-large)
+
+;; (global-set-key (kbd "C-c M-c") 'wil-frame-center)
+;; (define-key org-mode-map (kbd "C-c M-c") 'wil-frame-center)
+;; (define-key php-mode-map (kbd "C-c M-c") 'wil-frame-center)
+;; (define-key ggtags-mode-map (kbd "C-c M-c") 'wil-frame-center)
+
+(global-set-key (kbd "C-c , f c") 'wil-frame-center)
 
 ;; New frame
 (global-set-key [meta shift w] 'delete-frame)
