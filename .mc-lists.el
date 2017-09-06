@@ -104,6 +104,7 @@
       sp-backward-kill-sexp
       sp-backward-sexp
       sp-backward-up-sexp
+      sp-down-sexp
       sp-forward-sexp
       sp-kill-hybrid-sexp
       sp-kill-sexp

@@ -37,7 +37,8 @@
   dired-subtree
   ido-at-point
   react-snippets
-  ; rjsx
+  rjsx-mode
+
 
   ;; backe-button
   ;; perspective
