@@ -46,6 +46,8 @@
 (global-set-key (kbd "C-c , f h a") 'hs-hide-all) ; (user key binding (C-c ,) + [f]olding [h]ide [a]ll)
 (global-set-key (kbd "C-c , f s b") 'hs-show-block) ; (user key binding (C-c ,) + [f]olding [s]how [b]lock)
 (global-set-key (kbd "C-c , f h b") 'hs-hide-block) ; (user key binding (C-c ,) + [f]olding [h]ide [b]lock)
+
+(global-set-key (kbd "C-c , f n d") 'find-name-dired)
 (require 'php-mode)
 
 
@@ -507,11 +509,13 @@ Version 2016-12-27"
 
 ;; -- Text operations
 ;; Copy operations
-(global-set-key (kbd "C-c c w") (quote copy-word))
-(global-set-key (kbd "C-c c l") (quote copy-line))
-(global-set-key (kbd "C-c c p") (quote copy-paragraph))
-(global-set-key (kbd "C-c c s") (quote thing-copy-string-to-mark))
-(global-set-key (kbd "C-c c a") (quote thing-copy-parenthesis-to-mark))
+(global-set-key (kbd "C-c , c w") (quote copy-word))
+(global-set-key (kbd "C-c , c l") (quote copy-line))
+(global-set-key (kbd "C-c , c p") (quote copy-paragraph))
+(global-set-key (kbd "C-c , c s") (quote thing-copy-string-to-mark))
+(global-set-key (kbd "C-c , c a") (quote thing-copy-parenthesis-to-mark))
+
+
 
 ;; ---------------- search
 ;; Update : Apres pas mal d essais, la commande "ag-project" me convient le mieux.
@@ -589,14 +593,14 @@ Version 2016-12-27"
 (global-set-key [C-M-tab] 'other-window)
 (global-set-key [C-M-S-tab] 'previous-multiframe-window)
 
-(global-set-key [C-tab] 'tabbar-forward)
-(global-set-key [C-S-tab] 'tabbar-backward)
-
 (global-set-key [escape] 'evil-exit-emacs-state)
 
+;; Update : Use of buffer-stack instead
+;; (global-set-key [C-tab] 'tabbar-forward)
+;; (global-set-key [C-S-tab] 'tabbar-backward)
 ;; Update : Impossible car meta shift a est utilisée
-(global-set-key [C-S-tab] 'previous-buffer)
-(global-set-key [C-tab] 'next-buffer)
+;; (global-set-key [C-S-tab] 'previous-buffer)
+;; (global-set-key [C-tab] 'next-buffer)
 
 ;; easy-motion
 (evilem-default-keybindings "ù")
@@ -907,9 +911,6 @@ Version 2016-12-27"
 ;; Pourquoi no no no ????, très utile pour la navigation entre les buffers !
 (global-set-key [(meta shift o)] 'previous-multiframe-window)
 
-(global-set-key [(meta shift i)] 'previous-buffer)
-(global-set-key [(meta i)] 'next-buffer)
-
 (define-key ggtags-navigation-map (kbd "M-p") 'highlight-symbol-next)
 (define-key ggtags-navigation-map (kbd "M-n") 'highlight-symbol-prev)
 
@@ -1146,3 +1147,12 @@ Version 2016-12-27"
 (global-set-key (kbd "M-/") 'eval-expression)
 (global-set-key (kbd "M-:") 'hippie-expand)
 (global-set-key (kbd "M-i") 'hippie-expand)
+
+
+;; https://github.com/jacktasia/dumb-jump
+(global-set-key (kbd "M-g o") 'dumb-jump-go-other-window)
+(global-set-key (kbd "M-g j") 'dumb-jump-go)
+(global-set-key (kbd "M-g i") 'dumb-jump-go-prompt)
+(global-set-key (kbd "M-g x") 'dumb-jump-go-prefer-external)
+(global-set-key (kbd "M-g z") 'dumb-jump-go-prefer-external-other-window)
+(global-set-key (kbd "M-g b") 'dumb-jump-back)
