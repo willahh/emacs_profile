@@ -166,3 +166,8 @@ and then calling `my-dired-kill-spawn' twice."
 (define-key image-dired-thumbnail-mode-map "g" 'revert-buffer)
 (define-key image-dired-thumbnail-mode-map "x" 'image-diredx-flagged-delete)
 (setq image-dired-track-movement nil)
+
+
+
+
+(setq dired-listing-switches "-alh")

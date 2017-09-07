@@ -19,7 +19,12 @@
 (global-set-key (kbd "M-v") 'yank)
 (global-set-key [(meta v)] 'yank)
 (global-set-key [(meta shift v)] 'yank-pop)
+
+;; Scroll
 (global-set-key (kbd "C-x M-v") 'evil-scroll-up)
+(define-key syslog-mode-map (kbd "s-v") 'scroll-down)
+(define-key syslog-mode-map (kbd "C-v") 'scroll-up)
+
 
 ;; M-z (zap-to-char) -> "undo"
 (global-set-key (kbd "M-z") 'undo-tree-undo)
@@ -994,8 +999,10 @@ Version 2016-12-27"
 (define-key org-mode-map (kbd "C-c C-b") 'org-backward-heading-same-level)
 
 ;; zoom
+(global-set-key (kbd "<s-kp-subtract>") 'text-scale-decrease)
 (global-set-key (kbd "s--") 'text-scale-decrease)
 (global-set-key (kbd "s-+") 'text-scale-increase)
+(global-set-key (kbd "<s-kp-add>") 'text-scale-increase)
 
 ;; ediff
 ;; (require 'ediff)
