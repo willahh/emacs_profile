@@ -51,7 +51,7 @@ is already narrowed."
         (t (js2-narrow-to-defun))))
 
 ;; js-comint
-;; javascript live interpreter nice to test regexp on fly
+;; javascript live interpreter nice to yo regexp on fly
 ;; (require 'js-comint)
 
 ;; Tern conf

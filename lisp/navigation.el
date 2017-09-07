@@ -371,12 +371,12 @@
 ;; @todo ce package ne se telecharge pas
 ;; Update ce package est quand meme tres pratique, reactivation
 ;; Update 2 : En fait utilisation de smartparens plutot
-;; Update 3 : Re-passage sur ce package suite a un test avec le package
+;; Update 3 : Re-passage sur ce package suite a un yo avec le package
 ;; autopair qui ne me convenait pas. (Mauvaise fermeture de simple quote dans
 ;; concatenation de chaine javascript)
 ;; Tout semble bien fonctionner.
 ;;
-;; Update 4 : Test du package paredit, celui-ci peut entrer en conflit avec
+;; Update 4 : Yo du package paredit, celui-ci peut entrer en conflit avec
 ;; certaines commandes de autopair, desactivation temporaire
 ;;
 ;; Update 5 : Trop pratique lors de, par exemple, l'ouverture
@@ -545,7 +545,7 @@
 
 ;; fix pour utilisation de paredit dans des languages autre que du
 ;; elisp, lisp (qui sont des languagess fortement bases sur les parentèses.
-;; @todo : Il faut ajouter des tests pour que cette modification soit
+;; @todo : Il faut ajouter des yos pour que cette modification soit
 ;; effective uniquement sur certains modes http://stackoverflow.com/a/913823
 (defun paredit-space-for-delimiter-p (endp delimiter)
   (and (not (if endp (eobp) (bobp)))

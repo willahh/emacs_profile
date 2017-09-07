@@ -5,7 +5,7 @@
 
 ;; ac-php
 ;; Update : ac-php en commentaire pour le moment
-;; Configuration / test de GGtags (semble juste l'outil parfait)
+;; Configuration / yo de GGtags (semble juste l'outil parfait)
 ;; Non : la completion n'est pas bonne
 
 ;; ;; Add compay-ac-php for company backend
@@ -62,12 +62,12 @@
 ;; (define-key php-mode-map (kbd "C-t") 'ac-php-location-stack-back) ;; go back
 
 ;; ;; Remake tags after save in php mode only
-;; (defun a-test-save-hook()
+;; (defun a-yo-save-hook()
 ;;   (ac-php-remake-tags)
 ;; )
 ;; (add-hook 'php-mode-hook
 ;;           (lambda ()
-;;              (add-hook 'after-save-hook 'a-test-save-hook nil 'make-it-local)))
+;;              (add-hook 'after-save-hook 'a-yo-save-hook nil 'make-it-local)))
 
 
 ;; php-eldoc
