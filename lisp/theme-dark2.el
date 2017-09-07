@@ -92,3 +92,9 @@
 
 (set-face-attribute 'wgrep-face nil :background "#00ffec" :foreground "#000" :box nil)
 
+;; ------ Dired
+(set-face-attribute 'dired-header nil :foreground "#34aeff" :background nil)
+(set-face-attribute 'dired-directory nil :foreground "#34aeff" :background nil)
+(set-face-attribute 'dired-perm-write nil :foreground "#34aeff" :background nil)
+
+

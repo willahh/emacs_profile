@@ -311,6 +311,8 @@
 ;; magit
 ;; (require 'magit)
 
+(setq magit-diff-refine-hunk 'all)
+
 
 
 
@@ -1237,4 +1239,30 @@ _d_: subtree
   :bind
   (([(meta control up)] . move-text-up)
    ([(meta control down)] . move-text-down)))
+   
+(use-package buffer-stack
+  :ensure t
+  :bind
+  (([(C-tab)] . buffer-stack-up)
+   ([(C-S-tab)] . buffer-stack-down)
+   ([(meta shift i)] . buffer-stack-down)
+   ([(meta i)] . buffer-stack-up)))
 
+
+;; single key to jump thru marks
+
+;; (defun xah-pop-local-mark-ring ()
+;;   "Move cursor to last mark position of current buffer.
+;; Call this repeatedly will cycle all positions in `mark-ring'.
+;; URL `http://ergoemacs.org/emacs/emacs_jump_to_previous_position.html'
+;; version 2016-04-04"
+;;   (interactive)
+;;   (set-mark-command t))
+
+;; (global-set-key (kbd "M-7") 'pop-global-mark) ; Meta+7
+;; (global-set-key (kbd "M-8") 'xah-pop-local-mark-ring) ; Meta+8
+
+
+
+
+(require 'dumb-jump)

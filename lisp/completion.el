@@ -68,7 +68,7 @@
 ;; (setq company-idle-delay 0.35)
 ;; (setq company-idle-delay 0.25)
 ;; (setq company-idle-delay 0.1)
-;; (setq company-idle-delay 0) ;; Note : Re-test avec un delai rapide (comme dans Sublime)
+;; (setq company-idle-delay 0) ;; Note : Re-yo avec un delai rapide (comme dans Sublime)
 ;; (setq company-idle-delay 0.25) ;; ... impossible affichage trop lent
 ;; (setq company-idle-delay 0.3) ;; Update en mode css, un retour raîde serait bien.
 ;; (setq company-idle-delay 0.15)

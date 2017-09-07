@@ -1,5 +1,5 @@
 ;; AG
-;; http://agel.readthedocs.io/en/latest/installation.html
+;; http://agel.readthedocs.io/en/layo/installation.html
 (require 'ag)
 
 (setq ag-highlight-search t)

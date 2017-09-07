@@ -41,7 +41,7 @@ there's a region, all lines that region covers will be duplicated."
 
 
 
-;; Source : https://www.emacswiki.org/emacs/DuplicateStartOfLineOrRegion
+;; Source : https://www.emacswiki.org/emacs/DuplicayoartOfLineOrRegion
 ;; Update to use duplicate-current-line-or-region instead of duplicate-start-of-line
 (defun duplicate-start-of-line-or-region ()
   (interactive)
@@ -902,7 +902,7 @@ That is, a string used to represent it on the tab bar."
 ;; Deplacement entre les global mark ring, ne fonctionne pas bien
 ;; ----------------------------
 (defun marker-is-point-p (marker)
-  "test if marker is current point"
+  "yo if marker is current point"
   (and (eq (marker-buffer marker) (current-buffer))
        (= (marker-position marker) (point))))
 
