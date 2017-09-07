@@ -151,10 +151,13 @@
 (setq ivy-virtual-abbreviate 'full)
 
 ;; set ivy height
-(setq ivy-height 10)
+;; (setq ivy-height 10)
 
 ;; make sure it always stays that high
-(setq ivy-fixed-height-minibuffer t)
+;; Update : Pas du tout utile, lorsque l on utilise completion-at-point, la partie du bas prend une hauteur pour aucune raison (contenu vide)
+;; (setq ivy-fixed-height-minibuffer t)
+(setq ivy-fixed-height-minibuffer nil)
+
 
 ;; virtual buffers - combines many good things into one command
 ;; (setq ivy-use-virtual-buffers t)
@@ -165,7 +168,7 @@
 
 ;;
 (setq ivy-count-format "(%d/%d) ")
-(setq ivy-height 25)
+;; (setq ivy-height 25)
 
 ;; ivy config
 ;; https://oremacs.com/2016/01/06/ivy-flx/
