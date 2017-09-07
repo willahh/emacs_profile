@@ -38,6 +38,7 @@
   ido-at-point
   react-snippets
   rjsx-mode
+  indent-guide
 
 
   ;; backe-button

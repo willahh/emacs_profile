@@ -152,6 +152,9 @@
 
 ;; set ivy height
 ;; (setq ivy-height 10)
+(setq ivy-height 25)
+
+
 
 ;; make sure it always stays that high
 ;; Update : Pas du tout utile, lorsque l on utilise completion-at-point, la partie du bas prend une hauteur pour aucune raison (contenu vide)
@@ -168,7 +171,6 @@
 
 ;;
 (setq ivy-count-format "(%d/%d) ")
-;; (setq ivy-height 25)
 
 ;; ivy config
 ;; https://oremacs.com/2016/01/06/ivy-flx/

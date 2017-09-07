@@ -1266,3 +1266,15 @@ _d_: subtree
 
 
 (require 'dumb-jump)
+
+
+(use-package php-eldoc
+  :ensure t
+  :bind)
+
+(require 'indent-guide)
+(set-face-background 'indent-guide-face "dimgray")
+(setq indent-guide-delay 0.1)
+(setq indent-guide-char ":")
+
+(add-hook 'web-mode-hook 'indent-guide-mode)

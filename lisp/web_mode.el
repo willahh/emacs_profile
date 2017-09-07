@@ -29,8 +29,10 @@
 
 (setq web-mode-enable-css-colorization t)
 
-;; (setq web-mode-enable-current-element-highlight t) ;; Update : L effet visuel n est pas reelement convaincant
+;; Update : L effet visuel n est pas reelement convaincant
+;; (setq web-mode-enable-current-element-highlight t) 
 (setq web-mode-enable-current-column-highlight nil)
+(setq web-mode-enable-current-element-highlight t)
 
 ;; Add auto-pair
 (setq web-mode-extra-auto-pairs

@@ -69,7 +69,6 @@
 
 
 ;; Cursor / caret state color
-;; (setq evil-emacs-state-cursor '("#56b0ec" box))
 (setq evil-emacs-state-cursor '("#ff00d2" box))
 (setq evil-normal-state-cursor '("#98cf15" box))
 (setq evil-visual-state-cursor '("#fff" box))
@@ -77,24 +76,19 @@
 (setq evil-replace-state-cursor '("red" bar))
 (setq evil-operator-state-cursor '("red" hollow))
 
-;; (set-face-attribute 'highlight-symbol-face nil :foreground "#000" :background "#56b0ec")
-;; (set-face-attribute 'highlight-symbol-face nil :foreground nil :background "#000000")
 (set-face-attribute 'highlight-symbol-face nil :foreground nil :background "#5d5e62")
-;; (set-face-attribute 'highlight-symbol-face nil :foreground nil :background "#525356")
 
 ;; Text selection
 (set-face-attribute 'region nil :background "#275f99" :foreground nil :box nil)
-;; (set-face-attribute 'lazy-highlight nil :background "#005dac" :foreground nil :box nil)
-;; (set-face-attribute 'lazy-highlight nil :background "#00ffec" :foreground nil :box nil)
 (set-face-attribute 'lazy-highlight nil :background "#149591" :foreground nil :box nil)
-;; (set-face-attribute 'lazy-highlight nil :background "#1c6a6c" :foreground nil :box nil)
 (set-face-attribute 'isearch nil :background "#00ffec" :foreground "#000" :box nil)
-
-(set-face-attribute 'wgrep-face nil :background "#00ffec" :foreground "#000" :box nil)
 
 ;; ------ Dired
 (set-face-attribute 'dired-header nil :foreground "#34aeff" :background nil)
 (set-face-attribute 'dired-directory nil :foreground "#34aeff" :background nil)
 (set-face-attribute 'dired-perm-write nil :foreground "#34aeff" :background nil)
+;; (set-face-attribute 'web-mode-current-element-highlight-face nil :foreground "#000" :background "#d7f145")
+;; (set-face-attribute 'web-mode-current-element-highlight-face nil :foreground "#000" :background "#00ffec")
+(set-face-attribute 'web-mode-current-element-highlight-face nil :foreground "#000" :background "#72ff00")
 
 
