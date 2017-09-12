@@ -416,6 +416,8 @@ Version 2016-12-27"
 ; (define-key iedit-mode-keymap (kbd "C-w") 'paredit-backward-kill-word)
 (define-key helm-map (kbd "C-w") 'paredit-backward-kill-word)
 
+(define-key ido-buffer-completion-map (kbd "C-w") 'backward-delete-char)
+
 (global-set-key (kbd "C-h") 'backward-delete-char)
 (define-key lisp-mode-map (kbd "C-h") 'paredit-backward-delete)
 (define-key emacs-lisp-mode-map (kbd "C-h") 'paredit-backward-delete)

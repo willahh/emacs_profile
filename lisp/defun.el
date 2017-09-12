@@ -1667,7 +1667,7 @@ Version 2017-04-19"
 ;; (setq eldoc-message-function #'my-eldoc-display-message)
 ;; (setq eldoc-idle-delay 2)
 
-
+(eldoc-mode)
 
 
 
