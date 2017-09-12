@@ -131,7 +131,8 @@
 ;; en commentaire pour le moment Update 2 : Il faut un repere visuel
 ;; pour savoir tout de suite ou se situe le caret, juste le caret ne
 ;; suffit pas.
-(global-hl-line-mode)
+;; (global-hl-line-mode)
+(global-hl-line-mode 1)
 
 ;;
 (winner-mode t)

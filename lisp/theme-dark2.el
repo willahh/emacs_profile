@@ -92,3 +92,45 @@
 (set-face-attribute 'web-mode-current-element-highlight-face nil :foreground "#000" :background "#72ff00")
 
 
+
+
+
+
+
+
+
+
+
+;; ;; ----- vc-ediff color custom
+(require 'ediff)
+;; (set-face-attribute 'ediff-current-diff-A nil :foreground "#c792ea" :background "#161616")
+;; (set-face-attribute 'ediff-current-diff-Ancestor nil :foreground "#fff" :background "#fc5572")
+;; (set-face-attribute 'ediff-current-diff-B nil :foreground "#c792ea" :background "#161616")
+;; (set-face-attribute 'ediff-current-diff-C nil :foreground "#c792ea" :background nil)
+
+;;
+;; (set-face-attribute 'ediff-even-diff-A nil :foreground "#c792ea" :background "#161616")
+;; (set-face-attribute 'ediff-even-diff-Ancestor nil :foreground "#fff" :background "161616")
+;; (set-face-attribute 'ediff-even-diff-B nil :foreground "#c792ea" :background "#161616")
+;; (set-face-attribute 'ediff-even-diff-C nil :foreground "#c792ea" :background "#161616")
+
+;; (set-face-attribute 'ediff-fine-diff-A nil :foreground "#000" :background "#fc5572")
+;; (set-face-attribute 'ediff-fine-diff-Ancestor nil :foreground "#fff" :background "red")
+;; (set-face-attribute 'ediff-fine-diff-B nil :foreground "#000" :background "#c792ea")
+;; (set-face-attribute 'ediff-fine-diff-C nil :foreground "#000" :background "#c792ea")
+
+;; (set-face-attribute 'ediff-odd-diff-A nil :foreground "#c792ea" :background nil :box nil)
+;; (set-face-attribute 'ediff-odd-diff-Ancestor nil :foreground "#fff" :background nil :box nil)
+;; (set-face-attribute 'ediff-odd-diff-B nil :foreground "#c792ea" :background nil :box nil)
+;; (set-face-attribute 'ediff-odd-diff-C nil :foreground "#c792ea" :background "#161616" :box nil)
+
+
+(set-face-attribute 'ediff-even-diff-A nil :foreground nil :background "#000")
+(set-face-attribute 'ediff-even-diff-B nil :foreground nil :background "#000")
+(set-face-attribute 'ediff-odd-diff-A nil :foreground nil :background "#000")
+(set-face-attribute 'ediff-odd-diff-B nil :foreground nil :background "#000")
+
+ 
+ 
+;;
+(set-face-attribute 'hl-line nil :foreground nil :background "#1d2027")

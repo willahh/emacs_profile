@@ -335,8 +335,9 @@ Version 2016-12-27"
 (global-set-key (kbd "C-∑") 'projectile-ag) ; CONTROL+ALT+SHIFT+s
 
 (global-set-key (kbd "Ò") 'paredit-splice-sexp)
-(global-set-key (kbd "∑") 'helm-swoop) ; ALT+SHIFT+s
+;; (global-set-key (kbd "∑") 'helm-swoop) ; ALT+SHIFT+s
 ;; (global-set-key (kbd "∑") 'swiper) ; ALT+SHIFT+s
+(global-set-key (kbd "∑") 'swiper) ; ALT+SHIFT+s
 
 (global-set-key (kbd "æ") 'mark-whole-buffer) ; ALT+a
 (global-set-key (kbd "Â") 'toggle-php-flavor-mode) ; ALT+z
@@ -480,10 +481,14 @@ Version 2016-12-27"
 ;; (global-set-key (kbd "C-x TAB") 'helm-imenu)
 ;; (global-set-key (kbd "C-x <C-i>") 'helm-imenu)
 
-(global-set-key (kbd "C-x C-i") 'helm-imenu)
-(global-set-key (kbd "C-x <C-i>") 'helm-imenu)
-(global-set-key (kbd "M-r") 'helm-imenu)
-(define-key paredit-mode-map (kbd "M-r") 'helm-imenu)
+;; (global-set-key (kbd "C-x C-i") 'helm-imenu)
+;; (global-set-key (kbd "C-x <C-i>") 'helm-imenu)
+
+;; (global-set-key (kbd "M-r") 'helm-imenu)
+;; (define-key paredit-mode-map (kbd "M-r") 'helm-imenu)
+
+(global-set-key (kbd "M-r") 'counsel-imenu)
+(define-key paredit-mode-map (kbd "M-r") 'counsel-imenu)
 
 ;; Update to use counsel-find-file instead of helm-find-file
 ;; Update : Non utilisé
@@ -1106,8 +1111,9 @@ Version 2016-12-27"
 (global-set-key (kbd "s-j") 'emmet-expand-line)
 
 (global-set-key (kbd "s-a") 'mark-whole-buffer)
-(global-set-key (kbd "s-s") 'helm-swoop)
+;; (global-set-key (kbd "s-s") 'helm-swoop)
 ;; (global-set-key (kbd "s-s") 'swiper)
+(global-set-key (kbd "s-s") 'swiper)
 
 (global-set-key (kbd "s-w") 'vc-diff)
 (global-set-key (kbd "s-W") 'vc-ediff)
