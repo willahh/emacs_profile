@@ -1115,7 +1115,8 @@ Version 2016-12-27"
 (global-set-key (kbd "s-a") 'mark-whole-buffer)
 ;; (global-set-key (kbd "s-s") 'helm-swoop)
 ;; (global-set-key (kbd "s-s") 'swiper)
-(global-set-key (kbd "s-s") 'swiper)
+;; (global-set-key (kbd "s-s") 'swiper)
+(global-set-key (kbd "s-s") 'helm-swoop)
 
 (global-set-key (kbd "s-w") 'vc-diff)
 (global-set-key (kbd "s-W") 'vc-ediff)

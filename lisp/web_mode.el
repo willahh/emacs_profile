@@ -32,6 +32,8 @@
 ;; Update : L effet visuel n est pas reelement convaincant
 ;; (setq web-mode-enable-current-element-highlight t) 
 (setq web-mode-enable-current-column-highlight nil)
+
+;; Good
 (setq web-mode-enable-current-element-highlight t)
 
 ;; Add auto-pair

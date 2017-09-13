@@ -39,6 +39,7 @@
   react-snippets
   rjsx-mode
   indent-guide
+  org-bullets
 
 
   ;; backe-button
