@@ -3,6 +3,10 @@
 (require 'paredit)
 (require 'iedit)
 
+;; (global-set-key (kbd "RET") 'new-line-and-indent-for-tab)
+;; (global-set-key (kbd "RET") 'autopair-newline)
+
+
 ;; M-x (M-x main command) -> "cut"
 (global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
 (global-set-key (kbd "M-q") 'fill-paragraph)
@@ -598,7 +602,7 @@ Version 2016-12-27"
 (define-key typescript-mode-map (kbd "M-j") 'c-indent-new-comment-line)
 
 ;; ---------------- Comment lines
-(define-key prog-mode-map(kbd "C-i") 'tab-indent-or-complete)
+;; (define-key prog-mode-map(kbd "C-i") 'tab-indent-or-complete)
 
 (global-set-key [(meta shift d)] 'duplicate-start-of-line-or-region)
 
@@ -866,6 +870,7 @@ Version 2016-12-27"
 ;; (global-set-key (kbd "C-c TAB") 'emmet-expand-line)
 ;; (define-key web-mode-map "C-c C-j" 'emmet-expand-line)
 
+
 (global-set-key [control command shift j] 'emmet-expand-line)
 (define-key web-mode-map [control command shift j] 'emmet-expand-line)
 (define-key web-mode-map (kbd "C-M-S-j") 'emmet-expand-line)
@@ -895,11 +900,14 @@ Version 2016-12-27"
 (global-set-key (kbd "M-1") 'delete-other-windows) ;; M-1
 (define-key diff-mode-map (kbd "M-1") 'delete-other-windows)
 
-(global-set-key (kbd "M-2") 'hrs/split-window-below-and-switch) ;; M-2
-(define-key diff-mode-map (kbd "M-2") 'hrs/split-window-below-and-switch)
+;; (global-set-key (kbd "M-2") 'hrs/split-window-below-and-switch) ;; M-2
+;; (define-key diff-mode-map (kbd "M-2") 'hrs/split-window-below-and-switch)
 
-(global-set-key (kbd "M-3") 'hrs/split-window-right-and-switch) ;; M-3
-(define-key diff-mode-map (kbd "M-3") 'hrs/split-window-right-and-switch)
+(global-set-key (kbd "M-2") 'split-window-below) ;; M-2
+(define-key diff-mode-map (kbd "M-2") 'split-window-below)
+
+(global-set-key (kbd "M-3") 'split-window-right) ;; M-3
+(define-key diff-mode-map (kbd "M-3") 'split-window-right)
 
 ;; (global-set-key (kbd "M-9") 'resize-window) ;; M-9
 ;; (define-key diff-mode-map (kbd "M-9") 'resize-window)
@@ -925,6 +933,7 @@ Version 2016-12-27"
 
 (define-key ggtags-navigation-map (kbd "M-p") 'highlight-symbol-next)
 (define-key ggtags-navigation-map (kbd "M-n") 'highlight-symbol-prev)
+
 
 ;; (global-set-key (kbd "<delete>") 'autopair-backspace)
 ;; (define-key paredit-mode-map (kbd "<delete>") 'autopair-backspace)

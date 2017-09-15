@@ -27,7 +27,8 @@
 ;; (blink-cursor-mode 1)
 ;; (blink-cursor-mode 0)
 ;; (blink-cursor-mode 1)
-(blink-cursor-mode 0)
+;; (blink-cursor-mode 0)
+(blink-cursor-mode 1)
 
 ;; Don't write new line at end of document
 (setq mode-require-final-newline nil)
@@ -186,7 +187,8 @@
 ;; (setq scroll-margin 3)
 ;; (setq scroll-margin 8)
 ;; (setq scroll-margin 5)
-(setq scroll-margin 2)
+;; (setq scroll-margin 2) ;; 2 ne va pas assez vite par rapport aux editeurs modernes
+(setq scroll-margin 5) ;; La valeur se rapprochant le plus semble etre entre 4 et 5
 (setq scroll-conservatively 9999)
 (setq scroll-step 1)
 
@@ -374,6 +376,12 @@
 
 ;; (ad-activate 'isearch-repeat-forward)
 ;; (ad-activate 'isearch-repeat-backward)
+
+;; (defadvice
+;;     autopair-newline
+;;   (after isearch-repeat-forward-recenter activate)
+;;   (recenter))
+
 
 ;; https://www.emacswiki.org/emacs/IncrementalSearch#toc4
 (add-hook 'isearch-mode-end-hook 'my-goto-match-beginning)

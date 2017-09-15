@@ -22,6 +22,8 @@
 ;; Update : remove nlinum-relative (lower performance)
 
 ;; (require 'nlinum-relative)
+(add-hook 'prog-mode-hook 'nlinum-mode)
+
 ;; (nlinum-relative-setup-evil)
 
 ;; ;; Enable nlinum-relative with html mode

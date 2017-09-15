@@ -38,7 +38,7 @@
   ido-at-point
   react-snippets
   rjsx-mode
-  indent-guide
+  ;; indent-guide
   org-bullets
 
 

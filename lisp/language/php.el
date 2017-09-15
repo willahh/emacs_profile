@@ -52,7 +52,7 @@
             ))
 
 ;; Rebind php mode map tab to get tab-indent-or-complete like everywhere
-(define-key php-mode-map [tab] #'tab-indent-or-complete)
+;; (define-key php-mode-map [tab] #'tab-indent-or-complete)
 (define-key php-mode-map [(meta shift e)] #'forward-sentence)
 
 

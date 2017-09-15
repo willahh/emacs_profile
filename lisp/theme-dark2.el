@@ -69,7 +69,7 @@
 
 
 ;; Cursor / caret state color
-(setq evil-emacs-state-cursor '("#ff00d2" box))
+(setq evil-emacs-state-cursor '("#ff00d2" bar))
 (setq evil-normal-state-cursor '("#98cf15" box))
 (setq evil-visual-state-cursor '("#fff" box))
 (setq evil-insert-state-cursor '("red" bar))
@@ -77,6 +77,9 @@
 (setq evil-operator-state-cursor '("red" hollow))
 
 (set-face-attribute 'highlight-symbol-face nil :foreground nil :background "#5d5e62")
+
+;; Fringe
+(set-face-attribute 'fringe nil :background nil)
 
 ;; Text selection
 (set-face-attribute 'region nil :background "#275f99" :foreground nil :box nil)

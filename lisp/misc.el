@@ -1272,9 +1272,9 @@ _d_: subtree
   :ensure t
   :bind)
 
-(require 'indent-guide)
-(set-face-background 'indent-guide-face "dimgray")
-(setq indent-guide-delay 0.1)
-(setq indent-guide-char ":")
+;; (require 'indent-guide)
+;; (set-face-background 'indent-guide-face "dimgray")
+;; (setq indent-guide-delay 0.1)
+;; (setq indent-guide-char ":")
 
-(add-hook 'web-mode-hook 'indent-guide-mode)
+;; (add-hook 'web-mode-hook 'indent-guide-mode)
