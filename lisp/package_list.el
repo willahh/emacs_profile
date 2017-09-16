@@ -40,6 +40,7 @@
   rjsx-mode
   indent-guide
   lsp-mode
+  org-bullets
 
 
   ;; backe-button

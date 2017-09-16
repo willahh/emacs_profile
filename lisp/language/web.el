@@ -39,6 +39,11 @@
             ;; Company backend
             ;; (set (make-local-variable 'company-backends) '(company-css company-dabbrev))
 
+            
+            
+            
+            
             ;; Some key binding
-            (define-key web-mode-map [tab] 'wlh-tab-indent-or-complete-web)
+            ;; (define-key web-mode-map [tab] 'wlh-tab-indent-or-complete-web)
+            
             ))

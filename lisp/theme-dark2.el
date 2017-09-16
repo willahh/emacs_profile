@@ -69,7 +69,7 @@
 
 
 ;; Cursor / caret state color
-(setq evil-emacs-state-cursor '("#ff00d2" box))
+(setq evil-emacs-state-cursor '("#ff00d2" bar))
 (setq evil-normal-state-cursor '("#98cf15" box))
 (setq evil-visual-state-cursor '("#fff" box))
 (setq evil-insert-state-cursor '("red" bar))
@@ -77,6 +77,9 @@
 (setq evil-operator-state-cursor '("red" hollow))
 
 (set-face-attribute 'highlight-symbol-face nil :foreground nil :background "#5d5e62")
+
+;; Fringe
+(set-face-attribute 'fringe nil :background nil)
 
 ;; Text selection
 (set-face-attribute 'region nil :background "#275f99" :foreground nil :box nil)
@@ -90,5 +93,59 @@
 ;; (set-face-attribute 'web-mode-current-element-highlight-face nil :foreground "#000" :background "#d7f145")
 ;; (set-face-attribute 'web-mode-current-element-highlight-face nil :foreground "#000" :background "#00ffec")
 (set-face-attribute 'web-mode-current-element-highlight-face nil :foreground "#000" :background "#72ff00")
+
+
+
+
+
+
+
+
+
+
+
+;; ;; ----- vc-ediff color custom
+(require 'ediff)
+;; (set-face-attribute 'ediff-current-diff-A nil :foreground "#c792ea" :background "#161616")
+;; (set-face-attribute 'ediff-current-diff-Ancestor nil :foreground "#fff" :background "#fc5572")
+;; (set-face-attribute 'ediff-current-diff-B nil :foreground "#c792ea" :background "#161616")
+;; (set-face-attribute 'ediff-current-diff-C nil :foreground "#c792ea" :background nil)
+
+;;
+;; (set-face-attribute 'ediff-even-diff-A nil :foreground "#c792ea" :background "#161616")
+;; (set-face-attribute 'ediff-even-diff-Ancestor nil :foreground "#fff" :background "161616")
+;; (set-face-attribute 'ediff-even-diff-B nil :foreground "#c792ea" :background "#161616")
+;; (set-face-attribute 'ediff-even-diff-C nil :foreground "#c792ea" :background "#161616")
+
+;; (set-face-attribute 'ediff-fine-diff-A nil :foreground "#000" :background "#fc5572")
+;; (set-face-attribute 'ediff-fine-diff-Ancestor nil :foreground "#fff" :background "red")
+;; (set-face-attribute 'ediff-fine-diff-B nil :foreground "#000" :background "#c792ea")
+;; (set-face-attribute 'ediff-fine-diff-C nil :foreground "#000" :background "#c792ea")
+
+;; (set-face-attribute 'ediff-odd-diff-A nil :foreground "#c792ea" :background nil :box nil)
+;; (set-face-attribute 'ediff-odd-diff-Ancestor nil :foreground "#fff" :background nil :box nil)
+;; (set-face-attribute 'ediff-odd-diff-B nil :foreground "#c792ea" :background nil :box nil)
+;; (set-face-attribute 'ediff-odd-diff-C nil :foreground "#c792ea" :background "#161616" :box nil)
+
+
+(set-face-attribute 'ediff-even-diff-A nil :foreground nil :background "#000")
+(set-face-attribute 'ediff-even-diff-B nil :foreground nil :background "#000")
+(set-face-attribute 'ediff-odd-diff-A nil :foreground nil :background "#000")
+(set-face-attribute 'ediff-odd-diff-B nil :foreground nil :background "#000")
+;;
+(set-face-attribute 'hl-line nil :foreground nil :background "#1d2027")
+
+;; org
+(set-face-attribute 'org-document-title nil :family "Sans Serif" :height 1.8 :foreground "#fffefe")
+(set-face-attribute 'org-level-1 nil :height 1.3 :overline "#2a2a2a" :foreground "#000" :background "#fff")
+(set-face-attribute 'org-level-2 nil :height 1 :box nil :overline nil :foreground "#000" :background "#ced3da")
+(set-face-attribute 'org-special-keyword nil :height 1 :foreground "#aeb7da" :background nil)
+(set-face-attribute 'org-document-info-keyword nil :height 1 :foreground "#b0dcff" :background nil)
+(set-face-attribute 'org  nil :height 1 :foreground "#b0dcff" :background nil)
+(set-face-attribute 'org-checkbox-statistics-todo  nil :height 1)
+
+
+
+
 
 

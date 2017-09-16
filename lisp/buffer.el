@@ -4,11 +4,9 @@
 (setq display-buffer-alist
       '(
         ("*ag*"               . (display-buffer-same-window . nil))
-        ("*vc-diff*"               . (display-buffer-same-window . nil))
-        ;; ("*vc-dir*"           . (display-buffer-same-window . nil))
+        ;; ("*vc-diff*"               . (display-buffer-same-window . nil))
         ("*shell*"            . (display-buffer-same-window . nil))
         ("*Google Translate*" . (display-buffer-same-window . nil))
-        ;; ("*Help*"             . (display-buffer-same-window . nil))
         ))
 
 ;; Use the same window for compile-goto-error mode (ag result list too (herited))
