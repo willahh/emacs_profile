@@ -45,6 +45,8 @@
 (load-file "~/.emacs.d/lisp/key_binding.el")
 ; (load-file "~/.emacs.d/lisp/browser.el")
 
+
+
 ;; Show trailing whitespace White space
 ;; Note : Mise tout a la fin sinon ne fonctionne pas
 (setq-default show-trailing-whitespace t)
@@ -77,11 +79,11 @@
  ;; If there is more than one, they won't work right.
  '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks" t)
  '(custom-safe-themes
- (quote
-  ("b97a01622103266c1a26a032567e02d920b2c697ff69d40b7d9956821ab666cc" default)))
+   (quote
+    ("b97a01622103266c1a26a032567e02d920b2c697ff69d40b7d9956821ab666cc" default)))
  '(ediff-diff-options "-w")
  '(ediff-split-window-function (quote split-window-horizontally))
- '(ediff-window-setup-function (quote ediff-setup-windows-plain))
+ '(ediff-window-setup-function (quote ediff-setup-windows-plain) t)
  '(evil-search-module (quote evil-search))
  '(fast-but-imprecise-scrolling t)
  '(helm-ag-base-command "ag --nocolor --nogroup --ignore-case")
@@ -89,13 +91,13 @@
  '(helm-ag-ignore-buffer-patterns (quote ("\\.txt\\'" "\\.min.js\\'")))
  '(helm-ag-insert-at-point (quote symbol))
  '(helm-source-names-using-follow
- (quote
-  ("Search at ~/www/test/reactnative/react-redux-realworld-example-app/src/components/" "Imenu" "Search at ~/.emacs.d/lisp/")))
+   (quote
+    ("Search at ~/www/test/reactnative/react-redux-realworld-example-app/src/components/" "Imenu" "Search at ~/.emacs.d/lisp/")))
  '(ido-enable-flex-matching t)
  '(magit-dispatch-arguments nil)
  '(package-selected-packages
- (quote
-  (ido-gnus indent-guide rjsx-mode react-snippets ido-at-point fill-column-indicator lispy dired-subtree outline-toc dired-ranger jabber sourcemap websocket nodejs-repl dracula-theme git-timemachine gradle-mode relative-line-numbers evil-org easy-kill string-inflection flycheck-pos-tip ibuffer-vc ov volatile-highlights crux smex psysh toc-org evil-magit fullframe jade-mode ecb imenu-list google-maps sx image-dired+ anzu impatient-mode find-file-in-project clojurescript-mode cider slime yaml-mode pdf-tools restclient helm-w3m w3 hl-line+ syslog-mode paredit-everywhere paredit wgrep-ag iedit wgrep sr-speedbar indium google-translate helm-projectile ivy-hydra helm-swoop evil-matchit point-undo editorconfig php-completion php-extras company-php eclim rainbow-mode company-web helm helm-ag flx-ido ace-jump-mode change-inner iy-go-to-char evil-snipe zop-to-char try counsel autopair ido-vertical-mode ido-ubiquitous php-eldoc smart-tab json-mode company-quickhelp company-tern highlight-chars smooth-scrolling drag-stuff evil-tutor clean-aindent-mode rainbow-delimiters tide typescript-mode js2-refactor dumb-jump flymake-jshint helm-hunks yascroll actionscript-mode perspective workgroups2 php-mode polymode web-mode mmm-mode multi-web-mode load-theme-buffer-local 0blayout use-package tabbar color-theme-buffer-local leuven-theme js-doc smart-forward js-comint php-auto-yasnippets smart-newline resize-window php-refactor-mode ac-php popwin evil-surround window-numbering eyebrowse which-key evil edit-server neotree elfeed logview monokai-theme material-theme noctilux-theme nlinum crosshairs dumb-mode theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord flymake-mode ggtags less-css-mode ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn highlight-symbol zerodark-theme markdown-mode+ emmet-mode company web-beautify multiple-cursors other-frame-window desktop+ undo-tree expand-region avy-menu auto-complete ace-window magit)))
+   (quote
+    (lsp-mode ido-gnus indent-guide rjsx-mode react-snippets ido-at-point fill-column-indicator lispy dired-subtree outline-toc dired-ranger jabber sourcemap websocket nodejs-repl dracula-theme git-timemachine gradle-mode relative-line-numbers evil-org easy-kill string-inflection flycheck-pos-tip ibuffer-vc ov volatile-highlights crux smex psysh toc-org evil-magit fullframe jade-mode ecb imenu-list google-maps sx image-dired+ anzu impatient-mode find-file-in-project clojurescript-mode cider slime yaml-mode pdf-tools restclient helm-w3m w3 hl-line+ syslog-mode paredit-everywhere paredit wgrep-ag iedit wgrep sr-speedbar indium google-translate ivy-hydra helm-swoop evil-matchit point-undo editorconfig php-completion php-extras company-php eclim rainbow-mode company-web helm helm-ag flx-ido ace-jump-mode change-inner iy-go-to-char evil-snipe zop-to-char try counsel autopair ido-vertical-mode ido-ubiquitous php-eldoc smart-tab json-mode company-quickhelp company-tern highlight-chars smooth-scrolling drag-stuff evil-tutor clean-aindent-mode rainbow-delimiters tide typescript-mode js2-refactor dumb-jump flymake-jshint helm-hunks yascroll actionscript-mode perspective workgroups2 php-mode polymode web-mode mmm-mode multi-web-mode load-theme-buffer-local 0blayout use-package tabbar color-theme-buffer-local leuven-theme js-doc smart-forward js-comint php-auto-yasnippets smart-newline resize-window php-refactor-mode ac-php popwin evil-surround window-numbering eyebrowse which-key evil edit-server neotree elfeed logview monokai-theme material-theme noctilux-theme nlinum crosshairs dumb-mode theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord flymake-mode ggtags less-css-mode ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn highlight-symbol zerodark-theme markdown-mode+ emmet-mode company web-beautify multiple-cursors other-frame-window desktop+ undo-tree expand-region avy-menu auto-complete ace-window magit)))
  '(safe-local-variable-values (quote ((no-byte-compile t))))
  '(tabbar-separator (quote (1)) t)
  '(vc-annotate-background "#181e26")
