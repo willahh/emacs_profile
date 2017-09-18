@@ -181,7 +181,3 @@
                (save-excursion
                  (end-of-defun)
                  (point)))))
-
-
-
-(modify-syntax-entry ?_ "w")

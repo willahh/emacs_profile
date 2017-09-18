@@ -59,7 +59,7 @@
 ;; Update : Commentaire
 ;; Update 2 : Rollback (un double click sur un mot
 ;; contenant un underscore ne  selectionne pas le mot en entier
-(modify-syntax-entry ?_ "w")
+;; Update 3 : Cette partie est deja presente a un autre endroit
 
 ;; Auto refresh buffers
 (global-auto-revert-mode 1)

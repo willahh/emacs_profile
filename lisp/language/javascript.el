@@ -206,7 +206,7 @@ is already narrowed."
   ;; (define-key wil-js-mode-map (kbd "s-J") 'company-yasnippet)
 
   ;; Highlight-mode
-  (set (make-local-variable 'highlight-symbol-mode) 't)
+  ;; (set (make-local-variable 'highlight-symbol-mode) 't)
 
 )
 (add-hook 'js-mode-hook #'indium-interaction-mode)
