@@ -1,3 +1,8 @@
+(require 'smartparens-config)
+(require 'smartparens-html)
+(require 'php-mode)
+(require 'nxml-mode)
+
 ;; iy-go-to-char
 (require 'iy-go-to-char)
 
@@ -472,9 +477,6 @@
 
 
 
-(require 'smartparens-config)
-(require 'smartparens-html)
-(require 'php-mode)
 
 (define-key prog-mode-map (kbd "C-M-f") 'sp-forward-sexp)
 (define-key php-mode-map (kbd "C-M-f") 'sp-forward-sexp)

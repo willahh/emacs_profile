@@ -1,3 +1,5 @@
+(require 'org)
+
 (load-theme 'dracula)
 
 
@@ -92,7 +94,8 @@
 (set-face-attribute 'dired-perm-write nil :foreground "#34aeff" :background nil)
 ;; (set-face-attribute 'web-mode-current-element-highlight-face nil :foreground "#000" :background "#d7f145")
 ;; (set-face-attribute 'web-mode-current-element-highlight-face nil :foreground "#000" :background "#00ffec")
-(set-face-attribute 'web-mode-current-element-highlight-face nil :foreground "#000" :background "#72ff00")
+;; (set-face-attribute 'web-mode-current-element-highlight-face nil :foreground "#000" :background "#72ff00")
+(set-face-attribute 'web-mode-current-element-highlight-face nil :foreground nil :background "#60a467")
 
 
 
@@ -141,7 +144,7 @@
 (set-face-attribute 'org-level-2 nil :height 1 :box nil :overline nil :foreground "#000" :background "#ced3da")
 (set-face-attribute 'org-special-keyword nil :height 1 :foreground "#aeb7da" :background nil)
 (set-face-attribute 'org-document-info-keyword nil :height 1 :foreground "#b0dcff" :background nil)
-(set-face-attribute 'org  nil :height 1 :foreground "#b0dcff" :background nil)
+; (set-face-attribute 'org  nil :height 1 :foreground "#b0dcff" :background nil)
 (set-face-attribute 'org-checkbox-statistics-todo  nil :height 1)
 
 
