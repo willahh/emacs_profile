@@ -2,6 +2,7 @@
 (require 'magit)
 (require 'paredit)
 (require 'iedit)
+(require 'php-mode)
 
 ;; (global-set-key (kbd "RET") 'new-line-and-indent-for-tab)
 ;; (global-set-key (kbd "RET") 'autopair-newline)
@@ -57,7 +58,10 @@
 (global-set-key (kbd "C-c , f h b") 'hs-hide-block) ; (user key binding (C-c ,) + [f]olding [h]ide [b]lock)
 
 (global-set-key (kbd "C-c , f n d") 'find-name-dired)
-(require 'php-mode)
+
+;; (global-set-key (kbd "C-c , s p a") 'helm-projectile-ag) ;; [s]earch [p]rojectile [a]g
+
+
 
 
 ;; Toggle fullscreen
@@ -1060,6 +1064,11 @@ Version 2016-12-27"
 ;; Kill
 (global-set-key (kbd "s-k") 'kill-paragraph)
 (global-set-key (kbd "s-K") 'backward-kill-paragraph)
+
+;; Move paragraph
+;; Convert default qwerty M-{ and M-} position on keyboard to azerty mapping
+(global-set-key (kbd "M-¨") 'backward-paragraph)
+(global-set-key (kbd "M-*") 'forward-paragraph)
 
 ;; Help
 (global-set-key (kbd "s-h") 'help)

@@ -1277,4 +1277,6 @@ _d_: subtree
 ;; (setq indent-guide-delay 0.1)
 ;; (setq indent-guide-char ":")
 
+
+(require 'lsp-mode)
 ;; (add-hook 'web-mode-hook 'indent-guide-mode)

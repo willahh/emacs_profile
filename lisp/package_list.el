@@ -38,7 +38,8 @@
   ido-at-point
   react-snippets
   rjsx-mode
-  ;; indent-guide
+  indent-guide
+  lsp-mode
   org-bullets
 
 
@@ -222,6 +223,7 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/general")
 (add-to-list 'load-path "~/.emacs.d/vendor/slime")
 (add-to-list 'load-path "~/.emacs.d/vendor/noctilux-theme")
+(add-to-list 'load-path "~/.emacs.d/vendor/lsp-javascript")
 ;; (add-to-list 'load-path "~/.emacs.d/vendor/lispy")
 ;; (add-to-list 'load-path "~/.emacs.d/vendor/emacs-memoize")
 ;; (add-to-list 'load-path "~/.emacs.d/vendor/jquery-doc")
