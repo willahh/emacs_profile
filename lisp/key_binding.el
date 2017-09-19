@@ -310,7 +310,7 @@ Version 2016-12-27"
 ;; (global-set-key (kbd "C-c C-k") 'kill-this-buffer)
 (define-key global-map (kbd "C-x k") 'kill-this-buffer)
 (define-key global-map (kbd "C-x C-r") 'revert-buffer-no-confirm)
-(global-set-key (kbd "C-x C-k") 'delete-current-buffer-file)
+(global-set-key (kbd "C-x C-k") 'kill-region)
 
 ;; ---------------- Dired
 ;; (define-key dired-mode-map (kbd "<tab>") 'dired-find-file)
@@ -608,7 +608,8 @@ Version 2016-12-27"
 ;; ---------------- Comment lines
 ;; (define-key prog-mode-map(kbd "C-i") 'tab-indent-or-complete)
 
-(global-set-key [(meta shift d)] 'duplicate-start-of-line-or-region)
+;; (global-set-key [(meta shift d)] 'duplicate-start-of-line-or-region)
+(global-set-key (kbd "C-c d") 'duplicate-start-of-line-or-region)
 
 (global-set-key [C-M-tab] 'other-window)
 (global-set-key [C-M-S-tab] 'previous-multiframe-window)
