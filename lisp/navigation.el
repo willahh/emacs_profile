@@ -1,3 +1,8 @@
+(require 'smartparens-config)
+(require 'smartparens-html)
+(require 'php-mode)
+(require 'nxml-mode)
+
 ;; iy-go-to-char
 (require 'iy-go-to-char)
 
@@ -472,60 +477,75 @@
 
 
 
-(require 'smartparens-config)
-(require 'smartparens-html)
-(require 'php-mode)
 
 (define-key prog-mode-map (kbd "C-M-f") 'sp-forward-sexp)
 (define-key php-mode-map (kbd "C-M-f") 'sp-forward-sexp)
+(define-key nxml-mode-map (kbd "C-M-f") 'sp-forward-sexp)
 
 (define-key prog-mode-map (kbd "C-M-b") 'sp-backward-sexp)
 (define-key php-mode-map (kbd "C-M-b") 'sp-backward-sexp)
+(define-key nxml-mode-map (kbd "C-M-b") 'sp-backward-sexp)
 
 (define-key prog-mode-map (kbd "C-M-u") 'sp-backward-up-sexp)
 (define-key php-mode-map (kbd "C-M-u") 'sp-backward-up-sexp)
+(define-key nxml-mode-map (kbd "C-M-u") 'sp-backward-up-sexp)
 
 (define-key prog-mode-map (kbd "C-M-d") 'sp-down-sexp)
 (define-key php-mode-map (kbd "C-M-d") 'sp-down-sexp)
+(define-key nxml-mode-map (kbd "C-M-d") 'sp-down-sexp)
 
 (define-key prog-mode-map (kbd "C-M-p") 'sp-backward-down-sexp)
 (define-key php-mode-map (kbd "C-M-p") 'sp-backward-down-sexp)
+(define-key nxml-mode-map (kbd "C-M-p") 'sp-backward-down-sexp)
 
 (define-key prog-mode-map (kbd "C-M-n") 'sp-up-sexp)
 (define-key php-mode-map (kbd "C-M-n") 'sp-up-sexp)
+(define-key nxml-mode-map (kbd "C-M-n") 'sp-up-sexp)
 
 (define-key prog-mode-map (kbd "C-k") 'sp-kill-hybrid-sexp)
 (define-key php-mode-map (kbd "C-k") 'sp-kill-hybrid-sexp)
+(define-key nxml-mode-map (kbd "C-k") 'sp-kill-hybrid-sexp)
 
 (define-key prog-mode-map (kbd "C-M-k") 'sp-kill-sexp)
 (define-key php-mode-map (kbd "C-M-k") 'sp-kill-sexp)
+(define-key nxml-mode-map (kbd "C-M-k") 'sp-kill-sexp)
 
 (define-key prog-mode-map (kbd "C-M-h") 'sp-backward-kill-sexp)
 (define-key php-mode-map (kbd "C-M-h") 'sp-backward-kill-sexp)
+(define-key nxml-mode-map (kbd "C-M-h") 'sp-backward-kill-sexp)
 
 ;; (define-key prog-mode-map (kbd "C-h") 'paredit-backward-delete)
 ;; (define-key php-mode-map (kbd "C-h") 'paredit-backward-delete)
 
 (define-key prog-mode-map (kbd "C-h") 'backward-delete-char)
 (define-key php-mode-map (kbd "C-h") 'backward-delete-char)
+(define-key php-mode-map (kbd "C-h") 'backward-delete-char)
+(define-key nxml-mode-map (kbd "C-h") 'backward-delete-char)
 
 (define-key php-mode-map (kbd "C-M-a") 'beginning-of-defun)
+(define-key nxml-mode-map (kbd "C-M-a") 'beginning-of-defun)
+
 (define-key php-mode-map (kbd "C-M-e") 'end-of-defun)
+(define-key nxml-mode-map (kbd "C-M-e") 'end-of-defun)
 
 (define-key prog-mode-map (kbd "M-(") 'paredit-wrap-round)
 (define-key php-mode-map (kbd "M-(") 'paredit-wrap-round)
 
 (define-key prog-mode-map (kbd "M-{") 'paredit-wrap-curly)
 (define-key php-mode-map (kbd "M-{") 'paredit-wrap-curly)
+(define-key nxml-mode-map (kbd "M-{") 'paredit-wrap-curly)
 
 (define-key prog-mode-map (kbd "M-[") 'paredit-wrap-angled)
 (define-key php-mode-map (kbd "M-[") 'paredit-wrap-angled)
+(define-key nxml-mode-map (kbd "M-[") 'paredit-wrap-angled)
 
 (define-key prog-mode-map (kbd "<C-left>")'paredit-forward-barf-sexp)
 (define-key php-mode-map (kbd "<C-left>")'paredit-forward-barf-sexp)
+(define-key nxml-mode-map (kbd "<C-left>")'paredit-forward-barf-sexp)
 
 (define-key prog-mode-map (kbd "<C-right>")'paredit-forward-slurp-sexp)
 (define-key php-mode-map (kbd "<C-right>")'paredit-forward-slurp-sexp)
+(define-key nxml-mode-map (kbd "<C-right>")'paredit-forward-slurp-sexp)
 
 
 

@@ -3,6 +3,7 @@
 (require 'paredit)
 (require 'iedit)
 (require 'php-mode)
+(require 'nxml-mode)
 
 ;; (global-set-key (kbd "RET") 'new-line-and-indent-for-tab)
 ;; (global-set-key (kbd "RET") 'autopair-newline)
@@ -880,7 +881,6 @@ Version 2016-12-27"
 (define-key web-mode-map [control command shift j] 'emmet-expand-line)
 (define-key web-mode-map (kbd "C-M-S-j") 'emmet-expand-line)
 
-(require 'nxml-mode)
 (define-key global-map (kbd "C-x RET") 'dired-jump)
 (define-key php-mode-map (kbd "C-x C-j") 'dired-jump)
 (define-key web-mode-map (kbd "C-x C-j") 'dired-jump)
