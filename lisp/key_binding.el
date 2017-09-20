@@ -109,7 +109,6 @@
 
 
 
-;; (define-key key-translation-map "\C-q" "\C-g")
 
 
 (use-package evil-mc
@@ -601,10 +600,11 @@ Version 2016-12-27"
 
 
 ;; ---------------- new lne
+(global-set-key (kbd "RET") #'newline-and-indent)
 (define-key typescript-mode-map (kbd "M-j") 'c-indent-new-comment-line)
 
 
-;; ---------------- Comment lines
+;; lines
 ;; (define-key prog-mode-map(kbd "C-i") 'tab-indent-or-complete)
 
 ;; (global-set-key [(meta shift d)] 'duplicate-start-of-line-or-region)
@@ -817,7 +817,7 @@ Version 2016-12-27"
 
 ;; ---------------- open line
 ;; Standard new line
-(define-key key-translation-map (kbd "C-j") (kbd "RET"))
+;; (define-key key-translation-map (kbd "C-j") (kbd "RET"))
 
 
 
@@ -831,7 +831,6 @@ Version 2016-12-27"
 (global-set-key [(control shift j)] 'smart-open-line-above)
 (global-set-key [(control shift j)] 'smart-open-line-above)
 (define-key web-mode-map [(control shift j)] 'smart-open-line-above)
-;; (global-set-key (kbd "C-M-j") 'newline-and-indent)
 (global-set-key (kbd "C-o") 'smart-open-line-above)
 
 
@@ -1176,7 +1175,6 @@ Version 2016-12-27"
 ;; use hippie-expand instead of dabbrev
 
 ;; "Translate" key to behave like on us keyboard
-;; (define-key key-translation-map (kbd "M-/") (kbd "M-:"))
 (global-set-key (kbd "M-/") 'eval-expression)
 (global-set-key (kbd "M-:") 'hippie-expand)
 (global-set-key (kbd "M-i") 'hippie-expand)
