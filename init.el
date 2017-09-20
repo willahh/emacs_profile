@@ -87,12 +87,11 @@
  '(evil-search-module (quote evil-search))
  '(fast-but-imprecise-scrolling t)
  '(helm-ag-base-command "ag --nocolor --nogroup --ignore-case")
- '(helm-ag-command-option "--all-text")
  '(helm-ag-ignore-buffer-patterns (quote ("\\.txt\\'" "\\.min.js\\'")))
  '(helm-ag-insert-at-point (quote symbol))
  '(helm-source-names-using-follow
    (quote
-    ("Search at ~/.emacs.d_jwiegley/" "Search at ~/www/test/reactnative/react-redux-realworld-example-app/src/components/" "Imenu" "Search at ~/.emacs.d/lisp/")))
+    ("Recentf" "Search at ~/www/test/reactnative/react-redux-realworld-example-app/src/components/" "Imenu" "Search at ~/.emacs.d/lisp/")))
  '(ido-enable-flex-matching t)
  '(magit-dispatch-arguments nil)
  '(package-selected-packages
