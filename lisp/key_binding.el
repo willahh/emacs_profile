@@ -5,9 +5,6 @@
 (require 'php-mode)
 (require 'nxml-mode)
 
-;; (global-set-key (kbd "RET") 'new-line-and-indent-for-tab)
-;; (global-set-key (kbd "RET") 'autopair-newline)
-
 
 ;; M-x (M-x main command) -> "cut"
 (global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
@@ -603,14 +600,15 @@ Version 2016-12-27"
 (global-set-key [control meta shift s] 'ag-project)
 
 
-;; ---------------- window
+;; ---------------- new lne
 (define-key typescript-mode-map (kbd "M-j") 'c-indent-new-comment-line)
+
 
 ;; ---------------- Comment lines
 ;; (define-key prog-mode-map(kbd "C-i") 'tab-indent-or-complete)
 
 ;; (global-set-key [(meta shift d)] 'duplicate-start-of-line-or-region)
-(global-set-key (kbd "C-c d") 'duplicate-start-of-line-or-region)
+(global-set-key (kbd "C-c C-d") 'duplicate-start-of-line-or-region)
 
 (global-set-key [C-M-tab] 'other-window)
 (global-set-key [C-M-S-tab] 'previous-multiframe-window)
