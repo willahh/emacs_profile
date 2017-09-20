@@ -1,6 +1,5 @@
 (require 'org)
-
-(load-theme 'dracula)
+(load-theme 'dracula t)
 
 
 (setq-default line-spacing 2) ; Same line height as modern editor (VS Code)
@@ -147,16 +146,10 @@
 (set-face-attribute 'hl-line nil :foreground nil :background "#1d2027")
 
 ;; org
-(set-face-attribute 'org-document-title nil :family "Sans Serif" :height 1.8 :foreground "#fffefe")
-(set-face-attribute 'org-level-1 nil :height 1.3 :overline "#2a2a2a" :foreground "#000" :background "#fff")
-(set-face-attribute 'org-level-2 nil :height 1 :box nil :overline nil :foreground "#000" :background "#ced3da")
-(set-face-attribute 'org-special-keyword nil :height 1 :foreground "#aeb7da" :background nil)
-(set-face-attribute 'org-document-info-keyword nil :height 1 :foreground "#b0dcff" :background nil)
-; (set-face-attribute 'org  nil :height 1 :foreground "#b0dcff" :background nil)
-(set-face-attribute 'org-checkbox-statistics-todo  nil :height 1)
-
-
-
-
-
-
+;; (set-face-attribute 'org-document-title nil :family "Sans Serif" :height 1.8 :foreground "#fffefe")
+;; (set-face-attribute 'org-level-1 nil :height 1.3 :overline "#2a2a2a" :foreground "#000" :background "#fff")
+;; (set-face-attribute 'org-level-2 nil :height 1 :box nil :overline nil :foreground "#000" :background "#ced3da")
+;; (set-face-attribute 'org-special-keyword nil :height 1 :foreground "#aeb7da" :background nil)
+;; (set-face-attribute 'org-document-info-keyword nil :height 1 :foreground "#b0dcff" :background nil)
+;; (set-face-attribute 'org  nil :height 1 :foreground "#b0dcff" :background nil)
+;; (set-face-attribute 'org-checkbox-statistics-todo  nil :height 1)

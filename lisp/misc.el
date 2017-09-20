@@ -1191,20 +1191,6 @@ _d_: subtree
 
 (add-hook 'prog-mode-hook 'hs-minor-mode)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ;; hippie expand is dabbrev expand on steroids
 (setq hippie-expand-try-functions-list '(try-expand-dabbrev
                                          try-expand-dabbrev-all-buffers
@@ -1216,10 +1202,6 @@ _d_: subtree
                                          try-expand-line
                                          try-complete-lisp-symbol-partially
                                          try-complete-lisp-symbol))
-
-
-
-
 
 ;; (require 'lispy)
 ;; (add-hook 'prog-mode-hook 'lispy-mode)
@@ -1262,11 +1244,7 @@ _d_: subtree
 ;; (global-set-key (kbd "M-7") 'pop-global-mark) ; Meta+7
 ;; (global-set-key (kbd "M-8") 'xah-pop-local-mark-ring) ; Meta+8
 
-
-
-
 (require 'dumb-jump)
-
 
 (use-package php-eldoc
   :ensure t
@@ -1277,6 +1255,10 @@ _d_: subtree
 ;; (setq indent-guide-delay 0.1)
 ;; (setq indent-guide-char ":")
 
-
 (require 'lsp-mode)
 ;; (add-hook 'web-mode-hook 'indent-guide-mode)
+
+;; https://www.emacswiki.org/emacs/FillParagraph
+;; The original value is "\f\\|[      ]*$", so we add the bullets (-), (+), and (*).
+;; There is no need for "^" as the regexp is matched at the beginning of line.
+;; (setq paragraph-start "\f\\|[ \t]*$\\|[ \t]*[-+*] ")
