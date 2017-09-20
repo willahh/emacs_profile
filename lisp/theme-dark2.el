@@ -3,6 +3,9 @@
 (load-theme 'dracula)
 
 
+(setq-default line-spacing 2) ; Same line height as modern editor (VS Code)
+
+
 ;; Rainbow delimiter faces
 (custom-set-faces
  '(rainbow-delimiters-depth-1-face ((t (:foreground "#5abeee"))))
@@ -78,10 +81,18 @@
 (setq evil-replace-state-cursor '("red" bar))
 (setq evil-operator-state-cursor '("red" hollow))
 
-(set-face-attribute 'highlight-symbol-face nil :foreground nil :background "#5d5e62")
+;; (set-face-attribute 'highlight-symbol-face nil :foreground nil :background "#5d5e62")
+(set-face-attribute 'highlight-symbol-face nil :foreground nil :background "#476574")
 
 ;; Fringe
-(set-face-attribute 'fringe nil :background nil)
+(set-face-attribute 'fringe nil :background nil :slant 'normal)
+(set-window-margins nil 4)
+(setq nlinum-format "%4d \u2502 ")
+(set-face-foreground 'linum "#6272a4")
+
+
+
+
 
 ;; Text selection
 (set-face-attribute 'region nil :background "#275f99" :foreground nil :box nil)
@@ -96,9 +107,6 @@
 ;; (set-face-attribute 'web-mode-current-element-highlight-face nil :foreground "#000" :background "#00ffec")
 ;; (set-face-attribute 'web-mode-current-element-highlight-face nil :foreground "#000" :background "#72ff00")
 (set-face-attribute 'web-mode-current-element-highlight-face nil :foreground nil :background "#60a467")
-
-
-
 
 
 

@@ -113,7 +113,9 @@
       tern-ac-dot-complete
       typescript-insert-and-indent
       untab-region
+      web-mode-attribute-kill
       web-mode-comment-indent-new-line
+      web-mode-element-kill
       whole-line-or-region-kill-region
       wil-copy
       wil-delete-backspace

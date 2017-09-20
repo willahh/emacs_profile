@@ -189,7 +189,8 @@
 ;; (setq scroll-margin 5)
 ;; (setq scroll-margin 2) ;; 2 ne va pas assez vite par rapport aux editeurs modernes
 ;; (setq scroll-margin 5) ;; La valeur se rapprochant le plus semble etre entre 4 et 5
-(setq scroll-margin 6) ;; La valeur se rapprochant le plus semble etre entre 4 et 5
+;; (setq scroll-margin 2) ;; La valeur se rapprochant le plus semble etre entre 4 et 5
+(setq scroll-margin 2)
 (setq scroll-conservatively 9999)
 (setq scroll-step 1)
 
@@ -198,8 +199,9 @@
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil)))
 (setq mouse--progressive-speed 10)
 
-(setq mouse-wheel-scroll-amount '(0.022))
-(setq mouse-wheel-progressive-speed 0)
+;; (setq mouse-wheel-scroll-amount '(0.022))
+(setq mouse-wheel-scroll-amount '(0.035)) ; Update : la valeur la plus proche des editeurs modernes est 0.035 (test sur un scroll d un cran, set sur plusieurs gros coup de scroll)
+(setq mouse-wheel-progressive-speed 10)
 
 ;; "Modern" copy / paste (dont put the selection on the markring)
 ;; https://www.emacswiki.org/emacs/Comments_on_CopyAndPaste
