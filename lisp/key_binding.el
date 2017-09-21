@@ -4,6 +4,7 @@
 (require 'iedit)
 (require 'php-mode)
 (require 'nxml-mode)
+(require 'tern)
 
 
 ;; M-x (M-x main command) -> "cut"
@@ -388,7 +389,7 @@ Version 2016-12-27"
 (global-set-key (kbd "<M-down-mouse-1>") 'mc/add-cursor-on-click)
 
 ;; All
-(global-set-key (kbd "M-L") 'mc/mark-all-words-like-this) ; Like in VS Code
+;; (global-set-key (kbd "M-L") 'mc/mark-all-words-like-this) ; Like in VS Code
 
 ;; Next
 (global-set-key (kbd "°") 'mc/mark-next-like-this-word) ; ALT+d
@@ -409,7 +410,7 @@ Version 2016-12-27"
 
 ;; Line operations
 (global-set-key (kbd "C-é") 'drag-stuff-down) ;; control+alt+j
-(global-set-key (kbd "<C-return>") 'open-line-below)
+;; (global-set-key (kbd "<C-return>") 'open-line-below)
 (global-set-key (kbd "<C-S-return>") 'open-line-above)
 ;; Helm
 ;; (global-set-key (kbd "M-x") 'helm-M-x)
@@ -607,8 +608,9 @@ Version 2016-12-27"
 ;; ---------------- Comment lines
 ;; (define-key prog-mode-map(kbd "C-i") 'tab-indent-or-complete)
 
-;; (global-set-key [(meta shift d)] 'duplicate-start-of-line-or-region)
+(global-set-key [(meta shift d)] 'duplicate-start-of-line-or-region)
 (global-set-key (kbd "C-c C-d") 'duplicate-start-of-line-or-region)
+(define-key tern-mode-keymap (kbd "C-c C-d") 'duplicate-start-of-line-or-region)
 
 (global-set-key [C-M-tab] 'other-window)
 (global-set-key [C-M-S-tab] 'previous-multiframe-window)
@@ -795,6 +797,7 @@ Version 2016-12-27"
 ;; camelcase are moved into "string-inflection-all-cycle" function
 (global-set-key (kbd "M-l") 'er/expand-region)
 (global-set-key (kbd "M-L") 'er/contract-region)
+(global-set-key (kbd "M-L") 'mc/mark-all-words-like-this) ; Like in VS Code
 (global-set-key (kbd "C-M-l") 'mark-sexp)
 
 
@@ -824,9 +827,10 @@ Version 2016-12-27"
 
 
 ;;
-(global-set-key (kbd "C-M-j") 'open-line-below)
-(global-set-key (kbd "C-M-j") 'open-line-below)
-(define-key php-mode-map (kbd "C-M-j") 'open-line-below)
+(global-set-key (kbd "C-M-o") 'open-line-below)
+(global-set-key (kbd "C-M-o") 'open-line-below)
+(define-key php-mode-map (kbd "C-M-o") 'open-line-below)
+(define-key org-mode-map (kbd "C-M-o") 'wil-org-open-line-below)
 
 (global-set-key [(control shift j)] 'smart-open-line-above)
 (global-set-key [(control shift j)] 'smart-open-line-above)
@@ -836,7 +840,7 @@ Version 2016-12-27"
 
 
 ;; Below
-(global-set-key (kbd "C-M-S-j") 'open-line-below)
+;; (global-set-key (kbd "C-M-S-j") 'open-line-below)
 ; (global-set-key [(control command shift j)] 'open-line-below)
 
 
@@ -857,8 +861,7 @@ Version 2016-12-27"
   (beginning-of-line)
   (kill-line)
 )
-(define-key org-mode-map (kbd "C-M-j") 'wil-org-open-line-below)
-;; (define-key org-mode-map [(command control j)] 'wil-org-open-line-below)
+
 
 
 ;; Emmet
@@ -938,8 +941,7 @@ Version 2016-12-27"
 (define-key ggtags-navigation-map (kbd "M-n") 'highlight-symbol-prev)
 
 
-;; (global-set-key (kbd "<delete>") 'autopair-backspace)
-;; (define-key paredit-mode-map (kbd "<delete>") 'autopair-backspace)
+
 (global-set-key (kbd "<delete>") 'wil-delete-backspace)
 (define-key paredit-mode-map (kbd "<delete>") 'wil-delete-backspace)
 
@@ -1004,7 +1006,7 @@ Version 2016-12-27"
 (add-hook 'pdf-view-mode 'wlh-pdf-view-mode-hook)
 
 ;; Hydra
-(global-set-key (kbd "C-x o") 'hydra-occur-dwim/body)
+(global-set-key (kbd "s-o") 'hydra-window/body)
 
 ;; Occur mode
 ;; Recenter line when occur-mode-goto-occurrence

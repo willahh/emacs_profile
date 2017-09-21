@@ -21,6 +21,8 @@
 (setq auto-revert-verbose nil)
 
 ;; Auto close brackets
+;; Update : Reactivation de smartparens
+;; Update : Reactivation de autopair
 (autopair-global-mode t)
 
 ;; Enable blink cursor

@@ -376,33 +376,65 @@
 ;; Expand region
 (require 'expand-region)
 
-;; Auto close parenthesis brackets, ...
-;; @todo ce package ne se telecharge pas
-;; Update ce package est quand meme tres pratique, reactivation
-;; Update 2 : En fait utilisation de smartparens plutot
+;; Auto close parenthesis brackets, ... @todo ce package ne se
+;; telecharge pas Update ce package est quand meme tres pratique,
+;; reactivation Update 2 : En fait utilisation de smartparens plutot
 ;; Update 3 : Re-passage sur ce package suite a un yo avec le package
-;; autopair qui ne me convenait pas. (Mauvaise fermeture de simple quote dans
-;; concatenation de chaine javascript)
-;; Tout semble bien fonctionner.
+;; autopair qui ne me convenait pas. (Mauvaise fermeture de simple
+;; quote dans concatenation de chaine javascript) Tout semble bien
+;; fonctionner.
 ;;
-;; Update 4 : Yo du package paredit, celui-ci peut entrer en conflit avec
-;; certaines commandes de autopair, desactivation temporaire
+;; Update 4 : Yo du package paredit, celui-ci peut entrer en conflit
+;; avec certaines commandes de autopair, desactivation temporaire
 ;;
-;; Update 5 : Trop pratique lors de, par exemple, l'ouverture
-;; d'une accolade en javascript, puis d'un retour à la ligne
+;; Update 5 : Trop pratique lors de, par exemple, l'ouverture d'une
+;; accolade en javascript, puis d'un retour à la ligne
 ;;
 ;; Update 6 : Desactivation, le package paredit s en charge
 ;; 
 ;; (require 'autopair)
 ;; (autopair-global-mode 1)
 
-;; smart-parens
-;; Probleme avec des concatenations javascript et l insertion de simple quote.
-;; Impossible de changer la configuration pour desactiver l auto insertion de simple quote.
-;; Desactivation du package, retour sur autopair
+;; smart-parens Probleme avec des concatenations javascript et l
+;; insertion de simple quote. Impossible de changer la configuration
+;; pour desactiver l auto insertion de simple quote. Desactivation du
+;; package, retour sur autopair
 
 ;; (require 'smartparens-config)
 ;; (add-hook 'prog-mode-hook #'smartparens-mode)
+
+;; Update : desactivation : des ralentissements sont visibles avec
+;; cette extension Update 2 : Utilisation de autopair + binding un a
+;; un des binding de Smartparens
+
+;; Update : Reactivation de smartparens plutot que du natif autopair,
+;; Smartparens gere BEAUCOUP mieux les ouvertures / fermetures des
+;; quotes et autres.
+;;
+;; Update : Ce n est pas vraiment le cas, les quotes ne sont pas si
+;; bien gerees que ca, plus entre en conflit avec paredit -> Desactivation
+
+;; (require 'smartparens)
+;; (require 'smartparens-config)
+;; (setq sp-base-key-bindings 'paredit)
+;; (setq sp-autoskip-closing-pair 'always)
+;; (setq sp-hybrid-kill-entire-symbol nil)
+;; (sp-use-paredit-bindings)
+
+;; (add-hook 'php-mode-hook 'smartparens-mode)
+;; (add-hook 'web-mode-hook 'smartparens-mode)
+;; (add-hook 'js2-mode-hook 'smartparens-mode)
+;; (add-hook 'js-mode-hook 'smartparens-mode)
+
+
+;; (require 'smartparens-config)
+;; (setq sp-escape-quotes-after-insert nil)
+;; (setq sp-escape-char nil)
+;; (setq sp-escape-wrapped-region nil)
+
+;; (add-hook 'prog-mode-hook 'smartparens-mode)
+
+
 
 ;; -------- url
 ;; Enable jump to url quickly for all buffers
@@ -457,23 +489,7 @@
 
 
 
-;; Smartparens
-;; Update : desactivation : des ralentissements sont
-;; visibles avec cette extension
-;; Update 2 : Utilisation de autopair + binding un a un
-;; des binding de Smartparens
 
-;; (require 'smartparens)
-;; (require 'smartparens-config)
-;; (setq sp-base-key-bindings 'paredit)
-;; (setq sp-autoskip-closing-pair 'always)
-;; (setq sp-hybrid-kill-entire-symbol nil)
-;; (sp-use-paredit-bindings)
-
-;; (add-hook 'php-mode-hook 'smartparens-mode)
-;; (add-hook 'web-mode-hook 'smartparens-mode)
-;; (add-hook 'js2-mode-hook 'smartparens-mode)
-;; (add-hook 'js-mode-hook 'smartparens-mode)
 
 
 

@@ -18,9 +18,9 @@
  '(rainbow-delimiters-depth-7-face ((t (:foreground "#fa75e2"))))
  '(rainbow-delimiters-depth-8-face ((t (:foreground "#55bdf0")))))
 
-
-         
+;; white-space         
 (set-face-attribute 'trailing-whitespace nil :background "#20212b")
+(set-face-attribute 'web-mode-whitespace-face nil :background "#20212b")
 
 (defun powerline-theme-emacs()
   (set-face-attribute 'mode-line nil

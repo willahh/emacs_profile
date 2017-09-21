@@ -121,7 +121,7 @@ is already narrowed."
   ;; Paredit
   ;; Prevent paredit from adding a space before delimiters
   (set (make-local-variable 'paredit-space-for-delimiter-predicates) 0)
-  (set (make-local-variable 'autopair-mode) nil)
+  
 
   ;; Completion
   ;; (set (make-local-variable 'company-minimum-prefix-length) 2)
@@ -129,10 +129,12 @@ is already narrowed."
 
   ;; (set (make-local-variable 'company-minimum-prefix-length) 1)
   ;; (set (make-local-variable 'company-minimum-prefix-length) 2)
-  (set (make-local-variable 'company-minimum-prefix-length) 1)
+  ;; (set (make-local-variable 'company-minimum-prefix-length) 1) ; Impossible trop de conflit possibles + leges ralentissements, il vaut mieux le declencher a la main, ajout d un min a 3
+  (set (make-local-variable 'company-minimum-prefix-length) 3)
   ;; (set (make-local-variable 'company-idle-delay) 0)
   ;; (set (make-local-variable 'company-idle-delay) 1)
-  (set (make-local-variable 'company-idle-delay) 0)
+  ;; (set (make-local-variable 'company-idle-delay) 0)
+  (set (make-local-variable 'company-idle-delay) 3) ; Delai trop court = chiant
 
   ;; js2-refactor-mode
   ;; (js2-refactor-mode)
