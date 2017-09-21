@@ -194,6 +194,7 @@
   ))
 
 (add-to-list 'load-path "~/.emacs.d/vendor/emacs-async")
+(add-to-list 'load-path "~/.emacs.d/vendor/emacs-textmate-0.1/textmate.el")
 (add-to-list 'load-path "~/.emacs.d/vendor/helm")
 (add-to-list 'load-path "~/.emacs.d/vendor/avy")
 (add-to-list 'load-path "~/.emacs.d/vendor/avy-menu")
@@ -208,7 +209,6 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/evil-easymotion")
 (add-to-list 'load-path "~/.emacs.d/vendor/psvn")
 (add-to-list 'load-path "~/.emacs.d/vendor/simple-httpd")
-(add-to-list 'load-path "~/.emacs.d/vendor/doom-themes")
 (add-to-list 'load-path "~/.emacs.d/vendor/dumb-jump")
 (add-to-list 'load-path "~/.emacs.d/vendor/Indium")
 (add-to-list 'load-path "~/.emacs.d/vendor/restclient")
@@ -222,7 +222,9 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/easy-kill-0.9.3")
 (add-to-list 'load-path "~/.emacs.d/vendor/general")
 (add-to-list 'load-path "~/.emacs.d/vendor/slime")
-(add-to-list 'load-path "~/.emacs.d/vendor/noctilux-theme")
+
+
+
 ;;(add-to-list 'load-path "~/.emacs.d/vendor/lsp-javascript")
 
 ;; (add-to-list 'load-path "~/.emacs.d/vendor/lispy")

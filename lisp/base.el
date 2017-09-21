@@ -24,7 +24,10 @@
 ;; Desactivation car impossible d avoir une
 ;; nouvelle ligne + indent fonctionnel avec ce mode
 ;; (autopair-global-mode t)
-(autopair-global-mode nil)
+;; Update : Reactivation de smartparens
+;; Update : Reactivation de autopair
+;; Update : Desactivation, car empeche de re bind RET
+;; (autopair-global-mode t)
 
 ;; Enable blink cursor
 ;; (blink-cursor-mode 1)
@@ -203,7 +206,8 @@
 (setq mouse--progressive-speed 10)
 
 ;; (setq mouse-wheel-scroll-amount '(0.022))
-(setq mouse-wheel-scroll-amount '(0.035)) ; Update : la valeur la plus proche des editeurs modernes est 0.035 (test sur un scroll d un cran, set sur plusieurs gros coup de scroll)
+;; (setq mouse-wheel-scroll-amount '(0.035)) ; Update : la valeur la plus proche des editeurs modernes est 0.035 (test sur un scroll d un cran, set sur plusieurs gros coup de scroll)
+(setq mouse-wheel-scroll-amount '(0.038))
 (setq mouse-wheel-progressive-speed 10)
 
 ;; "Modern" copy / paste (dont put the selection on the markring)

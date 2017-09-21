@@ -4,6 +4,7 @@
 (require 'iedit)
 (require 'php-mode)
 (require 'nxml-mode)
+(require 'tern)
 
 ;; key-translation-map
 (define-key key-translation-map (kbd "C-j") (kbd "RET"))
@@ -19,6 +20,7 @@
 ;; (global-set-key (kbd "M-c") 'kill-ring-save)
 ;; (global-set-key (kbd "C-x M-c") 'capitalize-word)
 ;; M-v (capitalize-word) -> "paste"
+
 (global-set-key (kbd "M-c") 'wil-copy)
 (global-set-key (kbd "M-v") 'yank)
 (global-set-key [(meta v)] 'yank)
@@ -384,7 +386,7 @@ Version 2016-12-27"
 (global-set-key (kbd "<M-down-mouse-1>") 'mc/add-cursor-on-click)
 
 ;; All
-(global-set-key (kbd "M-L") 'mc/mark-all-words-like-this) ; Like in VS Code
+;; (global-set-key (kbd "M-L") 'mc/mark-all-words-like-this) ; Like in VS Code
 
 ;; Next
 (global-set-key (kbd "°") 'mc/mark-next-like-this-word) ; ALT+d
@@ -405,7 +407,7 @@ Version 2016-12-27"
 
 ;; Line operations
 (global-set-key (kbd "C-é") 'drag-stuff-down) ;; control+alt+j
-(global-set-key (kbd "<C-return>") 'open-line-below)
+;; (global-set-key (kbd "<C-return>") 'open-line-below)
 (global-set-key (kbd "<C-S-return>") 'open-line-above)
 ;; Helm
 ;; (global-set-key (kbd "M-x") 'helm-M-x)
@@ -596,10 +598,10 @@ Version 2016-12-27"
 (global-set-key [control meta shift s] 'ag-project)
 
 
-;; ---------------- new lne
+;; ---------------- new line
 ;; http://emacsredux.com/blog/2013/03/29/automatic-electric-indentation/
 ;; (global-set-key (kbd "RET") #'newline-and-indent) ; Ne fonctionne pas
-(global-set-key (kbd "RET") 'newline-and-indent)
+;; (global-set-key (kbd "RET") 'newline-and-indent) ; N est pas suffisant
 (global-set-key (kbd "RET") 'reindent-then-newline-and-indent)
 
 ;; 
@@ -609,8 +611,9 @@ Version 2016-12-27"
 ;; lines
 ;; (define-key prog-mode-map(kbd "C-i") 'tab-indent-or-complete)
 
-;; (global-set-key [(meta shift d)] 'duplicate-start-of-line-or-region)
+(global-set-key [(meta shift d)] 'duplicate-start-of-line-or-region)
 (global-set-key (kbd "C-c C-d") 'duplicate-start-of-line-or-region)
+(define-key tern-mode-keymap (kbd "C-c C-d") 'duplicate-start-of-line-or-region)
 (define-key web-mode-map (kbd "C-c C-d") 'duplicate-start-of-line-or-region)
 (define-key js2-mode-map (kbd "C-c C-d") 'duplicate-start-of-line-or-region)
 (define-key tern-mode-keymap (kbd "C-c C-d") 'duplicate-start-of-line-or-region)
@@ -800,6 +803,7 @@ Version 2016-12-27"
 ;; camelcase are moved into "string-inflection-all-cycle" function
 (global-set-key (kbd "M-l") 'er/expand-region)
 (global-set-key (kbd "M-L") 'er/contract-region)
+(global-set-key (kbd "M-L") 'mc/mark-all-words-like-this) ; Like in VS Code
 (global-set-key (kbd "C-M-l") 'mark-sexp)
 
 
@@ -819,24 +823,11 @@ Version 2016-12-27"
 (define-key magit-status-mode-map (kbd "M-w") 'kill-ring-save)
 (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
 
-;;
-(global-set-key (kbd "C-M-j") 'open-line-below)
-(global-set-key (kbd "C-M-j") 'open-line-below)
-(define-key php-mode-map (kbd "C-M-j") 'open-line-below)
-
-(global-set-key [(control shift j)] 'smart-open-line-above)
-(global-set-key [(control shift j)] 'smart-open-line-above)
-(define-key web-mode-map [(control shift j)] 'smart-open-line-above)
+;; open line above / below
 (global-set-key (kbd "C-o") 'smart-open-line-above)
-
-
-;; Below
-(global-set-key (kbd "C-M-S-j") 'open-line-below)
-; (global-set-key [(control command shift j)] 'open-line-below)
-
-
-
-
+(global-set-key (kbd "C-M-o") 'open-line-below)
+(define-key php-mode-map (kbd "C-M-o") 'open-line-below)
+(define-key org-mode-map (kbd "C-M-o") 'wil-org-open-line-below)
 
 (defun wil-org-open-line-above ()
   (interactive)
@@ -852,24 +843,10 @@ Version 2016-12-27"
   (beginning-of-line)
   (kill-line)
 )
-(define-key org-mode-map (kbd "C-M-j") 'wil-org-open-line-below)
-;; (define-key org-mode-map [(command control j)] 'wil-org-open-line-below)
+
 
 
 ;; Emmet
-;; (global-set-key (kbd "é") 'emmet-expand-line) ;; ALT + j
-;; (global-set-key (kbd "C-c k") 'emmet-expand-line)
-;; (define-key emmet-mode-keymap "é" 'emmet-expand-line)
-;; (define-key web-mode-map "é" 'emmet-expand-line)
-;; (define-key emmet-mode-keymap "C-c RET" 'emmet-expand-line)
-;; (add-hook 'web-mode-hook
-;;           (lambda ()
-;;             (define-key emmet-mode-keymap "C-c RET" 'emmet-expand-line)))
-
-;; (global-set-key (kbd "C-c TAB") 'emmet-expand-line)
-;; (define-key web-mode-map "C-c C-j" 'emmet-expand-line)
-
-
 (global-set-key [control command shift j] 'emmet-expand-line)
 (define-key web-mode-map [control command shift j] 'emmet-expand-line)
 (define-key web-mode-map (kbd "C-M-S-j") 'emmet-expand-line)
@@ -933,8 +910,7 @@ Version 2016-12-27"
 (define-key ggtags-navigation-map (kbd "M-n") 'highlight-symbol-prev)
 
 
-;; (global-set-key (kbd "<delete>") 'autopair-backspace)
-;; (define-key paredit-mode-map (kbd "<delete>") 'autopair-backspace)
+
 (global-set-key (kbd "<delete>") 'wil-delete-backspace)
 (define-key paredit-mode-map (kbd "<delete>") 'wil-delete-backspace)
 
@@ -997,7 +973,7 @@ Version 2016-12-27"
 (add-hook 'pdf-view-mode 'wlh-pdf-view-mode-hook)
 
 ;; Hydra
-(global-set-key (kbd "C-x o") 'hydra-occur-dwim/body)
+(global-set-key (kbd "s-o") 'hydra-window/body)
 
 ;; Occur mode
 ;; Recenter line when occur-mode-goto-occurrence
@@ -1069,16 +1045,6 @@ Version 2016-12-27"
 ;; Find
 ;; (global-set-key (kbd "s-f") 'counsel-find-file)
 (global-set-key (kbd "s-f") 'counsel-find-file)
-
-;; Expand / Contract region
-
-
-
-;; ------- Navigation
-;; From Sacha.org
-;; (bind-key "C-x p" 'pop-to-mark-command)
-;; (setq set-mark-command-repeat-pop t)
-
 
 ;; ------- Line navigation commands
 ;; (global-set-key (kbd "s-S") 'avy-goto-char-in-line)
@@ -1175,5 +1141,3 @@ Version 2016-12-27"
 (global-set-key (kbd "M-g x") 'dumb-jump-go-prefer-external)
 (global-set-key (kbd "M-g z") 'dumb-jump-go-prefer-external-other-window)
 (global-set-key (kbd "M-g b") 'dumb-jump-back)
-
-

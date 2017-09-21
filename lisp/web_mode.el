@@ -69,3 +69,8 @@
 (setq web-mode-style-padding 4)
 (setq web-mode-script-padding 4)
 (setq web-mode-block-padding 4)
+
+;; ;; https://emacs.stackexchange.com/a/13393
+;; (with-eval-after-load 'flycheck
+;;   (flycheck-add-mode 'html-tidy 'web-mode)
+;;   (flycheck-add-mode 'css-csslint 'web-mode))
