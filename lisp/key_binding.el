@@ -600,7 +600,8 @@ Version 2016-12-27"
 ;; ---------------- new lne
 ;; http://emacsredux.com/blog/2013/03/29/automatic-electric-indentation/
 ;; (global-set-key (kbd "RET") #'newline-and-indent) ; Ne fonctionne pas
-(global-set-key (kbd "RET") 'newline-and-indent)
+;; (global-set-key (kbd "RET") 'newline-and-indent) ; N est pas suffisant
+(global-set-key (kbd "RET") 'reindent-then-newline-and-indent)
 
 ;; 
 (define-key typescript-mode-map (kbd "M-j") 'c-indent-new-comment-line)

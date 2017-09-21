@@ -434,7 +434,13 @@
 ;; (setq sp-escape-wrapped-region nil)
 
 ;; (add-hook 'prog-mode-hook 'smartparens-mode)
-(add-hook 'prog-mode-hook 'textmate-mode)
+
+; Textmate-mode to manage '"(){} well
+; prog-mode-hook not allowed due to lisp language like
+; 
+;; (add-hook 'prog-mode-hook 'textmate-mode)
+(add-hook 'c-mode-hook 'textmate-mode)
+
 
 
 
