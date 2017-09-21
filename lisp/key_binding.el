@@ -18,10 +18,9 @@
 
 ;; M-c (capitalize-word) -> "copy"
 ;; (global-set-key (kbd "M-c") 'kill-ring-save)
-;; (global-set-key (kbd "M-c") 'wil-copy)
 ;; (global-set-key (kbd "C-x M-c") 'capitalize-word)
 
-;; M-v (capitalize-word) -> "paste"
+(global-set-key (kbd "M-c") 'wil-copy)
 (global-set-key (kbd "M-v") 'yank)
 (global-set-key [(meta v)] 'yank)
 (global-set-key [(meta shift v)] 'yank-pop)
@@ -820,25 +819,11 @@ Version 2016-12-27"
 (define-key magit-status-mode-map (kbd "M-w") 'kill-ring-save)
 (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
 
-;;
-(global-set-key (kbd "C-M-o") 'open-line-below)
+;; open line above / below
+(global-set-key (kbd "C-o") 'smart-open-line-above)
 (global-set-key (kbd "C-M-o") 'open-line-below)
 (define-key php-mode-map (kbd "C-M-o") 'open-line-below)
 (define-key org-mode-map (kbd "C-M-o") 'wil-org-open-line-below)
-
-(global-set-key [(control shift j)] 'smart-open-line-above)
-(global-set-key [(control shift j)] 'smart-open-line-above)
-(define-key web-mode-map [(control shift j)] 'smart-open-line-above)
-(global-set-key (kbd "C-o") 'smart-open-line-above)
-
-
-;; Below
-;; (global-set-key (kbd "C-M-S-j") 'open-line-below)
-; (global-set-key [(control command shift j)] 'open-line-below)
-
-
-
-
 
 (defun wil-org-open-line-above ()
   (interactive)
@@ -858,19 +843,6 @@ Version 2016-12-27"
 
 
 ;; Emmet
-;; (global-set-key (kbd "é") 'emmet-expand-line) ;; ALT + j
-;; (global-set-key (kbd "C-c k") 'emmet-expand-line)
-;; (define-key emmet-mode-keymap "é" 'emmet-expand-line)
-;; (define-key web-mode-map "é" 'emmet-expand-line)
-;; (define-key emmet-mode-keymap "C-c RET" 'emmet-expand-line)
-;; (add-hook 'web-mode-hook
-;;           (lambda ()
-;;             (define-key emmet-mode-keymap "C-c RET" 'emmet-expand-line)))
-
-;; (global-set-key (kbd "C-c TAB") 'emmet-expand-line)
-;; (define-key web-mode-map "C-c C-j" 'emmet-expand-line)
-
-
 (global-set-key [control command shift j] 'emmet-expand-line)
 (define-key web-mode-map [control command shift j] 'emmet-expand-line)
 (define-key web-mode-map (kbd "C-M-S-j") 'emmet-expand-line)
@@ -1070,16 +1042,6 @@ Version 2016-12-27"
 ;; (global-set-key (kbd "s-f") 'counsel-find-file)
 (global-set-key (kbd "s-f") 'counsel-find-file)
 
-;; Expand / Contract region
-
-
-
-;; ------- Navigation
-;; From Sacha.org
-;; (bind-key "C-x p" 'pop-to-mark-command)
-;; (setq set-mark-command-repeat-pop t)
-
-
 ;; ------- Line navigation commands
 ;; (global-set-key (kbd "s-S") 'avy-goto-char-in-line)
 (global-set-key (kbd "s-l") 'avy-goto-char-in-line)
@@ -1182,5 +1144,3 @@ Version 2016-12-27"
 (global-set-key (kbd "M-g x") 'dumb-jump-go-prefer-external)
 (global-set-key (kbd "M-g z") 'dumb-jump-go-prefer-external-other-window)
 (global-set-key (kbd "M-g b") 'dumb-jump-back)
-
-

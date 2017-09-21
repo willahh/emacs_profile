@@ -724,39 +724,9 @@ That is, a string used to represent it on the tab bar."
 (defun wil-create-new-centered-frame ()
   (interactive)
 
-  ;; New frame
-  ;; (make-frame-command)
-  ;; (setq x (- (/ (x-display-pixel-width) 2) (/ 580 2)))
-  ;; (setq y (- (/ (x-display-pixel-height) 2) (/ 500 2)))
-
-  ;; (let (myframe)
-  ;;   (setq myframe (new-frame))
-  ;;   (set-frame-width (myframe) 800)
-  ;;   )
-
-
-
-  ;; (setq frame (new-frame)
-  ;;       (wil-frame-center (frame))
-  ;; )
-
-  ;; (new-frame ((width . 100)
-  ;;             (height . 100)))
-
-  ;; (xah-new-empty-buffer)
-
-  ;; update frame position
-  ;; (set-frame-position (selected-frame) 500 500)
-  
-  ;; (set-frame-position (selected-frame) x y)
-
-  ;; New buffer inside
-  ;;  then Select this buffer @todo
-  ;; (switch-to-buffer (generate-new-buffer "*new*"))
-
-
   (select-frame (make-frame))
   (funcall #'switch-to-buffer (generate-new-buffer "*new*"))
+  ;; (funcall #'switch-to-buffer (with-current-buffer (generate-new-buffer "*new*") (funcall fundamental-mode)))
   (wil-frame-center)
 )
 
@@ -851,12 +821,12 @@ That is, a string used to represent it on the tab bar."
     (company-abort)))
 
 
-;; Custom wra
-;; New line and indent for tab
-(defun new-line-and-indent-for-tab ()
-  (interactive)
-  (autopair-newline)
-  (indent-for-tab-command))
+;; ;; Custom wra
+;; ;; New line and indent for tab
+;; (defun new-line-and-indent-for-tab ()
+;;   (interactive)
+;;   (autopair-newline)
+;;   (indent-for-tab-command))
 
 
 ;; ----------------------------

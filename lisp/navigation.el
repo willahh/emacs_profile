@@ -2,6 +2,7 @@
 (require 'smartparens-html)
 (require 'php-mode)
 (require 'nxml-mode)
+;(require 'textmate)
 
 ;; iy-go-to-char
 (require 'iy-go-to-char)
@@ -433,6 +434,7 @@
 ;; (setq sp-escape-wrapped-region nil)
 
 ;; (add-hook 'prog-mode-hook 'smartparens-mode)
+(add-hook 'prog-mode-hook 'textmate-mode)
 
 
 

@@ -23,7 +23,8 @@
 ;; Auto close brackets
 ;; Update : Reactivation de smartparens
 ;; Update : Reactivation de autopair
-(autopair-global-mode t)
+;; Update : Desactivation, car empeche de re bind RET
+;; (autopair-global-mode t)
 
 ;; Enable blink cursor
 ;; (blink-cursor-mode 1)
