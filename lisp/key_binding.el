@@ -17,10 +17,9 @@
 
 ;; M-c (capitalize-word) -> "copy"
 ;; (global-set-key (kbd "M-c") 'kill-ring-save)
-;; (global-set-key (kbd "M-c") 'wil-copy)
 ;; (global-set-key (kbd "C-x M-c") 'capitalize-word)
-
 ;; M-v (capitalize-word) -> "paste"
+(global-set-key (kbd "M-c") 'wil-copy)
 (global-set-key (kbd "M-v") 'yank)
 (global-set-key [(meta v)] 'yank)
 (global-set-key [(meta shift v)] 'yank-pop)
@@ -62,9 +61,9 @@
 
 (global-set-key (kbd "C-c , f n d") 'find-name-dired)
 
-
-
-
+(define-key text-mode-map (kbd "C-c ; s i") 'ispell)
+(define-key text-mode-map (kbd "C-c ; s l") 'langtool-check)
+(define-key text-mode-map (kbd "C-c ; s c") 'langtool-correct-buffer)
 ;; Toggle fullscreen
 ;; Update : OSX : Utilisation de l outil iSpectacle
 ;; Update : Maj pour utilsation des raccourcis avec prefix user (C-c ,)
@@ -601,6 +600,7 @@ Version 2016-12-27"
 ;; http://emacsredux.com/blog/2013/03/29/automatic-electric-indentation/
 ;; (global-set-key (kbd "RET") #'newline-and-indent) ; Ne fonctionne pas
 (global-set-key (kbd "RET") 'newline-and-indent)
+(global-set-key (kbd "RET") 'reindent-then-newline-and-indent)
 
 ;; 
 (define-key typescript-mode-map (kbd "M-j") 'c-indent-new-comment-line)
@@ -612,6 +612,8 @@ Version 2016-12-27"
 ;; (global-set-key [(meta shift d)] 'duplicate-start-of-line-or-region)
 (global-set-key (kbd "C-c C-d") 'duplicate-start-of-line-or-region)
 (define-key web-mode-map (kbd "C-c C-d") 'duplicate-start-of-line-or-region)
+(define-key js2-mode-map (kbd "C-c C-d") 'duplicate-start-of-line-or-region)
+(define-key tern-mode-keymap (kbd "C-c C-d") 'duplicate-start-of-line-or-region)
 
 (global-set-key [C-M-tab] 'other-window)
 (global-set-key [C-M-S-tab] 'previous-multiframe-window)
@@ -1157,13 +1159,6 @@ Version 2016-12-27"
 
 ;; ispell (H-$ instead of M-$, cause osx handle M-$ at os level)
 (global-set-key (kbd "H-$") 'ispell-word)
-
-
-(define-key text-mode-map (kbd "C-c ; s i") 'ispell)
-(define-key text-mode-map (kbd "C-c ; s l") 'langtool-check)
-(define-key text-mode-map (kbd "C-c ; s c") 'langtool-correct-buffer)
-
-
 
 ;; use hippie-expand instead of dabbrev
 

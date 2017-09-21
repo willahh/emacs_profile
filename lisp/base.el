@@ -21,7 +21,10 @@
 (setq auto-revert-verbose nil)
 
 ;; Auto close brackets
-(autopair-global-mode t)
+;; Desactivation car impossible d avoir une
+;; nouvelle ligne + indent fonctionnel avec ce mode
+;; (autopair-global-mode t)
+(autopair-global-mode nil)
 
 ;; Enable blink cursor
 ;; (blink-cursor-mode 1)
