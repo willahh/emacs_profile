@@ -440,6 +440,7 @@
 ; 
 ;; (add-hook 'prog-mode-hook 'textmate-mode)
 (add-hook 'c-mode-hook 'textmate-mode)
+(add-hook 'js2-mode 'textmate-mode)
 
 
 
