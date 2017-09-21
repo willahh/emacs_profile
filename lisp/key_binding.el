@@ -6,18 +6,20 @@
 (require 'nxml-mode)
 (require 'tern)
 
+;; key-translation-map
+(define-key key-translation-map (kbd "C-j") (kbd "RET"))
+(define-key key-translation-map (kbd "ESC") (kbd "C-g"))
 
-;; M-x (M-x main command) -> "cut"
 (global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
-(global-set-key (kbd "M-q") 'fill-paragraph)
+;; (global-set-key (kbd "M-q") 'fill-paragraph)
 (define-key paredit-mode-map (kbd "M-q") 'fill-paragraph)
-(global-set-key (kbd "C-x <C-m>") 'helm-M-x)
+;; (global-set-key (kbd "C-x <C-m>") 'helm-M-x)
 (global-set-key (kbd "C-;") "\C-e;") ;; Append ; at the end of a line
 
 ;; M-c (capitalize-word) -> "copy"
 ;; (global-set-key (kbd "M-c") 'kill-ring-save)
-(global-set-key (kbd "M-c") 'wil-copy)
-(global-set-key (kbd "C-x M-c") 'capitalize-word)
+;; (global-set-key (kbd "M-c") 'wil-copy)
+;; (global-set-key (kbd "C-x M-c") 'capitalize-word)
 
 ;; M-v (capitalize-word) -> "paste"
 (global-set-key (kbd "M-v") 'yank)
@@ -25,7 +27,7 @@
 (global-set-key [(meta shift v)] 'yank-pop)
 
 ;; Scroll
-(global-set-key (kbd "C-x M-v") 'evil-scroll-up)
+;; (global-set-key (kbd "C-x M-v") 'evil-scroll-up)
 (define-key syslog-mode-map (kbd "s-v") 'scroll-down)
 (define-key syslog-mode-map (kbd "C-v") 'scroll-up)
 
@@ -33,7 +35,7 @@
 ;; M-z (zap-to-char) -> "undo"
 (global-set-key (kbd "M-z") 'undo-tree-undo)
 (global-set-key [meta z] 'undo-tree-undo)
-(global-set-key (kbd "C-x M-z") 'zap-to-char)
+;; (global-set-key (kbd "C-x M-z") 'zap-to-char)
 
 ;; M-S-z () -> "redo"
 (global-set-key [(meta shift z)] 'undo-tree-redo)
@@ -48,17 +50,18 @@
 
 ;; M-w (kil-ring-save) -> "close window"
 (global-set-key (kbd "M-w") 'delete-window)
-(global-set-key (kbd "C-x M-w") 'kill-ring-save)
+;; (global-set-key (kbd "C-x M-w") 'kill-ring-save)
 (global-set-key (kbd "M-X") 'other-frame) ; Same keybinding from osx habits
 
+; User key map C-c ,
+;; (global-set-key (kbd "C-c , c l") 'downcase-word)
+;; (global-set-key (kbd "C-c , c u") 'upcase-word)
 (global-set-key (kbd "C-c , f s a") 'hs-show-all) ; (user key binding (C-c ,) + [f]olding [s]how [a]ll)
 (global-set-key (kbd "C-c , f h a") 'hs-hide-all) ; (user key binding (C-c ,) + [f]olding [h]ide [a]ll)
 (global-set-key (kbd "C-c , f s b") 'hs-show-block) ; (user key binding (C-c ,) + [f]olding [s]how [b]lock)
 (global-set-key (kbd "C-c , f h b") 'hs-hide-block) ; (user key binding (C-c ,) + [f]olding [h]ide [b]lock)
 
 (global-set-key (kbd "C-c , f n d") 'find-name-dired)
-
-;; (global-set-key (kbd "C-c , s p a") 'helm-projectile-ag) ;; [s]earch [p]rojectile [a]g
 
 
 
@@ -102,16 +105,10 @@
 (global-set-key (kbd "M-W") 'delete-frame)        
 
 ;; ---
-(define-key key-translation-map (kbd "ESC") (kbd "C-g"))
 (define-key ivy-minibuffer-map (kbd "<escape>") 'minibuffer-keyboard-quit)
 (define-key ivy-minibuffer-map (kbd "C-h") 'delete-backward-char)
 ;; (define-key ivy-minibuffer-map (kbd "C-w") 'delete-backward-char)
 (define-key ivy-minibuffer-map (kbd "C-w") 'backward-kill-word)
-
-
-
-;; (define-key key-translation-map "\C-q" "\C-g")
-
 
 (use-package evil-mc
   :bind (:map evil-mc-key-map
@@ -602,15 +599,21 @@ Version 2016-12-27"
 
 
 ;; ---------------- new lne
+;; http://emacsredux.com/blog/2013/03/29/automatic-electric-indentation/
+;; (global-set-key (kbd "RET") #'newline-and-indent) ; Ne fonctionne pas
+(global-set-key (kbd "RET") 'newline-and-indent)
+
+;; 
 (define-key typescript-mode-map (kbd "M-j") 'c-indent-new-comment-line)
 
 
-;; ---------------- Comment lines
+;; lines
 ;; (define-key prog-mode-map(kbd "C-i") 'tab-indent-or-complete)
 
 (global-set-key [(meta shift d)] 'duplicate-start-of-line-or-region)
 (global-set-key (kbd "C-c C-d") 'duplicate-start-of-line-or-region)
 (define-key tern-mode-keymap (kbd "C-c C-d") 'duplicate-start-of-line-or-region)
+(define-key web-mode-map (kbd "C-c C-d") 'duplicate-start-of-line-or-region)
 
 (global-set-key [C-M-tab] 'other-window)
 (global-set-key [C-M-S-tab] 'previous-multiframe-window)
@@ -817,15 +820,6 @@ Version 2016-12-27"
 (define-key magit-status-mode-map (kbd "M-w") 'kill-ring-save)
 (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
 
-
-;; ---------------- open line
-;; Standard new line
-(define-key key-translation-map (kbd "C-j") (kbd "RET"))
-
-
-
-
-
 ;;
 (global-set-key (kbd "C-M-o") 'open-line-below)
 (global-set-key (kbd "C-M-o") 'open-line-below)
@@ -835,7 +829,6 @@ Version 2016-12-27"
 (global-set-key [(control shift j)] 'smart-open-line-above)
 (global-set-key [(control shift j)] 'smart-open-line-above)
 (define-key web-mode-map [(control shift j)] 'smart-open-line-above)
-;; (global-set-key (kbd "C-M-j") 'newline-and-indent)
 (global-set-key (kbd "C-o") 'smart-open-line-above)
 
 
@@ -945,9 +938,7 @@ Version 2016-12-27"
 (global-set-key (kbd "<delete>") 'wil-delete-backspace)
 (define-key paredit-mode-map (kbd "<delete>") 'wil-delete-backspace)
 
-
-;; PERFFFECT.
-(define-key key-translation-map (kbd "C-j") (kbd "RET"))
+;;
 (define-key global-map (kbd "C-x RET") 'dired-jump)
 (define-key web-mode-map (kbd "C-x RET") 'dired-jump)
 
@@ -1037,8 +1028,8 @@ Version 2016-12-27"
 ;; (define-key ediff-mode-map (kbd "q") 'wil-vc-ediff-quit)
 (add-hook 'ediff-mode-hook 'wil-ediff-hook)
 
-(global-set-key (kbd "M-9") 'xah-toggle-letter-case)
-(global-set-key (kbd "M-8") 'string-inflection-all-cycle)
+(global-set-key (kbd "M-ç") 'xah-toggle-letter-case) ; (M-9 on azerty keyboard)
+(global-set-key (kbd "M-!") 'string-inflection-all-cycle) ; (M-8 on azerty keyboard)
 
 
 ;; ---------------- Function keys
@@ -1050,6 +1041,7 @@ Version 2016-12-27"
 ;; Search with super key
 ;; (global-set-key (kbd "s-s") 'helm-swoop) ; Super+s
 (global-set-key (kbd "s-s") 'swiper) ; Super+s
+(global-set-key (kbd "s-z") 'zap-to-char)
 (global-set-key (kbd "s-e") 'kmacro-end-and-call-macro) ; Super+e
 (global-set-key (kbd "C-s-s") 'helm-ag) ; Super+Contral+s
 (global-set-key (kbd "C-M-s-s") 'projectile-ag) ; Control+Meta+Super+s
@@ -1178,7 +1170,6 @@ Version 2016-12-27"
 ;; use hippie-expand instead of dabbrev
 
 ;; "Translate" key to behave like on us keyboard
-;; (define-key key-translation-map (kbd "M-/") (kbd "M-:"))
 (global-set-key (kbd "M-/") 'eval-expression)
 (global-set-key (kbd "M-:") 'hippie-expand)
 (global-set-key (kbd "M-i") 'hippie-expand)
@@ -1191,3 +1182,5 @@ Version 2016-12-27"
 (global-set-key (kbd "M-g x") 'dumb-jump-go-prefer-external)
 (global-set-key (kbd "M-g z") 'dumb-jump-go-prefer-external-other-window)
 (global-set-key (kbd "M-g b") 'dumb-jump-back)
+
+

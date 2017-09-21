@@ -95,7 +95,8 @@ is already narrowed."
   ;; (indium-interaction-mode)
 
   (setq js2-missing-semi-one-line-override 1)
-  (setq js2-strict-missing-semi-warning nil)
+  ;; (setq js2-strict-missing-semi-warning nil)
+  (setq js2-strict-missing-semi-warning t)
   (setq js2-highlight-unused-variables-mode t)
   (setq js2-strict-var-hides-function-arg-warning t)
   ;; (require 'smartparens-config)
