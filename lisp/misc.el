@@ -1262,3 +1262,7 @@ _d_: subtree
 ;; The original value is "\f\\|[      ]*$", so we add the bullets (-), (+), and (*).
 ;; There is no need for "^" as the regexp is matched at the beginning of line.
 ;; (setq paragraph-start "\f\\|[ \t]*$\\|[ \t]*[-+*] ")
+
+
+;; http://emacsredux.com/blog/2013/03/29/automatic-electric-indentation/
+(electric-indent-mode +1)
