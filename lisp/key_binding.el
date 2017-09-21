@@ -386,7 +386,7 @@ Version 2016-12-27"
 (global-set-key (kbd "<M-down-mouse-1>") 'mc/add-cursor-on-click)
 
 ;; All
-;; (global-set-key (kbd "M-L") 'mc/mark-all-words-like-this) ; Like in VS Code
+(global-set-key (kbd "M-L") 'mc/mark-all-words-like-this) ; Like in VS Code
 
 ;; Next
 (global-set-key (kbd "°") 'mc/mark-next-like-this-word) ; ALT+d
