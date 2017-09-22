@@ -22,8 +22,15 @@
 ;; M-v (capitalize-word) -> "paste"
 
 (global-set-key (kbd "M-c") 'wil-copy)
+
+;; Yank
 (global-set-key (kbd "M-v") 'yank)
+(define-key mc/keymap (kbd "M-v") 'yank)
+(define-key helm-map (kbd "M-v") 'yank)
+(define-key ivy-minibuffer-map (kbd "M-v") 'yank)
 (global-set-key [(meta v)] 'yank)
+
+;; Yank pop
 (global-set-key [(meta shift v)] 'yank-pop)
 
 ;; Scroll
@@ -383,7 +390,7 @@ Version 2016-12-27"
 
 ;; ------ Multi cursor binding
 ;; Multi cursor map
-(define-key mc/keymap (kbd "M-v") 'yank)
+
 
 ;; Mouse
 (global-set-key (kbd "<M-down-mouse-1>") 'mc/add-cursor-on-click)
@@ -433,7 +440,7 @@ Version 2016-12-27"
 ;; (define-key common-lisp-mode-map (kbd "C-h") 'paredit-backward-delete)
 
 (define-key helm-map (kbd "C-h") 'paredit-backward-delete)
-(define-key helm-map (kbd "M-v") 'yank)
+
 
 ;; (define-key company-active-map (kbd "C-h") 'delete-backward-char)
 (define-key company-active-map (kbd "C-h") 'paredit-backward-delete)
@@ -466,7 +473,7 @@ Version 2016-12-27"
 
 ;; (global-set-key (kbd "C-c C-p") 'projectile-find-file)
 ;; (define-key org-mode-map (kbd "C-c C-p") 'projectile-find-file)
-(define-key ivy-minibuffer-map (kbd "M-v") 'yank) ; Add yank to ivy mini map
+
 
 (global-set-key (kbd "C-c C-n") 'diff-hl-next-hunk)
 (define-key web-mode-map (kbd "C-c C-n") 'diff-hl-next-hunk)
@@ -619,11 +626,15 @@ Version 2016-12-27"
 ;; (define-key prog-mode-map(kbd "C-i") 'tab-indent-or-complete)
 
 (global-set-key [(meta shift d)] 'duplicate-start-of-line-or-region)
-(global-set-key (kbd "C-c C-d") 'duplicate-start-of-line-or-region)
-(define-key tern-mode-keymap (kbd "C-c C-d") 'duplicate-start-of-line-or-region)
-(define-key web-mode-map (kbd "C-c C-d") 'duplicate-start-of-line-or-region)
-(define-key js2-mode-map (kbd "C-c C-d") 'duplicate-start-of-line-or-region)
-(define-key tern-mode-keymap (kbd "C-c C-d") 'duplicate-start-of-line-or-region)
+
+;; Update to C-x C-d (dired list dir that i did not use at all)
+(global-set-key (kbd "C-x C-d") 'duplicate-start-of-line-or-region)
+
+;; (global-set-key (kbd "C-c C-d") 'duplicate-start-of-line-or-region)
+;; (define-key tern-mode-keymap (kbd "C-c C-d") 'duplicate-start-of-line-or-region)
+;; (define-key web-mode-map (kbd "C-c C-d") 'duplicate-start-of-line-or-region)
+;; (define-key js2-mode-map (kbd "C-c C-d") 'duplicate-start-of-line-or-region)
+;; (define-key tern-mode-keymap (kbd "C-c C-d") 'duplicate-start-of-line-or-region)
 
 (global-set-key [C-M-tab] 'other-window)
 (global-set-key [C-M-S-tab] 'previous-multiframe-window)
@@ -1097,7 +1108,8 @@ Version 2016-12-27"
 (global-set-key (kbd "s-g") 'magit-status)
 
 (global-set-key (kbd "s-D") 'projectile-dired)
-(global-set-key (kbd "s-j") 'emmet-expand-line)
+(global-set-key (kbd "C-c C-c TAB") 'emmet-expand-line)
+(global-set-key (kbd "s-i") 'emmet-expand-line)
 
 (global-set-key (kbd "s-a") 'mark-whole-buffer)
 ;; (global-set-key (kbd "s-s") 'helm-swoop)
@@ -1109,7 +1121,8 @@ Version 2016-12-27"
 (global-set-key (kbd "s-W") 'vc-ediff)
 
 ;; avy
-(global-set-key (kbd "s-i") 'avy-goto-word-1)
+;; (global-set-key (kbd "s-i") 'avy-goto-word-1)
+(global-set-key (kbd "s-j") 'avy-goto-word-1)
 
 ;; dired
 (global-set-key (kbd "s-d") 'projectile-dired)
