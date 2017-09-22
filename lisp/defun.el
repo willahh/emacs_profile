@@ -1426,6 +1426,11 @@ the visible part of the current buffer following point. "
          (compile-goto-error)
          (setq ag-reuse-window t)))
 
+(defun wil-duplicate ()
+  (interactive)
+  (duplicate-start-of-line-or-region)
+  (keyboard-quit))
+
 ;; https://www.emacswiki.org/emacs/AutoIndentation
 ;; (defadvice kill-line (before check-position activate)
 ;;   (if (and (eolp) (not (bolp)))

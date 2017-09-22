@@ -623,10 +623,10 @@ Version 2016-12-27"
 ;; lines
 ;; (define-key prog-mode-map(kbd "C-i") 'tab-indent-or-complete)
 
-(global-set-key [(meta shift d)] 'duplicate-start-of-line-or-region)
+(global-set-key [(meta shift d)] 'wil-duplicate)
 
 ;; Update to C-x C-d (dired list dir that i did not use at all)
-(global-set-key (kbd "C-x C-d") 'duplicate-start-of-line-or-region)
+(global-set-key (kbd "C-x C-d") 'wil-duplicate)
 
 ;; (global-set-key (kbd "C-c C-d") 'duplicate-start-of-line-or-region)
 ;; (define-key tern-mode-keymap (kbd "C-c C-d") 'duplicate-start-of-line-or-region)
@@ -819,7 +819,8 @@ Version 2016-12-27"
 
 ;; Remove native M-l binding (lowercase) Lowercase, uppercase,
 ;; camelcase are moved into "string-inflection-all-cycle" function
-(global-set-key (kbd "M-l") 'er/expand-region)
+;; (global-set-key (kbd "M-l") 'er/expand-region)
+(global-set-key (kbd "C-à") 'er/expand-region)
 (global-set-key (kbd "M-L") 'er/contract-region)
 (global-set-key (kbd "M-L") 'mc/mark-all-words-like-this) ; Like in VS Code
 (global-set-key (kbd "C-M-l") 'mark-sexp)

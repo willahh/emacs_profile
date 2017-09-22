@@ -500,6 +500,7 @@
 ;; (add-hook 'js2-mode-hook 'paredit-mode)
 (add-hook 'css-mode-hook 'paredit-mode)
 (add-hook 'clojure-mode-hook 'paredit-mode)
+(add-hook 'eshell-mode-hook 'paredit-mode)
 ;; (add-hook 'prog-mode-hook )
 
 
