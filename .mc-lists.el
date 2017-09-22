@@ -73,6 +73,7 @@
       mouse-save-then-kill
       mouse-set-region
       mouse-start-secondary
+      move-over-quote
       my-abort-recursive-edit
       org-beginning-of-line
       org-cycle
@@ -173,6 +174,7 @@
       previous-multiframe-window
       projectile-find-file-dwim
       resize-window
+      textmate-backspace2
       toggle-truncate-lines
       undefined
       vc-dir-mark

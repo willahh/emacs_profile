@@ -2,7 +2,10 @@
 (require 'smartparens-html)
 (require 'php-mode)
 (require 'nxml-mode)
-;(require 'textmate)
+
+
+(load "~/.emacs.d/vendor/emacs-textmate-0.1/textmate")
+(require 'textmate-mode)
 
 ;; iy-go-to-char
 (require 'iy-go-to-char)
@@ -439,8 +442,9 @@
 ; prog-mode-hook not allowed due to lisp language like
 ; 
 ;; (add-hook 'prog-mode-hook 'textmate-mode)
-(add-hook 'c-mode-hook 'textmate-mode)
-(add-hook 'js2-mode 'textmate-mode)
+;; (add-hook 'c-mode-hook 'textmate-mode)
+(add-hook 'js2-mode-hook 'textmate-mode)
+(add-hook 'web-mode-hook 'textmate-mode)
 
 
 

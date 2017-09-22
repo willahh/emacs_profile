@@ -64,7 +64,6 @@
 
 
 
-
 ;; Toggle fullscreen
 ;; Update : OSX : Utilisation de l outil iSpectacle
 ;; Update : Maj pour utilsation des raccourcis avec prefix user (C-c ,)
@@ -861,25 +860,27 @@ Version 2016-12-27"
 ;; (define-key web-mode-map (kbd "C-c C-r") 'helm-recentf)
 ;; (define-key org-mode-map (kbd "C-c C-r") 'helm-recentf)
 
-(define-key global-map (kbd "C-c <C-m>") 'helm-recentf)
-(define-key php-mode-map (kbd "C-c <C-m>") 'helm-recentf)
-(define-key web-mode-map (kbd "C-c <C-m>") 'helm-recentf)
-(define-key org-mode-map (kbd "C-c <C-m>") 'helm-recentf)
+;; (define-key global-map (kbd "C-c <C-m>") 'helm-recentf)
+;; (define-key php-mode-map (kbd "C-c <C-m>") 'helm-recentf)
+;; (define-key web-mode-map (kbd "C-c <C-m>") 'helm-recentf)
+;; (define-key org-mode-map (kbd "C-c <C-m>") 'helm-recentf)
 
-(global-set-key (kbd "M-0") 'delete-window) ;; M-0
-(define-key diff-mode-map (kbd "M-0") 'delete-window)
 
-(global-set-key (kbd "M-1") 'delete-other-windows) ;; M-1
-(define-key diff-mode-map (kbd "M-1") 'delete-other-windows)
+;; Azerty binding equivalent chars to 0-9 on the upper row keyboard
+(global-set-key (kbd "M-à") 'delete-window) ;; M-0
+(define-key diff-mode-map (kbd "M-à") 'delete-window)
+
+(global-set-key (kbd "M-&") 'delete-other-windows) ;; M-1
+(define-key diff-mode-map (kbd "M-&") 'delete-other-windows)
 
 ;; (global-set-key (kbd "M-2") 'hrs/split-window-below-and-switch) ;; M-2
 ;; (define-key diff-mode-map (kbd "M-2") 'hrs/split-window-below-and-switch)
 
-(global-set-key (kbd "M-2") 'split-window-below) ;; M-2
-(define-key diff-mode-map (kbd "M-2") 'split-window-below)
+(global-set-key (kbd "M-é") 'split-window-below) ;; M-2
+(define-key diff-mode-map (kbd "M-é") 'split-window-below)
 
-(global-set-key (kbd "M-3") 'split-window-right) ;; M-3
-(define-key diff-mode-map (kbd "M-3") 'split-window-right)
+(global-set-key (kbd "M-\"") 'split-window-right) ;; M-3
+(define-key diff-mode-map (kbd "M-\"") 'split-window-right)
 
 ;; (global-set-key (kbd "M-9") 'resize-window) ;; M-9
 ;; (define-key diff-mode-map (kbd "M-9") 'resize-window)
@@ -1062,7 +1063,8 @@ Version 2016-12-27"
 
 ;; (global-set-key (kbd "s-r") 'crux-recentf-ido-find-file)
 (global-set-key (kbd "s-r") 'projectile-recentf)
-(global-set-key (kbd "C-s-r") 'counsel-recentf)
+;; (global-set-key (kbd "C-s-r") 'counsel-recentf)
+(global-set-key (kbd "C-s-r") 'helm-recentf) ; Update : helm-recentf est preferable car il tris dans l ordre d utilisation des fichiers
 
 ;; (global-set-key (kbd "s-r") 'crux-recentf-ido-find-file)
 
