@@ -16,7 +16,7 @@
   ;;find-file-in-project
   yaml-mode
   ;; slime
-  cider
+  ;; cider ; En commentaire, package not found
   impatient-mode
   ;; clojurescript-mode
   image-dired+
@@ -222,6 +222,7 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/easy-kill-0.9.3")
 (add-to-list 'load-path "~/.emacs.d/vendor/general")
 (add-to-list 'load-path "~/.emacs.d/vendor/slime")
+(add-to-list 'load-path "~/.emacs.d/vendor/cider")
 
 
 

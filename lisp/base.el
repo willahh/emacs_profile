@@ -131,9 +131,6 @@
 ;; Show matching parenthesis
 (show-paren-mode)
 
-;; New line and indent by default
-(global-set-key (kbd "RET") 'newline-and-indent)
-
 ;; Hihglight la ligne courante Update : Ralentis un peu l affichage,
 ;; en commentaire pour le moment Update 2 : Il faut un repere visuel
 ;; pour savoir tout de suite ou se situe le caret, juste le caret ne

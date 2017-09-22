@@ -1222,13 +1222,13 @@ _d_: subtree
   (([(meta control up)] . move-text-up)
    ([(meta control down)] . move-text-down)))
    
-(use-package buffer-stack
-  :ensure t
-  :bind
-  (([(C-tab)] . buffer-stack-up)
-   ([(C-S-tab)] . buffer-stack-down)
-   ([(meta shift i)] . buffer-stack-down)
-   ([(meta i)] . buffer-stack-up)))
+; (use-package buffer-stack
+;   :ensure t
+;   :bind
+;   (([(C-tab)] . buffer-stack-up)
+;    ([(C-S-tab)] . buffer-stack-down)
+;    ([(meta shift i)] . buffer-stack-down)
+;    ([(meta i)] . buffer-stack-up)))
 
 
 ;; single key to jump thru marks

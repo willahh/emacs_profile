@@ -6,10 +6,6 @@
 (require 'nxml-mode)
 (require 'tern)
 
-;; key-translation-map
-(define-key key-translation-map (kbd "C-j") (kbd "RET"))
-(define-key key-translation-map (kbd "ESC") (kbd "C-g"))
-
 (global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
 ;; (global-set-key (kbd "M-q") 'fill-paragraph)
 (define-key paredit-mode-map (kbd "M-q") 'fill-paragraph)
@@ -603,6 +599,7 @@ Version 2016-12-27"
 ;; (global-set-key (kbd "RET") #'newline-and-indent) ; Ne fonctionne pas
 ;; (global-set-key (kbd "RET") 'newline-and-indent) ; N est pas suffisant
 (global-set-key (kbd "RET") 'reindent-then-newline-and-indent)
+(global-set-key (kbd "C-j") 'reindent-then-newline-and-indent)
 
 ;; 
 (define-key typescript-mode-map (kbd "M-j") 'c-indent-new-comment-line)
@@ -627,8 +624,10 @@ Version 2016-12-27"
 ;; (global-set-key [C-tab] 'tabbar-forward)
 ;; (global-set-key [C-S-tab] 'tabbar-backward)
 ;; Update : Impossible car meta shift a est utilisée
-;; (global-set-key [C-S-tab] 'previous-buffer)
-;; (global-set-key [C-tab] 'next-buffer)
+
+(global-set-key [C-S-tab] 'previous-buffer)
+(global-set-key (kbd "M-I")'previous-buffer)
+(global-set-key [C-tab] 'next-buffer)
 
 ;; easy-motion
 (evilem-default-keybindings "ù")
@@ -1065,6 +1064,8 @@ Version 2016-12-27"
 
 ;; (global-set-key (kbd "s-r") 'crux-recentf-ido-find-file)
 (global-set-key (kbd "s-r") 'projectile-recentf)
+;; (global-set-key (kbd "C-s-r") 'counsel-recentf)
+;; (global-set-key (kbd "C-s-r") 'helm-recentf)
 (global-set-key (kbd "C-s-r") 'counsel-recentf)
 
 ;; (global-set-key (kbd "s-r") 'crux-recentf-ido-find-file)
@@ -1141,3 +1142,10 @@ Version 2016-12-27"
 (global-set-key (kbd "M-g x") 'dumb-jump-go-prefer-external)
 (global-set-key (kbd "M-g z") 'dumb-jump-go-prefer-external-other-window)
 (global-set-key (kbd "M-g b") 'dumb-jump-back)
+
+
+
+
+;; key-translation-map
+(define-key key-translation-map (kbd "C-j") (kbd "RET"))
+(define-key key-translation-map (kbd "ESC") (kbd "C-g"))
