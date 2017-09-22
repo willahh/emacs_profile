@@ -21,6 +21,9 @@
 (setq auto-revert-verbose nil)
 
 ;; Auto close brackets
+;; Desactivation car impossible d avoir une
+;; nouvelle ligne + indent fonctionnel avec ce mode
+;; (autopair-global-mode t)
 ;; Update : Reactivation de smartparens
 ;; Update : Reactivation de autopair
 ;; Update : Desactivation, car empeche de re bind RET

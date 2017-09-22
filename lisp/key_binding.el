@@ -19,6 +19,7 @@
 ;; M-c (capitalize-word) -> "copy"
 ;; (global-set-key (kbd "M-c") 'kill-ring-save)
 ;; (global-set-key (kbd "C-x M-c") 'capitalize-word)
+;; M-v (capitalize-word) -> "paste"
 
 (global-set-key (kbd "M-c") 'wil-copy)
 (global-set-key (kbd "M-v") 'yank)
@@ -63,6 +64,10 @@
 (global-set-key (kbd "C-c , f n d") 'find-name-dired)
 
 
+
+;; (define-key text-mode-map (kbd "C-c ; s i") 'ispell)
+;; (define-key text-mode-map (kbd "C-c ; s l") 'langtool-check)
+;; (define-key text-mode-map (kbd "C-c ; s c") 'langtool-correct-buffer)
 
 ;; Toggle fullscreen
 ;; Update : OSX : Utilisation de l outil iSpectacle
@@ -384,7 +389,7 @@ Version 2016-12-27"
 (global-set-key (kbd "<M-down-mouse-1>") 'mc/add-cursor-on-click)
 
 ;; All
-;; (global-set-key (kbd "M-L") 'mc/mark-all-words-like-this) ; Like in VS Code
+(global-set-key (kbd "M-L") 'mc/mark-all-words-like-this) ; Like in VS Code
 
 ;; Next
 (global-set-key (kbd "°") 'mc/mark-next-like-this-word) ; ALT+d
@@ -596,7 +601,7 @@ Version 2016-12-27"
 (global-set-key [control meta shift s] 'ag-project)
 
 
-;; ---------------- new lne
+;; ---------------- new line
 ;; http://emacsredux.com/blog/2013/03/29/automatic-electric-indentation/
 ;; (global-set-key (kbd "RET") #'newline-and-indent) ; Ne fonctionne pas
 ;; (global-set-key (kbd "RET") 'newline-and-indent) ; N est pas suffisant
@@ -613,6 +618,8 @@ Version 2016-12-27"
 (global-set-key (kbd "C-c C-d") 'duplicate-start-of-line-or-region)
 (define-key tern-mode-keymap (kbd "C-c C-d") 'duplicate-start-of-line-or-region)
 (define-key web-mode-map (kbd "C-c C-d") 'duplicate-start-of-line-or-region)
+(define-key js2-mode-map (kbd "C-c C-d") 'duplicate-start-of-line-or-region)
+(define-key tern-mode-keymap (kbd "C-c C-d") 'duplicate-start-of-line-or-region)
 
 (global-set-key [C-M-tab] 'other-window)
 (global-set-key [C-M-S-tab] 'previous-multiframe-window)
@@ -1124,13 +1131,6 @@ Version 2016-12-27"
 
 ;; ispell (H-$ instead of M-$, cause osx handle M-$ at os level)
 (global-set-key (kbd "H-$") 'ispell-word)
-
-
-(define-key text-mode-map (kbd "C-c ; s i") 'ispell)
-(define-key text-mode-map (kbd "C-c ; s l") 'langtool-check)
-(define-key text-mode-map (kbd "C-c ; s c") 'langtool-correct-buffer)
-
-
 
 ;; use hippie-expand instead of dabbrev
 
