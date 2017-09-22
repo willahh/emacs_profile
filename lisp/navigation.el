@@ -445,6 +445,8 @@
 ;; (add-hook 'c-mode-hook 'textmate-mode)
 (add-hook 'js2-mode-hook 'textmate-mode)
 (add-hook 'web-mode-hook 'textmate-mode)
+(add-hook 'css-mode-hook 'textmate-mode)
+(add-hook 'scss-mode-hook 'textmate-mode)
 
 
 

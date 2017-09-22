@@ -1266,3 +1266,23 @@ _d_: subtree
 
 ;; http://emacsredux.com/blog/2013/03/29/automatic-electric-indentation/
 (electric-indent-mode +1)
+
+
+
+
+
+
+
+;; https://stackoverflow.com/a/22109370
+(defun new-line-dwim ()
+  (interactive)
+  (let ((break-open-pair (or (and (looking-back "{") (looking-at "}"))
+                             (and (looking-back ">") (looking-at "<"))
+                             (and (looking-back "(") (looking-at ")"))
+                             (and (looking-back "\\[") (looking-at "\\]")))))
+    (newline)
+    (when break-open-pair
+      (save-excursion
+        (newline)
+        (indent-for-tab-command)))
+    (indent-for-tab-command)))
