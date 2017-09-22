@@ -18,8 +18,15 @@
 ;; M-v (capitalize-word) -> "paste"
 
 (global-set-key (kbd "M-c") 'wil-copy)
+
+;; Yank
 (global-set-key (kbd "M-v") 'yank)
+(define-key mc/keymap (kbd "M-v") 'yank)
+(define-key helm-map (kbd "M-v") 'yank)
+(define-key ivy-minibuffer-map (kbd "M-v") 'yank)
 (global-set-key [(meta v)] 'yank)
+
+;; Yank pop
 (global-set-key [(meta shift v)] 'yank-pop)
 
 ;; Scroll
@@ -59,9 +66,12 @@
 
 (global-set-key (kbd "C-c , f n d") 'find-name-dired)
 
-(define-key text-mode-map (kbd "C-c ; s i") 'ispell)
-(define-key text-mode-map (kbd "C-c ; s l") 'langtool-check)
-(define-key text-mode-map (kbd "C-c ; s c") 'langtool-correct-buffer)
+
+
+;; (define-key text-mode-map (kbd "C-c ; s i") 'ispell)
+;; (define-key text-mode-map (kbd "C-c ; s l") 'langtool-check)
+;; (define-key text-mode-map (kbd "C-c ; s c") 'langtool-correct-buffer)
+;
 ;; Toggle fullscreen
 ;; Update : OSX : Utilisation de l outil iSpectacle
 ;; Update : Maj pour utilsation des raccourcis avec prefix user (C-c ,)
@@ -376,7 +386,7 @@ Version 2016-12-27"
 
 ;; ------ Multi cursor binding
 ;; Multi cursor map
-(define-key mc/keymap (kbd "M-v") 'yank)
+
 
 ;; Mouse
 (global-set-key (kbd "<M-down-mouse-1>") 'mc/add-cursor-on-click)
@@ -426,7 +436,7 @@ Version 2016-12-27"
 ;; (define-key common-lisp-mode-map (kbd "C-h") 'paredit-backward-delete)
 
 (define-key helm-map (kbd "C-h") 'paredit-backward-delete)
-(define-key helm-map (kbd "M-v") 'yank)
+
 
 ;; (define-key company-active-map (kbd "C-h") 'delete-backward-char)
 (define-key company-active-map (kbd "C-h") 'paredit-backward-delete)
@@ -459,7 +469,7 @@ Version 2016-12-27"
 
 ;; (global-set-key (kbd "C-c C-p") 'projectile-find-file)
 ;; (define-key org-mode-map (kbd "C-c C-p") 'projectile-find-file)
-(define-key ivy-minibuffer-map (kbd "M-v") 'yank) ; Add yank to ivy mini map
+
 
 (global-set-key (kbd "C-c C-n") 'diff-hl-next-hunk)
 (define-key web-mode-map (kbd "C-c C-n") 'diff-hl-next-hunk)
@@ -596,10 +606,15 @@ Version 2016-12-27"
 
 ;; ---------------- new line
 ;; http://emacsredux.com/blog/2013/03/29/automatic-electric-indentation/
+;; Update : Utilisation de la fonction new-line-dwin pour avoir une
+;; ouverture de ligne intelligente si le caret est entre des {} () []
+
 ;; (global-set-key (kbd "RET") #'newline-and-indent) ; Ne fonctionne pas
 ;; (global-set-key (kbd "RET") 'newline-and-indent) ; N est pas suffisant
 (global-set-key (kbd "RET") 'reindent-then-newline-and-indent)
 (global-set-key (kbd "C-j") 'reindent-then-newline-and-indent)
+;; (global-set-key (kbd "RET") 'reindent-then-newline-and-indent)
+(global-set-key (kbd "RET") 'new-line-dwim)
 
 ;; 
 (define-key typescript-mode-map (kbd "M-j") 'c-indent-new-comment-line)
@@ -609,11 +624,15 @@ Version 2016-12-27"
 ;; (define-key prog-mode-map(kbd "C-i") 'tab-indent-or-complete)
 
 (global-set-key [(meta shift d)] 'duplicate-start-of-line-or-region)
-(global-set-key (kbd "C-c C-d") 'duplicate-start-of-line-or-region)
-(define-key tern-mode-keymap (kbd "C-c C-d") 'duplicate-start-of-line-or-region)
-(define-key web-mode-map (kbd "C-c C-d") 'duplicate-start-of-line-or-region)
-(define-key js2-mode-map (kbd "C-c C-d") 'duplicate-start-of-line-or-region)
-(define-key tern-mode-keymap (kbd "C-c C-d") 'duplicate-start-of-line-or-region)
+
+;; Update to C-x C-d (dired list dir that i did not use at all)
+(global-set-key (kbd "C-x C-d") 'duplicate-start-of-line-or-region)
+
+;; (global-set-key (kbd "C-c C-d") 'duplicate-start-of-line-or-region)
+;; (define-key tern-mode-keymap (kbd "C-c C-d") 'duplicate-start-of-line-or-region)
+;; (define-key web-mode-map (kbd "C-c C-d") 'duplicate-start-of-line-or-region)
+;; (define-key js2-mode-map (kbd "C-c C-d") 'duplicate-start-of-line-or-region)
+;; (define-key tern-mode-keymap (kbd "C-c C-d") 'duplicate-start-of-line-or-region)
 
 (global-set-key [C-M-tab] 'other-window)
 (global-set-key [C-M-S-tab] 'previous-multiframe-window)
@@ -863,16 +882,18 @@ Version 2016-12-27"
 ;; (define-key web-mode-map (kbd "C-c C-r") 'helm-recentf)
 ;; (define-key org-mode-map (kbd "C-c C-r") 'helm-recentf)
 
-(define-key global-map (kbd "C-c <C-m>") 'helm-recentf)
-(define-key php-mode-map (kbd "C-c <C-m>") 'helm-recentf)
-(define-key web-mode-map (kbd "C-c <C-m>") 'helm-recentf)
-(define-key org-mode-map (kbd "C-c <C-m>") 'helm-recentf)
+;; (define-key global-map (kbd "C-c <C-m>") 'helm-recentf)
+;; (define-key php-mode-map (kbd "C-c <C-m>") 'helm-recentf)
+;; (define-key web-mode-map (kbd "C-c <C-m>") 'helm-recentf)
+;; (define-key org-mode-map (kbd "C-c <C-m>") 'helm-recentf)
 
+
+;; Azerty binding equivalent chars to 0-9 on the upper row keyboard
 (global-set-key (kbd "M-0") 'delete-window) ;; M-0
 (define-key diff-mode-map (kbd "M-0") 'delete-window)
 
 (global-set-key (kbd "M-1") 'delete-other-windows) ;; M-1
-(define-key diff-mode-map (kbd "M-1") 'delete-other-windows)
+(define-key diff-mode-map (kbd "M-0") 'delete-other-windows)
 
 ;; (global-set-key (kbd "M-2") 'hrs/split-window-below-and-switch) ;; M-2
 ;; (define-key diff-mode-map (kbd "M-2") 'hrs/split-window-below-and-switch)
@@ -1066,7 +1087,8 @@ Version 2016-12-27"
 (global-set-key (kbd "s-r") 'projectile-recentf)
 ;; (global-set-key (kbd "C-s-r") 'counsel-recentf)
 ;; (global-set-key (kbd "C-s-r") 'helm-recentf)
-(global-set-key (kbd "C-s-r") 'counsel-recentf)
+;; (global-set-key (kbd "C-s-r") 'counsel-recentf)
+(global-set-key (kbd "C-s-r") 'helm-recentf) ; Update : helm-recentf est preferable car il tris dans l ordre d utilisation des fichiers
 
 ;; (global-set-key (kbd "s-r") 'crux-recentf-ido-find-file)
 
@@ -1088,7 +1110,8 @@ Version 2016-12-27"
 (global-set-key (kbd "s-g") 'magit-status)
 
 (global-set-key (kbd "s-D") 'projectile-dired)
-(global-set-key (kbd "s-j") 'emmet-expand-line)
+(global-set-key (kbd "C-c C-c TAB") 'emmet-expand-line)
+(global-set-key (kbd "s-i") 'emmet-expand-line)
 
 (global-set-key (kbd "s-a") 'mark-whole-buffer)
 ;; (global-set-key (kbd "s-s") 'helm-swoop)
@@ -1100,7 +1123,8 @@ Version 2016-12-27"
 (global-set-key (kbd "s-W") 'vc-ediff)
 
 ;; avy
-(global-set-key (kbd "s-i") 'avy-goto-word-1)
+;; (global-set-key (kbd "s-i") 'avy-goto-word-1)
+(global-set-key (kbd "s-j") 'avy-goto-word-1)
 
 ;; dired
 (global-set-key (kbd "s-d") 'projectile-dired)
