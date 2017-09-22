@@ -1087,7 +1087,7 @@ Version 2016-12-27"
 (global-set-key (kbd "s-r") 'projectile-recentf)
 ;; (global-set-key (kbd "C-s-r") 'counsel-recentf)
 ;; (global-set-key (kbd "C-s-r") 'helm-recentf)
-;; (global-set-key (kbd "C-s-r") 'counsel-recentf)
+
 (global-set-key (kbd "C-s-r") 'helm-recentf) ; Update : helm-recentf est preferable car il tris dans l ordre d utilisation des fichiers
 
 ;; (global-set-key (kbd "s-r") 'crux-recentf-ido-find-file)
