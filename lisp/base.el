@@ -164,6 +164,12 @@
 ;; enable y/n answers
 (fset 'yes-or-no-p 'y-or-n-p)
 
+(icomplete-mode 1)
+
+;; Handy way of getting back to previous places.
+(bind-key "C-x p" 'pop-to-mark-command)
+(setq set-mark-command-repeat-pop t)
+
 ;; Smooth scrolling
 ;; (setq scroll-margin 5
 ;; scroll-conservatively 9999
@@ -447,6 +453,7 @@
 (setq abbrev-file-name "~/.emacs.d/abbrev_defs")
 (setq save-abbrevs t) ;; save abbrevs when files are saved
 ;; you will be asked before the abbreviations are saved
+(setq save-abbrevs 'silently)
 
 
 ;; Disable mini buffer messages

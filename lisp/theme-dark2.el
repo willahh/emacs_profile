@@ -108,13 +108,13 @@
 (set-face-attribute 'web-mode-current-element-highlight-face nil :foreground nil :background "#60a467")
 
 
+(set-face-attribute 'vhl/default-face nil :background "#000" :foreground "#00faff")
 
 
 
 
 
 
-;; ;; ----- vc-ediff color custom
 (require 'ediff)
 ;; (set-face-attribute 'ediff-current-diff-A nil :foreground "#c792ea" :background "#161616")
 ;; (set-face-attribute 'ediff-current-diff-Ancestor nil :foreground "#fff" :background "#fc5572")

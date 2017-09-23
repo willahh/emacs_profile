@@ -1277,7 +1277,7 @@ _d_: subtree
 (defun new-line-dwim ()
   (interactive)
   (let ((break-open-pair (or (and (looking-back "{") (looking-at "}"))
-                             (and (looking-back ">") (looking-at "<"))
+                             ;; (and (looking-back ">") (looking-at "<"))
                              (and (looking-back "(") (looking-at ")"))
                              (and (looking-back "\\[") (looking-at "\\]")))))
     (newline)
@@ -1286,3 +1286,22 @@ _d_: subtree
         (newline)
         (indent-for-tab-command)))
     (indent-for-tab-command)))
+
+
+
+
+;; http://ergoemacs.org/emacs/emacs_abbrev_mode_tutorial.html
+(defun xah-abbrev-h-f ()
+  "Abbrev hook function, used for `define-abbrev'.
+ Our use is to prevent inserting the char that triggered expansion. Experimental.
+ the “ahf” stand for abbrev hook function.
+Version 2016-10-24"
+  t)
+
+(put 'xah-abbrev-h-f 'no-self-insert t)
+
+;; Prevent space after abbrev expand
+(define-abbrev-table 'global-abbrev-table 
+  '(
+    ("fu" "function" xah-abbrev-h-f)
+    ("arg" "arguments" xah-abbrev-h-f)))
