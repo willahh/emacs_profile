@@ -445,6 +445,7 @@ Version 2016-12-27"
 (define-key company-active-map (kbd "C-n") 'company-select-next)
 (define-key company-active-map (kbd "C-p") 'company-select-previous)
 (define-key company-active-map (kbd "C-i") 'company-complete-selection)
+(define-key company-active-map (kbd "C-j") nil) ; Disable C-j (compplete-selection) in company mode
 
 (global-set-key (kbd "C-,") 'company-files)
 
@@ -820,7 +821,8 @@ Version 2016-12-27"
 ;; Remove native M-l binding (lowercase) Lowercase, uppercase,
 ;; camelcase are moved into "string-inflection-all-cycle" function
 ;; (global-set-key (kbd "M-l") 'er/expand-region)
-(global-set-key (kbd "C-à") 'er/expand-region)
+;; (global-set-key (kbd "C-à") 'er/expand-region)
+(global-set-key (kbd "<C-m>") 'er/expand-region)
 (global-set-key (kbd "M-L") 'er/contract-region)
 (global-set-key (kbd "M-L") 'mc/mark-all-words-like-this) ; Like in VS Code
 (global-set-key (kbd "C-M-l") 'mark-sexp)
@@ -1043,7 +1045,8 @@ Version 2016-12-27"
 (global-set-key (kbd "C-s-s") 'helm-ag) ; Super+Contral+s
 (global-set-key (kbd "C-M-s-s") 'projectile-ag) ; Control+Meta+Super+s
 (global-set-key (kbd "s-c") 'org-capture)
-(global-set-key (kbd "s-b") 'ivy-switch-buffer)
+(global-set-key (kbd "s-b") 'projectile-switch-to-buffer)
+(global-set-key (kbd "s-B") 'ivy-switch-buffer)
 (global-set-key (kbd "s-k") 'fixup-whitespace)
 
 
@@ -1174,3 +1177,17 @@ Version 2016-12-27"
 ;; key-translation-map
 (define-key key-translation-map (kbd "C-j") (kbd "RET"))
 (define-key key-translation-map (kbd "ESC") (kbd "C-g"))
+
+
+;; ----------- Give acces to numerics on control key instead of shift (azery keyboard layout)
+(global-set-key (kbd "C-&") "1")
+(global-set-key (kbd "C-é") "2")
+(global-set-key (kbd "C-\"") "3")
+(global-set-key (kbd "C-\'") "4")
+(global-set-key (kbd "C-(") "5")
+(define-key paredit-mode-map (kbd "C-(") "5")
+(global-set-key (kbd "C-§") "6")
+(global-set-key (kbd "C-è") "7")
+(global-set-key (kbd "C-!") "8")
+(global-set-key (kbd "C-ç") "9")
+(global-set-key (kbd "C-à") "0")

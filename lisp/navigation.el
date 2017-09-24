@@ -501,6 +501,7 @@
 (add-hook 'css-mode-hook 'paredit-mode)
 (add-hook 'clojure-mode-hook 'paredit-mode)
 (add-hook 'eshell-mode-hook 'paredit-mode)
+(add-hook 'cider-repl-mode-hook 'paredit-mode)
 ;; (add-hook 'prog-mode-hook )
 
 
