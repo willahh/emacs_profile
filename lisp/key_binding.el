@@ -1054,6 +1054,7 @@ Version 2016-12-27"
 ;; Comment
 (global-set-key (kbd "s-/") 'comment-line)
 
+
 ;; Kill
 (global-set-key (kbd "s-k") 'kill-paragraph)
 (global-set-key (kbd "s-K") 'backward-kill-paragraph)
@@ -1127,8 +1128,8 @@ Version 2016-12-27"
 (global-set-key (kbd "s-W") 'vc-ediff)
 
 ;; avy
-;; (global-set-key (kbd "s-i") 'avy-goto-word-1)
-(global-set-key (kbd "s-j") 'avy-goto-word-1)
+(global-set-key (kbd "C-à") 'avy-goto-word-1)
+;; (global-set-key (kbd "s-j") 'avy-goto-word-1)
 
 ;; dired
 (global-set-key (kbd "s-d") 'projectile-dired)
@@ -1158,8 +1159,11 @@ Version 2016-12-27"
 ;; use hippie-expand instead of dabbrev
 
 ;; "Translate" key to behave like on us keyboard
-(global-set-key (kbd "M-/") 'eval-expression)
-(global-set-key (kbd "M-:") 'hippie-expand)
+;; Update : Back to default 
+;; (global-set-key (kbd "M-/") 'eval-expression)
+;; (global-set-key (kbd "M-:") 'hippie-expand)
+
+;; Hippie expand
 (global-set-key (kbd "M-i") 'hippie-expand)
 
 
@@ -1177,6 +1181,7 @@ Version 2016-12-27"
 ;; key-translation-map
 (define-key key-translation-map (kbd "C-j") (kbd "RET"))
 (define-key key-translation-map (kbd "ESC") (kbd "C-g"))
+(define-key key-translation-map (kbd "C-S-i") (kbd "<backtab>"))
 
 
 ;; ;; ----------- Give acces to numerics on control key instead of shift (azery keyboard layout)
@@ -1197,4 +1202,12 @@ Version 2016-12-27"
 (global-set-key (kbd "<M-backspace>") 'paredit-backward-kill-word)
 ;; (global-set-key (kbd "M-DEL") 'paredit-backward-kill-word)
 ;; (global-set-key (kbd "M-backspace") 'paredit-backward-kill-word)
+
+;; (global-set-key (kbd "M-/") 'comment-or-uncomment-region-or-line)
+(global-set-key [(meta shift /)] 'comment-or-uncomment-region-or-line)
+;; (global-set-key [(meta shift \\)] 'delete-horizontal-space)
+(global-set-key (kbd "s-/") 'delete-horizontal-space)
+
+
+
 

@@ -267,9 +267,7 @@
 
 ;; If this value is t, split window inside the current window
 (setq helm-swoop-split-with-multiple-windows t)
-
-;;
-;; (setq helm-swoop-pre-input-function (lambda () nil))
+(setq helm-swoop-pre-input-function (lambda () nil))
 
 
 ;; ---------------- swiper
