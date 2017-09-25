@@ -132,6 +132,7 @@
   ;; general
   git-gutter
   sx
+  beacon
 
   ;; helm
   ;; helm-ag

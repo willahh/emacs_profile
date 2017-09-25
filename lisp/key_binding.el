@@ -722,15 +722,22 @@ Version 2016-12-27"
 ;; (define-key help-mode-map (kbd "<C-i>") 'avy-goto-word-1-below)
 ;; (define-key diff-mode-map (kbd "<C-i>") 'avy-goto-word-1-below)
 
-(global-set-key (kbd "<C-S-i>") 'avy-goto-word-1-above)
-(define-key magit-status-mode-map (kbd "<C-S-i>") 'avy-goto-word-1-above)
-(define-key help-mode-map (kbd "<C-S-i>") 'avy-goto-word-1-above)
-(define-key diff-mode-map (kbd "<C-S-i>") 'avy-goto-word-1-above)
+;; (global-set-key (kbd "<C-S-i>") 'avy-goto-word-1-above)
+;; (define-key magit-status-mode-map (kbd "<C-S-i>") 'avy-goto-word-1-above)
+;; (define-key help-mode-map (kbd "<C-S-i>") 'avy-goto-word-1-above)
+;; (define-key diff-mode-map (kbd "<C-S-i>") 'avy-goto-word-1-above)
 
-(global-set-key (kbd "<C-M-i>") 'avy-goto-word-1-above)
-(define-key magit-status-mode-map (kbd "<C-M-i>") 'avy-goto-word-1-above)
-(define-key help-mode-map (kbd "<C-M-i>") 'avy-goto-word-1-above)
-(define-key diff-mode-map (kbd "<C-M-i>") 'avy-goto-word-1-above)
+;; (global-set-key (kbd "<C-M-i>") 'avy-goto-word-1-above)
+;; (define-key magit-status-mode-map (kbd "<C-M-i>") 'avy-goto-word-1-above)
+;; (define-key help-mode-map (kbd "<C-M-i>") 'avy-goto-word-1-above)
+;; (define-key diff-mode-map (kbd "<C-M-i>") 'avy-goto-word-1-above)
+
+(global-set-key (kbd "s-m") 'avy-goto-word-1)
+
+;; More convenient key binding instead of leaving the home row to get
+;; left and right arrow. Inspired by jwiegley paredit keybinding.
+(global-set-key (kbd "C-M-(") 'paredit-forward-barf-sexp)
+(global-set-key (kbd "C-M-)") 'paredit-forward-slurp-sexp)
 
 ;; i-search
 (define-key isearch-mode-map (kbd "C-'") 'avy-isearch)

@@ -499,3 +499,7 @@
 
 ;; Delete move to trash
 (setq delete-by-moving-to-trash t)
+
+;; From https://github.com/cichli/dotfiles/blob/master/.emacs.d/init.el
+;; Seems enabled by default but in case of ...
+(mac-auto-operator-composition-mode t)

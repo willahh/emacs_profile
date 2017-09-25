@@ -1305,3 +1305,23 @@ Version 2016-10-24"
   '(
     ("fu" "function" xah-abbrev-h-f)
     ("arg" "arguments" xah-abbrev-h-f)))
+
+
+
+;; (use-package back-button
+;;   :defer 1
+;;   :commands
+;;   back-button-mode
+;;   :config
+;;   (back-button-mode 1)
+;;   (diminish 'back-button-mode))
+
+(use-package beacon
+  :config
+  (beacon-mode 1)
+  (setq beacon-color "#6373a2")
+  (setq beacon-size 80)
+  (diminish 'beacon-mode))
+
+
+
