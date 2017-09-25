@@ -5,6 +5,9 @@
 
 (require 'cider)
 (require 'clojure-cheatsheet)
+(require 'clj-refactor)
+(require 'helm-cider)
+
 
 (setq cider-prompt-for-symbol nil)
 
@@ -14,9 +17,17 @@
            (figwheel-sidecar.repl-api/start-figwheel!)
            (figwheel-sidecar.repl-api/cljs-repl))")
 
+
+(add-hook 'clojure-mode-hook 
+          (lambda ()
+            (clj-refactor-mode 1)            
+            (cljr-add-keybindings-with-prefix "C-c C-m")
+            (cljr-add-keybindings-with-prefix "C-c <C-m>")))
+
 (add-hook 'cider-mode-hook
           (lambda ()
             (eldoc-mode)
+            ;; (helm-cider-mode 1) ; Return an error for the moment, disable it
             (cider-company-enable-fuzzy-completion)))
 
 (add-hook 'cider-repl-mode-hook (lambda ()

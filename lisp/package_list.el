@@ -42,7 +42,8 @@
   lsp-mode
   org-bullets
   clojure-cheatsheet
-
+  clj-refactor
+  helm-cider
 
   ;; backe-button
   ;; perspective
