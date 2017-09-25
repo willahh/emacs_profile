@@ -15,4 +15,5 @@
 
 (add-hook 'cider-mode-hook
           (lambda ()
-            (eldoc)))
+            (eldoc-mode)))
+
