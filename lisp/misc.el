@@ -1357,3 +1357,25 @@ Version 2016-10-24"
   (([C-S-tab] . iflipb-previous-buffer)
    ("M-I" . iflipb-previous-buffer)
    ([C-tab] . iflipb-next-buffer)))
+
+(use-package paradox
+  :defer t
+  :config
+  (setq paradox-column-width-package 28
+        paradox-column-width-version 14
+        paradox-display-download-count t
+        paradox-execute-asynchronously nil
+        paradox-github-token t
+        paradox-use-homepage-buttons nil)
+  ;; (add-hook 'paradox-menu-mode-hook #'hide-trailing-whitespace)
+  )
+
+
+;; (use-package popwin
+;;   :config
+;;   ;; (add-hook 'popwin:after-popup-hook #'hide-trailing-whitespace)
+  
+;;   )
+
+(require 'popwin)
+(popwin-mode 1)

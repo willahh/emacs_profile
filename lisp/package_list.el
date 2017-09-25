@@ -173,6 +173,8 @@
   ;; swiper-helm
   tern
   iflipb
+  paradox
+  popwin
 
   zop-to-char
   ;; tern-auto-complete
