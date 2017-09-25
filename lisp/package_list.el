@@ -41,6 +41,7 @@
   indent-guide
   lsp-mode
   org-bullets
+  clojure-cheatsheet
 
 
   ;; backe-button

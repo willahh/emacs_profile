@@ -89,7 +89,17 @@
 ;;             (set (make-local-variable 'company-idle-delay 0))))
 
 ;; Company-quickhelp
-(company-quickhelp-mode 1)
+;; Update:  Disable, too slow
+;; 
+;; Update : Re enable but don't display when idle (set idle time to a
+;; very high value), to show help, invoke key binding C-c h from the
+;; company-mode-map.
+;;
+;; Didn't really work at the moment (C-h didn't trigger the tooltip) 
+(setq company-quickhelp-mode 1)
+(setq company-quickhelp-delay nil)
+
+
 
 ;; Key
 ;; https://emacs.stackexchange.com/a/2990

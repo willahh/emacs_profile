@@ -4,6 +4,7 @@
 ;; http://www.lispcast.com/clojure-mac
 
 (require 'cider)
+(require 'clojure-cheatsheet)
 
 (setq cider-prompt-for-symbol nil)
 
@@ -15,5 +16,15 @@
 
 (add-hook 'cider-mode-hook
           (lambda ()
-            (eldoc-mode)))
+            (eldoc-mode)
+            (cider-company-enable-fuzzy-completion)))
+
+(add-hook 'cider-repl-mode-hook (lambda ()
+                                  (company-mode t)
+                                  (cider-company-enable-fuzzy-completion)))
+
+;; https://cider.readthedocs.io/en/latest/code_completion/
+(add-hook 'cider-repl-mode-hook #'cider-company-enable-fuzzy-completion)
+;; (add-hook 'cider-mode-hook #'cider-company-enable-fuzzy-completion)
+
 

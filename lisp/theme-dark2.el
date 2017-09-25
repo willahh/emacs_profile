@@ -153,3 +153,8 @@
 ;; (set-face-attribute 'org-document-info-keyword nil :height 1 :foreground "#b0dcff" :background nil)
 ;; (set-face-attribute 'org  nil :height 1 :foreground "#b0dcff" :background nil)
 ;; (set-face-attribute 'org-checkbox-statistics-todo  nil :height 1)
+
+
+;; ------- company
+(set-face-attribute 'company-tooltip-annotation nil :foreground "#55e97b")
+(set-face-attribute 'company-tooltip-common-selection nil :foreground "#00faff")
