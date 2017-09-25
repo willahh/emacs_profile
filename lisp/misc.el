@@ -1,4 +1,3 @@
-
 (require 'thingatpt)
 (require 'dash)
 (require 'ov)
@@ -1323,5 +1322,38 @@ Version 2016-10-24"
   (setq beacon-size 80)
   (diminish 'beacon-mode))
 
+;; From
+;; https://github.com/cichli/dotfiles/blob/master/.emacs.d/init.el#L172
+;; again. Nice feature!
+(use-package browse-kill-ring
+  :config
+  (browse-kill-ring-default-keybindings)
+  :bind
+  (("C-c k" . browse-kill-ring)))
 
 
+
+;; From
+;; https://github.com/cichli/dotfiles/blob/master/.emacs.d/init.el#L172
+;; Update: Theses package seems not available on Elpa at the moment
+(use-package help-fns+
+  :config
+  (setq help-cross-reference-manuals nil))
+
+(use-package help-mode
+  :config
+  ;; (add-hook 'help-mode-hook #'hide-trailing-whitespace)
+  )
+
+(use-package help-mode+)
+
+(use-package help+)
+
+(use-package iflipb
+  :config
+  (setq iflipb-include-more-buffers t
+        iflipb-wrap-around t)
+  :bind
+  (([C-S-tab] . iflipb-previous-buffer)
+   ("M-I" . iflipb-previous-buffer)
+   ([C-tab] . iflipb-next-buffer)))

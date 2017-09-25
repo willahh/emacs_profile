@@ -133,6 +133,7 @@
   git-gutter
   sx
   beacon
+  browse-kill-ring
 
   ;; helm
   ;; helm-ag
@@ -171,6 +172,7 @@
   swiper
   ;; swiper-helm
   tern
+  iflipb
 
   zop-to-char
   ;; tern-auto-complete

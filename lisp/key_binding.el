@@ -647,10 +647,11 @@ Version 2016-12-27"
 ;; (global-set-key [C-tab] 'tabbar-forward)
 ;; (global-set-key [C-S-tab] 'tabbar-backward)
 ;; Update : Impossible car meta shift a est utilisée
+;; Update : Utilisation du package iflipbk
 
-(global-set-key [C-S-tab] 'previous-buffer)
-(global-set-key (kbd "M-I")'previous-buffer)
-(global-set-key [C-tab] 'next-buffer)
+;; (global-set-key [C-S-tab] 'previous-buffer)
+;; (global-set-key (kbd "M-I")'previous-buffer)
+;; (global-set-key [C-tab] 'next-buffer)
 
 ;; easy-motion
 (evilem-default-keybindings "ù")

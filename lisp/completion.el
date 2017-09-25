@@ -76,9 +76,11 @@
 ;; (setq company-idle-delay 0.3) ;; Impossible, trop lent, il faut l activer pour CSS only
 
 ;; (setq company-idle-delay 0.3) ;; Trop lent
+;; Some company conf from https://github.com/cichli/dotfiles/blob/master/.emacs.d/init.el#L172
 (setq company-idle-delay 0.2)
-
-
+(setq company-tooltip-align-annotations t)
+(setq company-tooltip-limit 16)
+(setq company-require-match nil)
 
 ;; Idle delay a 0 en mode css
 ;; Il est possible que cette partie ne fonctionne pas bien
