@@ -56,17 +56,6 @@
 ;; (global-set-key (kbd "C-x M-w") 'kill-ring-save)
 (global-set-key (kbd "M-X") 'other-frame) ; Same keybinding from osx habits
 
-; User key map C-c ;
-;; (global-set-key (kbd "C-c ; c l") 'downcase-word)
-;; (global-set-key (kbd "C-c ; c u") 'upcase-word)
-(global-set-key (kbd "C-c ; f s a") 'hs-show-all) ; (user key binding (C-c ;) + [f]olding [s]how [a]ll)
-(global-set-key (kbd "C-c ; f h a") 'hs-hide-all) ; (user key binding (C-c ;) + [f]olding [h]ide [a]ll)
-(global-set-key (kbd "C-c ; f s b") 'hs-show-block) ; (user key binding (C-c ;) + [f]olding [s]how [b]lock)
-(global-set-key (kbd "C-c ; f h b") 'hs-hide-block) ; (user key binding (C-c ;) + [f]olding [h]ide [b]lock)
-
-(global-set-key (kbd "C-c ; f n d") 'find-name-dired)
-
-
 
 ;; (define-key text-mode-map (kbd "C-c ; s i") 'ispell)
 ;; (define-key text-mode-map (kbd "C-c ; s l") 'langtool-check)
@@ -80,29 +69,56 @@
 ;; (define-key org-mode-map (kbd "C-c C-M-f") 'toggle-frame-fullscreen)
 ;; (define-key ggtags-mode-map (kbd "C-c C-M-f") 'toggle-frame-fullscreen)
 
-;; (define-key php-mode-map (kbd "C-c C-M-f") 'toggle-frame-fullscreen)
-(global-set-key (kbd "C-c ; f f") 'toggle-frame-fullscreen)
 
 ;; (global-set-key (kbd "C-c M-f") 'toggle-frame-maximized)
 ;; (define-key org-mode-map (kbd "C-c M-f") 'toggle-frame-maximized)
 ;; (define-key php-mode-map (kbd "C-c M-f") 'toggle-frame-maximized)
 ;; (define-key ggtags-mode-map (kbd "C-c M-f") 'toggle-frame-maximized)
 
-(global-set-key (kbd "C-c ; f m") 'toggle-frame-maximized)
 
 ;; (define-key org-mode-map (kbd "C-c M-F") 'wil-frame-large)
 ;; (global-set-key (kbd "C-c M-F") 'wil-frame-large)
 ;; (define-key php-mode-map (kbd "C-c M-F") 'wil-frame-large)
 ;; (define-key ggtags-mode-map (kbd "C-c M-F") 'wil-frame-large)
 
-(global-set-key (kbd "C-c ; f l") 'wil-frame-large)
+
+; User key map C-c ;
+;; (global-set-key (kbd "C-c ; c l") 'downcase-word)
+;; (global-set-key (kbd "C-c ; c u") 'upcase-word)
 
 ;; (global-set-key (kbd "C-c M-c") 'wil-frame-center)
 ;; (define-key org-mode-map (kbd "C-c M-c") 'wil-frame-center)
 ;; (define-key php-mode-map (kbd "C-c M-c") 'wil-frame-center)
 ;; (define-key ggtags-mode-map (kbd "C-c M-c") 'wil-frame-center)
 
+(global-set-key (kbd "C-c ; f s a") 'hs-show-all) ; (user key binding (C-c ;) + [f]olding [s]how [a]ll)
+(global-set-key (kbd "C-c ; f h a") 'hs-hide-all) ; (user key binding (C-c ;) + [f]olding [h]ide [a]ll)
+(global-set-key (kbd "C-c ; f s b") 'hs-show-block) ; (user key binding (C-c ;) + [f]olding [s]how [b]lock)
+(global-set-key (kbd "C-c ; f h b") 'hs-hide-block) ; (user key binding (C-c ;) + [f]olding [h]ide [b]lock)
+(global-set-key (kbd "C-c ; f n d") 'find-name-dired)
+
+;; (define-key php-mode-map (kbd "C-c C-M-f") 'toggle-frame-fullscreen)
+(global-set-key (kbd "C-c ; f f") 'toggle-frame-fullscreen)
+(global-set-key (kbd "C-c ; f m") 'toggle-frame-maximized)
+(global-set-key (kbd "C-c ; f l") 'wil-frame-large)
 (global-set-key (kbd "C-c ; f c") 'wil-frame-center)
+
+;; -- Text operations
+;; Copy operations
+(global-set-key (kbd "C-c ; c w") (quote copy-word))
+(global-set-key (kbd "C-c ; c l") (quote copy-line))
+(global-set-key (kbd "C-c ; c p") (quote copy-paragraph))
+(global-set-key (kbd "C-c ; c s") (quote thing-copy-string-to-mark))
+(global-set-key (kbd "C-c ; c a") (quote thing-copy-parenthesis-to-mark))
+
+;; -- Text operations
+;; Copy operations
+(global-set-key (kbd "C-c ; c w") (quote copy-word))
+(global-set-key (kbd "C-c ; c l") (quote copy-line))
+(global-set-key (kbd "C-c ; c p") (quote copy-paragraph))
+(global-set-key (kbd "C-c ; c s") (quote thing-copy-string-to-mark))
+(global-set-key (kbd "C-c ; c a") (quote thing-copy-parenthesis-to-mark))
+
 
 ;; New frame
 (global-set-key [meta shift w] 'delete-frame)
@@ -115,6 +131,8 @@
 (define-key ivy-minibuffer-map (kbd "C-h") 'delete-backward-char)
 ;; (define-key ivy-minibuffer-map (kbd "C-w") 'delete-backward-char)
 (define-key ivy-minibuffer-map (kbd "C-w") 'backward-kill-word)
+
+
 
 (use-package evil-mc
   :bind (:map evil-mc-key-map
@@ -531,14 +549,6 @@ Version 2016-12-27"
 
 ;; Swiper
 ;; (global-set-key (kbd "C-c C-p") 'swiper)
-
-;; -- Text operations
-;; Copy operations
-(global-set-key (kbd "C-c ; c w") (quote copy-word))
-(global-set-key (kbd "C-c ; c l") (quote copy-line))
-(global-set-key (kbd "C-c ; c p") (quote copy-paragraph))
-(global-set-key (kbd "C-c ; c s") (quote thing-copy-string-to-mark))
-(global-set-key (kbd "C-c ; c a") (quote thing-copy-parenthesis-to-mark))
 
 
 
@@ -1137,6 +1147,7 @@ Version 2016-12-27"
 ;; (global-set-key (kbd "s-s") 'helm-swoop)
 ;; (global-set-key (kbd "s-s") 'swiper)
 (global-set-key (kbd "s-s") 'helm-swoop)
+(global-set-key (kbd "C-c C-s-s") 'swiper)
 
 (global-set-key (kbd "s-w") 'vc-diff)
 (global-set-key (kbd "s-W") 'vc-ediff)
