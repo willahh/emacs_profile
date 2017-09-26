@@ -196,10 +196,11 @@
 ;; (setq scroll-margin 3)
 ;; (setq scroll-margin 8)
 ;; (setq scroll-margin 5)
-;; (setq scroll-margin 2) ;; 2 ne va pas assez vite par rapport aux editeurs modernes
-;; (setq scroll-margin 5) ;; La valeur se rapprochant le plus semble etre entre 4 et 5
-;; (setq scroll-margin 2) ;; La valeur se rapprochant le plus semble etre entre 4 et 5
-(setq scroll-margin 2)
+;; (setq scroll-margin 2)
+;; (setq scroll-margin 5)
+;; (setq scroll-margin 2)
+;; (setq scroll-margin 2)
+(setq scroll-margin 0)
 (setq scroll-conservatively 9999)
 (setq scroll-step 1)
 

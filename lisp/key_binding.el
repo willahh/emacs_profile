@@ -493,10 +493,13 @@ Version 2016-12-27"
 (global-set-key (kbd "C-c C-n") 'diff-hl-next-hunk)
 (define-key web-mode-map (kbd "C-c C-n") 'diff-hl-next-hunk)
 (define-key php-mode-map (kbd "C-c C-n") 'diff-hl-next-hunk)
+;;(define-key cider-mode-map (kbd "C-c C-n") 'diff-hl-next-hunk)
 
 (global-set-key (kbd "C-c C-p") 'diff-hl-previous-hunk)
 (define-key web-mode-map (kbd "C-c C-p") 'diff-hl-previous-hunk)
 (define-key php-mode-map (kbd "C-c C-p") 'diff-hl-previous-hunk)
+;;(define-key cider-mode-map (kbd "C-c C-p") 'diff-hl-previous-hunk)
+
 
 ; (global-set-key (kbd "c-c c-n") 'diff-hl-next-hunk)
 ; (global-set-key (kbd "c-c c-p") 'diff-hl-previous-hunk)
@@ -1135,8 +1138,9 @@ Version 2016-12-27"
 (global-set-key (kbd "s-g") 'magit-status)
 
 (global-set-key (kbd "s-D") 'projectile-dired)
-(global-set-key (kbd "C-c C-c TAB") 'emmet-expand-line)
+;; (global-set-key (kbd "C-c C-c TAB") 'emmet-expand-line) ; Pas de rebind sur C-c C-c
 (global-set-key (kbd "s-i") 'emmet-expand-line)
+(define-key emacs-lisp-mode-map (kbd "C-c C-c") 'eval-defun)
 
 (global-set-key (kbd "s-a") 'mark-whole-buffer)
 ;; (global-set-key (kbd "s-s") 'helm-swoop)

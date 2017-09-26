@@ -1322,6 +1322,9 @@ Version 2016-10-24"
   (setq beacon-size 80)
   (diminish 'beacon-mode))
 
+(require 'popwin)
+(popwin-mode 1)
+
 ;; From
 ;; https://github.com/cichli/dotfiles/blob/master/.emacs.d/init.el#L172
 ;; again. Nice feature!
@@ -1376,6 +1379,3 @@ Version 2016-10-24"
 ;;   ;; (add-hook 'popwin:after-popup-hook #'hide-trailing-whitespace)
   
 ;;   )
-
-(require 'popwin)
-(popwin-mode 1)
