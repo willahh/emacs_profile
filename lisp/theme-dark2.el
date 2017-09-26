@@ -165,3 +165,10 @@
 (set-face-attribute 'diff-hl-delete nil :foreground "#fc1a9f" :background "#74245c")
 (set-face-attribute 'diff-hl-change nil :foreground "#5fbfec" :background "#3c6078")
 (set-face-attribute 'diff-hl-insert nil :foreground "#70ee00" :background "#6dc79f")
+
+;; ------- hydra
+(set-face-attribute 'hydra-face-amaranth nil :foreground "#70ee00")
+(set-face-attribute 'hydra-face-blue nil :foreground "#5fbfec")
+(set-face-attribute 'hydra-face-pink nil :foreground "#fc1a9f")
+(set-face-attribute 'hydra-face-red nil :foreground "#fc1a9f")
+(set-face-attribute 'hydra-face-teal nil :foreground "#5fbfec")

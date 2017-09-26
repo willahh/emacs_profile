@@ -83,7 +83,7 @@
  '(helm-ag-insert-at-point (quote symbol))
  '(helm-source-names-using-follow
    (quote
-    ("Search at ~/.emacs.d/lisp/" "Search at ~/www/test/clojure/myproject2/src/clj/myproject2/" "Search at ~/www/test/reactnative/react-redux-realworld-example-app/src/components/" "Imenu")))
+    ("Search at ~/www/test/clojure/clojure-web-app/src/" "Search at ~/.emacs.d/lisp/" "Search at ~/www/test/clojure/myproject2/src/clj/myproject2/" "Search at ~/www/test/reactnative/react-redux-realworld-example-app/src/components/" "Imenu")))
  '(ido-enable-flex-matching t)
  '(magit-dispatch-arguments nil)
  '(package-selected-packages

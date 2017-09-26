@@ -97,9 +97,11 @@
 ;; very high value), to show help, invoke key binding C-c h from the
 ;; company-mode-map.
 ;;
-;; Didn't really work at the moment (C-h didn't trigger the tooltip) 
+;; Didn't really work at the moment (C-h didn't trigger the tooltip)
+;; Update : Re enabled, very usefull for Clojure
 (setq company-quickhelp-mode 1)
-(setq company-quickhelp-delay nil)
+(setq company-quickhelp-delay 0)
+(setq company-quickhelp-max-lines nil)
 
 
 

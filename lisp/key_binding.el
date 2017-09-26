@@ -461,7 +461,9 @@ Version 2016-12-27"
 (define-key company-active-map (kbd "C-n") 'company-select-next)
 (define-key company-active-map (kbd "C-p") 'company-select-previous)
 (define-key company-active-map (kbd "C-i") 'company-complete-selection)
-(define-key company-active-map (kbd "C-j") nil) ; Disable C-j (compplete-selection) in company mode
+;; (define-key company-active-map (kbd "C-j") nil) ; Disable C-j (compplete-selection) in company mode
+(define-key company-active-map (kbd "C-j") 'new-line-dwim) ;; Disable with reaffectation of new line function
+(define-key company-active-map (kbd "RET") 'new-line-dwim) ;; Disable with reaffectation of new line function
 (define-key company-active-map (kbd "C-c h") 'company-quickhelp--show)
 ;; (define-key company-active-map (kbd "C-c h") 'company-quickhelp-show)
 
@@ -658,7 +660,7 @@ Version 2016-12-27"
 ;; (global-set-key [C-tab] 'tabbar-forward)
 ;; (global-set-key [C-S-tab] 'tabbar-backward)
 ;; Update : Impossible car meta shift a est utilisée
-;; Update : Utilisation du package iflipbk
+;; Update : Utilisation du package iflipb
 
 ;; (global-set-key [C-S-tab] 'previous-buffer)
 ;; (global-set-key (kbd "M-I")'previous-buffer)
@@ -914,23 +916,31 @@ Version 2016-12-27"
 
 
 ;; Azerty binding equivalent chars to 0-9 on the upper row keyboard
-(global-set-key (kbd "M-0") 'delete-window) ;; M-0
-(define-key diff-mode-map (kbd "M-0") 'delete-window)
+(global-set-key (kbd "M-à") 'delete-window) ;; M-0
+(define-key diff-mode-map (kbd "M-à") 'delete-window)
 
-(global-set-key (kbd "M-1") 'delete-other-windows) ;; M-1
-(define-key diff-mode-map (kbd "M-0") 'delete-other-windows)
+(global-set-key (kbd "M-&") 'delete-other-windows) ;; M-1
+(define-key diff-mode-map (kbd "M-&") 'delete-other-windows)
 
 ;; (global-set-key (kbd "M-2") 'hrs/split-window-below-and-switch) ;; M-2
 ;; (define-key diff-mode-map (kbd "M-2") 'hrs/split-window-below-and-switch)
 
-(global-set-key (kbd "M-2") 'split-window-below) ;; M-2
-(define-key diff-mode-map (kbd "M-2") 'split-window-below)
+;; (global-set-key (kbd "M-2") 'split-window-below) ;; M-2
+;; (define-key diff-mode-map (kbd "M-2") 'split-window-below)
 
-(global-set-key (kbd "M-3") 'split-window-right) ;; M-3
-(define-key diff-mode-map (kbd "M-3") 'split-window-right)
+;; (global-set-key (kbd "M-3") 'split-window-right) ;; M-3
+;; (define-key diff-mode-map (kbd "M-3") 'split-window-right)
 
 ;; (global-set-key (kbd "M-9") 'resize-window) ;; M-9
 ;; (define-key diff-mode-map (kbd "M-9") 'resize-window)
+
+
+(global-set-key (kbd "M-2") 'hrs/split-window-below-and-switch) ;; M-2
+(define-key diff-mode-map (kbd "M-2") 'hrs/split-window-below-and-switch)
+
+(global-set-key (kbd "M-3") 'hrs/split-window-right-and-switch) ;; M-3
+(define-key diff-mode-map (kbd "M-3") 'hrs/split-window-right-and-switch)
+
 
 ;; other Window
 (global-set-key (kbd "M-o") 'other-window)

@@ -8,62 +8,62 @@
 
 
 ;; https://oremacs.com/2015/02/04/pre-hydra-post/
-(global-set-key
- (kbd "C-M-o")
- (defhydra hydra-window ()
-   "window"
-   ("h" windmove-left)
-   ("j" windmove-down)
-   ("k" windmove-up)
-   ("l" windmove-right)
-   ("a" (lambda ()
-          (interactive)
-          (ace-window 1)
-          (add-hook 'ace-window-end-once-hook
-                    'hydra-window/body)
-          (throw 'hydra-disable t))
-        "ace")
-   ("v" (lambda ()
-          (interactive)
-          (split-window-right)
-          (windmove-right))
-        "vert")
-   ("x" (lambda ()
-          (interactive)
-          (split-window-below)
-          (windmove-down))
-        "horz")
-   ("s" (lambda ()
-          (interactive)
-          (ace-window 4)
-          (add-hook 'ace-window-end-once-hook
-                    'hydra-window/body)
-          (throw 'hydra-disable t))
-        "swap")
-   ("t" transpose-frame "'")
-   ("d" (lambda ()
-          (interactive)
-          (ace-window 16)
-          (add-hook 'ace-window-end-once-hook
-                    'hydra-window/body)
-          (throw 'hydra-disable t))
-        "del")
+;; (global-set-key
+;;  (kbd "C-M-o")
+;;  (defhydra hydra-window ()
+;;    "window"
+;;    ("h" windmove-left)
+;;    ("j" windmove-down)
+;;    ("k" windmove-up)
+;;    ("l" windmove-right)
+;;    ("a" (lambda ()
+;;           (interactive)
+;;           (ace-window 1)
+;;           (add-hook 'ace-window-end-once-hook
+;;                     'hydra-window/body)
+;;           (throw 'hydra-disable t))
+;;         "ace")
+;;    ("v" (lambda ()
+;;           (interactive)
+;;           (split-window-right)
+;;           (windmove-right))
+;;         "vert")
+;;    ("x" (lambda ()
+;;           (interactive)
+;;           (split-window-below)
+;;           (windmove-down))
+;;         "horz")
+;;    ("s" (lambda ()
+;;           (interactive)
+;;           (ace-window 4)
+;;           (add-hook 'ace-window-end-once-hook
+;;                     'hydra-window/body)
+;;           (throw 'hydra-disable t))
+;;         "swap")
+;;    ("t" transpose-frame "'")
+;;    ("d" (lambda ()
+;;           (interactive)
+;;           (ace-window 16)
+;;           (add-hook 'ace-window-end-once-hook
+;;                     'hydra-window/body)
+;;           (throw 'hydra-disable t))
+;;         "del")
    
-   ("o" delete-other-windows "one" :color blue)
-   ;; ("o" evil-window-next "other-window" :color blue)
-   ("i" ace-maximize-window "ace-one" :color blue)
-   ("q" nil "cancel")
+;;    ("o" delete-other-windows "one" :color blue)
+;;    ;; ("o" evil-window-next "other-window" :color blue)
+;;    ("i" ace-maximize-window "ace-one" :color blue)
+;;    ("q" nil "cancel")
 
-   ("H" evil-window-move-far-left "evil-window-move-far-left")
-   ("J" evil-window-move-very-bottom "evil-window-move-very-bottom")
-   ("K" evil-window-move-very-top "evil-window-move-very-top")
-   ("L" evil-window-move-far-right "evil-window-move-far-right")
+;;    ("H" evil-window-move-far-left "evil-window-move-far-left")
+;;    ("J" evil-window-move-very-bottom "evil-window-move-very-bottom")
+;;    ("K" evil-window-move-very-top "evil-window-move-very-top")
+;;    ("L" evil-window-move-far-right "evil-window-move-far-right")
 
-   ("n" (resize-window--enlarge-down) "resize-window--enlarge-down")
-   ("p" (resize-window--enlarge-up) "resize-window--enlarge-up")
-   ("f" (resize-window--enlarge-horizontally) "resize-window--enlarge-horizontally")
-   ("b" (resize-window--shrink-horizontally) "resize-window--shrink-horizontally")
-   ))
+;;    ("n" (resize-window--enlarge-down) "resize-window--enlarge-down")
+;;    ("p" (resize-window--enlarge-up) "resize-window--enlarge-up")
+;;    ("f" (resize-window--enlarge-horizontally) "resize-window--enlarge-horizontally")
+;;    ("b" (resize-window--shrink-horizontally) "resize-window--shrink-horizontally")
+;;    ))
 
 
 
@@ -160,7 +160,62 @@
 
 
 
+(global-set-key
+ (kbd "C-M-o")
+ (defhydra hydra-window ()
+   " "
+   ("h" windmove-left)
+   ("j" windmove-down)
+   ("k" windmove-up)
+   ("l" windmove-right)
+   ("a" (lambda ()
+          (interactive)
+          (ace-window 1)
+          (add-hook 'ace-window-end-once-hook
+                    'hydra-window/body)
+          (throw 'hydra-disable t))
+        "")
+   ("v" (lambda ()
+          (interactive)
+          (split-window-right)
+          (windmove-right))
+        "")
+   ("x" (lambda ()
+          (interactive)
+          (split-window-below)
+          (windmove-down))
+        "")
+   ("s" (lambda ()
+          (interactive)
+          (ace-window 4)
+          (add-hook 'ace-window-end-once-hook
+                    'hydra-window/body)
+          (throw 'hydra-disable t))
+        "")
+   ("t" transpose-frame "'")
+   ("d" (lambda ()
+          (interactive)
+          (ace-window 16)
+          (add-hook 'ace-window-end-once-hook
+                    'hydra-window/body)
+          (throw 'hydra-disable t))
+        "")
+   
+   ("o" delete-other-windows "" :color blue)
+   ;; ("o" evil-window-next "other-window" :color blue)
+   ("i" ace-maximize-window "" :color blue)
+   ("q" nil "")
 
+   ("H" evil-window-move-far-left "")
+   ("J" evil-window-move-very-bottom "")
+   ("K" evil-window-move-very-top "")
+   ("L" evil-window-move-far-right "")
+
+   ("n" (resize-window--enlarge-down) "")
+   ("p" (resize-window--enlarge-up) "")
+   ("f" (resize-window--enlarge-horizontally) "")
+   ("b" (resize-window--shrink-horizontally) "")
+   ))
 
 
 
@@ -1357,9 +1412,9 @@ Version 2016-10-24"
   (setq iflipb-include-more-buffers t
         iflipb-wrap-around t)
   :bind
-  (([C-S-tab] . iflipb-previous-buffer)
-   ("M-I" . iflipb-previous-buffer)
-   ([C-tab] . iflipb-next-buffer)))
+  (([C-S-tab] . iflipb-next-buffer)
+   ("M-I" . iflipb-next-buffer)
+   ([C-tab] . iflipb-previous-buffer)))
 
 (use-package paradox
   :defer t
