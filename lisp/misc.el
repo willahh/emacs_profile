@@ -783,11 +783,11 @@ _d_: subtree
         regexp-history)
   (call-interactively 'occur))
 
-;; Keeps focus on *Occur* window, even when when target is visited via RETURN key.
-;; See hydra-occur-dwim for more options.
-(defadvice occur-mode-goto-occurrence (after occur-mode-goto-occurrence-advice activate)
-  (other-window 1)
-  (hydra-occur-dwim/body))
+;; ;; Keeps focus on *Occur* window, even when when target is visited via RETURN key.
+;; ;; See hydra-occur-dwim for more options.
+;; (defadvice occur-mode-goto-occurrence (after occur-mode-goto-occurrence-advice activate)
+;;   (other-window 1)
+;;   (hydra-occur-dwim/body))
 
 ;; Focus on *Occur* window right away.
 (add-hook 'occur-hook (lambda () (other-window 1)))
@@ -797,15 +797,15 @@ _d_: subtree
     (switch-to-buffer-other-window "*Occur*")
     (hydra-occur-dwim/body) ))
 
-;; Used in conjunction with occur-mode-goto-occurrence-advice this helps keep
-;; focus on the *Occur* window and hides upon request in case needed later.
-(defhydra hydra-occur-dwim ()
-  "Occur mode"
-  ("o" occur-dwim "Start occur-dwim" :color red)
-  ("j" occur-next "Next" :color red)
-  ("k" occur-prev "Prev":color red)
-  ("h" delete-window "Hide" :color blue)
-  ("r" (reattach-occur) "Re-attach" :color red))
+;; ;; Used in conjunction with occur-mode-goto-occurrence-advice this helps keep
+;; ;; focus on the *Occur* window and hides upon request in case needed later.
+;; (defhydra hydra-occur-dwim ()
+;;   "Occur mode"
+;;   ("o" occur-dwim "Start occur-dwim" :color red)
+;;   ("j" occur-next "Next" :color red)
+;;   ("k" occur-prev "Prev":color red)
+;;   ("h" delete-window "Hide" :color blue)
+;;   ("r" (reattach-occur) "Re-attach" :color red))
 
 
 

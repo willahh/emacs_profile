@@ -119,6 +119,8 @@
 (global-set-key (kbd "C-c ; c s") (quote thing-copy-string-to-mark))
 (global-set-key (kbd "C-c ; c a") (quote thing-copy-parenthesis-to-mark))
 
+;; -- linium
+(global-set-key (kbd "C-c ; nl") 'nlinum-mode)
 
 ;; New frame
 (global-set-key [meta shift w] 'delete-frame)
@@ -132,14 +134,10 @@
 ;; (define-key ivy-minibuffer-map (kbd "C-w") 'delete-backward-char)
 (define-key ivy-minibuffer-map (kbd "C-w") 'backward-kill-word)
 
-
-
 (use-package evil-mc
   :bind (:map evil-mc-key-map
               ("\M-p" . nil)
-              ("M-p" . nil)
-        )
-)
+              ("M-p" . nil)))
 
 ;; Custom abor-recursive-edit
 ;; Utilise comme substitut a C-g (keyboard-quit)
@@ -1238,3 +1236,8 @@ Version 2016-12-27"
 
 
 (global-set-key (kbd "C-c ; c c s") 'clojure-cheatsheet)
+
+(define-key occur-mode-map (kbd "n") 'next-line)
+(define-key occur-mode-map (kbd "p") 'previous-line)
+(global-set-key (kbd "C-/") 'ffap) ; Qwerty C-> for Azerty
+(define-key undo-tree-map (kbd "C-/") 'ffap)

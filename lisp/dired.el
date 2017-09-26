@@ -171,3 +171,10 @@ and then calling `my-dired-kill-spawn' twice."
 
 
 (setq dired-listing-switches "-alh")
+
+
+;; https://github.com/expez/.emacs.d/blob/master/lisp/init-dired.el
+(eval-after-load 'wdired
+  '(setq wdired-allow-to-change-permissions t
+         wdired-confirm-overwrite t
+         wdired-use-interactive-rename t))

@@ -86,8 +86,10 @@
 ;; Fringe
 (set-face-attribute 'fringe nil :background nil :slant 'normal)
 (set-window-margins nil 4)
-(setq nlinum-format "%4d \u2502 ")
-(set-face-foreground 'linum "#6272a4")
+
+(add-hook 'nlinum-mode (lambda ()
+                         (setq nlinum-format "%4d \u2502 ")
+                         (set-face-foreground 'linum "#6272a4")))
 
 
 
@@ -158,3 +160,8 @@
 ;; ------- company
 (set-face-attribute 'company-tooltip-annotation nil :foreground "#55e97b")
 (set-face-attribute 'company-tooltip-common-selection nil :foreground "#00faff")
+
+;; ------- diff-hl
+(set-face-attribute 'diff-hl-delete nil :foreground "#fc1a9f" :background "#74245c")
+(set-face-attribute 'diff-hl-change nil :foreground "#5fbfec" :background "#3c6078")
+(set-face-attribute 'diff-hl-insert nil :foreground "#70ee00" :background "#6dc79f")
