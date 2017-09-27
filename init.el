@@ -4,8 +4,6 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
-;; (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
-
 (load-file "~/.emacs.d/lisp/defun.el")
 (load-file "~/.emacs.d/lisp/system.el")
 (load-file "~/.emacs.d/lisp/base.el")
@@ -27,11 +25,8 @@
 (load-file "~/.emacs.d/lisp/web_mode.el")
 (load-file "~/.emacs.d/lisp/syntax_checker.el")
 (load-file "~/.emacs.d/lisp/emmet.el")
-(load-file "~/.emacs.d/lisp/eclim.el")
-(load-file "~/.emacs.d/lisp/indentation.el")
 (load-file "~/.emacs.d/lisp/simple_httpd.el")
 (load-file "~/.emacs.d/lisp/org.el")
-(load-file "~/.emacs.d/lisp/pdf.el")
 (load-file "~/.emacs.d/lisp/language/typescript.el")
 (load-file "~/.emacs.d/lisp/language/html.el")
 (load-file "~/.emacs.d/lisp/language/javascript.el")
@@ -47,7 +42,7 @@
 
 ;; Show trailing whitespace White space
 ;; Note : Mise tout a la fin sinon ne fonctionne pas
-(setq-default show-trailing-whitespace t)
+;; (setq-default show-trailing-whitespace t)
 
 ;; Syntax entry for web mode doesnt work actualy
 ;; https://github.com/fxbois/web-mode/issues/149

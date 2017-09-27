@@ -1,32 +1,20 @@
 ;; AG
 ;; http://agel.readthedocs.io/en/layo/installation.html
 (require 'ag)
+(require 'find-file-in-project)
+(require 'anzu)
 
 (setq ag-highlight-search t)
 (setq ag-reuse-buffers nil)
-;; (setq ag-reuse-window t)
-
-;; Re use same window 
-(setq ag-reuse-window t)
-
-; (defun wil-ag-hook ()
-;   (interactive)
-;   (setq truncate-lines nil)
-; )
-
-; (add-hook 'ag-mode-hook 'wil-ag-mode-hook)
+(setq ag-reuse-window t) ; Re use same window 
 (add-hook 'ag-mode-hook
           (lambda () 
              (setq truncate-lines nil)))
 
-;; find-file-in-project
-(require 'find-file-in-project)
-
 ;; Enable anzu
 ;; https://github.com/syohex/emacs-anzu
-(require 'anzu)
-(global-anzu-mode +1)
 
+(global-anzu-mode +1)
 
 ;; I-search
 (setq-default
@@ -45,13 +33,6 @@
 
 (define-key isearch-mode-map (kbd "C-o") 'isearch-occur)
 
-
-
-
-
-
-
-
 ;; https://www.emacswiki.org/emacs/HighlightFromIsearch
 (defun isearch-highlight-phrase ()
   "Invoke `highligh-phrase' from within isearch."
@@ -62,3 +43,4 @@
                         (regexp-quote isearch-string)))))
 
 (define-key isearch-mode-map (kbd "C-i") 'isearch-highlight-phrase)
+

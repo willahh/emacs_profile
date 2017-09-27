@@ -33,16 +33,6 @@
 
 (add-hook 'wil-css-mode-hook
           (lambda ()
-            ;; Fast completion
-            ;; (set (make-local-variable 'company-minimum-prefix-length) 2)
-            ;; (set (make-local-variable 'company-idle-delay) 1)
-            
-            ;; (set (make-local-variable 'company-minimum-prefix-length) 0)
-            ;; (set (make-local-variable 'company-idle-delay) 0)
-            
-            ;; (set (make-local-variable 'company-minimum-prefix-length) 1)
-            ;; (set (make-local-variable 'company-idle-delay) 1)
-
             ;; Enable emmet-mode
             (emmet-mode)
 
@@ -50,7 +40,6 @@
             (set (make-local-variable 'company-dabbrev-other-buffers) 't)
 
             ;; Company backend
-            ;; (set (make-local-variable 'company-backends) '(company-css company-dabbrev))
             (set (make-local-variable 'company-backends) '(company-css))
 
             ;; Local key map

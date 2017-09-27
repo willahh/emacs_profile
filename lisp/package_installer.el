@@ -1,21 +1,11 @@
 ;; Liste des repositories pour trouver les packages
-;; Add melpa to package repos
-;; Update : Utilisation de melpa-stable seulement, les autres ont souvent des
-;; packages non disponibles.
-
 ;; (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
 ;; (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 ;; (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
-
-
-(add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
 ;; (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 ;; (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
+(add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
 
-
-
-
-;; activate all the packages (in particular autoloads)
 (package-initialize)
 
 ;; fetch the list of packages available

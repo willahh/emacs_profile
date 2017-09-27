@@ -1,5 +1,8 @@
-;; Git gutter
 (require 'git-gutter)
+(require 'psvn)
+(require 'diff-hl)
+(require 'vc-svn)
+(require 'fullframe)
 
 (set-face-background 'git-gutter:modified "#ff7200")
 (set-face-foreground 'git-gutter:modified "#ff7200")
@@ -7,10 +10,6 @@
 (set-face-foreground 'git-gutter:added "#92de37")
 (set-face-background 'git-gutter:deleted "#f82167")
 (set-face-foreground 'git-gutter:deleted "#f82167")
-
-;; psvn
-(require 'psvn)
-
 
 ;; Psvn conf source : http://www.generation-nt.com/reponses/emacs-svn-entraide-3776751.html
 ;; `svn-status-property-edit-svn-ignore' (`P TAB') allows user to edit
@@ -44,44 +43,29 @@
 (defun wil-diff-mode-hook ()
   (interactive)
   (toggle-truncate-lines)
-  (outline-minor-mode)
-  ;; (hydra-outline/body)
-  
-)
+  (outline-minor-mode))
+
 (add-hook 'diff-mode-hook 'wil-diff-mode-hook)
 
 ;; Magit hook
 (defun wil-magit-status-mode-hook ()
   (toggle-truncate-lines)
-  (outline-minor-mode)
-)
+  (outline-minor-mode))
+
 (add-hook 'magit-status-mode-hook 'wil-magit-status-mode-hook)
 
 ;; ag hook
 (defun wil-ag-mode-hook ()
-  (toggle-truncate-lines)
-)
+  (toggle-truncate-lines))
+
 (add-hook 'ag-mode-hook 'wil-ag-mode-hook)
-
-
 
 ;; Diff-hl
 ;; Update : global-diff-hl-mode ainsi que diff-hl-dired-mode
 ;; ne fonctionne plus pour le moment
 ;; Le package semble casse sur melpa
-
-(require 'diff-hl)
 (diff-hl-mode)
 (global-diff-hl-mode t)
-
-;; Ne fonctionne pas
-;; (add-hook 'dired-mode-hook 'diff-hl-dired-mode)
-
-;; (require diff-hl)
-;; (add-hook 'prog-mode-hook 'diff-hl-mode)
-
-
-
 
 ;; dsvn conf
 ;; Besoin : Avoir des commandes svn non disponible par default comme svn status
@@ -89,19 +73,13 @@
 ;; Update : suite a pas mal de test avec psn, dsvn est plus recent et convient mieu.
 ;; http://stackoverflow.com/a/2490367
 ;; http://svn.apache.org/repos/asf/subversion/trunk/contrib/client-side/emacs/dsvn.el
-(require 'vc-svn)
+
 (autoload 'svn-status "dsvn" "Run `svn status'." t)
 (autoload 'svn-update "dsvn" "Run `svn update'." t)
-
-;; Ediff setup
-;; (winner-mode)
 
 ;; Show character-level diff
 ;; http://emacs.stackexchange.com/q/7362
 (setq-default ediff-forward-word-function 'forward-char)
-
-;; Restore windows after quit
-;; (add-hook 'ediff-after-quit-hook-internal 'winner-undo)
 
 ;; Display ediff vertical by default
 (advice-add 'ediff-quit :around #'disable-y-or-n-p)
@@ -109,9 +87,6 @@
 ;; Add vc hooks to enable ediff checking
 (eval-after-load "vc-hooks"
   '(define-key vc-prefix-map "=" 'vc-ediff))
-
-;; Close neotree before show
-;; (add-hook 'ediff-before-setup-windows-hook 'neotree-hide)
 
 ;; Override emacs diff-goto-source defun
 ;; Change "pop-to-buffer" to "pop-to-buffer-same-window"
@@ -139,8 +114,6 @@ then `diff-jump-to-old-file' is also set, for the next invocations."
       (goto-char (+ (car pos) (cdr src)))
       (diff-hunk-status-msg line-offset (diff-xor rev switched) t))))
 
-
-
 ;; https://emacs.stackexchange.com/a/17089
 (defvar my-ediff-last-windows nil)
 
@@ -153,22 +126,14 @@ then `diff-jump-to-old-file' is also set, for the next invocations."
 (add-hook 'ediff-before-setup-hook #'my-store-pre-ediff-winconfig)
 (add-hook 'ediff-quit-hook #'my-restore-pre-ediff-winconfig)
 
-
-
-
-
 ;; fullframe
-(require 'fullframe)
 (fullframe vc-dir quit-window)
-;; (fullframe ediff quit-window)
 (fullframe ibuffer quit-window)
 
 ;; wil-vc-dir
 (defun wil-vc-dir ()
   (interactive)
   (vc-dir (projectile-project-root))
-
-  ;; (vc-dir-next-line 1)
 
   ;; Some key binding
   ;; (define-key vc-dir-mode-map (kbd "e") 'vc-ediff)
@@ -177,8 +142,7 @@ then `diff-jump-to-old-file' is also set, for the next invocations."
   (define-key vc-dir-mode-map (kbd "d") 'vc-diff)
   (define-key vc-dir-mode-map (kbd "D") 'wil-vc-version-diff-base-head)
   (define-key vc-dir-mode-map (kbd "k") 'vc-revert)
-  (define-key vc-dir-mode-map (kbd "g") 'vc-dir-refresh)
-)
+  (define-key vc-dir-mode-map (kbd "g") 'vc-dir-refresh))
 
 
 (defun wil-vc-version-diff-base-head ()
@@ -190,37 +154,7 @@ then `diff-jump-to-old-file' is also set, for the next invocations."
 (defun wil-vc-version-ediff-base-head ()
   ;; Quick call vc-version-ediff to compare the base and head version
   (interactive)
-  ;; (vc-version-ediff (vc-deduce-fileset t) "base" "head")
-  (vc-version-ediff (cadr (vc-deduce-fileset t)) "base" "head")
-)
-
-
-
-;; Recenter after forward-sentence
-;; (advice-add 'vc-dir
-;;             :after
-;;             (lambda (&rest args)
-;;               (vc-dir-next-line 1)))
-
-
-
-
-
-
-;; (defun ediff-current-buffer-revision () 
-;;   "Run Ediff to diff current buffer's file against VC depot. 
-;; Uses `vc.el' or `rcs.el' depending on `ediff-version-control-package'." 
-;;   (interactive) 
-;;   (let ((file (or (buffer-file-name) 
-;;           (error "Current buffer is not visiting a file")))) 
-;; (if (and (buffer-modified-p) 
-;;      (y-or-n-p (message "Buffer %s is modified. Save buffer? " 
-;;                 (buffer-name)))) 
-;;     (save-buffer (current-buffer))) 
-;; (ediff-load-version-control) 
-;; (funcall 
-;;  (intern (format "ediff-%S-internal" ediff-version-control-package)) 
-;;  "" "" nil)))
+  (vc-version-ediff (cadr (vc-deduce-fileset t)) "base" "head"))
 
 ;; Dont hide elements in ediff
 ;; Useful when ediffing a .org file

@@ -1,164 +1,7 @@
 (require 'thingatpt)
 (require 'dash)
 (require 'ov)
-
-
-
-
-
-
-;; https://oremacs.com/2015/02/04/pre-hydra-post/
-;; (global-set-key
-;;  (kbd "C-M-o")
-;;  (defhydra hydra-window ()
-;;    "window"
-;;    ("h" windmove-left)
-;;    ("j" windmove-down)
-;;    ("k" windmove-up)
-;;    ("l" windmove-right)
-;;    ("a" (lambda ()
-;;           (interactive)
-;;           (ace-window 1)
-;;           (add-hook 'ace-window-end-once-hook
-;;                     'hydra-window/body)
-;;           (throw 'hydra-disable t))
-;;         "ace")
-;;    ("v" (lambda ()
-;;           (interactive)
-;;           (split-window-right)
-;;           (windmove-right))
-;;         "vert")
-;;    ("x" (lambda ()
-;;           (interactive)
-;;           (split-window-below)
-;;           (windmove-down))
-;;         "horz")
-;;    ("s" (lambda ()
-;;           (interactive)
-;;           (ace-window 4)
-;;           (add-hook 'ace-window-end-once-hook
-;;                     'hydra-window/body)
-;;           (throw 'hydra-disable t))
-;;         "swap")
-;;    ("t" transpose-frame "'")
-;;    ("d" (lambda ()
-;;           (interactive)
-;;           (ace-window 16)
-;;           (add-hook 'ace-window-end-once-hook
-;;                     'hydra-window/body)
-;;           (throw 'hydra-disable t))
-;;         "del")
-   
-;;    ("o" delete-other-windows "one" :color blue)
-;;    ;; ("o" evil-window-next "other-window" :color blue)
-;;    ("i" ace-maximize-window "ace-one" :color blue)
-;;    ("q" nil "cancel")
-
-;;    ("H" evil-window-move-far-left "evil-window-move-far-left")
-;;    ("J" evil-window-move-very-bottom "evil-window-move-very-bottom")
-;;    ("K" evil-window-move-very-top "evil-window-move-very-top")
-;;    ("L" evil-window-move-far-right "evil-window-move-far-right")
-
-;;    ("n" (resize-window--enlarge-down) "resize-window--enlarge-down")
-;;    ("p" (resize-window--enlarge-up) "resize-window--enlarge-up")
-;;    ("f" (resize-window--enlarge-horizontally) "resize-window--enlarge-horizontally")
-;;    ("b" (resize-window--shrink-horizontally) "resize-window--shrink-horizontally")
-;;    ))
-
-
-
-;; Not really vi not really Emacs
-;; Update: disable
-;; (define-key evil-emacs-state-map (kbd "C-z") nil)
-;; (global-set-key (kbd "C-z") (defhydra hydra-vi ()
-;;    "vi"
-
-;;    ;; Visual mode
-;;    ("v" evil-visual-char)
-
-;;    ;; Search
-;;    ("s" evil-snipe-s)
-;;    ("S" evil-snipe-S)
-;;    (";" evil-repeat-find-char)
-;;    ("," evil-repeat-find-char-reverse)
-
-;;    ;; Scrolling
-;;    ("zt" evil-scroll-line-to-top)
-;;    ("zz" evil-scroll-line-to-center)
-;;    ("zb" evil-scroll-line-to-bottom)
-;;    ("C-e" evil-scroll-line-down)
-;;    ("C-y" evil-scroll-line-up)
-
-;;    ("C-S-e" evil-scroll-line-up) ;; Not vi command
-;;    ("C-S-d" evil-scroll-up) ;; Not vi command
-;;    ("C-l" recenter-top-bottom) ;; Not vi command
-
-
-
-;;    ;; Editing
-;;    ("u" undo-tree-undo)
-;;    ("C-r" undo-tree-redo)
-;;    ("." evil-repeat)
-
-;;    ;; Inserting
-;;    ("i" evil-insert)
-;;    ("I" evil-insert-line)
-;;    ("a" evil-append)
-;;    ("A" evil-append-line)
-;;    ("o" evil-open-below)
-;;    ("O" evil-open-above)
-
-;;    ;; Changing
-;;    ;; @todo a completer
-;;    ("r" evil-replace)
-;;    ("R" evil-replace-state)
-;;    ;; ("s" )
-
-;;    ;; Deleting
-;;    ("yy" evil-yank-line)
-;;    ("Y" evil-yank)
-;;    ("dd" evil-delete)
-
-;;    ;; >>
-;;    ("l" forward-char)
-;;    ("e" evil-forward-word-end)
-;;    ("E" evil-forward-WORD-end)
-;;    ("w" evil-forward-word-begin)
-;;    ("W" evil-forward-WORD-begin)
-;;    ("t" evil-find-char-to)
-;;    ("f" evil-find-char)
-;;    ("$" evil-end-of-line)
-
-;;    ;; <<
-;;    ("h" evil-backward-char)
-;;    ("ge" evil-backward-word-end)
-;;    ("gE" evil-backward-WORD-end)
-;;    ("b" evil-backward-word-begin)
-;;    ("B" evil-backward-WORD-begin)
-;;    ("T" evil-find-char-to-backward)
-;;    ("F" evil-find-char-backward)
-;;    ("_" evil-next-line-1-first-non-blank)
-;;    ("0" evil-digit-argument-or-evil-beginning-of-line)
-
-;;    ;; ^^
-;;    ("gg" evil-goto-first-line)
-;;    ;; ("C-b" evil-scroll-page-up)
-;;    ("C-u" evil-scroll-up)
-;;    ("H" evil-window-top)
-;;    ("{" evil-backward-paragraph)
-;;    ("k" previous-line)
-
-;;    ;; ;;
-;;    ("j" next-line)
-;;    ("}" evil-forward-paragraph)
-;;    ("L" evil-window-bottom)
-;;    ;; ("C-f" evil-scroll-page-down)
-;;    ("G" evil-goto-line)
-;;    ("C-d" evil-scroll-down)
-;; ))
-
-
-
+(require 'cl-lib)
 
 (global-set-key
  (kbd "C-M-o")
@@ -217,16 +60,8 @@
    ("b" (resize-window--shrink-horizontally) "")
    ))
 
-
-
-                                        ; diffstat
 ;; Enhanced version of diff
-;; (require 'diffstat)
 (add-hook 'diff-mode-hook (lambda () (local-set-key "\C-c\C-l" 'diffstat)))
-
-
-
-
 
 ;; https://www.emacswiki.org/emacs/LsLispToggleVerbosity
 (defun leo-toggle-ls-lisp-verbosity ()
@@ -243,54 +78,6 @@
       (revert-buffer)
       (message "uid & gid visible"))))
 
-;; (custom-set-variables
-;;  '(ls-lisp-verbosity nil))
-
-;;  (defadvice ls-lisp-format (around my-ls-lisp-format
-;;   (file-name file-attr file-size switches time-index now))
-;;   "Advice definition which removes unnecessary information
-;; during file listing in dired. For such purposes
-;; `ls-lisp-verbosity' customized variable can be used, but
-;; even if it is equal to nil dired will display file
-;; permissions field like \"drwxrwxrwx\".\. So here we just
-;; get full control to what dired shows and leave only those
-;; fields which we need."
-;;   (progn
-;;     ad-do-it
-;;     (setq ad-return-value (concat
-;;       (substring ad-return-value 0 1)
-;;       (substring ad-return-value 13)))))
-
-;; (ad-activate 'ls-lisp-format t)
-
-
-
-
-
-
-
-
-
-
-
-
-
-;; golden-ratio
-;; (require 'golden-ratio)
-;; (golden-ratio-mode)
-
-
-
-;; Ajout de save mode auto
-;; En commentaire pour le moment, car fait FREEZER emacs sur l ouverture d un gros fichier
-;; Voir pour trouver la raison et remettre ce package, mais je peux m'en passer
-;; Update : desktop (emacs native) est utile pour sauvegarder l etat actuel.
-;; Utilise avec eyebrowe fonctionne a merveille pour restaurer des "workspace".
-;; (desktop-save-mode 1)
-
-;; Default timeout at 30 seconds ?
-;; (desktop-auto-save-timeout)
-
 ;; Automatically save and restore sessions
 ;; https://stackoverflow.com/a/4485083
 (setq desktop-dirname             "~/.emacs.d/desktop/"
@@ -301,13 +88,11 @@
       desktop-files-not-to-save   "^$" ;reload tramp paths
       desktop-load-locked-desktop nil
       desktop-auto-save-timeout   10)
+
 (desktop-save-mode 1)
-
-
 
 ;; Don't prompt me when i want to kill a shell
 ;; Source : http://stackoverflow.com/a/2706660
-(require 'cl-lib)
 (defadvice save-buffers-kill-emacs (around no-query-kill-emacs activate)
   "Prevent annoying \"Active processes exist\" query when you quit Emacs."
   (cl-letf (((symbol-function #'process-list) (lambda ())))

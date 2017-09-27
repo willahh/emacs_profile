@@ -9,11 +9,6 @@
   "Revert buffer without confirmation."
   (interactive) (revert-buffer t t))
 
-
-
-
-
-
 ;; Duplicate current line or region
 ;; source : http://rejeep.github.io/emacs/elisp/2010/03/11/duplicate-current-line-or-region-in-emacs.html
 (defun duplicate-current-line-or-region (arg)
@@ -36,11 +31,6 @@ there's a region, all lines that region covers will be duplicated."
         (setq end (point)))
       (goto-char (+ origin (* (length region) arg) arg)))))
 
-
-
-
-
-
 ;; Source : https://www.emacswiki.org/emacs/DuplicayoartOfLineOrRegion
 ;; Update to use duplicate-current-line-or-region instead of duplicate-start-of-line
 (defun duplicate-start-of-line-or-region ()
@@ -48,16 +38,6 @@ there's a region, all lines that region covers will be duplicated."
   (if mark-active
       (duplicate-region)
     (duplicate-current-line-or-region 1)))
-    ;; (duplicate-start-of-line)))
-
-
-;; (defun duplicate-start-of-line ()
-;;   (let ((text (buffer-substring (point)
-;;                                 (beginning-of-thing 'line))))
-;;     (forward-line)
-;;     (push-mark)
-;;     (insert text)
-;;     (open-line 1)))
 
 (defun duplicate-region ()
   (let* ((end (region-end))
@@ -69,23 +49,16 @@ there's a region, all lines that region covers will be duplicated."
     (setq deactivate-mark nil)
     (exchange-point-and-mark)))
 
-
-
-
-
-;; Prompt Before Closing Emacs
-;; Source : http://nileshk.com/2009/06/13/prompt-before-closing-emacs.html
-(defun ask-before-closing ()
-  "Ask whether or not to close, and then close if y was pressed"
-  (interactive)
-  (if (y-or-n-p (format "Are you sure you want to exit Emacs? "))
-      (if (< emacs-major-version 22)
-          (save-buffers-kill-terminal)
-        (save-buffers-kill-emacs))
-    (message "Canceled exit")))
-
-
-
+;; ;; Prompt Before Closing Emacs
+;; ;; Source : http://nileshk.com/2009/06/13/prompt-before-closing-emacs.html
+;; (defun ask-before-closing ()
+;;   "Ask whether or not to close, and then close if y was pressed"
+;;   (interactive)
+;;   (if (y-or-n-p (format "Are you sure you want to exit Emacs? "))
+;;       (if (< emacs-major-version 22)
+;;           (save-buffers-kill-terminal)
+;;         (save-buffers-kill-emacs))
+;;     (message "Canceled exit")))
 
 ;; File-path to clipboard
 ;; Besoin initial :
@@ -110,9 +83,9 @@ there's a region, all lines that region covers will be duplicated."
   (copy-file-path))
 
 ;; Copy file name 
-(defun wil-cfn ()
-  (interactive)
-  (kill-new (nth 0 (last (split-string (cfp) "/")))))
+;; (defun wil-cfn ()
+;;   (interactive)
+;;   (kill-new (nth 0 (last (split-string (cfp) "/")))))
 
 ;; copy-file-name-to-clipboard
 ;; Source : http://emacsredux.com/blog/2013/03/27/copy-filename-to-the-clipboard/
@@ -126,65 +99,28 @@ there's a region, all lines that region covers will be duplicated."
       (kill-new filename)
       (message "Copied buffer file name '%s' to the clipboard." filename))))
 
+(defun move-line (n)
+  "Move the current line up or down by N lines."
+  (interactive "p")
+  (setq col (current-column))
+  (beginning-of-line) (setq start (point))
+  (end-of-line) (forward-char) (setq end (point))
+  (let ((line-text (delete-and-extract-region start end)))
+    (forward-line n)
+    (insert line-text)
+    ;; restore point to original column in moved line
+    (forward-line -1)
+    (forward-char col)))
 
+(defun move-line-up (n)
+  "Move the current line up by N lines."
+  (interactive "p")
+  (move-line (if (null n) -1 (- n))))
 
-;; Move line or region up and down update
-;; Source : https://www.emacswiki.org/emacs/MoveLineRegion
-;; Move line
-;; (defun move-line (n)
-;;   "Move the current line up or down by N lines."
-;;   (interactive "p")
-;;   (setq col (current-column))
-;;   (beginning-of-line) (setq start (point))
-;;   (end-of-line) (forward-char) (setq end (point))
-;;   (let ((line-text (delete-and-extract-region start end)))
-;;     (forward-line n)
-;;     (insert line-text)
-;;     ;; restore point to original column in moved line
-;;     (forward-line -1)
-;;     (forward-char col)))
-
-;; (defun move-line-up (n)
-;;   "Move the current line up by N lines."
-;;   (interactive "p")
-;;   (move-line (if (null n) -1 (- n))))
-
-;; (defun move-line-down (n)
-;;   "Move the current line down by N lines."
-;;   (interactive "p")
-;;   (move-line (if (null n) 1 n)))
-
-
-
-;; (defun move-region (start end n)
-;;   "Move the current region up or down by N lines."
-;;   (interactive "r\np")
-;;   (let ((line-text (delete-and-extract-region start end)))
-;;     (forward-line n)
-;;     (let ((start (point)))
-;;       (insert line-text)
-;;       (setq deactivate-mark nil)
-;;       (set-mark start))))
-
-;; (defun move-region-up (start end n)
-;;   "Move the current line up by N lines."
-;;   (interactive "r\np")
-;;   (move-region start end (if (null n) -1 (- n))))
-
-;; (defun move-region-down (start end n)
-;;   "Move the current line down by N lines."
-;;   (interactive "r\np")
-;;   (move-region start end (if (null n) 1 n)))
-
-
-;; ;; Move lineregin
-;; (defun move-line-region-up (&optional start end n)
-;;   (interactive "r\np")
-;;   (if (use-region-p) (move-region-up start end n) (move-line-up n)))
-
-;; (defun move-line-region-down (&optional start end n)
-;;   (interactive "r\np")
-;;   (if (use-region-p) (move-region-down start end n) (move-line-down n)))
+(defun move-line-down (n)
+  "Move the current line down by N lines."
+  (interactive "p")
+  (move-line (if (null n) 1 n)))
 
 (defun move-line-region-up (&optional start end n)
   (interactive "r\np")
@@ -194,56 +130,14 @@ there's a region, all lines that region covers will be duplicated."
   (interactive "r\np")
   (if (use-region-p) (move-region-down start end n) (move-line-down n)))
 
-
-
-
-
-
-
-
-;; svn utilities
-(defun svn-repo-open (s)
-  "Open a buffer to browse a Subversion repository."
-  (interactive "sRepo: ")
-  (switch-to-buffer "svn-repo")
-  (svn-repo-mode)
-  (shell-command (concat "svn ls " (shell-quote-argument s)) "svn-repo")
-  (goto-char (point-min))
-  (if (equal "/" (substring s (- (length s) 1) (length s)))
-      (insert (concat s "\n\n"))
-    (insert (concat s "/\n\n"))))
-
-(defun svn-repo-browse ()
-  "Browse to the SVN folder at point in svn-repo buffer."
-  (interactive)
-  (let (currentFolder rootFolder)
-    (setq currentFolder (buffer-substring-no-properties (line-beginning-position) (line-end-position)))
-    (goto-char (point-min))
-    (setq rootFolder (buffer-substring-no-properties (line-beginning-position) (line-end-position)))
-    (svn-repo-open (concat rootFolder currentFolder))))
-
-
-
 (defun svn-repo-up ()
-  "Browse to the parent of the current SpwdVN folder."
+  "Browse to the parent of the current folder."
   (interactive)
   (let (rootFolder rootFolderPieces)
     (goto-char (point-min))
     (setq rootFolder (buffer-substring-no-properties (line-beginning-position) (line-end-position)))
     (setq rootFolderPieces (split-string rootFolder "/" nil))
     (svn-repo-open (mapconcat 'identity (butlast(butlast rootFolderPieces)) "/"))))
-
-;; php doc and stuff
-;; Source : http://www.prodevtips.com/2013/10/18/emacs-as-a-multi-mode-web-dev-ide-is-now-possible/ 
-(defun php-jump ()
-  (interactive)
-  (let (myword myurl)
-    (setq myword
-          (if (and transient-mark-mode mark-active)
-              (buffer-substring-no-properties (region-beginning) (region-end))
-            (thing-at-point 'symbol)))
-    (setq myurl (concat "http://php.net/manual/en/function." (replace-regexp-in-string "_" "-" myword) ".php"))
-    (browse-url myurl)))
 
 ;; Copy current pwd into clipboard
 ;; Source http://stackoverflow.com/a/18816438
@@ -256,19 +150,6 @@ there's a region, all lines that region covers will be duplicated."
                     (buffer-file-name))))
     (when filename
       (x-select-text filename))))
-
-;; insert line after
-;; Source : http://emacsredux.com/blog/2013/03/26/smarter-open-line/
-;; Update use newline instead of newline-and-indent
-(defun smart-open-line ()
-  "Insert an empty line after the current line.
-Position the cursor at its beginning, according to the current mode."
-  (interactive)
-  (move-end-of-line nil)
-  ;; (newline-and-indent))
-  (newline))
-
-
 
 ;; Insert line before
 ;; Source : http://emacsredux.com/blog/2013/06/15/open-line-above/
@@ -307,32 +188,11 @@ point reaches the beginning or end of the buffer, stop there."
     (when (= orig-point (point))
       (move-beginning-of-line 1))))
 
-
-;; remap C-a to `smarter-move-beginning-of-line'
-(global-set-key [remap move-beginning-of-line]
-                'smarter-move-beginning-of-line)
-;;
-(define-minor-mode svn-repo-mode
-       "Toggle svn-repo mode."
-      ;; The initial value.
-      nil
-      ;; The indicator for the mode line.
-      " SVN-Repo"
-      ;; The minor mode bindings.
-      '(
-  (("\^M") . svn-repo-browse)
-  ((kbd "^") . svn-repo-up)
-  ((kbd "n") . next-line)
-  ((kbd "p") . previous-line)
-  ))
-
 ;; Dont prompt me when quit
 ;; Source : http://emacs.stackexchange.com/a/24602
 (defun disable-y-or-n-p (orig-fun &rest args)
   (cl-letf (((symbol-function 'y-or-n-p) (lambda (prompt) t)))
     (apply orig-fun args)))
-
-
 
 ;; next-hunk; Single escape to quit buffer
 ;; esc quits
@@ -1701,3 +1561,48 @@ Version 2017-04-19"
             (setq beg (region-beginning) end (region-end))
             (setq beg (line-beginning-position) end (line-end-position)))
         (comment-or-uncomment-region beg end)))
+
+
+;; https://stackoverflow.com/a/25792276
+(defun xah-new-empty-buffer ()
+  "Create a new empty buffer.
+New buffer will be named “untitled” or “untitled<2>”, “untitled<3>”, etc.
+
+URL `http://ergoemacs.org/emacs/emacs_new_empty_buffer.html'
+Version 2016-12-27"
+  (interactive)
+  (let ((-buf (generate-new-buffer "untitled")))
+    (switch-to-buffer -buf)
+    (funcall initial-major-mode)
+    (setq buffer-offer-save t)))
+
+(defun wil-wil-create-new-centered-frame ()
+  (interactive)
+  (wil-create-new-centered-frame)
+  (text-mode)
+  ;; (funcall initial-major-mode)
+)
+
+(defun m-eshell-hook ()
+  (define-key eshell-mode-map (kbd "C-M-l") 'er/contract-region))
+
+(defun wil-org-open-line-above ()
+  (interactive)
+  (open-line-above)
+  (beginning-of-line)
+  (kill-line))
+
+(defun wil-org-open-line-below ()
+  (interactive)
+  (open-line-below)
+  (beginning-of-line)
+  (kill-line)
+)
+
+(defun wlh-pdf-view-mode-hook ()
+  (define-key pdf-view-mode-map (kbd ".") 'hydra-pdftools/body)
+)
+(defun wil-ediff-hook ()
+  (ediff-setup-keymap)
+  (define-key ediff-mode-map (kbd "q") 'wil-vc-ediff-quit)
+)

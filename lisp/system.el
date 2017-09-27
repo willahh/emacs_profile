@@ -8,9 +8,6 @@
 (setq exec-path (append exec-path '("/usr/local/bin")))
 (setenv "PATH" (shell-command-to-string "source ~/.bashrc; echo -n $PATH"))
 
-
-
-
 ;; Enable emoji, and stop the UI from freezing when trying to display them.
 ;; (From prelude)
 (if (fboundp 'set-fontset-font)

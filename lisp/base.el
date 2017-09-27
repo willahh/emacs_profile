@@ -3,37 +3,10 @@
 
 ;; syntax highlighting everywhere
 (global-font-lock-mode 1)
-;; (global-font-lock-mode 0)
-;; (setq bidi-display-reordering nil)
+(setq-default bidi-display-reordering nil) ; Display function, didn't see real changes
 
-;; (setq ns-right-option-modifier 'super)
+(setq auto-revert-verbose nil) ;; Don't display "Reverting buffer ..." message
 
-;; (setq font-lock-support-mode 'jit-lock-mode)
-;; (setq jit-lock-stealth-time 16
-;;        jit-lock-defer-contextually t
-;;        jit-lock-stealth-nice 0.5)
-;; (setq-default font-lock-multiline t)
-
-;; Display function, didn't see real changes
-(setq-default bidi-display-reordering nil)
-
-;; Don't display "Reverting buffer ..." message
-(setq auto-revert-verbose nil)
-
-;; Auto close brackets
-;; Desactivation car impossible d avoir une
-;; nouvelle ligne + indent fonctionnel avec ce mode
-;; (autopair-global-mode t)
-;; Update : Reactivation de smartparens
-;; Update : Reactivation de autopair
-;; Update : Desactivation, car empeche de re bind RET
-;; (autopair-global-mode t)
-
-;; Enable blink cursor
-;; (blink-cursor-mode 1)
-;; (blink-cursor-mode 0)
-;; (blink-cursor-mode 1)
-;; (blink-cursor-mode 0)
 (blink-cursor-mode 1)
 
 ;; Don't write new line at end of document
@@ -61,12 +34,6 @@
 ;; Update : Voir ce que c est precisemment
 ;; (set-default 'fill-column 80)
 
-;; Select whole word when separated with _
-;; Update : Commentaire
-;; Update 2 : Rollback (un double click sur un mot
-;; contenant un underscore ne  selectionne pas le mot en entier
-;; Update 3 : Cette partie est deja presente a un autre endroit
-
 ;; Auto refresh buffers
 (global-auto-revert-mode 1)
 
@@ -74,19 +41,10 @@
 (tool-bar-mode -1)
 
 ;; Disable scrollbar
-;; (scroll-bar-mode -1)
-;; Enable scrollbar
 (scroll-bar-mode 1)
-;; (horizontal-scroll-bar-mode 1)
-;; (horizontal-scroll-bar-mode nil)
 
 ;; make the left fringe 4 pixels wide and the right disappear
-;; (fringe-mode '(32 . 0))
-;; (fringe-mode '(16 . 0))
 (fringe-mode '(12 . 0))
-
-;; restore the default sizes
-;; (fringe-mode nil)
 
 ;; ?
 (set-default 'cursor-type 'bar)
@@ -95,15 +53,6 @@
 ;; Set window divider bottom and right 
 (setq window-divider-mode t)
 (setq window-divider-default-places t)
-; (setq window-divider-default-places t)
-;; (setq window-divider-mode 1)
-;; (setq window-divider-default-places 'right-only)
-
-
-;; Paste without source font lock
-;; 
-;; (add-to-list 'yank-excluded-properties 'font)
-;; (add-to-list 'yank-excluded-properties 'face)
 
 ;; ------ Indentation
 ;; Always indent with space
@@ -116,10 +65,6 @@
 (setq typescript-indent-level 4) ;; Most of ts examples have 2 space indent
 (setq js-indent-level 4)
 (setq sgml-basic-offset 4)
-
-;; enable for all programming modes
-;; Disable
-;; (add-hook 'prog-mode-hook 'subword-mode)
 
 ;; -----
 (setq transient-mark-mode t)
@@ -135,7 +80,6 @@
 ;; en commentaire pour le moment Update 2 : Il faut un repere visuel
 ;; pour savoir tout de suite ou se situe le caret, juste le caret ne
 ;; suffit pas.
-;; (global-hl-line-mode)
 (global-hl-line-mode 1)
 
 ;;
@@ -170,47 +114,14 @@
 (bind-key "C-x p" 'pop-to-mark-command)
 (setq set-mark-command-repeat-pop t)
 
-;; Smooth scrolling
-;; (setq scroll-margin 5
-;; scroll-conservatively 9999
-;; scroll-step 1)
-
-;; (setq auto-window-vscroll 1)
-;; (setq scroll-conservatively 0)
-
-;; (setq mouse-wheel-scroll-amount '(0.01))
-;; (setq mouse-wheel-progressive-speed 1)
-
-;; Update : Une marge de 8 peut paraître plus pratique (pour la lisibilitée),
-;; en revenche des problèmes surviennent lorue l'on clic avec la souris dans la partie du haut
-;; le buffer scroll automatiquement.
-;; Une valeur a 0 (par defaut) est préférable.
-;; Update : Un compromis doit être fait, avoir une marge en bas et en haut
-;; semble plus naturel, notamment lorsque l'on écrit du texte en bas de page.
-;; (Recentrage manuel utilisé instinctivement beaucoup plus de fois)
-;; Switch sur une valeur de 8
-
-;; (setq scroll-margin 8)
-;; (setq scroll-margin 0)
-;; (setq scroll-margin 8)
-;; (setq scroll-margin 3)
-;; (setq scroll-margin 8)
-;; (setq scroll-margin 5)
-;; (setq scroll-margin 2)
-;; (setq scroll-margin 5)
-;; (setq scroll-margin 2)
-;; (setq scroll-margin 2)
 (setq scroll-margin 0)
 (setq scroll-conservatively 9999)
 (setq scroll-step 1)
-
 
 ;; Mouse wheel behaviour -> Add acceleration like Sublime
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil)))
 (setq mouse--progressive-speed 10)
 
-;; (setq mouse-wheel-scroll-amount '(0.022))
-;; (setq mouse-wheel-scroll-amount '(0.035)) ; Update : la valeur la plus proche des editeurs modernes est 0.035 (test sur un scroll d un cran, set sur plusieurs gros coup de scroll)
 (setq mouse-wheel-scroll-amount '(0.038))
 (setq mouse-wheel-progressive-speed 10)
 

@@ -9,7 +9,6 @@
 (require 'helm-cider)
 (require 'clojure-snippets)
 
-
 (setq cider-prompt-for-symbol nil)
 
 ;; https://markhudnall.com/2016/04/25/starting-figwheel-in-emacs/

@@ -173,3 +173,5 @@
 (set-face-attribute 'hydra-face-pink nil :foreground "#fc1a9f")
 (set-face-attribute 'hydra-face-red nil :foreground "#fc1a9f")
 (set-face-attribute 'hydra-face-teal nil :foreground "#5fbfec")
+
+(set-face-attribute 'lazy-highlight nil :background "green")

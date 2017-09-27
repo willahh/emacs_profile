@@ -16,29 +16,25 @@
   (set-face-attribute 'mode-line nil
                       :foreground "#000"
                       :background "#56b0ec"
-                      :box nil)
-)
+                      :box nil))
 
 (defun powerline-theme-visual()
   (set-face-attribute 'mode-line nil
                       :foreground "#000"
                       :background "#ffba00"
-                      :box nil)
-)
+                      :box nil))
 
 (defun powerline-theme-insert()
   (set-face-attribute 'mode-line nil
                       :foreground "#000"
                       :background "red"
-                      :box nil)
-)
+                      :box nil))
 
 (defun powerline-theme-normal()
   (set-face-attribute 'mode-line nil
                       :foreground "#000"
                       :background "#98cf15"
-                      :box nil)
-)
+                      :box nil))
 
 (add-hook 'evil-normal-state-entry-hook 'powerline-theme-normal)
 (add-hook 'evil-visual-state-entry-hook 'powerline-theme-visual)

@@ -1,47 +1,9 @@
-
-;; ---------------- Dired
-;; (require 'dired)
-;; (require 'dash)
-;;
-;; ;; Make dired less verbose
-;; ;; Update : Non available on Melpa
-;;
-
-;; (setq-default dired-details-hidden-string "--- ")
-;; (dired-details-install)
-;;
-;; (dired-hide-details-mode)
-
-
-;; highlight-chars
-;; (require 'highlight-chars)
-
-
-;; (defun my-find-file-check-make-large-file-read-only-hook ()
-;;   "If a file is over a given size, make the buffer read only."
-;;   (when (> (buffer-size) (* 1024 1024))
-;;     (setq buffer-read-only t)
-;;     (buffer-disable-undo)
-;;     (fundamental-mode)))
-
-;; (add-hook 'find-file-hook 'my-find-file-check-make-large-file-read-only-hook)
-
-;; No need since emacs 24
-;; (require 'dired-details)
-;; (setq-default dired-details-hidden-string "--- ")
-;; (dired-details-install)
-
-;; ------- dired conf
 (require 'dired-x)
-
+(require 'dired)
+(require 'cl)
 
 (add-hook 'dired-mode-hook
           (lambda () (dired-hide-details-mode +1)))
-
-;; Hide dot files (.svn, .git, ...)
-;; (setq dired-omit-files "^\\...+$")
-;; (add-hook 'dired-mode-hook (lambda () (dired-omit-mode 1)))
-
 ;; Mouse click to open in current window
 (define-key dired-mode-map [mouse-2] 'dired-find-file)
 
@@ -55,16 +17,11 @@
 
 ;; Quickly copy/move file in Emacs Dired
 ;; Source : http://emacs.stackexchange.com/q/5603
-;; Update : nil 
 (setq dired-dwim-target nil)
-
-
 
 ;; -------------------------------
 ;; Preview media when in dired directory
 ;; https://emacs.stackexchange.com/a/22541
-(require 'dired)
-(require 'cl)
 
 (defvar my-dired-spawn nil)
 (make-variable-buffer-local 'my-dired-spawn)
@@ -154,11 +111,6 @@ and then calling `my-dired-kill-spawn' twice."
   (define-key dired-mode-map [up] 'my-dired-previous-line)
   (define-key dired-mode-map (kbd "SPC") 'my-dired-quicklook)))
 
-
-
-
-
-
 ;; ----------image-dired+
 (eval-after-load 'image-dired+ '(image-diredx-adjust-mode 1))
 (define-key image-dired-thumbnail-mode-map "\C-p" 'image-diredx-previous-line)
@@ -166,12 +118,7 @@ and then calling `my-dired-kill-spawn' twice."
 (define-key image-dired-thumbnail-mode-map "g" 'revert-buffer)
 (define-key image-dired-thumbnail-mode-map "x" 'image-diredx-flagged-delete)
 (setq image-dired-track-movement nil)
-
-
-
-
 (setq dired-listing-switches "-alh")
-
 
 ;; https://github.com/expez/.emacs.d/blob/master/lisp/init-dired.el
 (eval-after-load 'wdired
