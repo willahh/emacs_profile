@@ -44,6 +44,7 @@
   clojure-cheatsheet
   clj-refactor
   helm-cider
+  clojure-snippets
 
   ;; backe-button
   ;; perspective

@@ -7,6 +7,7 @@
 ; (require 'clojure-cheatsheet)
 (require 'clj-refactor)
 (require 'helm-cider)
+(require 'clojure-snippets)
 
 
 (setq cider-prompt-for-symbol nil)
@@ -37,5 +38,7 @@
 ;; https://cider.readthedocs.io/en/latest/code_completion/
 (add-hook 'cider-repl-mode-hook #'cider-company-enable-fuzzy-completion)
 ;; (add-hook 'cider-mode-hook #'cider-company-enable-fuzzy-completion)
+
+
 
 
