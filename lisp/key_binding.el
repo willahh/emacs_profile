@@ -393,7 +393,9 @@ Version 2016-12-27"
 ;; ----------------
 ;; Separate C-m from RETURN key
 (define-key input-decode-map [?\C-m] [C-m])
-(define-key input-decode-map "\C-m" [?\C-1])
+;; (define-key input-decode-map "\C-m" [?\C-1])
+(define-key input-decode-map "\C-m" (kbd "<C-m>")) ; Needed
+
 (defun wlh-set-bind-for-mc ()
   ;; Bind sur Meta q
   )

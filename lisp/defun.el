@@ -1302,19 +1302,20 @@ the visible part of the current buffer following point. "
 ;;               "Recenter"
 ;;               (recenter)))
 
-;; Recenter after compile-goto-error
-(advice-add 'compile-goto-error
-            :after
-            (lambda (&rest args)
-              "evil-scroll-line-to-top "
-              (evil-scroll-line-to-top)))
 
-;; Recenter after diff-hl-next-hunk
-(advice-add 'diff-hl-next-hunk
-            :after
-            (lambda (&rest args)
-              "Recenter"
-              (recenter)))
+;; Recenter after compile-goto-error
+; (advice-add 'compile-goto-error
+;             :after
+;             (lambda (&rest args)
+;               "evil-scroll-line-to-top "
+;               (evil-scroll-line-to-top)))
+
+; ;; Recenter after diff-hl-next-hunk
+; (advice-add 'diff-hl-next-hunk
+;             :after
+;             (lambda (&rest args)
+;               "Recenter"
+;               (recenter)))
 
 
 (defun wil-find-org-files ()

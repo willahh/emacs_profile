@@ -4,7 +4,7 @@
 ;; http://www.lispcast.com/clojure-mac
 
 (require 'cider)
-(require 'clojure-cheatsheet)
+; (require 'clojure-cheatsheet)
 (require 'clj-refactor)
 (require 'helm-cider)
 

@@ -85,7 +85,8 @@
 
 ;; Fringe
 (set-face-attribute 'fringe nil :background nil :slant 'normal)
-(set-window-margins nil 4)
+;; (set-window-margins nil 4)
+(set-window-margins nil 0)
 
 (add-hook 'nlinum-mode (lambda ()
                          (setq nlinum-format "%4d \u2502 ")
