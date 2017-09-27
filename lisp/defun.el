@@ -1426,6 +1426,11 @@ the visible part of the current buffer following point. "
          (compile-goto-error)
          (setq ag-reuse-window t)))
 
+(defun wil-duplicate ()
+  (interactive)
+  (duplicate-start-of-line-or-region)
+  (keyboard-quit))
+
 ;; https://www.emacswiki.org/emacs/AutoIndentation
 ;; (defadvice kill-line (before check-position activate)
 ;;   (if (and (eolp) (not (bolp)))
@@ -1686,4 +1691,12 @@ Version 2017-04-19"
 
 
 
-
+;; https://stackoverflow.com/a/9697222
+(defun comment-or-uncomment-region-or-line ()
+    "Comments or uncomments the region or the current line if there's no active region."
+    (interactive)
+    (let (beg end)
+        (if (region-active-p)
+            (setq beg (region-beginning) end (region-end))
+            (setq beg (line-beginning-position) end (line-end-position)))
+        (comment-or-uncomment-region beg end)))

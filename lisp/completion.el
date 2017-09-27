@@ -76,9 +76,11 @@
 ;; (setq company-idle-delay 0.3) ;; Impossible, trop lent, il faut l activer pour CSS only
 
 ;; (setq company-idle-delay 0.3) ;; Trop lent
+;; Some company conf from https://github.com/cichli/dotfiles/blob/master/.emacs.d/init.el#L172
 (setq company-idle-delay 0.2)
-
-
+(setq company-tooltip-align-annotations t)
+(setq company-tooltip-limit 16)
+(setq company-require-match nil)
 
 ;; Idle delay a 0 en mode css
 ;; Il est possible que cette partie ne fonctionne pas bien
@@ -89,7 +91,19 @@
 ;;             (set (make-local-variable 'company-idle-delay 0))))
 
 ;; Company-quickhelp
-(company-quickhelp-mode 1)
+;; Update:  Disable, too slow
+;; 
+;; Update : Re enable but don't display when idle (set idle time to a
+;; very high value), to show help, invoke key binding C-c h from the
+;; company-mode-map.
+;;
+;; Didn't really work at the moment (C-h didn't trigger the tooltip)
+;; Update : Re enabled, very usefull for Clojure
+(setq company-quickhelp-mode 1)
+(setq company-quickhelp-delay 0)
+(setq company-quickhelp-max-lines nil)
+
+
 
 ;; Key
 ;; https://emacs.stackexchange.com/a/2990

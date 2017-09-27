@@ -6,10 +6,6 @@
 (require 'nxml-mode)
 (require 'tern)
 
-;; key-translation-map
-(define-key key-translation-map (kbd "C-j") (kbd "RET"))
-(define-key key-translation-map (kbd "ESC") (kbd "C-g"))
-
 (global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
 ;; (global-set-key (kbd "M-q") 'fill-paragraph)
 (define-key paredit-mode-map (kbd "M-q") 'fill-paragraph)
@@ -60,17 +56,6 @@
 ;; (global-set-key (kbd "C-x M-w") 'kill-ring-save)
 (global-set-key (kbd "M-X") 'other-frame) ; Same keybinding from osx habits
 
-; User key map C-c ,
-;; (global-set-key (kbd "C-c , c l") 'downcase-word)
-;; (global-set-key (kbd "C-c , c u") 'upcase-word)
-(global-set-key (kbd "C-c , f s a") 'hs-show-all) ; (user key binding (C-c ,) + [f]olding [s]how [a]ll)
-(global-set-key (kbd "C-c , f h a") 'hs-hide-all) ; (user key binding (C-c ,) + [f]olding [h]ide [a]ll)
-(global-set-key (kbd "C-c , f s b") 'hs-show-block) ; (user key binding (C-c ,) + [f]olding [s]how [b]lock)
-(global-set-key (kbd "C-c , f h b") 'hs-hide-block) ; (user key binding (C-c ,) + [f]olding [h]ide [b]lock)
-
-(global-set-key (kbd "C-c , f n d") 'find-name-dired)
-
-
 
 ;; (define-key text-mode-map (kbd "C-c ; s i") 'ispell)
 ;; (define-key text-mode-map (kbd "C-c ; s l") 'langtool-check)
@@ -78,35 +63,64 @@
 ;
 ;; Toggle fullscreen
 ;; Update : OSX : Utilisation de l outil iSpectacle
-;; Update : Maj pour utilsation des raccourcis avec prefix user (C-c ,)
+;; Update : Maj pour utilsation des raccourcis avec prefix user (C-c ;)
 
 ;; (global-set-key (kbd "C-c C-M-f") 'toggle-frame-fullscreen)
 ;; (define-key org-mode-map (kbd "C-c C-M-f") 'toggle-frame-fullscreen)
 ;; (define-key ggtags-mode-map (kbd "C-c C-M-f") 'toggle-frame-fullscreen)
 
-;; (define-key php-mode-map (kbd "C-c C-M-f") 'toggle-frame-fullscreen)
-(global-set-key (kbd "C-c , f f") 'toggle-frame-fullscreen)
 
 ;; (global-set-key (kbd "C-c M-f") 'toggle-frame-maximized)
 ;; (define-key org-mode-map (kbd "C-c M-f") 'toggle-frame-maximized)
 ;; (define-key php-mode-map (kbd "C-c M-f") 'toggle-frame-maximized)
 ;; (define-key ggtags-mode-map (kbd "C-c M-f") 'toggle-frame-maximized)
 
-(global-set-key (kbd "C-c , f m") 'toggle-frame-maximized)
 
 ;; (define-key org-mode-map (kbd "C-c M-F") 'wil-frame-large)
 ;; (global-set-key (kbd "C-c M-F") 'wil-frame-large)
 ;; (define-key php-mode-map (kbd "C-c M-F") 'wil-frame-large)
 ;; (define-key ggtags-mode-map (kbd "C-c M-F") 'wil-frame-large)
 
-(global-set-key (kbd "C-c , f l") 'wil-frame-large)
+
+; User key map C-c ;
+;; (global-set-key (kbd "C-c ; c l") 'downcase-word)
+;; (global-set-key (kbd "C-c ; c u") 'upcase-word)
 
 ;; (global-set-key (kbd "C-c M-c") 'wil-frame-center)
 ;; (define-key org-mode-map (kbd "C-c M-c") 'wil-frame-center)
 ;; (define-key php-mode-map (kbd "C-c M-c") 'wil-frame-center)
 ;; (define-key ggtags-mode-map (kbd "C-c M-c") 'wil-frame-center)
 
-(global-set-key (kbd "C-c , f c") 'wil-frame-center)
+(global-set-key (kbd "C-c ; f s a") 'hs-show-all) ; (user key binding (C-c ;) + [f]olding [s]how [a]ll)
+(global-set-key (kbd "C-c ; f h a") 'hs-hide-all) ; (user key binding (C-c ;) + [f]olding [h]ide [a]ll)
+(global-set-key (kbd "C-c ; f s b") 'hs-show-block) ; (user key binding (C-c ;) + [f]olding [s]how [b]lock)
+(global-set-key (kbd "C-c ; f h b") 'hs-hide-block) ; (user key binding (C-c ;) + [f]olding [h]ide [b]lock)
+(global-set-key (kbd "C-c ; f n d") 'find-name-dired)
+
+;; (define-key php-mode-map (kbd "C-c C-M-f") 'toggle-frame-fullscreen)
+(global-set-key (kbd "C-c ; f f") 'toggle-frame-fullscreen)
+(global-set-key (kbd "C-c ; f m") 'toggle-frame-maximized)
+(global-set-key (kbd "C-c ; f l") 'wil-frame-large)
+(global-set-key (kbd "C-c ; f c") 'wil-frame-center)
+
+;; -- Text operations
+;; Copy operations
+(global-set-key (kbd "C-c ; c w") (quote copy-word))
+(global-set-key (kbd "C-c ; c l") (quote copy-line))
+(global-set-key (kbd "C-c ; c p") (quote copy-paragraph))
+(global-set-key (kbd "C-c ; c s") (quote thing-copy-string-to-mark))
+(global-set-key (kbd "C-c ; c a") (quote thing-copy-parenthesis-to-mark))
+
+;; -- Text operations
+;; Copy operations
+(global-set-key (kbd "C-c ; c w") (quote copy-word))
+(global-set-key (kbd "C-c ; c l") (quote copy-line))
+(global-set-key (kbd "C-c ; c p") (quote copy-paragraph))
+(global-set-key (kbd "C-c ; c s") (quote thing-copy-string-to-mark))
+(global-set-key (kbd "C-c ; c a") (quote thing-copy-parenthesis-to-mark))
+
+;; -- linium
+(global-set-key (kbd "C-c ; nl") 'nlinum-mode)
 
 ;; New frame
 (global-set-key [meta shift w] 'delete-frame)
@@ -123,9 +137,7 @@
 (use-package evil-mc
   :bind (:map evil-mc-key-map
               ("\M-p" . nil)
-              ("M-p" . nil)
-        )
-)
+              ("M-p" . nil)))
 
 ;; Custom abor-recursive-edit
 ;; Utilise comme substitut a C-g (keyboard-quit)
@@ -449,6 +461,11 @@ Version 2016-12-27"
 (define-key company-active-map (kbd "C-n") 'company-select-next)
 (define-key company-active-map (kbd "C-p") 'company-select-previous)
 (define-key company-active-map (kbd "C-i") 'company-complete-selection)
+;; (define-key company-active-map (kbd "C-j") nil) ; Disable C-j (compplete-selection) in company mode
+(define-key company-active-map (kbd "C-j") 'new-line-dwim) ;; Disable with reaffectation of new line function
+(define-key company-active-map (kbd "RET") 'new-line-dwim) ;; Disable with reaffectation of new line function
+(define-key company-active-map (kbd "C-c h") 'company-quickhelp--show)
+;; (define-key company-active-map (kbd "C-c h") 'company-quickhelp-show)
 
 (global-set-key (kbd "C-,") 'company-files)
 
@@ -478,10 +495,13 @@ Version 2016-12-27"
 (global-set-key (kbd "C-c C-n") 'diff-hl-next-hunk)
 (define-key web-mode-map (kbd "C-c C-n") 'diff-hl-next-hunk)
 (define-key php-mode-map (kbd "C-c C-n") 'diff-hl-next-hunk)
+;;(define-key cider-mode-map (kbd "C-c C-n") 'diff-hl-next-hunk)
 
 (global-set-key (kbd "C-c C-p") 'diff-hl-previous-hunk)
 (define-key web-mode-map (kbd "C-c C-p") 'diff-hl-previous-hunk)
 (define-key php-mode-map (kbd "C-c C-p") 'diff-hl-previous-hunk)
+;;(define-key cider-mode-map (kbd "C-c C-p") 'diff-hl-previous-hunk)
+
 
 ; (global-set-key (kbd "c-c c-n") 'diff-hl-next-hunk)
 ; (global-set-key (kbd "c-c c-p") 'diff-hl-previous-hunk)
@@ -532,14 +552,6 @@ Version 2016-12-27"
 
 ;; Swiper
 ;; (global-set-key (kbd "C-c C-p") 'swiper)
-
-;; -- Text operations
-;; Copy operations
-(global-set-key (kbd "C-c , c w") (quote copy-word))
-(global-set-key (kbd "C-c , c l") (quote copy-line))
-(global-set-key (kbd "C-c , c p") (quote copy-paragraph))
-(global-set-key (kbd "C-c , c s") (quote thing-copy-string-to-mark))
-(global-set-key (kbd "C-c , c a") (quote thing-copy-parenthesis-to-mark))
 
 
 
@@ -615,6 +627,8 @@ Version 2016-12-27"
 
 ;; (global-set-key (kbd "RET") #'newline-and-indent) ; Ne fonctionne pas
 ;; (global-set-key (kbd "RET") 'newline-and-indent) ; N est pas suffisant
+(global-set-key (kbd "RET") 'reindent-then-newline-and-indent)
+(global-set-key (kbd "C-j") 'reindent-then-newline-and-indent)
 ;; (global-set-key (kbd "RET") 'reindent-then-newline-and-indent)
 (global-set-key (kbd "RET") 'new-line-dwim)
 (global-set-key (kbd "<RET>") 'new-line-dwim)
@@ -622,15 +636,16 @@ Version 2016-12-27"
 
 ;; 
 (define-key typescript-mode-map (kbd "M-j") 'c-indent-new-comment-line)
+(global-set-key (kbd "C-s-i") 'company-complete)
 
 
 ;; lines
 ;; (define-key prog-mode-map(kbd "C-i") 'tab-indent-or-complete)
 
-(global-set-key [(meta shift d)] 'duplicate-start-of-line-or-region)
+(global-set-key [(meta shift d)] 'wil-duplicate)
 
 ;; Update to C-x C-d (dired list dir that i did not use at all)
-(global-set-key (kbd "C-x C-d") 'duplicate-start-of-line-or-region)
+(global-set-key (kbd "C-x C-d") 'wil-duplicate)
 
 ;; (global-set-key (kbd "C-c C-d") 'duplicate-start-of-line-or-region)
 ;; (define-key tern-mode-keymap (kbd "C-c C-d") 'duplicate-start-of-line-or-region)
@@ -647,7 +662,10 @@ Version 2016-12-27"
 ;; (global-set-key [C-tab] 'tabbar-forward)
 ;; (global-set-key [C-S-tab] 'tabbar-backward)
 ;; Update : Impossible car meta shift a est utilisée
+;; Update : Utilisation du package iflipb
+
 ;; (global-set-key [C-S-tab] 'previous-buffer)
+;; (global-set-key (kbd "M-I")'previous-buffer)
 ;; (global-set-key [C-tab] 'next-buffer)
 
 ;; easy-motion
@@ -720,15 +738,22 @@ Version 2016-12-27"
 ;; (define-key help-mode-map (kbd "<C-i>") 'avy-goto-word-1-below)
 ;; (define-key diff-mode-map (kbd "<C-i>") 'avy-goto-word-1-below)
 
-(global-set-key (kbd "<C-S-i>") 'avy-goto-word-1-above)
-(define-key magit-status-mode-map (kbd "<C-S-i>") 'avy-goto-word-1-above)
-(define-key help-mode-map (kbd "<C-S-i>") 'avy-goto-word-1-above)
-(define-key diff-mode-map (kbd "<C-S-i>") 'avy-goto-word-1-above)
+;; (global-set-key (kbd "<C-S-i>") 'avy-goto-word-1-above)
+;; (define-key magit-status-mode-map (kbd "<C-S-i>") 'avy-goto-word-1-above)
+;; (define-key help-mode-map (kbd "<C-S-i>") 'avy-goto-word-1-above)
+;; (define-key diff-mode-map (kbd "<C-S-i>") 'avy-goto-word-1-above)
 
-(global-set-key (kbd "<C-M-i>") 'avy-goto-word-1-above)
-(define-key magit-status-mode-map (kbd "<C-M-i>") 'avy-goto-word-1-above)
-(define-key help-mode-map (kbd "<C-M-i>") 'avy-goto-word-1-above)
-(define-key diff-mode-map (kbd "<C-M-i>") 'avy-goto-word-1-above)
+;; (global-set-key (kbd "<C-M-i>") 'avy-goto-word-1-above)
+;; (define-key magit-status-mode-map (kbd "<C-M-i>") 'avy-goto-word-1-above)
+;; (define-key help-mode-map (kbd "<C-M-i>") 'avy-goto-word-1-above)
+;; (define-key diff-mode-map (kbd "<C-M-i>") 'avy-goto-word-1-above)
+
+(global-set-key (kbd "s-m") 'avy-goto-word-1)
+
+;; More convenient key binding instead of leaving the home row to get
+;; left and right arrow. Inspired by jwiegley paredit keybinding.
+(global-set-key (kbd "C-M-(") 'paredit-forward-barf-sexp)
+(global-set-key (kbd "C-M-)") 'paredit-forward-slurp-sexp)
 
 ;; i-search
 (define-key isearch-mode-map (kbd "C-'") 'avy-isearch)
@@ -760,11 +785,11 @@ Version 2016-12-27"
 ;; (define-key web-mode-map (kbd "C-S-s") 'helm-swoop)
 ;; (define-key markdown-mode-map (kbd "C-S-s") 'helm-swoop)
 
-(global-set-key (kbd "C-S-s") 'swiper)
-(define-key js2-mode-map (kbd "C-S-s") 'swiper)
-(define-key php-mode-map (kbd "C-S-s") 'swiper)
-(define-key web-mode-map (kbd "C-S-s") 'swiper)
-(define-key markdown-mode-map (kbd "C-S-s") 'swiper)
+;; (global-set-key (kbd "C-S-s") 'swiper)
+;; (define-key js2-mode-map (kbd "C-S-s") 'swiper)
+;; (define-key php-mode-map (kbd "C-S-s") 'swiper)
+;; (define-key web-mode-map (kbd "C-S-s") 'swiper)
+;; (define-key markdown-mode-map (kbd "C-S-s") 'swiper)
 
 
 ;; Align your code in a pretty way.
@@ -821,7 +846,9 @@ Version 2016-12-27"
 
 ;; Remove native M-l binding (lowercase) Lowercase, uppercase,
 ;; camelcase are moved into "string-inflection-all-cycle" function
-(global-set-key (kbd "M-l") 'er/expand-region)
+;; (global-set-key (kbd "M-l") 'er/expand-region)
+;; (global-set-key (kbd "C-à") 'er/expand-region)
+(global-set-key (kbd "<C-m>") 'er/expand-region)
 (global-set-key (kbd "M-L") 'er/contract-region)
 (global-set-key (kbd "M-L") 'mc/mark-all-words-like-this) ; Like in VS Code
 (global-set-key (kbd "C-M-l") 'mark-sexp)
@@ -891,23 +918,31 @@ Version 2016-12-27"
 
 
 ;; Azerty binding equivalent chars to 0-9 on the upper row keyboard
-(global-set-key (kbd "M-0") 'delete-window) ;; M-0
-(define-key diff-mode-map (kbd "M-0") 'delete-window)
+(global-set-key (kbd "M-à") 'delete-window) ;; M-0
+(define-key diff-mode-map (kbd "M-à") 'delete-window)
 
-(global-set-key (kbd "M-1") 'delete-other-windows) ;; M-1
-(define-key diff-mode-map (kbd "M-0") 'delete-other-windows)
+(global-set-key (kbd "M-&") 'delete-other-windows) ;; M-1
+(define-key diff-mode-map (kbd "M-&") 'delete-other-windows)
 
 ;; (global-set-key (kbd "M-2") 'hrs/split-window-below-and-switch) ;; M-2
 ;; (define-key diff-mode-map (kbd "M-2") 'hrs/split-window-below-and-switch)
 
-(global-set-key (kbd "M-2") 'split-window-below) ;; M-2
-(define-key diff-mode-map (kbd "M-2") 'split-window-below)
+;; (global-set-key (kbd "M-2") 'split-window-below) ;; M-2
+;; (define-key diff-mode-map (kbd "M-2") 'split-window-below)
 
-(global-set-key (kbd "M-3") 'split-window-right) ;; M-3
-(define-key diff-mode-map (kbd "M-3") 'split-window-right)
+;; (global-set-key (kbd "M-3") 'split-window-right) ;; M-3
+;; (define-key diff-mode-map (kbd "M-3") 'split-window-right)
 
 ;; (global-set-key (kbd "M-9") 'resize-window) ;; M-9
 ;; (define-key diff-mode-map (kbd "M-9") 'resize-window)
+
+
+(global-set-key (kbd "M-2") 'hrs/split-window-below-and-switch) ;; M-2
+(define-key diff-mode-map (kbd "M-2") 'hrs/split-window-below-and-switch)
+
+(global-set-key (kbd "M-3") 'hrs/split-window-right-and-switch) ;; M-3
+(define-key diff-mode-map (kbd "M-3") 'hrs/split-window-right-and-switch)
+
 
 ;; other Window
 (global-set-key (kbd "M-o") 'other-window)
@@ -1038,19 +1073,21 @@ Version 2016-12-27"
 ;; --------------- Super keys
 ;; Search with super key
 ;; (global-set-key (kbd "s-s") 'helm-swoop) ; Super+s
-(global-set-key (kbd "s-s") 'swiper) ; Super+s
+;; (global-set-key (kbd "s-s") 'swiper) ; Super+s
 (global-set-key (kbd "s-z") 'zap-to-char)
 (global-set-key (kbd "s-e") 'kmacro-end-and-call-macro) ; Super+e
 (global-set-key (kbd "C-s-s") 'helm-ag) ; Super+Contral+s
 (global-set-key (kbd "C-M-s-s") 'projectile-ag) ; Control+Meta+Super+s
 (global-set-key (kbd "s-c") 'org-capture)
-(global-set-key (kbd "s-b") 'ivy-switch-buffer)
+(global-set-key (kbd "s-b") 'projectile-switch-to-buffer)
+(global-set-key (kbd "C-s-b") 'ivy-switch-buffer)
 (global-set-key (kbd "s-k") 'fixup-whitespace)
 
 
 
 ;; Comment
 (global-set-key (kbd "s-/") 'comment-line)
+
 
 ;; Kill
 (global-set-key (kbd "s-k") 'kill-paragraph)
@@ -1089,7 +1126,8 @@ Version 2016-12-27"
 (global-set-key (kbd "s-r") 'projectile-recentf)
 ;; (global-set-key (kbd "C-s-r") 'counsel-recentf)
 ;; (global-set-key (kbd "C-s-r") 'helm-recentf) ; Update : helm-recentf est preferable car il tris dans l ordre d utilisation des fichiers
-(global-set-key (kbd "C-s-r") 'counsel-recentf) ; Update : Utilisation de counsel-recentf, car la completion sans espace est vraiment pratique
+;; (global-set-key (kbd "C-s-r") 'helm-recentf) ; Update : helm-recentf est preferable car il tris dans l ordre d utilisation des fichiers
+(global-set-key (kbd "C-s-r") 'counsel-recentf) ; Update : Oui mais la completion avec espace est relou et moins rapide
 
 ;; (global-set-key (kbd "s-r") 'crux-recentf-ido-find-file)
 
@@ -1111,22 +1149,25 @@ Version 2016-12-27"
 (global-set-key (kbd "s-g") 'magit-status)
 
 (global-set-key (kbd "s-D") 'projectile-dired)
-;; (global-set-key (kbd "C-c C-c TAB") 'emmet-expand-line)
-;; (global-set-key (kbd "s-i") 'emmet-expand-line)
-(global-set-key (kbd "C-m") 'emmet-expand-line) ; C-m n est libre par default, utilisation pour emmet (que j utilise souvent)
+;; (global-set-key (kbd "C-c C-c TAB") 'emmet-expand-line) ; Pas de rebind sur C-c C-c
+(global-set-key (kbd "s-i") 'emmet-expand-line)
+(define-key emacs-lisp-mode-map (kbd "C-c C-c") 'eval-defun)
 
 (global-set-key (kbd "s-a") 'mark-whole-buffer)
 ;; (global-set-key (kbd "s-s") 'helm-swoop)
 ;; (global-set-key (kbd "s-s") 'swiper)
 ;; (global-set-key (kbd "s-s") 'swiper)
+;; (global-set-key (kbd "s-s") 'helm-swoop)
+;; (global-set-key (kbd "s-s") 'swiper)
 (global-set-key (kbd "s-s") 'helm-swoop)
+(global-set-key (kbd "C-c C-s-s") 'swiper)
 
 (global-set-key (kbd "s-w") 'vc-diff)
 (global-set-key (kbd "s-W") 'vc-ediff)
 
 ;; avy
-;; (global-set-key (kbd "s-i") 'avy-goto-word-1)
-(global-set-key (kbd "s-j") 'avy-goto-word-1)
+(global-set-key (kbd "C-à") 'avy-goto-word-1)
+;; (global-set-key (kbd "s-j") 'avy-goto-word-1)
 
 ;; dired
 (global-set-key (kbd "s-d") 'projectile-dired)
@@ -1156,8 +1197,11 @@ Version 2016-12-27"
 ;; use hippie-expand instead of dabbrev
 
 ;; "Translate" key to behave like on us keyboard
-(global-set-key (kbd "M-/") 'eval-expression)
-(global-set-key (kbd "M-:") 'hippie-expand)
+;; Update : Back to default 
+;; (global-set-key (kbd "M-/") 'eval-expression)
+;; (global-set-key (kbd "M-:") 'hippie-expand)
+
+;; Hippie expand
 (global-set-key (kbd "M-i") 'hippie-expand)
 
 
@@ -1168,3 +1212,47 @@ Version 2016-12-27"
 (global-set-key (kbd "M-g x") 'dumb-jump-go-prefer-external)
 (global-set-key (kbd "M-g z") 'dumb-jump-go-prefer-external-other-window)
 (global-set-key (kbd "M-g b") 'dumb-jump-back)
+
+
+
+
+;; key-translation-map
+(define-key key-translation-map (kbd "C-j") (kbd "RET"))
+(define-key key-translation-map (kbd "ESC") (kbd "C-g"))
+(define-key key-translation-map (kbd "C-S-i") (kbd "<backtab>"))
+
+
+;; ;; ----------- Give acces to numerics on control key instead of shift (azery keyboard layout)
+;; (global-set-key (kbd "C-&") "1")
+;; (global-set-key (kbd "C-é") "2")
+;; (global-set-key (kbd "C-\"") "3")
+;; (global-set-key (kbd "C-\'") "4")
+;; (global-set-key (kbd "C-(") "5")
+;; (define-key paredit-mode-map (kbd "C-(") "5")
+;; (global-set-key (kbd "C-§") "6")
+;; (global-set-key (kbd "C-è") "7")
+;; (global-set-key (kbd "C-!") "8")
+;; (global-set-key (kbd "C-ç") "9")
+;; (global-set-key (kbd "C-à") "0")
+
+
+;; (global-set-key (kbd "<alt> <delete>") 'wil-delete-backspace)
+(global-set-key (kbd "<M-backspace>") 'paredit-backward-kill-word)
+;; (global-set-key (kbd "M-DEL") 'paredit-backward-kill-word)
+;; (global-set-key (kbd "M-backspace") 'paredit-backward-kill-word)
+
+;; (global-set-key (kbd "M-/") 'comment-or-uncomment-region-or-line)
+(global-set-key [(meta shift /)] 'comment-or-uncomment-region-or-line)
+;; (global-set-key [(meta shift \\)] 'delete-horizontal-space)
+;; (global-set-key (kbd "s-/") 'delete-horizontal-space)
+;; (global-set-key (kbd "C-c \\") 'delete-horizontal-space)
+(global-set-key (kbd "s-:") 'delete-horizontal-space)
+
+
+
+(global-set-key (kbd "C-c ; c c s") 'clojure-cheatsheet)
+
+(define-key occur-mode-map (kbd "n") 'next-line)
+(define-key occur-mode-map (kbd "p") 'previous-line)
+(global-set-key (kbd "C-/") 'ffap) ; Qwerty C-> for Azerty
+(define-key undo-tree-map (kbd "C-/") 'ffap)

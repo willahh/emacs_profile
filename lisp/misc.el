@@ -1,4 +1,3 @@
-
 (require 'thingatpt)
 (require 'dash)
 (require 'ov)
@@ -9,62 +8,62 @@
 
 
 ;; https://oremacs.com/2015/02/04/pre-hydra-post/
-(global-set-key
- (kbd "C-M-o")
- (defhydra hydra-window ()
-   "window"
-   ("h" windmove-left)
-   ("j" windmove-down)
-   ("k" windmove-up)
-   ("l" windmove-right)
-   ("a" (lambda ()
-          (interactive)
-          (ace-window 1)
-          (add-hook 'ace-window-end-once-hook
-                    'hydra-window/body)
-          (throw 'hydra-disable t))
-        "ace")
-   ("v" (lambda ()
-          (interactive)
-          (split-window-right)
-          (windmove-right))
-        "vert")
-   ("x" (lambda ()
-          (interactive)
-          (split-window-below)
-          (windmove-down))
-        "horz")
-   ("s" (lambda ()
-          (interactive)
-          (ace-window 4)
-          (add-hook 'ace-window-end-once-hook
-                    'hydra-window/body)
-          (throw 'hydra-disable t))
-        "swap")
-   ("t" transpose-frame "'")
-   ("d" (lambda ()
-          (interactive)
-          (ace-window 16)
-          (add-hook 'ace-window-end-once-hook
-                    'hydra-window/body)
-          (throw 'hydra-disable t))
-        "del")
+;; (global-set-key
+;;  (kbd "C-M-o")
+;;  (defhydra hydra-window ()
+;;    "window"
+;;    ("h" windmove-left)
+;;    ("j" windmove-down)
+;;    ("k" windmove-up)
+;;    ("l" windmove-right)
+;;    ("a" (lambda ()
+;;           (interactive)
+;;           (ace-window 1)
+;;           (add-hook 'ace-window-end-once-hook
+;;                     'hydra-window/body)
+;;           (throw 'hydra-disable t))
+;;         "ace")
+;;    ("v" (lambda ()
+;;           (interactive)
+;;           (split-window-right)
+;;           (windmove-right))
+;;         "vert")
+;;    ("x" (lambda ()
+;;           (interactive)
+;;           (split-window-below)
+;;           (windmove-down))
+;;         "horz")
+;;    ("s" (lambda ()
+;;           (interactive)
+;;           (ace-window 4)
+;;           (add-hook 'ace-window-end-once-hook
+;;                     'hydra-window/body)
+;;           (throw 'hydra-disable t))
+;;         "swap")
+;;    ("t" transpose-frame "'")
+;;    ("d" (lambda ()
+;;           (interactive)
+;;           (ace-window 16)
+;;           (add-hook 'ace-window-end-once-hook
+;;                     'hydra-window/body)
+;;           (throw 'hydra-disable t))
+;;         "del")
    
-   ("o" delete-other-windows "one" :color blue)
-   ;; ("o" evil-window-next "other-window" :color blue)
-   ("i" ace-maximize-window "ace-one" :color blue)
-   ("q" nil "cancel")
+;;    ("o" delete-other-windows "one" :color blue)
+;;    ;; ("o" evil-window-next "other-window" :color blue)
+;;    ("i" ace-maximize-window "ace-one" :color blue)
+;;    ("q" nil "cancel")
 
-   ("H" evil-window-move-far-left "evil-window-move-far-left")
-   ("J" evil-window-move-very-bottom "evil-window-move-very-bottom")
-   ("K" evil-window-move-very-top "evil-window-move-very-top")
-   ("L" evil-window-move-far-right "evil-window-move-far-right")
+;;    ("H" evil-window-move-far-left "evil-window-move-far-left")
+;;    ("J" evil-window-move-very-bottom "evil-window-move-very-bottom")
+;;    ("K" evil-window-move-very-top "evil-window-move-very-top")
+;;    ("L" evil-window-move-far-right "evil-window-move-far-right")
 
-   ("n" (resize-window--enlarge-down) "resize-window--enlarge-down")
-   ("p" (resize-window--enlarge-up) "resize-window--enlarge-up")
-   ("f" (resize-window--enlarge-horizontally) "resize-window--enlarge-horizontally")
-   ("b" (resize-window--shrink-horizontally) "resize-window--shrink-horizontally")
-   ))
+;;    ("n" (resize-window--enlarge-down) "resize-window--enlarge-down")
+;;    ("p" (resize-window--enlarge-up) "resize-window--enlarge-up")
+;;    ("f" (resize-window--enlarge-horizontally) "resize-window--enlarge-horizontally")
+;;    ("b" (resize-window--shrink-horizontally) "resize-window--shrink-horizontally")
+;;    ))
 
 
 
@@ -161,7 +160,62 @@
 
 
 
+(global-set-key
+ (kbd "C-M-o")
+ (defhydra hydra-window ()
+   " "
+   ("h" windmove-left)
+   ("j" windmove-down)
+   ("k" windmove-up)
+   ("l" windmove-right)
+   ("a" (lambda ()
+          (interactive)
+          (ace-window 1)
+          (add-hook 'ace-window-end-once-hook
+                    'hydra-window/body)
+          (throw 'hydra-disable t))
+        "")
+   ("v" (lambda ()
+          (interactive)
+          (split-window-right)
+          (windmove-right))
+        "")
+   ("x" (lambda ()
+          (interactive)
+          (split-window-below)
+          (windmove-down))
+        "")
+   ("s" (lambda ()
+          (interactive)
+          (ace-window 4)
+          (add-hook 'ace-window-end-once-hook
+                    'hydra-window/body)
+          (throw 'hydra-disable t))
+        "")
+   ("t" transpose-frame "'")
+   ("d" (lambda ()
+          (interactive)
+          (ace-window 16)
+          (add-hook 'ace-window-end-once-hook
+                    'hydra-window/body)
+          (throw 'hydra-disable t))
+        "")
+   
+   ("o" delete-other-windows "" :color blue)
+   ;; ("o" evil-window-next "other-window" :color blue)
+   ("i" ace-maximize-window "" :color blue)
+   ("q" nil "")
 
+   ("H" evil-window-move-far-left "")
+   ("J" evil-window-move-very-bottom "")
+   ("K" evil-window-move-very-top "")
+   ("L" evil-window-move-far-right "")
+
+   ("n" (resize-window--enlarge-down) "")
+   ("p" (resize-window--enlarge-up) "")
+   ("f" (resize-window--enlarge-horizontally) "")
+   ("b" (resize-window--shrink-horizontally) "")
+   ))
 
 
 
@@ -784,11 +838,11 @@ _d_: subtree
         regexp-history)
   (call-interactively 'occur))
 
-;; Keeps focus on *Occur* window, even when when target is visited via RETURN key.
-;; See hydra-occur-dwim for more options.
-(defadvice occur-mode-goto-occurrence (after occur-mode-goto-occurrence-advice activate)
-  (other-window 1)
-  (hydra-occur-dwim/body))
+;; ;; Keeps focus on *Occur* window, even when when target is visited via RETURN key.
+;; ;; See hydra-occur-dwim for more options.
+;; (defadvice occur-mode-goto-occurrence (after occur-mode-goto-occurrence-advice activate)
+;;   (other-window 1)
+;;   (hydra-occur-dwim/body))
 
 ;; Focus on *Occur* window right away.
 (add-hook 'occur-hook (lambda () (other-window 1)))
@@ -798,15 +852,15 @@ _d_: subtree
     (switch-to-buffer-other-window "*Occur*")
     (hydra-occur-dwim/body) ))
 
-;; Used in conjunction with occur-mode-goto-occurrence-advice this helps keep
-;; focus on the *Occur* window and hides upon request in case needed later.
-(defhydra hydra-occur-dwim ()
-  "Occur mode"
-  ("o" occur-dwim "Start occur-dwim" :color red)
-  ("j" occur-next "Next" :color red)
-  ("k" occur-prev "Prev":color red)
-  ("h" delete-window "Hide" :color blue)
-  ("r" (reattach-occur) "Re-attach" :color red))
+;; ;; Used in conjunction with occur-mode-goto-occurrence-advice this helps keep
+;; ;; focus on the *Occur* window and hides upon request in case needed later.
+;; (defhydra hydra-occur-dwim ()
+;;   "Occur mode"
+;;   ("o" occur-dwim "Start occur-dwim" :color red)
+;;   ("j" occur-next "Next" :color red)
+;;   ("k" occur-prev "Prev":color red)
+;;   ("h" delete-window "Hide" :color blue)
+;;   ("r" (reattach-occur) "Re-attach" :color red))
 
 
 
@@ -1222,13 +1276,13 @@ _d_: subtree
   (([(meta control up)] . move-text-up)
    ([(meta control down)] . move-text-down)))
    
-(use-package buffer-stack
-  :ensure t
-  :bind
-  (([(C-tab)] . buffer-stack-up)
-   ([(C-S-tab)] . buffer-stack-down)
-   ([(meta shift i)] . buffer-stack-down)
-   ([(meta i)] . buffer-stack-up)))
+; (use-package buffer-stack
+;   :ensure t
+;   :bind
+;   (([(C-tab)] . buffer-stack-up)
+;    ([(C-S-tab)] . buffer-stack-down)
+;    ([(meta shift i)] . buffer-stack-down)
+;    ([(meta i)] . buffer-stack-up)))
 
 
 ;; single key to jump thru marks
@@ -1277,7 +1331,7 @@ _d_: subtree
 (defun new-line-dwim ()
   (interactive)
   (let ((break-open-pair (or (and (looking-back "{") (looking-at "}"))
-                             (and (looking-back ">") (looking-at "<"))
+                             ;; (and (looking-back ">") (looking-at "<"))
                              (and (looking-back "(") (looking-at ")"))
                              (and (looking-back "\\[") (looking-at "\\]")))))
     (newline)
@@ -1286,3 +1340,97 @@ _d_: subtree
         (newline)
         (indent-for-tab-command)))
     (indent-for-tab-command)))
+
+
+
+
+;; http://ergoemacs.org/emacs/emacs_abbrev_mode_tutorial.html
+(defun xah-abbrev-h-f ()
+  "Abbrev hook function, used for `define-abbrev'.
+ Our use is to prevent inserting the char that triggered expansion. Experimental.
+ the “ahf” stand for abbrev hook function.
+Version 2016-10-24"
+  t)
+
+(put 'xah-abbrev-h-f 'no-self-insert t)
+
+;; Prevent space after abbrev expand
+(define-abbrev-table 'global-abbrev-table 
+  '(
+    ("fu" "function" xah-abbrev-h-f)
+    ("arg" "arguments" xah-abbrev-h-f)))
+
+
+
+;; (use-package back-button
+;;   :defer 1
+;;   :commands
+;;   back-button-mode
+;;   :config
+;;   (back-button-mode 1)
+;;   (diminish 'back-button-mode))
+
+(use-package beacon
+  :config
+  (beacon-mode 1)
+  (setq beacon-color "#6373a2")
+  (setq beacon-size 80)
+  (diminish 'beacon-mode))
+
+(require 'popwin)
+(popwin-mode 1)
+
+;; From
+;; https://github.com/cichli/dotfiles/blob/master/.emacs.d/init.el#L172
+;; again. Nice feature!
+(use-package browse-kill-ring
+  :config
+  (browse-kill-ring-default-keybindings)
+  :bind
+  (("C-c k" . browse-kill-ring)))
+
+
+
+;; From
+;; https://github.com/cichli/dotfiles/blob/master/.emacs.d/init.el#L172
+;; Update: Theses package seems not available on Elpa at the moment
+(use-package help-fns+
+  :config
+  (setq help-cross-reference-manuals nil))
+
+(use-package help-mode
+  :config
+  ;; (add-hook 'help-mode-hook #'hide-trailing-whitespace)
+  )
+
+(use-package help-mode+)
+
+(use-package help+)
+
+(use-package iflipb
+  :config
+  (setq iflipb-include-more-buffers t
+        iflipb-wrap-around t)
+  :bind
+  (([C-S-tab] . iflipb-next-buffer)
+   ("M-I" . iflipb-next-buffer)
+   ([C-tab] . iflipb-previous-buffer)))
+
+(use-package paradox
+  :defer t
+  :config
+  (setq paradox-column-width-package 28
+        paradox-column-width-version 14
+        paradox-display-download-count t
+        paradox-execute-asynchronously nil
+        paradox-github-token t
+        paradox-use-homepage-buttons nil)
+  ;; (add-hook 'paradox-menu-mode-hook #'hide-trailing-whitespace)
+  )
+
+
+;; (use-package popwin
+;;   :config
+;;   ;; (add-hook 'popwin:after-popup-hook #'hide-trailing-whitespace)
+  
+;;   )

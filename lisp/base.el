@@ -131,9 +131,6 @@
 ;; Show matching parenthesis
 (show-paren-mode)
 
-;; New line and indent by default
-(global-set-key (kbd "RET") 'newline-and-indent)
-
 ;; Hihglight la ligne courante Update : Ralentis un peu l affichage,
 ;; en commentaire pour le moment Update 2 : Il faut un repere visuel
 ;; pour savoir tout de suite ou se situe le caret, juste le caret ne
@@ -167,6 +164,12 @@
 ;; enable y/n answers
 (fset 'yes-or-no-p 'y-or-n-p)
 
+(icomplete-mode 1)
+
+;; Handy way of getting back to previous places.
+(bind-key "C-x p" 'pop-to-mark-command)
+(setq set-mark-command-repeat-pop t)
+
 ;; Smooth scrolling
 ;; (setq scroll-margin 5
 ;; scroll-conservatively 9999
@@ -193,10 +196,11 @@
 ;; (setq scroll-margin 3)
 ;; (setq scroll-margin 8)
 ;; (setq scroll-margin 5)
-;; (setq scroll-margin 2) ;; 2 ne va pas assez vite par rapport aux editeurs modernes
-;; (setq scroll-margin 5) ;; La valeur se rapprochant le plus semble etre entre 4 et 5
-;; (setq scroll-margin 2) ;; La valeur se rapprochant le plus semble etre entre 4 et 5
-(setq scroll-margin 2)
+;; (setq scroll-margin 2)
+;; (setq scroll-margin 5)
+;; (setq scroll-margin 2)
+;; (setq scroll-margin 2)
+(setq scroll-margin 0)
 (setq scroll-conservatively 9999)
 (setq scroll-step 1)
 
@@ -450,6 +454,7 @@
 (setq abbrev-file-name "~/.emacs.d/abbrev_defs")
 (setq save-abbrevs t) ;; save abbrevs when files are saved
 ;; you will be asked before the abbreviations are saved
+(setq save-abbrevs 'silently)
 
 
 ;; Disable mini buffer messages
@@ -495,3 +500,7 @@
 
 ;; Delete move to trash
 (setq delete-by-moving-to-trash t)
+
+;; From https://github.com/cichli/dotfiles/blob/master/.emacs.d/init.el
+;; Seems enabled by default but in case of ...
+(mac-auto-operator-composition-mode t)

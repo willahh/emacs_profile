@@ -86,8 +86,10 @@
 ;; Fringe
 (set-face-attribute 'fringe nil :background nil :slant 'normal)
 (set-window-margins nil 4)
-(setq nlinum-format "%4d \u2502 ")
-(set-face-foreground 'linum "#6272a4")
+
+(add-hook 'nlinum-mode (lambda ()
+                         (setq nlinum-format "%4d \u2502 ")
+                         (set-face-foreground 'linum "#6272a4")))
 
 
 
@@ -108,13 +110,13 @@
 (set-face-attribute 'web-mode-current-element-highlight-face nil :foreground nil :background "#60a467")
 
 
+(set-face-attribute 'vhl/default-face nil :background "#000" :foreground "#00faff")
 
 
 
 
 
 
-;; ;; ----- vc-ediff color custom
 (require 'ediff)
 ;; (set-face-attribute 'ediff-current-diff-A nil :foreground "#c792ea" :background "#161616")
 ;; (set-face-attribute 'ediff-current-diff-Ancestor nil :foreground "#fff" :background "#fc5572")
@@ -153,3 +155,20 @@
 ;; (set-face-attribute 'org-document-info-keyword nil :height 1 :foreground "#b0dcff" :background nil)
 ;; (set-face-attribute 'org  nil :height 1 :foreground "#b0dcff" :background nil)
 ;; (set-face-attribute 'org-checkbox-statistics-todo  nil :height 1)
+
+
+;; ------- company
+(set-face-attribute 'company-tooltip-annotation nil :foreground "#55e97b")
+(set-face-attribute 'company-tooltip-common-selection nil :foreground "#00faff")
+
+;; ------- diff-hl
+(set-face-attribute 'diff-hl-delete nil :foreground "#fc1a9f" :background "#74245c")
+(set-face-attribute 'diff-hl-change nil :foreground "#5fbfec" :background "#3c6078")
+(set-face-attribute 'diff-hl-insert nil :foreground "#70ee00" :background "#6dc79f")
+
+;; ------- hydra
+(set-face-attribute 'hydra-face-amaranth nil :foreground "#70ee00")
+(set-face-attribute 'hydra-face-blue nil :foreground "#5fbfec")
+(set-face-attribute 'hydra-face-pink nil :foreground "#fc1a9f")
+(set-face-attribute 'hydra-face-red nil :foreground "#fc1a9f")
+(set-face-attribute 'hydra-face-teal nil :foreground "#5fbfec")

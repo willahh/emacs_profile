@@ -16,7 +16,7 @@
   ;;find-file-in-project
   yaml-mode
   ;; slime
-  cider
+  ;; cider ; En commentaire, package not found
   impatient-mode
   ;; clojurescript-mode
   image-dired+
@@ -41,7 +41,9 @@
   indent-guide
   lsp-mode
   org-bullets
-
+  clojure-cheatsheet
+  clj-refactor
+  helm-cider
 
   ;; backe-button
   ;; perspective
@@ -130,6 +132,8 @@
   ;; general
   git-gutter
   sx
+  beacon
+  browse-kill-ring
 
   ;; helm
   ;; helm-ag
@@ -168,6 +172,9 @@
   swiper
   ;; swiper-helm
   tern
+  iflipb
+  paradox
+  popwin
 
   zop-to-char
   ;; tern-auto-complete
@@ -222,6 +229,7 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/easy-kill-0.9.3")
 (add-to-list 'load-path "~/.emacs.d/vendor/general")
 (add-to-list 'load-path "~/.emacs.d/vendor/slime")
+(add-to-list 'load-path "~/.emacs.d/vendor/cider")
 
 
 

@@ -267,9 +267,7 @@
 
 ;; If this value is t, split window inside the current window
 (setq helm-swoop-split-with-multiple-windows t)
-
-;;
-;; (setq helm-swoop-pre-input-function (lambda () nil))
+(setq helm-swoop-pre-input-function (lambda () nil))
 
 
 ;; ---------------- swiper
@@ -501,6 +499,8 @@
 ;; (add-hook 'js2-mode-hook 'paredit-mode)
 (add-hook 'css-mode-hook 'paredit-mode)
 (add-hook 'clojure-mode-hook 'paredit-mode)
+(add-hook 'eshell-mode-hook 'paredit-mode)
+(add-hook 'cider-repl-mode-hook 'paredit-mode)
 ;; (add-hook 'prog-mode-hook )
 
 

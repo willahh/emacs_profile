@@ -325,6 +325,20 @@ Convert .md file to .org file with :
 pandoc -o README.md README.org
 #+END_SRC
 
+** Keyboard speed
+osx
+  - defaults write -g InitialKeyRepeat -int 11 # normal minimum is 15
+    (225 ms)
+  - defaults write -g InitialKeyRepeat -float 8.5 # normal minimum is 15
+    (225 ms)
+  - defaults write -g InitialKeyRepeat -float 9.5 # normal minimum is 15
+    (225 ms)
+  - defaults write -g InitialKeyRepeat -float 10.5 # normal minimum is 15
+    (225 ms)
+
+  - defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
 * Key bindings
-  
+
+
+
 
