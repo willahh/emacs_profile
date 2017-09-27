@@ -447,6 +447,7 @@
 (add-hook 'web-mode-hook 'textmate-mode)
 (add-hook 'css-mode-hook 'textmate-mode)
 (add-hook 'scss-mode-hook 'textmate-mode)
+(add-hook 'org-mode 'textmate-mode)
 
 
 

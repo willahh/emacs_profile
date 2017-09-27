@@ -381,7 +381,7 @@ Version 2016-12-27"
 ;; ----------------
 ;; Separate C-m from RETURN key
 (define-key input-decode-map [?\C-m] [C-m])
-
+(define-key input-decode-map "\C-m" [?\C-1])
 (defun wlh-set-bind-for-mc ()
   ;; Bind sur Meta q
   )
@@ -617,6 +617,8 @@ Version 2016-12-27"
 ;; (global-set-key (kbd "RET") 'newline-and-indent) ; N est pas suffisant
 ;; (global-set-key (kbd "RET") 'reindent-then-newline-and-indent)
 (global-set-key (kbd "RET") 'new-line-dwim)
+(global-set-key (kbd "<RET>") 'new-line-dwim)
+(global-set-key (kbd "C-j") 'new-line-dwim)
 
 ;; 
 (define-key typescript-mode-map (kbd "M-j") 'c-indent-new-comment-line)
@@ -1086,7 +1088,8 @@ Version 2016-12-27"
 ;; (global-set-key (kbd "s-r") 'crux-recentf-ido-find-file)
 (global-set-key (kbd "s-r") 'projectile-recentf)
 ;; (global-set-key (kbd "C-s-r") 'counsel-recentf)
-(global-set-key (kbd "C-s-r") 'helm-recentf) ; Update : helm-recentf est preferable car il tris dans l ordre d utilisation des fichiers
+;; (global-set-key (kbd "C-s-r") 'helm-recentf) ; Update : helm-recentf est preferable car il tris dans l ordre d utilisation des fichiers
+(global-set-key (kbd "C-s-r") 'counsel-recentf) ; Update : Utilisation de counsel-recentf, car la completion sans espace est vraiment pratique
 
 ;; (global-set-key (kbd "s-r") 'crux-recentf-ido-find-file)
 
@@ -1108,8 +1111,9 @@ Version 2016-12-27"
 (global-set-key (kbd "s-g") 'magit-status)
 
 (global-set-key (kbd "s-D") 'projectile-dired)
-(global-set-key (kbd "C-c C-c TAB") 'emmet-expand-line)
-(global-set-key (kbd "s-i") 'emmet-expand-line)
+;; (global-set-key (kbd "C-c C-c TAB") 'emmet-expand-line)
+;; (global-set-key (kbd "s-i") 'emmet-expand-line)
+(global-set-key (kbd "C-m") 'emmet-expand-line) ; C-m n est libre par default, utilisation pour emmet (que j utilise souvent)
 
 (global-set-key (kbd "s-a") 'mark-whole-buffer)
 ;; (global-set-key (kbd "s-s") 'helm-swoop)
