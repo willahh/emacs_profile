@@ -10,45 +10,36 @@
   :lighter " wil-js"
   wil-js-mode-map)
 
-;; (defun company-mode/backend-with-yas (backend)
-;;   (if (or (not company-mode/enable-yas) (and (listp backend)    (member 'company-yasnippet backend)))
-;;       backend
-;;     (append (if (consp backend) backend (list backend))
-;;             '(:with company-yasnippet))))
-
 (provide 'wil-js-mode)
-
-
-;; javascript mode
 (require 'js2-mode)
 
 
 ;; Modification of endlessparenthesis narrow-or-widen for javascript
 ;; to use the nice js2-narrow-to-defun
 ;; http://endlessparentheses.com/emacs-narrow-or-widen-dwim.html
-(defun wil-js-narrow-or-widen-dwim (p)
-  "Widen if buffer is narrowed, narrow-dwim otherwise.
-Dwim means: region, org-src-block, org-subtree, or
-defun, whichever applies first. Narrowing to
-org-src-block actually calls `org-edit-src-code'.
+;; (defun wil-js-narrow-or-widen-dwim (p)
+;;   "Widen if buffer is narrowed, narrow-dwim otherwise.
+;; Dwim means: region, org-src-block, org-subtree, or
+;; defun, whichever applies first. Narrowing to
+;; org-src-block actually calls `org-edit-src-code'.
 
-With prefix P, don't widen, just narrow even if buffer
-is already narrowed."
-  (interactive "P")
-  (declare (interactive-only))
-  (cond ((and (buffer-narrowed-p) (not p)) (widen))
-        ((js2-narrow-to-defun))
-        ((derived-mode-p 'org-mode)
-         ;; `org-edit-src-code' is not a real narrowing
-         ;; command. Remove this first conditional if
-         ;; you don't want it.
-         (cond ((ignore-errors (org-edit-src-code) t)
-                (delete-other-windows))
-               ((ignore-errors (org-narrow-to-block) t))
-               (t (org-narrow-to-subtree))))
-        ((derived-mode-p 'latex-mode)
-         (LaTeX-narrow-to-environment))
-        (t (js2-narrow-to-defun))))
+;; With prefix P, don't widen, just narrow even if buffer
+;; is already narrowed."
+;;   (interactive "P")
+;;   (declare (interactive-only))
+;;   (cond ((and (buffer-narrowed-p) (not p)) (widen))
+;;         ((js2-narrow-to-defun))
+;;         ((derived-mode-p 'org-mode)
+;;          ;; `org-edit-src-code' is not a real narrowing
+;;          ;; command. Remove this first conditional if
+;;          ;; you don't want it.
+;;          (cond ((ignore-errors (org-edit-src-code) t)
+;;                 (delete-other-windows))
+;;                ((ignore-errors (org-narrow-to-block) t))
+;;                (t (org-narrow-to-subtree))))
+;;         ((derived-mode-p 'latex-mode)
+;;          (LaTeX-narrow-to-environment))
+;;         (t (js2-narrow-to-defun))))
 
 ;; js-comint
 ;; javascript live interpreter nice to yo regexp on fly
@@ -99,6 +90,7 @@ is already narrowed."
   (setq js2-strict-missing-semi-warning t)
   (setq js2-highlight-unused-variables-mode t)
   (setq js2-strict-var-hides-function-arg-warning t)
+  
   ;; (require 'smartparens-config)
   ;; (require 'smartparens-javascript)
 
@@ -110,7 +102,7 @@ is already narrowed."
   ;; ('paredit-everywhere-mode)
 
 
-
+  
   ;; jquery-doc
   ;; Update : Pas du tout utile
   ;; (require 'jquery-doc)
@@ -131,11 +123,15 @@ is already narrowed."
   ;; (set (make-local-variable 'company-minimum-prefix-length) 1)
   ;; (set (make-local-variable 'company-minimum-prefix-length) 2)
   ;; (set (make-local-variable 'company-minimum-prefix-length) 1) ; Impossible trop de conflit possibles + leges ralentissements, il vaut mieux le declencher a la main, ajout d un min a 3
-  (set (make-local-variable 'company-minimum-prefix-length) 3)
+  
+  ;; Update : Disable, use global settings instead
+  ;; (set (make-local-variable 'company-minimum-prefix-length) 3)
+  
   ;; (set (make-local-variable 'company-idle-delay) 0)
   ;; (set (make-local-variable 'company-idle-delay) 1)
   ;; (set (make-local-variable 'company-idle-delay) 0)
-  (set (make-local-variable 'company-idle-delay) 3) ; Delai trop court = chiant
+  ;; Update : Disable, use global settings instead
+  ;; (set (make-local-variable 'company-idle-delay) 3) ; Delai trop court = chiant
 
   ;; js2-refactor-mode
   ;; (js2-refactor-mode)
@@ -156,14 +152,17 @@ is already narrowed."
 
   ;; Company-dabbrev
   ;; Only words in the current buffer
-  (set (make-local-variable 'company-dabbrev-other-buffers) 't)
+  ;; Update : Use of hippie expand globally binded a separate key instead
+  ;; (set (make-local-variable 'company-dabbrev-other-buffers) 't)
   ;; (set (make-local-variable 'company-backends) '((company-tern :with company-files)))
-  (set (make-local-variable 'company-backends) '((company-tern :with company-files :with company-dabbrev)))
+  ;; (set (make-local-variable 'company-backends) '((company-tern :with company-files :with company-dabbrev)))
+  (set (make-local-variable 'company-backends) '((company-tern)))
   
   ;; (define-key wil-js-mode-map (kbd "<tab>") 'company-indent-or-complete-common)
   ;; (define-key wil-js-mode-map (kbd "C-i") 'company-indent-or-complete-common)
   ;; (define-key wil-js-mode-map (kbd "C-i") 'tab-indent-or-complete) ; Update : binde sur prog mode
-  (define-key wil-js-mode-map (kbd "C-x n") 'wil-js-narrow-or-widen-dwim)
+  ;; Update use of separated keys for company, hippie, yas, company-file
+  ;; (define-key wil-js-mode-map (kbd "C-x n") 'wil-js-narrow-or-widen-dwim)
 
   
   ;; (define-key wil-js-mode-map (kbd "C-M-f") 'sp-forward-sexp)
@@ -251,10 +250,6 @@ is already narrowed."
 
 
 (add-hook 'wil-js-mode-hook 'wil-my-js-mode-hook)
-
-
-(add-hook 'js2-mode-hook
-          (lambda ()
+(add-hook 'js2-mode-hook (lambda ()
             ;; Wil css minor mode
-            (wil-js-mode)
-            ))
+            (wil-js-mode)))
