@@ -40,8 +40,8 @@
             ;; (set (make-local-variable 'company-minimum-prefix-length) 0)
             ;; (set (make-local-variable 'company-idle-delay) 0)
             
-            (set (make-local-variable 'company-minimum-prefix-length) 1)
-            (set (make-local-variable 'company-idle-delay) 1)
+            ;; (set (make-local-variable 'company-minimum-prefix-length) 1)
+            ;; (set (make-local-variable 'company-idle-delay) 1)
 
             ;; Enable emmet-mode
             (emmet-mode)
@@ -50,16 +50,14 @@
             (set (make-local-variable 'company-dabbrev-other-buffers) 't)
 
             ;; Company backend
-            (set (make-local-variable 'company-backends) '(company-css company-dabbrev))
+            ;; (set (make-local-variable 'company-backends) '(company-css company-dabbrev))
+            (set (make-local-variable 'company-backends) '(company-css))
 
             ;; Local key map
             (define-key wil-css-mode-map (kbd "<tab>") 'wil-tab-indent-or-complete-css)
             (define-key wil-css-mode-map (kbd "C-i") 'wil-tab-indent-or-complete-css)))
 
-
-(add-hook 'css-mode-hook
-          (lambda ()
+(add-hook 'css-mode-hook (lambda ()
             ;; Wil css minor mode
-            (wil-css-mode)
-            ))
+            (wil-css-mode)))
 

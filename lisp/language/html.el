@@ -1,4 +1,3 @@
-
 ;;(require 'html-mode)
 (add-hook 'html-mode-hook
           (lambda ()
