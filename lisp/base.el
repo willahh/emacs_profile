@@ -415,3 +415,12 @@
 ;; From https://github.com/cichli/dotfiles/blob/master/.emacs.d/init.el
 ;; Seems enabled by default but in case of ...
 (mac-auto-operator-composition-mode t)
+
+;; Fix whitespace on save, but only if the file was clean
+(global-whitespace-cleanup-mode)
+
+;; Transparently open compressed files
+(auto-compression-mode t)
+
+;; Keep cursor away from edges when scrolling up/down
+(require 'smooth-scrolling)

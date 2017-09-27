@@ -5,6 +5,8 @@
   sr-speedbar
   wgrep
   wgrep-ag
+  whitespace-cleanup-mode
+  smooth-scrolling
   iedit
   hydra
   paredit

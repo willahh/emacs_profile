@@ -20,6 +20,7 @@
 
 (add-hook 'clojure-mode-hook 
           (lambda ()
+            (cider-mode)
             (clj-refactor-mode 1)            
             (cljr-add-keybindings-with-prefix "C-c C-m")
             (cljr-add-keybindings-with-prefix "C-c <C-m>")))
