@@ -14,7 +14,6 @@
 (defun modify-syntax-table-for-jsx ()
   (modify-syntax-entry ?< "(>")
 
-
 (add-hook 'rjsx-mode-hook 'modify-syntax-table-for-jsx)
 (eval-after-load 'js2-mode
   '(sp-local-pair 'js2-mode "<" ">"))
