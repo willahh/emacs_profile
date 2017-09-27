@@ -824,10 +824,6 @@ is already narrowed."
             (define-key LaTeX-mode-map "\C-xn"
               nil)))
 
-
-
-
-
 ;; http://endlessparentheses.com/faster-pop-to-mark-command.html
 ;; Prevent emacs from adding same entries in the mark ring... usefull !
 (defun modi/multi-pop-to-mark (orig-fun &rest args)
@@ -840,9 +836,6 @@ Try the repeated popping up to 10 times."
 
 (advice-add 'pop-to-mark-command :around
             #'modi/multi-pop-to-mark)
-
-
-
 
 ;;;###autoload
 (defun avy-goto-word-1-above (char &optional arg)
@@ -895,29 +888,6 @@ the visible part of the current buffer following point. "
 
 (define-key dired-mode-map
   (vector 'remap 'end-of-buffer) 'dired-jump-to-bottom)
-
-;; Function to create new functions that look for a specific pattern
-; (defun ffip-create-pattern-file-finder (&rest patterns)
-;   (lexical-let ((patterns patterns))
-;     (lambda ()
-;       (interactive)
-;       (let ((ffip-patterns patterns))
-;         (find-file-in-project)))))
-
-;; Find file in project, with specific patterns
-; (global-unset-key (kbd "C-x C-o"))
-; (global-set-key (kbd "C-x C-o ja")
-;                 (ffip-create-pattern-file-finder "*.java"))
-; (global-set-key (kbd "C-x C-o js")
-;                 (ffip-create-pattern-file-finder "*.js"))
-; (global-set-key (kbd "C-x C-o jp")
-;                 (ffip-create-pattern-file-finder "*.jsp"))
-; (global-set-key (kbd "C-x C-o ph")
-;                 (ffip-create-pattern-file-finder "*.php"))
-; (global-set-key (kbd "C-x C-o pd")
-;                 (ffip-create-pattern-file-finder "*.pdf"))
-; (global-set-key (kbd "C-x C-o jon")
-;                 (ffip-create-pattern-file-finder "*.json"))
 
 ;; Join lines
 ;; http://whattheemacsd.com/
@@ -999,8 +969,6 @@ the visible part of the current buffer following point. "
   (forward-line -1)
   (indent-for-tab-command))
 
-
-
 ;; full screen magit-status
 ;; http://whattheemacsd.com/
 (defadvice magit-status (around magit-fullscreen activate)
@@ -1019,6 +987,7 @@ the visible part of the current buffer following point. "
   (window-configuration-to-register :wil2)
   (vc-ediff nil)
 )
+
 (defun wil-vc-ediff-quit ()
   (interactive)
   (ediff-quit t)
@@ -1038,25 +1007,6 @@ the visible part of the current buffer following point. "
   (split-window-right)
   (other-window 1))
 
-
-;; (defun xah-dired-sort ()
-;;   "Sort dired dir listing in different ways.
-;; Prompt for a choice.
-;; URL `http://ergoemacs.org/emacs/dired_sort.html'
-;; Version 2015-07-30"
-;;   (interactive)
-;;   (let (-sort-by -arg)
-;;     (setq -sort-by (ido-completing-read "Sort by:" '( "date" "size" "name" "dir")))
-;;     (cond
-;;      ((equal -sort-by "name") (setq -arg "-Al --si --time-style long-iso "))
-;;      ((equal -sort-by "date") (setq -arg "-Al --si --time-style long-iso -t"))
-;;      ((equal -sort-by "size") (setq -arg "-Al --si --time-style long-iso -S"))
-;;      ((equal -sort-by "dir") (setq -arg "-Al --si --time-style long-iso --group-directories-first"))
-;;      (t (error "logic error 09535" )))
-;;     (dired-sort-other -arg )))
-;;     (define-key dired-mode-map (kbd "s") 'xah-dired-sort)
-
-
 ;; https://www.emacswiki.org/emacs/DiredSortCriterias?
 (defun dired-sort-criteria (criteria)
   "sort-dired by different criteria by Robert Gloeckner "
@@ -1073,197 +1023,74 @@ the visible part of the current buffer following point. "
 
 (define-key dired-mode-map (kbd "s") 'dired-sort-criteria)
 
-
-
-
-
-
-
-
-;; Update : Le vrai comportement devrait être de re-centrer unniquement si la ligne n est pas visible a l ecran
-
-;; Recenter after isearch
-;; https://stackoverflow.com/a/36896945
-;; Update : desactivation
-;; Update : Reactivation
-;; Update : desactivation
-;; (advice-add 'isearch-search
-;;             :after
-;;             (lambda (&rest args)
-;;               "Recenter"
-;;               (when isearch-success
-;;                 (recenter))))
-
-;; Recenter after pop to mark
-;; Update : desactivation
-;; Update : Reactivation
-;; Update : desactivation
-;; (advice-add 'pop-to-mark-command
-;;             :after
-;;             (lambda (&rest args)
-;;               "Recenter"
-;;               (recenter)))
-
-;; ;; Recenter after unpop to mark
-;; ;; Update : desativation
-;; ;; Update : reactivation
-;; (advice-add 'unpop-to-mark-command
-;;             :after
-;;             (lambda (&rest args)
-;;               "Recenter"
-;;               (recenter)))
-
-;; ;; Recenter after avy
-;; (advice-add 'avy--generic-jump
-;;             :after
-;;             (lambda (&rest args)
-;;               "Recenter"
-;;               (recenter)))
-
-;; ;; Recenter after compile-goto-error
-;; (advice-add 'compile-goto-error
-;;             :after
-;;             (lambda (&rest args)
-;;               "Recenter"
-;;               (recenter)))
-
-;; ;; Recenter after forward-sentence
-;; (advice-add 'forward-sentence
-;;             :after
-;;             (lambda (&rest args)
-;;               "Recenter"
-;;               (recenter)))
-
-;; ;; Recenter after paredit-forward
-;; (advice-add 'paredit-forward
-;;             :after
-;;             (lambda (&rest args)
-;;               "Recenter"
-;;               (recenter)))
-
-;; ;; Recenter after paredit-backward
-;; (advice-add 'paredit-backward
-;;             :after
-;;             (lambda (&rest args)
-;;               "Recenter"
-;;               (recenter)))
-
-;; Recenter after highlight-symbol-next
-;; (advice-add 'highlight-symbol-next
-;;             :after
-;;             (lambda (&rest args)
-;;               "Recenter"
-;;               (recenter)))
-
-;; Recenter after highlight-symbol-prev
-;; (advice-add 'highlight-symbol-prev
-;;             :after
-;;             (lambda (&rest args)
-;;               "Recenter"
-;;               (recenter)))
-
-
-;; Recenter after compile-goto-error
-; (advice-add 'compile-goto-error
-;             :after
-;             (lambda (&rest args)
-;               "evil-scroll-line-to-top "
-;               (evil-scroll-line-to-top)))
-
-; ;; Recenter after diff-hl-next-hunk
-; (advice-add 'diff-hl-next-hunk
-;             :after
-;             (lambda (&rest args)
-;               "Recenter"
-;               (recenter)))
-
-
 (defun wil-find-org-files ()
   ;; Find org files in user directory
   (interactive)
-  (find-name-dired "~/" "*.org")
-)
+  (find-name-dired "~/" "*.org"))
+
 (defun wil-find-org-files-in-directory ()
   ;; Find org files in current directory
   (interactive)
-  (find-name-dired default-directory "*.org")
-)
+  (find-name-dired default-directory "*.org"))
+
 (defun wil-find-dsstore ()
   ;; Find .DS_Store files in user directory
   (interactive)
-  (find-name-dired "~/" "*.DS_Store")
-)
+  (find-name-dired "~/" "*.DS_Store"))
+
 (defun wil-find-pdf ()
   ;; Find pdf files in user directory
   (interactive)
-  (find-name-dired "~/" "*.pdf")
-)
+  (find-name-dired "~/" "*.pdf"))
+
 (defun wil-open-projectile-bookmarks ()
   ;; Find pdf files in user directory
   (interactive)
-  (find-file "~/.emacs.d/projectile-bookmarks.eld")
-)
+  (find-file "~/.emacs.d/projectile-bookmarks.eld"))
+
 (defun wil-delete-backspace ()
   ;; delete the selection or forward-char
   (interactive)
-  (if (region-active-p) (delete-region (region-beginning) (region-end)) (delete-forward-char 1))
-)
+  (if (region-active-p) (delete-region (region-beginning) (region-end)) (delete-forward-char 1)))
+
 (defun wil-org-open-main()
   (interactive)
   (select-frame (make-frame))
   (funcall #'find-file "~/org/main.org")
-  (wil-frame-center)
-)
+  (wil-frame-center))
+
 (defun wil-org-open-emacs()
   (interactive)
   (select-frame (make-frame))
   (funcall #'find-file "~/.emacs.d/todo.org")
-  (wil-frame-center)
-)
+  (wil-frame-center))
+
 (defun wil-open-logs
   (interactive)
-  (dired "~/www/logs")
-)
+  (dired "~/www/logs"))
 
-
-;; Non finalise
 (defun wil-yank-and-indent-region ()
   ;; Yank and indent region
   (interactive)
   (yank)
-  (call-interactively 'indent-region)
-)
+  (call-interactively 'indent-region))
 
 (defun wil-svn-up-recursive ()
   "Svn update recursivly"
   (interactive)
   (shell-command "svn_up_recursive"))
 
-;; https://www.emacswiki.org/emacs/AutoIndentation
-;; (defadvice yank (around html-yank-indent)
-;;   "Indents after yanking."
-;;   (let ((point-before (point)))
-;;     ad-do-it
-;;     (when (eq major-mode 'html-mode) ;; check what mode we're in
-;;       (indent-region point-before (point)))))
-
-;; (ad-activate 'yank)
-
-
 (defun wil-copy ()
   (interactive)
   (easy-kill)
   (deactivate-mark))
-
 
 (defun wil-html-to-concat ()
   "Convert a string into a concation for php [WIP]"
   (interactive)
   (move-beginning-of-line 1)
   (set-mark (point))
-  (move-end-of-line 1)
-  ;; (replace-string "dom "[x]")
-  )
+  (move-end-of-line 1))
 
 (defun wil-dired-new-dir (name)
   (interactive "sName: ")
@@ -1282,7 +1109,6 @@ the visible part of the current buffer following point. "
 
 (defun wil-ag-open-new-window ()
   (interactive)
-
   (progn (setq ag-reuse-window nil)
          (compile-goto-error)
          (setq ag-reuse-window t)))
@@ -1291,125 +1117,6 @@ the visible part of the current buffer following point. "
   (interactive)
   (duplicate-start-of-line-or-region)
   (keyboard-quit))
-
-;; https://www.emacswiki.org/emacs/AutoIndentation
-;; (defadvice kill-line (before check-position activate)
-;;   (if (and (eolp) (not (bolp)))
-;;       (progn (forward-char 1)
-;;              (just-one-space 0)
-;;              (backward-char 1))))
-
-;; (defun kill-and-join-forward (&optional arg)
-;;    "If at end of line, join with following; otherwise kill line.
-;;  Deletes whitespace at join."
-;;    (interactive "P")
-;;    (if (and (eolp) (not (bolp)))
-;;        (progn
-;;   (delete-indentation t)
-;;   (if (looking-at " $")
-;;      	(delete-char 1)))
-;;      (kill-line arg)))
-
-
-
-
- 
-;; (defun my-isearch-forward-to-beginning ()
-;;   "Do a forward search and jump to the beginning of the search-term."
-;;   (interactive)
-;;   (isearch-repeat 'forward)
-;;   (goto-char isearch-other-end))
-
-;; (define-key isearch-mode-map (kbd "C-v") 'my-isearch-forward-to-beginning)
-
-
-
-
-
-;; (defun my-goto-match-beginning ()
-;;   (when (and isearch-forward isearch-other-end)
-;;     (goto-char isearch-other-end)))
-
-;; (defadvice isearch-exit (after my-goto-match-beginning activate)
-;;   "Go to beginning of match."
-;;   (when (and isearch-forward isearch-other-end)
-;;     (goto-char isearch-other-end)))
-  
-;; (defun my-goto-match-beginning ()
-;;   (when (and isearch-forward isearch-other-end (not isearch-mode-end-hook-quit))
-;;     (goto-char isearch-other-end)))
-
-;; (add-hook 'isearch-mode-end-hook 'my-goto-match-beginning)
-
-
-
-
-
-
-
-
-
-;; (defun region-as-string ()
-;;   (buffer-substring (region-beginning)
-;;                     (region-end)))
-
-;; (defun isearch-forward-use-region ()
-;;   (interactive)
-;;   (when (region-active-p)
-;;     (add-to-history 'search-ring (region-as-string))
-;;     (deactivate-mark))
-;;   (call-interactively 'isearch-forward))
-
-;; (defun isearch-backward-use-region ()
-;;   (interactive)
-;;   (when (region-active-p)
-;;     (add-to-history 'search-ring (region-as-string))
-;;     (deactivate-mark))
-;;   (call-interactively 'isearch-backward))
-
-;; (eval-after-load "multiple-cursors"
-;;   '(progn
-;;      (unsupported-cmd isearch-forward-use-region ".")
-;;      (unsupported-cmd isearch-backward-use-region ".")))
-
-
-
-
-
-
-;; (add-hook 'isearch-mode-end-hook
-;;           #'endless/goto-match-beginning)
-;; (defun endless/goto-match-beginning ()
-;;   "Go to the start of current isearch match.
-;; Use in `isearch-mode-end-hook'."
-;;   (when (and isearch-forward
-;;              (number-or-marker-p isearch-other-end)
-;;              (not mark-active)
-;;              (not isearch-mode-end-hook-quit))
-;;     (goto-char isearch-other-end)))
-
-
-;;
-;; https://stackoverflow.com/a/5194568
-;; (defun backward-up-sexp (arg)
-;;   (interactive "p")
-;;   (let ((ppss (syntax-ppss)))
-;;     (cond ((elt ppss 3)
-;;            (goto-char (elt ppss 8))
-;;            (backward-up-sexp (1- arg)))
-;;           ((backward-up-list arg)))))
-
-;; (global-set-key [remap backward-up-list] 'backward-up-sexp)
-
-
-
-
-
-
-
-
-
-
 
 (defun xah-toggle-letter-case ()
   "Toggle the letter case of current word or text selection.
@@ -1442,10 +1149,6 @@ Version 2017-04-19"
       (downcase-region -p1 -p2)
       (put this-command 'state 0)))))
 
-
-
-
-
 ;; ;; Keyboard macros
 ;; (fset 'wil-php-echo-string
 ;;    (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ([101 99 104 111 32 39 5 39 32 46 33554464 80 72 80 S-backspace 80 95 69 79 76 59] 0 "%d")) arg)))
@@ -1466,18 +1169,6 @@ Version 2017-04-19"
 (defvar yank-advised-indent-threshold 1000
   "Threshold (# chars) over which indentation does not automatically occur.")
 
-;; (defun yank-advised-indent-function (beg end)
-;;   "Do indentation, as long as the region isn't too large."
-;;   (if (<= (- end beg) yank-advised-indent-threshold)
-;;       (indent-region beg end nil)))
-
-;; (defadvice yank (after yank-indent activate)
-;;   "If current mode is one of 'yank-indent-modes, indent yanked text (with prefix arg don't indent)."
-;;   (if (and (not (ad-get-arg 0))
-;;            (member major-mode yank-indent-modes))
-;;       (let ((transient-mark-mode nil))
-;;     (yank-advised-indent-function (region-beginning) (region-end)))))
-
 (defadvice yank-pop (after yank-pop-indent activate)
   "If current mode is one of 'yank-indent-modes, indent yanked text (with prefix arg don't indent)."
   (if (and (not (ad-get-arg 0))
@@ -1487,10 +1178,6 @@ Version 2017-04-19"
 
 (fset 'wil-php-concatstring-off
    [?\C-a ?\C-  ?\C-e ?\s-x ?r ?e ?p ?l ?a ?c ?e ?s ?t ?i ?r ?n ?g ?\C-h ?\C-h ?\C-h ?\C-h ?\C-j ?\\ ?\' ?\C-j ?\' ?\C-j ?\C-a ?\M-d ?\C-d ?\C-d ?\C-d ?\C-d ?\C-e ?\C-w ?\C-h ?\C-h ?\C-h ?\C-h ?\C-a ?\C-d ?\C-  ?\C-b ?\C-h ?\C-n])
-
-
-
-
 
 ;; eldoc at point
 ;; https://www.topbug.net/blog/2016/11/03/emacs-display-function-or-variable-information-near-point-cursor/
@@ -1503,54 +1190,7 @@ Version 2017-04-19"
 ;; (setq eldoc-message-function #'my-eldoc-display-message)
 ;; (setq eldoc-idle-delay 2)
 
-(eldoc-mode)
-
-
-
-;; (defun my-indent-region (N)
-;;   (interactive "p")
-;;   (if (use-region-p)
-;;       (progn (indent-rigidly (region-beginning) (region-end) (* N 4))
-;;              (setq deactivate-mark nil))
-;;     (self-insert-command N)))
-
-;; (defun my-unindent-region (N)
-;;   (interactive "p")
-;;   (if (use-region-p)
-;;       (progn (indent-rigidly (region-beginning) (region-end) (* N -4))
-;;              (setq deactivate-mark nil))
-;;     (self-insert-command N)))
-
-
-
-
-
-
-
-;; (defun shift-text (distance)
-;;   (if (use-region-p)
-;;       (let ((mark (mark)))
-;;         (save-excursion
-;;           (indent-rigidly (region-beginning)
-;;                           (region-end)
-;;                           distance)
-;;           (push-mark mark t t)
-;;           (setq deactivate-mark nil)))
-;;     (indent-rigidly (line-beginning-position)
-;;                     (line-end-position)
-;;                     distance)))
-
-;; (defun shift-right (count)
-;;   (interactive "p")
-;;     (shift-text 4))
-
-;; (defun shift-left (count)
-;;   (interactive "p")
-;;   (shift-text (- 4)))
-
-
-
-
+;; (eldoc-mode t)
 
 ;; https://stackoverflow.com/a/9697222
 (defun comment-or-uncomment-region-or-line ()
@@ -1561,7 +1201,6 @@ Version 2017-04-19"
             (setq beg (region-beginning) end (region-end))
             (setq beg (line-beginning-position) end (line-end-position)))
         (comment-or-uncomment-region beg end)))
-
 
 ;; https://stackoverflow.com/a/25792276
 (defun xah-new-empty-buffer ()
@@ -1602,6 +1241,7 @@ Version 2016-12-27"
 (defun wlh-pdf-view-mode-hook ()
   (define-key pdf-view-mode-map (kbd ".") 'hydra-pdftools/body)
 )
+
 (defun wil-ediff-hook ()
   (ediff-setup-keymap)
   (define-key ediff-mode-map (kbd "q") 'wil-vc-ediff-quit)
