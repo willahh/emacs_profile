@@ -29,15 +29,6 @@
 (require 'js2-imenu-extras)
 (js2-imenu-extras-setup)
 
-
-
-
-
-
-
-
-
-
 ;; wil-js-mode.el
 ;; Temporary minor mode
 (defvar wil-js-mode-map (make-sparse-keymap)
@@ -56,21 +47,20 @@
 (setq tern-command '("tern" "--no-port-file"))
 
 (defun wil-my-js-mode-hook ()
-
-
   (js2-imenu-extras-mode) ; js2-imenu-extras-mode
 
   ;; Paredit
   ;; Prevent paredit from adding a space before delimiters
   (set (make-local-variable 'paredit-space-for-delimiter-predicates) 0)
 
-  (flycheck-mode t) ; flycheck-mode
+  (flycheck-mode t)
   (tern-mode t)
+  (skewer-mode)
 
   ;; Yas
   (set (make-local-variable 'yas-indent-line) 'auto); Auto indent yas snippet
 
-  ;; Company-dabbrev
+  ;; Company
   (set (make-local-variable 'company-backends) '((company-tern))))
 
 (add-hook 'wil-js-mode-hook 'wil-my-js-mode-hook)
