@@ -417,10 +417,10 @@
 (mac-auto-operator-composition-mode t)
 
 ;; Fix whitespace on save, but only if the file was clean
-(global-whitespace-cleanup-mode)
+;;(global-whitespace-cleanup-mode)
 
 ;; Transparently open compressed files
 (auto-compression-mode t)
 
 ;; Keep cursor away from edges when scrolling up/down
-(require 'smooth-scrolling)
+;;(require 'smooth-scrolling)

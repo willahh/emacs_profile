@@ -73,6 +73,8 @@
         mouse-save-then-kill
         mouse-set-region
         mouse-start-secondary
+        move-over-bracket
+        move-over-curly
         move-over-quote
         my-abort-recursive-edit
         new-line-dwim
