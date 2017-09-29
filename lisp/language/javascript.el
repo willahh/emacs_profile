@@ -55,7 +55,7 @@
 
   (flycheck-mode t)
   (tern-mode t)
-  (skewer-mode)
+  ;; (skewer-mode) ; Can crash CPU
 
   ;; Yas
   (set (make-local-variable 'yas-indent-line) 'auto); Auto indent yas snippet

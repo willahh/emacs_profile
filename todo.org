@@ -82,7 +82,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 :VISIBILITY: all
 ** DONE em C-h ne fonctionne pas dans le mini panneau du bas (visible sur l'ouverture d'n fichier)
    [2017-08-07 Mon]
-
+** TODO Ajouter un bind C-space en mode company pour afficher / masquer la documentation (comportement moderne)
 
 ** TODO em : Parenthèses de toute les couleurs uniquement pour lisp elisp clisp
    [2017-08-09 Wed]
@@ -99,7 +99,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 
 ** TODO Ag result buffer : C-o : Open in new window
-** TODO Réduire la hauteur du bandeau du bas
+** DONE Réduire la hauteur du bandeau du bas
 ** TODO Activer le highlight en mode php
 ** TODO Remettre trailing whitespace sauf pour eww
 ** TODO Remettre un bind pour org mode pour faire des checkbox
@@ -107,10 +107,10 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 ** TODO Mini buffer : Ne pas afficher lde scrollbar
 ** TODO Ajouter un bind ALT + arrow up / down sur drags
 ** DONE Activer Paredit sur le racourcis C-h (delete backward)
-** TODO Les caractères ^M sont de nouveau visibles en mode php (vue
+** DONE Les caractères ^M sont de nouveau visibles en mode php (vue
   certains en mode lisp aussi mais moins dérangeant)
 
-** TODO @work Warning (flycheck): Syntax checker css-csslint reported too many
+** DONE @work Warning (flycheck): Syntax checker css-csslint reported too many
   errors (1415) and is disabled. 
 ** TODO Ediff depuis un fichier, la commande q ne rétablie pas bien les
   buffers

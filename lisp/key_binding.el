@@ -181,6 +181,7 @@
 (global-set-key (kbd "∑") 'swiper) ; ALT+SHIFT+s
 (global-set-key (kbd "æ") 'mark-whole-buffer) ; ALT+a
 (global-set-key (kbd "Â") 'toggle-php-flavor-mode) ; ALT+z
+(define-key php-mode-map (kbd "Â") 'toggle-php-flavor-mode) ; ALT+z
 
 ;; wgrep
 (define-key compilation-mode-map (kbd "C-x w") 'wgrep-change-to-wgrep-mode)
