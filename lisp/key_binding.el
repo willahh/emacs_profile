@@ -67,6 +67,10 @@
 (global-set-key (kbd "C-c ; c s") (quote thing-copy-string-to-mark))
 (global-set-key (kbd "C-c ; c a") (quote thing-copy-parenthesis-to-mark))
 
+;; Neotree
+(global-set-key (kbd "C-c ; b b") 'neotree-toggle)
+(global-set-key (kbd "C-c ; b p") 'neotree-projectile-action)
+
 ;; -- linium
 (global-set-key (kbd "C-c ; nl") 'nlinum-mode)
 

@@ -4,6 +4,8 @@
 
 (setq-default line-spacing 2) ; Same line height as modern editor (VS Code)
 
+;; Main background color
+(set-face-attribute 'default nil :background "#1a1c1d")
 
 ;; Rainbow delimiter faces
 (custom-set-faces

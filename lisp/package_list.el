@@ -14,6 +14,7 @@
   syslog-mode
   yaml-mode
   impatient-mode
+  dtrt-indent
   image-dired+
   imenu-list
   crux

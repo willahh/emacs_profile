@@ -1197,9 +1197,13 @@ Version 2016-10-24"
   (setq iflipb-include-more-buffers t
         iflipb-wrap-around t)
   :bind
-  (([C-S-tab] . iflipb-next-buffer)
-   ("M-I" . iflipb-next-buffer)
-   ([C-tab] . iflipb-previous-buffer)))
+  (
+   ;; ("M-I" . iflipb-next-buffer)
+   ("M-ù" . iflipb-previous-buffer)
+   ("M-`" . iflipb-next-buffer)
+   ;; ([C-S-tab] . iflipb-next-buffer)
+   ;; ([C-tab] . iflipb-previous-buffer)
+   ))
 
 (use-package paradox
   :defer t
@@ -1219,3 +1223,10 @@ Version 2016-10-24"
 ;;   ;; (add-hook 'popwin:after-popup-hook #'hide-trailing-whitespace)
   
 ;;   )
+
+
+
+;; (add-hook 'prog-mode-hook (lambda ()
+(add-hook 'editorconfig-mode-hook (lambda ()
+                            (dtrt-indent-mode)
+                            (dtrt-indent-adapt)))

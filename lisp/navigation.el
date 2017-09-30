@@ -179,17 +179,17 @@
 (advice-add 'swiper :after #'bjm-swiper-recenter)
 
 ;; ---------------- neotree
-(setq neo-theme 'icons) ;; Set the neotree theme before show
+;; (setq neo-theme 'icons) ;; Set the neotree theme before show
 
 ;; dont ask
 (setq neo-force-change-root t)
 (setq neo-window-fixed-size nil)
 
-;; Evil key binding for neotree
-(evil-define-key 'normal neotree-mode-map (kbd "TAB") 'neotree-enter)
-(evil-define-key 'normal neotree-mode-map (kbd "SPC") 'neotree-enter)
-(evil-define-key 'normal neotree-mode-map (kbd "q") 'neotree-hide)
-(evil-define-key 'normal neotree-mode-map (kbd "RET") 'neotree-enter)
+;; ;; Evil key binding for neotree
+;; (evil-define-key 'normal neotree-mode-map (kbd "TAB") 'neotree-enter)
+;; (evil-define-key 'normal neotree-mode-map (kbd "SPC") 'neotree-enter)
+;; (evil-define-key 'normal neotree-mode-map (kbd "q") 'neotree-hide)
+;; (evil-define-key 'normal neotree-mode-map (kbd "RET") 'neotree-enter)
 
 (defadvice evil-ex-search-next (after advice-for-evil-ex-search-next activate)
   (evil-scroll-line-to-center (line-number-at-pos)))
