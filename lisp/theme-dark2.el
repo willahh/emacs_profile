@@ -108,9 +108,8 @@
 (set-face-attribute 'isearch nil :background "#00ffec" :foreground "#000" :box nil)
 
 ;; ------ Dired
-(set-face-attribute 'dired-header nil :foreground "#ff79c6" :background nil)
+(set-face-attribute 'dired-header nil :foreground "#48fa7b" :background nil)
 (set-face-attribute 'dired-directory nil :foreground "#8be9fd" :background nil)
-(set-face-attribute 'dired-directory nil :foreground "#e84370" :background nil)
 (set-face-attribute 'dired-perm-write nil :foreground "#34aeff" :background nil)
 ;; (set-face-attribute 'web-mode-current-element-highlight-face nil :foreground "#000" :background "#d7f145")
 ;; (set-face-attribute 'web-mode-current-element-highlight-face nil :foreground "#000" :background "#00ffec")
