@@ -29,7 +29,7 @@
   dired-subtree
   ido-at-point
   react-snippets
-  rjsx-mode
+  ;; rjsx-mode
   indent-guide
   lsp-mode
   org-bullets

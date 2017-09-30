@@ -172,6 +172,7 @@
         mc/mark-next-lines
         mc/mark-previous-lines
         mouse-drag-vertical-line
+        mouse-set-secondary
         next-buffer
         org-mouse-down-mouse
         previous-buffer
