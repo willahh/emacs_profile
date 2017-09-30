@@ -87,6 +87,7 @@
 
 ;; Fringe
 (set-face-attribute 'fringe nil :background nil :slant 'normal)
+(set-face-attribute 'fringe nil :background "#1a1c1d" :slant 'normal)
 ;; (set-window-margins nil 4)
 (set-window-margins nil 0)
 

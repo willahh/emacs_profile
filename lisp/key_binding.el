@@ -69,7 +69,16 @@
 
 ;; Neotree
 (global-set-key (kbd "C-c ; b b") 'neotree-toggle)
-(global-set-key (kbd "C-c ; b p") 'neotree-projectile-action)
+(global-set-key (kbd "C-c ; b p") 'wil-neo)
+(global-set-key (kbd "C-c b") 'neotree-toggle)
+(global-set-key (kbd "C-c r") 'wil-neo)
+
+(defun wil-neo()
+  (interactive)
+  (neotree-projectile-action)
+  (other-window 1))
+
+
 
 ;; -- linium
 (global-set-key (kbd "C-c ; nl") 'nlinum-mode)

@@ -182,8 +182,10 @@
 ;; (setq neo-theme 'icons) ;; Set the neotree theme before show
 
 ;; dont ask
-(setq neo-force-change-root t)
+;; (setq neo-force-change-root t)
+(setq neo-force-change-root nil)
 (setq neo-window-fixed-size nil)
+(setq neo-autorefresh nil)
 
 ;; ;; Evil key binding for neotree
 ;; (evil-define-key 'normal neotree-mode-map (kbd "TAB") 'neotree-enter)

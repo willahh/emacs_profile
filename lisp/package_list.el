@@ -121,6 +121,7 @@
   ace-jump-mode
   whole-line-or-region
   neotree
+  validate
   iy-go-to-char
   flx-ido))
 

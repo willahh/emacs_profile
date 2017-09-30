@@ -2,6 +2,7 @@
 (require 'dash)
 (require 'ov)
 (require 'cl-lib)
+(require 'validate)
 
 (global-set-key
  (kbd "C-M-o")
@@ -1230,3 +1231,5 @@ Version 2016-10-24"
 (add-hook 'editorconfig-mode-hook (lambda ()
                             (dtrt-indent-mode)
                             (dtrt-indent-adapt)))
+
+
