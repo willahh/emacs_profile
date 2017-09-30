@@ -1,4 +1,8 @@
 (require 'org)
+(require 'ediff)
+(require 'xah-css-mode)
+
+
 (load-theme 'dracula t)
 
 
@@ -105,8 +109,9 @@
 (set-face-attribute 'isearch nil :background "#00ffec" :foreground "#000" :box nil)
 
 ;; ------ Dired
-(set-face-attribute 'dired-header nil :foreground "#34aeff" :background nil)
+(set-face-attribute 'dired-header nil :foreground "#fff" :background nil)
 (set-face-attribute 'dired-directory nil :foreground "#34aeff" :background nil)
+(set-face-attribute 'dired-directory nil :foreground "#e84370" :background nil)
 (set-face-attribute 'dired-perm-write nil :foreground "#34aeff" :background nil)
 ;; (set-face-attribute 'web-mode-current-element-highlight-face nil :foreground "#000" :background "#d7f145")
 ;; (set-face-attribute 'web-mode-current-element-highlight-face nil :foreground "#000" :background "#00ffec")
@@ -115,13 +120,17 @@
 
 
 (set-face-attribute 'vhl/default-face nil :background "#000" :foreground "#00faff")
+(set-face-attribute 'font-lock-variable-name-face nil  :foreground "#8be9fd")
+(set-face-attribute 'xah-css-class-selector nil  :foreground "#48fa7b")
+(set-face-attribute 'font-lock-function-name-face nil  :foreground "#ff79c6")
+(set-face-attribute 'font-lock-keyword-face nil  :foreground "#bd93f9")
 
 
 
 
 
 
-(require 'ediff)
+
 ;; (set-face-attribute 'ediff-current-diff-A nil :foreground "#c792ea" :background "#161616")
 ;; (set-face-attribute 'ediff-current-diff-Ancestor nil :foreground "#fff" :background "#fc5572")
 ;; (set-face-attribute 'ediff-current-diff-B nil :foreground "#c792ea" :background "#161616")
@@ -181,3 +190,116 @@
 
 (set-face-attribute 'scroll-bar nil :background "#282a36")
 (set-face-attribute 'tide-hl-identifier-face nil :background "#356a4b" :foreground "#ffffff" :underline "yellow")
+
+
+
+
+
+
+
+
+
+
+;; (add-hook 'prog-common-hook
+;;           (lambda ()
+;;             (font-lock-add-keywords nil
+;;                                     '(("\\<\\(FIX\\|FIXME\\|TODO\\|BUG\\|HACK\\):" 1 font-lock-warning-face t)))))
+
+;; (add-hook 'css-mode-hook
+;;           (lambda ()
+;;             (font-lock-add-keywords nil
+;;                                     '(("\\:\\" . font-lock-warning-face)))))
+
+
+;; (add-hook 'c-mode-hook
+;;           (lambda ()
+;;             (font-lock-add-keywords nil
+;;                                     '(("\\<\\(FIXME\\):" 1
+;;                                        font-lock-warning-face t)))))
+(add-hook 'web-mode
+          (lambda ()
+            (font-lock-add-keywords nil
+                                    '(("\\<\\FIXME\\:" 1
+                                       font-lock-warning-face t)))))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -124,7 +124,7 @@
 (define-key emacs-lisp-mode-map (kbd "C-c C-r") 'eval-region)
 (define-key emacs-lisp-mode-map (kbd "C-c C-e") 'rr/eval-and-replace)
 (define-key emacs-lisp-mode-map (kbd "C-c C-v") 'eval-buffer)
-(global-set-key (kbd "C-c C-v") 'eval-buffer)
+;; (global-set-key (kbd "C-c C-v") 'eval-buffer)
 
 ;; ---------------- key binding leader
 ;; -- Evil leader key commands
