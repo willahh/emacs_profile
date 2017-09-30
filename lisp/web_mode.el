@@ -7,7 +7,7 @@
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 ;; (add-to-list 'auto-mode-alist '("\\.css\\'" . css-mode)) ;; .css file should be assigned to css-mode for nice emmet support
-(add-to-list 'auto-mode-alist '("\\.css\\'" . xah-css-mode))
+(add-to-list 'auto-mode-alist '("\\.css\\'" . css-mode))
 ;; (add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
 
 ;; Update to use web-mode instead because most of .php files are melt
