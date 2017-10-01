@@ -333,8 +333,8 @@
 (define-key indent-rigidly-map [(shift tab)] 'indent-rigidly-left-to-tab-stop)
 (define-key indent-rigidly-map [(tab)] 'indent-rigidly-right-to-tab-stop)
 
-(global-set-key (kbd "C-'") 'avy-goto-word-1)
-(global-set-key (kbd "s-m") 'avy-goto-word-1)
+;; (global-set-key (kbd "C-'") 'avy-goto-word-1)
+;; (global-set-key (kbd "s-m") 'avy-goto-word-1)
 
 ;; More convenient key binding instead of leaving the home row to get
 ;; left and right arrow. Inspired by jwiegley paredit keybinding.
@@ -355,7 +355,7 @@
 (define-key help-mode-map (kbd "b") 'backward-char)
 
 ;; search in line
-(global-set-key (kbd "C-c C-s") 'avy-goto-char-in-line)
+;; (global-set-key (kbd "C-c C-s") 'avy-goto-char-in-line) ; Disable : Too long key
 
 ;; Align your code in a pretty way.
 (global-set-key (kbd "C-x \\") 'align-regexp)
@@ -552,7 +552,7 @@
 (global-set-key (kbd "s-f") 'counsel-find-file)
 
 ;; ------- Line navigation commands
-(global-set-key (kbd "s-l") 'avy-goto-char-in-line)
+;; (global-set-key (kbd "s-l") 'avy-goto-char-in-line) ; Not used
 
 ;; Browse comands
 (global-set-key (kbd "s-p") 'projectile-find-file)
@@ -577,7 +577,7 @@
 (global-set-key (kbd "s-W") 'vc-ediff)
 
 ;; avy
-(global-set-key (kbd "C-à") 'avy-goto-word-1)
+(global-set-key (kbd "C-ù") 'avy-goto-word-1)
 
 ;; dired
 (global-set-key (kbd "s-d") 'projectile-dired)
