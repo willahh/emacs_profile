@@ -1,5 +1,7 @@
 (require 'org)
 (require 'ediff)
+(require 'scroll-bar)
+(require 'faces)
 
 
 (load-theme 'dracula t)
@@ -185,16 +187,14 @@
 (set-face-attribute 'hydra-face-teal nil :foreground "#5fbfec")
 
 (set-face-attribute 'lazy-highlight nil :background "green")
+(set-face-attribute 'scroll-bar nil :background "#000")
 
-(set-face-attribute 'scroll-bar nil :background "#282a36")
 (set-face-attribute 'tide-hl-identifier-face nil :background "#356a4b" :foreground "#ffffff" :underline "yellow")
 
 
 
 
-
-
-
+;; (set-face-attribute 'scroll-bar-background nil :background "#282a36") 
 
 
 
