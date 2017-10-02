@@ -196,8 +196,8 @@
 
 ;; (set-face-attribute 'scroll-bar-background nil :background "#282a36") 
 
-
-
+;; rirc
+;; (set-face-attribute 'irc nil :background "##ff79c6" :foreground "#ffffff" :underline "yellow")
 
 
 

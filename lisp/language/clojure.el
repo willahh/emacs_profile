@@ -23,10 +23,10 @@
 (setq cider-prompt-for-symbol nil)
 
 ;; https://markhudnall.com/2016/04/25/starting-figwheel-in-emacs/
-(setq cider-cljs-lein-repl
-      "(do (require 'figwheel-sidecar.repl-api)
-           (figwheel-sidecar.repl-api/start-figwheel!)
-           (figwheel-sidecar.repl-api/cljs-repl))")
+;; (setq cider-cljs-lein-repl
+;;       "(do (require 'figwheel-sidecar.repl-api)
+;;            (figwheel-sidecar.repl-api/start-figwheel!)
+;;            (figwheel-sidecar.repl-api/cljs-repl))")
 
 
 (add-hook 'clojure-mode-hook 
