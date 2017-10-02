@@ -44,7 +44,8 @@
 ;; Tern conf
 ;; Don't create .tern-project automatically
 ;; ~/.tern-config file is used globally instead
-(setq tern-command '("tern" "--no-port-file"))
+;; Switch from tern to tide
+;; (setq tern-command '("tern" "--no-port-file"))
 
 (defun wil-my-js-mode-hook ()
   (js2-imenu-extras-mode) ; js2-imenu-extras-mode
@@ -54,14 +55,17 @@
   (set (make-local-variable 'paredit-space-for-delimiter-predicates) 0)
 
   (flycheck-mode t)
-  (tern-mode t)
+  
+  ;; Switch from tern to tide
+  ;; (tern-mode t)
   ;; (skewer-mode) ; Can crash CPU
 
   ;; Yas
-  (set (make-local-variable 'yas-indent-line) 'auto); Auto indent yas snippet
+  (set (make-local-variable 'yas-indent-line) 'auto)); Auto indent yas snippet
 
   ;; Company
-  (set (make-local-variable 'company-backends) '((company-tern))))
+  ;; Switch from tern to tide
+  ;; (set (make-local-variable 'company-backends) '((company-tern))))
 
 (add-hook 'wil-js-mode-hook 'wil-my-js-mode-hook)
 (add-hook 'js2-mode-hook (lambda ()

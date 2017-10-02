@@ -28,7 +28,7 @@
 
 #+BEGIN_SRC bash
 brew tap railwaycat/emacsmacport
-brew install emacs-mac
+brew install emacs-mac --with-cocoa
 
 ##brew install --with-cocoa --srgb emacs
 #+END_SRC

@@ -14,6 +14,7 @@
   syslog-mode
   yaml-mode
   impatient-mode
+  dtrt-indent
   image-dired+
   imenu-list
   crux
@@ -29,7 +30,7 @@
   dired-subtree
   ido-at-point
   react-snippets
-  rjsx-mode
+  ;; rjsx-mode
   indent-guide
   lsp-mode
   org-bullets
@@ -120,6 +121,7 @@
   ace-jump-mode
   whole-line-or-region
   neotree
+  validate
   iy-go-to-char
   flx-ido))
 
@@ -153,3 +155,6 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/general")
 (add-to-list 'load-path "~/.emacs.d/vendor/slime")
 (add-to-list 'load-path "~/.emacs.d/vendor/cider")
+(add-to-list 'load-path "~/.emacs.d/vendor/xah-css-mode")
+
+(load "~/.emacs.d/vendor/xah-css-mode/xah-css-mode-mode.el")

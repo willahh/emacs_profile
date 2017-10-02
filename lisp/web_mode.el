@@ -1,22 +1,19 @@
 (require 'web-mode)
 
 
-;; From : http://www.blogbyben.com/2016/08/emacs-php-modern-and-far-more-complete.html
-(defun toggle-php-flavor-mode ()
-  (interactive)
-  "Toggle mode between PHP & Web-Mode Helper modes"
-  (cond ((string= mode-name "PHP")
-         (web-mode))
-        ((string= mode-name "Web")
-         (php-mode))))
-
 
 (setq web-mode-enable-block-partial-invalidation t) ; Perf improvement !
 
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.css\\'" . css-mode)) ;; .css file should be assigned to css-mode for nice emmet support
-(add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
+;; (add-to-list 'auto-mode-alist '("\\.css\\'" . css-mode)) ;; .css file should be assigned to css-mode for nice emmet support
+(add-to-list 'auto-mode-alist '("\\.css\\'" . css-mode))
+;; (add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
+
+;; Update to use web-mode instead because most of .php files are melt
+;; of html / php / css / js.
+(add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
+
 (add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-mode))
 (add-to-list 'auto-mode-alist '("\\.jade\\'" . jade-mode))
 

@@ -1,9 +1,14 @@
 (require 'org)
+(require 'ediff)
+
+
 (load-theme 'dracula t)
 
 
 (setq-default line-spacing 2) ; Same line height as modern editor (VS Code)
 
+;; Main background color
+(set-face-attribute 'default nil :background "#1a1c1d")
 
 ;; Rainbow delimiter faces
 (custom-set-faces
@@ -85,6 +90,7 @@
 
 ;; Fringe
 (set-face-attribute 'fringe nil :background nil :slant 'normal)
+(set-face-attribute 'fringe nil :background "#1a1c1d" :slant 'normal)
 ;; (set-window-margins nil 4)
 (set-window-margins nil 0)
 
@@ -102,8 +108,8 @@
 (set-face-attribute 'isearch nil :background "#00ffec" :foreground "#000" :box nil)
 
 ;; ------ Dired
-(set-face-attribute 'dired-header nil :foreground "#34aeff" :background nil)
-(set-face-attribute 'dired-directory nil :foreground "#34aeff" :background nil)
+(set-face-attribute 'dired-header nil :foreground "#48fa7b" :background nil)
+(set-face-attribute 'dired-directory nil :foreground "#8be9fd" :background nil)
 (set-face-attribute 'dired-perm-write nil :foreground "#34aeff" :background nil)
 ;; (set-face-attribute 'web-mode-current-element-highlight-face nil :foreground "#000" :background "#d7f145")
 ;; (set-face-attribute 'web-mode-current-element-highlight-face nil :foreground "#000" :background "#00ffec")
@@ -112,13 +118,17 @@
 
 
 (set-face-attribute 'vhl/default-face nil :background "#000" :foreground "#00faff")
+(set-face-attribute 'font-lock-variable-name-face nil  :foreground "#8be9fd")
+;; (set-face-attribute 'xah-css-class-selector nil  :foreground "#48fa7b")
+(set-face-attribute 'font-lock-function-name-face nil  :foreground "#ff79c6")
+(set-face-attribute 'font-lock-keyword-face nil  :foreground "#bd93f9")
 
 
 
 
 
 
-(require 'ediff)
+
 ;; (set-face-attribute 'ediff-current-diff-A nil :foreground "#c792ea" :background "#161616")
 ;; (set-face-attribute 'ediff-current-diff-Ancestor nil :foreground "#fff" :background "#fc5572")
 ;; (set-face-attribute 'ediff-current-diff-B nil :foreground "#c792ea" :background "#161616")
@@ -175,3 +185,94 @@
 (set-face-attribute 'hydra-face-teal nil :foreground "#5fbfec")
 
 (set-face-attribute 'lazy-highlight nil :background "green")
+
+(set-face-attribute 'scroll-bar nil :background "#282a36")
+(set-face-attribute 'tide-hl-identifier-face nil :background "#356a4b" :foreground "#ffffff" :underline "yellow")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -367,6 +367,9 @@
 ;; you will be asked before the abbreviations are saved
 (setq save-abbrevs 'silently)
 
+;; Inhibit mini buffer message
+(let ((inhibit-message t))
+  (message "Listen to me, you!"))
 
 ;; Disable mini buffer messages
 ;; https://emacs.stackexchange.com/a/19747
@@ -414,7 +417,7 @@
 
 ;; From https://github.com/cichli/dotfiles/blob/master/.emacs.d/init.el
 ;; Seems enabled by default but in case of ...
-(mac-auto-operator-composition-mode t)
+;; (mac-auto-operator-composition-mode t)
 
 ;; Fix whitespace on save, but only if the file was clean
 ;;(global-whitespace-cleanup-mode)

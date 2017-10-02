@@ -67,6 +67,19 @@
 (global-set-key (kbd "C-c ; c s") (quote thing-copy-string-to-mark))
 (global-set-key (kbd "C-c ; c a") (quote thing-copy-parenthesis-to-mark))
 
+;; Neotree
+(global-set-key (kbd "C-c ; b b") 'neotree-toggle)
+(global-set-key (kbd "C-c ; b p") 'wil-neo)
+(global-set-key (kbd "C-c b") 'neotree-toggle)
+(global-set-key (kbd "C-c r") 'wil-neo)
+
+(defun wil-neo()
+  (interactive)
+  (neotree-projectile-action)
+  (other-window 1))
+
+
+
 ;; -- linium
 (global-set-key (kbd "C-c ; nl") 'nlinum-mode)
 
@@ -111,7 +124,7 @@
 (define-key emacs-lisp-mode-map (kbd "C-c C-r") 'eval-region)
 (define-key emacs-lisp-mode-map (kbd "C-c C-e") 'rr/eval-and-replace)
 (define-key emacs-lisp-mode-map (kbd "C-c C-v") 'eval-buffer)
-(global-set-key (kbd "C-c C-v") 'eval-buffer)
+;; (global-set-key (kbd "C-c C-v") 'eval-buffer)
 
 ;; ---------------- key binding leader
 ;; -- Evil leader key commands
@@ -504,7 +517,7 @@
 
 
 ;; ---------------- Function keys
-(global-set-key (kbd "<f2>") 'my/open-tree-view)
+;; (global-set-key (kbd "<f2>") 'my/open-tree-view)
 (global-set-key (kbd "<f12>") 'wil-vc-dir)
 (global-set-key (kbd "<f11>") 'wil-IDE)
 
@@ -582,13 +595,13 @@
 ;; Hippie expand
 (global-set-key (kbd "M-i") 'hippie-expand)
 
-;; https://github.com/jacktasia/dumb-jump
-(global-set-key (kbd "M-g o") 'dumb-jump-go-other-window)
-(global-set-key (kbd "M-g j") 'dumb-jump-go)
-(global-set-key (kbd "M-g i") 'dumb-jump-go-prompt)
-(global-set-key (kbd "M-g x") 'dumb-jump-go-prefer-external)
-(global-set-key (kbd "M-g z") 'dumb-jump-go-prefer-external-other-window)
-(global-set-key (kbd "M-g b") 'dumb-jump-back)
+;; ;; https://github.com/jacktasia/dumb-jump
+;; (global-set-key (kbd "M-g o") 'dumb-jump-go-other-window)
+;; (global-set-key (kbd "M-g j") 'dumb-jump-go)
+;; (global-set-key (kbd "M-g i") 'dumb-jump-go-prompt)
+;; (global-set-key (kbd "M-g x") 'dumb-jump-go-prefer-external)
+;; (global-set-key (kbd "M-g z") 'dumb-jump-go-prefer-external-other-window)
+;; (global-set-key (kbd "M-g b") 'dumb-jump-back)
 
 ;; key-translation-map
 (define-key key-translation-map (kbd "C-j") (kbd "RET"))
