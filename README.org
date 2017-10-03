@@ -236,6 +236,7 @@ semble qu actuellement ma conf n utilise que jscs. Le fichier à éditer
 est donc .jscsrc
 
 *** Tools
+    npm install -g typescript
 *** jscs
 **** eslint
 http://eslint.org/
