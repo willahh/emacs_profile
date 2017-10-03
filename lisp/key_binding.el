@@ -325,8 +325,10 @@
 
 ;; easy-motion
 (evilem-default-keybindings "ù")
-(global-set-key (kbd "C-v") 'evil-scroll-down)
-(global-set-key (kbd "◊") 'evil-scroll-up) ; ALT+v
+
+;; scroll
+;; (global-set-key (kbd "C-v") 'evil-scroll-down) ; Too slow (huge gain on large file)
+(global-set-key (kbd "C-v") 'scroll-up)
 
 (global-set-key (kbd "C-x <tab>") 'indent-rigidly) ; Default emacs key binding
 (define-key indent-rigidly-map [(shift tab)] 'indent-rigidly-left-to-tab-stop)
@@ -561,7 +563,8 @@
 (global-set-key (kbd "C-s-r") 'counsel-recentf) ; Update : Oui mais la completion avec espace est relou et moins rapide
 
 ;; Scroll commands
-(global-set-key (kbd "s-v") 'evil-scroll-up)
+;; (global-set-key (kbd "s-v") 'evil-scroll-up) ; too slow
+(global-set-key (kbd "s-v") 'scroll-down)
 (global-set-key (kbd "s-x") 'counsel-M-x)
 (global-set-key (kbd "s-g") 'magit-status)
 (global-set-key (kbd "s-D") 'projectile-dired)
