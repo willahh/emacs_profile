@@ -1228,8 +1228,8 @@ Version 2016-10-24"
 
 
 ;; (add-hook 'prog-mode-hook (lambda ()
-(add-hook 'editorconfig-mode-hook (lambda ()
-                            (dtrt-indent-mode)
-                            (dtrt-indent-adapt)))
+;; (add-hook 'editorconfig-mode-hook (lambda ()
+;;                             (dtrt-indent-mode)
+;;                             (dtrt-indent-adapt)))
 
 

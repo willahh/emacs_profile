@@ -75,6 +75,7 @@
         mouse-start-secondary
         move-over-bracket
         move-over-curly
+        move-over-dbl-quote
         move-over-quote
         my-abort-recursive-edit
         new-line-dwim
