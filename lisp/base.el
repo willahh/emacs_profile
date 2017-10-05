@@ -430,3 +430,9 @@
 
 ;; Disable mac frame tabbing (move with C-tab C-S-tab)
 (setq mac-frame-tabbing nil)
+
+;; Disable auto indentation... works all formated clean files. BUT for
+;; some cases it can't work (custom indenteded file) and it's just
+;; ANNOYING as fuck. TODO: Put this nil for web-mode only (when lot of
+;; different languages are mixed together)
+(setq tab-always-indent nil)
