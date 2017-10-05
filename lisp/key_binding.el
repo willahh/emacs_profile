@@ -626,3 +626,10 @@
 ;; remap C-a to `smarter-move-beginning-of-line'
 (global-set-key [remap move-beginning-of-line]
                 'smarter-move-beginning-of-line)
+
+
+;; Navigation entre les buffers
+(global-set-key (kbd "<C-tab>") 'next-buffer)
+(global-set-key (kbd "C-ù") 'next-buffer)
+(global-set-key (kbd "C-`") 'previous-buffer)
+(global-set-key (kbd "<C-S-tab>") 'previous-buffer)

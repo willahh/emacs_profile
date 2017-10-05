@@ -184,6 +184,7 @@
         toggle-truncate-lines
         undefined
         vc-dir-mark
+        vc-dir-next-line
         vc-dir-previous-line
         wgrep-finish-edit
         wil-tab-indent-or-complete-js

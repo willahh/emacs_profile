@@ -427,3 +427,6 @@
 
 ;; Keep cursor away from edges when scrolling up/down
 ;;(require 'smooth-scrolling)
+
+;; Disable mac frame tabbing (move with C-tab C-S-tab)
+(setq mac-frame-tabbing nil)
