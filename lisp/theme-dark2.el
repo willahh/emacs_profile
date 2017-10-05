@@ -117,7 +117,7 @@
 (set-face-attribute 'web-mode-current-element-highlight-face nil :foreground nil :background "#60a467")
 
 
-(set-face-attribute 'vhl/default-face nil :background "#000" :foreground "#00faff")
+(set-face-attribute 'vhl/default-face nil :background "#000" :foreground nil)
 (set-face-attribute 'font-lock-variable-name-face nil  :foreground "#8be9fd")
 ;; (set-face-attribute 'xah-css-class-selector nil  :foreground "#48fa7b")
 (set-face-attribute 'font-lock-function-name-face nil  :foreground "#ff79c6")
