@@ -226,6 +226,7 @@
 ;; ------ Multi cursor binding
 ;; Mouse
 (global-set-key (kbd "<M-down-mouse-1>") 'mc/add-cursor-on-click)
+(global-set-key (kbd "<mouse-3>") 'mac-mouse-buffer-menu)
 
 ;; All
 (global-set-key (kbd "M-L") 'mc/mark-all-words-like-this) ; Like in VS Code
@@ -539,6 +540,7 @@
 
 ;; Comment
 (global-set-key (kbd "s-/") 'comment-line)
+(global-set-key (kbd "M-/") 'comment-line)
 
 ;; Kill
 (global-set-key (kbd "s-k") 'kill-paragraph)
@@ -630,6 +632,6 @@
 
 ;; Navigation entre les buffers
 (global-set-key (kbd "<C-tab>") 'next-buffer)
-(global-set-key (kbd "C-ù") 'next-buffer)
-(global-set-key (kbd "C-`") 'previous-buffer)
+(global-set-key (kbd "C-ù") 'previous-buffer)
+(global-set-key (kbd "C-`") 'next-buffer)
 (global-set-key (kbd "<C-S-tab>") 'previous-buffer)
