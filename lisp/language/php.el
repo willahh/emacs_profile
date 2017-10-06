@@ -13,7 +13,7 @@
             (add-to-list (make-local-variable 'company-backends)
                          'company-ac-php-backend)
 
-            (eldoc-mode) ; el-doc
+            (eldoc-mode t) ; el-doc
             (ggtags-mode 1) ; ggtags-mode
             (flycheck-mode) ; flycheck-mode
             (set (make-local-variable 'highlight-symbol-mode) 't) ; Highlight-mode

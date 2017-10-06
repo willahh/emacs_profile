@@ -1233,4 +1233,13 @@ Version 2016-10-24"
 ;;                             (dtrt-indent-mode)
 ;;                             (dtrt-indent-adapt)))
 
-
+;; New wil-ide version.
+;; In progress
+(defun wil-ide ()
+  (interactive)
+  (projectile-dired)
+  (neotree-projectile-action)
+  (other-window 1)
+  (hrs/split-window-below-and-switch)
+  (window-resize (selected-window) -10)
+  (eshell "yo"))
