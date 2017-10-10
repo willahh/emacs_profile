@@ -435,4 +435,8 @@
 ;; some cases it can't work (custom indenteded file) and it's just
 ;; ANNOYING as fuck. TODO: Put this nil for web-mode only (when lot of
 ;; different languages are mixed together)
-(setq tab-always-indent nil)
+;;
+;; Note : Faire un toggle parce que les 2 sont utiles dans certains
+;; cas
+;; (setq tab-always-indent nil)
+(setq tab-always-indent t)

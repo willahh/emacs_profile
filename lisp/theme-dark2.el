@@ -188,3 +188,4 @@
 
 (set-face-attribute 'scroll-bar nil :background "#282a36")
 (set-face-attribute 'tide-hl-identifier-face nil :background "#356a4b" :foreground "#ffffff" :underline "yellow")
+(set-face-attribute 'link nil :foreground nil)
