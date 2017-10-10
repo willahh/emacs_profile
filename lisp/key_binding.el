@@ -143,7 +143,7 @@
 (evil-define-key 'normal 'dired-mode (kbd "TAB") 'dired-find-file)
 (evil-define-key 'normal org-mode-map (kbd "q") 'quit-window)
 
-(define-key evil-normal-state-map (kbd "M-n") 'evil-buffer-new)
+;; (define-key evil-normal-state-map (kbd "M-n") 'evil-buffer-new)
 
 ;; ---------------- Key binding
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
@@ -462,7 +462,12 @@
 (global-set-key [(meta shift o)] 'previous-multiframe-window)
 
 (define-key ggtags-navigation-map (kbd "M-p") 'highlight-symbol-next)
-(define-key ggtags-navigation-map (kbd "M-n") 'highlight-symbol-prev)
+(define-key ggtags-navigation-map (kbd "s-n") 'highlight-symbol-prev)
+
+;; Update to use, classical Meta-n to create a new buffer like in
+;; modern editors. Update highlight-symbol-prev to Super - M
+(define-key highlight-symbol-nav-mode-map (kbd "M-n") 'xah-new-empty-buffer)
+
 
 (global-set-key (kbd "<delete>") 'wil-delete-backspace)
 (define-key paredit-mode-map (kbd "<delete>") 'wil-delete-backspace)
