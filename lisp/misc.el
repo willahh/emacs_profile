@@ -1244,3 +1244,18 @@ Version 2016-10-24"
   (hrs/split-window-below-and-switch)
   (window-resize (selected-window) -10)
   (eshell "yo"))
+
+(window-divider-mode-apply nil)
+
+
+(defun wil-window-divider-off ()
+  (interactive)
+  (window-divider-mode-apply nil))
+
+(defun wil-window-divider-on ()
+  (interactive)
+  (window-divider-mode-apply t))
+
+(dired-at-point)
+
+(setq global-flycheck-mode t)

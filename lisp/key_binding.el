@@ -462,7 +462,7 @@
 (global-set-key [(meta shift o)] 'previous-multiframe-window)
 
 (define-key ggtags-navigation-map (kbd "M-p") 'highlight-symbol-next)
-(define-key ggtags-navigation-map (kbd "s-n") 'highlight-symbol-prev)
+(global-set-key (kbd "s-n") 'highlight-symbol-prev)
 
 ;; Update to use, classical Meta-n to create a new buffer like in
 ;; modern editors. Update highlight-symbol-prev to Super - M
@@ -621,6 +621,7 @@
 (define-key key-translation-map (kbd "C-S-i") (kbd "<backtab>"))
 
 (global-set-key (kbd "<M-backspace>") 'paredit-backward-kill-word)
+(global-set-key (kbd "<backspace>") 'delete-backward-char) ;; Override paredit-backward-kill-word behaviour for backspace
 (global-set-key [(meta shift /)] 'comment-or-uncomment-region-or-line)
 (global-set-key (kbd "s-:") 'delete-horizontal-space)
 (global-set-key (kbd "C-c ; c c s") 'clojure-cheatsheet)

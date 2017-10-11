@@ -44,10 +44,10 @@
 
 
 
-(defun wil-web-mode-hook ()
-  (flycheck-mode t)
-  )
-(add-hook 'web-mode 'wil-web-mode-hook)
+;; (defun wil-web-mode-hook ()
+;;   (flycheck-mode t)
+;;   )
+;; (add-hook 'web-mode 'wil-web-mode-hook)
 
 
 ;; https://emacs.stackexchange.com/questions/12946/how-tell-web-mode-to-use-tidy-syntaxchecker-in-flycheck
