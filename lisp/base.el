@@ -445,3 +445,5 @@
 ;; https://emacs.stackexchange.com/questions/22283/dired-group-directories-and-symlinks-to-directories-first
 (setq ls-lisp-dirs-first t)
 
+;; Show trailing whitespace
+(setq-default show-trailing-whitespace t)
