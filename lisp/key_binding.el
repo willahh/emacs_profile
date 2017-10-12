@@ -574,8 +574,11 @@
 (global-set-key (kbd "s-s") 'helm-swoop)
 (global-set-key (kbd "C-c C-s-s") 'swiper)
 
+;; vc
 (global-set-key (kbd "s-w") 'vc-diff)
 (global-set-key (kbd "s-W") 'vc-ediff)
+(define-key vc-dir-mode-map (kbd "C-M-i") 'vc-dir-previous-directory)
+(define-key diff-mode-map (kbd "C-M-i") 'diff-hunk-prev)
 
 ;; avy
 (global-set-key (kbd "C-ù") 'avy-goto-word-1)

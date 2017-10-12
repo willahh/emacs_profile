@@ -127,7 +127,8 @@
 
 
 
-
+(set-face-attribute 'diff-header nil :background nil :foreground "#fff")
+(set-face-attribute 'diff-file-header nil :background "#000" :foreground "#fff")
 
 
 
