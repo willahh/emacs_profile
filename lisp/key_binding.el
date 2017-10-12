@@ -564,7 +564,8 @@
 ;; Scroll commands
 (global-set-key (kbd "s-v") 'evil-scroll-up)
 (global-set-key (kbd "s-x") 'counsel-M-x)
-(global-set-key (kbd "s-g") 'magit-status)
+;; (global-set-key (kbd "s-g") 'magit-status)
+(global-set-key (kbd "s-g") 'wil-vc-status)
 (global-set-key (kbd "s-D") 'projectile-dired)
 (global-set-key (kbd "s-i") 'emmet-expand-line)
 (define-key emacs-lisp-mode-map (kbd "C-c C-c") 'eval-defun)

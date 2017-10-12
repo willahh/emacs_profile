@@ -1279,3 +1279,13 @@ the checking happens for all pairs in auto-minor-mode-alist"
         (if (string-match (caar alist) name)
             (funcall (cdar alist) 1))
         (setq alist (cdr alist))))))
+
+
+(defun wil-vc-status ()
+  "Switch to either SVN status or GIT status"
+  (interactive)
+  (let ((vc-type (vc-backend (copy-file-path))))
+    (if (string= vc-type "SVN")
+        (wil-vc-dir)
+      (magit-status))))
+
