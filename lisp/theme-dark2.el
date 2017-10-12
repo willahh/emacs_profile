@@ -13,10 +13,6 @@
 ;; Rainbow delimiter faces
 
 
-((((((((((((((((((((((((((((((((()))))))))))))))))))))))))))))))))
-
-
-
 
 (custom-set-faces
  '(rainbow-delimiters-depth-1-face ((t (:foreground "#5abeee"))))

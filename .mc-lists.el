@@ -114,6 +114,7 @@
         sp-forward-sexp
         sp-kill-hybrid-sexp
         sp-kill-sexp
+        sp-up-sexp
         string-inflection-all-cycle
         tab-indent-or-complete
         tern-ac-dot-complete
@@ -125,6 +126,7 @@
         whole-line-or-region-kill-region
         wil-copy
         wil-delete-backspace
+        wil-duplicate
         wil-tab-indent-or-complete-css
         wlh-tab-indent-or-complete-web
         xah-toggle-letter-case

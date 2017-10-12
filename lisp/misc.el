@@ -1256,6 +1256,4 @@ Version 2016-10-24"
   (interactive)
   (window-divider-mode-apply t))
 
-(dired-at-point)
-
 (setq global-flycheck-mode t)
