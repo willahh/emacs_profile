@@ -1,3 +1,4 @@
+(require 'dracula-theme)
 (require 'org)
 (require 'ediff)
 
@@ -86,17 +87,21 @@
 
 
 ;; Text selection
-(set-face-attribute 'region nil :background "#275f99" :foreground nil :box nil)
-(set-face-attribute 'lazy-highlight nil :background "#149591" :foreground nil :box nil)
-
-;; (add-hook 'dracula-theme (lambda ()
-;;                             (set-face-attribute 'region nil :background "#275f99" :foreground nil :box nil)))
+;; (set-face-attribute 'region nil :background "#275f99" :foreground nil :box nil)
+;; (set-face-attribute 'lazy-highlight nil :background "#149591" :foreground nil :box nil)
 
 ;; I-search
-(set-face-attribute 'isearch nil :background "#ffe400" :foreground nil)
 ;; (set-face-attribute 'isearch-lazy-highlight nil :background "#4f5d66")
-(set-face-attribute 'lazy-highlight nil :background "#4f5d66" :underline t)
 ;; (set-face-attribute 'lazy-highlight nil :background "#4f5d66" (:underline (:style wave :color "#F4EB80")))
+
+;; (set-face-attribute 'isearch nil :background "#ffe400" :foreground nil)
+;; (set-face-attribute 'lazy-highlight nil :background "#4f5d66" :underline t)
+
+(custom-theme-set-faces
+           'dracula
+           '(region ((t (:background "#275f99" :foreground nil))))
+           '(isearch ((t (:background "#ffe400" :foreground nil))))
+           '(lazy-highlight ((t (:background "#4f5d66" :underline t)))))
 
 
 ;; ------ Dired
@@ -143,8 +148,6 @@
 (set-face-attribute 'hydra-face-pink nil :foreground "#fc1a9f")
 (set-face-attribute 'hydra-face-red nil :foreground "#fc1a9f")
 (set-face-attribute 'hydra-face-teal nil :foreground "#5fbfec")
-
-(set-face-attribute 'lazy-highlight nil :background "green")
 
 (set-face-attribute 'scroll-bar nil :background "#282a36")
 (set-face-attribute 'tide-hl-identifier-face nil :background "#356a4b" :foreground "#ffffff" :underline "yellow")
