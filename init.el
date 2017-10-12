@@ -54,11 +54,10 @@
 ;; -> prog-mode-hook
 
 (defun update-syntax-entry ()
-      (modify-syntax-entry ?_ "w")
-)
+  (modify-syntax-entry ?_ "w"))
+
 (update-syntax-entry)
 (add-hook 'prog-mode-hook (lambda () (update-syntax-entry)))
-
 
 ;; -------------- custom-set-variables
 (custom-set-variables
@@ -94,22 +93,6 @@
 (put 'narrow-to-page 'disabled nil)
 (put 'narrow-to-region 'disabled nil)
 (put 'set-goal-column 'disabled nil)
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(markdown-code-face ((t (:inherit fixed-pitch :background "#2e303e" :width normal))))
- '(mode-line ((t (:box (:line-width 0)))))
- '(rainbow-delimiters-depth-1-face ((t (:foreground "#5abeee"))))
- '(rainbow-delimiters-depth-2-face ((t (:foreground "#ff00a0"))))
- '(rainbow-delimiters-depth-3-face ((t (:foreground "#d2ff00"))))
- '(rainbow-delimiters-depth-4-face ((t (:foreground "#66ff66"))))
- '(rainbow-delimiters-depth-5-face ((t (:foreground "#907373"))))
- '(rainbow-delimiters-depth-6-face ((t (:foreground "#cc99ff"))))
- '(rainbow-delimiters-depth-7-face ((t (:foreground "#fa75e2"))))
- '(rainbow-delimiters-depth-8-face ((t (:foreground "#55bdf0"))))
- '(scroll-bar ((t (:background "magenta")))))
 (put 'scroll-left 'disabled nil)
 (put 'scroll-bottom 'disabled nil)
 (put 'upcase-region 'disabled nil)

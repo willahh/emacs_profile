@@ -63,6 +63,8 @@
                     :background "#000")
 
 
+
+
 ;; Cursor / caret state color
 (setq evil-emacs-state-cursor '("#ff00d2" bar))
 (setq evil-normal-state-cursor '("#98cf15" box))
@@ -78,6 +80,10 @@
 ;; Fringe
 (set-face-attribute 'fringe nil :background nil :slant 'normal)
 (set-face-attribute 'fringe nil :background "#1a1c1d" :slant 'normal)
+
+(set-face-attribute 'window-divider nil :foreground "#1a1c1d")
+(set-face-attribute 'window-divider-first-pixel nil :foreground "#1a1c1d")
+(set-face-attribute 'window-divider-last-pixel nil :foreground "#1a1c1d")
 ;; (set-window-margins nil 4)
 (set-window-margins nil 0)
 

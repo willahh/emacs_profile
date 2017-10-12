@@ -59,6 +59,11 @@
 (global-set-key (kbd "C-c ; c s") (quote thing-copy-string-to-mark))
 (global-set-key (kbd "C-c ; c a") (quote thing-copy-parenthesis-to-mark))
 
+;; 
+(global-set-key (kbd "C-c ; d y") 'wil-window-divider-on) ;; (Translate : C-c (user main prefix) + ; (my prefix) + [d]ivider + [y]es)
+(global-set-key (kbd "C-c ; d n") 'wil-window-divider-off) ;; (Translate : C-c (user main prefix) + ; (my prefix) + [d]ivider + [n]o)
+
+
 ;; -- Text operations
 ;; Copy operations
 (global-set-key (kbd "C-c ; c w") (quote copy-word))
@@ -234,7 +239,7 @@
 ;; Next
 (global-set-key (kbd "°") 'mc/mark-next-like-this-word) ; ALT+d
 (global-set-key (kbd "∂") 'mc/mark-next-like-this-word) ; ALT+d
-(define-key paredit-mode-map (kbd "°") 'mc/mark-next-like-this-word) ; ALT+d
+;; (define-key paredit-mode-map (kbd "°") 'mc/mark-next-like-this-word) ; ALT+d
 (define-key paredit-mode-map (kbd "∂") 'mc/mark-next-like-this-word) ; ALT+d
 
 ;; Previous
