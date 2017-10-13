@@ -136,8 +136,9 @@
 (evil-leader/set-leader "<SPC>")
 
 ;; ---------------- key-hord Note : Ralentis beaucoup la saisie Ne pas
-(key-chord-define-global "xc" 'er/expand-region)
-(key-chord-define-global "wx" 'er/contract-region)
+;; (key-chord-define-global "xc" 'er/expand-region) ; Update to <w because wx can be triggered too often (when leaving emacs C-x C-c)
+;; (key-chord-define-global "<w" 'er/expand-region)
+;; (key-chord-define-global "wx" 'er/contract-region)
 (key-chord-define evil-emacs-state-map "jk" 'evil-normal-state)
 (key-chord-define evil-normal-state-map "jk" 'evil-emacs-state)
 (key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
@@ -367,7 +368,7 @@
 (define-key help-mode-map (kbd "b") 'backward-char)
 
 ;; search in line
-;; (global-set-key (kbd "C-c C-s") 'avy-goto-char-in-line)
+;; (global-set-key (kbd "C-c C-s") 'avy-goto-char-in-line) ; Disable : Too long key
 
 ;; Align your code in a pretty way.
 (global-set-key (kbd "C-x \\") 'align-regexp)
@@ -569,6 +570,9 @@
 ;; Find
 (global-set-key (kbd "s-f") 'counsel-find-file)
 
+;; ------- Line navigation commands
+;; (global-set-key (kbd "s-l") 'avy-goto-char-in-line) ; Not used
+
 ;; Browse comands
 (global-set-key (kbd "s-p") 'projectile-find-file)
 (global-set-key (kbd "s-q") 'my-abort-recursive-edit)
@@ -580,7 +584,8 @@
 ;; (global-set-key (kbd "s-v") 'evil-scroll-up) ; too slow
 (global-set-key (kbd "s-v") 'scroll-down)
 (global-set-key (kbd "s-x") 'counsel-M-x)
-(global-set-key (kbd "s-g") 'magit-status)
+;; (global-set-key (kbd "s-g") 'magit-status)
+(global-set-key (kbd "s-g") 'wil-vc-status)
 (global-set-key (kbd "s-D") 'projectile-dired)
 (global-set-key (kbd "s-i") 'emmet-expand-line)
 (define-key emacs-lisp-mode-map (kbd "C-c C-c") 'eval-defun)
@@ -589,8 +594,11 @@
 (global-set-key (kbd "s-s") 'helm-swoop)
 (global-set-key (kbd "C-c C-s-s") 'swiper)
 
+;; vc
 (global-set-key (kbd "s-w") 'vc-diff)
 (global-set-key (kbd "s-W") 'vc-ediff)
+(define-key vc-dir-mode-map (kbd "C-M-i") 'vc-dir-previous-directory)
+(define-key diff-mode-map (kbd "C-M-i") 'diff-hunk-prev)
 
 ;; avy
 (global-set-key (kbd "C-à") 'avy-goto-word-1)
@@ -641,9 +649,11 @@
 (global-set-key [remap move-beginning-of-line]
                 'smarter-move-beginning-of-line)
 
-
 ;; Navigation entre les buffers
 (global-set-key (kbd "<C-tab>") 'next-buffer)
 (global-set-key (kbd "C-ù") 'previous-buffer)
 (global-set-key (kbd "C-`") 'next-buffer)
 (global-set-key (kbd "<C-S-tab>") 'previous-buffer)
+
+;; ---------------- Markdown
+(define-key markdown-mode-map (kbd "C-M-i") 'markdown-shifttab)

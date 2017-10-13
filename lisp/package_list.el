@@ -11,6 +11,7 @@
   hydra
   paredit
   paredit-everywhere
+  inf-clojure
   syslog-mode
   yaml-mode
   impatient-mode

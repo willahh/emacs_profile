@@ -1,6 +1,8 @@
 (require 'dracula-theme)
 (require 'org)
 (require 'ediff)
+(require 'scroll-bar)
+(require 'faces)
 
 (load-theme 'dracula t)
 
@@ -122,6 +124,32 @@
 (set-face-attribute 'font-lock-function-name-face nil  :foreground "#ff79c6")
 (set-face-attribute 'font-lock-keyword-face nil  :foreground "#bd93f9")
 
+(set-face-attribute 'diff-header nil :background nil :foreground "#fff")
+(set-face-attribute 'diff-file-header nil :background "#000" :foreground "#fff")
+
+
+
+;; (set-face-attribute 'ediff-current-diff-A nil :foreground "#c792ea" :background "#161616")
+;; (set-face-attribute 'ediff-current-diff-Ancestor nil :foreground "#fff" :background "#fc5572")
+;; (set-face-attribute 'ediff-current-diff-B nil :foreground "#c792ea" :background "#161616")
+;; (set-face-attribute 'ediff-current-diff-C nil :foreground "#c792ea" :background nil)
+
+;;
+;; (set-face-attribute 'ediff-even-diff-A nil :foreground "#c792ea" :background "#161616")
+;; (set-face-attribute 'ediff-even-diff-Ancestor nil :foreground "#fff" :background "161616")
+;; (set-face-attribute 'ediff-even-diff-B nil :foreground "#c792ea" :background "#161616")
+;; (set-face-attribute 'ediff-even-diff-C nil :foreground "#c792ea" :background "#161616")
+
+;; (set-face-attribute 'ediff-fine-diff-A nil :foreground "#000" :background "#fc5572")
+;; (set-face-attribute 'ediff-fine-diff-Ancestor nil :foreground "#fff" :background "red")
+;; (set-face-attribute 'ediff-fine-diff-B nil :foreground "#000" :background "#c792ea")
+;; (set-face-attribute 'ediff-fine-diff-C nil :foreground "#000" :background "#c792ea")
+
+;; (set-face-attribute 'ediff-odd-diff-A nil :foreground "#c792ea" :background nil :box nil)
+;; (set-face-attribute 'ediff-odd-diff-Ancestor nil :foreground "#fff" :background nil :box nil)
+;; (set-face-attribute 'ediff-odd-diff-B nil :foreground "#c792ea" :background nil :box nil)
+;; (set-face-attribute 'ediff-odd-diff-C nil :foreground "#c792ea" :background "#161616" :box nil)
+
 (set-face-attribute 'ediff-even-diff-A nil :foreground nil :background "#000")
 (set-face-attribute 'ediff-even-diff-B nil :foreground nil :background "#000")
 (set-face-attribute 'ediff-odd-diff-A nil :foreground nil :background "#000")
@@ -158,3 +186,11 @@
 (set-face-attribute 'scroll-bar nil :background "#282a36")
 (set-face-attribute 'tide-hl-identifier-face nil :background "#356a4b" :foreground "#ffffff" :underline "yellow")
 (set-face-attribute 'link nil :foreground nil)
+(set-face-attribute 'lazy-highlight nil :background "green")
+(set-face-attribute 'scroll-bar nil :background "#000")
+(set-face-attribute 'tide-hl-identifier-face nil :background "#356a4b" :foreground "#ffffff" :underline "yellow")
+
+;; (set-face-attribute 'scroll-bar-background nil :background "#282a36") 
+
+;; rirc
+;; (set-face-attribute 'irc nil :background "##ff79c6" :foreground "#ffffff" :underline "yellow")
