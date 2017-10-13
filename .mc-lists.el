@@ -182,6 +182,7 @@
         previous-multiframe-window
         projectile-find-file-dwim
         resize-window
+        textmate-backspace2
         toggle-truncate-lines
         undefined
         vc-dir-mark

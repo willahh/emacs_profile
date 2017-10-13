@@ -235,6 +235,8 @@
 
 ;; All
 (global-set-key (kbd "M-L") 'mc/mark-all-words-like-this) ; Like in VS Code
+(global-set-key (kbd "<f6>") 'dired-jump)
+(global-set-key (kbd "<f7>") 'projectile-dired)
 
 ;; Next
 (global-set-key (kbd "°") 'mc/mark-next-like-this-word) ; ALT+d
