@@ -79,7 +79,7 @@
  '(helm-ag-insert-at-point (quote symbol))
  '(helm-source-names-using-follow
    (quote
-    ("Search at ~/www/test/clojurescript/02/" "Search at /usr/local/Cellar/emacs-mac/emacs-25.3-mac-6.8/share/emacs/25.3/lisp/" "Search at ~/.emacs.d/" "Search at ~/Documents/test/clojure/clojureadmin/src/my_webapp/" "Search at ~/www/test/clojure/clojure-web-app/src/" "Search at ~/.emacs.d/lisp/" "Search at ~/www/test/clojure/myproject2/src/clj/myproject2/" "Search at ~/www/test/reactnative/react-redux-realworld-example-app/src/components/" "Imenu")))
+    ("Search at ~/.emacs.d/elpa/multiple-cursors-1.4.0/" "Search at ~/www/project/arsia/goacrop/lib/cropperjs/src/js/" "Search at ~/www/test/clojurescript/02/" "Search at /usr/local/Cellar/emacs-mac/emacs-25.3-mac-6.8/share/emacs/25.3/lisp/" "Search at ~/.emacs.d/" "Search at ~/Documents/test/clojure/clojureadmin/src/my_webapp/" "Search at ~/www/test/clojure/clojure-web-app/src/" "Search at ~/.emacs.d/lisp/" "Search at ~/www/test/clojure/myproject2/src/clj/myproject2/" "Search at ~/www/test/reactnative/react-redux-realworld-example-app/src/components/" "Imenu")))
  '(ido-enable-flex-matching t)
  '(magit-dispatch-arguments nil)
  '(package-selected-packages
@@ -160,6 +160,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(default ((((class color) (min-colors 89)) (:background "#282a36" :foreground "#f8f8f2"))))
  '(rainbow-delimiters-depth-1-face ((t (:foreground "#5abeee"))))
  '(rainbow-delimiters-depth-2-face ((t (:foreground "#ff00a0"))))
  '(rainbow-delimiters-depth-3-face ((t (:foreground "#d2ff00"))))

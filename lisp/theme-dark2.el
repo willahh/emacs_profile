@@ -194,3 +194,12 @@
 
 ;; rirc
 ;; (set-face-attribute 'irc nil :background "##ff79c6" :foreground "#ffffff" :underline "yellow")
+
+;; Disable bold
+(set-face-bold-p 'bold nil)
+
+(mapc
+ (lambda (face)
+        (when (eq (face-attribute face :weight) 'bold)
+          (set-face-attribute face nil :weight 'normal)))
+ (face-list))
