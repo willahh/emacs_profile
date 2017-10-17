@@ -3,6 +3,8 @@
 
 
 (setq web-mode-enable-block-partial-invalidation t) ; Perf improvement !
+;; (setq web-mode-enable-current-column-highlight nil) ; Perf
+;; (setq web-mode-enable-current-element-highlight nil) ; Perf
 
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))

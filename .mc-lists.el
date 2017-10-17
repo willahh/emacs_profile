@@ -132,6 +132,7 @@
         xah-toggle-letter-case
         yank-rectangle
         yas-expand
+        textmate-backspace2
         ))
 
 (setq mc/cmds-to-run-once

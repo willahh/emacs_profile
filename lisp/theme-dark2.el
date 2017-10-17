@@ -109,7 +109,12 @@
            'dracula
            '(region ((t (:background "#275f99" :foreground nil))))
            '(isearch ((t (:background "#ffe400" :foreground nil))))
-           '(lazy-highlight ((t (:background "#4f5d66" :underline t)))))
+           '(lazy-highlight ((t (:background "#4f5d66" :underline t))))
+           '(set-face-attribute 'link nil :foreground nil))
+
+
+;; ------- Font
+(set-frame-font "Office Code Pro:antialias=1")
 
 
 ;; ------ Dired

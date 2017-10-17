@@ -79,7 +79,7 @@
  '(helm-ag-insert-at-point (quote symbol))
  '(helm-source-names-using-follow
    (quote
-    ("Search at ~/.emacs.d/elpa/multiple-cursors-1.4.0/" "Search at ~/www/project/arsia/goacrop/lib/cropperjs/src/js/" "Search at ~/www/test/clojurescript/02/" "Search at /usr/local/Cellar/emacs-mac/emacs-25.3-mac-6.8/share/emacs/25.3/lisp/" "Search at ~/.emacs.d/" "Search at ~/Documents/test/clojure/clojureadmin/src/my_webapp/" "Search at ~/www/test/clojure/clojure-web-app/src/" "Search at ~/.emacs.d/lisp/" "Search at ~/www/test/clojure/myproject2/src/clj/myproject2/" "Search at ~/www/test/reactnative/react-redux-realworld-example-app/src/components/" "Imenu")))
+    ("Search at ~/www/project/easy3p/easy3p_3.2_lot2/dev/module/flatplan/js/" "Search at ~/.emacs.d/elpa/multiple-cursors-1.4.0/" "Search at ~/www/project/arsia/goacrop/lib/cropperjs/src/js/" "Search at ~/www/test/clojurescript/02/" "Search at /usr/local/Cellar/emacs-mac/emacs-25.3-mac-6.8/share/emacs/25.3/lisp/" "Search at ~/Documents/test/clojure/clojureadmin/src/my_webapp/" "Search at ~/www/test/clojure/clojure-web-app/src/" "Search at ~/www/test/clojure/myproject2/src/clj/myproject2/" "Search at ~/www/test/reactnative/react-redux-realworld-example-app/src/components/" "Imenu")))
  '(ido-enable-flex-matching t)
  '(magit-dispatch-arguments nil)
  '(package-selected-packages
