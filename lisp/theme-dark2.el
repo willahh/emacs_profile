@@ -1,12 +1,10 @@
-;; (require 'dracula-theme)
-(require 'dark-theme)
+(require 'dracula-theme)
 (require 'org)
 (require 'ediff)
 (require 'scroll-bar)
 (require 'faces)
 
-;; (load-theme 'dracula t)
-(load-theme 'dark t)
+(load-theme 'dracula t)
 
 (setq-default line-spacing 2) ; Same line height as modern editor (VS Code)
 
@@ -25,8 +23,8 @@
  '(rainbow-delimiters-depth-8-face ((t (:foreground "#55bdf0")))))
 
 ;; white-space         
-;; (set-face-attribute 'trailing-whitespace nil :background "#0f1010")
-;; (set-face-attribute 'web-mode-whitespace-face nil :background "#0f1010")
+(set-face-attribute 'trailing-whitespace nil :background "#0f1010")
+(set-face-attribute 'web-mode-whitespace-face nil :background "#0f1010")
 
 (defun powerline-theme-emacs()
   (set-face-attribute 'mode-line nil
@@ -59,8 +57,15 @@
 
 (set-face-background 'show-paren-match "#9a00ff")
 
-;; (set-face-attribute 'js2-error nil :foreground "#fff")
-;; (set-face-attribute 'yas-field-highlight-face nil :foreground "#fff":background "#000")
+(set-face-attribute 'js2-error nil
+                    :foreground "#fff")
+
+(set-face-attribute 'yas-field-highlight-face nil
+                    :foreground "#fff"
+                    :background "#000")
+
+
+
 
 ;; Cursor / caret state color
 (setq evil-emacs-state-cursor '("#ff00d2" bar))
@@ -88,6 +93,7 @@
                          (setq nlinum-format "%4d \u2502 ")
                          (set-face-foreground 'linum "#6272a4")))
 
+
 ;; Text selection
 ;; (set-face-attribute 'region nil :background "#275f99" :foreground nil :box nil)
 ;; (set-face-attribute 'lazy-highlight nil :background "#149591" :foreground nil :box nil)
@@ -99,16 +105,17 @@
 ;; (set-face-attribute 'isearch nil :background "#ffe400" :foreground nil)
 ;; (set-face-attribute 'lazy-highlight nil :background "#4f5d66" :underline t)
 
-;; (custom-theme-set-faces
-;;            'dark
-;;            '(region ((t (:background "#275f99" :foreground nil))))
-;;            '(isearch ((t (:background "#ffe400" :foreground nil))))
-;;            '(lazy-highlight ((t (:background "#4f5d66" :underline t))))
-;;            '(set-face-attribute 'link nil :foreground nil))
+(custom-theme-set-faces
+           'dracula
+           '(region ((t (:background "#275f99" :foreground nil))))
+           '(isearch ((t (:background "#ffe400" :foreground nil))))
+           '(lazy-highlight ((t (:background "#4f5d66" :underline t))))
+           '(set-face-attribute 'link nil :foreground nil))
 
 
 ;; ------- Font
 (set-frame-font "Office Code Pro:antialias=1")
+
 
 ;; ------ Dired
 (set-face-attribute 'dired-header nil :foreground "#48fa7b" :background nil)
@@ -116,10 +123,12 @@
 (set-face-attribute 'dired-perm-write nil :foreground "#34aeff" :background nil)
 (set-face-attribute 'web-mode-current-element-highlight-face nil :foreground nil :background "#60a467")
 
+
 (set-face-attribute 'vhl/default-face nil :background "#000" :foreground nil)
 (set-face-attribute 'font-lock-variable-name-face nil  :foreground "#8be9fd")
 (set-face-attribute 'font-lock-function-name-face nil  :foreground "#ff79c6")
 (set-face-attribute 'font-lock-keyword-face nil  :foreground "#bd93f9")
+
 
 (set-face-attribute 'magit-diff-removed-highlight nil :background nil :foreground "#ff536a")
 (set-face-attribute 'magit-diff-removed nil :background nil :foreground "#ff536a")
@@ -139,6 +148,7 @@
 
 ;; Magit
 (set-face-attribute 'magit-diff-context-highlight nil :background "#1a1c1d")
+
 
 ;; (set-face-attribute 'ediff-current-diff-A nil :foreground "#c792ea" :background "#161616")
 ;; (set-face-attribute 'ediff-current-diff-Ancestor nil :foreground "#fff" :background "#fc5572")
@@ -211,6 +221,6 @@
 
 (mapc
  (lambda (face)
-   (when (eq (face-attribute face :weight) 'bold)
-     (set-face-attribute face nil :weight 'normal)))
+        (when (eq (face-attribute face :weight) 'bold)
+          (set-face-attribute face nil :weight 'normal)))
  (face-list))

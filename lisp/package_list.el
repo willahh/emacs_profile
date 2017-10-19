@@ -126,11 +126,6 @@
   iy-go-to-char
   flx-ido))
 
-
-
-(load "~/.emacs.d/lisp/theme-dark/dark-theme.el")
-
-
 (add-to-list 'load-path "~/.emacs.d/vendor/emacs-async")
 (add-to-list 'load-path "~/.emacs.d/vendor/emacs-textmate-0.1/textmate.el")
 (add-to-list 'load-path "~/.emacs.d/vendor/helm")
