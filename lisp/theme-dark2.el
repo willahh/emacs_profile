@@ -136,6 +136,14 @@
 (set-face-attribute 'magit-diff-added nil :background nil :foreground "#c3e886")
 (set-face-attribute 'magit-diff-added-highlight nil :background nil :foreground "#c3e886")
 
+(set-face-attribute 'diff-indicator-removed nil :background nil :foreground "#86d9fb")
+(set-face-attribute 'diff-indicator-added nil :background nil :foreground "#86d9fb")
+(set-face-attribute 'diff-removed nil :background nil :foreground "#ff536a")
+(set-face-attribute 'diff-added nil :background nil :foreground "#c3e886")
+(set-face-attribute 'diff-hunk-header nil :background "#fff" :foreground "#000")
+(set-face-attribute 'diff-context nil :background nil :foreground "#ccc")
+(set-face-attribute 'diff-header nil :background nil :foreground "#fff")
+
 ;; Magit
 (set-face-attribute 'magit-diff-context-highlight nil :background "#1a1c1d")
 
