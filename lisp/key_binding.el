@@ -288,7 +288,7 @@
 
 (define-key iedit-mode-keymap (kbd "C-h") 'paredit-backward-delete)
 
-(global-set-key (kbd "C-c t") 'toggle-truncate-lines)
+(global-set-key (kbd "C-c ; t") 'toggle-truncate-lines)
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 (global-set-key (kbd "C-c C-n") 'diff-hl-next-hunk)
 (define-key web-mode-map (kbd "C-c C-n") 'diff-hl-next-hunk)
