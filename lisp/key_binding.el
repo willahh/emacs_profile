@@ -83,6 +83,8 @@
   (neotree-projectile-action)
   (other-window 1))
 
+;; Google
+(global-set-key (kbd "C-c ; g") 'helm-google-suggest)
 
 
 ;; -- linium

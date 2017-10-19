@@ -129,12 +129,11 @@
 (set-face-attribute 'font-lock-function-name-face nil  :foreground "#ff79c6")
 (set-face-attribute 'font-lock-keyword-face nil  :foreground "#bd93f9")
 
-(set-face-attribute 'diff-header nil :background nil :foreground "#fff")
-(set-face-attribute 'diff-file-header nil :background "#000" :foreground "#fff")
+(set-face-attribute 'diff-header nil :background "#1a1c1d" :foreground "#fff")
+(set-face-attribute 'diff-file-header nil :background "#fff" :foreground "#000")
 
 ;; Magit
 (set-face-attribute 'magit-diff-context-highlight nil :background "#1a1c1d")
-
 
 
 ;; (set-face-attribute 'ediff-current-diff-A nil :foreground "#c792ea" :background "#161616")
