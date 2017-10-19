@@ -1,6 +1,6 @@
 (require 'package)
 (setq package-list '(
-  ;; powerline
+  powerline
   undo-tree
   sr-speedbar
   wgrep
@@ -133,9 +133,9 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/avy-menu")
 (add-to-list 'load-path "~/.emacs.d/vendor/ace-window")
 (add-to-list 'load-path "~/.emacs.d/vendor/emacs-helm-ag")
-;; (add-to-list 'load-path "~/.emacs.d/vendor/emacs-powerline")
+(add-to-list 'load-path "~/.emacs.d/vendor/emacs-powerline")
 (add-to-list 'load-path "~/.emacs.d/vendor/webmode")
-;; (add-to-list 'load-path "~/.emacs.d/vendor/emacspowerline")
+(add-to-list 'load-path "~/.emacs.d/vendor/emacspowerline")
 (add-to-list 'load-path "~/.emacs.d/vendor/find-file-in-project")
 (add-to-list 'load-path "~/.emacs.d/vendor/ivy_buffer_extend")
 (add-to-list 'load-path "~/.emacs.d/vendor/helm-swoop")

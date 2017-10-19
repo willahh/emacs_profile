@@ -1323,8 +1323,6 @@ the checking happens for all pairs in auto-minor-mode-alist"
           (error "No number at point"))
       (replace-match (number-to-string (+ 10 (string-to-number (match-string 0))))))
 
-
-
 (defun decrement-number-at-point ()
       (interactive)
       (skip-chars-backward "0-9")
@@ -1337,7 +1335,8 @@ the checking happens for all pairs in auto-minor-mode-alist"
       (skip-chars-backward "0-9")
       (or (looking-at "[0-9]+")
           (error "No number at point"))
-      (replace-match (number-to-string (- 10 (string-to-number (match-string 0))))))
+      (replace-match (number-to-string (- (string-to-number (match-string 0)) 10))))
+
 
 ;; Hydra for incremnet at point
 (defhydra wil-hydra-increment-at-point (:color teal :columns 5
@@ -1351,4 +1350,8 @@ the checking happens for all pairs in auto-minor-mode-alist"
 (global-set-key (kbd "C-c ; i") 'wil-hydra-increment-at-point/body)
 
 
+(defun wil-open-file-in-browser ()
+  (interactive)
+  (buffer-file-name))
 
+; (cons (split-string (quote "/Users/wravel/www/project/arsia/arsia_standard_310/dev/sygesp/test.php") "/"))

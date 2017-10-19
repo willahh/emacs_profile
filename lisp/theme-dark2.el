@@ -27,34 +27,34 @@
 (set-face-attribute 'trailing-whitespace nil :background "#0f1010")
 (set-face-attribute 'web-mode-whitespace-face nil :background "#0f1010")
 
-;; (defun powerline-theme-emacs()
-;;   (set-face-attribute 'mode-line nil
-;;                       :foreground "#000"
-;;                       :background "#56b0ec"
-;;                       :box nil))
+(defun powerline-theme-emacs()
+  (set-face-attribute 'mode-line nil
+                      :foreground "#000"
+                      :background "#56b0ec"
+                      :box nil))
 
-;; (defun powerline-theme-visual()
-;;   (set-face-attribute 'mode-line nil
-;;                       :foreground "#000"
-;;                       :background "#ffba00"
-;;                       :box nil))
+(defun powerline-theme-visual()
+  (set-face-attribute 'mode-line nil
+                      :foreground "#000"
+                      :background "#ffba00"
+                      :box nil))
 
-;; (defun powerline-theme-insert()
-;;   (set-face-attribute 'mode-line nil
-;;                       :foreground "#000"
-;;                       :background "red"
-;;                       :box nil))
+(defun powerline-theme-insert()
+  (set-face-attribute 'mode-line nil
+                      :foreground "#000"
+                      :background "red"
+                      :box nil))
 
-;; (defun powerline-theme-normal()
-;;   (set-face-attribute 'mode-line nil
-;;                       :foreground "#000"
-;;                       :background "#98cf15"
-;;                       :box nil))
+(defun powerline-theme-normal()
+  (set-face-attribute 'mode-line nil
+                      :foreground "#000"
+                      :background "#98cf15"
+                      :box nil))
 
-;; (add-hook 'evil-normal-state-entry-hook 'powerline-theme-normal)
-;; (add-hook 'evil-visual-state-entry-hook 'powerline-theme-visual)
-;; (add-hook 'evil-insert-state-entry-hook 'powerline-theme-insert)
-;; (add-hook 'evil-emacs-state-entry-hook 'powerline-theme-emacs)
+(add-hook 'evil-normal-state-entry-hook 'powerline-theme-normal)
+(add-hook 'evil-visual-state-entry-hook 'powerline-theme-visual)
+(add-hook 'evil-insert-state-entry-hook 'powerline-theme-insert)
+(add-hook 'evil-emacs-state-entry-hook 'powerline-theme-emacs)
 
 (set-face-background 'show-paren-match "#9a00ff")
 
