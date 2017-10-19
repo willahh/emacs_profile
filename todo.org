@@ -80,84 +80,33 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 
 * Tasks
 :VISIBILITY: all
-** DONE em C-h ne fonctionne pas dans le mini panneau du bas (visible sur l'ouverture d'n fichier)
-   [2017-08-07 Mon]
 ** TODO Ajouter un bind C-space en mode company pour afficher / masquer la documentation (comportement moderne)
 
-** TODO em : Parenthèses de toute les couleurs uniquement pour lisp elisp clisp
-   [2017-08-09 Wed]
-   [[file:~/www/project/rb_3d/rb_3d_1.0/dev/module/project/list.php]]
-** TODO em Remettre M-q original, paredit prend le pas
-   [2017-08-18 Fri]
-   [[file:~/www/project/rb_3d/rb_3d_1.0/dev/layout/style.css::/*%20Mauvais%20padding%20top%20lorsque%20logge%20sur%20la%20page%20configure%20en%20mobile%20*/][file:~/www/project/rb_3d/rb_3d_1.0/dev/layout/style.css::/* Mauvais
-   padding top lorsque logge sur la page configure en mobile */]]
-
-** TODO em : Nouvelle frame : Mettre le mode projectile sur le buffer actif
-   [2017-07-28 Fri]
-   [[file:~/.Trash]]
-** TODO Voir pour retirer les onglets du haut
-
-
 ** TODO Ag result buffer : C-o : Open in new window
-** DONE Réduire la hauteur du bandeau du bas
 ** TODO Activer le highlight en mode php
-** TODO Remettre trailing whitespace sauf pour eww
-** TODO Remettre un bind pour org mode pour faire des checkbox
 ** TODO Tester l'alternative a AG pour la recherche (le plus récent)
-** TODO Mini buffer : Ne pas afficher lde scrollbar
+** TODO Mini buffer : Ne pas afficher de scrollbar
 ** TODO Ajouter un bind ALT + arrow up / down sur drags
-** DONE Activer Paredit sur le racourcis C-h (delete backward)
-** DONE Les caractères ^M sont de nouveau visibles en mode php (vue
-  certains en mode lisp aussi mais moins dérangeant)
-
-** DONE @work Warning (flycheck): Syntax checker css-csslint reported too many
-  errors (1415) and is disabled. 
-** TODO Ediff depuis un fichier, la commande q ne rétablie pas bien les
-  buffers
 ** TODO [helm] Plugin helm utiisable avec la souris
 ** TODO org mode : > yas snippet new checkbox ne fonctionne plus
   - Retrouver le racourcis de base plutot
 ** TODO Multi-cursor : KP ENTER -> Meme comportement que ENTER
 ** TODO [ag] Ne pas lancer la recherche avec les caracteres sur le curseur
 ** TODO [man] Autofocus sur la fenêtre
-** TODO [common] M-v -> Paste and indent ?
-** TODO flyspell mode ne doit pas etre actif par default car il
-    consomme beaucoup
-** TODO mshell / shell + Abbrev autocomplete :
-  possibilité d'avoir une complétion case insensitve.
-  l'option était présente au départ mais à été retirée pour avoir une
-  completion plus rapide sur des fichiers dev
 ** TODO General : Utiliser le package general et jouer une touche sur
   super-spc ou hyper-spc
 ** TODO Associer les fichiers .pdf au mode PDFView
-** TODO Faire un fichier org nomme main.org Lorsqu'une nouvelle frame
-  est crée, initialiser sur ce fichier. Ce fichier contient des liens
-  vers tous les projets courant ainsi que vers tous les fichiers les
-  plus souvents utilises.
-
-
-
 ** TODO Terminer intégration de hunspell @work
 ** TODO Mini buffer > M-p : Ne pas afficher de message beginning of
   buffer bla bla
 ** TODO AG mettre en mode emacs et non pas evil normal
 ** TODO [vc-dir] N et P pour se déplacer en evitant les dossiers
-** TODO Recenter after go to line number
-** TODO Commande : Commentaire sans retour à la ligne, binder sur C-/  
 ** TODO Help mode evil : add q binding pour quitter
-** TODO Helm imenu : Add advice recenter line
 ** TODO [projectile find file] Auto centrer la ligne une fois le goto dans le fichier
 ** TODO [projectile find file] Possibilité de saisir des espaces dans le regexp
 ** TODO New frame : centrer la frame
 ** TODO New frame : Mettre un nouveau buffer de type texte dedans
-** TODO [web-mode] Ne pas remplacer les fin de ligne windows par des fins de ligne unix
-** TODO [emacs-osxs] new centered frame : Le mode par default devrait être le mode text
-** TODO [emacs-osxs] Vérifier les keybindings sur les touches alt (alt+n alt+p, etc)
-** TODO [vc-dir] Déclencher le vc-dir en mode fullscreen avec la touche semble
-  ESCAPE pour revenir sur le layout précédent comme dans magit
-  Un plugin existe pour çâ
 ** TODO [vc-dir] Faire un Hydra pour ce mode sur la touch "."
-** TODO [vc-dir] Ne pas afficher les "up-to-date"
 ** TODO [svn-log-view] Faire des ediff depuis ce mode
 ** TODO [swoop] C-w ne fonctionne pas
 ** TODO [helm] [mini-buffer] Ajouter la possibilité de faire du M-v dans le mini-buffer
@@ -342,6 +291,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
   - [ ] Show current mode in color
   - [ ] Show current VC system used
   - [ ] Show current encoding
+** TODO Remettre un bind pour org mode pour faire des checkbox
 * Corrige
 - [X] rebind Sépartions verticales et horizontales sur clavier azerty
 - [X] Remettre le binding par default C-q

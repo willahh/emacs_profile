@@ -99,17 +99,23 @@
 ;; (set-face-attribute 'lazy-highlight nil :background "#149591" :foreground nil :box nil)
 
 ;; I-search
-;; (set-face-attribute 'isearch-lazy-highlight nil :background "#4f5d66")
-;; (set-face-attribute 'lazy-highlight nil :background "#4f5d66" (:underline (:style wave :color "#F4EB80")))
 
-;; (set-face-attribute 'isearch nil :background "#ffe400" :foreground nil)
-;; (set-face-attribute 'lazy-highlight nil :background "#4f5d66" :underline t)
+;; (set-face-attribute 'isearch-lazy-highlight nil :background "#4f5d66")
+(set-face-attribute 'isearch-lazy-highlight-face nil :background "#4f5d66")
+
+(set-face-attribute 'isearch nil :background "#ffe400" :foreground nil)
+(set-face-attribute 'lazy-highlight nil :background "#4f5d66" :underline t)
 
 (custom-theme-set-faces
            'dracula
            '(region ((t (:background "#275f99" :foreground nil))))
            '(isearch ((t (:background "#ffe400" :foreground nil))))
-           '(lazy-highlight ((t (:background "#4f5d66" :underline t)))))
+           '(lazy-highlight ((t (:background "#4f5d66" :underline t))))
+           '(set-face-attribute 'link nil :foreground nil))
+
+
+;; ------- Font
+(set-frame-font "Office Code Pro:antialias=1")
 
 
 ;; ------ Dired
@@ -124,9 +130,25 @@
 (set-face-attribute 'font-lock-function-name-face nil  :foreground "#ff79c6")
 (set-face-attribute 'font-lock-keyword-face nil  :foreground "#bd93f9")
 
-(set-face-attribute 'diff-header nil :background nil :foreground "#fff")
-(set-face-attribute 'diff-file-header nil :background "#000" :foreground "#fff")
 
+(set-face-attribute 'magit-diff-removed-highlight nil :background nil :foreground "#ff536a")
+(set-face-attribute 'magit-diff-removed nil :background nil :foreground "#ff536a")
+(set-face-attribute 'magit-diff-added nil :background nil :foreground "#c3e886")
+(set-face-attribute 'magit-diff-added-highlight nil :background nil :foreground "#c3e886")
+
+;; (set-face-attribute 'diff-header nil :background "#1a1c1d" :foreground "#fff")
+(set-face-attribute 'diff-header nil :background "#161718" :foreground "#fff")
+(set-face-attribute 'diff-file-header nil :background nil :foreground "#fff")
+(set-face-attribute 'diff-hunk-header nil :background "#333" :foreground "#fff" :box "#666")
+(set-face-attribute 'diff-indicator-removed nil :background nil :foreground "#86d9fb")
+(set-face-attribute 'diff-indicator-added nil :background nil :foreground "#86d9fb")
+(set-face-attribute 'diff-removed nil :background nil :foreground "#ff536a")
+(set-face-attribute 'diff-added nil :background nil :foreground "#c3e886")
+(set-face-attribute 'diff-context nil :background nil :foreground "#ccc")
+(set-face-attribute 'diff-header nil :background nil :foreground "#fff")
+
+;; Magit
+(set-face-attribute 'magit-diff-context-highlight nil :background "#1a1c1d")
 
 
 ;; (set-face-attribute 'ediff-current-diff-A nil :foreground "#c792ea" :background "#161616")
@@ -194,3 +216,12 @@
 
 ;; rirc
 ;; (set-face-attribute 'irc nil :background "##ff79c6" :foreground "#ffffff" :underline "yellow")
+
+;; Disable bold
+(set-face-bold-p 'bold nil)
+
+(mapc
+ (lambda (face)
+        (when (eq (face-attribute face :weight) 'bold)
+          (set-face-attribute face nil :weight 'normal)))
+ (face-list))
