@@ -10,6 +10,9 @@
 (add-hook 'magit-mode-hook
           (lambda ()
             (toggle-truncate-lines 0)))
+(add-hook 'magit-diff-mode-hook
+          (lambda ()
+            (toggle-truncate-lines 0)))
 
 (set-face-background 'git-gutter:modified "#ff7200")
 (set-face-foreground 'git-gutter:modified "#ff7200")
