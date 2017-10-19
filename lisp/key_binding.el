@@ -40,41 +40,41 @@
 (global-set-key (kbd "M-w") 'delete-window)
 (global-set-key (kbd "M-X") 'other-frame) ; Same keybinding from osx habits
 
-(global-set-key (kbd "C-c ; f s a") 'hs-show-all) ; (user key binding (C-c ;) + [f]olding [s]how [a]ll)
-(global-set-key (kbd "C-c ; f h a") 'hs-hide-all) ; (user key binding (C-c ;) + [f]olding [h]ide [a]ll)
-(global-set-key (kbd "C-c ; f s b") 'hs-show-block) ; (user key binding (C-c ;) + [f]olding [s]how [b]lock)
-(global-set-key (kbd "C-c ; f h b") 'hs-hide-block) ; (user key binding (C-c ;) + [f]olding [h]ide [b]lock)
-(global-set-key (kbd "C-c ; f n d") 'find-name-dired)
+(global-set-key (kbd "C-c j f s a") 'hs-show-all) ; (user key binding (C-c j) + [f]olding [s]how [a]ll)
+(global-set-key (kbd "C-c j f h a") 'hs-hide-all) ; (user key binding (C-c j) + [f]olding [h]ide [a]ll)
+(global-set-key (kbd "C-c j f s b") 'hs-show-block) ; (user key binding (C-c j) + [f]olding [s]how [b]lock)
+(global-set-key (kbd "C-c j f h b") 'hs-hide-block) ; (user key binding (C-c j) + [f]olding [h]ide [b]lock)
+(global-set-key (kbd "C-c j f n d") 'find-name-dired)
 
-(global-set-key (kbd "C-c ; f f") 'toggle-frame-fullscreen)
-(global-set-key (kbd "C-c ; f m") 'toggle-frame-maximized)
-(global-set-key (kbd "C-c ; f l") 'wil-frame-large)
-(global-set-key (kbd "C-c ; f c") 'wil-frame-center)
+(global-set-key (kbd "C-c j f f") 'toggle-frame-fullscreen)
+(global-set-key (kbd "C-c j f m") 'toggle-frame-maximized)
+(global-set-key (kbd "C-c j f l") 'wil-frame-large)
+(global-set-key (kbd "C-c j f c") 'wil-frame-center)
 
 ;; -- Text operations
 ;; Copy operations
-(global-set-key (kbd "C-c ; c w") (quote copy-word))
-(global-set-key (kbd "C-c ; c l") (quote copy-line))
-(global-set-key (kbd "C-c ; c p") (quote copy-paragraph))
-(global-set-key (kbd "C-c ; c s") (quote thing-copy-string-to-mark))
-(global-set-key (kbd "C-c ; c a") (quote thing-copy-parenthesis-to-mark))
+(global-set-key (kbd "C-c j c w") (quote copy-word))
+(global-set-key (kbd "C-c j c l") (quote copy-line))
+(global-set-key (kbd "C-c j c p") (quote copy-paragraph))
+(global-set-key (kbd "C-c j c s") (quote thing-copy-string-to-mark))
+(global-set-key (kbd "C-c j c a") (quote thing-copy-parenthesis-to-mark))
 
 ;; 
-(global-set-key (kbd "C-c ; d y") 'wil-window-divider-on) ;; (Translate : C-c (user main prefix) + ; (my prefix) + [d]ivider + [y]es)
-(global-set-key (kbd "C-c ; d n") 'wil-window-divider-off) ;; (Translate : C-c (user main prefix) + ; (my prefix) + [d]ivider + [n]o)
+(global-set-key (kbd "C-c j d y") 'wil-window-divider-on) ;; (Translate : C-c (user main prefix) + ; (my prefix) + [d]ivider + [y]es)
+(global-set-key (kbd "C-c j d n") 'wil-window-divider-off) ;; (Translate : C-c (user main prefix) + ; (my prefix) + [d]ivider + [n]o)
 
 
 ;; -- Text operations
 ;; Copy operations
-(global-set-key (kbd "C-c ; c w") (quote copy-word))
-(global-set-key (kbd "C-c ; c l") (quote copy-line))
-(global-set-key (kbd "C-c ; c p") (quote copy-paragraph))
-(global-set-key (kbd "C-c ; c s") (quote thing-copy-string-to-mark))
-(global-set-key (kbd "C-c ; c a") (quote thing-copy-parenthesis-to-mark))
+(global-set-key (kbd "C-c j c w") (quote copy-word))
+(global-set-key (kbd "C-c j c l") (quote copy-line))
+(global-set-key (kbd "C-c j c p") (quote copy-paragraph))
+(global-set-key (kbd "C-c j c s") (quote thing-copy-string-to-mark))
+(global-set-key (kbd "C-c j c a") (quote thing-copy-parenthesis-to-mark))
 
 ;; Neotree
-(global-set-key (kbd "C-c ; b b") 'neotree-toggle)
-(global-set-key (kbd "C-c ; b p") 'wil-neo)
+(global-set-key (kbd "C-c j b b") 'neotree-toggle)
+(global-set-key (kbd "C-c j b p") 'wil-neo)
 (global-set-key (kbd "C-c b") 'neotree-toggle)
 (global-set-key (kbd "C-c r") 'wil-neo)
 
@@ -84,11 +84,11 @@
   (other-window 1))
 
 ;; Google
-(global-set-key (kbd "C-c ; g") 'helm-google-suggest)
+(global-set-key (kbd "C-c j g") 'helm-google-suggest)
 
 
 ;; -- linium
-(global-set-key (kbd "C-c ; nl") 'nlinum-mode)
+(global-set-key (kbd "C-c j nl") 'nlinum-mode)
 
 ;; New frame
 (global-set-key [meta shift w] 'delete-frame)
@@ -288,7 +288,7 @@
 
 (define-key iedit-mode-keymap (kbd "C-h") 'paredit-backward-delete)
 
-(global-set-key (kbd "C-c ; t") 'toggle-truncate-lines)
+(global-set-key (kbd "C-c j t") 'toggle-truncate-lines)
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 (global-set-key (kbd "C-c C-n") 'diff-hl-next-hunk)
 (define-key web-mode-map (kbd "C-c C-n") 'diff-hl-next-hunk)
@@ -644,7 +644,7 @@
 (global-set-key (kbd "<backspace>") 'delete-backward-char) ;; Override paredit-backward-kill-word behaviour for backspace
 (global-set-key [(meta shift /)] 'comment-or-uncomment-region-or-line)
 (global-set-key (kbd "s-:") 'delete-horizontal-space)
-(global-set-key (kbd "C-c ; c c s") 'clojure-cheatsheet)
+(global-set-key (kbd "C-c j c c s") 'clojure-cheatsheet)
 (define-key occur-mode-map (kbd "n") 'next-line)
 (define-key occur-mode-map (kbd "p") 'previous-line)
 (global-set-key (kbd "C-/") 'ffap) ; Qwerty C-> for Azerty
