@@ -131,6 +131,10 @@
 
 (set-face-attribute 'diff-header nil :background "#1a1c1d" :foreground "#fff")
 (set-face-attribute 'diff-file-header nil :background "#fff" :foreground "#000")
+(set-face-attribute 'magit-diff-removed-highlight nil :background nil :foreground "#ff536a")
+(set-face-attribute 'magit-diff-removed nil :background nil :foreground "#ff536a")
+(set-face-attribute 'magit-diff-added nil :background nil :foreground "#c3e886")
+(set-face-attribute 'magit-diff-added-highlight nil :background nil :foreground "#c3e886")
 
 ;; Magit
 (set-face-attribute 'magit-diff-context-highlight nil :background "#1a1c1d")
