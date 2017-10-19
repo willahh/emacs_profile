@@ -471,11 +471,12 @@
 (global-set-key [(meta shift o)] 'previous-multiframe-window)
 
 (define-key ggtags-navigation-map (kbd "M-p") 'highlight-symbol-next)
-(global-set-key (kbd "s-n") 'highlight-symbol-prev)
+(global-set-key (kbd "M-n") 'highlight-symbol-prev)
 
 ;; Update to use, classical Meta-n to create a new buffer like in
 ;; modern editors. Update highlight-symbol-prev to Super - M
-(define-key highlight-symbol-nav-mode-map (kbd "M-n") 'xah-new-empty-buffer)
+;; Update : Retour sur le M-n highlight symbol bien plus pratique
+;; (define-key highlight-symbol-nav-mode-map (kbd "M-n") 'xah-new-empty-buffer)
 
 
 (global-set-key (kbd "<delete>") 'wil-delete-backspace)

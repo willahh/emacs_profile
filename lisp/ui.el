@@ -1,4 +1,4 @@
-(require 'powerline)
+;; (require 'powerline)
 (require 'diminish)
 
 ;; Besoin : Afficher le chemin du fichier complet dans le title de la frame courante

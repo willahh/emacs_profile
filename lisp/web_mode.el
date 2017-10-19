@@ -16,6 +16,7 @@
 ;; of html / php / css / js.
 (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
 
+
 (add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-mode))
 (add-to-list 'auto-mode-alist '("\\.jade\\'" . jade-mode))
 
@@ -35,12 +36,21 @@
 ;; Disable auto indent in web mode (can be very slow)
 (setq web-mode-enable-auto-indentation nil)
 
-;; web-mode indentation (needed)
-(setq web-mode-markup-indent-offset 4)
-(setq web-mode-css-indent-offset 4)
-(setq web-mode-code-indent-offset 4)
-(setq web-mode-style-padding 4)
-(setq web-mode-script-padding 4)
+;; ;; web-mode indentation (needed)
+;; (setq web-mode-markup-indent-offset 4)
+;; (setq web-mode-css-indent-offset 4)
+;; (setq web-mode-code-indent-offset 4)
+;; (setq web-mode-style-padding 4)
+;; (setq web-mode-script-padding 4)
+;; ;; (setq web-mode-block-padding 4)
+;; (setq web-mode-block-padding 0)
+
+;; Update : Not ?
+(setq web-mode-markup-indent-offset 0)
+(setq web-mode-css-indent-offset 0)
+(setq web-mode-code-indent-offset 0)
+(setq web-mode-style-padding 0)
+(setq web-mode-script-padding 0)
 ;; (setq web-mode-block-padding 4)
 (setq web-mode-block-padding 0)
 
