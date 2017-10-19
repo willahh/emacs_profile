@@ -527,10 +527,12 @@
 (define-key org-mode-map (kbd "C-c C-b") 'org-backward-heading-same-level)
 
 ;; zoom
-(global-set-key (kbd "<s-kp-subtract>") 'text-scale-decrease)
-(global-set-key (kbd "s--") 'text-scale-decrease)
-(global-set-key (kbd "s-+") 'text-scale-increase)
-(global-set-key (kbd "<s-kp-add>") 'text-scale-increase)
+;; (global-set-key (kbd "<s-kp-subtract>") 'text-scale-decrease)
+;; (global-set-key (kbd "<s-kp-add>") 'text-scale-increase)
+;; (global-set-key (kbd "s--") 'text-scale-decrease)
+;; (global-set-key (kbd "s-+") 'text-scale-increase)
+(global-set-key (kbd "M--") 'text-scale-decrease)
+(global-set-key (kbd "M-+") 'text-scale-increase)
 
 ;; ediff
 (add-hook 'ediff-mode-hook 'wil-ediff-hook)
