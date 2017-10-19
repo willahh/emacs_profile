@@ -454,3 +454,8 @@
 ;; Cleanup whitespace on save
 ;; http://batsov.com/articles/2011/11/25/emacs-tip-number-3-whitespace-cleanup/
 ;; (add-hook 'before-save-hook 'whitespace-cleanup)
+
+;; https://stackoverflow.com/questions/27845980/how-do-i-remove-newline-symbols-inside-emacs-vertical-border
+;; Disable fringe indicator arrow for text truncate-lines
+(setf (cdr (assq 'continuation fringe-indicator-alist))
+      '(nil nil))
