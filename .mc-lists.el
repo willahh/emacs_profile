@@ -75,6 +75,7 @@
         mouse-start-secondary
         move-over-bracket
         move-over-curly
+        move-over-dbl-quote
         move-over-quote
         my-abort-recursive-edit
         new-line-dwim
@@ -113,6 +114,7 @@
         sp-forward-sexp
         sp-kill-hybrid-sexp
         sp-kill-sexp
+        sp-up-sexp
         string-inflection-all-cycle
         tab-indent-or-complete
         tern-ac-dot-complete
@@ -124,11 +126,13 @@
         whole-line-or-region-kill-region
         wil-copy
         wil-delete-backspace
+        wil-duplicate
         wil-tab-indent-or-complete-css
         wlh-tab-indent-or-complete-web
         xah-toggle-letter-case
         yank-rectangle
         yas-expand
+        textmate-backspace2
         ))
 
 (setq mc/cmds-to-run-once
@@ -183,6 +187,7 @@
         toggle-truncate-lines
         undefined
         vc-dir-mark
+        vc-dir-next-line
         vc-dir-previous-line
         wgrep-finish-edit
         wil-tab-indent-or-complete-js

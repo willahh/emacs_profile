@@ -50,7 +50,7 @@
 (set-default 'cursor-type 'bar)
 (setq window-divider-mode 1)
 
-;; Set window divider bottom and right 
+;; Set window divider bottom and right
 (setq window-divider-mode t)
 (setq window-divider-default-places t)
 
@@ -88,7 +88,7 @@
 
 ;; disable backup
 (setq backup-inhibited t)
- 
+
 ;; disable auto save
 (setq auto-save-default nil)
 
@@ -130,10 +130,10 @@
 ;; Update : Retour sur le mode par default de emacs pour la selection
 ;; Le fait de placer toute les selections directement dans le kill ring
 ;; s'avère très pratique dans beaucoup de cas
-;; 
+;;
 ;; Update : Retour sur le mode x-select-enable-primary nil car sinon
 ;; impossible de copier coller avec multi cursor
-;; 
+;;
 (setq mouse-drag-copy-region nil)  ; stops selection with a mouse being immediately injected to the kill ring
 ;; (setq x-select-enable-primary nil)  ; stops killing/yanking interacting with primary X11 selectisetqon
 
@@ -149,9 +149,9 @@
 (setq ring-bell-function 'ignore)
 
 
-;; UTF-8 
-(setq locale-coding-system 'utf-8) 
-(set-keyboard-coding-system 'utf-8)  
+;; UTF-8
+(setq locale-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
 (set-selection-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
 
@@ -173,7 +173,7 @@
      mac-option-modifier 'none)
 
 (setq mac-control-modifier 'control)
-(setq ns-function-modifier 'control) ;; mbp FN and CTRL system switch 
+(setq ns-function-modifier 'control) ;; mbp FN and CTRL system switch
 
 ;; set keys for Apple keyboard, for emacs in OS X
 ;; http://ergoemacs.org/emacs/emacs_hyper_super_keys.html
@@ -427,3 +427,27 @@
 
 ;; Keep cursor away from edges when scrolling up/down
 ;;(require 'smooth-scrolling)
+
+;; Disable mac frame tabbing (move with C-tab C-S-tab)
+(setq mac-frame-tabbing nil)
+
+;; Disable auto indentation... works all formated clean files. BUT for
+;; some cases it can't work (custom indenteded file) and it's just
+;; ANNOYING as fuck. TODO: Put this nil for web-mode only (when lot of
+;; different languages are mixed together)
+;;
+;; Note : Faire un toggle parce que les 2 sont utiles dans certains
+;; cas
+;; (setq tab-always-indent nil)
+(setq tab-always-indent t)
+
+;; Directory first
+;; https://emacs.stackexchange.com/questions/22283/dired-group-directories-and-symlinks-to-directories-first
+(setq ls-lisp-dirs-first t)
+
+;; Show trailing whitespace
+(setq-default show-trailing-whitespace t)
+
+;; Cleanup whitespace on save
+;; http://batsov.com/articles/2011/11/25/emacs-tip-number-3-whitespace-cleanup/
+;; (add-hook 'before-save-hook 'whitespace-cleanup)

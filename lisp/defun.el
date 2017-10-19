@@ -1289,3 +1289,8 @@ the checking happens for all pairs in auto-minor-mode-alist"
         (wil-vc-dir)
       (magit-status))))
 
+
+;; Add advice after mouse click to leave multiple cursor mode
+(defadvice mouse-set-point (before set-mark-before-mouse-set-point ())
+  "Set mark before moving point by mouse."
+  (multiple-cursors-mode 0))

@@ -13,11 +13,12 @@
             (add-to-list (make-local-variable 'company-backends)
                          'company-ac-php-backend)
 
-            (eldoc-mode) ; el-doc
+            ;; (eldoc-mode t) ; el-doc, deja active de maniere global
             (ggtags-mode 1) ; ggtags-mode
-            (flycheck-mode) ; flycheck-mode
+            (flycheck-mode) ; flycheck-mode, deja active de maniere global
             (set (make-local-variable 'highlight-symbol-mode) 't) ; Highlight-mode
             ))
 
 ;; Rebind php mode map tab to get tab-indent-or-complete like everywhere
-(define-key php-mode-map [(meta shift e)] #'forward-sentence)
+;; Update : En commentaire meta shift e n a pas de sens
+;; (define-key php-mode-map [(meta shift e)] #'forward-sentence)
