@@ -771,13 +771,13 @@ That is, a string used to represent it on the tab bar."
 ;; always free, whereas C-c t is used by some modes.
 (define-key ctl-x-map "t" 'endless/toggle-map)
 
-(define-key endless/toggle-map "c" #'column-number-mode)
-(define-key endless/toggle-map "d" #'toggle-debug-on-error)
-(define-key endless/toggle-map "e" #'toggle-debug-on-error)
-(define-key endless/toggle-map "f" #'auto-fill-mode)
-(define-key endless/toggle-map "l" #'toggle-truncate-lines)
-(define-key endless/toggle-map "q" #'toggle-debug-on-quit)
-(define-key endless/toggle-map "t" #'endless/toggle-theme)
+;; (define-key endless/toggle-map "c" #'column-number-mode)
+;; (define-key endless/toggle-map "d" #'toggle-debug-on-error)
+;; (define-key endless/toggle-map "e" #'toggle-debug-on-error)
+;; (define-key endless/toggle-map "f" #'auto-fill-mode)
+;; (define-key endless/toggle-map "l" #'toggle-truncate-lines)
+;; (define-key endless/toggle-map "q" #'toggle-debug-on-quit)
+;; (define-key endless/toggle-map "t" #'endless/toggle-theme)
 
 ;;; Generalized version of `read-only-mode'.
 (define-key endless/toggle-map "r" #'dired-toggle-read-only)
