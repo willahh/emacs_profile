@@ -8,6 +8,7 @@
 (require 'clj-refactor)
 (require 'helm-cider)
 (require 'clojure-snippets)
+(require 'inf-clojure)
 
 ;; From Magnar
 (defun clj-duplicate-top-level-form ()
@@ -17,16 +18,22 @@
     (insert (cljr--extract-sexp) "\n")
     (cljr--just-one-blank-line)))
 
+;; https://github.com/bhauman/lein-figwheel/wiki/Running-figwheel-with-Emacs-Inferior-Clojure-Interaction-Mode
+(defun figwheel-repl ()
+  (interactive)
+  (inf-clojure "lein figwheel"))
+
+;;
 (define-key clojure-mode-map (kbd "M-s-d") 'clj-duplicate-top-level-form)
 
 ;; 
 (setq cider-prompt-for-symbol nil)
 
 ;; https://markhudnall.com/2016/04/25/starting-figwheel-in-emacs/
-(setq cider-cljs-lein-repl
-      "(do (require 'figwheel-sidecar.repl-api)
-           (figwheel-sidecar.repl-api/start-figwheel!)
-           (figwheel-sidecar.repl-api/cljs-repl))")
+;; (setq cider-cljs-lein-repl
+;;       "(do (require 'figwheel-sidecar.repl-api)
+;;            (figwheel-sidecar.repl-api/start-figwheel!)
+;;            (figwheel-sidecar.repl-api/cljs-repl))")
 
 
 (add-hook 'clojure-mode-hook 
@@ -34,7 +41,8 @@
             (cider-mode)
             (clj-refactor-mode 1)            
             (cljr-add-keybindings-with-prefix "C-c C-m")
-            (cljr-add-keybindings-with-prefix "C-c <C-m>")))
+            (cljr-add-keybindings-with-prefix "C-c <C-m>")
+            (inf-clojure-minor-mode)))
 
 (add-hook 'cider-mode-hook
           (lambda ()

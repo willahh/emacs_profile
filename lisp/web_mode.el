@@ -39,4 +39,17 @@
 (setq web-mode-code-indent-offset 4)
 (setq web-mode-style-padding 4)
 (setq web-mode-script-padding 4)
-(setq web-mode-block-padding 4)
+;; (setq web-mode-block-padding 4)
+(setq web-mode-block-padding 0)
+
+
+
+;; (defun wil-web-mode-hook ()
+;;   (flycheck-mode t)
+;;   )
+;; (add-hook 'web-mode 'wil-web-mode-hook)
+
+
+;; https://emacs.stackexchange.com/questions/12946/how-tell-web-mode-to-use-tidy-syntaxchecker-in-flycheck
+(eval-after-load 'flycheck
+   '(flycheck-add-mode 'html-tidy 'web-mode))

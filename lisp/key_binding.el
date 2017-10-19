@@ -59,6 +59,11 @@
 (global-set-key (kbd "C-c ; c s") (quote thing-copy-string-to-mark))
 (global-set-key (kbd "C-c ; c a") (quote thing-copy-parenthesis-to-mark))
 
+;; 
+(global-set-key (kbd "C-c ; d y") 'wil-window-divider-on) ;; (Translate : C-c (user main prefix) + ; (my prefix) + [d]ivider + [y]es)
+(global-set-key (kbd "C-c ; d n") 'wil-window-divider-off) ;; (Translate : C-c (user main prefix) + ; (my prefix) + [d]ivider + [n]o)
+
+
 ;; -- Text operations
 ;; Copy operations
 (global-set-key (kbd "C-c ; c w") (quote copy-word))
@@ -131,8 +136,9 @@
 (evil-leader/set-leader "<SPC>")
 
 ;; ---------------- key-hord Note : Ralentis beaucoup la saisie Ne pas
-(key-chord-define-global "xc" 'er/expand-region)
-(key-chord-define-global "wx" 'er/contract-region)
+;; (key-chord-define-global "xc" 'er/expand-region) ; Update to <w because wx can be triggered too often (when leaving emacs C-x C-c)
+;; (key-chord-define-global "<w" 'er/expand-region)
+;; (key-chord-define-global "wx" 'er/contract-region)
 (key-chord-define evil-emacs-state-map "jk" 'evil-normal-state)
 (key-chord-define evil-normal-state-map "jk" 'evil-emacs-state)
 (key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
@@ -143,7 +149,7 @@
 (evil-define-key 'normal 'dired-mode (kbd "TAB") 'dired-find-file)
 (evil-define-key 'normal org-mode-map (kbd "q") 'quit-window)
 
-(define-key evil-normal-state-map (kbd "M-n") 'evil-buffer-new)
+;; (define-key evil-normal-state-map (kbd "M-n") 'evil-buffer-new)
 
 ;; ---------------- Key binding
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
@@ -190,9 +196,12 @@
 (global-set-key (kbd "ı") 'mc/mark-next-lines) ; ALT+SHIFT+p
 (global-set-key (kbd "∏") 'mc/mark-previous-lines) ; ALT+SHIFT+n
 (global-set-key (kbd "C-∑") 'projectile-ag) ; CONTROL+ALT+SHIFT+s
+
+;;
 (global-set-key (kbd "Ò") 'paredit-splice-sexp)
 (global-set-key (kbd "∑") 'swiper) ; ALT+SHIFT+s
-(global-set-key (kbd "æ") 'mark-whole-buffer) ; ALT+a
+(global-set-key (kbd "M-a") 'mark-whole-buffer) ; ALT+a
+(global-set-key (kbd "æ") 'backward-sentence) ; ALT+a
 (global-set-key (kbd "Â") 'toggle-php-flavor-mode) ; ALT+z
 (define-key php-mode-map (kbd "Â") 'toggle-php-flavor-mode) ; ALT+z
 
@@ -223,14 +232,17 @@
 ;; ------ Multi cursor binding
 ;; Mouse
 (global-set-key (kbd "<M-down-mouse-1>") 'mc/add-cursor-on-click)
+(global-set-key (kbd "<mouse-3>") 'mac-mouse-buffer-menu)
 
 ;; All
 (global-set-key (kbd "M-L") 'mc/mark-all-words-like-this) ; Like in VS Code
+(global-set-key (kbd "<f6>") 'dired-jump)
+(global-set-key (kbd "<f7>") 'projectile-dired)
 
 ;; Next
 (global-set-key (kbd "°") 'mc/mark-next-like-this-word) ; ALT+d
 (global-set-key (kbd "∂") 'mc/mark-next-like-this-word) ; ALT+d
-(define-key paredit-mode-map (kbd "°") 'mc/mark-next-like-this-word) ; ALT+d
+;; (define-key paredit-mode-map (kbd "°") 'mc/mark-next-like-this-word) ; ALT+d
 (define-key paredit-mode-map (kbd "∂") 'mc/mark-next-like-this-word) ; ALT+d
 
 ;; Previous
@@ -325,15 +337,17 @@
 
 ;; easy-motion
 (evilem-default-keybindings "ù")
-(global-set-key (kbd "C-v") 'evil-scroll-down)
-(global-set-key (kbd "◊") 'evil-scroll-up) ; ALT+v
+
+;; scroll
+;; (global-set-key (kbd "C-v") 'evil-scroll-down) ; Too slow (huge gain on large file)
+(global-set-key (kbd "C-v") 'scroll-up)
 
 (global-set-key (kbd "C-x <tab>") 'indent-rigidly) ; Default emacs key binding
 (define-key indent-rigidly-map [(shift tab)] 'indent-rigidly-left-to-tab-stop)
 (define-key indent-rigidly-map [(tab)] 'indent-rigidly-right-to-tab-stop)
 
-(global-set-key (kbd "C-'") 'avy-goto-word-1)
-(global-set-key (kbd "s-m") 'avy-goto-word-1)
+;; (global-set-key (kbd "C-'") 'avy-goto-word-1)
+;; (global-set-key (kbd "s-m") 'avy-goto-word-1)
 
 ;; More convenient key binding instead of leaving the home row to get
 ;; left and right arrow. Inspired by jwiegley paredit keybinding.
@@ -354,7 +368,7 @@
 (define-key help-mode-map (kbd "b") 'backward-char)
 
 ;; search in line
-(global-set-key (kbd "C-c C-s") 'avy-goto-char-in-line)
+;; (global-set-key (kbd "C-c C-s") 'avy-goto-char-in-line) ; Disable : Too long key
 
 ;; Align your code in a pretty way.
 (global-set-key (kbd "C-x \\") 'align-regexp)
@@ -456,7 +470,12 @@
 (global-set-key [(meta shift o)] 'previous-multiframe-window)
 
 (define-key ggtags-navigation-map (kbd "M-p") 'highlight-symbol-next)
-(define-key ggtags-navigation-map (kbd "M-n") 'highlight-symbol-prev)
+(global-set-key (kbd "s-n") 'highlight-symbol-prev)
+
+;; Update to use, classical Meta-n to create a new buffer like in
+;; modern editors. Update highlight-symbol-prev to Super - M
+(define-key highlight-symbol-nav-mode-map (kbd "M-n") 'xah-new-empty-buffer)
+
 
 (global-set-key (kbd "<delete>") 'wil-delete-backspace)
 (define-key paredit-mode-map (kbd "<delete>") 'wil-delete-backspace)
@@ -534,6 +553,7 @@
 
 ;; Comment
 (global-set-key (kbd "s-/") 'comment-line)
+(global-set-key (kbd "M-/") 'comment-line)
 
 ;; Kill
 (global-set-key (kbd "s-k") 'kill-paragraph)
@@ -551,7 +571,7 @@
 (global-set-key (kbd "s-f") 'counsel-find-file)
 
 ;; ------- Line navigation commands
-(global-set-key (kbd "s-l") 'avy-goto-char-in-line)
+;; (global-set-key (kbd "s-l") 'avy-goto-char-in-line) ; Not used
 
 ;; Browse comands
 (global-set-key (kbd "s-p") 'projectile-find-file)
@@ -561,9 +581,11 @@
 (global-set-key (kbd "C-s-r") 'counsel-recentf) ; Update : Oui mais la completion avec espace est relou et moins rapide
 
 ;; Scroll commands
-(global-set-key (kbd "s-v") 'evil-scroll-up)
+;; (global-set-key (kbd "s-v") 'evil-scroll-up) ; too slow
+(global-set-key (kbd "s-v") 'scroll-down)
 (global-set-key (kbd "s-x") 'counsel-M-x)
-(global-set-key (kbd "s-g") 'magit-status)
+;; (global-set-key (kbd "s-g") 'magit-status)
+(global-set-key (kbd "s-g") 'wil-vc-status)
 (global-set-key (kbd "s-D") 'projectile-dired)
 (global-set-key (kbd "s-i") 'emmet-expand-line)
 (define-key emacs-lisp-mode-map (kbd "C-c C-c") 'eval-defun)
@@ -572,11 +594,16 @@
 (global-set-key (kbd "s-s") 'helm-swoop)
 (global-set-key (kbd "C-c C-s-s") 'swiper)
 
+;; vc
 (global-set-key (kbd "s-w") 'vc-diff)
 (global-set-key (kbd "s-W") 'vc-ediff)
+(define-key vc-dir-mode-map (kbd "C-M-i") 'vc-dir-previous-directory)
+(define-key diff-mode-map (kbd "C-M-i") 'diff-hunk-prev)
 
 ;; avy
 (global-set-key (kbd "C-à") 'avy-goto-word-1)
+(global-set-key (kbd "s-l") 'avy-goto-char-in-line)
+
 
 ;; dired
 (global-set-key (kbd "s-d") 'projectile-dired)
@@ -609,6 +636,7 @@
 (define-key key-translation-map (kbd "C-S-i") (kbd "<backtab>"))
 
 (global-set-key (kbd "<M-backspace>") 'paredit-backward-kill-word)
+(global-set-key (kbd "<backspace>") 'delete-backward-char) ;; Override paredit-backward-kill-word behaviour for backspace
 (global-set-key [(meta shift /)] 'comment-or-uncomment-region-or-line)
 (global-set-key (kbd "s-:") 'delete-horizontal-space)
 (global-set-key (kbd "C-c ; c c s") 'clojure-cheatsheet)
@@ -620,3 +648,12 @@
 ;; remap C-a to `smarter-move-beginning-of-line'
 (global-set-key [remap move-beginning-of-line]
                 'smarter-move-beginning-of-line)
+
+;; Navigation entre les buffers
+(global-set-key (kbd "<C-tab>") 'next-buffer)
+(global-set-key (kbd "C-ù") 'previous-buffer)
+(global-set-key (kbd "C-`") 'next-buffer)
+(global-set-key (kbd "<C-S-tab>") 'previous-buffer)
+
+;; ---------------- Markdown
+(define-key markdown-mode-map (kbd "C-M-i") 'markdown-shifttab)

@@ -1161,6 +1161,7 @@ Version 2016-10-24"
   (beacon-mode 1)
   (setq beacon-color "#6373a2")
   (setq beacon-size 80)
+  (setq beacon-blink-when-window-scrolls nil)
   (diminish 'beacon-mode))
 
 (require 'popwin)
@@ -1193,18 +1194,19 @@ Version 2016-10-24"
 
 (use-package help+)
 
-(use-package iflipb
-  :config
-  (setq iflipb-include-more-buffers t
-        iflipb-wrap-around t)
-  :bind
-  (
-   ;; ("M-I" . iflipb-next-buffer)
-   ("M-ù" . iflipb-previous-buffer)
-   ("M-`" . iflipb-next-buffer)
-   ;; ([C-S-tab] . iflipb-next-buffer)
-   ;; ([C-tab] . iflipb-previous-buffer)
-   ))
+;; Update : Ne convient pas
+;; (use-package iflipb
+;;   :config
+;;   (setq iflipb-include-more-buffers t
+;;         iflipb-wrap-around t)
+;;   :bind
+;;   (
+;;    ;; ("M-I" . iflipb-next-buffer)
+;;    ("M-ù" . iflipb-previous-buffer)
+;;    ("M-`" . iflipb-next-buffer)
+;;    ;; ([C-S-tab] . iflipb-next-buffer)
+;;    ;; ([C-tab] . iflipb-previous-buffer)
+;;    ))
 
 (use-package paradox
   :defer t
@@ -1228,8 +1230,30 @@ Version 2016-10-24"
 
 
 ;; (add-hook 'prog-mode-hook (lambda ()
-(add-hook 'editorconfig-mode-hook (lambda ()
-                            (dtrt-indent-mode)
-                            (dtrt-indent-adapt)))
+;; (add-hook 'editorconfig-mode-hook (lambda ()
+;;                             (dtrt-indent-mode)
+;;                             (dtrt-indent-adapt)))
+
+;; New wil-ide version.
+;; In progress
+(defun wil-ide ()
+  (interactive)
+  (projectile-dired)
+  (neotree-projectile-action)
+  (other-window 1)
+  (hrs/split-window-below-and-switch)
+  (window-resize (selected-window) -10)
+  (eshell "yo"))
+
+(window-divider-mode-apply nil)
 
 
+(defun wil-window-divider-off ()
+  (interactive)
+  (window-divider-mode-apply nil))
+
+(defun wil-window-divider-on ()
+  (interactive)
+  (window-divider-mode-apply t))
+
+(setq global-flycheck-mode t)
