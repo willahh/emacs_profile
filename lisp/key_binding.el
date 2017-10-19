@@ -203,8 +203,9 @@
 ;;
 (global-set-key (kbd "Ò") 'paredit-splice-sexp)
 (global-set-key (kbd "∑") 'swiper) ; ALT+SHIFT+s
-(global-set-key (kbd "M-a") 'mark-whole-buffer) ; ALT+a
-(global-set-key (kbd "æ") 'backward-sentence) ; ALT+a
+;; (global-set-key (kbd "M-a") 'mark-whole-buffer) ; ALT+a
+(global-set-key (kbd "æ") 'mark-whole-buffer) ; ALT+a
+;; (global-set-key (kbd "æ") 'backward-sentence) ; ALT+a
 (global-set-key (kbd "Â") 'toggle-php-flavor-mode) ; ALT+z
 (define-key php-mode-map (kbd "Â") 'toggle-php-flavor-mode) ; ALT+z
 

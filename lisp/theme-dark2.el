@@ -99,11 +99,12 @@
 ;; (set-face-attribute 'lazy-highlight nil :background "#149591" :foreground nil :box nil)
 
 ;; I-search
-;; (set-face-attribute 'isearch-lazy-highlight nil :background "#4f5d66")
-;; (set-face-attribute 'lazy-highlight nil :background "#4f5d66" (:underline (:style wave :color "#F4EB80")))
 
-;; (set-face-attribute 'isearch nil :background "#ffe400" :foreground nil)
-;; (set-face-attribute 'lazy-highlight nil :background "#4f5d66" :underline t)
+;; (set-face-attribute 'isearch-lazy-highlight nil :background "#4f5d66")
+(set-face-attribute 'isearch-lazy-highlight-face nil :background "#4f5d66")
+
+(set-face-attribute 'isearch nil :background "#ffe400" :foreground nil)
+(set-face-attribute 'lazy-highlight nil :background "#4f5d66" :underline t)
 
 (custom-theme-set-faces
            'dracula

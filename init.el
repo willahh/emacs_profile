@@ -161,6 +161,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((((class color) (min-colors 89)) (:background "#282a36" :foreground "#f8f8f2"))))
+ '(lazy-highlight ((t (:background "#4f5d66" :underline t))))
  '(rainbow-delimiters-depth-1-face ((t (:foreground "#5abeee"))))
  '(rainbow-delimiters-depth-2-face ((t (:foreground "#ff00a0"))))
  '(rainbow-delimiters-depth-3-face ((t (:foreground "#d2ff00"))))
