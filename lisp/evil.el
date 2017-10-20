@@ -77,3 +77,25 @@
 (global-evil-leader-mode)
 (evil-snipe-mode 1)
 (global-evil-matchit-mode 1)
+
+
+;; Leave evil state to emacs 
+(define-key evil-normal-state-map (kbd "C-p") (lambda ()
+                                                (interactive)
+                                                (evil-emacs-state)
+                                                (previous-line)))
+
+(define-key evil-normal-state-map (kbd "C-n") (lambda ()
+                                                (interactive)
+                                                (evil-emacs-state)
+                                                (next-line)))
+
+(define-key evil-normal-state-map (kbd "C-f") (lambda ()
+                                                (interactive)
+                                                (evil-emacs-state)
+                                                (forward-char)))
+
+(define-key evil-normal-state-map (kbd "C-b") (lambda ()
+                                                (interactive)
+                                                (evil-emacs-state)
+                                                (backward-char)))
