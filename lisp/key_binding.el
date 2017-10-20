@@ -130,7 +130,7 @@
 ;; ---------------- evaluation
 (define-key emacs-lisp-mode-map (kbd "C-c C-r") 'eval-region)
 (define-key emacs-lisp-mode-map (kbd "C-c C-e") 'rr/eval-and-replace)
-(define-key emacs-lisp-mode-map (kbd "C-c C-v") 'eval-buffer)
+;; (define-key emacs-lisp-mode-map (kbd "C-c C-v") 'eval-buffer)
 ;; (global-set-key (kbd "C-c C-v") 'eval-buffer)
 
 ;; ---------------- key binding leader
@@ -181,7 +181,7 @@
 
 ;; New frame
 (global-set-key (kbd "M-N") 'wil-create-new-centered-frame)
-(define-key global-map (kbd "C-x k") 'kill-this-buffer)
+;; (define-key global-map (kbd "C-x k") 'kill-this-buffer) ; Update to C-z
 (define-key global-map (kbd "C-x C-r") 'revert-buffer-no-confirm)
 (global-set-key (kbd "C-x C-k") 'kill-region)
 
@@ -277,8 +277,8 @@
 (define-key company-active-map (kbd "C-n") 'company-select-next)
 (define-key company-active-map (kbd "C-p") 'company-select-previous)
 (define-key company-active-map (kbd "C-i") 'company-complete-selection)
-(define-key company-active-map (kbd "C-j") 'new-line-dwim) ;; Disable with reaffectation of new line function
-(define-key company-active-map (kbd "RET") 'new-line-dwim) ;; Disable with reaffectation of new line function
+(define-key company-active-map (kbd "C-j") 'newline) ;; Disable with reaffectation of new line function
+(define-key company-active-map (kbd "RET") 'newline) ;; Disable with reaffectation of new line function
 (define-key company-active-map (kbd "C-c h") 'company-quickhelp--show)
 
 (global-set-key (kbd "C-,") 'company-files)
@@ -325,12 +325,17 @@
 
 (global-set-key (kbd "RET") 'reindent-then-newline-and-indent)
 (global-set-key (kbd "C-j") 'reindent-then-newline-and-indent)
-(global-set-key (kbd "RET") 'new-line-dwim)
-(global-set-key (kbd "<RET>") 'new-line-dwim)
-(global-set-key (kbd "C-j") 'new-line-dwim)
+(global-set-key (kbd "RET") 'newline)
+(global-set-key (kbd "<RET>") 'newline)
+(global-set-key (kbd "C-j") 'newline)
 (define-key typescript-mode-map (kbd "M-j") 'c-indent-new-comment-line)
 (global-set-key (kbd "C-s-i") 'company-complete)
 
+(define-key prog-mode-map (kbd "RET") 'new-line-dwim)
+(define-key prog-mode-map (kbd "<RET>") 'new-line-dwim)
+(global-set-key (kbd "<RET>") 'newline)
+
+;;
 (global-set-key [(meta shift d)] 'wil-duplicate)
 (global-set-key (kbd "C-x C-d") 'wil-duplicate)
 
@@ -516,7 +521,8 @@
   (interactive)
   (cond ((equal (web-mode-language-at-pos) "html") (kill-sexp))
         ((equal (web-mode-language-at-pos) "javascript") (sp-kill-hybrid-sexp 1))
-        ((equal (web-mode-language-at-pos) "php") (paredit-kill))))
+        ((equal (web-mode-language-at-pos) "php") (paredit-kill))
+        ((equal (web-mode-language-at-pos) "css") (paredit-kill))))
         
 
 
@@ -674,3 +680,12 @@
 
 ;; ---------------- Markdown
 (define-key markdown-mode-map (kbd "C-M-i") 'markdown-shifttab)
+
+
+;; kill
+(define-key evil-emacs-state-map (kbd "C-z") 'kill-region)
+(global-set-key (kbd "C-z") 'kill-region)
+
+;; scroll
+(global-set-key (kbd "C-v") 'scroll-up-half)
+(global-set-key (kbd "s-v") 'scroll-down-half)

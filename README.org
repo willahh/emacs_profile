@@ -48,8 +48,23 @@ git clone https://github.com/willahh/emacs_profile ~/.emacs.d
     :CUSTOM_ID: windows
     :END:
 
--  Gnutls
--  htftp://ftp.gnutls.org/gcrypt/gnutls/w32/
+- Gnutls
+- htftp://ftp.gnutls.org/gcrypt/gnutls/w32/
+- 
+  
+** Launch as server
+http://www.star.bris.ac.uk/bjm/emacs-tips.html#orgheadline3
+
+#+BEGIN_SRC shell
+#! /bin/tcsh -f
+
+# start emacs server - replace with path to your emacs
+/Applications/Emacs.app/Contents/MacOS/Emacs --daemon
+
+# start emacs client - replace with path to your emacsclient
+# this is usually in the same place as your emacs executable
+/Applications/Emacs.app/Contents/MacOS/bin-x86_64-10_9/emacsclient -c $argv
+#+END_SRC
 
 * Requirements
   All binaries should be accessible from emacs. In osx by default emacs
@@ -336,6 +351,7 @@ osx
     (225 ms)
   - defaults write -g InitialKeyRepeat -float 10.5 # normal minimum is 15
     (225 ms)
+  - defaults write -g InitialKeyRepeat -float 12
 
   - defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
   - defaults write -g KeyRepeat -float 1.5 # normal minimum is 2 (30

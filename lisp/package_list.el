@@ -4,6 +4,7 @@
   undo-tree
   sr-speedbar
   wgrep
+  edit-server
   wgrep-ag
   whitespace-cleanup-mode
   smooth-scrolling
@@ -156,6 +157,7 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/general")
 (add-to-list 'load-path "~/.emacs.d/vendor/slime")
 (add-to-list 'load-path "~/.emacs.d/vendor/cider")
+(add-to-list 'load-path "~/.emacs.d/vendor/centered-window")
 ;; (add-to-list 'load-path "~/.emacs.d/vendor/xah-css-mode")
 
 ;; (load "~/.emacs.d/vendor/xah-css-mode/xah-css-mode-mode.el")
