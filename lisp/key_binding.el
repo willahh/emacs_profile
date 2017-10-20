@@ -181,7 +181,7 @@
 
 ;; New frame
 (global-set-key (kbd "M-N") 'wil-create-new-centered-frame)
-(define-key global-map (kbd "C-x k") 'kill-this-buffer)
+;; (define-key global-map (kbd "C-x k") 'kill-this-buffer) ; Update to C-z
 (define-key global-map (kbd "C-x C-r") 'revert-buffer-no-confirm)
 (global-set-key (kbd "C-x C-k") 'kill-region)
 
@@ -673,3 +673,8 @@
 
 ;; ---------------- Markdown
 (define-key markdown-mode-map (kbd "C-M-i") 'markdown-shifttab)
+
+
+;; kill
+(define-key evil-emacs-state-map (kbd "C-z") 'kill-region)
+(global-set-key (kbd "C-z") 'kill-region)

@@ -1297,3 +1297,53 @@ the checking happens for all pairs in auto-minor-mode-alist"
 
 (global-set-key (kbd "C-v") 'scroll-up-half)
 (global-set-key (kbd "s-v") 'scroll-down-half)
+
+;; (defadvice diff-hunk-next (before wil-focus-on-top-after-diff-hunk-next (hunk destp char-offset))
+;;   "Focus the scroll on top of the screen after diff-hunk-next"
+;;   (recenter 0))
+
+;; (defun wil-diff-hunk-next ()
+;;        (recenter 0))
+     
+;; (add-function :after (diff-hunk-next) #'wil-diff-hunk-next)
+
+
+
+
+
+
+(defun helm/test-default-action (candidate)
+  (browse-url (format
+               "http://www.google.com/search?q=%s"
+               (url-hexify-string candidate))))
+
+;; (defvar my-source (helm-build-dummy-source "test a"
+;;                     :action '(("Google" . helm/test-default-action))))
+
+
+;; (defvar my-source (helm-make-source "test" :action '(("Google" . helm/test-default-action))))
+
+(defun my-first-helm-command ()
+  (interactive)
+  (helm :sources 'my-source
+        :buffer "*helm my command*"))
+
+;; (defclass my-helm-class (helm-source-sync)
+;;   ((candidates :initform '("foo" "bar" "baz"))))
+
+;; (helm :sources (helm-make-source "test" 'my-helm-class)
+;;       :buffer "*helm test*
+
+(defun my-first-helm-command ()
+  (interactive)
+  (helm :sources (helm-build-sync-source "test"
+                   :candidates '("foo" "bar" "baz"))
+        :buffer "*helm test*"))
+
+(global-set-key (kbd "C-c j i") 'my-first-helm-command)
+
+
+
+
+
+>>>>>>> Stashed changes

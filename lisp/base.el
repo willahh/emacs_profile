@@ -460,6 +460,5 @@
 (setf (cdr (assq 'continuation fringe-indicator-alist))
       '(nil nil))
 
-
-
-;; test writed from v1.2
+;; Do not truncate words
+(setq visual-line-mode t)
