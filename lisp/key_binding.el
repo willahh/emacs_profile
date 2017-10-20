@@ -511,6 +511,16 @@
 (global-set-key (kbd "C-c RET") 'wlh-join-lines)
 (define-key web-mode-map (kbd "C-c RET") 'wlh-join-lines)
 
+(defun wil-web-mode-kill-sexp ()
+  (interactive)
+  (cond ((equal (web-mode-language-at-pos) "html") (kill-sexp))
+        ((equal (web-mode-language-at-pos) "javascript") (sp-kill-hybrid-sexp 1))
+        ((equal (web-mode-language-at-pos) "php") (paredit-kill))))
+        
+
+
+(define-key web-mode-map (kbd "C-k") 'wil-web-mode-kill-sexp)
+
 ;; PDF
 (add-hook 'pdf-view-mode 'wlh-pdf-view-mode-hook)
 
