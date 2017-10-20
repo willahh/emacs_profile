@@ -441,6 +441,9 @@
 ;; (setq tab-always-indent nil)
 (setq tab-always-indent t)
 
+;; diff
+(setq diff-auto-refine-mode t)
+
 ;; Directory first
 ;; https://emacs.stackexchange.com/questions/22283/dired-group-directories-and-symlinks-to-directories-first
 (setq ls-lisp-dirs-first t)
@@ -451,24 +454,6 @@
 ;; Cleanup whitespace on save
 ;; http://batsov.com/articles/2011/11/25/emacs-tip-number-3-whitespace-cleanup/
 ;; (add-hook 'before-save-hook 'whitespace-cleanup)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 ;; Tentative de meilleurs perf sur les fonts, pas encore top
@@ -492,3 +477,9 @@
 
 ;; https://emacs.stackexchange.com/a/603
 (setq bidi-display-reordering nil)
+
+
+;; https://stackoverflow.com/questions/27845980/how-do-i-remove-newline-symbols-inside-emacs-vertical-border
+;; Disable fringe indicator arrow for text truncate-lines
+(setf (cdr (assq 'continuation fringe-indicator-alist))
+      '(nil nil))

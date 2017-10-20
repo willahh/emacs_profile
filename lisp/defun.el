@@ -78,11 +78,11 @@ there's a region, all lines that region covers will be duplicated."
       (message filename))))
 
 ;; Shorthand : ([c]opy-[f]ile-[p]ath)
-(defun cfp () 
+(defun cfp ()
   (interactive)
   (copy-file-path))
 
-;; Copy file name 
+;; Copy file name
 ;; (defun wil-cfn ()
 ;;   (interactive)
 ;;   (kill-new (nth 0 (last (split-string (cfp) "/")))))
@@ -196,7 +196,7 @@ point reaches the beginning or end of the buffer, stop there."
 
 ;; next-hunk; Single escape to quit buffer
 ;; esc quits
-;; Source : https://juanjoalvarez.net/es/detail/2014/sep/19/vim-emacsevil-chaotic-migration-guide/x    
+;; Source : https://juanjoalvarez.net/es/detail/2014/sep/19/vim-emacsevil-chaotic-migration-guide/x
 (defun minibuffer-keyboard-quit ()
   "Abort recursive edit.
 In Delete Selection mode, if the mark is active, just deactivate it;
@@ -219,8 +219,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
     "Create tags file."
     (interactive "DDirectory: ")
     (shell-command
-     (format "%s -f TAGS -e -R %s" ctags (directory-file-name dir-name)))
-  )
+     (format "%s -f TAGS -e -R %s" ctags (directory-file-name dir-name))))
 
 
 
@@ -339,7 +338,7 @@ That is, a string used to represent it on the tab bar."
     (message-position-point)))
 
 
-;; ;; Shorthand - file:revert 
+;; ;; Shorthand - file:revert
 ;; (defun file:revert()
 ;;   "VC: (File) Revert"
 ;;   (interactive)
@@ -371,11 +370,11 @@ That is, a string used to represent it on the tab bar."
 ;; (global-set-key (kbd "<S-tab>") 'nil)
 
 
-;; Indent - unindent 
+;; Indent - unindent
 ;; Source http://stackoverflow.com/a/35183657
-;; Updated to just use for back indent, forward indent is 
+;; Updated to just use for back indent, forward indent is
 (defun custom-indent-region(numSpaces)
-    (progn 
+    (progn
         ; default to start and end of current line
         (setq regionStart (line-beginning-position))
         (setq regionEnd (line-end-position))
@@ -386,7 +385,7 @@ That is, a string used to represent it on the tab bar."
             (setq regionEnd (region-end))
         )
 
-        (save-excursion ; restore the position afterwards            
+        (save-excursion ; restore the position afterwards
             (goto-char regionStart) ; go to the start of region
             (setq start (line-beginning-position)) ; save the start of the line
             (goto-char regionEnd) ; go to the end of region
@@ -429,7 +428,7 @@ That is, a string used to represent it on the tab bar."
   "Sort dired listings with directories first."
   (save-excursion
     (let (buffer-read-only)
-      (forward-line 2) ;; beyond dir. header 
+      (forward-line 2) ;; beyond dir. header
       (sort-regexp-fields t "^.*$" "[ ]*." (point) (point-max)))
     (set-buffer-modified-p nil)))
 
@@ -483,47 +482,40 @@ That is, a string used to represent it on the tab bar."
   (defun get-point (symbol &optional arg)
       "get the point"
       (funcall symbol arg)
-      (point)
-     )
-     
+      (point))
+
      (defun copy-thing (begin-of-thing end-of-thing &optional arg)
        "copy thing between beg & end into kill ring"
         (save-excursion
           (let ((beg (get-point begin-of-thing 1))
-         	 (end (get-point end-of-thing arg)))
-            (copy-region-as-kill beg end)))
-     )
-     
+             (end (get-point end-of-thing arg)))
+            (copy-region-as-kill beg end))))
+
      (defun paste-to-mark(&optional arg)
        "Paste things to mark, or to the prompt in shell-mode"
-       (let ((pasteMe 
-     	 (lambda()
-     	   (if (string= "shell-mode" major-mode)
-     	     (progn (comint-next-prompt 25535) (yank))
-     	   (progn (goto-char (mark)) (yank) )))))
-     	(if arg
-     	    (if (= arg 1)
-     		nil
-     	      (funcall pasteMe))
-     	  (funcall pasteMe))
-     	))
+       (let ((pasteMe
+         (lambda()
+           (if (string= "shell-mode" major-mode)
+             (progn (comint-next-prompt 25535) (yank))
+           (progn (goto-char (mark)) (yank) )))))
+        (if arg
+            (if (= arg 1)
+            nil
+              (funcall pasteMe))
+          (funcall pasteMe))))
 
 (defun copy-word (&optional arg)
       "Copy words at point into kill-ring"
        (interactive)
        (copy-thing 'backward-word 'forward-word arg)
-       (message "copy-word")
-       ;;(paste-to-mark arg)
-     )
+       (message "copy-word"))
 
 
  (defun copy-line (&optional arg)
       "Save current line into Kill-Ring without mark the line "
        (interactive)
        (copy-thing 'beginning-of-line 'end-of-line arg)
-       ;; (paste-to-mark arg)
-       (message "copy-line")
-     )
+       (message "copy-line"))
 
 
  (defun copy-paragraph (&optional arg)
@@ -538,14 +530,14 @@ That is, a string used to represent it on the tab bar."
  (defun beginning-of-string(&optional arg)
        "  "
        (re-search-backward "[ \t]" (line-beginning-position) 3 1)
-     	     (if (looking-at "[\t ]")  (goto-char (+ (point) 1)) )
+             (if (looking-at "[\t ]")  (goto-char (+ (point) 1)) )
      )
      (defun end-of-string(&optional arg)
        " "
        (re-search-forward "[ \t]" (line-end-position) 3 arg)
-     	     (if (looking-back "[\t ]") (goto-char (- (point) 1)) )
+             (if (looking-back "[\t ]") (goto-char (- (point) 1)) )
      )
-     
+
      (defun thing-copy-string-to-mark(&optional arg)
        " Try to copy a string and paste it to the mark
      When used in shell-mode, it will paste string on shell prompt by default "
@@ -558,14 +550,14 @@ That is, a string used to represent it on the tab bar."
 (defun beginning-of-parenthesis(&optional arg)
        "  "
        (re-search-backward "[[<(?\"]" (line-beginning-position) 3 1)
-     	     (if (looking-at "[[<(?\"]")  (goto-char (+ (point) 1)) )
+             (if (looking-at "[[<(?\"]")  (goto-char (+ (point) 1)) )
      )
      (defun end-of-parenthesis(&optional arg)
        " "
        (re-search-forward "[]>)?\"]" (line-end-position) 3 arg)
-     	     (if (looking-back "[]>)?\"]") (goto-char (- (point) 1)) )
+             (if (looking-back "[]>)?\"]") (goto-char (- (point) 1)) )
      )
-     
+
      (defun thing-copy-parenthesis-to-mark(&optional arg)
        " Try to copy a parenthesis and paste it to the mark
      When used in shell-mode, it will paste parenthesis on shell prompt by default "
@@ -573,7 +565,7 @@ That is, a string used to represent it on the tab bar."
        (copy-thing 'beginning-of-parenthesis 'end-of-parenthesis arg)
        ;; (paste-to-mark arg)
      )
-     
+
 
 
 
@@ -724,7 +716,7 @@ That is, a string used to represent it on the tab bar."
          (unpop-to-mark-command))
         (t
          ad-do-it)))))
-         
+
 (my-unpop-to-mark-advice)
 
 
@@ -736,14 +728,14 @@ That is, a string used to represent it on the tab bar."
   (and (eq (marker-buffer marker) (current-buffer))
        (= (marker-position marker) (point))))
 
-(defun push-mark-maybe () 
+(defun push-mark-maybe ()
   "push mark onto `global-mark-ring' if mark head or tail is not current location"
   (if (not global-mark-ring) (error "global-mark-ring empty")
     (unless (or (marker-is-point-p (car global-mark-ring))
                 (marker-is-point-p (car (reverse global-mark-ring))))
       (push-mark))))
 
-(defun backward-global-mark () 
+(defun backward-global-mark ()
   "use `pop-global-mark', pushing current point if not on ring."
   (interactive)
   (push-mark-maybe)
@@ -771,13 +763,13 @@ That is, a string used to represent it on the tab bar."
 ;; always free, whereas C-c t is used by some modes.
 (define-key ctl-x-map "t" 'endless/toggle-map)
 
-(define-key endless/toggle-map "c" #'column-number-mode)
-(define-key endless/toggle-map "d" #'toggle-debug-on-error)
-(define-key endless/toggle-map "e" #'toggle-debug-on-error)
-(define-key endless/toggle-map "f" #'auto-fill-mode)
-(define-key endless/toggle-map "l" #'toggle-truncate-lines)
-(define-key endless/toggle-map "q" #'toggle-debug-on-quit)
-(define-key endless/toggle-map "t" #'endless/toggle-theme)
+;; (define-key endless/toggle-map "c" #'column-number-mode)
+;; (define-key endless/toggle-map "d" #'toggle-debug-on-error)
+;; (define-key endless/toggle-map "e" #'toggle-debug-on-error)
+;; (define-key endless/toggle-map "f" #'auto-fill-mode)
+;; (define-key endless/toggle-map "l" #'toggle-truncate-lines)
+;; (define-key endless/toggle-map "q" #'toggle-debug-on-quit)
+;; (define-key endless/toggle-map "t" #'endless/toggle-theme)
 
 ;;; Generalized version of `read-only-mode'.
 (define-key endless/toggle-map "r" #'dired-toggle-read-only)
@@ -1010,16 +1002,16 @@ the visible part of the current buffer following point. "
 ;; https://www.emacswiki.org/emacs/DiredSortCriterias?
 (defun dired-sort-criteria (criteria)
   "sort-dired by different criteria by Robert Gloeckner "
-  (interactive 
-   (list 
+  (interactive
+   (list
     (or (completing-read "criteria [name]: "
-			 '("size(S)" "extension(X)" "creation-time(ct)"
-			   "access-time(ut)" "time(t)" "name()"))
-	"")))
+             '("size(S)" "extension(X)" "creation-time(ct)"
+               "access-time(ut)" "time(t)" "name()"))
+    "")))
   (string-match ".*(\\(.*\\))" criteria)
   (dired-sort-other
-   (concat dired-listing-switches 
-	   (match-string 1 criteria))))
+   (concat dired-listing-switches
+       (match-string 1 criteria))))
 
 (define-key dired-mode-map (kbd "s") 'dired-sort-criteria)
 
@@ -1218,9 +1210,7 @@ Version 2016-12-27"
 (defun wil-wil-create-new-centered-frame ()
   (interactive)
   (wil-create-new-centered-frame)
-  (text-mode)
-  ;; (funcall initial-major-mode)
-)
+  (text-mode))
 
 (defun m-eshell-hook ()
   (define-key eshell-mode-map (kbd "C-M-l") 'er/contract-region))
@@ -1235,17 +1225,14 @@ Version 2016-12-27"
   (interactive)
   (open-line-below)
   (beginning-of-line)
-  (kill-line)
-)
+  (kill-line))
 
 (defun wlh-pdf-view-mode-hook ()
-  (define-key pdf-view-mode-map (kbd ".") 'hydra-pdftools/body)
-)
+  (define-key pdf-view-mode-map (kbd ".") 'hydra-pdftools/body))
 
 (defun wil-ediff-hook ()
   (ediff-setup-keymap)
-  (define-key ediff-mode-map (kbd "q") 'wil-vc-ediff-quit)
-)
+  (define-key ediff-mode-map (kbd "q") 'wil-vc-ediff-quit))
 
 ;; From : http://www.blogbyben.com/2016/08/emacs-php-modern-and-far-more-complete.html
 (defun toggle-php-flavor-mode ()
@@ -1296,17 +1283,6 @@ the checking happens for all pairs in auto-minor-mode-alist"
   (multiple-cursors-mode 0))
 
 
-
-
-
-
-
-
-
-
-
-
-
 ;; Increment at point
 ;; https://www.emacswiki.org/emacs/IncrementNumber
 (defun increment-number-at-point ()
@@ -1337,7 +1313,6 @@ the checking happens for all pairs in auto-minor-mode-alist"
           (error "No number at point"))
       (replace-match (number-to-string (- (string-to-number (match-string 0)) 10))))
 
-
 ;; Hydra for incremnet at point
 (defhydra wil-hydra-increment-at-point (:color teal :columns 5
                               :after-exit (wil-hydra-increment-at-point/body))
@@ -1355,3 +1330,17 @@ the checking happens for all pairs in auto-minor-mode-alist"
   (buffer-file-name))
 
 ; (cons (split-string (quote "/Users/wravel/www/project/arsia/arsia_standard_310/dev/sygesp/test.php") "/"))
+;; https://www.emacswiki.org/emacs/HalfScrolling
+(defun window-half-height ()
+  (max 1 (/ (1- (window-height (selected-window))) 2)))
+
+(defun scroll-up-half ()
+  (interactive)
+  (scroll-up (window-half-height)))
+
+(defun scroll-down-half ()
+  (interactive)
+  (scroll-down (window-half-height)))
+
+(global-set-key (kbd "C-v") 'scroll-up-half)
+(global-set-key (kbd "s-v") 'scroll-down-half)
