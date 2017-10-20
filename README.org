@@ -338,6 +338,9 @@ osx
     (225 ms)
 
   - defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
+  - defaults write -g KeyRepeat -float 1.5 # normal minimum is 2 (30
+    ms)
+  - defaults write -g KeyRepeat -float 1.8 # normal minimum is 2 (30 ms)
 * Key bindings
 
 
