@@ -1257,3 +1257,6 @@ Version 2016-10-24"
   (window-divider-mode-apply t))
 
 (setq global-flycheck-mode t)
+
+(require 'edit-server)
+(edit-server-start)

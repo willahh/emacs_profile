@@ -130,7 +130,7 @@
 ;; ---------------- evaluation
 (define-key emacs-lisp-mode-map (kbd "C-c C-r") 'eval-region)
 (define-key emacs-lisp-mode-map (kbd "C-c C-e") 'rr/eval-and-replace)
-(define-key emacs-lisp-mode-map (kbd "C-c C-v") 'eval-buffer)
+;; (define-key emacs-lisp-mode-map (kbd "C-c C-v") 'eval-buffer)
 ;; (global-set-key (kbd "C-c C-v") 'eval-buffer)
 
 ;; ---------------- key binding leader
@@ -515,7 +515,8 @@
   (interactive)
   (cond ((equal (web-mode-language-at-pos) "html") (kill-sexp))
         ((equal (web-mode-language-at-pos) "javascript") (sp-kill-hybrid-sexp 1))
-        ((equal (web-mode-language-at-pos) "php") (paredit-kill))))
+        ((equal (web-mode-language-at-pos) "php") (paredit-kill))
+        ((equal (web-mode-language-at-pos) "css") (paredit-kill))))
         
 
 
@@ -678,3 +679,7 @@
 ;; kill
 (define-key evil-emacs-state-map (kbd "C-z") 'kill-region)
 (global-set-key (kbd "C-z") 'kill-region)
+
+;; scroll
+(global-set-key (kbd "C-v") 'scroll-up-half)
+(global-set-key (kbd "s-v") 'scroll-down-half)
