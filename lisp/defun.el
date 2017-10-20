@@ -1294,3 +1294,21 @@ the checking happens for all pairs in auto-minor-mode-alist"
 (defadvice mouse-set-point (before set-mark-before-mouse-set-point ())
   "Set mark before moving point by mouse."
   (multiple-cursors-mode 0))
+
+
+;; https://www.emacswiki.org/emacs/HalfScrolling
+(defun window-half-height ()
+  (max 1 (/ (1- (window-height (selected-window))) 2)))
+
+(defun scroll-up-half ()
+  (interactive)
+  (scroll-up (window-half-height)))
+
+(defun scroll-down-half ()         
+  (interactive)                    
+  (scroll-down (window-half-height)))
+
+(global-set-key (kbd "C-v") 'scroll-up-half)
+(global-set-key (kbd "s-v") 'scroll-down-half)
+
+
