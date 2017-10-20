@@ -228,3 +228,6 @@
         (when (eq (face-attribute face :weight) 'bold)
           (set-face-attribute face nil :weight 'normal)))
  (face-list))
+
+;; Eshell
+(set-face-attribute 'eshell-prompt nil :foreground "#8be9fd")
