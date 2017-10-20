@@ -1297,3 +1297,17 @@ the checking happens for all pairs in auto-minor-mode-alist"
 
 (global-set-key (kbd "C-v") 'scroll-up-half)
 (global-set-key (kbd "s-v") 'scroll-down-half)
+
+(defun helm/test-default-action (candidate)
+  (eww (format
+               "http://www.google.com/search?q=%s"
+               (url-hexify-string candidate))))
+
+(defun wil-helm-test ()
+  (interactive)
+  (helm :sources (helm-build-in-buffer-source "test1"
+                   :data '(a b c d e)
+                   :action '(("Google" . helm/test-default-action)))
+        :buffer "*helm test*"))
+
+(global-set-key (kbd "C-c j i") 'wil-helm-test)
