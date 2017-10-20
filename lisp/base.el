@@ -483,3 +483,27 @@
 ;; Disable fringe indicator arrow for text truncate-lines
 (setf (cdr (assq 'continuation fringe-indicator-alist))
       '(nil nil))
+
+;; https://stackoverflow.com/questions/27845980/how-do-i-remove-newline-symbols-inside-emacs-vertical-border
+;; Disable fringe indicator arrow for text truncate-lines
+(setf (cdr (assq 'continuation fringe-indicator-alist))
+      '(nil nil))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -111,7 +111,8 @@
            'dracula
            '(region ((t (:background "#275f99" :foreground nil))))
            '(isearch-lazy-highlight ((t (:background "#4f5d66" :foreground nil))))
-           '(isearch ((t (:background "#ffe400" :foreground "#000"))))
+           ;; '(isearch ((t (:background "#ffe400" :foreground "#000"))))
+           '(isearch ((t (:background "#ffe400" :foreground nil))))
            '(lazy-highlight ((t (:background "#4f5d66" :underline t))))
            '(set-face-attribute 'link nil :foreground nil))
 
