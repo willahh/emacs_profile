@@ -277,8 +277,8 @@
 (define-key company-active-map (kbd "C-n") 'company-select-next)
 (define-key company-active-map (kbd "C-p") 'company-select-previous)
 (define-key company-active-map (kbd "C-i") 'company-complete-selection)
-(define-key company-active-map (kbd "C-j") 'new-line-dwim) ;; Disable with reaffectation of new line function
-(define-key company-active-map (kbd "RET") 'new-line-dwim) ;; Disable with reaffectation of new line function
+(define-key company-active-map (kbd "C-j") 'newline) ;; Disable with reaffectation of new line function
+(define-key company-active-map (kbd "RET") 'newline) ;; Disable with reaffectation of new line function
 (define-key company-active-map (kbd "C-c h") 'company-quickhelp--show)
 
 (global-set-key (kbd "C-,") 'company-files)
@@ -325,12 +325,17 @@
 
 (global-set-key (kbd "RET") 'reindent-then-newline-and-indent)
 (global-set-key (kbd "C-j") 'reindent-then-newline-and-indent)
-(global-set-key (kbd "RET") 'new-line-dwim)
-(global-set-key (kbd "<RET>") 'new-line-dwim)
-(global-set-key (kbd "C-j") 'new-line-dwim)
+(global-set-key (kbd "RET") 'newline)
+(global-set-key (kbd "<RET>") 'newline)
+(global-set-key (kbd "C-j") 'newline)
 (define-key typescript-mode-map (kbd "M-j") 'c-indent-new-comment-line)
 (global-set-key (kbd "C-s-i") 'company-complete)
 
+(define-key prog-mode-map (kbd "RET") 'new-line-dwim)
+(define-key prog-mode-map (kbd "<RET>") 'new-line-dwim)
+(global-set-key (kbd "<RET>") 'newline)
+
+;;
 (global-set-key [(meta shift d)] 'wil-duplicate)
 (global-set-key (kbd "C-x C-d") 'wil-duplicate)
 
