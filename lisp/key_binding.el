@@ -149,8 +149,8 @@
 (key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
 
 ;; ---------------- Key binding evil normal mode
-(with-eval-after-load 'evil-maps
-  (define-key evil-normal-state-map (kbd "M-a") 'mark-whole-buffer))
+;; (with-eval-after-load 'evil-maps
+;;   (define-key evil-normal-state-map (kbd "M-a") 'mark-whole-buffer))
 (evil-define-key 'normal 'dired-mode (kbd "TAB") 'dired-find-file)
 (evil-define-key 'normal org-mode-map (kbd "q") 'quit-window)
 
