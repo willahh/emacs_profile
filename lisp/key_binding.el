@@ -10,6 +10,8 @@
 (require 'conf-mode)
 (require 'magit)
 
+(global-set-key (kbd "s--") 'negative-argument)
+
 (global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
 (define-key paredit-mode-map (kbd "M-q") 'fill-paragraph)
 (global-set-key (kbd "C-;") "\C-e;") ;; Append ; at the end of a line
@@ -125,13 +127,13 @@
 
 ;; Backward kill sexp
 (global-set-key [(control meta h)] 'backward-kill-sexp)
-(global-set-key [(control shift k)] 'kill-whole-line) ;; Override default emacs kill sentence but i don't use it
+(global-set-key (kbd "C-c C-k") 'kill-whole-line) ;; Override default emacs kill sentence but i don't use it
 
 ;; ---------------- evaluation
 (define-key emacs-lisp-mode-map (kbd "C-c C-r") 'eval-region)
 (define-key emacs-lisp-mode-map (kbd "C-c C-e") 'rr/eval-and-replace)
-;; (define-key emacs-lisp-mode-map (kbd "C-c C-v") 'eval-buffer)
-;; (global-set-key (kbd "C-c C-v") 'eval-buffer)
+(define-key emacs-lisp-mode-map (kbd "C-c C-v") 'eval-buffer)
+(global-set-key (kbd "C-c C-v") 'eval-buffer)
 
 ;; ---------------- key binding leader
 ;; -- Evil leader key commands
@@ -622,6 +624,7 @@
 (global-set-key (kbd "s-W") 'vc-ediff)
 (define-key vc-dir-mode-map (kbd "C-M-i") 'vc-dir-previous-directory)
 (define-key diff-mode-map (kbd "C-M-i") 'diff-hunk-prev)
+(define-key diff-mode-map (kbd "l") 'recenter-top-bottom)
 
 ;; avy
 (global-set-key (kbd "C-à") 'avy-goto-word-1)
@@ -689,3 +692,6 @@
 ;; scroll
 (global-set-key (kbd "C-v") 'scroll-up-half)
 (global-set-key (kbd "s-v") 'scroll-down-half)
+
+;; url
+(global-set-key (kbd "C-c j u") 'wil-browse-url-at-point)
