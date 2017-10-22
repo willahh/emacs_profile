@@ -93,6 +93,7 @@
         paredit-backward
         paredit-backward-down
         paredit-backward-kill-word
+        paredit-backward-up
         paredit-doublequote
         paredit-forward
         paredit-forward-delete
@@ -118,6 +119,7 @@
         string-inflection-all-cycle
         tab-indent-or-complete
         tern-ac-dot-complete
+        textmate-backspace2
         typescript-insert-and-indent
         untab-region
         web-mode-attribute-kill
@@ -132,7 +134,6 @@
         xah-toggle-letter-case
         yank-rectangle
         yas-expand
-        textmate-backspace2
         ))
 
 (setq mc/cmds-to-run-once

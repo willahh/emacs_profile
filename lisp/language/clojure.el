@@ -8,7 +8,7 @@
 (require 'clj-refactor)
 (require 'helm-cider)
 (require 'clojure-snippets)
-(require 'inf-clojure)
+;; (require 'inf-clojure)
 
 ;; From Magnar
 (defun clj-duplicate-top-level-form ()
@@ -42,7 +42,8 @@
             (clj-refactor-mode 1)            
             (cljr-add-keybindings-with-prefix "C-c C-m")
             (cljr-add-keybindings-with-prefix "C-c <C-m>")
-            (inf-clojure-minor-mode)))
+            ;; (inf-clojure-minor-mode)
+            ))
 
 (add-hook 'cider-mode-hook
           (lambda ()

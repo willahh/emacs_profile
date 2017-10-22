@@ -125,6 +125,8 @@
   neotree
   validate
   iy-go-to-char
+  ripgrep
+  projectile-ripgrep
   flx-ido))
 
 (add-to-list 'load-path "~/.emacs.d/vendor/emacs-async")
@@ -158,6 +160,7 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/slime")
 (add-to-list 'load-path "~/.emacs.d/vendor/cider")
 (add-to-list 'load-path "~/.emacs.d/vendor/centered-window")
+(add-to-list 'load-path "~/.emacs.d/vendor/jumptoprevpos")
 ;; (add-to-list 'load-path "~/.emacs.d/vendor/xah-css-mode")
 
 ;; (load "~/.emacs.d/vendor/xah-css-mode/xah-css-mode-mode.el")
