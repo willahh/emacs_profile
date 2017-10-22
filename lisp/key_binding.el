@@ -127,7 +127,7 @@
 
 ;; Backward kill sexp
 (global-set-key [(control meta h)] 'backward-kill-sexp)
-(global-set-key [(control shift k)] 'kill-whole-line) ;; Override default emacs kill sentence but i don't use it
+(global-set-key (kbd "C-c C-k") 'kill-whole-line) ;; Override default emacs kill sentence but i don't use it
 
 ;; ---------------- evaluation
 (define-key emacs-lisp-mode-map (kbd "C-c C-r") 'eval-region)
