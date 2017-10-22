@@ -23,10 +23,11 @@
 
 ;; tsx support
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
-(add-hook 'web-mode-hook
-          (lambda ()
-            (when (string-equal "tsx" (file-name-extension buffer-file-name))
-              (setup-tide-mode))))
+
+;; (add-hook 'web-mode-hook
+;;           (lambda ()
+;;             (when (string-equal "tsx" (file-name-extension buffer-file-name))
+;;               (setup-tide-mode))))
 
 ;; ;; jsx support
 ;; Update : .jsx for web-mode
@@ -35,13 +36,6 @@
 ;;           (lambda ()
 ;;             (when (string-equal "jsx" (file-name-extension buffer-file-name))
 ;;               (setup-tide-mode))))
-
-;; ts support
-(add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-mode))
-(add-hook 'web-mode-hook
-          (lambda ()
-            (when (string-equal "ts" (file-name-extension buffer-file-name))
-              (setup-tide-mode))))
 
 (add-hook 'typescript-mode-hook
           (define-key evil-normal-state-map (kbd "M-]") 'tide-jump-to-definition)
