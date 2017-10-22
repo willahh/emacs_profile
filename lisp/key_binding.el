@@ -691,3 +691,6 @@
 ;; scroll
 (global-set-key (kbd "C-v") 'scroll-up-half)
 (global-set-key (kbd "s-v") 'scroll-down-half)
+
+;; url
+(global-set-key (kbd "C-c j u") 'wil-browse-url-at-point)
