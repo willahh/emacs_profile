@@ -1,6 +1,7 @@
 (require 'dracula-theme)
 (require 'org)
 (require 'ediff)
+
 (require 'scroll-bar)
 (require 'faces)
 
@@ -10,6 +11,9 @@
 
 ;; Main background color
 (set-face-attribute 'default nil :background "#1a1c1d")
+
+;; CUrrent line
+(set-face-attribute 'hl-line nil :foreground nil :background "#263942")
 
 ;; Rainbow delimiter faces
 (custom-set-faces
