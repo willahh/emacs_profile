@@ -55,11 +55,11 @@
 
 ;; -- Text operations
 ;; Copy operations
-(global-set-key (kbd "C-c j c w") (quote copy-word))
-(global-set-key (kbd "C-c j c l") (quote copy-line))
-(global-set-key (kbd "C-c j c p") (quote copy-paragraph))
-(global-set-key (kbd "C-c j c s") (quote thing-copy-string-to-mark))
-(global-set-key (kbd "C-c j c a") (quote thing-copy-parenthesis-to-mark))
+(global-set-key (kbd "C-c j c w") '(copy-word))
+(global-set-key (kbd "C-c j c l") '(copy-line))
+(global-set-key (kbd "C-c j c p") '(copy-paragraph))
+(global-set-key (kbd "C-c j c s") '(thing-copy-string-to-mark))
+(global-set-key (kbd "C-c j c a") '(thing-copy-parenthesis-to-mark))
 
 ;;
 (global-set-key (kbd "C-c j d y") 'wil-window-divider-on) ;; (Translate : C-c (user main prefix) + ; (my prefix) + [d]ivider + [y]es)
