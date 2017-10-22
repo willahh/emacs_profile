@@ -1307,4 +1307,10 @@ the checking happens for all pairs in auto-minor-mode-alist"
                    :action '(("Google" . helm/test-default-action)))
         :buffer "*helm test*"))
 
-(global-set-key (kbd "C-c j i") 'wil-helm-test)
+(defun wil-browse-url-at-point (x)
+  (interactive "P")
+  (if (equal 4 (first x))
+      ;; Universal argument passed
+      (browse-url (thing-at-point 'url))
+    ;; Standard
+    (eww (thing-at-point 'url))))
