@@ -61,7 +61,7 @@
 (global-set-key (kbd "C-c j c s") (quote thing-copy-string-to-mark))
 (global-set-key (kbd "C-c j c a") (quote thing-copy-parenthesis-to-mark))
 
-;; 
+;;
 (global-set-key (kbd "C-c j d y") 'wil-window-divider-on) ;; (Translate : C-c (user main prefix) + ; (my prefix) + [d]ivider + [y]es)
 (global-set-key (kbd "C-c j d n") 'wil-window-divider-off) ;; (Translate : C-c (user main prefix) + ; (my prefix) + [d]ivider + [n]o)
 
@@ -95,7 +95,7 @@
 ;; New frame
 (global-set-key [meta shift w] 'delete-frame)
 (global-set-key (kbd "M-S-w") 'delete-frame)
-(global-set-key (kbd "M-W") 'delete-frame)        
+(global-set-key (kbd "M-W") 'delete-frame)
 
 ;; ---
 (define-key ivy-minibuffer-map (kbd "<escape>") 'minibuffer-keyboard-quit)
@@ -524,7 +524,7 @@
         ((equal (web-mode-language-at-pos) "javascript") (sp-kill-hybrid-sexp 1))
         ((equal (web-mode-language-at-pos) "php") (paredit-kill))
         ((equal (web-mode-language-at-pos) "css") (paredit-kill))))
-        
+
 
 
 (define-key web-mode-map (kbd "C-k") 'wil-web-mode-kill-sexp)
