@@ -10,7 +10,7 @@
 (require 'conf-mode)
 (require 'magit)
 
-(global-set-key (kbd "s--") 'negative-argument)
+;; (global-set-key (kbd "s--") 'negative-argument)
 
 (global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
 (define-key paredit-mode-map (kbd "M-q") 'fill-paragraph)
@@ -311,14 +311,16 @@
 (define-key org-mode-map (kbd "C-x <C-i>") 'helm-org-in-buffer-headings)
 (define-key org-mode-map (kbd "M-j") 'org-meta-return)
 
-(global-set-key (kbd "C-c s a") 'ag)
-(global-set-key (kbd "C-c s p") 'projectile-ag)
-(global-set-key (kbd "C-c s s") 'helm-ag)
-(global-set-key (kbd "C-c s S") 'helm-ag-project-root)
+;; (global-set-key (kbd "C-c s a") 'ag)
+;; (global-set-key (kbd "C-c s p") 'projectile-ag)
+;; (global-set-key (kbd "C-c s s") 'helm-ag)
+;; (global-set-key (kbd "C-c s S") 'helm-ag-project-root)
 
 (global-set-key (kbd "C-M-s") 'ag)
 (global-set-key [control meta s] 'ag-project-at-point)
 (global-set-key [control meta shift s] 'ag-project)
+
+(global-set-key (kbd "C-c j s") 'ag)
 
 ;; ---------------- new line
 ;; http://emacsredux.com/blog/2013/03/29/automatic-electric-indentation/
@@ -464,8 +466,8 @@
 (global-set-key (kbd "M-&") 'delete-other-windows) ;; M-1
 (define-key diff-mode-map (kbd "M-&") 'delete-other-windows)
 
-(global-set-key (kbd "M-2") 'hrs/split-window-below-and-switch) ;; M-2
-(define-key diff-mode-map (kbd "M-2") 'hrs/split-window-below-and-switch)
+(global-set-key (kbd "M-é") 'hrs/split-window-below-and-switch) ;; M-2
+(define-key diff-mode-map (kbd "M-é") 'hrs/split-window-below-and-switch)
 
 (global-set-key (kbd "M-3") 'hrs/split-window-right-and-switch) ;; M-3
 (define-key diff-mode-map (kbd "M-3") 'hrs/split-window-right-and-switch)
@@ -589,10 +591,11 @@
 (global-set-key (kbd "M-*") 'forward-paragraph)
 
 ;; Help
-(global-set-key (kbd "s-h") 'help)
+;; (global-set-key (kbd "s-h") 'help)
+(global-set-key (kbd "C-c j h") 'help)
 
 ;; Find
-(global-set-key (kbd "s-f") 'counsel-find-file)
+;; (global-set-key (kbd "s-f") 'counsel-find-file)
 
 ;; ------- Line navigation commands
 ;; (global-set-key (kbd "s-l") 'avy-goto-char-in-line) ; Not used
@@ -603,12 +606,14 @@
 (global-set-key (kbd "C-s-p") 'find-file-in-current-directory)
 (global-set-key (kbd "s-r") 'projectile-recentf)
 (global-set-key (kbd "C-s-r") 'counsel-recentf) ; Update : Oui mais la completion avec espace est relou et moins rapide
+(global-set-key (kbd "C-c j r") 'counsel-recentf)
+(global-set-key (kbd "C-c j R") 'projectile-recentf)
 
 ;; Scroll commands
 ;; (global-set-key (kbd "s-v") 'evil-scroll-up) ; too slow
 (global-set-key (kbd "s-v") 'scroll-down)
 (global-set-key (kbd "s-x") 'counsel-M-x)
-;; (global-set-key (kbd "s-g") 'magit-status)
+;; (global-set-key (kbd "C-c j x") 'counsel-M-x) ;; (global-set-key (kbd "s-g") 'magit-status)
 (global-set-key (kbd "s-g") 'wil-vc-status)
 (global-set-key (kbd "s-D") 'projectile-dired)
 (global-set-key (kbd "s-i") 'emmet-expand-line)
@@ -635,14 +640,15 @@
 
 ;; Search
 (global-set-key (kbd "s-S") 'helm-ag)
+(global-set-key (kbd "C-c j S") 'helm-ag)
 
-;; ---------------- Hyper key
-(global-set-key (kbd "H-p") 'projectile-switch-project)
-(global-set-key (kbd "H-s") 'mark-end-of-sentence)
+;; ;; ---------------- Hyper key
+;; (global-set-key (kbd "H-p") 'projectile-switch-project)
+;; (global-set-key (kbd "H-s") 'mark-end-of-sentence)
 
-(define-key org-mode-map (kbd "M-J") 'org-insert-todo-heading)
+;; (define-key org-mode-map (kbd "M-J") 'org-insert-todo-heading)
 
-(global-set-key (kbd "H-$") 'ispell-word)
+;; (global-set-key (kbd "H-$") 'ispell-word)
 
 ;; Hippie expand
 (global-set-key (kbd "M-i") 'hippie-expand)
@@ -664,7 +670,7 @@
 (global-set-key (kbd "<backspace>") 'delete-backward-char) ;; Override paredit-backward-kill-word behaviour for backspace
 (global-set-key [(meta shift /)] 'comment-or-uncomment-region-or-line)
 (global-set-key (kbd "s-:") 'delete-horizontal-space)
-(global-set-key (kbd "C-c j c c s") 'clojure-cheatsheet)
+;; (global-set-key (kbd "C-c j c c s") 'clojure-cheatsheet)
 (define-key occur-mode-map (kbd "n") 'next-line)
 (define-key occur-mode-map (kbd "p") 'previous-line)
 (global-set-key (kbd "C-/") 'ffap) ; Qwerty C-> for Azerty
@@ -683,10 +689,9 @@
 ;; ---------------- Markdown
 (define-key markdown-mode-map (kbd "C-M-i") 'markdown-shifttab)
 
-
 ;; kill
-(define-key evil-emacs-state-map (kbd "C-z") 'kill-region)
-(global-set-key (kbd "C-z") 'kill-region)
+(define-key evil-emacs-state-map (kbd "C-z") 'whole-line-or-region-kill-region)
+(global-set-key (kbd "C-z") 'whole-line-or-region-kill-region)
 
 ;; scroll
 (global-set-key (kbd "C-v") 'scroll-up-half)
