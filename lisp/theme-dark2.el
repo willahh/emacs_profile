@@ -138,7 +138,8 @@
 
 ;; (set-face-attribute 'diff-header nil :background "#1a1c1d" :foreground "#fff")
 (set-face-attribute 'diff-header nil :background "#161718" :foreground "#fff")
-(set-face-attribute 'diff-file-header nil :background nil :foreground "#fff")
+;; (set-face-attribute 'diff-header nil :background "#000" :foreground "#fff")
+(set-face-attribute 'diff-file-header nil :background nil :foreground "#fff" :weight 'ultra-bold)
 (set-face-attribute 'diff-hunk-header nil :background "#333" :foreground "#fff" :box "#666")
 (set-face-attribute 'diff-indicator-removed nil :background nil :foreground "#86d9fb")
 (set-face-attribute 'diff-indicator-added nil :background nil :foreground "#86d9fb")
