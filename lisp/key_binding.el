@@ -623,6 +623,7 @@
 (global-set-key (kbd "s-W") 'vc-ediff)
 (define-key vc-dir-mode-map (kbd "C-M-i") 'vc-dir-previous-directory)
 (define-key diff-mode-map (kbd "C-M-i") 'diff-hunk-prev)
+(define-key diff-mode-map (kbd "l") 'recenter-top-bottom)
 
 ;; avy
 (global-set-key (kbd "C-à") 'avy-goto-word-1)
