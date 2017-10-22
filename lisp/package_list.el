@@ -125,6 +125,8 @@
   neotree
   validate
   iy-go-to-char
+  ripgrep
+  projectile-ripgrep
   flx-ido))
 
 (add-to-list 'load-path "~/.emacs.d/vendor/emacs-async")
