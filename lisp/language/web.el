@@ -7,11 +7,12 @@
 
 (add-hook 'web-mode-hook
           (lambda ()
-            (emmet-mode)
+            (emmet-mode t)
             
             ;; Update company back end
-            (add-to-list (make-local-variable 'company-backends)
-                         'company-ac-php-backend)
+            ;; Update : Ne doit etre active que sur une zone php
+            ;; (add-to-list (make-local-variable 'company-backends)
+            ;;              'company-ac-php-backend)
             ))
 
 
