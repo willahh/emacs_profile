@@ -694,3 +694,10 @@
 
 ;; url
 (global-set-key (kbd "C-c j u") 'wil-browse-url-at-point)
+
+;; Prev / next location
+(global-set-key (kbd "C-$") 'jump-to-prev-pos)
+(global-set-key (kbd "C-M-$") 'jump-to-next-pos)
+
+;; Whitespace cleanup
+(global-set-key (kbd "C-c j wc") 'whitespace-cleanup)

@@ -12,7 +12,7 @@
 ;; Main background color
 (set-face-attribute 'default nil :background "#1a1c1d")
 
-;; CUrrent line
+;; Current line
 (set-face-attribute 'hl-line nil :foreground nil :background "#263942")
 
 ;; Rainbow delimiter faces
