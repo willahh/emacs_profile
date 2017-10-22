@@ -10,6 +10,8 @@
 (require 'conf-mode)
 (require 'magit)
 
+(global-set-key (kbd "s--") 'negative-argument)
+
 (global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
 (define-key paredit-mode-map (kbd "M-q") 'fill-paragraph)
 (global-set-key (kbd "C-;") "\C-e;") ;; Append ; at the end of a line
