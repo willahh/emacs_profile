@@ -7,9 +7,13 @@
 (setq ag-highlight-search t)
 (setq ag-reuse-buffers nil)
 (setq ag-reuse-window t) ; Re use same window 
-(add-hook 'ag-mode-hook
-          (lambda () 
-             (setq truncate-lines nil)))
+
+;; ag hook
+(defun wil-ag-mode-hook ()
+  (toggle-truncate-lines)
+  (evil-emacs-state))
+
+(add-hook 'ag-mode-hook 'wil-ag-mode-hook)
 
 ;; Enable anzu
 ;; https://github.com/syohex/emacs-anzu
