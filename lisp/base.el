@@ -462,3 +462,5 @@
 
 ;; Do not truncate words
 (setq visual-line-mode t)
+
+
