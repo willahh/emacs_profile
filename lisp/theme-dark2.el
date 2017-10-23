@@ -4,6 +4,7 @@
 
 (require 'scroll-bar)
 (require 'faces)
+(require 'eshell)
 
 (load-theme 'dracula t)
 
@@ -235,4 +236,4 @@
  (face-list))
 
 ;; Eshell
-(set-face-attribute 'eshell-prompt nil :foreground "#8be9fd")
+;; (set-face-attribute 'eshell-prompt nil :foreground "#8be9fd")
