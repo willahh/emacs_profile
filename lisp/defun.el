@@ -1298,8 +1298,7 @@ the checking happens for all pairs in auto-minor-mode-alist"
 (defun helm/test-default-action (candidate)
   (eww (format
                "http://www.google.com/search?q=%s"
-               (url-hexify-string candidate))))
-
+               (url-hexify-string candidate)))) 
 (defun wil-helm-test ()
   (interactive)
   (helm :sources (helm-build-in-buffer-source "test1"
@@ -1314,3 +1313,13 @@ the checking happens for all pairs in auto-minor-mode-alist"
       (browse-url (thing-at-point 'url))
     ;; Standard
     (eww (thing-at-point 'url))))
+
+;; http://bling.github.io/blog/2016/01/18/why-are-you-changing-gc-cons-threshold/
+(defun my-minibuffer-setup-hook ()
+  (setq gc-cons-threshold most-positive-fixnum))
+
+(defun my-minibuffer-exit-hook ()
+  (setq gc-cons-threshold 800000))
+
+(add-hook 'minibuffer-setup-hook #'my-minibuffer-setup-hook)
+(add-hook 'minibuffer-exit-hook #'my-minibuffer-exit-hook)
