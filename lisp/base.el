@@ -491,19 +491,15 @@
 
 
 
+;; (require 'auto-answer)    
+;; (let ((auto-answer '(("\\`Active processes exist; kill them and exit anyway\\? \\'" t))))
+;;   (save-buffers-kill-emacs))
 
+;; Kill shell process without asking, i do trust (hope) !
+;; https://emacs.stackexchange.com/questions/17005/killing-ansi-term-says-has-a-running-process
+(defun set-no-process-query-on-exit ()
+  (let ((proc (get-buffer-process (current-buffer))))
+    (when (processp proc)
+      (set-process-query-on-exit-flag proc nil))))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+(add-hook 'term-exec-hook 'set-no-process-query-on-exit)
