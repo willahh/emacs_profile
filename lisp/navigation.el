@@ -165,7 +165,10 @@
 ;; ---------------- swoop
 ;; If this value is t, split window inside the current window
 (setq helm-swoop-split-with-multiple-windows t)
-(setq helm-swoop-pre-input-function (lambda () nil))
+
+;; Dont pre fill at point
+;; (setq helm-swoop-pre-input-function (lambda () nil))
+;; Update : Ok, maybe more usefull
 
 ;; ---------------- swiper
 (use-package counsel

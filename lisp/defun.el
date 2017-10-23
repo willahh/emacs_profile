@@ -1283,6 +1283,53 @@ the checking happens for all pairs in auto-minor-mode-alist"
   (multiple-cursors-mode 0))
 
 
+;; Increment at point
+;; https://www.emacswiki.org/emacs/IncrementNumber
+(defun increment-number-at-point ()
+      (interactive)
+      (skip-chars-backward "0-9")
+      (or (looking-at "[0-9]+")
+          (error "No number at point"))
+      (replace-match (number-to-string (1+ (string-to-number (match-string 0))))))
+
+(defun increment-number-at-point-by-10 ()
+      (interactive)
+      (skip-chars-backward "0-9")
+      (or (looking-at "[0-9]+")
+          (error "No number at point"))
+      (replace-match (number-to-string (+ 10 (string-to-number (match-string 0))))))
+
+(defun decrement-number-at-point ()
+      (interactive)
+      (skip-chars-backward "0-9")
+      (or (looking-at "[0-9]+")
+          (error "No number at point"))
+      (replace-match (number-to-string (1- (string-to-number (match-string 0))))))
+
+(defun decrement-number-at-point-by-10 ()
+      (interactive)
+      (skip-chars-backward "0-9")
+      (or (looking-at "[0-9]+")
+          (error "No number at point"))
+      (replace-match (number-to-string (- (string-to-number (match-string 0)) 10))))
+
+;; Hydra for incremnet at point
+(defhydra wil-hydra-increment-at-point (:color teal :columns 5
+                              :after-exit (wil-hydra-increment-at-point/body))
+  "Increment at point"
+  ("p" increment-number-at-point)
+  ("n" decrement-number-at-point)
+  ("P" increment-number-at-point-by-10)
+  ("N" decrement-number-at-point-by-10))
+
+(global-set-key (kbd "C-c ; i") 'wil-hydra-increment-at-point/body)
+
+
+(defun wil-open-file-in-browser ()
+  (interactive)
+  (buffer-file-name))
+
+; (cons (split-string (quote "/Users/wravel/www/project/arsia/arsia_standard_310/dev/sygesp/test.php") "/"))
 ;; https://www.emacswiki.org/emacs/HalfScrolling
 (defun window-half-height ()
   (max 1 (/ (1- (window-height (selected-window))) 2)))

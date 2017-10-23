@@ -4,10 +4,12 @@
 
 (require 'scroll-bar)
 (require 'faces)
+(require 'eshell)
 
 (load-theme 'dracula t)
 
-(setq-default line-spacing 2) ; Same line height as modern editor (VS Code)
+;; (setq-default line-spacing 2) ; Same line height as modern editor (VS Code)
+(setq-default line-spacing 1) ; Update to default value (switch font instead)
 
 ;; Main background color
 (set-face-attribute 'default nil :background "#1a1c1d")
@@ -113,6 +115,8 @@
 (custom-theme-set-faces
            'dracula
            '(region ((t (:background "#275f99" :foreground nil))))
+           '(isearch-lazy-highlight ((t (:background "#4f5d66" :foreground nil))))
+           ;; '(isearch ((t (:background "#ffe400" :foreground "#000"))))
            '(isearch ((t (:background "#ffe400" :foreground nil))))
            '(lazy-highlight ((t (:background "#4f5d66" :underline t))))
            '(set-face-attribute 'link nil :foreground nil))
@@ -230,3 +234,6 @@
         (when (eq (face-attribute face :weight) 'bold)
           (set-face-attribute face nil :weight 'normal)))
  (face-list))
+
+;; Eshell
+;; (set-face-attribute 'eshell-prompt nil :foreground "#8be9fd")

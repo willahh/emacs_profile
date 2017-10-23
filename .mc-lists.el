@@ -102,6 +102,7 @@
         paredit-kill
         paredit-meta-doublequote
         paredit-open-round
+        paredit-open-square
         paredit-semicolon
         reindent-then-newline-and-indent
         skeleton-pair-insert-maybe

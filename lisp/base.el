@@ -455,6 +455,35 @@
 ;; http://batsov.com/articles/2011/11/25/emacs-tip-number-3-whitespace-cleanup/
 ;; (add-hook 'before-save-hook 'whitespace-cleanup)
 
+
+;; Tentative de meilleurs perf sur les fonts, pas encore top
+;; do lazy locking, it's quicker
+(setq font-lock-support-mode 'lazy-lock-mode)
+;; more font-locking, variables for `lazy-lock-mode'
+;; wait 10 secs before font-locking stuff
+(setq lazy-lock-defer-time 10
+      ;; don't font lock as I type
+      lazy-lock-defer-on-the-fly t
+      ;; If I'm not doing stuff, start fontifying 
+      ;; the rest of the buffer
+      lazy-lock-stealth-time 30)
+ ;; emacs 21 has jit-lock which is better
+ (setq font-lock-support-mode 'jit-lock-mode)
+ (setq jit-lock-stealth-time 16
+       jit-lock-defer-contextually t
+       jit-lock-stealth-nice 0.5)
+ (setq-default font-lock-multiline t)
+
+
+;; https://emacs.stackexchange.com/a/603
+(setq bidi-display-reordering nil)
+
+
+;; https://stackoverflow.com/questions/27845980/how-do-i-remove-newline-symbols-inside-emacs-vertical-border
+;; Disable fringe indicator arrow for text truncate-lines
+(setf (cdr (assq 'continuation fringe-indicator-alist))
+      '(nil nil))
+
 ;; https://stackoverflow.com/questions/27845980/how-do-i-remove-newline-symbols-inside-emacs-vertical-border
 ;; Disable fringe indicator arrow for text truncate-lines
 (setf (cdr (assq 'continuation fringe-indicator-alist))
@@ -463,4 +492,15 @@
 ;; Do not truncate words
 (setq visual-line-mode t)
 
+;; (require 'auto-answer)
+;; (let ((auto-answer '(("\\`Active processes exist; kill them and exit anyway\\? \\'" t))))
+;;   (save-buffers-kill-emacs))
 
+;; Kill shell process without asking, i do trust (hope) !
+;; https://emacs.stackexchange.com/questions/17005/killing-ansi-term-says-has-a-running-process
+(defun set-no-process-query-on-exit ()
+  (let ((proc (get-buffer-process (current-buffer))))
+    (when (processp proc)
+      (set-process-query-on-exit-flag proc nil))))
+
+(add-hook 'term-exec-hook 'set-no-process-query-on-exit)

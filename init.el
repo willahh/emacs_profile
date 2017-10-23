@@ -17,6 +17,7 @@
 (load-file "~/.emacs.d/lisp/misc.el")
 (load-file "~/.emacs.d/lisp/ui.el")
 (load-file "~/.emacs.d/lisp/completion.el")
+;; (load-file "~/.emacs.d/lisp/lsp.el")
 (load-file "~/.emacs.d/lisp/yas.el")
 (load-file "~/.emacs.d/lisp/vc.el")
 (load-file "~/.emacs.d/lisp/markdown.el")
@@ -79,7 +80,7 @@
  '(helm-ag-insert-at-point (quote symbol))
  '(helm-source-names-using-follow
    (quote
-    ("Search at ~/.emacs.d/lisp/" "Search at ~/www/project/easy3p/easy3p_3.2_lot2/dev/module/flatplan/js/" "Search at ~/.emacs.d/elpa/multiple-cursors-1.4.0/" "Search at ~/www/project/arsia/goacrop/lib/cropperjs/src/js/" "Search at ~/www/test/clojurescript/02/" "Search at /usr/local/Cellar/emacs-mac/emacs-25.3-mac-6.8/share/emacs/25.3/lisp/" "Search at ~/Documents/test/clojure/clojureadmin/src/my_webapp/" "Search at ~/www/test/clojure/clojure-web-app/src/" "Search at ~/www/test/clojure/myproject2/src/clj/myproject2/" "Search at ~/www/test/reactnative/react-redux-realworld-example-app/src/components/" "Imenu")))
+    ("Search at ~/.emacs.d/lisp/" "Search at ~/.emacs.d/elpa/multiple-cursors-1.4.0/" "Search at ~/www/project/arsia/goacrop/lib/cropperjs/src/js/" "Search at ~/www/test/clojurescript/02/" "Search at /usr/local/Cellar/emacs-mac/emacs-25.3-mac-6.8/share/emacs/25.3/lisp/" "Search at ~/Documents/test/clojure/clojureadmin/src/my_webapp/" "Search at ~/www/test/clojure/clojure-web-app/src/" "Search at ~/www/test/clojure/myproject2/src/clj/myproject2/" "Search at ~/www/test/reactnative/react-redux-realworld-example-app/src/components/" "Imenu")))
  '(ido-enable-flex-matching t)
  '(magit-dispatch-arguments nil)
  '(package-selected-packages
@@ -160,7 +161,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((((class color) (min-colors 89)) (:background "#282a36" :foreground "#f8f8f2"))))
+ '(default ((((class color) (min-colors 89)) (:background "#282a36" :foreground "#f8f8f2" :family "Office Code Pro" :foundry "nil" :slant normal :weight normal :height 130 :width normal))))
  '(lazy-highlight ((t (:background "#4f5d66" :underline t))))
  '(rainbow-delimiters-depth-1-face ((t (:foreground "#5abeee"))))
  '(rainbow-delimiters-depth-2-face ((t (:foreground "#ff00a0"))))

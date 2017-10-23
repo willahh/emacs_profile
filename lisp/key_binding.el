@@ -417,7 +417,8 @@
 
 ;; ---------------- Shell
 ;; Start eshell or switch to it if it's active.
-(global-set-key (kbd "C-x m") 'eshell)
+;; (global-set-key (kbd "C-x m") 'eshell)
+(global-set-key (kbd "C-c j e") 'eshell)
 
 ;; Start a new eshell even if one is active.
 (global-set-key (kbd "C-x M") (lambda () (interactive) (eshell t)))
@@ -483,11 +484,12 @@
 (global-set-key [(meta shift o)] 'previous-multiframe-window)
 
 (define-key ggtags-navigation-map (kbd "M-p") 'highlight-symbol-next)
-(global-set-key (kbd "s-n") 'highlight-symbol-prev)
+(global-set-key (kbd "M-n") 'highlight-symbol-prev)
 
 ;; Update to use, classical Meta-n to create a new buffer like in
 ;; modern editors. Update highlight-symbol-prev to Super - M
-(define-key highlight-symbol-nav-mode-map (kbd "M-n") 'xah-new-empty-buffer)
+;; Update : Retour sur le M-n highlight symbol bien plus pratique
+;; (define-key highlight-symbol-nav-mode-map (kbd "M-n") 'xah-new-empty-buffer)
 
 
 (global-set-key (kbd "<delete>") 'wil-delete-backspace)
@@ -615,6 +617,8 @@
 (global-set-key (kbd "s-x") 'counsel-M-x)
 ;; (global-set-key (kbd "C-c j x") 'counsel-M-x) ;; (global-set-key (kbd "s-g") 'magit-status)
 (global-set-key (kbd "s-g") 'wil-vc-status)
+(global-set-key (kbd "C-x v U") 'wil-svn-up-recursive)
+
 (global-set-key (kbd "s-D") 'projectile-dired)
 (global-set-key (kbd "s-i") 'emmet-expand-line)
 (define-key emacs-lisp-mode-map (kbd "C-c C-c") 'eval-defun)
@@ -633,7 +637,6 @@
 ;; avy
 (global-set-key (kbd "C-à") 'avy-goto-word-1)
 (global-set-key (kbd "s-l") 'avy-goto-char-in-line)
-
 
 ;; dired
 (global-set-key (kbd "s-d") 'projectile-dired)
