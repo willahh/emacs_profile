@@ -19,6 +19,7 @@
 
 (add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-mode))
 (add-to-list 'auto-mode-alist '("\\.jade\\'" . jade-mode))
+(add-to-list 'auto-mode-alist '("\\.as\\'" . actionscript-mode))
 
 (setq web-mode-enable-css-colorization t)
 (setq web-mode-enable-current-column-highlight nil) ; Update : L effet visuel n est pas reelement convaincant
