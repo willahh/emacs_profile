@@ -100,7 +100,7 @@
 ;; ---
 (define-key ivy-minibuffer-map (kbd "<escape>") 'minibuffer-keyboard-quit)
 (define-key ivy-minibuffer-map (kbd "C-h") 'delete-backward-char)
-(define-key ivy-minibuffer-map (kbd "C-w") 'backward-kill-word)
+(define-key ivy-minibuffer-map (kbd "C-z") 'backward-kill-word)
 
 (use-package evil-mc
   :bind (:map evil-mc-key-map
@@ -264,9 +264,9 @@
 ;; Line operations
 (global-set-key (kbd "C-é") 'drag-stuff-down) ;; control+alt+j
 (global-set-key (kbd "<C-S-return>") 'open-line-above)
-(global-set-key (kbd "C-w") 'paredit-backward-kill-word)
-(define-key helm-map (kbd "C-w") 'paredit-backward-kill-word)
-(define-key ido-buffer-completion-map (kbd "C-w") 'backward-delete-char)
+(global-set-key (kbd "C-z") 'backward-kill-word-or-region)
+(define-key helm-map (kbd "C-z") 'backward-kill-word-or-region)
+(define-key ido-buffer-completion-map (kbd "C-z") 'backward-kill-word-or-region)
 (global-set-key (kbd "C-h") 'backward-delete-char)
 (define-key lisp-mode-map (kbd "C-h") 'paredit-backward-delete)
 (define-key emacs-lisp-mode-map (kbd "C-h") 'paredit-backward-delete)
@@ -275,7 +275,7 @@
 
 (define-key company-active-map (kbd "C-h") 'paredit-backward-delete)
 (define-key company-active-map (kbd "<tab>") 'company-complete-selection)
-(define-key company-active-map (kbd "C-w") 'paredit-backward-kill-word)
+(define-key company-active-map (kbd "C-z") 'backward-kill-word-or-region)
 (define-key company-active-map (kbd "C-n") 'company-select-next)
 (define-key company-active-map (kbd "C-p") 'company-select-previous)
 (define-key company-active-map (kbd "C-i") 'company-complete-selection)
