@@ -321,6 +321,7 @@
 (global-set-key [control meta shift s] 'ag-project)
 
 (global-set-key (kbd "C-c j s") 'ag)
+;; (global-set-key (kbd "C-c j s") 'projectile-ag)
 
 ;; ---------------- new line
 ;; http://emacsredux.com/blog/2013/03/29/automatic-electric-indentation/
