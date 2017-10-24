@@ -20,7 +20,7 @@
 (setq-default js2-include-gears-externs nil)
 (setq-default js2-concat-multiline-strings 'eol)
 (setq-default js2-rebind-eol-bol-keys nil)
-
+(setq-default js-switch-indent-offset 4)
 ;; Let flycheck handle parse errors
 (setq-default js2-show-parse-errors nil)
 (setq-default js2-strict-missing-semi-warning nil)
