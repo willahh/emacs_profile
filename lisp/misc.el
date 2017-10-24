@@ -165,6 +165,9 @@
 
 ;; rainbow-mode (css color)
 ;; (require 'rainbow-mode)
+(require 'rainbow-mode)
+(add-hook 'prog-mode-hook #'rainbow-mode)
+
 
 ;;; Colourise CSS colour
 ;; Update : trop de couleurs
