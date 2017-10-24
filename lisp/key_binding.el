@@ -593,8 +593,8 @@
 (global-set-key (kbd "M-*") 'forward-paragraph)
 
 ;; Help
-;; (global-set-key (kbd "s-h") 'help)
-(global-set-key (kbd "C-c j h") 'help)
+(global-set-key (kbd "s-h") 'help)
+;; (global-set-key (kbd "C-c j h") 'help)
 
 ;; Find
 ;; (global-set-key (kbd "s-f") 'counsel-find-file)
