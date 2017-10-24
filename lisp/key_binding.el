@@ -695,6 +695,7 @@
 ;; kill
 (define-key evil-emacs-state-map (kbd "C-z") 'whole-line-or-region-kill-region)
 (global-set-key (kbd "C-z") 'whole-line-or-region-kill-region)
+(global-set-key (kbd "C-w") 'backward-kill-word-or-region)
 
 ;; scroll
 (global-set-key (kbd "C-v") 'scroll-up-half)
