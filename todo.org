@@ -77,25 +77,14 @@ phpmd
 Semantic PHP parser with ECB
 http://ecb.sourceforge.net/
 https://www.youtube.com/watch?v=KoRNCrx9pak
-
+C
 * Tasks
 :VISIBILITY: all
 ** TODO Ajouter un bind C-space en mode company pour afficher / masquer la documentation (comportement moderne)
-
 ** TODO Ag result buffer : C-o : Open in new window
 ** TODO Activer le highlight en mode php
-** TODO Tester l'alternative a AG pour la recherche (le plus récent)
-** TODO Mini buffer : Ne pas afficher de scrollbar
-** TODO Ajouter un bind ALT + arrow up / down sur drags
-** TODO [helm] Plugin helm utiisable avec la souris
-** TODO org mode : > yas snippet new checkbox ne fonctionne plus
-  - Retrouver le racourcis de base plutot
-** TODO Multi-cursor : KP ENTER -> Meme comportement que ENTER
-** TODO [ag] Ne pas lancer la recherche avec les caracteres sur le curseur
-** TODO [man] Autofocus sur la fenêtre
 ** TODO General : Utiliser le package general et jouer une touche sur
-  super-spc ou hyper-spc
-** TODO Associer les fichiers .pdf au mode PDFView
+  super-spc ou hyper-sp
 ** TODO Terminer intégration de hunspell @work
 ** TODO Mini buffer > M-p : Ne pas afficher de message beginning of
   buffer bla bla
@@ -292,6 +281,15 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
   - [ ] Show current VC system used
   - [ ] Show current encoding
 ** TODO Remettre un bind pour org mode pour faire des checkbox
+** TODO Mini buffer : Ne pas afficher de scrollbar
+** TODO Ajouter un bind ALT + arrow up / down sur drags
+** TODO [helm] Plugin helm utisable avec la souris
+** TODO org mode : > yas snippet new checkbox ne fonctionne plus
+  - Retrouver le racourcis de base plutot
+** TODO Multi-cursor : KP ENTER -> Meme comportement que ENTER
+** TODO [ag] Ne pas lancer la recherche avec les caracteres sur le curseur
+** TODO [man] Autofocus sur la fenêtrec
+** TODO Associer les fichiers .pdf au mode PDFView
 * Corrige
 - [X] rebind Sépartions verticales et horizontales sur clavier azerty
 - [X] Remettre le binding par default C-q
