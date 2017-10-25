@@ -1,7 +1,7 @@
 ;; yank-pop-forwards
 (defun yank-pop-forwards (arg)
-      (interactive "p")
-      (yank-pop (- arg)))
+  (interactive "p")
+  (yank-pop (- arg)))
 
 
 ;; Revert without confirm
@@ -165,28 +165,28 @@ Position the cursor at it's beginning, according to the current mode."
   (indent-according-to-mode))
 
 ;; http://emacsredux.com/blog/2013/05/22/smarter-navigation-to-the-beginning-of-a-line/
-(defun smarter-move-beginning-of-line (arg)
-  "Move point back to indentation of beginning of line.
+;; (defun smarter-move-beginning-of-line (arg)
+;;   "Move point back to indentation of beginning of line.
 
-Move point to the first non-whitespace character on this line.
-If point is already there, move to the beginning of the line.
-Effectively toggle between the first non-whitespace character and
-the beginning of the line.
+;; Move point to the first non-whitespace character on this line.
+;; If point is already there, move to the beginning of the line.
+;; Effectively toggle between the first non-whitespace character and
+;; the beginning of the line.
 
-If ARG is not nil or 1, move forward ARG - 1 lines first.  If
-point reaches the beginning or end of the buffer, stop there."
-  (interactive "^p")
-  (setq arg (or arg 1))
+;; If ARG is not nil or 1, move forward ARG - 1 lines first.  If
+;; point reaches the beginning or end of the buffer, stop there."
+;;   (interactive "^p")
+;;   (setq arg (or arg 1))
 
-  ;; Move lines first
-  (when (/= arg 1)
-    (let ((line-move-visual nil))
-      (forward-line (1- arg))))
+;;   ;; Move lines first
+;;   (when (/= arg 1)
+;;     (let ((line-move-visual nil))
+;;       (forward-line (1- arg))))
 
-  (let ((orig-point (point)))
-    (back-to-indentation)
-    (when (= orig-point (point))
-      (move-beginning-of-line 1))))
+;;   (let ((orig-point (point)))
+;;     (back-to-indentation)
+;;     (when (= orig-point (point))
+;;       (move-beginning-of-line 1))))
 
 ;; Dont prompt me when quit
 ;; Source : http://emacs.stackexchange.com/a/24602
@@ -216,10 +216,10 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;; Create-tags
 ;; Source : https://www.emacswiki.org/emacs/BuildTags
 (defun create-tags (dir-name)
-    "Create tags file."
-    (interactive "DDirectory: ")
-    (shell-command
-     (format "%s -f TAGS -e -R %s" ctags (directory-file-name dir-name))))
+  "Create tags file."
+  (interactive "DDirectory: ")
+  (shell-command
+   (format "%s -f TAGS -e -R %s" ctags (directory-file-name dir-name))))
 
 
 
@@ -374,33 +374,33 @@ That is, a string used to represent it on the tab bar."
 ;; Source http://stackoverflow.com/a/35183657
 ;; Updated to just use for back indent, forward indent is
 (defun custom-indent-region(numSpaces)
-    (progn
-        ; default to start and end of current line
-        (setq regionStart (line-beginning-position))
-        (setq regionEnd (line-end-position))
+  (progn
+                                        ; default to start and end of current line
+    (setq regionStart (line-beginning-position))
+    (setq regionEnd (line-end-position))
 
-        ; if there's a selection, use that instead of the current line
-        (when (use-region-p)
-            (setq regionStart (region-beginning))
-            (setq regionEnd (region-end))
-        )
+                                        ; if there's a selection, use that instead of the current line
+    (when (use-region-p)
+      (setq regionStart (region-beginning))
+      (setq regionEnd (region-end))
+      )
 
-        (save-excursion ; restore the position afterwards
-            (goto-char regionStart) ; go to the start of region
-            (setq start (line-beginning-position)) ; save the start of the line
-            (goto-char regionEnd) ; go to the end of region
-            (setq end (line-end-position)) ; save the end of the line
+    (save-excursion ; restore the position afterwards
+      (goto-char regionStart) ; go to the start of region
+      (setq start (line-beginning-position)) ; save the start of the line
+      (goto-char regionEnd) ; go to the end of region
+      (setq end (line-end-position)) ; save the end of the line
 
-            (indent-rigidly start end numSpaces) ; indent between start and end
-            (setq deactivate-mark nil) ; restore the selected region
-        )
+      (indent-rigidly start end numSpaces) ; indent between start and end
+      (setq deactivate-mark nil) ; restore the selected region
+      )
     )
-)
+  )
 
 (defun untab-region (N)
-    (interactive "p")
-    (custom-indent-region -4)
-)
+  (interactive "p")
+  (custom-indent-region -4)
+  )
 
 ;; (defun tab-region (N)
 ;;     (interactive "p")
@@ -433,7 +433,7 @@ That is, a string used to represent it on the tab bar."
     (set-buffer-modified-p nil)))
 
 (defadvice dired-readin
-  (after dired-after-updating-hook first () activate)
+    (after dired-after-updating-hook first () activate)
   "Sort dired listings with directories first before adding marks."
   (mydired-sort))
 
@@ -479,98 +479,89 @@ That is, a string used to represent it on the tab bar."
 
 ;; Copy without selection (word, line, paragraph, string, parenthesis)
 ;; https://emacswiki.org/emacs/CopyWithoutSelection
-  (defun get-point (symbol &optional arg)
-      "get the point"
-      (funcall symbol arg)
-      (point))
+(defun get-point (symbol &optional arg)
+  "get the point"
+  (funcall symbol arg)
+  (point))
 
-     (defun copy-thing (begin-of-thing end-of-thing &optional arg)
-       "copy thing between beg & end into kill ring"
-        (save-excursion
-          (let ((beg (get-point begin-of-thing 1))
-             (end (get-point end-of-thing arg)))
-            (copy-region-as-kill beg end))))
+(defun copy-thing (begin-of-thing end-of-thing &optional arg)
+  "copy thing between beg & end into kill ring"
+  (save-excursion
+    (let ((beg (get-point begin-of-thing 1))
+          (end (get-point end-of-thing arg)))
+      (copy-region-as-kill beg end))))
 
-     (defun paste-to-mark(&optional arg)
-       "Paste things to mark, or to the prompt in shell-mode"
-       (let ((pasteMe
+(defun paste-to-mark(&optional arg)
+  "Paste things to mark, or to the prompt in shell-mode"
+  (let ((pasteMe
          (lambda()
            (if (string= "shell-mode" major-mode)
-             (progn (comint-next-prompt 25535) (yank))
-           (progn (goto-char (mark)) (yank) )))))
-        (if arg
-            (if (= arg 1)
+               (progn (comint-next-prompt 25535) (yank))
+             (progn (goto-char (mark)) (yank) )))))
+    (if arg
+        (if (= arg 1)
             nil
-              (funcall pasteMe))
-          (funcall pasteMe))))
+          (funcall pasteMe))
+      (funcall pasteMe))))
 
 (defun copy-word (&optional arg)
-      "Copy words at point into kill-ring"
-       (interactive)
-       (copy-thing 'backward-word 'forward-word arg)
-       (message "copy-word"))
+  "Copy words at point into kill-ring"
+  (interactive)
+  (copy-thing 'backward-word 'forward-word arg)
+  (message "copy-word"))
 
 
- (defun copy-line (&optional arg)
-      "Save current line into Kill-Ring without mark the line "
-       (interactive)
-       (copy-thing 'beginning-of-line 'end-of-line arg)
-       (message "copy-line"))
+(defun copy-line (&optional arg)
+  "Save current line into Kill-Ring without mark the line "
+  (interactive)
+  (copy-thing 'beginning-of-line 'end-of-line arg)
+  (message "copy-line"))
 
 
- (defun copy-paragraph (&optional arg)
-      "Copy paragraphes at point"
-       ;; (interactive "P")
-       (interactive)
-       (copy-thing 'backward-paragraph 'forward-paragraph arg)
-       (message "copy-paragraph")
-       ;; (paste-to-mark arg)
-     )
+(defun copy-paragraph (&optional arg)
+  "Copy paragraphes at point"
+  ;; (interactive "P")
+  (interactive)
+  (copy-thing 'backward-paragraph 'forward-paragraph arg)
+  (message "copy-paragraph")
+  ;; (paste-to-mark arg)
+  )
 
- (defun beginning-of-string(&optional arg)
-       "  "
-       (re-search-backward "[ \t]" (line-beginning-position) 3 1)
-             (if (looking-at "[\t ]")  (goto-char (+ (point) 1)) )
-     )
-     (defun end-of-string(&optional arg)
-       " "
-       (re-search-forward "[ \t]" (line-end-position) 3 arg)
-             (if (looking-back "[\t ]") (goto-char (- (point) 1)) )
-     )
+(defun beginning-of-string(&optional arg)
+  "  "
+  (re-search-backward "[ \t]" (line-beginning-position) 3 1)
+  (if (looking-at "[\t ]")  (goto-char (+ (point) 1)) )
+  )
+(defun end-of-string(&optional arg)
+  " "
+  (re-search-forward "[ \t]" (line-end-position) 3 arg)
+  (if (looking-back "[\t ]") (goto-char (- (point) 1)) )
+  )
 
-     (defun thing-copy-string-to-mark(&optional arg)
-       " Try to copy a string and paste it to the mark
+(defun thing-copy-string-to-mark(&optional arg)
+  " Try to copy a string and paste it to the mark
      When used in shell-mode, it will paste string on shell prompt by default "
-       (interactive "P")
-       (copy-thing 'beginning-of-string 'end-of-string arg)
-       ;; (paste-to-mark arg)
-     )
+  (interactive "P")
+  (copy-thing 'beginning-of-string 'end-of-string arg)
+  ;; (paste-to-mark arg)
+  )
 
 
 (defun beginning-of-parenthesis(&optional arg)
-       "  "
-       (re-search-backward "[[<(?\"]" (line-beginning-position) 3 1)
-             (if (looking-at "[[<(?\"]")  (goto-char (+ (point) 1)) )
-     )
-     (defun end-of-parenthesis(&optional arg)
-       " "
-       (re-search-forward "[]>)?\"]" (line-end-position) 3 arg)
-             (if (looking-back "[]>)?\"]") (goto-char (- (point) 1)) )
-     )
+  "  "
+  (re-search-backward "[[<(?\"]" (line-beginning-position) 3 1)
+  (if (looking-at "[[<(?\"]")  (goto-char (+ (point) 1)) ))
 
-     (defun thing-copy-parenthesis-to-mark(&optional arg)
-       " Try to copy a parenthesis and paste it to the mark
+(defun end-of-parenthesis(&optional arg)
+  " "
+  (re-search-forward "[]>)?\"]" (line-end-position) 3 arg)
+  (if (looking-back "[]>)?\"]") (goto-char (- (point) 1))))
+
+(defun thing-copy-parenthesis-to-mark(&optional arg)
+  " Try to copy a parenthesis and paste it to the mark
      When used in shell-mode, it will paste parenthesis on shell prompt by default "
-       (interactive "P")
-       (copy-thing 'beginning-of-parenthesis 'end-of-parenthesis arg)
-       ;; (paste-to-mark arg)
-     )
-
-
-
-
-
-
+  (interactive "P")
+  (copy-thing 'beginning-of-parenthesis 'end-of-parenthesis arg))
 
 ;; New centered frame
 (defun wil-create-new-centered-frame ()
@@ -579,8 +570,7 @@ That is, a string used to represent it on the tab bar."
   (select-frame (make-frame))
   (funcall #'switch-to-buffer (generate-new-buffer "*new*"))
   ;; (funcall #'switch-to-buffer (with-current-buffer (generate-new-buffer "*new*") (funcall fundamental-mode)))
-  (wil-frame-center)
-)
+  (wil-frame-center))
 
 ;; Block comment auto close
 ;; https://emacs.stackexchange.com/a/14613
@@ -600,15 +590,13 @@ That is, a string used to represent it on the tab bar."
         (insert "*/"))
       (move-to-column star-col-num) ; comment this line if using bsd style
       (insert "*") ; comment this line if using bsd style
-     ))
+      ))
   ;; Ensure one space between the asterisk and the comment
   (when (not (looking-back " "))
     (insert " ")))
 
 (advice-add 'c-indent-new-comment-line :around #'my-prettify-c-block-comment)
 ;; (advice-remove 'c-indent-new-comment-line #'my-prettify-c-block-comment)
-
-
 
 ;; Source : http://emacs.stackexchange.com/a/7925
 ;; @todo ajouter la completion en php apres :: (la ligne en commentaire empeche
@@ -688,12 +676,12 @@ That is, a string used to represent it on the tab bar."
 (defun unpop-to-mark-command ()
   "Unpop off mark ring. Does nothing if mark ring is empty."
   (interactive)
-      (when mark-ring
-        (setq mark-ring (cons (copy-marker (mark-marker)) mark-ring))
-        (set-marker (mark-marker) (car (last mark-ring)) (current-buffer))
-        (when (null (mark t)) (ding))
-        (setq mark-ring (nbutlast mark-ring))
-        (goto-char (marker-position (car (last mark-ring))))))
+  (when mark-ring
+    (setq mark-ring (cons (copy-marker (mark-marker)) mark-ring))
+    (set-marker (mark-marker) (car (last mark-ring)) (current-buffer))
+    (when (null (mark t)) (ding))
+    (setq mark-ring (nbutlast mark-ring))
+    (goto-char (marker-position (car (last mark-ring))))))
 
 ;; http://stackoverflow.com/a/3399064/8000017
 (defmacro my-unpop-to-mark-advice ()
@@ -978,7 +966,7 @@ the visible part of the current buffer following point. "
   (interactive)
   (window-configuration-to-register :wil2)
   (vc-ediff nil)
-)
+  )
 
 (defun wil-vc-ediff-quit ()
   (interactive)
@@ -1005,13 +993,13 @@ the visible part of the current buffer following point. "
   (interactive
    (list
     (or (completing-read "criteria [name]: "
-             '("size(S)" "extension(X)" "creation-time(ct)"
-               "access-time(ut)" "time(t)" "name()"))
-    "")))
+                         '("size(S)" "extension(X)" "creation-time(ct)"
+                           "access-time(ut)" "time(t)" "name()"))
+        "")))
   (string-match ".*(\\(.*\\))" criteria)
   (dired-sort-other
    (concat dired-listing-switches
-       (match-string 1 criteria))))
+           (match-string 1 criteria))))
 
 (define-key dired-mode-map (kbd "s") 'dired-sort-criteria)
 
@@ -1058,7 +1046,7 @@ the visible part of the current buffer following point. "
   (wil-frame-center))
 
 (defun wil-open-logs
-  (interactive)
+    (interactive)
   (dired "~/www/logs"))
 
 (defun wil-yank-and-indent-region ()
@@ -1145,7 +1133,7 @@ Version 2017-04-19"
 ;; (fset 'wil-php-echo-string
 ;;    (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ([101 99 104 111 32 39 5 39 32 46 33554464 80 72 80 S-backspace 80 95 69 79 76 59] 0 "%d")) arg)))
 (fset 'wil-php-concatstring
-   [?\C-a ?\C-  ?\C-e ?\s-x ?r ?e ?p ?l ?a ?c ?e ?  ?s ?t ?\C-w ?\C-h ?s ?t ?r ?i ?\C-j ?\' ?\C-j ?\\ ?\' ?\C-j ?\C-a ?$ ?s ?H ?l backspace ?t ?m ?l ?  ?. ?= ?  ?\' ?\C-d ?\' ?\C-  ?\C-f ?\C-h ?\C-e ?\' ?  ?. ?\S-  ?P ?P ?\C-h ?H ?P ?_ ?E ?O ?L ?\; ?\C-n])
+      [?\C-a ?\C-  ?\C-e ?\s-x ?r ?e ?p ?l ?a ?c ?e ?  ?s ?t ?\C-w ?\C-h ?s ?t ?r ?i ?\C-j ?\' ?\C-j ?\\ ?\' ?\C-j ?\C-a ?$ ?s ?H ?l backspace ?t ?m ?l ?  ?. ?= ?  ?\' ?\C-d ?\' ?\C-  ?\C-f ?\C-h ?\C-e ?\' ?  ?. ?\S-  ?P ?P ?\C-h ?H ?P ?_ ?E ?O ?L ?\; ?\C-n])
 
 ;; automatically indenting yanked text if in programming-modes
 ;; http://trey-jackson.blogspot.fr/2008/03/emacs-tip-15-indent-yanked-code.html
@@ -1165,11 +1153,11 @@ Version 2017-04-19"
   "If current mode is one of 'yank-indent-modes, indent yanked text (with prefix arg don't indent)."
   (if (and (not (ad-get-arg 0))
            (member major-mode yank-indent-modes))
-    (let ((transient-mark-mode nil))
-    (yank-advised-indent-function (region-beginning) (region-end)))))
+      (let ((transient-mark-mode nil))
+        (yank-advised-indent-function (region-beginning) (region-end)))))
 
 (fset 'wil-php-concatstring-off
-   [?\C-a ?\C-  ?\C-e ?\s-x ?r ?e ?p ?l ?a ?c ?e ?s ?t ?i ?r ?n ?g ?\C-h ?\C-h ?\C-h ?\C-h ?\C-j ?\\ ?\' ?\C-j ?\' ?\C-j ?\C-a ?\M-d ?\C-d ?\C-d ?\C-d ?\C-d ?\C-e ?\C-w ?\C-h ?\C-h ?\C-h ?\C-h ?\C-a ?\C-d ?\C-  ?\C-b ?\C-h ?\C-n])
+      [?\C-a ?\C-  ?\C-e ?\s-x ?r ?e ?p ?l ?a ?c ?e ?s ?t ?i ?r ?n ?g ?\C-h ?\C-h ?\C-h ?\C-h ?\C-j ?\\ ?\' ?\C-j ?\' ?\C-j ?\C-a ?\M-d ?\C-d ?\C-d ?\C-d ?\C-d ?\C-e ?\C-w ?\C-h ?\C-h ?\C-h ?\C-h ?\C-a ?\C-d ?\C-  ?\C-b ?\C-h ?\C-n])
 
 ;; eldoc at point
 ;; https://www.topbug.net/blog/2016/11/03/emacs-display-function-or-variable-information-near-point-cursor/
@@ -1186,13 +1174,13 @@ Version 2017-04-19"
 
 ;; https://stackoverflow.com/a/9697222
 (defun comment-or-uncomment-region-or-line ()
-    "Comments or uncomments the region or the current line if there's no active region."
-    (interactive)
-    (let (beg end)
-        (if (region-active-p)
-            (setq beg (region-beginning) end (region-end))
-            (setq beg (line-beginning-position) end (line-end-position)))
-        (comment-or-uncomment-region beg end)))
+  "Comments or uncomments the region or the current line if there's no active region."
+  (interactive)
+  (let (beg end)
+    (if (region-active-p)
+        (setq beg (region-beginning) end (region-end))
+      (setq beg (line-beginning-position) end (line-end-position)))
+    (comment-or-uncomment-region beg end)))
 
 ;; https://stackoverflow.com/a/25792276
 (defun xah-new-empty-buffer ()
@@ -1286,36 +1274,36 @@ the checking happens for all pairs in auto-minor-mode-alist"
 ;; Increment at point
 ;; https://www.emacswiki.org/emacs/IncrementNumber
 (defun increment-number-at-point ()
-      (interactive)
-      (skip-chars-backward "0-9")
-      (or (looking-at "[0-9]+")
-          (error "No number at point"))
-      (replace-match (number-to-string (1+ (string-to-number (match-string 0))))))
+  (interactive)
+  (skip-chars-backward "0-9")
+  (or (looking-at "[0-9]+")
+      (error "No number at point"))
+  (replace-match (number-to-string (1+ (string-to-number (match-string 0))))))
 
 (defun increment-number-at-point-by-10 ()
-      (interactive)
-      (skip-chars-backward "0-9")
-      (or (looking-at "[0-9]+")
-          (error "No number at point"))
-      (replace-match (number-to-string (+ 10 (string-to-number (match-string 0))))))
+  (interactive)
+  (skip-chars-backward "0-9")
+  (or (looking-at "[0-9]+")
+      (error "No number at point"))
+  (replace-match (number-to-string (+ 10 (string-to-number (match-string 0))))))
 
 (defun decrement-number-at-point ()
-      (interactive)
-      (skip-chars-backward "0-9")
-      (or (looking-at "[0-9]+")
-          (error "No number at point"))
-      (replace-match (number-to-string (1- (string-to-number (match-string 0))))))
+  (interactive)
+  (skip-chars-backward "0-9")
+  (or (looking-at "[0-9]+")
+      (error "No number at point"))
+  (replace-match (number-to-string (1- (string-to-number (match-string 0))))))
 
 (defun decrement-number-at-point-by-10 ()
-      (interactive)
-      (skip-chars-backward "0-9")
-      (or (looking-at "[0-9]+")
-          (error "No number at point"))
-      (replace-match (number-to-string (- (string-to-number (match-string 0)) 10))))
+  (interactive)
+  (skip-chars-backward "0-9")
+  (or (looking-at "[0-9]+")
+      (error "No number at point"))
+  (replace-match (number-to-string (- (string-to-number (match-string 0)) 10))))
 
 ;; Hydra for incremnet at point
 (defhydra wil-hydra-increment-at-point (:color teal :columns 5
-                              :after-exit (wil-hydra-increment-at-point/body))
+                                               :after-exit (wil-hydra-increment-at-point/body))
   "Increment at point"
   ("p" increment-number-at-point)
   ("n" decrement-number-at-point)
@@ -1329,7 +1317,7 @@ the checking happens for all pairs in auto-minor-mode-alist"
   (interactive)
   (buffer-file-name))
 
-; (cons (split-string (quote "/Users/wravel/www/project/arsia/arsia_standard_310/dev/sygesp/test.php") "/"))
+                                        ; (cons (split-string (quote "/Users/wravel/www/project/arsia/arsia_standard_310/dev/sygesp/test.php") "/"))
 ;; https://www.emacswiki.org/emacs/HalfScrolling
 (defun window-half-height ()
   (max 1 (/ (1- (window-height (selected-window))) 2)))
@@ -1344,8 +1332,9 @@ the checking happens for all pairs in auto-minor-mode-alist"
 
 (defun helm/test-default-action (candidate)
   (eww (format
-               "http://www.google.com/search?q=%s"
-               (url-hexify-string candidate)))) 
+        "http://www.google.com/search?q=%s"
+        (url-hexify-string candidate)))) 
+
 (defun wil-helm-test ()
   (interactive)
   (helm :sources (helm-build-in-buffer-source "test1"
