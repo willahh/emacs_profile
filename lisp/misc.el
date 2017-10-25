@@ -1164,7 +1164,8 @@ Version 2016-10-24"
   (beacon-mode 1)
   (setq beacon-color "#6373a2")
   (setq beacon-size 80)
-  (setq beacon-blink-when-window-scrolls nil)
+  ;; (setq beacon-blink-when-window-scrolls nil)
+  (setq beacon-blink-when-window-scrolls t)
   (diminish 'beacon-mode))
 
 (require 'popwin)
