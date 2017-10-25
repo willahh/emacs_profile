@@ -9,6 +9,7 @@
         autopair-newline
         autopair-skip-close-maybe
         backward-delete-char
+        backward-kill-word-or-region
         backward-sentence
         backward-sexp
         c-electric-colon
