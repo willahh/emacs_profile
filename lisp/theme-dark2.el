@@ -32,6 +32,12 @@
 (set-face-attribute 'trailing-whitespace nil :background "#192124")
 (set-face-attribute 'web-mode-whitespace-face nil :background "#192124")
 
+;; Mode line
+;; (set-face-background 'mode-line-inactive "#000")
+;; (set-face-background 'mode-line-emphasis "#000")
+;; (set-face-background 'mode-line-buffer-id "#000")
+;; (set-face-background 'mode-line-buffer-id "#000")
+
 (defun powerline-theme-emacs()
   (set-face-attribute 'mode-line nil
                       :foreground "#000"
