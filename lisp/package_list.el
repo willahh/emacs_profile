@@ -7,6 +7,7 @@
   edit-server
   wgrep-ag
   whitespace-cleanup-mode
+  pandoc-mode
   smooth-scrolling
   iedit
   hydra

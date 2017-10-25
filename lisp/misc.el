@@ -1260,3 +1260,5 @@ Version 2016-10-24"
 
 (require 'edit-server)
 (edit-server-start)
+
+(require 'pandoc-mode)
