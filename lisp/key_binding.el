@@ -711,3 +711,5 @@
 
 ;; Whitespace cleanup
 (global-set-key (kbd "C-c j wc") 'whitespace-cleanup)
+
+(global-set-key (kbd "C-c M-.") 'dumb-jump-go)
