@@ -680,9 +680,9 @@
 (global-set-key (kbd "C-/") 'ffap) ; Qwerty C-> for Azerty
 (define-key undo-tree-map (kbd "C-/") 'ffap)
 
-;; remap C-a to `smarter-move-beginning-of-line'
-(global-set-key [remap move-beginning-of-line]
-                'smarter-move-beginning-of-line)
+;; ;; remap C-a to `smarter-move-beginning-of-line'
+;; (global-set-key [remap move-beginning-of-line]
+;;                 'smarter-move-beginning-of-line)
 
 ;; Navigation entre les buffers
 (global-set-key (kbd "<C-tab>") 'next-buffer)
