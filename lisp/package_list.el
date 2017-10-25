@@ -142,7 +142,7 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/webmode")
 (add-to-list 'load-path "~/.emacs.d/vendor/emacspowerline")
 (add-to-list 'load-path "~/.emacs.d/vendor/find-file-in-project")
-(add-to-list 'load-path "~/.emacs.d/vendor/ivy_buffer_extend")
+;; (add-to-list 'load-path "~/.emacs.d/vendor/ivy_buffer_extend")
 (add-to-list 'load-path "~/.emacs.d/vendor/helm-swoop")
 (add-to-list 'load-path "~/.emacs.d/vendor/evil-easymotion")
 (add-to-list 'load-path "~/.emacs.d/vendor/psvn")

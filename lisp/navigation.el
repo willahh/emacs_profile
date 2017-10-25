@@ -22,7 +22,7 @@
 (require 'ivy)
 (require 'helm-ag)
 (require 'helm-config)
-(require 'ivy_buffer_extend)
+;; (require 'ivy_buffer_extend)
 (require 'swiper)
 (require 'helm-swoop)
 (require 'helm-swoop)
