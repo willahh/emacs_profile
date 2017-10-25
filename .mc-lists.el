@@ -67,6 +67,7 @@
         hydra-vi/evil-next-line-1-first-non-blank
         indent-for-tab-command
         indent-rigidly
+        js2-line-break
         kill-region
         kill-sentence
         kill-sexp
@@ -132,6 +133,7 @@
         wil-delete-backspace
         wil-duplicate
         wil-tab-indent-or-complete-css
+        wil-web-mode-kill-sexp
         wlh-tab-indent-or-complete-web
         xah-toggle-letter-case
         yank-rectangle
