@@ -3,6 +3,7 @@
   powerline
   undo-tree
   sr-speedbar
+  diff-hl
   wgrep
   edit-server
   wgrep-ag
