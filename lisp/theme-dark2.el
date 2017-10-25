@@ -29,8 +29,14 @@
  '(rainbow-delimiters-depth-8-face ((t (:foreground "#55bdf0")))))
 
 ;; white-space         
-(set-face-attribute 'trailing-whitespace nil :background "#0f1010")
-(set-face-attribute 'web-mode-whitespace-face nil :background "#0f1010")
+(set-face-attribute 'trailing-whitespace nil :background "#192124")
+(set-face-attribute 'web-mode-whitespace-face nil :background "#192124")
+
+;; Mode line
+;; (set-face-background 'mode-line-inactive "#000")
+;; (set-face-background 'mode-line-emphasis "#000")
+;; (set-face-background 'mode-line-buffer-id "#000")
+;; (set-face-background 'mode-line-buffer-id "#000")
 
 (defun powerline-theme-emacs()
   (set-face-attribute 'mode-line nil
@@ -237,3 +243,6 @@
 
 ;; Eshell
 ;; (set-face-attribute 'eshell-prompt nil :foreground "#8be9fd")
+
+
+(set-face-attribute 'flycheck-error nil :foreground "#fff" :background "red")

@@ -149,7 +149,7 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/dumb-jump")
 (add-to-list 'load-path "~/.emacs.d/vendor/Indium")
 (add-to-list 'load-path "~/.emacs.d/vendor/restclient")
-(add-to-list 'load-path "~/.emacs.d/vendor/diff-hl-1.8.4")
+;; (add-to-list 'load-path "~/.emacs.d/vendor/diff-hl-1.8.4")
 (add-to-list 'load-path "~/.emacs.d/vendor/org-mouse")
 (add-to-list 'load-path "~/.emacs.d/vendor/clean-aindent-mode")
 (add-to-list 'load-path "~/.emacs.d/vendor/workgroups2")

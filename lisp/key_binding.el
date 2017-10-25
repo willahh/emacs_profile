@@ -321,6 +321,7 @@
 (global-set-key [control meta shift s] 'ag-project)
 
 (global-set-key (kbd "C-c j s") 'ag)
+;; (global-set-key (kbd "C-c j s") 'projectile-ag)
 
 ;; ---------------- new line
 ;; http://emacsredux.com/blog/2013/03/29/automatic-electric-indentation/
@@ -593,8 +594,8 @@
 (global-set-key (kbd "M-*") 'forward-paragraph)
 
 ;; Help
-;; (global-set-key (kbd "s-h") 'help)
-(global-set-key (kbd "C-c j h") 'help)
+(global-set-key (kbd "s-h") 'help)
+;; (global-set-key (kbd "C-c j h") 'help)
 
 ;; Find
 ;; (global-set-key (kbd "s-f") 'counsel-find-file)
@@ -695,6 +696,7 @@
 ;; kill
 (define-key evil-emacs-state-map (kbd "C-z") 'whole-line-or-region-kill-region)
 (global-set-key (kbd "C-z") 'whole-line-or-region-kill-region)
+(global-set-key (kbd "C-w") 'backward-kill-word-or-region)
 
 ;; scroll
 (global-set-key (kbd "C-v") 'scroll-up-half)

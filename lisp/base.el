@@ -504,3 +504,6 @@
       (set-process-query-on-exit-flag proc nil))))
 
 (add-hook 'term-exec-hook 'set-no-process-query-on-exit)
+
+
+(display-time-mode 1)

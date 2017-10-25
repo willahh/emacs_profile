@@ -70,6 +70,7 @@
  '(custom-safe-themes
    (quote
     ("b97a01622103266c1a26a032567e02d920b2c697ff69d40b7d9956821ab666cc" default)))
+ '(display-time-day-and-date t)
  '(ediff-diff-options "-w")
  '(ediff-split-window-function (quote split-window-horizontally))
  '(ediff-window-setup-function (quote ediff-setup-windows-plain))

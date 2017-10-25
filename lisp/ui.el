@@ -7,7 +7,7 @@
 (setq inhibit-default-init t)
 
 ;; SHOW FILE PATH IN FRAME TITLE
-(setq-default frame-title-format "%b (%f)")
+;; (setq-default frame-title-format "%b (%f)")
 
 ;; Mode Line changes
 ;; Display workgroups in Mode Line?
