@@ -1266,3 +1266,10 @@ Version 2016-10-24"
 (edit-server-start)
 
 (require 'pandoc-mode)
+
+;; vi-tilde-fringe
+(require 'vi-tilde-fringe)
+(add-hook 'prog-mode-hook (lambda ()
+                            (vi-tilde-fringe-mode t)))
+
+
