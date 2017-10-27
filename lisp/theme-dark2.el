@@ -271,3 +271,11 @@
  
  '(isearch-lazy-highlight-face ((t (:background "#4f5d66"))))
  '(isearch-lazy-highlight-face ((t (:background "#ffe400" :foreground nil)))))
+
+
+
+
+
+
+
+(set-face-attribute 'dired-marked nil :foreground "#48fa7b")
