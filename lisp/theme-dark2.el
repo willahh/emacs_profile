@@ -29,7 +29,7 @@
  '(rainbow-delimiters-depth-8-face ((t (:foreground "#55bdf0")))))
 
 ;; white-space         
-(set-face-attribute 'trailing-whitespace nil :background "#192124")
+(set-face-attribute 'trailing-whitespace nil :background "#242f33")
 (set-face-attribute 'web-mode-whitespace-face nil :background "#192124")
 
 ;; Mode line
@@ -95,6 +95,7 @@
 (set-face-attribute 'fringe nil :background nil :slant 'normal)
 (set-face-attribute 'fringe nil :background "#1a1c1d" :slant 'normal)
 
+;; window-divider
 (set-face-attribute 'window-divider nil :foreground "#1a1c1d")
 (set-face-attribute 'window-divider-first-pixel nil :foreground "#1a1c1d")
 (set-face-attribute 'window-divider-last-pixel nil :foreground "#1a1c1d")
@@ -113,10 +114,9 @@
 ;; I-search
 
 ;; (set-face-attribute 'isearch-lazy-highlight nil :background "#4f5d66")
-(set-face-attribute 'isearch-lazy-highlight-face nil :background "#4f5d66")
-
-(set-face-attribute 'isearch nil :background "#ffe400" :foreground nil)
-(set-face-attribute 'lazy-highlight nil :background "#4f5d66" :underline t)
+;; (set-face-attribute 'isearch-lazy-highlight-face nil :background "#4f5d66")
+;; (set-face-attribute 'isearch nil :background "#ffe400" :foreground nil)
+;; (set-face-attribute 'lazy-highlight nil :background "#4f5d66" :underline t)
 
 (custom-theme-set-faces
            'dracula
@@ -195,23 +195,33 @@
 (set-face-attribute 'hl-line nil :foreground nil :background "#1d2027")
 
 ;; ;; org
-(set-face-attribute 'org-document-title nil :family "Sans Serif" :height 1.8 :foreground "#fffefe")
-(set-face-attribute 'org-level-1 nil :height 1.3 :overline "#2a2a2a" :foreground "#fff" :background nil :box nil)
-(set-face-attribute 'org-level-2 nil :height 1 :box nil :overline nil :foreground "#fff" :background "#333")
-(set-face-attribute 'org-special-keyword nil :height 1 :foreground "#aeb7da" :background nil)
-(set-face-attribute 'org-document-info-keyword nil :height 1 :foreground "#b0dcff" :background nil)
-(set-face-attribute 'org  nil :height 1 :foreground "#b0dcff" :background nil)
-(set-face-attribute 'org-checkbox-statistics-todo  nil :height 1)
+;; Todo cette partie fait une erreur, il faut l implementer comme un vrai theme, voir
+;; https://www.emacswiki.org/emacs/download/zenburn.el
+;; 
+;; (add-hook 'org-mode-hook (lambda ()
+;; (set-face-attribute 'org-document-title nil :family "Sans Serif" :height 1.8 :foreground "#fffefe")
+;; (set-face-attribute 'org-level-1 nil :height 1.3 :overline "#2a2a2a" :foreground "#fff" :background nil :box nil)
+;; (set-face-attribute 'org-level-2 nil :height 1 :box nil :overline nil :foreground "#fff" :background "#333")
+;; (set-face-attribute 'org-special-keyword nil :height 1 :foreground "#aeb7da" :background nil)
+;; (set-face-attribute 'org-document-info-keyword nil :height 1 :foreground "#b0dcff" :background nil)
+;; (set-face-attribute 'org  nil :height 1 :foreground "#b0dcff" :background nil)
+;; (set-face-attribute 'org-checkbox-statistics-todo  nil :height 1)
+                           ;; ))
 
 
 ;; ------- company
 (set-face-attribute 'company-tooltip-annotation nil :foreground "#55e97b")
 (set-face-attribute 'company-tooltip-common-selection nil :foreground "#00faff")
 
+;; ;; ------- diff-hl
+;; (set-face-attribute 'diff-hl-delete nil :foreground "#fc1a9f" :background "#74245c")
+;; (set-face-attribute 'diff-hl-change nil :foreground "#5fbfec" :background "#3c6078")
+;; (set-face-attribute 'diff-hl-insert nil :foreground "#70ee00" :background "#36494b")
+
 ;; ------- diff-hl
-(set-face-attribute 'diff-hl-delete nil :foreground "#fc1a9f" :background "#74245c")
-(set-face-attribute 'diff-hl-change nil :foreground "#5fbfec" :background "#3c6078")
-(set-face-attribute 'diff-hl-insert nil :foreground "#70ee00" :background "#36494b")
+(set-face-attribute 'diff-hl-delete nil :foreground "#fc1a9f" :background nil)
+(set-face-attribute 'diff-hl-change nil :foreground "#5fbfec" :background nil)
+(set-face-attribute 'diff-hl-insert nil :foreground "#70ee00" :background nil)
 
 ;; ------- hydra
 (set-face-attribute 'hydra-face-amaranth nil :foreground "#70ee00")
@@ -245,8 +255,19 @@
 ;; (set-face-attribute 'eshell-prompt nil :foreground "#8be9fd")
 
 
-(set-face-attribute 'flycheck-error nil :foreground "#fff" :background "red")
-(set-face-attribute 'js2-warning nil :foreground "#fff" :background "orange")
+;; (set-face-attribute 'flycheck-error nil :foreground "#fff" :background "red")
+;; (set-face-attribute 'js2-warning nil :foreground "#fff" :background "orange")
 (set-face-attribute 'ag-hit-face nil :foreground "#48fa7b")
 (set-face-attribute 'compilation-line-number nil :foreground "#f0f0f0")
 (set-face-attribute 'compilation-column-number nil :foreground "#555")
+
+
+(custom-theme-set-faces
+ 'dracula
+ '(js2-warning ((t (:underline (:color "#ff0000" :style wave)))))
+ '(js2-error ((t (:underline (:color "#ff0000" :style wave)))))
+ '(flycheck-error ((t (:underline (:color "#ff0000" :style wave)))))
+ 
+ 
+ '(isearch-lazy-highlight-face ((t (:background "#4f5d66"))))
+ '(isearch-lazy-highlight-face ((t (:background "#ffe400" :foreground nil)))))
