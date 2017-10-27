@@ -264,9 +264,9 @@
 
 (custom-theme-set-faces
  'dracula
- '(js2-warning ((t (:underline (:color "#ff0000" :style wave)))))
- '(js2-error ((t (:underline (:color "#ff0000" :style wave)))))
- '(flycheck-error ((t (:underline (:color "#ff0000" :style wave)))))
+ '(js2-warning ((t (:background nil :underline (:color "#ff0000" :style wave)))))
+ '(js2-error ((t (:background nil :underline (:color "#ff0000" :style wave)))))
+ '(flycheck-error ((t (:background nil :underline (:color "#ff0000" :style wave)))))
  
  
  '(isearch-lazy-highlight-face ((t (:background "#4f5d66"))))
