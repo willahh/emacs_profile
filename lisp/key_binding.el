@@ -146,9 +146,15 @@
 ;; (key-chord-define-global "<w" 'er/expand-region)
 (key-chord-define-global "wx" 'er/expand-region)
 ;; (key-chord-define-global "wx" 'er/contract-region)
+
 (key-chord-define evil-emacs-state-map "jk" 'evil-normal-state)
-(key-chord-define evil-normal-state-map "jk" 'evil-emacs-state)
+(key-chord-define evil-normal-state-map "jk" 'evil-emacs-state)s
 (key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
+
+;; ;; Bind C-1 (on azerty keyboard)
+(define-key evil-emacs-state-map (kbd "C-&") 'evil-normal-state)
+(define-key evil-normal-state-map (kbd "C-&") 'evil-emacs-state)
+;; (define-key evil-insert-state-map "C-&" 'evil-normal-state)
 
 ;; ---------------- Key binding evil normal mode
 ;; (with-eval-after-load 'evil-maps
@@ -714,4 +720,11 @@
 ;; Whitespace cleanup
 (global-set-key (kbd "C-c j wc") 'whitespace-cleanup)
 
+;; dumb-jump-go
 (global-set-key (kbd "C-c M-.") 'dumb-jump-go)
+
+;; org
+(global-set-key (kbd "s-a") 'org-agenda)
+
+;; Increment at point
+(global-set-key (kbd "C-c j i") 'wil-hydra-increment-at-point/body)
