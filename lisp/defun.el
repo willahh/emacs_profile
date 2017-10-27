@@ -1310,9 +1310,6 @@ the checking happens for all pairs in auto-minor-mode-alist"
   ("P" increment-number-at-point-by-10)
   ("N" decrement-number-at-point-by-10))
 
-(global-set-key (kbd "C-c ; i") 'wil-hydra-increment-at-point/body)
-
-
 (defun wil-open-file-in-browser ()
   (interactive)
   (buffer-file-name))
