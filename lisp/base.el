@@ -105,6 +105,10 @@
 ;; each 50MB of allocated data (the default is on every 0.76MB)
 (setq gc-cons-threshold 50000000)
 
+;; From hlissner
+(setq-default gc-cons-threshold 4388608
+                   gc-cons-percentage 0.4)
+
 ;; warn when opening files bigger than 100MB
 (setq large-file-warning-threshold 100000000)
 
@@ -567,3 +571,26 @@
    (if (ignore-errors (doom/get-real-buffers))
        (y-or-n-p "››› Quit?")
      t)))
+
+
+;; From hlissner config
+;; `window-divider-mode' gives us finer control over the border between windows.
+;; The native border "consumes" a pixel of the fringe on righter-most splits (in
+;; Yamamoto's emacs-mac at least), window-divider does not.
+;; NOTE Only available on Emacs 25.1+
+(when (boundp 'window-divider-mode)
+  (setq window-divider-default-places t
+        window-divider-default-bottom-width 1
+        window-divider-default-right-width 1)
+  (window-divider-mode +1))
+
+
+
+(use-package visual-fill-column :defer t
+  :config
+  (setq-default visual-fill-column-center-text nil
+                visual-fill-column-width fill-column
+                split-window-preferred-function 'visual-line-mode-split-window-sensibly))
+
+
+
