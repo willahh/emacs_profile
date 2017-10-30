@@ -24,7 +24,10 @@
 (setq initial-scratch-message "")
 
 ;; Display current file path in title
-(setq frame-title-format "%b")
+;; (setq frame-title-format "%b")
+(setq frame-title-format
+      (list (format "%s %%S: %%j " (system-name))
+        '(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
 
 ;; Hide some mini buffer message
 (let ((inhibit-message t))
@@ -252,7 +255,8 @@
 ;; (setq jit-lock-defer-time 0.5)
 ;; (setq jit-lock-defer-time 0.25)
 ;; (setq jit-lock-defer-time 0.125)
-(setq jit-lock-defer-time 0)
+;; (setq jit-lock-defer-time 0)
+(setq jit-lock-defer-time .5)
 
 ;; Some settings from https://github.com/technomancy/better-defaults/blob/master/better-defaults.el
 (progn

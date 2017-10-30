@@ -109,7 +109,9 @@
 (setq ivy-virtual-abbreviate 'full)
 
 ;; set ivy height
-(setq ivy-height 25)
+;; Update : 25 est bcp trop grand
+;; (setq ivy-height 25)
+(setq ivy-height 12)
 
 ;; make sure it always stays that high
 ;; Update : Pas du tout utile, lorsque l on utilise completion-at-point, la partie du bas prend une hauteur pour aucune raison (contenu vide)

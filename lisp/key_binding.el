@@ -148,7 +148,7 @@
 ;; (key-chord-define-global "wx" 'er/contract-region)
 
 (key-chord-define evil-emacs-state-map "jk" 'evil-normal-state)
-(key-chord-define evil-normal-state-map "jk" 'evil-emacs-state)s
+(key-chord-define evil-normal-state-map "jk" 'evil-emacs-state)
 (key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
 
 ;; ;; Bind C-1 (on azerty keyboard)

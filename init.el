@@ -38,7 +38,6 @@
 (load-file "~/.emacs.d/lisp/language/clojure.el")
 (load-file "~/.emacs.d/lisp/language/react.el")
 (load-file "~/.emacs.d/lisp/browser.el")
-;; (load-file "~/.emacs.d/lisp/modeline.el")
 (load-file "~/.emacs.d/lisp/key_binding.el")
 (load-file "~/.emacs.d/lisp/theme-dark2.el")
 
