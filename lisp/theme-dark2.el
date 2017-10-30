@@ -216,12 +216,12 @@
 ;; ;; ------- diff-hl
 ;; (set-face-attribute 'diff-hl-delete nil :foreground "#fc1a9f" :background "#74245c")
 ;; (set-face-attribute 'diff-hl-change nil :foreground "#5fbfec" :background "#3c6078")
-;; (set-face-attribute 'diff-hl-insert nil :foreground "#70ee00" :background "#36494b")
+;; (set-face-attribute 'diff-hl-insert nil :foreground "#55e97b" :background "#36494b")
 
 ;; ------- diff-hl
-(set-face-attribute 'diff-hl-delete nil :foreground "#fc1a9f" :background nil)
-(set-face-attribute 'diff-hl-change nil :foreground "#5fbfec" :background nil)
-(set-face-attribute 'diff-hl-insert nil :foreground "#70ee00" :background nil)
+(set-face-attribute 'diff-hl-delete nil :foreground "#fc1a9f" :background "#1a1c1d")
+(set-face-attribute 'diff-hl-change nil :foreground "#5fbfec" :background "#1a1c1d")
+(set-face-attribute 'diff-hl-insert nil :foreground "#55e97b" :background "#1a1c1d")
 
 ;; ------- hydra
 (set-face-attribute 'hydra-face-amaranth nil :foreground "#70ee00")
@@ -267,6 +267,7 @@
  '(js2-warning ((t (:background nil :underline (:color "#ff0000" :style wave)))))
  '(js2-error ((t (:background nil :underline (:color "#ff0000" :style wave)))))
  '(flycheck-error ((t (:background nil :underline (:color "#ff0000" :style wave)))))
+ '(flycheck-warning ((t (:background nil :underline (:color "#ff0000" :style wave)))))
  
  
  '(isearch-lazy-highlight-face ((t (:background "#4f5d66"))))
