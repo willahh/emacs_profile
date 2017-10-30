@@ -116,6 +116,9 @@ C
 ** TODO [vc-dir] Ne pas afficher les lignes dossier grises
 ** TODO [vc-dir] key M-< && M-> : Faire pointer sur le vrai début/fin de ligne
 ** TODO Previous/Next buffer : Utiliser la liste de ibuffer trier par ordre recent
+** TODO web-mode single quote dans commentaire : Ne pas auto fermer la quote lorsque l'on est dans un commentaire
+   [2017-10-23 Mon]
+   [[file:~/www/project/arsia/goacrop/src/main.js:://%20Pas%20de%20traitement%20particulier,%20l'image][file:~/www/project/arsia/goacrop/src/main.js::// Pas de traitement particulier, l'image]]
 * A ranger
 ** TODO [doc-view] Faire fonctionner doc-view (Lire des fichiers excel, doc, word, etc)
 ** TODO [Google talk] : Intégrer Google Talk dans Emacs
