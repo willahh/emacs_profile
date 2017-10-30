@@ -728,3 +728,12 @@
 
 ;; Increment at point
 (global-set-key (kbd "C-c j i") 'wil-hydra-increment-at-point/body)
+
+;; Recenter
+(global-set-key (kbd "C-l") 'wil-recenter-top-bottom)
+
+
+
+
+
+

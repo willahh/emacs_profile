@@ -1370,3 +1370,10 @@ the checking happens for all pairs in auto-minor-mode-alist"
     ;; (backward-kill-word arg)
     (paredit-backward-kill-word)))
 
+
+
+(defun wil-recenter-top-bottom ()
+  "Call recenter-top-bottom then do a beacon-blink"
+  (interactive)
+  (recenter-top-bottom)
+  (beacon-blink))

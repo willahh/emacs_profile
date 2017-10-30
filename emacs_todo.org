@@ -119,6 +119,14 @@ C
 ** TODO web-mode single quote dans commentaire : Ne pas auto fermer la quote lorsque l'on est dans un commentaire
    [2017-10-23 Mon]
    [[file:~/www/project/arsia/goacrop/src/main.js:://%20Pas%20de%20traitement%20particulier,%20l'image][file:~/www/project/arsia/goacrop/src/main.js::// Pas de traitement particulier, l'image]]
+** TODO Faire fonctionner la custom theme dark pour org mode
+   [2017-10-30 Mon]
+   [[file:~/.emacs.d/lisp/theme-dark2.el]]
+
+** TODO js2-mode, voir pourquoi la naviguation au sein de fichiers en mode js2, est lente (visible lorsque l'on se déplace sur une ligne de façon répétitive par example)
+   [2017-10-30 Mon]
+   [[file:~/www/project/arsia/arsia_standard_310/dev/creation/module/home/ajax/templateList.json.php::$g_oLogger->debug('no%20first%20page%20found%20for%20this%20gabarit%20%5B'%20.%20$iGabaIdx%20.%20'%5D')%3B][file:~/www/project/arsia/arsia_standard_310/dev/creation/module/home/ajax/templateList.json.php::$g_oLogger->debug('no first page found for this gabarit [' . $iGabaIdx . ']');]]
+
 * A ranger
 ** TODO [doc-view] Faire fonctionner doc-view (Lire des fichiers excel, doc, word, etc)
 ** TODO [Google talk] : Intégrer Google Talk dans Emacs
@@ -203,83 +211,84 @@ C
 - [ ] [ivy] : Ne pas mettre les fichiers .svn dans la liste
 - [ ] [plugin] [change inner] Ajoute rl'option Change Inner Tag
 * Majeur
+
 - [ ] [php-mode] Autocompletion, ajouter les entrés du buffer courant dans la liste des completions
-- [ ] [custom] Faire une fonction custom delete backward or region
+** TODO [custom] Faire une fonction custom delete backward or region
       C-w doit appeler clean-aindent--bsunindent ou "whole-line-or-region-kill-region"
 
-- [ ] [vc-dir] Faire une fonction pour activer un vc-version-diff avec les paramètres older revision : "base", newer revision : "head"
+** TODO [vc-dir] Faire une fonction pour activer un vc-version-diff avec les paramètres older revision : "base", newer revision : "head"
 
-- [ ] [util] Revert buffer : keep current line position
-- [ ] [theme] Mettre plus en avant le buffer actif
-- [ ] [theme] js color var
-- [ ] [theme] Ajouter des differenciations sur certains mot clee comme "$", "=", ".", "'", "(", ")", "+", "-", certains mots clés php "var_dump", "PHP_EOL", etc
+** TODO [util] Revert buffer : keep current line position
+** TODO [theme] Mettre plus en avant le buffer actif
+** TODO [theme] js color var
+** TODO [theme] Ajouter des differenciations sur certains mot clee comme "$", "=", ".", "'", "(", ")", "+", "-", certains mots clés php "var_dump", "PHP_EOL", etc
               Voir package "highlight-chars"
-- [ ] [theme] Revoir toutes les couleurs pour avoir les mêmes que dans Sublime
+** TODO [theme] Revoir toutes les couleurs pour avoir les mêmes que dans Sublime
       Le profile colorimétrique utilisé par Photoshop n'était pas bon ... ... ...
-- [ ] [theme] php mode : Plus de couleurs
+** TODO [theme] php mode : Plus de couleurs
 
-- [ ] [util] Voir si il est possible de faire un (CMD+P + touche @) (file.php@methode_name)
-- [ ] [vc-dir] Faire une fonction toggle des hunk comme dans magit
-- [ ] Faire une fonction "Merge lines" pour supprimer les linebreak/whitespace
-- [ ] Delete file : ne pas re demander le chemin alors que l'on a deja le focus
-- [ ] [theme] nlinum : highlight current line number
-- [ ] Ajouter une méthode copy file name pour retourner uniquement le nom du fichier
+** TODO [util] Voir si il est possible de faire un (CMD+P + touche @) (file.php@methode_name)
+** TODO [vc-dir] Faire une fonction toggle des hunk comme dans magit
+** TODO Faire une fonction "Merge lines" pour supprimer les linebreak/whitespace
+** TODO Delete file : ne pas re demander le chemin alors que l'on a deja le focus
+** TODO [theme] nlinum : highlight current line number
+** TODO Ajouter une méthode copy file name pour retourner uniquement le nom du fichier
   - La fonction copy-file-name-to-clipbord est present, mais elle retourne le chemin complet
     Il faudrait garder que la derniere partie apres le /
-- [ ] delete-file
+** TODO delete-file
   - dont prompt for path
   - kill buffer
-- [ ] ag/helm-ag/helm-ag-... : Ignore les regles suivantes :
+** TODO ag/helm-ag/helm-ag-... : Ignore les regles suivantes :
   - "*.min.js"
   - "*.svn-base"
   - "*.log"
-- [ ] helm-do-grep-ag -> Ignjorer les fichier "*.svn-base"
+** TODO helm-do-grep-ag -> Ignjorer les fichier "*.svn-base"
       -> helm-ag-ignore-buffer-patterns (conf ajoutee, non testee, maj : ne fonctionne pas, voir pour mettre la bonne regle)
       -> Impossible de trouver la raison sur cette commande, utiliser helm-ag a la place
-- [ ] ag search result buffer : highlight search words
-- [ ] Ajouter hook pour recentrer sur la ligne courante après les actions suivantes :
+** TODO ag search result buffer : highlight search words
+** TODO Ajouter hook pour recentrer sur la ligne courante après les actions suivantes :
  (recenter)
   - [ ] git-gutter next / prev
   - [x] evil search
   - [ ] highlight mode nav
 
-- [ ] Custom theme, se baser sur les couleurs suivantes "images/theme.png"
+** TODO Custom theme, se baser sur les couleurs suivantes "images/theme.png"
          http://blog.pabuisson.com/2014/07/vim-vundle-gestion-plugins/
 
-- [ ] svn ignore rules to add :
+** TODO svn ignore rules to add :
   - .ac-php-conf.json
   - logs
   - .DS_Store
 * Mineur
-- [ ] [dired] delete folder very slow
-- [ ] Ivy : Possibilité de boucler
+** TODO [dired] delete folder very slow
+** TODO Ivy : Possibilité de boucler
 
-- [ ] [IMPORTANT] Fonction get file name to clipboard (très utilisé)
-- [ ] [vc-dir] N'affiche pas les fichiers supprimés localement, mais non envoyé à svn (svn remove)
+** TODO [IMPORTANT] Fonction get file name to clipboard (très utilisé)
+** TODO [vc-dir] N'affiche pas les fichiers supprimés localement, mais non envoyé à svn (svn remove)
 
 
-- [ ] [misc] Copier : Ne pas embarquer la couleur
+** TODO [misc] Copier : Ne pas embarquer la couleur
       -> Cibler uniquement certains buffers
         -> mini buffer
         -> fundamental
-- [ ] nlinum in fringe ? Pouvoir afficher les vc diff plus loin que le contenu
-- [ ] [vc-dir] Ne pas afficher les lignes dossiers (les lignes qui sont grisées)
-- [ ] Voir pour utiliser une largeur max lors de la saisie de long texte
+** TODO nlinum in fringe ? Pouvoir afficher les vc diff plus loin que le contenu
+** TODO [vc-dir] Ne pas afficher les lignes dossiers (les lignes qui sont grisées)
+** TODO Voir pour utiliser une largeur max lors de la saisie de long texte
       -> Impossible
-- [ ] web mode : refresh colors after yank
-- [ ] git-svn
-- [ ] Fichiers markdown mette toutes les windows en centré
+** TODO web mode : refresh colors after yank
+** TODO git-svn
+** TODO Fichiers markdown mette toutes les windows en centré
       (Creation de differences inutiles sur la toute dernière ligne de certains fichiers)
-- [ ] Markdown mode style like in Sublime (background white, text black, column width limit, center inside)
-- [ ] Dired : remove folder is very slow
-- [ ] Display current encoding
-- [ ] Markdown in white theme
-- [ ] Parcourir partage smb 
-- [ ] [theme] Color in shell mode 
-- [ ] [theme] Les couleurs ne sont pas assez décomposé comme dans Sublime (« var » colorA, = colorB, …) 
-- [ ] Markdown in white theme
-- [ ] git-svn
-- [X] Don't prompt for delete recursivly (code available in prelude)
+** TODO Markdown mode style like in Sublime (background white, text black, column width limit, center inside)
+** TODO Dired : remove folder is very slow
+** TODO Display current encoding
+** TODO Markdown in white theme
+** TODO Parcourir partage smb 
+** TODO [theme] Color in shell mode 
+** TODO [theme] Les couleurs ne sont pas assez décomposé comme dans Sublime (« var » colorA, = colorB, …) 
+** TODO Markdown in white theme
+** TODO git-svn
+** TODO Don't prompt for delete recursivly (code available in prelude)
   - [ ] Show current mode in color
   - [ ] Show current VC system used
   - [ ] Show current encoding
@@ -825,3 +834,6 @@ C
 - [x] Indent html.  —> web beautify html 
 - [x] Installer ag
   
+
+
+
