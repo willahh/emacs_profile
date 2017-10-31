@@ -103,6 +103,8 @@
 (define-key ivy-minibuffer-map (kbd "<escape>") 'minibuffer-keyboard-quit)
 (define-key ivy-minibuffer-map (kbd "C-h") 'delete-backward-char)
 (define-key ivy-minibuffer-map (kbd "C-z") 'backward-kill-word)
+(define-key org-mode-map (kbd "C-w") 'backward-kill-word)
+(define-key company-active-map (kbd "C-w") 'backward-kill-word)
 
 (use-package evil-mc
   :bind (:map evil-mc-key-map
