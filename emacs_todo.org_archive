@@ -1053,3 +1053,23 @@ Archived entries from file /Users/wravel/.emacs.d/emacs_todo.org
   :ARCHIVE_CATEGORY: emacs_todo
   :ARCHIVE_TODO: TODO
   :END:
+
+* TODO [#A] [ffap] Ffap doit fonctionner avec ce genre de lignes :
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-10-31 Tue 13:54
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :END:
+ - require_once(dirname(__FILE__) . '/file.inc.php');
+
+* TODO [#C] [company] Voir pour utiliser autre chose que company pour la complétion des mots car cela peut être lent
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-10-31 Tue 13:55
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :END:
+

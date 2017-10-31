@@ -80,22 +80,10 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 C
 * Tasks
 :VISIBILITY: all
-** TODO [#C] Ajouter un bind C-space en mode company pour afficher / masquer la documentation (comportement moderne)
-** TODO [#C] Ag result buffer : C-o : Open in new window
 ** TODO [#A] Activer le highlight en mode php
-** TODO [#B] General : Utiliser le package general et jouer une touche sur
-  super-spc ou hyper-sp
-** TODO [#A] Terminer intégration de hunspell @work
-** TODO [#B] Mini buffer > M-p : Ne pas afficher de message beginning of
-  buffer bla bla
-** TODO [#B] AG mettre en mode emacs et non pas evil normal
-** TODO [#C] [vc-dir] N et P pour se déplacer en evitant les dossiers
-** TODO [#C] Help mode evil : add q binding pour quitter
-** TODO [#B] [projectile find file] Auto centrer la ligne une fois le goto dans le fichier
-** TODO [#B] [svn-log-view] Faire des ediff depuis ce mode
+** TODO [#B] Terminer intégration de hunspell @work
 ** TODO [#A] [swoop] C-w ne fonctionne pas
 ** TODO [#A] [helm] [mini-buffer] Ajouter la possibilité de faire du M-v dans le mini-buffer
-** TODO [#C] [vc-dir] key M-< && M-> : Faire pointer sur le vrai début/fin de ligne
 ** TODO [#A] web-mode single quote dans commentaire : Ne pas auto fermer la quote lorsque l'on est dans un commentaire
    [2017-10-23 Mon]
    [[file:~/www/project/arsia/goacrop/src/main.js:://%20Pas%20de%20traitement%20particulier,%20l'image][file:~/www/project/arsia/goacrop/src/main.js::// Pas de traitement particulier, l'image]]
@@ -106,10 +94,6 @@ C
 ** TODO [#A] js2-mode, voir pourquoi la naviguation au sein de fichiers en mode js2, est lente (visible lorsque l'on se déplace sur une ligne de façon répétitive par example)
    [2017-10-30 Mon]
    [[file:~/www/project/arsia/arsia_standard_310/dev/creation/module/home/ajax/templateList.json.php::$g_oLogger->debug('no%20first%20page%20found%20for%20this%20gabarit%20%5B'%20.%20$iGabaIdx%20.%20'%5D')%3B][file:~/www/project/arsia/arsia_standard_310/dev/creation/module/home/ajax/templateList.json.php::$g_oLogger->debug('no first page found for this gabarit [' . $iGabaIdx . ']');]]
-
-* A ranger
-** TODO [#C] [doc-view] Faire fonctionner doc-view (Lire des fichiers excel, doc, word, etc)
-** TODO [#A] [company] Voir pour utiliser autre chose que company pour la complétion des mots car cela peut être lent
 
 ** TODO [#A] [swoop] Ne pas initialiser avec le texte sous le curseur
   ** [org] Lancer org mode avec certains titre ouvert fermé
@@ -131,11 +115,9 @@ C
 
 ** TODO [#A] Kill texte : Ne pas ajouter dans le kill ring
       --> L'ajout dans le kill ring ne doit se faire que depuis M-w si possible
-** TODO [#A] M-S-n sur buffer vc-diff ne fonctionne pas 
+** TODO [#A] M-S-n sur buffer vc-diff ne fonctionne pas
 ** TODO [#A] [counsel-find-file] [mini-buffer] Ajouter un bind C-k pour supprimer tout le texte
-** TODO [#A] [dired] Delete dir slow, piste : Tester sans 
-** TODO [#A] [ffap] Ffap doit fonctionner avec ce genre de lignes :
-  - require_once(dirname(__FILE__) . '/file.inc.php');
+** TODO [#A] [dired] Delete dir slow, piste : Tester sans
 ** TODO [#A] [vc-diff mode] Voir si il est possible de lancer des commandes de type ediff
        Depuis  le vc-diff
 ** TODO [#A] Autres tâches à mettre au format todo
@@ -185,7 +167,6 @@ C
 - [ ] [ivy] [mini buffer] CTRL+l to back up
 - [ ] [ivy] : Ne pas mettre les fichiers .svn dans la liste
 - [ ] [plugin] [change inner] Ajoute rl'option Change Inner Tag
-* Majeur
 ** TODO [#A] [php-mode] Autocompletion, ajouter les entrés du buffer courant dans la liste des completions
 ** TODO [#A] [custom] Faire une fonction custom delete backward or region
       C-w doit appeler clean-aindent--bsunindent ou "whole-line-or-region-kill-region"
@@ -201,11 +182,7 @@ C
       Le profile colorimétrique utilisé par Photoshop n'était pas bon ... ... ...
 ** TODO [#A] [theme] php mode : Plus de couleurs
 
-** TODO [#C] [util] Voir si il est possible de faire un (CMD+P + touche @) (file.php@methode_name)
 ** TODO [#A] [vc-dir] Faire une fonction toggle des hunk comme dans magit
-** TODO [#B] Faire une fonction "Merge lines" pour supprimer les linebreak/whitespace
-** TODO [#B] Delete file : ne pas re demander le chemin alors que l'on a deja le focus
-** TODO [#C] [theme] nlinum : highlight current line number
 ** TODO [#A] Ajouter une méthode copy file name pour retourner uniquement le nom du fichier
   - La fonction copy-file-name-to-clipbord est present, mais elle retourne le chemin complet
     Il faudrait garder que la derniere partie apres le /
@@ -216,18 +193,11 @@ C
       -> helm-ag-ignore-buffer-patterns (conf ajoutee, non testee, maj : ne fonctionne pas, voir pour mettre la bonne regle)
       -> Impossible de trouver la raison sur cette commande, utiliser helm-ag a la place
 ** TODO [#A] ag search result buffer : highlight search words
-* Mineur
-** TODO [#B] Ivy : Possibilité de boucler
-
 ** TODO [#A] Fonction get file name to clipboard (très utilisé)
-** TODO [#B] [vc-dir] N'affiche pas les fichiers supprimés localement, mais non envoyé à svn (svn remove)
-
-** TODO [#C] git-svn
 ** TODO [#A] Fichiers markdown mette toutes les windows en centré
       (Creation de differences inutiles sur la toute dernière ligne de certains fichiers)
 ** TODO [#A] Markdown mode style like in Sublime (background white, text black, column width limit, center inside
    Markdown in white theme
-** TODO [#B] Display current encoding
 ** TODO [#A] Markdown in white theme
 ** TODO [#A] git-svn
 ** TODO [#A] Don't prompt for delete recursivly (code available in prelude)
@@ -238,4 +208,26 @@ C
 ** TODO [#A] Ajouter un bind ALT + arrow up / down sur drags
 ** TODO [#A] [helm] Plugin helm utisable avec la souris
 ** TODO [#A] Associer les fichiers .pdf au mode PDFView
-* Corrige
+** TODO [#B] General : Utiliser le package general et jouer une touche sur
+  super-spc ou hyper-sp
+** TODO [#B] Mini buffer > M-p : Ne pas afficher de message beginning of
+  buffer bla bla
+** TODO [#B] AG mettre en mode emacs et non pas evil normal
+** TODO [#B] [projectile find file] Auto centrer la ligne une fois le goto dans le fichier
+** TODO [#B] [svn-log-view] Faire des ediff depuis ce mode
+** TODO [#B] Faire une fonction "Merge lines" pour supprimer les linebreak/whitespace
+** TODO [#B] Delete file : ne pas re demander le chemin alors que l'on a deja le focus
+** TODO [#B] Ivy : Possibilité de boucler
+
+** TODO [#B] [vc-dir] N'affiche pas les fichiers supprimés localement, mais non envoyé à svn (svn remove)
+
+** TODO [#B] Display current encoding
+** TODO [#C] Ajouter un bind C-space en mode company pour afficher / masquer la documentation (comportement moderne)
+** TODO [#C] Ag result buffer : C-o : Open in new window
+** TODO [#C] [vc-dir] N et P pour se déplacer en evitant les dossiers
+** TODO [#C] Help mode evil : add q binding pour quitter
+** TODO [#C] [vc-dir] key M-< && M-> : Faire pointer sur le vrai début/fin de ligne
+** TODO [#C] [doc-view] Faire fonctionner doc-view (Lire des fichiers excel, doc, word, etc)
+** TODO [#C] [util] Voir si il est possible de faire un (CMD+P + touche @) (file.php@methode_name)
+** TODO [#C] [theme] nlinum : highlight current line number
+** TODO [#C] git-svn
