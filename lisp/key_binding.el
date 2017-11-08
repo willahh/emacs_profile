@@ -762,3 +762,4 @@
 (global-set-key (kbd "s-j") 'crux-top-join-line)
 
 
+(define-key term-mode-map (kbd "C-c RET") 'term-line-mode)
