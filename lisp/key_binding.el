@@ -311,7 +311,8 @@
 (define-key web-mode-map (kbd "C-c C-p") 'diff-hl-previous-hunk)
 (define-key php-mode-map (kbd "C-c C-p") 'diff-hl-previous-hunk)
 
-(global-set-key (kbd "M-r") 'counsel-imenu)
+;; (global-set-key (kbd "M-r") 'counsel-imenu)
+(global-set-key (kbd "M-r") 'helm-imenu)
 (define-key paredit-mode-map (kbd "M-r") 'counsel-imenu)
 
 ;; mark

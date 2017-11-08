@@ -79,7 +79,7 @@ http://ecb.sourceforge.net/
 https://www.youtube.com/watch?v=KoRNCrx9pak
 C
 * Tasks
-:VISIBILITY: all
+  :VISIBILITY: content
 ** TODO [#A] Activer le highlight en mode php
 ** TODO [#B] Terminer intégration de hunspell @work
 ** TODO [#A] [swoop] C-w ne fonctionne pas
@@ -192,14 +192,14 @@ C
 ** TODO [#A] helm-do-grep-ag -> Ignjorer les fichier "*.svn-base"
       -> helm-ag-ignore-buffer-patterns (conf ajoutee, non testee, maj : ne fonctionne pas, voir pour mettre la bonne regle)
       -> Impossible de trouver la raison sur cette commande, utiliser helm-ag a la place
-** TODO [#A] ag search result buffer : highlight search words
+** DONE [#A] ag search result buffer : highlight search words
 ** TODO [#A] Fonction get file name to clipboard (très utilisé)
-** TODO [#A] Fichiers markdown mette toutes les windows en centré
+** TODO [#C] Fichiers markdown mette toutes les windows en centré
       (Creation de differences inutiles sur la toute dernière ligne de certains fichiers)
-** TODO [#A] Markdown mode style like in Sublime (background white, text black, column width limit, center inside
+** TODO [#C] Markdown mode style like in Sublime (background white, text black, column width limit, center inside
    Markdown in white theme
-** TODO [#A] Markdown in white theme
-** TODO [#A] git-svn
+** TODO [#C] Markdown in white theme
+** TODO [#C] git-svn
 ** TODO [#A] Don't prompt for delete recursivly (code available in prelude)
   - [ ] Show current mode in color
   - [ ] Show current VC system used
@@ -207,7 +207,7 @@ C
 ** TODO [#A] Mini buffer : Ne pas afficher de scrollbar
 ** TODO [#A] Ajouter un bind ALT + arrow up / down sur drags
 ** TODO [#A] [helm] Plugin helm utisable avec la souris
-** TODO [#A] Associer les fichiers .pdf au mode PDFView
+** TODO [#B] Associer les fichiers .pdf au mode PDFView
 ** TODO [#B] General : Utiliser le package general et jouer une touche sur
   super-spc ou hyper-sp
 ** TODO [#B] Mini buffer > M-p : Ne pas afficher de message beginning of
@@ -231,3 +231,9 @@ C
 ** TODO [#C] [util] Voir si il est possible de faire un (CMD+P + touche @) (file.php@methode_name)
 ** TODO [#C] [theme] nlinum : highlight current line number
 ** TODO [#C] git-svn
+** TODO [#A] Ne pas rendre cliquable les liens directement avec la souris, il faut les rendre cliquable seulement avec l'utilisation d'un racourcis clavier comme alt par exemple
+   [2017-11-06 Mon]
+   [[file:~/www/project/arsia/arsia_standard_310/dev/common/js/goa/suggest/suggest.js::__export.prototype.id%20%3D%20''%3B][file:~/www/project/arsia/arsia_standard_310/dev/common/js/goa/suggest/suggest.js::__export.prototype.id = '';]]
+
+** TODO [#A] Faire fonctionner fengyuanchen/cropper, les fichiers .babelrc, .editorconfig (déjà le cas en principe), .eslintrc
+   [2017-09-20 Wed]
