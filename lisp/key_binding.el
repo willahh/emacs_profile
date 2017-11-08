@@ -439,7 +439,9 @@
 
 ;; ---------------- Magit
 ;; Magit
-(global-set-key (kbd "C-x g") 'magit-status)
+;; (global-set-key (kbd "C-x g") 'magit-status)
+(global-set-key (kbd "s-g") 'wil-vc-status)
+(global-set-key (kbd "C-x g") 'wil-vc-status)
 (global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
 
 (define-key magit-status-mode-map (kbd "M-w") 'kill-ring-save)
@@ -619,7 +621,6 @@
 (global-set-key (kbd "s-v") 'scroll-down)
 (global-set-key (kbd "s-x") 'counsel-M-x)
 ;; (global-set-key (kbd "C-c j x") 'counsel-M-x) ;; (global-set-key (kbd "s-g") 'magit-status)
-(global-set-key (kbd "s-g") 'wil-vc-status)
 (global-set-key (kbd "C-x v U") 'wil-svn-up-recursive)
 
 (global-set-key (kbd "s-D") 'projectile-dired)

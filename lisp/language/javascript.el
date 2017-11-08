@@ -27,6 +27,14 @@
 ;; (setq-default js2-strict-missing-semi-warning nil)
 ;; (setq-default js2-strict-trailing-comma-warning t) ;; jshint does not warn about this now for some reason
 
+
+;; From https://github.com/skeeto/.emacs.d/blob/master/init.el
+(setq-default js2-additional-externs
+              '("$" "unsafeWindow" "localStorage" "jQuery"
+                "setTimeout" "setInterval" "location" "skewer"
+                "console" "phantom"))
+
+;; 
 (require 'js2-imenu-extras)
 (js2-imenu-extras-setup)
 
