@@ -103,6 +103,8 @@
 (define-key ivy-minibuffer-map (kbd "<escape>") 'minibuffer-keyboard-quit)
 (define-key ivy-minibuffer-map (kbd "C-h") 'delete-backward-char)
 (define-key ivy-minibuffer-map (kbd "C-z") 'backward-kill-word)
+(define-key org-mode-map (kbd "C-w") 'backward-kill-word)
+(define-key company-active-map (kbd "C-w") 'backward-kill-word)
 
 (use-package evil-mc
   :bind (:map evil-mc-key-map
@@ -146,9 +148,15 @@
 ;; (key-chord-define-global "<w" 'er/expand-region)
 (key-chord-define-global "wx" 'er/expand-region)
 ;; (key-chord-define-global "wx" 'er/contract-region)
+
 (key-chord-define evil-emacs-state-map "jk" 'evil-normal-state)
 (key-chord-define evil-normal-state-map "jk" 'evil-emacs-state)
 (key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
+
+;; ;; Bind C-1 (on azerty keyboard)
+(define-key evil-emacs-state-map (kbd "C-&") 'evil-normal-state)
+(define-key evil-normal-state-map (kbd "C-&") 'evil-emacs-state)
+;; (define-key evil-insert-state-map "C-&" 'evil-normal-state)
 
 ;; ---------------- Key binding evil normal mode
 ;; (with-eval-after-load 'evil-maps
@@ -684,8 +692,8 @@
 (define-key undo-tree-map (kbd "C-/") 'ffap)
 
 ;; ;; remap C-a to `smarter-move-beginning-of-line'
-;; (global-set-key [remap move-beginning-of-line]
-;;                 'smarter-move-beginning-of-line)
+(global-set-key [remap move-beginning-of-line]
+                'smarter-move-beginning-of-line)
 
 ;; Navigation entre les buffers
 (global-set-key (kbd "<C-tab>") 'next-buffer)
@@ -715,4 +723,20 @@
 ;; Whitespace cleanup
 (global-set-key (kbd "C-c j wc") 'whitespace-cleanup)
 
+;; dumb-jump-go
 (global-set-key (kbd "C-c M-.") 'dumb-jump-go)
+
+;; org
+(global-set-key (kbd "s-a") 'org-agenda)
+
+;; Increment at point
+(global-set-key (kbd "C-c j i") 'wil-hydra-increment-at-point/body)
+
+;; Recenter
+(global-set-key (kbd "C-l") 'wil-recenter-top-bottom)
+
+
+
+
+
+

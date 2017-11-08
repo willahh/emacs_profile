@@ -24,7 +24,10 @@
 (setq initial-scratch-message "")
 
 ;; Display current file path in title
-(setq frame-title-format "%b")
+;; (setq frame-title-format "%b")
+(setq frame-title-format
+      (list (format "%s %%S: %%j " (system-name))
+        '(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
 
 ;; Hide some mini buffer message
 (let ((inhibit-message t))
@@ -101,6 +104,10 @@
 ;; reduce the frequency of garbage collection by making it happen on
 ;; each 50MB of allocated data (the default is on every 0.76MB)
 (setq gc-cons-threshold 50000000)
+
+;; From hlissner
+(setq-default gc-cons-threshold 4388608
+                   gc-cons-percentage 0.4)
 
 ;; warn when opening files bigger than 100MB
 (setq large-file-warning-threshold 100000000)
@@ -252,7 +259,8 @@
 ;; (setq jit-lock-defer-time 0.5)
 ;; (setq jit-lock-defer-time 0.25)
 ;; (setq jit-lock-defer-time 0.125)
-(setq jit-lock-defer-time 0)
+;; (setq jit-lock-defer-time 0)
+(setq jit-lock-defer-time .5)
 
 ;; Some settings from https://github.com/technomancy/better-defaults/blob/master/better-defaults.el
 (progn
@@ -507,3 +515,82 @@
 
 
 (display-time-mode 1)
+
+
+
+
+
+
+
+
+
+
+;; From hl-lissner cf
+(setq-default
+ mode-line-default-help-echo nil ; don't say anything on mode-line mouseover
+ indicate-buffer-boundaries nil  ; don't show where buffer starts/ends
+ indicate-empty-lines nil        ; don't show empty lines
+ fringes-outside-margins t       ; switches order of fringe and margin
+ 
+ ;; Keep cursors and highlights in current window only
+ cursor-in-non-selected-windows nil
+ highlight-nonselected-windows nil
+ 
+ ;; Disable bidirectional text support for slight performance bonus
+ bidi-display-reordering nil
+ 
+ ;; Remove continuation arrow on right fringe
+ fringe-indicator-alist (delq (assq 'continuation fringe-indicator-alist)
+                              fringe-indicator-alist)
+
+ blink-matching-paren nil ; don't blink--too distracting
+ show-paren-delay 0.075
+ show-paren-highlight-openparen t
+ show-paren-when-point-inside-paren t
+ uniquify-buffer-name-style nil
+ visible-bell nil
+ visible-cursor nil
+ x-stretch-cursor t
+ ;; use-dialog-box nil             ; always avoid GUI
+ redisplay-dont-pause t         ; don't pause display on input
+ split-width-threshold nil      ; favor horizontal splits
+ show-help-function nil         ; hide :help-echo text
+ jit-lock-defer-time nil
+ jit-lock-stealth-nice 0.1
+ jit-lock-stealth-time 0.2
+ jit-lock-stealth-verbose nil
+ 
+ ;; Minibuffer resizing
+ resize-mini-windows 'grow-only
+ max-mini-window-height 0.3
+ image-animate-loop t
+ 
+ ;; Ask for confirmation on exit only if there are real buffers left
+ confirm-kill-emacs
+ (lambda (_)
+   (if (ignore-errors (doom/get-real-buffers))
+       (y-or-n-p "››› Quit?")
+     t)))
+
+
+;; From hlissner config
+;; `window-divider-mode' gives us finer control over the border between windows.
+;; The native border "consumes" a pixel of the fringe on righter-most splits (in
+;; Yamamoto's emacs-mac at least), window-divider does not.
+;; NOTE Only available on Emacs 25.1+
+(when (boundp 'window-divider-mode)
+  (setq window-divider-default-places t
+        window-divider-default-bottom-width 1
+        window-divider-default-right-width 1)
+  (window-divider-mode +1))
+
+
+
+(use-package visual-fill-column :defer t
+  :config
+  (setq-default visual-fill-column-center-text nil
+                visual-fill-column-width fill-column
+                split-window-preferred-function 'visual-line-mode-split-window-sensibly))
+
+
+

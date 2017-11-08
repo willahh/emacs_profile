@@ -165,28 +165,28 @@ Position the cursor at it's beginning, according to the current mode."
   (indent-according-to-mode))
 
 ;; http://emacsredux.com/blog/2013/05/22/smarter-navigation-to-the-beginning-of-a-line/
-;; (defun smarter-move-beginning-of-line (arg)
-;;   "Move point back to indentation of beginning of line.
+(defun smarter-move-beginning-of-line (arg)
+  "Move point back to indentation of beginning of line.
 
-;; Move point to the first non-whitespace character on this line.
-;; If point is already there, move to the beginning of the line.
-;; Effectively toggle between the first non-whitespace character and
-;; the beginning of the line.
+Move point to the first non-whitespace character on this line.
+If point is already there, move to the beginning of the line.
+Effectively toggle between the first non-whitespace character and
+the beginning of the line.
 
-;; If ARG is not nil or 1, move forward ARG - 1 lines first.  If
-;; point reaches the beginning or end of the buffer, stop there."
-;;   (interactive "^p")
-;;   (setq arg (or arg 1))
+If ARG is not nil or 1, move forward ARG - 1 lines first.  If
+point reaches the beginning or end of the buffer, stop there."
+  (interactive "^p")
+  (setq arg (or arg 1))
 
-;;   ;; Move lines first
-;;   (when (/= arg 1)
-;;     (let ((line-move-visual nil))
-;;       (forward-line (1- arg))))
+  ;; Move lines first
+  (when (/= arg 1)
+    (let ((line-move-visual nil))
+      (forward-line (1- arg))))
 
-;;   (let ((orig-point (point)))
-;;     (back-to-indentation)
-;;     (when (= orig-point (point))
-;;       (move-beginning-of-line 1))))
+  (let ((orig-point (point)))
+    (back-to-indentation)
+    (when (= orig-point (point))
+      (move-beginning-of-line 1))))
 
 ;; Dont prompt me when quit
 ;; Source : http://emacs.stackexchange.com/a/24602
@@ -1310,9 +1310,6 @@ the checking happens for all pairs in auto-minor-mode-alist"
   ("P" increment-number-at-point-by-10)
   ("N" decrement-number-at-point-by-10))
 
-(global-set-key (kbd "C-c ; i") 'wil-hydra-increment-at-point/body)
-
-
 (defun wil-open-file-in-browser ()
   (interactive)
   (buffer-file-name))
@@ -1373,3 +1370,10 @@ the checking happens for all pairs in auto-minor-mode-alist"
     ;; (backward-kill-word arg)
     (paredit-backward-kill-word)))
 
+
+
+(defun wil-recenter-top-bottom ()
+  "Call recenter-top-bottom then do a beacon-blink"
+  (interactive)
+  (recenter-top-bottom)
+  (beacon-blink))

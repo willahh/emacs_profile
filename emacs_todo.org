@@ -1,0 +1,233 @@
+#+TITLE: TODO.org
+#+STARTUP: content
+* Utils
+- [dired] "o" Ouvre le fichier dans un nouveau buffer et donne le focus à ce buffer
+
+- Twitter
+  - Implementer https://github.com/abo-abo/hydra/wiki/Twittering
+
+- View pdf
+  https://emacs.stackexchange.com/a/22591/15824
+  https://emacs.stackexchange.com/questions/13314/install-pdf-tools-on-emacs-macosx
+
+- Find files in project
+  - C-x C-o js (find JS files)
+  - C-x C-o ph (find php files)
+
+- Osx keyboard input delay :
+  - default values :
+    - defaults read NSGlobalDomain KeyRepeat 2
+    - defaults read NSGlobalDomain InitialKeyRepeat 15
+  - My values :
+     - defaults write NSGlobalDomain KeyRepeat 1
+     - defaults write NSGlobalDomain InitialKeyRepeat 8
+
+- Refactoring : 
+  - Ag at point (C-c s A)
+  - wgrep-change-to-wgrep-mode (C-c C-p)
+  - iedit-mode (C-;)
+  - Some changes ...
+  - wgrep-finish-edit (C-x C-s) (or abort C-c C-k)
+
+- Narrow to (region, defun, ...)
+  (C-x n n), (C-x n ...), ...
+  Très utile pour travailler sur des portions de code de façon indepdendante
+
+- [i-edit] (C-;) : Modification de portions de texte identiques 
+  -> Assez proche de Sublime command+control+g
+  -> Très pratique pour des petits modifications rapides
+
+- evil mode : ":new file.extension" -> Create new buffer/file/window
+
+- evil mode : "gf" ("go to file")
+
+- Sublime merge lines -> Evil gJ
+
+- [M+S+;] ---> xref-find-definitions (natif)
+
+- dired-jump (C-x C-j) : Jump directly to dired from file
+
+- New line with comment M-j
+
+- Revert hunk (depuis vc-diff) :
+  - C-c C-r (diff-reverse-direction)
+  - C-C C-a (diff-apply-hunk)
+
+- [web-mode] Element wrap (from "word" to -> "<strong>word</strong>")
+
+- Php ide mode
+  - Create ".ac-php-conf.json" file at project root
+  - Create ".projectile" file at project root
+
+- Typescript ide mode
+  - Make sure tsconfig.json or jsconfig.json is present in the root folder of the project.
+** Links
+  https://github.com/epsil
+  https://github.com/djangoliv/conf
+  https://github.com/hlissner/.emacs.d
+** Notes :
+- [ ] Voir https://github.com/NicolasPetton/Indium
+  Javascript connexion to current browser, inspector, debugger etc
+
+PHP checker
+http://daniel-bush.blogspot.fr/2014/12/emacs-flycheck-and-jshint-and-other.html
+phpcs
+phpmd
+
+Semantic PHP parser with ECB
+http://ecb.sourceforge.net/
+https://www.youtube.com/watch?v=KoRNCrx9pak
+C
+* Tasks
+:VISIBILITY: all
+** TODO [#A] Activer le highlight en mode php
+** TODO [#B] Terminer intégration de hunspell @work
+** TODO [#A] [swoop] C-w ne fonctionne pas
+** TODO [#A] [helm] [mini-buffer] Ajouter la possibilité de faire du M-v dans le mini-buffer
+** TODO [#A] web-mode single quote dans commentaire : Ne pas auto fermer la quote lorsque l'on est dans un commentaire
+   [2017-10-23 Mon]
+   [[file:~/www/project/arsia/goacrop/src/main.js:://%20Pas%20de%20traitement%20particulier,%20l'image][file:~/www/project/arsia/goacrop/src/main.js::// Pas de traitement particulier, l'image]]
+** TODO [#A] Faire fonctionner la custom theme dark pour org mode
+   [2017-10-30 Mon]
+   [[file:~/.emacs.d/lisp/theme-dark2.el]]
+
+** TODO [#A] js2-mode, voir pourquoi la naviguation au sein de fichiers en mode js2, est lente (visible lorsque l'on se déplace sur une ligne de façon répétitive par example)
+   [2017-10-30 Mon]
+   [[file:~/www/project/arsia/arsia_standard_310/dev/creation/module/home/ajax/templateList.json.php::$g_oLogger->debug('no%20first%20page%20found%20for%20this%20gabarit%20%5B'%20.%20$iGabaIdx%20.%20'%5D')%3B][file:~/www/project/arsia/arsia_standard_310/dev/creation/module/home/ajax/templateList.json.php::$g_oLogger->debug('no first page found for this gabarit [' . $iGabaIdx . ']');]]
+
+** TODO [#A] [swoop] Ne pas initialiser avec le texte sous le curseur
+  ** [org] Lancer org mode avec certains titre ouvert fermé
+- (conf en tête de fichier)
+  ** [org-mode] Mouse-1 pour toggler un header
+- [X] Voir pour installer le plugin pour lancer des mode en "fullscreen", vu sur un blog d'un autre
+- [X] [system] [osx] Autoriser le F5 dans Emacs (revert-buffer)
+** TODO [#A] Rebind les scroll to other window pour avoir un scroll sur la fenetre a cote mais d'une demie page seulement
+      C-M-S-v runs the command scroll-other-window-down (found in
+      global-map), which is an interactive compiled Lisp function in
+      ‘window.el’.
+
+      It is bound to <M-prior>, C-M-S-v, ESC <prior>.
+
+      (scroll-other-window-down &optional LINES)
+
+      Scroll the "other window" down.
+      For more details, see the documentation for ‘scroll-other-window’.
+
+** TODO [#A] Kill texte : Ne pas ajouter dans le kill ring
+      --> L'ajout dans le kill ring ne doit se faire que depuis M-w si possible
+** TODO [#A] M-S-n sur buffer vc-diff ne fonctionne pas
+** TODO [#A] [counsel-find-file] [mini-buffer] Ajouter un bind C-k pour supprimer tout le texte
+** TODO [#A] [dired] Delete dir slow, piste : Tester sans
+** TODO [#A] [vc-diff mode] Voir si il est possible de lancer des commandes de type ediff
+       Depuis  le vc-diff
+** TODO [#A] Autres tâches à mettre au format todo
+- [ ] Implementer le menu semantique (je n'ai plus le nom) et l'afficher a gauche ou faire un toggle a voir
+      Cette fonction est déjà présente dans emacs mais apparait dans une autre frame, un package existe pour
+      L'afficher dans la même frame mais je n'ai pas réussis à bien l'implèmenter
+- [ ] System : bind c-j
+- [X] [all] Ne pas ajouter dabbrev dans company par default
+  - [X] [css-mode] Virer company dabbrev de css mode
+- [ ] [theme] [ediff] Trouver comment avoir les bons code couleur,des couleurs parfaitement implémentées comme avec avec le thème leuven
+
+
+- [ ] Faire une fonction mark paragraph TOP et la binder sur M-S-H
+- [ ] Associer les fichiers .htaccess au mode conf-mode
+- [ ] [dired] Rename file : Possibilité de préciser un chemin contenant des dossiers
+      N'existant pas, ces dossier seront créés automatiquement à la validation
+- [ ] Ajouter des bind system sur C-h et C-w C-w https://blog.sensible.io/2012/10/19/mac-os-x-emacs-style-keybindings-everywhere.html
+  - [ ] C-j new line
+  - [ ] C-w delete back word
+  - [ ] M-b back word
+- [ ] Multiple emacs config management propositions : http://stackoverflow.com/questions/17483598/maintaining-multiple-emacs-configurations-at-the-same-time
+- [ ] Open file from system in new emacs frame (Right click open in)
+- [ ] [multi-cursor] Remettre la possibilité d'ajouter un command click de la souris pour ajouter un nouveau caret
+- [ ] [projectile] Find file - Traitement lent lorsqu'il y a beaucoup de fichiers
+- [ ] [highlight-symbol] [ggtags] [web-mode] Les couleurs disparaissent lorsque les modes web-mode ggtags sont presents highlight-mode est active
+- [ ] [projectile] Auto invalidate cache after create/rename/delete files
+  - [ ] create
+  - [ ] rename
+  - [x] delete
+
+- [ ] [vc-diff] g (refresh) --> Remettre la bonne position y
+- [ ] Création de tableaux directement par texte
+- [ ] Couper la saisie de texte automatiquement
+- [ ] [helm-ag] auto recentrer une fois le focus effectué
+- [ ] [ivy] [mini buffer] Add C-l keybinding
+- [ ] [ivy] - Highlight current line plus visible
+
+- [ ] [php-mode] [ac-php] [company] La boite d'information supplémentaire ne contient pas les php doc
+- [ ] [php-mode] Voir pour implementer quick type hierarchy
+- [ ] [php-mode] Saisie de /** + ENTER -> Creation d un php doc pre rempli
+
+- [ ] [flycheck] : Mieux distinguer la ligne en erreur
+- [ ] [web-mode] [javascript] [company] Add javascript keywords to company backend
+- [ ] [refactor] emacs.d conf a ranger, voir modele suivant : https://github.com/purcell/emacs.d
+- [ ] Activer les url cliquable dans les differents modes
+
+- [ ] [ivy] [mini buffer] CTRL+l to back up
+- [ ] [ivy] : Ne pas mettre les fichiers .svn dans la liste
+- [ ] [plugin] [change inner] Ajoute rl'option Change Inner Tag
+** TODO [#A] [php-mode] Autocompletion, ajouter les entrés du buffer courant dans la liste des completions
+** TODO [#A] [custom] Faire une fonction custom delete backward or region
+      C-w doit appeler clean-aindent--bsunindent ou "whole-line-or-region-kill-region"
+
+** TODO [#A] [vc-dir] Faire une fonction pour activer un vc-version-diff avec les paramètres older revision : "base", newer revision : "head"
+
+** TODO [#A] [util] Revert buffer : keep current line position
+** TODO [#A] [theme] Mettre plus en avant le buffer actif
+** TODO [#A] [theme] js color var
+** TODO [#A] [theme] Ajouter des differenciations sur certains mot clee comme "$", "=", ".", "'", "(", ")", "+", "-", certains mots clés php "var_dump", "PHP_EOL", etc
+              Voir package "highlight-chars"
+** TODO [#A] [theme] Revoir toutes les couleurs pour avoir les mêmes que dans Sublime
+      Le profile colorimétrique utilisé par Photoshop n'était pas bon ... ... ...
+** TODO [#A] [theme] php mode : Plus de couleurs
+
+** TODO [#A] [vc-dir] Faire une fonction toggle des hunk comme dans magit
+** TODO [#A] Ajouter une méthode copy file name pour retourner uniquement le nom du fichier
+  - La fonction copy-file-name-to-clipbord est present, mais elle retourne le chemin complet
+    Il faudrait garder que la derniere partie apres le /
+** TODO [#A] delete-file
+  - dont prompt for path
+  - kill buffer
+** TODO [#A] helm-do-grep-ag -> Ignjorer les fichier "*.svn-base"
+      -> helm-ag-ignore-buffer-patterns (conf ajoutee, non testee, maj : ne fonctionne pas, voir pour mettre la bonne regle)
+      -> Impossible de trouver la raison sur cette commande, utiliser helm-ag a la place
+** TODO [#A] ag search result buffer : highlight search words
+** TODO [#A] Fonction get file name to clipboard (très utilisé)
+** TODO [#A] Fichiers markdown mette toutes les windows en centré
+      (Creation de differences inutiles sur la toute dernière ligne de certains fichiers)
+** TODO [#A] Markdown mode style like in Sublime (background white, text black, column width limit, center inside
+   Markdown in white theme
+** TODO [#A] Markdown in white theme
+** TODO [#A] git-svn
+** TODO [#A] Don't prompt for delete recursivly (code available in prelude)
+  - [ ] Show current mode in color
+  - [ ] Show current VC system used
+  - [ ] Show current encoding
+** TODO [#A] Mini buffer : Ne pas afficher de scrollbar
+** TODO [#A] Ajouter un bind ALT + arrow up / down sur drags
+** TODO [#A] [helm] Plugin helm utisable avec la souris
+** TODO [#A] Associer les fichiers .pdf au mode PDFView
+** TODO [#B] General : Utiliser le package general et jouer une touche sur
+  super-spc ou hyper-sp
+** TODO [#B] Mini buffer > M-p : Ne pas afficher de message beginning of
+  buffer bla bla
+** TODO [#B] AG mettre en mode emacs et non pas evil normal
+** TODO [#B] [projectile find file] Auto centrer la ligne une fois le goto dans le fichier
+** TODO [#B] [svn-log-view] Faire des ediff depuis ce mode
+** TODO [#B] Faire une fonction "Merge lines" pour supprimer les linebreak/whitespace
+** TODO [#B] Delete file : ne pas re demander le chemin alors que l'on a deja le focus
+** TODO [#B] Ivy : Possibilité de boucler
+
+** TODO [#B] [vc-dir] N'affiche pas les fichiers supprimés localement, mais non envoyé à svn (svn remove)
+
+** TODO [#B] Display current encoding
+** TODO [#C] Ajouter un bind C-space en mode company pour afficher / masquer la documentation (comportement moderne)
+** TODO [#C] Ag result buffer : C-o : Open in new window
+** TODO [#C] [vc-dir] N et P pour se déplacer en evitant les dossiers
+** TODO [#C] Help mode evil : add q binding pour quitter
+** TODO [#C] [vc-dir] key M-< && M-> : Faire pointer sur le vrai début/fin de ligne
+** TODO [#C] [doc-view] Faire fonctionner doc-view (Lire des fichiers excel, doc, word, etc)
+** TODO [#C] [util] Voir si il est possible de faire un (CMD+P + touche @) (file.php@methode_name)
+** TODO [#C] [theme] nlinum : highlight current line number
+** TODO [#C] git-svn

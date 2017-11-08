@@ -75,3 +75,10 @@
 (add-hook 'wil-js-mode-hook 'wil-my-js-mode-hook)
 (add-hook 'js2-mode-hook (lambda ()
             (wil-js-mode)))
+
+
+;; From Hlissner config
+(setq-default
+   js2-skip-preprocessor-directives t
+   js2-highlight-external-variables nil
+   js2-mode-show-parse-errors nil)

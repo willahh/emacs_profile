@@ -195,5 +195,6 @@
         vc-dir-next-line
         vc-dir-previous-line
         wgrep-finish-edit
+        wil-recenter-top-bottom
         wil-tab-indent-or-complete-js
         ))
