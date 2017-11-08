@@ -231,11 +231,10 @@
 (set-face-attribute 'hydra-face-teal nil :foreground "#5fbfec")
 
 (set-face-attribute 'scroll-bar nil :background "#282a36")
-(set-face-attribute 'tide-hl-identifier-face nil :background "#356a4b" :foreground "#ffffff" :underline "yellow")
 (set-face-attribute 'link nil :foreground nil)
 (set-face-attribute 'lazy-highlight nil :background "green")
 (set-face-attribute 'scroll-bar nil :background "#000")
-(set-face-attribute 'tide-hl-identifier-face nil :background "#356a4b" :foreground "#ffffff" :underline "yellow")
+(set-face-attribute 'tide-hl-identifier-face nil :background "#356a4b" :foreground "#ffffff" :underline nil)
 
 ;; (set-face-attribute 'scroll-bar-background nil :background "#282a36") 
 
