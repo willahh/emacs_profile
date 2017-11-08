@@ -601,4 +601,5 @@
                 split-window-preferred-function 'visual-line-mode-split-window-sensibly))
 
 
-
+;; Open jar files in archive mode
+(add-to-list 'auto-mode-alist '("\\.jar$" . archive-mode))

@@ -1073,3 +1073,64 @@ Archived entries from file /Users/wravel/.emacs.d/emacs_todo.org
   :ARCHIVE_TODO: TODO
   :END:
 
+
+* TODO [#A] Faire fonctionner fengyuanchen/cropper, les fichiers .babelrc, .editorconfig (déjà le cas en principe), .eslintrc
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-11-08 Wed 13:21
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :END:
+   [2017-09-20 Wed]
+`** TODO [#A] Diff hl revert hunk --> no confirm
+   [2017-11-08 Wed]
+   [[file:~/www/project/arsia/arsia_standard_310/dev/data2print/admin/module/ordre_document/ordre_document.js:://%20Clic%20en%20dehors%20du%20td%20drag%20and%20drop%20->%20bloque%20l%20action][file:~/www/project/arsia/arsia_standard_310/dev/data2print/admin/module/ordre_document/ordre_document.js::// Clic en dehors du td drag and drop -> bloque l action]]
+
+* TODO [#A] Diff hl revert hunk --> no confirm
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-11-08 Wed 13:21
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :END:
+  [2017-11-08 Wed]
+  [[file:~/www/project/arsia/arsia_standard_310/dev/data2print/admin/module/ordre_document/ordre_document.js:://%20Clic%20en%20dehors%20du%20td%20drag%20and%20drop%20->%20bloque%20l%20action][file:~/www/project/arsia/arsia_standard_310/dev/data2print/admin/module/ordre_document/ordre_document.js::// Clic en dehors du td drag and drop -> bloque l action]]
+
+* TODO [#A] M-S-n sur buffer vc-diff ne fonctionne pas
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-11-08 Wed 13:33
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :END:
+
+* TODO [#A] Kill texte : Ne pas ajouter dans le kill ring
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-11-08 Wed 13:33
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :END:
+     --> L'ajout dans le kill ring ne doit se faire que depuis M-w si possible
+
+* DONE [#A] [dired] Delete dir slow, piste : Tester sans
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-11-08 Wed 13:33
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: DONE
+  :END:
+
+* TODO [#C] [theme] nlinum : highlight current line number
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-11-08 Wed 13:35
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :END:

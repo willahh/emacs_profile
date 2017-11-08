@@ -10,10 +10,11 @@
 
 ;; ag hook
 (defun wil-ag-mode-hook ()
-  (toggle-truncate-lines)
-  (evil-emacs-state))
+  (make-variable-buffer-local 'truncate-lines)
+  (setq truncate-lines t))
 
 (add-hook 'ag-mode-hook 'wil-ag-mode-hook)
+
 
 ;; Enable anzu
 ;; https://github.com/syohex/emacs-anzu

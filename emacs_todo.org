@@ -79,8 +79,9 @@ http://ecb.sourceforge.net/
 https://www.youtube.com/watch?v=KoRNCrx9pak
 C
 * Tasks
-:VISIBILITY: all
+  :VISIBILITY: content
 ** TODO [#A] Activer le highlight en mode php
+** TODO [#A] [js2 mode] Voir pour avoir une ouverture plus rapide, c'esst surement du au mode TIDE
 ** TODO [#B] Terminer intégration de hunspell @work
 ** TODO [#A] [swoop] C-w ne fonctionne pas
 ** TODO [#A] [helm] [mini-buffer] Ajouter la possibilité de faire du M-v dans le mini-buffer
@@ -101,7 +102,7 @@ C
   ** [org-mode] Mouse-1 pour toggler un header
 - [X] Voir pour installer le plugin pour lancer des mode en "fullscreen", vu sur un blog d'un autre
 - [X] [system] [osx] Autoriser le F5 dans Emacs (revert-buffer)
-** TODO [#A] Rebind les scroll to other window pour avoir un scroll sur la fenetre a cote mais d'une demie page seulement
+** TODO [#B] Rebind les scroll to other window pour avoir un scroll sur la fenetre a cote mais d'une demie page seulement
       C-M-S-v runs the command scroll-other-window-down (found in
       global-map), which is an interactive compiled Lisp function in
       ‘window.el’.
@@ -113,11 +114,7 @@ C
       Scroll the "other window" down.
       For more details, see the documentation for ‘scroll-other-window’.
 
-** TODO [#A] Kill texte : Ne pas ajouter dans le kill ring
-      --> L'ajout dans le kill ring ne doit se faire que depuis M-w si possible
-** TODO [#A] M-S-n sur buffer vc-diff ne fonctionne pas
 ** TODO [#A] [counsel-find-file] [mini-buffer] Ajouter un bind C-k pour supprimer tout le texte
-** TODO [#A] [dired] Delete dir slow, piste : Tester sans
 ** TODO [#A] [vc-diff mode] Voir si il est possible de lancer des commandes de type ediff
        Depuis  le vc-diff
 ** TODO [#A] Autres tâches à mettre au format todo
@@ -192,14 +189,14 @@ C
 ** TODO [#A] helm-do-grep-ag -> Ignjorer les fichier "*.svn-base"
       -> helm-ag-ignore-buffer-patterns (conf ajoutee, non testee, maj : ne fonctionne pas, voir pour mettre la bonne regle)
       -> Impossible de trouver la raison sur cette commande, utiliser helm-ag a la place
-** TODO [#A] ag search result buffer : highlight search words
+** DONE [#A] ag search result buffer : highlight search words
 ** TODO [#A] Fonction get file name to clipboard (très utilisé)
-** TODO [#A] Fichiers markdown mette toutes les windows en centré
+** TODO [#C] Fichiers markdown mette toutes les windows en centré
       (Creation de differences inutiles sur la toute dernière ligne de certains fichiers)
-** TODO [#A] Markdown mode style like in Sublime (background white, text black, column width limit, center inside
+** TODO [#C] Markdown mode style like in Sublime (background white, text black, column width limit, center inside
    Markdown in white theme
-** TODO [#A] Markdown in white theme
-** TODO [#A] git-svn
+** TODO [#C] Markdown in white theme
+** TODO [#C] git-svn
 ** TODO [#A] Don't prompt for delete recursivly (code available in prelude)
   - [ ] Show current mode in color
   - [ ] Show current VC system used
@@ -207,7 +204,7 @@ C
 ** TODO [#A] Mini buffer : Ne pas afficher de scrollbar
 ** TODO [#A] Ajouter un bind ALT + arrow up / down sur drags
 ** TODO [#A] [helm] Plugin helm utisable avec la souris
-** TODO [#A] Associer les fichiers .pdf au mode PDFView
+** TODO [#B] Associer les fichiers .pdf au mode PDFView
 ** TODO [#B] General : Utiliser le package general et jouer une touche sur
   super-spc ou hyper-sp
 ** TODO [#B] Mini buffer > M-p : Ne pas afficher de message beginning of
@@ -229,5 +226,10 @@ C
 ** TODO [#C] [vc-dir] key M-< && M-> : Faire pointer sur le vrai début/fin de ligne
 ** TODO [#C] [doc-view] Faire fonctionner doc-view (Lire des fichiers excel, doc, word, etc)
 ** TODO [#C] [util] Voir si il est possible de faire un (CMD+P + touche @) (file.php@methode_name)
-** TODO [#C] [theme] nlinum : highlight current line number
 ** TODO [#C] git-svn
+** TODO [#A] Ne pas rendre cliquable les liens directement avec la souris, il faut les rendre cliquable seulement avec l'utilisation d'un racourcis clavier comme alt par exemple
+   [2017-11-06 Mon]
+   [[file:~/www/project/arsia/arsia_standard_310/dev/common/js/goa/suggest/suggest.js::__export.prototype.id%20%3D%20''%3B][file:~/www/project/arsia/arsia_standard_310/dev/common/js/goa/suggest/suggest.js::__export.prototype.id = '';]]
+
+** TODO [#A] Faire fonctionner fengyuanchen/cropper, les fichiers .babelrc, .editorconfig (déjà le cas en principe), .eslintrc
+   [2017-09-20 Wed]
