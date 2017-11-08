@@ -22,6 +22,7 @@
         clean-aindent--bsunindent
         comment-line
         company-indent-or-complete-common
+        delete-horizontal-space
         dired-jump
         drag-stuff-down
         drag-stuff-up
@@ -101,6 +102,7 @@
         paredit-forward-delete
         paredit-forward-down
         paredit-forward-kill-word
+        paredit-forward-up
         paredit-kill
         paredit-meta-doublequote
         paredit-open-round
@@ -138,6 +140,7 @@
         xah-toggle-letter-case
         yank-rectangle
         yas-expand
+        wil-tab-indent-or-complete-js
         ))
 
 (setq mc/cmds-to-run-once
@@ -194,7 +197,5 @@
         vc-dir-mark
         vc-dir-next-line
         vc-dir-previous-line
-        wgrep-finish-edit
-        wil-recenter-top-bottom
-        wil-tab-indent-or-complete-js
+        wgrep-finish-edit        
         ))

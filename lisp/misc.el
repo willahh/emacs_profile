@@ -1275,10 +1275,26 @@ Version 2016-10-24"
 (add-hook 'prog-mode-hook (lambda ()
                             (vi-tilde-fringe-mode t)))
 
-
 ;; Skewer-mode
 (require 'skewer-mode)
 (add-hook 'js2-mode-hook 'skewer-mode)
 (add-hook 'css-mode-hook 'skewer-css-mode)
 (add-hook 'html-mode-hook 'skewer-html-mode)
 
+;; From prelude
+;; proced-mode doesn't work on OS X so we use vkill instead
+(autoload 'vkill "vkill" nil t)
+(global-set-key (kbd "C-x p") 'vkill)
+
+;; From prelude
+;; whitespace-mode config
+(require 'whitespace)
+(setq whitespace-line-column 80) ;; limit line length
+(setq whitespace-style '(face tabs empty trailing lines-tail))
+
+
+;; From prelude
+;; Colorize output of Compilation Mode, see
+;; http://stackoverflow.com/a/3072831/355252
+(require 'ansi-color)
+(add-hook 'compilation-filter-hook #'prelude-colorize-compilation-buffer)
