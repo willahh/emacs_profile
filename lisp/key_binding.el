@@ -763,4 +763,8 @@
 (global-set-key (kbd "s-j") 'crux-top-join-line)
 
 
-(define-key term-mode-map (kbd "C-c RET") 'term-line-mode)
+;; (define-key term-mode-map (kbd "C-c RET") 'term-line-mode)
+(add-hook 'term-mode-hook
+          (function
+           (lambda ()
+             (define-key term-raw-map (kbd "C-c RET") 'term-line-mode))))
