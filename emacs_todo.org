@@ -81,6 +81,7 @@ C
 * Tasks
   :VISIBILITY: content
 ** TODO [#A] Activer le highlight en mode php
+** TODO [#A] [js2 mode] Voir pour avoir une ouverture plus rapide, c'esst surement du au mode TIDE
 ** TODO [#B] Terminer intégration de hunspell @work
 ** TODO [#A] [swoop] C-w ne fonctionne pas
 ** TODO [#A] [helm] [mini-buffer] Ajouter la possibilité de faire du M-v dans le mini-buffer
@@ -101,7 +102,7 @@ C
   ** [org-mode] Mouse-1 pour toggler un header
 - [X] Voir pour installer le plugin pour lancer des mode en "fullscreen", vu sur un blog d'un autre
 - [X] [system] [osx] Autoriser le F5 dans Emacs (revert-buffer)
-** TODO [#A] Rebind les scroll to other window pour avoir un scroll sur la fenetre a cote mais d'une demie page seulement
+** TODO [#B] Rebind les scroll to other window pour avoir un scroll sur la fenetre a cote mais d'une demie page seulement
       C-M-S-v runs the command scroll-other-window-down (found in
       global-map), which is an interactive compiled Lisp function in
       ‘window.el’.
@@ -113,11 +114,7 @@ C
       Scroll the "other window" down.
       For more details, see the documentation for ‘scroll-other-window’.
 
-** TODO [#A] Kill texte : Ne pas ajouter dans le kill ring
-      --> L'ajout dans le kill ring ne doit se faire que depuis M-w si possible
-** TODO [#A] M-S-n sur buffer vc-diff ne fonctionne pas
 ** TODO [#A] [counsel-find-file] [mini-buffer] Ajouter un bind C-k pour supprimer tout le texte
-** TODO [#A] [dired] Delete dir slow, piste : Tester sans
 ** TODO [#A] [vc-diff mode] Voir si il est possible de lancer des commandes de type ediff
        Depuis  le vc-diff
 ** TODO [#A] Autres tâches à mettre au format todo
@@ -229,7 +226,6 @@ C
 ** TODO [#C] [vc-dir] key M-< && M-> : Faire pointer sur le vrai début/fin de ligne
 ** TODO [#C] [doc-view] Faire fonctionner doc-view (Lire des fichiers excel, doc, word, etc)
 ** TODO [#C] [util] Voir si il est possible de faire un (CMD+P + touche @) (file.php@methode_name)
-** TODO [#C] [theme] nlinum : highlight current line number
 ** TODO [#C] git-svn
 ** TODO [#A] Ne pas rendre cliquable les liens directement avec la souris, il faut les rendre cliquable seulement avec l'utilisation d'un racourcis clavier comme alt par exemple
    [2017-11-06 Mon]
