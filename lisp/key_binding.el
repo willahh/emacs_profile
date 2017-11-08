@@ -430,7 +430,9 @@
 ;; ---------------- Shell
 ;; Start eshell or switch to it if it's active.
 ;; (global-set-key (kbd "C-x m") 'eshell)
-(global-set-key (kbd "C-c j e") 'eshell)
+;; (global-set-key (kbd "C-c j e") 'eshell)
+(global-set-key (kbd "C-c j e") 'ansi-term)
+
 
 ;; Start a new eshell even if one is active.
 (global-set-key (kbd "C-x M") (lambda () (interactive) (eshell t)))
