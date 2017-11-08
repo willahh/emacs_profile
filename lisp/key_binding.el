@@ -9,6 +9,7 @@
 (require 'org)
 (require 'conf-mode)
 (require 'magit)
+(require 'term)
 
 ;; (global-set-key (kbd "s--") 'negative-argument)
 
