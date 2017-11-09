@@ -768,3 +768,5 @@
           (function
            (lambda ()
              (define-key term-raw-map (kbd "C-c RET") 'term-line-mode))))
+
+(global-set-key (kbd "C-c j G") 'google-translate-at-point)

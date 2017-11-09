@@ -28,9 +28,11 @@
  '(rainbow-delimiters-depth-7-face ((t (:foreground "#fa75e2"))))
  '(rainbow-delimiters-depth-8-face ((t (:foreground "#55bdf0")))))
 
-;; white-space         
-(set-face-attribute 'trailing-whitespace nil :background "#242f33")
-(set-face-attribute 'web-mode-whitespace-face nil :background "#192124")
+;; white-space
+;; (set-face-attribute 'trailing-whitespace nil :background "#242f33")
+;; (set-face-attribute 'web-mode-whitespace-face nil :background "#192124")
+(set-face-attribute 'trailing-whitespace nil :background "#161818")
+(set-face-attribute 'web-mode-whitespace-face nil :background "#161818")
 
 ;; Mode line
 ;; (set-face-background 'mode-line-inactive "#000")

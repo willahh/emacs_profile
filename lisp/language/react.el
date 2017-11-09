@@ -6,19 +6,23 @@
   (when (and (stringp buffer-file-name)
              (or (string-match "\\.jsx\\'" buffer-file-name)
                  (string-match "components\\/.*\\.js\\'" buffer-file-name)
-                 (string-match "pages\\/.*\\.js\\'" buffer-file-name)
-                 (string-match "\\.js\\'" buffer-file-name)))
+                 
+                 ;; Update pour ne pas activer tide-moe sur des fichiers
+                 ;; javascript Tide-mode est tres tres mais rend le chargemnet
+                 ;; du fichier bcp plus lent (~1sec de plus). Desactivation pour
+                 ;; le moment avant de trouver une meilleur alternative
+                 
+                 ;; (string-match "pages\\/.*\\.js\\'" buffer-file-name)
+                 ;; (string-match "\\.js\\'" buffer-file-name)
+                 ))
     
-    (setup-tide-mode)
-    ;; (tide-mode)
-    ;; (tide-hl-identifier-mode)
-    ))
+    (setup-tide-mode)))
 
 (add-hook 'find-file-hook 'wil-add-minor-mode-for-react)
 
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("components\\/.*\\.js\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("pages\\/.*\\.js\\'" . web-mode))
+;; (add-to-list 'auto-mode-alist '("components\\/.*\\.js\\'" . web-mode)) ; Voir point au dessus
+;; (add-to-list 'auto-mode-alist '("pages\\/.*\\.js\\'" . web-mode))
 
 ;; ;; https://github.com/felipeochoa/rjsx-mode
 ;; (with-eval-after-load 'rjsx

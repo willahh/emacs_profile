@@ -241,3 +241,18 @@ C
 ** TODO Emacs - La couleur de recherche normal et highlight n est pas bonne
    [2017-11-08 Wed]
    [[file:~/www/project/easy3p/easy3p_3.2_lot2/dev/layout/sass/_module.scss::height:%2016px%3B][file:~/www/project/easy3p/easy3p_3.2_lot2/dev/layout/sass/_module.scss::height: 16px;]]
+** TODO Voir pour régler définitivement le "problème" des retours chariots :
+   Si des caractères ^M sont visibles dans un fichier, il faut voir pour
+   s'adapter à ce comportement.
+   
+
+   Commencer par voir comment Sublime / VS Code / Eclipse gére le problème.
+   Il semblerait que ce caractère ne soit pas pris en compte avec les editeurs
+   modernes, sous Emacs en revanche, si le caractère est présent mais non
+   visible (prog mode par exemple) lorsque l'on avance ou recule, il est pris en
+   compte comme un vrai caractère.
+   
+   
+   [2017-11-09 Thu]
+   [[file:~/www/project/arsia/arsia_standard_310/dev/data2print/admin/module/affectation_gabarit/js/affectationTemplateManager.js::dropLeft.onDragOut%20%3D%20function(p_oDragSource,%20p_eEvent,%20p_oData)%20{][file:~/www/project/arsia/arsia_standard_310/dev/data2print/admin/module/affectation_gabarit/js/affectationTemplateManager.js::dropLeft.onDragOut = function(p_oDragSource, p_eEvent, p_oData) {]]
+
