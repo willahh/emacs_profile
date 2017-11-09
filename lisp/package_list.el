@@ -22,7 +22,7 @@
   image-dired+
   imenu-list
   crux
-  volatile-highlights
+  ;; volatile-highlights ; Update : desactivation car trop distrayant, et pas 
   ov ; Utlise pour quelques fonctions utils de prelude
   ibuffer-vc
   flycheck-pos-tip

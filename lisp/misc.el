@@ -843,9 +843,9 @@ _d_: subtree
 (require 'crux)
 
 ;; volatile-highlights
-(require 'volatile-highlights)
+;; (require 'volatile-highlights)
 
-(volatile-highlights-mode t)
+;; (volatile-highlights-mode t)
 ;; (diminish 'volatile-highlights-mode)
 
 
