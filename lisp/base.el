@@ -33,9 +33,8 @@
 (let ((inhibit-message t))
   (message "Listen to me, you!"))
 
-;; 80 chars is a good width.
-;; Update : Voir ce que c est precisemment
-;; (set-default 'fill-column 80)
+;; Set default column width to 80
+(set-default 'fill-column 80)
 
 ;; Auto refresh buffers
 (global-auto-revert-mode 1)
