@@ -1134,3 +1134,15 @@ Archived entries from file /Users/wravel/.emacs.d/emacs_todo.org
   :ARCHIVE_CATEGORY: emacs_todo
   :ARCHIVE_TODO: TODO
   :END:
+
+* TODO [#A] Ne pas rendre cliquable les liens directement avec la souris, il faut les rendre cliquable seulement avec l'utilisation d'un racourcis clavier comme alt par exemple
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-11-09 Thu 13:35
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :END:
+  [2017-11-06 Mon]
+  [[file:~/www/project/arsia/arsia_standard_310/dev/common/js/goa/suggest/suggest.js::__export.prototype.id%20%3D%20''%3B][file:~/www/project/arsia/arsia_standard_310/dev/common/js/goa/suggest/suggest.js::__export.prototype.id = '';]]
+

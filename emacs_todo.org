@@ -227,9 +227,17 @@ C
 ** TODO [#C] [doc-view] Faire fonctionner doc-view (Lire des fichiers excel, doc, word, etc)
 ** TODO [#C] [util] Voir si il est possible de faire un (CMD+P + touche @) (file.php@methode_name)
 ** TODO [#C] git-svn
-** TODO [#A] Ne pas rendre cliquable les liens directement avec la souris, il faut les rendre cliquable seulement avec l'utilisation d'un racourcis clavier comme alt par exemple
-   [2017-11-06 Mon]
-   [[file:~/www/project/arsia/arsia_standard_310/dev/common/js/goa/suggest/suggest.js::__export.prototype.id%20%3D%20''%3B][file:~/www/project/arsia/arsia_standard_310/dev/common/js/goa/suggest/suggest.js::__export.prototype.id = '';]]
-
 ** TODO [#A] Faire fonctionner fengyuanchen/cropper, les fichiers .babelrc, .editorconfig (déjà le cas en principe), .eslintrc
    [2017-09-20 Wed]
+** TODO Emacs > md mode : Ne pas afficher les white space
+   [2017-11-09 Thu]
+   [[file:~/www/project/arsia/goacrop/README.md::-%20Sym%C3%A9trie][file:~/www/project/arsia/goacrop/README.md::- Symétrie]]
+** TODO Definir tous les fichiers .php dans un dossier process pour être en mode php
+   [2017-11-08 Wed]
+   [[file:~/www/project/arsia/arsia_standard_310/dev/common/include/process/mediadata/MediaDataHelper.class.php::public%20function%20getMediaDataButton($p_sIdImg,%20$p_sIdHiddenField,%20$p_sImagePath%20%3D%20'')%0D][file:~/www/project/arsia/arsia_standard_310/dev/common/include/process/mediadata/MediaDataHelper.class.php::public function getMediaDataButton($p_sIdImg, $p_sIdHiddenField, $p_sImagePath = '')]]
+** TODO Retirer le flash après un copier coller, c'est plus gênant qu'autre chose
+   [2017-11-08 Wed]
+   [[file:~/www/project/easy3p/easy3p_3.2_lot2/dev/module/flatplan/js/view/conception/FlatplanView.js::console.log('{1}%20iNbProduct',%20iNbProduct)%3B][file:~/www/project/easy3p/easy3p_3.2_lot2/dev/module/flatplan/js/view/conception/FlatplanView.js::console.log('{1} iNbProduct', iNbProduct);]]
+** TODO Emacs - La couleur de recherche normal et highlight n est pas bonne
+   [2017-11-08 Wed]
+   [[file:~/www/project/easy3p/easy3p_3.2_lot2/dev/layout/sass/_module.scss::height:%2016px%3B][file:~/www/project/easy3p/easy3p_3.2_lot2/dev/layout/sass/_module.scss::height: 16px;]]
