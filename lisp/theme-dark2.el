@@ -96,9 +96,9 @@
 (set-face-attribute 'fringe nil :background "#1a1c1d" :slant 'normal)
 
 ;; window-divider
-(set-face-attribute 'window-divider nil :foreground "#1a1c1d")
-(set-face-attribute 'window-divider-first-pixel nil :foreground "#1a1c1d")
-(set-face-attribute 'window-divider-last-pixel nil :foreground "#1a1c1d")
+(set-face-attribute 'window-divider nil :foreground "#545454")
+(set-face-attribute 'window-divider-first-pixel nil :foreground "#545454")
+(set-face-attribute 'window-divider-last-pixel nil :foreground "#545454")
 ;; (set-window-margins nil 4)
 (set-window-margins nil 0)
 

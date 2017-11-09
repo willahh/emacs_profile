@@ -65,3 +65,9 @@
       org-src-tab-acts-natively t)
 
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+
+
+;; org protocol
+;; http://orgmode.org/worg/org-contrib/org-protocol.html
+;; (add-to-list 'load-path "~/path/to/org/protocol/")
+(require 'org-protocol)
