@@ -576,8 +576,8 @@
 
 ;; ediff
 (add-hook 'ediff-mode-hook 'wil-ediff-hook)
-(global-set-key (kbd "M-ç") 'xah-toggle-letter-case) ; (M-9 on azerty keyboard)
-(global-set-key (kbd "M-!") 'string-inflection-all-cycle) ; (M-8 on azerty keyboard)
+(global-set-key (kbd "C-ç") 'xah-toggle-letter-case) ; (C-9 on azerty keyboard)
+(global-set-key (kbd "C-!") 'string-inflection-all-cycle) ; (C-8 on azerty keyboard)
 
 
 ;; ---------------- Function keys

@@ -71,7 +71,8 @@
 ;; (set-face-background 'show-paren-match "#fff")
 ;; (set-face-background 'show-paren-match "#666")
 ;; (set-face-background 'show-paren-match "#9a00ff")
-(set-face-attribute 'show-paren-match :foreground "#fff" :background "inherit")
+;; (set-face-attribute 'show-paren-match :foreground "#fff" :background "inherit")
+(set-face-background 'show-paren-match "#2897f5")
 
 (set-face-attribute 'js2-error nil
                     :foreground "#fff")
