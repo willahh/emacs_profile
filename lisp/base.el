@@ -464,7 +464,10 @@
 (setq ls-lisp-dirs-first t)
 
 ;; Show trailing whitespace
-(setq-default show-trailing-whitespace t)
+(setq-default show-trailing-whitespace nil)
+(add-hook 'prog-mode-hook 
+  (lambda()
+    (setq show-trailing-whitespace t)))
 
 ;; Cleanup whitespace on save
 ;; http://batsov.com/articles/2011/11/25/emacs-tip-number-3-whitespace-cleanup/
