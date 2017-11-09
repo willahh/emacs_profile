@@ -342,7 +342,7 @@ pandoc -o README.md README.org
 #+END_SRC
 
 ** Keyboard speed
-osx
+   osx
   - defaults write -g InitialKeyRepeat -int 11 # normal minimum is 15
     (225 ms)
   - defaults write -g InitialKeyRepeat -float 8.5 # normal minimum is 15
@@ -352,12 +352,30 @@ osx
   - defaults write -g InitialKeyRepeat -float 10.5 # normal minimum is 15
     (225 ms)
   - defaults write -g InitialKeyRepeat -float 12
-
   - defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
   - defaults write -g KeyRepeat -float 1.5 # normal minimum is 2 (30
     ms)
-  - defaults write -g KeyRepeat -float 1.8 # normal minimum is 2 (30 ms)
+  - defaults write -g KeyRepeat -float 1.8 # normal minimum is 2 (30
+    ms)
+  - defaults write -g KeyRepeat -float 2 # normal minimum is 2 (30 ms)
 * Key bindings
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
