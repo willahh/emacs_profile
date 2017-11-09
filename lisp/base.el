@@ -234,7 +234,7 @@
 ;; Remember the cursor position of files when reopening them
 ;; Save point position between sessions
 (require 'saveplace)
-(setq save-place-file "~/.emacs.d/saveplace")
+;; (setq save-place-file "~/.emacs.d/saveplace")
 (setq-default save-place t)
 (setq save-place-file (expand-file-name ".places" user-emacs-directory))
 
@@ -361,13 +361,21 @@
       ;; scroll-margin 1
       scroll-step 1
       scroll-conservatively 10000
-      scroll-preserve-screen-position nil)
+      ;; scroll-preserve-screen-position nil
+      scroll-preserve-screen-position t)
 
 ;; Save emacs history
 ;; https://stackoverflow.com/a/1230877
-(savehist-mode 1)
-(setq savehist-additional-variables '(kill-ring search-ring regexp-search-ring))
-(setq savehist-file "~/.emacs.d/tmp/savehist")
+;; Config from prelude
+(require 'savehist)
+(setq savehist-additional-variables
+      ;; search entries
+      '(search-ring regexp-search-ring)
+      ;; save every minute
+      savehist-autosave-interval 60
+      ;; keep the home clean
+      savehist-file "~/.emacs.d/tmp/savehist")
+(savehist-mode +1)
 
 ;; Dabrev
 (setq abbrev-file-name "~/.emacs.d/abbrev_defs")

@@ -3,7 +3,6 @@
 
 :TOC:
 
-
 * Description
   This is my Emacs configuration i use and tweak every day. Mainly
   used from OSX system. The installation can be done quickly, however
@@ -66,52 +65,21 @@ http://www.star.bris.ac.uk/bjm/emacs-tips.html#orgheadline3
 /Applications/Emacs.app/Contents/MacOS/bin-x86_64-10_9/emacsclient -c $argv
 #+END_SRC
 
-* Requirements
-  All binaries should be accessible from emacs. In osx by default emacs
-  VC - svn - git
-
-  load .bashrc (~/.bash\_profile should be copied .bashrc)
-
-  Search tools - ag (lightning search)
-
-  Tags tools @@html:<!-- - ctags -->@@ @@html:<!-- - tags -->@@
-  @@html:<!-- - cscope -->@@ @@html:<!-- - Global -->@@
-  @@html:<!-- - gtags -->@@
-
-** global bin
-     :PROPERTIES:
-     :CUSTOM_ID: global-bin
-     :END:
-
-VC - svn - git
-
-Search tools - ag (lightning search)
-
-Language tools
-@@html:<!-- - ispell - brew install ispell --witch-lang-fr -->@@
-
-Tags tools - global (gtags) - brew install global --with-pygments
---with-ctags --with-exuberant-ctags
-
-#+BEGIN_HTML
-  <!-- - tags https://github.com/leoliu/ggtags/wiki/Install-Global-with-support-for-exuberant-ctags -->
-#+END_HTML
-
-#+BEGIN_HTML
-  <!-- - gtags - brew install global (gtags) -->
-#+END_HTML
-
-#+BEGIN_HTML
-  <!-- - ctags - brew install --HEAD ctags -->
-#+END_HTML
-
-#+BEGIN_HTML
-  <!-- - cscope - brew install cscope -->
-#+END_HTML
-
-#+BEGIN_HTML
-  <!-- - Global - brew install global --with-exuberant-ctags -->
-#+END_HTML
+* Required binaries
+  - brew
+  - gnutls
+  - svn
+  - git
+  - ag
+  - php
+  - mysql
+  - apache
+  - node
+  - npm
+  - ispell
+  - typescript
+  - jscs
+  - pandoc
 * Support
 ** Spell checker
 *** Tools : ispell
@@ -342,7 +310,7 @@ pandoc -o README.md README.org
 #+END_SRC
 
 ** Keyboard speed
-osx
+   osx
   - defaults write -g InitialKeyRepeat -int 11 # normal minimum is 15
     (225 ms)
   - defaults write -g InitialKeyRepeat -float 8.5 # normal minimum is 15
@@ -352,12 +320,29 @@ osx
   - defaults write -g InitialKeyRepeat -float 10.5 # normal minimum is 15
     (225 ms)
   - defaults write -g InitialKeyRepeat -float 12
-
   - defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
   - defaults write -g KeyRepeat -float 1.5 # normal minimum is 2 (30
     ms)
-  - defaults write -g KeyRepeat -float 1.8 # normal minimum is 2 (30 ms)
-* Key bindings
+  - defaults write -g KeyRepeat -float 1.8 # normal minimum is 2 (30
+    ms)
+  - defaults write -g KeyRepeat -float 2 # normal minimum is 2 (30 ms)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

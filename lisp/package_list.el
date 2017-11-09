@@ -129,7 +129,8 @@
   iy-go-to-char
   ripgrep
   projectile-ripgrep
-  flx-ido))
+  flx-ido
+  darkroom))
 
 (add-to-list 'load-path "~/.emacs.d/vendor/emacs-async")
 (add-to-list 'load-path "~/.emacs.d/vendor/emacs-textmate-0.1/textmate.el")
@@ -164,6 +165,8 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/centered-window")
 (add-to-list 'load-path "~/.emacs.d/vendor/jumptoprevpos")
 (add-to-list 'load-path "~/.emacs.d/vendor/vi-tilde-fringe")
+(add-to-list 'load-path "~/.emacs.d/vendor/vkill")
+(add-to-list 'load-path "~/.emacs.d/vendor/ibuffer-vc")
 ;; (add-to-list 'load-path "~/.emacs.d/vendor/xah-css-mode")
 
 ;; (load "~/.emacs.d/vendor/xah-css-mode/xah-css-mode-mode.el")
