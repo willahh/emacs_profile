@@ -67,7 +67,11 @@
 (add-hook 'evil-insert-state-entry-hook 'powerline-theme-insert)
 (add-hook 'evil-emacs-state-entry-hook 'powerline-theme-emacs)
 
-(set-face-background 'show-paren-match "#9a00ff")
+;; (set-face-background 'show-paren-match "#9a00ff")
+;; (set-face-background 'show-paren-match "#fff")
+;; (set-face-background 'show-paren-match "#666")
+;; (set-face-background 'show-paren-match "#9a00ff")
+(set-face-attribute 'show-paren-match :foreground "#fff" :background "inherit")
 
 (set-face-attribute 'js2-error nil
                     :foreground "#fff")
