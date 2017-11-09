@@ -129,7 +129,8 @@
   iy-go-to-char
   ripgrep
   projectile-ripgrep
-  flx-ido))
+  flx-ido
+  darkroom))
 
 (add-to-list 'load-path "~/.emacs.d/vendor/emacs-async")
 (add-to-list 'load-path "~/.emacs.d/vendor/emacs-textmate-0.1/textmate.el")
