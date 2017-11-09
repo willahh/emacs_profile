@@ -135,12 +135,12 @@
         wil-delete-backspace
         wil-duplicate
         wil-tab-indent-or-complete-css
+        wil-tab-indent-or-complete-js
         wil-web-mode-kill-sexp
         wlh-tab-indent-or-complete-web
         xah-toggle-letter-case
         yank-rectangle
         yas-expand
-        wil-tab-indent-or-complete-js
         ))
 
 (setq mc/cmds-to-run-once
@@ -196,5 +196,6 @@
         vc-dir-mark
         vc-dir-next-line
         vc-dir-previous-line
-        wgrep-finish-edit        
+        wgrep-finish-edit
+        wil-recenter-top-bottom
         ))
