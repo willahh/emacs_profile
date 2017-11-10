@@ -15,7 +15,8 @@
 (set-face-attribute 'default nil :background "#1a1c1d")
 
 ;; Current line
-(set-face-attribute 'hl-line nil :foreground nil :background "#263942")
+;; (set-face-attribute 'hl-line nil :foreground nil :background "#263942")
+(set-face-attribute 'hl-line nil :foreground nil :background "#131414")
 
 ;; Rainbow delimiter faces
 (custom-set-faces
@@ -74,7 +75,9 @@
 ;; (set-face-background 'show-paren-match "#666")
 ;; (set-face-background 'show-paren-match "#9a00ff")
 ;; (set-face-attribute 'show-paren-match :foreground "#fff" :background "inherit")
-(set-face-background 'show-paren-match "#2897f5")
+;; (set-face-background 'show-paren-match "#2897f5")
+(set-face-attribute 'show-paren-match-face nil :foreground "#2e4d67" :foreground "#fff")
+
 
 (set-face-attribute 'js2-error nil
                     :foreground "#fff")
@@ -146,7 +149,7 @@
 (set-face-attribute 'web-mode-current-element-highlight-face nil :foreground nil :background "#60a467")
 
 
-(set-face-attribute 'vhl/default-face nil :background "#000" :foreground nil)
+;; (set-face-attribute 'vhl/default-face nil :background "#000" :foreground nil)
 (set-face-attribute 'font-lock-variable-name-face nil  :foreground "#8be9fd")
 (set-face-attribute 'font-lock-function-name-face nil  :foreground "#ff79c6")
 (set-face-attribute 'font-lock-keyword-face nil  :foreground "#bd93f9")
@@ -249,13 +252,14 @@
 ;; (set-face-attribute 'irc nil :background "##ff79c6" :foreground "#ffffff" :underline "yellow")
 
 ;; Disable bold
-(set-face-bold-p 'bold nil)
+;; Update : re-enable
+;; (set-face-bold-p 'bold nil)
 
-(mapc
- (lambda (face)
-        (when (eq (face-attribute face :weight) 'bold)
-          (set-face-attribute face nil :weight 'normal)))
- (face-list))
+;; Update mise en commentaire de la partie ci-dessous, je ne vois pas bien
+;; pourquoi.
+;; 
+;; (mapc (lambda (face) (when (eq (face-attribute face :weight) 'bold)
+;;  (set-face-attribute face nil :weight 'normal))) (face-list))
 
 ;; Eshell
 ;; (set-face-attribute 'eshell-prompt nil :foreground "#8be9fd")
@@ -278,11 +282,4 @@
  
  '(isearch-lazy-highlight-face ((t (:background "#4f5d66"))))
  '(isearch-lazy-highlight-face ((t (:background "#ffe400" :foreground nil)))))
-
-
-
-
-
-
-
 (set-face-attribute 'dired-marked nil :foreground "#48fa7b")

@@ -468,6 +468,9 @@
 (add-hook 'prog-mode-hook 
   (lambda()
     (setq show-trailing-whitespace t)))
+(add-hook 'diff-mode 
+  (lambda()
+    (setq show-trailing-whitespace t)))
 
 ;; Cleanup whitespace on save
 ;; http://batsov.com/articles/2011/11/25/emacs-tip-number-3-whitespace-cleanup/

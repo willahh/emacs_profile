@@ -320,6 +320,7 @@ pandoc -o README.md README.org
   - defaults write -g InitialKeyRepeat -float 10.5 # normal minimum is 15
     (225 ms)
   - defaults write -g InitialKeyRepeat -float 12
+  - defaults write -g InitialKeyRepeat -float 10.5
   - defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
   - defaults write -g KeyRepeat -float 1.5 # normal minimum is 2 (30
     ms)
