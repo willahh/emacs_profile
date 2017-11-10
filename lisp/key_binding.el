@@ -565,6 +565,8 @@
 (global-set-key (kbd "C-c b") 'projectile-switch-to-buffer)
 
 (define-key org-mode-map (kbd "C-c C-b") 'org-backward-heading-same-level)
+(define-key org-mode-map (kbd "π") 'org-metadown)
+(define-key org-mode-map (kbd "È") 'org-metaup)
 
 ;; zoom
 ;; (global-set-key (kbd "<s-kp-subtract>") 'text-scale-decrease)
