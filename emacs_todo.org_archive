@@ -1146,3 +1146,25 @@ Archived entries from file /Users/wravel/.emacs.d/emacs_todo.org
   [2017-11-06 Mon]
   [[file:~/www/project/arsia/arsia_standard_310/dev/common/js/goa/suggest/suggest.js::__export.prototype.id%20%3D%20''%3B][file:~/www/project/arsia/arsia_standard_310/dev/common/js/goa/suggest/suggest.js::__export.prototype.id = '';]]
 
+
+* DONE Emacs > md mode : Ne pas afficher les white space
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-11-13 Mon 13:34
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: DONE
+  :END:
+  [2017-11-09 Thu]
+  [[file:~/www/project/arsia/goacrop/README.md::-%20Sym%C3%A9trie][file:~/www/project/arsia/goacrop/README.md::- Symétrie]]
+
+* DONE Retirer le flash après un copier coller, c'est plus gênant qu'autre chose
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-11-13 Mon 13:34
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: DONE
+  :END:
+  [2017-11-08 Wed]
+  [[file:~/www/project/easy3p/easy3p_3.2_lot2/dev/module/flatplan/js/view/conception/FlatplanView.js::console.log('{1}%20iNbProduct',%20iNbProduct)%3B][file:~/www/project/easy3p/easy3p_3.2_lot2/dev/module/flatplan/js/view/conception/FlatplanView.js::console.log('{1} iNbProduct', iNbProduct);]]

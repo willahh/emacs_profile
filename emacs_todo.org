@@ -78,14 +78,6 @@ Semantic PHP parser with ECB
 http://ecb.sourceforge.net/
 https://www.youtube.com/watch?v=KoRNCrx9pak
 C
-** TODO PHP Mode : Double clic sur un mot avec un $ -----> Le $ n'est pas sélectionné
-   [2017-11-10 Fri]
-   [[file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/production_crop2.php::$data%5B'imageIdx'%5D%20%3D%20$iWidth%3B][file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/production_crop2.php::$data['imageIdx'] = $iWidth;]]
-
-** TODO Projectile - Ne pas ajouter automatiquement les fichiers manquants dans le cache, car cela peut ralentir énormement le process. Il faut le gérer manuellement
-   [2017-11-10 Fri]
-   [[file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/include/lib/internal/croptosize2/src/events.js::Events.on_validate%20%3D%20function(input)%20{][file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/include/lib/internal/croptosize2/src/events.js::Events.on_validate = function(input) {]]
-
 * Tasks
   :VISIBILITY: content
 ** TODO [#A] Activer le highlight en mode php
@@ -181,8 +173,7 @@ C
 ** TODO [#A] [util] Revert buffer : keep current line position
 ** TODO [#A] [theme] Mettre plus en avant le buffer actif
 ** TODO [#A] [theme] js color var
-** TODO [#A] [theme] Ajouter des differenciations sur certains mot clee comme "$", "=", ".", "'", "(", ")", "+", "-", certains mots clés php "var_dump", "PHP_EOL", etc
-              Voir package "highlight-chars"
+** TODO [#A] [theme] Ajouter des differenciations sur certains mot clee comme "$", "=", ".", "'", "(", ")", "+", "-", certains mots clés php "var_dump", "PHP_EOL", etc Voir package "highlight-chars"
 ** TODO [#A] [theme] Revoir toutes les couleurs pour avoir les mêmes que dans Sublime
       Le profile colorimétrique utilisé par Photoshop n'était pas bon ... ... ...
 ** TODO [#A] [theme] php mode : Plus de couleurs
@@ -237,19 +228,13 @@ C
 ** TODO [#C] git-svn
 ** TODO [#A] Faire fonctionner fengyuanchen/cropper, les fichiers .babelrc, .editorconfig (déjà le cas en principe), .eslintrc
    [2017-09-20 Wed]
-** DONE Emacs > md mode : Ne pas afficher les white space
-   [2017-11-09 Thu]
-   [[file:~/www/project/arsia/goacrop/README.md::-%20Sym%C3%A9trie][file:~/www/project/arsia/goacrop/README.md::- Symétrie]]
-** TODO Definir tous les fichiers .php dans un dossier "process" pour être en mode php
+** TODO [#A] Definir tous les fichiers .php dans un dossier "process" pour être en mode php
    [2017-11-08 Wed]
    [[file:~/www/project/arsia/arsia_standard_310/dev/common/include/process/mediadata/MediaDataHelper.class.php::public%20function%20getMediaDataButton($p_sIdImg,%20$p_sIdHiddenField,%20$p_sImagePath%20%3D%20'')%0D][file:~/www/project/arsia/arsia_standard_310/dev/common/include/process/mediadata/MediaDataHelper.class.php::public function getMediaDataButton($p_sIdImg, $p_sIdHiddenField, $p_sImagePath = '')]]
-** DONE Retirer le flash après un copier coller, c'est plus gênant qu'autre chose
-   [2017-11-08 Wed]
-   [[file:~/www/project/easy3p/easy3p_3.2_lot2/dev/module/flatplan/js/view/conception/FlatplanView.js::console.log('{1}%20iNbProduct',%20iNbProduct)%3B][file:~/www/project/easy3p/easy3p_3.2_lot2/dev/module/flatplan/js/view/conception/FlatplanView.js::console.log('{1} iNbProduct', iNbProduct);]]
-** TODO Emacs - La couleur de recherche normal et highlight n est pas bonne
+** TODO [#A] Emacs - La couleur de recherche normal et highlight n est pas bonne
    [2017-11-08 Wed]
    [[file:~/www/project/easy3p/easy3p_3.2_lot2/dev/layout/sass/_module.scss::height:%2016px%3B][file:~/www/project/easy3p/easy3p_3.2_lot2/dev/layout/sass/_module.scss::height: 16px;]]
-** TODO Voir pour régler définitivement le "problème" des retours chariots :
+** TODO [#A] Voir pour régler définitivement le "problème" des retours chariots :
    Si des caractères ^M sont visibles dans un fichier, il faut voir pour
    s'adapter à ce comportement.
    
@@ -264,15 +249,23 @@ C
    [2017-11-09 Thu]
    [[file:~/www/project/arsia/arsia_standard_310/dev/data2print/admin/module/affectation_gabarit/js/affectationTemplateManager.js::dropLeft.onDragOut%20%3D%20function(p_oDragSource,%20p_eEvent,%20p_oData)%20{][file:~/www/project/arsia/arsia_standard_310/dev/data2print/admin/module/affectation_gabarit/js/affectationTemplateManager.js::dropLeft.onDragOut = function(p_oDragSource, p_eEvent, p_oData) {]]
 
-** TODO core.css - On se paye un warning de css flycheck too many errors 
+** TODO [#A] core.css - On se paye un warning de css flycheck too many errors 
    [2017-11-10 Fri]
    [[file:~/www/project/arsia/arsia_standard_310/dev/common/layout/css/core.css::/*-------------------------------------------------------------]]
 
-** TODO Liens -> Ne pas faire de style en rollover, ne pas changer la couleur du texte (violet) -> Laisser uniquement le surlignage
+** TODO [#A] Liens -> Ne pas faire de style en rollover, ne pas changer la couleur du texte (violet) -> Laisser uniquement le surlignage
    [2017-11-10 Fri]
    [[file:~/www/project/arsia/goacrop/example/production_crop_update.php::$crop_url%20%3D%20'http://192.168.0.26/project/arsia/goacrop/lib/sygesp_croptosize/dev/goacroptosize.xml.php?ZoImIdx%3D3'%3B][file:~/www/project/arsia/goacrop/example/production_crop_update.php::$crop_url = 'http://192.168.0.26/project/arsia/goacrop/lib/sygesp_croptosize/dev/goacroptosize.xml.php?ZoImIdx=3';]]
 
-** TODO URGENT -> PHP-MODE -> Les quotes ( ) { } [ ] ne fonctionnent pas comme en web-mode
+** TODO [#A] URGENT -> PHP-MODE -> Les quotes ( ) { } [ ] ne fonctionnent pas comme en web-mode
    [2017-11-10 Fri]
    [[file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/production_crop2.php::(]]
+
+** TODO [#A] PHP Mode : Double clic sur un mot avec un $ -----> Le $ n'est pas sélectionné
+   [2017-11-10 Fri]
+   [[file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/production_crop2.php::$data%5B'imageIdx'%5D%20%3D%20$iWidth%3B][file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/production_crop2.php::$data['imageIdx'] = $iWidth;]]
+
+** TODO [#B] Projectile - Ne pas ajouter automatiquement les fichiers manquants dans le cache, car cela peut ralentir énormement le process. Il faut le gérer manuellement
+   [2017-11-10 Fri]
+   [[file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/include/lib/internal/croptosize2/src/events.js::Events.on_validate%20%3D%20function(input)%20{][file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/include/lib/internal/croptosize2/src/events.js::Events.on_validate = function(input) {]]
 

@@ -71,3 +71,18 @@
 ;; http://orgmode.org/worg/org-contrib/org-protocol.html
 ;; (add-to-list 'load-path "~/path/to/org/protocol/")
 (require 'org-protocol)
+
+;; If you would like a TODO entry to automatically change to DONE when all children are done, you can use the following setup:
+;; http://orgmode.org/manual/Breaking-down-tasks.html#Breaking-down-tasks
+(defun org-summary-todo (n-done n-not-done)
+       "Switch entry to DONE when all subentries are done, to TODO otherwise."
+       (let (org-log-done org-log-states)   ; turn off logging
+         (org-todo (if (= n-not-done 0) "DONE" "TODO"))))
+     
+(add-hook 'org-after-todo-statistics-hook 'org-summary-todo)
+
+
+;; http://orgmode.org/manual/Multiple-sets-in-one-file.html#Multiple-sets-in-one-file
+(setq org-todo-keywords
+           '((sequence "TODO" "|" "DONE")
+             (sequence "WAIT" "IN PROGRESS" "CANCELED" "|")))
