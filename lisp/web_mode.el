@@ -74,3 +74,19 @@
 ;; https://emacs.stackexchange.com/questions/12946/how-tell-web-mode-to-use-tidy-syntaxchecker-in-flycheck
 (eval-after-load 'flycheck
    '(flycheck-add-mode 'html-tidy 'web-mode))
+
+;; From howardabrams
+(defun surround-html (start end tag)
+       "Wraps the specified region (or the current 'symbol / word'
+     with a properly formatted HTML tag."
+       (interactive "r\nsTag: " start end tag)
+       (save-excursion
+         (narrow-to-region start end)
+         (goto-char (point-min))
+         (insert (format "<%s>" tag))
+         (goto-char (point-max))
+         (insert (format "</%s>" tag))
+         (widen)))
+
+(define-key web-mode-map (kbd "C-c C-z") 'surround-html)
+(define-key html-mode-map (kbd "C-c C-z") 'surround-html)
