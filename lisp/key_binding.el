@@ -40,8 +40,10 @@
 (global-set-key [meta z] 'undo-tree-undo)
 
 (global-set-key [(meta shift z)] 'undo-tree-redo)
-(global-set-key (kbd "M-s") 'save-buffer)
-(define-key paredit-mode-map (kbd "M-s") 'save-buffer)
+
+;; Update disable M-s for save, use default C-x C-s
+;; (global-set-key (kbd "M-s") 'save-buffer)
+;; (define-key paredit-mode-map (kbd "M-s") 'save-buffer)
 
 (global-set-key (kbd "M-w") 'delete-window)
 (global-set-key (kbd "M-X") 'other-frame) ; Same keybinding from osx habits

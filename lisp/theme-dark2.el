@@ -1,7 +1,6 @@
 (require 'dracula-theme)
 (require 'org)
 (require 'ediff)
-
 (require 'scroll-bar)
 (require 'faces)
 (require 'eshell)
@@ -194,11 +193,21 @@
 ;;
 (set-face-attribute 'hl-line nil :foreground nil :background "#1d2027")
 
-;; ;; org
+;; org
 ;; Todo cette partie fait une erreur, il faut l implementer comme un vrai theme, voir
 ;; https://www.emacswiki.org/emacs/download/zenburn.el
-;; 
-;; (add-hook 'org-mode-hook (lambda ()
+
+(add-hook 'org-mode-hook (lambda ()
+                           (set-face-attribute 'org-document-title nil :family "Sans Serif" :height 1.8 :foreground "#fffefe")
+                           (set-face-attribute 'org-level-1 nil :height 1.3 :overline "#2a2a2a" :foreground "#fff" :background nil :box nil)
+                           (set-face-attribute 'org-level-2 nil :height 1 :box nil :overline nil :foreground "#fff" :background "#333")
+                           (set-face-attribute 'org-special-keyword nil :height 1 :foreground "#aeb7da" :background nil)
+                           (set-face-attribute 'org-document-info-keyword nil :height 1 :foreground "#b0dcff" :background nil)
+                           (set-face-attribute 'org  nil :height 1 :foreground "#b0dcff" :background nil)
+                           (set-face-attribute 'org-checkbox-statistics-todo  nil :height 1)
+                           ))
+
+
 ;; (set-face-attribute 'org-document-title nil :family "Sans Serif" :height 1.8 :foreground "#fffefe")
 ;; (set-face-attribute 'org-level-1 nil :height 1.3 :overline "#2a2a2a" :foreground "#fff" :background nil :box nil)
 ;; (set-face-attribute 'org-level-2 nil :height 1 :box nil :overline nil :foreground "#fff" :background "#333")
@@ -206,7 +215,7 @@
 ;; (set-face-attribute 'org-document-info-keyword nil :height 1 :foreground "#b0dcff" :background nil)
 ;; (set-face-attribute 'org  nil :height 1 :foreground "#b0dcff" :background nil)
 ;; (set-face-attribute 'org-checkbox-statistics-todo  nil :height 1)
-                           ;; ))
+
 
 ;; ------- company
 (set-face-attribute 'company-tooltip-annotation nil :foreground "#55e97b")
@@ -230,7 +239,7 @@
 (set-face-attribute 'hydra-face-teal nil :foreground "#5fbfec")
 
 (set-face-attribute 'scroll-bar nil :background "#282a36")
-(set-face-attribute 'link nil :foreground nil)
+
 (set-face-attribute 'scroll-bar nil :background "#000")
 (set-face-attribute 'tide-hl-identifier-face nil :background "#356a4b" :foreground "#ffffff" :underline nil)
 

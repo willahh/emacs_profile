@@ -82,15 +82,19 @@ C
   :VISIBILITY: content
 ** TODO [#A] Activer le highlight en mode php
 ** DONE [#A] [js2 mode] Voir pour avoir une ouverture plus rapide, c'esst surement du au mode TIDE
-** TODO [#B] Terminer intégration de hunspell @work
 ** TODO [#A] [swoop] C-w ne fonctionne pas
 ** TODO [#A] [helm] [mini-buffer] Ajouter la possibilité de faire du M-v dans le mini-buffer
 ** TODO [#A] web-mode single quote dans commentaire : Ne pas auto fermer la quote lorsque l'on est dans un commentaire
    [2017-10-23 Mon]
    [[file:~/www/project/arsia/goacrop/src/main.js:://%20Pas%20de%20traitement%20particulier,%20l'image][file:~/www/project/arsia/goacrop/src/main.js::// Pas de traitement particulier, l'image]]
+*
 ** TODO [#A] Faire fonctionner la custom theme dark pour org mode
-   [2017-10-30 Mon]
-   [[file:~/.emacs.d/lisp/theme-dark2.el]]
+    [2017-10-30 Mon]
+    [[file:~/.emacs.d/lisp/theme-dark2.el]]
+
+** TODO [#A] [URGENT] wdired ne fonctionne plus
+   [2017-11-13 Mon]
+   [[file:~/www/temp/.png]]
 
 ** TODO [#A] js2-mode, voir pourquoi la naviguation au sein de fichiers en mode js2, est lente (visible lorsque l'on se déplace sur une ligne de façon répétitive par example)
    [2017-10-30 Mon]
@@ -102,18 +106,6 @@ C
   ** [org-mode] Mouse-1 pour toggler un header
 - [X] Voir pour installer le plugin pour lancer des mode en "fullscreen", vu sur un blog d'un autre
 - [X] [system] [osx] Autoriser le F5 dans Emacs (revert-buffer)
-** TODO [#B] Rebind les scroll to other window pour avoir un scroll sur la fenetre a cote mais d'une demie page seulement
-      C-M-S-v runs the command scroll-other-window-down (found in
-      global-map), which is an interactive compiled Lisp function in
-      ‘window.el’.
-
-      It is bound to <M-prior>, C-M-S-v, ESC <prior>.
-
-      (scroll-other-window-down &optional LINES)
-
-      Scroll the "other window" down.
-      For more details, see the documentation for ‘scroll-other-window’.
-
 ** TODO [#A] [counsel-find-file] [mini-buffer] Ajouter un bind C-k pour supprimer tout le texte
 ** TODO [#A] [vc-diff mode] Voir si il est possible de lancer des commandes de type ediff
        Depuis  le vc-diff
@@ -171,31 +163,14 @@ C
 ** TODO [#A] [vc-dir] Faire une fonction pour activer un vc-version-diff avec les paramètres older revision : "base", newer revision : "head"
 
 ** TODO [#A] [util] Revert buffer : keep current line position
-** TODO [#C] [theme] Mettre plus en avant le buffer actif
-** TODO [#C] [theme] js color var
-** TODO [#C] [theme] Ajouter des differenciations sur certains mot clee comme "$", "=", ".", "'", "(", ")", "+", "-", certains mots clés php "var_dump", "PHP_EOL", etc Voir package "highlight-chars"
-** TODO [#C] [theme] Revoir toutes les couleurs pour avoir les mêmes que dans Sublime
-      Le profile colorimétrique utilisé par Photoshop n'était pas bon ... ... ...
-** TODO [#C] [theme] php mode : Plus de couleurs
-
-** TODO [#B] [vc-dir] Faire une fonction toggle des hunk comme dans magit
 ** TODO [#A] Ajouter une méthode copy file name pour retourner uniquement le nom du fichier
   - La fonction copy-file-name-to-clipbord est present, mais elle retourne le chemin complet
     Il faudrait garder que la derniere partie apres le /
 ** TODO [#A] delete-file
   - dont prompt for path
   - kill buffer
-** TODO [#C] helm-do-grep-ag -> Ignjorer les fichier "*.svn-base"
-      -> helm-ag-ignore-buffer-patterns (conf ajoutee, non testee, maj : ne fonctionne pas, voir pour mettre la bonne regle)
-      -> Impossible de trouver la raison sur cette commande, utiliser helm-ag a la place
 ** DONE [#A] ag search result buffer : highlight search words
 ** TODO [#A] Fonction get file name to clipboard (très utilisé)
-** TODO [#C] Fichiers markdown mette toutes les windows en centré
-      (Creation de differences inutiles sur la toute dernière ligne de certains fichiers)
-** TODO [#C] Markdown mode style like in Sublime (background white, text black, column width limit, center inside
-   Markdown in white theme
-** TODO [#C] Markdown in white theme
-** TODO [#C] git-svn
 ** TODO [#A] Don't prompt for delete recursivly (code available in prelude)
   - [ ] Show current mode in color
   - [ ] Show current VC system used
@@ -203,35 +178,12 @@ C
 ** TODO [#A] Mini buffer : Ne pas afficher de scrollbar
 ** TODO [#A] Ajouter un bind ALT + arrow up / down sur drags
 ** TODO [#A] [helm] Plugin helm utisable avec la souris
-** TODO [#B] Associer les fichiers .pdf au mode PDFView
-** TODO [#B] General : Utiliser le package general et jouer une touche sur
-  super-spc ou hyper-sp
-** TODO [#B] Mini buffer > M-p : Ne pas afficher de message beginning of
-  buffer bla bla
-** TODO [#B] AG mettre en mode emacs et non pas evil normal
-** TODO [#B] [projectile find file] Auto centrer la ligne une fois le goto dans le fichier
-** TODO [#B] [svn-log-view] Faire des ediff depuis ce mode
-** TODO [#B] Faire une fonction "Merge lines" pour supprimer les linebreak/whitespace
-** TODO [#B] Delete file : ne pas re demander le chemin alors que l'on a deja le focus
-** TODO [#B] Ivy : Possibilité de boucler
-
-** TODO [#B] [vc-dir] N'affiche pas les fichiers supprimés localement, mais non envoyé à svn (svn remove)
-
-** TODO [#B] Display current encoding
-** TODO [#C] Ajouter un bind C-space en mode company pour afficher / masquer la documentation (comportement moderne)
-** TODO [#C] Ag result buffer : C-o : Open in new window
-** TODO [#C] [vc-dir] N et P pour se déplacer en evitant les dossiers
-** TODO [#C] Help mode evil : add q binding pour quitter
-** TODO [#C] [vc-dir] key M-< && M-> : Faire pointer sur le vrai début/fin de ligne
-** TODO [#C] [doc-view] Faire fonctionner doc-view (Lire des fichiers excel, doc, word, etc)
-** TODO [#C] [util] Voir si il est possible de faire un (CMD+P + touche @) (file.php@methode_name)
-** TODO [#C] git-svn
 ** TODO [#A] Faire fonctionner fengyuanchen/cropper, les fichiers .babelrc, .editorconfig (déjà le cas en principe), .eslintrc
    [2017-09-20 Wed]
 ** TODO [#A] Definir tous les fichiers .php dans un dossier "process" pour être en mode php
    [2017-11-08 Wed]
    [[file:~/www/project/arsia/arsia_standard_310/dev/common/include/process/mediadata/MediaDataHelper.class.php::public%20function%20getMediaDataButton($p_sIdImg,%20$p_sIdHiddenField,%20$p_sImagePath%20%3D%20'')%0D][file:~/www/project/arsia/arsia_standard_310/dev/common/include/process/mediadata/MediaDataHelper.class.php::public function getMediaDataButton($p_sIdImg, $p_sIdHiddenField, $p_sImagePath = '')]]
-** TODO [#A] Emacs - La couleur de recherche normal et highlight n est pas bonne
+** DONE [#A] Emacs - La couleur de recherche normal et highlight n est pas bonne
    [2017-11-08 Wed]
    [[file:~/www/project/easy3p/easy3p_3.2_lot2/dev/layout/sass/_module.scss::height:%2016px%3B][file:~/www/project/easy3p/easy3p_3.2_lot2/dev/layout/sass/_module.scss::height: 16px;]]
 ** TODO [#A] Voir pour régler définitivement le "problème" des retours chariots :
@@ -261,17 +213,9 @@ C
    [2017-11-10 Fri]
    [[file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/production_crop2.php::(]]
 
-** TODO [#A] PHP Mode : Double clic sur un mot avec un $ -----> Le $ n'est pas sélectionné
+** TODO [#A] [PHP Mode] : Double clic sur un mot avec un $ -----> Le $ n'est pas sélectionné
    [2017-11-10 Fri]
    [[file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/production_crop2.php::$data%5B'imageIdx'%5D%20%3D%20$iWidth%3B][file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/production_crop2.php::$data['imageIdx'] = $iWidth;]]
-
-** TODO [#B] Projectile - Ne pas ajouter automatiquement les fichiers manquants dans le cache, car cela peut ralentir énormement le process. Il faut le gérer manuellement
-   [2017-11-10 Fri]
-   [[file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/include/lib/internal/croptosize2/src/events.js::Events.on_validate%20%3D%20function(input)%20{][file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/include/lib/internal/croptosize2/src/events.js::Events.on_validate = function(input) {]]
-
-** TODO [#A] [URGENT] wdired ne fonctionne plus
-   [2017-11-13 Mon]
-   [[file:~/www/temp/.png]]
 
 ** TODO [#A] [web-mode] C-k ne s arrête pas a la dernière quote dans la chaîne suivante :
    Il faut placer le cart dans le candO juste après la première quote
@@ -304,16 +248,66 @@ C
    [2017-11-13 Mon]
    [[file:~/.emacs.d/emacs_todo.org::*%5Bprojectile%20find%20file%5D%20Auto%20centrer%20la%20ligne%20une%20fois%20le%20goto%20dans%20le%20fichier][{projectile find file} Auto centrer la ligne une fois le goto dans le fichier]]
 
-** TODO [#A] Déplacer le bind expand select sur le combo : é "
-   [2017-11-14 Tue]
-   [[file:~/www/project/arsia/arsia_standard_310/mediadata/src/app/module/mainPanel/mainPanel.js]]
-
 ** TODO [#A] Il faut initialiser les divider a visible au lancement
    [2017-11-14 Tue]
    [[file:~/www/project/rb_siteweb/rb_siteweb_1.4/resources/module/mag_list/js/mag_list.js::*]]
+
+** TODO [#B] Terminer intégration de hunspell @work
+** TODO [#B] Rebind les scroll to other window pour avoir un scroll sur la fenetre a cote mais d'une demie page seulement
+      C-M-S-v runs the command scroll-other-window-down (found in
+      global-map), which is an interactive compiled Lisp function in
+      ‘window.el’.
+
+      It is bound to <M-prior>, C-M-S-v, ESC <prior>.
+
+      (scroll-other-window-down &optional LINES)
+
+      Scroll the "other window" down.
+      For more details, see the documentation for ‘scroll-other-window’.
+
+** TODO [#B] [vc-dir] Faire une fonction toggle des hunk comme dans magit
+** TODO [#B] General : Utiliser le package general et jouer une touche sur
+  super-spc ou hyper-sp
+** TODO [#B] Mini buffer > M-p : Ne pas afficher de message beginning of
+  buffer bla bla
+** TODO [#B] AG mettre en mode emacs et non pas evil normal
+** TODO [#B] [projectile find file] Auto centrer la ligne une fois le goto dans le fichier
+** TODO [#B] [svn-log-view] Faire des ediff depuis ce mode
+** TODO [#B] Faire une fonction "Merge lines" pour supprimer les linebreak/whitespace
+** TODO [#B] Delete file : ne pas re demander le chemin alors que l'on a deja le focus
+** TODO [#B] Ivy : Possibilité de boucler
+
+** TODO [#B] [vc-dir] N'affiche pas les fichiers supprimés localement, mais non envoyé à svn (svn remove)
+
+** TODO [#B] Display current encoding
+** TODO [#B] Projectile - Ne pas ajouter automatiquement les fichiers manquants dans le cache, car cela peut ralentir énormement le process d'ouverture du fichier. Il faut le gérer manuellement
+   [2017-11-10 Fri]
+   [[file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/include/lib/internal/croptosize2/src/events.js::Events.on_validate%20%3D%20function(input)%20{][file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/include/lib/internal/croptosize2/src/events.js::Events.on_validate = function(input) {]]
 
 ** TODO [#B] Save selection on buffers history
    [2017-11-14 Tue]
    [[file:~/.emacs.d/lisp/theme-dark2.el::(set-face-attribute%20'company-tooltip-annotation%20nil%20:foreground%20"#55e97b")][file:~/.emacs.d/lisp/theme-dark2.el::(set-face-attribute 'company-tooltip-annotation nil :foreground "#55e97b")]]
 
+** TODO [#C] [theme] Mettre plus en avant le buffer actif
+** TODO [#C] [theme] js color var
+** TODO [#C] [theme] Ajouter des differenciations sur certains mot clee comme "$", "=", ".", "'", "(", ")", "+", "-", certains mots clés php "var_dump", "PHP_EOL", etc Voir package "highlight-chars"
+** TODO [#C] [theme] php mode : Plus de couleurs
+** TODO [#C] helm-do-grep-ag -> Ignjorer les fichier "*.svn-base"
+      -> helm-ag-ignore-buffer-patterns (conf ajoutee, non testee, maj : ne fonctionne pas, voir pour mettre la bonne regle)
+      -> Impossible de trouver la raison sur cette commande, utiliser helm-ag a la place
+** TODO [#C] Fichiers markdown mette toutes les windows en centré
+      (Creation de differences inutiles sur la toute dernière ligne de certains fichiers)
+** TODO [#C] Markdown mode style like in Sublime (background white, text black, column width limit, center inside
+   Markdown in white theme
+** TODO [#C] Markdown in white theme
+** TODO [#C] git-svn
+** TODO [#C] Associer les fichiers .pdf au mode PDFView
+** TODO [#C] Ajouter un bind C-space en mode company pour afficher / masquer la documentation (comportement moderne)
+** TODO [#C] Ag result buffer : C-o : Open in new window
+** TODO [#C] [vc-dir] N et P pour se déplacer en evitant les dossiers
+** TODO [#C] Help mode evil : add q binding pour quitter
+** TODO [#C] [vc-dir] key M-< && M-> : Faire pointer sur le vrai début/fin de ligne
+** TODO [#C] [doc-view] Faire fonctionner doc-view (Lire des fichiers excel, doc, word, etc)
+** TODO [#C] [util] Voir si il est possible de faire un (CMD+P + touche @) (file.php@methode_name)
+** TODO [#C] git-svn
 

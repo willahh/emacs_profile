@@ -1168,3 +1168,35 @@ Archived entries from file /Users/wravel/.emacs.d/emacs_todo.org
   :END:
   [2017-11-08 Wed]
   [[file:~/www/project/easy3p/easy3p_3.2_lot2/dev/module/flatplan/js/view/conception/FlatplanView.js::console.log('{1}%20iNbProduct',%20iNbProduct)%3B][file:~/www/project/easy3p/easy3p_3.2_lot2/dev/module/flatplan/js/view/conception/FlatplanView.js::console.log('{1} iNbProduct', iNbProduct);]]
+
+* DONE [#A] Déplacer le bind expand select sur le combo : é "
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-11-14 Tue 13:45
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: DONE
+  :END:
+  [2017-11-14 Tue]
+  [[file:~/www/project/arsia/arsia_standard_310/mediadata/src/app/module/mainPanel/mainPanel.js]]
+
+
+* TODO [#C] [theme] Revoir toutes les couleurs pour avoir les mêmes que dans Sublime
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-11-14 Tue 13:46
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :END:
+     Le profile colorimétrique utilisé par Photoshop n'était pas bon ... ... ...
+
+* TODO [#C] [theme] php mode : Plus de couleurs
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-11-14 Tue 13:46
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :END:
+

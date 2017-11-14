@@ -8,6 +8,7 @@
       desktop-files-not-to-save   "^$" ;reload tramp paths
       desktop-load-locked-desktop nil
       desktop-auto-save-timeout   10)
+
 (desktop-save-mode 1)
 
 ;; ---- Projectile
@@ -21,7 +22,7 @@
 (setq wg-emacs-exit-save-behavior           'save)      ; Options: 'save 'ask nil
 (setq wg-workgroups-mode-exit-save-behavior 'save)      ; Options: 'save 'ask nil
 
-;; Projectile auto invalidate cache after delete file
+;; What to do on Emacs exit / workgroups-mode exit?Projectile auto invalidate cache after delete file
 ;; http://cupfullofcode.com/blog/2014/10/06/invalidate-projectile-cache-on-delete/index.html
 (defadvice delete-file (before purge-from-projectile-cache (filename &optional trash))
   (if (and (projectile-project-p) projectile-enable-caching)
