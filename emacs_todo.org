@@ -269,3 +269,50 @@ C
    [2017-11-10 Fri]
    [[file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/include/lib/internal/croptosize2/src/events.js::Events.on_validate%20%3D%20function(input)%20{][file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/include/lib/internal/croptosize2/src/events.js::Events.on_validate = function(input) {]]
 
+** TODO [#A] [URGENT] wdired ne fonctionne plus
+   [2017-11-13 Mon]
+   [[file:~/www/temp/.png]]
+
+** TODO [#A] [web-mode] C-k ne s arrête pas a la dernière quote dans la chaîne suivante :
+   Il faut placer le cart dans le candO juste après la première quote
+   $asAssign = array();
+   $asAssign['AssignIdx'] = $oAssign->getIdx();
+   $asAssign['categoryName'] = $sName;
+   $asAssign['bgcolor'] = $sBackgroundColor;
+   $asAssign['textColor'] = $sTextColor;
+   $asAssign['discountName'] = $sDiscName;
+   $asAssign['nbProducts'] = $sProductCount;
+   $asAssign['labelNbProducts'] = $sProductCount;
+   $asAssign['canDo']['pageXToPageX'] = RightHelper::getInstance()->canDoActionForFlatplan(RightActionConstant::ASSIGN_CATEGORY_MOVE_PAGEX_TO_PAGEX, $iFPPrIdx);
+   $asAssign['canDo']['pageXToPageY'] = RightHelper::getInstance()->canDoActionForFlatplan(RightActionConstant::ASSIGN_CATEGORY_MOVE_PAGEX_TO_PAGEY, $iFPPrIdx);
+   $asAssign['canDo']['editAssign'] = RightHelper::getInstance()->canDoActionForFlatplan(RightActionConstant::ASSIGN_CATEGORY_EDIT, $iFPPrIdx);
+   $asAssign['canDo']['deleteAssign'] = RightHelper::getInstance()->canDoActionForFlatplan(RightActionConstant::ASSIGN_CATEGORY_DELETE, $iFPPrIdx);
+   $asAssign['canDo']['refineAssign'] = RightHelper::getInstance()->canDoActionForFlatplan(RightActionConstant::ASSIGN_CATEGORY_DELETE, $iFPPrIdx);
+   $asAssign['canDo']['nbmaxprod'] = RightHelper::getInstance()->canDoActionForConceptionPage(RightActionConstant::CONCEPTION_DEFINE_PRODUCT_COUNT_PER_PAGE, $oPage->getIdx(), $iFPPrIdx);
+   $asAssign['canDo']['seeAssignComment'] = $bCanSeeAssignComment;
+   $asAssign['nbNotes'] = $iCommentCount;
+   $asAssign['notesPreview'] = $sAssignCommentListPreview;
+   
+   [2017-11-13 Mon]
+   [[file:~/www/project/easy3p/easy3p_3.2_lot2/dev/module/flatplan/ajax/conception/pageListInfo.php::$asAssign%5B'canDo'%5D%5B'pageXToPageY'%5D%20%3D%20RightHelper::getInstance()->canDoActionForFlatplan(RightActionConstant::ASSIGN_CATEGORY_MOVE_PAGEX_TO_PAGEY,%20$iFPPrIdx)%3B][file:~/www/project/easy3p/easy3p_3.2_lot2/dev/module/flatplan/ajax/conception/pageListInfo.php::$asAssign['canDo']['pageXToPageY'] = RightHelper::getInstance()->canDoActionForFlatplan(RightActionConstant::ASSIGN_CATEGORY_MOVE_PAGEX_TO_PAGEY, $iFPPrIdx);]]
+
+** TODO [#A] Disable company mode auto -> Trigger it only by key binding
+   [2017-11-13 Mon]
+   [[file:~/www/project/easy3p/easy3p_3.2_lot2/dev/module/flatplan/js/view/conception/popup/Refine.js::{action:%20'close',%20text:%20'',%20cls:%20'closeButton',%20iconCls:%20'ico-close-24',%20tooltip:%20getTrad('doClose')}][file:~/www/project/easy3p/easy3p_3.2_lot2/dev/module/flatplan/js/view/conception/popup/Refine.js::{action: 'close', text: '', cls: 'closeButton', iconCls: 'ico-close-24', tooltip: getTrad('doClose')}]]
+
+** TODO [#A] Les fichiers flatplan/index.php et lang fr sont de nouveau lent en web-mode
+   [2017-11-13 Mon]
+   [[file:~/.emacs.d/emacs_todo.org::*%5Bprojectile%20find%20file%5D%20Auto%20centrer%20la%20ligne%20une%20fois%20le%20goto%20dans%20le%20fichier][{projectile find file} Auto centrer la ligne une fois le goto dans le fichier]]
+
+** TODO [#A] Déplacer le bind expand select sur le combo : é "
+   [2017-11-14 Tue]
+   [[file:~/www/project/arsia/arsia_standard_310/mediadata/src/app/module/mainPanel/mainPanel.js]]
+
+** TODO [#A] Il faut initialiser les divider a visible au lancement
+   [2017-11-14 Tue]
+   [[file:~/www/project/rb_siteweb/rb_siteweb_1.4/resources/module/mag_list/js/mag_list.js::*]]
+
+** TODO Save selection on buffers history
+   [2017-11-14 Tue]
+   [[file:~/.emacs.d/lisp/theme-dark2.el::(set-face-attribute%20'company-tooltip-annotation%20nil%20:foreground%20"#55e97b")][file:~/.emacs.d/lisp/theme-dark2.el::(set-face-attribute 'company-tooltip-annotation nil :foreground "#55e97b")]]
+

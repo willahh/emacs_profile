@@ -128,16 +128,6 @@
 ;; (set-face-attribute 'isearch nil :background "#ffe400" :foreground nil)
 ;; (set-face-attribute 'lazy-highlight nil :background "#4f5d66" :underline t)
 
-(custom-theme-set-faces
-           'dracula
-           '(region ((t (:background "#275f99" :foreground nil))))
-           '(isearch-lazy-highlight ((t (:background "#4f5d66" :foreground nil))))
-           ;; '(isearch ((t (:background "#ffe400" :foreground "#000"))))
-           '(isearch ((t (:background "#ffe400" :foreground nil))))
-           '(lazy-highlight ((t (:background "#4f5d66" :underline t))))
-           '(set-face-attribute 'link nil :foreground nil))
-
-
 ;; ------- Font
 (set-frame-font "Office Code Pro:antialias=1")
 
@@ -218,7 +208,6 @@
 ;; (set-face-attribute 'org-checkbox-statistics-todo  nil :height 1)
                            ;; ))
 
-
 ;; ------- company
 (set-face-attribute 'company-tooltip-annotation nil :foreground "#55e97b")
 (set-face-attribute 'company-tooltip-common-selection nil :foreground "#00faff")
@@ -242,7 +231,6 @@
 
 (set-face-attribute 'scroll-bar nil :background "#282a36")
 (set-face-attribute 'link nil :foreground nil)
-(set-face-attribute 'lazy-highlight nil :background "green")
 (set-face-attribute 'scroll-bar nil :background "#000")
 (set-face-attribute 'tide-hl-identifier-face nil :background "#356a4b" :foreground "#ffffff" :underline nil)
 
@@ -270,8 +258,8 @@
 (set-face-attribute 'ag-hit-face nil :foreground "#48fa7b")
 (set-face-attribute 'compilation-line-number nil :foreground "#f0f0f0")
 (set-face-attribute 'compilation-column-number nil :foreground "#555")
-
-
+(set-face-attribute 'warning nil :foreground "#ff6600")
+(set-face-attribute 'dired-marked nil :foreground "#48fa7b")
 (custom-theme-set-faces
  'dracula
  '(js2-warning ((t (:background nil :underline (:color "#ff0000" :style wave)))))
@@ -282,4 +270,12 @@
  
  '(isearch-lazy-highlight-face ((t (:background "#4f5d66"))))
  '(isearch-lazy-highlight-face ((t (:background "#ffe400" :foreground nil)))))
-(set-face-attribute 'dired-marked nil :foreground "#48fa7b")
+
+(custom-theme-set-faces
+           'dracula
+           '(region ((t (:background "#275f99" :foreground nil))))
+           '(isearch-lazy-highlight ((t (:background "#4f5d66" :foreground nil))))
+           ;; '(isearch ((t (:background "#ffe400" :foreground "#000"))))
+           '(isearch ((t (:background "#ffe400" :foreground nil))))
+           '(lazy-highlight ((t (:background "#4f5d66" :underline t))))
+           '(set-face-attribute 'link nil :foreground nil))

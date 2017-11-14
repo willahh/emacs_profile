@@ -327,6 +327,7 @@ pandoc -o README.md README.org
   - defaults write -g KeyRepeat -float 1.8 # normal minimum is 2 (30
     ms)
   - defaults write -g KeyRepeat -float 2 # normal minimum is 2 (30 ms)
+  - defaults write -g KeyRepeat -float 1.8 # normal minimum is 2 (30 ms)
 
 
 

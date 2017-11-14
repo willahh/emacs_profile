@@ -19,7 +19,8 @@
 (define-key paredit-mode-map (kbd "M-q") 'fill-paragraph)
 (global-set-key (kbd "C-;") "\C-e;") ;; Append ; at the end of a line
 
-(global-set-key (kbd "M-c") 'wil-copy)
+;; (global-set-key (kbd "M-c") 'wil-copy)
+(global-set-key (kbd "M-c") 'easy-kill)
 
 ;; Yank
 (global-set-key (kbd "M-v") 'yank)
@@ -240,7 +241,7 @@
 (define-key org-mode-map (kbd "ñ") 'org-down) ; ALT+n
 
 (global-set-key (kbd "Ï") 'drag-stuff-down) ; ALT+j
-(define-key org-mode-map (kbd "Ï") 'org-metdownaup) ; ALT+j
+(define-key org-mode-map (kbd "Ï") 'org-metadown) ; ALT+j
 
 ;; ----------------
 (define-key input-decode-map [?\C-m] [C-m])
@@ -432,7 +433,8 @@
 ;; Start eshell or switch to it if it's active.
 ;; (global-set-key (kbd "C-x m") 'eshell)
 ;; (global-set-key (kbd "C-c j e") 'eshell)
-(global-set-key (kbd "C-c j e") 'ansi-term)
+;; (global-set-key (kbd "C-c j e") 'ansi-term)
+(global-set-key (kbd "C-c j e") 'eshell)
 
 
 ;; Start a new eshell even if one is active.
