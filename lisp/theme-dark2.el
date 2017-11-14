@@ -15,7 +15,9 @@
 
 ;; Current line
 ;; (set-face-attribute 'hl-line nil :foreground nil :background "#263942")
-(set-face-attribute 'hl-line nil :foreground nil :background "#131414")
+;; (set-face-attribute 'hl-line nil :foreground nil :background "#131414")
+;; (set-face-attribute 'hl-line nil :foreground nil :background "#1d2027")
+(set-face-attribute 'hl-line nil :foreground nil :background "#101010")
 
 ;; Rainbow delimiter faces
 (custom-set-faces
@@ -149,18 +151,6 @@
 (set-face-attribute 'magit-diff-added nil :background nil :foreground "#c3e886")
 (set-face-attribute 'magit-diff-added-highlight nil :background nil :foreground "#c3e886")
 
-;; (set-face-attribute 'diff-header nil :background "#1a1c1d" :foreground "#fff")
-(set-face-attribute 'diff-header nil :background "#161718" :foreground "#fff")
-;; (set-face-attribute 'diff-header nil :background "#000" :foreground "#fff")
-(set-face-attribute 'diff-file-header nil :background nil :foreground "#fff" :weight 'ultra-bold)
-(set-face-attribute 'diff-hunk-header nil :background "#333" :foreground "#fff" :box "#666")
-(set-face-attribute 'diff-indicator-removed nil :background nil :foreground "#86d9fb")
-(set-face-attribute 'diff-indicator-added nil :background nil :foreground "#86d9fb")
-(set-face-attribute 'diff-removed nil :background nil :foreground "#ff536a")
-(set-face-attribute 'diff-added nil :background nil :foreground "#c3e886")
-(set-face-attribute 'diff-context nil :background nil :foreground "#ccc")
-(set-face-attribute 'diff-header nil :background nil :foreground "#fff")
-
 ;; Magit
 (set-face-attribute 'magit-diff-context-highlight nil :background "#1a1c1d")
 
@@ -191,7 +181,7 @@
 (set-face-attribute 'ediff-odd-diff-A nil :foreground nil :background "#000")
 (set-face-attribute 'ediff-odd-diff-B nil :foreground nil :background "#000")
 ;;
-(set-face-attribute 'hl-line nil :foreground nil :background "#1d2027")
+
 
 ;; org
 ;; Todo cette partie fait une erreur, il faut l implementer comme un vrai theme, voir
@@ -206,6 +196,19 @@
                            (set-face-attribute 'org  nil :height 1 :foreground "#b0dcff" :background nil)
                            (set-face-attribute 'org-checkbox-statistics-todo  nil :height 1)
                            ))
+
+(add-hook 'diff-mode-hook (lambda ()
+                            ;; (set-face-attribute 'diff-header nil :background "#1a1c1d" :foreground "#fff")
+                            (set-face-attribute 'diff-header nil :background "#161718" :foreground "#fff")
+                            ;; (set-face-attribute 'diff-header nil :background "#000" :foreground "#fff")
+                            (set-face-attribute 'diff-file-header nil :background nil :foreground "#fff" :weight 'ultra-bold)
+                            (set-face-attribute 'diff-hunk-header nil :background "#333" :foreground "#fff" :box "#666")
+                            (set-face-attribute 'diff-indicator-removed nil :background nil :foreground "#86d9fb")
+                            (set-face-attribute 'diff-indicator-added nil :background nil :foreground "#86d9fb")
+                            (set-face-attribute 'diff-removed nil :background nil :foreground "#ff536a")
+                            (set-face-attribute 'diff-added nil :background nil :foreground "#c3e886")
+                            (set-face-attribute 'diff-context nil :background nil :foreground "#ccc")
+                            (set-face-attribute 'diff-header nil :background nil :foreground "#fff")))
 
 
 ;; (set-face-attribute 'org-document-title nil :family "Sans Serif" :height 1.8 :foreground "#fffefe")

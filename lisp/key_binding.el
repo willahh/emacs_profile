@@ -41,7 +41,7 @@
 
 (global-set-key [(meta shift z)] 'undo-tree-redo)
 
-;; Update disable M-s for save, use default C-x C-s
+;; Update disable M-s for save, use default C-x C-sq
 ;; (global-set-key (kbd "M-s") 'save-buffer)
 ;; (define-key paredit-mode-map (kbd "M-s") 'save-buffer)
 
