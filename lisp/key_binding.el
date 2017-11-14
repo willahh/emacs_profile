@@ -149,8 +149,9 @@
 ;; (key-chord-define-global "xc" 'er/expand-region) ; Update to <w because wx can be triggered too often (when leaving emacs C-x C-c)
 ;; (key-chord-define-global "<w" 'er/expand-region)
 ;; (key-chord-define-global "wx" 'er/expand-region)
-(key-chord-define-global "\"\'" 'er/expand-region) ; 3 + 4 on azerty keyboard
 ;; (key-chord-define-global "wx" 'er/contract-region)
+;; (key-chord-define-global "\"\'" 'er/expand-region) ; 3 + 4 on azerty keyboard
+(key-chord-define-global "xc" 'er/expand-region)
 
 (key-chord-define evil-emacs-state-map "jk" 'evil-normal-state)
 (key-chord-define evil-normal-state-map "jk" 'evil-emacs-state)
