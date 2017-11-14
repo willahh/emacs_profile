@@ -82,3 +82,13 @@
    js2-skip-preprocessor-directives t
    js2-highlight-external-variables nil
    js2-mode-show-parse-errors nil)
+
+;; From howardabrams
+(use-package color-identifiers-mode
+       :ensure t
+       :init
+         (add-hook 'js2-mode-hook 'color-identifiers-mode))
+
+;; From howardabrams
+(add-hook 'js2-mode-hook
+              (lambda () (flycheck-select-checker "javascript-eslint")))

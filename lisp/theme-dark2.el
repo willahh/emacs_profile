@@ -77,7 +77,8 @@
 ;; (set-face-background 'show-paren-match "#9a00ff")
 ;; (set-face-attribute 'show-paren-match :foreground "#fff" :background "inherit")
 ;; (set-face-background 'show-paren-match "#2897f5")
-(set-face-attribute 'show-paren-match-face nil :background "#2e4d67" :foreground "#fff")
+;; (set-face-attribute 'show-paren-match-face nil :background "#2e4d67" :foreground "#fff")
+(set-face-attribute 'show-paren-match-face nil :background "#0d874c" :foreground "#ffffff" :weight 'ultra-bold)
 
 
 (set-face-attribute 'js2-error nil
@@ -187,15 +188,16 @@
 ;; Todo cette partie fait une erreur, il faut l implementer comme un vrai theme, voir
 ;; https://www.emacswiki.org/emacs/download/zenburn.el
 
-(add-hook 'org-mode-hook (lambda ()
-                           (set-face-attribute 'org-document-title nil :family "Sans Serif" :height 1.8 :foreground "#fffefe")
-                           (set-face-attribute 'org-level-1 nil :height 1.3 :overline "#2a2a2a" :foreground "#fff" :background nil :box nil)
-                           (set-face-attribute 'org-level-2 nil :height 1 :box nil :overline nil :foreground "#fff" :background "#333")
-                           (set-face-attribute 'org-special-keyword nil :height 1 :foreground "#aeb7da" :background nil)
-                           (set-face-attribute 'org-document-info-keyword nil :height 1 :foreground "#b0dcff" :background nil)
-                           (set-face-attribute 'org  nil :height 1 :foreground "#b0dcff" :background nil)
-                           (set-face-attribute 'org-checkbox-statistics-todo  nil :height 1)
-                           ))
+(add-hook 'org-mode-hook lambda ()
+          (set-face-attribute 'org-document-title nil :family "Sans Serif" :height 1.8 :foreground "#fffefe")
+          (set-face-attribute 'org-level-1 nil :height 1.3 :overline "#2a2a2a" :foreground "#fff" :background nil :box nil)
+          (set-face-attribute 'org-level-2 nil :height 1 :box nil :overline nil :foreground "#fff" :background "#333")
+          (set-face-attribute 'org-special-keyword nil :height 1 :foreground "#aeb7da" :background nil)
+          (set-face-attribute 'org-document-info-keyword nil :height 1 :foreground "#b0dcff" :background nil)
+          (set-face-attribute 'org  nil :height 1 :foreground "#b0dcff" :background nil)
+          (set-face-attribute 'org-checkbox-statistics-todo  nil :height 1)
+          (set-face-attribute 'org-block-background nil :background "#101112")
+          (set-face-attribute 'org-block-begin-line nil :background "#000"))
 
 (add-hook 'diff-mode-hook (lambda ()
                             ;; (set-face-attribute 'diff-header nil :background "#1a1c1d" :foreground "#fff")
@@ -209,16 +211,6 @@
                             (set-face-attribute 'diff-added nil :background nil :foreground "#c3e886")
                             (set-face-attribute 'diff-context nil :background nil :foreground "#ccc")
                             (set-face-attribute 'diff-header nil :background nil :foreground "#fff")))
-
-
-;; (set-face-attribute 'org-document-title nil :family "Sans Serif" :height 1.8 :foreground "#fffefe")
-;; (set-face-attribute 'org-level-1 nil :height 1.3 :overline "#2a2a2a" :foreground "#fff" :background nil :box nil)
-;; (set-face-attribute 'org-level-2 nil :height 1 :box nil :overline nil :foreground "#fff" :background "#333")
-;; (set-face-attribute 'org-special-keyword nil :height 1 :foreground "#aeb7da" :background nil)
-;; (set-face-attribute 'org-document-info-keyword nil :height 1 :foreground "#b0dcff" :background nil)
-;; (set-face-attribute 'org  nil :height 1 :foreground "#b0dcff" :background nil)
-;; (set-face-attribute 'org-checkbox-statistics-todo  nil :height 1)
-
 
 ;; ------- company
 (set-face-attribute 'company-tooltip-annotation nil :foreground "#55e97b")
