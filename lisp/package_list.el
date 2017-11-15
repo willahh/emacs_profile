@@ -127,6 +127,7 @@
   neotree
   validate
   iy-go-to-char
+  google-translate
   ripgrep
   projectile-ripgrep
   flx-ido

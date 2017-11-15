@@ -1387,3 +1387,8 @@ the checking happens for all pairs in auto-minor-mode-alist"
   (when (eq major-mode 'compilation-mode)
     (let ((inhibit-read-only t))
       (ansi-color-apply-on-region (point-min) (point-max)))))
+
+(defun wil-other-window () 
+  (interactive)
+  (other-window 1)
+  (hydra-window/body))

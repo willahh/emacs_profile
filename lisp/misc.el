@@ -1298,3 +1298,7 @@ Version 2016-10-24"
 ;; http://stackoverflow.com/a/3072831/355252
 (require 'ansi-color)
 (add-hook 'compilation-filter-hook #'prelude-colorize-compilation-buffer)
+
+;; google-translate conf
+(setq google-translate-default-source-language "fr")
+(setq google-translate-default-target-language "en")

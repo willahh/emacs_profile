@@ -42,8 +42,11 @@
 (global-set-key [(meta shift z)] 'undo-tree-redo)
 
 ;; Update disable M-s for save, use default C-x C-sq
+;; Reactivation because I had a lot of trouble with paredit M-s
 ;; (global-set-key (kbd "M-s") 'save-buffer)
 ;; (define-key paredit-mode-map (kbd "M-s") 'save-buffer)
+(global-set-key (kbd "M-s") 'save-buffer)
+(define-key paredit-mode-map (kbd "M-s") 'save-buffer)
 
 (global-set-key (kbd "M-w") 'delete-window)
 (global-set-key (kbd "M-X") 'other-frame) ; Same keybinding from osx habits
@@ -92,7 +95,8 @@
   (other-window 1))
 
 ;; Google
-(global-set-key (kbd "C-c j g") 'helm-google-suggest)
+(global-set-key (kbd "C-c j g s") 'helm-google-suggest)
+(global-set-key (kbd "C-c j g t") 'google-translate-at-point)
 
 
 ;; -- linium
@@ -776,5 +780,3 @@
           (function
            (lambda ()
              (define-key term-raw-map (kbd "C-c RET") 'term-line-mode))))
-
-(global-set-key (kbd "C-c j G") 'google-translate-at-point)
