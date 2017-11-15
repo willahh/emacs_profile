@@ -35,5 +35,8 @@
 (ad-activate 'delete-file)
 
 ;; Perspective
-(require 'persp-projectile)
-(persp-mode)
+;; (require 'persp-projectile)
+;; (persp-mode)
+
+
+

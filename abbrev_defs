@@ -53,10 +53,6 @@
 
 (define-abbrev-table 'gfm-mode-abbrev-table '())
 
-(define-abbrev-table 'ggtags-global-mode-abbrev-table '())
-
-(define-abbrev-table 'ggtags-view-search-history-mode-abbrev-table '())
-
 (define-abbrev-table 'global-abbrev-table
   '(
     ("arg" "arguments" xah-abbrev-h-f 0)
@@ -84,8 +80,6 @@
 (define-abbrev-table 'image-dired-display-image-mode-abbrev-table '())
 
 (define-abbrev-table 'image-dired-thumbnail-mode-abbrev-table '())
-
-(define-abbrev-table 'internal-ange-ftp-mode-abbrev-table '())
 
 (define-abbrev-table 'ivy-occur-grep-mode-abbrev-table '())
 
@@ -133,6 +127,8 @@
 
 (define-abbrev-table 'package-menu-mode-abbrev-table '())
 
+(define-abbrev-table 'pandoc-@-mode-abbrev-table '())
+
 (define-abbrev-table 'php-mode-abbrev-table '())
 
 (define-abbrev-table 'pike-mode-abbrev-table
@@ -148,6 +144,10 @@
 (define-abbrev-table 'sgml-mode-abbrev-table '())
 
 (define-abbrev-table 'shell-mode-abbrev-table '())
+
+(define-abbrev-table 'skewer-clients-mode-abbrev-table '())
+
+(define-abbrev-table 'skewer-error-mode-abbrev-table '())
 
 (define-abbrev-table 'snippet-mode-abbrev-table '())
 
@@ -167,7 +167,15 @@
 
 (define-abbrev-table 'typescript-mode-abbrev-table '())
 
+(define-abbrev-table 'url-cookie-mode-abbrev-table '())
+
 (define-abbrev-table 'vc-dir-mode-abbrev-table '())
+
+(define-abbrev-table 'vc-git-log-edit-mode-abbrev-table '())
+
+(define-abbrev-table 'vc-git-log-view-mode-abbrev-table '())
+
+(define-abbrev-table 'vc-git-region-history-mode-abbrev-table '())
 
 (define-abbrev-table 'vc-svn-log-view-mode-abbrev-table '())
 

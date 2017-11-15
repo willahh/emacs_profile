@@ -328,6 +328,12 @@ pandoc -o README.md README.org
     ms)
   - defaults write -g KeyRepeat -float 2 # normal minimum is 2 (30 ms)
   - defaults write -g KeyRepeat -float 1.8 # normal minimum is 2 (30 ms)
+  - defaults write -g KeyRepeat -float 1.5 # normal minimum is 2 (30 ms)
+  - defaults write -g KeyRepeat -float 1.7 # normal minimum is 2 (30 ms)
+  - defaults write -g KeyRepeat 1 # Cette valeur ne semble prendre en compte
+    qu'un entier et non pas un float
+  - defaults write -g KeyRepeat -float 1.6
+  - defaults write -g KeyRepeat -float 1.2m
 
 
 
@@ -348,4 +354,14 @@ pandoc -o README.md README.org
 
 
 
+  
 
+
+
+
+
+
+
+
+
+y
