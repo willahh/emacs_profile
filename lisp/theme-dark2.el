@@ -187,15 +187,16 @@
 ;; Todo cette partie fait une erreur, il faut l implementer comme un vrai theme, voir
 ;; https://www.emacswiki.org/emacs/download/zenburn.el
 
-(add-hook 'org-mode-hook (lambda ()
-                           (set-face-attribute 'org-document-title nil :family "Sans Serif" :height 1.8 :foreground "#fffefe")
-                           (set-face-attribute 'org-level-1 nil :height 1.3 :overline "#2a2a2a" :foreground "#fff" :background nil :box nil)
-                           (set-face-attribute 'org-level-2 nil :height 1 :box nil :overline nil :foreground "#fff" :background "#333")
-                           (set-face-attribute 'org-special-keyword nil :height 1 :foreground "#aeb7da" :background nil)
-                           (set-face-attribute 'org-document-info-keyword nil :height 1 :foreground "#b0dcff" :background nil)
-                           (set-face-attribute 'org  nil :height 1 :foreground "#b0dcff" :background nil)
-                           (set-face-attribute 'org-checkbox-statistics-todo  nil :height 1)
-                           ))
+;; Cette partie ne fonctionne pas bien
+;; (add-hook 'org-mode-hook (lambda ()
+;;                            (set-face-attribute 'org-document-title nil :family "Sans Serif" :height 1.8 :foreground "#fffefe")
+;;                            (set-face-attribute 'org-level-1 nil :height 1.3 :overline "#2a2a2a" :foreground "#fff" :background nil :box nil)
+;;                            (set-face-attribute 'org-level-2 nil :height 1 :box nil :overline nil :foreground "#fff" :background "#333")
+;;                            (set-face-attribute 'org-special-keyword nil :height 1 :foreground "#aeb7da" :background nil)
+;;                            (set-face-attribute 'org-document-info-keyword nil :height 1 :foreground "#b0dcff" :background nil)
+;;                            (set-face-attribute 'org  nil :height 1 :foreground "#b0dcff" :background nil)
+;;                            (set-face-attribute 'org-checkbox-statistics-todo  nil :height 1)
+;;                            ))
 
 (add-hook 'diff-mode-hook (lambda ()
                             ;; (set-face-attribute 'diff-header nil :background "#1a1c1d" :foreground "#fff")
