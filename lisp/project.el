@@ -33,3 +33,7 @@
             (projectile-purge-file-from-cache relative-filename)))))
   
 (ad-activate 'delete-file)
+
+;; Perspective
+(require 'persp-projectile)
+(persp-mode)

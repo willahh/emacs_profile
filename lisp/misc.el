@@ -4,9 +4,7 @@
 (require 'cl-lib)
 (require 'validate)
 
-(global-set-key
- (kbd "C-M-o")
- (defhydra hydra-window ()
+(defhydra hydra-window (:idle 9999)
    " "
    ("h" windmove-left)
    ("j" windmove-down)
@@ -59,7 +57,7 @@
    ("p" (resize-window--enlarge-up) "")
    ("f" (resize-window--enlarge-horizontally) "")
    ("b" (resize-window--shrink-horizontally) "")
-   ))
+   )
 
 ;; Enhanced version of diff
 (add-hook 'diff-mode-hook (lambda () (local-set-key "\C-c\C-l" 'diffstat)))
@@ -99,192 +97,17 @@
   (cl-letf (((symbol-function #'process-list) (lambda ())))
     ad-do-it))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-;; smart-tab
-;; (require 'smart-tab)
-;; (global-smart-tab-mode 1)
-
-
-
-
-;; smart tab behavior - indent or complete
-;; Update : ne surtout pas mettre cette ligne
-;; Le tab est gere automatiquement avec la conf plus haute
-;;
-;; (setq tab-always-indent 'complete)
-
-
-
-;; -------------- End of indent / auto complete / yasnippet
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-;; magit
-;; (require 'magit)
-
-(setq magit-diff-refine-hunk 'all)
-
-
-
-
 ;; Auto save all buffer when file change on disk (aka function to keep synchro between buffers)
 ;; UPDATE : @todo n a pas l air de fonctionner .. une prochaine fois peut être !
 ;; Update : @todo doesn't seems to work... may be an other day !
 (global-auto-revert-mode t)
-
-
 
 ;; rainbow-mode (css color)
 ;; (require 'rainbow-mode)
 (require 'rainbow-mode)
 (add-hook 'prog-mode-hook #'rainbow-mode)
 
-
-;;; Colourise CSS colour
-;; Update : trop de couleurs
-;; (dolist (hook '(css-mode-hook html-mode-hook sass-mode-hook))
-;;     (add-hook hook 'rainbow-mode))
-
-
-
-;; window-numbering
-;; (require 'window-numbering)
-;; (window-numbering-mode)
-
-;; Spaceline
-;; Note : power line stylee, mais je n arrive pas a la faire fonctionner
-;; Update : il faut avoir le mode evil active pour que le package fonctionne
-;; (require 'spaceline-config)
-;; (spaceline-spacemacs-theme)
-
-;; ;; Smart-newline
-;; (require 'smart-newline)
-;; (smart-newline-mode 1)
-
-;; Nyan
-;; (require 'nyan-mode)
-;; (nyan-mode)
-;; (nyan-start-animation)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-;; (global-set-key (kbd "C-SPC") 'hydra-set-mark)
-
-;; (defun hydra-set-mark ()
-;;   (interactive)
-;;   (if (region-active-p)
-;;       (progn
-;;         (deactivate-mark)
-;;         (hydra-keyboard-quit))
-;;     (call-interactively 'set-mark-command)
-;;     (hydra-region/body)))
-
-;; (defhydra hydra-region ()
-;;   ("w" evil-forward-word-begin)
-;;   ("W" evil-forward-WORD-begin)
-
-;;   ("E" forward-sentence)
-;;   ("f" forward-word)
-;;   ("b" backward-word)
-;;   ;; ("w" kill-region :exit t)
-;;   )
-
-
-
-
-
-
-
-
-
-
-
-
-
-;; (defhydra hydra-buffer-menu (:color pink
-;;                              :hint nil)
-;;   "
-;; ^Mark^             ^Unmark^           ^Actions^          ^Search
-;; ^^^^^^^^-----------------------------------------------------------------
-;; _m_: mark          _u_: unmark        _x_: execute       _R_: re-isearch
-;; _s_: save          _U_: unmark up     _b_: bury          _I_: isearch
-;; _d_: delete        ^ ^                _g_: refresh       _O_: multi-occur
-;; _D_: delete up     ^ ^                _T_: files only: % -28`Buffer-menu-files-only
-;; _~_: modified
-;; "
-;;   ("m" Buffer-menu-mark)
-;;   ("u" Buffer-menu-unmark)
-;;   ("U" Buffer-menu-backup-unmark)
-;;   ("d" Buffer-menu-delete)
-;;   ("D" Buffer-menu-delete-backwards)
-;;   ("s" Buffer-menu-save)
-;;   ("~" Buffer-menu-not-modified)
-;;   ("x" Buffer-menu-execute)
-;;   ("b" Buffer-menu-bury)
-;;   ("g" revert-buffer)
-;;   ("T" Buffer-menu-toggle-files-only)
-;;   ("O" Buffer-menu-multi-occur :color blue)
-;;   ("I" Buffer-menu-isearch-buffers :color blue)
-;;   ("R" Buffer-menu-isearch-buffers-regexp :color blue)
-;;   ("c" nil "cancel")
-;;   ("v" Buffer-menu-select "select" :color blue)
-;;   ("o" Buffer-menu-other-window "other-window" :color blue)
-;;   ("q" quit-window "quit" :color blue))
-
-;; (define-key Buffer-menu-mode-map "." 'hydra-buffer-menu/body)
-
-
-
-
-
-
-
-
-
-
-
-
+;; goto
 (defhydra goto (:color blue :hint nil)
   "
 Goto:
@@ -332,20 +155,11 @@ _n_: Navigate           _._: mark position _/_: jump to mark
   ("R" helm-recentf)
   ("n" hydra-navigate/body))
 
-
-;; (global-set-key (kbd "s-g") 'goto/body)
-;; (global-set-key (kbd "C-S-s") 'goto/body)
-
-
-
-
-
 ;; sy
 (require 'syslog-mode)
 (add-hook 'syslog-mode-hook
           (lambda ()
             (toggle-truncate-lines 0)))
-
 
 ;; https://emacs.stackexchange.com/a/13010
 (defun etc-log-tail-handler ()
@@ -372,28 +186,7 @@ _n_: Navigate           _._: mark position _/_: jump to mark
 (add-to-list 'auto-mode-alist '("\\`/log/" . auto-revert-tail-mode))
 (add-to-list 'auto-mode-alist '("\\.log\\'" . auto-revert-tail-mode))
 (add-to-list 'auto-mode-alist '("/var/log.*\\'" . auto-revert-tail-mode))
-
 (add-hook 'auto-revert-tail-mode-hook 'etc-log-tail-handler)
-
-;; (defface visible-mark-active ;; put this before (require 'visible-mark)
-;;   '((((type tty) (class mono)))
-;;     (t (:background "magenta"))) "")
-;; (setq visible-mark-max 2)
-;; (setq visible-mark-faces `(visible-mark-face1 visible-mark-face2))
-
-
-;; (require 'hl-line+)
-;; (setq hl-line-overlay-priority -50)
-
-
-;; dumb-jump
-;;(require 'dumb-jump)
-;;(add-hook 'prog-mode-hook
-;;          (interactive)
-;;
-;;          (dumb-jump-mode))
-
-
 
 ;; recent files
 (require 'recentf)
@@ -404,7 +197,6 @@ _n_: Navigate           _._: mark position _/_: jump to mark
 (recentf-mode 1)
 (setq-default recent-save-file "~/.emacs.d/tmp/recentf")
 
-
 (require 'yaml-mode)
 
 ;; rainbow-delimiters
@@ -414,11 +206,6 @@ _n_: Navigate           _._: mark position _/_: jump to mark
 
 (add-hook 'eww-mode #'rainbow-delimiters-mode)
 (add-hook 'eww-mode #'rainbow-mode)
-
-
-
-
-
 
 (defhydra hydra-ibuffer-main (:color pink :hint nil)
   "
@@ -513,59 +300,6 @@ _n_: Navigate           _._: mark position _/_: jump to mark
 
 (define-key ibuffer-mode-map "." 'hydra-ibuffer-main/body)
 
-
-
-
-
-
-
-
-
-
-
-
-
-;; (defhydra hydra-move
-;;    (:body-pre (next-line))
-;;    "move"
-;;    ("n" next-line)
-;;    ("p" previous-line)
-;;    ("f" forward-char)
-;;    ("b" backward-char)
-;;    ("a" beginning-of-line)
-;;    ("e" move-end-of-line)
-;;    ("v" scroll-up-command)
-;;    ;; Converting M-v to V here by analogy.
-;;    ("V" scroll-down-command)
-;;    ("l" recenter-top-bottom))
-
-;; Impossible trop de conflit avec par exemple la lettre f
-;; (defhydra hydra-move-top
-;;    (:body-pre (previous-line))
-;;    "move"
-;;    ("n" next-line)
-;;    ("p" previous-line)
-;;    ("f" forward-char)
-;;    ("b" backward-char)
-;;    ("a" beginning-of-line)
-;;    ("e" move-end-of-line)
-;;    ("v" scroll-up-command)
-;;    ;; Converting M-v to V here by analogy.
-;;    ("V" scroll-down-command)
-;;    ("l" recenter-top-bottom))
-
-;; (global-set-key (kbd "C-n") 'hydra-move/body)
-;; (global-set-key (kbd "C-p") 'hydra-move-top/body)
-
-
-
-
-
-
-
-
-
-
 (defhydra hydra-outline (:color pink :hint nil)
   "
 ^Hide^             ^Show^           ^Move
@@ -604,16 +338,6 @@ _d_: subtree
 ;; (define-key diff-mode-map (kbd ".") 'hydra-outline/body)
 (define-key diff-mode-map (kbd "/") 'hydra-outline/body)
 
-
-
-
-
-
-
-
-
-
-
 (defun occur-dwim ()
   "Call `occur' with a sane default, chosen as the thing under point or selected region"
   (interactive)
@@ -627,12 +351,6 @@ _d_: subtree
         regexp-history)
   (call-interactively 'occur))
 
-;; ;; Keeps focus on *Occur* window, even when when target is visited via RETURN key.
-;; ;; See hydra-occur-dwim for more options.
-;; (defadvice occur-mode-goto-occurrence (after occur-mode-goto-occurrence-advice activate)
-;;   (other-window 1)
-;;   (hydra-occur-dwim/body))
-
 ;; Focus on *Occur* window right away.
 (add-hook 'occur-hook (lambda () (other-window 1)))
 
@@ -641,31 +359,7 @@ _d_: subtree
     (switch-to-buffer-other-window "*Occur*")
     (hydra-occur-dwim/body) ))
 
-;; ;; Used in conjunction with occur-mode-goto-occurrence-advice this helps keep
-;; ;; focus on the *Occur* window and hides upon request in case needed later.
-;; (defhydra hydra-occur-dwim ()
-;;   "Occur mode"
-;;   ("o" occur-dwim "Start occur-dwim" :color red)
-;;   ("j" occur-next "Next" :color red)
-;;   ("k" occur-prev "Prev":color red)
-;;   ("h" delete-window "Hide" :color blue)
-;;   ("r" (reattach-occur) "Re-attach" :color red))
-
-
-
-
-
-
-
-
  ;; (eval-after-load 'image-dired+ '(image-diredx-async-mode 1))
-
-
-
-
-
-
-
 
  (defhydra hydra-macro (:hint nil :color pink :pre 
                              (when defining-kbd-macro
@@ -704,60 +398,6 @@ _d_: subtree
 
 (global-set-key (kbd "C-c q") 'hydra-macro/body)
 
-;; google-maps
-;; (require 'google-maps)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-;; https://emacs.stackexchange.com/a/14987
-;; (defun my/open-tree-view ()
-;;   "Open a clone of the current buffer to the left, resize it to 30 columns, and bind <mouse-1> to jump to the same position in the base buffer."
-;;   (interactive)
-;;   (let ((new-buffer-name (concat "<tree>" (buffer-name))))
-;;     ;; Create tree buffer
-;;     (split-window-right 30)
-;;     (evil-window-move-far-right)
-;;     (enlarge-window-horizontally -30)
-;;     (if (get-buffer new-buffer-name)
-;;         (switch-to-buffer new-buffer-name)  ; Use existing tree buffer
-;;       ;; Make new tree buffer
-;;       (progn  (clone-indirect-buffer new-buffer-name nil t)
-;;               (switch-to-buffer new-buffer-name)
-;;               (read-only-mode)
-;;               (hide-body)
-;;               (toggle-truncate-lines)
-
-;;               ;; Do this twice in case the point is in a hidden line
-;;               (dotimes (_ 2 (forward-line 0)))
-
-;;               ;; Map keys
-;;               (use-local-map (copy-keymap outline-mode-map))
-;;               (local-set-key (kbd "q") 'delete-window)
-;;               (mapc (lambda (key) (local-set-key (kbd key) 'my/jump-to-point-and-show))
-;;                     '("<mouse-1>" "RET"))))))
-
 (defun my/jump-to-point-and-show ()
   "Switch to a cloned buffer's base buffer and move point to the cursor position in the clone."
   (interactive)
@@ -774,22 +414,6 @@ _d_: subtree
       (when (invisible-p (point))
         (show-branches)))))
 
-;; (defun wil-org-mode-hook ()
-;;   (interactive)
-;;   (my/open-tree-view)
-;; )
-
-;; (add-hook 'org-mode-hook 'wil-org-mode-hook)
-
-
-
-
-
-
-
-
-
-
 ;; Do not show ^M in files containing mixed UNIX and DOS line endings.
 ;; https://stackoverflow.com/a/750933
 (defun remove-dos-eol ()
@@ -800,29 +424,19 @@ _d_: subtree
 
 (remove-dos-eol)
 
-
-
-
-
-
-
 ;; Enlarge frame
 (defun wil-frame-large ()
   (interactive)
   (set-frame-width (selected-frame) 220)
   (set-frame-height (selected-frame) 55)
-  (set-frame-position (selected-frame) 500 400)
-)
+  (set-frame-position (selected-frame) 500 400))
 
 ;; Center frame
 ;; x-display-width / 4 because of retinata double ratio (should be / 2)
 ;; Only works in emacs-osx build
 (defun wil-frame-center ()
   (interactive)
-  (set-frame-position (selected-frame) (- (/ (x-display-pixel-width) 4) (/ (frame-pixel-width) 2)) (- (/ (x-display-pixel-width) 4) (frame-pixel-height)))
-)
-
-
+  (set-frame-position (selected-frame) (- (/ (x-display-pixel-width) 4) (/ (frame-pixel-width) 2)) (- (/ (x-display-pixel-width) 4) (frame-pixel-height))))
 
 ;; IDE Mode
 (defun wil-IDE ()
@@ -831,26 +445,8 @@ _d_: subtree
   (other-window 1)
   (evil-window-move-very-bottom))
 
-
-
-
-
-
-
-
-
 ;; crux
 (require 'crux)
-
-;; volatile-highlights
-;; (require 'volatile-highlights)
-
-;; (volatile-highlights-mode t)
-;; (diminish 'volatile-highlights-mode)
-
-
-
-
 
 (defun prelude-todo-ov-evaporate (_ov _after _beg _end &optional _length)
   (let ((inhibit-modification-hooks t))
@@ -865,13 +461,8 @@ _d_: subtree
                       'display '(left-fringe right-triangle))
           'modification-hooks '(prelude-todo-ov-evaporate)))
 
-
-
 ;; ibuffer-vc
 (require 'ibuffer-vc)
-
-
-
 
 ;; langtool
 (require 'langtool)
@@ -884,7 +475,6 @@ _d_: subtree
 (setq ispell-program-name (executable-find "hunspell"))
 (setq ispell-dictionary "fr")
 
-
 (defun langtool-autoshow-detail-popup (overlays)
   (when (require 'popup nil t)
     ;; Do not interrupt current popup
@@ -896,8 +486,6 @@ _d_: subtree
 
 (setq langtool-autoshow-message-function
       'langtool-autoshow-detail-popup)
-
-
 ;; Magnifique !!
 (require 'string-inflection)
 
@@ -908,9 +496,7 @@ _d_: subtree
 
 ;; general
 (require 'general)
-
 (setq my-leader1 "H-<SPC>")
-
 
 ;; without :keymaps, general-define-key acts similarly to global-set-key
 ;; bind "C-c a" and "C-c b" globally
@@ -918,59 +504,14 @@ _d_: subtree
                     "a" 'some-command
                     "b" 'another-command)
 
-;; or without a prefix
-;; (general-define-key
-;;  "C-c a" 'some-command
-;;  "C-c b" 'another-command)
-
-;; bind a key in a specific keymap (keymaps must be quoted)
-;; (general-define-key :keymaps 'org-mode-map
-;;                     "TAB" 'org-cycle)
-
-;; ;; if you prefer an explicit (kbd) or don't want (kbd) at all:
-;; (setq general-implicit-kbd nil)
-
-;; (general-define-key
-;;  (kbd "C-c a") 'some-command
-;;  (kbd "C-c b") 'another-command)
-
 ;; Gradle
 (require 'gradle-mode)
-
-
-;; Jabber
-;; (require 'jabber)
 
 (setq jabber-account-list 
       '(("wravel@gmail.com"
          (:network-server . "talk.google.com")
          (:connection-type . ssl)
          (:port . 443))))
-
-;; (setq jabber-username "wravel" ;; notice: leave off the @gmail.com
-;;       jabber-password ""
-;;       jabber-server "gmail.com"     ;; this is a part of your user ID, not a part of the server you will connect to.
-;;       jabber-network-server "talk.google.com"  ;; this is the actual server to connect to
-;;       jabber-port 5223
-;;       jabber-connection-type 'ssl)
-
-;; (setq jabber-account-list '("wravel@gmail.com"
-;;                             (
-;;                              :net-work-server . "talk.google.com")
-;;                             :connection-type . sll))
-
-;; (defun jabber ()
-;;   (interactive)
-;;   (jabber-connect)
-;;   (switch-to-buffer "*-jabber-*"))
-
-
-
-
-
-
-
-
 
 (use-package dired-ranger
   :ensure t
@@ -985,10 +526,6 @@ _d_: subtree
   (insert (if arg
               (format-time-string "%d-%m-%Y")
             (format-time-string "%Y-%m-%d"))))
-
-
-
-
 
 ;; source: http://steve.yegge.googlepages.com/my-dot-emacs-file
 (defun rename-file-and-buffer (new-name)
@@ -1021,11 +558,6 @@ _d_: subtree
           (set-visited-file-name new-name)
           (set-buffer-modified-p nil))))))
 
-
-
-;; (require 'origami)
-;; (add-hook 'prog-mode-hook 'origami-mode)
-
 ;; undotre
 (global-undo-tree-mode 1)
 (setq undo-tree-auto-save-history t)
@@ -1046,9 +578,6 @@ _d_: subtree
                                          try-complete-lisp-symbol-partially
                                          try-complete-lisp-symbol))
 
-;; (require 'lispy)
-;; (add-hook 'prog-mode-hook 'lispy-mode)
-
 (use-package uniquify
   :config
   (setq uniquify-buffer-name-style 'forward)
@@ -1065,38 +594,11 @@ _d_: subtree
   (([(meta control up)] . move-text-up)
    ([(meta control down)] . move-text-down)))
    
-; (use-package buffer-stack
-;   :ensure t
-;   :bind
-;   (([(C-tab)] . buffer-stack-up)
-;    ([(C-S-tab)] . buffer-stack-down)
-;    ([(meta shift i)] . buffer-stack-down)
-;    ([(meta i)] . buffer-stack-up)))
-
-
-;; single key to jump thru marks
-
-;; (defun xah-pop-local-mark-ring ()
-;;   "Move cursor to last mark position of current buffer.
-;; Call this repeatedly will cycle all positions in `mark-ring'.
-;; URL `http://ergoemacs.org/emacs/emacs_jump_to_previous_position.html'
-;; version 2016-04-04"
-;;   (interactive)
-;;   (set-mark-command t))
-
-;; (global-set-key (kbd "M-7") 'pop-global-mark) ; Meta+7
-;; (global-set-key (kbd "M-8") 'xah-pop-local-mark-ring) ; Meta+8
-
 (require 'dumb-jump)
 
 (use-package php-eldoc
   :ensure t
   :bind)
-
-;; (require 'indent-guide)
-;; (set-face-background 'indent-guide-face "dimgray")
-;; (setq indent-guide-delay 0.1)
-;; (setq indent-guide-char ":")
 
 (require 'lsp-mode)
 ;; (add-hook 'web-mode-hook 'indent-guide-mode)
@@ -1106,15 +608,8 @@ _d_: subtree
 ;; There is no need for "^" as the regexp is matched at the beginning of line.
 ;; (setq paragraph-start "\f\\|[ \t]*$\\|[ \t]*[-+*] ")
 
-
 ;; http://emacsredux.com/blog/2013/03/29/automatic-electric-indentation/
 (electric-indent-mode +1)
-
-
-
-
-
-
 
 ;; https://stackoverflow.com/a/22109370
 (defun new-line-dwim ()
@@ -1129,9 +624,6 @@ _d_: subtree
         (newline)
         (indent-for-tab-command)))
     (indent-for-tab-command)))
-
-
-
 
 ;; http://ergoemacs.org/emacs/emacs_abbrev_mode_tutorial.html
 (defun xah-abbrev-h-f ()
@@ -1148,16 +640,6 @@ Version 2016-10-24"
   '(
     ("fu" "function" xah-abbrev-h-f)
     ("arg" "arguments" xah-abbrev-h-f)))
-
-
-
-;; (use-package back-button
-;;   :defer 1
-;;   :commands
-;;   back-button-mode
-;;   :config
-;;   (back-button-mode 1)
-;;   (diminish 'back-button-mode))
 
 (use-package beacon
   :config
@@ -1183,8 +665,6 @@ Version 2016-10-24"
   :bind
   (("C-c k" . browse-kill-ring)))
 
-
-
 ;; From
 ;; https://github.com/cichli/dotfiles/blob/master/.emacs.d/init.el#L172
 ;; Update: Theses package seems not available on Elpa at the moment
@@ -1198,22 +678,7 @@ Version 2016-10-24"
   )
 
 (use-package help-mode+)
-
 (use-package help+)
-
-;; Update : Ne convient pas
-;; (use-package iflipb
-;;   :config
-;;   (setq iflipb-include-more-buffers t
-;;         iflipb-wrap-around t)
-;;   :bind
-;;   (
-;;    ;; ("M-I" . iflipb-next-buffer)
-;;    ("M-ù" . iflipb-previous-buffer)
-;;    ("M-`" . iflipb-next-buffer)
-;;    ;; ([C-S-tab] . iflipb-next-buffer)
-;;    ;; ([C-tab] . iflipb-previous-buffer)
-;;    ))
 
 (use-package paradox
   :defer t
@@ -1226,20 +691,6 @@ Version 2016-10-24"
         paradox-use-homepage-buttons nil)
   ;; (add-hook 'paradox-menu-mode-hook #'hide-trailing-whitespace)
   )
-
-
-;; (use-package popwin
-;;   :config
-;;   ;; (add-hook 'popwin:after-popup-hook #'hide-trailing-whitespace)
-  
-;;   )
-
-
-
-;; (add-hook 'prog-mode-hook (lambda ()
-;; (add-hook 'editorconfig-mode-hook (lambda ()
-;;                             (dtrt-indent-mode)
-;;                             (dtrt-indent-adapt)))
 
 ;; New wil-ide version.
 ;; In progress
@@ -1298,3 +749,14 @@ Version 2016-10-24"
 ;; http://stackoverflow.com/a/3072831/355252
 (require 'ansi-color)
 (add-hook 'compilation-filter-hook #'prelude-colorize-compilation-buffer)
+
+;; google-translate conf
+(setq google-translate-default-source-language "fr")
+(setq google-translate-default-target-language "en")
+
+;; linum
+(use-package linum
+       :init
+       (add-hook 'php-mode-hook 'linum-mode)
+       (add-hook 'web-mode-hook 'linum-mode))
+       
