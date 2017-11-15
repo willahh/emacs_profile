@@ -128,6 +128,7 @@
   validate
   iy-go-to-char
   google-translate
+  perspective
   ripgrep
   projectile-ripgrep
   flx-ido
@@ -168,6 +169,7 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/vi-tilde-fringe")
 (add-to-list 'load-path "~/.emacs.d/vendor/vkill")
 (add-to-list 'load-path "~/.emacs.d/vendor/ibuffer-vc")
+(add-to-list 'load-path "~/.emacs.d/vendor/better-breadcrumbs")
 ;; (add-to-list 'load-path "~/.emacs.d/vendor/xah-css-mode")
 
 ;; (load "~/.emacs.d/vendor/xah-css-mode/xah-css-mode-mode.el")

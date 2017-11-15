@@ -608,3 +608,6 @@
 
 ;; Open jar files in archive mode
 (add-to-list 'auto-mode-alist '("\\.jar$" . archive-mode))
+
+;; Mac only - Use the spotlight service for locate command
+(setq locate-command "mdfind")

@@ -753,3 +753,10 @@ Version 2016-10-24"
 ;; google-translate conf
 (setq google-translate-default-source-language "fr")
 (setq google-translate-default-target-language "en")
+
+;; linum
+(use-package linum
+       :init
+       (add-hook 'php-mode-hook 'linum-mode)
+       (add-hook 'web-mode-hook 'linum-mode))
+       
