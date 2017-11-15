@@ -4,9 +4,7 @@
 (require 'cl-lib)
 (require 'validate)
 
-(global-set-key
- (kbd "C-M-o")
- (defhydra hydra-window ()
+(defhydra hydra-window (:idle 9999)
    " "
    ("h" windmove-left)
    ("j" windmove-down)
@@ -59,7 +57,7 @@
    ("p" (resize-window--enlarge-up) "")
    ("f" (resize-window--enlarge-horizontally) "")
    ("b" (resize-window--shrink-horizontally) "")
-   ))
+   )
 
 ;; Enhanced version of diff
 (add-hook 'diff-mode-hook (lambda () (local-set-key "\C-c\C-l" 'diffstat)))
