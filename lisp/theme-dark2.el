@@ -118,18 +118,6 @@
                          (setq nlinum-format "%4d \u2502 ")
                          (set-face-foreground 'linum "#6272a4")))
 
-
-;; Text selection
-;; (set-face-attribute 'region nil :background "#275f99" :foreground nil :box nil)
-;; (set-face-attribute 'lazy-highlight nil :background "#149591" :foreground nil :box nil)
-
-;; I-search
-
-;; (set-face-attribute 'isearch-lazy-highlight nil :background "#4f5d66")
-;; (set-face-attribute 'isearch-lazy-highlight-face nil :background "#4f5d66")
-;; (set-face-attribute 'isearch nil :background "#ffe400" :foreground nil)
-;; (set-face-attribute 'lazy-highlight nil :background "#4f5d66" :underline t)
-
 ;; ------- Font
 (set-frame-font "Office Code Pro:antialias=1")
 
@@ -271,16 +259,14 @@
  '(js2-error ((t (:background nil :underline (:color "#ff0000" :style wave)))))
  '(flycheck-error ((t (:background nil :underline (:color "#ff0000" :style wave)))))
  '(flycheck-warning ((t (:background nil :underline (:color "#ff0000" :style wave)))))
- 
- 
  '(isearch-lazy-highlight-face ((t (:background "#4f5d66"))))
- '(isearch-lazy-highlight-face ((t (:background "#ffe400" :foreground nil)))))
+ ;; '(isearch-lazy-highlight-face ((t (:background "#ffe400" :foreground nil))))
+ '(isearch-lazy-highlight-face ((t (:background "#ffe400" :foreground "#000")))))
 
 (custom-theme-set-faces
            'dracula
            '(region ((t (:background "#275f99" :foreground nil))))
            '(isearch-lazy-highlight ((t (:background "#4f5d66" :foreground nil))))
-           ;; '(isearch ((t (:background "#ffe400" :foreground "#000"))))
            '(isearch ((t (:background "#ffe400" :foreground nil))))
-           '(lazy-highlight ((t (:background "#4f5d66" :underline t))))
+           '(lazy-highlight ((t (:background "#4f5d66" :foreground nil :underline t))))
            '(set-face-attribute 'link nil :foreground nil))
