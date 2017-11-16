@@ -759,4 +759,7 @@ Version 2016-10-24"
        :init
        (add-hook 'php-mode-hook 'linum-mode)
        (add-hook 'web-mode-hook 'linum-mode))
-       
+
+
+(require 'smart-comment)
+(global-set-key (kbd "M-;") 'smart-comment)

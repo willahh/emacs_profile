@@ -609,8 +609,8 @@
 (global-set-key (kbd "s-k") 'fixup-whitespace)
 
 ;; Comment
-(global-set-key (kbd "s-/") 'comment-line)
-(global-set-key (kbd "M-/") 'comment-line)
+;; (global-set-key (kbd "s-/") 'comment-line)
+(global-set-key (kbd "M-/") 'smart-comment)
 
 ;; Kill
 (global-set-key (kbd "s-k") 'kill-paragraph)
