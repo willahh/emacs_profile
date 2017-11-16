@@ -427,12 +427,12 @@
 (global-set-key (kbd "C-c f") 'iy-go-to-char)
 (global-set-key (kbd "C-c F") 'iy-go-to-char-backward)
 
-;; Transpose stuff with M-t
-(global-unset-key (kbd "M-t")) ;; which used to be transpose-words
-(global-set-key (kbd "M-t l") 'transpose-lines)
-(global-set-key (kbd "M-t w") 'transpose-words)
-(global-set-key (kbd "M-t s") 'transpose-sexps)
-(global-set-key (kbd "M-t p") 'transpose-params)
+;; ;; Transpose stuff with M-t
+;; (global-unset-key (kbd "M-t")) ;; which used to be transpose-words
+;; (global-set-key (kbd "M-t l") 'transpose-lines)
+;; (global-set-key (kbd "M-t w") 'transpose-words)
+;; (global-set-key (kbd "M-t s") 'transpose-sexps)
+;; (global-set-key (kbd "M-t p") 'transpose-params)
 
 ;; vc
 (global-set-key (kbd "C-x v f") 'vc-diff)

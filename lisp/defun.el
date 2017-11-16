@@ -1,3 +1,5 @@
+(require 'cl-lib)
+
 ;; yank-pop-forwards
 (defun yank-pop-forwards (arg)
   (interactive "p")
@@ -1370,8 +1372,6 @@ the checking happens for all pairs in auto-minor-mode-alist"
     ;; (backward-kill-word arg)
     (paredit-backward-kill-word)))
 
-
-
 (defun wil-recenter-top-bottom ()
   "Call recenter-top-bottom then do a beacon-blink"
   (interactive)
@@ -1392,3 +1392,9 @@ the checking happens for all pairs in auto-minor-mode-alist"
   (interactive)
   (other-window 1)
   (hydra-window/body))
+
+;; https://stackoverflow.com/a/2706660
+(defadvice save-buffers-kill-emacs (around no-query-kill-emacs activate)
+  "Prevent annoying \"Active processes exist\" query when you quit Emacs."
+  (cl-letf (((symbol-function #'process-list) (lambda ())))
+    ad-do-it))

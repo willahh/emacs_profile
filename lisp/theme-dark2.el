@@ -183,7 +183,6 @@
                            (set-face-attribute 'org-level-2 nil :height 1 :box nil :overline nil :foreground "#fff" :background "#333")
                            (set-face-attribute 'org-special-keyword nil :height 1 :foreground "#aeb7da" :background nil)
                            (set-face-attribute 'org-document-info-keyword nil :height 1 :foreground "#b0dcff" :background nil)
-                           ;; (set-face-attribute 'org  nil :height 1 :foreground "#b0dcff" :background nil)
                            (set-face-attribute 'org-checkbox-statistics-todo  nil :height 1)))
 
 
