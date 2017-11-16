@@ -609,8 +609,10 @@
 (global-set-key (kbd "s-k") 'fixup-whitespace)
 
 ;; Comment
-(global-set-key (kbd "s-/") 'comment-line)
-(global-set-key (kbd "M-/") 'comment-line)
+(global-set-key (kbd "s-/") 'smart-comment)
+(global-set-key (kbd "M-/") 'smart-comment)
+(global-set-key (kbd "M-;") 'smart-comment)
+(define-key paredit-mode-map (kbd "M-;") 'smart-comment)
 
 ;; Kill
 (global-set-key (kbd "s-k") 'kill-paragraph)
@@ -713,8 +715,11 @@
 
 ;; Navigation entre les buffers
 (global-set-key (kbd "<C-tab>") 'next-buffer)
-(global-set-key (kbd "C-ù") 'previous-buffer)
 (global-set-key (kbd "C-`") 'next-buffer)
+(global-set-key (kbd "C-M-`") 'winner-redo)
+
+(global-set-key (kbd "C-ù") 'previous-buffer)
+(global-set-key (kbd "C-M-ù") 'winner-undo)
 (global-set-key (kbd "<C-S-tab>") 'previous-buffer)
 
 ;; ---------------- Markdown

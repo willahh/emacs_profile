@@ -114,8 +114,8 @@
 (set-window-margins nil 0)
 
 (add-hook 'nlinum-mode (lambda ()
-                         (setq nlinum-format "%4d \u2502 ")
-                         (set-face-foreground 'linum "#6272a4")))
+                         (setq nlinum-format "%4d \u2502")
+                         (set-face-attribute 'linum nil :foreground "#4a4a4a" :background"#1a1c1d")))
 
 ;; ------- Font
 (set-frame-font "Office Code Pro:antialias=1")
@@ -251,20 +251,19 @@
 (set-face-attribute 'compilation-column-number nil :foreground "#555")
 (set-face-attribute 'warning nil :foreground "#ff6600")
 (set-face-attribute 'dired-marked nil :foreground "#48fa7b")
+
 (custom-theme-set-faces
  'dracula
+ '(region ((t (:background "#275f99" :foreground nil))))
+ '(lazy-highlight ((t (:background "#4f5d66" :foreground nil :underline t))))
  '(js2-warning ((t (:background nil :underline (:color "#ff0000" :style wave)))))
  '(js2-error ((t (:background nil :underline (:color "#ff0000" :style wave)))))
  '(flycheck-error ((t (:background nil :underline (:color "#ff0000" :style wave)))))
  '(flycheck-warning ((t (:background nil :underline (:color "#ff0000" :style wave)))))
+ '(isearch ((t (:background "#ffe400" :foreground nil))))
  '(isearch-lazy-highlight-face ((t (:background "#4f5d66"))))
+ '(isearch-lazy-highlight ((t (:background "#4f5d66" :foreground nil))))
  ;; '(isearch-lazy-highlight-face ((t (:background "#ffe400" :foreground nil))))
- '(isearch-lazy-highlight-face ((t (:background "#ffe400" :foreground "#000")))))
-
-(custom-theme-set-faces
-           'dracula
-           '(region ((t (:background "#275f99" :foreground nil))))
-           '(isearch-lazy-highlight ((t (:background "#4f5d66" :foreground nil))))
-           '(isearch ((t (:background "#ffe400" :foreground nil))))
-           '(lazy-highlight ((t (:background "#4f5d66" :foreground nil :underline t))))
-           '(set-face-attribute 'link nil :foreground nil))
+ '(isearch-lazy-highlight-face ((t (:background "#ffe400" :foreground "#000"))))
+ '(font-lock-comment-face ((t (:foreground "#636465"))))
+ '(set-face-attribute 'link nil :foreground nil))

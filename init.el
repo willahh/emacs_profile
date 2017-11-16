@@ -54,7 +54,8 @@
 ;; -> prog-mode-hook
 
 (defun update-syntax-entry ()
-  (modify-syntax-entry ?_ "w"))
+  (modify-syntax-entry ?_ "w")
+  (modify-syntax-entry ?\$ "w"))
 
 (update-syntax-entry)
 (add-hook 'prog-mode-hook (lambda () (update-syntax-entry)))

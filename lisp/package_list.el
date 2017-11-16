@@ -170,6 +170,7 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/vkill")
 (add-to-list 'load-path "~/.emacs.d/vendor/ibuffer-vc")
 (add-to-list 'load-path "~/.emacs.d/vendor/better-breadcrumbs")
+(load "~/.emacs.d/vendor/smartcomment/smartcomment.elc")
 ;; (add-to-list 'load-path "~/.emacs.d/vendor/xah-css-mode")
 
 ;; (load "~/.emacs.d/vendor/xah-css-mode/xah-css-mode-mode.el")

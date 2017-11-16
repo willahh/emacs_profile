@@ -1200,3 +1200,89 @@ Archived entries from file /Users/wravel/.emacs.d/emacs_todo.org
   :ARCHIVE_TODO: TODO
   :END:
 
+
+* TODO [#A] [swoop] Ne pas initialiser avec le texte sous le curseur
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-11-16 Thu 13:49
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :END:
+  ** [org] Lancer org mode avec certains titre ouvert fermé
+- (conf en tête de fichier)
+  ** [org-mode] Mouse-1 pour toggler un header
+- [X] Voir pour installer le plugin pour lancer des mode en "fullscreen", vu sur un blog d'un autre
+- [X] [system] [osx] Autoriser le F5 dans Emacs (revert-buffer)
+
+* TODO [#A] js2-mode, voir pourquoi la naviguation au sein de fichiers en mode js2, est lente (visible lorsque l'on se déplace sur une ligne de façon répétitive par example)
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-11-16 Thu 13:49
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :END:
+  [2017-10-30 Mon]
+  [[file:~/www/project/arsia/arsia_standard_310/dev/creation/module/home/ajax/templateList.json.php::$g_oLogger->debug('no%20first%20page%20found%20for%20this%20gabarit%20%5B'%20.%20$iGabaIdx%20.%20'%5D')%3B][file:~/www/project/arsia/arsia_standard_310/dev/creation/module/home/ajax/templateList.json.php::$g_oLogger->debug('no first page found for this gabarit [' . $iGabaIdx . ']');]]
+
+
+* TODO [#C] helm-do-grep-ag -> Ignjorer les fichier "*.svn-base"
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-11-16 Thu 13:50
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :END:
+     -> helm-ag-ignore-buffer-patterns (conf ajoutee, non testee, maj : ne fonctionne pas, voir pour mettre la bonne regle)
+     -> Impossible de trouver la raison sur cette commande, utiliser helm-ag a la place
+
+* TODO [#C] [php-mode] Autocompletion, ajouter les entrés du buffer courant dans la liste des completions
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-11-16 Thu 13:53
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :END:
+
+* DONE [#A] [custom] Faire une fonction custom delete backward or region
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-11-16 Thu 13:53
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: DONE
+  :END:
+     C-w doit appeler clean-aindent--bsunindent ou "whole-line-or-region-kill-region"
+
+
+* TODO Implementer le menu semantique (je n'ai plus le nom) et l'afficher a gauche ou faire un toggle a voir
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-11-16 Thu 13:55
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :END:
+     Cette fonction est déjà présente dans emacs mais apparait dans une autre frame, un package existe pour
+     L'afficher dans la même frame mais je n'ai pas réussis à bien l'implèmenter
+
+* TODO System : bind c-j
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-11-16 Thu 13:55
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :END:
+
+* TODO [all] Ne pas ajouter dabbrev dans company par default
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-11-16 Thu 13:55
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :END:
