@@ -80,15 +80,19 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 C
 * Tasks
   :VISIBILITY: content
-** TODO [#A] Activer le highlight en mode php
+
+** DONE [#A] Activer le highlight en mode php
 ** DONE [#A] [js2 mode] Voir pour avoir une ouverture plus rapide, c'esst surement du au mode TIDE
+** TODO [#A] [PHP Mode] & [js2-mode] : Double clic sur un mot avec un $ -----> Le $ n'est pas sélectionné
+   [2017-11-10 Fri]
+   [[file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/production_crop2.php::$data%5B'imageIdx'%5D%20%3D%20$iWidth%3B][file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/production_crop2.php::$data['imageIdx'] = $iWidth;]]
 ** TODO [#A] [swoop] C-w ne fonctionne pas
 ** TODO [#A] [helm] [mini-buffer] Ajouter la possibilité de faire du M-v dans le mini-buffer
 ** TODO [#A] web-mode single quote dans commentaire : Ne pas auto fermer la quote lorsque l'on est dans un commentaire
    [2017-10-23 Mon]
    [[file:~/www/project/arsia/goacrop/src/main.js:://%20Pas%20de%20traitement%20particulier,%20l'image][file:~/www/project/arsia/goacrop/src/main.js::// Pas de traitement particulier, l'image]]
 *
-** TODO [#A] Faire fonctionner la custom theme dark pour org mode
+** DONE [#A] Faire fonctionner la custom theme dark pour org mode
     [2017-10-30 Mon]
     [[file:~/.emacs.d/lisp/theme-dark2.el]]
 
@@ -213,10 +217,6 @@ C
    [2017-11-10 Fri]
    [[file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/production_crop2.php::(]]
 
-** TODO [#A] [PHP Mode] : Double clic sur un mot avec un $ -----> Le $ n'est pas sélectionné
-   [2017-11-10 Fri]
-   [[file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/production_crop2.php::$data%5B'imageIdx'%5D%20%3D%20$iWidth%3B][file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/production_crop2.php::$data['imageIdx'] = $iWidth;]]
-
 ** TODO [#A] [web-mode] C-k ne s arrête pas a la dernière quote dans la chaîne suivante :
    Il faut placer le cart dans le candO juste après la première quote
    $asAssign = array();
@@ -310,4 +310,11 @@ C
 ** TODO [#C] [doc-view] Faire fonctionner doc-view (Lire des fichiers excel, doc, word, etc)
 ** TODO [#C] [util] Voir si il est possible de faire un (CMD+P + touche @) (file.php@methode_name)
 ** TODO [#C] git-svn
+
+** TODO Il faudrait voir pour faire tourner 2 instances d emacs, 
+   [2017-11-15 Wed]
+
+** TODO web mode update syntax word pour ne pas sélectionner le $ dans un mot
+   [2017-11-15 Wed]
+   [[file:~/www/project/arsia/arsia_standard_310/dev/common/include/process/eletter/EletterHelper.class.php::$this->m_oLogger->debug('-->%20checkAndCleanLinksForCreation(document)')%3B%0D][file:~/www/project/arsia/arsia_standard_310/dev/common/include/process/eletter/EletterHelper.class.php::$this->m_oLogger->debug('--> checkAndCleanLinksForCreation(document)');]]
 

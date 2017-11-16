@@ -11,7 +11,6 @@
 (set-face-attribute 'default nil :background "#212121" :foreground "#e6fbfb" :box nil)
 (set-face-attribute 'fringe nil :background "#212121")
 (set-face-attribute 'fringe nil :background "#212121")
-;; (set-face-attribute 'linum nil :background "#212121")
 
 
 (set-face-attribute 'trailing-whitespace nil :background "#000")
