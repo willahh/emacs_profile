@@ -611,6 +611,8 @@
 ;; Comment
 ;; (global-set-key (kbd "s-/") 'comment-line)
 (global-set-key (kbd "M-/") 'smart-comment)
+(global-set-key (kbd "M-;") 'smart-comment)
+(define-key paredit-mode-map (kbd "M-;") 'smart-comment)
 
 ;; Kill
 (global-set-key (kbd "s-k") 'kill-paragraph)

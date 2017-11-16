@@ -121,7 +121,7 @@
 (setq set-mark-command-repeat-pop t)
 
 (setq scroll-margin 0)
-(setq scroll-conservatively 9999)
+;; (setq scroll-conservatively 9999)
 (setq scroll-step 1)
 
 ;; Mouse wheel behaviour -> Add acceleration like Sublime
@@ -359,9 +359,12 @@
 (setq redisplay-dont-pause t
       ;; scroll-margin 1
       scroll-step 1
-      scroll-conservatively 10000
+      ;; scroll-conservatively 10000
       ;; scroll-preserve-screen-position nil
       scroll-preserve-screen-position t)
+
+;; Permet de re-centrer la ligne suite a un goto line
+(setq scroll-conservatively 0)
 
 ;; Save emacs history
 ;; https://stackoverflow.com/a/1230877
