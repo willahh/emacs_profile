@@ -782,3 +782,5 @@
              (define-key term-raw-map (kbd "C-c RET") 'term-line-mode))))
 
 
+(global-set-key [f7] 'winner-undo)
+(global-set-key [C-f7] 'winner-redo)
