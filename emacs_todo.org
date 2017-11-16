@@ -293,3 +293,7 @@ C
 ** TODO [#B] Il faudrait voir pour faire tourner 2 instances d emacs, 
    [2017-11-15 Wed]
 
+** TODO theme : Selection mettre un bleu plus foncé
+   [2017-11-16 Thu]
+   [[file:~/www/project/arsia/goacrop/src/events.js::y:%20Utils.getYForOutput(goacrop.Main.cropper.getData().y),][file:~/www/project/arsia/goacrop/src/events.js::y: Utils.getYForOutput(goacrop.Main.cropper.getData().y),]]
+

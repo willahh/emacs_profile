@@ -265,4 +265,5 @@
  '(isearch-lazy-highlight ((t (:background "#4f5d66" :foreground nil))))
  ;; '(isearch-lazy-highlight-face ((t (:background "#ffe400" :foreground nil))))
  '(isearch-lazy-highlight-face ((t (:background "#ffe400" :foreground "#000"))))
+ '(font-lock-comment-face ((t (:foreground "#636465"))))
  '(set-face-attribute 'link nil :foreground nil))
