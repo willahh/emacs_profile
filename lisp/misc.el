@@ -763,3 +763,7 @@ Version 2016-10-24"
 
 (require 'smart-comment)
 (global-set-key (kbd "M-;") 'smart-comment)
+
+(require 'visual-regexp)
+(global-set-key (kbd "M-%") 'vr/query-replace)
+

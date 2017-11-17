@@ -43,8 +43,8 @@
 
 (defun powerline-theme-emacs()
   (set-face-attribute 'mode-line nil
-                      :foreground "#000"
-                      :background "#56b0ec"
+                      :foreground "#fff"
+                      :background "#000"
                       :box nil))
 
 (defun powerline-theme-visual()
