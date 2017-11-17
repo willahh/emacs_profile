@@ -291,3 +291,15 @@ C
    [2017-11-16 Thu]
    [[file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/production_crop2.php::<li%20class%3D"btn%20btn-default"%20onclick%3D"goacrop.Events.on_zoomplus()%3B"%20title%3D"Init">][file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/production_crop2.php::<li class="btn btn-default" onclick="goacrop.Events.on_zoomplus();" title="Init">]]
 
+** TODO ALT+p ne fait plus de multi cursor move line up
+   [2017-11-17 Fri]
+   [[file:~/www/project/arsia/goacrop/src/utils.js:://%20x%200%20y%200%20a%200][file:~/www/project/arsia/goacrop/src/utils.js::// x 0 y 0 a 0]]
+
+** TODO Faire fonctionner projectile dans un nouveau buffer
+   [2017-11-17 Fri]
+   [[file:~/www/project/arsia/goacrop/src/utils.js:://]]
+
+** TODO SHIFT + ENTER -> Meme comportement que SHIFT+J
+   [2017-11-17 Fri]
+   [[file:~/www/project/arsia/goacrop/src/utils.js:://]]
+
