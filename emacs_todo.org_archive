@@ -1286,3 +1286,143 @@ Archived entries from file /Users/wravel/.emacs.d/emacs_todo.org
   :ARCHIVE_CATEGORY: emacs_todo
   :ARCHIVE_TODO: TODO
   :END:
+
+* TODO [#A] Activé company partout, désactivé pour css, web html
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-11-17 Fri 01:11
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :END:
+  [2017-11-16 Thu]
+
+* TODO Make a mark paragraph TOP function and bind it to M-š-H
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-11-17 Fri 01:25
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :END:
+
+* TODO Associer les fichiers .htaccess au mode conf-mode
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-11-17 Fri 01:31
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :END:
+
+* TODO [theme] [ediff] Find how to have the right color code, colors perfectly implemented as with with the theme leuven
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-11-17 Fri 01:32
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :END:
+
+* TODO [dired] Rename file : Possibilité de préciser un chemin contenant des dossiers
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-11-17 Fri 01:32
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :END:
+     N'existant pas, ces dossier seront créés automatiquement à la validation
+
+* TODO Multiple emacs config management propositions : http://stackoverflow.com/questions/17483598/maintaining-multiple-emacs-configurations-at-the-same-time
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-11-17 Fri 01:34
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :END:
+
+* DONE [#C] [multi-cursor] Remettre la possibilité d'ajouter un command click de la souris pour ajouter un nouveau caret
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-11-17 Fri 01:35
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: DONE
+  :END:
+
+* TODO [#C] [projectile] Find file - Traitement lent lorsqu'il y a beaucoup de fichiers
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-11-17 Fri 01:35
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :END:
+
+* DONE [#C] [projectile] Find file - Traitement lent lorsqu'il y a beaucoup de fichiers
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-11-17 Fri 01:35
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: DONE
+  :END:
+
+* TODO [#C] [highlight-symbol] [ggtags] [web-mode] Les couleurs disparaissent lorsque les modes web-mode ggtags sont presents highlight-mode est active
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-11-17 Fri 01:35
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :END:
+
+* TODO [#C] [projectile] Auto invalidate cache after create/rename/delete files
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-11-17 Fri 01:35
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :END:
+ - [ ] create
+ - [ ] rename
+ - [x] delete
+
+* TODO [#C] [vc-diff] g (refresh) --> Remettre la bonne position y
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-11-17 Fri 01:36
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :END:
+
+* TODO [#C] Création de tableaux directement par texte
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-11-17 Fri 01:36
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :END:
+
+* TODO [#C] Couper la saisie de texte automatiquement
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-11-17 Fri 01:36
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :END:
+
+* TODO [#C] [helm-ag] auto recentrer une fois le focus effectué
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-11-17 Fri 01:36
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :END:

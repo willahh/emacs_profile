@@ -88,15 +88,15 @@ C
    [2017-11-16 Thu]
    [[file:~/www/project/arsia/goacrop/src/main.js::goacrop.Main.cropper.scaleX(window.data.height%20/%20250)%3B][file:~/www/project/arsia/goacrop/src/main.js::goacrop.Main.cropper.scaleX(window.data.height / 250);]]
 
-** TODO [#A] Activé company partout, désactivé pour css, web html
-   [2017-11-16 Thu]
 ** DONE [#A] Activer le highlight en mode php
 ** DONE [#A] [js2 mode] Voir pour avoir une ouverture plus rapide, c'esst surement du au mode TIDE
 ** DONE [#A] [PHP Mode] & [js2-mode] : Double clic sur un mot avec un $ -----> Le $ n'est pas sélectionné
    [2017-11-10 Fri]
    [[file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/production_crop2.php::$data%5B'imageIdx'%5D%20%3D%20$iWidth%3B][file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/production_crop2.php::$data['imageIdx'] = $iWidth;]]
-** TODO [#A] [swoop] C-w ne fonctionne pas
+** TODO [#A] [swoop] C-w ne fonctionne pas 
+   SCHEDULED: <2017-11-25 Sat>
 ** TODO [#A] [helm] [mini-buffer] Ajouter la possibilité de faire du M-v dans le mini-buffer
+   SCHEDULED: <2017-11-30 Thu>
 ** TODO [#A] web-mode single quote dans commentaire : Ne pas auto fermer la quote lorsque l'on est dans un commentaire
    [2017-10-23 Mon]
    [[file:~/www/project/arsia/goacrop/src/main.js:://%20Pas%20de%20traitement%20particulier,%20l'image][file:~/www/project/arsia/goacrop/src/main.js::// Pas de traitement particulier, l'image]]
@@ -114,40 +114,26 @@ C
        Depuis  le vc-diff
 ** TODO [#A] Autres tâches à mettre au format todo
 ** TODO [#A] [css-mode] Virer company dabbrev de css mode
-** TODO [theme] [ediff] Trouver comment avoir les bons code couleur,des couleurs parfaitement implémentées comme avec avec le thème leuven
-** TODO Faire une fonction mark paragraph TOP et la binder sur M-S-H
-** TODO Associer les fichiers .htaccess au mode conf-mode
-** TODO [dired] Rename file : Possibilité de préciser un chemin contenant des dossiers
+** DONE Associer les fichiers .htaccess au mode conf-mode
+** TODO [#C] [dired] Rename file : Possibilité de préciser un chemin contenant des dossiers
       N'existant pas, ces dossier seront créés automatiquement à la validation
-** TODO Ajouter des bind system sur C-h et C-w C-w https://blog.sensible.io/2012/10/19/mac-os-x-emacs-style-keybindings-everywhere.html
+** TODO [#C] Ajouter des bind system sur C-h et C-w C-w https://blog.sensible.io/2012/10/19/mac-os-x-emacs-style-keybindings-everywhere.html
   - [ ] C-j new line
   - [ ] C-w delete back word
   - [ ] M-b back word
-** TODO Multiple emacs config management propositions : http://stackoverflow.com/questions/17483598/maintaining-multiple-emacs-configurations-at-the-same-time
-** TODO Open file from system in new emacs frame (Right click open in)
-** TODO [multi-cursor] Remettre la possibilité d'ajouter un command click de la souris pour ajouter un nouveau caret
-** TODO [projectile] Find file - Traitement lent lorsqu'il y a beaucoup de fichiers
-** TODO [highlight-symbol] [ggtags] [web-mode] Les couleurs disparaissent lorsque les modes web-mode ggtags sont presents highlight-mode est active
-** TODO [projectile] Auto invalidate cache after create/rename/delete files
-  - [ ] create
-  - [ ] rename
-  - [x] delete
-** TODO [vc-diff] g (refresh) --> Remettre la bonne position y
-** TODO Création de tableaux directement par texte
-** TODO Couper la saisie de texte automatiquement
-** TODO [helm-ag] auto recentrer une fois le focus effectué
-** TODO [ivy] [mini buffer] Add C-l keybinding
-** TODO [ivy] - Highlight current line plus visible
-** TODO [php-mode] [ac-php] [company] La boite d'information supplémentaire ne contient pas les php doc
-** TODO [php-mode] Voir pour implementer quick type hierarchy
-** TODO [php-mode] Saisie de /** + ENTER -> Creation d un php doc pre rempli
-** TODO [flycheck] : Mieux distinguer la ligne en erreur
-** TODO [web-mode] [javascript] [company] Add javascript keywords to company backend
-** TODO [refactor] emacs.d conf a ranger, voir modele suivant : https://github.com/purcell/emacs.d
-** TODO Activer les url cliquable dans les differents modes
-** TODO [ivy] [mini buffer] CTRL+l to back up
-** TODO [ivy] : Ne pas mettre les fichiers .svn dans la liste
-** TODO [plugin] [change inner] Ajoute rl'option Change Inner Tag
+** TODO [#C] Open file from system in new emacs frame (Right click open in)
+** TODO [#C] [ivy] [mini buffer] Add C-l keybinding
+** TODO [#C] [ivy] - Highlight current line plus visible
+** TODO [#C] [php-mode] [ac-php] [company] La boite d'information supplémentaire ne contient pas les php doc
+** TODO [#C] [php-mode] Voir pour implementer quick type hierarchy
+** TODO [#C] [php-mode] Saisie de /** + ENTER -> Creation d un php doc pre rempli
+** TODO [#C] [flycheck] : Mieux distinguer la ligne en erreur
+** TODO [#C] [web-mode] [javascript] [company] Add javascript keywords to company backend
+** TODO [#C] [refactor] emacs.d conf a ranger, voir modele suivant : https://github.com/purcell/emacs.d
+** TODO [#C] Activer les url cliquable dans les differents modes
+** TODO [#C] [ivy] [mini buffer] CTRL+l to back up
+** TODO [#C] [ivy] : Ne pas mettre les fichiers .svn dans la liste
+** TODO [#C] [plugin] [change inner] Ajoute rl'option Change Inner Tag
 ** TODO [#A] [vc-dir] Faire une fonction pour activer un vc-version-diff avec les paramètres older revision : "base", newer revision : "head"
 
 ** TODO [#A] [util] Revert buffer : keep current line position
