@@ -501,7 +501,7 @@
 (define-key diff-mode-map (kbd "M-3") 'hrs/split-window-right-and-switch)
 
 ;; other Window
-(global-set-key (kbd "M-o") 'wil-other-window)
+(global-set-key (kbd "M-o") 'other-window)
 (define-key diff-mode-map (kbd "M-o") 'other-window)
 (define-key ggtags-navigation-map (kbd "M-o") 'other-window) ;; Need to override ggtags map
 (global-set-key [(meta o)] 'other-window)
@@ -787,3 +787,5 @@
              (define-key term-raw-map (kbd "C-c RET") 'term-line-mode))))
 
 
+(global-set-key [f7] 'winner-undo)
+(global-set-key [C-f7] 'winner-redo)

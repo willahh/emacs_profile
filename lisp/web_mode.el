@@ -15,11 +15,10 @@
 ;; Update to use web-mode instead because most of .php files are melt
 ;; of html / php / css / js.
 (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
-
-
 (add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-mode))
 (add-to-list 'auto-mode-alist '("\\.jade\\'" . jade-mode))
 (add-to-list 'auto-mode-alist '("\\.as\\'" . actionscript-mode))
+(add-to-list 'auto-mode-alist '("\\.htaccess\\'" . conf-mode))
 
 (setq web-mode-enable-css-colorization t)
 (setq web-mode-enable-current-column-highlight nil) ; Update : L effet visuel n est pas reelement convaincant

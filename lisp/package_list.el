@@ -132,7 +132,8 @@
   ripgrep
   projectile-ripgrep
   flx-ido
-  darkroom))
+  darkroom
+  visual-regexp))
 
 (add-to-list 'load-path "~/.emacs.d/vendor/emacs-async")
 (add-to-list 'load-path "~/.emacs.d/vendor/emacs-textmate-0.1/textmate.el")

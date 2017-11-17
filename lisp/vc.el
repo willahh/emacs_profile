@@ -165,7 +165,5 @@ then `diff-jump-to-old-file' is also set, for the next invocations."
 ;; https://emacs.stackexchange.com/a/21336
 (add-hook 'ediff-prepare-buffer-hook #'show-all)
 
-
-
-
-
+;; Show refined hunks
+(set-default 'magit-diff-refine-hunk t)
