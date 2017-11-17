@@ -297,3 +297,11 @@ C
    [2017-11-16 Thu]
    [[file:~/www/project/arsia/goacrop/src/events.js::y:%20Utils.getYForOutput(goacrop.Main.cropper.getData().y),][file:~/www/project/arsia/goacrop/src/events.js::y: Utils.getYForOutput(goacrop.Main.cropper.getData().y),]]
 
+** TODO Faire un mode pour naviguer dans le html comme dans l'outil de debug de Chrome et la partie elements
+   [2017-11-16 Thu]
+   [[file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/production_crop2.php::</a>]]
+
+** TODO [web-mode] La double quote en attribut ne fonctionne pas bien
+   [2017-11-16 Thu]
+   [[file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/production_crop2.php::<li%20class%3D"btn%20btn-default"%20onclick%3D"goacrop.Events.on_zoomplus()%3B"%20title%3D"Init">][file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/production_crop2.php::<li class="btn btn-default" onclick="goacrop.Events.on_zoomplus();" title="Init">]]
+
