@@ -9,7 +9,7 @@
 ;; (setq-default line-spacing 2) ; Same line height as modern editor (VS Code)
 (setq-default line-spacing 1) ; Update to default value (switch font instead)
 
-;; Main background color
+
 (set-face-attribute 'default nil :background "#1a1c1d")
 
 ;; Current line
@@ -77,7 +77,8 @@
 ;; (set-face-attribute 'show-paren-match :foreground "#fff" :background "inherit")
 ;; (set-face-background 'show-paren-match "#2897f5")
 ;; (set-face-attribute 'show-paren-match-face nil :background "#2e4d67" :foreground "#fff")
-(set-face-attribute 'show-paren-match-face nil :background "#0d874c" :foreground "#ffffff" :weight 'ultra-bold)
+;; (set-face-attribute 'show-paren-match-face nil :background "#0d874c" :foreground "#ffffff" :weight 'ultra-bold)
+(set-face-attribute 'show-paren-match-face nil :background "#0d5787" :foreground "#ffffff" :weight 'ultra-bold)
 
 
 (set-face-attribute 'js2-error nil
@@ -254,7 +255,8 @@
 
 (custom-theme-set-faces
  'dracula
- '(region ((t (:background "#275f99" :foreground nil))))
+ ;; '(region ((t (:background "#275f99" :foreground nil))))
+ '(region ((t (:background "#203a5b" :foreground nil))))
  '(lazy-highlight ((t (:background "#4f5d66" :foreground nil :underline t))))
  '(js2-warning ((t (:background nil :underline (:color "#ff0000" :style wave)))))
  '(js2-error ((t (:background nil :underline (:color "#ff0000" :style wave)))))
