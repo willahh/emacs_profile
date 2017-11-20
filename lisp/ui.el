@@ -44,4 +44,5 @@
 (eval-after-load "emmet-mode" '(diminish 'emmet-mode))
 (eval-after-load "highlight-symbol" '(diminish 'highlight-symbol-mode))
 (eval-after-load "flycheck" '(diminish 'flycheck-mode))
+(eval-after-load "evil-snipe" '(diminish 'evil-snipe-mode))
 ;; (eval-after-load "arev" '(diminish 'auto-revert-mode))
