@@ -279,11 +279,11 @@ C
 ** TODO [#B] Il faudrait voir pour faire tourner 2 instances d emacs, 
    [2017-11-15 Wed]
 
-** TODO theme : Selection mettre un bleu plus foncé
+** DONE theme : Selection mettre un bleu plus foncé
    [2017-11-16 Thu]
    [[file:~/www/project/arsia/goacrop/src/events.js::y:%20Utils.getYForOutput(goacrop.Main.cropper.getData().y),][file:~/www/project/arsia/goacrop/src/events.js::y: Utils.getYForOutput(goacrop.Main.cropper.getData().y),]]
 
-** TODO Faire un mode pour naviguer dans le html comme dans l'outil de debug de Chrome et la partie elements
+** TODO [#C] Faire un mode pour naviguer dans le html comme dans l'outil de debug de Chrome et la partie elements
    [2017-11-16 Thu]
    [[file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/production_crop2.php::</a>]]
 
@@ -291,15 +291,22 @@ C
    [2017-11-16 Thu]
    [[file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/production_crop2.php::<li%20class%3D"btn%20btn-default"%20onclick%3D"goacrop.Events.on_zoomplus()%3B"%20title%3D"Init">][file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/production_crop2.php::<li class="btn btn-default" onclick="goacrop.Events.on_zoomplus();" title="Init">]]
 
-** TODO ALT+p ne fait plus de multi cursor move line up
    [2017-11-17 Fri]
    [[file:~/www/project/arsia/goacrop/src/utils.js:://%20x%200%20y%200%20a%200][file:~/www/project/arsia/goacrop/src/utils.js::// x 0 y 0 a 0]]
 
-** TODO Faire fonctionner projectile dans un nouveau buffer
+** DONE Faire fonctionner projectile dans un nouveau buffer
    [2017-11-17 Fri]
    [[file:~/www/project/arsia/goacrop/src/utils.js:://]]
 
 ** TODO SHIFT + ENTER -> Meme comportement que SHIFT+J
    [2017-11-17 Fri]
    [[file:~/www/project/arsia/goacrop/src/utils.js:://]]
+
+** DONE Theme : Match bracket bleu
+   [2017-11-16 Thu]
+   [[file:~/www/project/arsia/goacrop/src/events.js::y:%20Utils.getYForOutput(goacrop.Main.cropper.getData().y),][file:~/www/project/arsia/goacrop/src/events.js::y: Utils.getYForOutput(goacrop.Main.cropper.getData().y),]]
+
+** TODO [#A] Lorsque l'on quite le mode ediff - Les windows se placent n'importe comment
+   [2017-11-20 Mon]
+   [[file:~/org/etor.org::*3.1%20Corriger%20le%20sprite%20des%20boutons%20visible%20dans%20une%20fiche%20produit][3.1 Corriger le sprite des boutons visible dans une fiche produit]]
 

@@ -570,7 +570,8 @@ That is, a string used to represent it on the tab bar."
   (interactive)
 
   (select-frame (make-frame))
-  (funcall #'switch-to-buffer (generate-new-buffer "*new*"))
+  ;; (funcall #'switch-to-buffer (generate-new-buffer "*new*"))
+  (funcall #'switch-to-buffer (xah-new-empty-buffer))
   ;; (funcall #'switch-to-buffer (with-current-buffer (generate-new-buffer "*new*") (funcall fundamental-mode)))
   (wil-frame-center))
 
