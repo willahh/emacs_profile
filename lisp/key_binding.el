@@ -11,7 +11,15 @@
 (require 'magit)
 (require 'term)
 
-;; (global-set-key (kbd "s--") 'negative-argument)
+;; key-translation-madefine-key key-translation-map (kbd "ESC") (kbd "C-g"))
+
+
+;;; (define-key key-translation-map (kbd "C-z") (kbd "C-z")); (define-key key-translation-map (kbd "C-j") (kbd "RET"))
+;; (define-key key-translation-map (kbd "C-S-i") (kbd "<backtab>"))
+
+
+
+;; (global-set-key (kbd "s--") 'snegative-argument)
   
 (global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
@@ -37,8 +45,6 @@
 (define-key syslog-mode-map (kbd "C-v") 'scroll-up)
 
 (global-set-key (kbd "M-z") 'undo-tree-undo)
-(global-set-key [meta z] 'undo-tree-undo)
-
 (global-set-key [(meta shift z)] 'undo-tree-redo)
 
 ;; Update disable M-s for save, use default C-x C-sq
@@ -110,8 +116,6 @@
 ;; ---
 (define-key ivy-minibuffer-map (kbd "<escape>") 'minibuffer-keyboard-quit)
 (define-key ivy-minibuffer-map (kbd "C-h") 'delete-backward-char)
-(define-key ivy-minibuffer-map (kbd "C-z") 'backward-kill-word)
-(define-key org-mode-map (kbd "C-w") 'backward-kill-word)
 
 (use-package evil-mc
   :bind (:map evil-mc-key-map
@@ -202,7 +206,6 @@
 
 ;; New frame
 (global-set-key (kbd "M-N") 'wil-create-new-centered-frame)
-;; (define-key global-map (kbd "C-x k") 'kill-this-buffer) ; Update to C-z
 (define-key global-map (kbd "C-x C-r") 'revert-buffer-no-confirm)
 (global-set-key (kbd "C-x C-k") 'kill-region)
 
@@ -281,26 +284,39 @@
 (define-key global-map (kbd "<S-down-mouse-1>") 'mouse-save-then-kill)
 
 ;; Line operations
-(global-set-key (kbd "C-é") 'drag-stuff-down) ;; control+alt+j
-(global-set-key (kbd "C-z") 'backward-kill-word-or-region)
-(define-key helm-map (kbd "C-z") 'backward-kill-word-or-region)
-(define-key ido-buffer-completion-map (kbd "C-z") 'backward-kill-word-or-region)
+(global-set-key (kbd "C-é") 'drag-stuff-down) ;; control+alt+
 (global-set-key (kbd "C-h") 'backward-delete-char)
 (define-key lisp-mode-map (kbd "C-h") 'paredit-backward-delete)
 (define-key emacs-lisp-mode-map (kbd "C-h") 'paredit-backward-delete)
 (define-key clojure-mode-map (kbd "C-h") 'paredit-backward-delete)
 (define-key helm-map (kbd "C-h") 'paredit-backward-delete)
 
-(define-key company-active-map (kbd "C-w") 'backward-kill-word)
 (define-key company-active-map (kbd "C-h") 'paredit-backward-delete)
 (define-key company-active-map (kbd "<tab>") 'company-complete-selection)
-(define-key company-active-map (kbd "C-z") 'backward-kill-word-or-region)
 ;; (define-key company-active-map (kbd "C-n") 'company-select-next)
 ;; (define-key company-active-map (kbd "C-p") 'company-select-previous)
 ;; (define-key company-active-map (kbd "C-i") 'company-complete-selection)
 ;; (define-key company-active-map (kbd "C-c h") 'company-quickhelp--show)
 ;; (define-key company-active-map (kbd "C-j") 'newline) ;; Disable with reaffectation of new line function
-;; (define-key company-active-map (kbd "RET") 'newline) ;; Disable with reaffectation of new line function
+;; (define-key company-active-map (kbd "RET") 'newline) ;; Disable with reaffectation of new line 
+
+;; ;; Kill
+;; (global-set-key (kbd "C-z") 'whole-line-or-region-kill-region)
+;; (define-key evil-emacs-state-map (kbd "C-z") 'whole-line-or-region-kill-region)
+;; (define-key ivy-minibuffer-map (kbd "C-z") 'whole-line-or-region-kill-region)
+;; (define-key helm-map (kbd "C-z") 'whole-line-or-region-kill-region)
+;; (define-key ido-buffer-completion-map (kbd "C-z") 'whole-line-or-region-kill-region)
+;; (define-key company-active-map (kbd "C-z") 'whole-line-or-kill-gion)
+
+;; Kill
+(global-set-key (kbd "C-w") 'undo-tree-undo)
+(global-set-key (kbd "C-S-w") 'undo-tree-redo)
+
+;; kill
+(global-set-key (kbd "C-z") 'backward-kill-word-or-region)
+(define-key company-active-map (kbd "C-z") 'backward-kill-word-or-region)
+(define-key org-mode-map (kbd "C-z") 'backward-kill-word-or-region)
+(define-key evil-emacs-state-map (kbd "C-z") 'backward-kill-word-or-region)
 
 
 
@@ -362,8 +378,6 @@
 (global-set-key [(meta shift d)] 'wil-duplicate)
 (global-set-key (kbd "C-x C-d") 'wil-duplicate)
 
-(global-set-key [C-M-tab] 'other-window)
-(global-set-key [C-M-S-tab] 'previous-multiframe-window)
 
 (global-set-key [escape] 'evil-exit-emacs-state)
 
@@ -509,14 +523,15 @@
 (define-key diff-mode-map (kbd "M-3") 'hrs/split-window-right-and-switch)
 
 ;; other Window
+(global-set-key [C-M-tab] 'other-window)
+(global-set-key [C-M-S-tab] 'previous-multiframe-window)
 (global-set-key (kbd "M-o") 'other-window)
+;; (global-set-key [(meta o)] 'other-window)
 (define-key diff-mode-map (kbd "M-o") 'other-window)
 (define-key ggtags-navigation-map (kbd "M-o") 'other-window) ;; Need to override ggtags map
-(global-set-key [(meta o)] 'other-window)
 (define-key ibuffer-mode-map (kbd "M-o") 'other-window)
 
-;; No no no
-(global-set-key [(meta shift o)] 'previous-multiframe-window)
+(global-set-key (kbd "C-M-o") 'previous-multiframe-window)
 
 (define-key ggtags-navigation-map (kbd "M-p") 'highlight-symbol-next)
 (global-set-key (kbd "M-n") 'highlight-symbol-prev)
@@ -702,11 +717,6 @@
 ;; (global-set-key (kbd "M-g z") 'dumb-jump-go-prefer-external-other-window)
 ;; (global-set-key (kbd "M-g b") 'dumb-jump-back)
 
-;; key-translation-map
-;; (define-key key-translation-map (kbd "C-j") (kbd "RET"))
-(define-key key-translation-map (kbd "ESC") (kbd "C-g"))
-;; (define-key key-translation-map (kbd "C-S-i") (kbd "<backtab>"))
-
 (global-set-key (kbd "<M-backspace>") 'paredit-backward-kill-word)
 (global-set-key (kbd "<backspace>") 'delete-backward-char) ;; Override paredit-backward-kill-word behaviour for backspace
 (global-set-key [(meta shift /)] 'comment-or-uncomment-region-or-line)
@@ -732,11 +742,6 @@
 
 ;; ---------------- Markdown
 (define-key markdown-mode-map (kbd "C-M-i") 'markdown-shifttab)
-
-;; kill
-(define-key evil-emacs-state-map (kbd "C-z") 'whole-line-or-region-kill-region)
-(global-set-key (kbd "C-z") 'whole-line-or-region-kill-region)
-(global-set-key (kbd "C-w") 'backward-kill-word-or-region)
 
 ;; scroll
 (global-set-key (kbd "C-v") 'scroll-up-half)
