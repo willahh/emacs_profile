@@ -61,7 +61,7 @@
 (global-set-key (kbd "C-c j f m") 'toggle-frame-maximized)
 (global-set-key (kbd "C-c j f l") 'wil-frame-large)
 (global-set-key (kbd "C-c j f c") 'wil-frame-center)
-(wil-create-new-centered-frame)
+
 ;; -- Text operations
 ;; Copy operations
 (global-set-key (kbd "C-c j c w") '(copy-word))
@@ -112,7 +112,6 @@
 (define-key ivy-minibuffer-map (kbd "C-h") 'delete-backward-char)
 (define-key ivy-minibuffer-map (kbd "C-z") 'backward-kill-word)
 (define-key org-mode-map (kbd "C-w") 'backward-kill-word)
-(define-key company-active-map (kbd "C-w") 'backward-kill-word)
 
 (use-package evil-mc
   :bind (:map evil-mc-key-map
@@ -252,8 +251,8 @@
 (define-key org-mode-map (kbd "Ï") 'org-metadown) ; ALT+j
 
 ;; ----------------
-(define-key input-decode-map [?\C-m] [C-m])
-(define-key input-decode-map "\C-m" (kbd "<C-m>")) ; Needed
+;; (define-key input-decode-map [?\C-m] [C-m])
+;; (define-key input-decode-map "\C-m" (kbd "<C-m>")) ; Needed
 
 ;; ------ Multi cursor binding
 ;; Mouse
@@ -283,7 +282,6 @@
 
 ;; Line operations
 (global-set-key (kbd "C-é") 'drag-stuff-down) ;; control+alt+j
-(global-set-key (kbd "<C-S-return>") 'open-line-above)
 (global-set-key (kbd "C-z") 'backward-kill-word-or-region)
 (define-key helm-map (kbd "C-z") 'backward-kill-word-or-region)
 (define-key ido-buffer-completion-map (kbd "C-z") 'backward-kill-word-or-region)
@@ -293,22 +291,22 @@
 (define-key clojure-mode-map (kbd "C-h") 'paredit-backward-delete)
 (define-key helm-map (kbd "C-h") 'paredit-backward-delete)
 
+(define-key company-active-map (kbd "C-w") 'backward-kill-word)
 (define-key company-active-map (kbd "C-h") 'paredit-backward-delete)
 (define-key company-active-map (kbd "<tab>") 'company-complete-selection)
 (define-key company-active-map (kbd "C-z") 'backward-kill-word-or-region)
-(define-key company-active-map (kbd "C-n") 'company-select-next)
-(define-key company-active-map (kbd "C-p") 'company-select-previous)
-(define-key company-active-map (kbd "C-i") 'company-complete-selection)
-(define-key company-active-map (kbd "C-j") 'newline) ;; Disable with reaffectation of new line function
-(define-key company-active-map (kbd "RET") 'newline) ;; Disable with reaffectation of new line function
-(define-key company-active-map (kbd "C-c h") 'company-quickhelp--show)
+;; (define-key company-active-map (kbd "C-n") 'company-select-next)
+;; (define-key company-active-map (kbd "C-p") 'company-select-previous)
+;; (define-key company-active-map (kbd "C-i") 'company-complete-selection)
+;; (define-key company-active-map (kbd "C-c h") 'company-quickhelp--show)
+;; (define-key company-active-map (kbd "C-j") 'newline) ;; Disable with reaffectation of new line function
+;; (define-key company-active-map (kbd "RET") 'newline) ;; Disable with reaffectation of new line function
 
-(global-set-key (kbd "C-,") 'company-files)
+
 
 ;; yas-expand
-(global-set-key (kbd "C-,") 'yas-expand)
-(define-key iedit-mode-keymap (kbd "C-,") 'yas-expand)
-
+;; (global-set-key (kbd "C-,") 'yas-expand)
+;; (define-key iedit-mode-keymap (kbd "C-,") 'yas-expand)
 (define-key iedit-mode-keymap (kbd "C-h") 'paredit-backward-delete)
 
 (global-set-key (kbd "C-c j t") 'toggle-truncate-lines)
@@ -330,7 +328,6 @@
 
 ;; org
 (define-key org-mode-map (kbd "C-x <C-i>") 'helm-org-in-buffer-headings)
-(define-key org-mode-map (kbd "M-j") 'org-meta-return)
 
 ;; (global-set-key (kbd "C-c s a") 'ag)
 ;; (global-set-key (kbd "C-c s p") 'projectile-ag)
@@ -349,17 +346,17 @@
 ;; Update : Utilisation de la fonction new-line-dwin pour avoir une
 ;; ouverture de ligne intelligente si le caret est entre des {} () []
 
-(global-set-key (kbd "RET") 'reindent-then-newline-and-indent)
-(global-set-key (kbd "C-j") 'reindent-then-newline-and-indent)
-(global-set-key (kbd "RET") 'newline)
-(global-set-key (kbd "<RET>") 'newline)
-(global-set-key (kbd "C-j") 'newline)
-(define-key typescript-mode-map (kbd "M-j") 'c-indent-new-comment-line)
+;; (global-set-key (kbd "RET") 'reindent-then-newline-and-indent)
+;; (global-set-key (kbd "C-j") 'reindent-then-newline-and-indent)
+;; (global-set-key (kbd "RET") 'newline)
+;; (global-set-key (kbd "<RET>") 'newline)
+;; (global-set-key (kbd "C-j") 'newline)
+;; (define-key typescript-mode-map (kbd "M-j") 'c-indent-new-comment-line)
 (global-set-key (kbd "C-s-i") 'company-complete)
 
 (define-key prog-mode-map (kbd "RET") 'new-line-dwim)
-(define-key prog-mode-map (kbd "<RET>") 'new-line-dwim)
-(global-set-key (kbd "<RET>") 'newline)
+;; (define-key prog-mode-map (kbd "<RET>") 'new-line-dwim)
+;; (global-set-key (kbd "<RET>") 'newline)
 
 ;;
 (global-set-key [(meta shift d)] 'wil-duplicate)
@@ -452,7 +449,12 @@
 (global-set-key (kbd "C-x M-m") 'shell)
 
 ;; expand-region
-(global-set-key (kbd "<C-m>") 'er/expand-region)
+;; (global-set-key (kbd "<C-m>") 'er/expand-region)
+;; (global-set-key (kbd "C-j") 'er/expand-region)
+;; (define-key paredit-mode-map (kbd "C-j") 'er/expand-region)
+;; (define-key isearch-mode-map (kbd "C-j") 'er/expand-region)
+;; (define-key emmet-mode-keymap (kbd "C-j") 'er/expand-region)
+(global-set-key (kbd "C-,") 'er/expand-region)
 (global-set-key (kbd "M-L") 'er/contract-region)
 (global-set-key (kbd "M-L") 'mc/mark-all-words-like-this) ; Like in VS Code
 (global-set-key (kbd "C-M-l") 'mark-sexp)
@@ -469,23 +471,29 @@
 (define-key magit-status-mode-map (kbd "M-w") 'kill-ring-save)
 (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
 
+
 ;; open line above / below
 (global-set-key (kbd "C-o") 'smart-open-line-above)
 (global-set-key (kbd "C-M-o") 'open-line-below)
 (define-key php-mode-map (kbd "C-M-o") 'open-line-below)
 (define-key org-mode-map (kbd "C-M-o") 'wil-org-open-line-below)
-
-(define-key org-mode-map [(control shift j)] 'wil-org-open-line-above)
+;; (define-key org-mode-map [(control shift j)] 'wil-org-open-line-above)
+;; (global-set-key (kbd "<C-S-return>") 'open-line-above)
+;; (define-key company-active-map (kbd "C-j") 'newline) ;; Disable with reaffectation of new line function
+;; (define-key company-active-map (kbd "RET") 'newline) ;; Disable with reaffectation of new line function
+;; (global-set-key (kbd "<C-S-return>") 'open-line-above)
+;; (define-key org-mode-map (kbd "M-j") 'org-meta-return)
+;; (define-key org-mode-map (kbd "M-j") 'org-meta-return)
 
 ;; Emmet
 (global-set-key [control command shift j] 'emmet-expand-line)
 (define-key web-mode-map [control command shift j] 'emmet-expand-line)
 (define-key web-mode-map (kbd "C-M-S-j") 'emmet-expand-line)
 
-(define-key global-map (kbd "C-x RET") 'dired-jump)
-(define-key php-mode-map (kbd "C-x C-j") 'dired-jump)
-(define-key web-mode-map (kbd "C-x C-j") 'dired-jump)
-(define-key nxml-mode-map "\C-x\C-j" 'dired-jump)
+;; (define-key global-map (kbd "C-x RET") 'dired-jump)
+;; (define-key php-mode-map (kbd "C-x C-j") 'dired-jump)
+;; (define-key web-mode-map (kbd "C-x C-j") 'dired-jump)
+;; (define-key nxml-mode-map "\C-x\C-j" 'dired-jump)
 
 ;; Azerty binding equivalent chars to 0-9 on the upper row keyboard
 (global-set-key (kbd "M-à") 'delete-window) ;; M-0
@@ -523,17 +531,17 @@
 (define-key paredit-mode-map (kbd "<delete>") 'wil-delete-backspace)
 
 ;;
-(define-key global-map (kbd "C-x RET") 'dired-jump)
-(define-key web-mode-map (kbd "C-x RET") 'dired-jump)
+;; (define-key global-map (kbd "C-x RET") 'dired-jump)
+;; (define-key web-mode-map (kbd "C-x RET") 'dired-jump)
 
 ;; Find file at point
 ;; Update to use find-file-in-project-by-selected
 (global-set-key (kbd "C->") 'ffap)
 
 ;;
-(global-set-key (kbd "C-c C-M-i") 'company-files)
-(global-set-key (kbd "C-c C-i") 'company-dabbrev)
-(global-set-key (kbd "C-c C-M-l") 'mark-defun)
+;; (global-set-key (kbd "C-c C-M-i") 'company-files)
+;; (global-set-key (kbd "C-c C-i") 'company-dabbrev)
+;; (global-set-key (kbd "C-c C-M-l") 'mark-defun)
 
 (global-set-key (kbd "C-.") 'find-file-in-project-by-selected)
 (define-key php-mode-map [(control .)] 'find-file-in-project-by-selected)
@@ -546,8 +554,8 @@
 (define-key php-mode-map (kbd "C-:") "\C-e;")
 (define-key web-mode-map (kbd "C-:") "\C-e;")
 
-(global-set-key (kbd "C-c RET") 'wlh-join-lines)
-(define-key web-mode-map (kbd "C-c RET") 'wlh-join-lines)
+;; (global-set-key (kbd "C-c RET") 'wlh-join-lines)
+;; (define-key web-mode-map (kbd "C-c RET") 'wlh-join-lines)
 
 (defun wil-web-mode-kill-sexp ()
   (interactive)
@@ -695,9 +703,9 @@
 ;; (global-set-key (kbd "M-g b") 'dumb-jump-back)
 
 ;; key-translation-map
-(define-key key-translation-map (kbd "C-j") (kbd "RET"))
+;; (define-key key-translation-map (kbd "C-j") (kbd "RET"))
 (define-key key-translation-map (kbd "ESC") (kbd "C-g"))
-(define-key key-translation-map (kbd "C-S-i") (kbd "<backtab>"))
+;; (define-key key-translation-map (kbd "C-S-i") (kbd "<backtab>"))
 
 (global-set-key (kbd "<M-backspace>") 'paredit-backward-kill-word)
 (global-set-key (kbd "<backspace>") 'delete-backward-char) ;; Override paredit-backward-kill-word behaviour for backspace
@@ -781,10 +789,10 @@
 
 
 ;; (define-key term-mode-map (kbd "C-c RET") 'term-line-mode)
-(add-hook 'term-mode-hook
-          (function
-           (lambda ()
-             (define-key term-raw-map (kbd "C-c RET") 'term-line-mode))))
+;; (add-hook 'term-mode-hook
+;;           (function
+;;            (lambda ()
+;;              (define-key term-raw-map (kbd "C-c RET") 'term-line-mode))))
 
 
 (global-set-key [f7] 'winner-undo)
