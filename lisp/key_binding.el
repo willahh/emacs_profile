@@ -61,7 +61,7 @@
 (global-set-key (kbd "C-c j f m") 'toggle-frame-maximized)
 (global-set-key (kbd "C-c j f l") 'wil-frame-large)
 (global-set-key (kbd "C-c j f c") 'wil-frame-center)
-(wil-create-new-centered-frame)
+
 ;; -- Text operations
 ;; Copy operations
 (global-set-key (kbd "C-c j c w") '(copy-word))
