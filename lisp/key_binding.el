@@ -12,7 +12,7 @@
 (require 'term)
 
 ;; (global-set-key (kbd "s--") 'negative-argument)
-
+  
 (global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
 (global-set-key (kbd "M-g") 'goto-line) ;; https://github.com/skeeto/.emacs.d/blob/master/init.el
