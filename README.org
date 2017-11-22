@@ -333,7 +333,7 @@ pandoc -o README.md README.org
   - defaults write -g KeyRepeat 1 # Cette valeur ne semble prendre en compte
     qu'un entier et non pas un float
   - defaults write -g KeyRepeat -float 1.6
-  - defaults write -g KeyRepeat -float 1.2m
+  - defaults write -g KeyRepeat -float 1.2
 
 
 
