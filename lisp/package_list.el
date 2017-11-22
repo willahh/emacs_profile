@@ -21,6 +21,7 @@
   dtrt-indent
   image-dired+
   imenu-list
+  ivy-hydra
   crux
   ;; volatile-highlights ; Update : desactivation car trop distrayant, et pas 
   ov ; Utlise pour quelques fonctions utils de prelude
