@@ -71,7 +71,7 @@
   auto-complete
   highlight-symbol
   autopair
-  smartparens
+  ;; smartparens
   pdf-tools
   dash
   dsvn
@@ -171,6 +171,7 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/vkill")
 (add-to-list 'load-path "~/.emacs.d/vendor/ibuffer-vc")
 (add-to-list 'load-path "~/.emacs.d/vendor/better-breadcrumbs")
+(add-to-list 'load-path "~/.emacs.d/vendor/smartparens")
 (load "~/.emacs.d/vendor/smartcomment/smartcomment.elc")
 ;; (add-to-list 'load-path "~/.emacs.d/vendor/xah-css-mode")
 
