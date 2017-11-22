@@ -280,3 +280,6 @@ C
    [2017-11-21 Tue]
    [[file:~/www/project/arsia/arsia_standard_310/mediadata/src/app/module/sidePanel/treePanel/default/treePanelDefault.js::'id':%20node.id,][file:~/www/project/arsia/arsia_standard_310/mediadata/src/app/module/sidePanel/treePanel/default/treePanelDefault.js::'id': node.id,]]
 
+** TODO ALT + SHIFT + P devrait déclencher multi cursor top
+   [2017-11-21 Tue]
+   [[file:~/www/project/arsia/arsia_3.2.x_standard_crop/dev/common/layout/css/common.css::background:%20#000%3B][file:~/www/project/arsia/arsia_3.2.x_standard_crop/dev/common/layout/css/common.css::background: #000;]]
