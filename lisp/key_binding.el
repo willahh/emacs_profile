@@ -805,3 +805,7 @@
 
 (global-set-key [f7] 'winner-undo)
 (global-set-key [C-f7] 'winner-redo)
+
+;; C-x shortcuts from oremacs
+(global-set-key (kbd "C-x l") 'counsel-locate)
+(global-set-key (kbd "C-x C-l") 'locate)
