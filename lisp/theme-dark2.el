@@ -3,6 +3,7 @@
 (require 'scroll-bar)
 (require 'faces)
 (require 'eshell)
+(require 'magit)
 
 (load-theme 'dracula t)
 
@@ -41,34 +42,34 @@
 ;; (set-face-background 'mode-line-buffer-id "#000")
 ;; (set-face-background 'mode-line-buffer-id "#000")
 
-(defun powerline-theme-emacs()
-  (set-face-attribute 'mode-line nil
-                      :foreground "#fff"
-                      :background "#000"
-                      :box nil))
+;; (defun powerline-theme-emacs()
+;;   (set-face-attribute 'mode-line nil
+;;                       :foreground "#fff"
+;;                       :background "#000"
+;;                       :box nil))
 
-(defun powerline-theme-visual()
-  (set-face-attribute 'mode-line nil
-                      :foreground "#000"
-                      :background "#ffba00"
-                      :box nil))
+;; (defun powerline-theme-visual()
+;;   (set-face-attribute 'mode-line nil
+;;                       :foreground "#000"
+;;                       :background "#ffba00"
+;;                       :box nil))
 
-(defun powerline-theme-insert()
-  (set-face-attribute 'mode-line nil
-                      :foreground "#000"
-                      :background "red"
-                      :box nil))
+;; (defun powerline-theme-insert()
+;;   (set-face-attribute 'mode-line nil
+;;                       :foreground "#000"
+;;                       :background "red"
+;;                       :box nil))
 
-(defun powerline-theme-normal()
-  (set-face-attribute 'mode-line nil
-                      :foreground "#000"
-                      :background "#98cf15"
-                      :box nil))
+;; (defun powerline-theme-normal()
+;;   (set-face-attribute 'mode-line nil
+;;                       :foreground "#000"
+;;                       :background "#98cf15"
+;;                       :box nil))
 
-(add-hook 'evil-normal-state-entry-hook 'powerline-theme-normal)
-(add-hook 'evil-visual-state-entry-hook 'powerline-theme-visual)
-(add-hook 'evil-insert-state-entry-hook 'powerline-theme-insert)
-(add-hook 'evil-emacs-state-entry-hook 'powerline-theme-emacs)
+;; (add-hook 'evil-normal-state-entry-hook 'powerline-theme-normal)
+;; (add-hook 'evil-visual-state-entry-hook 'powerline-theme-visual)
+;; (add-hook 'evil-insert-state-entry-hook 'powerline-theme-insert)
+;; (add-hook 'evil-emacs-state-entry-hook 'powerline-theme-emacs)
 
 ;; (set-face-background 'show-paren-match "#9a00ff")
 ;; (set-face-background 'show-paren-match "#fff")
@@ -113,10 +114,18 @@
 (set-face-attribute 'window-divider-last-pixel nil :foreground "#545454")
 ;; (set-window-margins nil 4)
 (set-window-margins nil 0)
+(wil-web-mode-kill-sexp)
 
-(add-hook 'nlinum-mode (lambda ()
-                         (setq nlinum-format "%4d \u2502")
-                         (set-face-attribute 'linum nil :foreground "#4a4a4a" :background"#1a1c1d")))
+(defun wlh/linum-hook ()
+  (setq nlinum-format "%6d \u2502")
+  (set-face-attribute 'linum nil :foreground "#4a4a4a" :background"#1a1c1d"))
+
+(add-hook 'php-mode-hook 'wlh/linum-hook)
+(add-hook 'web-mode-hook 'wlh/linum-hook)
+
+;; La partie du haut ne fonctionne pas 
+;; (set-face-attribute 'linum nil :foreground "#4a4a4a" :background"#1a1c1d")
+
 
 ;; ------- Font
 (set-frame-font "Office Code Pro:antialias=1")
@@ -266,4 +275,12 @@
  '(isearch-lazy-highlight ((t (:background "#4f5d66" :foreground "#fff"))))
  '(isearch-lazy-highlight-face ((t (:background "#ffe400" :foreground "#fff"))))
  '(font-lock-comment-face ((t (:foreground "#636465"))))
- '(set-face-attribute 'link nil :foreground nil))
+ '(set-face-attribute 'link nil :foreground nil)
+ '(set-face-attribute 'link-visited nil :foreground nil))
+
+(defun wlh/prog-mode-hook-link ()
+  (set-face-attribute 'link nil :foreground nil))
+
+(add-hook 'prog-mode-hook 'wlh/prog-mode-hook-link)
+(add-hook 'org-mode-hook 'wlh/prog-mode-hook-link)
+

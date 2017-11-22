@@ -61,7 +61,7 @@
 (global-set-key (kbd "C-c j f m") 'toggle-frame-maximized)
 (global-set-key (kbd "C-c j f l") 'wil-frame-large)
 (global-set-key (kbd "C-c j f c") 'wil-frame-center)
-(wil-create-new-centered-frame)
+
 ;; -- Text operations
 ;; Copy operations
 (global-set-key (kbd "C-c j c w") '(copy-word))
@@ -556,8 +556,6 @@
         ((equal (web-mode-language-at-pos) "php") (paredit-kill))
         ((equal (web-mode-language-at-pos) "css") (paredit-kill))))
 
-
-
 (define-key web-mode-map (kbd "C-k") 'wil-web-mode-kill-sexp)
 
 ;; PDF
@@ -608,11 +606,17 @@
 (global-set-key (kbd "C-s-b") 'ivy-switch-buffer)
 (global-set-key (kbd "s-k") 'fixup-whitespace)
 
+;; ;; Comment
+;; (global-set-key (kbd "s-/") 'smart-comment)
+;; (global-set-key (kbd "M-/") 'smart-comment)
+;; (global-set-key (kbd "M-;") 'smart-comment)
+;; (define-key paredit-mode-map (kbd "M-;") 'smart-comment)
+
 ;; Comment
-(global-set-key (kbd "s-/") 'smart-comment)
-(global-set-key (kbd "M-/") 'smart-comment)
-(global-set-key (kbd "M-;") 'smart-comment)
-(define-key paredit-mode-map (kbd "M-;") 'smart-comment)
+(global-set-key (kbd "s-/") 'comment-line)
+(global-set-key (kbd "M-/") 'comment-line)
+(global-set-key (kbd "M-;") 'comment-line)
+(define-key paredit-mode-map (kbd "M-;") 'comment-line)
 
 ;; Kill
 (global-set-key (kbd "s-k") 'kill-paragraph)
@@ -789,3 +793,6 @@
 
 (global-set-key [f7] 'winner-undo)
 (global-set-key [C-f7] 'winner-redo)
+
+(global-set-key (kbd "<end>") 'end-of-buffer)
+(global-set-key (kbd "<home>") 'beginning-of-buffer)

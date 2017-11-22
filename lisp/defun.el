@@ -968,8 +968,7 @@ the visible part of the current buffer following point. "
 (defun wil-vc-ediff ()
   (interactive)
   (window-configuration-to-register :wil2)
-  (vc-ediff nil)
-  )
+  (vc-ediff nil))
 
 (defun wil-vc-ediff-quit ()
   (interactive)

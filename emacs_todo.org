@@ -80,84 +80,27 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 C
 * Tasks
   :VISIBILITY: content
-** DONE [#A] web mode update syntax word pour ne pas sélectionner le $ dans un mot
-   [2017-11-15 Wed]
-   [[file:~/www/project/arsia/arsia_standard_310/dev/common/include/process/eletter/EletterHelper.class.php::$this->m_oLogger->debug('-->%20checkAndCleanLinksForCreation(document)')%3B%0D][file:~/www/project/arsia/arsia_standard_310/dev/common/include/process/eletter/EletterHelper.class.php::$this->m_oLogger->debug('--> checkAndCleanLinksForCreation(document)');]]
+** TODO [#A] Il faut initialiser les divider a visible au lancement
+   [2017-11-14 Tue]
+   [[file:~/www/project/rb_siteweb/rb_siteweb_1.4/resources/module/mag_list/js/mag_list.js::*]]
 
-** DONE [#A] Ajouter de la marge lors d'un goto d une ligne non visible a l'écran
-   [2017-11-16 Thu]
-   [[file:~/www/project/arsia/goacrop/src/main.js::goacrop.Main.cropper.scaleX(window.data.height%20/%20250)%3B][file:~/www/project/arsia/goacrop/src/main.js::goacrop.Main.cropper.scaleX(window.data.height / 250);]]
-
-** DONE [#A] Activer le highlight en mode php
-** DONE [#A] [js2 mode] Voir pour avoir une ouverture plus rapide, c'esst surement du au mode TIDE
-** DONE [#A] [PHP Mode] & [js2-mode] : Double clic sur un mot avec un $ -----> Le $ n'est pas sélectionné
-   [2017-11-10 Fri]
-   [[file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/production_crop2.php::$data%5B'imageIdx'%5D%20%3D%20$iWidth%3B][file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/production_crop2.php::$data['imageIdx'] = $iWidth;]]
-** TODO [#A] [swoop] C-w ne fonctionne pas 
-   SCHEDULED: <2017-11-25 Sat>
-** TODO [#A] [helm] [mini-buffer] Ajouter la possibilité de faire du M-v dans le mini-buffer
-   SCHEDULED: <2017-11-30 Thu>
-** TODO [#A] web-mode single quote dans commentaire : Ne pas auto fermer la quote lorsque l'on est dans un commentaire
-   [2017-10-23 Mon]
-   [[file:~/www/project/arsia/goacrop/src/main.js:://%20Pas%20de%20traitement%20particulier,%20l'image][file:~/www/project/arsia/goacrop/src/main.js::// Pas de traitement particulier, l'image]]
-*
-** DONE [#A] Faire fonctionner la custom theme dark pour org mode
-    [2017-10-30 Mon]
-    [[file:~/.emacs.d/lisp/theme-dark2.el]]
-
-** TODO [#A] [URGENT] wdired ne fonctionne plus
+** TODO [#A] Les fichiers flatplan/index.php et lang fr sont de nouveau lent en web-mode
+   La faute entre autre à projectile, mode-line ne ralenti pas tant que ça
    [2017-11-13 Mon]
-   [[file:~/www/temp/.png]]
+   [[file:~/.emacs.d/emacs_todo.org::*%5Bprojectile%20find%20file%5D%20Auto%20centrer%20la%20ligne%20une%20fois%20le%20goto%20dans%20le%20fichier][{projectile find file} Auto centrer la ligne une fois le goto dans le fichier]]
+   
+** TODO [#A] Disable company mode auto -> Trigger it only by key binding
+   [2017-11-13 Mon]
+   [[file:~/www/project/easy3p/easy3p_3.2_lot2/dev/module/flatplan/js/view/conception/popup/Refine.js::{action:%20'close',%20text:%20'',%20cls:%20'closeButton',%20iconCls:%20'ico-close-24',%20tooltip:%20getTrad('doClose')}][file:~/www/project/easy3p/easy3p_3.2_lot2/dev/module/flatplan/js/view/conception/popup/Refine.js::{action: 'close', text: '', cls: 'closeButton', iconCls: 'ico-close-24', tooltip: getTrad('doClose')}]]
 
-** TODO [#A] [counsel-find-file] [mini-buffer] Ajouter un bind C-k pour supprimer tout le texte
-** TODO [#A] [vc-diff mode] Voir si il est possible de lancer des commandes de type ediff
-       Depuis  le vc-diff
-** TODO [#A] Autres tâches à mettre au format todo
-** TODO [#A] [css-mode] Virer company dabbrev de css mode
-** DONE Associer les fichiers .htaccess au mode conf-mode
-** TODO [#C] [dired] Rename file : Possibilité de préciser un chemin contenant des dossiers
-      N'existant pas, ces dossier seront créés automatiquement à la validation
-** TODO [#C] Ajouter des bind system sur C-h et C-w C-w https://blog.sensible.io/2012/10/19/mac-os-x-emacs-style-keybindings-everywhere.html
-  - [ ] C-j new line
-  - [ ] C-w delete back word
-  - [ ] M-b back word
-** TODO [#C] Open file from system in new emacs frame (Right click open in)
-** TODO [#C] [ivy] [mini buffer] Add C-l keybinding
-** TODO [#C] [ivy] - Highlight current line plus visible
-** TODO [#C] [php-mode] [ac-php] [company] La boite d'information supplémentaire ne contient pas les php doc
-** TODO [#C] [php-mode] Voir pour implementer quick type hierarchy
-** TODO [#C] [php-mode] Saisie de /** + ENTER -> Creation d un php doc pre rempli
-** TODO [#C] [flycheck] : Mieux distinguer la ligne en erreur
-** TODO [#C] [web-mode] [javascript] [company] Add javascript keywords to company backend
-** TODO [#C] [refactor] emacs.d conf a ranger, voir modele suivant : https://github.com/purcell/emacs.d
-** TODO [#C] Activer les url cliquable dans les differents modes
-** TODO [#C] [ivy] [mini buffer] CTRL+l to back up
-** TODO [#C] [ivy] : Ne pas mettre les fichiers .svn dans la liste
-** TODO [#C] [plugin] [change inner] Ajoute rl'option Change Inner Tag
-** TODO [#A] [vc-dir] Faire une fonction pour activer un vc-version-diff avec les paramètres older revision : "base", newer revision : "head"
+** TODO [#A] Liens -> Ne pas faire de style en rollover, ne pas changer la couleur du texte (violet) -> Laisser uniquement le surlignage
+   [2017-11-10 Fri]
+   [[file:~/www/project/arsia/goacrop/example/production_crop_update.php::$crop_url%20%3D%20'http://192.168.0.26/project/arsia/goacrop/lib/sygesp_croptosize/dev/goacroptosize.xml.php?ZoImIdx%3D3'%3B][file:~/www/project/arsia/goacrop/example/production_crop_update.php::$crop_url = 'http://192.168.0.26/project/arsia/goacrop/lib/sygesp_croptosize/dev/goacroptosize.xml.php?ZoImIdx=3';]]
 
-** TODO [#A] [util] Revert buffer : keep current line position
-** TODO [#A] Ajouter une méthode copy file name pour retourner uniquement le nom du fichier
-  - La fonction copy-file-name-to-clipbord est present, mais elle retourne le chemin complet
-    Il faudrait garder que la derniere partie apres le /
-** TODO [#A] [vc-dir] delete-file dont prompt for path, kill buffer
-** DONE [#A] ag search result buffer : highlight search words
-** TODO [#A] Fonction get file name to clipboard (très utilisé)
-** TODO [#A] Don't prompt for delete recursivly (code available in prelude)
-  - [ ] Show current mode in color
-  - [ ] Show current VC system used
-  - [ ] Show current encoding
-** TODO [#A] Mini buffer : Ne pas afficher de scrollbar
-** TODO [#A] Ajouter un bind ALT + arrow up / down sur drags
-** TODO [#A] [helm] Plugin helm utisable avec la souris
-** TODO [#A] Faire fonctionner fengyuanchen/cropper, les fichiers .babelrc, .editorconfig (déjà le cas en principe), .eslintrc
-   [2017-09-20 Wed]
-** TODO [#A] Definir tous les fichiers .php dans un dossier "process" pour être en mode php
-   [2017-11-08 Wed]
-   [[file:~/www/project/arsia/arsia_standard_310/dev/common/include/process/mediadata/MediaDataHelper.class.php::public%20function%20getMediaDataButton($p_sIdImg,%20$p_sIdHiddenField,%20$p_sImagePath%20%3D%20'')%0D][file:~/www/project/arsia/arsia_standard_310/dev/common/include/process/mediadata/MediaDataHelper.class.php::public function getMediaDataButton($p_sIdImg, $p_sIdHiddenField, $p_sImagePath = '')]]
-** DONE [#A] Emacs - La couleur de recherche normal et highlight n est pas bonne
-   [2017-11-08 Wed]
-   [[file:~/www/project/easy3p/easy3p_3.2_lot2/dev/layout/sass/_module.scss::height:%2016px%3B][file:~/www/project/easy3p/easy3p_3.2_lot2/dev/layout/sass/_module.scss::height: 16px;]]
+** TODO [#A] core.css - On se paye un warning de css flycheck too many errors 
+   [2017-11-10 Fri]
+   [[file:~/www/project/arsia/arsia_standard_310/dev/common/layout/css/core.css::/*-------------------------------------------------------------]]
+
 ** TODO [#A] Voir pour régler définitivement le "problème" des retours chariots :
    Si des caractères ^M sont visibles dans un fichier, il faut voir pour
    s'adapter à ce comportement.
@@ -173,15 +116,42 @@ C
    [2017-11-09 Thu]
    [[file:~/www/project/arsia/arsia_standard_310/dev/data2print/admin/module/affectation_gabarit/js/affectationTemplateManager.js::dropLeft.onDragOut%20%3D%20function(p_oDragSource,%20p_eEvent,%20p_oData)%20{][file:~/www/project/arsia/arsia_standard_310/dev/data2print/admin/module/affectation_gabarit/js/affectationTemplateManager.js::dropLeft.onDragOut = function(p_oDragSource, p_eEvent, p_oData) {]]
 
-** TODO [#A] core.css - On se paye un warning de css flycheck too many errors 
-   [2017-11-10 Fri]
-   [[file:~/www/project/arsia/arsia_standard_310/dev/common/layout/css/core.css::/*-------------------------------------------------------------]]
+** TODO [#A] Definir tous les fichiers .php dans un dossier "process" pour être en mode php
+   [2017-11-08 Wed]
+   [[file:~/www/project/arsia/arsia_standard_310/dev/common/include/process/mediadata/MediaDataHelper.class.php::public%20function%20getMediaDataButton($p_sIdImg,%20$p_sIdHiddenField,%20$p_sImagePath%20%3D%20'')%0D][file:~/www/project/arsia/arsia_standard_310/dev/common/include/process/mediadata/MediaDataHelper.class.php::public function getMediaDataButton($p_sIdImg, $p_sIdHiddenField, $p_sImagePath = '')]]
+** TODO [#A] Faire fonctionner fengyuanchen/cropper, les fichiers .babelrc, .editorconfig (déjà le cas en principe), .eslintrc
+   [2017-09-20 Wed]
+** TODO [#A] [helm] Plugin helm utisable avec la souris
+** DONE [#A] Ajouter un bind ALT + arrow up / down sur drags
+** TODO [#A] Mini buffer : Ne pas afficher de scrollbar
+** DONE [#A] Don't prompt for delete recursivly (code available in prelude)
+  - [ ] Show current mode in color
+  - [ ] Show current VC system used
+  - [ ] Show current encoding
+** TODO [#A] Fonction get file name to clipboard (très utilisé)
+** TODO [#A] [vc-dir] delete-file dont prompt for path, kill buffer
+** TODO [#A] Ajouter une méthode copy file name pour retourner uniquement le nom du fichier
+  - La fonction copy-file-name-to-clipbord est present, mais elle retourne le chemin complet
+    Il faudrait garder que la derniere partie apres le /
+** DONE [#A] [util] Revert buffer : keep current line position
+** TODO [#A] [vc-dir] Faire une fonction pour activer un vc-version-diff avec les paramètres older revision : "base", newer revision : "head"
 
-** TODO [#A] Liens -> Ne pas faire de style en rollover, ne pas changer la couleur du texte (violet) -> Laisser uniquement le surlignage
-   [2017-11-10 Fri]
-   [[file:~/www/project/arsia/goacrop/example/production_crop_update.php::$crop_url%20%3D%20'http://192.168.0.26/project/arsia/goacrop/lib/sygesp_croptosize/dev/goacroptosize.xml.php?ZoImIdx%3D3'%3B][file:~/www/project/arsia/goacrop/example/production_crop_update.php::$crop_url = 'http://192.168.0.26/project/arsia/goacrop/lib/sygesp_croptosize/dev/goacroptosize.xml.php?ZoImIdx=3';]]
+** TODO [#A] [web-mode] La double quote en attribut ne fonctionne pas bien
+   [2017-11-16 Thu]
+   [[file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/production_crop2.php::<li%20class%3D"btn%20btn-default"%20onclick%3D"goacrop.Events.on_zoomplus()%3B"%20title%3D"Init">][file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/production_crop2.php::<li class="btn btn-default" onclick="goacrop.Events.on_zoomplus();" title="Init">]]
 
-** TODO [#A] URGENT -> PHP-MODE -> Les quotes ( ) { } [ ] ne fonctionnent pas comme en web-mode
+   [2017-11-17 Fri]
+   [[file:~/www/project/arsia/goacrop/src/utils.js:://%20x%200%20y%200%20a%200][file:~/www/project/arsia/goacrop/src/utils.js::// x 0 y 0 a 0]]
+
+** TODO [#A] SHIFT + ENTER -> Meme comportement que SHIFT+J
+   [2017-11-17 Fri]
+   [[file:~/www/project/arsia/goacrop/src/utils.js:://]]
+
+** TODO [#A] Lorsque l'on quite le mode ediff - Les windows se placent n'importe comment
+   [2017-11-20 Mon]
+   [[file:~/org/etor.org::*3.1%20Corriger%20le%20sprite%20des%20boutons%20visible%20dans%20une%20fiche%20produit][3.1 Corriger le sprite des boutons visible dans une fiche produit]]
+
+** TODO [#A] [php-mode] URGENT -> PHP-MODE -> Les quotes ( ) { } [ ] ne fonctionnent pas comme en web-mode
    [2017-11-10 Fri]
    [[file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/production_crop2.php::(]]
 
@@ -208,18 +178,40 @@ C
    [2017-11-13 Mon]
    [[file:~/www/project/easy3p/easy3p_3.2_lot2/dev/module/flatplan/ajax/conception/pageListInfo.php::$asAssign%5B'canDo'%5D%5B'pageXToPageY'%5D%20%3D%20RightHelper::getInstance()->canDoActionForFlatplan(RightActionConstant::ASSIGN_CATEGORY_MOVE_PAGEX_TO_PAGEY,%20$iFPPrIdx)%3B][file:~/www/project/easy3p/easy3p_3.2_lot2/dev/module/flatplan/ajax/conception/pageListInfo.php::$asAssign['canDo']['pageXToPageY'] = RightHelper::getInstance()->canDoActionForFlatplan(RightActionConstant::ASSIGN_CATEGORY_MOVE_PAGEX_TO_PAGEY, $iFPPrIdx);]]
 
-** TODO [#A] Disable company mode auto -> Trigger it only by key binding
+** TODO [#A] [swoop] C-w ne fonctionne pas 
+   SCHEDULED: <2017-11-25 Sat>
+** TODO [#A] [helm] [mini-buffer] Ajouter la possibilité de faire du M-v dans le mini-buffer
+   SCHEDULED: <2017-11-30 Thu>
+** TODO [#A] web-mode single quote dans commentaire : Ne pas auto fermer la quote lorsque l'on est dans un commentaire
+   [2017-10-23 Mon]
+   [[file:~/www/project/arsia/goacrop/src/main.js:://%20Pas%20de%20traitement%20particulier,%20l'image][file:~/www/project/arsia/goacrop/src/main.js::// Pas de traitement particulier, l'image]]
+*
+** TODO [#A] [URGENT] wdired ne fonctionne plus
    [2017-11-13 Mon]
-   [[file:~/www/project/easy3p/easy3p_3.2_lot2/dev/module/flatplan/js/view/conception/popup/Refine.js::{action:%20'close',%20text:%20'',%20cls:%20'closeButton',%20iconCls:%20'ico-close-24',%20tooltip:%20getTrad('doClose')}][file:~/www/project/easy3p/easy3p_3.2_lot2/dev/module/flatplan/js/view/conception/popup/Refine.js::{action: 'close', text: '', cls: 'closeButton', iconCls: 'ico-close-24', tooltip: getTrad('doClose')}]]
+   [[file:~/www/temp/.png]]
 
-** TODO [#A] Les fichiers flatplan/index.php et lang fr sont de nouveau lent en web-mode
-   [2017-11-13 Mon]
-   [[file:~/.emacs.d/emacs_todo.org::*%5Bprojectile%20find%20file%5D%20Auto%20centrer%20la%20ligne%20une%20fois%20le%20goto%20dans%20le%20fichier][{projectile find file} Auto centrer la ligne une fois le goto dans le fichier]]
-
-** TODO [#A] Il faut initialiser les divider a visible au lancement
-   [2017-11-14 Tue]
-   [[file:~/www/project/rb_siteweb/rb_siteweb_1.4/resources/module/mag_list/js/mag_list.js::*]]
-
+** TODO [#A] [counsel-find-file] [mini-buffer] Ajouter un bind C-k pour supprimer tout le texte
+** TODO [#A] [vc-diff mode] Voir si il est possible de lancer des commandes de type ediff
+       Depuis  le vc-diff
+** TODO [#A] [css-mode] Virer company dabbrev de css mode
+** TODO [#C] [dired] Rename file : Possibilité de préciser un chemin contenant des dossiers
+      N'existant pas, ces dossier seront créés automatiquement à la validation
+** TODO [#C] Ajouter des bind system sur C-h et C-w C-w https://blog.sensible.io/2012/10/19/mac-os-x-emacs-style-keybindings-everywhere.html
+  - [ ] C-j new line
+  - [ ] C-w delete back word
+  - [ ] M-b back word
+** TODO [#C] Open file from system in new emacs frame (Right click open in)
+** TODO [#C] [ivy] [mini buffer] Add C-l keybinding
+** TODO [#C] [ivy] - Highlight current line plus visible
+** TODO [#C] [php-mode] [ac-php] [company] La boite d'information supplémentaire ne contient pas les php doc
+** TODO [#C] [php-mode] Saisie de /** + ENTER -> Creation d un php doc pre rempli
+** TODO [#C] [flycheck] : Mieux distinguer la ligne en erreur
+** TODO [#C] [web-mode] [javascript] [company] Add javascript keywords to company backend
+** TODO [#C] [refactor] emacs.d conf a ranger, voir modele suivant : https://github.com/purcell/emacs.d
+** TODO [#C] Activer les url cliquable dans les differents modes
+** TODO [#C] [ivy] [mini buffer] CTRL+l to back up
+** TODO [#C] [ivy] : Ne pas mettre les fichiers .svn dans la liste
+** TODO [#C] [plugin] [change inner] Ajoute rl'option Change Inner Tag
 ** TODO [#B] Terminer intégration de hunspell @work
 ** TODO [#B] Rebind les scroll to other window pour avoir un scroll sur la fenetre a cote mais d'une demie page seulement
       C-M-S-v runs the command scroll-other-window-down (found in
@@ -257,7 +249,6 @@ C
    [[file:~/.emacs.d/lisp/theme-dark2.el::(set-face-attribute%20'company-tooltip-annotation%20nil%20:foreground%20"#55e97b")][file:~/.emacs.d/lisp/theme-dark2.el::(set-face-attribute 'company-tooltip-annotation nil :foreground "#55e97b")]]
 
 ** TODO [#C] [theme] Mettre plus en avant le buffer actif
-** DONE [#C] [theme] js color var
 ** TODO [#C] [theme] Ajouter des differenciations sur certains mot clee comme "$", "=", ".", "'", "(", ")", "+", "-", certains mots clés php "var_dump", "PHP_EOL", etc Voir package "highlight-chars"
 ** TODO [#C] [theme] php mode : Plus de couleurs
 ** TODO [#C] Fichiers markdown mette toutes les windows en centré
@@ -274,39 +265,18 @@ C
 ** TODO [#C] [vc-dir] key M-< && M-> : Faire pointer sur le vrai début/fin de ligne
 ** TODO [#C] [doc-view] Faire fonctionner doc-view (Lire des fichiers excel, doc, word, etc)
 ** TODO [#C] [util] Voir si il est possible de faire un (CMD+P + touche @) (file.php@methode_name)
-** TODO [#C] git-svn
-
 ** TODO [#B] Il faudrait voir pour faire tourner 2 instances d emacs, 
    [2017-11-15 Wed]
-
-** DONE theme : Selection mettre un bleu plus foncé
-   [2017-11-16 Thu]
-   [[file:~/www/project/arsia/goacrop/src/events.js::y:%20Utils.getYForOutput(goacrop.Main.cropper.getData().y),][file:~/www/project/arsia/goacrop/src/events.js::y: Utils.getYForOutput(goacrop.Main.cropper.getData().y),]]
 
 ** TODO [#C] Faire un mode pour naviguer dans le html comme dans l'outil de debug de Chrome et la partie elements
    [2017-11-16 Thu]
    [[file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/production_crop2.php::</a>]]
 
-** TODO [web-mode] La double quote en attribut ne fonctionne pas bien
-   [2017-11-16 Thu]
-   [[file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/production_crop2.php::<li%20class%3D"btn%20btn-default"%20onclick%3D"goacrop.Events.on_zoomplus()%3B"%20title%3D"Init">][file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/production_crop2.php::<li class="btn btn-default" onclick="goacrop.Events.on_zoomplus();" title="Init">]]
+** DONE nlinum la couleur de fond n'est pas bonne
+   [2017-11-21 Tue]
+   [[file:~/www/project/arsia/arsia_standard_310/dev/mediadata/full/module/media/index.php::<button%20class%3D"btn%20btn-default"%20id%3D"btn-add"%20title%3D"<?php%20echo%20$g_asLang%5B'media_media_add'%5D%3B%20?>">%0D][file:~/www/project/arsia/arsia_standard_310/dev/mediadata/full/module/media/index.php::<button class="btn btn-default" id="btn-add" title="<?php echo $g_asLang['media_media_add']; ?>">]]
 
-   [2017-11-17 Fri]
-   [[file:~/www/project/arsia/goacrop/src/utils.js:://%20x%200%20y%200%20a%200][file:~/www/project/arsia/goacrop/src/utils.js::// x 0 y 0 a 0]]
-
-** DONE Faire fonctionner projectile dans un nouveau buffer
-   [2017-11-17 Fri]
-   [[file:~/www/project/arsia/goacrop/src/utils.js:://]]
-
-** TODO SHIFT + ENTER -> Meme comportement que SHIFT+J
-   [2017-11-17 Fri]
-   [[file:~/www/project/arsia/goacrop/src/utils.js:://]]
-
-** DONE Theme : Match bracket bleu
-   [2017-11-16 Thu]
-   [[file:~/www/project/arsia/goacrop/src/events.js::y:%20Utils.getYForOutput(goacrop.Main.cropper.getData().y),][file:~/www/project/arsia/goacrop/src/events.js::y: Utils.getYForOutput(goacrop.Main.cropper.getData().y),]]
-
-** TODO [#A] Lorsque l'on quite le mode ediff - Les windows se placent n'importe comment
-   [2017-11-20 Mon]
-   [[file:~/org/etor.org::*3.1%20Corriger%20le%20sprite%20des%20boutons%20visible%20dans%20une%20fiche%20produit][3.1 Corriger le sprite des boutons visible dans une fiche produit]]
+** TODO Flycheck n'a pas de goutière (visible en js2-mode)
+   [2017-11-21 Tue]
+   [[file:~/www/project/arsia/arsia_standard_310/mediadata/src/app/module/sidePanel/treePanel/default/treePanelDefault.js::'id':%20node.id,][file:~/www/project/arsia/arsia_standard_310/mediadata/src/app/module/sidePanel/treePanel/default/treePanelDefault.js::'id': node.id,]]
 

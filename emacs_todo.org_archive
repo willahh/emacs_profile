@@ -1426,3 +1426,170 @@ Archived entries from file /Users/wravel/.emacs.d/emacs_todo.org
   :ARCHIVE_CATEGORY: emacs_todo
   :ARCHIVE_TODO: TODO
   :END:
+
+* DONE [#A] web mode update syntax word pour ne pas sélectionner le $ dans un mot
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-11-20 Mon 13:23
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: DONE
+  :END:
+  [2017-11-15 Wed]
+  [[file:~/www/project/arsia/arsia_standard_310/dev/common/include/process/eletter/EletterHelper.class.php::$this->m_oLogger->debug('-->%20checkAndCleanLinksForCreation(document)')%3B%0D][file:~/www/project/arsia/arsia_standard_310/dev/common/include/process/eletter/EletterHelper.class.php::$this->m_oLogger->debug('--> checkAndCleanLinksForCreation(document)');]]
+
+
+* DONE [#A] Ajouter de la marge lors d'un goto d une ligne non visible a l'écran
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-11-20 Mon 13:23
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: DONE
+  :END:
+  [2017-11-16 Thu]
+  [[file:~/www/project/arsia/goacrop/src/main.js::goacrop.Main.cropper.scaleX(window.data.height%20/%20250)%3B][file:~/www/project/arsia/goacrop/src/main.js::goacrop.Main.cropper.scaleX(window.data.height / 250);]]
+
+
+* DONE [#A] Activer le highlight en mode php
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-11-20 Mon 13:23
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: DONE
+  :END:
+
+* DONE [#A] [js2 mode] Voir pour avoir une ouverture plus rapide, c'esst surement du au mode TIDE
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-11-20 Mon 13:23
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: DONE
+  :END:
+
+* DONE [#A] [PHP Mode] & [js2-mode] : Double clic sur un mot avec un $ -----> Le $ n'est pas sélectionné
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-11-20 Mon 13:23
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: DONE
+  :END:
+  [2017-11-10 Fri]
+  [[file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/production_crop2.php::$data%5B'imageIdx'%5D%20%3D%20$iWidth%3B][file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/production_crop2.php::$data['imageIdx'] = $iWidth;]]
+
+* DONE [#A] Faire fonctionner la custom theme dark pour org mode
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-11-20 Mon 13:24
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: DONE
+  :END:
+   [2017-10-30 Mon]
+   [[file:~/.emacs.d/lisp/theme-dark2.el]]
+
+
+* DONE Associer les fichiers .htaccess au mode conf-mode
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-11-20 Mon 13:24
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: DONE
+  :END:
+
+* DONE [#A] ag search result buffer : highlight search words
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-11-20 Mon 13:24
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: DONE
+  :END:
+
+* DONE [#A] Emacs - La couleur de recherche normal et highlight n est pas bonne
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-11-20 Mon 13:24
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: DONE
+  :END:
+  [2017-11-08 Wed]
+  [[file:~/www/project/easy3p/easy3p_3.2_lot2/dev/layout/sass/_module.scss::height:%2016px%3B][file:~/www/project/easy3p/easy3p_3.2_lot2/dev/layout/sass/_module.scss::height: 16px;]]
+
+* DONE [#C] [theme] js color var
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-11-20 Mon 13:24
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: DONE
+  :END:
+
+* DONE theme : Selection mettre un bleu plus foncé
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-11-20 Mon 13:24
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: DONE
+  :END:
+  [2017-11-16 Thu]
+  [[file:~/www/project/arsia/goacrop/src/events.js::y:%20Utils.getYForOutput(goacrop.Main.cropper.getData().y),][file:~/www/project/arsia/goacrop/src/events.js::y: Utils.getYForOutput(goacrop.Main.cropper.getData().y),]]
+
+
+* DONE Faire fonctionner projectile dans un nouveau buffer
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-11-20 Mon 13:24
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: DONE
+  :END:
+  [2017-11-17 Fri]
+  [[file:~/www/project/arsia/goacrop/src/utils.js:://]]
+
+
+* DONE Theme : Match bracket bleu
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-11-20 Mon 13:24
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: DONE
+  :END:
+  [2017-11-16 Thu]
+  [[file:~/www/project/arsia/goacrop/src/events.js::y:%20Utils.getYForOutput(goacrop.Main.cropper.getData().y),][file:~/www/project/arsia/goacrop/src/events.js::y: Utils.getYForOutput(goacrop.Main.cropper.getData().y),]]
+
+
+* TODO [#C] [php-mode] Voir pour implementer quick type hierarchy
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-11-21 Tue 13:40
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :END:
+
+* TODO [#C] git-svn
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-11-21 Tue 13:43
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :END:
+
+
+* TODO [#A] Autres tâches à mettre au format todo
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-11-21 Tue 13:45
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :END:

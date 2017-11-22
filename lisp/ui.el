@@ -1,4 +1,4 @@
-(require 'powerline)
+;; (require 'powerline)
 
 ;; Besoin : Afficher le chemin du fichier complet dans le title de la frame courante
 ;; Disable loading of “default.el” at startup,
