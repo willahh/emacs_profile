@@ -533,8 +533,9 @@
 
 (global-set-key (kbd "C-M-o") 'previous-multiframe-window)
 
-(define-key ggtags-navigation-map (kbd "M-p") 'highlight-symbol-next)
-(global-set-key (kbd "M-n") 'highlight-symbol-prev)
+(define-key ggtags-navigation-map (kbd "s-p") 'highlight-symbol-next)
+(global-set-key (kbd "s-n") 'highlight-symbol-prev)
+(global-set-key (kbd "s-p") 'highlight-symbol-prev)
 
 ;; Update to use, classical Meta-n to create a new buffer like in
 ;; modern editors. Update highlight-symbol-prev to Super - M
@@ -657,7 +658,9 @@
 ;; (global-set-key (kbd "s-l") 'avy-goto-char-in-line) ; Not used
 
 ;; Browse comands
-(global-set-key (kbd "s-p") 'projectile-find-file)
+(global-set-key (kbd "M-p") 'projectile-find-file)
+(define-key highlight-symbol-nav-mode-map (kbd "M-p") 'projectile-find-file)
+
 (global-set-key (kbd "s-q") 'my-abort-recursive-edit)
 (global-set-key (kbd "C-s-p") 'find-file-in-current-directory)
 (global-set-key (kbd "s-r") 'projectile-recentf)
