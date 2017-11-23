@@ -143,6 +143,7 @@
 ;; Backward kill sexp
 (global-set-key [(control meta h)] 'backward-kill-sexp)
 (global-set-key (kbd "C-c C-k") 'kill-whole-line) ;; Override default emacs kill sentence but i don't use it
+(global-set-key (kbd "C-c C-o") 'ivy-occur)
 
 ;; ---------------- evaluation
 (define-key emacs-lisp-mode-map (kbd "C-c C-r") 'eval-region)
@@ -675,13 +676,13 @@
 ;; (global-set-key (kbd "C-c j x") 'counsel-M-x) ;; (global-set-key (kbd "s-g") 'magit-status)
 (global-set-key (kbd "C-x v U") 'wil-svn-up-recursive)
 
-(global-set-key (kbd "s-D") 'projectile-dired)
 (global-set-key (kbd "s-i") 'emmet-expand-line)
 (define-key emacs-lisp-mode-map (kbd "C-c C-c") 'eval-defun)
 
 (global-set-key (kbd "s-a") 'mark-whole-buffer)
-(global-set-key (kbd "s-s") 'helm-swoop)
-(global-set-key (kbd "C-c C-s-s") 'swiper)
+;; (global-set-key (kbd "s-s") 'helm-swoop)
+(global-set-key (kbd "s-s") 'swiper)
+(global-set-key (kbd "C-c C-s") 'swiper)
 
 ;; vc
 (global-set-key (kbd "s-w") 'vc-diff)
