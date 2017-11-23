@@ -693,7 +693,8 @@
 (define-key diff-mode-map (kbd "l") 'recenter-top-bottom)
 
 ;; avy
-(global-set-key (kbd "C-à") 'avy-goto-word-1)
+;; (global-set-key (kbd "C-à") 'avy-goto-word-1)
+(global-set-key (kbd "C-\'") 'avy-goto-word-1)
 (global-set-key (kbd "s-l") 'avy-goto-char-in-line)
 
 ;; dired
