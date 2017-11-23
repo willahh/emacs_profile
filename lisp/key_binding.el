@@ -346,16 +346,11 @@
 ;; org
 (define-key org-mode-map (kbd "C-x <C-i>") 'helm-org-in-buffer-headings)
 
-;; (global-set-key (kbd "C-c s a") 'ag)
-;; (global-set-key (kbd "C-c s p") 'projectile-ag)
-;; (global-set-key (kbd "C-c s s") 'helm-ag)
-;; (global-set-key (kbd "C-c s S") 'helm-ag-project-root)
-
-(global-set-key (kbd "C-M-s") 'ag)
+;; (global-set-key (kbd "C-M-s") 'ag)
+(global-set-key (kbd "C-M-s") 'ripgrep-regexp)
 (global-set-key [control meta s] 'ag-project-at-point)
 (global-set-key [control meta shift s] 'ag-project)
 
-(global-set-key (kbd "C-c j s") 'ag)
 ;; (global-set-key (kbd "C-c j s") 'projectile-ag)
 
 ;; ---------------- new line
