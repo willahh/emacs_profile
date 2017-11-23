@@ -455,6 +455,7 @@
 ;; (global-set-key (kbd "C-c j e") 'eshell)
 ;; (global-set-key (kbd "C-c j e") 'ansi-term)
 (global-set-key (kbd "C-c j e") 'eshell)
+(global-set-key (kbd "C-c j a") 'ansi-term)
 
 
 ;; Start a new eshell even if one is active.
