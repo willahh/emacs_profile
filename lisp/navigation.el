@@ -298,3 +298,7 @@
              (list ?\"  ;; REMOVED ?w ?_
                    (let ((matching (matching-paren delimiter)))
                      (and matching (char-syntax matching)))))))
+
+
+;; http://oremacs.com/swiper/
+(setq magit-completing-read-function 'ivy-completing-read)

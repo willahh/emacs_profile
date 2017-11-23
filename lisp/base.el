@@ -114,7 +114,9 @@
 ;; enable y/n answers
 (fset 'yes-or-no-p 'y-or-n-p)
 
-(icomplete-mode 1)
+;; Update : Disable icomplete-mode
+;; (icomplete-mode 1)
+
 
 ;; Handy way of getting back to previous places.
 (bind-key "C-x p" 'pop-to-mark-command)

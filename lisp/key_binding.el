@@ -143,6 +143,7 @@
 ;; Backward kill sexp
 (global-set-key [(control meta h)] 'backward-kill-sexp)
 (global-set-key (kbd "C-c C-k") 'kill-whole-line) ;; Override default emacs kill sentence but i don't use it
+(global-set-key (kbd "C-c C-o") 'ivy-occur)
 
 ;; ---------------- evaluation
 (define-key emacs-lisp-mode-map (kbd "C-c C-r") 'eval-region)
@@ -343,16 +344,11 @@
 ;; org
 (define-key org-mode-map (kbd "C-x <C-i>") 'helm-org-in-buffer-headings)
 
-;; (global-set-key (kbd "C-c s a") 'ag)
-;; (global-set-key (kbd "C-c s p") 'projectile-ag)
-;; (global-set-key (kbd "C-c s s") 'helm-ag)
-;; (global-set-key (kbd "C-c s S") 'helm-ag-project-root)
-
-(global-set-key (kbd "C-M-s") 'ag)
+;; (global-set-key (kbd "C-M-s") 'ag)
+(global-set-key (kbd "C-M-s") 'ripgrep-regexp)
 (global-set-key [control meta s] 'ag-project-at-point)
 (global-set-key [control meta shift s] 'ag-project)
 
-(global-set-key (kbd "C-c j s") 'ag)
 ;; (global-set-key (kbd "C-c j s") 'projectile-ag)
 
 ;; ---------------- new line
@@ -452,6 +448,7 @@
 ;; (global-set-key (kbd "C-c j e") 'eshell)
 ;; (global-set-key (kbd "C-c j e") 'ansi-term)
 (global-set-key (kbd "C-c j e") 'eshell)
+(global-set-key (kbd "C-c j a") 'ansi-term)
 
 
 ;; Start a new eshell even if one is active.
@@ -532,8 +529,8 @@
 (global-set-key (kbd "C-M-o") 'previous-multiframe-window)
 
 (define-key ggtags-navigation-map (kbd "s-p") 'highlight-symbol-next)
-(global-set-key (kbd "s-p") 'highlight-symbol-next)
 (global-set-key (kbd "s-n") 'highlight-symbol-prev)
+(global-set-key (kbd "s-p") 'highlight-symbol-prev)
 
 ;; Update to use, classical Meta-n to create a new buffer like in
 ;; modern editors. Update highlight-symbol-prev to Super - M
@@ -656,9 +653,9 @@
 ;; (global-set-key (kbd "s-l") 'avy-goto-char-in-line) ; Not used
 
 ;; Browse comands
-;; (global-set-key (kbd "s-p") 'projectile-find-file)
 (global-set-key (kbd "M-p") 'projectile-find-file)
 (define-key highlight-symbol-nav-mode-map (kbd "M-p") 'projectile-find-file)
+
 (global-set-key (kbd "s-q") 'my-abort-recursive-edit)
 (global-set-key (kbd "C-s-p") 'find-file-in-current-directory)
 (global-set-key (kbd "s-r") 'projectile-recentf)
@@ -673,13 +670,13 @@
 ;; (global-set-key (kbd "C-c j x") 'counsel-M-x) ;; (global-set-key (kbd "s-g") 'magit-status)
 (global-set-key (kbd "C-x v U") 'wil-svn-up-recursive)
 
-(global-set-key (kbd "s-D") 'projectile-dired)
 (global-set-key (kbd "s-i") 'emmet-expand-line)
 (define-key emacs-lisp-mode-map (kbd "C-c C-c") 'eval-defun)
 
 (global-set-key (kbd "s-a") 'mark-whole-buffer)
-(global-set-key (kbd "s-s") 'helm-swoop)
-(global-set-key (kbd "C-c C-s-s") 'swiper)
+;; (global-set-key (kbd "s-s") 'helm-swoop)
+(global-set-key (kbd "s-s") 'swiper)
+(global-set-key (kbd "C-c C-s") 'swiper)
 
 ;; vc
 (global-set-key (kbd "s-w") 'vc-diff)
@@ -690,7 +687,7 @@
 
 ;; avy
 ;; (global-set-key (kbd "C-à") 'avy-goto-word-1)
-(global-set-key (kbd "C-'") 'avy-goto-word-1)
+(global-set-key (kbd "C-\'") 'avy-goto-word-1)
 (global-set-key (kbd "s-l") 'avy-goto-char-in-line)
 
 ;; dired
@@ -804,3 +801,7 @@
 
 (global-set-key [f7] 'winner-undo)
 (global-set-key [C-f7] 'winner-redo)
+
+;; C-x shortcuts from oremacs
+(global-set-key (kbd "C-x l") 'counsel-locate)
+(global-set-key (kbd "C-x C-l") 'locate)

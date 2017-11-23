@@ -9,7 +9,6 @@
 ;; (setq-default line-spacing 2) ; Same line height as modern editor (VS Code)
 (setq-default line-spacing 1) ; Update to default value (switch font instead)
 
-
 (set-face-attribute 'default nil :background "#1a1c1d")
 
 ;; Current line

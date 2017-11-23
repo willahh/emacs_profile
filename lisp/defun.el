@@ -210,10 +210,10 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
     (abort-recursive-edit)))
 
 ;; Keep selection after kill ring savex
-(defadvice kill-ring-save (after keep-transient-mark-active ())
-  "Override the deactivation of the mark."
-  (setq deactivate-mark nil))
-(ad-activate 'kill-ring-save)
+; (defadvice kill-ring-save (after keep-transient-mark-active ())
+;   "Override the deactivation of the mark."
+;   (setq deactivate-mark nil))
+; (ad-activate 'kill-ring-save)
 
 ;; Create-tags
 ;; Source : https://www.emacswiki.org/emacs/BuildTags
