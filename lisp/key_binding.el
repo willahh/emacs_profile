@@ -308,15 +308,13 @@
 ;; (define-key ido-buffer-completion-map (kbd "C-z") 'whole-line-or-region-kill-region)
 ;; (define-key company-active-map (kbd "C-z") 'whole-line-or-kill-gion)
 
-;; Kill
-(global-set-key (kbd "C-w") 'undo-tree-undo)
-(global-set-key (kbd "C-S-w") 'undo-tree-redo)
 
 ;; kill
-(global-set-key (kbd "C-z") 'backward-kill-word-or-region)
-(define-key company-active-map (kbd "C-z") 'backward-kill-word-or-region)
-(define-key org-mode-map (kbd "C-z") 'backward-kill-word-or-region)
-(define-key evil-emacs-state-map (kbd "C-z") 'backward-kill-word-or-region)
+(global-set-key (kbd "C-w") 'backward-kill-word-or-region)
+(global-set-key (kbd "C-z") 'whole-line-or-region-kill-region)
+(define-key company-active-map (kbd "C-z") 'whole-line-or-region-kill-region)
+(define-key org-mode-map (kbd "C-z") 'whole-line-or-region-kill-region)
+(define-key evil-emacs-state-map (kbd "C-z") 'whole-line-or-region-kill-region)
 
 
 
@@ -533,8 +531,9 @@
 
 (global-set-key (kbd "C-M-o") 'previous-multiframe-window)
 
-(define-key ggtags-navigation-map (kbd "M-p") 'highlight-symbol-next)
-(global-set-key (kbd "M-n") 'highlight-symbol-prev)
+(define-key ggtags-navigation-map (kbd "s-p") 'highlight-symbol-next)
+(global-set-key (kbd "s-p") 'highlight-symbol-next)
+(global-set-key (kbd "s-n") 'highlight-symbol-prev)
 
 ;; Update to use, classical Meta-n to create a new buffer like in
 ;; modern editors. Update highlight-symbol-prev to Super - M
@@ -657,7 +656,9 @@
 ;; (global-set-key (kbd "s-l") 'avy-goto-char-in-line) ; Not used
 
 ;; Browse comands
-(global-set-key (kbd "s-p") 'projectile-find-file)
+;; (global-set-key (kbd "s-p") 'projectile-find-file)
+(global-set-key (kbd "M-p") 'projectile-find-file)
+(define-key highlight-symbol-nav-mode-map (kbd "M-p") 'projectile-find-file)
 (global-set-key (kbd "s-q") 'my-abort-recursive-edit)
 (global-set-key (kbd "C-s-p") 'find-file-in-current-directory)
 (global-set-key (kbd "s-r") 'projectile-recentf)
@@ -688,7 +689,8 @@
 (define-key diff-mode-map (kbd "l") 'recenter-top-bottom)
 
 ;; avy
-(global-set-key (kbd "C-à") 'avy-goto-word-1)
+;; (global-set-key (kbd "C-à") 'avy-goto-word-1)
+(global-set-key (kbd "C-'") 'avy-goto-word-1)
 (global-set-key (kbd "s-l") 'avy-goto-char-in-line)
 
 ;; dired
