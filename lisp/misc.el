@@ -780,3 +780,10 @@ Version 2016-10-24"
  (setq pdf-annot-activate-created-annotations t)
  ;; use normal isearch
  (define-key pdf-view-mode-map (kbd "C-s") 'isearch-forward))
+
+
+
+;; Enable anzu
+;; https://github.com/syohex/emacs-anzu
+
+(global-anzu-mode +1)
