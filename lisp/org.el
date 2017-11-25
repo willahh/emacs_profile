@@ -8,7 +8,8 @@
 
 ;; org-directory "~/org"
 ;; (setq org-agenda-files (quote ("~/org/main.org" "~/www/project/arsia/arsia_standard_310/mediadata_310.org" "~/www/project/arsia/arsia_gun_301/arsia_gun_301.org" "~/www/project/arsia/arsia_standard_310/mediadata_310.org" "~/www/project/clubelec/README.org" "~/www/project/easy3p/etor.org" "~/www/project/goaland_siteweb/goaland_siteweb_6.0.0/" "~/www/project/lifechecker/lifechecker.org" "~/www/project/rb_3d/rb_myproject.org" "~/www/project/rb_intranet/rb_intranet_12/rb_intranet_12.org" "~/.emacs.d/todo.org")))
-(setq org-agenda-files (quote ("~/org" "~/.emacs.d/emacs_todo.org")))
+;; (setq org-agenda-files (quote ("~/org" "~/.emacs.d/emacs_todo.org")))
+(setq org-agenda-files (quote ("~/org")))
 ;; (setq org-agenda-files (quote ("~/org")))
 (setq org-default-notes-file (concat org-directory "/main.org"))
 (setq org-refile-targets '((nil :maxlevel . 3)

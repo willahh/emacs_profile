@@ -309,15 +309,13 @@
 ;; (define-key ido-buffer-completion-map (kbd "C-z") 'whole-line-or-region-kill-region)
 ;; (define-key company-active-map (kbd "C-z") 'whole-line-or-kill-gion)
 
-;; Kill
-(global-set-key (kbd "C-w") 'undo-tree-undo)
-(global-set-key (kbd "C-S-w") 'undo-tree-redo)
 
 ;; kill
-(global-set-key (kbd "C-z") 'backward-kill-word-or-region)
-(define-key company-active-map (kbd "C-z") 'backward-kill-word-or-region)
-(define-key org-mode-map (kbd "C-z") 'backward-kill-word-or-region)
-(define-key evil-emacs-state-map (kbd "C-z") 'backward-kill-word-or-region)
+(global-set-key (kbd "C-w") 'backward-kill-word-or-region)
+(global-set-key (kbd "C-z") 'whole-line-or-region-kill-region)
+(define-key company-active-map (kbd "C-z") 'whole-line-or-region-kill-region)
+(define-key org-mode-map (kbd "C-z") 'whole-line-or-region-kill-region)
+(define-key evil-emacs-state-map (kbd "C-z") 'whole-line-or-region-kill-region)
 
 
 

@@ -80,6 +80,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 C
 * Tasks
   :VISIBILITY: content
+** TODO Mettre le caractere # dans les word bidul (double clic code couleur)
 ** DONE [#A] web mode update syntax word pour ne pas sélectionner le $ dans un mot
    [2017-11-15 Wed]
    [[file:~/www/project/arsia/arsia_standard_310/dev/common/include/process/eletter/EletterHelper.class.php::$this->m_oLogger->debug('-->%20checkAndCleanLinksForCreation(document)')%3B%0D][file:~/www/project/arsia/arsia_standard_310/dev/common/include/process/eletter/EletterHelper.class.php::$this->m_oLogger->debug('--> checkAndCleanLinksForCreation(document)');]]
