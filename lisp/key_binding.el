@@ -213,7 +213,7 @@
 ;; ---------------- Dired
 (define-key php-mode-map [(control x) (control j)] 'dired-jump)
 (define-key web-mode-map [(control x) (control j)] 'dired-jump)
-(define-key dired-mode-map (kbd "C-x w") 'wdired-change-to-wdired-mode)
+;; (define-key dired-mode-map (kbd "C-x w") 'wdired-change-to-wdired-mode)
 (define-key dired-mode-map (kbd "M-n") 'wil-dired-new-dir)
 (define-key dired-mode-map (kbd "C-i") 'dired-subtree-toggle)
 (define-key dired-mode-map (kbd "<tab>") 'dired-subtree-toggle)
@@ -235,9 +235,9 @@
 (define-key php-mode-map (kbd "Â") 'toggle-php-flavor-mode) ; ALT+z
 
 ;; wgrep
-(define-key compilation-mode-map (kbd "C-x w") 'wgrep-change-to-wgrep-mode)
-(define-key compilation-mode-map (kbd "C-x s") 'wgrep-save-all-buffers)
-(define-key compilation-mode-map (kbd "C-c C-c") 'wgrep-finish-edit)
+;; (define-key compilation-mode-map (kbd "C-x w") 'wgrep-change-to-wgrep-mode)
+;; (define-key compilation-mode-map (kbd "C-x s") 'wgrep-save-all-buffers)
+;; (define-key compilation-mode-map (kbd "C-c C-c") 'wgrep-finish-edit)
 
 ;; Drag line
 ;; top
