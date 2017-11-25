@@ -340,14 +340,17 @@
 
 ;; mark
 (global-set-key (kbd "C-c C-SPC") 'helm-all-mark-rings)
+(global-set-key (kbd "C-c C-x C-d") 'crux-duplicate-and-comment-current-line-or-region)
 
 ;; org
 (define-key org-mode-map (kbd "C-x <C-i>") 'helm-org-in-buffer-headings)
 
 ;; (global-set-key (kbd "C-M-s") 'ag)
-(global-set-key (kbd "C-M-s") 'ripgrep-regexp)
+;; (global-set-key (kbd "C-M-s") 'ripgrep-regexp)
+(global-set-key (kbd "C-M-s") 'ag)
 (global-set-key [control meta s] 'ag-project-at-point)
 (global-set-key [control meta shift s] 'ag-project)
+
 
 ;; (global-set-key (kbd "C-c j s") 'projectile-ag)
 
