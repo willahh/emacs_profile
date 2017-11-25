@@ -623,8 +623,8 @@
 ;; Search with super key
 (global-set-key (kbd "s-z") 'zap-to-char)
 (global-set-key (kbd "s-e") 'kmacro-end-and-call-macro) ; Super+e
-;; (global-set-key (kbd "C-s-s") 'helm-ag) ; Super+Contral+s
-(global-set-key (kbd "C-s-s") 'counsel-ag) ; Super+Contral+s
+(global-set-key (kbd "C-s-s") 'helm-ag) ; Super+Contral+s
+;; (global-set-key (kbd "C-s-s") 'counsel-ag) ; Super+Contral+s
 (global-set-key (kbd "C-M-s-s") 'projectile-ag) ; Control+Meta+Super+s
 (global-set-key (kbd "s-c") 'org-capture)
 (global-set-key (kbd "s-b") 'projectile-switch-to-buffer)
