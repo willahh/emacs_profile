@@ -698,8 +698,8 @@
 (global-set-key (kbd "s-d") 'projectile-dired)
 
 ;; Search
-(global-set-key (kbd "s-S") 'helm-ag)
-(global-set-key (kbd "C-c j S") 'helm-ag)
+;; (global-set-key (kbd "s-S") 'helm-ag)
+;; (global-set-key (kbd "C-c j S") 'helm-ag)
 
 ;; ;; ---------------- Hyper key
 ;; (global-set-key (kbd "H-p") 'projectile-switch-project)
