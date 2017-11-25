@@ -235,9 +235,9 @@
 (define-key php-mode-map (kbd "Â") 'toggle-php-flavor-mode) ; ALT+z
 
 ;; wgrep
-;; (define-key compilation-mode-map (kbd "C-x w") 'wgrep-change-to-wgrep-mode)
-;; (define-key compilation-mode-map (kbd "C-x s") 'wgrep-save-all-buffers)
-;; (define-key compilation-mode-map (kbd "C-c C-c") 'wgrep-finish-edit)
+(define-key compilation-mode-map (kbd "C-x w") 'wgrep-change-to-wgrep-mode)
+(define-key compilation-mode-map (kbd "C-x s") 'wgrep-save-all-buffers)
+(define-key compilation-mode-map (kbd "C-c C-c") 'wgrep-finish-edit)
 
 ;; Drag line
 ;; top
