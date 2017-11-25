@@ -128,6 +128,8 @@
       '((ivy-switch-buffer . ivy--regex-plus)
         (t . ivy--regex-fuzzy)))
 
+;; (setq ivy-re-builders-alist '((t . ivy--regex-plus))) ; Default
+
 ;; Use Enter on a directory to navigate into the directory, not open it with dired.
 (define-key ivy-minibuffer-map (kbd "C-m") 'ivy-alt-done)
 (define-key ivy-minibuffer-map (kbd "<tab>") 'ivy-alt-done)
