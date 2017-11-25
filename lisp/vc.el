@@ -131,8 +131,12 @@ then `diff-jump-to-old-file' is also set, for the next invocations."
 (add-hook 'ediff-quit-hook #'my-restore-pre-ediff-winconfig)
 
 ;; fullframe
+;; Update ne fonctionne pas bien avec par exemple ag
+;; Ne devrait pas être utilisé
 (fullframe vc-dir quit-window)
 (fullframe ibuffer quit-window)
+;; (fullframe vc-diff quit-window)
+;; (fullframe ag quit-window)
 
 ;; wil-vc-dir
 (defun wil-vc-dir ()
