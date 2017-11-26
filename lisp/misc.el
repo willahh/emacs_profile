@@ -787,3 +787,8 @@ Version 2016-10-24"
 ;; https://github.com/syohex/emacs-anzu
 
 (global-anzu-mode +1)
+
+;; ace-popup-menu-mode
+(ace-popup-menu-mode 1)
+
+
