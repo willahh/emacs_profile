@@ -110,6 +110,7 @@
   resize-window
   skewer-mode
   fullframe
+  ace-popup-menu
   counsel
   sml-mode
   swiper
