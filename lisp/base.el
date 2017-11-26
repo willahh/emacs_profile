@@ -382,6 +382,11 @@
 (savehist-mode +1)
 
 ;; Dabrev
+(setq default-abbrev-mode t)
+;; https://www.emacswiki.org/emacs/AbbrevMode
+(add-hook 'text-mode-hook (lambda () (abbrev-mode 1)))
+(add-hook 'prog-mode-hook (lambda () (abbrev-mode 1)))
+
 (setq abbrev-file-name "~/.emacs.d/abbrev_defs")
 (setq save-abbrevs t) ;; save abbrevs when files are saved
 ;; you will be asked before the abbreviations are saved
