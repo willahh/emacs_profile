@@ -125,7 +125,8 @@
 (set-face-attribute 'dired-header nil :foreground "#48fa7b" :background nil)
 (set-face-attribute 'dired-directory nil :foreground "#8be9fd" :background nil)
 (set-face-attribute 'dired-perm-write nil :foreground "#34aeff" :background nil)
-(set-face-attribute 'web-mode-current-element-highlight-face nil :foreground nil :background "#60a467")
+;; (set-face-attribute 'web-mode-current-element-highlight-face nil :foreground nil :background "#60a467")
+;; (set-face-attribute 'web-mode-current-element-highlight-face nil :foreground nil :background nil :underline (:color "#ff0000" :style wave))
 
 
 ;; (set-face-attribute 'vhl/default-face nil :background "#000" :foreground nil)
@@ -258,6 +259,7 @@
  '(region ((t (:background "#203a5b" :foreground nil))))
  '(lazy-highlight ((t (:background "#4f5d66" :foreground nil :underline t))))
  '(js2-warning ((t (:background nil :underline (:color "#ff0000" :style wave)))))
+ '(web-mode-current-element-highlight-face ((t (:foreground "#ffffff" :background nil :underline (:color "#ffffff" :style wave)))))
  '(js2-error ((t (:background nil :underline (:color "#ff0000" :style wave)))))
  '(flycheck-error ((t (:background nil :underline (:color "#ff0000" :style wave)))))
  '(flycheck-warning ((t (:background nil :underline (:color "#ff0000" :style wave)))))
