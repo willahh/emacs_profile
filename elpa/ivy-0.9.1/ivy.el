@@ -3500,7 +3500,6 @@ When `ivy-calling' isn't nil, call `ivy-occur-press'."
         (plist-put ivy--occurs-list cmd occur)))
 
 (ivy-set-occur 'ivy-switch-buffer 'ivy-switch-buffer-occur)
-(ivy-set-occur 'ivy-switch-buffer-other-window 'ivy-switch-buffer-occur)
 
 (defun ivy--occur-insert-lines (cands)
   (dolist (str cands)

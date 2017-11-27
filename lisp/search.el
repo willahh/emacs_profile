@@ -8,25 +8,18 @@
 (setq ag-reuse-buffers nil)
 (setq ag-reuse-window t) ; Re use same window 
 
+(setq-default
+ isearch-allow-scroll t
+ ;; lazy-highlight-cleanup nil
+ lazy-highlight-cleanup t
+ lazy-highlight-initial-delay 0)
+
 ;; ag hook
 (defun wil-ag-mode-hook ()
   (make-variable-buffer-local 'truncate-lines)
   (setq truncate-lines t))
 
 (add-hook 'ag-mode-hook 'wil-ag-mode-hook)
-
-
-;; Enable anzu
-;; https://github.com/syohex/emacs-anzu
-
-(global-anzu-mode +1)
-
-;; I-search
-(setq-default
- isearch-allow-scroll t
- ;; lazy-highlight-cleanup nil
- lazy-highlight-cleanup t
- lazy-highlight-initial-delay 0)
 
 ;; Occur from isearch
 ;; https://www.emacswiki.org/emacs/OccurFromIsearch

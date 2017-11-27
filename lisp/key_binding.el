@@ -342,6 +342,7 @@
 
 ;; mark
 (global-set-key (kbd "C-c C-SPC") 'helm-all-mark-rings)
+(global-set-key (kbd "C-c C-x C-d") 'crux-duplicate-and-comment-current-line-or-region)
 
 ;; org
 (define-key org-mode-map (kbd "C-x <C-i>") 'helm-org-in-buffer-headings)
@@ -351,6 +352,7 @@
 (global-set-key (kbd "C-M-s") 'ag)
 (global-set-key [control meta s] 'ag-project-at-point)
 (global-set-key [control meta shift s] 'ag-project)
+
 
 ;; (global-set-key (kbd "C-c j s") 'projectile-ag)
 
@@ -624,6 +626,7 @@
 (global-set-key (kbd "s-z") 'zap-to-char)
 (global-set-key (kbd "s-e") 'kmacro-end-and-call-macro) ; Super+e
 (global-set-key (kbd "C-s-s") 'helm-ag) ; Super+Contral+s
+;; (global-set-key (kbd "C-s-s") 'counsel-ag) ; Super+Contral+s
 (global-set-key (kbd "C-M-s-s") 'projectile-ag) ; Control+Meta+Super+s
 (global-set-key (kbd "s-c") 'org-capture)
 (global-set-key (kbd "s-b") 'projectile-switch-to-buffer)
@@ -697,8 +700,8 @@
 (global-set-key (kbd "s-d") 'projectile-dired)
 
 ;; Search
-(global-set-key (kbd "s-S") 'helm-ag)
-(global-set-key (kbd "C-c j S") 'helm-ag)
+;; (global-set-key (kbd "s-S") 'helm-ag)
+;; (global-set-key (kbd "C-c j S") 'helm-ag)
 
 ;; ;; ---------------- Hyper key
 ;; (global-set-key (kbd "H-p") 'projectile-switch-project)
@@ -808,3 +811,29 @@
 ;; C-x shortcuts from oremacs
 (global-set-key (kbd "C-x l") 'counsel-locate)
 (global-set-key (kbd "C-x C-l") 'locate)
+
+
+
+;; http://oremacs.com/swiper/
+;; (global-set-key (kbd "C-s") 'swiper)
+
+(global-set-key (kbd "M-x") 'counsel-M-x)
+(global-set-key (kbd "C-x C-f") 'counsel-find-file)
+(global-set-key (kbd "<f1> f") 'counsel-describe-function)
+(global-set-key (kbd "<f1> v") 'counsel-describe-variable)
+(global-set-key (kbd "<f1> l") 'counsel-find-library)
+(global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
+(global-set-key (kbd "<f2> u") 'counsel-unicode-char)
+
+
+
+(global-set-key (kbd "C-c g") 'counsel-git)
+;; (global-set-key (kbd "C-c j") 'counsel-git-grep)
+;; (global-set-key (kbd "C-c k") 'counsel-ag)
+(global-set-key (kbd "C-x l") 'counsel-locate)
+;; (global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
+(global-set-key (kbd "C-c C-r") 'ivy-resume)
+
+
+
+

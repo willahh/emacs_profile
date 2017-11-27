@@ -128,9 +128,16 @@
       '((ivy-switch-buffer . ivy--regex-plus)
         (t . ivy--regex-fuzzy)))
 
+;; (setq ivy-re-builders-alist '((t . ivy--regex-plus))) ; Default
+
 ;; Use Enter on a directory to navigate into the directory, not open it with dired.
 (define-key ivy-minibuffer-map (kbd "C-m") 'ivy-alt-done)
 (define-key ivy-minibuffer-map (kbd "<tab>") 'ivy-alt-done)
+
+;; https://oremacs.com/2017/11/18/dired-occur/
+;; (defun ivy-switch-buffer-occur ()
+;;   "Occur function for `ivy-switch-buffer' using `ibuffer'."
+;;   (ibuffer nil (buffer-name) (list (cons 'name ivy--old-re))))
 
 ; Let projectile use ivy
 (setq projectile-completion-system 'ivy)
@@ -175,6 +182,8 @@
 ;; ---------------- swiper
 (use-package counsel
   :ensure t)
+
+(ivy-set-occur 'swiper 'swiper-occur)
 
 ;; advise swiper to recenter on exit
 (defun bjm-swiper-recenter (&rest args)
