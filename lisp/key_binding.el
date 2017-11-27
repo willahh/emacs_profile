@@ -310,8 +310,10 @@
 ;; (define-key company-active-map (kbd "C-z") 'whole-line-or-kill-gion)
 
 
-;; kill
+;; kill backward
 (global-set-key (kbd "C-w") 'backward-kill-word-or-region)
+
+;; Kill line or region
 (global-set-key (kbd "C-z") 'whole-line-or-region-kill-region)
 (define-key company-active-map (kbd "C-z") 'whole-line-or-region-kill-region)
 (define-key org-mode-map (kbd "C-z") 'whole-line-or-region-kill-region)
@@ -345,7 +347,8 @@
 (define-key org-mode-map (kbd "C-x <C-i>") 'helm-org-in-buffer-headings)
 
 ;; (global-set-key (kbd "C-M-s") 'ag)
-(global-set-key (kbd "C-M-s") 'ripgrep-regexp)
+;; (global-set-key (kbd "C-M-s") 'ripgrep-regexp) ; Ripgrep ne supporte pas les retours a la ligne dans une recherche
+(global-set-key (kbd "C-M-s") 'ag)
 (global-set-key [control meta s] 'ag-project-at-point)
 (global-set-key [control meta shift s] 'ag-project)
 

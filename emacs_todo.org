@@ -311,3 +311,6 @@ C
    [2017-11-20 Mon]
    [[file:~/org/etor.org::*3.1%20Corriger%20le%20sprite%20des%20boutons%20visible%20dans%20une%20fiche%20produit][3.1 Corriger le sprite des boutons visible dans une fiche produit]]
 
+** TODO Comment - Remettre comme avant
+   [2017-11-27 Mon]
+   [[file:~/www/project/businessmanager/dev/admin/layout/style_new.css::}]]
