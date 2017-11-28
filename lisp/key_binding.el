@@ -206,7 +206,7 @@
 ;; Multi cursor stuf
 (global-set-key (kbd "ı") 'mc/mark-next-lines) ; ALT+SHIFT+p
 (global-set-key (kbd "∏") 'mc/mark-previous-lines) ; ALT+SHIFT+n
-(global-set-key (kbd "C-∑") 'projectile-ag) ; CONTROL+ALT+SHIFT+s
+;; (global-set-key (kbd "C-∑") 'projectile-ag) ; CONTROL+ALT+SHIFT+s
 
 ;;
 (global-set-key (kbd "Ò") 'paredit-splice-sexp)
@@ -332,7 +332,11 @@
 ;; (global-set-key (kbd "C-M-s") 'ag)
 ;; (global-set-key (kbd "C-M-s") 'ripgrep-regexp) ; Ripgrep ne supporte pas les retours a la ligne dans une recherche
 ;; (global-set-key (kbd "C-M-s") 'ag)
-(global-set-key (kbd "C-M-s") 'projectile-ag)
+;; (global-set-key (kbd "C-M-s") 'projectile-ag)
+;; (global-set-key (kbd "C-M-s") 'ag)
+(global-set-key (kbd "C-M-s") 'isearch-forward-regexp)
+(global-set-key (kbd "C-F") 'ag)
+(global-set-key (kbd "M-F") 'ag)
 (global-set-key [control meta s] 'ag-project-at-point)
 (global-set-key [control meta shift s] 'ag-project)
 
@@ -607,7 +611,7 @@
 (global-set-key (kbd "s-e") 'kmacro-end-and-call-macro) ; Super+e
 (global-set-key (kbd "C-s-s") 'helm-ag) ; Super+Contral+s
 ;; (global-set-key (kbd "C-s-s") 'counsel-ag) ; Super+Contral+s
-(global-set-key (kbd "C-M-s-s") 'projectile-ag) ; Control+Meta+Super+s
+;; (global-set-key (kbd "C-M-s-s") 'projectile-ag) ; Control+Meta+Super+s
 (global-set-key (kbd "s-c") 'org-capture)
 (global-set-key (kbd "s-b") 'projectile-switch-to-buffer)
 (global-set-key (kbd "C-s-b") 'ivy-switch-buffer)
