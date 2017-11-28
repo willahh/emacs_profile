@@ -64,10 +64,10 @@
                       :background "#98cf15"
                       :box nil))
 
-(add-hook 'evil-normal-state-entry-hook 'powerline-theme-normal)
-(add-hook 'evil-visual-state-entry-hook 'powerline-theme-visual)
-(add-hook 'evil-insert-state-entry-hook 'powerline-theme-insert)
-(add-hook 'evil-emacs-state-entry-hook 'powerline-theme-emacs)
+
+
+
+
 
 ;; (set-face-background 'show-paren-match "#9a00ff")
 ;; (set-face-background 'show-paren-match "#fff")
@@ -91,12 +91,11 @@
 
 
 ;; Cursor / caret state color
-(setq evil-emacs-state-cursor '("#ff00d2" bar))
-(setq evil-normal-state-cursor '("#98cf15" box))
-(setq evil-visual-state-cursor '("#fff" box))
-(setq evil-insert-state-cursor '("red" bar))
-(setq evil-replace-state-cursor '("red" bar))
-(setq evil-operator-state-cursor '("red" hollow))
+
+
+
+
+
 
 ;; (set-face-attribute 'highlight-symbol-face nil :foreground nil :background "#5d5e62")
 ;; (set-face-attribute 'highlight-symbol-face nil :foreground nil :background "#476574")

@@ -37,6 +37,4 @@
 ;;             (when (string-equal "jsx" (file-name-extension buffer-file-name))
 ;;               (setup-tide-mode))))
 
-(add-hook 'typescript-mode-hook
-          (define-key evil-normal-state-map (kbd "M-]") 'tide-jump-to-definition)
-          (define-key evil-normal-state-map (kbd "M-[") 'tide-jump-back))
+
