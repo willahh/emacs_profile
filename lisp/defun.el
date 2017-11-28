@@ -1399,3 +1399,8 @@ the checking happens for all pairs in auto-minor-mode-alist"
   "Prevent annoying \"Active processes exist\" query when you quit Emacs."
   (cl-letf (((symbol-function #'process-list) (lambda ())))
     ad-do-it))
+
+(defun wlh/project-browser-open ()
+  (interactive)
+  (let ((path (s-replace "/Users/wravel/www/" "http://192.168.0.26/" (projectile-project-root))))
+    (browse-url "http://192.168.0.26/project/easy3p/easy3p_3.2/dev/")))

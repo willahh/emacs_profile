@@ -75,6 +75,7 @@
 (global-set-key (kbd "C-c j c p") '(copy-paragraph))
 (global-set-key (kbd "C-c j c s") '(thing-copy-string-to-mark))
 (global-set-key (kbd "C-c j c a") '(thing-copy-parenthesis-to-mark))
+(global-set-key (kbd "C-c j p b") 'wlh/project-browser-open)
 
 ;;
 (global-set-key (kbd "C-c j d y") 'wil-window-divider-on) ;; (Translate : C-c (user main prefix) + ; (my prefix) + [d]ivider + [y]es)
