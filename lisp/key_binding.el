@@ -285,7 +285,6 @@
 
 ;; ;; Kill
 ;; (global-set-key (kbd "C-z") 'whole-line-or-region-kill-region)
-;; (define-key evil-emacs-state-map (kbd "C-z") 'whole-line-or-region-kill-region)
 ;; (define-key ivy-minibuffer-map (kbd "C-z") 'whole-line-or-region-kill-region)
 ;; (define-key helm-map (kbd "C-z") 'whole-line-or-region-kill-region)
 ;; (define-key ido-buffer-completion-map (kbd "C-z") 'whole-line-or-region-kill-region)
