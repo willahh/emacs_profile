@@ -81,19 +81,6 @@ C
 * Tasks
   :VISIBILITY: content
 ** TODO Mettre le caractere # dans les word bidul (double clic code couleur)
-** DONE [#A] web mode update syntax word pour ne pas sélectionner le $ dans un mot
-   [2017-11-15 Wed]
-   [[file:~/www/project/arsia/arsia_standard_310/dev/common/include/process/eletter/EletterHelper.class.php::$this->m_oLogger->debug('-->%20checkAndCleanLinksForCreation(document)')%3B%0D][file:~/www/project/arsia/arsia_standard_310/dev/common/include/process/eletter/EletterHelper.class.php::$this->m_oLogger->debug('--> checkAndCleanLinksForCreation(document)');]]
-
-** DONE [#A] Ajouter de la marge lors d'un goto d une ligne non visible a l'écran
-   [2017-11-16 Thu]
-   [[file:~/www/project/arsia/goacrop/src/main.js::goacrop.Main.cropper.scaleX(window.data.height%20/%20250)%3B][file:~/www/project/arsia/goacrop/src/main.js::goacrop.Main.cropper.scaleX(window.data.height / 250);]]
-
-** DONE [#A] Activer le highlight en mode php
-** DONE [#A] [js2 mode] Voir pour avoir une ouverture plus rapide, c'esst surement du au mode TIDE
-** DONE [#A] [PHP Mode] & [js2-mode] : Double clic sur un mot avec un $ -----> Le $ n'est pas sélectionné
-   [2017-11-10 Fri]
-   [[file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/production_crop2.php::$data%5B'imageIdx'%5D%20%3D%20$iWidth%3B][file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/production_crop2.php::$data['imageIdx'] = $iWidth;]]
 ** TODO [#A] [swoop] C-w ne fonctionne pas 
    SCHEDULED: <2017-11-25 Sat>
 ** TODO [#A] [helm] [mini-buffer] Ajouter la possibilité de faire du M-v dans le mini-buffer
@@ -102,10 +89,6 @@ C
    [2017-10-23 Mon]
    [[file:~/www/project/arsia/goacrop/src/main.js:://%20Pas%20de%20traitement%20particulier,%20l'image][file:~/www/project/arsia/goacrop/src/main.js::// Pas de traitement particulier, l'image]]
 *
-** DONE [#A] Faire fonctionner la custom theme dark pour org mode
-    [2017-10-30 Mon]
-    [[file:~/.emacs.d/lisp/theme-dark2.el]]
-
 ** TODO [#A] [URGENT] wdired ne fonctionne plus
    [2017-11-13 Mon]
    [[file:~/www/temp/.png]]
@@ -115,7 +98,6 @@ C
        Depuis  le vc-diff
 ** TODO [#A] Autres tâches à mettre au format todo
 ** TODO [#A] [css-mode] Virer company dabbrev de css mode
-** DONE Associer les fichiers .htaccess au mode conf-mode
 ** TODO [#C] [dired] Rename file : Possibilité de préciser un chemin contenant des dossiers
       N'existant pas, ces dossier seront créés automatiquement à la validation
 ** TODO [#C] Ajouter des bind system sur C-h et C-w C-w https://blog.sensible.io/2012/10/19/mac-os-x-emacs-style-keybindings-everywhere.html
@@ -142,7 +124,6 @@ C
   - La fonction copy-file-name-to-clipbord est present, mais elle retourne le chemin complet
     Il faudrait garder que la derniere partie apres le /
 ** TODO [#A] [vc-dir] delete-file dont prompt for path, kill buffer
-** DONE [#A] ag search result buffer : highlight search words
 ** TODO [#A] Fonction get file name to clipboard (très utilisé)
 ** TODO [#A] Don't prompt for delete recursivly (code available in prelude)
   - [ ] Show current mode in color
@@ -156,9 +137,6 @@ C
 ** TODO [#A] Definir tous les fichiers .php dans un dossier "process" pour être en mode php
    [2017-11-08 Wed]
    [[file:~/www/project/arsia/arsia_standard_310/dev/common/include/process/mediadata/MediaDataHelper.class.php::public%20function%20getMediaDataButton($p_sIdImg,%20$p_sIdHiddenField,%20$p_sImagePath%20%3D%20'')%0D][file:~/www/project/arsia/arsia_standard_310/dev/common/include/process/mediadata/MediaDataHelper.class.php::public function getMediaDataButton($p_sIdImg, $p_sIdHiddenField, $p_sImagePath = '')]]
-** DONE [#A] Emacs - La couleur de recherche normal et highlight n est pas bonne
-   [2017-11-08 Wed]
-   [[file:~/www/project/easy3p/easy3p_3.2_lot2/dev/layout/sass/_module.scss::height:%2016px%3B][file:~/www/project/easy3p/easy3p_3.2_lot2/dev/layout/sass/_module.scss::height: 16px;]]
 ** TODO [#A] Voir pour régler définitivement le "problème" des retours chariots :
    Si des caractères ^M sont visibles dans un fichier, il faut voir pour
    s'adapter à ce comportement.
@@ -280,10 +258,6 @@ C
 ** TODO [#B] Il faudrait voir pour faire tourner 2 instances d emacs, 
    [2017-11-15 Wed]
 
-** DONE theme : Selection mettre un bleu plus foncé
-   [2017-11-16 Thu]
-   [[file:~/www/project/arsia/goacrop/src/events.js::y:%20Utils.getYForOutput(goacrop.Main.cropper.getData().y),][file:~/www/project/arsia/goacrop/src/events.js::y: Utils.getYForOutput(goacrop.Main.cropper.getData().y),]]
-
 ** TODO [#C] Faire un mode pour naviguer dans le html comme dans l'outil de debug de Chrome et la partie elements
    [2017-11-16 Thu]
    [[file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/production_crop2.php::</a>]]
@@ -295,22 +269,12 @@ C
    [2017-11-17 Fri]
    [[file:~/www/project/arsia/goacrop/src/utils.js:://%20x%200%20y%200%20a%200][file:~/www/project/arsia/goacrop/src/utils.js::// x 0 y 0 a 0]]
 
-** DONE Faire fonctionner projectile dans un nouveau buffer
-   [2017-11-17 Fri]
-   [[file:~/www/project/arsia/goacrop/src/utils.js:://]]
-
 ** TODO SHIFT + ENTER -> Meme comportement que SHIFT+J
    [2017-11-17 Fri]
    [[file:~/www/project/arsia/goacrop/src/utils.js:://]]
-
-** DONE Theme : Match bracket bleu
-   [2017-11-16 Thu]
-   [[file:~/www/project/arsia/goacrop/src/events.js::y:%20Utils.getYForOutput(goacrop.Main.cropper.getData().y),][file:~/www/project/arsia/goacrop/src/events.js::y: Utils.getYForOutput(goacrop.Main.cropper.getData().y),]]
 
 ** TODO [#A] Lorsque l'on quite le mode ediff - Les windows se placent n'importe comment
    [2017-11-20 Mon]
    [[file:~/org/etor.org::*3.1%20Corriger%20le%20sprite%20des%20boutons%20visible%20dans%20une%20fiche%20produit][3.1 Corriger le sprite des boutons visible dans une fiche produit]]
 
-** TODO Comment - Remettre comme avant
-   [2017-11-27 Mon]
-   [[file:~/www/project/businessmanager/dev/admin/layout/style_new.css::}]]
+
