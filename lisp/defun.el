@@ -1098,8 +1098,7 @@ the visible part of the current buffer following point. "
 
 (defun wil-duplicate ()
   (interactive)
-  (duplicate-start-of-line-or-region)
-  (keyboard-quit))
+  (duplicate-start-of-line-or-region))
 
 (defun xah-toggle-letter-case ()
   "Toggle the letter case of current word or text selection.
