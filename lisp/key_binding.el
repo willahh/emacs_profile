@@ -228,7 +228,6 @@
 
 ;;
 (global-set-key (kbd "Ò") 'paredit-splice-sexp)
-(global-set-key (kbd "∑") 'swiper) ; ALT+SHIFT+s
 ;; (global-set-key (kbd "M-a") 'mark-whole-buffer) ; ALT+a
 (global-set-key (kbd "æ") 'mark-whole-buffer) ; ALT+a
 ;; (global-set-key (kbd "æ") 'backward-sentence) ; ALT+a
@@ -350,7 +349,8 @@
 
 ;; (global-set-key (kbd "C-M-s") 'ag)
 ;; (global-set-key (kbd "C-M-s") 'ripgrep-regexp) ; Ripgrep ne supporte pas les retours a la ligne dans une recherche
-(global-set-key (kbd "C-M-s") 'ag)
+;; (global-set-key (kbd "C-M-s") 'ag)
+(global-set-key (kbd "C-M-s") 'projectile-ag)
 (global-set-key [control meta s] 'ag-project-at-point)
 (global-set-key [control meta shift s] 'ag-project)
 
@@ -682,8 +682,10 @@
 
 (global-set-key (kbd "s-a") 'mark-whole-buffer)
 ;; (global-set-key (kbd "s-s") 'helm-swoop)
-(global-set-key (kbd "s-s") 'swiper)
-(global-set-key (kbd "C-c C-s") 'swiper)
+;; (global-set-key (kbd "s-s") 'swiper)
+;; (global-set-key (kbd "C-c C-s") 'swiper)
+(global-set-key (kbd "s-s") 'helm-swoop)
+(global-set-key (kbd "C-c C-s") 'helm-swoop)
 
 ;; vc
 (global-set-key (kbd "s-w") 'vc-diff)
@@ -815,10 +817,8 @@
 
 
 
-;; http://oremacs.com/swiper/
-;; (global-set-key (kbd "C-s") 'swiper)
 
-(global-set-key (kbd "M-x") 'counsel-M-x)
+;; (global-set-key (kbd "M-x") 'counsel-M-x)
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 (global-set-key (kbd "<f1> f") 'counsel-describe-function)
 (global-set-key (kbd "<f1> v") 'counsel-describe-variable)
