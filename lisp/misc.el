@@ -754,10 +754,10 @@ Version 2016-10-24"
 (setq google-translate-default-target-language "en")
 
 ;; linum
-(use-package linum
+(use-package nlinum
        :init
-       (add-hook 'php-mode-hook 'linum-mode)
-       (add-hook 'web-mode-hook 'linum-mode))
+       (add-hook 'php-mode-hook 'nlinum-mode)
+       (add-hook 'web-mode-hook 'nlinum-mode))
 
 
 (require 'smart-comment)
