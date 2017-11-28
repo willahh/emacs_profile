@@ -299,7 +299,6 @@
 (global-set-key (kbd "C-z") 'whole-line-or-region-kill-region)
 (define-key company-active-map (kbd "C-z") 'whole-line-or-region-kill-region)
 (define-key org-mode-map (kbd "C-z") 'whole-line-or-region-kill-region)
-(define-key evil-emacs-state-map (kbd "C-z") 'whole-line-or-region-kill-region)
 
 
 
