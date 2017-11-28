@@ -56,8 +56,7 @@
    ("n" (resize-window--enlarge-down) "")
    ("p" (resize-window--enlarge-up) "")
    ("f" (resize-window--enlarge-horizontally) "")
-   ("b" (resize-window--shrink-horizontally) "")
-   )
+   ("b" (resize-window--shrink-horizontally) ""))
 
 ;; Enhanced version of diff
 (add-hook 'diff-mode-hook (lambda () (local-set-key "\C-c\C-l" 'diffstat)))
