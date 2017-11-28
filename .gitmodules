@@ -4,3 +4,6 @@
 [submodule "y"]
 	path = vendor/lispy
 	url = https://github.com/abo-abo/lispy.git
+[submodule "vendor/emacs-w3m"]
+	path = vendor/emacs-w3m
+	url = https://github.com/ecbrown/emacs-w3m.git
