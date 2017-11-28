@@ -10,7 +10,7 @@
 (load-file "~/.emacs.d/lisp/package_list.el")
 (load-file "~/.emacs.d/lisp/package_installer.el")
 (load-file "~/.emacs.d/lisp/project.el")
-(load-file "~/.emacs.d/lisp/evil.el")
+;; (load-file "~/.emacs.d/lisp/evil.el")
 (load-file "~/.emacs.d/lisp/use_package.el")
 (load-file "~/.emacs.d/lisp/navigation.el")
 (load-file "~/.emacs.d/lisp/dired.el")
