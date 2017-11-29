@@ -99,3 +99,61 @@
                                                 (interactive)
                                                 (evil-emacs-state)
                                                 (backward-char)))
+
+
+
+
+(use-package evil-mc
+  :bind (:map evil-mc-key-map
+              ("\M-p" . nil)
+              ("M-p" . nil)))
+
+;; -- Evil leader key commands
+(evil-leader/set-leader "<SPC>")
+(key-chord-define evil-emacs-state-map "jk" 'evil-normal-state)
+(key-chord-define evil-normal-state-map "jk" 'evil-emacs-state)
+(key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
+(define-key evil-emacs-state-map (kbd "C-&") 'evil-normal-state)
+(define-key evil-normal-state-map (kbd "C-&") 'evil-emacs-state)
+;; (define-key evil-insert-state-map "C-&" 'evil-normal-state)
+;; ---------------- Key binding evil normal mode
+;; (with-eval-after-load 'evil-maps
+;;   (define-key evil-normal-state-map (kbd "M-a") 'mark-whole-buffer))
+;; (evil-define-key 'normal 'dired-mode (kbd "TAB") 'dired-find-file)
+;; (evil-define-key 'normal org-mode-map (kbd "q") 'quit-window)
+;; (define-key evil-normal-state-map (kbd "M-n") 'evil-buffer-new)
+;; (define-key evil-emacs-state-map (kbd "C-z") 'whole-line-or-region-kill-region)
+(define-key evil-emacs-state-map (kbd "C-z") 'whole-line-or-region-kill-region)
+(global-set-key [escape] 'evil-exit-emacs-state)
+(evilem-default-keybindings "ù")
+;; (global-set-key (kbd "C-v") 'evil-scroll-down) ; Too slow (huge gain on large file)
+;; (global-set-key (kbd "s-v") 'evil-scroll-up) ; too slow
+
+(add-hook 'prog-mode-hook
+          (define-key evil-normal-state-map (kbd "M-n") 'highlight-symbol-next)
+          (define-key evil-normal-state-map (kbd "M-p") 'highlight-symbol-prev))
+
+(add-hook 'typscript-mode-hook
+          (define-key evil-normal-state-map (kbd "M-n") 'highlight-symbol-next)
+          (define-key evil-normal-state-map (kbd "M-p") 'highlight-symbol-prev))
+
+(add-hook 'emacs-lisp-mode-hook
+          (define-key evil-normal-state-map (kbd "M-n") 'highlight-symbol-next)
+          (define-key evil-normal-state-map (kbd "M-p") 'highlight-symbol-prev))
+
+(add-hook 'typescript-mode-hook
+          (define-key evil-normal-state-map (kbd "M-]") 'tide-jump-to-definition)
+          (define-key evil-normal-state-map (kbd "M-[") 'tide-jump-back))
+
+
+(add-hook 'evil-normal-state-entry-hook 'powerline-theme-normal)
+(add-hook 'evil-insert-state-entry-hook 'powerline-theme-insert)
+(add-hook 'evil-emacs-state-entry-hook 'powerline-theme-emacs)
+(setq evil-emacs-state-cursor '("#ff00d2" bar))
+(setq evil-normal-state-cursor '("#98cf15" box))
+(setq evil-visual-state-cursor '("#fff" box))
+(setq evil-insert-state-cursor '("red" bar))
+(setq evil-replace-state-cursor '("red" bar))
+(setq evil-operator-state-cursor '("red" hollow))
+(setq evil-operator-state-cursor '("red" hollow))
+(setq evil-replace-state-cursor '("red" bar))

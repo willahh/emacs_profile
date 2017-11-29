@@ -118,10 +118,6 @@
 (define-key ivy-minibuffer-map (kbd "<escape>") 'minibuffer-keyboard-quit)
 (define-key ivy-minibuffer-map (kbd "C-h") 'delete-backward-char)
 
-(use-package evil-mc
-  :bind (:map evil-mc-key-map
-              ("\M-p" . nil)
-              ("M-p" . nil)))
 
 ;; Custom abor-recursive-edit
 ;; Utilise comme substitut a C-g (keyboard-quit)
@@ -153,8 +149,6 @@
 (global-set-key (kbd "C-c C-v") 'eval-buffer)
 
 ;; ---------------- key binding leader
-;; -- Evil leader key commands
-(evil-leader/set-leader "<SPC>")
 
 ;; ---------------- key-hord Note : Ralentis beaucoup la saisie Ne pas
 ;; (key-chord-define-global "xc" 'er/expand-region) ; Update to <w because wx can be triggered too often (when leaving emacs C-x C-c)
@@ -164,22 +158,10 @@
 ;; (key-chord-define-global "\"\'" 'er/expand-region) ; 3 + 4 on azerty keyboard
 (key-chord-define-global "xc" 'er/expand-region)
 
-(key-chord-define evil-emacs-state-map "jk" 'evil-normal-state)
-(key-chord-define evil-normal-state-map "jk" 'evil-emacs-state)
-(key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
 
 ;; ;; Bind C-1 (on azerty keyboard)
-(define-key evil-emacs-state-map (kbd "C-&") 'evil-normal-state)
-(define-key evil-normal-state-map (kbd "C-&") 'evil-emacs-state)
-;; (define-key evil-insert-state-map "C-&" 'evil-normal-state)
 
-;; ---------------- Key binding evil normal mode
-;; (with-eval-after-load 'evil-maps
-;;   (define-key evil-normal-state-map (kbd "M-a") 'mark-whole-buffer))
-(evil-define-key 'normal 'dired-mode (kbd "TAB") 'dired-find-file)
-(evil-define-key 'normal org-mode-map (kbd "q") 'quit-window)
 
-;; (define-key evil-normal-state-map (kbd "M-n") 'evil-buffer-new)
 
 ;; ---------------- Key binding
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
@@ -224,7 +206,7 @@
 ;; Multi cursor stuf
 (global-set-key (kbd "ı") 'mc/mark-next-lines) ; ALT+SHIFT+p
 (global-set-key (kbd "∏") 'mc/mark-previous-lines) ; ALT+SHIFT+n
-(global-set-key (kbd "C-∑") 'projectile-ag) ; CONTROL+ALT+SHIFT+s
+;; (global-set-key (kbd "C-∑") 'projectile-ag) ; CONTROL+ALT+SHIFT+s
 
 ;;
 (global-set-key (kbd "Ò") 'paredit-splice-sexp)
@@ -303,7 +285,6 @@
 
 ;; ;; Kill
 ;; (global-set-key (kbd "C-z") 'whole-line-or-region-kill-region)
-;; (define-key evil-emacs-state-map (kbd "C-z") 'whole-line-or-region-kill-region)
 ;; (define-key ivy-minibuffer-map (kbd "C-z") 'whole-line-or-region-kill-region)
 ;; (define-key helm-map (kbd "C-z") 'whole-line-or-region-kill-region)
 ;; (define-key ido-buffer-completion-map (kbd "C-z") 'whole-line-or-region-kill-region)
@@ -317,7 +298,6 @@
 (global-set-key (kbd "C-z") 'whole-line-or-region-kill-region)
 (define-key company-active-map (kbd "C-z") 'whole-line-or-region-kill-region)
 (define-key org-mode-map (kbd "C-z") 'whole-line-or-region-kill-region)
-(define-key evil-emacs-state-map (kbd "C-z") 'whole-line-or-region-kill-region)
 
 
 
@@ -352,8 +332,14 @@
 
 ;; (global-set-key (kbd "C-M-s") 'ag)
 ;; (global-set-key (kbd "C-M-s") 'ripgrep-regexp) ; Ripgrep ne supporte pas les retours a la ligne dans une recherche
-(global-set-key (kbd "C-M-s") 'ag)
+;; (global-set-key (kbd "C-M-s") 'ag)
 ;; (global-set-key (kbd "C-M-s") 'projectile-ag)
+;; (global-set-key (kbd "C-M-s") 'ag)
+;; (global-set-key (kbd "C-M-s") 'projectile-ag)
+;; (global-set-key (kbd "C-M-s") 'ag)
+(global-set-key (kbd "C-M-s") 'isearch-forward-regexp)
+(global-set-key (kbd "C-F") 'ag)
+(global-set-key (kbd "M-F") 'ag)
 (global-set-key [control meta s] 'ag-project-at-point)
 (global-set-key [control meta shift s] 'ag-project)
 
@@ -382,13 +368,10 @@
 (global-set-key (kbd "C-x C-d") 'wil-duplicate)
 
 
-(global-set-key [escape] 'evil-exit-emacs-state)
 
 ;; easy-motion
-(evilem-default-keybindings "ù")
 
 ;; scroll
-;; (global-set-key (kbd "C-v") 'evil-scroll-down) ; Too slow (huge gain on large file)
 (global-set-key (kbd "C-v") 'scroll-up)
 
 (global-set-key (kbd "C-x <tab>") 'indent-rigidly) ; Default emacs key binding
@@ -631,7 +614,7 @@
 (global-set-key (kbd "s-e") 'kmacro-end-and-call-macro) ; Super+e
 (global-set-key (kbd "C-s-s") 'helm-ag) ; Super+Contral+s
 ;; (global-set-key (kbd "C-s-s") 'counsel-ag) ; Super+Contral+s
-(global-set-key (kbd "C-M-s-s") 'projectile-ag) ; Control+Meta+Super+s
+;; (global-set-key (kbd "C-M-s-s") 'projectile-ag) ; Control+Meta+Super+s
 (global-set-key (kbd "s-c") 'org-capture)
 (global-set-key (kbd "s-b") 'projectile-switch-to-buffer)
 (global-set-key (kbd "C-s-b") 'ivy-switch-buffer)
@@ -674,7 +657,6 @@
 (global-set-key (kbd "C-c j R") 'projectile-recentf)
 
 ;; Scroll commands
-;; (global-set-key (kbd "s-v") 'evil-scroll-up) ; too slow
 (global-set-key (kbd "s-v") 'scroll-down)
 (global-set-key (kbd "s-x") 'counsel-M-x)
 ;; (global-set-key (kbd "C-c j x") 'counsel-M-x) ;; (global-set-key (kbd "s-g") 'magit-status)

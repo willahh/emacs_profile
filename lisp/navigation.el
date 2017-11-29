@@ -46,19 +46,14 @@
 (add-hook 'emacs-lisp-mode 'highlight-symbol-nav-mode)
 
 (add-hook 'prog-mode-hook
-          (highlight-symbol-nav-mode)
-          (define-key evil-normal-state-map (kbd "M-n") 'highlight-symbol-next)
-          (define-key evil-normal-state-map (kbd "M-p") 'highlight-symbol-prev))
+          (highlight-symbol-nav-mode))
+          
 
 (add-hook 'typscript-mode-hook
-          (highlight-symbol-nav-mode)
-          (define-key evil-normal-state-map (kbd "M-n") 'highlight-symbol-next)
-          (define-key evil-normal-state-map (kbd "M-p") 'highlight-symbol-prev))
+          (highlight-symbol-nav-mode))
 
 (add-hook 'emacs-lisp-mode-hook
-          (highlight-symbol-nav-mode)
-          (define-key evil-normal-state-map (kbd "M-n") 'highlight-symbol-next)
-          (define-key evil-normal-state-map (kbd "M-p") 'highlight-symbol-prev))
+          (highlight-symbol-nav-mode))
 
 ;; Key chords commands
 ;; From http://emacsrocks.com/e07.html
@@ -201,14 +196,7 @@
 (setq neo-window-fixed-size nil)
 (setq neo-autorefresh nil)
 
-;; ;; Evil key binding for neotree
-;; (evil-define-key 'normal neotree-mode-map (kbd "TAB") 'neotree-enter)
-;; (evil-define-key 'normal neotree-mode-map (kbd "SPC") 'neotree-enter)
-;; (evil-define-key 'normal neotree-mode-map (kbd "q") 'neotree-hide)
-;; (evil-define-key 'normal neotree-mode-map (kbd "RET") 'neotree-enter)
 
-(defadvice evil-ex-search-next (after advice-for-evil-ex-search-next activate)
-  (evil-scroll-line-to-center (line-number-at-pos)))
 
 (add-hook 'js2-mode-hook 'textmate-mode)
 (add-hook 'web-mode-hook 'textmate-mode)

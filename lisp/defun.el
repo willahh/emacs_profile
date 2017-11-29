@@ -1098,8 +1098,7 @@ the visible part of the current buffer following point. "
 
 (defun wil-duplicate ()
   (interactive)
-  (duplicate-start-of-line-or-region)
-  (keyboard-quit))
+  (duplicate-start-of-line-or-region))
 
 (defun xah-toggle-letter-case ()
   "Toggle the letter case of current word or text selection.
@@ -1404,3 +1403,11 @@ the checking happens for all pairs in auto-minor-mode-alist"
   (interactive)
   (let ((path (s-replace "/Users/wravel/www/" "http://192.168.0.26/" (projectile-project-root))))
     (browse-url path)))
+
+(defun all-over-the-screen ()
+  (interactive)
+  (delete-other-windows)
+  (split-window-horizontally)
+  (split-window-horizontally)
+  (balance-windows)
+  (follow-mode t))
