@@ -113,17 +113,16 @@
 (setq ivy-fixed-height-minibuffer nil)
 
 ;; full file names - useful when multiple files have same names
-(setq ivy-virtual-abbreviate 'full);;
+(setq ivy-virtual-abbreviate 'full)
 (setq ivy-use-virtual-buffers t)
-
-;;
 (setq ivy-count-format "(%d/%d) ")
 (setq ivy-initial-inputs-alist nil)
+
 (setq ivy-re-builders-alist
       '((ivy-switch-buffer . ivy--regex-plus)
+        (swiper . ivy--regex-plus)
+        (projectile-find-file . ivy--regex-plus)
         (t . ivy--regex-fuzzy)))
-
-;; (setq ivy-re-builders-alist '((t . ivy--regex-plus))) ; Default
 
 ;; Use Enter on a directory to navigate into the directory, not open it with dired.
 (define-key ivy-minibuffer-map (kbd "C-m") 'ivy-alt-done)
