@@ -340,8 +340,11 @@
 (global-set-key (kbd "M-r") 'helm-imenu)
 (define-key paredit-mode-map (kbd "M-r") 'counsel-imenu)
 
+(global-set-key (kbd "C-c i") 'helm-imenu)
+(define-key paredit-mode-map (kbd "C-c i") 'helm-imenu)
+
 ;; mark
-(global-set-key (kbd "C-c C-SPC") 'helm-all-mark-rings)
+(global-set-key ("C-c C-SPC") 'helm-all-mark-rings)
 (global-set-key (kbd "C-c C-x C-d") 'crux-duplicate-and-comment-current-line-or-region)
 
 ;; org
