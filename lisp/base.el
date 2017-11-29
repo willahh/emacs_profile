@@ -621,3 +621,6 @@
 
 ;; Mac only - Use the spotlight service for locate command
 (setq locate-command "mdfind")
+
+;; Only require evil package just to get some commands
+(require 'evil)
