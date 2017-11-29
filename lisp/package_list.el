@@ -60,8 +60,8 @@
   php-mode
   php-auto-yasnippets
   gradle-mode
-  company-php
-  ac-php
+  ; company-php
+  ;; ac-php
   editorconfig
   dracula-theme
   psysh
