@@ -678,7 +678,7 @@
 (global-set-key (kbd "C-x v U") 'wil-svn-up-recursive)
 
 (global-set-key (kbd "s-i") 'emmet-expand-line)
-(define-key emacs-lisp-mode-map (kbd "C-c C-c") 'eval-defun)
+;; (define-key emacs-lisp-mode-map (kbd "C-c C-c") 'eval-defun)
 
 (global-set-key (kbd "s-a") 'mark-whole-buffer)
 ;; (global-set-key (kbd "s-s") 'helm-swoop)
