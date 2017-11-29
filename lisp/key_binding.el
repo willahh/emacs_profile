@@ -338,7 +338,7 @@
 ;; (global-set-key (kbd "C-M-s") 'projectile-ag)
 ;; (global-set-key (kbd "C-M-s") 'ag)
 (global-set-key (kbd "C-M-s") 'isearch-forward-regexp)
-(global-set-key (kbd "C-F") 'ag)
+;; (global-set-key (kbd "C-F") 'ag)
 (global-set-key (kbd "M-F") 'ag)
 (global-set-key [control meta s] 'ag-project-at-point)
 (global-set-key [control meta shift s] 'ag-project)
