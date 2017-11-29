@@ -65,7 +65,7 @@
                       :box nil))
 
 
-
+(powerline-theme-emacs)
 
 
 
