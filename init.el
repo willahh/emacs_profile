@@ -69,7 +69,7 @@
  '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks" t)
  '(custom-safe-themes
    (quote
-    ("b97a01622103266c1a26a032567e02d920b2c697ff69d40b7d9956821ab666cc" default)))
+    ("bfdcbf0d33f3376a956707e746d10f3ef2d8d9caa1c214361c9c08f00a1c8409" "b97a01622103266c1a26a032567e02d920b2c697ff69d40b7d9956821ab666cc" default)))
  '(display-time-day-and-date t)
  '(ediff-diff-options "-w")
  '(ediff-split-window-function (quote split-window-horizontally))
