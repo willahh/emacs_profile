@@ -8,6 +8,7 @@
   edit-server
   wgrep-ag
   whitespace-cleanup-mode
+  coffee-mode
   pandoc-mode
   smooth-scrolling
   iedit
