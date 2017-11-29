@@ -835,3 +835,8 @@ abort completely with `C-g'."
           (message "\"%s\" now expands to \"%s\" %sally"
                    bef aft (if p "loc" "glob")))
       (user-error "No typo at or before point"))))
+
+
+; ace-link
+(require 'ace-link)
+(ace-link-setup-default)

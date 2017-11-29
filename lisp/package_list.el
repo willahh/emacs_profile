@@ -112,6 +112,7 @@
   skewer-mode
   fullframe
   ace-popup-menu
+  ace-link
   counsel
   sml-mode
   swiper
