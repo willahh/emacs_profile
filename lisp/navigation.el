@@ -178,6 +178,11 @@
   :ensure t)
 
 (ivy-set-occur 'swiper 'swiper-occur)
+(ivy-set-occur 'ivy-switch-buffer 'ivy-switch-buffer-occur)
+(ivy-set-occur 'counsel-find-file 'ivy-switch-buffer-occur)
+;; (ivy-set-occur 'projectile-find-file 'swiper)
+
+
 
 ;; advise swiper to recenter on exit
 (defun bjm-swiper-recenter (&rest args)
