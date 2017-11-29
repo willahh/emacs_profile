@@ -100,35 +100,6 @@
 (put 'upcase-region 'disabled nil)
 (put 'dired-find-alternate-file 'disabled nil)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ;; http://endlessparentheses.com/eval-result-overlays-in-emacs-lisp.html
 ;; Cette partie doit est presente une fois cider charge
 (autoload 'cider--make-result-overlay "cider-overlays")
