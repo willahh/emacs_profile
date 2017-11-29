@@ -169,19 +169,13 @@
 ;; If this value is t, split window inside the current window
 (setq helm-swoop-split-with-multiple-windows t)
 
-;; Dont pre fill at point
-;; (setq helm-swoop-pre-input-function (lambda () nil))
-;; Update : Ok, maybe more usefull
-
 ;; ---------------- swiper
 (use-package counsel
   :ensure t)
 
 (ivy-set-occur 'swiper 'swiper-occur)
 (ivy-set-occur 'ivy-switch-buffer 'ivy-switch-buffer-occur)
-(ivy-set-occur 'counsel-find-file 'ivy-switch-buffer-occur)
-;; (ivy-set-occur 'projectile-find-file 'swiper)
-
+;; (ivy-set-occur 'counsel-find-file 'ivy-switch-buffer-occur)
 
 
 ;; advise swiper to recenter on exit
