@@ -650,7 +650,8 @@
 (define-key highlight-symbol-nav-mode-map (kbd "M-p") 'projectile-find-file)
 
 (global-set-key (kbd "s-q") 'my-abort-recursive-edit)
-(global-set-key (kbd "C-s-p") 'find-file-in-current-directory)
+;; (global-set-key (kbd "C-s-p") 'find-file-in-current-directory)
+(global-set-key (kbd "M-P") 'find-file-in-current-directory)
 (global-set-key (kbd "s-r") 'projectile-recentf)
 (global-set-key (kbd "C-s-r") 'counsel-recentf) ; Update : Oui mais la completion avec espace est relou et moins rapide
 (global-set-key (kbd "C-c j r") 'counsel-recentf)
