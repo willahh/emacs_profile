@@ -349,8 +349,8 @@
 
 ;; (global-set-key (kbd "C-M-s") 'ag)
 ;; (global-set-key (kbd "C-M-s") 'ripgrep-regexp) ; Ripgrep ne supporte pas les retours a la ligne dans une recherche
-;; (global-set-key (kbd "C-M-s") 'ag)
-(global-set-key (kbd "C-M-s") 'projectile-ag)
+(global-set-key (kbd "C-M-s") 'ag)
+;; (global-set-key (kbd "C-M-s") 'projectile-ag)
 (global-set-key [control meta s] 'ag-project-at-point)
 (global-set-key [control meta shift s] 'ag-project)
 
