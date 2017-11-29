@@ -770,7 +770,7 @@
 
 ;; org
 ;; (global-set-key (kbd "s-a") 'org-agenda)
-(global-set-key (kbd "C-c j o a") 'org-agenda)
+;; (global-set-key (kbd "C-c j o a") 'org-agenda)
 
 ;; Increment at point
 (global-set-key (kbd "C-c j i") 'wil-hydra-increment-at-point/body)
@@ -836,6 +836,8 @@
 ;; (global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
 (global-set-key (kbd "C-c C-r") 'ivy-resume)
 
-
-
          
+;; org (from prelude)
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key (kbd "C-c j o") 'org-iswitchb)
