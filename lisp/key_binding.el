@@ -769,7 +769,8 @@
 (global-set-key (kbd "C-c M-.") 'dumb-jump-go)
 
 ;; org
-(global-set-key (kbd "s-a") 'org-agenda)
+;; (global-set-key (kbd "s-a") 'org-agenda)
+(global-set-key (kbd "C-c j o a") 'org-agenda)
 
 ;; Increment at point
 (global-set-key (kbd "C-c j i") 'wil-hydra-increment-at-point/body)
