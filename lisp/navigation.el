@@ -113,17 +113,16 @@
 (setq ivy-fixed-height-minibuffer nil)
 
 ;; full file names - useful when multiple files have same names
-(setq ivy-virtual-abbreviate 'full);;
+(setq ivy-virtual-abbreviate 'full)
 (setq ivy-use-virtual-buffers t)
-
-;;
 (setq ivy-count-format "(%d/%d) ")
 (setq ivy-initial-inputs-alist nil)
+
 (setq ivy-re-builders-alist
       '((ivy-switch-buffer . ivy--regex-plus)
+        (swiper . ivy--regex-plus)
+        (projectile-find-file . ivy--regex-plus)
         (t . ivy--regex-fuzzy)))
-
-;; (setq ivy-re-builders-alist '((t . ivy--regex-plus))) ; Default
 
 ;; Use Enter on a directory to navigate into the directory, not open it with dired.
 (define-key ivy-minibuffer-map (kbd "C-m") 'ivy-alt-done)
@@ -170,15 +169,14 @@
 ;; If this value is t, split window inside the current window
 (setq helm-swoop-split-with-multiple-windows t)
 
-;; Dont pre fill at point
-;; (setq helm-swoop-pre-input-function (lambda () nil))
-;; Update : Ok, maybe more usefull
-
 ;; ---------------- swiper
 (use-package counsel
   :ensure t)
 
 (ivy-set-occur 'swiper 'swiper-occur)
+(ivy-set-occur 'ivy-switch-buffer 'ivy-switch-buffer-occur)
+;; (ivy-set-occur 'counsel-find-file 'ivy-switch-buffer-occur)
+
 
 ;; advise swiper to recenter on exit
 (defun bjm-swiper-recenter (&rest args)

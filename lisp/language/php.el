@@ -1,17 +1,18 @@
 (require 'cl)
 (require 'php-mode)
 (require 'ggtags)
-(require 'ac-php)
-(require 'company-php)
+;; (require 'ac-php)
+; (require 'company-php)
 
 ;; ;; Add compay-ac-php for company backend
 (add-hook 'php-mode-hook
           '(lambda ()
             (company-mode t)
-            (ac-php-mode); ac-php
+            ;; (ac-php-mode); ac-php
 
             (add-to-list (make-local-variable 'company-backends)
-                         'company-ac-php-backend)
+                         ;; 'company-ac-php-backend
+                         )
 
             ;; (eldoc-mode t) ; el-doc, deja active de maniere global
             (ggtags-mode 1) ; ggtags-mode

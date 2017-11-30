@@ -346,7 +346,8 @@
 (global-set-key (kbd "C-M-s") 'isearch-forward-regexp)
 (global-set-key (kbd "M-=") 'delete-horizontal-space) ; Azerty equivalent of M-\
 ;; (global-set-key (kbd "C-F") 'ag)
-(global-set-key (kbd "M-F") 'ag)
+;; (global-set-key (kbd "M-F") 'ag)
+(global-set-key (kbd "M-F") 'ripgrep-regexp)
 (global-set-key [control meta s] 'ag-project-at-point)
 (global-set-key [control meta shift s] 'ag-project)
 
@@ -677,8 +678,11 @@
 ;; (global-set-key (kbd "s-s") 'helm-swoop)
 ;; (global-set-key (kbd "s-s") 'swiper)
 ;; (global-set-key (kbd "C-c C-s") 'swiper)
+
+;; (global-set-key (kbd "s-s") 'helm-swoop)
+;; (global-set-key (kbd "C-c C-s") 'helm-swoop)
 (global-set-key (kbd "s-s") 'helm-swoop)
-(global-set-key (kbd "C-c C-s") 'helm-swoop)
+(global-set-key (kbd "C-c C-s") 'swiper)
 
 ;; vc
 (global-set-key (kbd "s-w") 'vc-diff)

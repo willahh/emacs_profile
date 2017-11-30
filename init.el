@@ -69,7 +69,7 @@
  '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks" t)
  '(custom-safe-themes
    (quote
-    ("b97a01622103266c1a26a032567e02d920b2c697ff69d40b7d9956821ab666cc" default)))
+    ("bfdcbf0d33f3376a956707e746d10f3ef2d8d9caa1c214361c9c08f00a1c8409" "b97a01622103266c1a26a032567e02d920b2c697ff69d40b7d9956821ab666cc" default)))
  '(display-time-day-and-date t)
  '(ediff-diff-options "-w")
  '(ediff-split-window-function (quote split-window-horizontally))
@@ -86,7 +86,7 @@
  '(magit-dispatch-arguments nil)
  '(package-selected-packages
    (quote
-    (coffee-mode color-identifiers-mode darkroom jabber pandoc-mode pandoc inf-clojure aggressive-indent validate spaceline dtrt-indent whitespace-cleanup-mode paradox iflipb browse-kill-ring beacon helm-cider clj-refactor company-quickhelp csv-mode clojure-cheatsheet clojure-snippets lsp-mode ido-gnus org-bullets indent-guide react-snippets ido-at-point fill-column-indicator lispy dired-subtree outline-toc dired-ranger sourcemap websocket nodejs-repl dracula-theme git-timemachine gradle-mode relative-line-numbers evil-org easy-kill string-inflection flycheck-pos-tip ibuffer-vc ov crux smex psysh toc-org evil-magit fullframe jade-mode ecb imenu-list google-maps sx image-dired+ anzu impatient-mode find-file-in-project clojurescript-mode cider slime yaml-mode pdf-tools restclient helm-w3m w3 hl-line+ syslog-mode paredit-everywhere paredit wgrep-ag iedit wgrep sr-speedbar indium google-translate helm-projectile ivy-hydra helm-swoop evil-matchit point-undo editorconfig php-completion php-extras company-php eclim rainbow-mode company-web helm helm-ag flx-ido ace-jump-mode change-inner iy-go-to-char evil-snipe zop-to-char try counsel autopair ido-vertical-mode ido-ubiquitous php-eldoc smart-tab json-mode company-tern highlight-chars smooth-scrolling drag-stuff evil-tutor clean-aindent-mode rainbow-delimiters tide typescript-mode js2-refactor dumb-jump flymake-jshint helm-hunks yascroll actionscript-mode perspective workgroups2 php-mode polymode web-mode mmm-mode multi-web-mode load-theme-buffer-local 0blayout use-package tabbar color-theme-buffer-local leuven-theme js-doc smart-forward js-comint php-auto-yasnippets smart-newline resize-window php-refactor-mode ac-php popwin evil-surround window-numbering eyebrowse which-key evil edit-server neotree elfeed logview monokai-theme material-theme noctilux-theme nlinum crosshairs dumb-mode theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord flymake-mode ggtags less-css-mode ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn highlight-symbol zerodark-theme markdown-mode+ emmet-mode company web-beautify multiple-cursors other-frame-window desktop+ undo-tree expand-region avy-menu auto-complete ace-window magit)))
+    (ace-link coffee-mode color-identifiers-mode darkroom jabber pandoc-mode pandoc inf-clojure aggressive-indent validate spaceline dtrt-indent whitespace-cleanup-mode paradox iflipb browse-kill-ring beacon helm-cider clj-refactor company-quickhelp csv-mode clojure-cheatsheet clojure-snippets lsp-mode ido-gnus org-bullets indent-guide react-snippets ido-at-point fill-column-indicator lispy dired-subtree outline-toc dired-ranger sourcemap websocket nodejs-repl dracula-theme git-timemachine gradle-mode relative-line-numbers evil-org easy-kill string-inflection flycheck-pos-tip ibuffer-vc ov crux smex psysh toc-org evil-magit fullframe jade-mode ecb imenu-list google-maps sx image-dired+ anzu impatient-mode find-file-in-project clojurescript-mode cider slime yaml-mode pdf-tools restclient helm-w3m w3 hl-line+ syslog-mode paredit-everywhere paredit wgrep-ag iedit wgrep sr-speedbar indium google-translate helm-projectile ivy-hydra helm-swoop evil-matchit point-undo editorconfig php-completion php-extras company-php eclim rainbow-mode company-web helm helm-ag flx-ido ace-jump-mode change-inner iy-go-to-char evil-snipe zop-to-char try counsel autopair ido-vertical-mode ido-ubiquitous php-eldoc smart-tab json-mode company-tern highlight-chars smooth-scrolling drag-stuff evil-tutor clean-aindent-mode rainbow-delimiters tide typescript-mode js2-refactor dumb-jump flymake-jshint helm-hunks yascroll actionscript-mode perspective workgroups2 php-mode polymode web-mode mmm-mode multi-web-mode load-theme-buffer-local 0blayout use-package tabbar color-theme-buffer-local leuven-theme js-doc smart-forward js-comint php-auto-yasnippets smart-newline resize-window php-refactor-mode popwin evil-surround window-numbering eyebrowse which-key evil edit-server neotree elfeed logview monokai-theme material-theme noctilux-theme nlinum crosshairs dumb-mode theme-doom-molokai doom-molokai zenburn-theme js2-mode tern-auto-complete psvn key-chord flymake-mode ggtags less-css-mode ag dired+ tern diff-hl dired-narrow dired-filter dired-hacks-utils exec-path-from-shell dsvn highlight-symbol zerodark-theme markdown-mode+ emmet-mode company web-beautify multiple-cursors other-frame-window desktop+ undo-tree expand-region avy-menu auto-complete ace-window magit)))
  '(safe-local-variable-values (quote ((no-byte-compile t))))
  '(tabbar-separator (quote (1)) t)
  '(vc-annotate-background "#181e26")
@@ -99,35 +99,6 @@
 (put 'scroll-bottom 'disabled nil)
 (put 'upcase-region 'disabled nil)
 (put 'dired-find-alternate-file 'disabled nil)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ;; http://endlessparentheses.com/eval-result-overlays-in-emacs-lisp.html
 ;; Cette partie doit est presente une fois cider charge
