@@ -278,3 +278,11 @@ C
    [[file:~/org/etor.org::*3.1%20Corriger%20le%20sprite%20des%20boutons%20visible%20dans%20une%20fiche%20produit][3.1 Corriger le sprite des boutons visible dans une fiche produit]]
 
 
+** TODO ag > Faire en sorte que le mode fonctionne comme le mode rgrep avec un follow auto et un split 
+   [2017-11-29 Wed]
+   [[file:~/.emacs.d_prelude/core/prelude-packages.el::"When%20file%20with%20EXTENSION%20is%20opened%20triggers%20auto-install%20of%20PACKAGE.][file:~/.emacs.d_prelude/core/prelude-packages.el::"When file with EXTENSION is opened triggers auto-install of PACKAGE.]]
+
+** TODO css mode : Paste : Ajouter une indentation auto après le paste
+   [2017-11-29 Wed]
+   [[file:~/www/project/arsia/arsia_standard_310/dev/mobile/pim/layout/main.css::.header%20.form-inline%20.btn%20{][file:~/www/project/arsia/arsia_standard_310/dev/mobile/pim/layout/main.css::.header .form-inline .btn {]]
+
