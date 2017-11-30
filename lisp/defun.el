@@ -1411,3 +1411,9 @@ the checking happens for all pairs in auto-minor-mode-alist"
   (split-window-horizontally)
   (balance-windows)
   (follow-mode t))
+
+(defadvice highlight-symbol-next (after wlh/highlight-symbol-next-advice)
+  (beacon-blink))
+
+(defadvice highlight-symbol-prev (after wlh/highlight-symbol-prev-advice)
+  (beacon-blink))
