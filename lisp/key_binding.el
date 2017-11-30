@@ -276,7 +276,10 @@
 
 (define-key company-active-map (kbd "C-h") 'paredit-backward-delete)
 (define-key company-active-map (kbd "<tab>") 'company-complete-selection)
-;; (define-key company-active-map (kbd "C-n") 'company-select-next)
+(define-key company-active-map (kbd "C-m") 'new-line-dwim)
+(define-key company-active-map (kbd "C-j") 'company-complete)
+
+;; (define-key company-active-map (kbd "C-n") 'company-select-next)def
 ;; (define-key company-active-map (kbd "C-p") 'company-select-previous)
 ;; (define-key company-active-map (kbd "C-i") 'company-complete-selection)
 ;; (define-key company-active-map (kbd "C-c h") 'company-quickhelp--show)
@@ -317,11 +320,14 @@
 (define-key php-mode-map (kbd "C-c C-p") 'diff-hl-previous-hunk)
 
 ;; (global-set-key (kbd "M-r") 'counsel-imenu)
-(global-set-key (kbd "M-r") 'helm-imenu)
+;; (global-set-key (kbd "M-r") 'helm-imenu)
+;; (define-key paredit-mode-map (kbd "M-r") 'counsel-imenu)
+
+(global-set-key (kbd "M-r") 'counsel-imenu)
 (define-key paredit-mode-map (kbd "M-r") 'counsel-imenu)
 
-(global-set-key (kbd "C-c i") 'helm-imenu)
-(define-key paredit-mode-map (kbd "C-c i") 'helm-imenu)
+(global-set-key (kbd "C-c i") 'counsel-imenu)
+(define-key paredit-mode-map (kbd "C-c i") 'counsel-imenu)
 
 ;; mark
 ; (global-set-key ("C-c C-SPC") 'helm-all-mark-rings)
@@ -338,9 +344,17 @@
 ;; (global-set-key (kbd "C-M-s") 'projectile-ag)
 ;; (global-set-key (kbd "C-M-s") 'ag)
 (global-set-key (kbd "C-M-s") 'isearch-forward-regexp)
+(global-set-key (kbd "C-c C-M-s") 'vr/replace)
+(global-set-key (kbd "M-=") 'delete-horizontal-space) ; Azerty equivalent of M-\
+(global-set-key (kbd "s-=") 'delete-horizontal-space) ; Azerty equivalent of M-\
+
+;; ripgrep-regexp ne fonctionne que par regexp, du coup impossible de rechercher
+;; des retours à la ligne ainsi que certains caractères spéciaux.
+;; 
 ;; (global-set-key (kbd "C-F") 'ag)
 ;; (global-set-key (kbd "M-F") 'ag)
-(global-set-key (kbd "M-F") 'ripgrep-regexp)
+;; (global-set-key (kbd "M-F") 'ripgrep-regexp)
+(global-set-key (kbd "M-F") 'ag)
 (global-set-key [control meta s] 'ag-project-at-point)
 (global-set-key [control meta shift s] 'ag-project)
 
@@ -358,7 +372,7 @@
 ;; (global-set-key (kbd "<RET>") 'newline)
 ;; (global-set-key (kbd "C-j") 'newline)
 ;; (define-key typescript-mode-map (kbd "M-j") 'c-indent-new-comment-line)
-(global-set-key (kbd "C-s-i") 'company-complete)
+;; (global-set-key (kbd "C-s-i") 'company-complete)
 
 (define-key prog-mode-map (kbd "RET") 'new-line-dwim)
 ;; (define-key prog-mode-map (kbd "<RET>") 'new-line-dwim)
@@ -457,6 +471,7 @@
 ;; (define-key isearch-mode-map (kbd "C-j") 'er/expand-region)
 ;; (define-key emmet-mode-keymap (kbd "C-j") 'er/expand-region)
 (global-set-key (kbd "C-,") 'er/expand-region)
+(define-key org-mode-map (kbd "C-,") 'er/expand-region)
 (global-set-key (kbd "M-L") 'er/contract-region)
 (global-set-key (kbd "M-L") 'mc/mark-all-words-like-this) ; Like in VS Code
 (global-set-key (kbd "C-M-l") 'mark-sexp)
@@ -831,3 +846,4 @@
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key (kbd "C-c j o") 'org-iswitchb)
+(global-set-key (kbd "C-c C-j") 'join-region)

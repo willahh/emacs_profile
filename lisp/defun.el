@@ -1411,3 +1411,34 @@ the checking happens for all pairs in auto-minor-mode-alist"
   (split-window-horizontally)
   (balance-windows)
   (follow-mode t))
+
+(defadvice highlight-symbol-next (after wlh/highlight-symbol-next-advice)
+  (beacon-blink))
+
+(defadvice highlight-symbol-prev (after wlh/highlight-symbol-prev-advice)
+  (beacon-blink))
+
+
+
+
+;; https://stackoverflow.com/a/32002122
+(defun jrh-isearch-with-region ()
+  "Use region as the isearch text."
+  (when mark-active
+    (let ((region (funcall region-extract-function nil)))
+      (deactivate-mark)
+      (isearch-push-state)
+      (isearch-yank-string region))))
+
+(add-hook 'isearch-mode-hook #'jrh-isearch-with-region)
+
+;; http://emacsredux.com/blog/2013/05/30/joining-lines/
+(defun join-region (beg end)
+  "Apply join-line over region."
+  (interactive "r")
+  (if mark-active
+      (let ((beg (region-beginning))
+            (end (copy-marker (region-end))))
+        (goto-char beg)
+        (while (< (point) end)
+          (join-line 1)))))

@@ -23,3 +23,5 @@
 (add-hook 'after-init-hook 'global-company-mode)
 
 (setq yas-indent-line 'auto)
+
+(company-quickhelp-mode 1)
