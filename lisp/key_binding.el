@@ -464,6 +464,7 @@
 ;; (define-key isearch-mode-map (kbd "C-j") 'er/expand-region)
 ;; (define-key emmet-mode-keymap (kbd "C-j") 'er/expand-region)
 (global-set-key (kbd "C-,") 'er/expand-region)
+(define-key org-mode-map (kbd "C-,") 'er/expand-region)
 (global-set-key (kbd "M-L") 'er/contract-region)
 (global-set-key (kbd "M-L") 'mc/mark-all-words-like-this) ; Like in VS Code
 (global-set-key (kbd "C-M-l") 'mark-sexp)
