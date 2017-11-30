@@ -121,6 +121,7 @@
 (setq ivy-re-builders-alist
       '((ivy-switch-buffer . ivy--regex-plus)
         (swiper . ivy--regex-plus)
+        (counsel-imenu . ivy--regex-plus)
         ;; (projectile-find-file . ivy--regex-plus)
         (projectile-find-file . ivy--regex-fuzzy)
         (t . ivy--regex-fuzzy)))
