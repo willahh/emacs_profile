@@ -757,7 +757,8 @@ Version 2016-10-24"
 (use-package nlinum
        :init
        (add-hook 'php-mode-hook 'nlinum-mode)
-       (add-hook 'web-mode-hook 'nlinum-mode))
+       (add-hook 'web-mode-hook 'nlinum-mode)
+       (add-hook 'js2-mode-hook 'nlinum-mode))
 
 
 (require 'smart-comment)
