@@ -276,7 +276,10 @@
 
 (define-key company-active-map (kbd "C-h") 'paredit-backward-delete)
 (define-key company-active-map (kbd "<tab>") 'company-complete-selection)
-;; (define-key company-active-map (kbd "C-n") 'company-select-next)
+(define-key company-active-map (kbd "C-m") 'new-line-dwim)
+(define-key company-active-map (kbd "C-j") 'company-complete)
+
+;; (define-key company-active-map (kbd "C-n") 'company-select-next)def
 ;; (define-key company-active-map (kbd "C-p") 'company-select-previous)
 ;; (define-key company-active-map (kbd "C-i") 'company-complete-selection)
 ;; (define-key company-active-map (kbd "C-c h") 'company-quickhelp--show)
@@ -317,11 +320,14 @@
 (define-key php-mode-map (kbd "C-c C-p") 'diff-hl-previous-hunk)
 
 ;; (global-set-key (kbd "M-r") 'counsel-imenu)
-(global-set-key (kbd "M-r") 'helm-imenu)
+;; (global-set-key (kbd "M-r") 'helm-imenu)
+;; (define-key paredit-mode-map (kbd "M-r") 'counsel-imenu)
+
+(global-set-key (kbd "M-r") 'counsel-imenu)
 (define-key paredit-mode-map (kbd "M-r") 'counsel-imenu)
 
-(global-set-key (kbd "C-c i") 'helm-imenu)
-(define-key paredit-mode-map (kbd "C-c i") 'helm-imenu)
+(global-set-key (kbd "C-c i") 'counsel-imenu)
+(define-key paredit-mode-map (kbd "C-c i") 'counsel-imenu)
 
 ;; mark
 ; (global-set-key ("C-c C-SPC") 'helm-all-mark-rings)
@@ -338,6 +344,7 @@
 ;; (global-set-key (kbd "C-M-s") 'projectile-ag)
 ;; (global-set-key (kbd "C-M-s") 'ag)
 (global-set-key (kbd "C-M-s") 'isearch-forward-regexp)
+(global-set-key (kbd "M-=") 'delete-horizontal-space) ; Azerty equivalent of M-\
 ;; (global-set-key (kbd "C-F") 'ag)
 (global-set-key (kbd "M-F") 'ag)
 (global-set-key [control meta s] 'ag-project-at-point)
@@ -357,7 +364,7 @@
 ;; (global-set-key (kbd "<RET>") 'newline)
 ;; (global-set-key (kbd "C-j") 'newline)
 ;; (define-key typescript-mode-map (kbd "M-j") 'c-indent-new-comment-line)
-(global-set-key (kbd "C-s-i") 'company-complete)
+;; (global-set-key (kbd "C-s-i") 'company-complete)
 
 (define-key prog-mode-map (kbd "RET") 'new-line-dwim)
 ;; (define-key prog-mode-map (kbd "<RET>") 'new-line-dwim)
