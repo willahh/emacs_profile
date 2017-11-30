@@ -1417,3 +1417,17 @@ the checking happens for all pairs in auto-minor-mode-alist"
 
 (defadvice highlight-symbol-prev (after wlh/highlight-symbol-prev-advice)
   (beacon-blink))
+
+
+
+
+;; https://stackoverflow.com/a/32002122
+(defun jrh-isearch-with-region ()
+  "Use region as the isearch text."
+  (when mark-active
+    (let ((region (funcall region-extract-function nil)))
+      (deactivate-mark)
+      (isearch-push-state)
+      (isearch-yank-string region))))
+
+(add-hook 'isearch-mode-hook #'jrh-isearch-with-region)
