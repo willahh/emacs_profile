@@ -58,6 +58,7 @@
   ido-ubiquitous
   ido-vertical-mode
   php-mode
+  auto-yasnippet
   php-auto-yasnippets
   gradle-mode
   ; company-php
