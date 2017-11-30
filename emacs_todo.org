@@ -286,3 +286,7 @@ C
    [2017-11-29 Wed]
    [[file:~/www/project/arsia/arsia_standard_310/dev/mobile/pim/layout/main.css::.header%20.form-inline%20.btn%20{][file:~/www/project/arsia/arsia_standard_310/dev/mobile/pim/layout/main.css::.header .form-inline .btn {]]
 
+** TODO Try ParInfer mode https://github.com/shaunlebron/parinfer
+   [2017-11-30 Thu]
+   [[file:~/.emacs.d/lisp/defun/wlh-nodejs-task-list.el::(defun%20re-seq%20(regexp%20string)][file:~/.emacs.d/lisp/defun/wlh-nodejs-task-list.el::(defun re-seq (regexp string)]]
+
