@@ -840,3 +840,5 @@ abort completely with `C-g'."
 ; ace-link
 (require 'ace-link)
 (ace-link-setup-default)
+
+(require 'visual-regexp)

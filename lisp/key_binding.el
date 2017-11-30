@@ -344,6 +344,7 @@
 ;; (global-set-key (kbd "C-M-s") 'projectile-ag)
 ;; (global-set-key (kbd "C-M-s") 'ag)
 (global-set-key (kbd "C-M-s") 'isearch-forward-regexp)
+(global-set-key (kbd "C-c C-M-s") 'vr/replace)
 (global-set-key (kbd "M-=") 'delete-horizontal-space) ; Azerty equivalent of M-\
 ;; (global-set-key (kbd "C-F") 'ag)
 ;; (global-set-key (kbd "M-F") 'ag)
