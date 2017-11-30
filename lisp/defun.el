@@ -1431,3 +1431,14 @@ the checking happens for all pairs in auto-minor-mode-alist"
       (isearch-yank-string region))))
 
 (add-hook 'isearch-mode-hook #'jrh-isearch-with-region)
+
+;; http://emacsredux.com/blog/2013/05/30/joining-lines/
+(defun join-region (beg end)
+  "Apply join-line over region."
+  (interactive "r")
+  (if mark-active
+      (let ((beg (region-beginning))
+            (end (copy-marker (region-end))))
+        (goto-char beg)
+        (while (< (point) end)
+          (join-line 1)))))

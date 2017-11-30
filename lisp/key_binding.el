@@ -346,6 +346,7 @@
 (global-set-key (kbd "C-M-s") 'isearch-forward-regexp)
 (global-set-key (kbd "C-c C-M-s") 'vr/replace)
 (global-set-key (kbd "M-=") 'delete-horizontal-space) ; Azerty equivalent of M-\
+(global-set-key (kbd "s-=") 'delete-horizontal-space) ; Azerty equivalent of M-\
 
 ;; ripgrep-regexp ne fonctionne que par regexp, du coup impossible de rechercher
 ;; des retours à la ligne ainsi que certains caractères spéciaux.
@@ -845,3 +846,4 @@
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key (kbd "C-c j o") 'org-iswitchb)
+(global-set-key (kbd "C-c C-j") 'join-region)
