@@ -1576,3 +1576,22 @@ Archived entries from file /Users/wravel/.emacs.d/emacs_todo.org
   :END:
   [2017-11-08 Wed]
   [[file:~/www/project/easy3p/easy3p_3.2_lot2/dev/layout/sass/_module.scss::height:%2016px%3B][file:~/www/project/easy3p/easy3p_3.2_lot2/dev/layout/sass/_module.scss::height: 16px;]]
+
+* TODO Mettre le caractere # dans les word bidul (double clic code couleur) :@home:
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-12-01 Fri 13:23
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :END:
+
+* TODO [#A] [swoop] C-w ne fonctionne pas                             :@home:
+  SCHEDULED: <2017-11-25 Sat>
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-12-01 Fri 13:23
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :END:
