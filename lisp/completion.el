@@ -24,4 +24,5 @@
 
 (setq yas-indent-line 'auto)
 
-(company-quickhelp-mode 1)
+;; Don't enable company-quickhelp ... it's too slow
+(company-quickhelp-mode 0)
