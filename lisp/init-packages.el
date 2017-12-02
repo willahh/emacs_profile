@@ -11,155 +11,156 @@
 
 ;; Package list
 (setq package-list '(
-                     powerline
-                     undo-tree
-                                        ; sr-speedbar
-                     diff-hl
-                     wgrep
-                     edit-server
-                                        ; wgrep-ag
-                                        ; whitespace-cleanup-mode
-                     coffee-mode
-                     pandoc-mode
-                     smooth-scrolling
-                     iedit
-                     hydra
-                     paredit
-                     paredit-everywhere
-                     inf-clojure
-                     syslog-mode
-                     yaml-mode
-                     impatient-mode
-                     dtrt-indent
-                     image-dired+
-                     imenu-list
-                     ivy
-                     ivy-hydra
-                     crux
-                     ;; volatile-highlights ; Update : desactivation car trop distrayant, et pas 
-                     ov ; Utlise pour quelques fonctions utils de prelude
-                     ibuffer-vc
-                     flycheck-pos-tip
-                     jabber
-                     websocket
-                     sourcemap
-                     memoize
-                                        ; outline-toc
-                                        ; dired-subtree
-                     ido-at-point
-                     react-snippets
-                     ;; rjsx-mode
-                     indent-guide
-                                        ; lsp-mode
-                     org-bullets
-                     clojure-cheatsheet
-                     clj-refactor
-                     helm
-                     helm-ag
-                     helm-swoop
-                     helm-cider
-                     clojure-snippets
-                     json-mode
-                     company-tern
-                     company-quickhelp
-                     company-web
-                     drag-stuff
+                     ace-jump-mode
+                     ace-link
+                     ace-window 
                      actionscript-mode
-                     typescript-mode
-                     tide
-                     anzu
-                     smex
-                     ido
-                     ido-ubiquitous
-                     ido-vertical-mode
-                     php-mode
-                     auto-yasnippet
-                     php-auto-yasnippets
-                     gradle-mode
-                                        ; company-php
-                     ;; ac-php
-                     editorconfig
-                     dracula-theme
-                     psysh
                      ag
-                     rainbow-mode
-                     eclim
-                     rainbow-delimiters
+                     anzu
                      async
                      auto-complete
-                     highlight-symbol
+                     auto-yasnippet
                      autopair
-                     ;; smartparens
-                     pdf-tools
-                     dash
-                     dsvn
-                     emmet-mode
-                     epl
-                     ggtags
-                     evil
-                     evil-leader
-                     evil-nerd-commenter
-                     evil-surround
-                     evil-visualstar
-                     evil-snipe
-                     evil-matchit
-                     evil-org
-                     toc-org
-                     exec-path-from-shell
-                     expand-region
-                     git-gutter
-                     sx
+                     avy
+                     avy-menu
                      beacon
                      browse-kill-ring
+                     clj-refactor
+                     clojure-cheatsheet
+                     clojure-snippets
+                     coffee-mode
+                     company-quickhelp
+                     company-tern
+                     company-web
+                     counsel
+                     crux
+                     darkroom
+                     dash
+                     diff-hl
+                     dracula-theme
+                     drag-stuff
+                     dsvn
+                     dtrt-indent
+                     eclim
+                     edit-server
+                     editorconfig
+                     emmet-mode
+                     epl
+                     evil
+                     evil-leader
+                     evil-matchit
+                     evil-nerd-commenter
+                     evil-org
+                     evil-snipe
+                     evil-surround
+                     evil-visualstar
+                     exec-path-from-shell
+                     expand-region
+                     find-file-in-project
+                     flx-ido
+                     flycheck-pos-tip
+                     fullframe
+                     ggtags
+                     git-gutter
+                     git-timemachine
+                     google-translate
+                     gradle-mode
+                     helm
+                     helm-ag
+                     helm-cider
+                     helm-swoop
+                     highlight-symbol
+                     hydra
+                     ibuffer-vc
+                     ido
+                     ido-at-point
+                     ido-ubiquitous
+                     ido-vertical-mode
+                     iedit
+                     iflipb
+                     image-dired+
+                     imenu-list
+                     impatient-mode
+                     indent-guide
+                     inf-clojure
+                     intellij-theme
+                     ivy
+                     ivy-hydra
+                     iy-go-to-char
+                     jabber
                      js-comint
                      js2-mode
+                     js2-refactor
+                     json-mode
                      key-chord
                      magit
                      magit-popup
-                     git-timemachine
                      markdown-mode
+                     memoize
                      monokai-theme
                      multiple-cursors
+                     neotree
                      nlinum
+                     org-bullets
+                     ov ; Utlise pour quelques fonctions utils de prelude
+                     pandoc-mode
+                     paradox
+                     paredit
+                     paredit-everywhere
+                     pdf-tools
+                     perspective
+                     php-auto-yasnippets
+                     php-mode
                      pkg-info
                      popup
-                     projectile
-                     resize-window
-                     skewer-mode
-                     fullframe
-                                        ; ace-popup-menu
-                     ace-link
-                     counsel
-                     sml-mode
-                                        ; swiper
-                     tern
-                     iflipb
-                     paradox
                      popwin
-                     zop-to-char
-                     use-package
-                     web-beautify
-                     which-key
-                     yasnippet
-                     js2-refactor
-                     ace-jump-mode
-                     whole-line-or-region
-                     neotree
-                     validate
-                     iy-go-to-char
-                     google-translate
-                     perspective
-                     ripgrep
+                     powerline
+                     projectile
                      projectile-ripgrep
-                     flx-ido
-                     darkroom
+                     psysh
+                     rainbow-delimiters
+                     rainbow-mode
+                     react-snippets
+                     resize-window
+                     ripgrep
+                     skewer-mode
+                     smex
+                     sml-mode
+                     smooth-scrolling
+                     sourcemap
+                     sx
+                     syslog-mode
+                     tern
+                     tide
+                     toc-org
+                     typescript-mode
+                     undo-tree
+                     use-package
+                     validate
                      visual-regexp
-                     intellij-theme
-                     avy
-                     avy-menu
-                     ace-window 
+                     web-beautify
                      web-mode
-                     find-file-in-project))
+                     websocket
+                     wgrep
+                     which-key
+                     whole-line-or-region
+                     yaml-mode
+                     yasnippet
+                     zop-to-char
+                     ;; ace-popup-menu
+                     ;; company-php
+                     ;; dired-subtree
+                     ;; lsp-mode
+                     ;; outline-toc
+                     ;; sr-speedbar
+                     ;; swiper
+                     ;; wgrep-ag
+                     ;; whitespace-cleanup-mode
+                     ;; ac-php
+                     ;; rjsx-mode
+                     ;; smartparens
+                     ;; volatile-highlights ; Update : desactivation car trop distrayant, et pas 
+                     ))
 
 ;; Add some missing packages
 ; (add-to-list 'load-path "~/.emacs.d/vendor/dired-subtree-20160920.130")
@@ -186,16 +187,16 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/ibuffer-vc")
 (add-to-list 'load-path "~/.emacs.d/vendor/better-breadcrumbs")
 (add-to-list 'load-path "~/.emacs.d/vendor/smartparens")
-;; (add-to-list 'load-path "~/.emacs.d/vendor/ivy")
-; (add-to-list 'load-path "~/.emacs.d/vendor/smartcomment")
 (add-to-list 'load-path "~/.emacs.d/vendor/sotlisp")
-; (add-to-list 'load-path "~/.emacs.d/vendor/emacs-helm-ag")
-; (add-to-list 'load-path "~/.emacs.d/vendor/emacs-async")
-; (add-to-list 'load-path "~/.emacs.d/vendor/emacs-textmate-0.1/textmate.el")
-; (add-to-list 'load-path "~/.emacs.d/vendor/emacs-powerline")
-; (add-to-list 'load-path "~/.emacs.d/vendor/emacspowerline")
+;; (add-to-list 'load-path "~/.emacs.d/vendor/smartcomment")
+;; (add-to-list 'load-path "~/.emacs.d/vendor/ivy")
+;; (add-to-list 'load-path "~/.emacs.d/vendor/emacs-helm-ag")
+;; (add-to-list 'load-path "~/.emacs.d/vendor/emacs-async")
+;; (add-to-list 'load-path "~/.emacs.d/vendor/emacs-textmate-0.1/textmate.el")
+;; (add-to-list 'load-path "~/.emacs.d/vendor/emacs-powerline")
+;; (add-to-list 'load-path "~/.emacs.d/vendor/emacspowerline")
 
-; activate all the packages
+;; activate all the packages
 (package-initialize)
 
 ; fetch the list of packages available 
@@ -212,5 +213,3 @@
 (load-file "~/.emacs.d/vendor/dired-subtree-20160920.130/dired-subtree.el")
 (load-file "~/.emacs.d/vendor/dired-ranger-20160924.335/dired-ranger.el")
 (load-file "~/.emacs.d/vendor/smartcomment/smartcomment.el")
-; (load "~/.emacs.d/vendor/smartcomment")
-; (load "~/.emacs.d/vendor/sotlisp")
