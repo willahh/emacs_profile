@@ -89,6 +89,10 @@
       ido-everywhere t
       ido-mode 1)
 
+(setq kill-buffer-query-functions
+      (remq 'process-kill-buffer-query-function
+            kill-buffer-query-functions))
+
 ;; ----- ido-vertical-mode
 (setq ido-vertical-mode 1)
 

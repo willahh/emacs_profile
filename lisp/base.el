@@ -7,6 +7,8 @@
 
 (setq auto-revert-verbose nil) ;; Don't display "Reverting buffer ..." message
 
+(setq confirm-nonexistent-file-or-buffer nil)
+
 (blink-cursor-mode 1)
 
 ;; Don't write new line at end of document
@@ -658,3 +660,4 @@
 
 (update-syntax-entry)
 (add-hook 'prog-mode-hook (lambda () (update-syntax-entry)))
+
