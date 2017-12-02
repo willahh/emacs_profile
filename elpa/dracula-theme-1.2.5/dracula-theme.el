@@ -1,4 +1,3 @@
-;;; dracula-theme.el --- Dracula Theme
 
 ;; Copyright 2015, All rights reserved
 ;;

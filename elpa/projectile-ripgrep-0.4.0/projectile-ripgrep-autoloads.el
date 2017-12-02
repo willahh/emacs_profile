@@ -4,7 +4,7 @@
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
 ;;;### (autoloads nil "projectile-ripgrep" "projectile-ripgrep.el"
-;;;;;;  (23073 46246 0 0))
+;;;;;;  (23061 50837 0 0))
 ;;; Generated autoloads from projectile-ripgrep.el
 
 (autoload 'projectile-ripgrep "projectile-ripgrep" "\

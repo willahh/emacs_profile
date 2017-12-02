@@ -3,7 +3,7 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "image-dired+" "image-dired+.el" (23073 45899
+;;;### (autoloads nil "image-dired+" "image-dired+.el" (22821 63632
 ;;;;;;  0 0))
 ;;; Generated autoloads from image-dired+.el
 

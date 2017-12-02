@@ -3,7 +3,7 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "helm-swoop" "helm-swoop.el" (23073 46334 0
+;;;### (autoloads nil "helm-swoop" "helm-swoop.el" (23074 45542 0
 ;;;;;;  0))
 ;;; Generated autoloads from helm-swoop.el
 

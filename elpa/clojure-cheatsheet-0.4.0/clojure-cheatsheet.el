@@ -575,13 +575,15 @@ collections and transducers.")
 
 (defun clojure-cheatsheet/lookup-doc
     (symbol)
-  (if (nrepl-current-connection-buffer)
+  ;; (if (nrepl-current-connection-buffer)
+  (if (cider-connected-p)
     (cider-doc-lookup symbol)
     (error "nREPL not connected!")))
 
 (defun clojure-cheatsheet/lookup-src
     (symbol)
-  (if (nrepl-current-connection-buffer)
+  ;; (if (nrepl-current-connection-buffer)
+  (if (cider-connected-p)
     (cider-find-var nil symbol)
     (error "nREPL not connected!")))
 

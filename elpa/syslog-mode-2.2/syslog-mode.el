@@ -136,7 +136,7 @@
 ;;    lines by regexps or dates, and for highlighting,
 ;;    and quick key for find-file-at-point
 ;;
-;; 20-03-2013    Christian GimÃ©nez
+;; 20-03-2013    Christian Giménez
 ;;    Added more keywords for font-lock.
 ;;
 ;; 16-03-2003 : Updated URL and contact info.
@@ -144,7 +144,7 @@
 ;;; Acknowledgements:
 ;;
 ;;  Harley Gorrell  (Author)
-;;  Christian GimÃ©nez
+;;  Christian Giménez
 ;;
 
 ;; If anyone wants to make changes please fork the following github repo: https://github.com/vapniks/syslog-mode

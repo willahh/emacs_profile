@@ -3,7 +3,7 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "validate" "validate.el" (23073 46242 0 0))
+;;;### (autoloads nil "validate" "validate.el" (22991 45061 0 0))
 ;;; Generated autoloads from validate.el
 
 (autoload 'validate-value "validate" "\
