@@ -1,10 +1,10 @@
 (require 'package)
 
-(add-to-list 'package-archives
-             '("elpy" . "http://jorgenschaefer.github.io/packages/"))
+;; (add-to-list 'package-archives
+;;              '("elpy" . "http://jorgenschaefer.github.io/packages/"))
 
-(add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/"))
+;; (add-to-list 'package-archives
+;;              '("marmalade" . "http://marmalade-repo.org/packages/"))
 
 (add-to-list 'package-archives
              '("melpa-stable" . "http://melpa-stable.milkbox.net/packages/") t)
@@ -33,6 +33,7 @@
                      dtrt-indent
                      image-dired+
                      imenu-list
+                     ivy
                      ivy-hydra
                      crux
                      ;; volatile-highlights ; Update : desactivation car trop distrayant, et pas 
@@ -160,20 +161,8 @@
                      web-mode
                      find-file-in-project))
 
-; activate all the packages
-(package-initialize)
-
-; fetch the list of packages available 
-(unless package-archive-contents
-  (package-refresh-contents))
-
-; install the missing packages
-(dolist (package package-list)
-  (unless (package-installed-p package)
-    (package-install package)))
-
 ;; Add some missing packages
-(add-to-list 'load-path "~/.emacs.d/vendor/dired-subtree-20160920.130")
+; (add-to-list 'load-path "~/.emacs.d/vendor/dired-subtree-20160920.130")
 (add-to-list 'load-path "~/.emacs.d/vendor/evil-easymotion")
 (add-to-list 'load-path "~/.emacs.d/vendor/psvn")
 (add-to-list 'load-path "~/.emacs.d/vendor/simple-httpd")
@@ -197,13 +186,31 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/ibuffer-vc")
 (add-to-list 'load-path "~/.emacs.d/vendor/better-breadcrumbs")
 (add-to-list 'load-path "~/.emacs.d/vendor/smartparens")
-(add-to-list 'load-path "~/.emacs.d/vendor/ivy")
+;; (add-to-list 'load-path "~/.emacs.d/vendor/ivy")
+; (add-to-list 'load-path "~/.emacs.d/vendor/smartcomment")
+(add-to-list 'load-path "~/.emacs.d/vendor/sotlisp")
 ; (add-to-list 'load-path "~/.emacs.d/vendor/emacs-helm-ag")
 ; (add-to-list 'load-path "~/.emacs.d/vendor/emacs-async")
 ; (add-to-list 'load-path "~/.emacs.d/vendor/emacs-textmate-0.1/textmate.el")
 ; (add-to-list 'load-path "~/.emacs.d/vendor/emacs-powerline")
 ; (add-to-list 'load-path "~/.emacs.d/vendor/emacspowerline")
 
-; ;; Auto load some packages
-(load "~/.emacs.d/vendor/smartcomment/smartcomment.elc")
-(load "~/.emacs.d/vendor/sotlisp/sotlisp.el")
+; activate all the packages
+(package-initialize)
+
+; fetch the list of packages available 
+(unless package-archive-contents
+  (package-refresh-contents))
+
+; install the missing packages
+(dolist (package package-list)
+  (unless (package-installed-p package)
+    (package-install package)))
+
+;; Load some package lisp files who don't have auto load
+(load-file "~/.emacs.d/vendor/dired-hacks-utils-20160527.1436/dired-hacks-utils.el")
+(load-file "~/.emacs.d/vendor/dired-subtree-20160920.130/dired-subtree.el")
+(load-file "~/.emacs.d/vendor/dired-ranger-20160924.335/dired-ranger.el")
+(load-file "~/.emacs.d/vendor/smartcomment/smartcomment.el")
+; (load "~/.emacs.d/vendor/smartcomment")
+; (load "~/.emacs.d/vendor/sotlisp")
