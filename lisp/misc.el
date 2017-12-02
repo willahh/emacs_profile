@@ -512,12 +512,12 @@ _d_: subtree
          (:connection-type . ssl)
          (:port . 443))))
 
-; (use-package dired-ranger
-;   :ensure t
-;   :bind (:map dired-mode-map
-;               ("W" . dired-ranger-copy)
-;               ("X" . dired-ranger-move)
-;               ("Y" . dired-ranger-paste)))
+(use-package dired-ranger
+  :ensure t
+  :bind (:map dired-mode-map
+              ("W" . dired-ranger-copy)
+              ("X" . dired-ranger-move)
+              ("Y" . dired-ranger-paste)))
 
 ;; http://pragmaticemacs.com/emacs/insert-todays-date/
 (defun insert-todays-date (arg)
