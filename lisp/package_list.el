@@ -143,9 +143,9 @@
                      intellij-theme))
 
 
-(add-to-list 'load-path "~/.emacs.d/vendor/dired-hacks-utils-20160527.1436")
-(add-to-list 'load-path "~/.emacs.d/vendor/dired-ranger-20160924.335")
-(add-to-list 'load-path "~/.emacs.d/vendor/dired-subtree-20160920.130")
+;; (add-to-list 'load-path "~/.emacs.d/vendor/dired-hacks-utils-20160527.1436")
+;; (add-to-list 'load-path "~/.emacs.d/vendor/dired-ranger-20160924.335")
+;; (add-to-list 'load-path "~/.emacs.d/vendor/dired-subtree-20160920.130")
 
 (add-to-list 'load-path "~/.emacs.d/vendor/emacs-async")
 (add-to-list 'load-path "~/.emacs.d/vendor/emacs-textmate-0.1/textmate.el")
@@ -158,7 +158,6 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/webmode")
 (add-to-list 'load-path "~/.emacs.d/vendor/emacspowerline")
 (add-to-list 'load-path "~/.emacs.d/vendor/find-file-in-project")
-;; (add-to-list 'load-path "~/.emacs.d/vendor/ivy_buffer_extend")
 (add-to-list 'load-path "~/.emacs.d/vendor/helm-swoop")
 (add-to-list 'load-path "~/.emacs.d/vendor/evil-easymotion")
 (add-to-list 'load-path "~/.emacs.d/vendor/psvn")
@@ -166,7 +165,6 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/dumb-jump")
 (add-to-list 'load-path "~/.emacs.d/vendor/Indium")
 (add-to-list 'load-path "~/.emacs.d/vendor/restclient")
-;; (add-to-list 'load-path "~/.emacs.d/vendor/diff-hl-1.8.4")
 (add-to-list 'load-path "~/.emacs.d/vendor/org-mouse")
 (add-to-list 'load-path "~/.emacs.d/vendor/clean-aindent-mode")
 (add-to-list 'load-path "~/.emacs.d/vendor/workgroups2")
@@ -185,9 +183,12 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/better-breadcrumbs")
 (add-to-list 'load-path "~/.emacs.d/vendor/smartparens")
 (add-to-list 'load-path "~/.emacs.d/vendor/ivy")
+;; (add-to-list 'load-path "~/.emacs.d/vendor/ivy_buffer_extend")
 
+
+;; Load some package lisp files who don't have auto load
+(load "~/.emacs.d/vendor/dired-hacks-utils-20160527.1436/dired-hacks-utils.elc")
+(load "~/.emacs.d/vendor/dired-subtree-20160920.130/dired-subtree.elc")
+(load "~/.emacs.d/vendor/dired-ranger-20160924.335/dired-ranger.elc")
 (load "~/.emacs.d/vendor/smartcomment/smartcomment.elc")
 (load "~/.emacs.d/vendor/sotlisp/sotlisp.el")
-;; (add-to-list 'load-path "~/.emacs.d/vendor/xah-css-mode")
-
-;; (load "~/.emacs.d/vendor/xah-css-mode/xah-css-mode-mode.el")

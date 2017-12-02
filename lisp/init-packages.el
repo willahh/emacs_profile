@@ -9,19 +9,16 @@
 (add-to-list 'package-archives
              '("melpa-stable" . "http://melpa-stable.milkbox.net/packages/") t)
 
-; (add-to-list 'load-path "~/.emacs.d/site-lisp/")
-
-
-; list the packages you want
+;; Package list
 (setq package-list '(
                      powerline
                      undo-tree
-                     ; sr-speedbar
+                                        ; sr-speedbar
                      diff-hl
                      wgrep
                      edit-server
-                     ; wgrep-ag
-                     ; whitespace-cleanup-mode
+                                        ; wgrep-ag
+                                        ; whitespace-cleanup-mode
                      coffee-mode
                      pandoc-mode
                      smooth-scrolling
@@ -46,13 +43,13 @@
                      websocket
                      sourcemap
                      memoize
-                     ; outline-toc
-                     ; dired-subtree
+                                        ; outline-toc
+                                        ; dired-subtree
                      ido-at-point
                      react-snippets
                      ;; rjsx-mode
                      indent-guide
-                     ; lsp-mode
+                                        ; lsp-mode
                      org-bullets
                      clojure-cheatsheet
                      clj-refactor
@@ -129,11 +126,11 @@
                      resize-window
                      skewer-mode
                      fullframe
-                     ; ace-popup-menu
+                                        ; ace-popup-menu
                      ace-link
                      counsel
                      sml-mode
-                     ; swiper
+                                        ; swiper
                      tern
                      iflipb
                      paradox
@@ -157,66 +154,26 @@
                      darkroom
                      visual-regexp
                      intellij-theme
-
-avy
-avy-menu
-ace-window 
-
-web-mode
-
-find-file-in-project
-
-                     ))
-
-
+                     avy
+                     avy-menu
+                     ace-window 
+                     web-mode
+                     find-file-in-project))
 
 ; activate all the packages
 (package-initialize)
 
-
-
 ; fetch the list of packages available 
 (unless package-archive-contents
   (package-refresh-contents))
-
-
 
 ; install the missing packages
 (dolist (package package-list)
   (unless (package-installed-p package)
     (package-install package)))
 
-
-
-
-
-
-
-;; Load custom el files
-; (add-to-list 'load-path "~/.emacs.d/vendor/helm")
-; (add-to-list 'load-path "~/.emacs.d/vendor/emacs-helm-ag")
-; (add-to-list 'load-path "~/.emacs.d/vendor/helm-swoop")
-
-
-; (add-to-list 'load-path "~/.emacs.d/vendor/avy")
-; (add-to-list 'load-path "~/.emacs.d/vendor/avy-menu")
-; (add-to-list 'load-path "~/.emacs.d/vendor/ace-window")
-
-
-; (add-to-list 'load-path "~/.emacs.d/vendor/emacs-async")
-; (add-to-list 'load-path "~/.emacs.d/vendor/emacs-textmate-0.1/textmate.el")
-
-
-; (add-to-list 'load-path "~/.emacs.d/vendor/webmode")
-; (add-to-list 'load-path "~/.emacs.d/vendor/emacs-powerline")
-; (add-to-list 'load-path "~/.emacs.d/vendor/emacspowerline")
-; (add-to-list 'load-path "~/.emacs.d/vendor/find-file-in-project")
-
-
-
-
-
-
+;; Add some missing packages
+(add-to-list 'load-path "~/.emacs.d/vendor/dired-subtree-20160920.130")
 (add-to-list 'load-path "~/.emacs.d/vendor/evil-easymotion")
 (add-to-list 'load-path "~/.emacs.d/vendor/psvn")
 (add-to-list 'load-path "~/.emacs.d/vendor/simple-httpd")
@@ -241,6 +198,11 @@ find-file-in-project
 (add-to-list 'load-path "~/.emacs.d/vendor/better-breadcrumbs")
 (add-to-list 'load-path "~/.emacs.d/vendor/smartparens")
 (add-to-list 'load-path "~/.emacs.d/vendor/ivy")
+; (add-to-list 'load-path "~/.emacs.d/vendor/emacs-helm-ag")
+; (add-to-list 'load-path "~/.emacs.d/vendor/emacs-async")
+; (add-to-list 'load-path "~/.emacs.d/vendor/emacs-textmate-0.1/textmate.el")
+; (add-to-list 'load-path "~/.emacs.d/vendor/emacs-powerline")
+; (add-to-list 'load-path "~/.emacs.d/vendor/emacspowerline")
 
 ; ;; Auto load some packages
 (load "~/.emacs.d/vendor/smartcomment/smartcomment.elc")
