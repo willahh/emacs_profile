@@ -3,9 +3,9 @@
 ;; Copyright 2006-2010 Virtutech AB
 ;; Copyright 2010 Intel
 
-;; Author: David Kågedal <davidk@lysator.liu.se>
-;;	   Mattias Engdegård <mattiase@acm.org>
-;; Maintainer: Mattias Engdegård <mattiase@acm.org>
+;; Author: David KÃ¥gedal <davidk@lysator.liu.se>
+;;	   Mattias EngdegÃ¥rd <mattiase@acm.org>
+;; Maintainer: Mattias EngdegÃ¥rd <mattiase@acm.org>
 ;; Created: 27 Jan 2006
 ;; URL: http://svn.apache.org/repos/asf/subversion/trunk/contrib/client-side/emacs/dsvn.el
 ;; Version: 922257

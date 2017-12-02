@@ -688,7 +688,7 @@
 ;; (global-set-key (kbd "s-s") 'helm-swoop)
 ;; (global-set-key (kbd "C-c C-s") 'helm-swoop)
 (global-set-key (kbd "s-s") 'helm-swoop)
-(global-set-key (kbd "C-c C-s") 'swiper)
+; (global-set-key (kbd "C-c C-s") 'swiper)
 
 ;; vc
 (global-set-key (kbd "s-w") 'vc-diff)

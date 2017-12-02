@@ -512,12 +512,12 @@ _d_: subtree
          (:connection-type . ssl)
          (:port . 443))))
 
-(use-package dired-ranger
-  :ensure t
-  :bind (:map dired-mode-map
-              ("W" . dired-ranger-copy)
-              ("X" . dired-ranger-move)
-              ("Y" . dired-ranger-paste)))
+; (use-package dired-ranger
+;   :ensure t
+;   :bind (:map dired-mode-map
+;               ("W" . dired-ranger-copy)
+;               ("X" . dired-ranger-move)
+;               ("Y" . dired-ranger-paste)))
 
 ;; http://pragmaticemacs.com/emacs/insert-todays-date/
 (defun insert-todays-date (arg)
@@ -595,11 +595,11 @@ _d_: subtree
    
 (require 'dumb-jump)
 
-(use-package php-eldoc
-  :ensure t
-  :bind)
+; (use-package php-eldoc
+;   :ensure t
+;   :bind)
 
-(require 'lsp-mode)
+; (require 'lsp-mode)
 ;; (add-hook 'web-mode-hook 'indent-guide-mode)
 
 ;; https://www.emacswiki.org/emacs/FillParagraph
@@ -789,7 +789,7 @@ Version 2016-10-24"
 (global-anzu-mode +1)
 
 ;; ace-popup-menu-mode
-(ace-popup-menu-mode 1)
+; (ace-popup-menu-mode 1)
 
 
 
@@ -843,3 +843,38 @@ abort completely with `C-g'."
 (ace-link-setup-default)
 
 (require 'visual-regexp)
+
+
+
+
+
+
+
+; http://endlessparentheses.com/eval-result-overlays-in-emacs-lisp.html
+; Cette partie doit est presente une fois cider charge
+(autoload 'cider--make-result-overlay "cider-overlays")
+
+(defun endless/eval-overlay (value point)
+  (cider--make-result-overlay (format "%S" value)
+    :where point
+    :duration 'command)
+  ;; Preserve the return value.
+  value)
+
+(advice-add 'eval-region :around
+            (lambda (f beg end &rest r)
+              (endless/eval-overlay
+               (apply f beg end r)
+               end)))
+
+(advice-add 'eval-last-sexp :filter-return
+            (lambda (r)
+              (endless/eval-overlay r (point))))
+
+(advice-add 'eval-defun :filter-return
+            (lambda (r)
+              (endless/eval-overlay
+               r
+               (save-excursion
+                 (end-of-defun)
+                 (point)))))

@@ -3,7 +3,7 @@
 ;;; Code:
 
 
-;;;### (autoloads nil "iedit" "iedit.el" (22821 55092 0 0))
+;;;### (autoloads nil "iedit" "iedit.el" (23073 45884 0 0))
 ;;; Generated autoloads from iedit.el
 
 (autoload 'iedit-mode "iedit" "\
@@ -68,7 +68,7 @@ Toggle Iedit mode on current function.
 
 ;;;***
 
-;;;### (autoloads nil "iedit-rect" "iedit-rect.el" (22821 55092 0
+;;;### (autoloads nil "iedit-rect" "iedit-rect.el" (23073 45884 0
 ;;;;;;  0))
 ;;; Generated autoloads from iedit-rect.el
 
@@ -87,7 +87,7 @@ Commands:
 ;;;***
 
 ;;;### (autoloads nil nil ("iedit-lib.el" "iedit-pkg.el" "iedit-tests.el")
-;;;;;;  (22821 55092 0 0))
+;;;;;;  (23073 45884 0 0))
 
 ;;;***
 

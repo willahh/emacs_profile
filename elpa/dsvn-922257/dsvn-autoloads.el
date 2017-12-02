@@ -3,7 +3,7 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "dsvn" "dsvn.el" (22821 55146 0 0))
+;;;### (autoloads nil "dsvn" "dsvn.el" (23073 46138 0 0))
 ;;; Generated autoloads from dsvn.el
 
 (autoload 'svn-status "dsvn" "\

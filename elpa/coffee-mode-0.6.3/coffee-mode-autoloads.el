@@ -3,7 +3,7 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "coffee-mode" "coffee-mode.el" (23070 30966
+;;;### (autoloads nil "coffee-mode" "coffee-mode.el" (23073 45883
 ;;;;;;  0 0))
 ;;; Generated autoloads from coffee-mode.el
 

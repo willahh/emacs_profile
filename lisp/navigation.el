@@ -8,7 +8,7 @@
 (require 'iy-go-to-char)
 (require 'textmate-mode)
 (require 'highlight-symbol)
-(require 'ido-ubiquitous)
+; (require 'ido-ubiquitous)
 (require 'ido)
 (require 'smex)
 (require 'which-key)
@@ -23,14 +23,14 @@
 (require 'helm-ag)
 (require 'helm-config)
 ;; (require 'ivy_buffer_extend)
-(require 'swiper)
+; (require 'swiper)
 (require 'helm-swoop)
 (require 'helm-swoop)
 (require 'resize-window)
 (require 'neotree)
 (require 'expand-region)
 (require 'paredit)
-(require 'sr-speedbar)
+; (require 'sr-speedbar)
 (require 'ace-window)
 (require 'avy)
 
@@ -126,6 +126,8 @@
         (projectile-find-file . ivy--regex-fuzzy)
         (t . ivy--regex-fuzzy)))
 
+(setq ivy-use-selectable-prompt t)
+
 ;; Use Enter on a directory to navigate into the directory, not open it with dired.
 (define-key ivy-minibuffer-map (kbd "C-m") 'ivy-alt-done)
 (define-key ivy-minibuffer-map (kbd "<tab>") 'ivy-alt-done)
@@ -141,7 +143,7 @@
 ;; ido conf
 (setq ido-mode 1)
 (setq ido-everywhere 1)
-(setq ido-ubiquitous-mode 1)
+; (setq ido-ubiquitous-mode 1)
 (setq ido-enable-flex-matching 1)
 (setq helm-split-window-in-side-p           t ; open helm buffer inside current window, not occupy whole other window
       helm-move-to-line-cycle-in-source     t ; move to end or beginning of source when reaching top or bottom of source.
@@ -172,10 +174,10 @@
 (setq helm-swoop-split-with-multiple-windows t)
 
 ;; ---------------- swiper
-(use-package counsel
-  :ensure t)
+; (use-package counsel
+;   :ensure t)
 
-(ivy-set-occur 'swiper 'swiper-occur)
+; (ivy-set-occur 'swiper 'swiper-occur)
 (ivy-set-occur 'ivy-switch-buffer 'ivy-switch-buffer-occur)
 ;; (ivy-set-occur 'counsel-find-file 'ivy-switch-buffer-occur)
 
@@ -185,7 +187,7 @@
   "recenter display after swiper"
   (recenter))
 
-(advice-add 'swiper :after #'bjm-swiper-recenter)
+; (advice-add 'swiper :after #'bjm-swiper-recenter)
 
 ;; ---------------- neotree
 ;; (setq neo-theme 'icons) ;; Set the neotree theme before show

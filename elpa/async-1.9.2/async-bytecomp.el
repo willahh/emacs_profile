@@ -51,7 +51,7 @@ the symbol `all', in this case packages are always compiled asynchronously."
   :group 'async
   :type '(repeat (choice symbol)))
 
-(defvar async-byte-compile-log-file (expand-file-name "async-bytecomp.log" user-emacs-directory))
+(defvar async-byte-compile-log-file "~/.emacs.d/async-bytecomp.log")
 
 ;;;###autoload
 (defun async-byte-recompile-directory (directory &optional quiet)

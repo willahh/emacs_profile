@@ -3,7 +3,7 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "hide-lines" "hide-lines.el" (22821 55094 0
+;;;### (autoloads nil "hide-lines" "hide-lines.el" (23073 45890 0
 ;;;;;;  0))
 ;;; Generated autoloads from hide-lines.el
 

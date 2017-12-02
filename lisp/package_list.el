@@ -1,15 +1,15 @@
-(require 'package)
+
 (setq package-list '(
                      powerline
                      undo-tree
-                     sr-speedbar
+                     ; sr-speedbar
                      diff-hl
                      wgrep
-                     edit-server
-                     wgrep-ag
-                     whitespace-cleanup-mode
+                     ; edit-server
+                     ; wgrep-ag
+                     ; whitespace-cleanup-mode
                      coffee-mode
-                     pandoc-mode
+                     ; pandoc-mode
                      smooth-scrolling
                      iedit
                      hydra
@@ -33,12 +33,13 @@
                      sourcemap
                      memoize
                      outline-toc
-                     dired-subtree
+                     ; dired-subtree
+                     ; dired-ranger
                      ido-at-point
                      react-snippets
                      ;; rjsx-mode
                      indent-guide
-                     lsp-mode
+                     ; <lsp-mo></lsp-mo>de
                      org-bullets
                      clojure-cheatsheet
                      clj-refactor
@@ -54,8 +55,8 @@
                      tide
                      anzu
                      smex
-                     ido
-                     ido-ubiquitous
+                     ; ido
+                     ; ido-ubiquitous
                      ido-vertical-mode
                      php-mode
                      auto-yasnippet
@@ -112,11 +113,11 @@
                      resize-window
                      skewer-mode
                      fullframe
-                     ace-popup-menu
-                     ace-link
+                     ; ace-popup-menu
+                     ; ace-link
                      counsel
                      sml-mode
-                     swiper
+                     ; swiper
                      tern
                      iflipb
                      paradox
@@ -140,6 +141,11 @@
                      darkroom
                      visual-regexp
                      intellij-theme))
+
+
+(add-to-list 'load-path "~/.emacs.d/vendor/dired-hacks-utils-20160527.1436")
+(add-to-list 'load-path "~/.emacs.d/vendor/dired-ranger-20160924.335")
+(add-to-list 'load-path "~/.emacs.d/vendor/dired-subtree-20160920.130")
 
 (add-to-list 'load-path "~/.emacs.d/vendor/emacs-async")
 (add-to-list 'load-path "~/.emacs.d/vendor/emacs-textmate-0.1/textmate.el")
@@ -178,6 +184,8 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/ibuffer-vc")
 (add-to-list 'load-path "~/.emacs.d/vendor/better-breadcrumbs")
 (add-to-list 'load-path "~/.emacs.d/vendor/smartparens")
+(add-to-list 'load-path "~/.emacs.d/vendor/ivy")
+
 (load "~/.emacs.d/vendor/smartcomment/smartcomment.elc")
 (load "~/.emacs.d/vendor/sotlisp/sotlisp.el")
 ;; (add-to-list 'load-path "~/.emacs.d/vendor/xah-css-mode")

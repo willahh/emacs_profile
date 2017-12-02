@@ -4,7 +4,7 @@
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
 ;;;### (autoloads nil "php-auto-yasnippets" "php-auto-yasnippets.el"
-;;;;;;  (22821 55126 0 0))
+;;;;;;  (23073 46106 0 0))
 ;;; Generated autoloads from php-auto-yasnippets.el
 
 (autoload 'yas/initialize "php-auto-yasnippets" "\
@@ -25,7 +25,7 @@ of a method for that class.
 
 ;;;***
 
-;;;### (autoloads nil nil ("php-auto-yasnippets-pkg.el") (22821 55126
+;;;### (autoloads nil nil ("php-auto-yasnippets-pkg.el") (23073 46106
 ;;;;;;  0 0))
 
 ;;;***

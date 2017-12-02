@@ -3,7 +3,7 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "jabber" "jabber.el" (22935 22674 0 0))
+;;;### (autoloads nil "jabber" "jabber.el" (23073 45919 0 0))
 ;;; Generated autoloads from jabber.el
 
 (defvar jabber-account-list nil "\
@@ -64,8 +64,8 @@ open jabber.el manual
 
 ;;;***
 
-;;;### (autoloads nil "jabber-activity" "jabber-activity.el" (22935
-;;;;;;  22674 0 0))
+;;;### (autoloads nil "jabber-activity" "jabber-activity.el" (23073
+;;;;;;  45919 0 0))
 ;;; Generated autoloads from jabber-activity.el
 
 (defvar jabber-activity-mode t "\
@@ -87,8 +87,8 @@ With a numeric arg, enable this display if arg is positive.
 
 ;;;***
 
-;;;### (autoloads nil "jabber-autoaway" "jabber-autoaway.el" (22935
-;;;;;;  22674 0 0))
+;;;### (autoloads nil "jabber-autoaway" "jabber-autoaway.el" (23073
+;;;;;;  45919 0 0))
 ;;; Generated autoloads from jabber-autoaway.el
 
 (autoload 'jabber-autoaway-start "jabber-autoaway" "\
@@ -100,8 +100,8 @@ The IGNORED argument is there so you can put this function in
 
 ;;;***
 
-;;;### (autoloads nil "jabber-bookmarks" "jabber-bookmarks.el" (22935
-;;;;;;  22674 0 0))
+;;;### (autoloads nil "jabber-bookmarks" "jabber-bookmarks.el" (23073
+;;;;;;  45919 0 0))
 ;;; Generated autoloads from jabber-bookmarks.el
 
 (autoload 'jabber-get-conference-data "jabber-bookmarks" "\
@@ -143,7 +143,7 @@ Create a buffer for editing bookmarks interactively.
 
 ;;;***
 
-;;;### (autoloads nil "jabber-chat" "jabber-chat.el" (22935 22674
+;;;### (autoloads nil "jabber-chat" "jabber-chat.el" (23073 45919
 ;;;;;;  0 0))
 ;;; Generated autoloads from jabber-chat.el
 
@@ -160,7 +160,7 @@ Either a string or a buffer is returned, so use `get-buffer' or
 ;;;***
 
 ;;;### (autoloads nil "jabber-chatbuffer" "jabber-chatbuffer.el"
-;;;;;;  (22935 22674 0 0))
+;;;;;;  (23073 45919 0 0))
 ;;; Generated autoloads from jabber-chatbuffer.el
 
 (defvar jabber-buffer-connection nil "\
@@ -170,8 +170,8 @@ The connection used by this buffer.")
 
 ;;;***
 
-;;;### (autoloads nil "jabber-compose" "jabber-compose.el" (22935
-;;;;;;  22674 0 0))
+;;;### (autoloads nil "jabber-compose" "jabber-compose.el" (23073
+;;;;;;  45919 0 0))
 ;;; Generated autoloads from jabber-compose.el
 
 (autoload 'jabber-compose "jabber-compose" "\
@@ -181,8 +181,8 @@ Create a buffer for composing a Jabber message.
 
 ;;;***
 
-;;;### (autoloads nil "jabber-console" "jabber-console.el" (22935
-;;;;;;  22674 0 0))
+;;;### (autoloads nil "jabber-console" "jabber-console.el" (23073
+;;;;;;  45919 0 0))
 ;;; Generated autoloads from jabber-console.el
 
 (autoload 'jabber-process-console "jabber-console" "\
@@ -192,7 +192,7 @@ Log XML-DATA i/o as XML in \"*-jabber-console-JID-*\" buffer
 
 ;;;***
 
-;;;### (autoloads nil "jabber-core" "jabber-core.el" (22935 22674
+;;;### (autoloads nil "jabber-core" "jabber-core.el" (23073 45919
 ;;;;;;  0 0))
 ;;; Generated autoloads from jabber-core.el
  (autoload 'jabber-connect-all "jabber" "Connect to all configured Jabber accounts.\nSee `jabber-account-list'.\nIf no accounts are configured (or ARG supplied), call `jabber-connect' interactively." t)
@@ -200,7 +200,7 @@ Log XML-DATA i/o as XML in \"*-jabber-console-JID-*\" buffer
 
 ;;;***
 
-;;;### (autoloads nil "jabber-export" "jabber-export.el" (22935 22674
+;;;### (autoloads nil "jabber-export" "jabber-export.el" (23073 45919
 ;;;;;;  0 0))
 ;;; Generated autoloads from jabber-export.el
 
@@ -216,7 +216,7 @@ Create buffer for roster import for connection JC from FILE.
 
 ;;;***
 
-;;;### (autoloads nil "jabber-gmail" "jabber-gmail.el" (22935 22674
+;;;### (autoloads nil "jabber-gmail" "jabber-gmail.el" (23073 45919
 ;;;;;;  0 0))
 ;;; Generated autoloads from jabber-gmail.el
 
@@ -234,8 +234,8 @@ See http://code.google.com/apis/talk/jep_extensions/gmail.html#requestmail
 
 ;;;***
 
-;;;### (autoloads nil "jabber-keepalive" "jabber-keepalive.el" (22935
-;;;;;;  22674 0 0))
+;;;### (autoloads nil "jabber-keepalive" "jabber-keepalive.el" (23073
+;;;;;;  45919 0 0))
 ;;; Generated autoloads from jabber-keepalive.el
 
 (let ((loads (get 'jabber-keepalive 'custom-loads))) (if (member '"jabber-keepalive" loads) nil (put 'jabber-keepalive 'custom-loads (cons '"jabber-keepalive" loads))))
@@ -263,7 +263,7 @@ accounts.
 
 ;;;***
 
-;;;### (autoloads nil "jabber-keymap" "jabber-keymap.el" (22935 22674
+;;;### (autoloads nil "jabber-keymap" "jabber-keymap.el" (23073 45919
 ;;;;;;  0 0))
 ;;; Generated autoloads from jabber-keymap.el
 
@@ -274,7 +274,7 @@ Global Jabber keymap (usually under C-x C-j)")
 
 ;;;***
 
-;;;### (autoloads nil "jabber-menu" "jabber-menu.el" (22935 22674
+;;;### (autoloads nil "jabber-menu" "jabber-menu.el" (23073 45919
 ;;;;;;  0 0))
 ;;; Generated autoloads from jabber-menu.el
 
@@ -293,7 +293,7 @@ is non-nil.")
 
 ;;;***
 
-;;;### (autoloads nil "jabber-muc" "jabber-muc.el" (22935 22674 0
+;;;### (autoloads nil "jabber-muc" "jabber-muc.el" (23073 45919 0
 ;;;;;;  0))
 ;;; Generated autoloads from jabber-muc.el
 
@@ -345,7 +345,7 @@ Return non-nil if MESSAGE is a private message in a groupchat.
 ;;;***
 
 ;;;### (autoloads nil "jabber-muc-nick-completion" "jabber-muc-nick-completion.el"
-;;;;;;  (22935 22674 0 0))
+;;;;;;  (23073 45919 0 0))
 ;;; Generated autoloads from jabber-muc-nick-completion.el
 
 (autoload 'jabber-muc-looks-like-personal-p "jabber-muc-nick-completion" "\
@@ -356,8 +356,8 @@ Optional argument GROUP to look.
 
 ;;;***
 
-;;;### (autoloads nil "jabber-presence" "jabber-presence.el" (22935
-;;;;;;  22674 0 0))
+;;;### (autoloads nil "jabber-presence" "jabber-presence.el" (23073
+;;;;;;  45919 0 0))
 ;;; Generated autoloads from jabber-presence.el
 
 (autoload 'jabber-send-presence "jabber-presence" "\
@@ -374,8 +374,8 @@ Default presence is specified by `jabber-default-show',
 
 ;;;***
 
-;;;### (autoloads nil "jabber-private" "jabber-private.el" (22935
-;;;;;;  22674 0 0))
+;;;### (autoloads nil "jabber-private" "jabber-private.el" (23073
+;;;;;;  45919 0 0))
 ;;; Generated autoloads from jabber-private.el
 
 (autoload 'jabber-private-get "jabber-private" "\
@@ -400,7 +400,7 @@ ERROR-CLOSURE-DATA are used as in `jabber-send-iq'.
 
 ;;;***
 
-;;;### (autoloads nil "jabber-roster" "jabber-roster.el" (22935 22674
+;;;### (autoloads nil "jabber-roster" "jabber-roster.el" (23073 45919
 ;;;;;;  0 0))
 ;;; Generated autoloads from jabber-roster.el
 
@@ -435,7 +435,7 @@ three being lists of JID symbols.
 ;;;;;;  "jabber-util.el" "jabber-vcard-avatars.el" "jabber-vcard.el"
 ;;;;;;  "jabber-version.el" "jabber-watch.el" "jabber-widget.el"
 ;;;;;;  "jabber-wmii.el" "jabber-xmessage.el" "jabber-xml.el" "srv.el")
-;;;;;;  (22935 22674 0 0))
+;;;;;;  (23073 45919 0 0))
 
 ;;;***
 
