@@ -393,7 +393,7 @@
 ;; scroll
 (global-set-key (kbd "C-v") 'scroll-up)
 
-(global-set-key (kbd "C-x <tab>") 'indent-rigidly) ; Default emacs key binding
+
 (define-key indent-rigidly-map [(shift tab)] 'indent-rigidly-left-to-tab-stop)
 (define-key indent-rigidly-map [(tab)] 'indent-rigidly-right-to-tab-stop)
 
@@ -530,8 +530,6 @@
 (define-key diff-mode-map (kbd "M-3") 'hrs/split-window-right-and-switch)
 
 ;; other Window
-(global-set-key [C-M-tab] 'other-window)
-(global-set-key [C-M-S-tab] 'previous-multiframe-window)
 (global-set-key (kbd "M-o") 'other-window)
 ;; (global-set-key [(meta o)] 'other-window)
 (define-key diff-mode-map (kbd "M-o") 'other-window)
@@ -749,13 +747,12 @@
                 'smarter-move-beginning-of-line)
 
 ;; Navigation entre les buffers
-(global-set-key (kbd "<C-tab>") 'next-buffer)
+
 (global-set-key (kbd "C-`") 'next-buffer)
 (global-set-key (kbd "C-M-`") 'winner-redo)
 
 (global-set-key (kbd "C-ù") 'previous-buffer)
 (global-set-key (kbd "C-M-ù") 'winner-undo)
-(global-set-key (kbd "<C-S-tab>") 'previous-buffer)
 
 ;; ---------------- Markdown
 (define-key markdown-mode-map (kbd "C-M-i") 'markdown-shifttab)
@@ -805,7 +802,6 @@
 (global-set-key (kbd "C-c r") 'crux-rename-buffer-and-file)
 (global-set-key (kbd "C-c t") 'crux-visit-term-buffer)
 ;; (global-set-key (kbd "C-c k") 'crux-kill-other-buffers)
-(global-set-key (kbd "C-c TAB") 'crux-indent-rigidly-and-copy-to-clipboard)
 (global-set-key (kbd "C-c I") 'crux-find-user-init-file)
 (global-set-key (kbd "C-c S") 'crux-find-shell-init-file)
 (global-set-key (kbd "s-j") 'crux-top-join-line)
@@ -851,3 +847,15 @@
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key (kbd "C-c j o") 'org-iswitchb)
 (global-set-key (kbd "C-c C-j") 'join-region)
+
+
+;; Tab related behaviour
+(global-set-key (kbd "C-x <tab>") 'indent-rigidly) ; Default emacs key binding
+(global-set-key [C-M-tab] 'other-window)
+(global-set-key [C-M-S-tab] 'previous-multiframe-window)
+(global-set-key (kbd "<C-tab>") 'next-buffer)
+(global-set-key (kbd "<C-S-tab>") 'previous-buffer)
+(global-set-key (kbd "C-c TAB") 'crux-indent-rigidly-and-copy-to-clipboard)
+
+;; (global-set-key (kbd "TAB") 'tab-indent-or-complete)
+;; (define-key yas-minor-mode-map (kbd "TAB") 'tab-indent-or-complete)
