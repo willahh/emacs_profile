@@ -205,11 +205,11 @@
 (add-hook 'org-mode 'textmate-mode)
 (add-hook 'php-mode 'textmate-mode)
 
-;; -------- url
+;; -------- url / link / goto-address-mode
 ;; Enable jump to url quickly for all buffers
-(add-hook 'prog-mode-hook (goto-address-mode 1))
-(add-hook 'emacs-lisp-mode-hook (goto-address-mode 1))
-(add-hook 'js2-mode-hook (goto-address-mode 1))
+;; (add-hook 'prog-mode-hook (goto-address-mode 1))
+;; (add-hook 'emacs-lisp-mode-hook (goto-address-mode 1))
+;; (add-hook 'js2-mode-hook (goto-address-mode 1))
 
 (add-hook 'emacs-lisp-mode-hook 'paredit-mode)
 (add-hook 'common-lisp-mode 'paredit-mode)
