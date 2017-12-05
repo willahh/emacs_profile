@@ -28,6 +28,7 @@
 
 (defvar wlh/nodejs-list-files '("gulpfile.js"))
 
+
 (defun wlh/nodejs-get-node-buffer ()
   (with-temp-buffer (let ((root-file (projectile-project-root))
                           ;; (buffer-content (concat root-file "gulpfile.js"))
@@ -38,17 +39,13 @@
                       
                       )))
 
-(wlh/nodejs-get-node-buffer)
-
-
 (defun wlh/nodesjs-debug ()
   (interactive)
   (message (wlh/nodejs-get-node-buffer)))
 
-(wlh/nodejs-get-node-buffer)
 
-(re-seq "ulp.task\('(.)+" buffer-string)
-(re-seq "gulp.task('\(.+\)', function" buffer-string)
-(re-seq "gulp.task('\([[:word:]]+\)'," buffer-string)
+;; (re-seq "ulp.task\('(.)+" buffer-string)
+;; (re-seq "gulp.task('\(.+\)', function" buffer-string)
+;; (re-seq "gulp.task('\([[:word:]]+\)'," buffer-string)
 
 ;; (string-match "gulp" buffer-string)
