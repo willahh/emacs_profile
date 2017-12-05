@@ -90,6 +90,10 @@
 (global-set-key (kbd "C-c j c s") (quote thing-copy-string-to-mark))
 (global-set-key (kbd "C-c j c a") (quote thing-copy-parenthesis-to-mark))
 
+
+;; Search
+(global-set-key (kbd "C-c j s") 'projectile-ag)
+
 ;; Neotree
 (global-set-key (kbd "C-c j b b") 'neotree-toggle)
 (global-set-key (kbd "C-c j b p") 'wil-neo)
