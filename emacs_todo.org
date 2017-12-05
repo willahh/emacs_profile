@@ -293,3 +293,11 @@ C
   [2017-12-01 Fri]
   [[file:~/www/logs/log_2017-12-01.log::Type,%20CoTyLevel%20FROM%20syge_concurrencytype%5D%0A01/12/17%2011:40:21,297%20(%2B%206%20ms)%20e8c3%20DEBUG%20DBManagerMySQL%20-%20select%20in%200.0003s%20:%20%5BSELECT%20ZoneIdx,ZoneZoTeStoryId,ZoneZoTeIdx,ZoneZoImIdx,ZoneDocuIdx,ZoneEtapIdxEnCours,ZoneType,ZoneItemId,ZonePageIdx,ZoneTop,ZoneLeft,ZoneBottom,ZoneRight,ZoneUpdatable,ZoneDeletable,ZonePageRefreshNeeded,ZoneServerRefreshNeeded,ZoneBrief,ZoneUsrIdx,DATE_FORMAT(ZoneDateRemise,'%25Y-%25m-%25d%20%25H:%25i:%25s')%20AS%20ZoneDateRemise_dv%20,DATE_FORMAT(ZoneDateCorrection,'%25Y-%25m-%25d%20%25H:%25i:%25s')%20AS%20Z][file:~/www/logs/log_2017-12-01.log::Type, CoTyLevel FROM syge_concurrencytype]
 01/12/17 11:40:21,297 (+ 6 ms) e8c3 DEBUG DBManagerMySQL - select in 0.0003s : [SELECT ZoneIdx,ZoneZoTeStoryId,ZoneZoTeIdx,ZoneZoImIdx,ZoneDocuIdx,ZoneEtapIdxEnCours,ZoneType,ZoneItemId,ZonePageIdx,ZoneTop,ZoneLeft,ZoneBottom,ZoneRight,ZoneUpdatable,ZoneDeletable,ZonePageRefreshNeeded,ZoneServerRefreshNeeded,ZoneBrief,ZoneUsrIdx,DATE_FORMAT(ZoneDateRemise,'%Y-%m-%d %H:%i:%s') AS ZoneDateRemise_dv ,DATE_FORMAT(ZoneDateCorrection,'%Y-%m-%d %H:%i:%s') AS Z]]
+** TODO Emacs directory doesn't exist; --> Ne pas afficher de prompt
+   [2017-12-01 Fri]
+   [[file:~/Documents/perso/glurps/static/a/b/a.html]]
+
+** TODO Kill dired buffer of a, too ? -> Don't prompt
+   [2017-12-01 Fri]
+   [[file:~/Documents/perso/glurps/static/]]
+
