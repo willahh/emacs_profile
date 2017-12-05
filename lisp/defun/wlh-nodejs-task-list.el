@@ -28,16 +28,35 @@
 
 (defvar wlh/nodejs-list-files '("gulpfile.js"))
 
+(defun wlh/nodejs-list-files ()
+  (find-lisp-find-files (projectile-project-root) "\\gulpfile.js$"))
+
+;; (with-temp-buffer (let ((root-file (projectile-project-root))
+;;                         ;; (buffer-content (concat root-file "gulpfile.js"))
+;;                         (list-of-files (find-lisp-find-files root-file "\\gulpfile.js$"))
+;;                         (message list-of-files)
+;;                         (buffer-string))
+;;                     ))
 
 (defun wlh/nodejs-get-node-buffer ()
-  (with-temp-buffer (let ((root-file (projectile-project-root))
-                          ;; (buffer-content (concat root-file "gulpfile.js"))
-                          (list-of-files (find-lisp-find-files root-file "\\gulpfile.js$"))
-                          (message list-of-files)
-                          (buffer-string))
-                      ;; (insert-file-contents buffer-content)
-                      
-                      )))
+  (interactive)
+  (let ((file-target (wlh/nodejs-list-files))
+        (buffer-content (concat (projectile-project-root) "gulpfile.js")))
+    (with-temp-buffer (buffer-string))
+    (message buffer-content)))
+
+
+;; (defun wlh/nodejs-get-node-buffer ()
+;;   (let ((test (projectile-project-root)))
+;;     (progn (let (list-of-files (find-lisp-find-files projectile-project-root "\\gulpfile.js$"))
+;;              (progn (message list-of-files)
+;;                     (buffer-string))))
+
+;;     ;; (insert-file-contents buffer-content)
+
+;;     )
+;;   ;; (with-temp-buffer )
+;;   )
 
 (defun wlh/nodesjs-debug ()
   (interactive)
