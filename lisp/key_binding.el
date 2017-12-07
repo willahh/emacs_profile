@@ -689,6 +689,7 @@
 ;; (global-set-key (kbd "s-s") 'swiper)
 (global-set-key (kbd "C-c C-s") 'swiper)
 (define-key web-mode-map (kbd "C-c C-s") 'swiper)
+(define-key js2-mode-map (kbd "C-c C-s") 'swiper)
 
 ;; (global-set-key (kbd "s-s") 'helm-swoop)
 ;; (global-set-key (kbd "C-c C-s") 'helm-swoop)
