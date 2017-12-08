@@ -671,11 +671,6 @@ Version 2016-10-24"
   :config
   (setq help-cross-reference-manuals nil))
 
-(use-package help-mode
-  :config
-  ;; (add-hook 'help-mode-hook #'hide-trailing-whitespace)
-  )
-
 (use-package help-mode+)
 (use-package help+)
 
@@ -753,13 +748,17 @@ Version 2016-10-24"
 (setq google-translate-default-source-language "fr")
 (setq google-translate-default-target-language "en")
 
-;; linum
-(use-package nlinum
-       :init
-       (add-hook 'php-mode-hook 'nlinum-mode)
-       (add-hook 'web-mode-hook 'nlinum-mode)
-       (add-hook 'js2-mode-hook 'nlinum-mode))
+;; ;; linum
+;; (use-package nlinum
+;;        :init
+;;        (add-hook 'php-mode-hook 'nlinum-mode)
+;;        (add-hook 'web-mode-hook 'nlinum-mode)
+;;        (add-hook 'js2-mode-hook 'nlinum-mode))
 
+(add-hook 'php-mode-hook 'linum-mode)
+(add-hook 'web-mode-hook 'linum-mode)
+(add-hook 'js2-mode-hook 'linum-mode)
+(add-hook 'css-mode-hook 'linum-mode)
 
 (require 'smart-comment)
 (global-set-key (kbd "M-;") 'smart-comment)

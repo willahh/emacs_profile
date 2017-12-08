@@ -111,7 +111,7 @@
 
 
 ;; -- linium
-(global-set-key (kbd "C-c j nl") 'nlinum-mode)
+;; (global-set-key (kbd "C-c j nl") 'nlinum-mode)
 
 ;; New frame
 (global-set-key [meta shift w] 'delete-frame)
@@ -638,11 +638,17 @@
 (global-set-key (kbd "C-s-b") 'ivy-switch-buffer)
 (global-set-key (kbd "s-k") 'fixup-whitespace)
 
-;; Comment
+;; ;; Comment
 (global-set-key (kbd "s-/") 'smart-comment)
 (global-set-key (kbd "M-/") 'smart-comment)
 (global-set-key (kbd "M-;") 'smart-comment)
 (define-key paredit-mode-map (kbd "M-;") 'smart-comment)
+
+;; Comment
+;; (global-set-key (kbd "s-/") 'comment-line)
+;; (global-set-key (kbd "M-/") 'comment-line)
+;; (global-set-key (kbd "M-;") 'comment-line)
+;; (define-key paredit-mode-map (kbd "M-;") 'comment-line)
 
 ;; Kill
 (global-set-key (kbd "s-k") 'kill-paragraph)

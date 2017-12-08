@@ -301,3 +301,21 @@ C
    [2017-12-01 Fri]
    [[file:~/Documents/perso/glurps/static/]]
 
+** TODO M-j web-mode doit faire une nouvelle ligne de commentaire
+   [2017-12-07 Thu]
+   [[file:~/www/project/arsia/arsia_3.2.x_standard/pimdatamanager/admin/module/data/list2.php::*%20filterToolbar][file:~/www/project/arsia/arsia_3.2.x_standard/pimdatamanager/admin/module/data/list2.php::* filterToolbar]]
+** TODO [wait] Migration du site de goaland de Wordpress vers un dev
+   [2017-11-15 Wed]
+   [[file:~/org/arsia.org::*%5Bevol%5D%20Arsia%203.3%20-%20Faire%20un%20js%20global%20permettant%20de%20masquer%20via%20une%20conf%20tout%20les%20console.log.][{evol} Arsia 3.3 - Faire un js global permettant de masquer via une conf tout les console.log.]]
+
+** TODO C-w company mode 
+   [2017-12-07 Thu]
+   [[file:~/www/project/arsia/arsia_3.2.x_standard/pimdatamanager/admin/module/data/js/filterToolbar.js::*%20Nested%20.dropdown,%20prevent%20closing%20the%20first%20dropdown,%20hen%20acti][file:~/www/project/arsia/arsia_3.2.x_standard/pimdatamanager/admin/module/data/js/filterToolbar.js::* Nested .dropdown, prevent closing the first dropdown, hen acti]]
+** TODO i-search color mauvaise
+   [2017-12-08 Fri]
+   [[file:~/www/project/arsia/arsia_3.2.x_standard/pimdatamanager/admin/module/data/list2.php::<div%20style%3D"text-align:%20left%3B"><label%20class%3D"checkbox"%20style%3D"text-align:%20left%3B"><input%20type%3D"checkbox"%20value%3D"0">Checkbox%201</label></div>][file:~/www/project/arsia/arsia_3.2.x_standard/pimdatamanager/admin/module/data/list2.php::<div style="text-align: left;"><label class="checkbox" style="text-align: left;"><input type="checkbox" value="0">Checkbox 1</label></div>]]
+
+** TODO Hide trailing whitespace
+   [2017-12-08 Fri]
+   [[file:~/www/project/arsia/arsia_3.2.x_standard/pimdatamanager/admin/module/data/list2.php::<div%20style%3D"text-align:%20left%3B"><label%20class%3D"checkbox"%20style%3D"text-align:%20left%3B"><input%20type%3D"checkbox"%20value%3D"0">Checkbox%201</label></div>][file:~/www/project/arsia/arsia_3.2.x_standard/pimdatamanager/admin/module/data/list2.php::<div style="text-align: left;"><label class="checkbox" style="text-align: left;"><input type="checkbox" value="0">Checkbox 1</label></div>]]
+

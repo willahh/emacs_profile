@@ -100,7 +100,7 @@
                      monokai-theme
                      multiple-cursors
                      neotree
-                     nlinum
+                     ;; nlinum
                      org-bullets
                      ov ; Utlise pour quelques fonctions utils de prelude
                      pandoc-mode

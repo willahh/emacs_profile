@@ -477,12 +477,12 @@
 
 ;; Show trailing whitespace
 (setq-default show-trailing-whitespace nil)
-(add-hook 'prog-mode-hook 
-  (lambda()
-    (setq show-trailing-whitespace t)))
-(add-hook 'diff-mode 
-  (lambda()
-    (setq show-trailing-whitespace t)))
+;; (add-hook 'prog-mode-hook 
+;;   (lambda()
+;;     (setq show-trailing-whitespace t)))
+;; (add-hook 'diff-mode 
+;;   (lambda()
+;;     (setq show-trailing-whitespace t)))
 
 ;; Cleanup whitespace on save
 ;; http://batsov.com/articles/2011/11/25/emacs-tip-number-3-whitespace-cleanup/
@@ -627,32 +627,12 @@
 ;; Only require evil package just to get some commands
 (require 'evil)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-; Show trailing whitespace White space
-; Note : Mise tout a la fin sinon ne fonctionne pas
-; (setq-default show-trailing-whitespace t)
-
-; Syntax entry for web mode doesnt work actualy
-; https://github.com/fxbois/web-mode/issues/149
-; Select whole word when separated with _
-; Update : Besoin d ajouter des hook pour certains mode
-; Je n ai pas reussis a setter cette propriete de maniere globale
-; -> prog-mode-hook
+;; Syntax entry for web mode doesnt work actualy
+;; https://github.com/fxbois/web-mode/issues/149
+;; Select whole word when separated with _
+;; Update : Besoin d ajouter des hook pour certains mode
+;; Je n ai pas reussis a setter cette propriete de maniere globale
+;; -> prog-mode-hook
 
 (defun update-syntax-entry ()
   (modify-syntax-entry ?_ "w")

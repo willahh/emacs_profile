@@ -1,6 +1,6 @@
-(add-hook 'eww-mode-hook
-          (lambda ()
-            (set (make-local-variable 'show-trailing-whitespace) nil)))
+;; (add-hook 'eww-mode-hook
+;;           (lambda ()
+;;             (set (make-local-variable 'show-trailing-whitespace) nil)))
 
 ;; Set eww as default browser
 ;; (setq browse-url-browser-function 'eww-browse-url)
