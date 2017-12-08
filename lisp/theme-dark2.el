@@ -117,7 +117,9 @@
 ;;                          (set-face-attribute 'nlinum nil :foreground "#4a4a4a" :background"#1a1c1d")))
 
 ;; (set-face-attribute 'nlinum nil :foreground "#4a4a4a" :background"#000")
-(set-face-attribute 'linum nil :foreground "#4a4a4a" :background"#1a1c1d")
+
+(add-hook 'linum-mode-hook (lambda ()
+                             (set-face-attribute 'linum nil :foreground "#4a4a4a" :background"#1a1c1d")))
 
 ;; ------- Font
 (set-frame-font "Office Code Pro:antialias=1")
