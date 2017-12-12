@@ -638,11 +638,17 @@
 (global-set-key (kbd "C-s-b") 'ivy-switch-buffer)
 (global-set-key (kbd "s-k") 'fixup-whitespace)
 
+;; ;; ;; Comment
+;; (global-set-key (kbd "s-/") 'smart-comment)
+;; (global-set-key (kbd "M-/") 'smart-comment)
+;; (global-set-key (kbd "M-;") 'smart-comment)
+;; (define-key paredit-mode-map (kbd "M-;") 'smart-comment)
+
 ;; ;; Comment
-(global-set-key (kbd "s-/") 'smart-comment)
-(global-set-key (kbd "M-/") 'smart-comment)
-(global-set-key (kbd "M-;") 'smart-comment)
-(define-key paredit-mode-map (kbd "M-;") 'smart-comment)
+(global-set-key (kbd "s-/") 'comment-or-uncomment-region-or-line)
+(global-set-key (kbd "M-/") 'comment-or-uncomment-region-or-line)
+(global-set-key (kbd "M-;") 'comment-or-uncomment-region-or-line)
+(define-key paredit-mode-map (kbd "M-;") 'comment-or-uncomment-region-or-line)
 
 ;; Comment
 ;; (global-set-key (kbd "s-/") 'comment-line)

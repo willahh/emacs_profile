@@ -80,11 +80,13 @@
 ;; Show matching parenthesis
 (show-paren-mode)
 
-;; Hihglight la ligne courante Update : Ralentis un peu l affichage,
-;; en commentaire pour le moment Update 2 : Il faut un repere visuel
-;; pour savoir tout de suite ou se situe le caret, juste le caret ne
-;; suffit pas.
-(global-hl-line-mode 1)
+;; Hihglight la ligne courante Update : Ralentis un peu l affichage, en
+;; commentaire pour le moment Update 2 : Il faut un repere visuel pour savoir
+;; tout de suite ou se situe le caret, juste le caret ne suffit pas.
+;;
+;; Probleme de superposition de couleur avec highlight symbol, update pour
+;; desactivation 
+;; (global-hl-line-mode 1)
 
 ;;
 (winner-mode t)
@@ -350,8 +352,8 @@
 
 (setq tramp-default-method "ssh")
 
-;; Set the default comment column to 70
-(setq-default comment-column 70)
+;; Set the default comment column to 80
+(setq-default comment-column 80)
 
 ;; Every time a window is started, make sure it get maximized
 ;; (add-to-list 'default-frame-alist '(fullscreen . maximized))

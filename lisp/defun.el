@@ -1442,3 +1442,12 @@ the checking happens for all pairs in auto-minor-mode-alist"
         (goto-char beg)
         (while (< (point) end)
           (join-line 1)))))
+
+
+(defun select-word ()
+  (interactive)
+  (unhighlight-regexp t)
+  (highlight-symbol-at-point)
+  (er/expand-region 1))
+
+(global-set-key [double-mouse-1] 'select-word)
