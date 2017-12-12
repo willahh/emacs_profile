@@ -155,3 +155,6 @@
  '(rainbow-delimiters-depth-6-face ((t (:foreground "#cc99ff"))))
  '(rainbow-delimiters-depth-7-face ((t (:foreground "#fa75e2"))))
  '(rainbow-delimiters-depth-8-face ((t (:foreground "#55bdf0")))))
+
+;; Enable window-divier
+(window-divider-mode-apply t)
