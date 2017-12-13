@@ -1,0 +1,6 @@
+(defun wlh/css-open-declaration ()
+  (interactive)
+  (insert " {\n}")
+  (backward-char)
+  (smart-open-line-above))
+(define-key css-mode-map (kbd "C-c C-i") 'wlh/css-open-declaration)
