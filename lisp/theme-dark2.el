@@ -109,7 +109,8 @@
 (set-face-attribute 'highlight-symbol-face nil :foreground nil :background "#2f3b41")
 ;; (set-face-attribute 'highlight-symbol-face nil :foreground nil :background "#2f3b41" :box "#c8a108")
 ;; (set-face-attribute 'hi-yellow nil :foreground "#000" :background "#ffea00")
-(set-face-attribute 'hi-yellow nil :foreground "#000" :background "#a1e7fa")
+;; (set-face-attribute 'hi-yellow nil :foreground "#000" :background "#a1e7fa")
+(set-face-attribute 'hi-yellow nil :foreground nil :background "#0d7aa6")
 ;; Fringe
 (set-face-attribute 'fringe nil :background nil :slant 'normal)
 (set-face-attribute 'fringe nil :background "#1a1c1d" :slant 'normal)

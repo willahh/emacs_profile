@@ -10,6 +10,7 @@
 (require 'conf-mode)
 (require 'magit)
 (require 'term)
+(require 'web-mode)
 
 ;; key-translation-madefine-key key-translation-map (kbd "ESC") (kbd "C-g"))
 
@@ -440,8 +441,8 @@
 ;; (global-set-key (kbd "M-s h h") 'highlight-symbol-at-point)
 
 ;; iy-go-to-char (awesoooooome VIM LIKE "f")
-(global-set-key (kbd "C-c f") 'iy-go-to-char)
-(global-set-key (kbd "C-c F") 'iy-go-to-char-backward)
+;; (global-set-key (kbd "C-c f") 'iy-go-to-char)
+;; (global-set-key (kbd "C-c F") 'iy-go-to-char-backward)
 
 ;; ;; Transpose stuff with M-t
 ;; (global-unset-key (kbd "M-t")) ;; which used to be transpose-words

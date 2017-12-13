@@ -1445,10 +1445,41 @@ the checking happens for all pairs in auto-minor-mode-alist"
           (join-line 1)))))
 
 
-(defun select-word ()
+
+
+
+
+
+;; (setq *wlh/dbleclick-enablep* nil)
+;; (defun wlh/dbleclick-select-word-a (enablep)
+;;   (wlh/dbleclick-select-word))
+
+(defun wlh/dbleclick-select-word ()
   (interactive)
+  (highlight-symbol-mode nil) ; Disable highlight-symbol-mode
   (unhighlight-regexp t)
   (highlight-symbol-at-point)
-  (er/expand-region 1))
+  (er/mark-word)
+  (exchange-point-and-mark)
+  ;; (forward-word)
+  ;; (setq *wlh/dbleclick-enablep* t)
+  )
 
-(global-set-key [double-mouse-1] 'select-word)
+(defun wlh/dbleclick-mouse1 ()
+  (interactive)
+  ;; (when *wlh/dbleclick-enablep* (unhighlight-regexp t))
+  (unhighlight-regexp t)
+  (highlight-symbol-mode t) ; Enable highlight-symbol-mode
+  )
+
+(global-set-key [mouse-1] 'wlh/dbleclick-mouse1)
+(global-set-key [double-mouse-1] 'wlh/dbleclick-select-word)
+; (define-key web-mode-map [double-mouse-1] 'wlh/dbleclick-select-word)
+
+
+
+
+
+
+
+
