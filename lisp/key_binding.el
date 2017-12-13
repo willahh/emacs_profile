@@ -95,16 +95,16 @@
 ;; Search
 (global-set-key (kbd "C-c j s") 'projectile-ag)
 
-;; Neotree
-(global-set-key (kbd "C-c j b b") 'neotree-toggle)
-(global-set-key (kbd "C-c j b p") 'wil-neo)
-(global-set-key (kbd "C-c b") 'neotree-toggle)
-(global-set-key (kbd "C-c r") 'wil-neo)
+;; ;; Neotree
+;; (global-set-key (kbd "C-c j b b") 'neotree-toggle)
+;; (global-set-key (kbd "C-c j b p") 'wil-neo)
+;; (global-set-key (kbd "C-c b") 'neotree-toggle)
+;; (global-set-key (kbd "C-c r") 'wil-neo)
 
-(defun wil-neo()
-  (interactive)
-  (neotree-projectile-action)
-  (other-window 1))
+;; (defun wil-neo()
+;;   (interactive)
+;;   (neotree-projectile-action)
+;;   (other-window 1))
 
 ;; Google
 (global-set-key (kbd "C-c j g s") 'helm-google-suggest)
@@ -173,7 +173,8 @@
 
 ;; ---------------- key binding
 ;; Main binds
-(global-set-key (kbd "<f5>") 'revert-buffer-no-confirm)
+
+
 
 ;; Mouse key binding
 (global-set-key (kbd "<S-wheel-left>") '(lambda ()
@@ -252,8 +253,8 @@
 
 ;; All
 (global-set-key (kbd "M-L") 'mc/mark-all-words-like-this) ; Like in VS Code
-(global-set-key (kbd "<f6>") 'dired-jump)
-(global-set-key (kbd "<f7>") 'projectile-dired)
+
+
 
 ;; Next
 (global-set-key (kbd "°") 'mc/mark-next-like-this-word) ; ALT+d
@@ -283,6 +284,7 @@
 (define-key company-active-map (kbd "<tab>") 'company-complete-selection)
 (define-key company-active-map (kbd "C-m") 'new-line-dwim)
 (define-key company-active-map (kbd "C-j") 'company-complete)
+(define-key company-active-map (kbd "C-i") 'company-complete-selection)
 
 ;; (define-key company-active-map (kbd "C-n") 'company-select-next)def
 ;; (define-key company-active-map (kbd "C-p") 'company-select-previous)
@@ -624,8 +626,19 @@
 
 ;; ---------------- Function keys
 ;; (global-set-key (kbd "<f2>") 'my/open-tree-view)
-(global-set-key (kbd "<f12>") 'wil-vc-dir)
+;; F Keys
+(global-set-key (kbd "<f1> f") 'counsel-describe-function)
+(global-set-key (kbd "<f1> v") 'counsel-describe-variable)
+(global-set-key (kbd "<f1> l") 'counsel-find-library)
+(global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
+(global-set-key (kbd "<f2> u") 'counsel-unicode-char)
+(global-set-key (kbd "<f5>") 'revert-buffer-no-confirm)
+(global-set-key (kbd "<f6>") 'dired-jump)
+(global-set-key (kbd "<f7>") 'projectile-dired)
+(global-set-key (kbd "<f8>") 'neotree-toggle)
 (global-set-key (kbd "<f11>") 'wil-IDE)
+(global-set-key (kbd "<f12>") 'wil-vc-dir)
+
 
 ;; --------------- Super keys
 ;; Search with super key
@@ -844,12 +857,6 @@
 
 ;; (global-set-key (kbd "M-x") 'counsel-M-x)
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
-(global-set-key (kbd "<f1> f") 'counsel-describe-function)
-(global-set-key (kbd "<f1> v") 'counsel-describe-variable)
-(global-set-key (kbd "<f1> l") 'counsel-find-library)
-(global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
-(global-set-key (kbd "<f2> u") 'counsel-unicode-char)
-
 
 
 (global-set-key (kbd "C-c g") 'counsel-git)

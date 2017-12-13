@@ -3,4 +3,4 @@
   (insert " {\n}")
   (backward-char)
   (smart-open-line-above))
-(define-key css-mode-map (kbd "C-c C-i") 'wlh/css-open-declaration)
+(define-key css-mode-map (kbd "C-c C-j") 'wlh/css-open-declaration)

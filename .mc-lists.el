@@ -198,4 +198,5 @@
         vc-dir-previous-line
         wgrep-finish-edit
         wil-recenter-top-bottom
+        wlh/dbleclick-mouse1
         ))
