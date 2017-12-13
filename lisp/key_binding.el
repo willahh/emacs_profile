@@ -636,6 +636,8 @@
 (global-set-key (kbd "<f6>") 'dired-jump)
 (global-set-key (kbd "<f7>") 'projectile-dired)
 (global-set-key (kbd "<f8>") 'neotree-toggle)
+(global-set-key (kbd "<f9>") 'projectile-recentf)
+(global-set-key (kbd "<f10>") 'counsel-recentf)
 (global-set-key (kbd "<f11>") 'wil-IDE)
 (global-set-key (kbd "<f12>") 'wil-vc-dir)
 

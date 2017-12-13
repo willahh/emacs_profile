@@ -9,6 +9,7 @@
 
 (setq confirm-nonexistent-file-or-buffer nil)
 
+(setq goto-address-mode nil)
 (blink-cursor-mode 1)
 
 ;; Don't write new line at end of document
