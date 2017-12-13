@@ -640,17 +640,17 @@ Version 2016-10-24"
     ("fu" "function" xah-abbrev-h-f)
     ("arg" "arguments" xah-abbrev-h-f)))
 
-(use-package beacon
-  :config
-  (beacon-mode 1)
-  (setq beacon-color "#6373a2")
-  (setq beacon-size 80)
-  
-  ;; (setq beacon-blink-when-window-scrolls nil)
-  ;; (setq beacon-blink-when-window-scrolls t)
-  (setq beacon-blink-when-window-scrolls nil)
-  
-  (diminish 'beacon-mode))
+;; (use-package beacon
+;;   :config
+;;   (beacon-mode 1)
+;;   (setq beacon-color "#6373a2")
+;;   (setq beacon-size 80)
+
+;;   ;; (setq beacon-blink-when-window-scrolls nil)
+;;   ;; (setq beacon-blink-when-window-scrolls t)
+;;   (setq beacon-blink-when-window-scrolls nil)
+
+;;   (diminish 'beacon-mode))
 
 (require 'popwin)
 (popwin-mode 1)

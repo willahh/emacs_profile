@@ -23,7 +23,7 @@
                      autopair
                      avy
                      avy-menu
-                     beacon
+                     ;; beacon
                      browse-kill-ring
                      clj-refactor
                      clojure-cheatsheet

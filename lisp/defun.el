@@ -1376,7 +1376,8 @@ the checking happens for all pairs in auto-minor-mode-alist"
   "Call recenter-top-bottom then do a beacon-blink"
   (interactive)
   (recenter-top-bottom)
-  (beacon-blink))
+  ;; (beacon-blink)
+  )
 
 ;; From prelude
 ;; Compilation from Emacs
@@ -1412,11 +1413,11 @@ the checking happens for all pairs in auto-minor-mode-alist"
   (balance-windows)
   (follow-mode t))
 
-(defadvice highlight-symbol-next (after wlh/highlight-symbol-next-advice)
-  (beacon-blink))
+;; (defadvice highlight-symbol-next (after wlh/highlight-symbol-next-advice)
+;;   (beacon-blink))
 
-(defadvice highlight-symbol-prev (after wlh/highlight-symbol-prev-advice)
-  (beacon-blink))
+;; (defadvice highlight-symbol-prev (after wlh/highlight-symbol-prev-advice)
+;;   (beacon-blink))
 
 
 
