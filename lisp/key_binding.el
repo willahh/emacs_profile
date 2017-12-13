@@ -682,8 +682,11 @@
 (global-set-key (kbd "s-q") 'my-abort-recursive-edit)
 ;; (global-set-key (kbd "C-s-p") 'find-file-in-current-directory)
 (global-set-key (kbd "M-P") 'find-file-in-current-directory)
-(global-set-key (kbd "s-r") 'projectile-recentf)
-(global-set-key (kbd "C-s-r") 'counsel-recentf) ; Update : Oui mais la completion avec espace est relou et moins rapide
+
+;; Recentf
+;; (global-set-key (kbd "s-r") 'projectile-recentf)
+(global-set-key (kbd "C-c f") 'counsel-recentf) 
+;; (global-set-key (kbd "C-s-r") 'counsel-recentf)
 (global-set-key (kbd "C-c j r") 'counsel-recentf)
 (global-set-key (kbd "C-c j R") 'projectile-recentf)
 
