@@ -1,3 +1,4 @@
+(require 'css-mode)
 (defun wlh/css-open-declaration ()
   (interactive)
   (insert " {\n}")
