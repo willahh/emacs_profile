@@ -1474,12 +1474,12 @@ the checking happens for all pairs in auto-minor-mode-alist"
 
 (global-set-key [mouse-1] 'wlh/dbleclick-mouse1)
 (global-set-key [double-mouse-1] 'wlh/dbleclick-select-word)
-; (define-key web-mode-map [double-mouse-1] 'wlh/dbleclick-select-word)
 
-
-
-
-
-
-
-
+(defun swiper--from-isearch ()
+  "Invoke `swiper' from isearch. https://github.com/ShingoFukuyama/helm-swoop/blob/f67fa8a4fe3b968b7105f8264a96da61c948a6fd/helm-swoop.el#L657-668"
+  (interactive)
+  (let (($query (if isearch-regexp
+                    isearch-string
+                  (regexp-quote isearch-string))))
+    (isearch-exit)
+    (swiper $query)))

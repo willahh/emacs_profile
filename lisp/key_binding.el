@@ -12,16 +12,7 @@
 (require 'term)
 (require 'web-mode)
 
-;; key-translation-madefine-key key-translation-map (kbd "ESC") (kbd "C-g"))
 
-
-;;; (define-key key-translation-map (kbd "C-z") (kbd "C-z")); (define-key key-translation-map (kbd "C-j") (kbd "RET"))
-;; (define-key key-translation-map (kbd "C-S-i") (kbd "<backtab>"))
-
-
-
-;; (global-set-key (kbd "s--") 'snegative-argument)
-  
 (global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
 (global-set-key (kbd "M-g") 'goto-line) ;; https://github.com/skeeto/.emacs.d/blob/master/init.el
@@ -91,28 +82,12 @@
 (global-set-key (kbd "C-c j c s") (quote thing-copy-string-to-mark))
 (global-set-key (kbd "C-c j c a") (quote thing-copy-parenthesis-to-mark))
 
-
 ;; Search
 (global-set-key (kbd "C-c j s") 'projectile-ag)
-
-;; ;; Neotree
-;; (global-set-key (kbd "C-c j b b") 'neotree-toggle)
-;; (global-set-key (kbd "C-c j b p") 'wil-neo)
-;; (global-set-key (kbd "C-c b") 'neotree-toggle)
-;; (global-set-key (kbd "C-c r") 'wil-neo)
-
-;; (defun wil-neo()
-;;   (interactive)
-;;   (neotree-projectile-action)
-;;   (other-window 1))
 
 ;; Google
 (global-set-key (kbd "C-c j g s") 'helm-google-suggest)
 (global-set-key (kbd "C-c j g t") 'google-translate-at-point)
-
-
-;; -- linium
-;; (global-set-key (kbd "C-c j nl") 'nlinum-mode)
 
 ;; New frame
 (global-set-key [meta shift w] 'delete-frame)
@@ -122,7 +97,6 @@
 ;; ---
 (define-key ivy-minibuffer-map (kbd "<escape>") 'minibuffer-keyboard-quit)
 (define-key ivy-minibuffer-map (kbd "C-h") 'delete-backward-char)
-
 
 ;; Custom abor-recursive-edit
 ;; Utilise comme substitut a C-g (keyboard-quit)
@@ -162,11 +136,6 @@
 ;; (key-chord-define-global "wx" 'er/contract-region)
 ;; (key-chord-define-global "\"\'" 'er/expand-region) ; 3 + 4 on azerty keyboard
 (key-chord-define-global "xc" 'er/expand-region)
-
-
-;; ;; Bind C-1 (on azerty keyboard)
-
-
 
 ;; ---------------- Key binding
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
@@ -242,10 +211,6 @@
 (global-set-key (kbd "Ï") 'drag-stuff-down) ; ALT+j
 (define-key org-mode-map (kbd "Ï") 'org-metadown) ; ALT+j
 
-;; ----------------
-;; (define-key input-decode-map [?\C-m] [C-m])
-;; (define-key input-decode-map "\C-m" (kbd "<C-m>")) ; Needed
-
 ;; ------ Multi cursor binding
 ;; Mouse
 (global-set-key (kbd "<M-down-mouse-1>") 'mc/add-cursor-on-click)
@@ -253,8 +218,6 @@
 
 ;; All
 (global-set-key (kbd "M-L") 'mc/mark-all-words-like-this) ; Like in VS Code
-
-
 
 ;; Next
 (global-set-key (kbd "°") 'mc/mark-next-like-this-word) ; ALT+d
@@ -285,21 +248,6 @@
 (define-key company-active-map (kbd "C-m") 'new-line-dwim)
 (define-key company-active-map (kbd "C-j") 'company-complete)
 (define-key company-active-map (kbd "C-i") 'company-complete-selection)
-
-;; (define-key company-active-map (kbd "C-n") 'company-select-next)def
-;; (define-key company-active-map (kbd "C-p") 'company-select-previous)
-;; (define-key company-active-map (kbd "C-i") 'company-complete-selection)
-;; (define-key company-active-map (kbd "C-c h") 'company-quickhelp--show)
-;; (define-key company-active-map (kbd "C-j") 'newline) ;; Disable with reaffectation of new line function
-;; (define-key company-active-map (kbd "RET") 'newline) ;; Disable with reaffectation of new line 
-
-;; ;; Kill
-;; (global-set-key (kbd "C-z") 'whole-line-or-region-kill-region)
-;; (define-key ivy-minibuffer-map (kbd "C-z") 'whole-line-or-region-kill-region)
-;; (define-key helm-map (kbd "C-z") 'whole-line-or-region-kill-region)
-;; (define-key ido-buffer-completion-map (kbd "C-z") 'whole-line-or-region-kill-region)
-;; (define-key company-active-map (kbd "C-z") 'whole-line-or-kill-gion)
-
 
 ;; kill backward
 (global-set-key (kbd "C-w") 'backward-kill-word-or-region)
@@ -382,8 +330,6 @@
 ;; (global-set-key (kbd "C-s-i") 'company-complete)
 
 (define-key prog-mode-map (kbd "RET") 'new-line-dwim)
-;; (define-key prog-mode-map (kbd "<RET>") 'new-line-dwim)
-;; (global-set-key (kbd "<RET>") 'newline)
 
 ;;
 (global-set-key [(meta shift d)] 'wil-duplicate)
@@ -391,17 +337,12 @@
 
 
 
-;; easy-motion
-
 ;; scroll
 (global-set-key (kbd "C-v") 'scroll-up)
 
 
 (define-key indent-rigidly-map [(shift tab)] 'indent-rigidly-left-to-tab-stop)
 (define-key indent-rigidly-map [(tab)] 'indent-rigidly-right-to-tab-stop)
-
-;; (global-set-key (kbd "C-'") 'avy-goto-word-1)
-;; (global-set-key (kbd "s-m") 'avy-goto-word-1)
 
 ;; More convenient key binding instead of leaving the home row to get
 ;; left and right arrow. Inspired by jwiegley paredit keybinding.
@@ -414,15 +355,13 @@
 (define-key isearch-mode-map (kbd "C-S-j") 'avy-isearch)
 (define-key isearch-mode-map (kbd "M-v") 'isearch-yank-pop)
 (define-key isearch-mode-map (kbd "C-v") 'isearch-yank-pop)
+(define-key isearch-mode-map (kbd "M-s") 'swiper--from-isearch)
 
 ;; help
 (define-key help-mode-map (kbd "n") 'next-line)
 (define-key help-mode-map (kbd "p") 'previous-line)
 (define-key help-mode-map (kbd "f") 'forward-char)
 (define-key help-mode-map (kbd "b") 'backward-char)
-
-;; search in line
-;; (global-set-key (kbd "C-c C-s") 'avy-goto-char-in-line) ; Disable : Too long key
 
 ;; Align your code in a pretty way.
 (global-set-key (kbd "C-x \\") 'align-regexp)
@@ -440,18 +379,6 @@
 ;; Webjump let's you quickly search google, wikipedia, emacs wiki
 (global-set-key (kbd "C-x g") 'webjump)
 (global-set-key (kbd "C-x M-g") 'browse-url-at-point)
-;; (global-set-key (kbd "M-s h h") 'highlight-symbol-at-point)
-
-;; iy-go-to-char (awesoooooome VIM LIKE "f")
-;; (global-set-key (kbd "C-c f") 'iy-go-to-char)
-;; (global-set-key (kbd "C-c F") 'iy-go-to-char-backward)
-
-;; ;; Transpose stuff with M-t
-;; (global-unset-key (kbd "M-t")) ;; which used to be transpose-words
-;; (global-set-key (kbd "M-t l") 'transpose-lines)
-;; (global-set-key (kbd "M-t w") 'transpose-words)
-;; (global-set-key (kbd "M-t s") 'transpose-sexps)
-;; (global-set-key (kbd "M-t p") 'transpose-params)
 
 ;; vc
 (global-set-key (kbd "C-x v f") 'vc-diff)
@@ -587,7 +514,6 @@
         ((equal (web-mode-language-at-pos) "javascript") (sp-kill-hybrid-sexp 1))
         ((equal (web-mode-language-at-pos) "php") (paredit-kill))
         ((equal (web-mode-language-at-pos) "css") (paredit-kill))))
-
 
 
 (define-key web-mode-map (kbd "C-k") 'wil-web-mode-kill-sexp)
@@ -841,13 +767,11 @@
 (global-set-key (kbd "C-c S") 'crux-find-shell-init-file)
 (global-set-key (kbd "s-j") 'crux-top-join-line)
 
-
 ;; (define-key term-mode-map (kbd "C-c RET") 'term-line-mode)
 ;; (add-hook 'term-mode-hook
 ;;           (function
 ;;            (lambda ()
 ;;              (define-key term-raw-map (kbd "C-c RET") 'term-line-mode))))
-
 
 (global-set-key [f7] 'winner-undo)
 (global-set-key [C-f7] 'winner-redo)
@@ -856,12 +780,8 @@
 (global-set-key (kbd "C-x l") 'counsel-locate)
 (global-set-key (kbd "C-x C-l") 'locate)
 
-
-
-
 ;; (global-set-key (kbd "M-x") 'counsel-M-x)
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
-
 
 (global-set-key (kbd "C-c g") 'counsel-git)
 ;; (global-set-key (kbd "C-c j") 'counsel-git-grep)
