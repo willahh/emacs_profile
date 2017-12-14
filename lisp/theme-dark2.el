@@ -110,7 +110,8 @@
 ;; (set-face-attribute 'highlight-symbol-face nil :foreground nil :background "#2f3b41" :box "#c8a108")
 ;; (set-face-attribute 'hi-yellow nil :foreground "#000" :background "#ffea00")
 ;; (set-face-attribute 'hi-yellow nil :foreground "#000" :background "#a1e7fa")
-(set-face-attribute 'hi-yellow nil :foreground nil :background "#0d7aa6")
+;; (set-face-attribute 'hi-yellow nil :foreground nil :background "#0d7aa6")
+(set-face-attribute 'hi-yellow nil :foreground "#000" :background "#ffea00")
 ;; Fringe
 (set-face-attribute 'fringe nil :background nil :slant 'normal)
 (set-face-attribute 'fringe nil :background "#1a1c1d" :slant 'normal)
@@ -120,9 +121,13 @@
 ;; (set-face-attribute 'window-divider-first-pixel nil :foreground "#545454")
 ;; (set-face-attribute 'window-divider-last-pixel nil :foreground "#545454")
 
-(set-face-attribute 'window-divider nil :foreground "#4a4a4a")
-(set-face-attribute 'window-divider-first-pixel nil :foreground "#4a4a4a")
-(set-face-attribute 'window-divider-last-pixel nil :foreground "#4a4a4a")
+;; (set-face-attribute 'window-divider nil :foreground "#4a4a4a")
+;; (set-face-attribute 'window-divider-first-pixel nil :foreground "#4a4a4a")
+;; (set-face-attribute 'window-divider-last-pixel nil :foreground "#4a4a4a")
+
+(set-face-attribute 'window-divider nil :foreground "#7b7b7b")
+(set-face-attribute 'window-divider-first-pixel nil :foreground "#7b7b7b")
+(set-face-attribute 'window-divider-last-pixel nil :foreground "#7b7b7b")
 
 ;; (set-window-margins nil 4)
 (set-window-margins nil 0)
