@@ -640,6 +640,8 @@
 (global-set-key (kbd "<f10>") 'counsel-recentf)
 (global-set-key (kbd "<f11>") 'wil-IDE)
 (global-set-key (kbd "<f12>") 'wil-vc-dir)
+(global-set-key (kbd "<end>") 'end-of-buffer)
+(global-set-key (kbd "<home>") 'beginning-of-buffer)
 
 
 ;; --------------- Super keys
