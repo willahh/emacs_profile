@@ -1483,3 +1483,13 @@ the checking happens for all pairs in auto-minor-mode-alist"
                   (regexp-quote isearch-string))))
     (isearch-exit)
     (swiper $query)))
+
+(defun wlh/projectile-ido-find-file ()
+  "Find a recent file using ido."
+  (interactive)
+  (let ((file (ido-completing-read "Project file: "
+                                   (mapcar #'abbreviate-file-name (projectile-current-project-files))
+                                   nil t)))
+    (when file
+      (find-file file))))
+
