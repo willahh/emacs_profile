@@ -86,14 +86,14 @@ C
    [2017-10-23 Mon]
    [[file:~/www/project/arsia/goacrop/src/main.js:://%20Pas%20de%20traitement%20particulier,%20l'image][file:~/www/project/arsia/goacrop/src/main.js::// Pas de traitement particulier, l'image]]
 *
-** TODO [#A] [URGENT] wdired ne fonctionne plus                       
+** DONE [#A] [URGENT] wdired ne fonctionne plus                       
    [2017-11-13 Mon]
    [[file:~/www/temp/.png]]
 
 ** TODO [#A] [counsel-find-file] [mini-buffer] Ajouter un bind C-k pour supprimer tout le texte 
 ** TODO [#A] [vc-diff mode] Voir si il est possible de lancer des commandes de type ediff 
        Depuis  le vc-diff
-** TODO [#A] Autres tâches à mettre au format todo                    
+** DONE [#A] Autres tâches à mettre au format todo                    
 ** TODO [#A] [css-mode] Virer company dabbrev de css mode             
 ** TODO [#C] [dired] Rename file : Possibilité de préciser un chemin contenant des dossiers 
       N'existant pas, ces dossier seront créés automatiquement à la validation
@@ -127,8 +127,6 @@ C
   - [ ] Show current VC system used
   - [ ] Show current encoding
 ** TODO [#A] Mini buffer : Ne pas afficher de scrollbar               
-** TODO [#A] Ajouter un bind ALT + arrow up / down sur drags          
-** TODO [#A] [helm] Plugin helm utisable avec la souris               
 ** TODO [#A] Faire fonctionner fengyuanchen/cropper, les fichiers .babelrc, .editorconfig (déjà le cas en principe), .eslintrc 
    [2017-09-20 Wed]
 ** TODO [#A] Definir tous les fichiers .php dans un dossier "process" pour être en mode php 
@@ -218,19 +216,14 @@ C
 ** TODO [#B] [projectile find file] Auto centrer la ligne une fois le goto dans le fichier 
 ** TODO [#B] [svn-log-view] Faire des ediff depuis ce mode            
 ** TODO [#B] Faire une fonction "Merge lines" pour supprimer les linebreak/whitespace 
-** TODO [#B] Delete file : ne pas re demander le chemin alors que l'on a deja le focus 
+** TODO [#B] Delete file : Ne pas re demander le chemin alors que l'on a deja le focus 
 ** TODO [#B] Ivy : Possibilité de boucler                             
 
 ** TODO [#B] [vc-dir] N'affiche pas les fichiers supprimés localement, mais non envoyé à svn (svn remove) 
 
-** TODO [#B] Display current encoding                                 
 ** TODO [#B] Projectile - Ne pas ajouter automatiquement les fichiers manquants dans le cache, car cela peut ralentir énormement le process d'ouverture du fichier. Il faut le gérer manuellement 
    [2017-11-10 Fri]
    [[file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/include/lib/internal/croptosize2/src/events.js::Events.on_validate%20%3D%20function(input)%20{][file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/include/lib/internal/croptosize2/src/events.js::Events.on_validate = function(input) {]]
-
-** TODO [#B] Save selection on buffers history                        
-   [2017-11-14 Tue]
-   [[file:~/.emacs.d/lisp/theme-dark2.el::(set-face-attribute%20'company-tooltip-annotation%20nil%20:foreground%20"#55e97b")][file:~/.emacs.d/lisp/theme-dark2.el::(set-face-attribute 'company-tooltip-annotation nil :foreground "#55e97b")]]
 
 ** TODO [#C] [theme] Mettre plus en avant le buffer actif             
 ** DONE [#C] [theme] js color var                                     
@@ -241,7 +234,6 @@ C
 ** TODO [#C] Markdown mode style like in Sublime (background white, text black, column width limit, center inside 
    Markdown in white theme
 ** TODO [#C] Markdown in white theme                                  
-** TODO [#C] git-svn                                                  
 ** TODO [#C] Associer les fichiers .pdf au mode PDFView               
 ** TODO [#C] Ajouter un bind C-space en mode company pour afficher / masquer la documentation (comportement moderne) 
 ** TODO [#C] Ag result buffer : C-o : Open in new window              
@@ -250,8 +242,6 @@ C
 ** TODO [#C] [vc-dir] key M-< && M-> : Faire pointer sur le vrai début/fin de ligne 
 ** TODO [#C] [doc-view] Faire fonctionner doc-view (Lire des fichiers excel, doc, word, etc) 
 ** TODO [#C] [util] Voir si il est possible de faire un (CMD+P + touche @) (file.php@methode_name) 
-** TODO [#C] git-svn                                                  
-
 ** TODO [#B] Il faudrait voir pour faire tourner 2 instances d emacs, 
    [2017-11-15 Wed]
 
@@ -265,10 +255,6 @@ C
 
    [2017-11-17 Fri]
    [[file:~/www/project/arsia/goacrop/src/utils.js:://%20x%200%20y%200%20a%200][file:~/www/project/arsia/goacrop/src/utils.js::// x 0 y 0 a 0]]
-
-** TODO [#A] SHIFT + ENTER -> Meme comportement que SHIFT+J                
-   [2017-11-17 Fri]
-   [[file:~/www/project/arsia/goacrop/src/utils.js:://]]
 
 ** TODO [#A] Lorsque l'on quite le mode ediff - Les windows se placent n'importe comment 
    [2017-11-20 Mon]
@@ -289,7 +275,7 @@ C
 ** TODO [#A] Org capture C-h ne fonctionne pas
    [2017-12-01 Fri]
    [[file:~/org/main.org::*Arsia%203.2%20crop][Arsia 3.2 crop]]
-** TODO [#A] Configurer les touches page down et page up
+** DONE [#A] Configurer les touches page down et page up
   [2017-12-01 Fri]
   [[file:~/www/logs/log_2017-12-01.log::Type,%20CoTyLevel%20FROM%20syge_concurrencytype%5D%0A01/12/17%2011:40:21,297%20(%2B%206%20ms)%20e8c3%20DEBUG%20DBManagerMySQL%20-%20select%20in%200.0003s%20:%20%5BSELECT%20ZoneIdx,ZoneZoTeStoryId,ZoneZoTeIdx,ZoneZoImIdx,ZoneDocuIdx,ZoneEtapIdxEnCours,ZoneType,ZoneItemId,ZonePageIdx,ZoneTop,ZoneLeft,ZoneBottom,ZoneRight,ZoneUpdatable,ZoneDeletable,ZonePageRefreshNeeded,ZoneServerRefreshNeeded,ZoneBrief,ZoneUsrIdx,DATE_FORMAT(ZoneDateRemise,'%25Y-%25m-%25d%20%25H:%25i:%25s')%20AS%20ZoneDateRemise_dv%20,DATE_FORMAT(ZoneDateCorrection,'%25Y-%25m-%25d%20%25H:%25i:%25s')%20AS%20Z][file:~/www/logs/log_2017-12-01.log::Type, CoTyLevel FROM syge_concurrencytype]
 01/12/17 11:40:21,297 (+ 6 ms) e8c3 DEBUG DBManagerMySQL - select in 0.0003s : [SELECT ZoneIdx,ZoneZoTeStoryId,ZoneZoTeIdx,ZoneZoImIdx,ZoneDocuIdx,ZoneEtapIdxEnCours,ZoneType,ZoneItemId,ZonePageIdx,ZoneTop,ZoneLeft,ZoneBottom,ZoneRight,ZoneUpdatable,ZoneDeletable,ZonePageRefreshNeeded,ZoneServerRefreshNeeded,ZoneBrief,ZoneUsrIdx,DATE_FORMAT(ZoneDateRemise,'%Y-%m-%d %H:%i:%s') AS ZoneDateRemise_dv ,DATE_FORMAT(ZoneDateCorrection,'%Y-%m-%d %H:%i:%s') AS Z]]

@@ -1595,3 +1595,80 @@ Archived entries from file /Users/wravel/.emacs.d/emacs_todo.org
   :ARCHIVE_CATEGORY: emacs_todo
   :ARCHIVE_TODO: TODO
   :END:
+
+* TODO [#A] SHIFT + ENTER -> Meme comportement que SHIFT+J                
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-12-14 Thu 13:47
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+  [2017-11-17 Fri]
+  [[file:~/www/project/arsia/goacrop/src/utils.js:://]]
+
+
+* TODO [#A] Ajouter un bind ALT + arrow up / down sur drags
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-12-14 Thu 13:52
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+
+* TODO [#A] [helm] Plugin helm utisable avec la souris               
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-12-14 Thu 13:52
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+
+* TODO [#B] Save selection on buffers history                        
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-12-14 Thu 13:54
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+  [2017-11-14 Tue]
+  [[file:~/.emacs.d/lisp/theme-dark2.el::(set-face-attribute%20'company-tooltip-annotation%20nil%20:foreground%20"#55e97b")][file:~/.emacs.d/lisp/theme-dark2.el::(set-face-attribute 'company-tooltip-annotation nil :foreground "#55e97b")]]
+
+
+* TODO [#B] Display current encoding                                 
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-12-14 Thu 13:54
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+
+* TODO [#C] git-svn                                                  
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-12-15 Fri 13:38
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+
+* TODO [#C] git-svn                                                  
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-12-15 Fri 13:38
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+

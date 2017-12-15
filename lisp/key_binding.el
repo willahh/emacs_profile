@@ -562,6 +562,7 @@
 (global-set-key (kbd "<f6>") 'dired-jump)
 (global-set-key (kbd "<f7>") 'projectile-dired)
 (global-set-key (kbd "<f8>") 'neotree-toggle)
+;; (global-set-key (kbd "<f8>") 'neotree-projectile-action)
 (global-set-key (kbd "<f9>") 'projectile-recentf)
 (global-set-key (kbd "<f10>") 'counsel-recentf)
 (global-set-key (kbd "<f11>") 'wil-IDE)
@@ -620,8 +621,10 @@
 ;; (global-set-key (kbd "s-l") 'avy-goto-char-in-line) ; Not used
 
 ;; Browse comands
-(global-set-key (kbd "M-p") 'projectile-find-file)
-(define-key highlight-symbol-nav-mode-map (kbd "M-p") 'projectile-find-file)
+;; (global-set-key (kbd "M-p") 'projectile-find-file)
+;; (define-key highlight-symbol-nav-mode-map (kbd "M-p") 'projectile-find-file)
+(global-set-key (kbd "M-p") 'wlh/projectile-ido-find-file)
+(define-key highlight-symbol-nav-mode-map (kbd "M-p") 'wlh/projectile-ido-find-file)
 
 (global-set-key (kbd "s-q") 'my-abort-recursive-edit)
 ;; (global-set-key (kbd "C-s-p") 'find-file-in-current-directory)
