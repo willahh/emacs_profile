@@ -3,19 +3,27 @@
 (require 'scroll-bar)
 (require 'faces)
 (require 'eshell)
+(require 'hi-lock)
 
 (load-theme 'dracula t)
+
+;; ------- Font
+(set-frame-font "Office Code Pro:antialias=1")
 
 ;; (setq-default line-spacing 2) ; Same line height as modern editor (VS Code)
 (setq-default line-spacing 1) ; Update to default value (switch font instead)
 
 (set-face-attribute 'default nil :background "#1a1c1d")
 
+;; (mapc (lambda (face)
+;;         (set-face-attribute face :box "#1a1c1d"))
+;;       (face-list))
+
 ;; Current line
 ;; (set-face-attribute 'hl-line nil :foreground nil :background "#263942")
 ;; (set-face-attribute 'hl-line nil :foreground nil :background "#131414")
 ;; (set-face-attribute 'hl-line nil :foreground nil :background "#1d2027")
-(set-face-attribute 'hl-line nil :foreground nil :background "#101010")
+;; (set-face-attribute 'hl-line nil :foreground nil :background "#101010")
 
 ;; Rainbow delimiter faces
 (custom-set-faces
@@ -40,32 +48,31 @@
 ;; (set-face-background 'mode-line-buffer-id "#000")
 ;; (set-face-background 'mode-line-buffer-id "#000")
 
-(defun powerline-theme-emacs()
-  (set-face-attribute 'mode-line nil
-                      :foreground "#fff"
-                      :background "#000"
-                      :box nil))
+;; (defun powerline-theme-emacs()
+;;   (set-face-attribute 'mode-line nil
+;;                       :foreground "#fff"
+;;                       :background "#000"
+;;                       :box nil))
 
-(defun powerline-theme-visual()
-  (set-face-attribute 'mode-line nil
-                      :foreground "#000"
-                      :background "#ffba00"
-                      :box nil))
+;; (defun powerline-theme-visual()
+;;   (set-face-attribute 'mode-line nil
+;;                       :foreground "#000"
+;;                       :background "#ffba00"
+;;                       :box nil))
 
-(defun powerline-theme-insert()
-  (set-face-attribute 'mode-line nil
-                      :foreground "#000"
-                      :background "red"
-                      :box nil))
+;; (defun powerline-theme-insert()
+;;   (set-face-attribute 'mode-line nil
+;;                       :foreground "#000"
+;;                       :background "red"
+;;                       :box nil))
 
-(defun powerline-theme-normal()
-  (set-face-attribute 'mode-line nil
-                      :foreground "#000"
-                      :background "#98cf15"
-                      :box nil))
+;; (defun powerline-theme-normal()
+;;   (set-face-attribute 'mode-line nil
+;;                       :foreground "#000"
+;;                       :background "#98cf15"
+;;                       :box nil))
 
-
-(powerline-theme-emacs)
+;; (powerline-theme-emacs)
 
 
 
@@ -100,39 +107,52 @@
 ;; (set-face-attribute 'highlight-symbol-face nil :foreground nil :background "#5d5e62")
 ;; (set-face-attribute 'highlight-symbol-face nil :foreground nil :background "#476574")
 (set-face-attribute 'highlight-symbol-face nil :foreground nil :background "#2f3b41")
-
+;; (set-face-attribute 'highlight-symbol-face nil :foreground nil :background "#2f3b41" :box "#c8a108")
+;; (set-face-attribute 'hi-yellow nil :foreground "#000" :background "#ffea00")
+;; (set-face-attribute 'hi-yellow nil :foreground "#000" :background "#a1e7fa")
+;; (set-face-attribute 'hi-yellow nil :foreground nil :background "#0d7aa6")
+(set-face-attribute 'hi-yellow nil :foreground "#000" :background "#ffea00")
 ;; Fringe
 (set-face-attribute 'fringe nil :background nil :slant 'normal)
 (set-face-attribute 'fringe nil :background "#1a1c1d" :slant 'normal)
 
 ;; window-divider
-(set-face-attribute 'window-divider nil :foreground "#545454")
-(set-face-attribute 'window-divider-first-pixel nil :foreground "#545454")
-(set-face-attribute 'window-divider-last-pixel nil :foreground "#545454")
+;; (set-face-attribute 'window-divider nil :foreground "#545454")
+;; (set-face-attribute 'window-divider-first-pixel nil :foreground "#545454")
+;; (set-face-attribute 'window-divider-last-pixel nil :foreground "#545454")
+
+;; (set-face-attribute 'window-divider nil :foreground "#4a4a4a")
+;; (set-face-attribute 'window-divider-first-pixel nil :foreground "#4a4a4a")
+;; (set-face-attribute 'window-divider-last-pixel nil :foreground "#4a4a4a")
+
+(set-face-attribute 'window-divider nil :foreground "#7b7b7b")
+(set-face-attribute 'window-divider-first-pixel nil :foreground "#7b7b7b")
+(set-face-attribute 'window-divider-last-pixel nil :foreground "#7b7b7b")
+
 ;; (set-window-margins nil 4)
 (set-window-margins nil 0)
+(setq window-divider-default-bottom-width 3)
+(setq window-divider-default-right-width 3)
 
-(add-hook 'nlinum-mode (lambda ()
-                         (setq nlinum-format "%4d \u2502")
-                         (set-face-attribute 'linum nil :foreground "#4a4a4a" :background"#1a1c1d")))
+;; (add-hook 'nlinum-mode (lambda ()
+;;                          (setq nlinum-format "%4d \u2502")
+;;                          (set-face-attribute 'nlinum nil :foreground "#4a4a4a" :background"#1a1c1d")))
 
-;; ------- Font
-(set-frame-font "Office Code Pro:antialias=1")
+;; (set-face-attribute 'nlinum nil :foreground "#4a4a4a" :background"#000")
 
+(add-hook 'linum-mode-hook (lambda ()
+                             (set-face-attribute 'linum nil :foreground "#4a4a4a" :background"#1a1c1d")))
 
 ;; ------ Dired
 (set-face-attribute 'dired-header nil :foreground "#48fa7b" :background nil)
 (set-face-attribute 'dired-directory nil :foreground "#8be9fd" :background nil)
 (set-face-attribute 'dired-perm-write nil :foreground "#34aeff" :background nil)
-;; (set-face-attribute 'web-mode-current-element-highlight-face nil :foreground nil :background "#60a467")
-;; (set-face-attribute 'web-mode-current-element-highlight-face nil :foreground nil :background nil :underline (:color "#ff0000" :style wave))
 
 
 ;; (set-face-attribute 'vhl/default-face nil :background "#000" :foreground nil)
 (set-face-attribute 'font-lock-variable-name-face nil  :foreground "#8be9fd")
 (set-face-attribute 'font-lock-function-name-face nil  :foreground "#ff79c6")
 (set-face-attribute 'font-lock-keyword-face nil  :foreground "#bd93f9")
-
 
 (set-face-attribute 'magit-diff-removed-highlight nil :background nil :foreground "#ff536a")
 (set-face-attribute 'magit-diff-removed nil :background nil :foreground "#ff536a")
@@ -142,34 +162,10 @@
 ;; Magit
 (set-face-attribute 'magit-diff-context-highlight nil :background "#1a1c1d")
 
-
-;; (set-face-attribute 'ediff-current-diff-A nil :foreground "#c792ea" :background "#161616")
-;; (set-face-attribute 'ediff-current-diff-Ancestor nil :foreground "#fff" :background "#fc5572")
-;; (set-face-attribute 'ediff-current-diff-B nil :foreground "#c792ea" :background "#161616")
-;; (set-face-attribute 'ediff-current-diff-C nil :foreground "#c792ea" :background nil)
-
-;;
-;; (set-face-attribute 'ediff-even-diff-A nil :foreground "#c792ea" :background "#161616")
-;; (set-face-attribute 'ediff-even-diff-Ancestor nil :foreground "#fff" :background "161616")
-;; (set-face-attribute 'ediff-even-diff-B nil :foreground "#c792ea" :background "#161616")
-;; (set-face-attribute 'ediff-even-diff-C nil :foreground "#c792ea" :background "#161616")
-
-;; (set-face-attribute 'ediff-fine-diff-A nil :foreground "#000" :background "#fc5572")
-;; (set-face-attribute 'ediff-fine-diff-Ancestor nil :foreground "#fff" :background "red")
-;; (set-face-attribute 'ediff-fine-diff-B nil :foreground "#000" :background "#c792ea")
-;; (set-face-attribute 'ediff-fine-diff-C nil :foreground "#000" :background "#c792ea")
-
-;; (set-face-attribute 'ediff-odd-diff-A nil :foreground "#c792ea" :background nil :box nil)
-;; (set-face-attribute 'ediff-odd-diff-Ancestor nil :foreground "#fff" :background nil :box nil)
-;; (set-face-attribute 'ediff-odd-diff-B nil :foreground "#c792ea" :background nil :box nil)
-;; (set-face-attribute 'ediff-odd-diff-C nil :foreground "#c792ea" :background "#161616" :box nil)
-
 (set-face-attribute 'ediff-even-diff-A nil :foreground nil :background "#000")
 (set-face-attribute 'ediff-even-diff-B nil :foreground nil :background "#000")
 (set-face-attribute 'ediff-odd-diff-A nil :foreground nil :background "#000")
 (set-face-attribute 'ediff-odd-diff-B nil :foreground nil :background "#000")
-;;
-
 
 ;; org
 ;; Todo cette partie fait une erreur, il faut l implementer comme un vrai theme, voir
@@ -232,7 +228,14 @@
 
 ;; Disable bold
 ;; Update : re-enable
-;; (set-face-bold-p 'bold nil)
+;; Update : re-disable
+(set-face-bold-p 'bold nil)
+
+(mapc
+ (lambda (face)
+   (when (eq (face-attribute face :weight) 'bold)
+     (set-face-attribute face nil :weight 'normal)))
+ (face-list))
 
 ;; Update mise en commentaire de la partie ci-dessous, je ne vois pas bien
 ;; pourquoi.
@@ -258,12 +261,13 @@
  '(region ((t (:background "#203a5b" :foreground nil))))
  '(lazy-highlight ((t (:background "#4f5d66" :foreground nil :underline t))))
  '(js2-warning ((t (:background nil :underline (:color "#ff0000" :style wave)))))
- '(web-mode-current-element-highlight-face ((t (:foreground "#ffffff" :background nil :underline (:color "#ffffff" :style wave)))))
+ ;; '(web-mode-current-element-highlight-face ((t (:foreground "#ffffff" :background nil :underline (:color "#ffffff" :style wave)))))
+ '(web-mode-current-element-highlight-face ((t (:foreground nil :background nil :underline (:color "#ffffff" :style wave)))))
  '(js2-error ((t (:background nil :underline (:color "#ff0000" :style wave)))))
  '(flycheck-error ((t (:background nil :underline (:color "#ff0000" :style wave)))))
  '(flycheck-warning ((t (:background nil :underline (:color "#ff0000" :style wave)))))
  '(isearch ((t (:background "#ffe400" :foreground "#000"))))
  '(isearch-lazy-highlight ((t (:background "#4f5d66" :foreground "#fff"))))
- '(isearch-lazy-highlight-face ((t (:background "#ffe400" :foreground "#fff"))))
+ '(isearch-lazy-highlight-face ((t (:background "#4f5d66" :foreground "#fff" :underline (:color "#ffffff" :style wave)))))
  '(font-lock-comment-face ((t (:foreground "#8c8c8c"))))
  '(set-face-attribute 'link nil :foreground nil))

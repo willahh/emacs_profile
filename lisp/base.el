@@ -9,6 +9,7 @@
 
 (setq confirm-nonexistent-file-or-buffer nil)
 
+(setq goto-address-mode nil)
 (blink-cursor-mode 1)
 
 ;; Don't write new line at end of document
@@ -80,11 +81,13 @@
 ;; Show matching parenthesis
 (show-paren-mode)
 
-;; Hihglight la ligne courante Update : Ralentis un peu l affichage,
-;; en commentaire pour le moment Update 2 : Il faut un repere visuel
-;; pour savoir tout de suite ou se situe le caret, juste le caret ne
-;; suffit pas.
-(global-hl-line-mode 1)
+;; Hihglight la ligne courante Update : Ralentis un peu l affichage, en
+;; commentaire pour le moment Update 2 : Il faut un repere visuel pour savoir
+;; tout de suite ou se situe le caret, juste le caret ne suffit pas.
+;;
+;; Probleme de superposition de couleur avec highlight symbol, update pour
+;; desactivation 
+;; (global-hl-line-mode 1)
 
 ;;
 (winner-mode t)
@@ -350,8 +353,8 @@
 
 (setq tramp-default-method "ssh")
 
-;; Set the default comment column to 70
-(setq-default comment-column 70)
+;; Set the default comment column to 80
+(setq-default comment-column 80)
 
 ;; Every time a window is started, make sure it get maximized
 ;; (add-to-list 'default-frame-alist '(fullscreen . maximized))
@@ -477,12 +480,12 @@
 
 ;; Show trailing whitespace
 (setq-default show-trailing-whitespace nil)
-(add-hook 'prog-mode-hook 
-  (lambda()
-    (setq show-trailing-whitespace t)))
-(add-hook 'diff-mode 
-  (lambda()
-    (setq show-trailing-whitespace t)))
+;; (add-hook 'prog-mode-hook 
+;;   (lambda()
+;;     (setq show-trailing-whitespace t)))
+;; (add-hook 'diff-mode 
+;;   (lambda()
+;;     (setq show-trailing-whitespace t)))
 
 ;; Cleanup whitespace on save
 ;; http://batsov.com/articles/2011/11/25/emacs-tip-number-3-whitespace-cleanup/
@@ -627,32 +630,12 @@
 ;; Only require evil package just to get some commands
 (require 'evil)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-; Show trailing whitespace White space
-; Note : Mise tout a la fin sinon ne fonctionne pas
-; (setq-default show-trailing-whitespace t)
-
-; Syntax entry for web mode doesnt work actualy
-; https://github.com/fxbois/web-mode/issues/149
-; Select whole word when separated with _
-; Update : Besoin d ajouter des hook pour certains mode
-; Je n ai pas reussis a setter cette propriete de maniere globale
-; -> prog-mode-hook
+;; Syntax entry for web mode doesnt work actualy
+;; https://github.com/fxbois/web-mode/issues/149
+;; Select whole word when separated with _
+;; Update : Besoin d ajouter des hook pour certains mode
+;; Je n ai pas reussis a setter cette propriete de maniere globale
+;; -> prog-mode-hook
 
 (defun update-syntax-entry ()
   (modify-syntax-entry ?_ "w")

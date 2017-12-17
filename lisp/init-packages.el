@@ -23,7 +23,7 @@
                      autopair
                      avy
                      avy-menu
-                     beacon
+                     ;; beacon
                      browse-kill-ring
                      clj-refactor
                      clojure-cheatsheet
@@ -100,7 +100,7 @@
                      monokai-theme
                      multiple-cursors
                      neotree
-                     nlinum
+                     ;; nlinum
                      org-bullets
                      ov ; Utlise pour quelques fonctions utils de prelude
                      pandoc-mode

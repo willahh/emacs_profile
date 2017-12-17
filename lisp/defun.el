@@ -1376,7 +1376,8 @@ the checking happens for all pairs in auto-minor-mode-alist"
   "Call recenter-top-bottom then do a beacon-blink"
   (interactive)
   (recenter-top-bottom)
-  (beacon-blink))
+  ;; (beacon-blink)
+  )
 
 ;; From prelude
 ;; Compilation from Emacs
@@ -1412,11 +1413,11 @@ the checking happens for all pairs in auto-minor-mode-alist"
   (balance-windows)
   (follow-mode t))
 
-(defadvice highlight-symbol-next (after wlh/highlight-symbol-next-advice)
-  (beacon-blink))
+;; (defadvice highlight-symbol-next (after wlh/highlight-symbol-next-advice)
+;;   (beacon-blink))
 
-(defadvice highlight-symbol-prev (after wlh/highlight-symbol-prev-advice)
-  (beacon-blink))
+;; (defadvice highlight-symbol-prev (after wlh/highlight-symbol-prev-advice)
+;;   (beacon-blink))
 
 
 
@@ -1442,3 +1443,53 @@ the checking happens for all pairs in auto-minor-mode-alist"
         (goto-char beg)
         (while (< (point) end)
           (join-line 1)))))
+
+
+
+
+
+
+
+;; (setq *wlh/dbleclick-enablep* nil)
+;; (defun wlh/dbleclick-select-word-a (enablep)
+;;   (wlh/dbleclick-select-word))
+
+(defun wlh/dbleclick-select-word ()
+  (interactive)
+  (highlight-symbol-mode nil) ; Disable highlight-symbol-mode
+  (unhighlight-regexp t)
+  (highlight-symbol-at-point)
+  (er/mark-word)
+  (exchange-point-and-mark)
+  ;; (forward-word)
+  ;; (setq *wlh/dbleclick-enablep* t)
+  )
+
+(defun wlh/dbleclick-mouse1 ()
+  (interactive)
+  ;; (when *wlh/dbleclick-enablep* (unhighlight-regexp t))
+  (unhighlight-regexp t)
+  (highlight-symbol-mode t) ; Enable highlight-symbol-mode
+  )
+
+(global-set-key [mouse-1] 'wlh/dbleclick-mouse1)
+(global-set-key [double-mouse-1] 'wlh/dbleclick-select-word)
+
+(defun swiper--from-isearch ()
+  "Invoke `swiper' from isearch. https://github.com/ShingoFukuyama/helm-swoop/blob/f67fa8a4fe3b968b7105f8264a96da61c948a6fd/helm-swoop.el#L657-668"
+  (interactive)
+  (let (($query (if isearch-regexp
+                    isearch-string
+                  (regexp-quote isearch-string))))
+    (isearch-exit)
+    (swiper $query)))
+
+(defun wlh/projectile-ido-find-file ()
+  "Find a recent file using ido."
+  (interactive)
+  (let ((file (ido-completing-read "Project file: "
+                                   (mapcar #'abbreviate-file-name (projectile-current-project-files))
+                                   nil t)))
+    (when file
+      (find-file file))))
+

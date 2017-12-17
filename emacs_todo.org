@@ -78,66 +78,61 @@ Semantic PHP parser with ECB
 http://ecb.sourceforge.net/
 https://www.youtube.com/watch?v=KoRNCrx9pak
 C
-* Tasks
+* Tasks                                                               :@home:
   :VISIBILITY: content
-** TODO Mettre le caractere # dans les word bidul (double clic code couleur) :@home:
-** TODO [#A] [swoop] C-w ne fonctionne pas                            :@home:
-   SCHEDULED: <2017-11-25 Sat>
-** TODO [#A] [helm] [mini-buffer] Ajouter la possibilité de faire du M-v dans le mini-buffer :@home:
+** TODO [#A] [helm] [mini-buffer] Ajouter la possibilité de faire du M-v dans le mini-buffer 
    SCHEDULED: <2017-11-30 Thu>
-** TODO [#A] web-mode single quote dans commentaire : Ne pas auto fermer la quote lorsque l'on est dans un commentaire :@home:
+** TODO [#A] web-mode single quote dans commentaire : Ne pas auto fermer la quote lorsque l'on est dans un commentaire 
    [2017-10-23 Mon]
    [[file:~/www/project/arsia/goacrop/src/main.js:://%20Pas%20de%20traitement%20particulier,%20l'image][file:~/www/project/arsia/goacrop/src/main.js::// Pas de traitement particulier, l'image]]
 *
-** TODO [#A] [URGENT] wdired ne fonctionne plus                       :@home:
+** DONE [#A] [URGENT] wdired ne fonctionne plus                       
    [2017-11-13 Mon]
    [[file:~/www/temp/.png]]
 
-** TODO [#A] [counsel-find-file] [mini-buffer] Ajouter un bind C-k pour supprimer tout le texte :@home:
-** TODO [#A] [vc-diff mode] Voir si il est possible de lancer des commandes de type ediff :@home:
+** TODO [#A] [counsel-find-file] [mini-buffer] Ajouter un bind C-k pour supprimer tout le texte 
+** TODO [#A] [vc-diff mode] Voir si il est possible de lancer des commandes de type ediff 
        Depuis  le vc-diff
-** TODO [#A] Autres tâches à mettre au format todo                    :@home:
-** TODO [#A] [css-mode] Virer company dabbrev de css mode             :@home:
-** TODO [#C] [dired] Rename file : Possibilité de préciser un chemin contenant des dossiers :@home:
+** DONE [#A] Autres tâches à mettre au format todo                    
+** TODO [#A] [css-mode] Virer company dabbrev de css mode             
+** TODO [#C] [dired] Rename file : Possibilité de préciser un chemin contenant des dossiers 
       N'existant pas, ces dossier seront créés automatiquement à la validation
-** TODO [#C] Ajouter des bind system sur C-h et C-w C-w https://blog.sensible.io/2012/10/19/mac-os-x-emacs-style-keybindings-everywhere.html :@home:
+** TODO [#C] Ajouter des bind system sur C-h et C-w C-w https://blog.sensible.io/2012/10/19/mac-os-x-emacs-style-keybindings-everywhere.html 
   - [ ] C-j new line
   - [ ] C-w delete back word
   - [ ] M-b back word
-** TODO [#C] Open file from system in new emacs frame (Right click open in) :@home:
-** TODO [#C] [ivy] [mini buffer] Add C-l keybinding                   :@home:
-** TODO [#C] [ivy] - Highlight current line plus visible              :@home:
-** TODO [#C] [php-mode] [ac-php] [company] La boite d'information supplémentaire ne contient pas les php doc :@home:
-** TODO [#C] [php-mode] Voir pour implementer quick type hierarchy    :@home:
-** TODO [#C] [php-mode] Saisie de /** + ENTER -> Creation d un php doc pre rempli :@home:
-** TODO [#C] [flycheck] : Mieux distinguer la ligne en erreur         :@home:
-** TODO [#C] [web-mode] [javascript] [company] Add javascript keywords to company backend :@home:
-** TODO [#C] [refactor] emacs.d conf a ranger, voir modele suivant : https://github.com/purcell/emacs.d :@home:
-** TODO [#C] Activer les url cliquable dans les differents modes      :@home:
-** TODO [#C] [ivy] [mini buffer] CTRL+l to back up                    :@home:
-** TODO [#C] [ivy] : Ne pas mettre les fichiers .svn dans la liste    :@home:
-** TODO [#C] [plugin] [change inner] Ajoute rl'option Change Inner Tag :@home:
-** TODO [#A] [vc-dir] Faire une fonction pour activer un vc-version-diff avec les paramètres older revision : "base", newer revision : "head" :@home:
+** TODO [#C] Open file from system in new emacs frame (Right click open in) 
+** TODO [#C] [ivy] [mini buffer] Add C-l keybinding                   
+** TODO [#C] [ivy] - Highlight current line plus visible              
+** TODO [#C] [php-mode] [ac-php] [company] La boite d'information supplémentaire ne contient pas les php doc 
+** TODO [#C] [php-mode] Voir pour implementer quick type hierarchy    
+** TODO [#C] [php-mode] Saisie de /** + ENTER -> Creation d un php doc pre rempli 
+** TODO [#C] [flycheck] : Mieux distinguer la ligne en erreur         
+** TODO [#C] [web-mode] [javascript] [company] Add javascript keywords to company backend 
+** TODO [#C] [refactor] emacs.d conf a ranger, voir modele suivant : https://github.com/purcell/emacs.d 
+** TODO [#C] Activer les url cliquable dans les differents modes      
+** TODO [#C] [ivy] [mini buffer] CTRL+l to back up                    
+** TODO [#C] [ivy] : Ne pas mettre les fichiers .svn dans la liste    
+** TODO [#C] [plugin] [change inner] Ajoute rl'option Change Inner Tag 
+** TODO [#A] [vc-dir] Faire une fonction pour activer un vc-version-diff avec les paramètres older revision : "base", newer revision : "head" 
 
-** TODO [#A] [util] Revert buffer : keep current line position        :@home:
-** TODO [#A] Ajouter une méthode copy file name pour retourner uniquement le nom du fichier :@home:
+** TODO [#A] [util] Revert buffer : keep current line position        
+** TODO [#A] Ajouter une méthode copy file name pour retourner uniquement le nom du fichier 
   - La fonction copy-file-name-to-clipbord est present, mais elle retourne le chemin complet
     Il faudrait garder que la derniere partie apres le /
-** TODO [#A] [vc-dir] delete-file dont prompt for path, kill buffer   :@home:
-** TODO [#A] Fonction get file name to clipboard (très utilisé)       :@home:
-** TODO [#A] Don't prompt for delete recursivly (code available in prelude) :@home:
+** TODO [#A] [vc-dir] delete-file dont prompt for path, kill buffer   
+** TODO [#A] Fonction get file name to clipboard (très utilisé)       
+** TODO [#A] Don't prompt for delete recursivly (code available in prelude) 
   - [ ] Show current mode in color
   - [ ] Show current VC system used
   - [ ] Show current encoding
-** TODO [#A] Mini buffer : Ne pas afficher de scrollbar               :@home:
-** TODO [#A] Ajouter un bind ALT + arrow up / down sur drags          :@home:
-** TODO [#A] [helm] Plugin helm utisable avec la souris               :@home:
-** TODO [#A] Faire fonctionner fengyuanchen/cropper, les fichiers .babelrc, .editorconfig (déjà le cas en principe), .eslintrc :@home:
+** TODO [#A] Mini buffer : Ne pas afficher de scrollbar               
+** TODO [#A] Faire fonctionner fengyuanchen/cropper, les fichiers .babelrc, .editorconfig (déjà le cas en principe), .eslintrc 
    [2017-09-20 Wed]
-** TODO [#A] Definir tous les fichiers .php dans un dossier "process" pour être en mode php :@home:
+** TODO [#A] Definir tous les fichiers .php dans un dossier "process" pour être en mode php 
    [2017-11-08 Wed]
    [[file:~/www/project/arsia/arsia_standard_310/dev/common/include/process/mediadata/MediaDataHelper.class.php::public%20function%20getMediaDataButton($p_sIdImg,%20$p_sIdHiddenField,%20$p_sImagePath%20%3D%20'')%0D][file:~/www/project/arsia/arsia_standard_310/dev/common/include/process/mediadata/MediaDataHelper.class.php::public function getMediaDataButton($p_sIdImg, $p_sIdHiddenField, $p_sImagePath = '')]]
-** TODO [#A] Voir pour régler définitivement le "problème" des retours chariots : :@home:
+** TODO [#A] Voir pour régler définitivement le "problème" des retours chariots : 
    Si des caractères ^M sont visibles dans un fichier, il faut voir pour
    s'adapter à ce comportement.
    
@@ -152,19 +147,19 @@ C
    [2017-11-09 Thu]
    [[file:~/www/project/arsia/arsia_standard_310/dev/data2print/admin/module/affectation_gabarit/js/affectationTemplateManager.js::dropLeft.onDragOut%20%3D%20function(p_oDragSource,%20p_eEvent,%20p_oData)%20{][file:~/www/project/arsia/arsia_standard_310/dev/data2print/admin/module/affectation_gabarit/js/affectationTemplateManager.js::dropLeft.onDragOut = function(p_oDragSource, p_eEvent, p_oData) {]]
 
-** TODO [#A] core.css - On se paye un warning de css flycheck too many errors :@home:
+** TODO [#A] core.css - On se paye un warning de css flycheck too many errors 
    [2017-11-10 Fri]
    [[file:~/www/project/arsia/arsia_standard_310/dev/common/layout/css/core.css::/*-------------------------------------------------------------]]
 
-** TODO [#A] Liens -> Ne pas faire de style en rollover, ne pas changer la couleur du texte (violet) -> Laisser uniquement le surlignage :@home:
+** TODO [#A] Liens -> Ne pas faire de style en rollover, ne pas changer la couleur du texte (violet) -> Laisser uniquement le surlignage 
    [2017-11-10 Fri]
    [[file:~/www/project/arsia/goacrop/example/production_crop_update.php::$crop_url%20%3D%20'http://192.168.0.26/project/arsia/goacrop/lib/sygesp_croptosize/dev/goacroptosize.xml.php?ZoImIdx%3D3'%3B][file:~/www/project/arsia/goacrop/example/production_crop_update.php::$crop_url = 'http://192.168.0.26/project/arsia/goacrop/lib/sygesp_croptosize/dev/goacroptosize.xml.php?ZoImIdx=3';]]
 
-** TODO [#A] URGENT -> PHP-MODE -> Les quotes ( ) { } [ ] ne fonctionnent pas comme en web-mode :@home:
+** TODO [#A] URGENT -> PHP-MODE -> Les quotes ( ) { } [ ] ne fonctionnent pas comme en web-mode 
    [2017-11-10 Fri]
    [[file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/production_crop2.php::(]]
 
-** TODO [#A] [web-mode] C-k ne s arrête pas a la dernière quote dans la chaîne suivante : :@home:
+** TODO [#A] [web-mode] C-k ne s arrête pas a la dernière quote dans la chaîne suivante : 
    Il faut placer le cart dans le candO juste après la première quote
    $asAssign = array();
    $asAssign['AssignIdx'] = $oAssign->getIdx();
@@ -187,20 +182,20 @@ C
    [2017-11-13 Mon]
    [[file:~/www/project/easy3p/easy3p_3.2_lot2/dev/module/flatplan/ajax/conception/pageListInfo.php::$asAssign%5B'canDo'%5D%5B'pageXToPageY'%5D%20%3D%20RightHelper::getInstance()->canDoActionForFlatplan(RightActionConstant::ASSIGN_CATEGORY_MOVE_PAGEX_TO_PAGEY,%20$iFPPrIdx)%3B][file:~/www/project/easy3p/easy3p_3.2_lot2/dev/module/flatplan/ajax/conception/pageListInfo.php::$asAssign['canDo']['pageXToPageY'] = RightHelper::getInstance()->canDoActionForFlatplan(RightActionConstant::ASSIGN_CATEGORY_MOVE_PAGEX_TO_PAGEY, $iFPPrIdx);]]
 
-** TODO [#A] Disable company mode auto -> Trigger it only by key binding :@home:
+** TODO [#A] Disable company mode auto -> Trigger it only by key binding 
    [2017-11-13 Mon]
    [[file:~/www/project/easy3p/easy3p_3.2_lot2/dev/module/flatplan/js/view/conception/popup/Refine.js::{action:%20'close',%20text:%20'',%20cls:%20'closeButton',%20iconCls:%20'ico-close-24',%20tooltip:%20getTrad('doClose')}][file:~/www/project/easy3p/easy3p_3.2_lot2/dev/module/flatplan/js/view/conception/popup/Refine.js::{action: 'close', text: '', cls: 'closeButton', iconCls: 'ico-close-24', tooltip: getTrad('doClose')}]]
 
-** TODO [#A] Les fichiers flatplan/index.php et lang fr sont de nouveau lent en web-mode :@home:
+** TODO [#A] Les fichiers flatplan/index.php et lang fr sont de nouveau lent en web-mode 
    [2017-11-13 Mon]
    [[file:~/.emacs.d/emacs_todo.org::*%5Bprojectile%20find%20file%5D%20Auto%20centrer%20la%20ligne%20une%20fois%20le%20goto%20dans%20le%20fichier][{projectile find file} Auto centrer la ligne une fois le goto dans le fichier]]
 
-** TODO [#A] Il faut initialiser les divider a visible au lancement   :@home:
+** TODO [#A] Il faut initialiser les divider a visible au lancement   
    [2017-11-14 Tue]
    [[file:~/www/project/rb_siteweb/rb_siteweb_1.4/resources/module/mag_list/js/mag_list.js::*]]
 
-** TODO [#B] Terminer intégration de hunspell @work                   :@home:
-** TODO [#B] Rebind les scroll to other window pour avoir un scroll sur la fenetre a cote mais d'une demie page seulement :@home:
+** TODO [#B] Terminer intégration de hunspell @work                   
+** TODO [#B] Rebind les scroll to other window pour avoir un scroll sur la fenetre a cote mais d'une demie page seulement 
       C-M-S-v runs the command scroll-other-window-down (found in
       global-map), which is an interactive compiled Lisp function in
       ‘window.el’.
@@ -212,81 +207,99 @@ C
       Scroll the "other window" down.
       For more details, see the documentation for ‘scroll-other-window’.
 
-** TODO [#B] [vc-dir] Faire une fonction toggle des hunk comme dans magit :@home:
-** TODO [#B] General : Utiliser le package general et jouer une touche sur :@home:
+** TODO [#B] [vc-dir] Faire une fonction toggle des hunk comme dans magit 
+** TODO [#B] General : Utiliser le package general et jouer une touche sur 
   super-spc ou hyper-sp
-** TODO [#B] Mini buffer > M-p : Ne pas afficher de message beginning of :@home:
+** TODO [#B] Mini buffer > M-p : Ne pas afficher de message beginning of 
   buffer bla bla
-** TODO [#B] AG mettre en mode emacs et non pas evil normal           :@home:
-** TODO [#B] [projectile find file] Auto centrer la ligne une fois le goto dans le fichier :@home:
-** TODO [#B] [svn-log-view] Faire des ediff depuis ce mode            :@home:
-** TODO [#B] Faire une fonction "Merge lines" pour supprimer les linebreak/whitespace :@home:
-** TODO [#B] Delete file : ne pas re demander le chemin alors que l'on a deja le focus :@home:
-** TODO [#B] Ivy : Possibilité de boucler                             :@home:
+** TODO [#B] AG mettre en mode emacs et non pas evil normal           
+** TODO [#B] [projectile find file] Auto centrer la ligne une fois le goto dans le fichier 
+** TODO [#B] [svn-log-view] Faire des ediff depuis ce mode            
+** TODO [#B] Faire une fonction "Merge lines" pour supprimer les linebreak/whitespace 
+** TODO [#B] Delete file : Ne pas re demander le chemin alors que l'on a deja le focus 
+** TODO [#B] Ivy : Possibilité de boucler                             
 
-** TODO [#B] [vc-dir] N'affiche pas les fichiers supprimés localement, mais non envoyé à svn (svn remove) :@home:
+** TODO [#B] [vc-dir] N'affiche pas les fichiers supprimés localement, mais non envoyé à svn (svn remove) 
 
-** TODO [#B] Display current encoding                                 :@home:
-** TODO [#B] Projectile - Ne pas ajouter automatiquement les fichiers manquants dans le cache, car cela peut ralentir énormement le process d'ouverture du fichier. Il faut le gérer manuellement :@home:
+** TODO [#B] Projectile - Ne pas ajouter automatiquement les fichiers manquants dans le cache, car cela peut ralentir énormement le process d'ouverture du fichier. Il faut le gérer manuellement 
    [2017-11-10 Fri]
    [[file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/include/lib/internal/croptosize2/src/events.js::Events.on_validate%20%3D%20function(input)%20{][file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/include/lib/internal/croptosize2/src/events.js::Events.on_validate = function(input) {]]
 
-** TODO [#B] Save selection on buffers history                        :@home:
-   [2017-11-14 Tue]
-   [[file:~/.emacs.d/lisp/theme-dark2.el::(set-face-attribute%20'company-tooltip-annotation%20nil%20:foreground%20"#55e97b")][file:~/.emacs.d/lisp/theme-dark2.el::(set-face-attribute 'company-tooltip-annotation nil :foreground "#55e97b")]]
-
-** TODO [#C] [theme] Mettre plus en avant le buffer actif             :@home:
-** DONE [#C] [theme] js color var                                     :@home:
-** TODO [#C] [theme] Ajouter des differenciations sur certains mot clee comme "$", "=", ".", "'", "(", ")", "+", "-", certains mots clés php "var_dump", "PHP_EOL", etc Voir package "highlight-chars" :@home:
-** TODO [#C] [theme] php mode : Plus de couleurs                      :@home:
-** TODO [#C] Fichiers markdown mette toutes les windows en centré     :@home:
+** TODO [#C] [theme] Mettre plus en avant le buffer actif             
+** DONE [#C] [theme] js color var                                     
+** TODO [#C] [theme] Ajouter des differenciations sur certains mot clee comme "$", "=", ".", "'", "(", ")", "+", "-", certains mots clés php "var_dump", "PHP_EOL", etc Voir package "highlight-chars" 
+** TODO [#C] [theme] php mode : Plus de couleurs                      
+** TODO [#C] Fichiers markdown mette toutes les windows en centré     
       (Creation de differences inutiles sur la toute dernière ligne de certains fichiers)
-** TODO [#C] Markdown mode style like in Sublime (background white, text black, column width limit, center inside :@home:
+** TODO [#C] Markdown mode style like in Sublime (background white, text black, column width limit, center inside 
    Markdown in white theme
-** TODO [#C] Markdown in white theme                                  :@home:
-** TODO [#C] git-svn                                                  :@home:
-** TODO [#C] Associer les fichiers .pdf au mode PDFView               :@home:
-** TODO [#C] Ajouter un bind C-space en mode company pour afficher / masquer la documentation (comportement moderne) :@home:
-** TODO [#C] Ag result buffer : C-o : Open in new window              :@home:
-** TODO [#C] [vc-dir] N et P pour se déplacer en evitant les dossiers :@home:
-** TODO [#C] Help mode evil : add q binding pour quitter              :@home:
-** TODO [#C] [vc-dir] key M-< && M-> : Faire pointer sur le vrai début/fin de ligne :@home:
-** TODO [#C] [doc-view] Faire fonctionner doc-view (Lire des fichiers excel, doc, word, etc) :@home:
-** TODO [#C] [util] Voir si il est possible de faire un (CMD+P + touche @) (file.php@methode_name) :@home:
-** TODO [#C] git-svn                                                  :@home:
-
-** TODO [#B] Il faudrait voir pour faire tourner 2 instances d emacs, :@home:
+** TODO [#C] Markdown in white theme                                  
+** TODO [#C] Associer les fichiers .pdf au mode PDFView               
+** TODO [#C] Ajouter un bind C-space en mode company pour afficher / masquer la documentation (comportement moderne) 
+** TODO [#C] Ag result buffer : C-o : Open in new window              
+** TODO [#C] [vc-dir] N et P pour se déplacer en evitant les dossiers 
+** TODO [#C] Help mode evil : add q binding pour quitter              
+** TODO [#C] [vc-dir] key M-< && M-> : Faire pointer sur le vrai début/fin de ligne 
+** TODO [#C] [doc-view] Faire fonctionner doc-view (Lire des fichiers excel, doc, word, etc) 
+** TODO [#C] [util] Voir si il est possible de faire un (CMD+P + touche @) (file.php@methode_name) 
+** TODO [#B] Il faudrait voir pour faire tourner 2 instances d emacs, 
    [2017-11-15 Wed]
 
-** TODO [#C] Faire un mode pour naviguer dans le html comme dans l'outil de debug de Chrome et la partie elements :@home:
+** TODO [#C] Faire un mode pour naviguer dans le html comme dans l'outil de debug de Chrome et la partie elements 
    [2017-11-16 Thu]
    [[file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/production_crop2.php::</a>]]
 
-** TODO [web-mode] La double quote en attribut ne fonctionne pas bien :@home:
+** TODO [#A] [web-mode] La double quote en attribut ne fonctionne pas bien 
    [2017-11-16 Thu]
    [[file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/production_crop2.php::<li%20class%3D"btn%20btn-default"%20onclick%3D"goacrop.Events.on_zoomplus()%3B"%20title%3D"Init">][file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/production_crop2.php::<li class="btn btn-default" onclick="goacrop.Events.on_zoomplus();" title="Init">]]
 
    [2017-11-17 Fri]
    [[file:~/www/project/arsia/goacrop/src/utils.js:://%20x%200%20y%200%20a%200][file:~/www/project/arsia/goacrop/src/utils.js::// x 0 y 0 a 0]]
 
-** TODO SHIFT + ENTER -> Meme comportement que SHIFT+J                :@home:
-   [2017-11-17 Fri]
-   [[file:~/www/project/arsia/goacrop/src/utils.js:://]]
-
-** TODO [#A] Lorsque l'on quite le mode ediff - Les windows se placent n'importe comment :@home:
+** TODO [#A] Lorsque l'on quite le mode ediff - Les windows se placent n'importe comment 
    [2017-11-20 Mon]
    [[file:~/org/etor.org::*3.1%20Corriger%20le%20sprite%20des%20boutons%20visible%20dans%20une%20fiche%20produit][3.1 Corriger le sprite des boutons visible dans une fiche produit]]
 
-
-** TODO ag > Faire en sorte que le mode fonctionne comme le mode rgrep avec un follow auto et un split 
+** TODO [#A] ag > Faire en sorte que le mode fonctionne comme le mode rgrep avec un follow auto et un split 
    [2017-11-29 Wed]
    [[file:~/.emacs.d_prelude/core/prelude-packages.el::"When%20file%20with%20EXTENSION%20is%20opened%20triggers%20auto-install%20of%20PACKAGE.][file:~/.emacs.d_prelude/core/prelude-packages.el::"When file with EXTENSION is opened triggers auto-install of PACKAGE.]]
 
-** TODO css mode : Paste : Ajouter une indentation auto après le paste
+** TODO [#A] css mode : Paste : Ajouter une indentation auto après le paste
    [2017-11-29 Wed]
    [[file:~/www/project/arsia/arsia_standard_310/dev/mobile/pim/layout/main.css::.header%20.form-inline%20.btn%20{][file:~/www/project/arsia/arsia_standard_310/dev/mobile/pim/layout/main.css::.header .form-inline .btn {]]
 
-** TODO Try ParInfer mode https://github.com/shaunlebron/parinfer
+** TODO [#A] Try ParInfer mode https://github.com/shaunlebron/parinfer
    [2017-11-30 Thu]
    [[file:~/.emacs.d/lisp/defun/wlh-nodejs-task-list.el::(defun%20re-seq%20(regexp%20string)][file:~/.emacs.d/lisp/defun/wlh-nodejs-task-list.el::(defun re-seq (regexp string)]]
+
+** TODO [#A] Org capture C-h ne fonctionne pas
+   [2017-12-01 Fri]
+   [[file:~/org/main.org::*Arsia%203.2%20crop][Arsia 3.2 crop]]
+** DONE [#A] Configurer les touches page down et page up
+  [2017-12-01 Fri]
+  [[file:~/www/logs/log_2017-12-01.log::Type,%20CoTyLevel%20FROM%20syge_concurrencytype%5D%0A01/12/17%2011:40:21,297%20(%2B%206%20ms)%20e8c3%20DEBUG%20DBManagerMySQL%20-%20select%20in%200.0003s%20:%20%5BSELECT%20ZoneIdx,ZoneZoTeStoryId,ZoneZoTeIdx,ZoneZoImIdx,ZoneDocuIdx,ZoneEtapIdxEnCours,ZoneType,ZoneItemId,ZonePageIdx,ZoneTop,ZoneLeft,ZoneBottom,ZoneRight,ZoneUpdatable,ZoneDeletable,ZonePageRefreshNeeded,ZoneServerRefreshNeeded,ZoneBrief,ZoneUsrIdx,DATE_FORMAT(ZoneDateRemise,'%25Y-%25m-%25d%20%25H:%25i:%25s')%20AS%20ZoneDateRemise_dv%20,DATE_FORMAT(ZoneDateCorrection,'%25Y-%25m-%25d%20%25H:%25i:%25s')%20AS%20Z][file:~/www/logs/log_2017-12-01.log::Type, CoTyLevel FROM syge_concurrencytype]
+01/12/17 11:40:21,297 (+ 6 ms) e8c3 DEBUG DBManagerMySQL - select in 0.0003s : [SELECT ZoneIdx,ZoneZoTeStoryId,ZoneZoTeIdx,ZoneZoImIdx,ZoneDocuIdx,ZoneEtapIdxEnCours,ZoneType,ZoneItemId,ZonePageIdx,ZoneTop,ZoneLeft,ZoneBottom,ZoneRight,ZoneUpdatable,ZoneDeletable,ZonePageRefreshNeeded,ZoneServerRefreshNeeded,ZoneBrief,ZoneUsrIdx,DATE_FORMAT(ZoneDateRemise,'%Y-%m-%d %H:%i:%s') AS ZoneDateRemise_dv ,DATE_FORMAT(ZoneDateCorrection,'%Y-%m-%d %H:%i:%s') AS Z]]
+** TODO Emacs directory doesn't exist; --> Ne pas afficher de prompt
+   [2017-12-01 Fri]
+   [[file:~/Documents/perso/glurps/static/a/b/a.html]]
+
+** TODO Kill dired buffer of a, too ? -> Don't prompt
+   [2017-12-01 Fri]
+   [[file:~/Documents/perso/glurps/static/]]
+
+** TODO M-j web-mode doit faire une nouvelle ligne de commentaire
+   [2017-12-07 Thu]
+   [[file:~/www/project/arsia/arsia_3.2.x_standard/pimdatamanager/admin/module/data/list2.php::*%20filterToolbar][file:~/www/project/arsia/arsia_3.2.x_standard/pimdatamanager/admin/module/data/list2.php::* filterToolbar]]
+   [[file:~/org/arsia.org::*%5Bevol%5D%20Arsia%203.3%20-%20Faire%20un%20js%20global%20permettant%20de%20masquer%20via%20une%20conf%20tout%20les%20console.log.][{evol} Arsia 3.3 - Faire un js global permettant de masquer via une conf tout les console.log.]]
+
+** TODO C-w company mode 
+   [2017-12-07 Thu]
+   [[file:~/www/project/arsia/arsia_3.2.x_standard/pimdatamanager/admin/module/data/js/filterToolbar.js::*%20Nested%20.dropdown,%20prevent%20closing%20the%20first%20dropdown,%20hen%20acti][file:~/www/project/arsia/arsia_3.2.x_standard/pimdatamanager/admin/module/data/js/filterToolbar.js::* Nested .dropdown, prevent closing the first dropdown, hen acti]]
+** DONE i-search color mauvaise
+   [2017-12-08 Fri]
+   [[file:~/www/project/arsia/arsia_3.2.x_standard/pimdatamanager/admin/module/data/list2.php::<div%20style%3D"text-align:%20left%3B"><label%20class%3D"checkbox"%20style%3D"text-align:%20left%3B"><input%20type%3D"checkbox"%20value%3D"0">Checkbox%201</label></div>][file:~/www/project/arsia/arsia_3.2.x_standard/pimdatamanager/admin/module/data/list2.php::<div style="text-align: left;"><label class="checkbox" style="text-align: left;"><input type="checkbox" value="0">Checkbox 1</label></div>]]
+
+** DONE Hide trailing whitespace
+   [2017-12-08 Fri]
+   [[file:~/www/project/arsia/arsia_3.2.x_standard/pimdatamanager/admin/module/data/list2.php::<div%20style%3D"text-align:%20left%3B"><label%20class%3D"checkbox"%20style%3D"text-align:%20left%3B"><input%20type%3D"checkbox"%20value%3D"0">Checkbox%201</label></div>][file:~/www/project/arsia/arsia_3.2.x_standard/pimdatamanager/admin/module/data/list2.php::<div style="text-align: left;"><label class="checkbox" style="text-align: left;"><input type="checkbox" value="0">Checkbox 1</label></div>]]
 
