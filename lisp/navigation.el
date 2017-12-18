@@ -305,3 +305,6 @@
 
 ;; http://oremacs.com/swiper/
 (setq magit-completing-read-function 'ivy-completing-read)
+
+;;
+(require 'ido-occur)
