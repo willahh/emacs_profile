@@ -76,6 +76,7 @@
                      ido-at-point
                      ido-ubiquitous
                      ido-vertical-mode
+                     ido-occur
                      iedit
                      iflipb
                      image-dired+
