@@ -459,6 +459,9 @@
 (global-set-key (kbd "M-3") 'hrs/split-window-right-and-switch) ;; M-3
 (define-key diff-mode-map (kbd "M-3") 'hrs/split-window-right-and-switch)
 
+(global-set-key (kbd "C-M-é") 'evil-window-move-very-bottom)
+(global-set-key (kbd "C-M-\"") 'evil-window-move-far-left)
+
 ;; other Window
 (global-set-key (kbd "M-o") 'other-window)
 ;; (global-set-key [(meta o)] 'other-window)
@@ -621,10 +624,10 @@
 ;; (global-set-key (kbd "s-l") 'avy-goto-char-in-line) ; Not used
 
 ;; Browse comands
-;; (global-set-key (kbd "M-p") 'projectile-find-file)
-;; (define-key highlight-symbol-nav-mode-map (kbd "M-p") 'projectile-find-file)
-(global-set-key (kbd "M-p") 'wlh/projectile-ido-find-file)
-(define-key highlight-symbol-nav-mode-map (kbd "M-p") 'wlh/projectile-ido-find-file)
+(global-set-key (kbd "M-p") 'projectile-find-file)
+(define-key highlight-symbol-nav-mode-map (kbd "M-p") 'projectile-find-file)
+;; (global-set-key (kbd "M-p") 'wlh/projectile-ido-find-file)
+;; (define-key highlight-symbol-nav-mode-map (kbd "M-p") 'wlh/projectile-ido-find-file)
 
 (global-set-key (kbd "s-q") 'my-abort-recursive-edit)
 ;; (global-set-key (kbd "C-s-p") 'find-file-in-current-directory)
