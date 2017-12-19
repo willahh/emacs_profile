@@ -733,9 +733,9 @@ Version 2016-10-24"
 
 ;; From prelude
 ;; whitespace-mode config
-(require 'whitespace)
+;; (require 'whitespace)
 (setq whitespace-line-column 80) ;; limit line length
-(setq whitespace-style '(face tabs empty trailing lines-tail))
+;; (setq whitespace-style '(face tabs empty trailing lines-tail))
 
 
 ;; From prelude

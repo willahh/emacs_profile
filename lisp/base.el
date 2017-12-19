@@ -450,7 +450,7 @@
 ;; (mac-auto-operator-composition-mode t)
 
 ;; Fix whitespace on save, but only if the file was clean
-;;(global-whitespace-cleanup-mode)
+(global-whitespace-cleanup-mode nil)
 
 ;; Transparently open compressed files
 (auto-compression-mode t)
