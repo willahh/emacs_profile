@@ -1,1 +1,7 @@
 (load-file "~/.emacs.d/lisp/theme/tango-plus/tangotango-plus-theme.el")
+(set-face-attribute 'dired-subtree-depth-1-face nil :background nil)
+(set-face-attribute 'dired-subtree-depth-2-face nil :background nil)
+(set-face-attribute 'dired-subtree-depth-3-face nil :background nil)
+(set-face-attribute 'dired-subtree-depth-4-face nil :background nil)
+(set-face-attribute 'dired-subtree-depth-5-face nil :background nil)
+(set-face-attribute 'dired-subtree-depth-6-face nil :background nil)
