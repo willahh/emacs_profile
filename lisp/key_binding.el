@@ -758,7 +758,7 @@
 (global-set-key [(meta shift up)] 'move-text-up)
 (global-set-key [(meta shift down)] 'move-text-down)
 (global-set-key (kbd "C-c n") 'crux-cleanup-buffer-or-region)
-(global-set-key (kbd "C-c f") 'crux-recentf-ido-find-file)
+;; (global-set-key (kbd "C-c f") 'crux-recentf-ido-find-file)
 (global-set-key (kbd "C-M-z") 'crux-indent-defun)
 (global-set-key (kbd "C-c u") 'crux-view-url)
 (global-set-key (kbd "C-c e") 'crux-eval-and-replace)
