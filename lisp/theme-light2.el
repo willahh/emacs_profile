@@ -247,6 +247,7 @@
 
 ;; ;; (set-face-attribute 'flycheck-error nil :foreground "#fff" :background "red")
 ;; ;; (set-face-attribute 'js2-warning nil :foreground "#fff" :background "orange")
+
 ;; (set-face-attribute 'ag-hit-face nil :foreground "#48fa7b")
 ;; (set-face-attribute 'compilation-line-number nil :foreground "#f0f0f0")
 ;; (set-face-attribute 'compilation-column-number nil :foreground "#555")
