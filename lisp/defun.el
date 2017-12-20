@@ -1493,3 +1493,8 @@ the checking happens for all pairs in auto-minor-mode-alist"
     (when file
       (find-file file))))
 
+(defun wlh/neotree-set ()
+  (interactive)
+  ;; (neotree-dir (projectile-project-root))
+  ;; (neo-global--open-and-find (projectile-project-root))
+  (neo-global--open-and-find (buffer-file-name)))

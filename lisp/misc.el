@@ -877,3 +877,6 @@ abort completely with `C-g'."
                (save-excursion
                  (end-of-defun)
                  (point)))))
+
+;; All the icons
+;; (require 'all-the-icons)

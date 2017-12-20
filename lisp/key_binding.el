@@ -468,7 +468,7 @@
 (define-key diff-mode-map (kbd "M-3") 'hrs/split-window-right-and-switch)
 
 (global-set-key (kbd "C-M-é") 'evil-window-move-very-bottom)
-(global-set-key (kbd "C-M-\"") 'evil-window-move-far-right)
+(global-set-key (kbd "C-M-\"") 'evil-window-move-far-left)
 
 ;; other Window
 (global-set-key (kbd "M-o") 'other-window)
@@ -572,7 +572,8 @@
 (global-set-key (kbd "<f5>") 'revert-buffer-no-confirm)
 (global-set-key (kbd "<f6>") 'dired-jump)
 (global-set-key (kbd "<f7>") 'projectile-dired)
-(global-set-key (kbd "<f8>") 'neotree-toggle)
+;; (global-set-key (kbd "<f8>") 'neotree-toggle)
+(global-set-key (kbd "<f8>") 'wlh/neotree-set)
 ;; (global-set-key (kbd "<f8>") 'neotree-projectile-action)
 (global-set-key (kbd "<f9>") 'projectile-recentf)
 (global-set-key (kbd "<f10>") 'counsel-recentf)
