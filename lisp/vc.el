@@ -133,7 +133,8 @@ then `diff-jump-to-old-file' is also set, for the next invocations."
 ;; fullframe
 ;; Update ne fonctionne pas bien avec par exemple ag
 ;; Ne devrait pas être utilisé
-(fullframe vc-dir quit-window)
+;; Ne fonctionne pas bien non plus avec vc-dir
+;; (fullframe vc-dir quit-window)
 (fullframe ibuffer quit-window)
 ;; (fullframe vc-diff quit-window)
 ;; (fullframe ag quit-window)
