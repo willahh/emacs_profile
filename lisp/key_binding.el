@@ -248,6 +248,9 @@
 (define-key company-active-map (kbd "C-m") 'new-line-dwim)
 (define-key company-active-map (kbd "C-j") 'company-complete)
 (define-key company-active-map (kbd "C-i") 'company-complete-selection)
+(define-key company-active-map (kbd "C-j") 'emmet-expand-line)
+(define-key company-active-map (kbd "C-w") 'backward-kill-word)
+
 
 ;; kill backward
 (global-set-key (kbd "C-w") 'backward-kill-word-or-region)
@@ -460,7 +463,7 @@
 (define-key diff-mode-map (kbd "M-3") 'hrs/split-window-right-and-switch)
 
 (global-set-key (kbd "C-M-é") 'evil-window-move-very-bottom)
-(global-set-key (kbd "C-M-\"") 'evil-window-move-far-left)
+(global-set-key (kbd "C-M-\"") 'evil-window-move-far-right)
 
 ;; other Window
 (global-set-key (kbd "M-o") 'other-window)
