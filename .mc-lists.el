@@ -200,4 +200,5 @@
         wgrep-finish-edit
         wil-recenter-top-bottom
         wlh/dbleclick-mouse1
+        wlh/dbleclick-select-word
         ))

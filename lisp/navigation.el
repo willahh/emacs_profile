@@ -156,9 +156,21 @@
       helm-ff-file-name-history-use-recentf t
       helm-echo-input-in-header-line t)
 
-;; Size
+;; helm
 (setq helm-autoresize-max-height 500)
 (setq helm-autoresize-min-height 100) ;; Important
+(setq helm-allow-mouse t)
+
+
+(defun helm-mouse-1-exit-minibuffer (click)
+  (interactive "e")
+  (mouse-set-point click)
+  (helm-mark-current-line)
+  (helm-exit-minibuffer))
+(define-key helm-map [mouse-1] 'helm-mouse-1-exit-minibuffer)
+
+
+
 
 ;; Auto resize
 (helm-autoresize-mode nil)

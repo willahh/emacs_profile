@@ -69,6 +69,7 @@
                      helm-ag
                      helm-cider
                      helm-swoop
+                     helm-projectile
                      highlight-symbol
                      hydra
                      ibuffer-vc

@@ -318,7 +318,8 @@
 ;; (global-set-key (kbd "C-s-s") 'counsel-ag) ; Super+Contral+s
 ;; (global-set-key (kbd "C-M-s-s") 'projectile-ag) ; Control+Meta+Super+s
 ;; (global-set-key (kbd "M-F") 'ag)
-(global-set-key (kbd "M-F") 'rzgrep)
+;; (global-set-key (kbd "M-F") 'rzgrep)
+(global-set-key (kbd "M-F") 'ag)
 (global-set-key (kbd "C-s-s") 'helm-ag) ; Super+Contral+s
 
 ;; (global-set-key (kbd "C-c j s") 'projectile-ag)
@@ -479,9 +480,14 @@
 
 (global-set-key (kbd "C-M-o") 'previous-multiframe-window)
 
-(define-key ggtags-navigation-map (kbd "s-p") 'highlight-symbol-next)
-(global-set-key (kbd "s-n") 'highlight-symbol-prev)
-(global-set-key (kbd "s-p") 'highlight-symbol-prev)
+(define-key ggtags-navigation-map (kbd "s-p") 'projectile-find-file)
+(global-set-key (kbd "s-n") 'projectile-find-file)
+(global-set-key (kbd "s-p") 'projectile-find-file)
+(global-set-key (kbd "C-x x") 'helm-M-x)
+
+;; (define-key ggtags-navigation-map (kbd "s-p") 'highlight-symbol-prev)
+;; (global-set-key (kbd "s-n") 'highlight-symbol-prev)
+;; (global-set-key (kbd "s-p") 'highlight-symbol-prev)
 
 ;; Update to use, classical Meta-n to create a new buffer like in
 ;; modern editors. Update highlight-symbol-prev to Super - M
@@ -561,14 +567,20 @@
 (global-set-key (kbd "C-!") 'string-inflection-all-cycle) ; (C-8 on azerty keyboard)
 
 
-;; ---------------- Function keys
+;; ---------------- Function keys -
 ;; (global-set-key (kbd "<f2>") 'my/open-tree-view)
 ;; F Keys
 (global-set-key (kbd "<f1> f") 'counsel-describe-function)
 (global-set-key (kbd "<f1> v") 'counsel-describe-variable)
 (global-set-key (kbd "<f1> l") 'counsel-find-library)
+(global-set-key (kbd "<f2> &") 'helm-projectile-switch-project) ; F2 1 on qwerty
 (global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
 (global-set-key (kbd "<f2> u") 'counsel-unicode-char)
+(global-set-key (kbd "<f2> a") 'org-agenda)
+(global-set-key (kbd "<f2> r") 'helm-recentf)
+(global-set-key (kbd "<f2> e") 'helm-projectile)
+(global-set-key (kbd "<f2> b") 'helm-buffers-list)
+(global-set-key (kbd "<f2> c") 'org-capture)
 (global-set-key (kbd "<f5>") 'revert-buffer-no-confirm)
 (global-set-key (kbd "<f6>") 'dired-jump)
 (global-set-key (kbd "<f7>") 'projectile-dired)
@@ -576,7 +588,8 @@
 (global-set-key (kbd "<f8>") 'wlh/neotree-set)
 ;; (global-set-key (kbd "<f8>") 'neotree-projectile-action)
 (global-set-key (kbd "<f9>") 'projectile-recentf)
-(global-set-key (kbd "<f10>") 'counsel-recentf)
+;; (global-set-key (kbd "<f10>") 'counsel-recentf)
+(global-set-key (kbd "<f10>") 'helm-recentf)
 (global-set-key (kbd "<f11>") 'wil-IDE)
 (global-set-key (kbd "<f12>") 'wil-vc-dir)
 (global-set-key (kbd "<end>") 'end-of-buffer)
@@ -636,7 +649,6 @@
 ;; (define-key highlight-symbol-nav-mode-map (kbd "M-p") 'wlh/projectile-ido-find-file)
 
 (global-set-key (kbd "s-q") 'my-abort-recursive-edit)
-;; (global-set-key (kbd "C-s-p") 'find-file-in-current-directory)
 (global-set-key (kbd "M-P") 'find-file-in-current-directory)
 
 ;; Recentf
