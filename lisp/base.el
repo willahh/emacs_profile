@@ -450,7 +450,7 @@
 ;; (mac-auto-operator-composition-mode t)
 
 ;; Fix whitespace on save, but only if the file was clean
-;;(global-whitespace-cleanup-mode)
+(global-whitespace-cleanup-mode nil)
 
 ;; Transparently open compressed files
 (auto-compression-mode t)
@@ -644,3 +644,10 @@
 (update-syntax-entry)
 (add-hook 'prog-mode-hook (lambda () (update-syntax-entry)))
 
+
+
+;; Init emacs on bookmark list
+(setq inhibit-splash-screen t)
+(require 'bookmark)
+;; (bookmark-bmenu-list)
+(switch-to-buffer "*Bookmark List*")

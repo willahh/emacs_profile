@@ -19,7 +19,6 @@
 (define-key paredit-mode-map (kbd "M-q") 'fill-paragraph)
 (global-set-key (kbd "C-;") "\C-e;") ;; Append ; at the end of a line
 
-;; (global-set-key (kbd "M-c") 'wil-copy)
 (global-set-key (kbd "M-c") 'easy-kill)
 
 ;; Yank
@@ -41,8 +40,6 @@
 
 ;; Update disable M-s for save, use default C-x C-sq
 ;; Reactivation because I had a lot of trouble with paredit M-s
-;; (global-set-key (kbd "M-s") 'save-buffer)
-;; (define-key paredit-mode-map (kbd "M-s") 'save-buffer)
 (global-set-key (kbd "M-s") 'save-buffer)
 (define-key paredit-mode-map (kbd "M-s") 'save-buffer)
 
@@ -294,6 +291,18 @@
 ;; org
 (define-key org-mode-map (kbd "C-x <C-i>") 'helm-org-in-buffer-headings)
 
+
+
+(global-set-key (kbd "C-M-s") 'isearch-forward-regexp)
+(global-set-key (kbd "C-c C-M-s") 'vr/replace)
+(global-set-key (kbd "M-=") 'delete-horizontal-space) ; Azerty equivalent of M-\
+(global-set-key (kbd "s-=") 'delete-horizontal-space) ; Azerty equivalent of M-\
+
+;; Search
+;; ripgrep-regexp ne fonctionne que par regexp, du coup impossible de rechercher
+;; des retours à la ligne ainsi que certains caractères spéciaux.
+;; Search
+;; (global-set-key (kbd "C-M-s") 'ag)
 ;; (global-set-key (kbd "C-M-s") 'ag)
 ;; (global-set-key (kbd "C-M-s") 'ripgrep-regexp) ; Ripgrep ne supporte pas les retours a la ligne dans une recherche
 ;; (global-set-key (kbd "C-M-s") 'ag)
@@ -301,21 +310,16 @@
 ;; (global-set-key (kbd "C-M-s") 'ag)
 ;; (global-set-key (kbd "C-M-s") 'projectile-ag)
 ;; (global-set-key (kbd "C-M-s") 'ag)
-(global-set-key (kbd "C-M-s") 'isearch-forward-regexp)
-(global-set-key (kbd "C-c C-M-s") 'vr/replace)
-(global-set-key (kbd "M-=") 'delete-horizontal-space) ; Azerty equivalent of M-\
-(global-set-key (kbd "s-=") 'delete-horizontal-space) ; Azerty equivalent of M-\
-
-;; ripgrep-regexp ne fonctionne que par regexp, du coup impossible de rechercher
-;; des retours à la ligne ainsi que certains caractères spéciaux.
-;; 
 ;; (global-set-key (kbd "C-F") 'ag)
 ;; (global-set-key (kbd "M-F") 'ag)
 ;; (global-set-key (kbd "M-F") 'ripgrep-regexp)
-(global-set-key (kbd "M-F") 'ag)
-(global-set-key [control meta s] 'ag-project-at-point)
-(global-set-key [control meta shift s] 'ag-project)
-
+;; (global-set-key [control meta s] 'ag-project-at-point)
+;; (global-set-key [control meta shift s] 'ag-project)
+;; (global-set-key (kbd "C-s-s") 'counsel-ag) ; Super+Contral+s
+;; (global-set-key (kbd "C-M-s-s") 'projectile-ag) ; Control+Meta+Super+s
+;; (global-set-key (kbd "M-F") 'ag)
+(global-set-key (kbd "M-F") 'rzgrep)
+(global-set-key (kbd "C-s-s") 'helm-ag) ; Super+Contral+s
 
 ;; (global-set-key (kbd "C-c j s") 'projectile-ag)
 
@@ -359,6 +363,7 @@
 (define-key isearch-mode-map (kbd "M-v") 'isearch-yank-pop)
 (define-key isearch-mode-map (kbd "C-v") 'isearch-yank-pop)
 (define-key isearch-mode-map (kbd "M-s") 'swiper--from-isearch)
+(define-key isearch-mode-map (kbd "C-c C-s") 'swiper--from-isearch)
 
 ;; help
 (define-key help-mode-map (kbd "n") 'next-line)
@@ -581,9 +586,6 @@
 ;; Search with super key
 (global-set-key (kbd "s-z") 'zap-to-char)
 (global-set-key (kbd "s-e") 'kmacro-end-and-call-macro) ; Super+e
-(global-set-key (kbd "C-s-s") 'helm-ag) ; Super+Contral+s
-;; (global-set-key (kbd "C-s-s") 'counsel-ag) ; Super+Contral+s
-;; (global-set-key (kbd "C-M-s-s") 'projectile-ag) ; Control+Meta+Super+s
 (global-set-key (kbd "s-c") 'org-capture)
 (global-set-key (kbd "s-b") 'projectile-switch-to-buffer)
 (global-set-key (kbd "C-s-b") 'ivy-switch-buffer)
@@ -658,6 +660,7 @@
 (global-set-key (kbd "C-c C-s") 'swiper)
 (define-key web-mode-map (kbd "C-c C-s") 'swiper)
 (define-key js2-mode-map (kbd "C-c C-s") 'swiper)
+(define-key php-mode-map (kbd "C-c C-s") 'swiper)
 
 ;; (global-set-key (kbd "s-s") 'helm-swoop)
 ;; (global-set-key (kbd "C-c C-s") 'helm-swoop)
@@ -678,10 +681,6 @@
 
 ;; dired
 (global-set-key (kbd "s-d") 'projectile-dired)
-
-;; Search
-;; (global-set-key (kbd "s-S") 'helm-ag)
-;; (global-set-key (kbd "C-c j S") 'helm-ag)
 
 ;; ;; ---------------- Hyper key
 ;; (global-set-key (kbd "H-p") 'projectile-switch-project)
