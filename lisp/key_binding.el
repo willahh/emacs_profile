@@ -285,7 +285,7 @@
 (define-key paredit-mode-map (kbd "C-c i") 'counsel-imenu)
 
 ;; mark
-; (global-set-key ("C-c C-SPC") 'helm-all-mark-rings)
+;; (global-set-key ("C-c C-SPC") 'helm-all-mark-rings)
 (global-set-key (kbd "C-c C-x C-d") 'crux-duplicate-and-comment-current-line-or-region)
 
 ;; org
@@ -434,10 +434,12 @@
 
 
 ;; open line above / below
-(global-set-key (kbd "C-o") 'smart-open-line-above)
-(global-set-key (kbd "C-M-o") 'open-line-below)
-(define-key php-mode-map (kbd "C-M-o") 'open-line-below)
-(define-key org-mode-map (kbd "C-M-o") 'wil-org-open-line-below)
+;; (global-set-key (kbd "C-M-o") 'smart-open-line-above)
+;; (global-set-key (kbd "C-o") 'open-line-below)
+;; (define-key php-mode-map (kbd "C-M-o") 'open-line-below)
+;; (define-key org-mode-map (kbd "C-M-o") 'wil-org-open-line-below)
+
+
 ;; (define-key org-mode-map [(control shift j)] 'wil-org-open-line-above)
 ;; (global-set-key (kbd "<C-S-return>") 'open-line-above)
 ;; (define-key company-active-map (kbd "C-j") 'newline) ;; Disable with reaffectation of new line function
@@ -479,7 +481,7 @@
 (define-key ggtags-navigation-map (kbd "M-o") 'other-window) ;; Need to override ggtags map
 (define-key ibuffer-mode-map (kbd "M-o") 'other-window)
 
-(global-set-key (kbd "C-M-o") 'previous-multiframe-window)
+(global-set-key [(control shift o)] 'previous-multiframe-window)
 
 (define-key ggtags-navigation-map (kbd "s-p") 'projectile-find-file)
 (global-set-key (kbd "s-n") 'projectile-find-file)
