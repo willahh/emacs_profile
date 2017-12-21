@@ -365,6 +365,7 @@
 (define-key isearch-mode-map (kbd "C-v") 'isearch-yank-pop)
 (define-key isearch-mode-map (kbd "M-s") 'swiper--from-isearch)
 (define-key isearch-mode-map (kbd "C-c C-s") 'swiper--from-isearch)
+(define-key isearch-mode-map (kbd "C-z") 'isearch-yank-word-or-char) ; Used for azerty keyboard (qwerty z is more accessible than w)
 
 ;; help
 (define-key help-mode-map (kbd "n") 'next-line)
