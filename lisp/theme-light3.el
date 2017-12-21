@@ -12,7 +12,8 @@
                              (set-face-attribute 'dired-subtree-depth-3-face nil :background nil)
                              (set-face-attribute 'dired-subtree-depth-4-face nil :background nil)
                              (set-face-attribute 'dired-subtree-depth-5-face nil :background nil)
-                             (set-face-attribute 'dired-subtree-depth-6-face nil :background nil)))
+                             (set-face-attribute 'dired-subtree-depth-6-face nil :background nil)
+                             (set-face-attribute 'dired-mark-face nil :background "#5abeee")))
 
 
 (custom-set-faces

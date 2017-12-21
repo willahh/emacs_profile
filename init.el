@@ -96,3 +96,4 @@
  '(rainbow-delimiters-depth-6-face ((t (:foreground "#cc99ff" :weight bold))))
  '(rainbow-delimiters-depth-7-face ((t (:foreground "#fa75e2" :weight bold))))
  '(rainbow-delimiters-depth-8-face ((t (:foreground "#55bdf0" :weight bold)))))
+(put 'dired-find-alternate-file 'disabled nil)
