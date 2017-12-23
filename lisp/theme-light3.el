@@ -14,13 +14,12 @@
                              (set-face-attribute 'dired-subtree-depth-5-face nil :background nil)
                              (set-face-attribute 'dired-subtree-depth-6-face nil :background nil)))
 
-
 (custom-set-faces
  '(rainbow-delimiters-depth-1-face ((t (:foreground "#5abeee" :weight bold))))
  '(rainbow-delimiters-depth-2-face ((t (:foreground "#ff00a0" :weight bold))))
- '(rainbow-delimiters-depth-3-face ((t (:foreground "#75ff89" :weight bold))))
- '(rainbow-delimiters-depth-4-face ((t (:foreground "#d2ff00" :weight bold))))
- '(rainbow-delimiters-depth-5-face ((t (:foreground "#00ffcc" :weight bold))))
+ '(rainbow-delimiters-depth-3-face ((t (:foreground "#ff953f" :weight bold))))
+ '(rainbow-delimiters-depth-4-face ((t (:foreground "#328d2e" :weight bold))))
+ '(rainbow-delimiters-depth-5-face ((t (:foreground "#22988a" :weight bold))))
  '(rainbow-delimiters-depth-6-face ((t (:foreground "#cc99ff" :weight bold))))
  '(rainbow-delimiters-depth-7-face ((t (:foreground "#fa75e2" :weight bold))))
  '(rainbow-delimiters-depth-8-face ((t (:foreground "#55bdf0" :weight bold)))))
