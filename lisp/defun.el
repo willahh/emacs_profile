@@ -1454,16 +1454,16 @@ the checking happens for all pairs in auto-minor-mode-alist"
 ;; (defun wlh/dbleclick-select-word-a (enablep)
 ;;   (wlh/dbleclick-select-word))
 
-(defun wlh/dbleclick-select-word ()
-  (interactive)
-  (highlight-symbol-mode nil) ; Disable highlight-symbol-mode
-  (unhighlight-regexp t)
-  (highlight-symbol-at-point)
-  (er/mark-word)
-  (exchange-point-and-mark)
-  ;; (forward-word)
-  ;; (setq *wlh/dbleclick-enablep* t)
-  )
+;; (defun wlh/dbleclick-select-word ()
+;;   (interactive)
+;;   (highlight-symbol-mode nil) ; Disable highlight-symbol-mode
+;;   (unhighlight-regexp t)
+;;   (highlight-symbol-at-point)
+;;   (er/mark-word)
+;;   (exchange-point-and-mark)
+;;   ;; (forward-word)
+;;   ;; (setq *wlh/dbleclick-enablep* t)
+;;   )
 
 (defun wlh/dbleclick-mouse1 ()
   (interactive)
@@ -1473,7 +1473,7 @@ the checking happens for all pairs in auto-minor-mode-alist"
   )
 
 (global-set-key [mouse-1] 'wlh/dbleclick-mouse1)
-(global-set-key [double-mouse-1] 'wlh/dbleclick-select-word)
+;; (global-set-key [double-mouse-1] 'wlh/dbleclick-select-word)
 
 (defun swiper--from-isearch ()
   "Invoke `swiper' from isearch. https://github.com/ShingoFukuyama/helm-swoop/blob/f67fa8a4fe3b968b7105f8264a96da61c948a6fd/helm-swoop.el#L657-668"

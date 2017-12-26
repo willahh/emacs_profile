@@ -65,12 +65,10 @@
 (add-hook 'magit-status-mode-hook 'wil-magit-status-mode-hook)
 
 ;; Diff-hl
-;; Update : global-diff-hl-mode ainsi que diff-hl-dired-mode
-;; ne fonctionne plus pour le moment
-;; Le package semble casse sur melpa
-(diff-hl-mode)
-(global-diff-hl-mode t)
-
+;; (diff-hl-mode)
+;; (global-diff-hl-mode t)
+(add-hook 'prog-mode-hook (lambda ()
+                            (diff-hl-mode t)))
 ;; dsvn conf
 ;; Besoin : Avoir des commandes svn non disponible par default comme svn status
 ;; Sources :
@@ -146,19 +144,29 @@ then `diff-jump-to-old-file' is also set, for the next invocations."
 
   ;; Some key binding
   ;; (define-key vc-dir-mode-map (kbd "e") 'vc-ediff)
-  (define-key vc-dir-mode-map (kbd "e") 'wil-vc-ediff)
-  (define-key vc-dir-mode-map (kbd "E") 'wil-vc-version-ediff-base-head)
-  (define-key vc-dir-mode-map (kbd "d") 'vc-diff)
-  (define-key vc-dir-mode-map (kbd "D") 'wil-vc-version-diff-base-head)
-  (define-key vc-dir-mode-map (kbd "k") 'vc-revert)
-  (define-key vc-dir-mode-map (kbd "g") 'vc-dir-refresh))
+  ;; (define-key vc-dir-mode-map (kbd "e") 'wil-vc-ediff)
+  ;; (define-key vc-dir-mode-map (kbd "E") 'wil-vc-version-ediff-base-head)
+  ;; (define-key vc-dir-mode-map (kbd "d") 'vc-diff)
+  ;; (define-key vc-dir-mode-map (kbd "D") 'wil-vc-version-diff-base-head)
+  ;; (define-key vc-dir-mode-map (kbd "k") 'vc-revert)
+  ;; (define-key vc-dir-mode-map (kbd "g") 'vc-dir-refresh)
+
+  )
+
+
+(define-key vc-dir-mode-map (kbd "e") 'wil-vc-ediff)
+(define-key vc-dir-mode-map (kbd "E") 'wil-vc-version-ediff-base-head)
+(define-key vc-dir-mode-map (kbd "d") 'vc-diff)
+(define-key vc-dir-mode-map (kbd "D") 'wil-vc-version-diff-base-head)
+(define-key vc-dir-mode-map (kbd "k") 'vc-revert)
+(define-key vc-dir-mode-map (kbd "g") 'vc-dir-refresh)
 
 
 (defun wil-vc-version-diff-base-head ()
   ;; Quick call vc-version-diff to compare the base and head version
   (interactive)
   (vc-version-diff (vc-deduce-fileset t) "base" "head")
-)
+  )
 
 (defun wil-vc-version-ediff-base-head ()
   ;; Quick call vc-version-ediff to compare the base and head version

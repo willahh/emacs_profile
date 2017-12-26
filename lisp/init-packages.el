@@ -16,7 +16,7 @@
                      ace-window 
                      actionscript-mode
                      ag
-                     anzu
+                     ; anzu
                      async
                      auto-complete
                      auto-yasnippet
@@ -140,6 +140,7 @@
                      use-package
                      validate
                      visual-regexp
+                     visual-regexp-steroids
                      web-beautify
                      web-mode
                      websocket

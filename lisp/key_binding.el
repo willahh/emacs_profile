@@ -11,6 +11,7 @@
 (require 'magit)
 (require 'term)
 (require 'web-mode)
+; (require 'syslog-mode)
 
 
 (global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
@@ -32,8 +33,10 @@
 (global-set-key [(meta shift v)] 'yank-pop)
 
 ;; Scroll
-(define-key syslog-mode-map (kbd "s-v") 'scroll-down)
-(define-key syslog-mode-map (kbd "C-v") 'scroll-up)
+(add-hook 'syslog-mode-hook (lambda ()
+    (define-key syslog-mode-map (kbd "s-v") 'scroll-down)
+    (define-key syslog-mode-map (kbd "C-v") 'scroll-up)
+    ))
 
 (global-set-key (kbd "M-z") 'undo-tree-undo)
 (global-set-key [(meta shift z)] 'undo-tree-redo)
@@ -65,6 +68,7 @@
 (global-set-key (kbd "C-c j c s") '(thing-copy-string-to-mark))
 (global-set-key (kbd "C-c j c a") '(thing-copy-parenthesis-to-mark))
 (global-set-key (kbd "C-c j p b") 'wlh/project-browser-open)
+(global-set-key (kbd "C-c j p p") 'wlh/workspace-search)
 
 ;;
 (global-set-key (kbd "C-c j d y") 'wil-window-divider-on) ;; (Translate : C-c (user main prefix) + ; (my prefix) + [d]ivider + [y]es)
@@ -434,11 +438,12 @@
 
 
 ;; open line above / below
+(global-set-key (kbd "C-o") 'crux-smart-open-line)
+(global-set-key (kbd "C-M-o") 'crux-smart-open-line-above)
 ;; (global-set-key (kbd "C-M-o") 'smart-open-line-above)
 ;; (global-set-key (kbd "C-o") 'open-line-below)
 ;; (define-key php-mode-map (kbd "C-M-o") 'open-line-below)
 ;; (define-key org-mode-map (kbd "C-M-o") 'wil-org-open-line-below)
-
 
 ;; (define-key org-mode-map [(control shift j)] 'wil-org-open-line-above)
 ;; (global-set-key (kbd "<C-S-return>") 'open-line-above)
@@ -481,7 +486,7 @@
 (define-key ggtags-navigation-map (kbd "M-o") 'other-window) ;; Need to override ggtags map
 (define-key ibuffer-mode-map (kbd "M-o") 'other-window)
 
-(global-set-key [(control shift o)] 'previous-multiframe-window)
+(global-set-key [(meta shift o)] 'previous-multiframe-window)
 
 (define-key ggtags-navigation-map (kbd "s-p") 'projectile-find-file)
 (global-set-key (kbd "s-n") 'projectile-find-file)

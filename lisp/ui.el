@@ -33,7 +33,7 @@
 (eval-after-load "skewer-html" '(diminish 'skewer-html-mode))
 (eval-after-load "smartparens" '(diminish 'smartparens-mode))
 (eval-after-load "editorconfig" '(diminish 'editorconfig-mode))
-(eval-after-load "anzu" '(diminish 'anzu-mode))
+; (eval-after-load "anzu" '(diminish 'anzu-mode))
 (eval-after-load "company" '(diminish 'company-mode))
 (eval-after-load "rainbow-mode" '(diminish 'rainbow-mode))
 ;; (eval-after-load "hs-minor-mode" '(diminish 'hs-minor-mode))

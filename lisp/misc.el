@@ -3,6 +3,7 @@
 (require 'ov)
 (require 'cl-lib)
 (require 'validate)
+; (require 'syslog-mode)
 
 (defhydra hydra-window (:idle 9999)
    " "
@@ -103,8 +104,9 @@
 
 ;; rainbow-mode (css color)
 ;; (require 'rainbow-mode)
+;; Disable rainbow-mode by default
 (require 'rainbow-mode)
-(add-hook 'prog-mode-hook #'rainbow-mode)
+;; (add-hook 'prog-mode-hook #'rainbow-mode)
 
 ;; goto
 (defhydra goto (:color blue :hint nil)
@@ -155,7 +157,6 @@ _n_: Navigate           _._: mark position _/_: jump to mark
   ("n" hydra-navigate/body))
 
 ;; sy
-(require 'syslog-mode)
 (add-hook 'syslog-mode-hook
           (lambda ()
             (toggle-truncate-lines 0)))
@@ -786,7 +787,7 @@ Version 2016-10-24"
 ;; Enable anzu
 ;; https://github.com/syohex/emacs-anzu
 
-(global-anzu-mode +1)
+; (global-anzu-mode +1)
 
 ;; ace-popup-menu-mode
 ; (ace-popup-menu-mode 1)
