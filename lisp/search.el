@@ -2,7 +2,7 @@
 ;; http://agel.readthedocs.io/en/layo/installation.html
 (require 'ag)
 (require 'find-file-in-project)
-(require 'anzu)
+; (require 'anzu)
 
 (setq ag-highlight-search t)
 (setq ag-reuse-buffers nil)

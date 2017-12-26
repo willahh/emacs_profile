@@ -16,7 +16,7 @@
                      ace-window 
                      actionscript-mode
                      ag
-                     anzu
+                     ; anzu
                      async
                      auto-complete
                      auto-yasnippet
