@@ -140,6 +140,7 @@
                      use-package
                      validate
                      visual-regexp
+                     visual-regexp-steroids
                      web-beautify
                      web-mode
                      websocket
