@@ -65,12 +65,10 @@
 (add-hook 'magit-status-mode-hook 'wil-magit-status-mode-hook)
 
 ;; Diff-hl
-;; Update : global-diff-hl-mode ainsi que diff-hl-dired-mode
-;; ne fonctionne plus pour le moment
-;; Le package semble casse sur melpa
-(diff-hl-mode)
-(global-diff-hl-mode t)
-
+;; (diff-hl-mode)
+;; (global-diff-hl-mode t)
+(add-hook 'prog-mode-hook (lambda ()
+                            (diff-hl-mode t)))
 ;; dsvn conf
 ;; Besoin : Avoir des commandes svn non disponible par default comme svn status
 ;; Sources :

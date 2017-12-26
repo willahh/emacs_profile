@@ -1,5 +1,6 @@
 (load "~/.emacs.d/vendor/emacs-textmate-0.1/textmate")
 
+(require 'projectile)
 (require 'smartparens-config)
 (require 'smartparens-html)
 (require 'php-mode)
