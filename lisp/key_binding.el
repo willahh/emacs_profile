@@ -11,6 +11,7 @@
 (require 'magit)
 (require 'term)
 (require 'web-mode)
+; (require 'syslog-mode)
 
 
 (global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
@@ -32,8 +33,10 @@
 (global-set-key [(meta shift v)] 'yank-pop)
 
 ;; Scroll
-(define-key syslog-mode-map (kbd "s-v") 'scroll-down)
-(define-key syslog-mode-map (kbd "C-v") 'scroll-up)
+(add-hook 'syslog-mode-hook (lambda ()
+    (define-key syslog-mode-map (kbd "s-v") 'scroll-down)
+    (define-key syslog-mode-map (kbd "C-v") 'scroll-up)
+    ))
 
 (global-set-key (kbd "M-z") 'undo-tree-undo)
 (global-set-key [(meta shift z)] 'undo-tree-redo)

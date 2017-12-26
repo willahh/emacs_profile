@@ -3,6 +3,7 @@
 (require 'ov)
 (require 'cl-lib)
 (require 'validate)
+; (require 'syslog-mode)
 
 (defhydra hydra-window (:idle 9999)
    " "
@@ -156,7 +157,6 @@ _n_: Navigate           _._: mark position _/_: jump to mark
   ("n" hydra-navigate/body))
 
 ;; sy
-(require 'syslog-mode)
 (add-hook 'syslog-mode-hook
           (lambda ()
             (toggle-truncate-lines 0)))
