@@ -144,19 +144,29 @@ then `diff-jump-to-old-file' is also set, for the next invocations."
 
   ;; Some key binding
   ;; (define-key vc-dir-mode-map (kbd "e") 'vc-ediff)
-  (define-key vc-dir-mode-map (kbd "e") 'wil-vc-ediff)
-  (define-key vc-dir-mode-map (kbd "E") 'wil-vc-version-ediff-base-head)
-  (define-key vc-dir-mode-map (kbd "d") 'vc-diff)
-  (define-key vc-dir-mode-map (kbd "D") 'wil-vc-version-diff-base-head)
-  (define-key vc-dir-mode-map (kbd "k") 'vc-revert)
-  (define-key vc-dir-mode-map (kbd "g") 'vc-dir-refresh))
+  ;; (define-key vc-dir-mode-map (kbd "e") 'wil-vc-ediff)
+  ;; (define-key vc-dir-mode-map (kbd "E") 'wil-vc-version-ediff-base-head)
+  ;; (define-key vc-dir-mode-map (kbd "d") 'vc-diff)
+  ;; (define-key vc-dir-mode-map (kbd "D") 'wil-vc-version-diff-base-head)
+  ;; (define-key vc-dir-mode-map (kbd "k") 'vc-revert)
+  ;; (define-key vc-dir-mode-map (kbd "g") 'vc-dir-refresh)
+
+  )
+
+
+(define-key vc-dir-mode-map (kbd "e") 'wil-vc-ediff)
+(define-key vc-dir-mode-map (kbd "E") 'wil-vc-version-ediff-base-head)
+(define-key vc-dir-mode-map (kbd "d") 'vc-diff)
+(define-key vc-dir-mode-map (kbd "D") 'wil-vc-version-diff-base-head)
+(define-key vc-dir-mode-map (kbd "k") 'vc-revert)
+(define-key vc-dir-mode-map (kbd "g") 'vc-dir-refresh)
 
 
 (defun wil-vc-version-diff-base-head ()
   ;; Quick call vc-version-diff to compare the base and head version
   (interactive)
   (vc-version-diff (vc-deduce-fileset t) "base" "head")
-)
+  )
 
 (defun wil-vc-version-ediff-base-head ()
   ;; Quick call vc-version-ediff to compare the base and head version
