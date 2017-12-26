@@ -434,11 +434,12 @@
 
 
 ;; open line above / below
+(global-set-key (kbd "C-o") 'crux-smart-open-line)
+(global-set-key (kbd "C-M-o") 'crux-smart-open-line-above)
 ;; (global-set-key (kbd "C-M-o") 'smart-open-line-above)
 ;; (global-set-key (kbd "C-o") 'open-line-below)
 ;; (define-key php-mode-map (kbd "C-M-o") 'open-line-below)
 ;; (define-key org-mode-map (kbd "C-M-o") 'wil-org-open-line-below)
-
 
 ;; (define-key org-mode-map [(control shift j)] 'wil-org-open-line-above)
 ;; (global-set-key (kbd "<C-S-return>") 'open-line-above)
@@ -481,7 +482,7 @@
 (define-key ggtags-navigation-map (kbd "M-o") 'other-window) ;; Need to override ggtags map
 (define-key ibuffer-mode-map (kbd "M-o") 'other-window)
 
-(global-set-key [(control shift o)] 'previous-multiframe-window)
+(global-set-key [(meta shift o)] 'previous-multiframe-window)
 
 (define-key ggtags-navigation-map (kbd "s-p") 'projectile-find-file)
 (global-set-key (kbd "s-n") 'projectile-find-file)

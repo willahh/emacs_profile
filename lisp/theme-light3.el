@@ -12,8 +12,7 @@
                              (set-face-attribute 'dired-subtree-depth-3-face nil :background nil)
                              (set-face-attribute 'dired-subtree-depth-4-face nil :background nil)
                              (set-face-attribute 'dired-subtree-depth-5-face nil :background nil)
-                             (set-face-attribute 'dired-subtree-depth-6-face nil :background nil)
-                             (set-face-attribute 'dired-mark-face nil :background "#5abeee")))
+                             (set-face-attribute 'dired-subtree-depth-6-face nil :background nil)))
 
 (custom-set-faces
  '(rainbow-delimiters-depth-1-face ((t (:foreground "#5abeee" :weight bold))))
@@ -31,6 +30,8 @@
 (set-face-attribute 'window-divider nil :foreground "#7b7b7b")
 (set-face-attribute 'window-divider-first-pixel nil :foreground "#7b7b7b")
 (set-face-attribute 'window-divider-last-pixel nil :foreground "#7b7b7b")
+(set-face-attribute 'web-mode-current-element-highlight-face nil :background nil :foreground "#7b7b7b")
+;; (set-face-attribute 'web-mode-current-element-highlight-face nil :background nil :foreground "#7b7b7b" :underline (:color "#ffffff" :style wave))
 
 (defun wlh/theme-linum-mode-hook ()
   (set-face-attribute 'linum nil :foreground "#4a4a4a" :background"#fafafa" :height 80))

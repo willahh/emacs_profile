@@ -103,8 +103,9 @@
 
 ;; rainbow-mode (css color)
 ;; (require 'rainbow-mode)
+;; Disable rainbow-mode by default
 (require 'rainbow-mode)
-(add-hook 'prog-mode-hook #'rainbow-mode)
+;; (add-hook 'prog-mode-hook #'rainbow-mode)
 
 ;; goto
 (defhydra goto (:color blue :hint nil)

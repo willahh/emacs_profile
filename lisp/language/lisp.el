@@ -8,9 +8,11 @@
           #'(lambda ()
               (define-key slime-prefix-map (kbd "M-h") 'slime-documentation-lookup)))
 
-(defun wlh/slime-repl-mode-hook ()
-  (paredit-mode))
-(add-hook 'slime-repl-mode-hook 'wlh/slime-repl-mode-hook)
+;; (defun wlh/slime-repl-mode-hook ()
+;;   (paredit-mode))
+;; (add-hook 'slime-repl-mode-hook 'wlh/slime-repl-mode-hook)
+(add-hook 'slime-repl-mode-hook (lambda ()
+                                  (paredit-mode)))
 
 ;; Set your lisp system and, optionally, some contribs
 ;; (setq inferior-lisp-program "/opt/sbcl/bin/sbcl")
