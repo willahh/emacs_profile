@@ -180,7 +180,8 @@ _n_: Navigate           _._: mark position _/_: jump to mark
   (company-mode 0)
   ;; (google-this-mode 0)
   (evil-snipe-mode 0)
-  (ivy-mode 0))
+  (ivy-mode 0)
+  (highlight-symbol-mode 0))
 
 ;; automagically tail log files
 (add-to-list 'auto-mode-alist '("\\`/log/" . auto-revert-tail-mode))

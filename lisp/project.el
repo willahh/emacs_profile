@@ -17,18 +17,16 @@
 
 
 ;; ---- Projectile
-; (projectile-global-mode)
+(require 'projectile)
+;; (projectile-global-mode)
 
-; (setq projectile-mode-line nil)
-; (setq projectile-enable-caching t)
-; (setq projectile-require-project-root nil); Using Projectile everywhere
-; (add-to-list 'projectile-globally-ignored-directories "node_modules") ; Some ignore rules
-
-
+(setq projectile-mode-line nil)
+(setq projectile-enable-caching t)
+(setq projectile-require-project-root nil); Using Projectile everywhere
+(add-to-list 'projectile-globally-ignored-directories "node_modules") ; Some ignore rules
 
 (add-hook 'prog-mode-hook (lambda ()
-  (projectile-mode)
-  ))
+                            (projectile-mode)))
 
 
 

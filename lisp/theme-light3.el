@@ -26,18 +26,45 @@
 
 (set-face-attribute 'scroll-bar nil :background "#fff")
 (set-face-attribute 'show-paren-match-face nil :foreground "#000000" :weight 'ultra-bold)
+(setq show-paren-priority -50)
 (set-face-attribute 'fringe nil :background "#fafafa" :slant 'normal)
 (set-face-attribute 'window-divider nil :foreground "#7b7b7b")
 (set-face-attribute 'window-divider-first-pixel nil :foreground "#7b7b7b")
 (set-face-attribute 'window-divider-last-pixel nil :foreground "#7b7b7b")
 (set-face-attribute 'web-mode-current-element-highlight-face nil :background nil :foreground "#7b7b7b")
-;; (set-face-attribute 'web-mode-current-element-highlight-face nil :background nil :foreground "#7b7b7b" :underline (:color "#ffffff" :style wave))
+(set-face-attribute 'region nil :background "#fce94f")
+(set-face-attribute 'region nil :background "#fce94f")
 
 (defun wlh/theme-linum-mode-hook ()
   (set-face-attribute 'linum nil :foreground "#4a4a4a" :background"#fafafa" :height 80))
 (add-hook 'linum-mode-hook 'wlh/theme-linum-mode-hook)
 
+;; -------
+(set-face-attribute 'font-lock-keyword-face nil :foreground "#9d288b")
+(set-face-attribute 'font-lock-variable-name-face nil :foreground "#1e27a3")
+(set-face-attribute 'font-lock-function-name-face nil :foreground "#1e27a3")
+(set-face-attribute 'font-lock-string-face nil :foreground "#b62e24")
+(set-face-attribute 'font-lock-comment-face nil :foreground "#008000")
+
 ;; ------- diff-hl
 (set-face-attribute 'diff-hl-delete nil :foreground "#fc1a9f")
 (set-face-attribute 'diff-hl-change nil :foreground "#5fbfec")
 (set-face-attribute 'diff-hl-insert nil :foreground "#55e97b")
+
+;; ------- css
+(set-face-attribute 'css-property nil :foreground "#ff0101")
+(set-face-attribute 'css-property nil :foreground "#0451a5")
+
+;; ------- comment
+
+;; ------- web-mode
+(set-face-attribute 'web-mode-function-call-face nil :foreground "#000000")
+(set-face-attribute 'web-mode-keyword-face nil :foreground "#0000ff")
+(set-face-attribute 'web-mode-block-delimiter-face nil :foreground "#800000")
+(set-face-attribute 'web-mode-variable-name-face nil :foreground "#2055a4")
+(set-face-attribute 'web-mode-block-string-face nil :foreground "#9c251e")
+(set-face-attribute 'web-mode-constant-face nil :foreground "#2e12a3")
+(set-face-attribute 'web-mode-type-face nil :foreground "#6c1883")
+
+;; ------- js2-mode
+(set-face-attribute 'web-mode-type-face nil :foreground "#6c1883")
