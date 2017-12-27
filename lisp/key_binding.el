@@ -221,10 +221,14 @@
 (global-set-key (kbd "M-L") 'mc/mark-all-words-like-this) ; Like in VS Code
 
 ;; Next
-(global-set-key (kbd "°") 'mc/mark-next-like-this-word) ; ALT+d
-(global-set-key (kbd "∂") 'mc/mark-next-like-this-word) ; ALT+d
-;; (define-key paredit-mode-map (kbd "°") 'mc/mark-next-like-this-word) ; ALT+d
-(define-key paredit-mode-map (kbd "∂") 'mc/mark-next-like-this-word) ; ALT+d
+(global-set-key (kbd "M-g") 'mc/mark-next-like-this-word) ; Was go to line
+(define-key paredit-mode-map (kbd "M-g") 'mc/mark-next-like-this-word) ; Was go to line
+
+;; ;; Next
+;; (global-set-key (kbd "°") 'mc/mark-next-like-this-word) ; ALT+d
+;; (global-set-key (kbd "∂") 'mc/mark-next-like-this-word) ; ALT+d
+;; ;; (define-key paredit-mode-map (kbd "°") 'mc/mark-next-like-this-word) ; ALT+d
+;; (define-key paredit-mode-map (kbd "∂") 'mc/mark-next-like-this-word) ; ALT+d
 
 ;; Previous
 (global-set-key (kbd "Δ") 'mc/mark-previous-like-this-word) ; ALT+SHIFT+q

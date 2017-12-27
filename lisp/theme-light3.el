@@ -26,12 +26,14 @@
 
 (set-face-attribute 'scroll-bar nil :background "#fff")
 (set-face-attribute 'show-paren-match-face nil :foreground "#000000" :weight 'ultra-bold)
+(setq show-paren-priority -50)
 (set-face-attribute 'fringe nil :background "#fafafa" :slant 'normal)
 (set-face-attribute 'window-divider nil :foreground "#7b7b7b")
 (set-face-attribute 'window-divider-first-pixel nil :foreground "#7b7b7b")
 (set-face-attribute 'window-divider-last-pixel nil :foreground "#7b7b7b")
 (set-face-attribute 'web-mode-current-element-highlight-face nil :background nil :foreground "#7b7b7b")
-;; (set-face-attribute 'web-mode-current-element-highlight-face nil :background nil :foreground "#7b7b7b" :underline (:color "#ffffff" :style wave))
+(set-face-attribute 'region nil :background "#fce94f")
+(set-face-attribute 'region nil :background "#fce94f")
 
 (defun wlh/theme-linum-mode-hook ()
   (set-face-attribute 'linum nil :foreground "#4a4a4a" :background"#fafafa" :height 80))

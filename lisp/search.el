@@ -61,3 +61,6 @@
 ;; to use visual-regexp-steroids's isearch instead of the built-in regexp isearch, also include the following lines:
 (global-set-key (kbd "C-M-r") 'vr/isearch-backward) ;; C-M-r
 (global-set-key (kbd "C-M-s") 'vr/isearch-forward) ;; C-M-s
+
+(add-hook 'compilation-mode-hook (lambda ()
+                                   (hl-line-mode)))

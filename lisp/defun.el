@@ -1465,14 +1465,14 @@ the checking happens for all pairs in auto-minor-mode-alist"
 ;;   ;; (setq *wlh/dbleclick-enablep* t)
 ;;   )
 
-(defun wlh/dbleclick-mouse1 ()
-  (interactive)
-  ;; (when *wlh/dbleclick-enablep* (unhighlight-regexp t))
-  (unhighlight-regexp t)
-  (highlight-symbol-mode t) ; Enable highlight-symbol-mode
-  )
+;; (defun wlh/dbleclick-mouse1 ()
+;;   (interactive)
+;;   ;; (when *wlh/dbleclick-enablep* (unhighlight-regexp t))
+;;   (unhighlight-regexp t)
+;;   (highlight-symbol-mode t) ; Enable highlight-symbol-mode
+;;   )
 
-(global-set-key [mouse-1] 'wlh/dbleclick-mouse1)
+;; (global-set-key [mouse-1] 'wlh/dbleclick-mouse1)
 ;; (global-set-key [double-mouse-1] 'wlh/dbleclick-select-word)
 
 (defun swiper--from-isearch ()

@@ -86,7 +86,9 @@
 ;; tout de suite ou se situe le caret, juste le caret ne suffit pas.
 ;;
 ;; Probleme de superposition de couleur avec highlight symbol, update pour
-;; desactivation 
+;; desactivation
+;;
+;; Defilement vertical plus lent avec
 ;; (global-hl-line-mode 1)
 
 ;;
@@ -135,7 +137,8 @@
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil)))
 (setq mouse--progressive-speed 10)
 
-(setq mouse-wheel-scroll-amount '(0.038))
+;; (setq mouse-wheel-scroll-amount '(0.038))
+(setq mouse-wheel-scroll-amount '(0.05))
 (setq mouse-wheel-progressive-speed 10)
 
 ;; "Modern" copy / paste (dont put the selection on the markring)
@@ -323,19 +326,19 @@
 
 
 ;; https://www.emacswiki.org/emacs/IncrementalSearch#toc4
-(add-hook 'isearch-mode-end-hook 'my-goto-match-beginning)
-(defun my-goto-match-beginning ()
-  (when (and isearch-forward isearch-other-end)
-    (goto-char isearch-other-end)))
+;; (add-hook 'isearch-mode-end-hook 'my-goto-match-beginning)
+;; (defun my-goto-match-beginning ()
+;;   (when (and isearch-forward isearch-other-end)
+;;     (goto-char isearch-other-end)))
 
-(defadvice isearch-exit (after my-goto-match-beginning activate)
-      "Go to beginning of match."
-      (when (and isearch-forward isearch-other-end)
-        (goto-char isearch-other-end)))
+;; (defadvice isearch-exit (after my-goto-match-beginning activate)
+;;       "Go to beginning of match."
+;;       (when (and isearch-forward isearch-other-end)
+;;         (goto-char isearch-other-end)))
 
-(defun my-goto-match-beginning ()
-  (when (and isearch-forward isearch-other-end (not isearch-mode-end-hook-quit))
-    (goto-char isearch-other-end)))
+;; (defun my-goto-match-beginning ()
+;;   (when (and isearch-forward isearch-other-end (not isearch-mode-end-hook-quit))
+;;     (goto-char isearch-other-end)))
 
 
 
