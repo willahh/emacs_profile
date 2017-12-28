@@ -182,6 +182,7 @@
 (define-key dired-mode-map (kbd "<tab>") 'dired-subtree-toggle)
 (define-key dired-mode-map (kbd "C-c C-p") 'dired-subtree-up)
 (define-key dired-mode-map (kbd "C-c C-n") 'dired-subtree-down)
+(define-key dired-mode-map (kbd "C-x n") 'dired-narrow)
 
 ;; Multi cursor stuf
 (global-set-key (kbd "ı") 'mc/mark-next-lines) ; ALT+SHIFT+p
