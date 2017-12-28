@@ -95,6 +95,10 @@
 (global-set-key (kbd "M-S-w") 'delete-frame)
 (global-set-key (kbd "M-W") 'delete-frame)
 
+;; Eshell
+(global-set-key (kbd "C-t") 'shell-pop)
+(define-key dired-mode-map (kbd "C-t") 'shell-pop)
+
 ;; ---
 (define-key ivy-minibuffer-map (kbd "<escape>") 'minibuffer-keyboard-quit)
 (define-key ivy-minibuffer-map (kbd "C-h") 'delete-backward-char)
