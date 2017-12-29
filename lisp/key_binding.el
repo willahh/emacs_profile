@@ -11,8 +11,6 @@
 (require 'magit)
 (require 'term)
 (require 'web-mode)
-;; (require 'syslog-mode)
-
 
 (global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
@@ -34,9 +32,8 @@
 
 ;; Scroll
 (add-hook 'syslog-mode-hook (lambda ()
-    (define-key syslog-mode-map (kbd "s-v") 'scroll-down)
-    (define-key syslog-mode-map (kbd "C-v") 'scroll-up)
-    ))
+                              (define-key syslog-mode-map (kbd "s-v") 'scroll-down)
+                              (define-key syslog-mode-map (kbd "C-v") 'scroll-up)))
 
 (global-set-key (kbd "M-z") 'undo-tree-undo)
 (global-set-key [(meta shift z)] 'undo-tree-redo)
@@ -47,41 +44,7 @@
 (define-key paredit-mode-map (kbd "M-s") 'save-buffer)
 
 (global-set-key (kbd "M-w") 'delete-window)
-(global-set-key (kbd "M-X") 'other-frame) ; Same keybinding from osx habits
-
-(global-set-key (kbd "C-c j f s a") 'hs-show-all) ; (user key binding (C-c j) + [f]olding [s]how [a]ll)
-(global-set-key (kbd "C-c j f h a") 'hs-hide-all) ; (user key binding (C-c j) + [f]olding [h]ide [a]ll)
-(global-set-key (kbd "C-c j f s b") 'hs-show-block) ; (user key binding (C-c j) + [f]olding [s]how [b]lock)
-(global-set-key (kbd "C-c j f h b") 'hs-hide-block) ; (user key binding (C-c j) + [f]olding [h]ide [b]lock)
-(global-set-key (kbd "C-c j f n d") 'find-name-dired)
-
-(global-set-key (kbd "C-c j f f") 'toggle-frame-fullscreen)
-(global-set-key (kbd "C-c j f m") 'toggle-frame-maximized)
-(global-set-key (kbd "C-c j f l") 'wil-frame-large)
-(global-set-key (kbd "C-c j f c") 'wil-frame-center)
-
-;; -- Text operations
-;; Copy operations
-(global-set-key (kbd "C-c j c w") '(copy-word))
-(global-set-key (kbd "C-c j c l") '(copy-line))
-(global-set-key (kbd "C-c j c p") '(copy-paragraph))
-(global-set-key (kbd "C-c j c s") '(thing-copy-string-to-mark))
-(global-set-key (kbd "C-c j c a") '(thing-copy-parenthesis-to-mark))
-(global-set-key (kbd "C-c j p b") 'wlh/project-browser-open)
-(global-set-key (kbd "C-c j p p") 'wlh/workspace-search)
-
-;;
-(global-set-key (kbd "C-c j d y") 'wil-window-divider-on) ;; (Translate : C-c (user main prefix) + ; (my prefix) + [d]ivider + [y]es)
-(global-set-key (kbd "C-c j d n") 'wil-window-divider-off) ;; (Translate : C-c (user main prefix) + ; (my prefix) + [d]ivider + [n]o)
-
-
-;; -- Text operations
-;; Copy operations
-(global-set-key (kbd "C-c j c w") (quote copy-word))
-(global-set-key (kbd "C-c j c l") (quote copy-line))
-(global-set-key (kbd "C-c j c p") (quote copy-paragraph))
-(global-set-key (kbd "C-c j c s") (quote thing-copy-string-to-mark))
-(global-set-key (kbd "C-c j c a") (quote thing-copy-parenthesis-to-mark))
+(global-set-key (kbd "M-X") 'other-frame) ; Same keybinding from osx switch window habits
 
 ;; Search
 (global-set-key (kbd "C-c j s") 'projectile-ag)
@@ -89,6 +52,9 @@
 ;; Google
 (global-set-key (kbd "C-c j g s") 'helm-google-suggest)
 (global-set-key (kbd "C-c j g t") 'google-translate-at-point)
+
+;; User keybinding - Line
+(global-set-key (kbd "C-c j t") 'toggle-truncate-lines)
 
 ;; New frame
 (global-set-key [meta shift w] 'delete-frame)
@@ -103,23 +69,8 @@
 (define-key ivy-minibuffer-map (kbd "<escape>") 'minibuffer-keyboard-quit)
 (define-key ivy-minibuffer-map (kbd "C-h") 'delete-backward-char)
 
-;; Custom abor-recursive-edit
-;; Utilise comme substitut a C-g (keyboard-quit)
-;; Interet :
-;;  - C-S-q est plus accessible que C-g (proche des C-x C-c C-v)
-;;  - my-abort-recursive-edit permet entre autre de sortir en un fois
-;;    d une edition avec cursor-multiple (Il faut faire 2 fois c-g autrement)
-;;    et d'annuler la selection active
-;;
-;; Update : Changement de control shift q vers control q tout court
-;; Le raccourcis control q natif est place en control shift q
-(defun my-abort-recursive-edit()
-  (interactive)
-  (deactivate-mark)
-  (abort-recursive-edit))
-
-(global-set-key [(control shift q)] 'quoted-insert)
-(global-set-key [(control shift w)] 'whole-line-or-region-kill-region)
+;; (global-set-key [(control shift q)] 'quoted-insert)
+;; (global-set-key [(control shift w)] 'whole-line-or-region-kill-region)
 
 ;; Backward kill sexp
 (global-set-key [(control meta h)] 'backward-kill-sexp)
@@ -134,12 +85,7 @@
 
 ;; ---------------- key binding leader
 
-;; ---------------- key-hord Note : Ralentis beaucoup la saisie Ne pas
-;; (key-chord-define-global "xc" 'er/expand-region) ; Update to <w because wx can be triggered too often (when leaving emacs C-x C-c)
-;; (key-chord-define-global "<w" 'er/expand-region)
-;; (key-chord-define-global "wx" 'er/expand-region)
-;; (key-chord-define-global "wx" 'er/contract-region)
-;; (key-chord-define-global "\"\'" 'er/expand-region) ; 3 + 4 on azerty keyboard
+;; ---------------- key-hord Note
 (key-chord-define-global "xc" 'er/expand-region)
 
 ;; ---------------- Key binding
@@ -147,8 +93,6 @@
 
 ;; ---------------- key binding
 ;; Main binds
-
-
 
 ;; Mouse key binding
 (global-set-key (kbd "<S-wheel-left>") '(lambda ()
@@ -177,7 +121,6 @@
 (define-key php-mode-map [(control x) (control j)] 'dired-jump)
 (define-key web-mode-map [(control x) (control j)] 'dired-jump)
 (define-key dired-mode-map (kbd "C-x w") 'wdired-change-to-wdired-mode)
-;; (define-key dired-mode-map (kbd "M-n") 'wil-dired-new-dir) ; Use the default "+"
 (define-key dired-mode-map (kbd "C-i") 'dired-subtree-toggle)
 (define-key dired-mode-map (kbd "<tab>") 'dired-subtree-toggle)
 (define-key dired-mode-map (kbd "C-c C-p") 'dired-subtree-up)
@@ -188,20 +131,12 @@
 ;; Multi cursor stuf
 (global-set-key (kbd "ı") 'mc/mark-next-lines) ; ALT+SHIFT+p
 (global-set-key (kbd "∏") 'mc/mark-previous-lines) ; ALT+SHIFT+n
-;; (global-set-key (kbd "C-∑") 'projectile-ag) ; CONTROL+ALT+SHIFT+s
 
-;;
+;; Misc
 (global-set-key (kbd "Ò") 'paredit-splice-sexp)
-;; (global-set-key (kbd "M-a") 'mark-whole-buffer) ; ALT+a
 (global-set-key (kbd "æ") 'mark-whole-buffer) ; ALT+a
-;; (global-set-key (kbd "æ") 'backward-sentence) ; ALT+a
 (global-set-key (kbd "Â") 'toggle-php-flavor-mode) ; ALT+z
 (define-key php-mode-map (kbd "Â") 'toggle-php-flavor-mode) ; ALT+z
-
-;; wgrep
-(define-key compilation-mode-map (kbd "C-x w") 'wgrep-change-to-wgrep-mode)
-(define-key compilation-mode-map (kbd "C-x s") 'wgrep-save-all-buffers)
-(define-key compilation-mode-map (kbd "C-c C-c") 'wgrep-finish-edit)
 
 ;; Drag line
 ;; top
@@ -230,12 +165,6 @@
 (global-set-key (kbd "M-g") 'mc/mark-next-like-this-word) ; Was go to line
 (define-key paredit-mode-map (kbd "M-g") 'mc/mark-next-like-this-word) ; Was go to line
 
-;; ;; Next
-;; (global-set-key (kbd "°") 'mc/mark-next-like-this-word) ; ALT+d
-;; (global-set-key (kbd "∂") 'mc/mark-next-like-this-word) ; ALT+d
-;; ;; (define-key paredit-mode-map (kbd "°") 'mc/mark-next-like-this-word) ; ALT+d
-;; (define-key paredit-mode-map (kbd "∂") 'mc/mark-next-like-this-word) ; ALT+d
-
 ;; Previous
 (global-set-key (kbd "Δ") 'mc/mark-previous-like-this-word) ; ALT+SHIFT+q
 (define-key paredit-mode-map (kbd "Δ") 'mc/mark-previous-like-this-word) ; ALT+SHIFT+q
@@ -247,21 +176,20 @@
 (define-key global-map (kbd "<S-down-mouse-1>") 'mouse-save-then-kill)
 
 ;; Line operations
-(global-set-key (kbd "C-é") 'drag-stuff-down) ;; control+alt+
 (global-set-key (kbd "C-h") 'backward-delete-char)
 (define-key lisp-mode-map (kbd "C-h") 'paredit-backward-delete)
 (define-key emacs-lisp-mode-map (kbd "C-h") 'paredit-backward-delete)
 (define-key clojure-mode-map (kbd "C-h") 'paredit-backward-delete)
 (define-key helm-map (kbd "C-h") 'paredit-backward-delete)
+(define-key iedit-mode-keymap (kbd "C-h") 'paredit-backward-delete)
 
-(define-key company-active-map (kbd "C-h") 'paredit-backward-delete)
+(define-key company-active-map (kbd "C-h") 'backward-delete-char)
 (define-key company-active-map (kbd "<tab>") 'company-complete-selection)
 (define-key company-active-map (kbd "C-m") 'new-line-dwim)
 (define-key company-active-map (kbd "C-j") 'company-complete)
 (define-key company-active-map (kbd "C-i") 'company-complete-selection)
 (define-key company-active-map (kbd "C-j") 'emmet-expand-line)
 (define-key company-active-map (kbd "C-w") 'backward-kill-word)
-
 
 ;; kill backward
 (global-set-key (kbd "C-w") 'backward-kill-word-or-region)
@@ -271,14 +199,7 @@
 (define-key company-active-map (kbd "C-z") 'whole-line-or-region-kill-region)
 (define-key org-mode-map (kbd "C-z") 'whole-line-or-region-kill-region)
 
-
-
 ;; yas-expand
-;; (global-set-key (kbd "C-,") 'yas-expand)
-;; (define-key iedit-mode-keymap (kbd "C-,") 'yas-expand)
-(define-key iedit-mode-keymap (kbd "C-h") 'paredit-backward-delete)
-
-(global-set-key (kbd "C-c j t") 'toggle-truncate-lines)
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 (global-set-key (kbd "C-c C-n") 'diff-hl-next-hunk)
 (define-key web-mode-map (kbd "C-c C-n") 'diff-hl-next-hunk)
@@ -288,11 +209,6 @@
 (define-key web-mode-map (kbd "C-c C-p") 'diff-hl-previous-hunk)
 (define-key php-mode-map (kbd "C-c C-p") 'diff-hl-previous-hunk)
 
-;; (global-set-key (kbd "M-r") 'counsel-imenu)
-;; (global-set-key (kbd "M-r") 'helm-imenu)
-;; (define-key paredit-mode-map (kbd "M-r") 'counsel-imenu)
-
-;; (global-set-key (kbd "M-r") 'counsel-imenu)
 (global-set-key (kbd "M-r") 'helm-imenu)
 (define-key paredit-mode-map (kbd "M-r") 'helm-imenu)
 
@@ -300,13 +216,10 @@
 (define-key paredit-mode-map (kbd "C-c i") 'counsel-imenu)
 
 ;; mark
-;; (global-set-key ("C-c C-SPC") 'helm-all-mark-rings)
 (global-set-key (kbd "C-c C-x C-d") 'crux-duplicate-and-comment-current-line-or-region)
 
 ;; org
 (define-key org-mode-map (kbd "C-x <C-i>") 'helm-org-in-buffer-headings)
-
-
 
 (global-set-key (kbd "C-M-s") 'isearch-forward-regexp)
 (global-set-key (kbd "C-c C-M-s") 'vr/replace)
@@ -314,44 +227,15 @@
 (global-set-key (kbd "s-=") 'delete-horizontal-space) ; Azerty equivalent of M-\
 
 ;; Search
-;; ripgrep-regexp ne fonctionne que par regexp, du coup impossible de rechercher
-;; des retours à la ligne ainsi que certains caractères spéciaux.
-;; Search
-;; (global-set-key (kbd "C-M-s") 'ag)
-;; (global-set-key (kbd "C-M-s") 'ag)
-;; (global-set-key (kbd "C-M-s") 'ripgrep-regexp) ; Ripgrep ne supporte pas les retours a la ligne dans une recherche
-;; (global-set-key (kbd "C-M-s") 'ag)
-;; (global-set-key (kbd "C-M-s") 'projectile-ag)
-;; (global-set-key (kbd "C-M-s") 'ag)
-;; (global-set-key (kbd "C-M-s") 'projectile-ag)
-;; (global-set-key (kbd "C-M-s") 'ag)
-;; (global-set-key (kbd "C-F") 'ag)
-;; (global-set-key (kbd "M-F") 'ag)
-;; (global-set-key (kbd "M-F") 'ripgrep-regexp)
-;; (global-set-key [control meta s] 'ag-project-at-point)
-;; (global-set-key [control meta shift s] 'ag-project)
-;; (global-set-key (kbd "C-s-s") 'counsel-ag) ; Super+Contral+s
-;; (global-set-key (kbd "C-M-s-s") 'projectile-ag) ; Control+Meta+Super+s
-;; (global-set-key (kbd "M-F") 'ag)
-;; (global-set-key (kbd "M-F") 'rzgrep)
 (global-set-key (kbd "M-F") 'ag)
 (global-set-key (kbd "C-s-s") 'helm-ag) ; Super+Contral+s
 
-;; (global-set-key (kbd "C-c j s") 'projectile-ag)
+;; wgrep
+(define-key compilation-mode-map (kbd "C-x w") 'wgrep-change-to-wgrep-mode)
+(define-key compilation-mode-map (kbd "C-x s") 'wgrep-save-all-buffers)
+(define-key compilation-mode-map (kbd "C-c C-c") 'wgrep-finish-edit)
 
 ;; ---------------- new line
-;; http://emacsredux.com/blog/2013/03/29/automatic-electric-indentation/
-;; Update : Utilisation de la fonction new-line-dwin pour avoir une
-;; ouverture de ligne intelligente si le caret est entre des {} () []
-
-;; (global-set-key (kbd "RET") 'reindent-then-newline-and-indent)
-;; (global-set-key (kbd "C-j") 'reindent-then-newline-and-indent)
-;; (global-set-key (kbd "RET") 'newline)
-;; (global-set-key (kbd "<RET>") 'newline)
-;; (global-set-key (kbd "C-j") 'newline)
-;; (define-key typescript-mode-map (kbd "M-j") 'c-indent-new-comment-line)
-;; (global-set-key (kbd "C-s-i") 'company-complete)
-
 (define-key prog-mode-map (kbd "RET") 'new-line-dwim)
 
 ;;
@@ -359,10 +243,8 @@
 (global-set-key (kbd "C-x C-d") 'wil-duplicate)
 
 
-
 ;; scroll
 (global-set-key (kbd "C-v") 'scroll-up)
-
 
 (define-key indent-rigidly-map [(shift tab)] 'indent-rigidly-left-to-tab-stop)
 (define-key indent-rigidly-map [(tab)] 'indent-rigidly-right-to-tab-stop)
@@ -409,13 +291,8 @@
 (global-set-key (kbd "C-x v f") 'vc-diff)
 
 ;; ---------------- Shell
-;; Start eshell or switch to it if it's active.
-;; (global-set-key (kbd "C-x m") 'eshell)
-;; (global-set-key (kbd "C-c j e") 'eshell)
-;; (global-set-key (kbd "C-c j e") 'ansi-term)
 (global-set-key (kbd "C-c j e") 'eshell)
 (global-set-key (kbd "C-c j a") 'ansi-term)
-
 
 ;; Start a new eshell even if one is active.
 (global-set-key (kbd "C-x M") (lambda () (interactive) (eshell t)))
@@ -424,11 +301,6 @@
 (global-set-key (kbd "C-x M-m") 'shell)
 
 ;; expand-region
-;; (global-set-key (kbd "<C-m>") 'er/expand-region)
-;; (global-set-key (kbd "C-j") 'er/expand-region)
-;; (define-key paredit-mode-map (kbd "C-j") 'er/expand-region)
-;; (define-key isearch-mode-map (kbd "C-j") 'er/expand-region)
-;; (define-key emmet-mode-keymap (kbd "C-j") 'er/expand-region)
 (global-set-key (kbd "C-,") 'er/expand-region)
 (define-key org-mode-map (kbd "C-,") 'er/expand-region)
 (global-set-key (kbd "M-L") 'er/contract-region)
@@ -436,6 +308,7 @@
 (global-set-key (kbd "C-M-l") 'mark-sexp)
 
 (add-hook 'eshell-mode-hook 'm-eshell-hook)
+
 
 ;; ---------------- Magit
 ;; Magit
@@ -447,33 +320,17 @@
 (define-key magit-status-mode-map (kbd "M-w") 'kill-ring-save)
 (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
 
-
 ;; open line above / below
 (global-set-key (kbd "C-o") 'crux-smart-open-line)
 (global-set-key (kbd "C-M-o") 'crux-smart-open-line-above)
-;; (global-set-key (kbd "C-M-o") 'smart-open-line-above)
-;; (global-set-key (kbd "C-o") 'open-line-below)
-;; (define-key php-mode-map (kbd "C-M-o") 'open-line-below)
-;; (define-key org-mode-map (kbd "C-M-o") 'wil-org-open-line-below)
-
-;; (define-key org-mode-map [(control shift j)] 'wil-org-open-line-above)
-;; (global-set-key (kbd "<C-S-return>") 'open-line-above)
-;; (define-key company-active-map (kbd "C-j") 'newline) ;; Disable with reaffectation of new line function
-;; (define-key company-active-map (kbd "RET") 'newline) ;; Disable with reaffectation of new line function
-;; (global-set-key (kbd "<C-S-return>") 'open-line-above)
-;; (define-key org-mode-map (kbd "M-j") 'org-meta-return)
-;; (define-key org-mode-map (kbd "M-j") 'org-meta-return)
 
 ;; Emmet
 (global-set-key [control command shift j] 'emmet-expand-line)
 (define-key web-mode-map [control command shift j] 'emmet-expand-line)
 (define-key web-mode-map (kbd "C-M-S-j") 'emmet-expand-line)
 
-;; (define-key global-map (kbd "C-x RET") 'dired-jump)
-;; (define-key php-mode-map (kbd "C-x C-j") 'dired-jump)
-;; (define-key web-mode-map (kbd "C-x C-j") 'dired-jump)
-;; (define-key nxml-mode-map "\C-x\C-j" 'dired-jump)
 
+;; ---------------- Window
 ;; Azerty binding equivalent chars to 0-9 on the upper row keyboard
 (global-set-key (kbd "M-à") 'delete-window) ;; M-0
 (define-key diff-mode-map (kbd "M-à") 'delete-window)
@@ -675,9 +532,7 @@
 (global-set-key (kbd "s-q") 'my-abort-recursive-edit)
 
 ;; Recentf
-;; (global-set-key (kbd "s-r") 'projectile-recentf)
 (global-set-key (kbd "C-c f") 'counsel-recentf) 
-;; (global-set-key (kbd "C-s-r") 'counsel-recentf)
 (global-set-key (kbd "C-c j r") 'counsel-recentf)
 (global-set-key (kbd "C-c j R") 'projectile-recentf)
 

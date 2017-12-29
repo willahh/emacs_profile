@@ -240,12 +240,6 @@
 (setq save-interprogram-paste-before-kill t)
 ;; (setq x-select-enable-clipboard 1)
 
-
-;; Launch in fullscreen
-;; Source: http://emacs.stackexchange.com/a/3008
-;; (add-to-list 'default-frame-alist '(fullscreen . maximized)
-;; (add-to-list 'default-frame-alist '(fullscreen . fullheight))
-
 ;; Enable gtags
 (setq load-path (cons "/usr/local/share/gtags" load-path))
 (autoload 'gtags-mode "gtags" "" t)
@@ -367,9 +361,6 @@
 
 ;; Set the default comment column to 80
 (setq-default comment-column 80)
-
-;; Every time a window is started, make sure it get maximized
-;; (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 ;; Avoid hiding with M-h
 (setq mac-pass-command-to-system nil)
