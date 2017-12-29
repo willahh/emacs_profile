@@ -240,10 +240,6 @@
 (setq save-interprogram-paste-before-kill t)
 ;; (setq x-select-enable-clipboard 1)
 
-;; Enable gtags
-(setq load-path (cons "/usr/local/share/gtags" load-path))
-(autoload 'gtags-mode "gtags" "" t)
-
 ;; Remember the cursor position of files when reopening them
 ;; Save point position between sessions
 (require 'saveplace)
