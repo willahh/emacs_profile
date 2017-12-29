@@ -846,5 +846,8 @@
 (global-set-key (kbd "<C-S-tab>") 'previous-buffer)
 (global-set-key (kbd "C-c TAB") 'crux-indent-rigidly-and-copy-to-clipboard)
 
-;; (global-set-key (kbd "TAB") 'tab-indent-or-complete)
-;; (define-key yas-minor-mode-map (kbd "TAB") 'tab-indent-or-complete)
+
+;; Bm
+(global-set-key (kbd "C-&") 'bm-toggle) ; C-1 on qwerty
+(global-set-key (kbd "C-é") 'bm-previous) ; C-2 on qwerty
+(global-set-key (kbd "C-\"") 'bm-next) ; C-3 on qwerty

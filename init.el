@@ -68,6 +68,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((((class color) (min-colors 89)) (:foreground "#000000" :background "#ffffff"))))
+ '(bm-face ((t (:background "#f2f2f2" :foreground "black"))))
  '(rainbow-delimiters-depth-1-face ((t (:foreground "#5abeee" :weight bold))))
  '(rainbow-delimiters-depth-2-face ((t (:foreground "#ff00a0" :weight bold))))
  '(rainbow-delimiters-depth-3-face ((t (:foreground "#ff953f" :weight bold))))
