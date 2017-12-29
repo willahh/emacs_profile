@@ -498,12 +498,15 @@
 ;; (global-set-key (kbd "M-p") 'projectile-find-file)
 ;; (define-key highlight-symbol-nav-mode-map (kbd "M-p") 'projectile-find-file)
 (global-set-key (kbd "M-n") 'evil-scroll-line-down)
+
 (define-key slime-mode-map (kbd "M-n") 'evil-scroll-line-down)
 (define-key highlight-symbol-nav-mode-map (kbd "M-n") 'evil-scroll-line-down)
+(define-key ggtags-navigation-map (kbd "M-n") 'evil-scroll-line-down)
 
 (global-set-key (kbd "M-p") 'evil-scroll-line-up)
 (define-key slime-mode-map (kbd "M-p") 'evil-scroll-line-up)
 (define-key highlight-symbol-nav-mode-map (kbd "M-p") 'evil-scroll-line-up)
+(define-key ggtags-navigation-map (kbd "M-p") 'evil-scroll-line-up)
 
 (global-set-key (kbd "s-q") 'my-abort-recursive-edit)
 

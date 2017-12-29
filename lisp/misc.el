@@ -771,27 +771,27 @@ Version 2016-10-24"
 
 
 ;; http://pragmaticemacs.com/
-(use-package pdf-tools
- :pin manual ;; manually update
- :config
- ;; initialise
- (pdf-tools-install)
- ;; open pdfs scaled to fit page
- (setq-default pdf-view-display-size 'fit-page)
- ;; automatically annotate highlights
- (setq pdf-annot-activate-created-annotations t)
- ;; use normal isearch
- (define-key pdf-view-mode-map (kbd "C-s") 'isearch-forward))
+;; (use-package pdf-tools
+;;  :pin manual ;; manually update
+;;  :config
+;;  ;; initialise
+;;  (pdf-tools-install)
+;;  ;; open pdfs scaled to fit page
+;;  (setq-default pdf-view-display-size 'fit-page)
+;;  ;; automatically annotate highlights
+;;  (setq pdf-annot-activate-created-annotations t)
+;;  ;; use normal isearch
+;;  (define-key pdf-view-mode-map (kbd "C-s") 'isearch-forward))
 
 
 
 ;; Enable anzu
 ;; https://github.com/syohex/emacs-anzu
 
-; (global-anzu-mode +1)
+;; (global-anzu-mode +1)
 
 ;; ace-popup-menu-mode
-; (ace-popup-menu-mode 1)
+;; (ace-popup-menu-mode 1)
 
 
 
