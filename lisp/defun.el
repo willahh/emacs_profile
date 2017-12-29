@@ -454,35 +454,6 @@ That is, a string used to represent it on the tab bar."
   "Sort dired listings with directories first before adding marks."
   (mydired-sort))
 
-
-
-;; https://oremacs.com/2017/03/18/dired-ediff/
-;; -*- lexical-binding: t -*-
-(defun ora-ediff-files ()
-  (interactive)
-  (let ((files (dired-get-marked-files))
-        (wnd (current-window-configuration)))
-    (if (<= (length files) 2)
-        (let ((file1 (car files))
-              (file2 (if (cdr files)
-                         (cadr files)
-                       (read-file-name
-                        "file: "
-                        (dired-dwim-target-directory)))))
-          (if (file-newer-than-file-p file1 file2)
-              (ediff-files file2 file1)
-            (ediff-files file1 file2))
-          (add-hook 'ediff-after-quit-hook-internal
-                    (lambda ()
-                      (setq ediff-after-quit-hook-internal nil)
-                      (set-window-configuration wnd))))
-      (error "no more than 2 files should be marked"))))
-(define-key dired-mode-map "e" 'ora-ediff-files)
-
-
-
-
-
 ;; Get the current file name from bufer file path
 (defun get-curent-file-name ()
   (interactive)
@@ -980,17 +951,6 @@ the visible part of the current buffer following point. "
   (kill-buffer)
   (jump-to-register :magit-fullscreen))
 
-(defun wil-vc-ediff ()
-  (interactive)
-  (window-configuration-to-register :wil2)
-  (vc-ediff nil)
-  )
-
-(defun wil-vc-ediff-quit ()
-  (interactive)
-  (ediff-quit t)
-  (jump-to-register :wil2))
-
 ;; Switch and rebalance windows when splitting
 ;; https://github.com/hrs/dotfiles/blob/master/emacs.d/configuration.org
 (defun hrs/split-window-below-and-switch ()
@@ -1235,9 +1195,6 @@ Version 2016-12-27"
 (defun wlh-pdf-view-mode-hook ()
   (define-key pdf-view-mode-map (kbd ".") 'hydra-pdftools/body))
 
-(defun wil-ediff-hook ()
-  (ediff-setup-keymap)
-  (define-key ediff-mode-map (kbd "q") 'wil-vc-ediff-quit))
 
 ;; From : http://www.blogbyben.com/2016/08/emacs-php-modern-and-far-more-complete.html
 (defun toggle-php-flavor-mode ()

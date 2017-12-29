@@ -180,3 +180,57 @@ then `diff-jump-to-old-file' is also set, for the next invocations."
 
 ;; Show refined hunks
 (set-default 'magit-diff-refine-hunk t)
+
+
+
+
+
+
+;; ediff
+(add-hook 'ediff-mode-hook 'wil-ediff-hook)
+(global-set-key (kbd "C-ç") 'xah-toggle-letter-case) ; (C-9 on azerty keyboard)
+(global-set-key (kbd "C-!") 'string-inflection-all-cycle) ; (C-8 on azerty keyboard)
+
+
+(defun wil-ediff-hook ()
+  (ediff-setup-keymap)
+  (define-key ediff-mode-map (kbd "q") 'wil-vc-ediff-quit))
+
+(defun wil-vc-ediff-quit ()
+  (interactive)
+  (winner-undo)
+
+  )
+
+(defun wil-vc-ediff ()
+  (interactive)
+  (window-configuration-to-register :wil2)
+  (vc-ediff nil)
+  )
+
+
+;; https://oremacs.com/2017/03/18/dired-ediff/
+;; -*- lexical-binding: t -*-
+(defun ora-ediff-files ()
+  (interactive)
+  (let ((files (dired-get-marked-files))
+        (wnd (current-window-configuration)))
+    (if (<= (length files) 2)
+        (let ((file1 (car files))
+              (file2 (if (cdr files)
+                         (cadr files)
+                       (read-file-name
+                        "file: "
+                        (dired-dwim-target-directory)))))
+          (if (file-newer-than-file-p file1 file2)
+              (ediff-files file2 file1)
+            (ediff-files file1 file2))
+          (add-hook 'ediff-after-quit-hook-internal
+                    (lambda ()
+                      (setq ediff-after-quit-hook-internal nil)
+                      (set-window-configuration wnd))))
+      (error "no more than 2 files should be marked"))))
+(define-key dired-mode-map "e" 'ora-ediff-files)
+
+(setq ediff-window-setup-function 'ediff-setup-windows-plain
+      ediff-split-window-function 'split-window-horizontally)

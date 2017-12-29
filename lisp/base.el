@@ -26,11 +26,16 @@
 (setq inhibit-startup-screen t)
 (setq initial-scratch-message "")
 
+;; From http://sriramkswamy.github.io/dotemacs/
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(when (file-exists-p custom-file)
+  (load custom-file))
+
 ;; Display current file path in title
 ;; (setq frame-title-format "%b")
 (setq frame-title-format
       (list (format "%s %%S: %%j " (system-name))
-        '(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
+            '(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
 
 ;; Hide some mini buffer message
 (let ((inhibit-message t))
@@ -109,11 +114,14 @@
 
 ;; reduce the frequency of garbage collection by making it happen on
 ;; each 50MB of allocated data (the default is on every 0.76MB)
-(setq gc-cons-threshold 50000000)
+(setq gc-cons-threshold (* 500 1024 1024))
 
 ;; From hlissner
-(setq-default gc-cons-threshold 4388608
-                   gc-cons-percentage 0.4)
+(setq-default gc-cons-percentage 0.4)
+
+;; From http://sriramkswamy.github.io/dotemacs/
+;; Garbage collector - decrease threshold to 5 MB
+(add-hook 'after-init-hook (lambda () (setq gc-cons-threshold (* 5 1024 1024))))
 
 ;; warn when opening files bigger than 100MB
 (setq large-file-warning-threshold 100000000)
@@ -166,13 +174,15 @@
 
 
 ;; UTF-8
-(setq locale-coding-system 'utf-8)
-(set-keyboard-coding-system 'utf-8)
-(set-selection-coding-system 'utf-8)
-(prefer-coding-system 'utf-8)
+;; (setq locale-coding-system 'utf-8)
+;; (set-keyboard-coding-system 'utf-8)
+;; (set-selection-coding-system 'utf-8)
+;; (prefer-coding-system 'utf-8)
 
-;; (setq coding-system-for-read 'utf-8)
-(setq coding-system-for-write 'utf-8)
+;; (setq coding-system-for-write 'utf-8)
+
+(prefer-coding-system 'utf-8)
+(setq-default buffer-file-coding-system 'utf-8-auto-unix)
 
 
 ;; Set meta key to command
@@ -273,7 +283,7 @@
 
 ;; Some settings from https://github.com/technomancy/better-defaults/blob/master/better-defaults.el
 (progn
-(setq x-select-enable-clipboard t
+  (setq x-select-enable-clipboard t
         ;; x-select-enable-primary t
         save-interprogram-paste-before-kill t
         apropos-do-all t
@@ -281,7 +291,6 @@
         ;; require-final-newline t
         visible-bell t
         load-prefer-newer t
-        ediff-window-setup-function 'ediff-setup-windows-plain
         save-place-file (concat user-emacs-directory "places")
         backup-directory-alist `(("." . ,(concat user-emacs-directory
                                                  "backups")))))

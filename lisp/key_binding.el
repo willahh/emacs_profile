@@ -11,7 +11,7 @@
 (require 'magit)
 (require 'term)
 (require 'web-mode)
-; (require 'syslog-mode)
+;; (require 'syslog-mode)
 
 
 (global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
@@ -492,17 +492,21 @@
 
 ;; other Window
 (global-set-key (kbd "M-o") 'other-window)
-;; (global-set-key [(meta o)] 'other-window)
 (define-key diff-mode-map (kbd "M-o") 'other-window)
 (define-key ggtags-navigation-map (kbd "M-o") 'other-window) ;; Need to override ggtags map
 (define-key ibuffer-mode-map (kbd "M-o") 'other-window)
 
 (global-set-key [(meta shift o)] 'previous-multiframe-window)
 
-(define-key ggtags-navigation-map (kbd "s-p") 'projectile-find-file)
-(global-set-key (kbd "s-n") 'projectile-find-file)
-(global-set-key (kbd "s-p") 'projectile-find-file)
+(global-set-key (kbd "M-P") 'projectile-find-file)
+(define-key ggtags-navigation-map (kbd "M-P") 'projectile-find-file)
+
+(global-set-key [(meta control shift p)] 'find-file-in-current-directory)
+
+;; M-x
 (global-set-key (kbd "C-x x") 'helm-M-x)
+(global-set-key (kbd "s-x") 'counsel-M-x)
+
 
 ;; (define-key ggtags-navigation-map (kbd "s-p") 'highlight-symbol-prev)
 ;; (global-set-key (kbd "s-n") 'highlight-symbol-prev)
@@ -579,11 +583,6 @@
 ;; (global-set-key (kbd "s-+") 'text-scale-increase)
 (global-set-key (kbd "M--") 'text-scale-decrease)
 (global-set-key (kbd "M-+") 'text-scale-increase)
-
-;; ediff
-(add-hook 'ediff-mode-hook 'wil-ediff-hook)
-(global-set-key (kbd "C-ç") 'xah-toggle-letter-case) ; (C-9 on azerty keyboard)
-(global-set-key (kbd "C-!") 'string-inflection-all-cycle) ; (C-8 on azerty keyboard)
 
 
 ;; ---------------- Function keys -
@@ -674,7 +673,6 @@
 (define-key highlight-symbol-nav-mode-map (kbd "M-p") 'evil-scroll-line-up)
 
 (global-set-key (kbd "s-q") 'my-abort-recursive-edit)
-(global-set-key (kbd "M-P") 'find-file-in-current-directory)
 
 ;; Recentf
 ;; (global-set-key (kbd "s-r") 'projectile-recentf)
@@ -685,7 +683,6 @@
 
 ;; Scroll commands
 (global-set-key (kbd "s-v") 'scroll-down)
-(global-set-key (kbd "s-x") 'counsel-M-x)
 ;; (global-set-key (kbd "C-c j x") 'counsel-M-x) ;; (global-set-key (kbd "s-g") 'magit-status)
 (global-set-key (kbd "C-x v U") 'wil-svn-up-recursive)
 
