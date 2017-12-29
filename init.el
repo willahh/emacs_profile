@@ -60,19 +60,3 @@
  '(shell-pop-universal-key "C-t")
  '(shell-pop-window-position "bottom")
  '(shell-pop-window-size 30))
-
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((((class color) (min-colors 89)) (:foreground "#000000" :background "#ffffff"))))
- '(bm-face ((t (:background "#f2f2f2" :foreground "black"))))
- '(rainbow-delimiters-depth-1-face ((t (:foreground "#5abeee" :weight bold))))
- '(rainbow-delimiters-depth-2-face ((t (:foreground "#ff00a0" :weight bold))))
- '(rainbow-delimiters-depth-3-face ((t (:foreground "#ff953f" :weight bold))))
- '(rainbow-delimiters-depth-4-face ((t (:foreground "#328d2e" :weight bold))))
- '(rainbow-delimiters-depth-5-face ((t (:foreground "#22988a" :weight bold))))
- '(rainbow-delimiters-depth-6-face ((t (:foreground "#cc99ff" :weight bold))))
- '(rainbow-delimiters-depth-7-face ((t (:foreground "#fa75e2" :weight bold))))
- '(rainbow-delimiters-depth-8-face ((t (:foreground "#55bdf0" :weight bold)))))
