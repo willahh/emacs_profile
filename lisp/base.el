@@ -636,10 +636,6 @@
 ;; Syntax entry for web mode doesnt work actualy
 ;; https://github.com/fxbois/web-mode/issues/149
 ;; Select whole word when separated with _
-;; Update : Besoin d ajouter des hook pour certains mode
-;; Je n ai pas reussis a setter cette propriete de maniere globale
-;; -> prog-mode-hook
-
 (defun update-syntax-entry ()
   (modify-syntax-entry ?_ "w")
   (modify-syntax-entry ?\$ "w"))

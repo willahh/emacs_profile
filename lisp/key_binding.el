@@ -286,8 +286,9 @@
 ;; (global-set-key (kbd "M-r") 'helm-imenu)
 ;; (define-key paredit-mode-map (kbd "M-r") 'counsel-imenu)
 
-(global-set-key (kbd "M-r") 'counsel-imenu)
-(define-key paredit-mode-map (kbd "M-r") 'counsel-imenu)
+;; (global-set-key (kbd "M-r") 'counsel-imenu)
+(global-set-key (kbd "M-r") 'helm-imenu)
+(define-key paredit-mode-map (kbd "M-r") 'helm-imenu)
 
 (global-set-key (kbd "C-c i") 'counsel-imenu)
 (define-key paredit-mode-map (kbd "C-c i") 'counsel-imenu)
