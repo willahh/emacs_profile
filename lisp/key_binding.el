@@ -12,7 +12,7 @@
 (require 'term)
 (require 'web-mode)
 
-(global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
+
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
 (global-set-key (kbd "M-g") 'goto-line) ;; https://github.com/skeeto/.emacs.d/blob/master/init.el
 (define-key paredit-mode-map (kbd "M-q") 'fill-paragraph)
@@ -44,7 +44,7 @@
 (define-key paredit-mode-map (kbd "M-s") 'save-buffer)
 
 (global-set-key (kbd "M-w") 'delete-window)
-(global-set-key (kbd "M-X") 'other-frame) ; Same keybinding from osx switch window habits
+
 
 ;; Search
 (global-set-key (kbd "C-c j s") 'projectile-ag)
@@ -361,35 +361,20 @@
 (global-set-key [(meta control shift p)] 'find-file-in-current-directory)
 
 ;; M-x
-(global-set-key (kbd "C-x x") 'helm-M-x)
-(global-set-key (kbd "s-x") 'counsel-M-x)
+(global-set-key (kbd "C-c C-x") 'helm-M-x)
+;; (global-set-key (kbd "s-x") 'counsel-M-x)
+;; (global-set-key (kbd "M-x") 'counsel-M-x)
 
-
-;; (define-key ggtags-navigation-map (kbd "s-p") 'highlight-symbol-prev)
-;; (global-set-key (kbd "s-n") 'highlight-symbol-prev)
-;; (global-set-key (kbd "s-p") 'highlight-symbol-prev)
-
-;; Update to use, classical Meta-n to create a new buffer like in
-;; modern editors. Update highlight-symbol-prev to Super - M
-;; Update : Retour sur le M-n highlight symbol bien plus pratique
-;; (define-key highlight-symbol-nav-mode-map (kbd "M-n") 'xah-new-empty-buffer)
+(global-set-key (kbd "M-X") 'other-frame) ; Same keybinding from osx switch window habits
+(global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
 
 
 (global-set-key (kbd "<delete>") 'wil-delete-backspace)
 (define-key paredit-mode-map (kbd "<delete>") 'wil-delete-backspace)
 
-;;
-;; (define-key global-map (kbd "C-x RET") 'dired-jump)
-;; (define-key web-mode-map (kbd "C-x RET") 'dired-jump)
-
 ;; Find file at point
 ;; Update to use find-file-in-project-by-selected
 (global-set-key (kbd "C->") 'ffap)
-
-;;
-;; (global-set-key (kbd "C-c C-M-i") 'company-files)
-;; (global-set-key (kbd "C-c C-i") 'company-dabbrev)
-;; (global-set-key (kbd "C-c C-M-l") 'mark-defun)
 
 (global-set-key (kbd "C-.") 'find-file-in-project-by-selected)
 (define-key php-mode-map [(control .)] 'find-file-in-project-by-selected)
@@ -401,9 +386,6 @@
 (define-key typescript-mode-map (kbd "C-:") "\C-e;")
 (define-key php-mode-map (kbd "C-:") "\C-e;")
 (define-key web-mode-map (kbd "C-:") "\C-e;")
-
-;; (global-set-key (kbd "C-c RET") 'wlh-join-lines)
-;; (define-key web-mode-map (kbd "C-c RET") 'wlh-join-lines)
 
 (defun wil-web-mode-kill-sexp ()
   (interactive)
@@ -434,10 +416,6 @@
 (define-key org-mode-map (kbd "È") 'org-metaup)
 
 ;; zoom
-;; (global-set-key (kbd "<s-kp-subtract>") 'text-scale-decrease)
-;; (global-set-key (kbd "<s-kp-add>") 'text-scale-increase)
-;; (global-set-key (kbd "s--") 'text-scale-decrease)
-;; (global-set-key (kbd "s-+") 'text-scale-increase)
 (global-set-key (kbd "M--") 'text-scale-decrease)
 (global-set-key (kbd "M-+") 'text-scale-increase)
 
@@ -492,12 +470,6 @@
 (global-set-key (kbd "M-/") 'comment-or-uncomment-region-or-line)
 (global-set-key (kbd "M-;") 'comment-or-uncomment-region-or-line)
 (define-key paredit-mode-map (kbd "M-;") 'comment-or-uncomment-region-or-line)
-
-;; Comment
-;; (global-set-key (kbd "s-/") 'comment-line)
-;; (global-set-key (kbd "M-/") 'comment-line)
-;; (global-set-key (kbd "M-;") 'comment-line)
-;; (define-key paredit-mode-map (kbd "M-;") 'comment-line)
 
 ;; Kill
 (global-set-key (kbd "s-k") 'kill-paragraph)
@@ -584,18 +556,11 @@
 (global-set-key (kbd "M-i") 'hippie-expand)
 
 ;; ;; https://github.com/jacktasia/dumb-jump
-;; (global-set-key (kbd "M-g o") 'dumb-jump-go-other-window)
-;; (global-set-key (kbd "M-g j") 'dumb-jump-go)
-;; (global-set-key (kbd "M-g i") 'dumb-jump-go-prompt)
-;; (global-set-key (kbd "M-g x") 'dumb-jump-go-prefer-external)
-;; (global-set-key (kbd "M-g z") 'dumb-jump-go-prefer-external-other-window)
-;; (global-set-key (kbd "M-g b") 'dumb-jump-back)
 
 (global-set-key (kbd "<M-backspace>") 'paredit-backward-kill-word)
 (global-set-key (kbd "<backspace>") 'delete-backward-char) ;; Override paredit-backward-kill-word behaviour for backspace
 (global-set-key [(meta shift /)] 'comment-or-uncomment-region-or-line)
 (global-set-key (kbd "s-:") 'delete-horizontal-space)
-;; (global-set-key (kbd "C-c j c c s") 'clojure-cheatsheet)
 (define-key occur-mode-map (kbd "n") 'next-line)
 (define-key occur-mode-map (kbd "p") 'previous-line)
 (global-set-key (kbd "C-/") 'ffap) ; Qwerty C-> for Azerty
@@ -678,7 +643,7 @@
 (global-set-key (kbd "C-x l") 'counsel-locate)
 (global-set-key (kbd "C-x C-l") 'locate)
 
-;; (global-set-key (kbd "M-x") 'counsel-M-x)
+
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 
 (global-set-key (kbd "C-c g") 'counsel-git)
