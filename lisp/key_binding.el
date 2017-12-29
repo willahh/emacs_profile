@@ -95,6 +95,10 @@
 (global-set-key (kbd "M-S-w") 'delete-frame)
 (global-set-key (kbd "M-W") 'delete-frame)
 
+;; Eshell
+(global-set-key (kbd "C-t") 'shell-pop)
+(define-key dired-mode-map (kbd "C-t") 'shell-pop)
+
 ;; ---
 (define-key ivy-minibuffer-map (kbd "<escape>") 'minibuffer-keyboard-quit)
 (define-key ivy-minibuffer-map (kbd "C-h") 'delete-backward-char)
@@ -178,6 +182,8 @@
 (define-key dired-mode-map (kbd "<tab>") 'dired-subtree-toggle)
 (define-key dired-mode-map (kbd "C-c C-p") 'dired-subtree-up)
 (define-key dired-mode-map (kbd "C-c C-n") 'dired-subtree-down)
+(define-key dired-mode-map (kbd "C-x n") 'dired-narrow)
+(define-key dired-mode-map (kbd "b") 'crux-open-with)
 
 ;; Multi cursor stuf
 (global-set-key (kbd "ı") 'mc/mark-next-lines) ; ALT+SHIFT+p
@@ -657,10 +663,15 @@
 ;; (global-set-key (kbd "s-l") 'avy-goto-char-in-line) ; Not used
 
 ;; Browse comands
-(global-set-key (kbd "M-p") 'projectile-find-file)
-(define-key highlight-symbol-nav-mode-map (kbd "M-p") 'projectile-find-file)
-;; (global-set-key (kbd "M-p") 'wlh/projectile-ido-find-file)
-;; (define-key highlight-symbol-nav-mode-map (kbd "M-p") 'wlh/projectile-ido-find-file)
+;; (global-set-key (kbd "M-p") 'projectile-find-file)
+;; (define-key highlight-symbol-nav-mode-map (kbd "M-p") 'projectile-find-file)
+(global-set-key (kbd "M-n") 'evil-scroll-line-down)
+(define-key slime-mode-map (kbd "M-n") 'evil-scroll-line-down)
+(define-key highlight-symbol-nav-mode-map (kbd "M-n") 'evil-scroll-line-down)
+
+(global-set-key (kbd "M-p") 'evil-scroll-line-up)
+(define-key slime-mode-map (kbd "M-p") 'evil-scroll-line-up)
+(define-key highlight-symbol-nav-mode-map (kbd "M-p") 'evil-scroll-line-up)
 
 (global-set-key (kbd "s-q") 'my-abort-recursive-edit)
 (global-set-key (kbd "M-P") 'find-file-in-current-directory)
@@ -841,5 +852,8 @@
 (global-set-key (kbd "<C-S-tab>") 'previous-buffer)
 (global-set-key (kbd "C-c TAB") 'crux-indent-rigidly-and-copy-to-clipboard)
 
-;; (global-set-key (kbd "TAB") 'tab-indent-or-complete)
-;; (define-key yas-minor-mode-map (kbd "TAB") 'tab-indent-or-complete)
+
+;; Bm
+(global-set-key (kbd "C-&") 'bm-toggle) ; C-1 on qwerty
+(global-set-key (kbd "C-é") 'bm-previous) ; C-2 on qwerty
+(global-set-key (kbd "C-\"") 'bm-next) ; C-3 on qwerty

@@ -1,7 +1,7 @@
 <?xml version="1.1" encoding="UTF-8"?>
 <!DOCTYPE keyboard SYSTEM "file://localhost/System/Library/DTDs/KeyboardLayout.dtd">
-<!--Last edited by Ukelele version 3.2.5.180 on 2017-11-10 at 10:19 (UTC+1)-->
-<keyboard group="126" id="-29115" name="frw2" maxout="1">
+<!--Last edited by Ukelele version 3.2.5.180 on 2017-12-26 at 01:43 (UTC+1)-->
+<keyboard group="126" id="-30087" name="frw2" maxout="1">
 	<layouts>
 		<layout first="0" last="0" mapSet="138" modifiers="30"/>
 	</layouts>
@@ -392,7 +392,7 @@
 			<key code="7" output="{"/>
 			<key code="8" output="}"/>
 			<key code="9" output="◊"/>
-			<key code="10" output="•"/>
+			<key code="10" output="`"/>
 			<key code="11" output="ß"/>
 			<key code="12" output="æ"/>
 			<key code="13" output="Â"/>

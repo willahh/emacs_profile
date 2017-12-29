@@ -216,3 +216,4 @@
 (load-file "~/.emacs.d/vendor/dired-subtree-20160920.130/dired-subtree.el")
 (load-file "~/.emacs.d/vendor/dired-ranger-20160924.335/dired-ranger.el")
 (load-file "~/.emacs.d/vendor/smartcomment/smartcomment.el")
+(load-file "~/.emacs.d/vendor/visible-bookmarks/bm.el")

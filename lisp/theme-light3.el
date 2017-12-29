@@ -68,3 +68,6 @@
 
 ;; ------- js2-mode
 (set-face-attribute 'web-mode-type-face nil :foreground "#6c1883")
+
+;; ------- bm
+(set-face-attribute 'bm-face nil :background "#e0e0e0" :foreground nil)
