@@ -91,4 +91,10 @@
 
 ;; From howardabrams
 (add-hook 'js2-mode-hook
-              (lambda () (flycheck-select-checker "javascript-eslint")))
+          (lambda () (flycheck-select-checker "javascript-eslint")))
+
+
+;; Javascript xref
+(define-key js2-mode-map (kbd "M-.") nil)
+(add-hook 'js2-mode-hook (lambda ()
+                           (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)))

@@ -16,7 +16,7 @@
                      ace-window 
                      actionscript-mode
                      ag
-                     ; anzu
+                                        ; anzu
                      async
                      auto-complete
                      auto-yasnippet
@@ -163,6 +163,8 @@
                      ;; rjsx-mode
                      ;; smartparens
                      ;; volatile-highlights ; Update : desactivation car trop distrayant, et pas 
+                     xref-js2
+                     counsel-gtags
                      ))
 
 ;; Add some missing packages
@@ -217,3 +219,4 @@
 (load-file "~/.emacs.d/vendor/dired-ranger-20160924.335/dired-ranger.el")
 (load-file "~/.emacs.d/vendor/smartcomment/smartcomment.el")
 (load-file "~/.emacs.d/vendor/visible-bookmarks/bm.el")
+;; (load-file "~/.emacs.d/vendor/dash-at-point/dash-at-point.el")
