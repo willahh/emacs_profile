@@ -158,6 +158,9 @@
 (global-set-key (kbd "<M-down-mouse-1>") 'mc/add-cursor-on-click)
 (global-set-key (kbd "<mouse-3>") 'mac-mouse-buffer-menu)
 
+;; PHP jump
+(define-key php-mode-map (kbd "<C-M-mouse-1>") 'dumb-jump-go)
+
 ;; All
 (global-set-key (kbd "M-L") 'mc/mark-all-words-like-this) ; Like in VS Code
 
