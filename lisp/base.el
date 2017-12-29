@@ -171,7 +171,7 @@
 (set-selection-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
 
-(setq coding-system-for-read 'utf-8)
+;; (setq coding-system-for-read 'utf-8)
 (setq coding-system-for-write 'utf-8)
 
 
@@ -184,9 +184,9 @@
 ;;  bracket {} cant be typed if alt is used as meta key...
 
 (setq mac-option-key-is-meta nil
-     mac-command-key-is-meta t
-     mac-command-modifier 'meta
-     mac-option-modifier 'none)
+      mac-command-key-is-meta t
+      mac-command-modifier 'meta
+      mac-option-modifier 'none)
 
 (setq mac-control-modifier 'control)
 (setq ns-function-modifier 'control) ;; mbp FN and CTRL system switch
