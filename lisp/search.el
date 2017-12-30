@@ -2,15 +2,14 @@
 ;; http://agel.readthedocs.io/en/layo/installation.html
 (require 'ag)
 (require 'find-file-in-project)
-; (require 'anzu)
 
+(setq search-whitespace-regexp ".*?")
 (setq ag-highlight-search t)
 (setq ag-reuse-buffers nil)
 (setq ag-reuse-window t) ; Re use same window 
 
 (setq-default
  isearch-allow-scroll t
- ;; lazy-highlight-cleanup nil
  lazy-highlight-cleanup t
  lazy-highlight-initial-delay 0)
 
@@ -42,18 +41,7 @@
 
 (define-key isearch-mode-map (kbd "C-i") 'isearch-highlight-phrase)
 
-
-
-
-
-
-
-
-
-
 (require 'visual-regexp-steroids)
-;; (define-key global-map (kbd "C-c r") 'vr/replace)
-;; (define-key global-map (kbd "C-c q") 'vr/query-replace)
 
 ;; if you use multiple-cursors, this is for you:
 (define-key global-map (kbd "C-c m") 'vr/mc-mark)

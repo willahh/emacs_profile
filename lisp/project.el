@@ -10,12 +10,6 @@
       desktop-load-locked-desktop nil
       desktop-auto-save-timeout   10)
 
-
-
-
-
-
-
 ;; ---- Projectile
 (require 'projectile)
 ;; (projectile-global-mode)
@@ -28,29 +22,6 @@
 (add-hook 'prog-mode-hook (lambda ()
                             (projectile-mode)))
 
-
-
-
-
-
-
-
-
-
-
-
 ;; What to do on Emacs exit / workgroups-mode exit?
 (setq wg-emacs-exit-save-behavior           'save)      ; Options: 'save 'ask nil
 (setq wg-workgroups-mode-exit-save-behavior 'save)      ; Options: 'save 'ask nil
-
-;; What to do on Emacs exit / workgroups-mode exit?Projectile auto invalidate cache after delete file
-; ;; http://cupfullofcode.com/blog/2014/10/06/invalidate-projectile-cache-on-delete/index.html
-; (defadvice delete-file (before purge-from-projectile-cache (filename &optional trash))
-;   (if (and (projectile-project-p) projectile-enable-caching)
-;       (let* ((project-root (projectile-project-root))
-;              (true-filename (file-truename filename))
-;              (relative-filename (file-relative-name true-filename project-root)))
-;         (if (projectile-file-cached-p relative-filename project-root)
-;             (projectile-purge-file-from-cache relative-filename)))))
-  
-; (ad-activate 'delete-file)
