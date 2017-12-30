@@ -49,7 +49,9 @@
 
 
 ;; Search
-(global-set-key (kbd "M-m s") 'projectile-ag)
+(global-set-key (kbd "M-m s s") 'projectile-ag)
+(global-set-key (kbd "M-m s a") 'ag)
+(global-set-key (kbd "M-m s h") 'helm-ag)
 
 ;; Google
 (global-set-key (kbd "M-m g s") 'helm-google-suggest)
@@ -376,8 +378,8 @@
 (global-set-key [(meta control shift p)] 'find-file-in-current-directory)
 
 ;; M-x
-(global-set-key (kbd "C-c C-x") 'helm-M-x)
-
+;; (global-set-key (kbd "C-c C-x") 'helm-M-x)
+(global-set-key (kbd "M-m M-m") 'helm-M-x)
 (global-set-key (kbd "M-X") 'other-frame) ; Same keybinding from osx switch window habits
 (global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
 

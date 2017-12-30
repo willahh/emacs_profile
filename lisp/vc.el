@@ -69,6 +69,9 @@
 ;; (global-diff-hl-mode t)
 (add-hook 'prog-mode-hook (lambda ()
                             (diff-hl-mode t)))
+
+(add-hook 'org-mode-hook (lambda ()
+                           (diff-hl-mode t)))
 ;; dsvn conf
 ;; Besoin : Avoir des commandes svn non disponible par default comme svn status
 ;; Sources :
