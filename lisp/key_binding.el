@@ -12,6 +12,8 @@
 (require 'term)
 (require 'web-mode)
 
+;; Define M-m shortcut as a leader key
+(global-unset-key (kbd "M-m"))
 
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
 (global-set-key (kbd "M-g") 'goto-line) ;; https://github.com/skeeto/.emacs.d/blob/master/init.el
@@ -47,14 +49,14 @@
 
 
 ;; Search
-(global-set-key (kbd "C-c j s") 'projectile-ag)
+(global-set-key (kbd "M-m s") 'projectile-ag)
 
 ;; Google
-(global-set-key (kbd "C-c j g s") 'helm-google-suggest)
-(global-set-key (kbd "C-c j g t") 'google-translate-at-point)
+(global-set-key (kbd "M-m g s") 'helm-google-suggest)
+(global-set-key (kbd "M-m g t") 'google-translate-at-point)
 
 ;; User keybinding - Line
-(global-set-key (kbd "C-c j t") 'toggle-truncate-lines)
+(global-set-key (kbd "M-m t") 'toggle-truncate-lines)
 
 ;; New frame
 (global-set-key [meta shift w] 'delete-frame)
@@ -64,7 +66,7 @@
 ;; Eshell
 (global-set-key (kbd "C-t") 'shell-pop)
 (define-key dired-mode-map (kbd "C-t") 'shell-pop)
-(global-set-key (kbd "C-c j f n d") 'find-name-dired)
+(global-set-key (kbd "M-m f n d") 'find-name-dired)
 
 ;; ---
 (define-key ivy-minibuffer-map (kbd "<escape>") 'minibuffer-keyboard-quit)
@@ -229,7 +231,7 @@
 (define-key paredit-mode-map (kbd "C-c i") 'counsel-imenu)
 
 ;; mark
-(global-set-key (kbd "C-c C-x C-d") 'crux-duplicate-and-comment-current-line-or-region)
+;; (global-set-key (kbd "C-c C-x C-d") 'crux-duplicate-and-comment-current-line-or-region)
 
 ;; org
 (define-key org-mode-map (kbd "C-x <C-i>") 'helm-org-in-buffer-headings)
@@ -304,8 +306,8 @@
 (global-set-key (kbd "C-x v f") 'vc-diff)
 
 ;; ---------------- Shell
-(global-set-key (kbd "C-c j e") 'eshell)
-(global-set-key (kbd "C-c j a") 'ansi-term)
+(global-set-key (kbd "M-m e") 'eshell)
+(global-set-key (kbd "M-m a") 'ansi-term)
 
 ;; Start a new eshell even if one is active.
 (global-set-key (kbd "C-x M") (lambda () (interactive) (eshell t)))
@@ -375,8 +377,6 @@
 
 ;; M-x
 (global-set-key (kbd "C-c C-x") 'helm-M-x)
-;; (global-set-key (kbd "s-x") 'counsel-M-x)
-;; (global-set-key (kbd "M-x") 'counsel-M-x)
 
 (global-set-key (kbd "M-X") 'other-frame) ; Same keybinding from osx switch window habits
 (global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
@@ -488,14 +488,15 @@
 (global-set-key (kbd "s-k") 'kill-paragraph)
 (global-set-key (kbd "s-K") 'backward-kill-paragraph)
 
-;; Move paragraph
+;; Better move paragraph / mark paragraph
 ;; Convert default qwerty M-{ and M-} position on keyboard to azerty mapping
-(global-set-key (kbd "M-¨") 'backward-paragraph)
-(global-set-key (kbd "M-*") 'forward-paragraph)
+(global-set-key (kbd "M-h") 'rs-mark-paragraph)
+(global-set-key (kbd "M-¨") 'lawlist-forward-paragraph)
+(global-set-key (kbd "M-*") 'lawlist-backward-paragraph)
 
 ;; Help
 (global-set-key (kbd "s-h") 'help)
-;; (global-set-key (kbd "C-c j h") 'help)
+;; (global-set-key (kbd "M-m h") 'help)
 
 ;; Find
 ;; (global-set-key (kbd "s-f") 'counsel-find-file)
@@ -520,12 +521,12 @@
 
 ;; Recentf
 (global-set-key (kbd "C-c f") 'counsel-recentf) 
-(global-set-key (kbd "C-c j r") 'counsel-recentf)
-(global-set-key (kbd "C-c j R") 'projectile-recentf)
+(global-set-key (kbd "M-m r") 'counsel-recentf)
+(global-set-key (kbd "M-m R") 'projectile-recentf)
 
 ;; Scroll commands
 (global-set-key (kbd "s-v") 'scroll-down)
-;; (global-set-key (kbd "C-c j x") 'counsel-M-x) ;; (global-set-key (kbd "s-g") 'magit-status)
+;; (global-set-key (kbd "M-m x") 'counsel-M-x) ;; (global-set-key (kbd "s-g") 'magit-status)
 (global-set-key (kbd "C-x v U") 'wil-svn-up-recursive)
 
 (global-set-key (kbd "s-i") 'emmet-expand-line)
@@ -601,24 +602,24 @@
 (global-set-key (kbd "s-v") 'scroll-down-half)
 
 ;; url
-(global-set-key (kbd "C-c j u") 'wil-browse-url-at-point)
+(global-set-key (kbd "M-m u") 'wil-browse-url-at-point)
 
 ;; Prev / next location
 (global-set-key (kbd "C-$") 'jump-to-prev-pos)
 (global-set-key (kbd "C-M-$") 'jump-to-next-pos)
 
 ;; Whitespace cleanup
-(global-set-key (kbd "C-c j wc") 'whitespace-cleanup)
+(global-set-key (kbd "M-m wc") 'whitespace-cleanup)
 
 ;; dumb-jump-go
 (global-set-key (kbd "C-c M-.") 'dumb-jump-go)
 
 ;; org
 ;; (global-set-key (kbd "s-a") 'org-agenda)
-;; (global-set-key (kbd "C-c j o a") 'org-agenda)
+;; (global-set-key (kbd "M-m o a") 'org-agenda)
 
 ;; Increment at point
-(global-set-key (kbd "C-c j i") 'wil-hydra-increment-at-point/body)
+(global-set-key (kbd "M-m i") 'wil-hydra-increment-at-point/body)
 
 ;; Recenter
 (global-set-key (kbd "C-l") 'wil-recenter-top-bottom)
@@ -662,7 +663,7 @@
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 
 (global-set-key (kbd "C-c g") 'counsel-git)
-;; (global-set-key (kbd "C-c j") 'counsel-git-grep)
+;; (global-set-key (kbd "M-m") 'counsel-git-grep)
 ;; (global-set-key (kbd "C-c k") 'counsel-ag)
 (global-set-key (kbd "C-x l") 'counsel-locate)
 ;; (global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
@@ -672,7 +673,7 @@
 ;; org (from prelude)
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
-(global-set-key (kbd "C-c j o") 'org-iswitchb)
+(global-set-key (kbd "M-m o") 'org-iswitchb)
 (global-set-key (kbd "C-c C-j") 'join-region)
 
 
