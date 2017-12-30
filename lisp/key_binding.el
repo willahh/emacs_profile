@@ -203,16 +203,25 @@
 (define-key company-active-map (kbd "C-z") 'whole-line-or-region-kill-region)
 (define-key org-mode-map (kbd "C-z") 'whole-line-or-region-kill-region)
 
-;; yas-expand
+;; counsel-find-file
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
-(global-set-key (kbd "C-c C-n") 'diff-hl-next-hunk)
-(define-key web-mode-map (kbd "C-c C-n") 'diff-hl-next-hunk)
-(define-key php-mode-map (kbd "C-c C-n") 'diff-hl-next-hunk)
 
-(global-set-key (kbd "C-c C-p") 'diff-hl-previous-hunk)
-(define-key web-mode-map (kbd "C-c C-p") 'diff-hl-previous-hunk)
-(define-key php-mode-map (kbd "C-c C-p") 'diff-hl-previous-hunk)
+;;
+(global-set-key (kbd "C-c C-n") 'highlight-symbol-next)
+(define-key web-mode-map (kbd "C-c C-n") 'highlight-symbol-next)
+(define-key php-mode-map (kbd "C-c C-n") 'highlight-symbol-next)
 
+(global-set-key (kbd "C-c C-p") 'highlight-symbol-prev)
+(define-key web-mode-map (kbd "C-c C-p") 'highlight-symbol-prev)
+(define-key php-mode-map (kbd "C-c C-p") 'highlight-symbol-prev)
+
+;;
+(global-set-key (kbd "C-c C-c C-n") 'diff-hl-next-hunk)
+(global-set-key (kbd "C-c C-c C-p") 'diff-hl-previous-hunk)
+
+
+
+;; helm-imenu
 (global-set-key (kbd "M-r") 'helm-imenu)
 (define-key paredit-mode-map (kbd "M-r") 'helm-imenu)
 
@@ -496,7 +505,6 @@
 
 ;; Browse comands
 ;; (global-set-key (kbd "M-p") 'projectile-find-file)
-;; (define-key highlight-symbol-nav-mode-map (kbd "M-p") 'projectile-find-file)
 (global-set-key (kbd "M-n") 'evil-scroll-line-down)
 
 (define-key slime-mode-map (kbd "M-n") 'evil-scroll-line-down)
