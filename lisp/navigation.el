@@ -179,9 +179,6 @@
   (helm-exit-minibuffer))
 (define-key helm-map [mouse-1] 'helm-mouse-1-exit-minibuffer)
 
-
-
-
 ;; Auto resize
 (helm-autoresize-mode nil)
 ;; (setq helm-autoresize-max-height 40) ;; Utilisation de 40% de hauteur
@@ -200,31 +197,20 @@
 (setq helm-swoop-split-with-multiple-windows t)
 
 ;; ---------------- swiper
-; (use-package counsel
-;   :ensure t)
-
-; (ivy-set-occur 'swiper 'swiper-occur)
 (ivy-set-occur 'ivy-switch-buffer 'ivy-switch-buffer-occur)
-;; (ivy-set-occur 'counsel-find-file 'ivy-switch-buffer-occur)
-
 
 ;; advise swiper to recenter on exit
 (defun bjm-swiper-recenter (&rest args)
   "recenter display after swiper"
   (recenter))
 
-; (advice-add 'swiper :after #'bjm-swiper-recenter)
-
 ;; ---------------- neotree
-;; (setq neo-theme 'icons) ;; Set the neotree theme before show
 
 ;; dont ask
 ;; (setq neo-force-change-root t)
 (setq neo-force-change-root nil)
 (setq neo-window-fixed-size nil)
 (setq neo-autorefresh nil)
-
-
 
 (add-hook 'js2-mode-hook 'textmate-mode)
 (add-hook 'web-mode-hook 'textmate-mode)

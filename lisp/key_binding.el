@@ -379,9 +379,10 @@
 
 ;; M-x
 ;; (global-set-key (kbd "C-c C-x") 'helm-M-x)
-(global-set-key (kbd "M-m M-m") 'helm-M-x)
+;; (global-set-key (kbd "M-m M-m") 'helm-M-x)
+(global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "M-X") 'other-frame) ; Same keybinding from osx switch window habits
-(global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
+;; (global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
 
 
 (global-set-key (kbd "<delete>") 'wil-delete-backspace)
