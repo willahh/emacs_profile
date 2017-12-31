@@ -11,6 +11,10 @@
 (require 'magit)
 (require 'term)
 (require 'web-mode)
+(require 'clojure-mode)
+(require 'typescript-mode)
+(require 'slime)
+
 
 ;; Define M-m shortcut as a leader key
 (global-unset-key (kbd "M-m"))

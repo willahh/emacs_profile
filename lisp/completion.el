@@ -9,9 +9,7 @@
 (setq company-dabbrev-downcase 0) 
 (setq company-dabbrev-downcase nil)
 
-;; (setq company-idle-delay 0.2)
-;; (setq company-idle-delay 99) ; I don't want auto completion, i trigger it manually
-(setq company-idle-delay 0.2) ; Update : Re-enable it
+(setq company-idle-delay 0.2)
 (setq company-tooltip-align-annotations t)
 (setq company-tooltip-limit 16)
 (setq company-require-match nil)

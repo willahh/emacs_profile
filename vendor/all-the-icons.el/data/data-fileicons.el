@@ -1,6 +1,6 @@
 (defvar all-the-icons-data/file-icon-alist
   '(
-		
+    
     ( "1c" . "\xa5ea" )
     ( "1c-alt" . "\xea28" )
     ( "MJML" . "\xea6f" )
@@ -420,15 +420,16 @@
     ( "terminal" . "\xf0c8" )
     ( "tern" . "\x1f54a" )
     ( "terraform" . "\xe916" )
-    ( "test-coffeescript" . "\xea62" )
-    ( "test-dir" . "\xea60" )
+    ( "test-coffeescript" . "\xf016" )
+    ;; ( "test-dir" . "\xea60" )
+    ( "test-dir" . "\xf016" )
     ( "test-generic" . "\xea63" )
     ( "test-js" . "\xea64" )
     ( "test-perl" . "\xea65" )
     ( "test-python" . "\xea66" )
     ( "test-react" . "\xea67" )
     ( "test-ruby" . "\xea68" )
-    ( "test-typescript" . "\xea69" )
+    ( "test-typescript" . "\xf016" )
     ( "tex" . "\xe600" )
     ( "textile" . "\x74" )
     ( "textmate" . "\x2122" )

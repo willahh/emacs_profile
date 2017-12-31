@@ -12,15 +12,15 @@
 
 ;; ---- Projectile
 (require 'projectile)
-;; (projectile-global-mode)
+(projectile-global-mode)
 
 (setq projectile-mode-line nil)
 (setq projectile-enable-caching t)
 (setq projectile-require-project-root nil); Using Projectile everywhere
 (add-to-list 'projectile-globally-ignored-directories "node_modules") ; Some ignore rules
 
-(add-hook 'prog-mode-hook (lambda ()
-                            (projectile-mode)))
+;; (add-hook 'prog-mode-hook (lambda ()
+;;                             (projectile-mode)))
 
 ;; What to do on Emacs exit / workgroups-mode exit?
 (setq wg-emacs-exit-save-behavior           'save)      ; Options: 'save 'ask nil

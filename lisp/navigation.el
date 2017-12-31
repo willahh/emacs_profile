@@ -205,6 +205,10 @@
   (recenter))
 
 ;; ---------------- neotree
+(defun wlh/neotree-mode-hook (window)
+  (set-window-fringes (selected-window) 0 0))
+
+(add-hook 'neo-after-create-hook 'wlh/neotree-mode-hook)
 
 ;; dont ask
 ;; (setq neo-force-change-root t)
@@ -212,6 +216,7 @@
 (setq neo-window-fixed-size nil)
 (setq neo-autorefresh nil)
 
+;; textmate-mode
 (add-hook 'js2-mode-hook 'textmate-mode)
 (add-hook 'web-mode-hook 'textmate-mode)
 (add-hook 'css-mode-hook 'textmate-mode)

@@ -883,3 +883,10 @@ abort completely with `C-g'."
 
 ;; All the icons
 ;; (require 'all-the-icons)
+
+;; markdown-mode
+(require 'markdown-mode)
+(setq markdown-toggle-fontify-code-blocks-natively t)
+
+;; simple-httpd
+(require 'simple-httpd)

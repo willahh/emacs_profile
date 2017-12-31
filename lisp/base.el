@@ -105,12 +105,6 @@
 ;; C-SPC.  instead of C-u C-SPC C-u C-SPC C-u C-SPC ...
 (setq set-mark-command-repeat-pop t)
 
-;; Show matching parenthesis
-(show-paren-mode)
-
-;; Active winner-mode to allow navigation between different windows
-(setq winner-mode t)
-
 ;; inserts newline to avoid `end of buffer' error.
 (setq next-line-add-newlines t)
 

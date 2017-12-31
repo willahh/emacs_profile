@@ -1,3 +1,6 @@
+(require 'css)
+(require 'css-mode)
+
 (load "~/.emacs.d/lisp/theme/tango-plus/tangotango-plus-theme.el")
 
 ;; ------- Font

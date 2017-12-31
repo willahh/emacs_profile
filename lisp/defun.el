@@ -7,7 +7,6 @@
   (interactive "p")
   (yank-pop (- arg)))
 
-
 ;; Revert without confirm
 (defun revert-buffer-no-confirm ()
   "Revert buffer without confirmation."
@@ -1231,7 +1230,10 @@ Version 2016-12-27"
 
 ;; New centered frame
 (defun wlh/create-new-centered-frame ()
-  (interactive))
+  (interactive)
+  (select-frame (make-frame))
+  (funcall #'switch-to-buffer (xah-new-empty-buffer))
+  (wil-frame-center))
 
 (defun wlh/find-org-files ()
   ;; Find org files in user directory
@@ -1276,8 +1278,15 @@ Version 2016-12-27"
 
 
 
-;; -------- Init emacs on bookmark list
+;; -------- Init
 (require 'bookmark)
 (setq inhibit-splash-screen t)
 (switch-to-buffer "*Bookmark List*")
-;; (my-unpop-to-mark-advice)
+
+;; Show matching parenthesis
+(show-paren-mode)
+
+;; Active winner-mode to allow navigation between different windows
+(winner-mode t)
+
+
