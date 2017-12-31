@@ -168,7 +168,7 @@
 (setq max-mini-window-height 0.3) ; default 0.25
 
 ;; Replace selection by text
-(setq delete-selection-mode 1)
+(delete-selection-mode)
 
 ;; Don't prompt for recursive delete
 (setq dired-recursive-deletes 'always)
