@@ -3,7 +3,7 @@
 (require 'ag)
 (require 'find-file-in-project)
 
-(setq search-whitespace-regexp ".*?")
+;; (setq search-whitespace-regexp ".*?")
 (setq ag-highlight-search t)
 (setq ag-reuse-buffers nil)
 (setq ag-reuse-window t) ; Re use same window 
@@ -14,11 +14,11 @@
  lazy-highlight-initial-delay 0)
 
 ;; ag hook
-(defun wil-ag-mode-hook ()
+(defun wlh/ag-mode-hook ()
   (make-variable-buffer-local 'truncate-lines)
   (setq truncate-lines t))
 
-(add-hook 'ag-mode-hook 'wil-ag-mode-hook)
+(add-hook 'ag-mode-hook 'wlh/ag-mode-hook)
 
 ;; Occur from isearch
 ;; https://www.emacswiki.org/emacs/OccurFromIsearch

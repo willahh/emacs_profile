@@ -2,7 +2,7 @@
 (require 'web-mode)
 (require 'tide)
 
-(defun wil-add-minor-mode-for-react ()
+(defun wlh/add-minor-mode-for-react ()
   (when (and (stringp buffer-file-name)
              (or (string-match "\\.jsx\\'" buffer-file-name)
                  (string-match "components\\/.*\\.js\\'" buffer-file-name)
@@ -18,7 +18,7 @@
     
     (setup-tide-mode)))
 
-(add-hook 'find-file-hook 'wil-add-minor-mode-for-react)
+(add-hook 'find-file-hook 'wlh/add-minor-mode-for-react)
 
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
 ;; (add-to-list 'auto-mode-alist '("components\\/.*\\.js\\'" . web-mode)) ; Voir point au dessus

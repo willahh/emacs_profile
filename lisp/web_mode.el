@@ -71,15 +71,15 @@
 
 
 
-;; (defun wil-web-mode-hook ()
+;; (defun wlh/web-mode-hook ()
 ;;   (flycheck-mode t)
 ;;   )
-;; (add-hook 'web-mode 'wil-web-mode-hook)
+;; (add-hook 'web-mode 'wlh/web-mode-hook)
 
 
 ;; https://emacs.stackexchange.com/questions/12946/how-tell-web-mode-to-use-tidy-syntaxchecker-in-flycheck
 (eval-after-load 'flycheck
-   '(flycheck-add-mode 'html-tidy 'web-mode))
+  '(flycheck-add-mode 'html-tidy 'web-mode))
 
 ;; From howardabrams
 (defun surround-html (start end tag)

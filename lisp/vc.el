@@ -50,19 +50,19 @@
 
 
 ;; Diff mode hook
-(defun wil-diff-mode-hook ()
+(defun wlh/diff-mode-hook ()
   (interactive)
   (toggle-truncate-lines)
   (outline-minor-mode))
 
-(add-hook 'diff-mode-hook 'wil-diff-mode-hook)
+(add-hook 'diff-mode-hook 'wlh/diff-mode-hook)
 
 ;; Magit hook
-(defun wil-magit-status-mode-hook ()
+(defun wlh/magit-status-mode-hook ()
   (toggle-truncate-lines)
   (outline-minor-mode))
 
-(add-hook 'magit-status-mode-hook 'wil-magit-status-mode-hook)
+(add-hook 'magit-status-mode-hook 'wlh/magit-status-mode-hook)
 
 ;; Diff-hl
 ;; (diff-hl-mode)
@@ -140,38 +140,38 @@ then `diff-jump-to-old-file' is also set, for the next invocations."
 ;; (fullframe vc-diff quit-window)
 ;; (fullframe ag quit-window)
 
-;; wil-vc-dir
-(defun wil-vc-dir ()
+;; wlh/vc-dir
+(defun wlh/vc-dir ()
   (interactive)
   (vc-dir (projectile-project-root))
 
   ;; Some key binding
   ;; (define-key vc-dir-mode-map (kbd "e") 'vc-ediff)
-  ;; (define-key vc-dir-mode-map (kbd "e") 'wil-vc-ediff)
-  ;; (define-key vc-dir-mode-map (kbd "E") 'wil-vc-version-ediff-base-head)
+  ;; (define-key vc-dir-mode-map (kbd "e") 'wlh/vc-ediff)
+  ;; (define-key vc-dir-mode-map (kbd "E") 'wlh/vc-version-ediff-base-head)
   ;; (define-key vc-dir-mode-map (kbd "d") 'vc-diff)
-  ;; (define-key vc-dir-mode-map (kbd "D") 'wil-vc-version-diff-base-head)
+  ;; (define-key vc-dir-mode-map (kbd "D") 'wlh/vc-version-diff-base-head)
   ;; (define-key vc-dir-mode-map (kbd "k") 'vc-revert)
   ;; (define-key vc-dir-mode-map (kbd "g") 'vc-dir-refresh)
 
   )
 
 
-(define-key vc-dir-mode-map (kbd "e") 'wil-vc-ediff)
-(define-key vc-dir-mode-map (kbd "E") 'wil-vc-version-ediff-base-head)
+(define-key vc-dir-mode-map (kbd "e") 'wlh/vc-ediff)
+(define-key vc-dir-mode-map (kbd "E") 'wlh/vc-version-ediff-base-head)
 (define-key vc-dir-mode-map (kbd "d") 'vc-diff)
-(define-key vc-dir-mode-map (kbd "D") 'wil-vc-version-diff-base-head)
+(define-key vc-dir-mode-map (kbd "D") 'wlh/vc-version-diff-base-head)
 (define-key vc-dir-mode-map (kbd "k") 'vc-revert)
 (define-key vc-dir-mode-map (kbd "g") 'vc-dir-refresh)
 
 
-(defun wil-vc-version-diff-base-head ()
+(defun wlh/vc-version-diff-base-head ()
   ;; Quick call vc-version-diff to compare the base and head version
   (interactive)
   (vc-version-diff (vc-deduce-fileset t) "base" "head")
   )
 
-(defun wil-vc-version-ediff-base-head ()
+(defun wlh/vc-version-ediff-base-head ()
   ;; Quick call vc-version-ediff to compare the base and head version
   (interactive)
   (vc-version-ediff (cadr (vc-deduce-fileset t)) "base" "head"))
@@ -190,22 +190,22 @@ then `diff-jump-to-old-file' is also set, for the next invocations."
 
 
 ;; ediff
-(add-hook 'ediff-mode-hook 'wil-ediff-hook)
+(add-hook 'ediff-mode-hook 'wlh/ediff-hook)
 (global-set-key (kbd "C-ç") 'xah-toggle-letter-case) ; (C-9 on azerty keyboard)
 (global-set-key (kbd "C-!") 'string-inflection-all-cycle) ; (C-8 on azerty keyboard)
 
 
-(defun wil-ediff-hook ()
+(defun wlh/ediff-hook ()
   (ediff-setup-keymap)
-  (define-key ediff-mode-map (kbd "q") 'wil-vc-ediff-quit))
+  (define-key ediff-mode-map (kbd "q") 'wlh/vc-ediff-quit))
 
-(defun wil-vc-ediff-quit ()
+(defun wlh/vc-ediff-quit ()
   (interactive)
   (winner-undo)
 
   )
 
-(defun wil-vc-ediff ()
+(defun wlh/vc-ediff ()
   (interactive)
   (window-configuration-to-register :wil2)
   (vc-ediff nil)

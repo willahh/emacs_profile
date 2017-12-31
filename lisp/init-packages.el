@@ -1,11 +1,5 @@
 (require 'package)
 
-;; (add-to-list 'package-archives
-;;              '("elpy" . "http://jorgenschaefer.github.io/packages/"))
-
-;; (add-to-list 'package-archives
-;;              '("marmalade" . "http://marmalade-repo.org/packages/"))
-
 (add-to-list 'package-archives
              '("melpa-stable" . "http://melpa-stable.milkbox.net/packages/") t)
 
@@ -150,19 +144,6 @@
                      yaml-mode
                      yasnippet
                      zop-to-char
-                     ;; ace-popup-menu
-                     ;; company-php
-                     ;; dired-subtree
-                     ;; lsp-mode
-                     ;; outline-toc
-                     ;; sr-speedbar
-                     ;; swiper
-                     ;; wgrep-ag
-                     ;; whitespace-cleanup-mode
-                     ;; ac-php
-                     ;; rjsx-mode
-                     ;; smartparens
-                     ;; volatile-highlights ; Update : desactivation car trop distrayant, et pas 
                      xref-js2
                      counsel-gtags
                      ))
@@ -193,13 +174,8 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/better-breadcrumbs")
 (add-to-list 'load-path "~/.emacs.d/vendor/smartparens")
 (add-to-list 'load-path "~/.emacs.d/vendor/sotlisp")
-;; (add-to-list 'load-path "~/.emacs.d/vendor/smartcomment")
-;; (add-to-list 'load-path "~/.emacs.d/vendor/ivy")
-;; (add-to-list 'load-path "~/.emacs.d/vendor/emacs-helm-ag")
-;; (add-to-list 'load-path "~/.emacs.d/vendor/emacs-async")
-;; (add-to-list 'load-path "~/.emacs.d/vendor/emacs-textmate-0.1/textmate.el")
-;; (add-to-list 'load-path "~/.emacs.d/vendor/emacs-powerline")
-;; (add-to-list 'load-path "~/.emacs.d/vendor/emacspowerline")
+(add-to-list 'load-path "~/.emacs.d/vendor/font-lock-plus")
+(add-to-list 'load-path "~/.emacs.d/vendor/all-the-icons.el")
 
 ;; activate all the packages
 (package-initialize)
@@ -219,4 +195,5 @@
 (load-file "~/.emacs.d/vendor/dired-ranger-20160924.335/dired-ranger.el")
 (load-file "~/.emacs.d/vendor/smartcomment/smartcomment.el")
 (load-file "~/.emacs.d/vendor/visible-bookmarks/bm.el")
-;; (load-file "~/.emacs.d/vendor/dash-at-point/dash-at-point.el")
+
+

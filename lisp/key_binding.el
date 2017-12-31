@@ -118,7 +118,7 @@
 (define-key org-mode-map (kbd "C-x C-n") 'xah-new-empty-buffer)
 
 ;; New frame
-(global-set-key (kbd "M-N") 'wil-create-new-centered-frame)
+(global-set-key (kbd "M-N") 'wlh/create-new-centered-frame)
 (define-key global-map (kbd "C-x C-r") 'revert-buffer-no-confirm)
 (global-set-key (kbd "C-x C-k") 'kill-region)
 
@@ -256,8 +256,8 @@
 (define-key prog-mode-map (kbd "RET") 'new-line-dwim)
 
 ;;
-(global-set-key [(meta shift d)] 'wil-duplicate)
-(global-set-key (kbd "C-x C-d") 'wil-duplicate)
+(global-set-key [(meta shift d)] 'crux-duplicate-current-line-or-region)
+(global-set-key (kbd "C-x C-d") 'crux-duplicate-current-line-or-region)
 
 
 ;; scroll
@@ -330,8 +330,8 @@
 ;; ---------------- Magit
 ;; Magit
 ;; (global-set-key (kbd "C-x g") 'magit-status)
-(global-set-key (kbd "s-g") 'wil-vc-status)
-(global-set-key (kbd "C-x g") 'wil-vc-status)
+(global-set-key (kbd "s-g") 'wlh/vc-status)
+(global-set-key (kbd "C-x g") 'wlh/vc-status)
 (global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
 
 (define-key magit-status-mode-map (kbd "M-w") 'kill-ring-save)
@@ -380,13 +380,14 @@
 ;; M-x
 ;; (global-set-key (kbd "C-c C-x") 'helm-M-x)
 ;; (global-set-key (kbd "M-m M-m") 'helm-M-x)
-(global-set-key (kbd "M-x") 'helm-M-x)
+;; (global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "M-x") 'counsel-M-x)
 (global-set-key (kbd "M-X") 'other-frame) ; Same keybinding from osx switch window habits
 ;; (global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
 
 
-(global-set-key (kbd "<delete>") 'wil-delete-backspace)
-(define-key paredit-mode-map (kbd "<delete>") 'wil-delete-backspace)
+(global-set-key (kbd "<delete>") 'wlh/delete-backspace)
+(define-key paredit-mode-map (kbd "<delete>") 'wlh/delete-backspace)
 
 ;; Find file at point
 ;; Update to use find-file-in-project-by-selected
@@ -403,7 +404,7 @@
 (define-key php-mode-map (kbd "C-:") "\C-e;")
 (define-key web-mode-map (kbd "C-:") "\C-e;")
 
-(defun wil-web-mode-kill-sexp ()
+(defun wlh/web-mode-kill-sexp ()
   (interactive)
   (cond ((equal (web-mode-language-at-pos) "html") (kill-sexp))
         ((equal (web-mode-language-at-pos) "javascript") (sp-kill-hybrid-sexp 1))
@@ -411,10 +412,10 @@
         ((equal (web-mode-language-at-pos) "css") (paredit-kill))))
 
 
-(define-key web-mode-map (kbd "C-k") 'wil-web-mode-kill-sexp)
+(define-key web-mode-map (kbd "C-k") 'wlh/web-mode-kill-sexp)
 
 ;; PDF
-(add-hook 'pdf-view-mode 'wlh-pdf-view-mode-hook)
+(add-hook 'pdf-view-mode 'wlh/pdf-view-mode-hook)
 
 ;; Hydra
 (global-set-key (kbd "s-o") 'hydra-window/body)
@@ -460,8 +461,8 @@
 (global-set-key (kbd "<f9>") 'projectile-recentf)
 ;; (global-set-key (kbd "<f10>") 'counsel-recentf)
 (global-set-key (kbd "<f10>") 'helm-recentf)
-(global-set-key (kbd "<f11>") 'wil-IDE)
-(global-set-key (kbd "<f12>") 'wil-vc-dir)
+(global-set-key (kbd "<f11>") 'wlh/IDE)
+(global-set-key (kbd "<f12>") 'wlh/vc-dir)
 (global-set-key (kbd "<end>") 'end-of-buffer)
 (global-set-key (kbd "<home>") 'beginning-of-buffer)
 
@@ -530,7 +531,7 @@
 ;; Scroll commands
 (global-set-key (kbd "s-v") 'scroll-down)
 ;; (global-set-key (kbd "M-m x") 'counsel-M-x) ;; (global-set-key (kbd "s-g") 'magit-status)
-(global-set-key (kbd "C-x v U") 'wil-svn-up-recursive)
+(global-set-key (kbd "C-x v U") 'wlh/svn-up-recursive)
 
 (global-set-key (kbd "s-i") 'emmet-expand-line)
 ;; (define-key emacs-lisp-mode-map (kbd "C-c C-c") 'eval-defun)
@@ -605,7 +606,7 @@
 (global-set-key (kbd "s-v") 'scroll-down-half)
 
 ;; url
-(global-set-key (kbd "M-m u") 'wil-browse-url-at-point)
+(global-set-key (kbd "M-m u") 'wlh/browse-url-at-point)
 
 ;; Prev / next location
 (global-set-key (kbd "C-$") 'jump-to-prev-pos)
@@ -622,10 +623,10 @@
 ;; (global-set-key (kbd "M-m o a") 'org-agenda)
 
 ;; Increment at point
-(global-set-key (kbd "M-m i") 'wil-hydra-increment-at-point/body)
+(global-set-key (kbd "M-m i") 'wlh/hydra-increment-at-point/body)
 
 ;; Recenter
-(global-set-key (kbd "C-l") 'wil-recenter-top-bottom)
+(global-set-key (kbd "C-l") 'wlh/recenter-top-bottom)
 
 ;; From prelude
 (global-set-key (kbd "C-c r") 'crux-rename-buffer-and-file)

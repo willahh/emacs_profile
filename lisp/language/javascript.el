@@ -1,6 +1,6 @@
 (require 'js2-mode)
 
-(provide 'wil-js-mode)
+(provide 'wlh/js-mode)
 
 ;; (setq js2-missing-semi-one-line-override 1)
 ;; (setq js2-strict-missing-semi-warning t)
@@ -38,17 +38,17 @@
 (require 'js2-imenu-extras)
 (js2-imenu-extras-setup)
 
-;; wil-js-mode.el
+;; wlh/js-mode.el
 ;; Temporary minor mode
-(defvar wil-js-mode-map (make-sparse-keymap)
-  "Keymap while wil-js-mode is active.")
+(defvar wlh/js-mode-map (make-sparse-keymap)
+  "Keymap while wlh/js-mode is active.")
 
 ;;;###autoload
-(define-minor-mode wil-js-mode
+(define-minor-mode wlh/js-mode
   "A temporary minor mode to be activated only specific to a buffer."
   nil
-  :lighter " wil-js"
-  wil-js-mode-map)
+  :lighter " wlh/js"
+  wlh/js-mode-map)
 
 ;; Tern conf
 ;; Don't create .tern-project automatically
@@ -56,7 +56,7 @@
 ;; Switch from tern to tide
 ;; (setq tern-command '("tern" "--no-port-file"))
 
-(defun wil-my-js-mode-hook ()
+(defun wlh/my-js-mode-hook ()
   (js2-imenu-extras-mode) ; js2-imenu-extras-mode
 
   ;; Paredit
@@ -68,13 +68,13 @@
   ;; Yas
   (set (make-local-variable 'yas-indent-line) 'auto)); Auto indent yas snippet
 
-  ;; Company
-  ;; Switch from tern to tide
-  ;; (set (make-local-variable 'company-backends) '((company-tern))))
+;; Company
+;; Switch from tern to tide
+;; (set (make-local-variable 'company-backends) '((company-tern))))
 
-(add-hook 'wil-js-mode-hook 'wil-my-js-mode-hook)
+(add-hook 'wlh/js-mode-hook 'wlh/my-js-mode-hook)
 (add-hook 'js2-mode-hook (lambda ()
-            (wil-js-mode)))
+                           (wlh/js-mode)))
 
 
 ;; From Hlissner config

@@ -3,11 +3,11 @@
 (require 'cl)
 (require 'dired-narrow)
 
-(defun wil-dired-hook ()
+(defun wlh/dired-hook ()
   (dired-hide-details-mode +1)
   (diff-hl-dired-mode))
 
-(add-hook 'dired-mode-hook 'wil-dired-hook)
+(add-hook 'dired-mode-hook 'wlh/dired-hook)
 ;; Mouse click to open in current window
 (define-key dired-mode-map [mouse-2] 'dired-find-file)
 

@@ -3,5 +3,5 @@
   (interactive)
   (insert " {\n}")
   (backward-char)
-  (smart-open-line-above))
+  (crux-smart-open-line-above))
 (define-key css-mode-map (kbd "C-c C-j") 'wlh/css-open-declaration)

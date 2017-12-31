@@ -3,6 +3,10 @@
 ;; ------- Font
 (set-frame-font "Office Code Pro:antialias=1")
 
+;; Main backgrouund
+(set-face-attribute 'default nil :background "#ffffff")
+
+;; Window-divider
 (setq window-divider-default-bottom-width 3)
 (setq window-divider-default-right-width 3)
 
@@ -72,3 +76,18 @@
 
 ;; ------- bm
 (set-face-attribute 'bm-face nil :background "#e0e0e0" :foreground nil)
+
+;; ------- neotree
+(set-face-attribute 'neo-file-link-face nil :background nil :foreground "#000" :family "arial" :height 1)
+(set-face-attribute 'neo-dir-link-face nil :background nil :foreground "#2055a4" :family "arial" :height 1)
+(set-face-attribute 'neo-root-dir-face nil :background nil :foreground "#ccc" :family "arial" :height 0.9)
+(set-face-attribute 'neo-header-face nil :background nil :foreground "#ccc" :family "arial" :height 0.9)
+(setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+
+
+
+;; ------- modeline
+(set-face-attribute 'mode-line nil
+                    :foreground "#fff"
+                    :background "#0078cf"
+                    :box nil)

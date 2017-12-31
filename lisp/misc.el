@@ -426,7 +426,7 @@ _d_: subtree
 (remove-dos-eol)
 
 ;; Enlarge frame
-(defun wil-frame-large ()
+(defun wlh/frame-large ()
   (interactive)
   (set-frame-width (selected-frame) 220)
   (set-frame-height (selected-frame) 55)
@@ -435,12 +435,12 @@ _d_: subtree
 ;; Center frame
 ;; x-display-width / 4 because of retinata double ratio (should be / 2)
 ;; Only works in emacs-osx build
-(defun wil-frame-center ()
+(defun wlh/frame-center ()
   (interactive)
   (set-frame-position (selected-frame) (- (/ (x-display-pixel-width) 4) (/ (frame-pixel-width) 2)) (- (/ (x-display-pixel-width) 4) (frame-pixel-height))))
 
 ;; IDE Mode
-(defun wil-IDE ()
+(defun wlh/IDE ()
   (interactive)
   (flycheck-list-errors)
   (other-window 1)
@@ -544,7 +544,7 @@ _d_: subtree
           (set-visited-file-name new-name)
           (set-buffer-modified-p nil))))))
 
-(defun wil-dired-rename (new-name)
+(defun wlh/dired-rename (new-name)
   "Rename from dired"
   (interactive "sNew name: ")
   (let ((name (buffer-name))
@@ -688,9 +688,9 @@ Version 2016-10-24"
   ;; (add-hook 'paradox-menu-mode-hook #'hide-trailing-whitespace)
   )
 
-;; New wil-ide version.
+;; New wlh/ide version.
 ;; In progress
-(defun wil-ide ()
+(defun wlh/ide ()
   (interactive)
   (projectile-dired)
   (neotree-projectile-action)
@@ -702,11 +702,11 @@ Version 2016-10-24"
 (window-divider-mode-apply nil)
 
 
-(defun wil-window-divider-off ()
+(defun wlh/window-divider-off ()
   (interactive)
   (window-divider-mode-apply nil))
 
-(defun wil-window-divider-on ()
+(defun wlh/window-divider-on ()
   (interactive)
   (window-divider-mode-apply t))
 

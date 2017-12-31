@@ -4,10 +4,18 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
+;; Package management
 (load "~/.emacs.d/lisp/init-packages")
-(load-file "~/.emacs.d/lisp/defun.el")
-(load-file "~/.emacs.d/lisp/system.el")
+
+;; Emacs defaults
 (load-file "~/.emacs.d/lisp/base.el")
+
+;; System
+(load-file "~/.emacs.d/lisp/system.el")
+
+;; Common functions
+(load-file "~/.emacs.d/lisp/defun.el")
+
 (load-file "~/.emacs.d/lisp/project.el")
 (load-file "~/.emacs.d/lisp/use_package.el")
 (load-file "~/.emacs.d/lisp/navigation.el")
