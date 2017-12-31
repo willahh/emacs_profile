@@ -194,14 +194,16 @@
 ;; Mac-Pass-Command-To-System
 (setq mac-pass-command-to-system nil)
 
-;; smooth scroling!
+;; 
 (setq 
- 
  ;; Don't pause display on input
  redisplay-dont-pause t
  
  scroll-preserve-screen-position t
  scroll-conservatively 0)
+
+;; Background luminance (eww visibility on dark theme)
+(setq shr-color-visible-luminance-min 100)
 
 ;; Abbrev
 (setq default-abbrev-mode t)
