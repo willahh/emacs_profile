@@ -385,7 +385,9 @@
 ;; (global-set-key (kbd "C-c C-x") 'helm-M-x)
 ;; (global-set-key (kbd "M-m M-m") 'helm-M-x)
 ;; (global-set-key (kbd "M-x") 'helm-M-x)
-(global-set-key (kbd "M-x") 'counsel-M-x)
+;; (global-set-key (kbd "M-x") 'counsel-M-x)
+(global-set-key (kbd "M-m M-x") 'counsel-M-x)
+(global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
 (global-set-key (kbd "M-X") 'other-frame) ; Same keybinding from osx switch window habits
 ;; (global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
 
@@ -628,6 +630,7 @@
 
 ;; Increment at point
 (global-set-key (kbd "M-m i") 'wlh/hydra-increment-at-point/body)
+(global-set-key (kbd "M-m p") 'wlh/workspace-search)
 
 ;; Recenter
 (global-set-key (kbd "C-l") 'wlh/recenter-top-bottom)

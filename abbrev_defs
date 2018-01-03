@@ -13,6 +13,8 @@
   '(
    ))
 
+(define-abbrev-table 'bibtex-mode-abbrev-table '())
+
 (define-abbrev-table 'bookmark-bmenu-mode-abbrev-table '())
 
 (define-abbrev-table 'bookmark-edit-annotation-mode-abbrev-table '())
@@ -113,7 +115,7 @@
 
 (define-abbrev-table 'global-abbrev-table
   '(
-    ("arg" "arguments" nil 1)
+    ("arg" "arguments" xah-abbrev-h-f 0)
     ("fu" "function" xah-abbrev-h-f 0)
     ("fun" "function" nil 1)
     ("wil" "willahh" nil 3)
@@ -243,9 +245,7 @@
 
 (define-abbrev-table 'python-mode-abbrev-table '())
 
-(define-abbrev-table 'python-mode-skeleton-abbrev-table
-  '(
-   ))
+(define-abbrev-table 'python-mode-skeleton-abbrev-table '())
 
 (define-abbrev-table 'scss-mode-abbrev-table '())
 
