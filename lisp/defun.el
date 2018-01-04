@@ -12,6 +12,26 @@
   "Revert buffer without confirmation."
   (interactive) (revert-buffer t t))
 
+(defun duplicate-current-line-or-region (arg)
+  "Duplicates the current line or region ARG times.
+ If there's no region, the current line will be duplicated. However, if
+ there's a region, all lines that region covers will be duplicated."
+  (interactive "p")
+  (let (beg end (origin (point)))
+    (if (and mark-active (> (point) (mark)))
+        (exchange-point-and-mark))
+    (setq beg (line-beginning-position))
+    (if mark-active
+        (exchange-point-and-mark))
+    (setq end (line-end-position))
+    (let ((region (buffer-substring-no-properties beg end)))
+      (dotimes (i arg)
+        (goto-char end)
+        (newline)
+        (insert region)
+        (setq end (point)))
+      (goto-char (+ origin (* (length region) arg) arg)))))
+      
 ;; Source : https://www.emacswiki.org/emacs/DuplicayoartOfLineOrRegion
 ;; Update to use duplicate-current-line-or-region instead of duplicate-start-of-line
 (defun duplicate-start-of-line-or-region ()
@@ -866,8 +886,6 @@ the checking happens for all pairs in auto-minor-mode-alist"
 
 (defun wlh/neotree-set ()
   (interactive)
-  ;; (neotree-dir (projectile-project-root))
-  ;; (neo-global--open-and-find (projectile-project-root))
   (neo-global--open-and-find (buffer-file-name)))
 
 

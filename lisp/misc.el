@@ -505,6 +505,10 @@ Version 2016-10-24"
 (add-hook 'js2-mode-hook 'linum-mode)
 (add-hook 'css-mode-hook 'linum-mode)
 
+;; disable window-system in terminal mode
+(unless window-system
+  (menu-bar-mode -1))
+
 (require 'smart-comment)
 (global-set-key (kbd "M-;") 'smart-comment)
 
