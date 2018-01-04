@@ -7,6 +7,13 @@
   (interactive "p")
   (yank-pop (- arg)))
 
+;; Center frame
+;; x-display-width / 4 because of retinata double ratio (should be / 2)
+;; Only works in emacs-osx build
+(defun wlh/frame-center ()
+  (interactive)
+  (set-frame-position (selected-frame) (- (/ (x-display-pixel-width) 4) (/ (frame-pixel-width) 2)) (- (/ (x-display-pixel-width) 4) (frame-pixel-height))))
+
 ;; Revert without confirm
 (defun revert-buffer-no-confirm ()
   "Revert buffer without confirmation."
@@ -31,7 +38,7 @@
         (insert region)
         (setq end (point)))
       (goto-char (+ origin (* (length region) arg) arg)))))
-      
+
 ;; Source : https://www.emacswiki.org/emacs/DuplicayoartOfLineOrRegion
 ;; Update to use duplicate-current-line-or-region instead of duplicate-start-of-line
 (defun duplicate-start-of-line-or-region ()
@@ -1251,7 +1258,7 @@ Version 2016-12-27"
   (interactive)
   (select-frame (make-frame))
   (funcall #'switch-to-buffer (xah-new-empty-buffer))
-  (wil-frame-center))
+  (wlh/frame-center))
 
 (defun wlh/find-org-files ()
   ;; Find org files in user directory

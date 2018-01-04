@@ -21,6 +21,7 @@
 (load-file "~/.emacs.d/lisp/search.el")
 (load-file "~/.emacs.d/lisp/buffer.el")
 (load-file "~/.emacs.d/lisp/syntax_checker.el")
+(load-file "~/.emacs.d/lisp/tags.el")
 (load-file "~/.emacs.d/lisp/org.el")
 (load-file "~/.emacs.d/lisp/key_binding.el")
 (load-file "~/.emacs.d/lisp/theme-light3.el")

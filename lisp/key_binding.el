@@ -15,6 +15,8 @@
 (require 'typescript-mode)
 (require 'slime)
 
+;; Defun leader key © (alt+c on osx azerty keyboard)
+(defvar wlh/leader-key (concat "©" " "))
 
 ;; Define M-m shortcut as a leader key
 (global-unset-key (kbd "M-m"))
@@ -261,8 +263,8 @@
 
 ;; Duplicate line
 (global-set-key (kbd "C-x C-d") 'duplicate-start-of-line-or-region)
-(global-set-key (kbd "M-d") 'duplicate-start-of-line-or-region)
-(define-key paredit-mode-map (kbd "M-d") 'duplicate-start-of-line-or-region)
+(global-set-key (kbd "M-D") 'duplicate-start-of-line-or-region)
+(define-key paredit-mode-map (kbd "M-D") 'duplicate-start-of-line-or-region)
 
 
 ;; scroll
@@ -387,10 +389,10 @@
 ;; (global-set-key (kbd "M-m M-m") 'helm-M-x)
 ;; (global-set-key (kbd "M-x") 'helm-M-x)
 ;; (global-set-key (kbd "M-x") 'counsel-M-x)
-(global-set-key (kbd "M-m M-x") 'counsel-M-x)
+;; (global-set-key (kbd "M-m M-x") 'counsel-M-x)
+(global-set-key (kbd "≈") 'counsel-M-x) ; Alt+x on azerty keyboard
 (global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
 (global-set-key (kbd "M-X") 'other-frame) ; Same keybinding from osx switch window habits
-;; (global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
 
 
 (global-set-key (kbd "<delete>") 'wlh/delete-backspace)
