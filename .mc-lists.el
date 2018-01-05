@@ -22,6 +22,7 @@
         clean-aindent--bsunindent
         comment-line
         company-indent-or-complete-common
+        crux-smart-open-line
         delete-horizontal-space
         dired-jump
         drag-stuff-down

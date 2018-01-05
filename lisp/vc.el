@@ -53,7 +53,8 @@
 (defun wlh/diff-mode-hook ()
   (interactive)
   (toggle-truncate-lines)
-  (outline-minor-mode))
+  (outline-minor-mode)
+  (setq diff-hl-draw-borders nil))
 
 (add-hook 'diff-mode-hook 'wlh/diff-mode-hook)
 
