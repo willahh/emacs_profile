@@ -81,7 +81,6 @@
   (yas-global-mode 0)
   (yas-minor-mode 0)
   (company-mode 0)
-  ;; (google-this-mode 0)
   (evil-snipe-mode 0)
   (ivy-mode 0)
   (highlight-symbol-mode 0))
@@ -505,6 +504,10 @@ Version 2016-10-24"
 (add-hook 'web-mode-hook 'linum-mode)
 (add-hook 'js2-mode-hook 'linum-mode)
 (add-hook 'css-mode-hook 'linum-mode)
+
+;; disable window-system in terminal mode
+(unless window-system
+  (menu-bar-mode -1))
 
 (require 'smart-comment)
 (global-set-key (kbd "M-;") 'smart-comment)

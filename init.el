@@ -21,6 +21,7 @@
 (load-file "~/.emacs.d/lisp/search.el")
 (load-file "~/.emacs.d/lisp/buffer.el")
 (load-file "~/.emacs.d/lisp/syntax_checker.el")
+(load-file "~/.emacs.d/lisp/tags.el")
 (load-file "~/.emacs.d/lisp/org.el")
 (load-file "~/.emacs.d/lisp/key_binding.el")
 (load-file "~/.emacs.d/lisp/theme-light3.el")
@@ -36,4 +37,5 @@
 (load-file "~/.emacs.d/lisp/lang/react.el")
 (load-file "~/.emacs.d/lisp/defun/wlh-project.el") ; Custom lisp
 
-(window-divider-mode-apply t) ; Enable window-divier
+;; (window-divider-mode-apply t) ; Enable window-divier
+(window-divider-mode-apply 1) ; Enable window-divier

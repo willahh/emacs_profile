@@ -154,7 +154,6 @@
 
 
 ;;; Require
-(require 'syslog-mode)
 (require 'hide-lines)
 (eval-when-compile (require 'cl))
 (require 'ido)

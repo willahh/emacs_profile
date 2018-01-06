@@ -63,8 +63,8 @@
             '(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
 
 ;; Hide some mini buffer message
-(let ((inhibit-message t))
-  (message "Listen to me, you!"))
+;; (let ((inhibit-message t))
+;;  (message "Listen to me, you!"))
 
 ;; Set default column width to 80
 (set-default 'fill-column 80)
@@ -120,8 +120,12 @@
 ;; Always load newest byte code
 (setq load-prefer-newer t)
 
-;; Reduce the frequency of garbage collection by making it happen on
+;; Increase the garbage collection threshold to 500 MB to ease startup
+;; @see http://sriramkswamy.github.io/dotemacs/
 (setq gc-cons-threshold (* 500 1024 1024))
+
+;; Garbage collector - decrease threshold to 5 MB after init
+(add-hook 'after-init-hook (lambda () (setq gc-cons-threshold (* 5 1024 1024))))
 
 ;; gc-cons-threshold
 (setq-default gc-cons-percentage 0.4)
