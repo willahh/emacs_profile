@@ -28,7 +28,8 @@
 (global-set-key (kbd "ß") 'projectile-switch-to-buffer) ; ALT+b
 (global-set-key (kbd "È") 'fixup-whitespace) ; ALT+k
 (global-set-key (kbd "Ì") 'help) ; ALT+h
-(global-set-key (kbd "Ò") 'helm-ag); ALT + S
+(global-set-key (kbd "Ò") 'helm-ag) ; ALT + S
+
 
 ;; M-x
 ;; (global-set-key (kbd "C-c C-x") 'helm-M-x)

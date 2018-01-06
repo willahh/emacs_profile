@@ -16,6 +16,7 @@
 
   (nlinum-mode t)
   (ggtags-mode 1) ; ggtags-mode
+  (textmate-mode)
   ;; (flycheck-mode) ; flycheck-mode, deja active de maniere global
   ;; (set (make-local-variable 'highlight-symbol-mode) 't) ; Highlight-mode
   )
