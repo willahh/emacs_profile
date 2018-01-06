@@ -15,13 +15,10 @@
 (require 'typescript-mode)
 (require 'slime)
 
-
 ;; Defun leader key © (alt+c on osx azerty keyboard)
 (defvar wlh/leader-key (concat "©" " "))
 (global-unset-key (kbd "©"))
 (global-unset-key (kbd "M-m")) ; Define M-m shortcut as a leader key
-
-
 
 ;; --------------- Direct ALT binding
 (global-set-key (kbd "Â") 'zap-to-char) ; ALT+z
@@ -360,8 +357,9 @@
 ;; (global-set-key (kbd "C-x M-m") 'shell)
 
 ;; expand-region
-(global-set-key (kbd "C-,") 'er/expand-region)
-(define-key org-mode-map (kbd "C-,") 'er/expand-region)
+;; (global-set-key (kbd "C-,") 'er/expand-region)
+;; (define-key org-mode-map (kbd "C-,") 'er/expand-region)
+(global-set-key (kbd "C-à") 'er/expand-region) ; C-0 on azerty keyboard
 (global-set-key (kbd "M-L") 'er/contract-region)
 (global-set-key (kbd "M-L") 'mc/mark-all-words-like-this) ; Like in VS Code
 (global-set-key (kbd "C-M-l") 'mark-sexp)
