@@ -499,8 +499,8 @@
 ;; Better move paragraph / mark paragraph
 ;; Convert default qwerty M-{ and M-} position on keyboard to azerty mapping
 (global-set-key (kbd "M-h") 'rs-mark-paragraph)
-(global-set-key (kbd "M-¨") 'lawlist-forward-paragraph)
-(global-set-key (kbd "M-*") 'lawlist-backward-paragraph)
+(global-set-key (kbd "M-¨") 'lawlist-backward-paragraph)
+(global-set-key (kbd "M-*") 'lawlist-forward-paragraph)
 
 ;; Help
 (global-set-key (kbd "s-h") 'help)

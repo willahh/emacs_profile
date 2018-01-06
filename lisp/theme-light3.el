@@ -47,10 +47,14 @@
 (add-hook 'linum-mode-hook 'wlh/theme-linum-mode-hook)
 
 ;; -------
-(set-face-attribute 'font-lock-keyword-face nil :foreground "#9d288b")
+;; (set-face-attribute 'font-lock-keyword-face nil :foreground "#9d288b")
+(set-face-attribute 'font-lock-keyword-face nil :foreground "#0000ff")
+(set-face-attribute 'font-lock-type-face nil :foreground "#6c1883")
 (set-face-attribute 'font-lock-variable-name-face nil :foreground "#1e27a3")
 (set-face-attribute 'font-lock-function-name-face nil :foreground "#1e27a3")
-(set-face-attribute 'font-lock-string-face nil :foreground "#b62e24")
+;; (set-face-attribute 'font-lock-string-face nil :foreground "#b62e24")
+;; (set-face-attribute 'font-lock-string-face nil :foreground "#008000")
+(set-face-attribute 'font-lock-string-face nil :foreground "#2a97b4")
 (set-face-attribute 'font-lock-comment-face nil :foreground "#008000")
 (set-face-attribute 'font-lock-doc-face nil :foreground "#008000")
 
@@ -94,3 +98,6 @@
                     :foreground "#fff"
                     :background "#0078cf"
                     :box nil)
+
+;; ------- php
+(set-face-attribute 'php-annotations-annotation-face nil :foreground "#008000" :background nil :underline t)

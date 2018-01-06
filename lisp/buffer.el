@@ -1,7 +1,7 @@
 ;; ;; Update : reactivation de *vc-diff*, plutot pratique
 (setq display-buffer-alist
       '(
-        ("*ag*"               . (display-buffer-same-window . nil))
+        ;; ("*ag*"               . (display-buffer-same-window . nil))
         ;; ("*vc-diff*"               . (display-buffer-same-window . nil))
         ("*vc-dir*"               . (display-buffer-same-window . nil))
         ("*vc-diff*"               . (display-buffer-same-window . nil))

@@ -222,7 +222,7 @@
 (add-hook 'css-mode-hook 'textmate-mode)
 (add-hook 'scss-mode-hook 'textmate-mode)
 (add-hook 'org-mode 'textmate-mode)
-(add-hook 'php-mode 'textmate-mode)
+;; (add-hook 'php-mode 'textmate-mode)
 
 ;; -------- url / link / goto-address-mode
 ;; Enable jump to url quickly for all buffers
