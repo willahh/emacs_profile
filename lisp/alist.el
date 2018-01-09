@@ -10,6 +10,8 @@
 (add-to-list 'auto-mode-alist '("lang/.*.php" . php-mode))
 (add-to-list 'auto-mode-alist '("conf/.*.php" . php-mode))
 (add-to-list 'auto-mode-alist '("ajax/.*.php" . php-mode))
+(add-to-list 'auto-mode-alist '("controller/.*.php" . php-mode))
+(add-to-list 'auto-mode-alist '("cron/.*.php" . php-mode))
 
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js-mode))

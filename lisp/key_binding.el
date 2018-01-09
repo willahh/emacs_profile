@@ -99,12 +99,14 @@
 
 
 ;; Scroll
+(global-set-key (kbd "C-v") 'scroll-up-half)
+(global-set-key (kbd "s-v") 'scroll-down-half)
+
+;; Scroll half can be slow
 (add-hook 'syslog-mode-hook (lambda ()
                               (define-key syslog-mode-map (kbd "s-v") 'scroll-down)
                               (define-key syslog-mode-map (kbd "C-v") 'scroll-up)))
 
-;; scroll
-(global-set-key (kbd "C-v") 'scroll-up)
 
 ;; undo-tree
 (global-set-key (kbd "M-z") 'undo-tree-undo)
@@ -197,7 +199,7 @@
 (global-set-key (kbd "∏") 'mc/mark-previous-lines) ; ALT+SHIFT+n
 
 ;; Misc
-(global-set-key (kbd "Ò") 'paredit-splice-sexp)
+;; (global-set-key (kbd "Ò") 'paredit-splice-sexp)
 (global-set-key (kbd "æ") 'mark-whole-buffer) ; ALT+a
 (global-set-key (kbd "Â") 'toggle-php-flavor-mode) ; ALT+z
 (define-key php-mode-map (kbd "Â") 'toggle-php-flavor-mode) ; ALT+z
@@ -520,7 +522,7 @@
 ;; (global-set-key (kbd "s-c") 'org-capture)
 ;; (global-set-key (kbd "s-b") 'projectile-switch-to-buffer)
 ;; (global-set-key (kbd "s-k") 'fixup-whitespace)
-;; (global-set-key (kbd "s-/") 'comment-or-uncomment-region-or-line)
+(global-set-key (kbd "s-/") 'comment-or-uncomment-region-or-line)
 
 ;; Kill
 ;; Better move paragraph / mark paragraph
@@ -561,7 +563,7 @@
 (global-set-key (kbd "M-m R") 'projectile-recentf)
 
 ;; Scroll commands
-(global-set-key (kbd "s-v") 'scroll-down)
+
 ;; (global-set-key (kbd "M-m x") 'counsel-M-x) ;; (global-set-key (kbd "s-g") 'magit-status)
 (global-set-key (kbd "C-x v U") 'wlh/svn-up-recursive)
 
@@ -625,10 +627,6 @@
 
 ;; ---------------- Markdown
 (define-key markdown-mode-map (kbd "C-M-i") 'markdown-shifttab)
-
-;; scroll
-(global-set-key (kbd "C-v") 'scroll-up-half)
-(global-set-key (kbd "s-v") 'scroll-down-half)
 
 ;; url
 (global-set-key (kbd "M-m u") 'wlh/browse-url-at-point)
