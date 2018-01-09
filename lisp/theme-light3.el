@@ -57,6 +57,7 @@
 (set-face-attribute 'font-lock-string-face nil :foreground "#2a97b4")
 (set-face-attribute 'font-lock-comment-face nil :foreground "#008000")
 (set-face-attribute 'font-lock-doc-face nil :foreground "#008000")
+(set-face-attribute 'font-lock-constant-face nil :foreground "#5fbfec")
 
 ;; ------- diff-hl
 (set-face-attribute 'diff-hl-delete nil :foreground "#fc1a9f")
