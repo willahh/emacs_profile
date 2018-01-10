@@ -144,19 +144,7 @@ then `diff-jump-to-old-file' is also set, for the next invocations."
 ;; wlh/vc-dir
 (defun wlh/vc-dir ()
   (interactive)
-  (vc-dir (projectile-project-root))
-
-  ;; Some key binding
-  ;; (define-key vc-dir-mode-map (kbd "e") 'vc-ediff)
-  ;; (define-key vc-dir-mode-map (kbd "e") 'wlh/vc-ediff)
-  ;; (define-key vc-dir-mode-map (kbd "E") 'wlh/vc-version-ediff-base-head)
-  ;; (define-key vc-dir-mode-map (kbd "d") 'vc-diff)
-  ;; (define-key vc-dir-mode-map (kbd "D") 'wlh/vc-version-diff-base-head)
-  ;; (define-key vc-dir-mode-map (kbd "k") 'vc-revert)
-  ;; (define-key vc-dir-mode-map (kbd "g") 'vc-dir-refresh)
-
-  )
-
+  (vc-dir (projectile-project-root)))
 
 (define-key vc-dir-mode-map (kbd "e") 'wlh/vc-ediff)
 (define-key vc-dir-mode-map (kbd "E") 'wlh/vc-version-ediff-base-head)
@@ -165,12 +153,10 @@ then `diff-jump-to-old-file' is also set, for the next invocations."
 (define-key vc-dir-mode-map (kbd "k") 'vc-revert)
 (define-key vc-dir-mode-map (kbd "g") 'vc-dir-refresh)
 
-
 (defun wlh/vc-version-diff-base-head ()
   ;; Quick call vc-version-diff to compare the base and head version
   (interactive)
-  (vc-version-diff (vc-deduce-fileset t) "base" "head")
-  )
+  (vc-version-diff (vc-deduce-fileset t) "base" "head"))
 
 (defun wlh/vc-version-ediff-base-head ()
   ;; Quick call vc-version-ediff to compare the base and head version
@@ -185,32 +171,15 @@ then `diff-jump-to-old-file' is also set, for the next invocations."
 ;; Show refined hunks
 (set-default 'magit-diff-refine-hunk t)
 
-
-
-
-
-
 ;; ediff
-(add-hook 'ediff-mode-hook 'wlh/ediff-hook)
+;; (add-hook 'ediff-mode-hook 'wlh/ediff-hook)
 (global-set-key (kbd "C-ç") 'xah-toggle-letter-case) ; (C-9 on azerty keyboard)
 (global-set-key (kbd "C-!") 'string-inflection-all-cycle) ; (C-8 on azerty keyboard)
-
-
-(defun wlh/ediff-hook ()
-  (ediff-setup-keymap)
-  (define-key ediff-mode-map (kbd "q") 'wlh/vc-ediff-quit))
-
-(defun wlh/vc-ediff-quit ()
-  (interactive)
-  (winner-undo)
-
-  )
 
 (defun wlh/vc-ediff ()
   (interactive)
   (window-configuration-to-register :wil2)
-  (vc-ediff nil)
-  )
+  (vc-ediff nil))
 
 
 ;; https://oremacs.com/2017/03/18/dired-ediff/
@@ -233,8 +202,9 @@ then `diff-jump-to-old-file' is also set, for the next invocations."
                     (lambda ()
                       (setq ediff-after-quit-hook-internal nil)
                       (set-window-configuration wnd))))
-      (error "no more than 2 files should be marked"))))
-(define-key dired-mode-map "e" 'ora-ediff-files)
+      (error "no more than 2 files should be marked")))
+  (define-key dired-mode-map "e" 'ora-ediff-files)
 
-(setq ediff-window-setup-function 'ediff-setup-windows-plain
-      ediff-split-window-function 'split-window-horizontally)
+  (setq ediff-window-setup-function 'ediff-setup-windows-plain
+        ediff-split-window-function 'split-window-horizontally)
+  )
