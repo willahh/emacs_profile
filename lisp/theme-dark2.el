@@ -168,10 +168,6 @@
 (set-face-attribute 'ediff-odd-diff-B nil :foreground nil :background "#000")
 
 ;; org
-;; Todo cette partie fait une erreur, il faut l implementer comme un vrai theme, voir
-;; https://www.emacswiki.org/emacs/download/zenburn.el
-
-;; Cette partie ne fonctionne pas bien
 (add-hook 'org-mode-hook (lambda ()
                            (require 'org)
                            (set-face-attribute 'org-document-title nil :family "Sans Serif" :height 1.8 :foreground "#fffefe")

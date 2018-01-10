@@ -32,6 +32,7 @@
 (global-set-key (kbd "Ò") 'helm-ag) ; ALT + S
 (global-set-key (kbd "ƒ") 'helm-recentf) ; ALT + f
 (global-set-key (kbd "¢") 'org-capture) ; ALT + C
+(global-set-key (kbd "†") 'toggle-truncate-lines) ; ALT + t
 
 
 ;; M-x
@@ -307,6 +308,8 @@
 
 ;; ---------------- new line
 (define-key prog-mode-map (kbd "RET") 'new-line-dwim)
+(define-key php-mode-map (kbd "RET") 'new-line-dwim)
+(define-key prog-mode-map "<return>" 'new-line-dwim)
 
 ;; Duplicate line
 (global-set-key (kbd "C-x C-d") 'duplicate-start-of-line-or-region)

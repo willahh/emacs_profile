@@ -1,4 +1,3 @@
-;; (require 'css)
 (require 'css-mode)
 
 (load "~/.emacs.d/lisp/theme/tango-plus/tangotango-plus-theme.el")
@@ -102,3 +101,31 @@
 
 ;; ------- php
 (set-face-attribute 'php-annotations-annotation-face nil :foreground "#008000" :background nil :underline t)
+
+
+;; ------- org
+(defun wlh/org-mode-hook ()
+  (require 'org)
+  (set-face-attribute 'org-document-title nil :family "Sans Serif" :height 1.8 :foreground "#999")
+  (set-face-attribute 'org-level-1 nil :height 1.3 :overline nil :foreground "#000" :background "#fff" :box nil)
+  (set-face-attribute 'org-level-2 nil :height 1 :box nil :overline nil :foreground "#000" :background "#ffffff")
+  (set-face-attribute 'org-special-keyword nil :height 1 :foreground "#aeb7da" :background nil)
+  (set-face-attribute 'org-document-info-keyword nil :height 1 :foreground "#b0dcff" :background nil)
+  (set-face-attribute 'org-checkbox-statistics-todo  nil :height 1))
+
+(add-hook 'org-mode-hook 'wlh/org-mode-hook)
+
+
+;; ------- diff
+(defun wlh/diff-mode-hook ()
+  (set-face-attribute 'diff-header nil :background "#ccc" :foreground "#000")
+  (set-face-attribute 'diff-file-header nil :background nil :foreground "#000000" :weight 'ultra-bold)
+  (set-face-attribute 'diff-hunk-header nil :background "#ccc" :foreground "#000" :box "#666")
+  (set-face-attribute 'diff-indicator-removed nil :background nil :foreground "#86d9fb")
+  (set-face-attribute 'diff-indicator-added nil :background nil :foreground "#86d9fb")
+  (set-face-attribute 'diff-removed nil :background nil :foreground "#ff536a")
+  (set-face-attribute 'diff-added nil :background nil :foreground "#c3e886")
+  (set-face-attribute 'diff-context nil :background nil :foreground "#ccc")
+  (set-face-attribute 'diff-header nil :background nil :foreground "#000"))
+
+(add-hook 'diff-mode-hook 'wlh/diff-mode-hook)
