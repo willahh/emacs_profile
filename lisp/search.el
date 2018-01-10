@@ -6,7 +6,7 @@
 ;; (setq search-whitespace-regexp ".*?")
 (setq ag-highlight-search t)
 (setq ag-reuse-buffers nil)
-(setq ag-reuse-window t) ; Re use same window 
+;; (setq ag-reuse-window nil) ; Re use same window 
 
 (setq-default
  isearch-allow-scroll t
@@ -16,6 +16,7 @@
 ;; ag hook
 (defun wlh/ag-mode-hook ()
   (make-variable-buffer-local 'truncate-lines)
+  (next-error-follow-minor-mode t) ; Active auto follow minor mode 
   (setq truncate-lines t))
 
 (add-hook 'ag-mode-hook 'wlh/ag-mode-hook)

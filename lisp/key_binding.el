@@ -24,11 +24,14 @@
 
 
 ;; --------------- Direct ALT binding
-(global-set-key (kbd "Â") 'zap-to-char) ; ALT+z
-(global-set-key (kbd "ß") 'projectile-switch-to-buffer) ; ALT+b
-(global-set-key (kbd "È") 'fixup-whitespace) ; ALT+k
-(global-set-key (kbd "Ì") 'help) ; ALT+h
+;; Helm used insted of ivy cause of mouse usage
+(global-set-key (kbd "Â") 'zap-to-char) ; ALT + z
+(global-set-key (kbd "ß") 'projectile-switch-to-buffer) ; ALT + b
+(global-set-key (kbd "È") 'fixup-whitespace) ; ALT + k
+(global-set-key (kbd "Ì") 'help) ; ALT + h
 (global-set-key (kbd "Ò") 'helm-ag) ; ALT + S
+(global-set-key (kbd "ƒ") 'helm-recentf) ; ALT + f
+(global-set-key (kbd "¢") 'org-capture) ; ALT + C
 
 
 ;; M-x
@@ -92,7 +95,7 @@
 ;; ---------------- 
 (global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
 (global-set-key (kbd "M-X") 'other-frame) ; Same keybinding from osx switch window habits
-(global-set-key (kbd "C-x k") 'kill-buffer-and-window)
+(global-set-key (kbd "C-x k") 'kill-this-buffer)
 (global-set-key (kbd "M-g") 'goto-line) ; https://github.com/skeeto/.emacs.d/blob/master/init.el
 (define-key paredit-mode-map (kbd "M-q") 'fill-paragraph)
 (global-set-key (kbd "C-;") "\C-e;") ; (CONTROL + ; -> Append ";" at the end of a line)
@@ -497,15 +500,16 @@
 (global-set-key (kbd "<f2> a") 'org-agenda)
 (global-set-key (kbd "<f2> r") 'helm-recentf)
 ;; (global-set-key (kbd "<f2> e") 'helm-projectile)
-(global-set-key (kbd "<f2> e") 'helm-mini)
-(global-set-key (kbd "<f2> b") 'helm-buffers-list)
-(global-set-key (kbd "<f2> c") 'org-capture)
+;; (global-set-key (kbd "<f2> e") 'helm-mini)
+;; (global-set-key (kbd "<f2> b") 'helm-buffers-list)
+;; (global-set-key (kbd "<f2> c") 'org-capture)
 (global-set-key (kbd "<f5>") 'revert-buffer-no-confirm)
 (global-set-key (kbd "<f6>") 'dired-jump)
 (global-set-key (kbd "<f7>") 'projectile-dired)
 ;; (global-set-key (kbd "<f8>") 'neotree-toggle)
-(global-set-key (kbd "<f8>") 'wlh/neotree-set)
+;; (global-set-key (kbd "<f8>") 'wlh/neotree-set) ; Ne fonctionne pas depuis dired
 ;; (global-set-key (kbd "<f8>") 'neotree-projectile-action)
+(global-set-key (kbd "<f8>") 'neotree-toggle)
 (global-set-key (kbd "<f9>") 'projectile-recentf)
 ;; (global-set-key (kbd "<f10>") 'counsel-recentf)
 (global-set-key (kbd "<f10>") 'helm-recentf)
