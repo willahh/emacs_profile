@@ -82,6 +82,12 @@
 ;; make the left fringe 4 pixels wide and the right disappear
 (fringe-mode '(12 . 0))
 
+;; make the flycheck arrow look like an exclamation point.
+;; but only do it when emacs runs in a window, not terminal
+(when window-system
+  (define-fringe-bitmap 'flycheck-fringe-bitmap-double-arrow
+    [0 24 24 24 24 24 24 0 0 24 24 0 0 0 0 0 0]))
+
 ;; Default cursor type to bar
 (set-default 'cursor-type 'bar)
 

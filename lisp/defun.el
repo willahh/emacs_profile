@@ -1098,6 +1098,10 @@ Version 2016-12-27"
     (ad-enable-advice 'isearch-repeat 'after 'isearch-no-fail)
     (ad-activate 'isearch-repeat)))
 
+;; Focus on the result window after doing ag
+(defadvice ag (after wlh-ag-before activate)
+ (other-window 1))
+
 
 
 

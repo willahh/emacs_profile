@@ -21,11 +21,15 @@
 (global-unset-key (kbd "M-m")) ; Define M-m shortcut as a leader key
 
 ;; --------------- Direct ALT binding
-(global-set-key (kbd "Â") 'zap-to-char) ; ALT+z
-(global-set-key (kbd "ß") 'projectile-switch-to-buffer) ; ALT+b
-(global-set-key (kbd "È") 'fixup-whitespace) ; ALT+k
-(global-set-key (kbd "Ì") 'help) ; ALT+h
+;; Helm used insted of ivy cause of mouse usage
+(global-set-key (kbd "Â") 'zap-to-char) ; ALT + z
+(global-set-key (kbd "ß") 'projectile-switch-to-buffer) ; ALT + b
+(global-set-key (kbd "È") 'fixup-whitespace) ; ALT + k
+(global-set-key (kbd "Ì") 'help) ; ALT + h
 (global-set-key (kbd "Ò") 'helm-ag) ; ALT + S
+(global-set-key (kbd "ƒ") 'helm-recentf) ; ALT + f
+(global-set-key (kbd "¢") 'org-capture) ; ALT + C
+(global-set-key (kbd "†") 'toggle-truncate-lines) ; ALT + t
 
 
 ;; M-x
@@ -96,12 +100,14 @@
 
 
 ;; Scroll
+(global-set-key (kbd "C-v") 'scroll-up-half)
+(global-set-key (kbd "s-v") 'scroll-down-half)
+
+;; Scroll half can be slow
 (add-hook 'syslog-mode-hook (lambda ()
                               (define-key syslog-mode-map (kbd "s-v") 'scroll-down)
                               (define-key syslog-mode-map (kbd "C-v") 'scroll-up)))
 
-;; scroll
-(global-set-key (kbd "C-v") 'scroll-up)
 
 ;; undo-tree
 (global-set-key (kbd "M-z") 'undo-tree-undo)
@@ -194,7 +200,7 @@
 (global-set-key (kbd "∏") 'mc/mark-previous-lines) ; ALT+SHIFT+n
 
 ;; Misc
-(global-set-key (kbd "Ò") 'paredit-splice-sexp)
+;; (global-set-key (kbd "Ò") 'paredit-splice-sexp)
 (global-set-key (kbd "æ") 'mark-whole-buffer) ; ALT+a
 (global-set-key (kbd "Â") 'toggle-php-flavor-mode) ; ALT+z
 (define-key php-mode-map (kbd "Â") 'toggle-php-flavor-mode) ; ALT+z
@@ -299,6 +305,8 @@
 
 ;; ---------------- new line
 (define-key prog-mode-map (kbd "RET") 'new-line-dwim)
+(define-key php-mode-map (kbd "RET") 'new-line-dwim)
+(define-key prog-mode-map "<return>" 'new-line-dwim)
 
 ;; Duplicate line
 (global-set-key (kbd "C-x C-d") 'duplicate-start-of-line-or-region)
@@ -493,15 +501,16 @@
 (global-set-key (kbd "<f2> a") 'org-agenda)
 (global-set-key (kbd "<f2> r") 'helm-recentf)
 ;; (global-set-key (kbd "<f2> e") 'helm-projectile)
-(global-set-key (kbd "<f2> e") 'helm-mini)
-(global-set-key (kbd "<f2> b") 'helm-buffers-list)
-(global-set-key (kbd "<f2> c") 'org-capture)
+;; (global-set-key (kbd "<f2> e") 'helm-mini)
+;; (global-set-key (kbd "<f2> b") 'helm-buffers-list)
+;; (global-set-key (kbd "<f2> c") 'org-capture)
 (global-set-key (kbd "<f5>") 'revert-buffer-no-confirm)
 (global-set-key (kbd "<f6>") 'dired-jump)
 (global-set-key (kbd "<f7>") 'projectile-dired)
 ;; (global-set-key (kbd "<f8>") 'neotree-toggle)
-(global-set-key (kbd "<f8>") 'wlh/neotree-set)
+;; (global-set-key (kbd "<f8>") 'wlh/neotree-set) ; Ne fonctionne pas depuis dired
 ;; (global-set-key (kbd "<f8>") 'neotree-projectile-action)
+(global-set-key (kbd "<f8>") 'neotree-toggle)
 (global-set-key (kbd "<f9>") 'projectile-recentf)
 ;; (global-set-key (kbd "<f10>") 'counsel-recentf)
 (global-set-key (kbd "<f10>") 'helm-recentf)
@@ -518,7 +527,7 @@
 ;; (global-set-key (kbd "s-c") 'org-capture)
 ;; (global-set-key (kbd "s-b") 'projectile-switch-to-buffer)
 ;; (global-set-key (kbd "s-k") 'fixup-whitespace)
-;; (global-set-key (kbd "s-/") 'comment-or-uncomment-region-or-line)
+(global-set-key (kbd "s-/") 'comment-or-uncomment-region-or-line)
 
 ;; Kill
 ;; Better move paragraph / mark paragraph
@@ -559,7 +568,7 @@
 (global-set-key (kbd "M-m R") 'projectile-recentf)
 
 ;; Scroll commands
-(global-set-key (kbd "s-v") 'scroll-down)
+
 ;; (global-set-key (kbd "M-m x") 'counsel-M-x) ;; (global-set-key (kbd "s-g") 'magit-status)
 (global-set-key (kbd "C-x v U") 'wlh/svn-up-recursive)
 
@@ -623,10 +632,6 @@
 
 ;; ---------------- Markdown
 (define-key markdown-mode-map (kbd "C-M-i") 'markdown-shifttab)
-
-;; scroll
-(global-set-key (kbd "C-v") 'scroll-up-half)
-(global-set-key (kbd "s-v") 'scroll-down-half)
 
 ;; url
 (global-set-key (kbd "M-m u") 'wlh/browse-url-at-point)

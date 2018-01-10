@@ -1,4 +1,3 @@
-;; (require 'css)
 (require 'css-mode)
 
 (load "~/.emacs.d/lisp/theme/tango-plus/tangotango-plus-theme.el")
@@ -25,7 +24,7 @@
  '(rainbow-delimiters-depth-1-face ((t (:foreground "#5abeee" :weight bold))))
  '(rainbow-delimiters-depth-2-face ((t (:foreground "#ff00a0" :weight bold))))
  '(rainbow-delimiters-depth-3-face ((t (:foreground "#328d2e" :weight bold))))
- '(rainbow-delimiters-depth-4-face ((t (:foreground "#ff953f" :weight bold))))
+ '(rainbow-delimiters-depth-4-face ((t (:foreground "#2a97b4" :weight bold))))
  '(rainbow-delimiters-depth-5-face ((t (:foreground "#22988a" :weight bold))))
  '(rainbow-delimiters-depth-6-face ((t (:foreground "#cc99ff" :weight bold))))
  '(rainbow-delimiters-depth-7-face ((t (:foreground "#fa75e2" :weight bold))))
@@ -57,6 +56,7 @@
 (set-face-attribute 'font-lock-string-face nil :foreground "#2a97b4")
 (set-face-attribute 'font-lock-comment-face nil :foreground "#008000")
 (set-face-attribute 'font-lock-doc-face nil :foreground "#008000")
+(set-face-attribute 'font-lock-constant-face nil :foreground "#5fbfec")
 
 ;; ------- diff-hl
 (set-face-attribute 'diff-hl-delete nil :foreground "#fc1a9f")
@@ -101,3 +101,31 @@
 
 ;; ------- php
 (set-face-attribute 'php-annotations-annotation-face nil :foreground "#008000" :background nil :underline t)
+
+
+;; ------- org
+(defun wlh/org-mode-hook ()
+  (require 'org)
+  (set-face-attribute 'org-document-title nil :family "Sans Serif" :height 1.8 :foreground "#999")
+  (set-face-attribute 'org-level-1 nil :height 1.3 :overline nil :foreground "#000" :background "#fff" :box nil)
+  (set-face-attribute 'org-level-2 nil :height 1 :box nil :overline nil :foreground "#000" :background "#ffffff")
+  (set-face-attribute 'org-special-keyword nil :height 1 :foreground "#aeb7da" :background nil)
+  (set-face-attribute 'org-document-info-keyword nil :height 1 :foreground "#b0dcff" :background nil)
+  (set-face-attribute 'org-checkbox-statistics-todo  nil :height 1))
+
+(add-hook 'org-mode-hook 'wlh/org-mode-hook)
+
+
+;; ------- diff
+(defun wlh/diff-mode-hook ()
+  (set-face-attribute 'diff-header nil :background "#ccc" :foreground "#000")
+  (set-face-attribute 'diff-file-header nil :background nil :foreground "#000000" :weight 'ultra-bold)
+  (set-face-attribute 'diff-hunk-header nil :background "#ccc" :foreground "#000" :box "#666")
+  (set-face-attribute 'diff-indicator-removed nil :background nil :foreground "#86d9fb")
+  (set-face-attribute 'diff-indicator-added nil :background nil :foreground "#86d9fb")
+  (set-face-attribute 'diff-removed nil :background "#fff" :foreground "#ff536a")
+  (set-face-attribute 'diff-added nil :background "#fff" :foreground "#c3e886")
+  (set-face-attribute 'diff-context nil :background "#fff" :foreground "#ccc")
+  (set-face-attribute 'diff-header nil :background "#fff" :foreground "#000"))
+
+(add-hook 'diff-mode-hook 'wlh/diff-mode-hook)
