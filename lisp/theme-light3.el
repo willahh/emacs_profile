@@ -123,9 +123,9 @@
   (set-face-attribute 'diff-hunk-header nil :background "#ccc" :foreground "#000" :box "#666")
   (set-face-attribute 'diff-indicator-removed nil :background nil :foreground "#86d9fb")
   (set-face-attribute 'diff-indicator-added nil :background nil :foreground "#86d9fb")
-  (set-face-attribute 'diff-removed nil :background nil :foreground "#ff536a")
-  (set-face-attribute 'diff-added nil :background nil :foreground "#c3e886")
-  (set-face-attribute 'diff-context nil :background nil :foreground "#ccc")
-  (set-face-attribute 'diff-header nil :background nil :foreground "#000"))
+  (set-face-attribute 'diff-removed nil :background "#fff" :foreground "#ff536a")
+  (set-face-attribute 'diff-added nil :background "#fff" :foreground "#c3e886")
+  (set-face-attribute 'diff-context nil :background "#fff" :foreground "#ccc")
+  (set-face-attribute 'diff-header nil :background "#fff" :foreground "#000"))
 
 (add-hook 'diff-mode-hook 'wlh/diff-mode-hook)
