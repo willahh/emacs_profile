@@ -21,8 +21,8 @@
 (evil-set-initial-state 'log-edit-files 'emacs)
 (evil-set-initial-state 'help-mode 'emacs)
 (evil-set-initial-state 'diff-mode 'emacs)
-(evil-set-initial-state 'text-mode 'emacs) ;; Mode utilise pour saisir des messages depuis magit
-(evil-set-initial-state 'log-edit-mode 'emacs) ;; Mode utilise pour saisir des messages depuis vc
+(evil-set-initial-state 'text-mode 'emacs)
+(evil-set-initial-state 'log-edit-mode 'emacs)
 (evil-set-initial-state 'ag-mode 'emacs)
 (evil-set-initial-state 'vc-dir-mode 'emacs)
 (evil-set-initial-state 'profiler-mode 'emacs)
@@ -100,8 +100,17 @@
                                                 (evil-emacs-state)
                                                 (backward-char)))
 
-
-
+;; (add-hook 'evil-normal-state-entry-hook 'powerline-theme-normal)
+;; (add-hook 'evil-insert-state-entry-hook 'powerline-theme-insert)
+;; (add-hook 'evil-emacs-state-entry-hook 'powerline-theme-emacs)
+(setq evil-emacs-state-cursor '("#ff00d2" bar))
+(setq evil-normal-state-cursor '("#98cf15" box))
+(setq evil-visual-state-cursor '("#fff" box))
+(setq evil-insert-state-cursor '("red" bar))
+(setq evil-replace-state-cursor '("red" bar))
+(setq evil-operator-state-cursor '("red" hollow))
+(setq evil-operator-state-cursor '("red" hollow))
+(setq evil-replace-state-cursor '("red" bar))
 
 (use-package evil-mc
   :bind (:map evil-mc-key-map
@@ -115,19 +124,9 @@
 (key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
 (define-key evil-emacs-state-map (kbd "C-&") 'evil-normal-state)
 (define-key evil-normal-state-map (kbd "C-&") 'evil-emacs-state)
-;; (define-key evil-insert-state-map "C-&" 'evil-normal-state)
-;; ---------------- Key binding evil normal mode
-;; (with-eval-after-load 'evil-maps
-;;   (define-key evil-normal-state-map (kbd "M-a") 'mark-whole-buffer))
-;; (evil-define-key 'normal 'dired-mode (kbd "TAB") 'dired-find-file)
-;; (evil-define-key 'normal org-mode-map (kbd "q") 'quit-window)
-;; (define-key evil-normal-state-map (kbd "M-n") 'evil-buffer-new)
-;; (define-key evil-emacs-state-map (kbd "C-z") 'whole-line-or-region-kill-region)
 (define-key evil-emacs-state-map (kbd "C-z") 'whole-line-or-region-kill-region)
 (global-set-key [escape] 'evil-exit-emacs-state)
 (evilem-default-keybindings "ù")
-;; (global-set-key (kbd "C-v") 'evil-scroll-down) ; Too slow (huge gain on large file)
-;; (global-set-key (kbd "s-v") 'evil-scroll-up) ; too slow
 
 (add-hook 'prog-mode-hook
           (define-key evil-normal-state-map (kbd "M-n") 'highlight-symbol-next)
@@ -146,14 +145,5 @@
           (define-key evil-normal-state-map (kbd "M-[") 'tide-jump-back))
 
 
-(add-hook 'evil-normal-state-entry-hook 'powerline-theme-normal)
-(add-hook 'evil-insert-state-entry-hook 'powerline-theme-insert)
-(add-hook 'evil-emacs-state-entry-hook 'powerline-theme-emacs)
-(setq evil-emacs-state-cursor '("#ff00d2" bar))
-(setq evil-normal-state-cursor '("#98cf15" box))
-(setq evil-visual-state-cursor '("#fff" box))
-(setq evil-insert-state-cursor '("red" bar))
-(setq evil-replace-state-cursor '("red" bar))
-(setq evil-operator-state-cursor '("red" hollow))
-(setq evil-operator-state-cursor '("red" hollow))
-(setq evil-replace-state-cursor '("red" bar))
+
+

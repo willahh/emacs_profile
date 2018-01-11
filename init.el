@@ -26,6 +26,7 @@
 (load-file "~/.emacs.d/lisp/key_binding.el")
 (load-file "~/.emacs.d/lisp/theme-light3.el")
 (load-file "~/.emacs.d/lisp/tags.el")
+(load-file "~/.emacs.d/lisp/evil.el")
 (load-file "~/.emacs.d/lisp/lang/typescript.el") ; Language specific configurations
 (load-file "~/.emacs.d/lisp/lang/html.el")
 (load-file "~/.emacs.d/lisp/lang/javascript.el")

@@ -129,3 +129,12 @@
   (set-face-attribute 'diff-header nil :background "#fff" :foreground "#000"))
 
 (add-hook 'diff-mode-hook 'wlh/diff-mode-hook)
+
+
+;; ------ Evil cursor
+(setq evil-emacs-state-cursor '("#ff00d2" box))
+(setq evil-normal-state-cursor '("#98cf15" box))
+(setq evil-visual-state-cursor '("#fff" box))
+(setq evil-insert-state-cursor '("red" bar))
+(setq evil-replace-state-cursor '("red" bar))
+(setq evil-operator-state-cursor '("red" hollow))
