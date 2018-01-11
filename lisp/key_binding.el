@@ -31,6 +31,7 @@
 (global-set-key (kbd "ƒ") 'helm-recentf) ; ALT + f
 (global-set-key (kbd "¢") 'org-capture) ; ALT + C
 (global-set-key (kbd "†") 'toggle-truncate-lines) ; ALT + t
+(global-set-key (kbd "ﬁ") 'goto-line) ; ALT + g
 
 
 ;; M-x
