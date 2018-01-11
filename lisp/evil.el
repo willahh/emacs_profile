@@ -17,19 +17,20 @@
 
 
 ;; Define some mode that should be initialized on emacs mode
-(evil-set-initial-state 'org-mode 'emacs)
-(evil-set-initial-state 'log-edit-files 'emacs)
-(evil-set-initial-state 'help-mode 'emacs)
-(evil-set-initial-state 'diff-mode 'emacs)
-(evil-set-initial-state 'text-mode 'emacs)
-(evil-set-initial-state 'log-edit-mode 'emacs)
-(evil-set-initial-state 'ag-mode 'emacs)
-(evil-set-initial-state 'vc-dir-mode 'emacs)
-(evil-set-initial-state 'profiler-mode 'emacs)
-(evil-set-initial-state 'profiler-report-mode 'emacs)
-(evil-set-initial-state 'dired-mode 'emacs)
-(evil-set-initial-state 'dired-find-file 'emacs)
-(evil-set-initial-state 'find-file 'emacs)
+(evil-set-initial-state 'org-mode 'normal)
+(evil-set-initial-state 'log-edit-files 'normal)
+(evil-set-initial-state 'help-mode 'normal)
+(evil-set-initial-state 'diff-mode 'normal)
+(evil-set-initial-state 'text-mode 'normal)
+(evil-set-initial-state 'log-edit-mode 'normal)
+(evil-set-initial-state 'ag-mode 'normal)
+(evil-set-initial-state 'vc-dir-mode 'normal)
+(evil-set-initial-state 'profiler-mode 'normal)
+(evil-set-initial-state 'profiler-report-mode 'normal)
+(evil-set-initial-state 'dired-mode 'normal)
+(evil-set-initial-state 'dired-find-file 'normal)
+(evil-set-initial-state 'find-file 'normal)
+(evil-set-initial-state 'magit 'normal)
 
 ;; dired evil mode
 (evil-define-key 'normal dired-mode-map (kbd "j") 'dired-next-line
@@ -122,6 +123,7 @@
 (key-chord-define evil-emacs-state-map "jk" 'evil-normal-state)
 (key-chord-define evil-normal-state-map "jk" 'evil-emacs-state)
 (key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
+
 (define-key evil-emacs-state-map (kbd "C-&") 'evil-normal-state)
 (define-key evil-normal-state-map (kbd "C-&") 'evil-emacs-state)
 (define-key evil-emacs-state-map (kbd "C-z") 'whole-line-or-region-kill-region)

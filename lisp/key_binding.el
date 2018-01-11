@@ -705,6 +705,7 @@
 
 
 ;; Bm
-(global-set-key (kbd "C-&") 'bm-toggle) ; C-1 on qwerty
-(global-set-key (kbd "C-é") 'bm-previous) ; C-2 on qwerty
-(global-set-key (kbd "C-\"") 'bm-next) ; C-3 on qwerty
+(global-set-key (kbd "C-é") 'bm-toggle) ; C-2 on qwerty
+(global-set-key (kbd "C-\"") 'bm-previous) ; C-3 on qwerty
+(global-set-key (kbd "C-3") 'bm-next) ; C-S-3 on qwerty
+

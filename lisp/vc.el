@@ -73,6 +73,8 @@
 
 (add-hook 'org-mode-hook (lambda ()
                            (diff-hl-mode t)))
+(setq diff-hl-draw-borders nil)
+
 ;; dsvn conf
 ;; Besoin : Avoir des commandes svn non disponible par default comme svn status
 ;; Sources :
