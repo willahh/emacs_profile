@@ -53,3 +53,5 @@
 
 (add-hook 'compilation-mode-hook (lambda ()
                                    (hl-line-mode)))
+(add-hook 'dired-mode-hook (lambda ()
+                                   (hl-line-mode)))

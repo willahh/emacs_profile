@@ -23,7 +23,8 @@
 ;; --------------- Direct ALT binding
 ;; Helm used insted of ivy cause of mouse usage
 (global-set-key (kbd "Â") 'zap-to-char) ; ALT + z
-(global-set-key (kbd "ß") 'projectile-switch-to-buffer) ; ALT + b
+(global-set-key (kbd "ß") 'ivy-switch-buffer) ; ALT + b
+(global-set-key (kbd "∫") 'projectile-switch-to-buffer) ; ALT + B
 (global-set-key (kbd "È") 'fixup-whitespace) ; ALT + k
 (global-set-key (kbd "Ì") 'help) ; ALT + h
 (global-set-key (kbd "Ò") 'helm-ag) ; ALT + S

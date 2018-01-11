@@ -103,6 +103,10 @@
 (set-face-attribute 'php-annotations-annotation-face nil :foreground "#008000" :background nil :underline t)
 
 
+;; ------- misc
+(set-face-attribute 'bm-face nil :foreground "#000" :background nil :underline t)
+
+
 ;; ------- org
 (defun wlh/org-mode-hook ()
   (require 'org)

@@ -503,6 +503,7 @@ Version 2016-10-24"
 (add-hook 'php-mode-hook 'nlinum-mode)
 (add-hook 'web-mode-hook 'nlinum-mode)
 (add-hook 'js2-mode-hook 'nlinum-mode)
+(add-hook 'js-mode-hook 'nlinum-mode)
 (add-hook 'css-mode-hook 'nlinum-mode)
 
 ;; disable window-system in terminal mode

@@ -18,21 +18,21 @@
 
 ;; Define some mode that should be initialized on emacs mode
 (evil-set-initial-state 'org-mode 'normal)
-(evil-set-initial-state 'log-edit-files 'normal)
+(evil-set-initial-state 'log-edit-files 'emacs)
 (evil-set-initial-state 'help-mode 'normal)
-(evil-set-initial-state 'diff-mode 'normal)
+(evil-set-initial-state 'diff-mode 'emacs)
 (evil-set-initial-state 'text-mode 'normal)
 (evil-set-initial-state 'log-edit-mode 'normal)
-(evil-set-initial-state 'ag-mode 'normal)
-(evil-set-initial-state 'vc-dir-mode 'normal)
-(evil-set-initial-state 'profiler-mode 'normal)
-(evil-set-initial-state 'profiler-report-mode 'normal)
-(evil-set-initial-state 'dired-mode 'normal)
-(evil-set-initial-state 'dired-find-file 'normal)
+(evil-set-initial-state 'ag-mode 'emacs)
+(evil-set-initial-state 'vc-dir-mode 'emacs)
+(evil-set-initial-state 'profiler-mode 'emacs)
+(evil-set-initial-state 'profiler-report-mode 'emacs)
+(evil-set-initial-state 'dired-mode 'emacs)
+(evil-set-initial-state 'dired-find-file 'emacs)
 (evil-set-initial-state 'find-file 'normal)
-(evil-set-initial-state 'magit 'normal)
-(evil-set-initial-state 'bookmark-alist 'normal)
-(evil-set-initial-state 'ibuffer 'normal)
+(evil-set-initial-state 'magit 'emacs)
+;; (evil-set-initial-state 'bookmark-alist 'normal)
+;; (evil-set-initial-state 'ibuffer 'normal)
 
 ;; dired evil mode
 (evil-define-key 'normal dired-mode-map (kbd "j") 'dired-next-line
