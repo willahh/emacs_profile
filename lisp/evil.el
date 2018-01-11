@@ -31,6 +31,8 @@
 (evil-set-initial-state 'dired-find-file 'normal)
 (evil-set-initial-state 'find-file 'normal)
 (evil-set-initial-state 'magit 'normal)
+(evil-set-initial-state 'bookmark-alist 'normal)
+(evil-set-initial-state 'ibuffer 'normal)
 
 ;; dired evil mode
 (evil-define-key 'normal dired-mode-map (kbd "j") 'dired-next-line
