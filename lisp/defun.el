@@ -996,16 +996,11 @@ Version 2016-12-27"
     (when (processp proc)
       (set-process-query-on-exit-flag proc nil))))
 
-(add-hook 'term-exec-hook 'set-no-process-query-on-exit)
-
 (use-package visual-fill-column :defer t
   :config
   (setq-default visual-fill-column-center-text nil
                 visual-fill-column-width fill-column
                 split-window-preferred-function 'visual-line-mode-split-window-sensibly))
-
-;; Open jar files in archive mode
-(add-to-list 'auto-mode-alist '("\\.jar$" . archive-mode))
 
 
 
@@ -1065,10 +1060,10 @@ Version 2016-12-27"
 
 ;; full screen magit-status
 ;; http://whattheemacsd.com/
-(defadvice magit-status (around magit-fullscreen activate)
-  (window-configuration-to-register :magit-fullscreen)
-  ad-do-it
-  (delete-other-windows))
+;; (defadvice magit-status (around magit-fullscreen activate)
+;;   (window-configuration-to-register :magit-fullscreen)
+;;   ad-do-it
+;;   (delete-other-windows))
 
 (defadvice yank-pop (after yank-pop-indent activate)
   "If current mode is one of 'yank-indent-modes, indent yanked text (with prefix arg don't indent)."
@@ -1100,6 +1095,10 @@ Version 2016-12-27"
 
 ;; Focus on the result window after doing ag
 (defadvice ag (after wlh-ag-before activate)
+ (other-window 1))
+
+;; Focus 
+(defadvice apropos (after wlh-apropos-before activate)
  (other-window 1))
 
 
@@ -1318,4 +1317,8 @@ Version 2016-12-27"
 ;; Active winner-mode to allow navigation between different windows
 (winner-mode t)
 
+;; Start the server. Used to connect with emacsclient
+(server-start)
 
+;; Create an eshell buffer on background
+(eshell)

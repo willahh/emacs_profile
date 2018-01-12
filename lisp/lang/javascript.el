@@ -1,4 +1,3 @@
-
 (defun wlh/js-mode ()
   (interactive)
   ;; Paredit Prevent paredit from adding a space before delimiters

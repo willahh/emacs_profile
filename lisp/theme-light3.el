@@ -34,9 +34,9 @@
 (set-face-attribute 'show-paren-match-face nil :foreground "#000000" :weight 'ultra-bold)
 (setq show-paren-priority -50)
 (set-face-attribute 'fringe nil :background "#fafafa" :slant 'normal)
-(set-face-attribute 'window-divider nil :foreground "#7b7b7b")
-(set-face-attribute 'window-divider-first-pixel nil :foreground "#7b7b7b")
-(set-face-attribute 'window-divider-last-pixel nil :foreground "#7b7b7b")
+(set-face-attribute 'window-divider nil :foreground "#5f5f5f")
+(set-face-attribute 'window-divider-first-pixel nil :foreground "#fffefe")
+(set-face-attribute 'window-divider-last-pixel nil :foreground "#fff")
 (set-face-attribute 'web-mode-current-element-highlight-face nil :background nil :foreground "#7b7b7b")
 (set-face-attribute 'region nil :background "#fce94f")
 (set-face-attribute 'region nil :background "#fce94f")
@@ -95,8 +95,12 @@
 
 ;; ------- modeline
 (set-face-attribute 'mode-line nil
-                    :foreground "#fff"
+                    :foreground "#ffffff"
                     :background "#0078cf"
+                    :box nil)
+(set-face-attribute 'mode-line-inactive nil
+                    :foreground "#666"
+                    :background "#fafafa"
                     :box nil)
 
 ;; ------- php
@@ -127,10 +131,10 @@
   (set-face-attribute 'diff-hunk-header nil :background "#ccc" :foreground "#000" :box "#666")
   (set-face-attribute 'diff-indicator-removed nil :background nil :foreground "#86d9fb")
   (set-face-attribute 'diff-indicator-added nil :background nil :foreground "#86d9fb")
-  (set-face-attribute 'diff-removed nil :background "#fff" :foreground "#ff536a")
-  (set-face-attribute 'diff-added nil :background "#fff" :foreground "#c3e886")
-  (set-face-attribute 'diff-context nil :background "#fff" :foreground "#ccc")
-  (set-face-attribute 'diff-header nil :background "#fff" :foreground "#000"))
+  (set-face-attribute 'diff-removed nil :background "#ffffff" :foreground "#ff536a")
+  (set-face-attribute 'diff-added nil :background "#ffffff" :foreground "#98cf15")
+  (set-face-attribute 'diff-context nil :background "#ffffff" :foreground "#ccc")
+  (set-face-attribute 'diff-header nil :background "#ffffff" :foreground "#000"))
 
 (add-hook 'diff-mode-hook 'wlh/diff-mode-hook)
 
@@ -138,7 +142,7 @@
 ;; ------ Evil cursor
 (setq evil-emacs-state-cursor '("#ff00d2" box))
 (setq evil-normal-state-cursor '("#98cf15" box))
-(setq evil-visual-state-cursor '("#fff" box))
+(setq evil-visual-state-cursor '("#ffffff" box))
 (setq evil-insert-state-cursor '("red" bar))
 (setq evil-replace-state-cursor '("red" bar))
 (setq evil-operator-state-cursor '("red" hollow))

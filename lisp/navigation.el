@@ -36,9 +36,10 @@
 (require 'avy)
 
 
-(add-hook 'prog-mode-hook 'highlight-symbol-mode)
-(add-hook 'php-mode-hook 'highlight-symbol-mode)
-(add-hook 'emacs-lisp-mode 'highlight-symbol-mode)
+;; Highlight-symbol can be slow on large file
+;; (add-hook 'prog-mode-hook 'highlight-symbol-mode)
+;; (add-hook 'php-mode-hook 'highlight-symbol-mode)
+;; (add-hook 'emacs-lisp-mode 'highlight-symbol-mode)
 
 (setq highlight-symbol-idle-delay .3)
 

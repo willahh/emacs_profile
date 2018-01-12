@@ -637,3 +637,6 @@ abort completely with `C-g'."
 
 ;; simple-httpd
 (require 'simple-httpd)
+
+;; term
+(add-hook 'term-exec-hook 'set-no-process-query-on-exit)

@@ -6,6 +6,8 @@
 ;; (setq search-whitespace-regexp ".*?")
 (setq ag-highlight-search t)
 (setq ag-reuse-buffers nil)
+
+(setq helm-ag-insert-at-point t)
 ;; (setq ag-reuse-window nil) ; Re use same window 
 
 (setq-default
@@ -55,3 +57,12 @@
                                    (hl-line-mode)))
 (add-hook 'dired-mode-hook (lambda ()
                                    (hl-line-mode)))
+
+(add-hook 'occur-mode-hook (lambda ()
+                             (hl-line-mode)))
+
+(add-hook 'ibuffer-mode-hook (lambda ()
+                             (hl-line-mode)))
+
+(add-hook 'diff-mode-hook (lambda ()
+                               (hl-line-mode)))
