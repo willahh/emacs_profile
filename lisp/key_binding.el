@@ -76,6 +76,19 @@
 (global-set-key (kbd (concat wlh/leader-key "o")) 'org-iswitchb)
 (global-set-key (kbd (concat wlh/leader-key "c")) 'org-capture)
 
+;; ---------------- Evil leader key bindings
+(evil-leader/set-key
+  ;; opened buffers scope
+  "ss" 'ag
+  
+  ;; current file scope
+  
+  ;; files scope
+  ;; "sf"
+  ""
+  
+  "b" 'switch-to-buffer
+  "k" 'kill-buffer)
 
 ;; ---------------- Custom CUA
 ;; Copy

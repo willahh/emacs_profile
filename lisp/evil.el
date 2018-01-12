@@ -13,26 +13,25 @@
 
 ;; Use the same behaviour as in vim when move trough sentences
 (setf sentence-end-double-space nil)
-(setq evil-default-state 'emacs)
+(setq evil-default-state 'normal)
 
-
-;; Define some mode that should be initialized on emacs mode
-(evil-set-initial-state 'org-mode 'normal)
-(evil-set-initial-state 'log-edit-files 'emacs)
-(evil-set-initial-state 'help-mode 'normal)
-(evil-set-initial-state 'diff-mode 'emacs)
-(evil-set-initial-state 'text-mode 'normal)
-(evil-set-initial-state 'log-edit-mode 'normal)
-(evil-set-initial-state 'ag-mode 'emacs)
-(evil-set-initial-state 'vc-dir-mode 'emacs)
-(evil-set-initial-state 'profiler-mode 'emacs)
-(evil-set-initial-state 'profiler-report-mode 'emacs)
-(evil-set-initial-state 'dired-mode 'emacs)
-(evil-set-initial-state 'dired-find-file 'emacs)
-(evil-set-initial-state 'find-file 'normal)
-(evil-set-initial-state 'magit 'emacs)
-;; (evil-set-initial-state 'bookmark-alist 'normal)
-;; (evil-set-initial-state 'ibuffer 'normal)
+;; ;; Define some mode that should be initialized on emacs mode
+;; (evil-set-initial-state 'org-mode 'normal)
+;; (evil-set-initial-state 'log-edit-files 'emacs)
+;; (evil-set-initial-state 'help-mode 'normal)
+;; (evil-set-initial-state 'diff-mode 'emacs)
+;; (evil-set-initial-state 'text-mode 'normal)
+;; (evil-set-initial-state 'log-edit-mode 'normal)
+;; (evil-set-initial-state 'ag-mode 'emacs)
+;; (evil-set-initial-state 'vc-dir-mode 'emacs)
+;; (evil-set-initial-state 'profiler-mode 'emacs)
+;; (evil-set-initial-state 'profiler-report-mode 'emacs)
+;; (evil-set-initial-state 'dired-mode 'emacs)
+;; (evil-set-initial-state 'dired-find-file 'emacs)
+;; (evil-set-initial-state 'find-file 'normal)
+;; (evil-set-initial-state 'magit 'emacs)
+;; ;; (evil-set-initial-state 'bookmark-alist 'normal)
+;; ;; (evil-set-initial-state 'ibuffer 'normal)
 
 ;; dired evil mode
 (evil-define-key 'normal dired-mode-map (kbd "j") 'dired-next-line
@@ -55,6 +54,7 @@
 (define-key evil-insert-state-map [escape] 'evil-normal-state)
 (define-key evil-emacs-state-map [escape] 'evil-normal-state)
 (define-key evil-normal-state-map [escape] 'evil-emacs-state)
+(global-set-key [escape] 'evil-exit-emacs-state)
 
 ;; Add some missing keybinding ?
 ;; Scroll up 1/2 page
@@ -129,7 +129,7 @@
 (define-key evil-emacs-state-map (kbd "C-&") 'evil-normal-state)
 (define-key evil-normal-state-map (kbd "C-&") 'evil-emacs-state)
 (define-key evil-emacs-state-map (kbd "C-z") 'whole-line-or-region-kill-region)
-(global-set-key [escape] 'evil-exit-emacs-state)
+
 (evilem-default-keybindings "ù")
 
 (add-hook 'prog-mode-hook
@@ -149,7 +149,8 @@
           (define-key evil-normal-state-map (kbd "M-[") 'tide-jump-back))
 
 
-
+;; https://emacs.stackexchange.com/a/32133 
+(add-hook 'view-mode-hook 'evil-motion-state)
 
 
 
