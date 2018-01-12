@@ -69,7 +69,7 @@
   (set (make-local-variable 'yas-indent-line) 'auto) ; Auto indent yas snippet
   (textmate-mode))
 
-
+(define-key js2-mode-map (kbd "<C-M-mouse-1>") 'xref-find-definitions)
 
 ;; Company
 ;; Switch from tern to tide

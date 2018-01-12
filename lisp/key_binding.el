@@ -182,7 +182,11 @@
 (define-key org-mode-map (kbd "C-x C-n") 'xah-new-empty-buffer)
 
 ;; New frame
-(global-set-key (kbd "M-N") 'wlh/create-new-centered-frame)
+(global-set-key (kbd "M-n") 'wlh/create-new-centered-frame)
+(define-key highlight-symbol-nav-mode-map (kbd "M-n") 'wlh/create-new-centered-frame)
+;; (define-key 'sql-interactive-mode-map (kbd "M-n") 'wlh/create-new-centered-frame)
+(define-key ibuffer-mode-map (kbd "M-n") 'wlh/create-new-centered-frame)
+
 (define-key global-map (kbd "C-x C-r") 'revert-buffer-no-confirm)
 (global-set-key (kbd "C-x C-k") 'kill-region)
 
@@ -308,7 +312,8 @@
 ;; ---------------- new line
 (define-key prog-mode-map (kbd "RET") 'new-line-dwim)
 (define-key php-mode-map (kbd "RET") 'new-line-dwim)
-(define-key prog-mode-map "<return>" 'new-line-dwim)
+;; (define-key prog-mode-map "<return>" 'new-line-dwim)
+;; (define-key web-mode-map "<return>" 'new-line-dwim)
 
 ;; Duplicate line
 (global-set-key (kbd "C-x C-d") 'duplicate-start-of-line-or-region)

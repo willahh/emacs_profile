@@ -29,7 +29,7 @@
 (load-file "~/.emacs.d/lisp/evil.el")
 (load-file "~/.emacs.d/lisp/lang/typescript.el") ; Language specific configurations
 (load-file "~/.emacs.d/lisp/lang/html.el")
-(load-file "~/.emacs.d/lisp/lang/javascript.el")
+(load-file "~/.emacs.d/lisp/lang/javascript2.el")
 (load-file "~/.emacs.d/lisp/lang/php.el")
 (load-file "~/.emacs.d/lisp/lang/css.el")
 (load-file "~/.emacs.d/lisp/lang/web.el")

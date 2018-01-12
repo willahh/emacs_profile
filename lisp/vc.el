@@ -2,7 +2,7 @@
 (require 'psvn)
 (require 'diff-hl)
 (require 'vc-svn)
-(require 'fullframe)
+;; (require 'fullframe)
 
 (add-hook 'diff-mode-hook
           (lambda ()
@@ -139,7 +139,7 @@ then `diff-jump-to-old-file' is also set, for the next invocations."
 ;; Ne devrait pas être utilisé
 ;; Ne fonctionne pas bien non plus avec vc-dir
 ;; (fullframe vc-dir quit-window)
-(fullframe ibuffer quit-window)
+;; (fullframe ibuffer quit-window)
 ;; (fullframe vc-diff quit-window)
 ;; (fullframe ag quit-window)
 
