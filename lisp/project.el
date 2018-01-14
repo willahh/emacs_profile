@@ -18,3 +18,11 @@
 (setq projectile-enable-caching t)
 (setq projectile-require-project-root nil); Using Projectile everywhere
 (add-to-list 'projectile-globally-ignored-directories "node_modules") ; Some ignore rules
+
+
+;; Projectile ibuffer group
+(add-hook 'ibuffer-hook
+    (lambda ()
+      (ibuffer-projectile-set-filter-groups)
+      (unless (eq ibuffer-sorting-mode 'alphabetic)
+        (ibuffer-do-sort-by-alphabetic))))

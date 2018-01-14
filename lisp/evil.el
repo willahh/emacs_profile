@@ -13,7 +13,7 @@
 
 ;; Use the same behaviour as in vim when move trough sentences
 (setf sentence-end-double-space nil)
-(setq evil-default-state 'normal)
+(setq evil-default-state 'emacs)
 
 ;; ;; Define some mode that should be initialized on emacs mode
 ;; (evil-set-initial-state 'org-mode 'normal)

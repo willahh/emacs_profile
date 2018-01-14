@@ -640,3 +640,7 @@ abort completely with `C-g'."
 
 ;; term
 (add-hook 'term-exec-hook 'set-no-process-query-on-exit)
+
+;; Crypto
+(require 'epa)
+(epa-file-enable)
