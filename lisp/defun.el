@@ -1306,6 +1306,27 @@ Version 2016-12-27"
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ;; -------- Init
 (require 'bookmark)
 (setq inhibit-splash-screen t)

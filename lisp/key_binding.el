@@ -522,7 +522,7 @@
 ;; (global-set-key (kbd "<f10>") 'counsel-recentf)
 (global-set-key (kbd "<f10>") 'helm-recentf)
 (global-set-key (kbd "<f11>") 'wlh/IDE)
-(global-set-key (kbd "<f12>") 'wlh/vc-dir)
+;; (global-set-key (kbd "<f12>") 'wlh/vc-dir)
 (global-set-key (kbd "<end>") 'end-of-buffer)
 (global-set-key (kbd "<home>") 'beginning-of-buffer)
 
@@ -718,6 +718,10 @@
 
 
 
+(global-set-key (kbd "C-ç") 'xah-toggle-letter-case) ; (C-9 on azerty keyboard)
+(global-set-key (kbd "C-!") 'string-inflection-all-cycle) ; (C-8 on azerty keyboard)
+
+
 ;; Spacemac key bindings
 ;; (spacemacs/set-leader-keys
 ;;         ;; helm-ag marks
@@ -816,3 +820,4 @@
 ;;         "ss"    'helm-swoop
 ;;         "sS"    'spacemacs/helm-swoop-region-or-symbol
 ;;         "s C-s" 'helm-multi-swoop-all)
+
