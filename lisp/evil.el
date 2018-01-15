@@ -15,23 +15,25 @@
 (setf sentence-end-double-space nil)
 (setq evil-default-state 'emacs)
 
-;; ;; Define some mode that should be initialized on emacs mode
-;; (evil-set-initial-state 'org-mode 'normal)
-;; (evil-set-initial-state 'log-edit-files 'emacs)
-;; (evil-set-initial-state 'help-mode 'normal)
-;; (evil-set-initial-state 'diff-mode 'emacs)
-;; (evil-set-initial-state 'text-mode 'normal)
-;; (evil-set-initial-state 'log-edit-mode 'normal)
-;; (evil-set-initial-state 'ag-mode 'emacs)
-;; (evil-set-initial-state 'vc-dir-mode 'emacs)
-;; (evil-set-initial-state 'profiler-mode 'emacs)
-;; (evil-set-initial-state 'profiler-report-mode 'emacs)
-;; (evil-set-initial-state 'dired-mode 'emacs)
-;; (evil-set-initial-state 'dired-find-file 'emacs)
-;; (evil-set-initial-state 'find-file 'normal)
-;; (evil-set-initial-state 'magit 'emacs)
-;; ;; (evil-set-initial-state 'bookmark-alist 'normal)
-;; ;; (evil-set-initial-state 'ibuffer 'normal)
+
+
+;; Define some mode that should be initialized on emacs mode
+(evil-set-initial-state 'org-mode 'emacs)
+(evil-set-initial-state 'log-edit-files 'emacs)
+(evil-set-initial-state 'help-mode 'emacs)
+(evil-set-initial-state 'diff-mode 'emacs)
+(evil-set-initial-state 'text-mode 'emacs)
+(evil-set-initial-state 'log-edit-mode 'emacs)
+(evil-set-initial-state 'ag-mode 'emacs)
+(evil-set-initial-state 'vc-dir-mode 'emacs)
+(evil-set-initial-state 'profiler-mode 'emacs)
+(evil-set-initial-state 'profiler-report-mode 'emacs)
+(evil-set-initial-state 'dired-mode 'emacs)
+(evil-set-initial-state 'dired-find-file 'emacs)
+(evil-set-initial-state 'find-file 'emacs)
+(evil-set-initial-state 'magit 'emacs)
+;; (evil-set-initial-state 'bookmark-alist 'emacs)
+;; (evil-set-initial-state 'ibuffer 'emacs)
 
 ;; dired evil mode
 (evil-define-key 'normal dired-mode-map (kbd "j") 'dired-next-line
