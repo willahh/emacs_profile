@@ -138,10 +138,10 @@
 (global-set-key (kbd "M-w") 'wlh/delete-window) ;; Delete window or frame
 
 
-;; New frame
-(global-set-key [meta shift w] 'delete-frame)
-(global-set-key (kbd "M-S-w") 'delete-frame)
-(global-set-key (kbd "M-W") 'delete-frame)
+;; ;; New frame
+;; (global-set-key [meta shift w] 'delete-frame)
+;; (global-set-key (kbd "M-S-w") 'delete-frame)
+;; (global-set-key (kbd "M-W") 'delete-frame)
 
 ;; shell-pop
 (global-set-key (kbd "C-t") 'shell-pop)
@@ -405,7 +405,7 @@
 (global-set-key (kbd "C-x g") 'wlh/vc-status)
 (global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
 
-(define-key magit-status-mode-map (kbd "M-w") 'kill-ring-save)
+;; (define-key magit-status-mode-map (kbd "M-w") 'kill-ring-save)
 (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
 
 ;; open line above / below
@@ -651,6 +651,12 @@
 (global-set-key (kbd "C-`") 'next-buffer)
 (global-set-key (kbd "C-M-`") 'winner-redo)
 
+;; (global-set-key (kbd "C-M-<tab>") 'winner-undo)
+;; (global-set-key (kbd "C-M-s<tab>") 'winner-redo)
+
+(global-set-key [C-M-tab] 'winner-undo)
+(global-set-key [C-M-S-tab] 'winner-redo)
+
 (global-set-key (kbd "C-ù") 'previous-buffer)
 (global-set-key (kbd "C-M-ù") 'winner-undo)
 
@@ -678,25 +684,10 @@
 (global-set-key [(meta shift down)] 'move-text-down)
 (global-set-key (kbd "C-c s") 'crux-swap-windows)
 (global-set-key (kbd "C-c r") 'crux-rename-buffer-and-file)
-;; (global-set-key (kbd "C-c n") 'crux-cleanup-buffer-or-region)
-;; (global-set-key (kbd "C-c f") 'crux-recentf-ido-find-file)
-;; (global-set-key (kbd "C-M-z") 'crux-indent-defun)
-;; (global-set-key (kbd "C-c u") 'crux-view-url)
-;; (global-set-key (kbd "C-c e") 'crux-eval-and-replace)
-;; (global-set-key (kbd "C-c D") 'crux-delete-file-and-buffer)
-;; (global-set-key (kbd "C-c d") 'duplicate-start-of-line-or-region)
-;; (global-set-key (kbd "C-c M-d") 'crux-duplicate-and-comment-current-line-or-region)
 (global-set-key (kbd "C-c t") 'crux-visit-term-buffer)
-;; (global-set-key (kbd "C-c k") 'crux-kill-other-buffers)
 (global-set-key (kbd "C-c I") 'crux-find-user-init-file)
 (global-set-key (kbd "C-c S") 'crux-find-shell-init-file)
 (global-set-key (kbd "s-j") 'crux-top-join-line)
-
-;; (define-key term-mode-map (kbd "C-c RET") 'term-line-mode)
-;; (add-hook 'term-mode-hook
-;;           (function
-;;            (lambda ()
-;;              (define-key term-raw-map (kbd "C-c RET") 'term-line-mode))))
 
 (global-set-key [f7] 'winner-undo)
 (global-set-key [C-f7] 'winner-redo)
@@ -721,8 +712,8 @@
 
 ;; Tab related behaviour
 (global-set-key (kbd "C-x <tab>") 'indent-rigidly) ; Default emacs key binding
-(global-set-key [C-M-tab] 'other-window)
-(global-set-key [C-M-S-tab] 'previous-multiframe-window)
+;; (global-set-key [C-M-tab] 'other-window)
+;; (global-set-key [C-M-S-tab] 'previous-multiframe-window)
 (global-set-key (kbd "<C-tab>") 'next-buffer)
 (global-set-key (kbd "<C-S-tab>") 'previous-buffer)
 (global-set-key (kbd "C-c TAB") 'crux-indent-rigidly-and-copy-to-clipboard)

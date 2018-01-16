@@ -32,20 +32,25 @@
                              "~/www/project/goaland_maintenance/"
                              ))
 
-(defvar wlh/workspace-vc-dir '("dev"
-                               "deploy_template"
-                               "pimdatamanager"
-                               "pimdatamanager_deploy_template"
-                               ))
-
 (defun wlh/workspace-add-vc-view (workspace-dir vc-dir)
   (if (file-exists-p (concat workspace-dir vc-dir))
       (progn
         (vc-dir (concat workspace-dir vc-dir))
-        ;; (wlh/vc-dir (concat workspace-dir vc-dir))
              (hrs/split-window-below-and-switch)
-             (balance-windows))
-    (message "ko")))
+             (balance-windows))))
+
+(defun wlh/workspace-get-subdirs (dir)
+  "Return a list of sub directory for the project.
+i.e. '(\"dev\" \"deploy_template\")."
+  (interactive)
+  (seq-filter (lambda (a)
+           (if (not (equal a "."))
+               (if (not (equal a ".."))
+                   (if (not (equal a ".metadata"))
+                       a
+                     nil)
+                 nil)
+             nil)) (directory-files dir)))
 
 (defun wlh/workspace-action-1 (x)
   (interactive)
@@ -53,22 +58,12 @@
   (hrs/split-window-right-and-switch)
   (find-file x)
   (other-window 1)
-
-  ;; (progn (mapcar (lambda(y) ((wlh/workspace-add-vc-view x y))) wlh/workspace-vc-dir))
-
-  (progn (wlh/workspace-add-vc-view x "dev")
-         (wlh/workspace-add-vc-view x "deploy_template")
-         (wlh/workspace-add-vc-view x "license")
-         (wlh/workspace-add-vc-view x "pimdatamanager")
-         (wlh/workspace-add-vc-view x "pimdatamanager_deploy_template")
-         (wlh/workspace-add-vc-view x "resources")
-         (wlh/workspace-add-vc-view x "translate"))
-
-  (other-window 1)
-  (window-resize (selected-window) 1 -100))
+  (mapcar (lambda(subdir)
+            (wlh/workspace-add-vc-view x subdir)) (wlh/workspace-get-subdirs x))
+   (other-window 1)
+   (window-resize (selected-window) 1 -100))
 
 (defun my-action-2 (x) (message "action-2: %s" x))
-
 (defun my-action-3 (x) (message "action-3: %s" x))
 
 (defun wlh/workspace-search ()
