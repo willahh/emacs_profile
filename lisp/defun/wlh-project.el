@@ -38,7 +38,9 @@
 
 (defun wlh/workspace-add-vc-view (workspace-dir vc-dir)
   (if (file-exists-p (concat workspace-dir vc-dir))
-      (progn (vc-dir (concat workspace-dir vc-dir))
+      (progn
+        (vc-dir (concat workspace-dir vc-dir))
+        ;; (wlh/vc-dir (concat workspace-dir vc-dir))
              (hrs/split-window-below-and-switch)
              (balance-windows))
     (message "ko")))

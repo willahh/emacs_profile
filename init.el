@@ -38,5 +38,4 @@
 (load-file "~/.emacs.d/lisp/lang/react.el")
 (load-file "~/.emacs.d/lisp/defun/wlh-project.el") ; Custom lisp
 
-;; (window-divider-mode-apply t) ; Enable window-divier
 (window-divider-mode-apply 1) ; Enable window-divier

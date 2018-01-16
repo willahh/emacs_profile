@@ -1,11 +1,23 @@
-;; ;; Update : reactivation de *vc-diff*, plutot pratique
+;; ;; ;; Update : reactivation de *vc-diff*, plutot pratique
+;; (setq display-buffer-alist
+;;       '(
+;;         ;; ("*ag*"               . (display-buffer-same-window . nil))
+;;         ;; ("*vc-diff*"               . (display-buffer-same-window . nil))
+;;         ("*vc-dir*"               . (display-buffer-same-window . nil))
+;;         ("*vc-diff*"               . (display-buffer-same-window . nil))
+;;         ("*vc-change-log*"            . (display-buffer-same-window . nil))
+;;         ;; ("*shell*"            . (display-buffer-same-window . nil))
+;;         ("*Google Translate*" . (display-buffer-same-window . nil))
+;;         ))
+
+;; Update vc-dir doit etre dans la liste pour que la fonction wlh/workspace-list fonctionne
 (setq display-buffer-alist
       '(
         ;; ("*ag*"               . (display-buffer-same-window . nil))
         ;; ("*vc-diff*"               . (display-buffer-same-window . nil))
         ("*vc-dir*"               . (display-buffer-same-window . nil))
-        ("*vc-diff*"               . (display-buffer-same-window . nil))
-        ("*vc-change-log*"            . (display-buffer-same-window . nil))
+        ;; ("*vc-diff*"               . (display-buffer-same-window . nil))
+        ;; ("*vc-change-log*"            . (display-buffer-same-window . nil))
         ;; ("*shell*"            . (display-buffer-same-window . nil))
-        ("*Google Translate*" . (display-buffer-same-window . nil))
+        ;; ("*Google Translate*" . (display-buffer-same-window . nil))
         ))
