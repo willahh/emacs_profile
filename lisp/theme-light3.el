@@ -135,6 +135,7 @@
   (set-face-attribute 'diff-added nil :background "#ffffff" :foreground "#98cf15")
   (set-face-attribute 'diff-context nil :background "#ffffff" :foreground "#ccc")
   (set-face-attribute 'diff-header nil :background "#ffffff" :foreground "#000")
+  (set-face-attribute 'diff-refine-added nil :background "#e4fee1" :foreground "#0cba3d")
 
   (set-face-background 'git-gutter:modified "#ff7200")
   (set-face-foreground 'git-gutter:modified "#ff7200")

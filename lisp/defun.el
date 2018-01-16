@@ -1273,6 +1273,11 @@ Version 2016-12-27"
   (interactive)
   (find-name-dired default-directory "*.org"))
 
+(defun wlh/delete-window ()
+  (interactive)
+  (if (> (length (window-list)) 1)
+      (delete-window)
+    (delete-frame)))
 
 ;; (setq *wlh/dbleclick-enablep* nil)
 ;; (defun wlh/dbleclick-select-word-a (enablep)

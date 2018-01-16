@@ -10,6 +10,8 @@
                              "~/www/project/arsia/arsia_3.1.0_standard/"
                              "~/www/project/arsia/arsia_3.2.x_standard/"
                              "~/www/project/arsia/arsia_3.2.x_standard_editzone/"
+                             "~/www/project/arsia/arsia_3.0.0_weiss_poc/"
+                             "~/www/project/arsia/arsia_3.1.x_ccas/"
                              "~/www/project/businessmanager/"
                              "~/www/project/easy3p/easy3p_2.18/"
                              "~/www/project/easy3p/easy3p_2.19/"

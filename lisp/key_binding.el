@@ -135,7 +135,7 @@
 
 
 ;; delete-window
-(global-set-key (kbd "M-w") 'delete-window)
+(global-set-key (kbd "M-w") 'wlh/delete-window) ;; Delete window or frame
 
 
 ;; New frame
@@ -199,9 +199,9 @@
 ;; New frame
 (global-set-key (kbd "M-n") 'wlh/create-new-centered-frame)
 (define-key highlight-symbol-nav-mode-map (kbd "M-n") 'wlh/create-new-centered-frame)
-;; (define-key 'sql-interactive-mode-map (kbd "M-n") 'wlh/create-new-centered-frame)
 (define-key ibuffer-mode-map (kbd "M-n") 'wlh/create-new-centered-frame)
 
+;; Revert buffer
 (define-key global-map (kbd "C-x C-r") 'revert-buffer-no-confirm)
 (global-set-key (kbd "C-x C-k") 'kill-region)
 
@@ -443,8 +443,9 @@
 
 (global-set-key [(meta shift o)] 'previous-multiframe-window)
 
-(global-set-key (kbd "M-P") 'projectile-find-file)
-(define-key ggtags-navigation-map (kbd "M-P") 'projectile-find-file)
+(global-set-key (kbd "M-p") 'projectile-find-file)
+(define-key ggtags-navigation-map (kbd "M-p") 'projectile-find-file)
+(define-key highlight-symbol-nav-mode-map (kbd "M-p") 'projectile-find-file)
 
 (global-set-key [(meta control shift p)] 'find-file-in-current-directory)
 
@@ -572,15 +573,15 @@
 ;; (global-set-key (kbd "s-l") 'avy-goto-char-in-line) ; Not used
 
 ;; Browse comands
-(global-set-key (kbd "M-n") 'highlight-symbol-next)
-(define-key slime-mode-map (kbd "M-n") 'highlight-symbol-next)
-(define-key highlight-symbol-nav-mode-map (kbd "M-n") 'highlight-symbol-next)
-(define-key ggtags-navigation-map (kbd "M-n") 'highlight-symbol-next)
+(global-set-key (kbd "M-N") 'highlight-symbol-next)
+(define-key slime-mode-map (kbd "M-N") 'highlight-symbol-next)
+(define-key highlight-symbol-nav-mode-map (kbd "M-N") 'highlight-symbol-next)
+(define-key ggtags-navigation-map (kbd "M-N") 'highlight-symbol-next)
 
-(global-set-key (kbd "M-p") 'highlight-symbol-prev)
-(define-key slime-mode-map (kbd "M-p") 'highlight-symbol-prev)
-(define-key highlight-symbol-nav-mode-map (kbd "M-p") 'highlight-symbol-prev)
-(define-key ggtags-navigation-map (kbd "M-p") 'highlight-symbol-prev)
+(global-set-key (kbd "M-P") 'highlight-symbol-prev)
+(define-key slime-mode-map (kbd "M-P") 'highlight-symbol-prev)
+(define-key highlight-symbol-nav-mode-map (kbd "M-P") 'highlight-symbol-prev)
+(define-key ggtags-navigation-map (kbd "M-P") 'highlight-symbol-prev)
 
 ;;
 (global-set-key (kbd "s-q") 'my-abort-recursive-edit)
