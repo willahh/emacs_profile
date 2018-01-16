@@ -76,6 +76,19 @@
 (global-set-key (kbd (concat wlh/leader-key "o")) 'org-iswitchb)
 (global-set-key (kbd (concat wlh/leader-key "c")) 'org-capture)
 
+;; ---------------- Evil leader key bindings
+;; (evil-leader/set-key
+;;   ;; opened buffers scope
+;;   "ss" 'ag
+  
+;;   ;; current file scope
+  
+;;   ;; files scope
+;;   ;; "sf"
+;;   ""
+  
+;;   ;; "b" 'switch-to-buffer
+;;   "k" 'kill-buffer)
 
 ;; ---------------- Custom CUA
 ;; Copy
@@ -117,9 +130,11 @@
 
 ;; Update disable M-s for save, use default C-x C-sq
 ;; Reactivation because I had a lot of trouble with paredit M-s
-(global-set-key (kbd "M-s") 'save-buffer)
-(define-key paredit-mode-map (kbd "M-s") 'save-buffer)
+;; (global-set-key (kbd "M-s") 'save-buffer)
+;; (define-key paredit-mode-map (kbd "M-s") 'save-buffer)
 
+
+;; delete-window
 (global-set-key (kbd "M-w") 'delete-window)
 
 
@@ -334,9 +349,10 @@
 (define-key isearch-mode-map (kbd "C-S-j") 'avy-isearch)
 (define-key isearch-mode-map (kbd "M-v") 'isearch-yank-pop)
 (define-key isearch-mode-map (kbd "C-v") 'isearch-yank-pop)
-(define-key isearch-mode-map (kbd "M-s") 'swiper--from-isearch)
+;; (define-key isearch-mode-map (kbd "M-s") 'swiper--from-isearch)
 (define-key isearch-mode-map (kbd "C-c C-s") 'swiper--from-isearch)
 (define-key isearch-mode-map (kbd "C-z") 'isearch-yank-word-or-char) ; Used for azerty keyboard (qwerty z is more accessible than w)
+(define-key isearch-mode-map (kbd "C-i") 'isearch-highlight-phrase)
 
 ;; help
 (define-key help-mode-map (kbd "n") 'next-line)

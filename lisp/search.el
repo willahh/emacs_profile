@@ -42,8 +42,6 @@
                           isearch-string
                         (regexp-quote isearch-string)))))
 
-(define-key isearch-mode-map (kbd "C-i") 'isearch-highlight-phrase)
-
 (require 'visual-regexp-steroids)
 
 ;; if you use multiple-cursors, this is for you:

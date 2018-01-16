@@ -16,6 +16,7 @@
 (setq evil-default-state 'emacs)
 
 
+
 ;; Define some mode that should be initialized on emacs mode
 (evil-set-initial-state 'org-mode 'emacs)
 (evil-set-initial-state 'log-edit-files 'emacs)
@@ -55,6 +56,7 @@
 (define-key evil-insert-state-map [escape] 'evil-normal-state)
 (define-key evil-emacs-state-map [escape] 'evil-normal-state)
 (define-key evil-normal-state-map [escape] 'evil-emacs-state)
+(global-set-key [escape] 'evil-exit-emacs-state)
 
 ;; Add some missing keybinding ?
 ;; Scroll up 1/2 page
@@ -129,7 +131,7 @@
 (define-key evil-emacs-state-map (kbd "C-&") 'evil-normal-state)
 (define-key evil-normal-state-map (kbd "C-&") 'evil-emacs-state)
 (define-key evil-emacs-state-map (kbd "C-z") 'whole-line-or-region-kill-region)
-(global-set-key [escape] 'evil-exit-emacs-state)
+
 (evilem-default-keybindings "ù")
 
 (add-hook 'prog-mode-hook
@@ -149,7 +151,8 @@
           (define-key evil-normal-state-map (kbd "M-[") 'tide-jump-back))
 
 
-
+;; https://emacs.stackexchange.com/a/32133 
+(add-hook 'view-mode-hook 'evil-motion-state)
 
 
 
