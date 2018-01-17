@@ -18,7 +18,6 @@
 ;; ag hook
 (defun wlh/ag-mode-hook ()
   (make-variable-buffer-local 'truncate-lines)
-  (next-error-follow-minor-mode t) ; Active auto follow minor mode 
   (setq truncate-lines t))
 
 (add-hook 'ag-mode-hook 'wlh/ag-mode-hook)

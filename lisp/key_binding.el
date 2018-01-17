@@ -200,6 +200,7 @@
 (global-set-key (kbd "M-n") 'wlh/create-new-centered-frame)
 (define-key highlight-symbol-nav-mode-map (kbd "M-n") 'wlh/create-new-centered-frame)
 (define-key ibuffer-mode-map (kbd "M-n") 'wlh/create-new-centered-frame)
+(define-key compilation-mode-map (kbd "M-n") 'wlh/create-new-centered-frame)
 
 ;; Revert buffer
 (define-key global-map (kbd "C-x C-r") 'revert-buffer-no-confirm)

@@ -644,3 +644,8 @@ abort completely with `C-g'."
 ;; Crypto
 (require 'epa)
 (epa-file-enable)
+
+;; Eshell
+(defun wlh/eshell-mode-hook ()
+  (company-mode nil))
+(add-hook 'eshell-mode-hook 'wlh/eshell-mode-hook)
