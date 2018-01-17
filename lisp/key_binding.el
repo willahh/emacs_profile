@@ -130,8 +130,8 @@
 
 ;; Update disable M-s for save, use default C-x C-sq
 ;; Reactivation because I had a lot of trouble with paredit M-s
-;; (global-set-key (kbd "M-s") 'save-buffer)
-;; (define-key paredit-mode-map (kbd "M-s") 'save-buffer)
+(global-set-key (kbd "M-s") 'save-buffer)
+(define-key paredit-mode-map (kbd "M-s") 'save-buffer)
 
 
 ;; delete-window

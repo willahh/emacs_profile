@@ -47,7 +47,9 @@ i.e. '(\"dev\" \"deploy_template\")."
            (if (not (equal a "."))
                (if (not (equal a ".."))
                    (if (not (equal a ".metadata"))
-                       a
+                       (if (not (equal a ".DS_Store"))
+                           a
+                         nil)
                      nil)
                  nil)
              nil)) (directory-files dir)))

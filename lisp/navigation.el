@@ -36,6 +36,7 @@
 (require 'avy)
 
 
+
 ;; Highlight-symbol can be slow on large file
 ;; @todo Disable this mode on large file
 (add-hook 'prog-mode-hook 'highlight-symbol-mode)
@@ -129,7 +130,6 @@
       '((ivy-switch-buffer . ivy--regex-plus)
         (swiper . ivy--regex-plus)
         (counsel-imenu . ivy--regex-plus)
-        ;; (projectile-find-file . ivy--regex-plus)
         (projectile-find-file . ivy--regex-fuzzy)
         (t . ivy--regex-fuzzy)))
 
@@ -218,19 +218,27 @@
 (setq neo-window-fixed-size nil)
 (setq neo-autorefresh nil)
 
-;; textmate-mode
-(add-hook 'js2-mode-hook 'textmate-mode)
-(add-hook 'web-mode-hook 'textmate-mode)
-(add-hook 'css-mode-hook 'textmate-mode)
-(add-hook 'scss-mode-hook 'textmate-mode)
-(add-hook 'org-mode 'textmate-mode)
-;; (add-hook 'php-mode 'textmate-mode)
 
-;; -------- url / link / goto-address-mode
-;; Enable jump to url quickly for all buffers
-;; (add-hook 'prog-mode-hook (goto-address-mode 1))
-;; (add-hook 'emacs-lisp-mode-hook (goto-address-mode 1))
-;; (add-hook 'js2-mode-hook (goto-address-mode 1))
+
+
+
+
+;; Enhanced navigation : Paredit for lisp style files, smartparens for other
+;; languages
+(add-hook 'js2-mode-hook 'textmate-mode)
+(add-hook 'js2-mode-hook 'smartparens-global-mode)
+
+(add-hook 'web-mode-hook 'textmate-mode)
+(add-hook 'web-mode-hook 'smartparens-global-mode)
+
+(add-hook 'css-mode-hook 'textmate-mode)
+(add-hook 'css-mode-hook 'smartparens-global-mode)
+
+(add-hook 'scss-mode-hook 'textmate-mode)
+(add-hook 'scss-mode-hook 'smartparens-global-mode)
+
+(add-hook 'org-mode 'textmate-mode)
+(add-hook 'org-mode 'smartparens-global-mode)
 
 (add-hook 'elisp-mode 'paredit-mode)
 (add-hook 'common-lisp-mode 'paredit-mode)
