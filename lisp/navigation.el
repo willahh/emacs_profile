@@ -223,23 +223,10 @@
 
 
 
-;; Enhanced navigation : Paredit for lisp style files, smartparens for other
+;; Enhanced navigation : Paredit for lisp style files, smartparens for C like
 ;; languages
-(add-hook 'js2-mode-hook 'textmate-mode)
-(add-hook 'js2-mode-hook 'smartparens-global-mode)
 
-(add-hook 'web-mode-hook 'textmate-mode)
-(add-hook 'web-mode-hook 'smartparens-global-mode)
-
-(add-hook 'css-mode-hook 'textmate-mode)
-(add-hook 'css-mode-hook 'smartparens-global-mode)
-
-(add-hook 'scss-mode-hook 'textmate-mode)
-(add-hook 'scss-mode-hook 'smartparens-global-mode)
-
-(add-hook 'org-mode 'textmate-mode)
-(add-hook 'org-mode 'smartparens-global-mode)
-
+;; Lisp like
 (add-hook 'elisp-mode 'paredit-mode)
 (add-hook 'common-lisp-mode 'paredit-mode)
 (add-hook 'lisp-mode-hook 'paredit-mode)
@@ -247,6 +234,23 @@
 (add-hook 'clojure-mode-hook 'paredit-mode)
 (add-hook 'eshell-mode-hook 'paredit-mode)
 (add-hook 'cider-repl-mode-hook 'paredit-mode)
+
+;; C like
+(add-hook 'js2-mode-hook 'textmate-mode)
+(add-hook 'js2-mode-hook #'smartparens-mode)
+(add-hook 'js-mode-hook #'smartparens-mode)
+
+(add-hook 'web-mode-hook 'textmate-mode)
+(add-hook 'web-mode-hook #'smartparens-mode)
+
+(add-hook 'css-mode-hook 'textmate-mode)
+(add-hook 'css-mode-hook #'smartparens-mode)
+
+(add-hook 'scss-mode-hook 'textmate-mode)
+(add-hook 'scss-mode-hook #'smartparens-mode)
+
+(add-hook 'org-mode 'textmate-mode)
+(add-hook 'org-mode #'smartparens-mode)
 
 (define-key prog-mode-map (kbd "C-M-f") 'sp-forward-sexp)
 (define-key php-mode-map (kbd "C-M-f") 'sp-forward-sexp)

@@ -17,8 +17,16 @@
 
 ;; Defun leader key © (alt+c on osx azerty keyboard)
 (defvar wlh/leader-key (concat "©" " "))
-(global-unset-key (kbd "©"))
 (global-unset-key (kbd "M-m")) ; Define M-m shortcut as a leader key
+(global-unset-key (kbd "©"))
+
+
+;; --------------- Main Emacs keybinding changes
+;; Change M-d M-a and M-d
+;; (global-set-key (kbd "M-d") 'mc/mark-next-like-this-word) ; Was kill-word
+;; (define-key paredit-mode-map (kbd "M-d") 'mc/mark-next-like-this-word) ; Was kill-word
+(global-set-key (kbd "M-a") 'mark-whole-buffer) ; Was backward-sentence
+
 
 ;; --------------- Direct ALT binding
 ;; Helm used insted of ivy cause of mouse usage
@@ -32,6 +40,8 @@
 (global-set-key (kbd "¢") 'org-capture) ; ALT + C
 (global-set-key (kbd "†") 'toggle-truncate-lines) ; ALT + t
 (global-set-key (kbd "ﬁ") 'goto-line) ; ALT + g
+(global-set-key (kbd "Â") 'toggle-php-flavor-mode) ; ALT+z
+(define-key php-mode-map (kbd "Â") 'toggle-php-flavor-mode) ; ALT+z
 
 
 ;; M-x
@@ -223,9 +233,6 @@
 
 ;; Misc
 ;; (global-set-key (kbd "Ò") 'paredit-splice-sexp)
-(global-set-key (kbd "æ") 'mark-whole-buffer) ; ALT+a
-(global-set-key (kbd "Â") 'toggle-php-flavor-mode) ; ALT+z
-(define-key php-mode-map (kbd "Â") 'toggle-php-flavor-mode) ; ALT+z
 
 ;; Drag line
 ;; top

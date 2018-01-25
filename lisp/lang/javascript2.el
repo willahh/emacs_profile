@@ -59,6 +59,9 @@
 (defun wlh/my-js-mode-hook ()
   (js2-imenu-extras-mode) ; js2-imenu-extras-mode
 
+  ;; Smartparens mode
+  (smartparens-mode)
+  
   ;; Paredit
   ;; Prevent paredit from adding a space before delimiters
   (set (make-local-variable 'paredit-space-for-delimiter-predicates) 0)

@@ -43,11 +43,14 @@
 (setq comment-auto-fill-only-comments t)
 (add-hook 'org-mode-hook 'toc-org-enable)
 (setq org-src-window-setup 'current-window)
-(add-hook 'org-mode-hook ()
-          (interactive)
-
-          ;; Enable source code block edition in org files
-          (org-src-mode))
+(add-hook 'org-mode-hook (lambda () 
+                           
+                           (interactive)
+                           
+                           (toggle-truncate-lines)
+                           
+                           ;; Enable source code block edition in org files
+                           (org-src-mode)))
 
 ;; Add org babel langages support
 (org-babel-do-load-languages
