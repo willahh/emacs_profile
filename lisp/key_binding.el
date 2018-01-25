@@ -449,7 +449,12 @@
 (define-key ggtags-navigation-map (kbd "M-o") 'other-window) ; Need to override ggtags map
 (define-key ibuffer-mode-map (kbd "M-o") 'other-window)
 
-(global-set-key [(meta shift o)] 'previous-multiframe-window)
+
+(defun wlh/previous-window ()
+  (interactive)
+  (other-window -1))
+
+(global-set-key [(meta shift o)] 'wlh/previous-window)
 
 (global-set-key (kbd "M-p") 'projectile-find-file)
 (define-key ggtags-navigation-map (kbd "M-p") 'projectile-find-file)
