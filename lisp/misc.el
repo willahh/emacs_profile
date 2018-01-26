@@ -179,7 +179,9 @@
 ;; Only works in emacs-osx build
 (defun wlh/frame-center ()
   (interactive)
-  (set-frame-position (selected-frame) (- (/ (x-display-pixel-width) 4) (/ (frame-pixel-width) 2)) (- (/ (x-display-pixel-width) 4) (frame-pixel-height))))
+  (set-frame-position (selected-frame)
+                      (- (/ (x-display-pixel-width) 4) (/ (frame-pixel-width) 2))
+                      (- (/ (x-display-pixel-width) 4) (frame-pixel-height))))
 
 ;; IDE Mode
 (defun wlh/IDE ()

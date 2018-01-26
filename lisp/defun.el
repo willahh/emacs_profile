@@ -1263,6 +1263,12 @@ Version 2016-12-27"
   (funcall #'switch-to-buffer (xah-new-empty-buffer))
   (wlh/frame-center))
 
+
+;; (defun wlh/create-new-centered-frame2 ()
+;;   (interactive)
+;;   (make-frame-command)
+;;   (switch-to-buffer (xah-new-empty-buffer)))
+
 (defun wlh/find-org-files ()
   ;; Find org files in user directory
   (interactive)

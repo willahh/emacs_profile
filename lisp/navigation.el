@@ -34,6 +34,7 @@
 ; (require 'sr-speedbar)
 (require 'ace-window)
 (require 'avy)
+(require 'web-mode)
 
 
 
@@ -269,9 +270,10 @@
 (define-key php-mode-map (kbd "C-M-b") 'sp-backward-sexp)
 (define-key nxml-mode-map (kbd "C-M-b") 'sp-backward-sexp)
 
-(define-key prog-mode-map (kbd "C-M-u") 'sp-backward-up-sexp)
-(define-key php-mode-map (kbd "C-M-u") 'sp-backward-up-sexp)
-(define-key nxml-mode-map (kbd "C-M-u") 'sp-backward-up-sexp)
+(define-key prog-mode-map (kbd "C-M-u") 'paredit-backward-up)
+(define-key php-mode-map (kbd "C-M-u") 'paredit-backward-up)
+(define-key nxml-mode-map (kbd "C-M-u") 'paredit-backward-up)
+(define-key web-mode-map (kbd "C-M-u") 'paredit-backward-up)
 
 (define-key prog-mode-map (kbd "C-M-d") 'sp-down-sexp)
 (define-key php-mode-map (kbd "C-M-d") 'sp-down-sexp)
@@ -298,7 +300,6 @@
 (define-key nxml-mode-map (kbd "C-M-h") 'sp-backward-kill-sexp)
 
 (define-key prog-mode-map (kbd "C-h") 'backward-delete-char)
-(define-key php-mode-map (kbd "C-h") 'backward-delete-char)
 (define-key php-mode-map (kbd "C-h") 'backward-delete-char)
 (define-key nxml-mode-map (kbd "C-h") 'backward-delete-char)
 
