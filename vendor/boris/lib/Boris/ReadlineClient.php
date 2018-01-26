@@ -37,7 +37,7 @@ class ReadlineClient
         readline_read_history($historyFile);
         
         declare (ticks = 1);
-        pcntl_signal(SIGCHLD, SIG_IGN);
+        cntl_signal(SIGCHLD, SIG_IGN);
         pcntl_signal(SIGINT, array(
             $this,
             'clear'
@@ -51,6 +51,13 @@ class ReadlineClient
         $parser = new ShallowParser();
         $buf    = '';
         $lineno = 1;
+        
+        $parse = new ShallowParser();
+        $buf = '';
+        $lineno = 1;
+        
+        for (var i = ; i < ; i++) {}
+
         
         for (;;) {
             $this->_clear = false;

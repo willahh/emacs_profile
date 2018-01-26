@@ -34,6 +34,7 @@
 ; (require 'sr-speedbar)
 (require 'ace-window)
 (require 'avy)
+(require 'web-mode)
 
 
 
@@ -51,7 +52,6 @@
 
 (add-hook 'prog-mode-hook
           (highlight-symbol-nav-mode))
-          
 
 (add-hook 'typscript-mode-hook
           (highlight-symbol-nav-mode))
@@ -227,13 +227,23 @@
 ;; languages
 
 ;; Lisp like
-(add-hook 'elisp-mode 'paredit-mode)
-(add-hook 'common-lisp-mode 'paredit-mode)
-(add-hook 'lisp-mode-hook 'paredit-mode)
+(autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
+;; (add-hook 'elisp-mode 'paredit-mode)
+;; (add-hook 'common-lisp-mode 'paredit-mode)
+;; (add-hook 'lisp-mode-hook 'paredit-mode)
 (add-hook 'css-mode-hook 'paredit-mode)
 (add-hook 'clojure-mode-hook 'paredit-mode)
 (add-hook 'eshell-mode-hook 'paredit-mode)
 (add-hook 'cider-repl-mode-hook 'paredit-mode)
+
+
+(add-hook 'emacs-lisp-mode-hook       #'enable-paredit-mode)
+(add-hook 'eval-expression-minibuffer-setup-hook #'enable-paredit-mode)
+(add-hook 'ielm-mode-hook             #'enable-paredit-mode)
+(add-hook 'lisp-mode-hook             #'enable-paredit-mode)
+(add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
+(add-hook 'scheme-mode-hook           #'enable-paredit-mode)
+
 
 ;; C like
 (add-hook 'js2-mode-hook 'textmate-mode)
@@ -263,6 +273,7 @@
 (define-key prog-mode-map (kbd "C-M-u") 'sp-backward-up-sexp)
 (define-key php-mode-map (kbd "C-M-u") 'sp-backward-up-sexp)
 (define-key nxml-mode-map (kbd "C-M-u") 'sp-backward-up-sexp)
+(define-key web-mode-map (kbd "C-M-u") 'sp-backward-up-sexp)
 
 (define-key prog-mode-map (kbd "C-M-d") 'sp-down-sexp)
 (define-key php-mode-map (kbd "C-M-d") 'sp-down-sexp)
@@ -289,7 +300,6 @@
 (define-key nxml-mode-map (kbd "C-M-h") 'sp-backward-kill-sexp)
 
 (define-key prog-mode-map (kbd "C-h") 'backward-delete-char)
-(define-key php-mode-map (kbd "C-h") 'backward-delete-char)
 (define-key php-mode-map (kbd "C-h") 'backward-delete-char)
 (define-key nxml-mode-map (kbd "C-h") 'backward-delete-char)
 
