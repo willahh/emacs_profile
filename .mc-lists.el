@@ -103,6 +103,7 @@
         paredit-forward-delete
         paredit-forward-down
         paredit-forward-kill-word
+        paredit-forward-slurp-sexp
         paredit-forward-up
         paredit-kill
         paredit-meta-doublequote

@@ -151,15 +151,15 @@
 ;; delete-window
 (global-set-key (kbd "M-w") 'wlh/delete-window) ;; Delete window or frame
 
-
 ;; ;; New frame
 ;; (global-set-key [meta shift w] 'delete-frame)
 ;; (global-set-key (kbd "M-S-w") 'delete-frame)
 ;; (global-set-key (kbd "M-W") 'delete-frame)
 
 ;; shell-pop
-(global-set-key (kbd "C-t") 'shell-pop)
-(define-key dired-mode-map (kbd "C-t") 'shell-pop)
+(global-set-key (kbd "C-c C-t") 'shell-pop)
+(define-key dired-mode-map (kbd "C-c C-t") 'shell-pop)
+;; (define-key eshell-mode-map (kbd "C-c C-t") 'shell-pop)
 
 ;; ---
 (define-key ivy-minibuffer-map (kbd "<escape>") 'minibuffer-keyboard-quit)
@@ -551,7 +551,8 @@
 ;; (global-set-key (kbd "<f8>") 'neotree-toggle)
 ;; (global-set-key (kbd "<f8>") 'wlh/neotree-set) ; Ne fonctionne pas depuis dired
 ;; (global-set-key (kbd "<f8>") 'neotree-projectile-action)
-(global-set-key (kbd "<f8>") 'neotree-toggle)
+;; (global-set-key (kbd "<f8>") 'neotree-toggle)
+(global-set-key (kbd "<f8>") 'neotree-dir)
 (global-set-key (kbd "<f9>") 'projectile-recentf)
 ;; (global-set-key (kbd "<f10>") 'counsel-recentf)
 (global-set-key (kbd "<f10>") 'helm-recentf)
