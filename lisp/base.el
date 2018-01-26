@@ -5,7 +5,9 @@
       mac-option-modifier 'none
       mac-control-modifier 'control
       ns-function-modifier 'control
-      mac-right-command-modifier 'super)
+      ;; mac-right-command-modifier 'super
+      
+      )
 
 ;; Turn truncate lines off by default (like in many modern tools)
 (set-default 'truncate-lines t)

@@ -1350,7 +1350,7 @@ Version 2016-12-27"
 (winner-mode t)
 
 ;; Start the server. Used to connect with emacsclient
-(server-start)
+;; (server-start)
 
 ;; Create an eshell buffer on background
 (eshell)

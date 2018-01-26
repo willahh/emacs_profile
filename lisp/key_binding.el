@@ -28,20 +28,23 @@
 (global-set-key (kbd "M-a") 'mark-whole-buffer) ; Was backward-sentence
 
 
-;; --------------- Direct ALT binding
-;; Helm used insted of ivy cause of mouse usage
-(global-set-key (kbd "Â") 'zap-to-char) ; ALT + z
-(global-set-key (kbd "ß") 'ivy-switch-buffer) ; ALT + b
-(global-set-key (kbd "∫") 'projectile-switch-to-buffer) ; ALT + B
-(global-set-key (kbd "È") 'fixup-whitespace) ; ALT + k
-(global-set-key (kbd "Ì") 'help) ; ALT + h
-(global-set-key (kbd "Ò") 'helm-ag) ; ALT + S
-(global-set-key (kbd "ƒ") 'helm-recentf) ; ALT + f
-(global-set-key (kbd "¢") 'org-capture) ; ALT + C
-(global-set-key (kbd "†") 'toggle-truncate-lines) ; ALT + t
-(global-set-key (kbd "ﬁ") 'goto-line) ; ALT + g
-(global-set-key (kbd "Â") 'toggle-php-flavor-mode) ; ALT+z
-(define-key php-mode-map (kbd "Â") 'toggle-php-flavor-mode) ; ALT+z
+;; --------------- ALT key binding
+;; Azerty keyboard
+(global-set-key (kbd "≈") 'counsel-M-x) ; Alt + x
+(global-set-key (kbd "Â") 'toggle-php-flavor-mode) ; Alt + z
+(global-set-key (kbd "Å") 'zap-to-char) ; Alt + Z
+(global-set-key (kbd "ß") 'ivy-switch-buffer) ; Alt + b
+(global-set-key (kbd "∫") 'projectile-switch-to-buffer) ; Alt + B
+(global-set-key (kbd "È") 'fixup-whitespace) ; Alt + k
+(global-set-key (kbd "Ì") 'help) ; Alt + h
+(global-set-key (kbd "Ò") 'swiper) ; Alt + s
+(global-set-key (kbd "∑") 'helm-ag) ; Alt + S
+(global-set-key (kbd "ƒ") 'helm-recentf) ; Alt + f
+(global-set-key (kbd "¢") 'org-capture) ; Alt + C
+(global-set-key (kbd "†") 'toggle-truncate-lines) ; Alt + t
+(global-set-key (kbd "ﬁ") 'goto-line) ; Alt + g
+(global-set-key (kbd "Â") 'toggle-php-flavor-mode) ; Alt+z
+(define-key php-mode-map (kbd "Â") 'toggle-php-flavor-mode) ; Alt+z
 
 
 ;; M-x
@@ -50,7 +53,6 @@
 ;; (global-set-key (kbd "M-x") 'helm-M-x)
 ;; (global-set-key (kbd "M-x") 'counsel-M-x)
 ;; (global-set-key (kbd "M-m M-x") 'counsel-M-x)
-(global-set-key (kbd "≈") 'counsel-M-x) ; Alt+x on azerty keyboard
 
 
 ;; ---------------- key-chord
@@ -126,11 +128,13 @@
 
 ;; Scroll
 (global-set-key (kbd "C-v") 'scroll-up-half)
-(global-set-key (kbd "s-v") 'scroll-down-half)
+;; (global-set-key (kbd "s-v") 'scroll-down-half)◊
+(global-set-key (kbd "◊") 'scroll-down-half) ; ALT + v
 
 ;; Scroll half can be slow
 (add-hook 'syslog-mode-hook (lambda ()
-                              (define-key syslog-mode-map (kbd "s-v") 'scroll-down)
+                              ;; (define-key syslog-mode-map (kbd "s-v") 'scroll-down)
+                              (define-key syslog-mode-map (kbd "◊") 'scroll-down)
                               (define-key syslog-mode-map (kbd "C-v") 'scroll-up)))
 
 
@@ -321,11 +325,10 @@
 (global-set-key (kbd "C-M-s") 'isearch-forward-regexp)
 (global-set-key (kbd "C-c C-M-s") 'vr/replace)
 (global-set-key (kbd "M-=") 'delete-horizontal-space) ; Azerty equivalent of M-\
-(global-set-key (kbd "s-=") 'delete-horizontal-space) ; Azerty equivalent of M-\
 
 ;; Search
 (global-set-key (kbd "M-F") 'ag)
-(global-set-key (kbd "C-s-s") 'helm-ag) ; Super+Contral+s
+;; (global-set-key (kbd "C-s-s") 'helm-ag) ; Super+Contral+s
 
 ;; wgrep
 (define-key compilation-mode-map (kbd "C-x w") 'wgrep-change-to-wgrep-mode)
@@ -335,6 +338,7 @@
 ;; ---------------- new line
 (define-key prog-mode-map (kbd "RET") 'new-line-dwim)
 (define-key php-mode-map (kbd "RET") 'new-line-dwim)
+(define-key web-mode-map (kbd "C-m") 'newline-and-indent)
 ;; (define-key prog-mode-map "<return>" 'new-line-dwim)
 ;; (define-key web-mode-map "<return>" 'new-line-dwim)
 
@@ -354,7 +358,7 @@
 ;; i-search
 (define-key isearch-mode-map (kbd "C-'") 'avy-isearch)
 (define-key isearch-mode-map (kbd "C-h") 'isearch-delete-char)
-(define-key isearch-mode-map (kbd "C-S-j") 'avy-isearch)
+;; (define-key isearch-mode-map (kbd "C-S-j") 'avy-isearch)
 (define-key isearch-mode-map (kbd "M-v") 'isearch-yank-pop)
 (define-key isearch-mode-map (kbd "C-v") 'isearch-yank-pop)
 ;; (define-key isearch-mode-map (kbd "M-s") 'swiper--from-isearch)
@@ -373,7 +377,7 @@
 
 ;; Browse the kill ring
 (global-set-key (kbd "C-x C-y") 'browse-kill-ring)
-(global-set-key (kbd "C-S-y") 'helm-show-kill-ring)
+(global-set-key (kbd "C-M-y") 'helm-show-kill-ring)
 
 ;; Display and edit occurances of regexp in buffer
 (global-set-key (kbd "C-c o") 'occur)
@@ -409,7 +413,7 @@
 ;; ---------------- Magit
 ;; Magit
 ;; (global-set-key (kbd "C-x g") 'magit-status)
-(global-set-key (kbd "s-g") 'wlh/vc-status)
+;; (global-set-key (kbd "s-g") 'wlh/vc-status)
 (global-set-key (kbd "C-x g") 'wlh/vc-status)
 (global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
 
@@ -564,7 +568,7 @@
 ;; (global-set-key (kbd "s-c") 'org-capture)
 ;; (global-set-key (kbd "s-b") 'projectile-switch-to-buffer)
 ;; (global-set-key (kbd "s-k") 'fixup-whitespace)
-(global-set-key (kbd "s-/") 'comment-or-uncomment-region-or-line)
+;; (global-set-key (kbd "s-/") 'comment-or-uncomment-region-or-line)
 
 ;; Kill
 ;; Better move paragraph / mark paragraph
@@ -597,7 +601,7 @@
 (define-key ggtags-navigation-map (kbd "M-P") 'highlight-symbol-prev)
 
 ;;
-(global-set-key (kbd "s-q") 'my-abort-recursive-edit)
+;; (global-set-key (kbd "s-q") 'my-abort-recursive-edit)
 
 ;; Recentf
 (global-set-key (kbd "C-c f") 'counsel-recentf) 
@@ -609,7 +613,7 @@
 ;; (global-set-key (kbd "M-m x") 'counsel-M-x) ;; (global-set-key (kbd "s-g") 'magit-status)
 (global-set-key (kbd "C-x v U") 'wlh/svn-up-recursive)
 
-(global-set-key (kbd "s-i") 'emmet-expand-line)
+;; (global-set-key (kbd "s-i") 'emmet-expand-line)
 ;; (define-key emacs-lisp-mode-map (kbd "C-c C-c") 'eval-defun)
 
 (global-set-key (kbd "s-a") 'mark-whole-buffer)
@@ -622,12 +626,12 @@
 
 ;; (global-set-key (kbd "s-s") 'helm-swoop)
 ;; (global-set-key (kbd "C-c C-s") 'helm-swoop)
-(global-set-key (kbd "s-s") 'helm-swoop)
-; (global-set-key (kbd "C-c C-s") 'swiper)
+;; (global-set-key (kbd "s-s") 'helm-swoop)
+                                        ; (global-set-key (kbd "C-c C-s") 'swiper)
 
 ;; vc
-(global-set-key (kbd "s-w") 'vc-diff)
-(global-set-key (kbd "s-W") 'vc-ediff)
+;; (global-set-key (kbd "s-w") 'vc-diff)
+;; (global-set-key (kbd "s-W") 'vc-ediff)
 (define-key vc-dir-mode-map (kbd "C-M-i") 'vc-dir-previous-directory)
 (define-key diff-mode-map (kbd "C-M-i") 'diff-hunk-prev)
 (define-key diff-mode-map (kbd "l") 'recenter-top-bottom)
@@ -638,7 +642,7 @@
 (global-set-key (kbd "s-l") 'avy-goto-char-in-line)
 
 ;; dired
-(global-set-key (kbd "s-d") 'projectile-dired)
+;; (global-set-key (kbd "s-d") 'projectile-dired)
 
 
 ;; Hippie expand
@@ -649,7 +653,7 @@
 (global-set-key (kbd "<M-backspace>") 'paredit-backward-kill-word)
 (global-set-key (kbd "<backspace>") 'delete-backward-char) ;; Override paredit-backward-kill-word behaviour for backspace
 (global-set-key [(meta shift /)] 'comment-or-uncomment-region-or-line)
-(global-set-key (kbd "s-:") 'delete-horizontal-space)
+;; (global-set-key (kbd "s-:") 'delete-horizontal-space)
 (define-key occur-mode-map (kbd "n") 'next-line)
 (define-key occur-mode-map (kbd "p") 'previous-line)
 (global-set-key (kbd "C-/") 'ffap) ; Qwerty C-> for Azerty
@@ -700,7 +704,7 @@
 (global-set-key (kbd "C-c t") 'crux-visit-term-buffer)
 (global-set-key (kbd "C-c I") 'crux-find-user-init-file)
 (global-set-key (kbd "C-c S") 'crux-find-shell-init-file)
-(global-set-key (kbd "s-j") 'crux-top-join-line)
+;; (global-set-key (kbd "s-j") 'crux-top-join-line)
 
 (global-set-key [f7] 'winner-undo)
 (global-set-key [C-f7] 'winner-redo)

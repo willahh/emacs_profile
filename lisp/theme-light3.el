@@ -41,9 +41,15 @@
 (set-face-attribute 'region nil :background "#fce94f")
 (set-face-attribute 'region nil :background "#fce94f")
 
-(defun wlh/theme-linum-mode-hook ()
+;; (defun wlh/theme-linum-mode-hook ()
+;;   (set-face-attribute 'linum nil :foreground "#4a4a4a" :background"#fafafa" :height 80))
+;; (add-hook 'linum-mode-hook 'wlh/theme-linum-mode-hook)
+
+;; nliunm
+(defun wlh/theme-nlinum-mode-hook ()
   (set-face-attribute 'linum nil :foreground "#4a4a4a" :background"#fafafa" :height 80))
-(add-hook 'linum-mode-hook 'wlh/theme-linum-mode-hook)
+
+(add-hook 'nlinum-mode-hook 'wlh/theme-nlinum-mode-hook)
 
 ;; -------
 ;; (set-face-attribute 'font-lock-keyword-face nil :foreground "#9d288b")
@@ -119,6 +125,7 @@
   (set-face-attribute 'org-level-2 nil :height 1 :box nil :overline nil :foreground "#000" :background "#ffffff")
   (set-face-attribute 'org-special-keyword nil :height 1 :foreground "#aeb7da" :background nil)
   (set-face-attribute 'org-document-info-keyword nil :height 1 :foreground "#b0dcff" :background nil)
+  (set-face-attribute 'org-tag nil :height 0.6 :weight "normal")
   (set-face-attribute 'org-checkbox-statistics-todo  nil :height 1))
 
 (add-hook 'org-mode-hook 'wlh/org-mode-hook)
