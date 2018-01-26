@@ -79,7 +79,7 @@
 (set-face-attribute 'web-mode-type-face nil :foreground "#6c1883")
 
 ;; ------- js2-mode
-(set-face-attribute 'web-mode-type-face nil :foreground "#6c1883")
+(set-face-attribute 'js2-external-variable nil :foreground "#2055a4")
 
 ;; ------- bm
 (set-face-attribute 'bm-face nil :background "#e0e0e0" :foreground nil)
