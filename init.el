@@ -10,6 +10,7 @@
 (load-file "~/.emacs.d/lisp/defun.el") ; Common functions
 (load-file "~/.emacs.d/lisp/alist.el") ; Manage major mode from file extension patterns
 (load-file "~/.emacs.d/lisp/project.el") ; Workspace / project
+(load "~/.emacs.d/vendor/emacs-textmate-0.1/textmate")
 (load-file "~/.emacs.d/lisp/navigation.el")
 (load-file "~/.emacs.d/lisp/hydras.el") ; Hydra
 (load-file "~/.emacs.d/lisp/dired.el") ;

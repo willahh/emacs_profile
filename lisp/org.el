@@ -44,7 +44,6 @@
 (add-hook 'org-mode-hook 'toc-org-enable)
 (setq org-src-window-setup 'current-window)
 (add-hook 'org-mode-hook (lambda () 
-                           
                            (interactive)
                            
                            (toggle-truncate-lines)

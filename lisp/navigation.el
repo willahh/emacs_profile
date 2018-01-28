@@ -1,5 +1,3 @@
-(load "~/.emacs.d/vendor/emacs-textmate-0.1/textmate")
-
 (require 'projectile)
 (require 'smartparens-config)
 (require 'smartparens-html)
@@ -159,9 +157,9 @@
       helm-ff-search-library-in-sexp        t ; search for library in `require' and `declare-function' sexp.
       helm-scroll-amount                    8 ; scroll 8 lines other window using M-<next>/M-<prior>
       helm-ff-file-name-history-use-recentf t
-      helm-echo-input-in-header-line t)
-
-(setq helm-M-x-fuzzy-match t
+      helm-echo-input-in-header-line t
+      helm-ag-insert-at-point 'sexp
+      helm-M-x-fuzzy-match t
       helm-recentf-fuzzy-match t
       helm-buffers-fuzzy-matching t
       helm-locate-fuzzy-match nil
