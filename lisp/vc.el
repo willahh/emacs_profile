@@ -85,33 +85,39 @@
   (setq diff-hl-draw-borders nil)
   (diff-hl-mode t))
 
+(defun wlh/diff-hl-mode-hook ()
+  (diff-hl-mode t))
+
+(add-hook 'prog-mode-hook 'wlh/diff-hl-mode-hook)
+
+
 (add-hook 'diff-mode-hook 'wlh/diff-mode-hook)
 (add-hook 'magit-mode-hook 'wlh/diff-mode-hook)
 (add-hook 'magit-diff-mode-hook 'wlh/diff-mode-hook)
 
-(defun wlh/vc-dir (dir &optional backend)
-  "Duplication of emacs vc-dir defun, with one modification to display vc-dir in the same window"
+;; (defun wlh/vc-dir (dir &optional backend)
+;;   "Duplication of emacs vc-dir defun, with one modification to display vc-dir in the same window"
 
-  (interactive
-   (list
-    (file-truename (read-directory-name "VC status for directory: "
-                    (vc-root-dir) nil t
-                    nil))
-    (if current-prefix-arg
-    (intern
-     (completing-read
-      "Use VC backend: "
-      (mapcar (lambda (b) (list (symbol-name b)))
-          vc-handled-backends)
-      nil t nil nil)))))
-  (unless backend
-    (setq backend (vc-responsible-backend dir)))
-  (let (pop-up-windows)           ; based on cvs-examine; bug#6204
-    (vc-dir-prepare-status-buffer "*vc-dir*" dir backend))
-  (if (derived-mode-p 'vc-dir-mode)
-      (vc-dir-refresh)
-    (let ((use-vc-backend backend))
-      (vc-dir-mode))))
+;;   (interactive
+;;    (list
+;;     (file-truename (read-directory-name "VC status for directory: "
+;;                     (vc-root-dir) nil t
+;;                     nil))
+;;     (if current-prefix-arg
+;;     (intern
+;;      (completing-read
+;;       "Use VC backend: "
+;;       (mapcar (lambda (b) (list (symbol-name b)))
+;;           vc-handled-backends)
+;;       nil t nil nil)))))
+;;   (unless backend
+;;     (setq backend (vc-responsible-backend dir)))
+;;   (let (pop-up-windows)           ; based on cvs-examine; bug#6204
+;;     (vc-dir-prepare-status-buffer "*vc-dir*" dir backend))
+;;   (if (derived-mode-p 'vc-dir-mode)
+;;       (vc-dir-refresh)
+;;     (let ((use-vc-backend backend))
+;;       (vc-dir-mode))))
 
 ;; vc-dir custom key bindings
 (define-key vc-dir-mode-map (kbd "e") 'wlh/vc-ediff)

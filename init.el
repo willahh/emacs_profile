@@ -13,6 +13,7 @@
 (load "~/.emacs.d/vendor/emacs-textmate-0.1/textmate")
 (load-file "~/.emacs.d/lisp/navigation.el")
 (load-file "~/.emacs.d/lisp/hydras.el") ; Hydra
+(load-file "~/.emacs.d/lisp/org.el")
 (load-file "~/.emacs.d/lisp/dired.el") ;
 (load-file "~/.emacs.d/lisp/misc.el")
 (load-file "~/.emacs.d/lisp/ui.el")
@@ -24,7 +25,6 @@
 ;; (load-file "~/.emacs.d/lisp/evil.el")
 (load-file "~/.emacs.d/lisp/syntax_checker.el")
 (load-file "~/.emacs.d/lisp/tags.el")
-(load-file "~/.emacs.d/lisp/org.el")
 (load-file "~/.emacs.d/lisp/key_binding.el")
 (load-file "~/.emacs.d/lisp/theme-light3.el")
 (load-file "~/.emacs.d/lisp/tags.el")

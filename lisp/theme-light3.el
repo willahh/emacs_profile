@@ -119,13 +119,12 @@
 
 ;; ------- org
 (defun wlh/org-mode-hook ()
-  (require 'org)
   (set-face-attribute 'org-document-title nil :family "Sans Serif" :height 1.8 :foreground "#999")
   (set-face-attribute 'org-level-1 nil :height 1.3 :overline nil :foreground "#000" :background "#fff" :box nil)
   (set-face-attribute 'org-level-2 nil :height 1 :box nil :overline nil :foreground "#000" :background "#ffffff")
   (set-face-attribute 'org-special-keyword nil :height 1 :foreground "#aeb7da" :background nil)
   (set-face-attribute 'org-document-info-keyword nil :height 1 :foreground "#b0dcff" :background nil)
-  (set-face-attribute 'org-tag nil :height 0.6 :weight "normal")
+  (set-face-attribute 'org-tag nil :height 0.6)
   (set-face-attribute 'org-checkbox-statistics-todo  nil :height 1))
 
 (add-hook 'org-mode-hook 'wlh/org-mode-hook)
