@@ -93,6 +93,7 @@
         org-metaup
         org-self-insert-command
         org-todo
+        org-yank
         paredit-backslash
         paredit-backward
         paredit-backward-down
@@ -100,6 +101,7 @@
         paredit-backward-up
         paredit-doublequote
         paredit-forward
+        paredit-forward-barf-sexp
         paredit-forward-delete
         paredit-forward-down
         paredit-forward-kill-word
