@@ -6,7 +6,6 @@
 (require 'nxml-mode)
 (require 'tern)
 (require 'org)
-(require 'org)
 (require 'conf-mode)
 (require 'magit)
 (require 'term)
@@ -322,6 +321,7 @@
 
 ;; Misc
 (define-key org-mode-map (kbd "C-x <C-i>") 'helm-org-in-buffer-headings)
+(define-key org-mode-map (kbd "C-M-i") 'org-shifttab)
 (global-set-key (kbd "C-M-s") 'isearch-forward-regexp)
 (global-set-key (kbd "C-c C-M-s") 'vr/replace)
 (global-set-key (kbd "M-=") 'delete-horizontal-space) ; Azerty equivalent of M-\
@@ -560,7 +560,6 @@
 ;; (global-set-key (kbd "<f10>") 'counsel-recentf)
 (global-set-key (kbd "<f10>") 'helm-recentf)
 (global-set-key (kbd "<f11>") 'wlh/IDE)
-;; (global-set-key (kbd "<f12>") 'wlh/vc-dir)
 (global-set-key (kbd "<end>") 'end-of-buffer)
 (global-set-key (kbd "<home>") 'beginning-of-buffer)
 
