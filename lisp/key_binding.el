@@ -37,7 +37,8 @@
 (global-set-key (kbd "È") 'fixup-whitespace) ; Alt + k
 (global-set-key (kbd "Ì") 'help) ; Alt + h
 (global-set-key (kbd "Ò") 'swiper) ; Alt + s
-(global-set-key (kbd "∑") 'helm-ag) ; Alt + S
+;; (global-set-key (kbd "∑") 'helm-ag) ; Alt + S
+(global-set-key (kbd "∑") 'helm-projectile-ag) ; Alt + S
 (global-set-key (kbd "ƒ") 'helm-recentf) ; Alt + f
 (global-set-key (kbd "¢") 'org-capture) ; Alt + C
 (global-set-key (kbd "†") 'toggle-truncate-lines) ; Alt + t
@@ -630,6 +631,9 @@
 (define-key web-mode-map (kbd "C-c C-s") 'swiper)
 (define-key js2-mode-map (kbd "C-c C-s") 'swiper)
 (define-key php-mode-map (kbd "C-c C-s") 'swiper)
+
+(define-key js2-mode-map (kbd "<C-M-mouse-1>") 'xref-find-definitions)
+(define-key js2-mode-map (kbd "<C-M-mouse-3>") 'xref-pop-marker-stack)
 
 ;; (global-set-key (kbd "s-s") 'helm-swoop)
 ;; (global-set-key (kbd "C-c C-s") 'helm-swoop)

@@ -56,8 +56,11 @@
   
   ;; js2-xref
   (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)
-  (define-key js2-mode-map (kbd "<C-M-mouse-1>") 'xref-find-definitions)
-  (define-key js2-mode-map (kbd "<C-M-mouse-3>") 'xref-pop-marker-stack)
+  
+  ;; (define-key js2-mode-map (kbd "<C-M-mouse-1>") 'xref-find-definitions)
+  ;; (define-key js2-mode-map (kbd "<C-M-mouse-3>") 'xref-pop-marker-stack)
+  
+  
   )
 
 (add-hook 'js2-mode-hook 'wlh/js-mode)
