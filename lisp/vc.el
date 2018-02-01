@@ -89,8 +89,7 @@
   (diff-hl-mode t))
 
 (add-hook 'prog-mode-hook 'wlh/diff-hl-mode-hook)
-
-
+(add-hook 'org-mode-hook 'wlh/diff-hl-mode-hook)
 (add-hook 'diff-mode-hook 'wlh/diff-mode-hook)
 (add-hook 'magit-mode-hook 'wlh/diff-mode-hook)
 (add-hook 'magit-diff-mode-hook 'wlh/diff-mode-hook)
