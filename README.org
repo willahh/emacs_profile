@@ -1,52 +1,52 @@
+
 #+TITLE: Emacs configuration
 #+OPTIONS: toc:3
 
-:TOC:
+:TOC:      
 
 * Description
-  This is my Emacs configuration i use and tweak every day. Mainly
-  used from OSX system. The installation can be done quickly, however
-  a lot of functionnalities depends on external tools. Theses are
-  describes into the "Support" section.
-
+  This is my Emacs configuration i use and tweak every day. Mainly used from OSX
+  system. The installation can be done quickly, however a lot of
+  functionnalities depends on external tools. Theses are describes into the
+  "Support" section.
+  
 ** Rules
   Packages :
   - Only stable packages are used from Elpa package manager
   - Non stable packages are moved into vendor directory
 * Installation
-  :PROPERTIES:
+  :PROPERTIES: 
   :CUSTOM_ID: installation
   :END:
 ** Mac Os X
  -  Mac Os X >= 10.11
  -  emacs >= 25
  -  Use of emacs-osx for osx instead of the default brew emacs
-   https://github.com/railwaycat/homebrew-emacsmacport
-
-  Emacs installation :
-
-#+BEGIN_SRC bash
-brew tap railwaycat/emacsmacport
-brew install emacs-mac --with-cocoa
+    https://github.com/railwaycat/homebrew-emacsmacport
+    
+    Emacs installation :
+    
+ #+BEGIN_SRC bash
+brew tap railwaycat/emacsmacport brew install emacs-mac --with-cocoa
 
 ##brew install --with-cocoa --srgb emacs
-#+END_SRC
-
-
-  Emacs personal Configuration :
-
-#+BEGIN_SRC bash
+ #+END_SRC
+ 
+ 
+ Emacs personal Configuration :
+ 
+ #+BEGIN_SRC bash
 git clone https://github.com/willahh/emacs_profile ~/.emacs.d
-#+END_SRC
-
-  Font :
+ #+END_SRC
+ 
+ Font :
     - Use font "fira-monoS" - size : 12 - ~/.emacs.d/fonts/meslo (Menu
       > option > set default font)
 ** Windows
-    :PROPERTIES:
+   :PROPERTIES: 
     :CUSTOM_ID: windows
     :END:
-
+   
 - Gnutls
 - htftp://ftp.gnutls.org/gcrypt/gnutls/w32/
 - 
@@ -104,20 +104,17 @@ Copy
 
 to ~/Library/Spelling/
 
-------------------
 **** Documentation
 #+BEGIN_SRC bash
 man hunspell
 #+END_SRC
 
-"... Dictionary files (*.aff and *.dic) should be placed in
-~/Library/Spelling/ or /Library/Spelling/.  Homebrew itself
-provides no dictionaries for Hunspell, but you can download
-compatible dictionaries from other sources, such as ..."
+"... Dictionary files (*.aff and *.dic) should be placed in ~/Library/Spelling/
+or /Library/Spelling/.  Homebrew itself provides no dictionaries for Hunspell,
+but you can download compatible dictionaries from other sources, such as ..."
 
 *** Tools : languagetools
-  @todo Used for grammar check
-  https://www.languagetool.org
+  @todo Used for grammar check https://www.languagetool.org
 
   - Download the "Stand alone for desktop" version.
   - Move the folder to "~/bin/"
@@ -130,7 +127,7 @@ compatible dictionaries from other sources, such as ..."
 #+BEGIN_SRC sh
 gem install sass
 #+END_SRC
-** CSS
+** CSSh
 *** Tools : csslint (Syntax checker)
 https://github.com/gajus/css-lint
 https://github.com/CSSLint/csslint/wiki/Command-line-interface
@@ -145,41 +142,19 @@ Configuration
 
 .csslintrc file
 #+BEGIN_SRC json
-  {
-      "adjoining-classes": false,
-      "box-model": false,
-      "order-alphabetical": false,
-      "box-sizing": false,
-      "bulletproof-font-face": false,
-      "compatible-vendor-prefixes": false,
-      "display-property-grouping": false,
-      "duplicate-background-images": false,
-      "duplicate-properties": false,
-      "empty-rules": false,
-      "fallback-colors": false,
-      "floats": false,
-      "font-faces": false,
-      "font-sizes": false,
-      "gradients": false,
-      "ids": false,
-      "import": false,
-      "important": false,
-      "known-properties": false,
-      "non-link-hover": false,
-      "outline-none": false,
-      "overqualified-elements": false,
-      "qualified-headings": false,
-      "regex-selectors": false,
-      "shorthand": false,
-      "star-property-hack": false,
-      "text-indent": false,
-      "underscore-property-hack": false,
-      "vendor-prefix": false,
-      "unique-headings": false,
-      "universal-selector": false,
-      "unqualified-attributes": false,
-      "zero-units": false
-  }
+  { "adjoining-classes": false, "box-model": false, "order-alphabetical": false,
+      "box-sizing": false, "bulletproof-font-face": false,
+      "compatible-vendor-prefixes": false, "display-property-grouping": false,
+      "duplicate-background-images": false, "duplicate-properties": false,
+      "empty-rules": false, "fallback-colors": false, "floats": false,
+      "font-faces": false, "font-sizes": false, "gradients": false, "ids":
+      false, "import": false, "important": false, "known-properties": false,
+      "non-link-hover": false, "outline-none": false, "overqualified-elements":
+      false, "qualified-headings": false, "regex-selectors": false, "shorthand":
+      false, "star-property-hack": false, "text-indent": false,
+      "underscore-property-hack": false, "vendor-prefix": false,
+      "unique-headings": false, "universal-selector": false,
+      "unqualified-attributes": false, "zero-units": false }
 #+END_SRC
 
 ** PHP
@@ -187,43 +162,38 @@ Configuration
 **** php
      http://php.net/
 **** php REPL : psysh
-A REPL for PHP https://github.com/bobthecow/psysh
-Used for debug php interactively.
-There is no need to have psysh installed to execute code inside #+BEGIN_SRC php
+A REPL for PHP https://github.com/bobthecow/psysh Used for debug php
+interactively.  There is no need to have psysh installed to execute code
+inside #+BEGIN_SRC php
 
 Installation : http://php.net/
 #+BEGIN_SRC sh
-wget https://git.io/psysh
-chmod +x psysh
-./psysh
+wget https://git.io/psysh chmod +x psysh ./psysh
 #+END_SRC
 
 psysh should be accessible on your $PATH dir.
 
 **** @todo
-PHP tools - php https://secure.php.net/ (brew install
-homebrew/php/php56)
+PHP tools - php https://secure.php.net/ (brew install homebrew/php/php56)
 
 ** HTML
 *** Tools
 **** phantomjs
-http://phantomjs.org/
+     http://phantomjs.org/
 ***** osx
-#+BEGIN_SRC bash
+      #+BEGIN_SRC bash
 brew install phantomjs
-#+END_SRC
+      #+END_SRC
 ** Javascript
    
-   @todo : Le support le plus récent et avancé est eslint. Il me
-semble qu actuellement ma conf n utilise que jscs. Le fichier à éditer
-est donc .jscsrc
+   @todo : Le support le plus récent et avancé est eslint. Il me semble qu
+actuellement ma conf n utilise que jscs. Le fichier à éditer est donc .jscsrc
 
 *** Tools
     npm install -g typescript
 *** jscs
 **** eslint
-http://eslint.org/
-http://eslint.org/docs/user-guide/getting-started
+http://eslint.org/ http://eslint.org/docs/user-guide/getting-started
 
 Installation :
 
@@ -233,22 +203,11 @@ npm install -g eslint
 
 Create .eslintrc file into user dir
 
-Default config files :
-https://gist.github.com/cletusw/e01a85e399ab563b1236
+Default config files : https://gist.github.com/cletusw/e01a85e399ab563b1236
 
 #+BEGIN_SRC json
-  {
-      "parserOptions": {
-          "ecmaVersion": 6,
-          "sourceType": "module",
-          "ecmaFeatures": {
-              "jsx": true
-          }
-      },
-      "rules": {
-          "semi": 0
-      }
-  }
+  { "parserOptions": { "ecmaVersion": 6, "sourceType": "module", "ecmaFeatures":
+      { "jsx": true } }, "rules": { "semi": 0 } }
 #+END_SRC
 **** todo
 
@@ -287,8 +246,7 @@ js-beautify
     :PROPERTIES:
     :CUSTOM_ID: excel-word-support
     :END:
-Excel, Word support
-={r, engine='bash', count_lines} brew install ghostscript=
+Excel, Word support ={r, engine='bash', count_lines} brew install ghostscript=
 * Utils
 ** Convert Markdown to org
 *** Links
@@ -308,61 +266,4 @@ Convert .md file to .org file with :
 #+BEGIN_SRC shell
 pandoc -o README.md README.org
 #+END_SRC
-
-** Keyboard speed
-   osx
-  - defaults write -g InitialKeyRepeat -int 11 # normal minimum is 15
-    (225 ms)
-  - defaults write -g InitialKeyRepeat -float 8.5 # normal minimum is 15
-    (225 ms)
-  - defaults write -g InitialKeyRepeat -float 9.5 # normal minimum is 15
-    (225 ms)
-  - defaults write -g InitialKeyRepeat -float 10.5 # normal minimum is 15
-    (225 ms)
-  - defaults write -g InitialKeyRepeat -float 12
-  - defaults write -g InitialKeyRepeat -float 10.5
-  - defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
-  - defaults write -g KeyRepeat -float 1.5 # normal minimum is 2 (30
-    ms)
-  - defaults write -g KeyRepeat -float 1.8 # normal minimum is 2 (30
-    ms)
-  - defaults write -g KeyRepeat -float 2 # normal minimum is 2 (30 ms)
-  - defaults write -g KeyRepeat -float 1.8 # normal minimum is 2 (30 ms)
-  - defaults write -g KeyRepeat -float 1.5 # normal minimum is 2 (30 ms)
-  - defaults write -g KeyRepeat -float 1.7 # normal minimum is 2 (30 ms)
-  - defaults write -g KeyRepeat 1 # Cette valeur ne semble prendre en compte
-    qu'un entier et non pas un float
-  - defaults write -g KeyRepeat -float 1.6
-  - defaults write -g KeyRepeat -float 1.2
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-y
 

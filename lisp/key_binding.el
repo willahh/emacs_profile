@@ -424,7 +424,7 @@
 (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
 
 ;; open line above / below
-(global-set-key (kbd "C-o") 'crux-smart-open-line)
+;; (global-set-key (kbd "C-o") 'crux-smart-open-line)
 (global-set-key (kbd "C-M-o") 'crux-smart-open-line-above)
 
 ;; Emmet
