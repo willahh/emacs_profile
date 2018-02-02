@@ -110,6 +110,13 @@
 (add-hook 'eww-mode #'rainbow-delimiters-mode)
 (add-hook 'eww-mode #'rainbow-mode)
 
+;; Eshell conf
+(defun wlh/eshell-hook ()
+  (interactive)
+  (company-mode nil))
+
+(add-hook 'eshell-mode-hook 'wlh/eshell-hook)
+
 (require 'diff-mode)
 (require 'smerge-mode)
 

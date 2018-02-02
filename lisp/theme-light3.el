@@ -117,6 +117,7 @@
 (set-face-attribute 'bm-face nil :foreground "#000" :background nil :underline t)
 
 
+
 ;; ------- org
 (defun wlh/org-mode-hook ()
   (set-face-attribute 'org-document-title nil :family "Sans Serif" :height 1.8 :foreground "#999")
@@ -124,7 +125,8 @@
   (set-face-attribute 'org-level-2 nil :height 1 :box nil :overline nil :foreground "#000" :background "#ffffff")
   (set-face-attribute 'org-special-keyword nil :height 1 :foreground "#aeb7da" :background nil)
   (set-face-attribute 'org-document-info-keyword nil :height 1 :foreground "#b0dcff" :background nil)
-  (set-face-attribute 'org-tag nil :height 0.6)
+  (set-face-attribute 'org-tag nil :height 0.6 :foreground "#008000")
+  (set-face-attribute 'org-block nil :background "#ccc")
   (set-face-attribute 'org-checkbox-statistics-todo  nil :height 1))
 
 (add-hook 'org-mode-hook 'wlh/org-mode-hook)
