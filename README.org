@@ -1,4 +1,3 @@
-
 #+TITLE: Emacs configuration
 #+OPTIONS: toc:3
 
