@@ -87,6 +87,7 @@
         org-cycle
         org-delete-char
         org-end-of-line
+        org-force-cycle-archived
         org-kill-line
         org-metaleft
         org-metaright

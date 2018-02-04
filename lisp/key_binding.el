@@ -40,7 +40,7 @@
 ;; (global-set-key (kbd "∑") 'helm-ag) ; Alt + S
 (global-set-key (kbd "∑") 'helm-projectile-ag) ; Alt + S
 (global-set-key (kbd "ƒ") 'helm-recentf) ; Alt + f
-(global-set-key (kbd "¢") 'org-capture) ; Alt + C
+;; (global-set-key (kbd "¢") 'org-capture) ; Alt + C
 (global-set-key (kbd "†") 'toggle-truncate-lines) ; Alt + t
 (global-set-key (kbd "ﬁ") 'goto-line) ; Alt + g
 (global-set-key (kbd "Â") 'toggle-php-flavor-mode) ; Alt+z
@@ -360,6 +360,7 @@
 
 ;; i-search
 (define-key isearch-mode-map (kbd "C-'") 'avy-isearch)
+(define-key org-mode-map (kbd "C-'") 'avy-isearch)
 (define-key isearch-mode-map (kbd "C-h") 'isearch-delete-char)
 ;; (define-key isearch-mode-map (kbd "C-S-j") 'avy-isearch)
 (define-key isearch-mode-map (kbd "M-v") 'isearch-yank-pop)
@@ -516,6 +517,7 @@
 (define-key org-mode-map (kbd "C-c C-b") 'org-backward-heading-same-level)
 (define-key org-mode-map (kbd "π") 'org-metadown)
 (define-key org-mode-map (kbd "È") 'org-metaup)
+(global-set-key (kbd "C-c c") 'org-capture)
 
 ;; zoom
 (global-set-key (kbd "M--") 'text-scale-decrease)
