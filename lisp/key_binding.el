@@ -397,6 +397,7 @@
 (global-set-key (kbd "C-x v f") 'vc-diff)
 
 ;; ---------------- Shell
+(define-key shell-mode-map (kbd "RET") 'eshell-send-input)
 ;; ;; Start a new eshell even if one is active.
 ;; (global-set-key (kbd "C-x M") (lambda () (interactive) (eshell t)))
 
