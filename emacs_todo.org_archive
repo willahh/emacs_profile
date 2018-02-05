@@ -1672,3 +1672,47 @@ Archived entries from file /Users/wravel/.emacs.d/emacs_todo.org
   :ARCHIVE_ITAGS: @home
   :END:
 
+
+* TODO [#B] Faire une fonction "Merge lines" pour supprimer les linebreak/whitespace 
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-02-04 Sun 22:35
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+
+* TODO [#B] Ivy : Possibilité de boucler                             
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-02-04 Sun 22:35
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+
+
+* TODO [#B] [vc-dir] N'affiche pas les fichiers supprimés localement, mais non envoyé à svn (svn remove) 
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-02-04 Sun 22:35
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+
+
+* TODO [#B] Il faudrait voir pour faire tourner 2 instances d emacs, 
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-02-04 Sun 22:35
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+  [2017-11-15 Wed]
+

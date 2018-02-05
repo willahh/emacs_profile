@@ -215,13 +215,8 @@ C
 ** TODO [#B] AG mettre en mode emacs et non pas evil normal           
 ** TODO [#B] [projectile find file] Auto centrer la ligne une fois le goto dans le fichier 
 ** TODO [#B] [svn-log-view] Faire des ediff depuis ce mode            
-** TODO [#B] Faire une fonction "Merge lines" pour supprimer les linebreak/whitespace 
 ** TODO [#B] Delete file : Ne pas re demander le chemin alors que l'on a deja le focus 
-** TODO [#B] Ivy : Possibilité de boucler                             
-
-** TODO [#B] [vc-dir] N'affiche pas les fichiers supprimés localement, mais non envoyé à svn (svn remove) 
-
-** TODO [#B] Projectile - Ne pas ajouter automatiquement les fichiers manquants dans le cache, car cela peut ralentir énormement le process d'ouverture du fichier. Il faut le gérer manuellement 
+** TODO [#A] Projectile - Ne pas ajouter automatiquement les fichiers manquants dans le cache, car cela peut ralentir énormement le process d'ouverture du fichier. Il faut le gérer manuellement 
    [2017-11-10 Fri]
    [[file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/include/lib/internal/croptosize2/src/events.js::Events.on_validate%20%3D%20function(input)%20{][file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/include/lib/internal/croptosize2/src/events.js::Events.on_validate = function(input) {]]
 
@@ -242,9 +237,6 @@ C
 ** TODO [#C] [vc-dir] key M-< && M-> : Faire pointer sur le vrai début/fin de ligne 
 ** TODO [#C] [doc-view] Faire fonctionner doc-view (Lire des fichiers excel, doc, word, etc) 
 ** TODO [#C] [util] Voir si il est possible de faire un (CMD+P + touche @) (file.php@methode_name) 
-** TODO [#B] Il faudrait voir pour faire tourner 2 instances d emacs, 
-   [2017-11-15 Wed]
-
 ** TODO [#C] Faire un mode pour naviguer dans le html comme dans l'outil de debug de Chrome et la partie elements 
    [2017-11-16 Thu]
    [[file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/production_crop2.php::</a>]]
