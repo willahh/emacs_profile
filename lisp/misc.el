@@ -657,5 +657,5 @@ abort completely with `C-g'."
 
 ;; Eshell
 (defun wlh/eshell-mode-hook ()
-  (company-mode nil))
+  (company-mode 0))
 (add-hook 'eshell-mode-hook 'wlh/eshell-mode-hook)

@@ -126,8 +126,8 @@
 (define-key vc-dir-mode-map (kbd "k") 'vc-revert) ; (k is like k (for discard changes) in magit)
 (define-key vc-dir-mode-map (kbd "g") 'vc-dir-refresh)
 
-;; ;; Ediff window management
-;; ;; https://emacs.stackexchange.com/a/17089
+;; Ediff window management
+;; https://emacs.stackexchange.com/a/17089
 (defvar my-ediff-last-windows nil)
 
 (defun my-restore-pre-ediff-winconfig ()

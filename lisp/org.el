@@ -46,6 +46,15 @@
 (add-hook 'org-mode-hook (lambda () 
                            (interactive)
                            
+                           (textmate-mode)
+                           (smartparens-mode)
+                           
+                           ;; Disable company mode to use autocomplete mode instead
+                           (company-mode nil)
+                           (auto-complete-mode t)
+                           (add-to-list 'ac-modes 'org-mode)
+                           (org-bullets-mode 1)
+                           
                            (toggle-truncate-lines)
                            
                            ;; Enable source code block edition in org files
@@ -74,7 +83,6 @@
       org-src-fontify-natively t
       org-src-tab-acts-natively t)
 
-(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
 
 ;; org protocol

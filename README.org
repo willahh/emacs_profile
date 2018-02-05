@@ -1,4 +1,3 @@
-
 #+TITLE: Emacs configuration
 #+OPTIONS: toc:3
 
@@ -6,14 +5,15 @@
 
 * Description
   This is my Emacs configuration i use and tweak every day. Mainly used from OSX
-  system. The installation can be done quickly, however a lot of
-  functionnalities depends on external tools. Theses are describes into the
+  system.   The  installation   can  be   done   quickly,  however   a  lot   of
+  functionnalities  depends on  external tools.  Theses are  describes into  the
   "Support" section.
   
 ** Rules
-  Packages :
+   Packages :
   - Only stable packages are used from Elpa package manager
   - Non stable packages are moved into vendor directory
+  - Elpa directory is not in ignore rules, all packages are submited
 * Installation
   :PROPERTIES: 
   :CUSTOM_ID: installation
@@ -28,20 +28,18 @@
     
  #+BEGIN_SRC bash
 brew tap railwaycat/emacsmacport brew install emacs-mac --with-cocoa
-
-##brew install --with-cocoa --srgb emacs
  #+END_SRC
  
  
- Emacs personal Configuration :
+ Clone this configuration :
  
  #+BEGIN_SRC bash
 git clone https://github.com/willahh/emacs_profile ~/.emacs.d
  #+END_SRC
  
  Font :
-    - Use font "fira-monoS" - size : 12 - ~/.emacs.d/fonts/meslo (Menu
-      > option > set default font)
+    - Use font "fira-mono" - size : 12 - ~/.emacs.d/fonts/meslo (Menu > option >
+      set default font)
 ** Windows
    :PROPERTIES: 
     :CUSTOM_ID: windows
@@ -49,8 +47,6 @@ git clone https://github.com/willahh/emacs_profile ~/.emacs.d
    
 - Gnutls
 - htftp://ftp.gnutls.org/gcrypt/gnutls/w32/
-- 
-  
 ** Launch as server
 http://www.star.bris.ac.uk/bjm/emacs-tips.html#orgheadline3
 
@@ -80,6 +76,7 @@ http://www.star.bris.ac.uk/bjm/emacs-tips.html#orgheadline3
   - typescript
   - jscs
   - pandoc
+  - Latex dependencies
 * Support
 ** Spell checker
 *** Tools : ispell
@@ -181,14 +178,12 @@ PHP tools - php https://secure.php.net/ (brew install homebrew/php/php56)
 **** phantomjs
      http://phantomjs.org/
 ***** osx
-      #+BEGIN_SRC bash
+#+BEGIN_SRC bash
 brew install phantomjs
-      #+END_SRC
-** Javascript
-   
-   @todo : Le support le plus récent et avancé est eslint. Il me semble qu
-actuellement ma conf n utilise que jscs. Le fichier à éditer est donc .jscsrc
-
+#+END_SRC
+** Javascript :todo:
+   The most recent and advanced support is eslint. It seems to me that
+   currently my conf is only using jscs. The file to edit is .jscsrc
 *** Tools
     npm install -g typescript
 *** jscs
@@ -210,21 +205,14 @@ Default config files : https://gist.github.com/cletusw/e01a85e399ab563b1236
       { "jsx": true } }, "rules": { "semi": 0 } }
 #+END_SRC
 **** todo
-
-
 Javascript tools - Nodejs https://nodejs.org/en/
 
 -  Node package manager https://www.npmjs.com/
-
 -  tern http://ternjs.net/
-
 -  eslint http://eslint.org/docs/user-guide/getting-started (sudo npm -g
    install eslint)
-
 -  babel-eslint (sudo npm install babel-eslint -g)
-
 -  eslint-plugin-react (sudo npm install eslint-plugin-react -g)
-
 -  js-beautify (npm install -g js-beautify)
 
 Javascript tools - tern - eslint - babel-eslint - eslint-plugin-react -
@@ -259,7 +247,7 @@ man pandoc
 
 *** Installation
   - http://pandoc.org/installing.html
-
+    
 *** Simple example
 Convert .md file to .org file with :
 
