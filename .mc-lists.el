@@ -203,6 +203,7 @@
         wdired-finish-edit
         wgrep-finish-edit
         wil-recenter-top-bottom
+        winner-undo
         wlh/dbleclick-mouse1
         wlh/dbleclick-select-word
         wlh/delete-window
