@@ -124,7 +124,7 @@ but you can download compatible dictionaries from other sources, such as ..."
 #+BEGIN_SRC sh
 gem install sass
 #+END_SRC
-** CSSh
+** CSS
 *** Tools : csslint (Syntax checker)
 https://github.com/gajus/css-lint
 https://github.com/CSSLint/csslint/wiki/Command-line-interface
@@ -221,12 +221,14 @@ js-beautify
 ** PDF
    Display PDF in Emacs on OSX
 ** LaTeX
-**** Links
      https://www.latex-project.org/get/ #### Installation on OSX
+
+     
+#+BEGIN_SRC 
+brew install poppler
+#+END_SRC
      
      - Full support : MacTeX : http://www.tug.org/mactex/
-     - Light support : BasicTeX :
-       http://www.tug.org/mactex/morepackages.html
 
      Full support is needed to export org file to LaTeX PDF file.
 
