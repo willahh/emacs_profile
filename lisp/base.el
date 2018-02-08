@@ -102,6 +102,11 @@
 (setq window-divider-mode 1)
 (setq window-divider-mode t)
 
+;; Emacs lets you move the current line to the top, middle or bottom of the
+;; screen to get appropriate context. The default goes to the middle first. I
+;; prefer that the default goes to the top first. Let’s change this.
+(setq recenter-positions '(top middle bottom))
+
 ;; Set window divider bottom and right
 (setq window-divider-default-places t)
 

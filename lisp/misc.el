@@ -659,3 +659,6 @@ abort completely with `C-g'."
 (defun wlh/eshell-mode-hook ()
   (company-mode 0))
 (add-hook 'eshell-mode-hook 'wlh/eshell-mode-hook)
+
+;; origami
+(require 'origami)

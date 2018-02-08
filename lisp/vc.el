@@ -8,6 +8,13 @@
 ;; Show refined hunks
 (set-default 'magit-diff-refine-hunk t)
 
+;; full screen magit-status
+;; http://whattheemacsd.com/
+(defadvice magit-status (around magit-fullscreen activate)
+  (window-configuration-to-register :magit-fullscreen)
+  ad-do-it
+  (delete-other-windows))
+
 ;; Show character-level diff
 ;; http://emacs.stackexchange.com/q/7362
 (setq-default ediff-forward-word-function 'forward-char)

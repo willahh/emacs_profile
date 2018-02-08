@@ -248,12 +248,16 @@
 (global-set-key (kbd "È") 'drag-stuff-up) ; ALT+k
 (define-key org-mode-map (kbd "È") 'org-metaup) ; ALT+k
 
+(global-set-key (kbd "<M-up>") 'drag-stuff-up)
+
 ;; Bottom
 (global-set-key (kbd "ñ") 'drag-stuff-down) ; ALT+n
 (define-key org-mode-map (kbd "ñ") 'org-down) ; ALT+n
 
 (global-set-key (kbd "Ï") 'drag-stuff-down) ; ALT+j
 (define-key org-mode-map (kbd "Ï") 'org-metadown) ; ALT+j
+
+(global-set-key (kbd "<M-down>") 'drag-stuff-down)
 
 
 
@@ -757,7 +761,7 @@
 
 
 
-(global-set-key (kbd "C-ç") 'xah-toggle-letter-case) ; (C-9 on azerty keyboard)
+(global-set-key (kbd "C-&") 'xah-toggle-letter-case) ; (C-1 on azerty keyboard)
 (global-set-key (kbd "C-!") 'string-inflection-all-cycle) ; (C-8 on azerty keyboard)
 
 
