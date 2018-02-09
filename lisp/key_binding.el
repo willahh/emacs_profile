@@ -25,6 +25,7 @@
 ;; (global-set-key (kbd "M-d") 'mc/mark-next-like-this-word) ; Was kill-word
 ;; (define-key paredit-mode-map (kbd "M-d") 'mc/mark-next-like-this-word) ; Was kill-word
 (global-set-key (kbd "M-a") 'mark-whole-buffer) ; Was backward-sentence
+(define-key php-mode-map (kbd "M-a") 'mark-whole-buffer)
 
 
 ;; --------------- ALT key binding
@@ -159,8 +160,7 @@
 
 ;; shell-pop
 (global-set-key (kbd "C-c C-t") 'shell-pop)
-(define-key dired-mode-map (kbd "C-c C-t") 'shell-pop)
-;; (define-key eshell-mode-map (kbd "C-c C-t") 'shell-pop)
+(define-key dired-mode-map (kbd "C-t") 'shell-pop)
 
 ;; ---
 (define-key ivy-minibuffer-map (kbd "<escape>") 'minibuffer-keyboard-quit)
@@ -537,6 +537,7 @@
 ;; Better move paragraph / mark paragraph
 ;; Convert default qwerty M-{ and M-} position on keyboard to azerty mapping
 (global-set-key (kbd "M-h") 'rs-mark-paragraph)
+(define-key js-mode-map (kbd "M-H") 'js2-mark-defun)
 (global-set-key (kbd "M-¨") 'lawlist-forward-paragraph)
 (global-set-key (kbd "M-*") 'lawlist-backward-paragraph)
 

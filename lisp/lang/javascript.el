@@ -77,15 +77,15 @@
 ;; Javascript xref
 (define-key js-mode-map (kbd "M-.") nil)
 (add-hook 'js2-mode-hook (lambda ()
-                          (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)))
+                           (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)))
 
 
 
 ;; js-doc
-(setq js-doc-mail-address "your email address"
-      js-doc-author (format "your name <%s>" js-doc-mail-address)
-      js-doc-url "url of your website"
-      js-doc-license "license name")
+;; (setq js-doc-mail-address "your email address"
+;;       js-doc-author (format "your name <%s>" js-doc-mail-address)
+;;       js-doc-url "url of your website"
+;;       js-doc-license "license name")
 
 
 

@@ -9,6 +9,7 @@
         autopair-newline
         autopair-skip-close-maybe
         backward-delete-char
+        backward-kill-sexp
         backward-kill-word-or-region
         backward-sentence
         backward-sexp
@@ -92,6 +93,7 @@
         org-metaleft
         org-metaright
         org-metaup
+        org-return
         org-self-insert-command
         org-todo
         org-yank
