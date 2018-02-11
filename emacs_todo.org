@@ -14,25 +14,6 @@
   - C-x C-o js (find JS files)
   - C-x C-o ph (find php files)
 
-- Osx keyboard input delay :
-  - default values :
-    - defaults read NSGlobalDomain KeyRepeat 2
-    - defaults read NSGlobalDomain InitialKeyRepeat 15
-  - My values :
-     - defaults write NSGlobalDomain KeyRepeat 1
-     - defaults write NSGlobalDomain InitialKeyRepeat 8
-
-- Refactoring : 
-  - Ag at point (C-c s A)
-  - wgrep-change-to-wgrep-mode (C-c C-p)
-  - iedit-mode (C-;)
-  - Some changes ...
-  - wgrep-finish-edit (C-x C-s) (or abort C-c C-k)
-
-- Narrow to (region, defun, ...)
-  (C-x n n), (C-x n ...), ...
-  Très utile pour travailler sur des portions de code de façon indepdendante
-
 - [i-edit] (C-;) : Modification de portions de texte identiques 
   -> Assez proche de Sublime command+control+g
   -> Très pratique pour des petits modifications rapides
@@ -42,12 +23,6 @@
 - evil mode : "gf" ("go to file")
 
 - Sublime merge lines -> Evil gJ
-
-- [M+S+;] ---> xref-find-definitions (natif)
-
-- dired-jump (C-x C-j) : Jump directly to dired from file
-
-- New line with comment M-j
 
 - Revert hunk (depuis vc-diff) :
   - C-c C-r (diff-reverse-direction)
@@ -86,14 +61,9 @@ C
    [2017-10-23 Mon]
    [[file:~/www/project/arsia/goacrop/src/main.js:://%20Pas%20de%20traitement%20particulier,%20l'image][file:~/www/project/arsia/goacrop/src/main.js::// Pas de traitement particulier, l'image]]
 *
-** DONE [#A] [URGENT] wdired ne fonctionne plus                       
-   [2017-11-13 Mon]
-   [[file:~/www/temp/.png]]
-
 ** TODO [#A] [counsel-find-file] [mini-buffer] Ajouter un bind C-k pour supprimer tout le texte 
 ** TODO [#A] [vc-diff mode] Voir si il est possible de lancer des commandes de type ediff 
        Depuis  le vc-diff
-** DONE [#A] Autres tâches à mettre au format todo                    
 ** TODO [#A] [css-mode] Virer company dabbrev de css mode             
 ** TODO [#C] [dired] Rename file : Possibilité de préciser un chemin contenant des dossiers 
       N'existant pas, ces dossier seront créés automatiquement à la validation
@@ -103,25 +73,15 @@ C
   - [ ] M-b back word
 ** TODO [#C] Open file from system in new emacs frame (Right click open in) 
 ** TODO [#C] [ivy] [mini buffer] Add C-l keybinding                   
-** TODO [#C] [ivy] - Highlight current line plus visible              
-** TODO [#C] [php-mode] [ac-php] [company] La boite d'information supplémentaire ne contient pas les php doc 
-** TODO [#C] [php-mode] Voir pour implementer quick type hierarchy    
-** TODO [#C] [php-mode] Saisie de /** + ENTER -> Creation d un php doc pre rempli 
 ** TODO [#C] [flycheck] : Mieux distinguer la ligne en erreur         
 ** TODO [#C] [web-mode] [javascript] [company] Add javascript keywords to company backend 
-** TODO [#C] [refactor] emacs.d conf a ranger, voir modele suivant : https://github.com/purcell/emacs.d 
-** TODO [#C] Activer les url cliquable dans les differents modes      
 ** TODO [#C] [ivy] [mini buffer] CTRL+l to back up                    
-** TODO [#C] [ivy] : Ne pas mettre les fichiers .svn dans la liste    
-** TODO [#C] [plugin] [change inner] Ajoute rl'option Change Inner Tag 
-** TODO [#A] [vc-dir] Faire une fonction pour activer un vc-version-diff avec les paramètres older revision : "base", newer revision : "head" 
-
 ** TODO [#A] [util] Revert buffer : keep current line position        
 ** TODO [#A] Ajouter une méthode copy file name pour retourner uniquement le nom du fichier 
   - La fonction copy-file-name-to-clipbord est present, mais elle retourne le chemin complet
     Il faudrait garder que la derniere partie apres le /
 ** TODO [#A] [vc-dir] delete-file dont prompt for path, kill buffer   
-** TODO [#A] Fonction get file name to clipboard (très utilisé)       
+** TODO [#A] Fonction get file name to clipboard
 ** TODO [#A] Don't prompt for delete recursivly (code available in prelude) 
   - [ ] Show current mode in color
   - [ ] Show current VC system used
@@ -129,24 +89,6 @@ C
 ** TODO [#A] Mini buffer : Ne pas afficher de scrollbar               
 ** TODO [#A] Faire fonctionner fengyuanchen/cropper, les fichiers .babelrc, .editorconfig (déjà le cas en principe), .eslintrc 
    [2017-09-20 Wed]
-** TODO [#A] Definir tous les fichiers .php dans un dossier "process" pour être en mode php 
-   [2017-11-08 Wed]
-   [[file:~/www/project/arsia/arsia_standard_310/dev/common/include/process/mediadata/MediaDataHelper.class.php::public%20function%20getMediaDataButton($p_sIdImg,%20$p_sIdHiddenField,%20$p_sImagePath%20%3D%20'')%0D][file:~/www/project/arsia/arsia_standard_310/dev/common/include/process/mediadata/MediaDataHelper.class.php::public function getMediaDataButton($p_sIdImg, $p_sIdHiddenField, $p_sImagePath = '')]]
-** TODO [#A] Voir pour régler définitivement le "problème" des retours chariots : 
-   Si des caractères ^M sont visibles dans un fichier, il faut voir pour
-   s'adapter à ce comportement.
-   
-
-   Commencer par voir comment Sublime / VS Code / Eclipse gére le problème.
-   Il semblerait que ce caractère ne soit pas pris en compte avec les editeurs
-   modernes, sous Emacs en revanche, si le caractère est présent mais non
-   visible (prog mode par exemple) lorsque l'on avance ou recule, il est pris en
-   compte comme un vrai caractère.
-   
-   
-   [2017-11-09 Thu]
-   [[file:~/www/project/arsia/arsia_standard_310/dev/data2print/admin/module/affectation_gabarit/js/affectationTemplateManager.js::dropLeft.onDragOut%20%3D%20function(p_oDragSource,%20p_eEvent,%20p_oData)%20{][file:~/www/project/arsia/arsia_standard_310/dev/data2print/admin/module/affectation_gabarit/js/affectationTemplateManager.js::dropLeft.onDragOut = function(p_oDragSource, p_eEvent, p_oData) {]]
-
 ** TODO [#A] core.css - On se paye un warning de css flycheck too many errors 
    [2017-11-10 Fri]
    [[file:~/www/project/arsia/arsia_standard_310/dev/common/layout/css/core.css::/*-------------------------------------------------------------]]
@@ -155,7 +97,7 @@ C
    [2017-11-10 Fri]
    [[file:~/www/project/arsia/goacrop/example/production_crop_update.php::$crop_url%20%3D%20'http://192.168.0.26/project/arsia/goacrop/lib/sygesp_croptosize/dev/goacroptosize.xml.php?ZoImIdx%3D3'%3B][file:~/www/project/arsia/goacrop/example/production_crop_update.php::$crop_url = 'http://192.168.0.26/project/arsia/goacrop/lib/sygesp_croptosize/dev/goacroptosize.xml.php?ZoImIdx=3';]]
 
-** TODO [#A] URGENT -> PHP-MODE -> Les quotes ( ) { } [ ] ne fonctionnent pas comme en web-mode 
+** DONE [#A] URGENT -> PHP-MODE -> Les quotes ( ) { } [ ] ne fonctionnent pas comme en web-mode 
    [2017-11-10 Fri]
    [[file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/production_crop2.php::(]]
 
@@ -194,7 +136,7 @@ C
    [2017-11-14 Tue]
    [[file:~/www/project/rb_siteweb/rb_siteweb_1.4/resources/module/mag_list/js/mag_list.js::*]]
 
-** TODO [#B] Terminer intégration de hunspell @work                   
+** TODO [#B] Terminer intégration de hunspell :work:
 ** TODO [#B] Rebind les scroll to other window pour avoir un scroll sur la fenetre a cote mais d'une demie page seulement 
       C-M-S-v runs the command scroll-other-window-down (found in
       global-map), which is an interactive compiled Lisp function in
@@ -212,7 +154,6 @@ C
   super-spc ou hyper-sp
 ** TODO [#B] Mini buffer > M-p : Ne pas afficher de message beginning of 
   buffer bla bla
-** TODO [#B] AG mettre en mode emacs et non pas evil normal           
 ** TODO [#B] [projectile find file] Auto centrer la ligne une fois le goto dans le fichier 
 ** TODO [#B] [svn-log-view] Faire des ediff depuis ce mode            
 ** TODO [#B] Delete file : Ne pas re demander le chemin alors que l'on a deja le focus 
@@ -220,27 +161,15 @@ C
    [2017-11-10 Fri]
    [[file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/include/lib/internal/croptosize2/src/events.js::Events.on_validate%20%3D%20function(input)%20{][file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/include/lib/internal/croptosize2/src/events.js::Events.on_validate = function(input) {]]
 
-** TODO [#C] [theme] Mettre plus en avant le buffer actif             
-** DONE [#C] [theme] js color var                                     
 ** TODO [#C] [theme] Ajouter des differenciations sur certains mot clee comme "$", "=", ".", "'", "(", ")", "+", "-", certains mots clés php "var_dump", "PHP_EOL", etc Voir package "highlight-chars" 
-** TODO [#C] [theme] php mode : Plus de couleurs                      
-** TODO [#C] Fichiers markdown mette toutes les windows en centré     
-      (Creation de differences inutiles sur la toute dernière ligne de certains fichiers)
-** TODO [#C] Markdown mode style like in Sublime (background white, text black, column width limit, center inside 
-   Markdown in white theme
 ** TODO [#C] Markdown in white theme                                  
 ** TODO [#C] Associer les fichiers .pdf au mode PDFView               
-** TODO [#C] Ajouter un bind C-space en mode company pour afficher / masquer la documentation (comportement moderne) 
 ** TODO [#C] Ag result buffer : C-o : Open in new window              
 ** TODO [#C] [vc-dir] N et P pour se déplacer en evitant les dossiers 
 ** TODO [#C] Help mode evil : add q binding pour quitter              
 ** TODO [#C] [vc-dir] key M-< && M-> : Faire pointer sur le vrai début/fin de ligne 
-** TODO [#C] [doc-view] Faire fonctionner doc-view (Lire des fichiers excel, doc, word, etc) 
+** TODO [#C] [doc-view] Faire fonctionner doc-view
 ** TODO [#C] [util] Voir si il est possible de faire un (CMD+P + touche @) (file.php@methode_name) 
-** TODO [#C] Faire un mode pour naviguer dans le html comme dans l'outil de debug de Chrome et la partie elements 
-   [2017-11-16 Thu]
-   [[file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/production_crop2.php::</a>]]
-
 ** TODO [#A] [web-mode] La double quote en attribut ne fonctionne pas bien 
    [2017-11-16 Thu]
    [[file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/production_crop2.php::<li%20class%3D"btn%20btn-default"%20onclick%3D"goacrop.Events.on_zoomplus()%3B"%20title%3D"Init">][file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/production_crop2.php::<li class="btn btn-default" onclick="goacrop.Events.on_zoomplus();" title="Init">]]
@@ -248,7 +177,7 @@ C
    [2017-11-17 Fri]
    [[file:~/www/project/arsia/goacrop/src/utils.js:://%20x%200%20y%200%20a%200][file:~/www/project/arsia/goacrop/src/utils.js::// x 0 y 0 a 0]]
 
-** TODO [#A] Lorsque l'on quite le mode ediff - Les windows se placent n'importe comment 
+** DONE [#A] Lorsque l'on quite le mode ediff - Les windows se placent n'importe comment 
    [2017-11-20 Mon]
    [[file:~/org/etor.org::*3.1%20Corriger%20le%20sprite%20des%20boutons%20visible%20dans%20une%20fiche%20produit][3.1 Corriger le sprite des boutons visible dans une fiche produit]]
 
@@ -267,10 +196,6 @@ C
 ** TODO [#A] Org capture C-h ne fonctionne pas
    [2017-12-01 Fri]
    [[file:~/org/main.org::*Arsia%203.2%20crop][Arsia 3.2 crop]]
-** DONE [#A] Configurer les touches page down et page up
-  [2017-12-01 Fri]
-  [[file:~/www/logs/log_2017-12-01.log::Type,%20CoTyLevel%20FROM%20syge_concurrencytype%5D%0A01/12/17%2011:40:21,297%20(%2B%206%20ms)%20e8c3%20DEBUG%20DBManagerMySQL%20-%20select%20in%200.0003s%20:%20%5BSELECT%20ZoneIdx,ZoneZoTeStoryId,ZoneZoTeIdx,ZoneZoImIdx,ZoneDocuIdx,ZoneEtapIdxEnCours,ZoneType,ZoneItemId,ZonePageIdx,ZoneTop,ZoneLeft,ZoneBottom,ZoneRight,ZoneUpdatable,ZoneDeletable,ZonePageRefreshNeeded,ZoneServerRefreshNeeded,ZoneBrief,ZoneUsrIdx,DATE_FORMAT(ZoneDateRemise,'%25Y-%25m-%25d%20%25H:%25i:%25s')%20AS%20ZoneDateRemise_dv%20,DATE_FORMAT(ZoneDateCorrection,'%25Y-%25m-%25d%20%25H:%25i:%25s')%20AS%20Z][file:~/www/logs/log_2017-12-01.log::Type, CoTyLevel FROM syge_concurrencytype]
-01/12/17 11:40:21,297 (+ 6 ms) e8c3 DEBUG DBManagerMySQL - select in 0.0003s : [SELECT ZoneIdx,ZoneZoTeStoryId,ZoneZoTeIdx,ZoneZoImIdx,ZoneDocuIdx,ZoneEtapIdxEnCours,ZoneType,ZoneItemId,ZonePageIdx,ZoneTop,ZoneLeft,ZoneBottom,ZoneRight,ZoneUpdatable,ZoneDeletable,ZonePageRefreshNeeded,ZoneServerRefreshNeeded,ZoneBrief,ZoneUsrIdx,DATE_FORMAT(ZoneDateRemise,'%Y-%m-%d %H:%i:%s') AS ZoneDateRemise_dv ,DATE_FORMAT(ZoneDateCorrection,'%Y-%m-%d %H:%i:%s') AS Z]]
 ** TODO Emacs directory doesn't exist; --> Ne pas afficher de prompt
    [2017-12-01 Fri]
    [[file:~/Documents/perso/glurps/static/a/b/a.html]]
@@ -279,22 +204,9 @@ C
    [2017-12-01 Fri]
    [[file:~/Documents/perso/glurps/static/]]
 
-** TODO M-j web-mode doit faire une nouvelle ligne de commentaire
-   [2017-12-07 Thu]
-   [[file:~/www/project/arsia/arsia_3.2.x_standard/pimdatamanager/admin/module/data/list2.php::*%20filterToolbar][file:~/www/project/arsia/arsia_3.2.x_standard/pimdatamanager/admin/module/data/list2.php::* filterToolbar]]
-   [[file:~/org/arsia.org::*%5Bevol%5D%20Arsia%203.3%20-%20Faire%20un%20js%20global%20permettant%20de%20masquer%20via%20une%20conf%20tout%20les%20console.log.][{evol} Arsia 3.3 - Faire un js global permettant de masquer via une conf tout les console.log.]]
-
 ** TODO C-w company mode 
    [2017-12-07 Thu]
    [[file:~/www/project/arsia/arsia_3.2.x_standard/pimdatamanager/admin/module/data/js/filterToolbar.js::*%20Nested%20.dropdown,%20prevent%20closing%20the%20first%20dropdown,%20hen%20acti][file:~/www/project/arsia/arsia_3.2.x_standard/pimdatamanager/admin/module/data/js/filterToolbar.js::* Nested .dropdown, prevent closing the first dropdown, hen acti]]
-** DONE i-search color mauvaise
-   [2017-12-08 Fri]
-   [[file:~/www/project/arsia/arsia_3.2.x_standard/pimdatamanager/admin/module/data/list2.php::<div%20style%3D"text-align:%20left%3B"><label%20class%3D"checkbox"%20style%3D"text-align:%20left%3B"><input%20type%3D"checkbox"%20value%3D"0">Checkbox%201</label></div>][file:~/www/project/arsia/arsia_3.2.x_standard/pimdatamanager/admin/module/data/list2.php::<div style="text-align: left;"><label class="checkbox" style="text-align: left;"><input type="checkbox" value="0">Checkbox 1</label></div>]]
-
-** DONE Hide trailing whitespace
-   [2017-12-08 Fri]
-   [[file:~/www/project/arsia/arsia_3.2.x_standard/pimdatamanager/admin/module/data/list2.php::<div%20style%3D"text-align:%20left%3B"><label%20class%3D"checkbox"%20style%3D"text-align:%20left%3B"><input%20type%3D"checkbox"%20value%3D"0">Checkbox%201</label></div>][file:~/www/project/arsia/arsia_3.2.x_standard/pimdatamanager/admin/module/data/list2.php::<div style="text-align: left;"><label class="checkbox" style="text-align: left;"><input type="checkbox" value="0">Checkbox 1</label></div>]]
-
 ** TODO DIRED - Auto sorted by access time
    [2018-01-10 Wed]
    [[file:~/Downloads/export.php]]

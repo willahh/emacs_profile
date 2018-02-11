@@ -448,6 +448,7 @@
 
 (global-set-key (kbd "M-\"") 'hrs/split-window-right-and-switch) ;; M-3
 (define-key diff-mode-map (kbd "M-\"") 'hrs/split-window-right-and-switch)
+(define-key paredit-mode-map (kbd "M-\"") 'hrs/split-window-right-and-switch)
 
 (global-set-key (kbd "C-M-é") 'evil-window-move-very-bottom)
 (global-set-key (kbd "C-M-\"") 'evil-window-move-far-left)

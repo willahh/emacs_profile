@@ -1716,3 +1716,339 @@ Archived entries from file /Users/wravel/.emacs.d/emacs_todo.org
   :END:
   [2017-11-15 Wed]
 
+
+* DONE [#A] [URGENT] wdired ne fonctionne plus                       
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-02-05 Mon 23:42
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: DONE
+  :ARCHIVE_ITAGS: @home
+  :END:
+  [2017-11-13 Mon]
+  [[file:~/www/temp/.png]]
+
+
+* DONE [#A] Autres tâches à mettre au format todo                    
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-02-05 Mon 23:42
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: DONE
+  :ARCHIVE_ITAGS: @home
+  :END:
+
+* DONE [#C] [theme] js color var                                     
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-02-05 Mon 23:42
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: DONE
+  :ARCHIVE_ITAGS: @home
+  :END:
+
+* DONE [#A] Configurer les touches page down et page up
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-02-05 Mon 23:42
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: DONE
+  :ARCHIVE_ITAGS: @home
+  :END:
+  [2017-12-01 Fri]
+  [[file:~/www/logs/log_2017-12-01.log::Type,%20CoTyLevel%20FROM%20syge_concurrencytype%5D%0A01/12/17%2011:40:21,297%20(%2B%206%20ms)%20e8c3%20DEBUG%20DBManagerMySQL%20-%20select%20in%200.0003s%20:%20%5BSELECT%20ZoneIdx,ZoneZoTeStoryId,ZoneZoTeIdx,ZoneZoImIdx,ZoneDocuIdx,ZoneEtapIdxEnCours,ZoneType,ZoneItemId,ZonePageIdx,ZoneTop,ZoneLeft,ZoneBottom,ZoneRight,ZoneUpdatable,ZoneDeletable,ZonePageRefreshNeeded,ZoneServerRefreshNeeded,ZoneBrief,ZoneUsrIdx,DATE_FORMAT(ZoneDateRemise,'%25Y-%25m-%25d%20%25H:%25i:%25s')%20AS%20ZoneDateRemise_dv%20,DATE_FORMAT(ZoneDateCorrection,'%25Y-%25m-%25d%20%25H:%25i:%25s')%20AS%20Z][file:~/www/logs/log_2017-12-01.log::Type, CoTyLevel FROM syge_concurrencytype]
+01/12/17 11:40:21,297 (+ 6 ms) e8c3 DEBUG DBManagerMySQL - select in 0.0003s : [SELECT ZoneIdx,ZoneZoTeStoryId,ZoneZoTeIdx,ZoneZoImIdx,ZoneDocuIdx,ZoneEtapIdxEnCours,ZoneType,ZoneItemId,ZonePageIdx,ZoneTop,ZoneLeft,ZoneBottom,ZoneRight,ZoneUpdatable,ZoneDeletable,ZonePageRefreshNeeded,ZoneServerRefreshNeeded,ZoneBrief,ZoneUsrIdx,DATE_FORMAT(ZoneDateRemise,'%Y-%m-%d %H:%i:%s') AS ZoneDateRemise_dv ,DATE_FORMAT(ZoneDateCorrection,'%Y-%m-%d %H:%i:%s') AS Z]]
+
+* DONE i-search color mauvaise
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-02-05 Mon 23:42
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: DONE
+  :ARCHIVE_ITAGS: @home
+  :END:
+  [2017-12-08 Fri]
+  [[file:~/www/project/arsia/arsia_3.2.x_standard/pimdatamanager/admin/module/data/list2.php::<div%20style%3D"text-align:%20left%3B"><label%20class%3D"checkbox"%20style%3D"text-align:%20left%3B"><input%20type%3D"checkbox"%20value%3D"0">Checkbox%201</label></div>][file:~/www/project/arsia/arsia_3.2.x_standard/pimdatamanager/admin/module/data/list2.php::<div style="text-align: left;"><label class="checkbox" style="text-align: left;"><input type="checkbox" value="0">Checkbox 1</label></div>]]
+
+
+* DONE Hide trailing whitespace
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-02-05 Mon 23:42
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: DONE
+  :ARCHIVE_ITAGS: @home
+  :END:
+  [2017-12-08 Fri]
+  [[file:~/www/project/arsia/arsia_3.2.x_standard/pimdatamanager/admin/module/data/list2.php::<div%20style%3D"text-align:%20left%3B"><label%20class%3D"checkbox"%20style%3D"text-align:%20left%3B"><input%20type%3D"checkbox"%20value%3D"0">Checkbox%201</label></div>][file:~/www/project/arsia/arsia_3.2.x_standard/pimdatamanager/admin/module/data/list2.php::<div style="text-align: left;"><label class="checkbox" style="text-align: left;"><input type="checkbox" value="0">Checkbox 1</label></div>]]
+
+
+* TODO [#C] [php-mode] [ac-php] [company] La boite d'information supplémentaire ne contient pas les php doc 
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-02-05 Mon 23:50
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+
+* TODO [#C] [php-mode] Voir pour implementer quick type hierarchy    
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-02-05 Mon 23:50
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+
+* TODO [#C] [php-mode] Saisie de /** + ENTER -> Creation d un php doc pre rempli 
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-02-05 Mon 23:51
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+
+* TODO [#C] [ivy] - Highlight current line plus visible              
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-02-05 Mon 23:51
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+
+* TODO [#C] [refactor] emacs.d conf a ranger, voir modele suivant : https://github.com/purcell/emacs.d 
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-02-05 Mon 23:51
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+
+* TODO [#C] Activer les url cliquable dans les differents modes      
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-02-05 Mon 23:51
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+
+* TODO [#C] [ivy] : Ne pas mettre les fichiers .svn dans la liste    
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-02-05 Mon 23:51
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+
+* TODO [#C] [plugin] [change inner] Ajoute l'option Change Inner Tag 
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-02-05 Mon 23:51
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+
+* TODO [#A] [vc-dir] Faire une fonction pour activer un vc-version-diff avec les paramètres older revision : "base", newer revision : "head" 
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-02-05 Mon 23:51
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+
+
+* TODO [#A] Voir pour régler définitivement le "problème" des retours chariots : 
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-02-05 Mon 23:52
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+  Si des caractères ^M sont visibles dans un fichier, il faut voir pour
+  s'adapter à ce comportement.
+  
+
+  Commencer par voir comment Sublime / VS Code / Eclipse gére le problème.
+  Il semblerait que ce caractère ne soit pas pris en compte avec les editeurs
+  modernes, sous Emacs en revanche, si le caractère est présent mais non
+  visible (prog mode par exemple) lorsque l'on avance ou recule, il est pris en
+  compte comme un vrai caractère.
+  
+  
+  [2017-11-09 Thu]
+  [[file:~/www/project/arsia/arsia_standard_310/dev/data2print/admin/module/affectation_gabarit/js/affectationTemplateManager.js::dropLeft.onDragOut%20%3D%20function(p_oDragSource,%20p_eEvent,%20p_oData)%20{][file:~/www/project/arsia/arsia_standard_310/dev/data2print/admin/module/affectation_gabarit/js/affectationTemplateManager.js::dropLeft.onDragOut = function(p_oDragSource, p_eEvent, p_oData) {]]
+
+
+* TODO [#A] Definir tous les fichiers .php dans un dossier "process" pour être en mode php 
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-02-05 Mon 23:52
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+  [2017-11-08 Wed]
+  [[file:~/www/project/arsia/arsia_standard_310/dev/common/include/process/mediadata/MediaDataHelper.class.php::public%20function%20getMediaDataButton($p_sIdImg,%20$p_sIdHiddenField,%20$p_sImagePath%20%3D%20'')%0D][file:~/www/project/arsia/arsia_standard_310/dev/common/include/process/mediadata/MediaDataHelper.class.php::public function getMediaDataButton($p_sIdImg, $p_sIdHiddenField, $p_sImagePath = '')]]
+
+* DONE [#A] Definir tous les fichiers .php dans un dossier "process" pour être en mode php 
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-02-05 Mon 23:52
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: DONE
+  :ARCHIVE_ITAGS: @home
+  :END:
+  [2017-11-08 Wed]
+  [[file:~/www/project/arsia/arsia_standard_310/dev/common/include/process/mediadata/MediaDataHelper.class.php::public%20function%20getMediaDataButton($p_sIdImg,%20$p_sIdHiddenField,%20$p_sImagePath%20%3D%20'')%0D][file:~/www/project/arsia/arsia_standard_310/dev/common/include/process/mediadata/MediaDataHelper.class.php::public function getMediaDataButton($p_sIdImg, $p_sIdHiddenField, $p_sImagePath = '')]]
+
+* TODO [#A] URGENT -> PHP-MODE -> Les quotes ( ) { } [ ] ne fonctionnent pas comme en web-mode 
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-02-05 Mon 23:52
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+  [2017-11-10 Fri]
+  [[file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/production_crop2.php::(]]
+
+
+* TODO [#B] AG mettre en mode emacs et non pas evil normal           
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-02-05 Mon 23:52
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+
+* TODO [#C] [theme] Mettre plus en avant le buffer actif             
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-02-05 Mon 23:53
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+
+* TODO [#C] [theme] php mode : Plus de couleurs                      
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-02-05 Mon 23:53
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+
+* TODO [#C] Fichiers markdown mette toutes les windows en centré     
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-02-05 Mon 23:53
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+     (Creation de differences inutiles sur la toute dernière ligne de certains fichiers)
+
+* TODO [#C] Markdown mode style like in Sublime (background white, text black, column width limit, center inside 
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-02-05 Mon 23:53
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+  Markdown in white theme
+
+* TODO [#C] Ajouter un bind C-space en mode company pour afficher / masquer la documentation (comportement moderne) 
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-02-05 Mon 23:53
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+
+* TODO [#C] [util] Voir si il est possible de faire un (CMD+P + touche @) (file.php@methode_name) 
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-02-05 Mon 23:54
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+
+* TODO [#C] Faire un mode pour naviguer dans le html comme dans l'outil de debug de Chrome et la partie elements 
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-02-05 Mon 23:54
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+  [2017-11-16 Thu]
+  [[file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/production_crop2.php::</a>]]
+
+
+* TODO [#A] Lorsque l'on quite le mode ediff - Les windows se placent n'importe comment 
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-02-05 Mon 23:54
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+  [2017-11-20 Mon]
+  [[file:~/org/etor.org::*3.1%20Corriger%20le%20sprite%20des%20boutons%20visible%20dans%20une%20fiche%20produit][3.1 Corriger le sprite des boutons visible dans une fiche produit]]
+
+
+* TODO M-j web-mode doit faire une nouvelle ligne de commentaire
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-02-05 Mon 23:54
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+  [2017-12-07 Thu]
+  [[file:~/www/project/arsia/arsia_3.2.x_standard/pimdatamanager/admin/module/data/list2.php::*%20filterToolbar][file:~/www/project/arsia/arsia_3.2.x_standard/pimdatamanager/admin/module/data/list2.php::* filterToolbar]]
+  [[file:~/org/arsia.org::*%5Bevol%5D%20Arsia%203.3%20-%20Faire%20un%20js%20global%20permettant%20de%20masquer%20via%20une%20conf%20tout%20les%20console.log.][{evol} Arsia 3.3 - Faire un js global permettant de masquer via une conf tout les console.log.]]
+
