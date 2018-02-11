@@ -110,6 +110,13 @@
 (add-hook 'eww-mode #'rainbow-delimiters-mode)
 (add-hook 'eww-mode #'rainbow-mode)
 
+;; Eshell conf
+(defun wlh/eshell-hook ()
+  (interactive)
+  (company-mode nil))
+
+(add-hook 'eshell-mode-hook 'wlh/eshell-hook)
+
 (require 'diff-mode)
 (require 'smerge-mode)
 
@@ -652,3 +659,6 @@ abort completely with `C-g'."
 (defun wlh/eshell-mode-hook ()
   (company-mode 0))
 (add-hook 'eshell-mode-hook 'wlh/eshell-mode-hook)
+
+;; origami
+(require 'origami)

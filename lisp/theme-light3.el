@@ -86,6 +86,7 @@
 
 ;; ------- js2-mode
 (set-face-attribute 'js2-external-variable nil :foreground "#2055a4")
+(set-face-attribute 'js2-warning nil :foreground "#ff0000")
 
 ;; ------- bm
 (set-face-attribute 'bm-face nil :background "#e0e0e0" :foreground nil)
@@ -115,6 +116,7 @@
 
 ;; ------- misc
 (set-face-attribute 'bm-face nil :foreground "#000" :background nil :underline t)
+
 
 
 ;; ------- org

@@ -25,6 +25,7 @@
 ;; (global-set-key (kbd "M-d") 'mc/mark-next-like-this-word) ; Was kill-word
 ;; (define-key paredit-mode-map (kbd "M-d") 'mc/mark-next-like-this-word) ; Was kill-word
 (global-set-key (kbd "M-a") 'mark-whole-buffer) ; Was backward-sentence
+(define-key php-mode-map (kbd "M-a") 'mark-whole-buffer)
 
 
 ;; --------------- ALT key binding
@@ -159,8 +160,7 @@
 
 ;; shell-pop
 (global-set-key (kbd "C-c C-t") 'shell-pop)
-(define-key dired-mode-map (kbd "C-c C-t") 'shell-pop)
-;; (define-key eshell-mode-map (kbd "C-c C-t") 'shell-pop)
+(define-key dired-mode-map (kbd "C-t") 'shell-pop)
 
 ;; ---
 (define-key ivy-minibuffer-map (kbd "<escape>") 'minibuffer-keyboard-quit)
@@ -248,12 +248,16 @@
 (global-set-key (kbd "È") 'drag-stuff-up) ; ALT+k
 (define-key org-mode-map (kbd "È") 'org-metaup) ; ALT+k
 
+(global-set-key (kbd "<M-up>") 'drag-stuff-up)
+
 ;; Bottom
 (global-set-key (kbd "ñ") 'drag-stuff-down) ; ALT+n
 (define-key org-mode-map (kbd "ñ") 'org-down) ; ALT+n
 
 (global-set-key (kbd "Ï") 'drag-stuff-down) ; ALT+j
 (define-key org-mode-map (kbd "Ï") 'org-metadown) ; ALT+j
+
+(global-set-key (kbd "<M-down>") 'drag-stuff-down)
 
 
 
@@ -534,6 +538,7 @@
 ;; Better move paragraph / mark paragraph
 ;; Convert default qwerty M-{ and M-} position on keyboard to azerty mapping
 (global-set-key (kbd "M-h") 'rs-mark-paragraph)
+(define-key js-mode-map (kbd "M-H") 'js2-mark-defun)
 (global-set-key (kbd "M-¨") 'lawlist-forward-paragraph)
 (global-set-key (kbd "M-*") 'lawlist-backward-paragraph)
 
@@ -758,7 +763,7 @@
 
 
 
-(global-set-key (kbd "C-ç") 'xah-toggle-letter-case) ; (C-9 on azerty keyboard)
+(global-set-key (kbd "C-&") 'xah-toggle-letter-case) ; (C-1 on azerty keyboard)
 (global-set-key (kbd "C-!") 'string-inflection-all-cycle) ; (C-8 on azerty keyboard)
 
 
