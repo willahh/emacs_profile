@@ -24,3 +24,7 @@
 
 ;; Don't enable company-quickhelp ... it's too slow
 (company-quickhelp-mode 0)
+
+;; Remove some words completion
+(delete 'company-dabbrev company-backends)
+(delete '(company-dabbrev-code company-gtags company-etags company-keywords) company-backends)

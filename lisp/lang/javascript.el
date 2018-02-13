@@ -52,7 +52,8 @@
   (set (make-local-variable 'yas-indent-line) 'auto) ; Auto indent yas snippet
   
   ;; Textmate mode
-  (textmate-mode)
+  ;; (textmate-mode t)
+  
   
   ;; js2-xref
   (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)

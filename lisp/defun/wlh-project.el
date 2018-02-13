@@ -45,15 +45,17 @@
 i.e. '(\"dev\" \"deploy_template\")."
   (interactive)
   (seq-filter (lambda (a)
-           (if (not (equal a "."))
-               (if (not (equal a ".."))
-                   (if (not (equal a ".metadata"))
-                       (if (not (equal a ".DS_Store"))
-                           a
-                         nil)
-                     nil)
-                 nil)
-             nil)) (directory-files dir)))
+                (if (not (equal a "."))
+                    (if (not (equal a ".."))
+                        (if (not (equal a ".metadata"))
+                            (if (not (equal a ".DS_Store"))
+                                (if (not (equal a "cron"))
+                                    a
+                                  nil)
+                              nil)
+                          nil)
+                      nil)
+                  nil)) (directory-files dir)))
 
 (defun wlh/workspace-action-1 (x)
   (interactive)

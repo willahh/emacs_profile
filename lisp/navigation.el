@@ -251,6 +251,9 @@
 (add-hook 'web-mode-hook 'textmate-mode)
 (add-hook 'web-mode-hook #'smartparens-mode)
 
+(add-hook 'php-mode-hook 'textmate-mode)
+(add-hook 'php-mode-hook #'smartparens-mode)
+
 (add-hook 'css-mode-hook 'textmate-mode)
 (add-hook 'css-mode-hook #'smartparens-mode)
 

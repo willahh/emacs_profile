@@ -80,7 +80,7 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 C
 * Tasks                                                               :@home:
   :VISIBILITY: content
-** TODO [#A] [helm] [mini-buffer] Ajouter la possibilité de faire du M-v dans le mini-buffer 
+** TODO [#B] [helm] [mini-buffer] Ajouter la possibilité de faire du M-v dans le mini-buffer 
    SCHEDULED: <2017-11-30 Thu>
 ** TODO [#A] web-mode single quote dans commentaire : Ne pas auto fermer la quote lorsque l'on est dans un commentaire 
    [2017-10-23 Mon]
@@ -91,7 +91,7 @@ C
    [[file:~/www/temp/.png]]
 
 ** TODO [#A] [counsel-find-file] [mini-buffer] Ajouter un bind C-k pour supprimer tout le texte 
-** TODO [#A] [vc-diff mode] Voir si il est possible de lancer des commandes de type ediff 
+** TODO [#B] [vc-diff mode] Voir si il est possible de lancer des commandes de type ediff 
        Depuis  le vc-diff
 ** DONE [#A] Autres tâches à mettre au format todo                    
 ** TODO [#A] [css-mode] Virer company dabbrev de css mode             
@@ -127,9 +127,9 @@ C
   - [ ] Show current VC system used
   - [ ] Show current encoding
 ** TODO [#A] Mini buffer : Ne pas afficher de scrollbar               
-** TODO [#A] Faire fonctionner fengyuanchen/cropper, les fichiers .babelrc, .editorconfig (déjà le cas en principe), .eslintrc 
+** TODO [#B] Faire fonctionner fengyuanchen/cropper, les fichiers .babelrc, .editorconfig (déjà le cas en principe), .eslintrc 
    [2017-09-20 Wed]
-** TODO [#A] Definir tous les fichiers .php dans un dossier "process" pour être en mode php 
+** DONE [#B] Definir tous les fichiers .php dans un dossier "process" pour être en mode php 
    [2017-11-08 Wed]
    [[file:~/www/project/arsia/arsia_standard_310/dev/common/include/process/mediadata/MediaDataHelper.class.php::public%20function%20getMediaDataButton($p_sIdImg,%20$p_sIdHiddenField,%20$p_sImagePath%20%3D%20'')%0D][file:~/www/project/arsia/arsia_standard_310/dev/common/include/process/mediadata/MediaDataHelper.class.php::public function getMediaDataButton($p_sIdImg, $p_sIdHiddenField, $p_sImagePath = '')]]
 ** TODO [#A] Voir pour régler définitivement le "problème" des retours chariots : 
@@ -287,7 +287,7 @@ C
    [2017-12-01 Fri]
    [[file:~/Documents/perso/glurps/static/]]
 
-** TODO M-j web-mode doit faire une nouvelle ligne de commentaire
+** TODO [#A] [web-mode] M-j doit faire une nouvelle ligne de commentaire
    [2017-12-07 Thu]
    [[file:~/www/project/arsia/arsia_3.2.x_standard/pimdatamanager/admin/module/data/list2.php::*%20filterToolbar][file:~/www/project/arsia/arsia_3.2.x_standard/pimdatamanager/admin/module/data/list2.php::* filterToolbar]]
    [[file:~/org/arsia.org::*%5Bevol%5D%20Arsia%203.3%20-%20Faire%20un%20js%20global%20permettant%20de%20masquer%20via%20une%20conf%20tout%20les%20console.log.][{evol} Arsia 3.3 - Faire un js global permettant de masquer via une conf tout les console.log.]]
@@ -303,7 +303,7 @@ C
    [2017-12-08 Fri]
    [[file:~/www/project/arsia/arsia_3.2.x_standard/pimdatamanager/admin/module/data/list2.php::<div%20style%3D"text-align:%20left%3B"><label%20class%3D"checkbox"%20style%3D"text-align:%20left%3B"><input%20type%3D"checkbox"%20value%3D"0">Checkbox%201</label></div>][file:~/www/project/arsia/arsia_3.2.x_standard/pimdatamanager/admin/module/data/list2.php::<div style="text-align: left;"><label class="checkbox" style="text-align: left;"><input type="checkbox" value="0">Checkbox 1</label></div>]]
 
-** TODO DIRED - Auto sorted by access time
+** TODO [#A] DIRED - Auto sorted by access time
    [2018-01-10 Wed]
    [[file:~/Downloads/export.php]]
 

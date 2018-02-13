@@ -345,7 +345,12 @@
 ;; ---------------- new line
 (define-key prog-mode-map (kbd "RET") 'new-line-dwim)
 (define-key php-mode-map (kbd "RET") 'new-line-dwim)
-(define-key web-mode-map (kbd "C-m") 'newline-and-indent)
+;; (define-key web-mode-map (kbd "C-m") 'newline-and-indent)
+(define-key web-mode-map (kbd "C-m") 'new-line-dwim) ; <-- Utiliser celle-ci
+                                        ; dans un block de css ou de javascript
+                                        ; pour avoir une ouverture de balise
+                                        ; plus precise
+
 ;; (define-key prog-mode-map "<return>" 'new-line-dwim)
 ;; (define-key web-mode-map "<return>" 'new-line-dwim)
 

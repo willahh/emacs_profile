@@ -40,8 +40,9 @@
 
 ;; Prevent display multiples windows on large screen
 ;; https://stackoverflow.com/a/1382869
-(setq split-width-threshold 999)
-(setq split-height-threshold 999)
+;; Update : Disable
+;; (setq split-width-threshold 999)
+;; (setq split-height-threshold 999)
 
 ;; Disable auto underlining links
 (setq goto-address-mode nil)
