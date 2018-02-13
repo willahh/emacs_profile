@@ -1259,9 +1259,11 @@ Version 2016-12-27"
 ;; New centered frame
 (defun wlh/create-new-centered-frame ()
   (interactive)
-  (select-frame (make-frame))
-  (funcall #'switch-to-buffer (xah-new-empty-buffer))
-  (wlh/frame-center))
+  (let ((frame (make-frame)))
+    (select-frame frame)
+    (funcall #'switch-to-buffer (xah-new-empty-buffer))
+    ;; (wlh/frame-center)
+    (wlh/frame-position-1 frame)))
 
 
 ;; (defun wlh/create-new-centered-frame2 ()
@@ -1315,7 +1317,16 @@ Version 2016-12-27"
 
 
 
-
+(defun wlh/frame-position-1 (frame)
+  "Most used frame configuration (x, y, width, height). Depends
+on the screen values."
+  (interactive)
+  (let* ((frame-width (/ (x-display-pixel-width) 3))
+         (frame-height (/ (x-display-pixel-height) 2))
+         (frame-x (- (/ (x-display-pixel-width) 4)))
+         (frame-y (- frame-height 100)))
+    (set-frame-size frame frame-width frame-height t)
+    (set-frame-position frame frame-x frame-y)))
 
 
 

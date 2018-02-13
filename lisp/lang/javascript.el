@@ -6,6 +6,9 @@
   ;; (setq js2-highlight-unused-variables-mode t)
   ;; (setq js2-strict-var-hides-function-arg-warning t)
   (setq-default js-switch-indent-offset 4)
+  
+  ;; (setq-default js2-idle-timer-delay 0.1)
+  ;; (setq-default js2-idle-timer-delay 2)
   (setq-default js2-idle-timer-delay 0.1)
 
   ;; (setq-default js2-allow-rhino-new-expr-initializer nil)

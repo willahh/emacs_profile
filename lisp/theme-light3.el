@@ -7,6 +7,11 @@
 
 ;; Main backgrouund
 (set-face-attribute 'default nil :background "#ffffff")
+(custom-set-faces
+ '(default ((t (:stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :family "Office Code Pro")))))
+
+;; Text selection
+(set-face-attribute 'region nil :background "#b9d6fb")
 
 ;; Window-divider
 (setq window-divider-default-bottom-width 3)
@@ -83,6 +88,11 @@
 (set-face-attribute 'web-mode-block-string-face nil :foreground "#9c251e")
 (set-face-attribute 'web-mode-constant-face nil :foreground "#2e12a3")
 (set-face-attribute 'web-mode-type-face nil :foreground "#6c1883")
+(set-face-attribute 'web-mode-html-tag-face nil :foreground "#7c237c")
+(set-face-attribute 'web-mode-html-attr-name-face nil :foreground "#8f4919")
+(set-face-attribute 'web-mode-html-attr-value-face nil :foreground "#17219f")
+(set-face-attribute 'web-mode-javascript-string-face nil :foreground "#b73127")
+(set-face-attribute 'web-mode-current-element-highlight-face nil :background nil :foreground "#000000" :weight 'ultra-bold)
 
 ;; ------- js2-mode
 (set-face-attribute 'js2-external-variable nil :foreground "#2055a4")
@@ -122,7 +132,7 @@
 ;; ------- org
 (defun wlh/org-mode-hook ()
   (set-face-attribute 'org-document-title nil :family "Sans Serif" :height 1.8 :foreground "#999")
-  (set-face-attribute 'org-level-1 nil :height 1.3 :overline nil :foreground "#000" :background "#fff" :box nil)
+  (set-face-attribute 'org-level-1 nil :height 1.3 :overline nil :foreground "#000" :background "#ffffff" :box nil)
   (set-face-attribute 'org-level-2 nil :height 1 :box nil :overline nil :foreground "#000" :background "#ffffff")
   (set-face-attribute 'org-level-3 nil :height 1 :box nil :overline nil :foreground "#000" :background "#ffffff")
   (set-face-attribute 'org-special-keyword nil :height 1 :foreground "#aeb7da" :background nil)

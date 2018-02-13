@@ -37,9 +37,12 @@
 (global-set-key (kbd "∫") 'projectile-switch-to-buffer) ; Alt + B
 (global-set-key (kbd "È") 'fixup-whitespace) ; Alt + k
 (global-set-key (kbd "Ì") 'help) ; Alt + h
+
 (global-set-key (kbd "Ò") 'swiper) ; Alt + s
 ;; (global-set-key (kbd "∑") 'helm-ag) ; Alt + S
-(global-set-key (kbd "∑") 'helm-projectile-ag) ; Alt + S
+(global-set-key (kbd "∑") 'helm-ag) ; Alt + shift + s
+;; (global-set-key (kbd "C-∑") 'helm-projectile-ag) ; Alt + control + shift + s
+
 (global-set-key (kbd "ƒ") 'helm-recentf) ; Alt + f
 ;; (global-set-key (kbd "¢") 'org-capture) ; Alt + C
 (global-set-key (kbd "†") 'toggle-truncate-lines) ; Alt + t

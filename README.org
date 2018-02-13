@@ -79,11 +79,6 @@ http://www.star.bris.ac.uk/bjm/emacs-tips.html#orgheadline3
   - Latex dependencies
 * Support
 ** Spell checker
-*** Tools : ispell
-**** OSX
-#+BEGIN_SRC
-brew install ispell
-#+END_SRC
 *** Tools : hunspell
 Links
  - https://wiki.openoffice.org/wiki/Dictionaries .
@@ -109,6 +104,11 @@ man hunspell
 "... Dictionary files (*.aff and *.dic) should be placed in ~/Library/Spelling/
 or /Library/Spelling/.  Homebrew itself provides no dictionaries for Hunspell,
 but you can download compatible dictionaries from other sources, such as ..."
+*** Tools : ispell
+**** OSX
+#+BEGIN_SRC
+brew install ispell
+#+END_SRC
 
 *** Tools : languagetools
   @todo Used for grammar check https://www.languagetool.org

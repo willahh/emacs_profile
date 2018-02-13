@@ -214,6 +214,13 @@
 ;; Set the default comment column to 80
 (setq-default comment-column 80)
 
+;; Auto-fill comments, but not code.
+;; (comment-auto-fill)
+
+;; And do it aggressively.
+;;(aggressive-fill-paragraph-mode)
+
+
 ;; Mac-Pass-Command-To-System
 (setq mac-pass-command-to-system nil)
 

@@ -166,11 +166,14 @@
       helm-imenu-fuzzy-match t
       helm-mode-fuzzy-match t)
 
-;; helm
+;; helm configuration
 (setq helm-autoresize-max-height 500)
 (setq helm-autoresize-min-height 100) ;; Important
 (setq helm-allow-mouse t)
 
+;; https://tuhdo.github.io/helm-intro.html
+(when (executable-find "curl")
+  (setq helm-google-suggest-use-curl-p t))
 
 (defun helm-mouse-1-exit-minibuffer (click)
   (interactive "e")

@@ -222,11 +222,26 @@
 ;; (setq langtool-language-tool-jar "/path/to/languagetool-commandline.jar")
 (setq langtool-language-tool-jar "~/bin/languagetool/languagetool-commandline.jar")
 
+
+;; Lang hunspel
 ;; (setq langtool-default-language "en-US")
 (setq langtool-default-language "fr")
 (setq ispell-program-name (executable-find "hunspell"))
 (setq ispell-dictionary "fr")
 
+;; (setq ispell-hunspell-dict-paths-alist ("american" "/Users/user/Library/Spelling/en_US.aff")
+;;       ("british" "/Users/user/Library/Spelling/en_GB.aff")
+;;       ("english" "/Users/user/Library/Spelling/en_US.aff")
+;;       ("en_ZA" "/Users/user/Library/Spelling/en_ZA.aff")
+;;       ("en_US" "/Users/user/Library/Spelling/en_US.aff")
+;;       ("en_GB" "/Users/user/Library/Spelling/en_GB.aff")
+;;       ("en_CA" "/Users/user/Library/Spelling/en_CA.aff")
+;;       ("en_AU" "/Users/user/Library/Spelling/en_AU.aff")
+;;       ("default" "/Users/user/Library/Spelling/default.aff"))
+
+;;(add-to-list 'ispell-hunspell-dict-paths-alist '("en_US" "your-path-to/en_US.aff")))
+
+;;
 (defun langtool-autoshow-detail-popup (overlays)
   (when (require 'popup nil t)
     ;; Do not interrupt current popup
@@ -662,3 +677,10 @@ abort completely with `C-g'."
 
 ;; origami
 (require 'origami)
+
+;; Pop-win
+(require 'popwin)
+(popwin-mode 1)
+
+
+(push "*vc-diff*" popwin:special-display-config)
