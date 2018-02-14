@@ -132,6 +132,7 @@
         tab-indent-or-complete
         tern-ac-dot-complete
         textmate-backspace2
+        transpose-sexps
         typescript-insert-and-indent
         untab-region
         web-mode-attribute-kill

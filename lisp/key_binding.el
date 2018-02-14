@@ -360,7 +360,8 @@
 (defun wlh/web-mode-tab ()
   (interactive)
   (if (equal (web-mode-language-at-pos) "html")
-      (emmet-expand-line nil)
+      (if (not (emmet-expand-line nil))
+          (indent-for-tab-command))
     (yas-expand-from-trigger-key)))
 
 ;; (define-key web-mode-map (kbd "C-m") 'new-line-dwim) ; <-- Utiliser celle-ci
@@ -370,6 +371,7 @@
 
 (define-key web-mode-map (kbd "C-m") 'wlh/web-mode-new-line)
 (define-key web-mode-map (kbd "TAB") 'wlh/web-mode-tab)
+(define-key web-mode-map (kbd "C-o") 'crux-smart-open-line-above)
 
 ;; (define-key prog-mode-map "<return>" 'new-line-dwim)
 ;; (define-key web-mode-map "<return>" 'new-line-dwim)
