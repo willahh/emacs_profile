@@ -5,7 +5,7 @@
 ;; ------- Font
 (set-frame-font "Office Code Pro:antialias=1")
 
-;; Main backgrouund
+;; Main background
 (set-face-attribute 'default nil :background "#ffffff")
 (custom-set-faces
  '(default ((t (:stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :family "Office Code Pro")))))
@@ -113,11 +113,16 @@
 ;; ------- modeline
 (set-face-attribute 'mode-line nil
                     :foreground "#ffffff"
-                    :background "#0078cf"
+                    :background "#304f4f"
+                    :height 100
+                    :font "Menlo"
                     :box nil)
+
 (set-face-attribute 'mode-line-inactive nil
                     :foreground "#666"
                     :background "#fafafa"
+                    :font "Menlo"
+                    :height 100
                     :box nil)
 
 ;; ------- php

@@ -92,6 +92,9 @@
 (global-set-key (kbd (concat wlh/leader-key "o")) 'org-iswitchb)
 (global-set-key (kbd (concat wlh/leader-key "c")) 'org-capture)
 
+;; Misc
+(global-set-key (kbd (concat wlh/leader-key "b u")) 'browse-url)
+
 ;; ---------------- Evil leader key bindings
 ;; (evil-leader/set-key
 ;;   ;; opened buffers scope
