@@ -349,10 +349,27 @@
 (define-key prog-mode-map (kbd "RET") 'new-line-dwim)
 (define-key php-mode-map (kbd "RET") 'new-line-dwim)
 ;; (define-key web-mode-map (kbd "C-m") 'newline-and-indent)
-(define-key web-mode-map (kbd "C-m") 'new-line-dwim) ; <-- Utiliser celle-ci
+
+(defun wlh/web-mode-new-line ()
+  (interactive)
+  (cond ((equal (web-mode-language-at-pos) "html") (newline-and-indent))
+        ((equal (web-mode-language-at-pos) "javascript") (new-line-dwim))
+        ((equal (web-mode-language-at-pos) "php") (newline))
+        ((equal (web-mode-language-at-pos) "css") (new-line-dwim))))
+
+(defun wlh/web-mode-tab ()
+  (interactive)
+  (if (equal (web-mode-language-at-pos) "html")
+      (emmet-expand-line nil)
+    (yas-expand-from-trigger-key)))
+
+;; (define-key web-mode-map (kbd "C-m") 'new-line-dwim) ; <-- Utiliser celle-ci
                                         ; dans un block de css ou de javascript
                                         ; pour avoir une ouverture de balise
                                         ; plus precise
+
+(define-key web-mode-map (kbd "C-m") 'wlh/web-mode-new-line)
+(define-key web-mode-map (kbd "TAB") 'wlh/web-mode-tab)
 
 ;; (define-key prog-mode-map "<return>" 'new-line-dwim)
 ;; (define-key web-mode-map "<return>" 'new-line-dwim)

@@ -11,6 +11,8 @@
  '(default ((t (:stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :family "Office Code Pro")))))
 
 ;; Text selection
+;; (set-face-attribute 'region nil :background "#fce94f")
+;; (set-face-attribute 'region nil :background "#fce94f")
 (set-face-attribute 'region nil :background "#b9d6fb")
 
 ;; Window-divider
@@ -43,8 +45,6 @@
 (set-face-attribute 'window-divider-first-pixel nil :foreground "#fffefe")
 (set-face-attribute 'window-divider-last-pixel nil :foreground "#fff")
 (set-face-attribute 'web-mode-current-element-highlight-face nil :background nil :foreground "#7b7b7b")
-(set-face-attribute 'region nil :background "#fce94f")
-(set-face-attribute 'region nil :background "#fce94f")
 
 ;; (defun wlh/theme-linum-mode-hook ()
 ;;   (set-face-attribute 'linum nil :foreground "#4a4a4a" :background"#fafafa" :height 80))
