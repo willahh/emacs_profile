@@ -3,12 +3,15 @@
 (load "~/.emacs.d/lisp/theme/tango-plus/tangotango-plus-theme.el")
 
 ;; ------- Font
-(set-frame-font "Office Code Pro:antialias=1")
+;; (set-frame-font "Office Code Pro:antialias=1")
+(set-frame-font "Menlo")
 
 ;; Main background
 (set-face-attribute 'default nil :background "#ffffff")
+;; (custom-set-faces
+;;  '(default ((t (:stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :family "Office Code Pro")))))
 (custom-set-faces
- '(default ((t (:stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :family "Office Code Pro")))))
+ '(default ((t (:stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 110 :width normal :family "Menlo")))))
 
 ;; Text selection
 ;; (set-face-attribute 'region nil :background "#fce94f")
@@ -16,8 +19,8 @@
 (set-face-attribute 'region nil :background "#b9d6fb")
 
 ;; Window-divider
-(setq window-divider-default-bottom-width 3)
-(setq window-divider-default-right-width 3)
+(setq window-divider-default-bottom-width 1)
+(setq window-divider-default-right-width 1)
 
 (add-hook 'dired-mode-hook (lambda ()
                              (set-face-attribute 'dired-subtree-depth-1-face nil :background nil)
@@ -44,7 +47,7 @@
 (set-face-attribute 'window-divider nil :foreground "#5f5f5f")
 (set-face-attribute 'window-divider-first-pixel nil :foreground "#fffefe")
 (set-face-attribute 'window-divider-last-pixel nil :foreground "#fff")
-(set-face-attribute 'web-mode-current-element-highlight-face nil :background nil :foreground "#7b7b7b")
+;; (set-face-attribute 'web-mode-current-element-highlight-face nil :background nil :foreground "#7b7b7b")
 
 ;; (defun wlh/theme-linum-mode-hook ()
 ;;   (set-face-attribute 'linum nil :foreground "#4a4a4a" :background"#fafafa" :height 80))
