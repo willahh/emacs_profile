@@ -127,6 +127,7 @@
         sp-forward-sexp
         sp-kill-hybrid-sexp
         sp-kill-sexp
+        sp-remove-active-pair-overlay
         sp-up-sexp
         string-inflection-all-cycle
         tab-indent-or-complete

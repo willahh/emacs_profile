@@ -122,7 +122,7 @@
 
 (set-face-attribute 'mode-line-inactive nil
                     :foreground "#666"
-                    :background "#fafafa"
+                    :background "#e0e0e0"
                     :font "Menlo"
                     :height 100
                     :box nil)
@@ -147,7 +147,10 @@
   (set-face-attribute 'org-tag nil :height 0.8 :foreground "#98cf15" :box "#98cf15" :background "#f2fff7")
   (set-face-attribute 'org-block-begin-line nil :background "#e3e3e3" :foreground "#000000" :underline "#000000")
   (set-face-attribute 'org-block-end-line nil :background "#e3e3e3" :foreground "#000000" :underline "#000000")
-  (set-face-attribute 'org-block-background nil :background "#f5f5f5")
+
+  (if (bound-and-true-p org-block-background)
+      (set-face-attribute 'org-block-background nil :background "#f5f5f5"))
+
   (set-face-attribute 'org-checkbox-statistics-todo  nil :height 1))
 
 (add-hook 'org-mode-hook 'wlh/org-mode-hook)
