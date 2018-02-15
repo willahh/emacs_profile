@@ -3,12 +3,15 @@
 (load "~/.emacs.d/lisp/theme/tango-plus/tangotango-plus-theme.el")
 
 ;; ------- Font
-(set-frame-font "Office Code Pro:antialias=1")
+;; (set-frame-font "Office Code Pro:antialias=1")
+(set-frame-font "Menlo")
 
-;; Main backgrouund
+;; Main background
 (set-face-attribute 'default nil :background "#ffffff")
+;; (custom-set-faces
+;;  '(default ((t (:stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :family "Office Code Pro")))))
 (custom-set-faces
- '(default ((t (:stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :family "Office Code Pro")))))
+ '(default ((t (:stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 110 :width normal :family "Menlo")))))
 
 ;; Text selection
 ;; (set-face-attribute 'region nil :background "#fce94f")
@@ -16,8 +19,8 @@
 (set-face-attribute 'region nil :background "#b9d6fb")
 
 ;; Window-divider
-(setq window-divider-default-bottom-width 3)
-(setq window-divider-default-right-width 3)
+(setq window-divider-default-bottom-width 1)
+(setq window-divider-default-right-width 1)
 
 (add-hook 'dired-mode-hook (lambda ()
                              (set-face-attribute 'dired-subtree-depth-1-face nil :background nil)
@@ -112,11 +115,16 @@
 ;; ------- modeline
 (set-face-attribute 'mode-line nil
                     :foreground "#ffffff"
-                    :background "#0078cf"
+                    :background "#304f4f"
+                    :height 100
+                    :font "Menlo"
                     :box nil)
+
 (set-face-attribute 'mode-line-inactive nil
                     :foreground "#666"
                     :background "#fafafa"
+                    :font "Menlo"
+                    :height 100
                     :box nil)
 
 ;; ------- php
