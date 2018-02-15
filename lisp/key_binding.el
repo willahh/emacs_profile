@@ -362,7 +362,7 @@
   (if (equal (web-mode-language-at-pos) "html")
       (if (not (emmet-expand-line nil))
           (indent-for-tab-command))
-    (yas-expand-from-trigger-key)))
+    (yas-expand-from-trigger-key)));; TODO l'indentation ne fonctionne pas dans du js
 
 ;; (define-key web-mode-map (kbd "C-m") 'new-line-dwim) ; <-- Utiliser celle-ci
                                         ; dans un block de css ou de javascript
