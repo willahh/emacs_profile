@@ -684,3 +684,6 @@ abort completely with `C-g'."
 
 
 (push "*vc-diff*" popwin:special-display-config)
+
+;; Highlight selection custom from vendor/highlight-selection
+(highlight-selection-mode)

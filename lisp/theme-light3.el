@@ -19,8 +19,8 @@
 (set-face-attribute 'region nil :background "#b9d6fb")
 
 ;; Window-divider
-(setq window-divider-default-bottom-width 1)
-(setq window-divider-default-right-width 1)
+(setq window-divider-default-bottom-width 3)
+(setq window-divider-default-right-width 3)
 
 (add-hook 'dired-mode-hook (lambda ()
                              (set-face-attribute 'dired-subtree-depth-1-face nil :background nil)
@@ -72,9 +72,9 @@
 (set-face-attribute 'font-lock-constant-face nil :foreground "#5fbfec")
 
 ;; ------- diff-hl
-(set-face-attribute 'diff-hl-delete nil :foreground "#fc1a9f")
-(set-face-attribute 'diff-hl-change nil :foreground "#5fbfec")
-(set-face-attribute 'diff-hl-insert nil :foreground "#55e97b")
+(set-face-attribute 'diff-hl-delete nil :background "#f2aad3")
+(set-face-attribute 'diff-hl-change nil :background "#c3e1f2")
+(set-face-attribute 'diff-hl-insert nil :background "#c7f1ca")
 
 ;; ------- css
 (set-face-attribute 'css-property nil :foreground "#ff0101")
@@ -94,7 +94,7 @@
 (set-face-attribute 'web-mode-html-attr-name-face nil :foreground "#8f4919")
 (set-face-attribute 'web-mode-html-attr-value-face nil :foreground "#17219f")
 (set-face-attribute 'web-mode-javascript-string-face nil :foreground "#b73127")
-(set-face-attribute 'web-mode-current-element-highlight-face nil :background nil :foreground "#000000" :weight 'ultra-bold)
+(set-face-attribute 'web-mode-current-element-highlight-face nil :background "#fffff" :foreground "#000000" :weight 'ultra-bold)
 
 ;; ------- js2-mode
 (set-face-attribute 'js2-external-variable nil :foreground "#2055a4")

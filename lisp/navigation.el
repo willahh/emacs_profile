@@ -7,7 +7,6 @@
 (require 'iy-go-to-char)
 (require 'textmate-mode)
 (require 'highlight-symbol)
-; (require 'ido-ubiquitous)
 (require 'ido)
 (require 'smex)
 (require 'which-key)
@@ -21,26 +20,31 @@
 (require 'ivy)
 (require 'helm-ag)
 (require 'helm-config)
-;; (require 'ivy_buffer_extend)
-; (require 'swiper)
 (require 'helm-swoop)
 (require 'helm-swoop)
 (require 'resize-window)
 (require 'neotree)
 (require 'expand-region)
 (require 'paredit)
-; (require 'sr-speedbar)
 (require 'ace-window)
 (require 'avy)
 (require 'web-mode)
-
+;; (require 'ido-ubiquitous)
+;; (require 'ivy_buffer_extend)
+;; (require 'swiper)
+;; (require 'sr-speedbar)
 
 
 ;; Highlight-symbol can be slow on large file
-;; @todo Disable this mode on large file
-(add-hook 'prog-mode-hook 'highlight-symbol-mode)
-(add-hook 'php-mode-hook 'highlight-symbol-mode)
-(add-hook 'emacs-lisp-mode 'highlight-symbol-mode)
+;; @todo Disable this mode on large file.
+;;
+;; Update : Disable this mode. This need to be used like in modern editor with
+;; mouse double click. Otherwise, with keyboard, use of highlight-regexp
+;; functions.
+;;
+;; (add-hook 'prog-mode-hook 'highlight-symbol-mode)
+;; (add-hook 'php-mode-hook 'highlight-symbol-mode)
+;; (add-hook 'emacs-lisp-mode 'highlight-symbol-mode)
 
 (setq highlight-symbol-idle-delay .3)
 

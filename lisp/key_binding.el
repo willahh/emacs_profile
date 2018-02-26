@@ -223,6 +223,7 @@
 (define-key ibuffer-mode-map (kbd "M-n") 'wlh/create-new-centered-frame)
 (define-key compilation-mode-map (kbd "M-n") 'wlh/create-new-centered-frame)
 (define-key magit-mode-map (kbd "M-n") 'wlh/create-new-centered-frame)
+;; (define-key eshell-mode-map (kbd "M-n") 'wlh/create-new-centered-frame)
 
 ;; Revert buffer
 (define-key global-map (kbd "C-x C-r") 'revert-buffer-no-confirm)
@@ -360,12 +361,17 @@
         ((equal (web-mode-language-at-pos) "php") (newline))
         ((equal (web-mode-language-at-pos) "css") (new-line-dwim))))
 
+;; TODO l'indentation ne fonctionne pas dans du js -> Il faut tester si
+;; yas-expand-from-trigger-key ne retourne pas d'erreur. Si c'est le cas, il
+;; faut lancer la commande indentation normale.
+;;
+;; Update : Voir pour trapper l'erreur avec par exemple condition-case.
 (defun wlh/web-mode-tab ()
   (interactive)
   (if (equal (web-mode-language-at-pos) "html")
       (if (not (emmet-expand-line nil))
           (indent-for-tab-command))
-    (yas-expand-from-trigger-key)));; TODO l'indentation ne fonctionne pas dans du js
+    (condition-case err (yas-expand-from-trigger-key) (error "ok"))))
 
 ;; (define-key web-mode-map (kbd "C-m") 'new-line-dwim) ; <-- Utiliser celle-ci
                                         ; dans un block de css ou de javascript

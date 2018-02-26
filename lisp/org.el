@@ -13,6 +13,7 @@
 ;; https://emacs.stackexchange.com/a/20762
 (setq org-goto-interface 'outline-path-completionp)
 (setq org-outline-path-complete-in-steps nil)
+(setq org-src-tab-acts-natively t)
 
 ;; (setq org-agenda-files (quote ("~/org" "~/.emacs.d/emacs_todo.org")))
 ;; (setq org-agenda-files (quote ("~/org")))
@@ -47,7 +48,9 @@
 (add-hook 'org-mode-hook (lambda () 
                            (interactive)
                            
-                           (textmate-mode)
+                           ;; Disable textemate quote system is bad in org mode
+                           ;; (textmate-mode)
+                           
                            (smartparens-mode)
                            
                            ;; Disable company mode to use autocomplete mode instead

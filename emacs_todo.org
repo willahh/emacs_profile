@@ -247,3 +247,6 @@ C
    [[file:~/Downloads/export.php]]
 
 
+** TODO Etor - Dashboard : La barre des boutons n'est pas centrée horizontalement, il faut tout centrer en absolut par rapport à la largeur de l'écran
+   [2018-02-23 Fri]
+   [[file:~/www/project/arsia/arsia_3.2.x_standard_editzone/dev/sygesp/module/production/editzone_v2/index.php::foreach($aoPage%20as%20$oPageTemp)]]

@@ -22,6 +22,7 @@
         c-indent-new-comment-line
         clean-aindent--bsunindent
         comment-line
+        comment-or-uncomment-region-or-line
         company-indent-or-complete-common
         crux-smart-open-line
         delete-horizontal-space
