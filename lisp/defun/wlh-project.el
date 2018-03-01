@@ -25,6 +25,7 @@
                              "~/www/project/easy3p/easy3p_3.4/"
                              "~/www/project/easy3p/easy3p_3.5/"
                              "~/www/project/easy3p/easy3p_3.6/"
+                             "~/www/project/easy3p/easy3p_3.7/"
                              "~/www/project/goaland_siteweb/goaland_siteweb_6.0.0/"
                              "~/www/project/lifechecker/"
                              "~/www/project/rb_3d/rb_3d_1.0/"
