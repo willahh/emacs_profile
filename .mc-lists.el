@@ -202,6 +202,7 @@
         projectile-find-file-dwim
         resize-window
         toggle-truncate-lines
+        treemacs-leftclick-action
         undefined
         vc-dir-mark
         vc-dir-next-line

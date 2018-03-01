@@ -177,6 +177,8 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/font-lock-plus")
 (add-to-list 'load-path "~/.emacs.d/vendor/all-the-icons.el")
 (add-to-list 'load-path "~/.emacs.d/vendor/origami")
+;; (add-to-list 'load-path "~/.emacs.d/vendor/sidebar.el")
+(add-to-list 'load-path "~/.emacs.d/vendor/treemacs/src/elisp")
 
 ;; activate all the packages
 (package-initialize)

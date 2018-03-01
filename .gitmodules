@@ -7,3 +7,6 @@
 [submodule "vendor/emacs-w3m"]
 	path = vendor/emacs-w3m
 	url = https://github.com/ecbrown/emacs-w3m.git
+[submodule "vendor/treemacs"]
+	path = vendor/treemacs
+	url = https://github.com/Alexander-Miller/treemacs.git
