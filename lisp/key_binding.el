@@ -240,6 +240,56 @@
 (define-key dired-mode-map (kbd "C-x n") 'dired-narrow)
 (define-key dired-mode-map (kbd "b") 'crux-open-with)
 
+
+
+
+;; (define-key dired-mode-map (kbd "<C-mouse-1>") 'dired-subtree-toggle)
+;; (define-key dired-mode-map (kbd "<C-mouse-1>") '(call-interactively dired-subtree-toggle))
+;;(define-key dired-mode-map (kbd "<C-mouse-1>") 'wlh/dired-subtree-toggle)
+
+
+
+;; (defun wlh/dired-subtree-toggle ()
+;;   (message "ok")
+;;   (funcall dired-subtree-toggle))
+;; todo WIP --> cal dired-subtree-toggle
+;;(defun wlh/dired-subtree-toggle (event)
+;;  "In Dired, visit the file or directory name you click on."
+;;  (interactive "e")
+;;  (let (window pos file)
+;;    (save-excursion
+;;      (setq window (posn-window (event-end event))
+;;            pos (posn-point (event-end event)))
+;;      (if (not (windowp window))
+;;          (error "No file chosen"))
+;;      (set-buffer (window-buffer window))
+;;      (goto-char pos)
+;;      (setq file (dired-get-file-for-visit)))
+;;    (if (file-directory-p file)
+;;        (or (and (cdr dired-subdir-alist)
+;;                 (dired-goto-subdir file))
+;;            (progn
+;;              (select-window window)
+;;              (dired-other-window file)))
+;;      (select-window window)
+;;      (find-file-other-window (file-name-sans-versions file t)))))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ;; Multi cursor stuf
 (global-set-key (kbd "ı") 'mc/mark-next-lines) ; ALT+SHIFT+p
 (global-set-key (kbd "∏") 'mc/mark-previous-lines) ; ALT+SHIFT+n
@@ -341,7 +391,8 @@
 (global-set-key (kbd "M-=") 'delete-horizontal-space) ; Azerty equivalent of M-\
 
 ;; Search
-(global-set-key (kbd "M-F") 'ag)
+;; (global-set-key (kbd "M-F") 'ag)
+(global-set-key (kbd "M-F") 'projectile-ag)
 ;; (global-set-key (kbd "C-s-s") 'helm-ag) ; Super+Contral+s
 
 ;; wgrep
@@ -751,6 +802,7 @@
 
 ;; From prelude
 (global-set-key (kbd "C-c r") 'crux-rename-buffer-and-file)
+(global-set-key (kbd "C-c d") 'crux-delete-file-and-buffer)
 (global-set-key [(control shift up)] 'move-text-up)
 (global-set-key [(control shift down)] 'move-text-down)
 (global-set-key [(meta shift up)] 'move-text-up)

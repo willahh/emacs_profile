@@ -1099,15 +1099,18 @@ Version 2016-12-27"
 
 ;; Focus 
 (defadvice apropos (after wlh-apropos-before activate)
- (other-window 1))
+  (other-window 1))
 
 
+;; Highlight selection after region expand
+;; (defadvice er/expand-region (after wlh/expand-region-highlight activate)
+;;   (call-interactively 'highlight-selection-current-selection))
 
+;; (defun wlh/expand-region-highlight-off (old-function &rest arguments)
+;;   (highlight-selection-light-off)
+;;   (apply old-function arguments))
 
-
-
-
-
+;; (advice-add #'keyboard-quit :around #'wlh/expand-region-highlight-off)
 
 
 
