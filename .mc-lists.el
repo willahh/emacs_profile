@@ -34,6 +34,7 @@
         easy-mark
         electric-newline-and-maybe-indent
         eval-defun
+        eval-expression
         eval-last-sexp
         evil-a-word
         evil-append
@@ -148,6 +149,7 @@
         wil-tab-indent-or-complete-js
         wil-web-mode-kill-sexp
         wlh-tab-indent-or-complete-web
+        wlh/delete-backspace
         xah-toggle-letter-case
         yank-rectangle
         yas-expand

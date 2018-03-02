@@ -30,7 +30,8 @@
 
 ;; --------------- ALT key binding
 ;; Azerty keyboard
-(global-set-key (kbd "≈") 'counsel-M-x) ; Alt + x
+;; (global-set-key (kbd "≈") 'counsel-M-x) ; Alt + x
+(global-set-key (kbd "≈") 'helm-M-x) ; Alt + x
 (global-set-key (kbd "Â") 'toggle-php-flavor-mode) ; Alt + z
 (global-set-key (kbd "Å") 'zap-to-char) ; Alt + Z
 (global-set-key (kbd "ß") 'ivy-switch-buffer) ; Alt + b
@@ -38,7 +39,8 @@
 (global-set-key (kbd "È") 'fixup-whitespace) ; Alt + k
 (global-set-key (kbd "Ì") 'help) ; Alt + h
 
-(global-set-key (kbd "Ò") 'swiper) ; Alt + s
+;; (global-set-key (kbd "Ò") 'swiper) ; Alt + s
+(global-set-key (kbd "Ò") 'helm-swoop) ; Alt + s
 ;; (global-set-key (kbd "∑") 'helm-ag) ; Alt + S
 (global-set-key (kbd "∑") 'helm-ag) ; Alt + shift + s
 ;; (global-set-key (kbd "C-∑") 'helm-projectile-ag) ; Alt + control + shift + s
@@ -654,7 +656,8 @@
 ;; (global-set-key (kbd "<f8>") 'neotree-projectile-action)
 ;; (global-set-key (kbd "<f8>") 'neotree-toggle)
 ;; (global-set-key (kbd "<f8>") 'neotree-dir)
-(global-set-key (kbd "<f8>") 'neotree-projectile-action)
+;; (global-set-key (kbd "<f8>") 'neotree-projectile-action)
+(global-set-key (kbd "<f8>") 'treemacs-projectile-toggle)
 
 (global-set-key (kbd "<f9>") 'projectile-recentf)
 ;; (global-set-key (kbd "<f10>") 'counsel-recentf)

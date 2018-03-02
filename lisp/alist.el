@@ -13,6 +13,7 @@
 (add-to-list 'auto-mode-alist '("_lang_de.inc.php" . php-mode))
 (add-to-list 'auto-mode-alist '("_lang_fr.inc.php" . php-mode))
 (add-to-list 'auto-mode-alist '("_lang_en.inc.php" . php-mode))
+(add-to-list 'auto-mode-alist '("index.php" . web-mode))
 
 
 ;; (add-to-list 'auto-mode-alist '("\\.*.log\\" . syslog-mode))

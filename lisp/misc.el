@@ -803,18 +803,42 @@ abort completely with `C-g'."
 
 
 
-(require 'dashboard)
-(dashboard-setup-startup-hook)
-;; Or if you use use-package
+;; (require 'dashboard)
+;; (dashboard-setup-startup-hook)
+
 (use-package dashboard
   :config
-  (dashboard-setup-startup-hook))
+  (dashboard-setup-startup-hook)
+  
+  
+
+  ;; (defun dashboard-insert-custom ()
+  ;;   (insert "Custom text"))
+
+  ;; (add-to-list 'dashboard-item-generators 'dashboard-insert-custom)
+  
+  
+  (setq dashboard-banner-logo-title "Welcome !")
+  (setq dashboard-startup-banner 1)
+  (setq dashboard-items '((recents  . 5)
+                          (bookmarks . 100)
+                          (projects . 5)
+                          (agenda . 5)
+                          (registers . 5))))
+
+;; (defun dashboard-insert-custom ()
+;;   (insert "Custom text"))
+;; (add-to-list 'dashboard-item-generators  '(custom . dashboard-insert-custom))
+;; (add-to-list 'dashboard-items '(custom . 5) t)
 
 
 ;; treemacs
 (require 'treemacs)
+(require 'treemacs-projectile)
+
 (setq treemacs-change-root-without-asking nil
       treemacs-collapse-dirs              (if (executable-find "python") 3 0)
+      treemacs-follow-mode t
       treemacs-file-event-delay           5000
       treemacs-follow-after-init          t
       treemacs-follow-recenter-distance   0.1
@@ -832,4 +856,7 @@ abort completely with `C-g'."
       treemacs-sorting                    'alphabetic-desc
       treemacs-tag-follow-cleanup         t
       treemacs-tag-follow-delay           1.5
-      treemacs-width                      35)
+      treemacs-width                      35
+      ;; treemacs--width-is-locked t
+      
+      )

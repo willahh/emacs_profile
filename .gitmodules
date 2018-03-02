@@ -10,3 +10,6 @@
 [submodule "vendor/treemacs"]
 	path = vendor/treemacs
 	url = https://github.com/Alexander-Miller/treemacs.git
+[submodule "vendor/sidebar.el"]
+	path = vendor/sidebar.el
+	url = https://github.com/sebastiencs/sidebar.el.git

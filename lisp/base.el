@@ -292,8 +292,10 @@
       ;; If I'm not doing stuff, start fontifying 
       ;; the rest of the buffer
       lazy-lock-stealth-time 30)
+
+
 ;; emacs 21 has jit-lock which is better
-(setq font-lock-support-mode 'jit-lock-mode)
+;; (setq font-lock-support-mode 'jit-lock-mode)
 
 (setq-default font-lock-multiline t)
 
@@ -366,3 +368,8 @@
       savehist-autosave-interval 60
       savehist-file "~/.emacs.d/tmp/savehist")
 (savehist-mode +1)
+
+
+;; Fix snapy frame resize -> Nice nice ...
+;; https://emacs.stackexchange.com/a/30444
+(setq frame-resize-pixelwise t)

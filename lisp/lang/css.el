@@ -1,4 +1,8 @@
 (require 'css-mode)
+(defun wlh/css-mode-hook ()
+  (company-css))
+(add-hook 'css-mode-hook 'wlh/css-mode-hook)
+
 (defun wlh/css-open-declaration ()
   (interactive)
   (insert " {\n}")

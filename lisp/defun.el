@@ -1073,9 +1073,9 @@ Version 2016-12-27"
         (yank-advised-indent-function (region-beginning) (region-end)))))
 
 ;; Add advice after mouse click to leave multiple cursor mode
-(defadvice mouse-set-point (before set-mark-before-mouse-set-point ())
-  "Set mark before moving point by mouse."
-  (multiple-cursors-mode 0))
+;; (defadvice mouse-set-point (before set-mark-before-mouse-set-point ())
+;;   "Set mark before moving point by mouse."
+;;   (multiple-cursors-mode 0))
 
 ;; https://stackoverflow.com/a/2706660
 (defadvice save-buffers-kill-emacs (around no-query-kill-emacs activate)

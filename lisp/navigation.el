@@ -179,12 +179,18 @@
 (when (executable-find "curl")
   (setq helm-google-suggest-use-curl-p t))
 
+
+
 (defun helm-mouse-1-exit-minibuffer (click)
   (interactive "e")
   (mouse-set-point click)
   (helm-mark-current-line)
   (helm-exit-minibuffer))
 (define-key helm-map [mouse-1] 'helm-mouse-1-exit-minibuffer)
+
+
+
+
 
 ;; Auto resize
 (helm-autoresize-mode nil)
