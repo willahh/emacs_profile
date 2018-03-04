@@ -46,7 +46,7 @@
 (set-face-attribute 'show-paren-match-face nil :foreground "#000000" :weight 'ultra-bold)
 (setq show-paren-priority -50)
 (set-face-attribute 'fringe nil :background "#fafafa" :slant 'normal)
-(set-face-attribute 'window-divider nil :foreground "#5f5f5f")
+(set-face-attribute 'window-divider nil :foreground "#fafafa")
 (set-face-attribute 'window-divider-first-pixel nil :foreground "#fffefe")
 (set-face-attribute 'window-divider-last-pixel nil :foreground "#fff")
 

@@ -3,7 +3,7 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "ripgrep" "ripgrep.el" (23061 50836 0 0))
+;;;### (autoloads nil "ripgrep" "ripgrep.el" (23195 57017 0 0))
 ;;; Generated autoloads from ripgrep.el
 
 (autoload 'ripgrep-regexp "ripgrep" "\

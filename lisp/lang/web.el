@@ -22,8 +22,9 @@
 (setq web-mode-block-padding 0)
 
 ;; https://emacs.stackexchange.com/questions/12946/how-tell-web-mode-to-use-tidy-syntaxchecker-in-flycheck
-(eval-after-load 'flycheck
-  '(flycheck-add-mode 'html-tidy 'web-mode))
+;; Tidy does not work well in mixed content
+;; (eval-after-load 'flycheck
+;;   '(flycheck-add-mode 'html-tidy 'web-mode))
 
 ;; Emmet
 (require 'emmet-mode)
@@ -33,6 +34,8 @@
 (add-hook 'css-mode-hook  'emmet-mode)
 (add-hook 'web-mode-hook 'emmet-mode)
 
-(add-hook 'web-mode-hook
-          (lambda ()
-            (emmet-mode t)))
+(defun wlh/web-mode ()
+  (emmet-mode t)
+  (flycheck-mode))
+
+(add-hook 'web-mode-hook 'wlh/web-mode)

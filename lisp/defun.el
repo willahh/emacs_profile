@@ -1101,6 +1101,9 @@ Version 2016-12-27"
 (defadvice apropos (after wlh-apropos-before activate)
   (other-window 1))
 
+(defadvice man (after wlh-man-before activate)
+  (other-window 1))
+
 
 ;; Highlight selection after region expand
 ;; (defadvice er/expand-region (after wlh/expand-region-highlight activate)
@@ -1119,16 +1122,6 @@ Version 2016-12-27"
 
 
 ;; ------------ willahh custom
-(defun wlh/find-dsstore ()
-  ;; Find .DS_Store files in user directory
-  (interactive)
-  (find-name-dired "~/" "*.DS_Store"))
-
-(defun wlh/find-pdf ()
-  ;; Find pdf files in user directory
-  (interactive)
-  (find-name-dired "~/" "*.pdf"))
-
 (defun wlh/open-projectile-bookmarks ()
   ;; Find pdf files in user directory
   (interactive)

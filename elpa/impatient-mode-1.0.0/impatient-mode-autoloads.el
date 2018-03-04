@@ -3,8 +3,8 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "impatient-mode" "impatient-mode.el" (22821
-;;;;;;  55101 0 0))
+;;;### (autoloads nil "impatient-mode" "impatient-mode.el" (23195
+;;;;;;  56987 0 0))
 ;;; Generated autoloads from impatient-mode.el
 
 (autoload 'impatient-mode "impatient-mode" "\
@@ -14,7 +14,7 @@ Serves the buffer live over HTTP.
 
 ;;;***
 
-;;;### (autoloads nil nil ("impatient-mode-pkg.el") (22821 55101
+;;;### (autoloads nil nil ("impatient-mode-pkg.el") (23195 56987
 ;;;;;;  0 0))
 
 ;;;***

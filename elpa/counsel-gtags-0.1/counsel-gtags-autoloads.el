@@ -3,7 +3,7 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "counsel-gtags" "counsel-gtags.el" (23110 35487
+;;;### (autoloads nil "counsel-gtags" "counsel-gtags.el" (23195 57197
 ;;;;;;  0 0))
 ;;; Generated autoloads from counsel-gtags.el
 

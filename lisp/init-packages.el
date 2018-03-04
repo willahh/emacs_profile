@@ -7,11 +7,25 @@
 (setq package-list '(
                      ace-jump-mode
                      ace-link
-                     ace-window 
+                     ace-window
                      actionscript-mode
                      ag
                                         ; anzu
                      async
+
+
+
+
+                     
+                     ht
+                     pfuture
+                     nlinum
+
+
+
+
+                     
+                     
                      auto-complete
                      auto-yasnippet
                      autopair
@@ -33,7 +47,6 @@
                      diff-hl
                      dracula-theme
                      drag-stuff
-                     dsvn
                      dtrt-indent
                      eclim
                      edit-server
@@ -49,6 +62,7 @@
                      evil-surround
                      evil-visualstar
                      exec-path-from-shell
+                     shell-pop
                      expand-region
                      find-file-in-project
                      flx-ido
@@ -125,7 +139,6 @@
                      smooth-scrolling
                      sourcemap
                      sx
-                     syslog-mode
                      tern
                      tide
                      toc-org

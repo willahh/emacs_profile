@@ -119,6 +119,7 @@
         paredit-semicolon
         reindent-then-newline-and-indent
         skeleton-pair-insert-maybe
+        slime-autodoc-space
         smart-open-line-above
         smarter-move-beginning-of-line
         sp-backward-down-sexp

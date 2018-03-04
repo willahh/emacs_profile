@@ -158,9 +158,12 @@ specifies if we are inside a string or code."
      (when (sp--looking-back-p "^[ \t]*" nil t)
        (sp-previous-sexp)))))
 
-(sp-with-modes sp--html-modes
-  (sp-local-pair "<" ">")
-  (sp-local-tag  "<" "<_>" "</_>" :transform 'sp-match-sgml-tags :post-handlers '(sp-html-post-handler)))
+
+;; Update wlh : Disable this
+;; (sp-with-modes sp--html-modes
+;;   (sp-local-pair "<" ">")
+;;   (sp-local-tag  "<" "<_>" "</_>" :transform 'sp-match-sgml-tags :post-handlers '(sp-html-post-handler)))
+
 
 (--each sp--html-modes
   (add-to-list 'sp-navigate-consider-sgml-tags it))
