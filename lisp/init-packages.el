@@ -20,6 +20,7 @@
                      ht
                      pfuture
                      nlinum
+                     agressive-indent
 
 
 
