@@ -7,6 +7,32 @@
 
 
 
+
+
+
+
+
+
+;; http://pragmaticemacs.com/
+(use-package pdf-tools
+  :pin manual ;; manually update
+  :config
+  ;; initialise
+  (pdf-tools-install)
+  ;; open pdfs scaled to fit page
+  (setq-default pdf-view-display-size 'fit-page)
+  ;; automatically annotate highlights
+  (setq pdf-annot-activate-created-annotations t)
+  ;; use normal isearch
+  (define-key pdf-view-mode-map (kbd "C-s") 'isearch-forward))
+
+
+
+
+
+
+
+
 ;; Enhanced version of diff
 (add-hook 'diff-mode-hook (lambda () (local-set-key "\C-c\C-l" 'diffstat)))
 
@@ -542,18 +568,7 @@ Version 2016-10-24"
 (global-set-key (kbd "M-%") 'vr/query-replace)
 
 
-;; http://pragmaticemacs.com/
-(use-package pdf-tools
-  :pin manual ;; manually update
-  :config
-  ;; initialise
-  (pdf-tools-install)
-  ;; open pdfs scaled to fit page
-  (setq-default pdf-view-display-size 'fit-page)
-  ;; automatically annotate highlights
-  (setq pdf-annot-activate-created-annotations t)
-  ;; use normal isearch
-  (define-key pdf-view-mode-map (kbd "C-s") 'isearch-forward))
+
 
 
 

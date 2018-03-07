@@ -4,13 +4,12 @@
 ;; From https://common-lisp.net/project/slime/doc/slime.pdf
 (add-to-list 'slime-contribs 'slime-fancy)
 
-(add-hook 'slime-load-hook
-          #'(lambda ()
-              (define-key slime-prefix-map (kbd "M-h") 'slime-documentation-lookup)))
+(defun wlh/slime-mode-hook ()
+  (company-mode nil)
+  (auto-complete-mode t)
+  (define-key slime-prefix-map (kbd "M-h") 'slime-documentation-lookup))
 
-;; (defun wlh/slime-repl-mode-hook ()
-;;   (paredit-mode))
-;; (add-hook 'slime-repl-mode-hook 'wlh/slime-repl-mode-hook)
+(add-hook 'slime-load-hook 'wlh/slime-mode-hook)
 (add-hook 'slime-repl-mode-hook (lambda ()
                                   (paredit-mode)))
 

@@ -3,7 +3,7 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "ido-occur" "ido-occur.el" (23091 59058 0 0))
+;;;### (autoloads nil "ido-occur" "ido-occur.el" (23195 56983 0 0))
 ;;; Generated autoloads from ido-occur.el
 
 (autoload 'ido-occur "ido-occur" "\

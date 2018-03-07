@@ -392,7 +392,8 @@
 (define-key org-mode-map (kbd "C-M-i") 'org-shifttab)
 (global-set-key (kbd "C-M-s") 'isearch-forward-regexp)
 (global-set-key (kbd "C-c C-M-s") 'vr/replace)
-(global-set-key (kbd "M-=") 'delete-horizontal-space) ; Azerty equivalent of M-\
+;; (global-set-key (kbd "M-=") 'delete-horizontal-space) ; Azerty equivalent of M-\
+(global-set-key (kbd "M-=") 'just-one-space) ; Azerty equivalent of M-\
 
 ;; Search
 ;; (global-set-key (kbd "M-F") 'ag)
@@ -404,10 +405,16 @@
 (define-key compilation-mode-map (kbd "C-x s") 'wgrep-save-all-buffers)
 (define-key compilation-mode-map (kbd "C-c C-c") 'wgrep-finish-edit)
 
+(defun wlh/insert-4spaces ()
+  (interactive)
+  (insert "    "))
+
+(global-set-key (kbd "C-c TAB") 'wlh/insert-4spaces)
 ;; ---------------- new line
 (define-key prog-mode-map (kbd "RET") 'new-line-dwim)
 (define-key php-mode-map (kbd "RET") 'new-line-dwim)
 ;; (define-key web-mode-map (kbd "C-m") 'newline-and-indent)
+(define-key web-mode-map(kbd "<return>") 'wlh/web-mode-new-line)
 
 (defun wlh/web-mode-new-line ()
   (interactive)
@@ -582,7 +589,7 @@
 (global-set-key (kbd "C-c p ' g") 'projectile-find-file-dwim-other-window) ; (C-c p 4 g on azerty)
 
 ;; ---------------- text
-(define-key js-mode-map (kbd "C-:") "\C-e;")
+;;(define-key js-mode-map (kbd "C-:") "\C-e;")
 (define-key typescript-mode-map (kbd "C-:") "\C-e;")
 (define-key php-mode-map (kbd "C-:") "\C-e;")
 (define-key web-mode-map (kbd "C-:") "\C-e;")
@@ -629,7 +636,7 @@
 ;; Better move paragraph / mark paragraph
 ;; Convert default qwerty M-{ and M-} position on keyboard to azerty mapping
 (global-set-key (kbd "M-h") 'rs-mark-paragraph)
-(define-key js-mode-map (kbd "M-H") 'js2-mark-defun)
+;;(define-key js-mode-map (kbd "M-H") 'js2-mark-defun)
 (global-set-key (kbd "M-¨") 'lawlist-forward-paragraph)
 (global-set-key (kbd "M-*") 'lawlist-backward-paragraph)
 

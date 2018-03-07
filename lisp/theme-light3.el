@@ -47,8 +47,13 @@
 (setq show-paren-priority -50)
 (set-face-attribute 'fringe nil :background "#fafafa" :slant 'normal)
 (set-face-attribute 'window-divider nil :foreground "#fafafa")
+<<<<<<< HEAD
 (set-face-attribute 'window-divider-first-pixel nil :foreground "#fafafa")
 (set-face-attribute 'window-divider-last-pixel nil :foreground "#fafafa")
+=======
+(set-face-attribute 'window-divider-first-pixel nil :foreground "#fffefe")
+(set-face-attribute 'window-divider-last-pixel nil :foreground "#fff")
+>>>>>>> d8cbf8d9ea2cd5308f509eff7ab459caad7b8b15
 
 ;; (defun wlh/theme-linum-mode-hook ()
 ;;   (set-face-attribute 'linum nil :foreground "#4a4a4a" :background"#fafafa" :height 80))
