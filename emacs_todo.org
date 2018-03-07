@@ -250,3 +250,35 @@ C
 ** TODO Etor - Dashboard : La barre des boutons n'est pas centrée horizontalement, il faut tout centrer en absolut par rapport à la largeur de l'écran
    [2018-02-23 Fri]
    [[file:~/www/project/arsia/arsia_3.2.x_standard_editzone/dev/sygesp/module/production/editzone_v2/index.php::foreach($aoPage%20as%20$oPageTemp)]]
+** TODO M-n New frame : Faire en sorte qu'elle soit centrée en bas
+   [2018-02-13 Tue]
+** TODO Man -> auto focus windows
+   [2018-02-13 Tue]
+** TODO web-mode new-line ne fonctionne pas correctement
+   [2018-02-14 Wed]
+** TODO web-mode : TAB n'indente plus
+   [2018-02-15 Thu]
+   [[file:~/www/project/arsia/arsia_3.2.x_standard/dev/mediadata/full/module/media/iframe/media_edit_multiple/index.php::}]]
+** TODO web-mode Flycheck : Add javascript to check
+   [2018-02-16 Fri]
+   [[file:~/www/project/arsia/arsia_3.2.x_standard/dev/mediadata/full/module/media/iframe/media_edit_multiple/index.php::reader.fileId%20=%20file.lastModified%20+%20'_'%20+%20file%5D.name%20+%20'_'%20+%20file.size;]]
+** TODO js2-mode refresh font slow
+   [2018-02-20 Tue]
+   [[file:~/www/project/rb_siteweb/rb_siteweb_1.4/dev/js/script.test.js][file:~/www/project/rb_siteweb/rb_siteweb_1.4/dev/js/script.test.js]]
+** TODO web-mode > js script snippet without src attribute
+   [2018-02-27 Tue]
+   [[file:~/www/project/easy3p/easy3p_3.7/dev/module/html_template/resize.php::<script></script>]]
+** TODO Faire une mode mineur pour AG avec le fonctionnement suivant :
+   u -> up -> Relaunch command with cd
+   [2018-03-01 Thu]
+** TODO Highlight-selection mode is slow
+   [2018-03-01 Thu]
+   [[file:~/www/project/easy3p/easy3p_3.7/dev/module/flatplan/js/controller/preparation/FlatplanController.js::flatplan.oMainView.fireEvent('FlatplanController:productlistpageload:after',%20oJsonData);]]
+** TODO [#B] Texte mate mode sur la partie javascript n'est plus actic'
+   Voir pour utiliser le nouvueau package textmate
+   [2018-02-05 Mon]
+   [[file:~/www/project/arsia/arsia_3.2.x_standard_editzone/dev/sygesp/module/production/editzone_v2/js/app/zone.js::sHTML%20%2B%3D%20'%20<div%20class%3D"fill"%20style%3D"'%20%2B%20sFillStyle%20%2B%20'"%20></div>'%3B][file:~/www/project/arsia/arsia_3.2.x_standard_editzone/dev/sygesp/module/production/editzone_v2/js/app/zone.js::sHTML
+   += ' <div class="fill" style="' + sFillStyle + '" ></div>';]]
+** TODO M-ENTER and M-kp enter ---> Appliquer l'équivalent de M-j
+   [2018-03-07 Wed]
+   [[file:~/www/project/arsia/arsia_3.2.x_standard/dev/sygesp/include/lib/internal/editorweb/src/editor/action/Action.js::*%20@todo%20refactor%20:%20Ne%20pas%20stocker%20en%20interne%20this._oEditorInstance%20ni]]
