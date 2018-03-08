@@ -24,8 +24,8 @@
 ;; Change M-d M-a and M-d
 ;; (global-set-key (kbd "M-d") 'mc/mark-next-like-this-word) ; Was kill-word
 ;; (define-key paredit-mode-map (kbd "M-d") 'mc/mark-next-like-this-word) ; Was kill-word
-(global-set-key (kbd "M-a") 'mark-whole-buffer) ; Was backward-sentence
-(define-key php-mode-map (kbd "M-a") 'mark-whole-buffer)
+;; (global-set-key (kbd "M-a") 'mark-whole-buffer) ; Was backward-sentence
+;; (define-key php-mode-map (kbd "M-a") 'mark-whole-buffer)
 
 
 ;; --------------- ALT key binding
@@ -235,7 +235,8 @@
 (define-key php-mode-map [(control x) (control j)] 'dired-jump)
 (define-key web-mode-map [(control x) (control j)] 'dired-jump)
 (define-key dired-mode-map (kbd "C-x w") 'wdired-change-to-wdired-mode)
-(define-key dired-mode-map (kbd "C-i") 'dired-subtree-toggle)
+;; (define-key dired-mode-map (kbd "C-i") 'dired-subtree-toggle)
+(define-key dired-mode-map (kbd "i") 'dired-subtree-toggle)
 (define-key dired-mode-map (kbd "<tab>") 'dired-subtree-toggle)
 (define-key dired-mode-map (kbd "C-c C-p") 'dired-subtree-up)
 (define-key dired-mode-map (kbd "C-c C-n") 'dired-subtree-down)
@@ -480,7 +481,7 @@
 (global-set-key (kbd "C-x \\") 'align-regexp)
 
 ;; Browse the kill ring
-(global-set-key (kbd "C-x C-y") 'browse-kill-ring)
+;; (global-set-key (kbd "C-x C-y") 'browse-kill-ring)
 (global-set-key (kbd "C-M-y") 'helm-show-kill-ring)
 
 ;; Display and edit occurances of regexp in buffer
@@ -859,108 +860,8 @@
 (global-set-key (kbd "C-\"") 'bm-previous) ; C-3 on qwerty
 (global-set-key (kbd "C-3") 'bm-next) ; C-S-3 on qwerty
 
-
-
 (global-set-key (kbd "C-&") 'xah-toggle-letter-case) ; (C-1 on azerty keyboard)
 (global-set-key (kbd "C-!") 'string-inflection-all-cycle) ; (C-8 on azerty keyboard)
 
 
-;; Spacemac key bindings
-;; (spacemacs/set-leader-keys
-;;         ;; helm-ag marks
-;;         "s`"  'helm-ag-pop-stack
-;;         ;; opened buffers scope
-;;         "sb"  'spacemacs/helm-buffers-smart-do-search
-;;         "sB"  'spacemacs/helm-buffers-smart-do-search-region-or-symbol
-;;         "sab" 'helm-do-ag-buffers
-;;         "saB" 'spacemacs/helm-buffers-do-ag-region-or-symbol
-;;         "skb" 'spacemacs/helm-buffers-do-ack
-;;         "skB" 'spacemacs/helm-buffers-do-ack-region-or-symbol
-;;         "stb" 'spacemacs/helm-buffers-do-pt
-;;         "stB" 'spacemacs/helm-buffers-do-pt-region-or-symbol
-;;         ;; current file scope
-;;         "ss"  'spacemacs/helm-file-smart-do-search
-;;         "sS"  'spacemacs/helm-file-smart-do-search-region-or-symbol
-;;         "saa" 'helm-ag-this-file
-;;         "saA" 'spacemacs/helm-file-do-ag-region-or-symbol
-;;         ;; files scope
-;;         "sf"  'spacemacs/helm-files-smart-do-search
-;;         "sF"  'spacemacs/helm-files-smart-do-search-region-or-symbol
-;;         "saf" 'helm-do-ag
-;;         "saF" 'spacemacs/helm-files-do-ag-region-or-symbol
-;;         "skf" 'spacemacs/helm-files-do-ack
-;;         "skF" 'spacemacs/helm-files-do-ack-region-or-symbol
-;;         "stf" 'spacemacs/helm-files-do-pt
-;;         "stF" 'spacemacs/helm-files-do-pt-region-or-symbol
-;;         ;; current project scope
-;;         "/"   'spacemacs/helm-project-smart-do-search
-;;         "*"   'spacemacs/helm-project-smart-do-search-region-or-symbol
-;;         "sp"  'spacemacs/helm-project-smart-do-search
-;;         "sP"  'spacemacs/helm-project-smart-do-search-region-or-symbol
-;;         "sap" 'spacemacs/helm-project-do-ag
-;;         "saP" 'spacemacs/helm-project-do-ag-region-or-symbol
-;;         "skp" 'spacemacs/helm-project-do-ack
-;;         "skP" 'spacemacs/helm-project-do-ack-region-or-symbol
-;;         "stp" 'spacemacs/helm-project-do-pt
-;;         "stP" 'spacemacs/helm-project-do-pt-region-or-symbol)
-
-;; (spacemacs/set-leader-keys
-;;         "<f1>" 'helm-apropos
-;;         "a'"   'helm-available-repls
-;;         "bb"   'helm-mini
-;;         "Cl"   'helm-colors
-;;         "ff"   'spacemacs/helm-find-files
-;;         "fF"   'helm-find-files
-;;         "fL"   'helm-locate
-;;         "fr"   'helm-recentf
-;;         "hdd"  'helm-apropos
-;;         "hdF"  'spacemacs/helm-faces
-;;         "hi"   'helm-info-at-point
-;;         "hm"   'helm-man-woman
-;;         "iu"   'helm-ucs
-;;         "jI"   'helm-imenu-in-all-buffers
-;;         "rm"   'helm-all-mark-rings
-;;         "rl"   'helm-resume
-;;         "rr"   'helm-register
-;;         "rs"   'spacemacs/resume-last-search-buffer
-;;         "ry"   'helm-show-kill-ring
-;;         "sl"   'spacemacs/resume-last-search-buffer
-;;         "sj"   'spacemacs/helm-jump-in-buffer)
-
-;; (spacemacs/set-leader-keys
-;;         "sgb"  'spacemacs/helm-buffers-do-grep
-;;         "sgB"  'spacemacs/helm-buffers-do-grep-region-or-symbol
-;;         "sgf"  'spacemacs/helm-files-do-grep
-;;         "sgF"  'spacemacs/helm-files-do-grep-region-or-symbol
-;;         "sgg"  'spacemacs/helm-file-do-grep
-;;         "sgG"  'spacemacs/helm-file-do-grep-region-or-symbol)
-
-;; (spacemacs/set-leader-keys
-;;       "hM"    'helm-switch-major-mode
-;;       ;; "hm"    'helm-disable-minor-mode
-;;       "h C-m" 'helm-enable-minor-mode)
-
-;; (spacemacs/set-leader-keys
-;;             "pb"  'helm-projectile-switch-to-buffer
-;;             "pd"  'helm-projectile-find-dir
-;;             "pf"  'helm-projectile-find-file
-;;             "pF"  'helm-projectile-find-file-dwim
-;;             "ph"  'helm-projectile
-;;             "pp"  'helm-projectile-switch-project
-;;             "pr"  'helm-projectile-recentf
-;;             "sgp" 'helm-projectile-grep)
-
-;; (spacemacs/set-leader-keys
-;;         "h ."   'helm-spacemacs-help-dotspacemacs
-;;         "h SPC" 'helm-spacemacs-help
-;;         "h f"   'helm-spacemacs-help-faq
-;;         "h l"   'helm-spacemacs-help-layers
-;;         "h p"   'helm-spacemacs-help-packages
-;;         "h r"   'helm-spacemacs-help-docs
-;;         "h t"   'helm-spacemacs-help-toggles)
-
-;; (spacemacs/set-leader-keys
-;;         "ss"    'helm-swoop
-;;         "sS"    'spacemacs/helm-swoop-region-or-symbol
-;;         "s C-s" 'helm-multi-swoop-all)
 
