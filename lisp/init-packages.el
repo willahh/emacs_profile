@@ -21,6 +21,7 @@
                      pfuture
                      nlinum
                      ;;agressive-indent
+                     diffview
 
 
 
