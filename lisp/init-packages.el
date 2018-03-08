@@ -20,7 +20,7 @@
                      ht
                      pfuture
                      nlinum
-                     agressive-indent
+                     ;;agressive-indent
 
 
 
@@ -191,7 +191,6 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/font-lock-plus")
 (add-to-list 'load-path "~/.emacs.d/vendor/all-the-icons.el")
 (add-to-list 'load-path "~/.emacs.d/vendor/origami")
-;; (add-to-list 'load-path "~/.emacs.d/vendor/sidebar.el")
 (add-to-list 'load-path "~/.emacs.d/vendor/treemacs/src/elisp")
 
 ;; activate all the packages
@@ -214,5 +213,3 @@
 (load-file "~/.emacs.d/vendor/visible-bookmarks/bm.el")
 (load-file "~/.emacs.d/vendor/ibuffer-projectile.el")
 (load-file "~/.emacs.d/vendor/highlight-selection/highlight-selection.el")
-
-
