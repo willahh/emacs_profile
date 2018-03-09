@@ -22,6 +22,7 @@
                      nlinum
                      ;;agressive-indent
                      diffview
+                     ac-slime
 
 
 
