@@ -235,7 +235,7 @@
 (define-key php-mode-map [(control x) (control j)] 'dired-jump)
 (define-key web-mode-map [(control x) (control j)] 'dired-jump)
 (define-key dired-mode-map (kbd "C-x w") 'wdired-change-to-wdired-mode)
-;; (define-key dired-mode-map (kbd "C-i") 'dired-subtree-toggle)
+(define-key dired-mode-map (kbd "C-i") 'dired-subtree-toggle)
 (define-key dired-mode-map (kbd "i") 'dired-subtree-toggle)
 (define-key dired-mode-map (kbd "<tab>") 'dired-subtree-toggle)
 (define-key dired-mode-map (kbd "C-c C-p") 'dired-subtree-up)
