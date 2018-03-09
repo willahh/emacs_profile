@@ -1,13 +1,15 @@
 (require 'slime)
 (require 'slime-autoloads)
+(require 'ac-slime)
 
 ;; From https://common-lisp.net/project/slime/doc/slime.pdf
 (add-to-list 'slime-contribs 'slime-fancy)
 
 (defun wlh/slime-mode-hook ()
   (company-mode nil)
-  (auto-complete-mode t)
-  (define-key slime-prefix-map (kbd "M-h") 'slime-documentation-lookup))
+  (auto-complete-mode)
+  (define-key slime-prefix-map (kbd "M-h") 'slime-documentation-lookup)
+  (set-up-slime-ac))
 
 (add-hook 'slime-load-hook 'wlh/slime-mode-hook)
 (add-hook 'slime-repl-mode-hook (lambda ()
@@ -24,4 +26,9 @@
                                   (aggressive-indent-mode)))
 
 (add-hook 'clojure-mode-hook (lambda ()
-                                  (aggressive-indent-mode)))
+                               (aggressive-indent-mode)))
+
+
+(eval-after-load "auto-complete"
+  '(add-to-list 'ac-modes 'slime-repl-mode))
+
