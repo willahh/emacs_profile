@@ -43,7 +43,8 @@
  '(rainbow-delimiters-depth-8-face ((t (:foreground "#55bdf0" :weight bold)))))
 
 (set-face-attribute 'scroll-bar nil :background "#fff")
-(set-face-attribute 'show-paren-match-face nil :foreground "#000000" :weight 'ultra-bold)
+;; (set-face-attribute 'show-paren-match-face nil :foreground "#000000" :weight 'ultra-bold)
+(set-face-attribute 'show-paren-match-face nil :background "#a5e8fe" :foreground "#000000" :weight 'ultra-bold)
 (setq show-paren-priority -50)
 (set-face-attribute 'fringe nil :background "#fafafa" :slant 'normal)
 (set-face-attribute 'window-divider nil :foreground "#fafafa")
