@@ -352,18 +352,18 @@
 
 ;; Kill line or region
 (global-set-key (kbd "C-z") 'whole-line-or-region-kill-region)
-(define-key company-active-map (kbd "C-z") 'whole-line-or-region-kill-region)
 (define-key org-mode-map (kbd "C-z") 'whole-line-or-region-kill-region)
 
 
-;; ---------------- Company map
-(define-key company-active-map (kbd "C-h") 'backward-delete-char)
-(define-key company-active-map (kbd "<tab>") 'company-complete-selection)
-(define-key company-active-map (kbd "C-m") 'new-line-dwim)
-(define-key company-active-map (kbd "C-j") 'company-complete)
-(define-key company-active-map (kbd "C-i") 'company-complete-selection)
-(define-key company-active-map (kbd "C-j") 'emmet-expand-line)
-(define-key company-active-map (kbd "C-w") 'backward-kill-word)
+;; ;; ---------------- Company map
+;; (define-key company-active-map (kbd "C-z") 'whole-line-or-region-kill-region)
+;; (define-key company-active-map (kbd "C-h") 'backward-delete-char)
+;; (define-key company-active-map (kbd "<tab>") 'company-complete-selection)
+;; (define-key company-active-map (kbd "C-m") 'new-line-dwim)
+;; (define-key company-active-map (kbd "C-j") 'company-complete)
+;; (define-key company-active-map (kbd "C-i") 'company-complete-selection)
+;; (define-key company-active-map (kbd "C-j") 'emmet-expand-line)
+;; (define-key company-active-map (kbd "C-w") 'backward-kill-word)
 
 ;; counsel-find-file
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)

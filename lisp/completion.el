@@ -15,7 +15,8 @@
 (setq company-require-match nil)
 
 (setq company-quickhelp-mode 1)
-(setq company-quickhelp-delay 0)
+;; (setq company-quickhelp-delay 0)
+(setq company-quickhelp-delay 1)
 (setq company-quickhelp-max-lines nil)
 
 (add-hook 'after-init-hook 'global-company-mode)
