@@ -244,6 +244,21 @@
 (define-key dired-mode-map (kbd "b") 'crux-open-with)
 
 
+;; (defun wlh/dired-mouse-right-click (event)
+;;   "Mouse right click on dired to open on other window"
+;;   (interactive "e")
+;;   (posn-set-point (event-end event))
+;;   (dired-display-file))
+
+;; (defun wlh/dired-mouse-click-open-file-or-toggle-folder (event)
+;;   "Mouse left (<mouse-2> for mouse left up event) click on dired to open the file or toggle dir"
+;;   (interactive "e")
+;;   (posn-set-point (event-end event)))
+
+;; (define-key dired-mode-map (kbd "<mouse-2>") 'wlh/dired-mouse-click-open-file-or-toggle-folder)
+;; (define-key dired-mode-map (kbd "<mouse-3>") 'wlh/dired-mouse-right-click)
+
+
 
 
 ;; (define-key dired-mode-map (kbd "<C-mouse-1>") 'dired-subtree-toggle)

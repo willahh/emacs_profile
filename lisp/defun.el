@@ -469,8 +469,8 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   (call-interactively 'pop-global-mark)
   (setq global-mark-ring (nreverse global-mark-ring)))
 
-(global-set-key [M-left] (quote backward-global-mark))
-(global-set-key [M-right] (quote forward-global-mark))
+;; (global-set-key [M-left] (quote backward-global-mark))
+;; (global-set-key [M-right] (quote forward-global-mark))
 
 ;; http://endlessparentheses.com/emacs-narrow-or-widen-dwim.html
 (define-prefix-command 'endless/toggle-map)
@@ -1024,6 +1024,17 @@ Version 2016-12-27"
   (mydired-sort))
 
 ;; http://stackoverflow.com/a/3399064/8000017
+;; http://stackoverflow.com/a/14539202
+(defun unpop-to-mark-command ()
+  "Unpop off mark ring. Does nothing if mark ring is empty."
+  (interactive)
+  (when mark-ring
+    (setq mark-ring (cons (copy-marker (mark-marker)) mark-ring))
+    (set-marker (mark-marker) (car (last mark-ring)) (current-buffer))
+    (when (null (mark t)) (ding))
+    (setq mark-ring (nbutlast mark-ring))
+    (goto-char (marker-position (car (last mark-ring))))))
+
 (defmacro my-unpop-to-mark-advice ()
   "Enable reversing direction with un/pop-to-mark."
   `(defadvice ,(key-binding (kbd "C-SPC")) (around my-unpop-to-mark activate)
