@@ -30,7 +30,8 @@
                              (set-face-attribute 'dired-subtree-depth-3-face nil :background nil)
                              (set-face-attribute 'dired-subtree-depth-4-face nil :background nil)
                              (set-face-attribute 'dired-subtree-depth-5-face nil :background nil)
-                             (set-face-attribute 'dired-subtree-depth-6-face nil :background nil)))
+                             (set-face-attribute 'dired-subtree-depth-6-face nil :background nil)
+                             (set-face-attribute 'dired-directory nil :foreground "#0000ff" :background nil)))
 
 (custom-set-faces
  '(rainbow-delimiters-depth-1-face ((t (:foreground "#5abeee" :weight bold))))
@@ -43,7 +44,8 @@
  '(rainbow-delimiters-depth-8-face ((t (:foreground "#55bdf0" :weight bold)))))
 
 (set-face-attribute 'scroll-bar nil :background "#fff")
-(set-face-attribute 'show-paren-match-face nil :foreground "#000000" :weight 'ultra-bold)
+;; (set-face-attribute 'show-paren-match-face nil :foreground "#000000" :weight 'ultra-bold)
+(set-face-attribute 'show-paren-match-face nil :background "#a5e8fe" :foreground "#000000" :weight 'ultra-bold)
 (setq show-paren-priority -50)
 (set-face-attribute 'fringe nil :background "#fafafa" :slant 'normal)
 (set-face-attribute 'window-divider nil :foreground "#fafafa")

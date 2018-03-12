@@ -248,12 +248,10 @@
 (setq help-window-select t)
 
 ;; Don't replace line ending (Windows, Unix, Windows+Unix)
-;; Just keep diverses line ending... it is not a real problem
-;; Problem is when all line endings are changed automatically (default behaviour)
-;; then the diff when commit is on ALL lines... this IS bad.
 ;; https://stackoverflow.com/a/10845302
 (setq inhibit-eol-conversion t)
 
+;; Scroll
 (setq-default horizontal-scroll-bar-mode nil)
 (setq horizontal-scroll-bar-mode nil)
 (setq-default horizontal-scroll-bar nil)
@@ -368,7 +366,6 @@
       savehist-autosave-interval 60
       savehist-file "~/.emacs.d/tmp/savehist")
 (savehist-mode +1)
-
 
 ;; Fix snapy frame resize -> Nice nice ...
 ;; https://emacs.stackexchange.com/a/30444
