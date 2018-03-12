@@ -192,6 +192,7 @@
         iedit-mode
         ivy-switch-buffer
         keyboard-quit
+        mac-mouse-buffer-menu
         mac-mwheel-scroll
         mark-whole-buffer
         mc/mark-next-lines
