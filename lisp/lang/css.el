@@ -1,6 +1,7 @@
 (require 'css-mode)
 (defun wlh/css-mode-hook ()
-  (company-css))
+  (company-css)
+  (smartparens-mode))
 (add-hook 'css-mode-hook 'wlh/css-mode-hook)
 
 (defun wlh/css-open-declaration ()

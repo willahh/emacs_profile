@@ -225,6 +225,8 @@
 (define-key ibuffer-mode-map (kbd "M-n") 'wlh/create-new-centered-frame)
 (define-key compilation-mode-map (kbd "M-n") 'wlh/create-new-centered-frame)
 (define-key magit-mode-map (kbd "M-n") 'wlh/create-new-centered-frame)
+(define-key slime-mode-map (kbd "M-n") 'wlh/create-new-centered-frame)
+;; (define-key slime-repl-mode-map (kbd "M-n") 'wlh/create-new-centered-frame)
 ;; (define-key eshell-mode-map (kbd "M-n") 'wlh/create-new-centered-frame)
 
 ;; Revert buffer
@@ -535,7 +537,8 @@
 ;; Magit
 ;; (global-set-key (kbd "C-x g") 'magit-status)
 ;; (global-set-key (kbd "s-g") 'wlh/vc-status)
-(global-set-key (kbd "C-x g") 'wlh/vc-status)
+;; (global-set-key (kbd "C-x g") 'wlh/vc-status)
+(global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
 
 ;; (define-key magit-status-mode-map (kbd "M-w") 'kill-ring-save)
@@ -724,6 +727,7 @@
 (define-key highlight-symbol-nav-mode-map (kbd "M-N") 'highlight-symbol-next)
 (define-key ggtags-navigation-map (kbd "M-N") 'highlight-symbol-next)
 (define-key magit-mode-map (kbd "M-N") 'highlight-symbol-next)
+(define-key slime-mode-map (kbd "M-N") 'highlight-symbol-next)
 
 (global-set-key (kbd "M-P") 'highlight-symbol-prev)
 (define-key slime-mode-map (kbd "M-P") 'highlight-symbol-prev)

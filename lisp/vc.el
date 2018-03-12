@@ -10,10 +10,10 @@
 
 ;; full screen magit-status
 ;; http://whattheemacsd.com/
-(defadvice magit-status (around magit-fullscreen activate)
-  (window-configuration-to-register :magit-fullscreen)
-  ad-do-it
-  (delete-other-windows))
+;; (defadvice magit-status (around magit-fullscreen activate)
+;;   (window-configuration-to-register :magit-fullscreen)
+;;   ad-do-it
+;;   (delete-other-windows))
 
 ;; Show character-level diff
 ;; http://emacs.stackexchange.com/q/7362

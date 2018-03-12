@@ -23,10 +23,6 @@
                      ;;agressive-indent
                      diffview
                      ac-slime
-
-
-
-
                      
                      
                      auto-complete
