@@ -251,6 +251,11 @@
 ;; https://stackoverflow.com/a/10845302
 (setq inhibit-eol-conversion t)
 
+;; Remove ^R 
+(add-hook 'prog-mode-hook 'remove-dos-eol)
+(add-hook 'text-mode-hook 'remove-dos-eol)
+(add-hook 'web-mode-hook 'remove-dos-eol)
+
 ;; Scroll
 (setq-default horizontal-scroll-bar-mode nil)
 (setq horizontal-scroll-bar-mode nil)

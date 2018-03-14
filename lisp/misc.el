@@ -446,8 +446,6 @@ Version 2016-10-24"
 
 ;;   (diminish 'beacon-mode))
 
-(require 'popwin)
-(popwin-mode 1)
 
 ;; From
 ;; https://github.com/cichli/dotfiles/blob/master/.emacs.d/init.el#L172
@@ -693,12 +691,12 @@ abort completely with `C-g'."
 ;; origami
 (require 'origami)
 
-;; Pop-win
-(require 'popwin)
-(popwin-mode 1)
+;; ;; Pop-win
+;; (require 'popwin)
+;; (popwin-mode 1)
+;; (push "*vc-diff*" popwin:special-display-config)
 
 
-(push "*vc-diff*" popwin:special-display-config)
 
 ;; Highlight selection custom from vendor/highlight-selection
 (highlight-selection-mode)

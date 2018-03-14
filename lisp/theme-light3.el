@@ -58,7 +58,7 @@
 
 ;; nliunm
 (defun wlh/theme-nlinum-mode-hook ()
-  (set-face-attribute 'linum nil :foreground "#4a4a4a" :background"#fafafa" :height 80))
+  (set-face-attribute 'linum nil :foreground "#b5b5b5" :background"#fafafa" :height 100))
 
 (add-hook 'nlinum-mode-hook 'wlh/theme-nlinum-mode-hook)
 

@@ -24,8 +24,8 @@
 ;; Change M-d M-a and M-d
 ;; (global-set-key (kbd "M-d") 'mc/mark-next-like-this-word) ; Was kill-word
 ;; (define-key paredit-mode-map (kbd "M-d") 'mc/mark-next-like-this-word) ; Was kill-word
-;; (global-set-key (kbd "M-a") 'mark-whole-buffer) ; Was backward-sentence
-;; (define-key php-mode-map (kbd "M-a") 'mark-whole-buffer)
+(global-set-key (kbd "M-a") 'mark-whole-buffer) ; Was backward-sentence
+(define-key php-mode-map (kbd "M-a") 'mark-whole-buffer)
 
 
 ;; --------------- ALT key binding
@@ -38,6 +38,7 @@
 (global-set-key (kbd "∫") 'projectile-switch-to-buffer) ; Alt + B
 (global-set-key (kbd "È") 'fixup-whitespace) ; Alt + k
 (global-set-key (kbd "Ì") 'help) ; Alt + h
+(global-set-key (kbd "æ") 'backward-sentence) ; Alt + a
 
 ;; (global-set-key (kbd "Ò") 'swiper) ; Alt + s
 (global-set-key (kbd "Ò") 'helm-swoop) ; Alt + s
