@@ -640,7 +640,7 @@ the visible part of the current buffer following point. "
    (concat dired-listing-switches
            (match-string 1 criteria))))
 
-(define-key dired-mode-map (kbd "s") 'dired-sort-criteria)
+
 
 (defun xah-toggle-letter-case ()
   "Toggle the letter case of current word or text selection.

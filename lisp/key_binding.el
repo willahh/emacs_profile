@@ -876,9 +876,9 @@
 
 
 ;; Bm
-(global-set-key (kbd "C-é") 'bm-toggle) ; C-2 on qwerty
-(global-set-key (kbd "C-\"") 'bm-previous) ; C-3 on qwerty
-(global-set-key (kbd "C-3") 'bm-next) ; C-S-3 on qwerty
+(global-set-key (kbd "C-é") 'point-to-register) ; C-2 on qwerty
+(global-set-key (kbd "C-\"") 'jump-to-register) ; C-3 on qwerty
+;; (global-set-key (kbd "C-3") 'bm-next) ; C-S-3 on qwerty
 
 (global-set-key (kbd "C-&") 'xah-toggle-letter-case) ; (C-1 on azerty keyboard)
 (global-set-key (kbd "C-!") 'string-inflection-all-cycle) ; (C-8 on azerty keyboard)
