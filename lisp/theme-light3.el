@@ -191,3 +191,14 @@
 (setq evil-insert-state-cursor '("red" bar))
 (setq evil-replace-state-cursor '("red" bar))
 (setq evil-operator-state-cursor '("red" hollow))
+
+
+;; ------- company
+(set-face-attribute 'company-tooltip nil :background "#fffff" :foreground "#000000" :weight 'normal)
+(set-face-attribute 'company-scrollbar-bg nil :background "#e9e9e9")
+(set-face-attribute 'company-scrollbar-fg nil :background "#ccc")
+(set-face-attribute 'company-preview-common nil :foreground "#ccc" :background nil)
+(set-face-attribute 'company-preview-search nil :foreground "#ccc" :background nil)
+(set-face-attribute 'company-tooltip-annotation nil :foreground "#62c0ea" :background nil)
+(set-face-attribute 'company-tooltip-common nil :foreground "#62c0ea" :background nil)
+(set-face-attribute 'company-tooltip-selection nil :foreground "#62c0ea" :background "#e9e9e9")
