@@ -457,7 +457,9 @@
                                         ; pour avoir une ouverture de balise
                                         ; plus precise
 
-(define-key web-mode-map (kbd "C-m") 'wlh/web-mode-new-line)
+(define-key web-mode-map (kbd "C-m") 'indent)
+(define-key web-mode-map (kbd "TAB") 'wlh/web-mode-tab)
+;; (define-key web-mode-map (kbd "TAB") 'indent-for-tab-command)
 (define-key web-mode-map (kbd "TAB") 'wlh/web-mode-tab)
 (define-key web-mode-map (kbd "C-o") 'crux-smart-open-line-above)
 

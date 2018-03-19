@@ -190,6 +190,7 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/all-the-icons.el")
 (add-to-list 'load-path "~/.emacs.d/vendor/origami")
 (add-to-list 'load-path "~/.emacs.d/vendor/treemacs/src/elisp")
+(add-to-list 'load-path "~/.emacs.d/vendor/syslog-mode-2.2")
 
 ;; activate all the packages
 (package-initialize)
