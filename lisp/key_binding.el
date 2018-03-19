@@ -32,13 +32,14 @@
 ;; Azerty keyboard
 ;; (global-set-key (kbd "≈") 'counsel-M-x) ; Alt + x
 (global-set-key (kbd "≈") 'helm-M-x) ; Alt + x
-(global-set-key (kbd "Â") 'toggle-php-flavor-mode) ; Alt + z
+;; (global-set-key (kbd "Â") 'toggle-php-flavor-mode) ; Alt + z
 (global-set-key (kbd "Å") 'zap-to-char) ; Alt + Z
 (global-set-key (kbd "ß") 'ivy-switch-buffer) ; Alt + b
 (global-set-key (kbd "∫") 'projectile-switch-to-buffer) ; Alt + B
 (global-set-key (kbd "È") 'fixup-whitespace) ; Alt + k
 (global-set-key (kbd "Ì") 'help) ; Alt + h
 (global-set-key (kbd "æ") 'backward-sentence) ; Alt + a
+;; (global-set-key (kbd "æ") 'backward-sentence) ; Alt + a
 
 ;; (global-set-key (kbd "Ò") 'swiper) ; Alt + s
 (global-set-key (kbd "Ò") 'helm-swoop) ; Alt + s
@@ -129,6 +130,7 @@
 
 ;; ---------------- 
 (global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
+(global-set-key (kbd "C-j") 'new-line-dwim)
 (global-set-key (kbd "M-X") 'other-frame) ; Same keybinding from osx switch window habits
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
 (global-set-key (kbd "M-g") 'goto-line) ; https://github.com/skeeto/.emacs.d/blob/master/init.el
@@ -168,8 +170,7 @@
 ;; (global-set-key (kbd "M-W") 'delete-frame)
 
 ;; shell-pop
-(global-set-key (kbd "C-c C-t") 'shell-pop)
-(define-key dired-mode-map (kbd "C-t") 'shell-pop)
+(global-set-key (kbd "C-!") 'shell-pop)
 
 ;; ---
 (define-key ivy-minibuffer-map (kbd "<escape>") 'minibuffer-keyboard-quit)
@@ -377,7 +378,8 @@
 ;; (define-key company-active-map (kbd "C-z") 'whole-line-or-region-kill-region)
 (define-key company-active-map (kbd "C-h") 'backward-delete-char)
 (define-key company-active-map (kbd "<tab>") 'company-complete-selection)
-(define-key company-active-map (kbd "C-m") 'new-line-dwim)
+;; (define-key company-active-map (kbd "C-m") 'new-line-dwim)
+(define-key company-active-map (kbd "C-m") 'company-complete-selection)
 ;; (define-key company-active-map (kbd "C-j") 'company-complete)
 (define-key company-active-map (kbd "C-i") 'company-complete-selection)
 ;; (define-key company-active-map (kbd "C-j") 'emmet-expand-line)
@@ -861,7 +863,7 @@
 (global-set-key (kbd "C-x l") 'counsel-locate)
 (global-set-key (kbd "C-c C-r") 'ivy-resume)
 
-         
+
 ;; org (from prelude)
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
@@ -878,12 +880,12 @@
 
 
 ;; Bm
-(global-set-key (kbd "C-é") 'bm-toggle) ; C-2 on qwerty
-(global-set-key (kbd "C-\"") 'bm-previous) ; C-3 on qwerty
-(global-set-key (kbd "C-3") 'bm-next) ; C-S-3 on qwerty
+(global-set-key (kbd "C-é") 'point-to-register) ; C-2 on qwerty
+(global-set-key (kbd "C-\"") 'jump-to-register) ; C-3 on qwerty
+;; (global-set-key (kbd "C-3") 'bm-next) ; C-S-3 on qwerty
 
 (global-set-key (kbd "C-&") 'xah-toggle-letter-case) ; (C-1 on azerty keyboard)
-(global-set-key (kbd "C-!") 'string-inflection-all-cycle) ; (C-8 on azerty keyboard)
+;; (global-set-key (kbd "C-!") 'string-inflection-all-cycle) ; (C-8 on azerty keyboard)
 
 
 

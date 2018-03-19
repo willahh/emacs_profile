@@ -276,6 +276,8 @@
 (add-hook 'org-mode 'textmate-mode)
 (add-hook 'org-mode #'smartparens-mode)
 
+(add-hook 'text-mode (lambda () (textmate-mode nil)))
+
 (define-key prog-mode-map (kbd "C-M-f") 'sp-forward-sexp)
 (define-key php-mode-map (kbd "C-M-f") 'sp-forward-sexp)
 (define-key nxml-mode-map (kbd "C-M-f") 'sp-forward-sexp)

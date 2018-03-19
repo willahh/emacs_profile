@@ -194,7 +194,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
  ;; If there is more than one, they won't work right.
  '(shell-pop-shell-type (quote ("eshell" "*eshell*" (lambda nil (eshell)))))
  '(shell-pop-term-shell "/bin/bash")
- '(shell-pop-universal-key "C-t")
+ ;; '(shell-pop-universal-key "C-t")
  '(shell-pop-window-size 30)
  '(shell-pop-full-span t)
  '(shell-pop-window-position "bottom"))
@@ -640,7 +640,7 @@ the visible part of the current buffer following point. "
    (concat dired-listing-switches
            (match-string 1 criteria))))
 
-(define-key dired-mode-map (kbd "s") 'dired-sort-criteria)
+
 
 (defun xah-toggle-letter-case ()
   "Toggle the letter case of current word or text selection.
