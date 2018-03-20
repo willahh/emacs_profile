@@ -33,6 +33,7 @@
 ;; (global-set-key (kbd "≈") 'counsel-M-x) ; Alt + x
 (global-set-key (kbd "≈") 'helm-M-x) ; Alt + x
 ;; (global-set-key (kbd "Â") 'toggle-php-flavor-mode) ; Alt + z
+(global-set-key (kbd "") 'toggle-php-flavor-mode) ; Alt + 1
 (global-set-key (kbd "Å") 'zap-to-char) ; Alt + Z
 (global-set-key (kbd "ß") 'ivy-switch-buffer) ; Alt + b
 (global-set-key (kbd "∫") 'projectile-switch-to-buffer) ; Alt + B
@@ -131,6 +132,7 @@
 ;; ---------------- 
 (global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
 (global-set-key (kbd "C-j") 'new-line-dwim)
+(define-key emmet-mode-keymap (kbd "C-j") 'new-line-dwim)
 (global-set-key (kbd "M-X") 'other-frame) ; Same keybinding from osx switch window habits
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
 (global-set-key (kbd "M-g") 'goto-line) ; https://github.com/skeeto/.emacs.d/blob/master/init.el
@@ -246,6 +248,7 @@
 (define-key dired-mode-map (kbd "C-c C-n") 'dired-subtree-down)
 (define-key dired-mode-map (kbd "C-x n") 'dired-narrow)
 (define-key dired-mode-map (kbd "b") 'crux-open-with)
+(define-key dired-mode-map (kbd "C-j") 'dired-find-file)
 
 
 ;; (defun wlh/dired-mouse-right-click (event)
