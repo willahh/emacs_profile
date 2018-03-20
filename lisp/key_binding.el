@@ -173,6 +173,7 @@
 
 ;; shell-pop
 (global-set-key (kbd "C-!") 'shell-pop)
+(global-set-key (kbd "C-t") 'transpose-chars)
 
 ;; ---
 (define-key ivy-minibuffer-map (kbd "<escape>") 'minibuffer-keyboard-quit)
@@ -383,7 +384,7 @@
 (define-key company-active-map (kbd "<tab>") 'company-complete-selection)
 ;; (define-key company-active-map (kbd "C-m") 'new-line-dwim)
 (define-key company-active-map (kbd "C-m") 'company-complete-selection)
-;; (define-key company-active-map (kbd "C-j") 'company-complete)
+(define-key company-active-map (kbd "C-j") 'company-complete)
 (define-key company-active-map (kbd "C-i") 'company-complete-selection)
 ;; (define-key company-active-map (kbd "C-j") 'emmet-expand-line)
 ;; (define-key company-active-map (kbd "C-w") 'backward-kill-word)
