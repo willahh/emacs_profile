@@ -14,7 +14,7 @@
   ;;              ;; 'company-ac-php-backend
   ;;              )
 
-  (nlinum-mode t)
+  ;; (nlinum-mode t)
   (ggtags-mode 1) ; ggtags-mode
   (textmate-mode)
   ;; (flycheck-mode) ; flycheck-mode, deja active de maniere global

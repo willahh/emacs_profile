@@ -132,7 +132,7 @@
 ;; ---------------- 
 (global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
 (global-set-key (kbd "C-j") 'new-line-dwim)
-(define-key emmet-mode-keymap (kbd "C-j") 'new-line-dwim)
+;; (define-key emmet-mode-keymap (kbd "C-j") 'new-line-dwim)
 (global-set-key (kbd "M-X") 'other-frame) ; Same keybinding from osx switch window habits
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
 (global-set-key (kbd "M-g") 'goto-line) ; https://github.com/skeeto/.emacs.d/blob/master/init.el
@@ -463,10 +463,11 @@
                                         ; pour avoir une ouverture de balise
                                         ; plus precise
 
-(define-key web-mode-map (kbd "C-m") 'indent)
-(define-key web-mode-map (kbd "TAB") 'wlh/web-mode-tab)
+;; (define-key web-mode-map (kbd "C-m") 'newline-and-indent)
+;; (define-key web-mode-map (kbd "TAB") 'wlh/web-mode-tab)
 ;; (define-key web-mode-map (kbd "TAB") 'indent-for-tab-command)
-(define-key web-mode-map (kbd "TAB") 'wlh/web-mode-tab)
+;; (define-key web-mode-map (kbd "TAB") 'wlh/web-mode-tab)
+(define-key web-mode-map (kbd "TAB") 'indent-for-tab-command)
 (define-key web-mode-map (kbd "C-o") 'crux-smart-open-line-above)
 
 ;; (define-key prog-mode-map "<return>" 'new-line-dwim)

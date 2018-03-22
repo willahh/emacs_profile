@@ -25,16 +25,6 @@
 (prefer-coding-system 'utf-8)
 (setq-default buffer-file-coding-system 'utf-8-auto-unix)
 
-;; Syntax entry for web mode doesnt work actualy
-;; https://github.com/fxbois/web-mode/issues/149
-;; Select whole word when separated with _
-(defun update-syntax-entry ()
-  (modify-syntax-entry ?_ "w")
-  (modify-syntax-entry ?\$ "w"))
-
-(update-syntax-entry)
-(add-hook 'prog-mode-hook (lambda () (update-syntax-entry)))
-
 ;; Confirm-Nonexistent-File-Or-Buffer
 (setq confirm-nonexistent-file-or-buffer nil)
 
@@ -375,3 +365,33 @@
 ;; Fix snapy frame resize -> Nice nice ...
 ;; https://emacs.stackexchange.com/a/30444
 (setq frame-resize-pixelwise t)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;; Syntax entry for web mode doesnt work actualy
+;; https://github.com/fxbois/web-mode/issues/149
+;; Select whole word when separated with _
+(defun update-syntax-entry ()
+  (modify-syntax-entry ?_ "w")
+  (modify-syntax-entry ?\$ "w"))
+
+(update-syntax-entry)
+(add-hook 'prog-mode-hook (lambda () (update-syntax-entry)))

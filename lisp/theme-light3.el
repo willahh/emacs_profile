@@ -45,7 +45,9 @@
 
 (set-face-attribute 'scroll-bar nil :background "#fff")
 ;; (set-face-attribute 'show-paren-match-face nil :foreground "#000000" :weight 'ultra-bold)
-(set-face-attribute 'show-paren-match-face nil :background "#a5e8fe" :foreground "#000000" :weight 'ultra-bold)
+;; (set-face-attribute 'show-paren-match-face nil :background "#a5e8fe" :foreground "#000000" :weight 'ultra-bold)
+;; (set-face-attribute 'show-paren-match-face nil :background "#d4d4d4" :foreground "#085269" :weight 'ultra-bold)
+(set-face-attribute 'show-paren-match-face nil :background nil :foreground "#ff00a0" :weight 'ultra-bold)
 (setq show-paren-priority -50)
 (set-face-attribute 'fringe nil :background "#fafafa" :slant 'normal)
 (set-face-attribute 'window-divider nil :foreground "#fafafa")
