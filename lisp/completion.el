@@ -8,33 +8,19 @@
 (setq company-dabbrev-downcase nil)
 (setq company-dabbrev-downcase 0) 
 (setq company-dabbrev-downcase nil)
-
 (setq company-idle-delay 0.2)
 (setq company-tooltip-align-annotations t)
 (setq company-tooltip-limit 16)
 (setq company-require-match nil)
-
 (setq company-quickhelp-mode 1)
-;; (setq company-quickhelp-delay 0)
 (setq company-quickhelp-delay 1)
 (setq company-quickhelp-max-lines nil)
+(setq yas-indent-line 'auto)
 
 (add-hook 'after-init-hook 'global-company-mode)
 
-(setq yas-indent-line 'auto)
-
-;; Don't enable company-quickhelp ... it's too slow
-;; Update : Re-enable it for lisp like languages is quite good
-;; (company-quickhelp-mode 0)
 (company-quickhelp-mode 1)
 
 ;; Remove some words completion
 (delete 'company-dabbrev company-backends)
 (delete '(company-dabbrev-code company-gtags company-etags company-keywords) company-backends)
-
-
-
-
-
-
-

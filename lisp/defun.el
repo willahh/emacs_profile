@@ -1005,18 +1005,6 @@ Version 2016-12-27"
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 ;; ---------- defadvice
 (defadvice dired-readin
     (after dired-after-updating-hook first () activate)
@@ -1319,11 +1307,6 @@ Version 2016-12-27"
 ;; (global-set-key [mouse-1] 'wlh/dbleclick-mouse1)
 ;; (global-set-key [double-mouse-1] 'wlh/dbleclick-select-word)
 
-
-
-
-
-
 (defun wlh/frame-position-1 (frame)
   "Most used frame configuration (x, y, width, height). Depends
 on the screen values."
@@ -1334,18 +1317,6 @@ on the screen values."
          (frame-y (- frame-height 100)))
     (set-frame-size frame frame-width frame-height t)
     (set-frame-position frame frame-x frame-y)))
-
-
-
-
-
-
-
-
-
-
-
-
 
 ;; ffap advice
 ;; Check ffap string for line-number and goto it (using advice)

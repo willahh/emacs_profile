@@ -1,3 +1,5 @@
+(require 'projectile)
+
 ;; Automatically save and restore sessions
 ;; https://stackoverflow.com/a/4485083
 (desktop-save-mode 1)
@@ -10,20 +12,9 @@
       desktop-load-locked-desktop nil
       desktop-auto-save-timeout   10)
 
-;; ---- Projectile
-(require 'projectile)
+;; Projectile
 (projectile-global-mode)
-
 (setq projectile-mode-line nil)
 (setq projectile-enable-caching t)
 (setq projectile-require-project-root nil); Using Projectile everywhere
 (add-to-list 'projectile-globally-ignored-directories "node_modules") ; Some ignore rules
-
-
-;; Projectile ibuffer group
-;; Update too slow
-;; (add-hook 'ibuffer-hook
-;;     (lambda ()
-;;       (ibuffer-projectile-set-filter-groups)
-;;       (unless (eq ibuffer-sorting-mode 'alphabetic)
-;;         (ibuffer-do-sort-by-alphabetic))))

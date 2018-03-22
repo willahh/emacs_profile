@@ -3,7 +3,6 @@
 (require 'ag)
 (require 'find-file-in-project)
 
-;; (setq search-whitespace-regexp ".*?")
 (setq ag-highlight-search t)
 (setq ag-reuse-buffers nil)
 

@@ -8,6 +8,7 @@
   (diff-hl-dired-mode))
 
 (add-hook 'dired-mode-hook 'wlh/dired-hook)
+
 ;; Mouse click to open in current window
 (define-key dired-mode-map [mouse-2] 'dired-find-file)
 
