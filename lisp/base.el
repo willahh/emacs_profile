@@ -4,10 +4,7 @@
       mac-command-modifier 'meta
       mac-option-modifier 'none
       mac-control-modifier 'control
-      ns-function-modifier 'control
-      ;; mac-right-command-modifier 'super
-      
-      )
+      ns-function-modifier 'control)
 
 ;; Turn truncate lines off by default (like in many modern tools)
 (set-default 'truncate-lines t)
@@ -28,12 +25,6 @@
 ;; Confirm-Nonexistent-File-Or-Buffer
 (setq confirm-nonexistent-file-or-buffer nil)
 
-;; Prevent display multiples windows on large screen
-;; https://stackoverflow.com/a/1382869
-;; Update : Disable
-;; (setq split-width-threshold 999)
-;; (setq split-height-threshold 999)
-
 ;; Disable auto underlining links
 (setq goto-address-mode nil)
 
@@ -50,7 +41,8 @@
 (setq inhibit-startup-screen t)
 (setq initial-scratch-message "")
 
-;; Let's emacs use a different file to write in when updating via customize-group
+;; Let's emacs use a different file to write in when updating via
+;; customize-group
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (when (file-exists-p custom-file)
   (load custom-file))
@@ -60,18 +52,14 @@
       (list (format "%s %%S: %%j " (system-name))
             '(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
 
-;; Hide some mini buffer message
-;; (let ((inhibit-message t))
-;;  (message "Listen to me, you!"))
-
 ;; Set default column width to 80
 (set-default 'fill-column 80)
 
 ;; Emacs lets you move the current line to the top, middle or bottom of the
 ;; screen to get appropriate context. The default goes to the middle first. I
-;; prefer that the default goes to the top first. Let’s change this.
-;; (setq recenter-positions '(top middle bottom))
-;; (setq recenter-positions '(middle top bottom)) ; recenter from the top instead of the middle
+;; prefer that the default goes to the top first. Let’s change this.  (setq
+;; recenter-positions '(top middle bottom)) (setq recenter-positions '(middle
+;; top bottom)) ; recenter from the top instead of the middle
 (setq recenter-positions '(middle top bottom)) ; recenter from the top instead of the middle
 
 ;; Auto refresh buffers
@@ -174,12 +162,16 @@
 (setq shell-file-name "bash")
 (setq shell-command-switch "-ic")
 
+;; Disable loading of “default.el” at startup, in Fedora all it does is fix
+;; window title which I rather configure differently
+(setq inhibit-default-init t)
+
 ;; Always display line and column numbers
 (setq line-number-mode t)
 (setq column-number-mode t)
 
 ;; Mini window height
-(setq max-mini-window-height 0.3) ; default 0.25
+(setq max-mini-window-height 0.25) ; default 0.25
 
 ;; Replace selection by text
 (delete-selection-mode)
@@ -205,23 +197,13 @@
 ;; Set the default comment column to 80
 (setq-default comment-column 80)
 
-;; Auto-fill comments, but not code.
-;; (comment-auto-fill)
-
-;; And do it aggressively.
-;;(aggressive-fill-paragraph-mode)
-
-
 ;; Mac-Pass-Command-To-System
 (setq mac-pass-command-to-system nil)
 
-;; 
-(setq 
- ;; Don't pause display on input
- redisplay-dont-pause t
- 
- scroll-preserve-screen-position t
- scroll-conservatively 0)
+;; Don't pause display on input
+(setq  redisplay-dont-pause t
+       scroll-preserve-screen-position t
+       scroll-conservatively 0)
 
 ;; Background luminance (eww visibility on dark theme)
 (setq shr-color-visible-luminance-min 100)
@@ -255,16 +237,14 @@
 ;; Move to trash when deleting file
 (setq delete-by-moving-to-trash t)
 
-;; Fix whitespace on save, but only if the file was clean
-;;(global-whitespace-cleanup-mode nil)
-
 ;; Transparently open compressed files
 (auto-compression-mode t)
 
 ;; Disable mac frame tabs
-(setq mac-frame-tabbing nil)
+;; (setq mac-frame-tabbing nil)
+(setq mac-frame-tabbing tab)
 
-;;
+;; t-always-indent to true
 (setq tab-always-indent t)
 
 ;; Diff auto refine
@@ -276,6 +256,7 @@
 
 ;; Show trailing whitespace
 (setq-default show-trailing-whitespace nil)
+;; (setq-default show-trailing-whitespace t)
 
 ;; more font-locking, variables for `lazy-lock-mode'
 ;; wait 10 secs before font-locking stuff
@@ -289,7 +270,6 @@
 
 ;; emacs 21 has jit-lock which is better
 ;; (setq font-lock-support-mode 'jit-lock-mode)
-
 (setq-default font-lock-multiline t)
 
 ;; Do not truncate words
@@ -385,6 +365,24 @@
 
 
 
+
+;; Automatically save and restore sessions
+;; https://stackoverflow.com/a/4485083
+(setq desktop-dirname             "~/.emacs.d/desktop/"
+      desktop-base-file-name      "emacs.desktop"
+      desktop-base-lock-name      "lock"
+      desktop-path                (list desktop-dirname)
+      desktop-save                t
+      desktop-files-not-to-save   "^$" ;reload tramp paths
+      desktop-load-locked-desktop nil
+      desktop-auto-save-timeout   10)
+
+(desktop-save-mode 1)
+
+;; Auto save all buffer when file change on disk (aka function to keep synchro between buffers)
+;; UPDATE : @todo n a pas l air de fonctionner .. une prochaine fois peut être !
+;; Update : @todo doesn't seems to work... may be an other day !
+(global-auto-revert-mode t)
 
 ;; Syntax entry for web mode doesnt work actualy
 ;; https://github.com/fxbois/web-mode/issues/149

@@ -3,15 +3,6 @@
 (require 'ov)
 (require 'cl-lib)
 (require 'validate)
-                                        ; (require 'syslog-mode)
-
-
-
-
-
-
-
-
 
 ;; http://pragmaticemacs.com/
 (use-package pdf-tools
@@ -26,43 +17,23 @@
   ;; use normal isearch
   (define-key pdf-view-mode-map (kbd "C-s") 'isearch-forward))
 
-
-
-
-
-
-
-
 ;; Enhanced version of diff
-(add-hook 'diff-mode-hook (lambda () (local-set-key "\C-c\C-l" 'diffstat)))
+;; (add-hook 'diff-mode-hook (lambda () (local-set-key "\C-c\C-l" 'diffstat)))
 
-;; https://www.emacswiki.org/emacs/LsLispToggleVerbosity
-(defun leo-toggle-ls-lisp-verbosity ()
-  (interactive)
-  (if (memq 'uid ls-lisp-verbosity)
-      (progn
-        (setq ls-lisp-verbosity (delq 'uid ls-lisp-verbosity))
-        (setq ls-lisp-verbosity (delq 'gid ls-lisp-verbosity))
-        (revert-buffer)
-        (message "uid & gid hidden"))
-    (progn
-      (add-to-list 'ls-lisp-verbosity 'uid)
-      (add-to-list 'ls-lisp-verbosity 'gid)
-      (revert-buffer)
-      (message "uid & gid visible"))))
-
-;; Automatically save and restore sessions
-;; https://stackoverflow.com/a/4485083
-(setq desktop-dirname             "~/.emacs.d/desktop/"
-      desktop-base-file-name      "emacs.desktop"
-      desktop-base-lock-name      "lock"
-      desktop-path                (list desktop-dirname)
-      desktop-save                t
-      desktop-files-not-to-save   "^$" ;reload tramp paths
-      desktop-load-locked-desktop nil
-      desktop-auto-save-timeout   10)
-
-(desktop-save-mode 1)
+;; ;; https://www.emacswiki.org/emacs/LsLispToggleVerbosity
+;; (defun leo-toggle-ls-lisp-verbosity ()
+;;   (interactive)
+;;   (if (memq 'uid ls-lisp-verbosity)
+;;       (progn
+;;         (setq ls-lisp-verbosity (delq 'uid ls-lisp-verbosity))
+;;         (setq ls-lisp-verbosity (delq 'gid ls-lisp-verbosity))
+;;         (revert-buffer)
+;;         (message "uid & gid hidden"))
+;;     (progn
+;;       (add-to-list 'ls-lisp-verbosity 'uid)
+;;       (add-to-list 'ls-lisp-verbosity 'gid)
+;;       (revert-buffer)
+;;       (message "uid & gid visible"))))
 
 ;; Don't prompt me when i want to kill a shell
 ;; Source : http://stackoverflow.com/a/2706660
@@ -71,19 +42,12 @@
   (cl-letf (((symbol-function #'process-list) (lambda ())))
     ad-do-it))
 
-;; Auto save all buffer when file change on disk (aka function to keep synchro between buffers)
-;; UPDATE : @todo n a pas l air de fonctionner .. une prochaine fois peut être !
-;; Update : @todo doesn't seems to work... may be an other day !
-(global-auto-revert-mode t)
 
 ;; rainbow-mode (css color)
 ;; (require 'rainbow-mode)
 ;; Disable rainbow-mode by default
 (require 'rainbow-mode)
 ;; (add-hook 'prog-mode-hook #'rainbow-mode)
-
-;; goto
-
 
 ;; sy
 (add-hook 'syslog-mode-hook
@@ -146,7 +110,6 @@
 (require 'diff-mode)
 (require 'smerge-mode)
 
-
 (defun occur-dwim ()
   "Call `occur' with a sane default, chosen as the thing under point or selected region"
   (interactive)
@@ -167,12 +130,6 @@
   (if (get-buffer "*Occur*")
       (switch-to-buffer-other-window "*Occur*")
     (hydra-occur-dwim/body) ))
-
-;; (eval-after-load 'image-dired+ '(image-diredx-async-mode 1))
-
-
-
-
 
 (defun my/jump-to-point-and-show ()
   "Switch to a cloned buffer's base buffer and move point to the cursor position in the clone."
@@ -216,12 +173,12 @@
                       (- (/ (x-display-pixel-width) 4) (/ (frame-pixel-width) 2))
                       (- (/ (x-display-pixel-width) 4) (frame-pixel-height))))
 
-;; IDE Mode
-(defun wlh/IDE ()
-  (interactive)
-  (flycheck-list-errors)
-  (other-window 1)
-  (evil-window-move-very-bottom))
+;; ;; IDE Mode
+;; (defun wlh/IDE ()
+;;   (interactive)
+;;   (flycheck-list-errors)
+;;   (other-window 1)
+;;   (evil-window-move-very-bottom))
 
 ;; crux
 (require 'crux)
@@ -351,7 +308,7 @@
           (set-visited-file-name new-name)
           (set-buffer-modified-p nil))))))
 
-;; undotre
+;; undotree
 (global-undo-tree-mode 1)
 (setq undo-tree-auto-save-history t)
 (setq undo-tree-history-directory-alist
@@ -388,18 +345,6 @@
    ([(meta control down)] . move-text-down)))
    
 (require 'dumb-jump)
-
-; (use-package php-eldoc
-;   :ensure t
-;   :bind)
-
-; (require 'lsp-mode)
-;; (add-hook 'web-mode-hook 'indent-guide-mode)
-
-;; https://www.emacswiki.org/emacs/FillParagraph
-;; The original value is "\f\\|[      ]*$", so we add the bullets (-), (+), and (*).
-;; There is no need for "^" as the regexp is matched at the beginning of line.
-;; (setq paragraph-start "\f\\|[ \t]*$\\|[ \t]*[-+*] ")
 
 ;; http://emacsredux.com/blog/2013/03/29/automatic-electric-indentation/
 (electric-indent-mode +1)
@@ -478,19 +423,18 @@ Version 2016-10-24"
   ;; (add-hook 'paradox-menu-mode-hook #'hide-trailing-whitespace)
   )
 
-;; New wlh/ide version.
-;; In progress
-(defun wlh/ide ()
-  (interactive)
-  (projectile-dired)
-  (neotree-projectile-action)
-  (other-window 1)
-  (hrs/split-window-below-and-switch)
-  (window-resize (selected-window) -10)
-  (eshell "yo"))
+;; ;; New wlh/ide version.
+;; ;; In progress
+;; (defun wlh/ide ()
+;;   (interactive)
+;;   (projectile-dired)
+;;   (neotree-projectile-action)
+;;   (other-window 1)
+;;   (hrs/split-window-below-and-switch)
+;;   (window-resize (selected-window) -10)
+;;   (eshell "yo"))
 
 (window-divider-mode-apply nil)
-
 
 (defun wlh/window-divider-off ()
   (interactive)
@@ -530,7 +474,6 @@ Version 2016-10-24"
 (setq whitespace-line-column 80) ;; limit line length
 ;; (setq whitespace-style '(face tabs empty trailing lines-tail))
 
-
 ;; From prelude
 ;; Colorize output of Compilation Mode, see
 ;; http://stackoverflow.com/a/3072831/355252
@@ -541,13 +484,7 @@ Version 2016-10-24"
 (setq google-translate-default-source-language "fr")
 (setq google-translate-default-target-language "en")
 
-;; ;; linum
-;; (use-package nlinum
-;;        :init
-;;        (add-hook 'php-mode-hook 'nlinum-mode)
-;;        (add-hook 'web-mode-hook 'nlinum-mode)
-;;        (add-hook 'js2-mode-hook 'nlinum-mode))
-
+;; nlinum-mode
 (add-hook 'prog-mode-hook 'nlinum-mode)
 (add-hook 'php-mode-hook 'nlinum-mode)
 (add-hook 'web-mode-hook 'nlinum-mode)
@@ -564,25 +501,6 @@ Version 2016-10-24"
 
 (require 'visual-regexp)
 (global-set-key (kbd "M-%") 'vr/query-replace)
-
-
-
-
-
-
-;; Enable anzu
-;; https://github.com/syohex/emacs-anzu
-
-;; (global-anzu-mode +1)
-
-;; ace-popup-menu-mode
-;; (ace-popup-menu-mode 1)
-
-
-
-
-
-
 
 ;; http://endlessparentheses.com/ispell-and-abbrev-the-perfect-auto-correct.html
 (define-key ctl-x-map "\C-i"
@@ -633,12 +551,8 @@ abort completely with `C-g'."
 
 
 
-
-
-
-
-; http://endlessparentheses.com/eval-result-overlays-in-emacs-lisp.html
-; Cette partie doit est presente une fois cider charge
+                                        ; http://endlessparentheses.com/eval-result-overlays-in-emacs-lisp.html
+                                        ; Cette partie doit est presente une fois cider charge
 (autoload 'cider--make-result-overlay "cider-overlays")
 
 (defun endless/eval-overlay (value point)
@@ -696,8 +610,6 @@ abort completely with `C-g'."
 ;; (popwin-mode 1)
 ;; (push "*vc-diff*" popwin:special-display-config)
 
-
-
 ;; Highlight selection custom from vendor/highlight-selection
 (highlight-selection-mode)
 
@@ -706,49 +618,6 @@ abort completely with `C-g'."
 ;; (require 'sidebar)
 ;; (global-set-key (kbd "C-x C-f") 'sidebar-open)
 ;; (global-set-key (kbd "C-x C-a") 'sidebar-buffers-open)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ;; (use-package treemacs
 ;;   :ensure t
@@ -810,34 +679,28 @@ abort completely with `C-g'."
 ;;               ("M-m fP" . treemacs-projectile)
 ;;               ("M-m fp" . treemacs-projectile-toggle)))
 
-
-
-
-
-
-
 ;; (require 'dashboard)
 ;; (dashboard-setup-startup-hook)
 
-(use-package dashboard
-  :config
-  (dashboard-setup-startup-hook)
-  
-  
+;; (use-package dashboard
+;;   :config
+;;   (dashboard-setup-startup-hook)
 
-  ;; (defun dashboard-insert-custom ()
-  ;;   (insert "Custom text"))
 
-  ;; (add-to-list 'dashboard-item-generators 'dashboard-insert-custom)
-  
-  
-  (setq dashboard-banner-logo-title "Welcome !")
-  (setq dashboard-startup-banner 1)
-  (setq dashboard-items '((recents  . 5)
-                          (bookmarks . 100)
-                          (projects . 5)
-                          (agenda . 5)
-                          (registers . 5))))
+
+;;   ;; (defun dashboard-insert-custom ()
+;;   ;;   (insert "Custom text"))
+
+;;   ;; (add-to-list 'dashboard-item-generators 'dashboard-insert-custom)
+
+
+;;   (setq dashboard-banner-logo-title "Welcome !")
+;;   (setq dashboard-startup-banner 1)
+;;   (setq dashboard-items '((recents  . 5)
+;;                           (bookmarks . 100)
+;;                           (projects . 5)
+;;                           (agenda . 5)
+;;                           (registers . 5))))
 
 ;; (defun dashboard-insert-custom ()
 ;;   (insert "Custom text"))

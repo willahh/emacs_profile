@@ -29,6 +29,8 @@
 (require 'ace-window)
 (require 'avy)
 (require 'web-mode)
+(require 'ido-occur)
+
 ;; (require 'ido-ubiquitous)
 ;; (require 'ivy_buffer_extend)
 ;; (require 'swiper)
@@ -132,8 +134,10 @@
       '((ivy-switch-buffer . ivy--regex-plus)
         (swiper . ivy--regex-plus)
         (counsel-imenu . ivy--regex-plus)
-        (projectile-find-file . ivy--regex-fuzzy)
-        (t . ivy--regex-fuzzy)))
+        ;; (projectile-find-file . ivy--regex-fuzzy)
+        ;; (t . ivy--regex-fuzzy)
+        (projectile-find-file . ivy--regex-plus)
+        (t . ivy--regex-plus)))
 
 (setq ivy-use-selectable-prompt t)
 
@@ -152,7 +156,6 @@
 ;; ido conf
 (setq ido-mode 1)
 (setq ido-everywhere 1)
-; (setq ido-ubiquitous-mode 1)
 (setq ido-enable-flex-matching 1)
 
 ;; Helm conf
@@ -172,7 +175,9 @@
 
 ;; helm configuration
 (setq helm-autoresize-max-height 500)
-(setq helm-autoresize-min-height 100) ;; Important
+(setq helm-autoresize-min-height 25) ;; Important
+(helm-autoresize-mode nil)
+(setq helm-autoresize-max-height 10)
 (setq helm-allow-mouse t)
 
 ;; https://tuhdo.github.io/helm-intro.html
@@ -180,22 +185,15 @@
   (setq helm-google-suggest-use-curl-p t))
 
 
-
 (defun helm-mouse-1-exit-minibuffer (click)
   (interactive "e")
   (mouse-set-point click)
   (helm-mark-current-line)
   (helm-exit-minibuffer))
+
 (define-key helm-map [mouse-1] 'helm-mouse-1-exit-minibuffer)
 
-
-
-
-
 ;; Auto resize
-(helm-autoresize-mode nil)
-;; (setq helm-autoresize-max-height 40) ;; Utilisation de 40% de hauteur
-(setq helm-autoresize-max-height 10)
 
 ;; helm locate
 (setq helm-locate-fuzzy-match t)
@@ -217,17 +215,17 @@
   "recenter display after swiper"
   (recenter))
 
-;; ---------------- neotree
-(defun wlh/neotree-mode-hook (window)
-  (set-window-fringes (selected-window) 0 0))
+;; ;; ---------------- neotree
+;; (defun wlh/neotree-mode-hook (window)
+;;   (set-window-fringes (selected-window) 0 0))
 
-(add-hook 'neo-after-create-hook 'wlh/neotree-mode-hook)
+;; (add-hook 'neo-after-create-hook 'wlh/neotree-mode-hook)
 
-;; dont ask
-;; (setq neo-force-change-root t)
-(setq neo-force-change-root nil)
-(setq neo-window-fixed-size nil)
-(setq neo-autorefresh nil)
+;; ;; dont ask
+;; ;; (setq neo-force-change-root t)
+;; (setq neo-force-change-root nil)
+;; (setq neo-window-fixed-size nil)
+;; (setq neo-autorefresh nil)
 
 
 
@@ -345,9 +343,6 @@
 (define-key nxml-mode-map (kbd "<C-right>")'paredit-forward-slurp-sexp)
 
 ;; fix pour utilisation de paredit dans des languages autre que du
-;; elisp, lisp (qui sont des languagess fortement bases sur les parentèses.
-;; @todo : Il faut ajouter des yos pour que cette modification soit
-;; effective uniquement sur certains modes http://stackoverflow.com/a/913823
 (defun paredit-space-for-delimiter-p (endp delimiter)
   (and (not (if endp (eobp) (bobp)))
        (memq (char-syntax (if endp (char-after) (char-before)))
@@ -360,4 +355,4 @@
 (setq magit-completing-read-function 'ivy-completing-read)
 
 ;;
-(require 'ido-occur)
+

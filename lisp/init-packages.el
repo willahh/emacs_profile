@@ -13,17 +13,11 @@
                                         ; anzu
                      async
 
-
-
-
-                     
-                     ht
                      pfuture
                      nlinum
                      ;;agressive-indent
                      diffview
                      ac-slime
-                     
                      
                      auto-complete
                      auto-yasnippet
@@ -111,7 +105,7 @@
                      neotree
                      ;; nlinum
                      org-bullets
-                     ov ; Utlise pour quelques fonctions utils de prelude
+                     ov ; Used for some useful prelude functions
                      pandoc-mode
                      paradox
                      paredit
@@ -163,7 +157,7 @@
 ;; Add some missing packages
 ; (add-to-list 'load-path "~/.emacs.d/vendor/dired-subtree-20160920.130")
 (add-to-list 'load-path "~/.emacs.d/vendor/evil-easymotion")
-(add-to-list 'load-path "~/.emacs.d/vendor/psvn")
+;; (add-to-list 'load-path "~/.emacs.d/vendor/psvn")
 (add-to-list 'load-path "~/.emacs.d/vendor/simple-httpd")
 (add-to-list 'load-path "~/.emacs.d/vendor/dumb-jump")
 (add-to-list 'load-path "~/.emacs.d/vendor/Indium")
