@@ -6,7 +6,8 @@
 (setq ag-highlight-search t)
 (setq ag-reuse-buffers nil)
 
-(setq helm-ag-insert-at-point t)
+;; (setq helm-ag-insert-at-point t)
+(setq helm-ag-insert-at-point nil)
 ;; (setq ag-reuse-window nil) ; Re use same window 
 
 (setq-default
@@ -49,6 +50,8 @@
 (global-set-key (kbd "C-M-r") 'vr/isearch-backward) ;; C-M-r
 (global-set-key (kbd "C-M-s") 'vr/isearch-forward) ;; C-M-s
 
+
+;; hl-line-mode
 (add-hook 'compilation-mode-hook (lambda ()
                                    (hl-line-mode)))
 (add-hook 'dired-mode-hook (lambda ()
