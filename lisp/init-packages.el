@@ -205,4 +205,4 @@
 (load-file "~/.emacs.d/vendor/smartcomment/smartcomment.el")
 (load-file "~/.emacs.d/vendor/visible-bookmarks/bm.el")
 (load-file "~/.emacs.d/vendor/ibuffer-projectile.el")
-(load-file "~/.emacs.d/vendor/highlight-selection/highlight-selection.el")
+;; (load-file "~/.emacs.d/vendor/highlight-selection/highlight-selection.el")

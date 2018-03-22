@@ -979,15 +979,6 @@ Version 2016-12-27"
 (add-hook 'eval-expression-minibuffer-setup-hook #'eldoc-mode)
 (add-hook 'eval-expression-minibuffer-setup-hook #'paredit-mode)
 
-;;
-(defun remove-dos-eol ()
-  "Do not show ^M in files containing mixed UNIX and DOS line endings."
-  (interactive)
-  (setq buffer-display-table (make-display-table))
-  (aset buffer-display-table ?\^M []))
-
-(add-hook 'text-mode-hook 'remove-dos-eol)
-(add-hook 'prog-mode-hook 'remove-dos-eol)
 
 ;; Kill shell process without asking, i do trust (hope) !
 ;; https://emacs.stackexchange.com/questions/17005/killing-ansi-term-says-has-a-running-process
@@ -1102,20 +1093,6 @@ Version 2016-12-27"
 
 (defadvice man (after wlh-man-before activate)
   (other-window 1))
-
-
-;; Highlight selection after region expand
-;; (defadvice er/expand-region (after wlh/expand-region-highlight activate)
-;;   (call-interactively 'highlight-selection-current-selection))
-
-;; (defun wlh/expand-region-highlight-off (old-function &rest arguments)
-;;   (highlight-selection-light-off)
-;;   (apply old-function arguments))
-
-;; (advice-add #'keyboard-quit :around #'wlh/expand-region-highlight-off)
-
-
-
 
 
 

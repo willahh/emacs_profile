@@ -242,7 +242,7 @@
 
 ;; Disable mac frame tabs
 ;; (setq mac-frame-tabbing nil)
-(setq mac-frame-tabbing tab)
+(setq mac-frame-tabbing t)
 
 ;; t-always-indent to true
 (setq tab-always-indent t)

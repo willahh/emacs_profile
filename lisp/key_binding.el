@@ -364,11 +364,16 @@
   (insert "    "))
 
 (global-set-key (kbd "C-c TAB") 'wlh/insert-4spaces)
+
 ;; ---------------- new line
+;; (global-set-key (kbd "<return>") 'new-line-dwim) ; Can't be setted globally (mini buffer, helm, misc actions)
+(define-key css-mode-map (kbd "RET") 'new-line-dwim)
 (define-key prog-mode-map (kbd "RET") 'new-line-dwim)
 (define-key php-mode-map (kbd "RET") 'new-line-dwim)
-;; (define-key web-mode-map (kbd "C-m") 'newline-and-indent)
 (define-key web-mode-map(kbd "<return>") 'wlh/web-mode-new-line)
+;; (define-key web-mode-map (kbd "C-m") 'newline-and-indent)
+;; (define-key prog-mode-map "<return>" 'new-line-dwim)
+;; (define-key web-mode-map "<return>" 'new-line-dwim)
 
 (defun wlh/web-mode-new-line ()
   (interactive)
@@ -401,8 +406,6 @@
 (define-key web-mode-map (kbd "TAB") 'indent-for-tab-command)
 (define-key web-mode-map (kbd "C-o") 'crux-smart-open-line-above)
 
-;; (define-key prog-mode-map "<return>" 'new-line-dwim)
-;; (define-key web-mode-map "<return>" 'new-line-dwim)
 
 ;; Duplicate line
 (global-set-key (kbd "C-x C-d") 'duplicate-start-of-line-or-region)
