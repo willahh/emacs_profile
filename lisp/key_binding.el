@@ -28,6 +28,7 @@
 ;; (global-set-key (kbd "≈") 'counsel-M-x) ; Alt + x
 (global-set-key (kbd "≈") 'helm-M-x) ; Alt + x
 ;; (global-set-key (kbd "Â") 'toggle-php-flavor-mode) ; Alt + z
+(global-set-key (kbd "") 'toggle-php-flavor-mode) ; Alt + 1
 (global-set-key (kbd "Å") 'zap-to-char) ; Alt + Z
 (global-set-key (kbd "ß") 'ivy-switch-buffer) ; Alt + b
 (global-set-key (kbd "∫") 'projectile-switch-to-buffer) ; Alt + B
@@ -128,6 +129,7 @@
 (global-set-key (kbd "<home>") 'beginning-of-buffer)
 (global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
 (global-set-key (kbd "C-j") 'new-line-dwim)
+;; (define-key emmet-mode-keymap (kbd "C-j") 'new-line-dwim)
 (global-set-key (kbd "M-X") 'other-frame) ; Same keybinding from osx switch window habits
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
 (global-set-key (kbd "M-g") 'goto-line) ; https://github.com/skeeto/.emacs.d/blob/master/init.el
@@ -362,11 +364,16 @@
   (insert "    "))
 
 (global-set-key (kbd "C-c TAB") 'wlh/insert-4spaces)
+
 ;; ---------------- new line
+;; (global-set-key (kbd "<return>") 'new-line-dwim) ; Can't be setted globally (mini buffer, helm, misc actions)
+(define-key css-mode-map (kbd "RET") 'new-line-dwim)
 (define-key prog-mode-map (kbd "RET") 'new-line-dwim)
 (define-key php-mode-map (kbd "RET") 'new-line-dwim)
-;; (define-key web-mode-map (kbd "C-m") 'newline-and-indent)
 (define-key web-mode-map(kbd "<return>") 'wlh/web-mode-new-line)
+;; (define-key web-mode-map (kbd "C-m") 'newline-and-indent)
+;; (define-key prog-mode-map "<return>" 'new-line-dwim)
+;; (define-key web-mode-map "<return>" 'new-line-dwim)
 
 (defun wlh/web-mode-new-line ()
   (interactive)
@@ -392,12 +399,13 @@
                                         ; pour avoir une ouverture de balise
                                         ; plus precise
 
-(define-key web-mode-map (kbd "C-m") 'wlh/web-mode-new-line)
-(define-key web-mode-map (kbd "TAB") 'wlh/web-mode-tab)
+;; (define-key web-mode-map (kbd "C-m") 'newline-and-indent)
+;; (define-key web-mode-map (kbd "TAB") 'wlh/web-mode-tab)
+;; (define-key web-mode-map (kbd "TAB") 'indent-for-tab-command)
+;; (define-key web-mode-map (kbd "TAB") 'wlh/web-mode-tab)
+(define-key web-mode-map (kbd "TAB") 'indent-for-tab-command)
 (define-key web-mode-map (kbd "C-o") 'crux-smart-open-line-above)
 
-;; (define-key prog-mode-map "<return>" 'new-line-dwim)
-;; (define-key web-mode-map "<return>" 'new-line-dwim)
 
 ;; Duplicate line
 (global-set-key (kbd "C-x C-d") 'duplicate-start-of-line-or-region)

@@ -184,6 +184,7 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/all-the-icons.el")
 (add-to-list 'load-path "~/.emacs.d/vendor/origami")
 (add-to-list 'load-path "~/.emacs.d/vendor/treemacs/src/elisp")
+(add-to-list 'load-path "~/.emacs.d/vendor/syslog-mode-2.2")
 
 ;; activate all the packages
 (package-initialize)
@@ -204,4 +205,4 @@
 (load-file "~/.emacs.d/vendor/smartcomment/smartcomment.el")
 (load-file "~/.emacs.d/vendor/visible-bookmarks/bm.el")
 (load-file "~/.emacs.d/vendor/ibuffer-projectile.el")
-(load-file "~/.emacs.d/vendor/highlight-selection/highlight-selection.el")
+;; (load-file "~/.emacs.d/vendor/highlight-selection/highlight-selection.el")

@@ -22,16 +22,6 @@
 (prefer-coding-system 'utf-8)
 (setq-default buffer-file-coding-system 'utf-8-auto-unix)
 
-;; Syntax entry for web mode doesnt work actualy
-;; https://github.com/fxbois/web-mode/issues/149
-;; Select whole word when separated with _
-(defun update-syntax-entry ()
-  (modify-syntax-entry ?_ "w")
-  (modify-syntax-entry ?\$ "w"))
-
-(update-syntax-entry)
-(add-hook 'prog-mode-hook (lambda () (update-syntax-entry)))
-
 ;; Confirm-Nonexistent-File-Or-Buffer
 (setq confirm-nonexistent-file-or-buffer nil)
 
@@ -286,6 +276,7 @@
 (add-hook 'prog-mode-hook 'remove-dos-eol)
 (add-hook 'text-mode-hook 'remove-dos-eol)
 (add-hook 'web-mode-hook 'remove-dos-eol)
+(add-hook 'fundamental-mode 'remove-dos-eol)
 
 
 
@@ -476,6 +467,26 @@
 ;; https://emacs.stackexchange.com/a/30444
 (setq frame-resize-pixelwise t)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ;; Automatically save and restore sessions
 ;; https://stackoverflow.com/a/4485083
 (setq desktop-dirname             "~/.emacs.d/desktop/"
@@ -493,3 +504,13 @@
 ;; UPDATE : @todo n a pas l air de fonctionner .. une prochaine fois peut être !
 ;; Update : @todo doesn't seems to work... may be an other day !
 (global-auto-revert-mode t)
+
+;; Syntax entry for web mode doesnt work actualy
+;; https://github.com/fxbois/web-mode/issues/149
+;; Select whole word when separated with _
+(defun update-syntax-entry ()
+  (modify-syntax-entry ?_ "w")
+  (modify-syntax-entry ?\$ "w"))
+
+(update-syntax-entry)
+(add-hook 'prog-mode-hook (lambda () (update-syntax-entry)))

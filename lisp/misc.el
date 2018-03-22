@@ -157,6 +157,11 @@
 
 (remove-dos-eol)
 
+(add-hook 'text-mode-hook 'remove-dos-eol)
+(add-hook 'prog-mode-hook 'remove-dos-eol)
+(add-hook 'diff-mode-hook 'remove-dos-eol)
+
+
 ;; Enlarge frame
 (defun wlh/frame-large ()
   (interactive)
@@ -610,9 +615,6 @@ abort completely with `C-g'."
 ;; (popwin-mode 1)
 ;; (push "*vc-diff*" popwin:special-display-config)
 
-;; Highlight selection custom from vendor/highlight-selection
-(highlight-selection-mode)
-
 
 ;; sidebar
 ;; (require 'sidebar)
@@ -736,3 +738,21 @@ abort completely with `C-g'."
       ;; treemacs--width-is-locked t
       
       )
+
+
+
+;; -------- Highlight gestion
+;; Highlight selection after region expand
+;; (defadvice er/expand-region (after wlh/expand-region-highlight activate)
+;;   (call-interactively 'highlight-selection-current-selection))
+
+;; (defun wlh/expand-region-highlight-off (old-function &rest arguments)
+;;   (highlight-selection-light-off)
+;;   (apply old-function arguments))
+
+;; (advice-add #'keyboard-quit :around #'wlh/expand-region-highlight-off)
+
+
+;; Highlight selection custom from vendor/highlight-selection
+;; Disable it globally, just enable mode per mode
+;; (highlight-selection-mode nil)
