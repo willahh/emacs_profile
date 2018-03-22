@@ -100,6 +100,28 @@
 ;; Set window divider bottom and right
 (setq window-divider-default-places t)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ;; Indentation
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
@@ -115,6 +137,33 @@
 
 ;; inserts newline to avoid `end of buffer' error.
 (setq next-line-add-newlines t)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ;; Disable backup
 (setq backup-inhibited t)
@@ -238,6 +287,47 @@
 (add-hook 'text-mode-hook 'remove-dos-eol)
 (add-hook 'web-mode-hook 'remove-dos-eol)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ;; Scroll
 (setq-default horizontal-scroll-bar-mode nil)
 (setq horizontal-scroll-bar-mode nil)
@@ -252,7 +342,7 @@
 
 ;; Disable mac frame tabs
 ;; (setq mac-frame-tabbing nil)
-(setq mac-frame-tabbing tab)
+(setq mac-frame-tabbing t)
 
 ;; t-always-indent to true
 (setq tab-always-indent t)
@@ -329,6 +419,36 @@
                 (if (ignore-errors (doom/get-real-buffers))
                     (y-or-n-p "››› Quit?")
                   t)))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ;; From hlissner config
 ;; `window-divider-mode' gives us finer control over the border between windows.
