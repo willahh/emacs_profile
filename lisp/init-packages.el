@@ -12,6 +12,7 @@
                      ag
                                         ; anzu
                      async
+                     hy-mode
 
                      pfuture
                      nlinum

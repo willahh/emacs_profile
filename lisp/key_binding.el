@@ -14,6 +14,7 @@
 (require 'typescript-mode)
 (require 'css-mode)
 (require 'slime)
+(require 'css-mode)
 
 ;; Defun leader key © (alt+c on osx azerty keyboard)
 (defvar wlh/leader-key (concat "©" " "))
