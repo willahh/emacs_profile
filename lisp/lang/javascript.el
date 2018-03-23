@@ -1,11 +1,13 @@
 (defun wlh/js-mode ()
   (interactive)
   
-  ;; Tide mode
-  (tide-mode)
-  (tide-setup)
-  (eldoc-mode +1)
-  (tide-hl-identifier-mode +1)
+  ;; ;; Tide mode
+  ;; (tide-mode)
+  ;; (tide-setup)
+  ;; (eldoc-mode +1)
+  ;; (tide-hl-identifier-mode +1)
+  
+  
   ;; aligns annotation to the right hand side
   (setq company-tooltip-align-annotations t)
 
@@ -72,15 +74,15 @@
 
 (add-hook 'js2-mode-hook 'wlh/js-mode)
 
-(use-package color-identifiers-mode
-  :ensure t
-  :init
-  (add-hook 'js2-mode-hook 'color-identifiers-mode))
+;; (use-package color-identifiers-mode
+;;   :ensure t
+;;   :init
+;;   (add-hook 'js2-mode-hook 'color-identifiers-mode))
 
 ;; Javascript xref
 (add-hook 'js2-mode-hook (lambda ()
                            (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)))
 
 ;; js2-imenu-extras
-(require 'js2-imenu-extras)
-(js2-imenu-extras-setup)
+;; (require 'js2-imenu-extras)
+;; (js2-imenu-extras-setup)

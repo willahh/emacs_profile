@@ -38,6 +38,7 @@
 (load-file "~/.emacs.d/lisp/lang/lisp.el")
 (load-file "~/.emacs.d/lisp/lang/clojure.el")
 (load-file "~/.emacs.d/lisp/lang/react.el")
+(load-file "~/.emacs.d/lisp/lang/hy.el")
 (load-file "~/.emacs.d/lisp/defun/wlh-project.el") ; Custom lisp
 
 (window-divider-mode-apply 1) ; Enable window-divier

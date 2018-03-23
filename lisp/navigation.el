@@ -175,7 +175,7 @@
 
 ;; helm configuration
 (setq helm-autoresize-max-height 500)
-(setq helm-autoresize-min-height 25) ;; Important
+(setq helm-autoresize-min-height 15) ;; Important
 (helm-autoresize-mode nil)
 (setq helm-autoresize-max-height 10)
 (setq helm-allow-mouse t)
