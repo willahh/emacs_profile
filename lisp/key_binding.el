@@ -12,6 +12,7 @@
 (require 'web-mode)
 (require 'clojure-mode)
 (require 'typescript-mode)
+(require 'css-mode)
 (require 'slime)
 
 ;; Defun leader key © (alt+c on osx azerty keyboard)
