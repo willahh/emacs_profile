@@ -1,16 +1,7 @@
-;; https://clojure.org/
-;; http://cider.readthedocs.io/en/layo/
-;; https://github.com/clojure-emacs/cider
-;; http://www.lispcast.com/clojure-mac
-
 (require 'cider)
-; (require 'clojure-cheatsheet)
 (require 'clj-refactor)
 (require 'helm-cider)
 (require 'clojure-snippets)
-
-;; Enable error buffer popping also in the REPL:
-;; (setq cider-repl-popup-stacktraces t)
 
 ;; Specify history file
 (setq cider-history-file "~/.emacs.d/nrepl-history")
@@ -27,6 +18,14 @@
 ;; Don't prompt for symbols
 (setq cider-prompt-for-symbol nil)
 
+(defun wlh/clojure-mode-hook ()
+  (interactive)
+  (clj-refactor-mode 1)            
+  (cljr-add-keybindings-with-prefix "C-c C-m")
+  (cljr-add-keybindings-with-prefix "C-c <C-m>"))
+
+(add-hook 'clojurex-mode-hook wlh/clojure-mode-hook)
+
 ;;
 (add-hook 'cider-mode-hook
           (lambda ()
@@ -40,13 +39,11 @@
 
 ;; https://cider.readthedocs.io/en/latest/code_completion/
 (add-hook 'cider-repl-mode-hook #'cider-company-enable-fuzzy-completion)
-;; (add-hook 'cider-mode-hook #'cider-company-enable-fuzzy-completion)
 
 ;; Indent and highlight more commands
 (put-clojure-indent 'match 'defun)
 
 ;; Cycle between () {} []
-
 (defun live-delete-and-extract-sexp ()
   "Delete the sexp and return it."
   (interactive)
@@ -79,17 +76,9 @@
 (define-key clojure-mode-map (kbd "C-^") 'live-cycle-clj-coll)
 
 ;; Warn about missing nREPL instead of doing stupid things
-
 (defun nrepl-warn-when-not-connected ()
   (interactive)
   (message "Oops! You're not connected to an nREPL server. Please run M-x cider or M-x cider-jack-in to connect."))
 
 (define-key clojure-mode-map (kbd "C-M-x")   'nrepl-warn-when-not-connected)
 (define-key clojure-mode-map (kbd "C-x C-e") 'nrepl-warn-when-not-connected)
-(define-key clojure-mode-map (kbd "C-c C-e") 'nrepl-warn-when-not-connected)
-(define-key clojure-mode-map (kbd "C-c C-l") 'nrepl-warn-when-not-connected)
-(define-key clojure-mode-map (kbd "C-c C-r") 'nrepl-warn-when-not-connected)
-(define-key clojure-mode-map (kbd "C-c C-z") 'nrepl-warn-when-not-connected)
-(define-key clojure-mode-map (kbd "C-c C-k") 'nrepl-warn-when-not-connected)
-(define-key clojure-mode-map (kbd "C-c C-n") 'nrepl-warn-when-not-connected)
-(define-key clojure-mode-map (kbd "C-c C-q") 'nrepl-warn-when-not-connected)

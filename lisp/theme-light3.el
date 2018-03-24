@@ -8,19 +8,13 @@
 
 ;; Main background
 (set-face-attribute 'default nil :background "#ffffff")
-;; (custom-set-faces
-;;  '(default ((t (:stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :family "Office Code Pro")))))
 (custom-set-faces
  '(default ((t (:stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 110 :width normal :family "Menlo")))))
 
 ;; Text selection
-;; (set-face-attribute 'region nil :background "#fce94f")
-;; (set-face-attribute 'region nil :background "#fce94f")
 (set-face-attribute 'region nil :background "#b9d6fb")
 
 ;; Window-divider
-;; (setq window-divider-default-bottom-width 3)
-;; (setq window-divider-default-right-width 3)
 (setq window-divider-default-bottom-width 10)
 (setq window-divider-default-right-width 10)
 
@@ -48,6 +42,8 @@
 ;; (set-face-attribute 'show-paren-match-face nil :background "#a5e8fe" :foreground "#000000" :weight 'ultra-bold)
 ;; (set-face-attribute 'show-paren-match-face nil :background "#d4d4d4" :foreground "#085269" :weight 'ultra-bold)
 (set-face-attribute 'show-paren-match-face nil :background nil :foreground "#ff00a0" :weight 'ultra-bold)
+(set-face-attribute 'show-paren-match-face nil :background nil :foreground "#000000" :weight 'ultra-bold :underline "#000000")
+(set-face-attribute 'show-paren-match-face nil :background "#a5e8fe" :foreground "#000000" :weight 'ultra-bold :underline "#000000")
 (setq show-paren-priority -50)
 (set-face-attribute 'fringe nil :background "#fafafa" :slant 'normal)
 (set-face-attribute 'window-divider nil :foreground "#fafafa")
