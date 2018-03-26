@@ -12,6 +12,7 @@
 (require 'web-mode)
 (require 'clojure-mode)
 (require 'typescript-mode)
+(require 'css-mode)
 (require 'slime)
 (require 'css-mode)
 
