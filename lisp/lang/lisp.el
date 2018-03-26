@@ -31,3 +31,11 @@
 
 (eval-after-load "auto-complete"
   '(add-to-list 'ac-modes 'slime-repl-mode))
+
+
+
+;; --------- Scheme lisp
+(defun wlh/inferior-scheme-mode-hook ()
+  (paredit-mode)
+  (auto-complete-mode))
+(add-hook 'inferior-scheme-mode-hook 'wlh/inferior-scheme-mode-hook)

@@ -175,9 +175,10 @@
 
 ;; helm configuration
 (setq helm-autoresize-max-height 500)
-(setq helm-autoresize-min-height 15) ;; Important
+;; (setq helm-autoresize-min-height 15) ;; Important
+(setq helm-autoresize-min-height 20) ;; Important
 (helm-autoresize-mode nil)
-(setq helm-autoresize-max-height 10)
+;; (setq helm-autoresize-max-height 10)
 (setq helm-allow-mouse t)
 
 ;; https://tuhdo.github.io/helm-intro.html
