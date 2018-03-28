@@ -24,7 +24,7 @@
   (cljr-add-keybindings-with-prefix "C-c C-m")
   (cljr-add-keybindings-with-prefix "C-c <C-m>"))
 
-(add-hook 'clojurex-mode-hook wlh/clojure-mode-hook)
+(add-hook 'clojurex-mode-hook 'wlh/clojure-mode-hook)
 
 ;;
 (add-hook 'cider-mode-hook
