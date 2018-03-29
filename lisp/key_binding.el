@@ -248,6 +248,7 @@
 (define-key dired-mode-map (kbd "C-x n") 'dired-narrow)
 (define-key dired-mode-map (kbd "b") 'crux-open-with)
 (define-key dired-mode-map (kbd "C-j") 'dired-find-file)
+(define-key dired-mode-map (kbd "B") 'wlh/vscode-dired-at-point)
 
 ;; Multi cursor stuf
 (global-set-key (kbd "ı") 'mc/mark-next-lines) ; ALT+SHIFT+p
