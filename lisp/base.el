@@ -514,3 +514,6 @@
 
 (update-syntax-entry)
 (add-hook 'prog-mode-hook (lambda () (update-syntax-entry)))
+
+;; Every time a window is started, make sure it get maximized
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
