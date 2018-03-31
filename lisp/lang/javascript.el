@@ -45,6 +45,7 @@
   
   (nlinum-mode)
   ;; (highlight-symbol-mode t)
+  (highlight-symbol-mode t)
 
   
   ;; js2-imenu-extras-mode

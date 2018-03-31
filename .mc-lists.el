@@ -164,6 +164,7 @@
         avy-goto-word-1-above
         avy-goto-word-1-below
         c-end-of-statement
+        c-indent-line-or-region
         company-complete-common
         compilation-next-error
         compilation-previous-error

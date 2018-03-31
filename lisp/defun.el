@@ -843,6 +843,15 @@ the checking happens for all pairs in auto-minor-mode-alist"
   (let ((path (s-replace "/Users/wravel/www/" "http://192.168.0.26/" (projectile-project-root))))
     (browse-url path)))
 
+
+(defun wlh/vscode-dired-at-point ()
+  "Open a VS Code at point from dired"
+  (interactive)
+  (let ((default-directory (dired-dwim-target-directory)
+          )) (shell-command "code")))
+
+
+
 (defun all-over-the-screen ()
   (interactive)
   (delete-other-windows)
@@ -1350,3 +1359,4 @@ save it in `ffap-file-at-point-line-number' variable."
 
 ;; Create an eshell buffer on background
 (eshell)
+
