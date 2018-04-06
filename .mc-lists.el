@@ -13,6 +13,7 @@
         backward-kill-word-or-region
         backward-sentence
         backward-sexp
+        beginning-of-visual-line
         c-electric-colon
         c-electric-delete-forward
         c-electric-pound
@@ -78,6 +79,7 @@
         kill-sentence
         kill-sexp
         mark-sexp
+        markdown-cycle
         mouse-save-then-kill
         mouse-set-region
         mouse-start-secondary
@@ -153,6 +155,7 @@
         wil-web-mode-kill-sexp
         wlh-tab-indent-or-complete-web
         wlh/delete-backspace
+        wlh/web-mode-kill-sexp
         xah-toggle-letter-case
         yank-rectangle
         yas-expand
