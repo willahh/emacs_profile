@@ -24,14 +24,18 @@
   (cljr-add-keybindings-with-prefix "C-c C-m")
   (cljr-add-keybindings-with-prefix "C-c <C-m>"))
 
-(add-hook 'clojurex-mode-hook 'wlh/clojure-mode-hook)
+(add-hook 'clojure-mode-hook 'wlh/clojure-mode-hook)
 
 ;;
 (add-hook 'cider-mode-hook
           (lambda ()
             (eldoc-mode)
+
+            (highlight-symbol-mode)
+            (setq company-minimum-prefix-length 0)
             ;; (helm-cider-mode 1) ; Return an error for the moment, disable it
-            (cider-company-enable-fuzzy-completion)))
+            (cider-company-enable-fuzzy-completion)
+            (define-key mc/keymap (kbd "C-c C-v") 'cider-eval-buffer)))
 
 (add-hook 'cider-repl-mode-hook (lambda ()
                                   (company-mode t)

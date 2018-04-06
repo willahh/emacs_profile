@@ -22,6 +22,7 @@
         c-electric-star
         c-indent-new-comment-line
         clean-aindent--bsunindent
+        cljr-slash
         comment-line
         comment-or-uncomment-region-or-line
         company-indent-or-complete-common
@@ -116,6 +117,7 @@
         paredit-forward-up
         paredit-kill
         paredit-meta-doublequote
+        paredit-open-curly
         paredit-open-round
         paredit-open-square
         paredit-semicolon
