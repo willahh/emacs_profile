@@ -50,6 +50,8 @@
 (global-set-key (kbd "†") 'toggle-truncate-lines) ; Alt + t
 (global-set-key (kbd "ﬁ") 'goto-line) ; Alt + g
 (global-set-key (kbd "Â") 'toggle-php-flavor-mode) ; Alt+z
+(global-set-key (kbd "Í") 'decrement-number-at-point)
+(global-set-key (kbd "Ë") 'increment-number-at-point)
 (define-key php-mode-map (kbd "Â") 'toggle-php-flavor-mode) ; Alt+z
 
 
