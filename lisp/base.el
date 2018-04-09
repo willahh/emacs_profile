@@ -187,7 +187,7 @@
 (setq set-mark-command-repeat-pop t)
 
 ;; Don't display warning-suppress-types
-(add-to-list 'warning-suppress-types '(undo discard-info))
+;; (add-to-list 'warning-suppress-types '(undo discard-info))
 
 ;; Scroll
 (setq scroll-margin 0)
