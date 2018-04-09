@@ -55,6 +55,22 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 C
 * Tasks                                                               :@home:
   :VISIBILITY: content
+** TODO [#A] Faire fonctionner Clojure LUMO
+   Fonctionne avec inf-clojure, inf-clojure ne remplace pas CIDER, mais est une
+   alternative plus légère
+   https://anmonteiro.com/2016/11/the-fastest-clojure-repl-in-the-world/
+   http://www.planck-repl.org/emacs.html
+   https://github.com/clojure-emacs/inf-clojure
+   [2018-04-06 Fri]
+   [[file:~/.emacs.d/emacs_todo.org::*Utils][Utils]]
+
+** TODO Web-mode / CSS MODE ENTER || KP_ENTER || C-m ---> New line and indent
+** TODO CSS : Tab --> Emmet
+
+
+
+
+
 ** TODO [#B] [helm] [mini-buffer] Ajouter la possibilité de faire du M-v dans le mini-buffer 
    SCHEDULED: <2017-11-30 Thu>
 ** TODO [#A] web-mode single quote dans commentaire : Ne pas auto fermer la quote lorsque l'on est dans un commentaire 
@@ -245,7 +261,6 @@ C
 ** TODO DIRED - Auto sorted by access time
    [2018-01-10 Wed]
    [[file:~/Downloads/export.php]]
-
 
 ** TODO Etor - Dashboard : La barre des boutons n'est pas centrée horizontalement, il faut tout centrer en absolut par rapport à la largeur de l'écran
    [2018-02-23 Fri]

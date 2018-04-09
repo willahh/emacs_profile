@@ -174,11 +174,11 @@
       helm-mode-fuzzy-match t)
 
 ;; helm configuration
-(setq helm-autoresize-max-height 500)
+;; (setq helm-autoresize-max-height 500)
 ;; (setq helm-autoresize-min-height 15) ;; Important
 ;; (setq helm-autoresize-min-height 20) ;; Important
-(helm-autoresize-mode nil)
 (setq helm-autoresize-max-height 25) ;; 15 is too small on laptop
+(helm-autoresize-mode nil)
 (setq helm-allow-mouse t)
 
 ;; https://tuhdo.github.io/helm-intro.html

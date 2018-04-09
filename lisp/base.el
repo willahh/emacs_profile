@@ -186,6 +186,9 @@
 ;; Repeating set-mark-command after popping mark pops it again.
 (setq set-mark-command-repeat-pop t)
 
+;; Don't display warning-suppress-types
+(add-to-list 'warning-suppress-types '(undo discard-info))
+
 ;; Scroll
 (setq scroll-margin 0)
 (setq scroll-step 1)
@@ -517,3 +520,5 @@
 
 ;; Every time a window is started, make sure it get maximized
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
+
+
