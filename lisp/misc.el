@@ -4,6 +4,14 @@
 (require 'cl-lib)
 (require 'validate)
 
+(setq kill-buffer-query-functions
+      (remq 'process-kill-buffer-query-function
+            kill-buffer-query-functions))
+
+;; https://tuhdo.github.io/helm-intro.html
+(when (executable-find "curl")
+  (setq helm-google-suggest-use-curl-p t))
+
 ;; http://pragmaticemacs.com/
 (use-package pdf-tools
   :pin manual ;; manually update
@@ -41,7 +49,6 @@
   "Prevent annoying \"Active processes exist\" query when you quit Emacs."
   (cl-letf (((symbol-function #'process-list) (lambda ())))
     ad-do-it))
-
 
 ;; rainbow-mode (css color)
 ;; (require 'rainbow-mode)
@@ -86,7 +93,6 @@
 (setq recentf-max-saved-items 200
       recentf-max-menu-items 15)
 
-;; (recentf-mode +1)
 (recentf-mode 1)
 (setq-default recent-save-file "~/.emacs.d/tmp/recentf")
 
@@ -156,11 +162,9 @@
   (aset buffer-display-table ?\^M []))
 
 (remove-dos-eol)
-
 (add-hook 'text-mode-hook 'remove-dos-eol)
 (add-hook 'prog-mode-hook 'remove-dos-eol)
 (add-hook 'diff-mode-hook 'remove-dos-eol)
-
 
 ;; Enlarge frame
 (defun wlh/frame-large ()
@@ -177,13 +181,6 @@
   (set-frame-position (selected-frame)
                       (- (/ (x-display-pixel-width) 4) (/ (frame-pixel-width) 2))
                       (- (/ (x-display-pixel-width) 4) (frame-pixel-height))))
-
-;; ;; IDE Mode
-;; (defun wlh/IDE ()
-;;   (interactive)
-;;   (flycheck-list-errors)
-;;   (other-window 1)
-;;   (evil-window-move-very-bottom))
 
 ;; crux
 (require 'crux)
@@ -216,18 +213,6 @@
 (setq langtool-default-language "fr")
 (setq ispell-program-name (executable-find "hunspell"))
 (setq ispell-dictionary "fr")
-
-;; (setq ispell-hunspell-dict-paths-alist ("american" "/Users/user/Library/Spelling/en_US.aff")
-;;       ("british" "/Users/user/Library/Spelling/en_GB.aff")
-;;       ("english" "/Users/user/Library/Spelling/en_US.aff")
-;;       ("en_ZA" "/Users/user/Library/Spelling/en_ZA.aff")
-;;       ("en_US" "/Users/user/Library/Spelling/en_US.aff")
-;;       ("en_GB" "/Users/user/Library/Spelling/en_GB.aff")
-;;       ("en_CA" "/Users/user/Library/Spelling/en_CA.aff")
-;;       ("en_AU" "/Users/user/Library/Spelling/en_AU.aff")
-;;       ("default" "/Users/user/Library/Spelling/default.aff"))
-
-;;(add-to-list 'ispell-hunspell-dict-paths-alist '("en_US" "your-path-to/en_US.aff")))
 
 ;;
 (defun langtool-autoshow-detail-popup (overlays)
@@ -416,17 +401,17 @@ Version 2016-10-24"
 (use-package help-mode+)
 (use-package help+)
 
-(use-package paradox
-  :defer t
-  :config
-  (setq paradox-column-width-package 28
-        paradox-column-width-version 14
-        paradox-display-download-count t
-        paradox-execute-asynchronously nil
-        paradox-github-token t
-        paradox-use-homepage-buttons nil)
-  ;; (add-hook 'paradox-menu-mode-hook #'hide-trailing-whitespace)
-  )
+;; (use-package paradox
+;;   :defer t
+;;   :config
+;;   (setq paradox-column-width-package 28
+;;         paradox-column-width-version 14
+;;         paradox-display-download-count t
+;;         paradox-execute-asynchronously nil
+;;         paradox-github-token t
+;;         paradox-use-homepage-buttons nil)
+;;   ;; (add-hook 'paradox-menu-mode-hook #'hide-trailing-whitespace)
+;;   )
 
 ;; ;; New wlh/ide version.
 ;; ;; In progress
@@ -554,10 +539,8 @@ abort completely with `C-g'."
 
 (require 'visual-regexp)
 
-
-
-                                        ; http://endlessparentheses.com/eval-result-overlays-in-emacs-lisp.html
-                                        ; Cette partie doit est presente une fois cider charge
+;; http://endlessparentheses.com/eval-result-overlays-in-emacs-lisp.html
+;; Cette partie doit est presente une fois cider charge
 (autoload 'cider--make-result-overlay "cider-overlays")
 
 (defun endless/eval-overlay (value point)

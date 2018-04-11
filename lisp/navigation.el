@@ -7,21 +7,13 @@
 (require 'iy-go-to-char)
 (require 'textmate-mode)
 (require 'highlight-symbol)
-(require 'ido)
+
 (require 'smex)
 (require 'which-key)
 (require 'multiple-cursors)
 (require 'key-chord)
 (require 'which-key)
-(require 'flx-ido)
 (require 'flx)
-(require 'ido-vertical-mode)
-(require 'ido-vertical-mode)
-(require 'ivy)
-(require 'helm-ag)
-(require 'helm-config)
-(require 'helm-swoop)
-(require 'helm-swoop)
 (require 'resize-window)
 (require 'neotree)
 (require 'expand-region)
@@ -29,25 +21,21 @@
 (require 'ace-window)
 (require 'avy)
 (require 'web-mode)
-(require 'ido-occur)
-
-;; (require 'ido-ubiquitous)
-;; (require 'ivy_buffer_extend)
-;; (require 'swiper)
-;; (require 'sr-speedbar)
 
 
-;; Highlight-symbol can be slow on large file
-;; @todo Disable this mode on large file.
-;;
-;; Update : Disable this mode. This need to be used like in modern editor with
-;; mouse double click. Otherwise, with keyboard, use of highlight-regexp
-;; functions.
-;;
-;; (add-hook 'prog-mode-hook 'highlight-symbol-mode)
-;; (add-hook 'php-mode-hook 'highlight-symbol-mode)
-;; (add-hook 'emacs-lisp-mode 'highlight-symbol-mode)
 
+
+
+
+
+
+
+
+
+
+
+
+;; highlight-symbol ---------------------------
 (setq highlight-symbol-idle-delay .3)
 
 (add-hook 'prog-mode-hook 'highlight-symbol-nav-mode)
@@ -63,15 +51,16 @@
 (add-hook 'emacs-lisp-mode-hook
           (highlight-symbol-nav-mode))
 
-;; Key chords commands
+;; Key chords ------------------------------------
 ;; From http://emacsrocks.com/e07.html
-
 (key-chord-mode 1)
 
 ;; Max time delay between two key presses to be considered a key
 (setq key-chord-two-keys-delay 0.1) ; default 0.1
 (setq key-chord-one-key-delay 0.2) ; default 0.2
 
+
+;; Multicursor ---------------------------------
 ;; Ask for apply command for all, keep on default (remember settings are stored in ~/.emacs/.mc-lists.el)
 ;; (setq mc/always-run-for-all 1)
 (setq mc/always-run-for-all nil)
@@ -82,157 +71,24 @@
   :ensure t
   :bind (("C-S-<mouse-1>" . mc/add-cursor-on-click)))
 
-;; Which-key
+;; Witch-key -----------------------
 (which-key-mode)
 
-;; ----- ido
-(setq ido-enable-prefix nil
-      ido-enable-flex-matching t
-      ido-case-fold nil
-      ido-auto-merge-work-directories-length -1
-      ido-create-new-buffer 'always
-      ido-use-filename-at-point nil
-      ;; ido-max-prospects 40
-      ido-max-prospects 10
-      ido-everywhere t
-      ido-mode 1)
-
-(setq kill-buffer-query-functions
-      (remq 'process-kill-buffer-query-function
-            kill-buffer-query-functions))
-
-;; ----- ido-vertical-mode
-(setq ido-vertical-mode 1)
-
-(flx-ido-mode 1)
-
-;; C-n/p is more intuitive in vertical layout
-(setq ido-vertical-define-keys 'C-n-C-p-up-down-left-right)
-
-;; ---- ivy
-(ivy-mode)
-
-;; ivy conf
-(setq ivy-virtual-abbreviate 'full)
-
-;; set ivy height
-;; Update : 25 est bcp trop grand
-;; (setq ivy-height 25)
-(setq ivy-height 12)
-
-;; make sure it always stays that high
-;; Update : Pas du tout utile, lorsque l on utilise completion-at-point, la partie du bas prend une hauteur pour aucune raison (contenu vide)
-(setq ivy-fixed-height-minibuffer nil)
-
-;; full file names - useful when multiple files have same names
-(setq ivy-virtual-abbreviate 'full)
-(setq ivy-use-virtual-buffers t)
-(setq ivy-count-format "(%d/%d) ")
-(setq ivy-initial-inputs-alist nil)
-
-(setq ivy-re-builders-alist
-      '((ivy-switch-buffer . ivy--regex-plus)
-        (swiper . ivy--regex-plus)
-        (counsel-imenu . ivy--regex-plus)
-        ;; (projectile-find-file . ivy--regex-fuzzy)
-        ;; (t . ivy--regex-fuzzy)
-        (projectile-find-file . ivy--regex-plus)
-        (t . ivy--regex-plus)))
-
-(setq ivy-use-selectable-prompt t)
-
-;; Use Enter on a directory to navigate into the directory, not open it with dired.
-(define-key ivy-minibuffer-map (kbd "C-m") 'ivy-alt-done)
-(define-key ivy-minibuffer-map (kbd "<tab>") 'ivy-alt-done)
-
-;; https://oremacs.com/2017/11/18/dired-occur/
-;; (defun ivy-switch-buffer-occur ()
-;;   "Occur function for `ivy-switch-buffer' using `ibuffer'."
-;;   (ibuffer nil (buffer-name) (list (cons 'name ivy--old-re))))
-
-; Let projectile use ivy
-(setq projectile-completion-system 'ivy)
-
-;; ido conf
-(setq ido-mode 1)
-(setq ido-everywhere 1)
-(setq ido-enable-flex-matching 1)
-
-;; Helm conf
-(setq helm-split-window-in-side-p           t ; open helm buffer inside current window, not occupy whole other window
-      helm-move-to-line-cycle-in-source     t ; move to end or beginning of source when reaching top or bottom of source.
-      helm-ff-search-library-in-sexp        t ; search for library in `require' and `declare-function' sexp.
-      helm-scroll-amount                    8 ; scroll 8 lines other window using M-<next>/M-<prior>
-      helm-ff-file-name-history-use-recentf t
-      helm-echo-input-in-header-line t
-      helm-ag-insert-at-point 'sexp
-      helm-M-x-fuzzy-match t
-      helm-recentf-fuzzy-match t
-      helm-buffers-fuzzy-matching t
-      helm-locate-fuzzy-match nil
-      helm-imenu-fuzzy-match t
-      helm-mode-fuzzy-match t)
-
-;; helm configuration
-;; (setq helm-autoresize-max-height 500)
-;; (setq helm-autoresize-min-height 15) ;; Important
-;; (setq helm-autoresize-min-height 20) ;; Important
-(setq helm-autoresize-max-height 25) ;; 15 is too small on laptop
-(helm-autoresize-mode nil)
-(setq helm-allow-mouse t)
-
-;; https://tuhdo.github.io/helm-intro.html
-(when (executable-find "curl")
-  (setq helm-google-suggest-use-curl-p t))
 
 
-(defun helm-mouse-1-exit-minibuffer (click)
-  (interactive "e")
-  (mouse-set-point click)
-  (helm-mark-current-line)
-  (helm-exit-minibuffer))
 
-(define-key helm-map [mouse-1] 'helm-mouse-1-exit-minibuffer)
 
-;; Auto resize
 
-;; helm locate
-(setq helm-locate-fuzzy-match t)
-
-;; Truncate lines
-(setq helm-truncate-lines 1)
-
-(setq helm-follow-mode-persistent t)
-
-;; ---------------- swoop
-;; If this value is t, split window inside the current window
-(setq helm-swoop-split-with-multiple-windows t)
-
-;; ---------------- swiper
-(ivy-set-occur 'ivy-switch-buffer 'ivy-switch-buffer-occur)
-
-;; advise swiper to recenter on exit
+;; Swiper ----------------------------
 (defun bjm-swiper-recenter (&rest args)
-  "recenter display after swiper"
+  "Recenter display after swiper"
   (recenter))
 
-;; ;; ---------------- neotree
-;; (defun wlh/neotree-mode-hook (window)
-;;   (set-window-fringes (selected-window) 0 0))
-
-;; (add-hook 'neo-after-create-hook 'wlh/neotree-mode-hook)
-
-;; ;; dont ask
-;; ;; (setq neo-force-change-root t)
-;; (setq neo-force-change-root nil)
-;; (setq neo-window-fixed-size nil)
-;; (setq neo-autorefresh nil)
 
 
 
 
-
-
+;; Paredit ----------------------------
 ;; Enhanced navigation : Paredit for lisp style files, smartparens for C like
 ;; languages
 
@@ -245,15 +101,12 @@
 (add-hook 'clojure-mode-hook 'paredit-mode)
 (add-hook 'eshell-mode-hook 'paredit-mode)
 (add-hook 'cider-repl-mode-hook 'paredit-mode)
-
-
 (add-hook 'emacs-lisp-mode-hook       #'enable-paredit-mode)
 (add-hook 'eval-expression-minibuffer-setup-hook #'enable-paredit-mode)
 (add-hook 'ielm-mode-hook             #'enable-paredit-mode)
 (add-hook 'lisp-mode-hook             #'enable-paredit-mode)
 (add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
 (add-hook 'scheme-mode-hook           #'enable-paredit-mode)
-
 
 ;; C like
 (add-hook 'js2-mode-hook 'textmate-mode)
@@ -351,9 +204,4 @@
                    (let ((matching (matching-paren delimiter)))
                      (and matching (char-syntax matching)))))))
 
-
-;; http://oremacs.com/swiper/
-(setq magit-completing-read-function 'ivy-completing-read)
-
-;;
 
