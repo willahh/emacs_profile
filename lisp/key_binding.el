@@ -360,10 +360,12 @@
 
 ;; ---------------- new line
 ;; (global-set-key (kbd "<return>") 'new-line-dwim) ; Can't be setted globally (mini buffer, helm, misc actions)
+(global-set-key (kbd "RET") 'new-line-dwim)
 (define-key css-mode-map (kbd "RET") 'new-line-dwim)
 (define-key prog-mode-map (kbd "RET") 'new-line-dwim)
 (define-key php-mode-map (kbd "RET") 'new-line-dwim)
 (define-key web-mode-map(kbd "<return>") 'wlh/web-mode-new-line)
+(define-key textmate-mode-map (kbd "<return>") 'wlh/web-mode-new-line) ;; Needed for web-mode > css / web-mode > js ENTER key
 ;; (define-key web-mode-map (kbd "C-m") 'newline-and-indent)
 ;; (define-key prog-mode-map "<return>" 'new-line-dwim)
 ;; (define-key web-mode-map "<return>" 'new-line-dwim)

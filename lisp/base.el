@@ -335,7 +335,11 @@
 (setq ls-lisp-dirs-first t)
 
 ;; Show trailing whitespace
+;; https://emacs.stackexchange.com/a/21961
 (setq-default show-trailing-whitespace nil)
+(setq whitespace-display-mappings '((space-mark 32 [?·])))
+(setq whitespace-style '(face trailing spaces space-mark))
+(global-whitespace-mode t)
 
 
 ;; Do not truncate words

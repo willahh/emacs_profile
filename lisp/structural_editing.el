@@ -95,10 +95,12 @@
 (define-key prog-mode-map (kbd "C-M-f") 'sp-forward-sexp)
 (define-key php-mode-map (kbd "C-M-f") 'sp-forward-sexp)
 (define-key nxml-mode-map (kbd "C-M-f") 'sp-forward-sexp)
+;; (define-key web-mode-map (kbd "C-M-f") 'sp-forward-sexp)
 
 (define-key prog-mode-map (kbd "C-M-b") 'sp-backward-sexp)
 (define-key php-mode-map (kbd "C-M-b") 'sp-backward-sexp)
 (define-key nxml-mode-map (kbd "C-M-b") 'sp-backward-sexp)
+;; (define-key web-mode-map (kbd "C-M-b") 'sp-backward-sexp)
 
 (define-key prog-mode-map (kbd "C-M-u") 'sp-backward-up-sexp)
 (define-key php-mode-map (kbd "C-M-u") 'sp-backward-up-sexp)
@@ -108,26 +110,44 @@
 (define-key prog-mode-map (kbd "C-M-d") 'sp-down-sexp)
 (define-key php-mode-map (kbd "C-M-d") 'sp-down-sexp)
 (define-key nxml-mode-map (kbd "C-M-d") 'sp-down-sexp)
+(define-key web-mode-map (kbd "C-M-d") 'sp-down-sexp)
 
 (define-key prog-mode-map (kbd "C-M-p") 'sp-backward-down-sexp)
 (define-key php-mode-map (kbd "C-M-p") 'sp-backward-down-sexp)
 (define-key nxml-mode-map (kbd "C-M-p") 'sp-backward-down-sexp)
+(define-key web-mode-map (kbd "C-M-p") 'sp-backward-down-sexp)
 
 (define-key prog-mode-map (kbd "C-M-n") 'sp-up-sexp)
 (define-key php-mode-map (kbd "C-M-n") 'sp-up-sexp)
 (define-key nxml-mode-map (kbd "C-M-n") 'sp-up-sexp)
+(define-key web-mode-map (kbd "C-M-n") 'sp-up-sexp) ;; OK in web mode > js
 
 (define-key prog-mode-map (kbd "C-k") 'sp-kill-hybrid-sexp)
 (define-key php-mode-map (kbd "C-k") 'sp-kill-hybrid-sexp)
 (define-key nxml-mode-map (kbd "C-k") 'sp-kill-hybrid-sexp)
+;; (define-key web-mode-map (kbd "C-k") 'sp-kill-hybrid-sexp)
 
 (define-key prog-mode-map (kbd "C-M-k") 'sp-kill-sexp)
 (define-key php-mode-map (kbd "C-M-k") 'sp-kill-sexp)
 (define-key nxml-mode-map (kbd "C-M-k") 'sp-kill-sexp)
+(define-key web-mode-map (kbd "C-M-k") 'sp-kill-sexp)
 
 (define-key prog-mode-map (kbd "C-M-h") 'sp-backward-kill-sexp)
 (define-key php-mode-map (kbd "C-M-h") 'sp-backward-kill-sexp)
 (define-key nxml-mode-map (kbd "C-M-h") 'sp-backward-kill-sexp)
+(define-key web-mode-map (kbd "C-M-h") 'sp-backward-kill-sexp) ;; OK in web mode > js
+
+(define-key php-mode-map (kbd "C-M-a") 'beginning-of-defun)
+(define-key nxml-mode-map (kbd "C-M-a") 'beginning-of-defun)
+
+(define-key php-mode-map (kbd "C-M-e") 'end-of-defun)
+(define-key nxml-mode-map (kbd "C-M-e") 'end-of-defun)
+
+
+
+
+
+
 
 
 ;; Textmate-mode ---------------------------
@@ -146,8 +166,8 @@
 (define-key php-mode-map (kbd "C-h") 'backward-delete-char)
 (define-key nxml-mode-map (kbd "C-h") 'backward-delete-char)
 
-(define-key php-mode-map (kbd "C-M-a") 'beginning-of-defun)
-(define-key nxml-mode-map (kbd "C-M-a") 'beginning-of-defun)
 
-(define-key php-mode-map (kbd "C-M-e") 'end-of-defun)
-(define-key nxml-mode-map (kbd "C-M-e") 'end-of-defun)
+
+
+
+
