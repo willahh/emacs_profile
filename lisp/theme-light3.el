@@ -83,16 +83,17 @@
 
 ;; ------- web-mode
 (set-face-attribute 'web-mode-function-call-face nil :foreground "#000000")
-(set-face-attribute 'web-mode-keyword-face nil :foreground "#0000ff")
+;; (set-face-attribute 'web-mode-keyword-face nil :foreground "#0000ff")
+(set-face-attribute 'web-mode-keyword-face nil :foreground "#e019b1")
 (set-face-attribute 'web-mode-block-delimiter-face nil :foreground "#800000")
 (set-face-attribute 'web-mode-variable-name-face nil :foreground "#2055a4")
 (set-face-attribute 'web-mode-block-string-face nil :foreground "#9c251e")
 (set-face-attribute 'web-mode-constant-face nil :foreground "#2e12a3")
 (set-face-attribute 'web-mode-type-face nil :foreground "#6c1883")
-(set-face-attribute 'web-mode-html-tag-face nil :foreground "#7c237c")
-(set-face-attribute 'web-mode-html-attr-name-face nil :foreground "#8f4919")
-(set-face-attribute 'web-mode-html-attr-value-face nil :foreground "#17219f")
-(set-face-attribute 'web-mode-javascript-string-face nil :foreground "#b73127")
+(set-face-attribute 'web-mode-html-tag-face nil :foreground "#0074e8")
+(set-face-attribute 'web-mode-html-attr-name-face nil :foreground "#dd00a9")
+(set-face-attribute 'web-mode-html-attr-value-face nil :foreground "#003eaa")
+(set-face-attribute 'web-mode-javascript-string-face nil :foreground "#003eaa")
 ;; (set-face-attribute 'web-mode-current-element-highlight-face nil :background nil :foreground "#000000" :weight 'ultra-bold)
 (set-face-attribute 'web-mode-current-element-highlight-face nil :background "transparent" :foreground "#000000" :weight 'ultra-bold)
 
