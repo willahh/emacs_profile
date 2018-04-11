@@ -6,8 +6,6 @@
 (setq ag-highlight-search t)
 (setq ag-reuse-buffers nil)
 
-;; (setq helm-ag-insert-at-point t)
-(setq helm-ag-insert-at-point nil)
 ;; (setq ag-reuse-window nil) ; Re use same window 
 (setq ag-reuse-window t)
 

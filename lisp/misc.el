@@ -8,9 +8,29 @@
       (remq 'process-kill-buffer-query-function
             kill-buffer-query-functions))
 
-;; https://tuhdo.github.io/helm-intro.html
-(when (executable-find "curl")
-  (setq helm-google-suggest-use-curl-p t))
+;; Key chords ------------------------------------
+;; From http://emacsrocks.com/e07.html
+(key-chord-mode 1)
+
+;; Max time delay between two key presses to be considered a key
+(setq key-chord-two-keys-delay 0.1) ; default 0.1
+(setq key-chord-one-key-delay 0.2) ; default 0.2
+
+
+;; Multicursor ---------------------------------
+;; Ask for apply command for all, keep on default (remember settings are stored in ~/.emacs/.mc-lists.el)
+;; (setq mc/always-run-for-all 1)
+(setq mc/always-run-for-all nil)
+
+;; Multiple-curspr with mouse
+;; http://pragmaticemacs.com/emacs/add-multiple-cursors-with-mouse-clicks/
+(use-package multiple-cursors
+  :ensure t
+  :bind (("C-S-<mouse-1>" . mc/add-cursor-on-click)))
+
+;; Witch-key -----------------------
+(which-key-mode)
+
 
 ;; http://pragmaticemacs.com/
 (use-package pdf-tools
@@ -463,6 +483,12 @@ Version 2016-10-24"
 ;; (require 'whitespace)
 (setq whitespace-line-column 80) ;; limit line length
 ;; (setq whitespace-style '(face tabs empty trailing lines-tail))
+(setq whitespace-style '(face tabs empty trailing lines-tail)) ; From Prelude
+
+;; saner regex syntax
+;; From Prelude
+(require 're-builder)
+(setq reb-re-syntax 'string)
 
 ;; From prelude
 ;; Colorize output of Compilation Mode, see

@@ -4,32 +4,29 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
-(load "~/.emacs.d/lisp/init-packages") ; Package management
-(load-file "~/.emacs.d/lisp/base.el") ; "better" Emacs defaults
-(load-file "~/.emacs.d/lisp/system.el") ; System
-(load-file "~/.emacs.d/lisp/defun.el") ; Common functions
-(load-file "~/.emacs.d/lisp/alist.el") ; Manage major mode from file extension patterns
-(load-file "~/.emacs.d/lisp/project.el") ; Workspace / project
-(load "~/.emacs.d/vendor/emacs-textmate-0.1/textmate")
-(load-file "~/.emacs.d/lisp/file_navigation.el")
+(load "~/.emacs.d/lisp/init-packages")
+(load-file "~/.emacs.d/lisp/base.el")
+(load-file "~/.emacs.d/lisp/system.el")
+(load-file "~/.emacs.d/lisp/defun.el")
+(load-file "~/.emacs.d/lisp/alist.el")
 (load-file "~/.emacs.d/lisp/navigation.el")
-(load-file "~/.emacs.d/lisp/hydras.el") ; Hydra
+(load-file "~/.emacs.d/lisp/structural_editing.el")
+(load-file "~/.emacs.d/lisp/dired.el")
+(load-file "~/.emacs.d/lisp/project.el")
+(load-file "~/.emacs.d/lisp/hydras.el")
 (load-file "~/.emacs.d/lisp/org.el")
-(load-file "~/.emacs.d/lisp/dired.el") ;
 (load-file "~/.emacs.d/lisp/misc.el")
 (load-file "~/.emacs.d/lisp/ui.el")
 (load-file "~/.emacs.d/lisp/completion.el")
 (load-file "~/.emacs.d/lisp/yas.el")
 (load-file "~/.emacs.d/lisp/vc.el")
 (load-file "~/.emacs.d/lisp/search.el")
-;; (load-file "~/.emacs.d/lisp/buffer.el")
-;; (load-file "~/.emacs.d/lisp/evil.el")
 (load-file "~/.emacs.d/lisp/syntax_checker.el")
 (load-file "~/.emacs.d/lisp/tags.el")
 (load-file "~/.emacs.d/lisp/key_binding.el")
 (load-file "~/.emacs.d/lisp/theme-light3.el")
 (load-file "~/.emacs.d/lisp/tags.el")
-(load-file "~/.emacs.d/lisp/lang/typescript.el") ; Language specific configurations
+(load-file "~/.emacs.d/lisp/lang/typescript.el")
 (load-file "~/.emacs.d/lisp/lang/html.el")
 (load-file "~/.emacs.d/lisp/lang/javascript.el")
 (load-file "~/.emacs.d/lisp/lang/php.el")
@@ -39,6 +36,5 @@
 (load-file "~/.emacs.d/lisp/lang/clojure.el")
 (load-file "~/.emacs.d/lisp/lang/react.el")
 (load-file "~/.emacs.d/lisp/lang/hy.el")
-(load-file "~/.emacs.d/lisp/defun/wlh-project.el") ; Custom lisp
-
-(window-divider-mode-apply 1) ; Enable window-divier
+(load-file "~/.emacs.d/lisp/defun/wlh-project.el")
+(window-divider-mode-apply 1)
