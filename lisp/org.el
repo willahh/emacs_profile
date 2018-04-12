@@ -87,8 +87,6 @@
       org-src-fontify-natively t
       org-src-tab-acts-natively t)
 
-
-
 ;; org protocol
 ;; http://orgmode.org/worg/org-contrib/org-protocol.html
 ;; (add-to-list 'load-path "~/path/to/org/protocol/")

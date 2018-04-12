@@ -15,8 +15,8 @@
 (require 'css-mode)
 (require 'slime)
 (require 'css-mode)
-
-;; Defun leader key © (alt+c on osx azerty keyboard)
+(require 'emmet-mode)
+;; leader key © (alt+c on osx azerty keyboard)
 (defvar wlh/leader-key (concat "©" " "))
 (global-unset-key (kbd "M-m")) ; Define M-m shortcut as a leader key
 (global-unset-key (kbd "©"))
@@ -133,7 +133,7 @@
 (global-set-key (kbd "<home>") 'beginning-of-buffer)
 (global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
 (global-set-key (kbd "C-j") 'new-line-dwim)
-;; (define-key emmet-mode-keymap (kbd "C-j") 'new-line-dwim)
+(define-key emmet-mode-keymap (kbd "C-j") 'new-line-dwim) ;; Needed
 (global-set-key (kbd "M-X") 'other-frame) ; Same keybinding from osx switch window habits
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
 (global-set-key (kbd "M-g") 'goto-line) ; https://github.com/skeeto/.emacs.d/blob/master/init.el
@@ -161,15 +161,9 @@
 (global-set-key (kbd "M-s") 'save-buffer)
 (define-key paredit-mode-map (kbd "M-s") 'save-buffer)
 
-
 ;; delete-window
 (global-set-key (kbd "M-w") 'wlh/delete-window) ;; Delete window or frame
 (define-key magit-mode-map (kbd "M-w") 'wlh/delete-window)
-
-;; ;; New frame
-;; (global-set-key [meta shift w] 'delete-frame)
-;; (global-set-key (kbd "M-S-w") 'delete-frame)
-;; (global-set-key (kbd "M-W") 'delete-frame)
 
 ;; shell-pop
 (global-set-key (kbd "C-!") 'shell-pop)
@@ -178,7 +172,6 @@
 ;; ---
 (define-key ivy-minibuffer-map (kbd "<escape>") 'minibuffer-keyboard-quit)
 (define-key ivy-minibuffer-map (kbd "C-h") 'delete-backward-char)
-
 
 ;; Backward kill sexp
 (global-set-key [(control meta h)] 'backward-kill-sexp)
@@ -231,8 +224,6 @@
 (define-key compilation-mode-map (kbd "M-n") 'wlh/create-new-centered-frame)
 (define-key magit-mode-map (kbd "M-n") 'wlh/create-new-centered-frame)
 (define-key slime-mode-map (kbd "M-n") 'wlh/create-new-centered-frame)
-;; (define-key slime-repl-mode-map (kbd "M-n") 'wlh/create-new-centered-frame)
-;; (define-key eshell-mode-map (kbd "M-n") 'wlh/create-new-centered-frame)
 
 ;; Revert buffer
 (define-key global-map (kbd "C-x C-r") 'revert-buffer-no-confirm)
@@ -255,9 +246,6 @@
 ;; Multi cursor stuf
 (global-set-key (kbd "ı") 'mc/mark-next-lines) ; ALT+SHIFT+p
 (global-set-key (kbd "∏") 'mc/mark-previous-lines) ; ALT+SHIFT+n
-
-;; Misc
-;; (global-set-key (kbd "Ò") 'paredit-splice-sexp)
 
 ;; Drag line
 ;; top
@@ -372,10 +360,12 @@
 
 ;; ---------------- new line
 ;; (global-set-key (kbd "<return>") 'new-line-dwim) ; Can't be setted globally (mini buffer, helm, misc actions)
+(global-set-key (kbd "RET") 'new-line-dwim)
 (define-key css-mode-map (kbd "RET") 'new-line-dwim)
 (define-key prog-mode-map (kbd "RET") 'new-line-dwim)
 (define-key php-mode-map (kbd "RET") 'new-line-dwim)
 (define-key web-mode-map(kbd "<return>") 'wlh/web-mode-new-line)
+(define-key textmate-mode-map (kbd "<return>") 'wlh/web-mode-new-line) ;; Needed for web-mode > css / web-mode > js ENTER key
 ;; (define-key web-mode-map (kbd "C-m") 'newline-and-indent)
 ;; (define-key prog-mode-map "<return>" 'new-line-dwim)
 ;; (define-key web-mode-map "<return>" 'new-line-dwim)
@@ -429,10 +419,8 @@
 (define-key isearch-mode-map (kbd "C-'") 'avy-isearch)
 (define-key org-mode-map (kbd "C-'") 'avy-isearch)
 (define-key isearch-mode-map (kbd "C-h") 'isearch-delete-char)
-;; (define-key isearch-mode-map (kbd "C-S-j") 'avy-isearch)
 (define-key isearch-mode-map (kbd "M-v") 'isearch-yank-pop)
 (define-key isearch-mode-map (kbd "C-v") 'isearch-yank-pop)
-;; (define-key isearch-mode-map (kbd "M-s") 'swiper--from-isearch)
 (define-key isearch-mode-map (kbd "C-c C-s") 'swiper--from-isearch)
 (define-key isearch-mode-map (kbd "C-z") 'isearch-yank-word-or-char) ; Used for azerty keyboard (qwerty z is more accessible than w)
 (define-key isearch-mode-map (kbd "C-i") 'isearch-highlight-phrase)
@@ -600,44 +588,11 @@
 ;; ---------------- Function keys -
 ;; (global-set-key (kbd "<f2>") 'my/open-tree-view)
 ;; F Keys
-;; (global-set-key (kbd "<f1> f") 'counsel-describe-function)
-;; (global-set-key (kbd "<f1> v") 'counsel-describe-variable)
-;; (global-set-key (kbd "<f1> l") 'counsel-find-library)
-;; (global-set-key (kbd "<f2> &") 'helm-projectile-switch-project) ; F2 1 on qwerty
-;; (global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
-;; (global-set-key (kbd "<f2> u") 'counsel-unicode-char)
-;; (global-set-key (kbd "<f2> a") 'org-agenda)
-;; (global-set-key (kbd "<f2> r") 'helm-recentf)
-;; (global-set-key (kbd "<f2> e") 'helm-projectile)
-;; (global-set-key (kbd "<f2> e") 'helm-mini)
-;; (global-set-key (kbd "<f2> b") 'helm-buffers-list)
-;; (global-set-key (kbd "<f2> c") 'org-capture)
 (global-set-key (kbd "<f5>") 'revert-buffer-no-confirm)
 (global-set-key (kbd "<f6>") 'dired-jump)
 (global-set-key (kbd "<f7>") 'projectile-dired)
-
-;; (global-set-key (kbd "<f8>") 'neotree-toggle)
-;; (global-set-key (kbd "<f8>") 'wlh/neotree-set) ; Ne fonctionne pas depuis dired
-;; (global-set-key (kbd "<f8>") 'neotree-projectile-action)
-;; (global-set-key (kbd "<f8>") 'neotree-toggle)
-;; (global-set-key (kbd "<f8>") 'neotree-dir)
-;; (global-set-key (kbd "<f8>") 'neotree-projectile-action)
 (global-set-key (kbd "<f8>") 'treemacs-projectile-toggle)
 
-;; (global-set-key (kbd "<f9>") 'projectile-recentf)
-;; (global-set-key (kbd "<f10>") 'counsel-recentf)
-;; (global-set-key (kbd "<f10>") 'helm-recentf)
-;; (global-set-key (kbd "<f11>") 'wlh/IDE)
-
-
-;; ---------------- Super keys
-;; Search with super key
-;; (global-set-key (kbd "s-z") 'zap-to-char)
-;; (global-set-key (kbd "s-e") 'kmacro-end-and-call-macro) ; Super+e
-;; (global-set-key (kbd "s-c") 'org-capture)
-;; (global-set-key (kbd "s-b") 'projectile-switch-to-buffer)
-;; (global-set-key (kbd "s-k") 'fixup-whitespace)
-;; (global-set-key (kbd "s-/") 'comment-or-uncomment-region-or-line)
 
 ;; Kill
 ;; Better move paragraph / mark paragraph
@@ -645,10 +600,8 @@
 (global-set-key (kbd "M-h") 'rs-mark-paragraph)
 (global-set-key (kbd "M-¨") 'lawlist-backward-paragraph)
 (global-set-key (kbd "M-*") 'lawlist-forward-paragraph)
-;; (global-set-key (kbd "s-k") 'kill-paragraph)
-;; (global-set-key (kbd "s-K") 'backward-kill-paragraph)
 
-;; Browse comands
+;; Highlight-symbol
 (global-set-key (kbd "M-N") 'highlight-symbol-next)
 (define-key slime-mode-map (kbd "M-N") 'highlight-symbol-next)
 (define-key highlight-symbol-nav-mode-map (kbd "M-N") 'highlight-symbol-next)
@@ -663,8 +616,6 @@
 
 ;; Recentf
 (global-set-key (kbd "C-c f") 'counsel-recentf) 
-;; (global-set-key (kbd "M-m r") 'counsel-recentf)
-;; (global-set-key (kbd "M-m R") 'projectile-recentf)
 
 ;; Scroll commands
 (global-set-key (kbd "C-x v U") 'wlh/svn-up-recursive)

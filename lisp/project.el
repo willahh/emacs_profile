@@ -1,9 +1,7 @@
-(require 'projectile)
-
 ;; Automatically save and restore sessions
 ;; https://stackoverflow.com/a/4485083
-(desktop-save-mode 1)
-(setq desktop-dirname             "~/.emacs.d/desktop/"
+(setq desktop-save-mode 1
+      desktop-dirname             "~/.emacs.d/desktop/"
       desktop-base-file-name      "emacs.desktop"
       desktop-base-lock-name      "lock"
       desktop-path                (list desktop-dirname)
@@ -13,6 +11,7 @@
       desktop-auto-save-timeout   10)
 
 ;; Projectile
+(require 'projectile)
 (projectile-global-mode)
 (setq projectile-mode-line nil)
 (setq projectile-enable-caching t)

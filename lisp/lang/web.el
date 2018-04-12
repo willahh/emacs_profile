@@ -39,3 +39,10 @@
   (flycheck-mode))
 
 (add-hook 'web-mode-hook 'wlh/web-mode)
+
+(defun wlh/web-mode-indent ()
+  (interactive)
+  (emmet-expand-yas)
+  (message "ok"))
+
+(define-key web-mode-map (kbd "C-M-i") 'wlh/web-mode-indent)
