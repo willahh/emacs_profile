@@ -92,10 +92,14 @@
       helm-imenu-fuzzy-match t
       helm-mode-fuzzy-match t)
 
+
 ;; helm configuration
+;; (helm-autoresize-mode nil)
+(helm-autoresize-mode t)
 (setq helm-autoresize-max-height 25) ;; 15 is too small on laptop
-(helm-autoresize-mode nil)
+(setq helm-display-buffer-default-height 10)
 (setq helm-allow-mouse t)
+
 
 (defun helm-mouse-1-exit-minibuffer (click)
   (interactive "e")
