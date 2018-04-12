@@ -1077,8 +1077,9 @@ Version 2016-12-27"
 ;;   (multiple-cursors-mode 0))
 
 ;; https://www.quora.com/In-emacs-multiple-cursors-how-can-I-turn-off-multiple-cursors-whenever-I-click-anywhere-in-the-window
-(global-unset-key (kbd "M-<down-mouse-1>"))
-(global-set-key (kbd "M-<mouse-1>") 'mc/remove-fake-cursors)
+;; (global-unset-key (kbd "M-<down-mouse-1>"))
+;; (global-set-key (kbd "M-<mouse-1>") 'mc/remove-fake-cursors)
+(global-set-key (kbd "<mouse-1>") 'mc/remove-fake-cursors)
 
 ;; https://stackoverflow.com/a/2706660
 (defadvice save-buffers-kill-emacs (around no-query-kill-emacs activate)

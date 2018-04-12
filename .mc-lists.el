@@ -80,6 +80,7 @@
         kill-sexp
         mark-sexp
         markdown-cycle
+        mc/remove-fake-cursors
         mouse-save-then-kill
         mouse-set-region
         mouse-start-secondary
