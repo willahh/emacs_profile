@@ -168,7 +168,7 @@
       helm-ag-insert-at-point 'sexp
       helm-M-x-fuzzy-match t
       helm-recentf-fuzzy-match t
-      helm-buffers-fuzzy-matching t
+      helm-buffers-fuzzy-matching nil
       helm-locate-fuzzy-match nil
       helm-imenu-fuzzy-match t
       helm-mode-fuzzy-match t)
