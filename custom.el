@@ -41,6 +41,7 @@
  '(rainbow-delimiters-depth-6-face ((t (:foreground "#cc99ff" :weight bold))))
  '(rainbow-delimiters-depth-7-face ((t (:foreground "#fa75e2" :weight bold))))
  '(rainbow-delimiters-depth-8-face ((t (:foreground "#55bdf0" :weight bold))))
- '(whitespace-line ((t (:background "white smoke" :foreground "black"))))
+ '(whitespace-empty ((t (:background "gainsboro"))))
+ '(whitespace-line ((t nil)))
  '(whitespace-space ((t (:foreground "lightgray"))))
  '(whitespace-trailing ((t (:foreground "gainsboro" :weight bold)))))
