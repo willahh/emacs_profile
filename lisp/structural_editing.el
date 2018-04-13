@@ -136,6 +136,8 @@
 (define-key php-mode-map (kbd "C-M-h") 'sp-backward-kill-sexp)
 (define-key nxml-mode-map (kbd "C-M-h") 'sp-backward-kill-sexp)
 (define-key web-mode-map (kbd "C-M-h") 'sp-backward-kill-sexp) ;; OK in web mode > js
+(define-key emacs-lisp-mode-map (kbd "C-M-h") 'paredit-backward-kill-word)
+(define-key clojure-mode-map (kbd "C-M-h") 'paredit-backward-kill-word)
 
 (define-key php-mode-map (kbd "C-M-a") 'beginning-of-defun)
 (define-key nxml-mode-map (kbd "C-M-a") 'beginning-of-defun)
@@ -143,6 +145,8 @@
 (define-key php-mode-map (kbd "C-M-e") 'end-of-defun)
 (define-key nxml-mode-map (kbd "C-M-e") 'end-of-defun)
 
+(define-key emacs-lisp-mode-map (kbd "<backspace>") 'paredit-backward-delete)
+(define-key clojure-mode-map (kbd "<backspace>") 'paredit-backward-delete)
 
 
 
