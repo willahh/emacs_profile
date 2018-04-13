@@ -79,8 +79,6 @@
 (set-face-attribute 'css-property nil :foreground "#ff0101")
 (set-face-attribute 'css-property nil :foreground "#0451a5")
 
-;; ------- comment
-
 ;; ------- web-mode
 (set-face-attribute 'web-mode-function-call-face nil :foreground "#000000")
 ;; (set-face-attribute 'web-mode-keyword-face nil :foreground "#0000ff")
