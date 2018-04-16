@@ -233,6 +233,7 @@
 (global-set-key (kbd "C-x C-k") 'kill-region)
 
 ;; ---------------- Dired
+(global-set-key (kbd "C-x RET") 'dired-jump)
 (define-key php-mode-map [(control x) (control j)] 'dired-jump)
 (define-key web-mode-map [(control x) (control j)] 'dired-jump)
 (define-key dired-mode-map (kbd "C-x w") 'wdired-change-to-wdired-mode)
