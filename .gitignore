@@ -35,3 +35,4 @@ lisp/lsp.el
 todo.org_archive
 archive-contents
 .idea
+.vscode
