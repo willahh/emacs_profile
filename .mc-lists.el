@@ -74,6 +74,7 @@
         hydra-vi/evil-next-line-1-first-non-blank
         indent-for-tab-command
         indent-rigidly
+        join-region
         js2-line-break
         kill-region
         kill-sentence
@@ -108,6 +109,7 @@
         paredit-backward-down
         paredit-backward-kill-word
         paredit-backward-up
+        paredit-close-curly
         paredit-doublequote
         paredit-forward
         paredit-forward-barf-sexp

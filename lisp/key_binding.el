@@ -10,12 +10,14 @@
 (require 'magit)
 (require 'term)
 (require 'web-mode)
-(require 'clojure-mode)
+;; (require 'clojure-mode)
 (require 'typescript-mode)
 (require 'css-mode)
 (require 'slime)
 (require 'css-mode)
 (require 'emmet-mode)
+(require 'highlight-symbol)
+
 ;; leader key © (alt+c on osx azerty keyboard)
 (defvar wlh/leader-key (concat "©" " "))
 (global-unset-key (kbd "M-m")) ; Define M-m shortcut as a leader key
@@ -289,9 +291,9 @@
 (global-set-key (kbd "C-h") 'backward-delete-char)
 (define-key lisp-mode-map (kbd "C-h") 'paredit-backward-delete)
 (define-key emacs-lisp-mode-map (kbd "C-h") 'paredit-backward-delete)
-(define-key clojure-mode-map (kbd "C-h") 'paredit-backward-delete)
+;; (define-key clojure-mode-map (kbd "C-h") 'paredit-backward-delete)
 (define-key helm-map (kbd "C-h") 'paredit-backward-delete)
-(define-key iedit-mode-keymap (kbd "C-h") 'paredit-backward-delete)
+;; (define-key iedit-mode-keymap (kbd "C-h") 'paredit-backward-delete)
 
 ;; ---------------- Backward delete word
 (global-set-key (kbd "C-w") 'backward-kill-word-or-region)
@@ -452,8 +454,14 @@
 ;; vc
 (global-set-key (kbd "C-x v f") 'vc-diff)
 
-;; ---------------- Shell
-(define-key shell-mode-map (kbd "RET") 'eshell-send-input)
+;; ;; ---------------- Shell
+;; (define-key shell-mode-map (kbd "RET") 'eshell-send-input)
+;; (define-key eshell-mode-map (kbd "C-j") 'eshell-send-input)
+
+;; (defun wlj/eshell-mode-hook ()
+;;   (interactive)
+;;   (define-key eshell-mode-map (kbd "C-j") 'eshell-send-input))
+;; (add-hook 'eshell-mode-hook 'wlj/eshell-mode-hook)
 
 ;; expand-region
 (global-set-key (kbd "C-à") 'er/expand-region) ; C-0 on azerty keyboard
