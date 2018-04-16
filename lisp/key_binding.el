@@ -16,12 +16,15 @@
 (require 'slime)
 (require 'css-mode)
 (require 'emmet-mode)
+
+
 ;; leader key © (alt+c on osx azerty keyboard)
 (defvar wlh/leader-key (concat "©" " "))
 (global-unset-key (kbd "M-m")) ; Define M-m shortcut as a leader key
 (global-unset-key (kbd "©"))
 
 ;; --------------- Main Emacs keybinding changes
+(define-key key-translation-map (kbd "C-j") (kbd "RET"))
 (global-set-key (kbd "M-a") 'mark-whole-buffer) ; Was backward-sentence
 (define-key php-mode-map (kbd "M-a") 'mark-whole-buffer)
 

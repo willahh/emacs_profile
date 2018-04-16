@@ -16,6 +16,7 @@
 (require 'ace-window)
 (require 'avy)
 (require 'web-mode)
+(require 'clojure-mode)
 
 ;; highlight-symbol ---------------------------
 (require 'highlight-symbol)
