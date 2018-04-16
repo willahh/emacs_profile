@@ -1059,10 +1059,10 @@ Version 2016-12-27"
 
 ;; full screen magit-status
 ;; http://whattheemacsd.com/
-;; (defadvice magit-status (around magit-fullscreen activate)
-;;   (window-configuration-to-register :magit-fullscreen)
-;;   ad-do-it
-;;   (delete-other-windows))
+(defadvice magit-status (around magit-fullscreen activate)
+  (window-configuration-to-register :magit-fullscreen)
+  ad-do-it
+  (delete-other-windows))
 
 (defadvice yank-pop (after yank-pop-indent activate)
   "If current mode is one of 'yank-indent-modes, indent yanked text (with prefix arg don't indent)."

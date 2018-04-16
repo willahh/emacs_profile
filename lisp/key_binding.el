@@ -453,6 +453,7 @@
 
 ;; ---------------- Shell
 (define-key shell-mode-map (kbd "RET") 'eshell-send-input)
+(define-key shell-mode-map (kbd "C-j") 'paredit-newline)
 
 ;; expand-region
 (global-set-key (kbd "C-à") 'er/expand-region) ; C-0 on azerty keyboard
