@@ -325,7 +325,8 @@
 
 ;; Disable mac frame tabs
 ;; (setq mac-frame-tabbing nil)
-(setq mac-frame-tabbing t)
+;; (setq mac-frame-tabbing t)
+(setq mac-frame-tabbing nil)
 
 ;; Diff auto refine
 (setq diff-auto-refine-mode t)

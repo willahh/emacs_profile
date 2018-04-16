@@ -24,6 +24,7 @@
 (global-unset-key (kbd "©"))
 
 ;; --------------- Main Emacs keybinding changes
+(define-key key-translation-map (kbd "C-j") (kbd "RET"))
 (global-set-key (kbd "M-a") 'mark-whole-buffer) ; Was backward-sentence
 (define-key php-mode-map (kbd "M-a") 'mark-whole-buffer)
 
@@ -462,6 +463,9 @@
 ;;   (interactive)
 ;;   (define-key eshell-mode-map (kbd "C-j") 'eshell-send-input))
 ;; (add-hook 'eshell-mode-hook 'wlj/eshell-mode-hook)
+;; ---------------- Shell
+(define-key shell-mode-map (kbd "RET") 'eshell-send-input)
+(define-key shell-mode-map (kbd "C-j") 'paredit-newline)
 
 ;; expand-region
 (global-set-key (kbd "C-à") 'er/expand-region) ; C-0 on azerty keyboard
