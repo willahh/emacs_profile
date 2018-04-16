@@ -341,6 +341,7 @@
 (global-set-key (kbd "C-c C-M-s") 'vr/replace)
 ;; (global-set-key (kbd "M-=") 'delete-horizontal-space) ; Azerty equivalent of M-\
 (global-set-key (kbd "M-=") 'just-one-space) ; Azerty equivalent of M-\
+(define-key helm-map (kbd "C-j") 'helm-confirm-and-exit-minibuffer)
 
 ;; Search
 ;; (global-set-key (kbd "M-F") 'ag)

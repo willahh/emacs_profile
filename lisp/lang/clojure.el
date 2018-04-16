@@ -1,13 +1,16 @@
+;; Check https://github.com/clojure-emacs/example-config/blob/master/lisp/cfg-hlsexp.el
 (require 'cider)
-(require 'clj-refactor)
 (require 'helm-cider)
 (require 'clojure-snippets)
 
 ;; Specify history file
 (setq cider-history-file "~/.emacs.d/nrepl-history")
 
-;; auto-select the error buffer when it's displayed
-(setq cider-auto-select-error-buffer t)
+;; ;; auto-select the error buffer when it's displayed
+;; (setq cider-auto-select-error-buffer t)
+
+;; nicer font lock in REPL
+(setq cider-repl-use-clojure-font-lock t)
 
 ;; Prevent the auto-display of the REPL buffer in a separate window after connection is established
 (setq cider-repl-pop-to-buffer-on-connect nil)
@@ -16,17 +19,57 @@
 (setq cider-repl-use-pretty-printing t)
 
 ;; Don't prompt for symbols
-(setq cider-prompt-for-symbol nil)
+;; (setq cider-prompt-for-symbol nil)
 
+;; result prefix for the REPL
+(setq cider-repl-result-prefix ";; => ")
+
+;; never ending REPL history
+(setq cider-repl-wrap-history t)
+
+;; looong history
+(setq cider-repl-history-size 3000)
+
+;; cljrefactor -------------------
+(require 'clj-refactor)
+
+;; no auto sort
+(setq cljr-auto-sort-ns nil)
+
+;; do not prefer prefixes when using clean-ns
+(setq cljr-favor-prefix-notation nil)
+
+
+;; Flycheck ---------------
+;; (add-to-list 'load-path (concat user-emacs-directory "site-lisp/" "flycheck-20150207.329"))
+
+;; (require-package 'let-alist)
+;; (require-package 'flycheck-clojure)
+
+;; (require 'flycheck)
+
+;; (eval-after-load 'flycheck '(flycheck-clojure-setup))
+
+;; (add-hook 'after-init-hook #'global-flycheck-mode)
+
+
+;; Paredit ---------------------
+(require 'paredit)
+(add-hook 'lisp-mode-hook #'paredit-mode)
+(add-hook 'emacs-lisp-mode-hook #'paredit-mode)
+(add-hook 'clojure-mode-hook #'paredit-mode)
+(add-hook 'cider-repl-mode-hook #'paredit-mode)
+
+
+;; Hooks ----------------------
 (defun wlh/clojure-mode-hook ()
   (interactive)
-  (clj-refactor-mode 1)            
-  (cljr-add-keybindings-with-prefix "C-c C-m")
-  (cljr-add-keybindings-with-prefix "C-c <C-m>"))
+  (clj-refactor-mode 1)
+  
+  ;; insert keybinding setup here
+  (cljr-add-keybindings-with-prefix "C-c RET"))
 
 (add-hook 'clojure-mode-hook 'wlh/clojure-mode-hook)
-
-;;
 (add-hook 'cider-mode-hook
           (lambda ()
             (eldoc-mode)
@@ -35,7 +78,8 @@
             (setq company-minimum-prefix-length 0)
             ;; (helm-cider-mode 1) ; Return an error for the moment, disable it
             (cider-company-enable-fuzzy-completion)
-            (define-key mc/keymap (kbd "C-c C-v") 'cider-eval-buffer)))
+            (define-key mc/keymap (kbd "C-c C-v") 'cider-eval-buffer)
+            (yas-minor-mode)))
 
 (add-hook 'cider-repl-mode-hook (lambda ()
                                   (company-mode t)
@@ -47,6 +91,7 @@
 ;; Indent and highlight more commands
 (put-clojure-indent 'match 'defun)
 
+;; Defuns ---------------------------------
 ;; Cycle between () {} []
 (defun live-delete-and-extract-sexp ()
   "Delete the sexp and return it."
