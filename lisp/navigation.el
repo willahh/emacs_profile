@@ -12,7 +12,6 @@
       ido-use-filename-at-point nil
       ;; ido-max-prospects 40
       ido-max-prospects 10
-      ido-everywhere t
       ido-everywhere 1
       ido-mode 1
       ido-vertical-mode 1)

@@ -25,6 +25,7 @@
 
 ;; --------------- Main Emacs keybinding changes
 (define-key key-translation-map (kbd "C-j") (kbd "RET"))
+(global-set-key (kbd "C-x RET") 'dired-jump) ;; Needed
 (global-set-key (kbd "M-a") 'mark-whole-buffer) ; Was backward-sentence
 (define-key php-mode-map (kbd "M-a") 'mark-whole-buffer)
 
@@ -64,6 +65,8 @@
 ;; (global-set-key (kbd "M-x") 'helm-M-x)
 ;; (global-set-key (kbd "M-x") 'counsel-M-x)
 ;; (global-set-key (kbd "M-m M-x") 'counsel-M-x)
+
+
 
 
 ;; ---------------- key-chord
@@ -369,7 +372,11 @@
 (define-key prog-mode-map (kbd "RET") 'new-line-dwim)
 (define-key php-mode-map (kbd "RET") 'new-line-dwim)
 (define-key web-mode-map(kbd "<return>") 'wlh/web-mode-new-line)
-(define-key textmate-mode-map (kbd "<return>") 'wlh/web-mode-new-line) ;; Needed for web-mode > css / web-mode > js ENTER key
+
+;; Needed for web-mode > css / web-mode > js ENTER key
+;; Update : wrong need only for web mode
+;; (define-key textmate-mode-map (kbd "<return>") 'wlh/web-mode-new-line) 
+
 ;; (define-key web-mode-map (kbd "C-m") 'newline-and-indent)
 ;; (define-key prog-mode-map "<return>" 'new-line-dwim)
 ;; (define-key web-mode-map "<return>" 'new-line-dwim)

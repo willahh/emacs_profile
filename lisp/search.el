@@ -63,4 +63,6 @@
                              (hl-line-mode)))
 
 (add-hook 'diff-mode-hook (lambda ()
-                               (hl-line-mode)))
+                            (hl-line-mode)))
+(add-hook 'prog-mode-hook (lambda ()
+                            (hl-line-mode)))
