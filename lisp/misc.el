@@ -77,6 +77,7 @@
 ;; (add-hook 'prog-mode-hook #'rainbow-mode)
 
 ;; sy
+(require 'syslog-mode)
 (add-hook 'syslog-mode-hook
           (lambda ()
             (toggle-truncate-lines 0)))
