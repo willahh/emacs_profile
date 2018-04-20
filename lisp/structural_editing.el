@@ -18,6 +18,14 @@
 (require 'web-mode)
 (require 'clojure-mode)
 
+
+
+;; Delete char ---------------------------
+(define-key prog-mode-map (kbd "C-h") 'backward-delete-char)
+(define-key php-mode-map (kbd "C-h") 'backward-delete-char)
+(define-key nxml-mode-map (kbd "C-h") 'backward-delete-char)
+
+
 ;; highlight-symbol ---------------------------
 (require 'highlight-symbol)
 
@@ -55,6 +63,8 @@
 (add-hook 'lisp-mode-hook             #'enable-paredit-mode)
 (add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
 (add-hook 'scheme-mode-hook           #'enable-paredit-mode)
+
+(define-key paredit-mode-map (kbd "C-h") 'paredit-backward-delete)
 
 (define-key prog-mode-map (kbd "M-(") 'paredit-wrap-round)
 (define-key php-mode-map (kbd "M-(") 'paredit-wrap-round)
@@ -167,13 +177,3 @@
 (add-hook 'scss-mode-hook 'textmate-mode)
 (add-hook 'org-mode 'textmate-mode)
 (add-hook 'text-mode (lambda () (textmate-mode nil)))
-
-(define-key prog-mode-map (kbd "C-h") 'backward-delete-char)
-(define-key php-mode-map (kbd "C-h") 'backward-delete-char)
-(define-key nxml-mode-map (kbd "C-h") 'backward-delete-char)
-
-
-
-
-
-
