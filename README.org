@@ -3,12 +3,6 @@
 
 :TOC:      
 
-* Description
-  This is my Emacs configuration i use and tweak every day. Mainly used from OSX
-  system.   The  installation   can  be   done   quickly,  however   a  lot   of
-  functionnalities  depends on  external tools.  Theses are  describes into  the
-  "Support" section.
-  
 ** Rules
    Packages :
   - Only stable packages are used from Elpa package manager
