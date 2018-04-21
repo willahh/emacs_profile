@@ -1,7 +1,7 @@
 ;; AG
 ;; http://agel.readthedocs.io/en/layo/installation.html
 (require 'ag)
-(require 'find-file-in-project)
+;; (require 'find-file-in-project)
 
 ;; (setq use-region-p nil)
 

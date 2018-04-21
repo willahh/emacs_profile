@@ -111,7 +111,6 @@
 ;; (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
 
 
-
 ;; ------- modeline
 (set-face-attribute 'mode-line nil
                     :foreground "#ffffff"

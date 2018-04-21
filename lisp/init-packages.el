@@ -34,7 +34,7 @@
                      company-quickhelp
                      company-tern
                      company-web
-                     counsel
+                     ;;counsel
                      crux
                      darkroom
                      dash
@@ -58,7 +58,7 @@
                      exec-path-from-shell
                      shell-pop
                      expand-region
-                     find-file-in-project
+;;                     find-file-in-project
                      flx-ido
                      flycheck-pos-tip
                      fullframe
@@ -152,7 +152,7 @@
                      yasnippet
                      zop-to-char
                      xref-js2
-                     counsel-gtags
+;;                     counsel-gtags
                      ))
 
 ;; Add some missing packages
@@ -187,6 +187,8 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/origami")
 (add-to-list 'load-path "~/.emacs.d/vendor/treemacs/src/elisp")
 (add-to-list 'load-path "~/.emacs.d/vendor/syslog-mode-2.2")
+;; (add-to-list 'load-path "~/.emacs.d/vendor/doom-themes")
+(add-to-list 'load-path "~/.emacs.d/vendor/wlh-dark-theme")
 
 ;; activate all the packages
 (package-initialize)

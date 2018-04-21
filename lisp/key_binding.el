@@ -10,7 +10,6 @@
 (require 'magit)
 (require 'term)
 (require 'web-mode)
-;; (require 'clojure-mode)
 (require 'typescript-mode)
 (require 'css-mode)
 (require 'slime)
@@ -35,7 +34,7 @@
 ;; (global-set-key (kbd "Â") 'toggle-php-flavor-mode) ; Alt + z
 (global-set-key (kbd "") 'toggle-php-flavor-mode) ; Alt + 1
 (global-set-key (kbd "Å") 'zap-to-char) ; Alt + Z
-(global-set-key (kbd "ß") 'ivy-switch-buffer) ; Alt + b
+; (global-set-key (kbd "ß") 'ivy-switch-buffer) ; Alt + b
 (global-set-key (kbd "∫") 'projectile-switch-to-buffer) ; Alt + B
 (global-set-key (kbd "È") 'fixup-whitespace) ; Alt + k
 (global-set-key (kbd "Ì") 'help) ; Alt + h
@@ -124,7 +123,7 @@
 (global-set-key (kbd "M-v") 'yank)
 (define-key mc/keymap (kbd "M-v") 'yank)
 (define-key helm-map (kbd "M-v") 'yank)
-(define-key ivy-minibuffer-map (kbd "M-v") 'yank)
+; (define-key ivy-minibuffer-map (kbd "M-v") 'yank)
 (global-set-key [(meta v)] 'yank)
 
 ;; Yank pop
@@ -173,13 +172,14 @@
 (global-set-key (kbd "C-t") 'transpose-chars)
 
 ;; ---
-(define-key ivy-minibuffer-map (kbd "<escape>") 'minibuffer-keyboard-quit)
-(define-key ivy-minibuffer-map (kbd "C-h") 'delete-backward-char)
+; (define-key ivy-minibuffer-map (kbd "<escape>") 'minibuffer-keyboard-quit)
+; (define-key ivy-minibuffer-map (kbd "C-h") 'delete-backward-char)
+(define-key ivy-mode-map (kbd "C-h") 'ivy-backward-delete-char)
 
 ;; Backward kill sexp
 (global-set-key [(control meta h)] 'backward-kill-sexp)
 (global-set-key (kbd "C-c C-k") 'kill-whole-line) ;; Override default emacs kill sentence but i don't use it
-(global-set-key (kbd "C-c C-o") 'ivy-occur)
+; (global-set-key (kbd "C-c C-o") 'ivy-occur)
 
 
 ;; ---------------- Eval
@@ -316,9 +316,12 @@
 (define-key company-active-map (kbd "C-i") 'company-complete-selection)
 ;; (define-key company-active-map (kbd "C-j") 'emmet-expand-line)
 ;; (define-key company-active-map (kbd "C-w") 'backward-kill-word)
+(define-key emacs-lisp-mode-map (kbd "C-i") 'company-complete)
 
 ;; counsel-find-file
-(global-set-key (kbd "C-x C-f") 'counsel-find-file)
+;;(global-set-key (kbd "C-x C-f") 'counsel-find-file)
+(global-set-key (kbd "C-x b") 'ido-switch-buffer)
+
 
 ;; Diff hl next / prev
 (global-set-key (kbd "C-c C-n") 'diff-hl-next-hunk)
@@ -332,8 +335,8 @@
 ;; helm-imenu - M-r key binding come from Sublime M-r go to symbol 
 (global-set-key (kbd "M-r") 'helm-imenu)
 (define-key paredit-mode-map (kbd "M-r") 'helm-imenu)
-(global-set-key (kbd "C-c i") 'counsel-imenu)
-(define-key paredit-mode-map (kbd "C-c i") 'counsel-imenu)
+;; (global-set-key (kbd "C-c i") 'counsel-imenu)
+;; (define-key paredit-mode-map (kbd "C-c i") 'counsel-imenu)
 
 ;; mark
 (global-set-key (kbd "C-c C-x C-d") 'crux-duplicate-and-comment-current-line-or-region)
@@ -426,7 +429,7 @@
 (define-key isearch-mode-map (kbd "C-h") 'isearch-delete-char)
 (define-key isearch-mode-map (kbd "M-v") 'isearch-yank-pop)
 (define-key isearch-mode-map (kbd "C-v") 'isearch-yank-pop)
-(define-key isearch-mode-map (kbd "C-c C-s") 'swiper--from-isearch)
+; (define-key isearch-mode-map (kbd "C-c C-s") 'swiper--from-isearch)
 (define-key isearch-mode-map (kbd "C-z") 'isearch-yank-word-or-char) ; Used for azerty keyboard (qwerty z is more accessible than w)
 (define-key isearch-mode-map (kbd "C-i") 'isearch-highlight-phrase)
 
@@ -526,13 +529,20 @@
 
 (global-set-key [(meta shift o)] 'wlh/previous-window)
 
-(global-set-key (kbd "M-p") 'projectile-find-file)
+;; (global-set-key (kbd "M-p") 'projectile-find-file)
+(global-set-key (kbd "M-p") 'counsel-projectile)
+
+(defun wlh/projectile-mode-hook2 ()
+  (interactive)
+  (global-set-key (kbd "M-p") 'counsel-projectile)
+(define-key projectile-mode-map (kbd "M-p") 'counsel-projectile))
+
+(define-key projectile-mode-map (kbd "M-p") 'counsel-projectile)
 (define-key ggtags-navigation-map (kbd "M-p") 'projectile-find-file)
 (define-key highlight-symbol-nav-mode-map (kbd "M-p") 'projectile-find-file)
 (define-key magit-mode-map (kbd "M-p") 'projectile-find-file)
 
-(global-set-key [(meta control shift p)] 'find-file-in-current-directory)
-
+;;(global-set-key [(meta control shift p)] 'find-file-in-current-directory)
 
 (global-set-key (kbd "<delete>") 'wlh/delete-backspace)
 (define-key paredit-mode-map (kbd "<delete>") 'wlh/delete-backspace)
@@ -541,10 +551,10 @@
 ;; Update to use find-file-in-project-by-selected
 (global-set-key (kbd "C->") 'ffap)
 
-(global-set-key (kbd "C-.") 'find-file-in-project-by-selected)
-(define-key php-mode-map [(control .)] 'find-file-in-project-by-selected)
+; (global-set-key (kbd "C-.") 'find-file-in-project-by-selected)
+; (define-key php-mode-map [(control .)] 'find-file-in-project-by-selected)
 
-(global-set-key (kbd "C-c p ' g") 'projectile-find-file-dwim-other-window) ; (C-c p 4 g on azerty)
+;; (global-set-key (kbd "C-c p ' g") 'projectile-find-file-dwim-other-window) ; (C-c p 4 g on azerty)
 
 ;; ---------------- text
 ;;(define-key js-mode-map (kbd "C-:") "\C-e;")
@@ -629,15 +639,16 @@
 (define-key ggtags-navigation-map (kbd "M-P") 'highlight-symbol-prev)
 
 ;; Recentf
-(global-set-key (kbd "C-c f") 'counsel-recentf) 
+;; (global-set-key (kbd "C-c f") 'counsel-recentf) 
+(global-set-key (kbd "C-c f") 'crux-recentf-ido-find-file)
 
 ;; Scroll commands
 (global-set-key (kbd "C-x v U") 'wlh/svn-up-recursive)
 (global-set-key (kbd "s-a") 'mark-whole-buffer)
-(global-set-key (kbd "C-c C-s") 'swiper)
-(define-key web-mode-map (kbd "C-c C-s") 'swiper)
-(define-key js2-mode-map (kbd "C-c C-s") 'swiper)
-(define-key php-mode-map (kbd "C-c C-s") 'swiper)
+; (global-set-key (kbd "C-c C-s") 'swiper)
+; (define-key web-mode-map (kbd "C-c C-s") 'swiper)
+; (define-key js2-mode-map (kbd "C-c C-s") 'swiper)
+; (define-key php-mode-map (kbd "C-c C-s") 'swiper)
 
 (define-key js2-mode-map (kbd "<C-M-mouse-1>") 'xref-find-definitions)
 (define-key js2-mode-map (kbd "<C-M-mouse-3>") 'xref-pop-marker-stack)
@@ -712,12 +723,12 @@
 (global-set-key [C-f7] 'winner-redo)
 
 ;; C-x shortcuts from oremacs
-(global-set-key (kbd "C-x l") 'counsel-locate)
-(global-set-key (kbd "C-x C-l") 'locate)
-(global-set-key (kbd "C-x C-f") 'counsel-find-file)
-(global-set-key (kbd "C-c g") 'counsel-git)
-(global-set-key (kbd "C-x l") 'counsel-locate)
-(global-set-key (kbd "C-c C-r") 'ivy-resume)
+; (global-set-key (kbd "C-x l") 'counsel-locate)
+; (global-set-key (kbd "C-x C-l") 'locate)
+; (global-set-key (kbd "C-x C-f") 'counsel-find-file)
+; (global-set-key (kbd "C-c g") 'counsel-git)
+; (global-set-key (kbd "C-x l") 'counsel-locate)
+; (global-set-key (kbd "C-c C-r") 'ivy-resume)
 
 ;; org (from prelude)
 (global-set-key "\C-cl" 'org-store-link)

@@ -13,3 +13,6 @@
 [submodule "vendor/sidebar.el"]
 	path = vendor/sidebar.el
 	url = https://github.com/sebastiencs/sidebar.el.git
+[submodule "ivy"]
+	path = vendor/____ivy
+	url = https://github.com/abo-abo/swiper.git

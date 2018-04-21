@@ -1,7 +1,7 @@
 ;; ido -------------------------------------------------------------------------
 (require 'ido)
 (require 'flx-ido)
-(require 'ido-vertical-mode)
+;; (require 'ido-vertical-mode)
 (require 'ido-occur)
 
 (setq ido-enable-prefix nil
@@ -10,39 +10,14 @@
       ido-auto-merge-work-directories-length -1
       ido-create-new-buffer 'always
       ido-use-filename-at-point nil
-      ;; ido-max-prospects 40
       ido-max-prospects 10
       ido-everywhere t
-      ido-everywhere 1
       ido-mode 1
-      ido-vertical-mode 1)
-
-(flx-ido-mode 1)
-
-;; C-n/p is more intuitive in vertical layout
-(setq ido-vertical-define-keys 'C-n-C-p-up-down-left-right)
-
+      ido-vertical-mode nil)
 
 
 ;;  Ivy -------------------------------------------------------------------------
 (require 'ivy)
-
-(ivy-mode)
-
-;; ivy conf
-(setq ivy-virtual-abbreviate 'full)
-
-;; set ivy height
-(setq ivy-height 12)
-
-;; make sure it always stays that high
-(setq ivy-fixed-height-minibuffer nil)
-
-;; full file names - useful when multiple files have same names
-(setq ivy-virtual-abbreviate 'full)
-(setq ivy-use-virtual-buffers t)
-(setq ivy-count-format "(%d/%d) ")
-(setq ivy-initial-inputs-alist nil)
 
 (setq ivy-re-builders-alist
       '((ivy-switch-buffer . ivy--regex-plus)
@@ -54,28 +29,63 @@
         (projectile-find-file . ivy--regex-fuzzy)
         (t . ivy--regex-plus)))
 
-(setq ivy-use-selectable-prompt t)
-
-;; Use Enter on a directory to navigate into the directory, not open it with dired.
-(define-key ivy-minibuffer-map (kbd "C-m") 'ivy-alt-done)
-(define-key ivy-minibuffer-map (kbd "<tab>") 'ivy-alt-done)
-
-(setq projectile-completion-system 'ivy)
-
-(ivy-set-occur 'ivy-switch-buffer 'ivy-switch-buffer-occur)
-
-;; http://oremacs.com/swiper/
-(setq magit-completing-read-function 'ivy-completing-read)
 
 
+;; (ivy-mode)
+
+;; ;; ivy conf
+;; (setq ivy-virtual-abbreviate 'full)
+
+;; ;; set ivy height
+;; (setq ivy-height 12)
+
+;; ;; make sure it always stays that high
+;; (setq ivy-fixed-height-minibuffer nil)
+
+;; ;; full file names - useful when multiple files have same names
+;; (setq ivy-virtual-abbreviate 'full)
+;; (setq ivy-use-virtual-buffers t)
+;; (setq ivy-count-format "(%d/%d) ")
+;; (setq ivy-initial-inputs-alist nil)
+
+;; (setq ivy-re-builders-alist
+;;       '((ivy-switch-buffer . ivy--regex-plus)
+;;         (swiper . ivy--regex-plus)
+;;         (counsel-imenu . ivy--regex-plus)
+;;         ;; (projectile-find-file . ivy--regex-fuzzy)
+;;         (t . ivy--regex-fuzzy)
+;;         ;; (projectile-find-file . ivy--regex-plus)
+;;         (projectile-find-file . ivy--regex-fuzzy)
+;;         (t . ivy--regex-plus)))
+
+;; (setq ivy-use-selectable-prompt t)
+
+;; ;; Use Enter on a directory to navigate into the directory, not open it with dired.
+;; (define-key ivy-minibuffer-map (kbd "C-m") 'ivy-alt-done)
+;; (define-key ivy-minibuffer-map (kbd "<tab>") 'ivy-alt-done)
+
+;; (setq projectile-completion-system 'ivy)
+
+;; (ivy-set-occur 'ivy-switch-buffer 'ivy-switch-buffer-occur)
+
+;; ;; http://oremacs.com/swiper/
+;; (setq magit-completing-read-function 'ivy-completing-read)
 
 
 
-;; Helm -------------------------------------------------------------------------
+
+
+;; ;; Helm -------------------------------------------------------------------------
 (require 'helm-ag)
 (require 'helm-config)
 (require 'helm-swoop)
 (require 'helm-swoop)
+
+(defun helm-mouse-1-exit-minibuffer (click)
+  (interactive "e")
+  (mouse-set-point click)
+  (helm-mark-current-line)
+  (helm-exit-minibuffer))
 
 ;; Helm conf
 (setq helm-split-window-in-side-p           t ; open helm buffer inside current window, not occupy whole other window
@@ -85,27 +95,19 @@
       helm-ff-file-name-history-use-recentf t
       helm-echo-input-in-header-line t
       helm-ag-insert-at-point 'sexp
-      helm-M-x-fuzzy-match t
-      helm-recentf-fuzzy-match t
+      helm-M-x-fuzzy-match nil
+      helm-recentf-fuzzy-match nil
       helm-buffers-fuzzy-matching nil
       helm-locate-fuzzy-match nil
-      helm-imenu-fuzzy-match t
-      helm-mode-fuzzy-match t)
+      helm-imenu-fuzzy-match nil
+      helm-mode-fuzzy-match nil)
 
 
-;; helm configuration
-;; (helm-autoresize-mode nil)
 (helm-autoresize-mode t)
-(setq helm-autoresize-max-height 25) ;; 15 is too small on laptop
-(setq helm-display-buffer-default-height 10)
+(setq helm-autoresize-max-height 20)
+(setq helm-display-buffer-default-height 20)
 (setq helm-allow-mouse t)
-
-
-(defun helm-mouse-1-exit-minibuffer (click)
-  (interactive "e")
-  (mouse-set-point click)
-  (helm-mark-current-line)
-  (helm-exit-minibuffer))
+(setq helm-autoresize-mode nil)
 
 (define-key helm-map [mouse-1] 'helm-mouse-1-exit-minibuffer)
 

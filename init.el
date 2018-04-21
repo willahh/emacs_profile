@@ -24,7 +24,8 @@
 (load-file "~/.emacs.d/lisp/syntax_checker.el")
 (load-file "~/.emacs.d/lisp/tags.el")
 (load-file "~/.emacs.d/lisp/key_binding.el")
-(load-file "~/.emacs.d/lisp/theme-light3.el")
+;; (load-file "~/.emacs.d/lisp/theme-light3.el")
+(load-file "~/.emacs.d/lisp/theme-dark2.el")
 (load-file "~/.emacs.d/lisp/tags.el")
 (load-file "~/.emacs.d/lisp/lang/typescript.el")
 (load-file "~/.emacs.d/lisp/lang/html.el")
@@ -37,4 +38,6 @@
 (load-file "~/.emacs.d/lisp/lang/react.el")
 (load-file "~/.emacs.d/lisp/lang/hy.el")
 (load-file "~/.emacs.d/lisp/defun/wlh-project.el")
+
+
 (window-divider-mode-apply 1)

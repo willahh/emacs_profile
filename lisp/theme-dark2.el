@@ -7,13 +7,24 @@
 
 (load-theme 'dracula t)
 
+(defvar wlh-main-bg-color "#1a1c1d")
+
 ;; ------- Font
-(set-frame-font "Office Code Pro:antialias=1")
+;; (set-frame-font "Office Code Pro:antialias=1")
+(set-frame-font "Menlo")
 
 ;; (setq-default line-spacing 2) ; Same line height as modern editor (VS Code)
 (setq-default line-spacing 1) ; Update to default value (switch font instead)
 
-(set-face-attribute 'default nil :background "#1a1c1d")
+;; Main background
+(set-face-attribute 'default nil :background wlh-main-bg-color)
+
+;; Text selection
+(set-face-attribute 'region nil :background "#203a5b" :foreground nil)
+
+;; Window-divider
+(setq window-divider-default-bottom-width 10)
+(setq window-divider-default-right-width 10)
 
 ;; (mapc (lambda (face)
 ;;         (set-face-attribute face :box "#1a1c1d"))
@@ -41,6 +52,33 @@
 ;; (set-face-attribute 'web-mode-whitespace-face nil :background "#192124")
 (set-face-attribute 'trailing-whitespace nil :background "#161818")
 (set-face-attribute 'web-mode-whitespace-face nil :background "#161818")
+
+;; nliunm
+(defun wlh/theme-nlinum-mode-hook ()
+  (set-face-attribute 'linum nil :foreground "#b5b5b5" :background wlh-main-bg-color :height 100))
+
+(add-hook 'nlinum-mode-hook 'wlh/theme-nlinum-mode-hook)
+(set-face-attribute 'font-lock-keyword-face nil :foreground "#82aaff")
+(set-face-attribute 'font-lock-keyword-face nil :foreground "#82aaff")
+
+;; ;; ------- web-mode
+(require 'web-mode)
+;; (set-face-attribute 'web-mode-function-call-face nil :foreground "#000000")
+;; ;; (set-face-attribute 'web-mode-keyword-face nil :foreground "#0000ff")
+;; (set-face-attribute 'web-mode-keyword-face nil :foreground "#e019b1")
+;; (set-face-attribute 'web-mode-block-delimiter-face nil :foreground "#800000")
+;; (set-face-attribute 'web-mode-variable-name-face nil :foreground "#2055a4")
+;; (set-face-attribute 'web-mode-block-string-face nil :foreground "#9c251e")
+;; (set-face-attribute 'web-mode-constant-face nil :foreground "#2e12a3")
+;; (set-face-attribute 'web-mode-type-face nil :foreground "#6c1883")
+;; (set-face-attribute 'web-mode-html-tag-face nil :foreground "#0074e8")
+;; (set-face-attribute 'web-mode-html-attr-name-face nil :foreground "#dd00a9")
+;; (set-face-attribute 'web-mode-html-attr-value-face nil :foreground "#003eaa")
+;; (set-face-attribute 'web-mode-javascript-string-face nil :foreground "#003eaa")
+;; ;; (set-face-attribute 'web-mode-current-element-highlight-face nil :background nil :foreground "#000000" :weight 'ultra-bold)
+;; (set-face-attribute 'web-mode-current-element-highlight-face nil :background "transparent" :foreground "#000000" :weight 'ultra-bold)
+
+
 
 ;; Mode line
 ;; (set-face-background 'mode-line-inactive "#000")
@@ -253,8 +291,7 @@
 
 (custom-theme-set-faces
  'dracula
- ;; '(region ((t (:background "#275f99" :foreground nil))))
- '(region ((t (:background "#203a5b" :foreground nil))))
+ ;; '(region ((t (:background "#203a5b" :foreground nil))))
  '(lazy-highlight ((t (:background "#4f5d66" :foreground nil :underline t))))
  '(js2-warning ((t (:background nil :underline (:color "#ff0000" :style wave)))))
  ;; '(web-mode-current-element-highlight-face ((t (:foreground "#ffffff" :background nil :underline (:color "#ffffff" :style wave)))))

@@ -66,6 +66,8 @@
   (interactive)
   (clj-refactor-mode 1)
   
+  (define-key clojure-mode-map (kbd "C-i") 'company-complete)
+  
   ;; insert keybinding setup here
   (cljr-add-keybindings-with-prefix "C-c RET"))
 

@@ -1,8 +1,17 @@
 (require 'doom-themes)
+(require 'doom-themes-)
 
-(load-theme 'doom-one t)
+
+;; (load-theme 'doom-one t)
+(load-theme 'doom-molokai t)
+
+;; ------- Font
+;; (set-frame-font "Office Code Pro:antialias=1")
+(set-frame-font "Menlo")
 
 (setq-default line-spacing 0)
+
+(set-face-attribute 'scroll-bar nil :background "#000")
 
 ;; ------ cursor
 (setq cursor-type 'box)
