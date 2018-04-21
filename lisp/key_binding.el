@@ -175,6 +175,7 @@
 ; (define-key ivy-minibuffer-map (kbd "<escape>") 'minibuffer-keyboard-quit)
 ; (define-key ivy-minibuffer-map (kbd "C-h") 'delete-backward-char)
 (define-key ivy-mode-map (kbd "C-h") 'ivy-backward-delete-char)
+(define-key ivy-mode-map (kbd "C-k") 'whole-line-or-region-kill-region)
 
 ;; Backward kill sexp
 (global-set-key [(control meta h)] 'backward-kill-sexp)
