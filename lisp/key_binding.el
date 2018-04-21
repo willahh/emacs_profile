@@ -175,7 +175,7 @@
 ; (define-key ivy-minibuffer-map (kbd "<escape>") 'minibuffer-keyboard-quit)
 ; (define-key ivy-minibuffer-map (kbd "C-h") 'delete-backward-char)
 (define-key ivy-mode-map (kbd "C-h") 'ivy-backward-delete-char)
-(define-key ivy-mode-map (kbd "C-k") 'whole-line-or-region-kill-region)
+;; (define-key ivy-mode-map (kbd "C-k") 'whole-line-or-region-kill-region)
 
 ;; Backward kill sexp
 (global-set-key [(control meta h)] 'backward-kill-sexp)
@@ -532,16 +532,17 @@
 
 ;; (global-set-key (kbd "M-p") 'projectile-find-file)
 (global-set-key (kbd "M-p") 'counsel-projectile)
+;; (define-key highlight-symbol-nav-mode-map (kbd "M-p") 'counsel-projectile) ;; Needed
 
 (defun wlh/projectile-mode-hook2 ()
   (interactive)
   (global-set-key (kbd "M-p") 'counsel-projectile)
-(define-key projectile-mode-map (kbd "M-p") 'counsel-projectile))
+  (define-key projectile-mode-map (kbd "M-p") 'counsel-projectile))
 
 (define-key projectile-mode-map (kbd "M-p") 'counsel-projectile)
-(define-key ggtags-navigation-map (kbd "M-p") 'projectile-find-file)
-(define-key highlight-symbol-nav-mode-map (kbd "M-p") 'projectile-find-file)
-(define-key magit-mode-map (kbd "M-p") 'projectile-find-file)
+(define-key ggtags-navigation-map (kbd "M-p") 'counsel-projectile)
+(define-key highlight-symbol-nav-mode-map (kbd "M-p") 'counsel-projectile)
+(define-key magit-mode-map (kbd "M-p") 'counsel-projectile)
 
 ;;(global-set-key [(meta control shift p)] 'find-file-in-current-directory)
 
@@ -641,7 +642,8 @@
 
 ;; Recentf
 ;; (global-set-key (kbd "C-c f") 'counsel-recentf) 
-(global-set-key (kbd "C-c f") 'crux-recentf-ido-find-file)
+;; (global-set-key (kbd "C-c f") 'crux-recentf-ido-find-file)
+(global-set-key (kbd "C-c f") 'counsel-recentf) 
 
 ;; Scroll commands
 (global-set-key (kbd "C-x v U") 'wlh/svn-up-recursive)

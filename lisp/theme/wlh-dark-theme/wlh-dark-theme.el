@@ -1,23 +1,4 @@
-;;; wlh-dark-theme.el --- Dracula Theme
-
-;; Copyright 2015, All rights reserved
-;;
-;; Code licensed under the MIT license
-;; http://zenorocha.mit-license.org
-
-;; Author: film42
-;; Version: 1.2.1
-;; Package-Version: 1.2.5
-;; Package-Requires: ((emacs "24"))
-;; URL: https://github.com/zenorocha/wlh-dark-theme
-
-;;; Commentary:
-
-;; A dark color theme available for a number of editors.
-
-;;; Code:
-
-(deftheme wlh-dark-theme)
+(deftheme wlh-dark)
 
 (let ((class '((class color) (min-colors 89)))
       (fg1 "#f8f8f2")
@@ -50,7 +31,7 @@
       (rainbow-8 "#0189cc"))
 
   (custom-theme-set-faces
-   'wlh-dark-theme
+   'wlh-dark
    `(default ((,class (:background ,bg1 :foreground ,fg1))))
    `(font-lock-builtin-face ((,class (:foreground ,builtin))))
    `(font-lock-comment-face ((,class (:foreground ,comment))))
@@ -275,15 +256,4 @@
    `(enh-ruby-regexp-delimiter-face ((,class (:foreground ,str))))
    `(which-func ((,class (:inherit ,font-lock-function-name-face))))))
 
-;;;###autoload
-(when load-file-name
-  (add-to-list 'custom-theme-load-path
-               (file-name-as-directory (file-name-directory load-file-name))))
-
-(provide-theme 'wlh-dark-theme)
-
-;; Local Variables:
-;; no-byte-compile: t
-;; End:
-
-;;; wlh-dark-theme.el ends here
+(provide-theme 'wlh-dark)

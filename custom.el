@@ -6,7 +6,7 @@
  '(ag-reuse-window nil)
  '(custom-safe-themes
    (quote
-    ("b48150eac948d6de3f8103e6e92f105979277b91c96e9687c13f2d80977d381d" "b2c8ea4a3049e4399a4015f8eddb74fcd0473e9aa0c8818a04979230b22d0e75" default)))
+    ("eb7e013a6531361beb8fa0c809150226cad077cdfbb2db56eed4105fcfab9038" "b48150eac948d6de3f8103e6e92f105979277b91c96e9687c13f2d80977d381d" "b2c8ea4a3049e4399a4015f8eddb74fcd0473e9aa0c8818a04979230b22d0e75" default)))
  '(ediff-diff-options "-w")
  '(ediff-split-window-function (quote split-window-horizontally))
  '(ediff-window-setup-function (quote ediff-setup-windows-plain))

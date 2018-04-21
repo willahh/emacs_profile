@@ -39,7 +39,7 @@
                      darkroom
                      dash
                      diff-hl
-                     dracula-theme
+                     ;; dracula-theme
                      drag-stuff
                      dtrt-indent
                      eclim
@@ -58,7 +58,7 @@
                      exec-path-from-shell
                      shell-pop
                      expand-region
-;;                     find-file-in-project
+                     ;;                     find-file-in-project
                      flx-ido
                      flycheck-pos-tip
                      fullframe
@@ -152,12 +152,13 @@
                      yasnippet
                      zop-to-char
                      xref-js2
-;;                     counsel-gtags
+                     ;;                     counsel-gtags
                      ))
 
 ;; Add some missing packages
 ;; (add-to-list 'load-path "~/.emacs.d/site-lisp/dired-subtree-20160920.130")
 (load "~/.emacs.d/site-lisp/emacs-textmate-0.1/textmate")
+(add-to-list 'load-path "~/.emacs.d/site-lisp/theme/wlh-dark-theme")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/evil-easymotion")
 ;; (add-to-list 'load-path "~/.emacs.d/site-lisp/psvn")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/simple-httpd")
@@ -188,7 +189,9 @@
 (add-to-list 'load-path "~/.emacs.d/site-lisp/treemacs/src/elisp")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/syslog-mode-2.2")
 ;; (add-to-list 'load-path "~/.emacs.d/site-lisp/doom-themes")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/wlh-dark-theme")
+;; (add-to-list 'load-path "~/.emacs.d/site-lisp/wlh-dark-theme")
+(add-to-list 'custom-theme-load-path "~/.emacs.d/lisp/theme")
+
 
 ;; activate all the packages
 (package-initialize)
@@ -209,4 +212,3 @@
 (load-file "~/.emacs.d/site-lisp/smartcomment/smartcomment.el")
 (load-file "~/.emacs.d/site-lisp/visible-bookmarks/bm.el")
 (load-file "~/.emacs.d/site-lisp/ibuffer-projectile.el")
-;; (load-file "~/.emacs.d/site-lisp/highlight-selection/highlight-selection.el")
