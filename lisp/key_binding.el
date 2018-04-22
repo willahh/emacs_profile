@@ -314,10 +314,12 @@
 ;; (define-key company-active-map (kbd "C-m") 'new-line-dwim)
 (define-key company-active-map (kbd "C-m") 'company-complete-selection)
 (define-key company-active-map (kbd "C-j") 'company-complete)
-(define-key company-active-map (kbd "C-i") 'company-complete-selection)
 ;; (define-key company-active-map (kbd "C-j") 'emmet-expand-line)
 ;; (define-key company-active-map (kbd "C-w") 'backward-kill-word)
-(define-key emacs-lisp-mode-map (kbd "C-i") 'company-complete)
+
+(define-key company-active-map (kbd "C-i") 'company-complete-selection)
+(define-key emacs-lisp-mode-map (kbd "C-i") 'company-indent-or-complete-common)
+(define-key clojure-mode-map (kbd "C-i") 'company-indent-or-complete-common)
 
 ;; counsel-find-file
 ;;(global-set-key (kbd "C-x C-f") 'counsel-find-file)
