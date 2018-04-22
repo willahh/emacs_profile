@@ -321,7 +321,8 @@
 
 ;; counsel-find-file
 ;;(global-set-key (kbd "C-x C-f") 'counsel-find-file)
-(global-set-key (kbd "C-x b") 'ido-switch-buffer)
+;; (global-set-key (kbd "C-x b") 'ido-switch-buffer)
+(global-set-key (kbd "C-x b") 'ivy-switch-buffer)
 
 
 ;; Diff hl next / prev
@@ -531,7 +532,8 @@
 (global-set-key [(meta shift o)] 'wlh/previous-window)
 
 ;; (global-set-key (kbd "M-p") 'projectile-find-file)
-(global-set-key (kbd "M-p") 'counsel-projectile)
+;; Can't be set globally
+;; (global-set-key (kbd "M-p") 'counsel-projectile)
 ;; (define-key highlight-symbol-nav-mode-map (kbd "M-p") 'counsel-projectile) ;; Needed
 
 (defun wlh/projectile-mode-hook2 ()
