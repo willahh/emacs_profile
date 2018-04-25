@@ -133,3 +133,16 @@
 
 (define-key clojure-mode-map (kbd "C-M-x")   'nrepl-warn-when-not-connected)
 (define-key clojure-mode-map (kbd "C-x C-e") 'nrepl-warn-when-not-connected)
+
+
+
+
+
+
+
+
+(require 'cider)
+(setq cider-cljs-lein-repl
+      "(do (require 'figwheel-sidecar.repl-api)
+           (figwheel-sidecar.repl-api/start-figwheel!)
+           (figwheel-sidecar.repl-api/cljs-repl))")

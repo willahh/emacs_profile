@@ -29,47 +29,44 @@
         (projectile-find-file . ivy--regex-fuzzy)
         (t . ivy--regex-plus)))
 
+(ivy-mode)
 
+(setq ivy-virtual-abbreviate 'full)
 
-;; (ivy-mode)
+;; set ivy height
+(setq ivy-height 12)
 
-;; ;; ivy conf
-;; (setq ivy-virtual-abbreviate 'full)
+;; make sure it always stays that high
+(setq ivy-fixed-height-minibuffer nil)
 
-;; ;; set ivy height
-;; (setq ivy-height 12)
+;; full file names - useful when multiple files have same names
+(setq ivy-virtual-abbreviate 'full)
+(setq ivy-use-virtual-buffers t)
+(setq ivy-count-format "(%d/%d) ")
+(setq ivy-initial-inputs-alist nil)
 
-;; ;; make sure it always stays that high
-;; (setq ivy-fixed-height-minibuffer nil)
+(setq ivy-re-builders-alist
+      '((ivy-switch-buffer . ivy--regex-plus)
+        (swiper . ivy--regex-plus)
+        (counsel-imenu . ivy--regex-plus)
+        ;; (projectile-find-file . ivy--regex-fuzzy)
+        (t . ivy--regex-fuzzy)
+        ;; (projectile-find-file . ivy--regex-plus)
+        (projectile-find-file . ivy--regex-fuzzy)
+        (t . ivy--regex-plus)))
 
-;; ;; full file names - useful when multiple files have same names
-;; (setq ivy-virtual-abbreviate 'full)
-;; (setq ivy-use-virtual-buffers t)
-;; (setq ivy-count-format "(%d/%d) ")
-;; (setq ivy-initial-inputs-alist nil)
+(setq ivy-use-selectable-prompt t)
 
-;; (setq ivy-re-builders-alist
-;;       '((ivy-switch-buffer . ivy--regex-plus)
-;;         (swiper . ivy--regex-plus)
-;;         (counsel-imenu . ivy--regex-plus)
-;;         ;; (projectile-find-file . ivy--regex-fuzzy)
-;;         (t . ivy--regex-fuzzy)
-;;         ;; (projectile-find-file . ivy--regex-plus)
-;;         (projectile-find-file . ivy--regex-fuzzy)
-;;         (t . ivy--regex-plus)))
-
-;; (setq ivy-use-selectable-prompt t)
-
-;; ;; Use Enter on a directory to navigate into the directory, not open it with dired.
+;; Use Enter on a directory to navigate into the directory, not open it with dired.
 ;; (define-key ivy-minibuffer-map (kbd "C-m") 'ivy-alt-done)
-;; (define-key ivy-minibuffer-map (kbd "<tab>") 'ivy-alt-done)
+(define-key ivy-minibuffer-map (kbd "<tab>") 'ivy-alt-done)
 
-;; (setq projectile-completion-system 'ivy)
+(setq projectile-completion-system 'ivy)
 
-;; (ivy-set-occur 'ivy-switch-buffer 'ivy-switch-buffer-occur)
+(ivy-set-occur 'ivy-switch-buffer 'ivy-switch-buffer-occur)
 
-;; ;; http://oremacs.com/swiper/
-;; (setq magit-completing-read-function 'ivy-completing-read)
+;; http://oremacs.com/swiper/
+(setq magit-completing-read-function 'ivy-completing-read)
 
 
 
