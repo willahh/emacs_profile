@@ -156,7 +156,8 @@
                      ))
 
 ;; Add some missing packages
-; (add-to-list 'load-path "~/.emacs.d/vendor/dired-subtree-20160920.130")
+;; (add-to-list 'load-path "~/.emacs.d/vendor/dired-subtree-20160920.130")
+(load "~/.emacs.d/vendor/emacs-textmate-0.1/textmate")
 (add-to-list 'load-path "~/.emacs.d/vendor/evil-easymotion")
 ;; (add-to-list 'load-path "~/.emacs.d/vendor/psvn")
 (add-to-list 'load-path "~/.emacs.d/vendor/simple-httpd")

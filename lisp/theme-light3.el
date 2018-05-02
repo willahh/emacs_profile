@@ -80,6 +80,7 @@
 (set-face-attribute 'css-property nil :foreground "#0451a5")
 
 ;; ------- web-mode
+(require 'web-mode)
 (set-face-attribute 'web-mode-function-call-face nil :foreground "#000000")
 ;; (set-face-attribute 'web-mode-keyword-face nil :foreground "#0000ff")
 (set-face-attribute 'web-mode-keyword-face nil :foreground "#e019b1")
@@ -103,11 +104,11 @@
 (set-face-attribute 'bm-face nil :background "#e0e0e0" :foreground nil)
 
 ;; ------- neotree
-(set-face-attribute 'neo-file-link-face nil :background nil :foreground "#000" :family "arial" :height 1)
-(set-face-attribute 'neo-dir-link-face nil :background nil :foreground "#2055a4" :family "arial" :height 1)
-(set-face-attribute 'neo-root-dir-face nil :background nil :foreground "#ccc" :family "arial" :height 0.9)
-(set-face-attribute 'neo-header-face nil :background nil :foreground "#ccc" :family "arial" :height 0.9)
-(setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+;; (set-face-attribute 'neo-file-link-face nil :background nil :foreground "#000" :family "arial" :height 1)
+;; (set-face-attribute 'neo-dir-link-face nil :background nil :foreground "#2055a4" :family "arial" :height 1)
+;; (set-face-attribute 'neo-root-dir-face nil :background nil :foreground "#ccc" :family "arial" :height 0.9)
+;; (set-face-attribute 'neo-header-face nil :background nil :foreground "#ccc" :family "arial" :height 0.9)
+;; (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
 
 
 
@@ -127,6 +128,7 @@
                     :box nil)
 
 ;; ------- php
+(require 'php-mode)
 (set-face-attribute 'php-annotations-annotation-face nil :foreground "#008000" :background nil :underline t)
 
 

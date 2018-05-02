@@ -10,13 +10,13 @@
 (require 'magit)
 (require 'term)
 (require 'web-mode)
-(require 'clojure-mode)
+;; (require 'clojure-mode)
 (require 'typescript-mode)
 (require 'css-mode)
 (require 'slime)
 (require 'css-mode)
 (require 'emmet-mode)
-
+(require 'highlight-symbol)
 
 ;; leader key © (alt+c on osx azerty keyboard)
 (defvar wlh/leader-key (concat "©" " "))
@@ -235,6 +235,7 @@
 (global-set-key (kbd "C-x C-k") 'kill-region)
 
 ;; ---------------- Dired
+(global-set-key (kbd "C-x RET") 'dired-jump)
 (define-key php-mode-map [(control x) (control j)] 'dired-jump)
 (define-key web-mode-map [(control x) (control j)] 'dired-jump)
 (define-key dired-mode-map (kbd "C-x w") 'wdired-change-to-wdired-mode)
@@ -294,9 +295,9 @@
 (global-set-key (kbd "C-h") 'backward-delete-char)
 (define-key lisp-mode-map (kbd "C-h") 'paredit-backward-delete)
 (define-key emacs-lisp-mode-map (kbd "C-h") 'paredit-backward-delete)
-(define-key clojure-mode-map (kbd "C-h") 'paredit-backward-delete)
+;; (define-key clojure-mode-map (kbd "C-h") 'paredit-backward-delete)
 (define-key helm-map (kbd "C-h") 'paredit-backward-delete)
-(define-key iedit-mode-keymap (kbd "C-h") 'paredit-backward-delete)
+;; (define-key iedit-mode-keymap (kbd "C-h") 'paredit-backward-delete)
 
 ;; ---------------- Backward delete word
 (global-set-key (kbd "C-w") 'backward-kill-word-or-region)
@@ -464,6 +465,14 @@
 ;; vc
 (global-set-key (kbd "C-x v f") 'vc-diff)
 
+;; ;; ---------------- Shell
+;; (define-key shell-mode-map (kbd "RET") 'eshell-send-input)
+;; (define-key eshell-mode-map (kbd "C-j") 'eshell-send-input)
+
+;; (defun wlj/eshell-mode-hook ()
+;;   (interactive)
+;;   (define-key eshell-mode-map (kbd "C-j") 'eshell-send-input))
+;; (add-hook 'eshell-mode-hook 'wlj/eshell-mode-hook)
 ;; ---------------- Shell
 (define-key shell-mode-map (kbd "RET") 'eshell-send-input)
 (define-key shell-mode-map (kbd "C-j") 'paredit-newline)
