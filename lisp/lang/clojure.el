@@ -32,6 +32,7 @@
 
 ;; cljrefactor -------------------
 (require 'clj-refactor)
+(setq cljr-warn-on-eval nil)
 
 ;; no auto sort
 (setq cljr-auto-sort-ns nil)
