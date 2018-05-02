@@ -138,7 +138,6 @@
 (global-set-key (kbd "<end>") 'end-of-buffer)
 (global-set-key (kbd "<home>") 'beginning-of-buffer)
 (global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
-(global-set-key (kbd "C-j") 'new-line-dwim)
 (define-key emmet-mode-keymap (kbd "C-j") 'new-line-dwim) ;; Needed
 (global-set-key (kbd "M-X") 'other-frame) ; Same keybinding from osx switch window habits
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
@@ -366,8 +365,11 @@
 (global-set-key (kbd "C-c TAB") 'wlh/insert-4spaces)
 
 ;; ---------------- new line
+;; new-line-dwin cannot be setted globally
 ;; (global-set-key (kbd "<return>") 'new-line-dwim) ; Can't be setted globally (mini buffer, helm, misc actions)
-(global-set-key (kbd "RET") 'new-line-dwim)
+;; (global-set-key (kbd "C-j") 'new-line-dwim)
+;; (global-set-key (kbd "RET") 'new-line-dwim)
+
 (define-key css-mode-map (kbd "RET") 'new-line-dwim)
 (define-key prog-mode-map (kbd "RET") 'new-line-dwim)
 (define-key php-mode-map (kbd "RET") 'new-line-dwim)

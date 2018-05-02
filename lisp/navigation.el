@@ -95,7 +95,8 @@
 ;; helm configuration
 ;; (helm-autoresize-mode nil)
 (helm-autoresize-mode t)
-(setq helm-autoresize-max-height 25) ;; 15 is too small on laptop
+(setq helm-autoresize-min-height 20)
+(setq helm-autoresize-max-height 25)
 (setq helm-display-buffer-default-height 10)
 (setq helm-allow-mouse t)
 

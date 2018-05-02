@@ -122,6 +122,7 @@
         paredit-open-round
         paredit-open-square
         paredit-semicolon
+        paredit-wrap-round
         reindent-then-newline-and-indent
         skeleton-pair-insert-maybe
         slime-autodoc-space
