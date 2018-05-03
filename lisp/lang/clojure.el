@@ -38,6 +38,7 @@
 
 ;; do not prefer prefixes when using clean-ns
 (setq cljr-favor-prefix-notation nil)
+(setq cljr-warn-on-eval nil)
 
 
 ;; Flycheck ---------------
@@ -122,12 +123,15 @@
       (message "beginning of file reached, this was probably a mistake.")))
     (goto-char original-point)))
 
-(define-key clojure-mode-map (kbd "C-^") 'live-cycle-clj-coll)
+
 
 ;; Warn about missing nREPL instead of doing stupid things
 (defun nrepl-warn-when-not-connected ()
   (interactive)
   (message "Oops! You're not connected to an nREPL server. Please run M-x cider or M-x cider-jack-in to connect."))
 
+(define-key clojure-mode-map (kbd "C-^") 'live-cycle-clj-coll)
 (define-key clojure-mode-map (kbd "C-M-x")   'nrepl-warn-when-not-connected)
 (define-key clojure-mode-map (kbd "C-x C-e") 'nrepl-warn-when-not-connected)
+;; (define-key cider-mode-map (kbd "C-M-i") 'company-complete)
+;; (define-key cider-mode-map (kbd "C-i") 'company-complete)
