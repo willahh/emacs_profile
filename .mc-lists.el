@@ -60,6 +60,7 @@
         forward-sentence
         forward-sexp
         helm-M-x
+        helm-show-kill-ring
         highlight-symbol-mode
         hydra-macro/nil
         hydra-vi/body
