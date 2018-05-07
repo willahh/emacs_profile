@@ -29,6 +29,7 @@
         crux-smart-open-line
         delete-horizontal-space
         dired-jump
+        dired-previous-line
         drag-stuff-down
         drag-stuff-up
         duplicate-start-of-line-or-region
@@ -127,6 +128,7 @@
         paredit-semicolon
         paredit-wrap-round
         reindent-then-newline-and-indent
+        revert-buffer
         skeleton-pair-insert-maybe
         slime-autodoc-space
         smart-open-line-above
@@ -184,6 +186,7 @@
         delete-window
         describe-key
         dired-find-file
+        dired-next-line
         dired-unmark-backward
         emmet-expand-line
         evil-buffer-new

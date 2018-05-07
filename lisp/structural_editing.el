@@ -18,8 +18,6 @@
 (require 'web-mode)
 (require 'clojure-mode)
 
-
-
 ;; Delete char ---------------------------
 (define-key prog-mode-map (kbd "C-h") 'backward-delete-char)
 (define-key php-mode-map (kbd "C-h") 'backward-delete-char)
@@ -159,12 +157,6 @@
 
 (define-key emacs-lisp-mode-map (kbd "<backspace>") 'paredit-backward-delete)
 (define-key clojure-mode-map (kbd "<backspace>") 'paredit-backward-delete)
-
-
-
-
-
-
 
 ;; Textmate-mode ---------------------------
 

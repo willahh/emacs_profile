@@ -10,7 +10,6 @@
 (require 'magit)
 (require 'term)
 (require 'web-mode)
-;; (require 'clojure-mode)
 (require 'typescript-mode)
 (require 'css-mode)
 (require 'slime)
@@ -18,8 +17,46 @@
 (require 'emmet-mode)
 (require 'highlight-symbol)
 
+(defun wlh/web-mode-kill-sexp ()
+  (interactive)
+  (cond ((equal (web-mode-language-at-pos) "html") (kill-sexp))
+        ((equal (web-mode-language-at-pos) "javascript") (sp-kill-hybrid-sexp 1))
+        ((equal (web-mode-language-at-pos) "php") (paredit-kill))
+        ((equal (web-mode-language-at-pos) "css") (paredit-kill))))
+
+(defun wlh/web-mode-new-line ()
+  (interactive)
+  (cond ((equal (web-mode-language-at-pos) "html") (newline-and-indent))
+        ((equal (web-mode-language-at-pos) "javascript") (new-line-dwim))
+        ((equal (web-mode-language-at-pos) "php") (newline))
+        ((equal (web-mode-language-at-pos) "css") (new-line-dwim))))
+
+(defun wlh/previous-window ()
+  (interactive)
+  (other-window -1))
+
+;; TODO l'indentation ne fonctionne pas dans du js -> Il faut tester si
+;; yas-expand-from-trigger-key ne retourne pas d'erreur. Si c'est le cas, il
+;; faut lancer la commande indentation normale.
+;;
+;; Update : Voir pour trapper l'erreur avec par exemple condition-case.
+(defun wlh/web-mode-tab ()
+  (interactive)
+  (if (equal (web-mode-language-at-pos) "html")
+      (if (not (emmet-expand-line nil))
+          (indent-for-tab-command))
+    (condition-case err (yas-expand-from-trigger-key) (error "ok"))))
+
+
+
 ;; leader key © (alt+c on osx azerty keyboard)
 (defvar wlh/leader-key (concat "©" " "))
+
+(defun wlh/insert-4spaces ()
+  (interactive)
+  (insert "    "))
+
+
 (global-unset-key (kbd "M-m")) ; Define M-m shortcut as a leader key
 (global-unset-key (kbd "©"))
 
@@ -359,10 +396,6 @@
 (define-key compilation-mode-map (kbd "C-x s") 'wgrep-save-all-buffers)
 (define-key compilation-mode-map (kbd "C-c C-c") 'wgrep-finish-edit)
 
-(defun wlh/insert-4spaces ()
-  (interactive)
-  (insert "    "))
-
 (global-set-key (kbd "C-c TAB") 'wlh/insert-4spaces)
 
 ;; ---------------- new line
@@ -384,24 +417,7 @@
 ;; (define-key prog-mode-map "<return>" 'new-line-dwim)
 ;; (define-key web-mode-map "<return>" 'new-line-dwim)
 
-(defun wlh/web-mode-new-line ()
-  (interactive)
-  (cond ((equal (web-mode-language-at-pos) "html") (newline-and-indent))
-        ((equal (web-mode-language-at-pos) "javascript") (new-line-dwim))
-        ((equal (web-mode-language-at-pos) "php") (newline))
-        ((equal (web-mode-language-at-pos) "css") (new-line-dwim))))
 
-;; TODO l'indentation ne fonctionne pas dans du js -> Il faut tester si
-;; yas-expand-from-trigger-key ne retourne pas d'erreur. Si c'est le cas, il
-;; faut lancer la commande indentation normale.
-;;
-;; Update : Voir pour trapper l'erreur avec par exemple condition-case.
-(defun wlh/web-mode-tab ()
-  (interactive)
-  (if (equal (web-mode-language-at-pos) "html")
-      (if (not (emmet-expand-line nil))
-          (indent-for-tab-command))
-    (condition-case err (yas-expand-from-trigger-key) (error "ok"))))
 
 ;; (define-key web-mode-map (kbd "C-m") 'new-line-dwim) ; <-- Utiliser celle-ci
                                         ; dans un block de css ou de javascript
@@ -529,9 +545,7 @@
 (define-key ibuffer-mode-map (kbd "M-o") 'other-window)
 
 
-(defun wlh/previous-window ()
-  (interactive)
-  (other-window -1))
+
 
 (global-set-key [(meta shift o)] 'wlh/previous-window)
 
@@ -560,14 +574,6 @@
 (define-key typescript-mode-map (kbd "C-:") "\C-e;")
 (define-key php-mode-map (kbd "C-:") "\C-e;")
 (define-key web-mode-map (kbd "C-:") "\C-e;")
-
-(defun wlh/web-mode-kill-sexp ()
-  (interactive)
-  (cond ((equal (web-mode-language-at-pos) "html") (kill-sexp))
-        ((equal (web-mode-language-at-pos) "javascript") (sp-kill-hybrid-sexp 1))
-        ((equal (web-mode-language-at-pos) "php") (paredit-kill))
-        ((equal (web-mode-language-at-pos) "css") (paredit-kill))))
-
 
 (define-key web-mode-map (kbd "C-k") 'wlh/web-mode-kill-sexp)
 
@@ -602,7 +608,8 @@
 
 ;; Better move paragraph / mark paragraph
 ;; Convert default qwerty M-{ and M-} position on keyboard to azerty mapping
-(global-set-key (kbd "M-h") 'rs-mark-paragraph)
+;; (global-set-key (kbd "M-h") 'rs-mark-paragraph)
+;; (global-set-key (kbd "M-h") 'mark-paragraph)
 ;;(define-key js-mode-map (kbd "M-H") 'js2-mark-defun)
 (global-set-key (kbd "M-¨") 'lawlist-forward-paragraph)
 (global-set-key (kbd "M-*") 'lawlist-backward-paragraph)

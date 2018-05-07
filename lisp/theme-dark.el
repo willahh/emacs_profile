@@ -103,29 +103,10 @@
 ;; Disable bold ---> seems to work !
 (mapc
  (lambda (face)
-        (when (eq (face-attribute face :weight) 'bold)
-          (set-face-attribute face nil :weight 'normal)))
+   (when (eq (face-attribute face :weight) 'bold)
+     (set-face-attribute face nil :weight 'normal)))
  (face-list))
 
-;; Current line highlight
-;; Note : La propriete foreground doit etre definie pour avoir une compatibilite
-;; avec highlight-symbol-mode
-;; Ralenti l affichage, en commentaire pour le moment
-
-
-;; (set-face-attribute 'hl-line nil :foreground nil :background "#161616")
-;; (set-face-attribute 'hl-line nil :foreground nil :background nil)
-
-
-;;
-;; (set-face-attribute 'highlight-symbol-face nil :foreground "#000" :background "#56b0ec")
-
-;; (set-face-attribute 'evil-ex-lazy-highlight nil :foreground "#000" :background "#b1b1b1")
-
-;; Text selection
-;; (set-face-attribute 'region nil :background "#fdb92c" :foreground "#000" :box nil)
-;; (set-face-attribute 'region nil :background "#000" :foreground nil :box nil)
-;; (set-face-attribute 'region nil :background "#fdb92c" :foreground nil :box nil)
 (set-face-attribute 'region nil :background "#fdb92c" :foreground "#000" :box nil)
 
 ;; parenthesis
@@ -143,9 +124,6 @@
 (set-face-attribute 'diff-added nil :foreground "#c3e88d" :background nil)
 (set-face-attribute 'diff-removed nil :foreground "#ff5370" :background nil)
 (set-face-attribute 'diff-indicator-removed nil :foreground "#89ddff" :background nil)
-
-;; (set-face-attribute 'diff-refine-removed nil :foreground "#000" :background "#fc5572")
-;; (set-face-attribute 'diff-refine-added nil :foreground "#000" :background "#c4e791")
 
 (set-face-attribute 'diff-refine-removed nil :foreground "#000" :background nil)
 (set-face-attribute 'diff-refine-added nil :foreground "#000" :background nil)
@@ -177,41 +155,30 @@
 (set-face-attribute 'yas--field-debug-face nil :foreground "#fff" :background nil)
 (set-face-attribute 'yas-field-highlight-face nil :foreground "#fff" :background nil)
 
-;; ;; ----- smerge
-;; smerge not defined
-
-
 ;; ----- magit
-;; magit not defined - Not included ?
-
-;; powerline theme
 (defun powerline-theme-emacs()
   (set-face-attribute 'mode-line nil
                       :foreground "#000"
                       :background "#56b0ec"
-                      :box nil)
-)
+                      :box nil))
 
 (defun powerline-theme-visual()
   (set-face-attribute 'mode-line nil
                       :foreground "#000"
                       :background "#ffba00"
-                      :box nil)
-)
+                      :box nil))
 
 (defun powerline-theme-insert()
   (set-face-attribute 'mode-line nil
                       :foreground "#000"
                       :background "red"
-                      :box nil)
-)
+                      :box nil))
 
 (defun powerline-theme-normal()
   (set-face-attribute 'mode-line nil
                       :foreground "#000"
                       :background "#98cf15"
-                      :box nil)
-)
+                      :box nil))
 
 (add-hook 'evil-normal-state-entry-hook 'powerline-theme-normal)
 (add-hook 'evil-visual-state-entry-hook 'powerline-theme-visual)
@@ -233,9 +200,6 @@
 
 ;; ------ Helm
 (set-face-attribute 'header-line nil :background "#212121" :foreground "#ffffff")
-
-;; error: Invalid face, helm-M-x-key
-;; (set-face-attribute 'helm-M-x-key nil :background "#56b0ec" :foreground "#000000")
 (set-face-attribute 'helm-selection nil :background "#4d5f6b" :foreground "#ffffff")
 
 ;; ------ Swoop
@@ -244,7 +208,6 @@
 
 ;; ------ Isearch
 (set-face-attribute 'isearch nil :background "#56b0ec" :foreground "#000")
-;; (set-face-attribute 'isearch-lazy-highlight-face nil :background "#225680" :foreground "#fff")
 (set-face-attribute 'isearch-lazy-highlight-face nil :background "#225680" :foreground "#fff")
 
 ;; ------ avy
@@ -253,7 +216,6 @@
 (set-face-attribute 'avy-lead-face-1 nil :background "#fff" :foreground "#000" :underline "#ff00ff")
 (set-face-attribute 'avy-lead-face-2 nil :background "#fff" :foreground "#000" :underline "#ff00ff")
 
-
 ;; ------ org mode
 (set-face-attribute 'org-checkbox nil :foreground "#56b0ec")
 (set-face-attribute 'org-level-1 nil :foreground "#ec6073")
@@ -261,6 +223,3 @@
 (set-face-attribute 'org-level-3 nil :foreground "#ec6073")
 (set-face-attribute 'org-level-4 nil :foreground "#ec6073")
 (set-face-attribute 'org-level-4 nil :foreground "#ec6073")
-
-;; ------ anzu
-; (set-face-attribute 'anzu-mode-line nil :foreground "#000" :background nil :height 125)

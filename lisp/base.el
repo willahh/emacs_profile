@@ -1,3 +1,4 @@
+
 ;; System -----------------------------
 ;; Increase the garbage collection threshold to 500 MB to ease startup @see
 ;; http://sriramkswamy.github.io/dotemacs/
@@ -115,8 +116,19 @@
 (add-hook 'web-mode-hook 'remove-dos-eol)
 (add-hook 'fundamental-mode 'remove-dos-eol)
 
+
+;; Disable annoying prompts and messages 
 ;; Use confirmation y and p instead of yes or not
 (fset 'yes-or-no-p 'y-or-n-p)
+
+;; (validate-setq kill-buffer-query-functions
+;;                (remq 'process-kill-buffer-query-function
+;;                      kill-buffer-query-functions))
+
+;; (validate-setq ring-bell-function #'ignore
+;;                inhibit-startup-screen t
+;;                initial-scratch-message nil)
+(fset 'display-startup-echo-area-message #'ignore)
 
 ;; transient-mark-mode 
 (setq transient-mark-mode t)
