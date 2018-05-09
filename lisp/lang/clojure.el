@@ -6,6 +6,9 @@
 ;; Specify history file
 (setq cider-history-file "~/.emacs.d/nrepl-history")
 
+;; Don't prompt when go to symbol
+(setq cider-prompt-for-symbol nil)
+
 ;; ;; auto-select the error buffer when it's displayed
 ;; (setq cider-auto-select-error-buffer t)
 

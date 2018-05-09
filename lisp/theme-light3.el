@@ -9,7 +9,7 @@
 ;; Main background
 (set-face-attribute 'default nil :background "#ffffff")
 (custom-set-faces
- '(default ((t (:stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 110 :width normal :family "Menlo")))))
+ '(default ((t (:stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 130 :width normal :family "Menlo")))))
 
 ;; Text selection
 (set-face-attribute 'region nil :background "#b9d6fb")

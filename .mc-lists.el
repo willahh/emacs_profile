@@ -230,7 +230,9 @@
         wgrep-finish-edit
         wil-recenter-top-bottom
         winner-undo
+        wlh/create-new-centered-frame
         wlh/dbleclick-mouse1
         wlh/dbleclick-select-word
         wlh/delete-window
+        wlh/recenter-top-bottom
         ))
