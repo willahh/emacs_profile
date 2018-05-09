@@ -155,8 +155,11 @@
 (define-key php-mode-map (kbd "C-M-e") 'end-of-defun)
 (define-key nxml-mode-map (kbd "C-M-e") 'end-of-defun)
 
-(define-key emacs-lisp-mode-map (kbd "<backspace>") 'paredit-backward-delete)
-(define-key clojure-mode-map (kbd "<backspace>") 'paredit-backward-delete)
+;; (define-key emacs-lisp-mode-map (kbd "<backspace>") 'paredit-backward-delete)
+;; (define-key clojure-mode-map (kbd "<backspace>") 'paredit-backward-delete)
+
+(define-key emacs-lisp-mode-map (kbd "<backspace>") 'delete-backward-char)
+(define-key clojure-mode-map (kbd "<backspace>") 'delete-backward-char)
 
 ;; Textmate-mode ---------------------------
 
