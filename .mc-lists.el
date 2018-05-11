@@ -185,6 +185,7 @@
         dired-find-file
         dired-unmark-backward
         emmet-expand-line
+        end-of-visual-line
         evil-buffer-new
         evil-emacs-state
         evil-find-char-to

@@ -39,3 +39,18 @@
   (paredit-mode)
   (auto-complete-mode))
 (add-hook 'inferior-scheme-mode-hook 'wlh/inferior-scheme-mode-hook)
+
+
+
+
+
+
+;; ;; --------- Emacs lisp
+;; (defun wlh/elisp-mouse-find-ref ()
+;;   (interactive)
+;;   (require 'xref)
+;;   (if (xref-find-definition)
+;;       (xref-find-definitions)
+;;     (ffap)))
+
+;; (define-key emacs-lisp-mode-map (kbd "<C-M-mouse-1>") #'wlh/elisp-mouse-find-ref)
