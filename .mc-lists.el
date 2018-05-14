@@ -29,6 +29,7 @@
         crux-smart-open-line
         delete-horizontal-space
         dired-jump
+        dired-previous-line
         drag-stuff-down
         drag-stuff-up
         duplicate-start-of-line-or-region
@@ -60,6 +61,7 @@
         forward-sentence
         forward-sexp
         helm-M-x
+        helm-show-kill-ring
         highlight-symbol-mode
         hydra-macro/nil
         hydra-vi/body
@@ -126,6 +128,7 @@
         paredit-semicolon
         paredit-wrap-round
         reindent-then-newline-and-indent
+        revert-buffer
         skeleton-pair-insert-maybe
         slime-autodoc-space
         smart-open-line-above
@@ -183,6 +186,7 @@
         delete-window
         describe-key
         dired-find-file
+        dired-next-line
         dired-unmark-backward
         emmet-expand-line
         end-of-visual-line
@@ -227,7 +231,9 @@
         wgrep-finish-edit
         wil-recenter-top-bottom
         winner-undo
+        wlh/create-new-centered-frame
         wlh/dbleclick-mouse1
         wlh/dbleclick-select-word
         wlh/delete-window
+        wlh/recenter-top-bottom
         ))

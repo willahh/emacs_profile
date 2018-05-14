@@ -16,7 +16,6 @@
 (setq key-chord-two-keys-delay 0.1) ; default 0.1
 (setq key-chord-one-key-delay 0.2) ; default 0.2
 
-
 ;; Multicursor ---------------------------------
 ;; Ask for apply command for all, keep on default (remember settings are stored in ~/.emacs/.mc-lists.el)
 ;; (setq mc/always-run-for-all 1)
@@ -44,24 +43,6 @@
   (setq pdf-annot-activate-created-annotations t)
   ;; use normal isearch
   (define-key pdf-view-mode-map (kbd "C-s") 'isearch-forward))
-
-;; Enhanced version of diff
-;; (add-hook 'diff-mode-hook (lambda () (local-set-key "\C-c\C-l" 'diffstat)))
-
-;; ;; https://www.emacswiki.org/emacs/LsLispToggleVerbosity
-;; (defun leo-toggle-ls-lisp-verbosity ()
-;;   (interactive)
-;;   (if (memq 'uid ls-lisp-verbosity)
-;;       (progn
-;;         (setq ls-lisp-verbosity (delq 'uid ls-lisp-verbosity))
-;;         (setq ls-lisp-verbosity (delq 'gid ls-lisp-verbosity))
-;;         (revert-buffer)
-;;         (message "uid & gid hidden"))
-;;     (progn
-;;       (add-to-list 'ls-lisp-verbosity 'uid)
-;;       (add-to-list 'ls-lisp-verbosity 'gid)
-;;       (revert-buffer)
-;;       (message "uid & gid visible"))))
 
 ;; Don't prompt me when i want to kill a shell
 ;; Source : http://stackoverflow.com/a/2706660
@@ -123,7 +104,6 @@
 (require 'rainbow-delimiters)
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 (add-hook 'eshell-mode-hook #'rainbow-delimiters-mode)
-
 (add-hook 'eww-mode #'rainbow-delimiters-mode)
 (add-hook 'eww-mode #'rainbow-mode)
 
@@ -228,14 +208,11 @@
 ;; (setq langtool-language-tool-jar "/path/to/languagetool-commandline.jar")
 (setq langtool-language-tool-jar "~/bin/languagetool/languagetool-commandline.jar")
 
-
 ;; Lang hunspel
-;; (setq langtool-default-language "en-US")
 (setq langtool-default-language "fr")
 (setq ispell-program-name (executable-find "hunspell"))
 (setq ispell-dictionary "fr")
 
-;;
 (defun langtool-autoshow-detail-popup (overlays)
   (when (require 'popup nil t)
     ;; Do not interrupt current popup
@@ -247,10 +224,8 @@
 
 (setq langtool-autoshow-message-function
       'langtool-autoshow-detail-popup)
-;; Magnifique !!
-(require 'string-inflection)
 
-;; Magnifique !!
+(require 'string-inflection)
 (require 'easy-kill)
 (global-set-key [remap kill-ring-save] 'easy-kill)
 ;; (global-set-key [remap mark-sexp] 'easy-mark)
@@ -390,19 +365,6 @@ Version 2016-10-24"
     ("fu" "function" xah-abbrev-h-f)
     ("arg" "arguments" xah-abbrev-h-f)))
 
-;; (use-package beacon
-;;   :config
-;;   (beacon-mode 1)
-;;   (setq beacon-color "#6373a2")
-;;   (setq beacon-size 80)
-
-;;   ;; (setq beacon-blink-when-window-scrolls nil)
-;;   ;; (setq beacon-blink-when-window-scrolls t)
-;;   (setq beacon-blink-when-window-scrolls nil)
-
-;;   (diminish 'beacon-mode))
-
-
 ;; From
 ;; https://github.com/cichli/dotfiles/blob/master/.emacs.d/init.el#L172
 ;; again. Nice feature!
@@ -421,29 +383,6 @@ Version 2016-10-24"
 
 (use-package help-mode+)
 (use-package help+)
-
-;; (use-package paradox
-;;   :defer t
-;;   :config
-;;   (setq paradox-column-width-package 28
-;;         paradox-column-width-version 14
-;;         paradox-display-download-count t
-;;         paradox-execute-asynchronously nil
-;;         paradox-github-token t
-;;         paradox-use-homepage-buttons nil)
-;;   ;; (add-hook 'paradox-menu-mode-hook #'hide-trailing-whitespace)
-;;   )
-
-;; ;; New wlh/ide version.
-;; ;; In progress
-;; (defun wlh/ide ()
-;;   (interactive)
-;;   (projectile-dired)
-;;   (neotree-projectile-action)
-;;   (other-window 1)
-;;   (hrs/split-window-below-and-switch)
-;;   (window-resize (selected-window) -10)
-;;   (eshell "yo"))
 
 (window-divider-mode-apply nil)
 
@@ -481,9 +420,7 @@ Version 2016-10-24"
 
 ;; From prelude
 ;; whitespace-mode config
-;; (require 'whitespace)
 (setq whitespace-line-column 80) ;; limit line length
-;; (setq whitespace-style '(face tabs empty trailing lines-tail))
 (setq whitespace-style '(face tabs empty trailing lines-tail)) ; From Prelude
 
 ;; saner regex syntax
@@ -620,106 +557,6 @@ abort completely with `C-g'."
 ;; origami
 (require 'origami)
 
-;; ;; Pop-win
-;; (require 'popwin)
-;; (popwin-mode 1)
-;; (push "*vc-diff*" popwin:special-display-config)
-
-
-;; sidebar
-;; (require 'sidebar)
-;; (global-set-key (kbd "C-x C-f") 'sidebar-open)
-;; (global-set-key (kbd "C-x C-a") 'sidebar-buffers-open)
-
-;; (use-package treemacs
-;;   :ensure t
-;;   :defer t
-;;   :init
-;;   (with-eval-after-load 'winum
-;;     (define-key winum-keymap (kbd "M-0") #'treemacs-select-window))
-;;   :config
-;;   (progn
-;;     (use-package treemacs-evil
-;;       :ensure t
-;;       :demand t)
-;;     (setq treemacs-change-root-without-asking nil
-;;           treemacs-collapse-dirs              (if (executable-find "python") 3 0)
-;;           treemacs-file-event-delay           5000
-;;           treemacs-follow-after-init          t
-;;           treemacs-follow-recenter-distance   0.1
-;;           treemacs-goto-tag-strategy          'refetch-index
-;;           treemacs-indentation                2
-;;           treemacs-indentation-string         " "
-;;           treemacs-is-never-other-window      nil
-;;           treemacs-never-persist              nil
-;;           treemacs-no-png-images              nil
-;;           treemacs-recenter-after-file-follow nil
-;;           treemacs-recenter-after-tag-follow  nil
-;;           treemacs-show-hidden-files          t
-;;           treemacs-silent-filewatch           nil
-;;           treemacs-silent-refresh             nil
-;;           treemacs-sorting                    'alphabetic-desc
-;;           treemacs-tag-follow-cleanup         t
-;;           treemacs-tag-follow-delay           1.5
-;;           treemacs-width                      35)
-
-;;     (treemacs-follow-mode t)
-;;     (treemacs-filewatch-mode t)
-;;     (pcase (cons (not (null (executable-find "git")))
-;;                  (not (null (executable-find "python3"))))
-;;       (`(t . t)
-;;        (treemacs-git-mode 'extended))
-;;       (`(t . _)
-;;        (treemacs-git-mode 'simple))))
-;;   :bind
-;;   (:map global-map
-;;         ([f8]         . treemacs-toggle)
-;;         ("M-0"        . treemacs-select-window)
-;;         ("C-c 1"      . treemacs-delete-other-windows)
-;;         ("M-m ft"     . treemacs-toggle)
-;;         ("M-m fT"     . treemacs)
-;;         ("M-m fB"     . treemacs-bookmark)
-;;         ("M-m f C-t"  . treemacs-find-file)
-;;         ("M-m f M-t"  . treemacs-find-tag)))
-
-;; (use-package treemacs-projectile
-;;   :defer t
-;;   :ensure t
-;;   :config
-;;   (setq treemacs-header-function #'treemacs-projectile-create-header)
-;;   :bind (:map global-map
-;;               ("M-m fP" . treemacs-projectile)
-;;               ("M-m fp" . treemacs-projectile-toggle)))
-
-;; (require 'dashboard)
-;; (dashboard-setup-startup-hook)
-
-;; (use-package dashboard
-;;   :config
-;;   (dashboard-setup-startup-hook)
-
-
-
-;;   ;; (defun dashboard-insert-custom ()
-;;   ;;   (insert "Custom text"))
-
-;;   ;; (add-to-list 'dashboard-item-generators 'dashboard-insert-custom)
-
-
-;;   (setq dashboard-banner-logo-title "Welcome !")
-;;   (setq dashboard-startup-banner 1)
-;;   (setq dashboard-items '((recents  . 5)
-;;                           (bookmarks . 100)
-;;                           (projects . 5)
-;;                           (agenda . 5)
-;;                           (registers . 5))))
-
-;; (defun dashboard-insert-custom ()
-;;   (insert "Custom text"))
-;; (add-to-list 'dashboard-item-generators  '(custom . dashboard-insert-custom))
-;; (add-to-list 'dashboard-items '(custom . 5) t)
-
-
 ;; treemacs
 (require 'treemacs)
 (require 'treemacs-projectile)
@@ -744,25 +581,4 @@ abort completely with `C-g'."
       treemacs-sorting                    'alphabetic-desc
       treemacs-tag-follow-cleanup         t
       treemacs-tag-follow-delay           1.5
-      treemacs-width                      35
-      ;; treemacs--width-is-locked t
-      
-      )
-
-
-
-;; -------- Highlight gestion
-;; Highlight selection after region expand
-;; (defadvice er/expand-region (after wlh/expand-region-highlight activate)
-;;   (call-interactively 'highlight-selection-current-selection))
-
-;; (defun wlh/expand-region-highlight-off (old-function &rest arguments)
-;;   (highlight-selection-light-off)
-;;   (apply old-function arguments))
-
-;; (advice-add #'keyboard-quit :around #'wlh/expand-region-highlight-off)
-
-
-;; Highlight selection custom from vendor/highlight-selection
-;; Disable it globally, just enable mode per mode
-;; (highlight-selection-mode nil)
+      treemacs-width                      35)

@@ -10,22 +10,17 @@
                      ace-window
                      actionscript-mode
                      ag
-                                        ; anzu
                      async
                      hy-mode
-
                      pfuture
                      nlinum
-                     ;;agressive-indent
                      diffview
                      ac-slime
-                     
                      auto-complete
                      auto-yasnippet
                      autopair
                      avy
                      avy-menu
-                     ;; beacon
                      browse-kill-ring
                      clj-refactor
                      clojure-cheatsheet
@@ -104,7 +99,6 @@
                      monokai-theme
                      multiple-cursors
                      neotree
-                     ;; nlinum
                      org-bullets
                      ov ; Used for some useful prelude functions
                      pandoc-mode
@@ -152,14 +146,11 @@
                      yasnippet
                      zop-to-char
                      xref-js2
-                     counsel-gtags
-                     ))
+                     counsel-gtags))
 
 ;; Add some missing packages
-;; (add-to-list 'load-path "~/.emacs.d/vendor/dired-subtree-20160920.130")
 (load "~/.emacs.d/vendor/emacs-textmate-0.1/textmate")
 (add-to-list 'load-path "~/.emacs.d/vendor/evil-easymotion")
-;; (add-to-list 'load-path "~/.emacs.d/vendor/psvn")
 (add-to-list 'load-path "~/.emacs.d/vendor/simple-httpd")
 (add-to-list 'load-path "~/.emacs.d/vendor/dumb-jump")
 (add-to-list 'load-path "~/.emacs.d/vendor/Indium")
@@ -207,4 +198,3 @@
 (load-file "~/.emacs.d/vendor/smartcomment/smartcomment.el")
 (load-file "~/.emacs.d/vendor/visible-bookmarks/bm.el")
 (load-file "~/.emacs.d/vendor/ibuffer-projectile.el")
-;; (load-file "~/.emacs.d/vendor/highlight-selection/highlight-selection.el")

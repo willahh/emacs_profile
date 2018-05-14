@@ -7,12 +7,6 @@
   (interactive "p")
   (yank-pop (- arg)))
 
-;; Center frame
-;; x-display-width / 4 because of retinata double ratio (should be / 2)
-;; Only works in emacs-osx build
-(defun wlh/frame-center ()
-  (interactive)
-  (set-frame-position (selected-frame) (- (/ (x-display-pixel-width) 4) (/ (frame-pixel-width) 2)) (- (/ (x-display-pixel-width) 4) (frame-pixel-height))))
 
 ;; Revert without confirm
 (defun revert-buffer-no-confirm ()
@@ -558,21 +552,21 @@ the visible part of the current buffer following point. "
 
 ;; In dired, M-> and M- never take me where I want to go.
 ;; http://whattheemacsd.com/
-(defun dired-back-to-top ()
-  (interactive)
-  (beginning-of-buffer)
-  (dired-next-line 4))
+;; (defun dired-back-to-top ()
+;;   (interactive)
+;;   (beginning-of-buffer)
+;;   (dired-next-line 4))
 
-(define-key dired-mode-map
-  (vector 'remap 'beginning-of-buffer) 'dired-back-to-top)
+;; (define-key dired-mode-map
+;;   (vector 'remap 'beginning-of-buffer) 'dired-back-to-top)
 
-(defun dired-jump-to-bottom ()
-  (interactive)
-  (end-of-buffer)
-  (dired-next-line -1))
+;; (defun dired-jump-to-bottom ()
+;;   (interactive)
+;;   (end-of-buffer)
+;;   (dired-next-line -1))
 
-(define-key dired-mode-map
-  (vector 'remap 'end-of-buffer) 'dired-jump-to-bottom)
+;; (define-key dired-mode-map
+;;   (vector 'remap 'end-of-buffer) 'dired-jump-to-bottom)
 
 ;; For some reason, renaming the current buffer file is a multi-step process in Emacs.
 ;; http://whattheemacsd.com/
@@ -719,8 +713,6 @@ Version 2017-04-19"
 (defun m-eshell-hook ()
   (define-key eshell-mode-map (kbd "C-M-l") 'er/contract-region))
 
-(defun wlh/pdf-view-mode-hook ()
-  (define-key pdf-view-mode-map (kbd ".") 'hydra-pdftools/body))
 
 
 ;; From : http://www.blogbyben.com/2016/08/emacs-php-modern-and-far-more-complete.html
@@ -838,17 +830,6 @@ the checking happens for all pairs in auto-minor-mode-alist"
     (let ((inhibit-read-only t))
       (ansi-color-apply-on-region (point-min) (point-max)))))
 
-(defun wlh/project-browser-open ()
-  (interactive)
-  (let ((path (s-replace "/Users/wravel/www/" "http://192.168.0.26/" (projectile-project-root))))
-    (browse-url path)))
-
-
-(defun wlh/vscode-dired-at-point ()
-  "Open a VS Code at point from dired"
-  (interactive)
-  (let ((default-directory (dired-dwim-target-directory)
-          )) (shell-command "code")))
 
 
 
@@ -891,18 +872,6 @@ the checking happens for all pairs in auto-minor-mode-alist"
     (isearch-exit)
     (swiper $query)))
 
-(defun wlh/projectile-ido-find-file ()
-  "Find a recent file using ido."
-  (interactive)
-  (let ((file (ido-completing-read "Project file: "
-                                   (mapcar #'abbreviate-file-name (projectile-current-project-files))
-                                   nil t)))
-    (when file
-      (find-file file))))
-
-(defun wlh/neotree-set ()
-  (interactive)
-  (neo-global--open-and-find (buffer-file-name)))
 
 
 ;; Better forward-paragraph backward-paragraph
@@ -1106,6 +1075,94 @@ Version 2016-12-27"
 
 
 
+
+
+
+;; ffap advice
+;; Check ffap string for line-number and goto it (using advice)
+;; https://www.emacswiki.org/emacs/FindFileAtPoint
+(defvar ffap-file-at-point-line-number nil
+  "Variable to hold line number from the last `ffap-file-at-point' call.")
+
+(defadvice ffap-file-at-point (after ffap-store-line-number activate)
+  "Search `ffap-string-at-point' for a line number pattern and
+save it in `ffap-file-at-point-line-number' variable."
+  (let* ((string (ffap-string-at-point)) ;; string/name definition copied from `ffap-string-at-point'
+         (name
+          (or (condition-case nil
+                  (and (not (string-match "//" string)) ; foo.com://bar
+                       (substitute-in-file-name string))
+                (error nil))
+              string))
+         (line-number-string 
+          (and (string-match ":[0-9]+" name)
+               (substring name (1+ (match-beginning 0)) (match-end 0))))
+         (line-number
+          (and line-number-string
+               (string-to-number line-number-string))))
+    (if (and line-number (> line-number 0)) 
+        (setq ffap-file-at-point-line-number line-number)
+      (setq ffap-file-at-point-line-number nil))))
+
+(defadvice find-file-at-point (after ffap-goto-line-number activate)
+  "If `ffap-file-at-point-line-number' is non-nil goto this line."
+  (when ffap-file-at-point-line-number
+    (goto-line ffap-file-at-point-line-number)
+    (setq ffap-file-at-point-line-number nil)))
+
+
+
+
+
+;; ------- wlh
+
+(defun wlh/frame-position-1 (frame)
+  "Most used frame configuration (x, y, width, height). Depends
+on the screen values."
+  (interactive)
+  (let* ((frame-width (/ (x-display-pixel-width) 3))
+         (frame-height (/ (x-display-pixel-height) 2))
+         (frame-x (- (/ (x-display-pixel-width) 4)))
+         (frame-y (- frame-height 100)))
+    (set-frame-size frame frame-width frame-height t)
+    (set-frame-position frame frame-x frame-y)))
+
+
+(defun wlh/neotree-set ()
+  (interactive)
+  (neo-global--open-and-find (buffer-file-name)))
+
+
+(defun wlh/projectile-ido-find-file ()
+  "Find a recent file using ido."
+  (interactive)
+  (let ((file (ido-completing-read "Project file: "
+                                   (mapcar #'abbreviate-file-name (projectile-current-project-files))
+                                   nil t)))
+    (when file
+      (find-file file))))
+
+(defun wlh/vscode-dired-at-point ()
+  "Open a VS Code at point from dired"
+  (interactive)
+  (let ((default-directory (dired-dwim-target-directory)
+          )) (shell-command "code")))
+
+(defun wlh/project-browser-open ()
+  (interactive)
+  (let ((path (s-replace "/Users/wravel/www/" "http://192.168.0.26/" (projectile-project-root))))
+    (browse-url path)))
+
+(defun wlh/pdf-view-mode-hook ()
+  (define-key pdf-view-mode-map (kbd ".") 'hydra-pdftools/body))
+
+;; Center frame
+;; x-display-width / 4 because of retinata double ratio (should be / 2)
+;; Only works in emacs-osx build
+(defun wlh/frame-center ()
+  (interactive)
+  (set-frame-position (selected-frame) (- (/ (x-display-pixel-width) 4) (/ (frame-pixel-width) 2)) (- (/ (x-display-pixel-width) 4) (frame-pixel-height))))
+
 ;; ------------ willahh custom
 (defun wlh/open-projectile-bookmarks ()
   ;; Find pdf files in user directory
@@ -1293,48 +1350,7 @@ Version 2016-12-27"
 ;; (global-set-key [mouse-1] 'wlh/dbleclick-mouse1)
 ;; (global-set-key [double-mouse-1] 'wlh/dbleclick-select-word)
 
-(defun wlh/frame-position-1 (frame)
-  "Most used frame configuration (x, y, width, height). Depends
-on the screen values."
-  (interactive)
-  (let* ((frame-width (/ (x-display-pixel-width) 3))
-         (frame-height (/ (x-display-pixel-height) 2))
-         (frame-x (- (/ (x-display-pixel-width) 4)))
-         (frame-y (- frame-height 100)))
-    (set-frame-size frame frame-width frame-height t)
-    (set-frame-position frame frame-x frame-y)))
 
-;; ffap advice
-;; Check ffap string for line-number and goto it (using advice)
-;; https://www.emacswiki.org/emacs/FindFileAtPoint
-(defvar ffap-file-at-point-line-number nil
-  "Variable to hold line number from the last `ffap-file-at-point' call.")
-
-(defadvice ffap-file-at-point (after ffap-store-line-number activate)
-  "Search `ffap-string-at-point' for a line number pattern and
-save it in `ffap-file-at-point-line-number' variable."
-  (let* ((string (ffap-string-at-point)) ;; string/name definition copied from `ffap-string-at-point'
-         (name
-          (or (condition-case nil
-                  (and (not (string-match "//" string)) ; foo.com://bar
-                       (substitute-in-file-name string))
-                (error nil))
-              string))
-         (line-number-string 
-          (and (string-match ":[0-9]+" name)
-               (substring name (1+ (match-beginning 0)) (match-end 0))))
-         (line-number
-          (and line-number-string
-               (string-to-number line-number-string))))
-    (if (and line-number (> line-number 0)) 
-        (setq ffap-file-at-point-line-number line-number)
-      (setq ffap-file-at-point-line-number nil))))
-
-(defadvice find-file-at-point (after ffap-goto-line-number activate)
-  "If `ffap-file-at-point-line-number' is non-nil goto this line."
-  (when ffap-file-at-point-line-number
-    (goto-line ffap-file-at-point-line-number)
-    (setq ffap-file-at-point-line-number nil)))
 
 
 
@@ -1359,4 +1375,5 @@ save it in `ffap-file-at-point-line-number' variable."
 
 ;; Create an eshell buffer on background
 (eshell)
+
 

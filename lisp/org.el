@@ -15,16 +15,12 @@
 (setq org-outline-path-complete-in-steps nil)
 (setq org-src-tab-acts-natively t)
 
-;; (setq org-agenda-files (quote ("~/org" "~/.emacs.d/emacs_todo.org")))
-;; (setq org-agenda-files (quote ("~/org")))
-;; (setq org-agenda-files (quote ("~/org")))
 (setq org-agenda-files (quote ("~/org" "~/.emacs.d/emacs_todo.org")))
 (setq org-default-notes-file (concat org-directory "/main.org"))
 (setq org-refile-targets '((nil :maxlevel . 1)
                            (org-agenda-files :maxlevel . 1)))
 
 (setq org-tag-alist '(("@work" . ?w) ("@home" . ?h) ("laptop" . ?l)))
-;; http://orgmode.org/worg/org-tutorials/org-latex-export.html
 (unless (boundp 'org-latex-classes)
   (setq org-latex-classes nil))
 
