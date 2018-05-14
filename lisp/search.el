@@ -6,10 +6,11 @@
 ;; (setq use-region-p nil)
 
 (setq ag-highlight-search t)
-(setq ag-reuse-buffers nil)
 
 ;; (setq ag-reuse-window nil) ; Re use same window 
+(setq ag-reuse-buffers nil)
 (setq ag-reuse-window t)
+(setq ag-reuse-buffers nil)
 
 
 (setq-default
