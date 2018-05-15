@@ -4,10 +4,15 @@
 
 (setq ag-highlight-search t)
 (setq ag-reuse-buffers nil)
-(setq ag-reuse-window nil)
-(setq-default isearch-allow-scroll t
-              lazy-highlight-cleanup t
-              lazy-highlight-initial-delay 0)
+(setq ag-reuse-window t)
+
+(setq-default
+ isearch-allow-scroll t
+ lazy-highlight-cleanup t
+ lazy-highlight-initial-delay 0
+ isearch-allow-scroll t
+ lazy-highlight-cleanup t
+ lazy-highlight-initial-delay 0)
 
 ;; ag hook
 (defun wlh/ag-mode-hook ()
@@ -35,18 +40,9 @@
                           isearch-string
                         (regexp-quote isearch-string)))))
 
-;; (require 'visual-regexp-steroids)
-;; if you use multiple-cursors, this is for you:
-;; (define-key global-map (kbd "C-c m") 'vr/mc-mark)
-;; to use visual-regexp-steroids's isearch instead of the built-in regexp isearch, also include the following lines:
-;; (global-set-key (kbd "C-M-r") 'vr/isearch-backward) ;; C-M-r
-;; (global-set-key (kbd "C-M-s") 'vr/isearch-forward) ;; C-M-s
-
 ;; hl-line-mode
 (add-hook 'compilation-mode-hook (lambda () (hl-line-mode)))
 (add-hook 'dired-mode-hook (lambda () (hl-line-mode)))
 (add-hook 'occur-mode-hook (lambda () (hl-line-mode)))
 (add-hook 'ibuffer-mode-hook (lambda () (hl-line-mode)))
 (add-hook 'diff-mode-hook (lambda () (hl-line-mode)))
-;; (add-hook 'prog-mode-hook (lambda ()
-;;                             (hl-line-mode)))
