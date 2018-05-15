@@ -584,7 +584,7 @@
 (add-hook 'pdf-view-mode 'wlh/pdf-view-mode-hook)
 
 ;; Hydra
-(global-set-key (kbd "s-o") 'hydra-window/body)
+;; (global-set-key (kbd "s-o") 'hydra-window/body)
 
 ;; Occur mode
 (add-hook 'occur-mode-find-occurrence-hook 'recenter)
@@ -653,7 +653,7 @@
 ;; Scroll commands
 (global-set-key (kbd "C-x v U") 'wlh/svn-up-recursive)
 (global-set-key (kbd "s-a") 'mark-whole-buffer)
-(global-set-key (kbd "C-c C-s") 'swiper)
+(global-set-key (kbd "C-c C-s") 'helm-swoop)
 (define-key web-mode-map (kbd "C-c C-s") 'swiper)
 (define-key js2-mode-map (kbd "C-c C-s") 'swiper)
 (define-key php-mode-map (kbd "C-c C-s") 'swiper)

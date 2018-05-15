@@ -293,12 +293,6 @@
 
 (define-abbrev-table 'vc-dir-mode-abbrev-table '())
 
-(define-abbrev-table 'vc-git-log-edit-mode-abbrev-table '())
-
-(define-abbrev-table 'vc-git-log-view-mode-abbrev-table '())
-
-(define-abbrev-table 'vc-git-region-history-mode-abbrev-table '())
-
 (define-abbrev-table 'vc-svn-log-view-mode-abbrev-table '())
 
 (define-abbrev-table 'web-mode-abbrev-table '())
