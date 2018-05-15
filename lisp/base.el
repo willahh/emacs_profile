@@ -24,20 +24,6 @@
        scroll-preserve-screen-position t
        scroll-conservatively 0)
 
-;; more font-locking, variables for `lazy-lock-mode'
-;; wait 10 secs before font-locking stuff
-;; Wed Apr 11 20:22:21 2018 Try with thoses settings commented
-;; (setq lazy-lock-defer-time 10
-;;       ;; don't font lock as I type
-;;       lazy-lock-defer-on-the-fly t
-;;       ;; If I'm not doing stuff, start fontifying 
-;;       ;; the rest of the buffer
-;;       lazy-lock-stealth-time 30)
-
-;; emacs 21 has jit-lock which is better
-;; (setq font-lock-support-mode 'jit-lock-mode)
-;; (setq-default font-lock-multiline t)
-
 ;; From hl-lissner cf
 (setq-default mode-line-default-help-echo nil ; don't say anything on mode-line mouseover
               indicate-buffer-boundaries nil  ; don't show where buffer starts/ends
@@ -81,18 +67,6 @@
                     (y-or-n-p "››› Quit?")
                   t)))
 
-;; ;; From hlissner config
-;; ;; `window-divider-mode' gives us finer control over the border between windows.
-;; ;; The native border "consumes" a pixel of the fringe on righter-most splits (in
-;; ;; Yamamoto's emacs-mac at least), window-divider does not.
-;; ;; NOTE Only available on Emacs 25.1+
-;; Wed Apr 11 20:23:43 2018 - Update Commented
-;; (when (boundp 'window-divider-mode)
-;;   (setq window-divider-default-places t
-;;         window-divider-default-bottom-width 1
-;;         window-divider-default-right-width 1)
-;;   (window-divider-mode +1))
-
 ;; Fix snapy frame resize
 ;; https://emacs.stackexchange.com/a/30444
 (setq frame-resize-pixelwise t)
@@ -109,25 +83,14 @@
 ;; Don't replace line ending (Windows, Unix, Windows+Unix)
 ;; https://stackoverflow.com/a/10845302
 (setq inhibit-eol-conversion t)
-
-;; Remove ^R 
 (add-hook 'prog-mode-hook 'remove-dos-eol)
 (add-hook 'text-mode-hook 'remove-dos-eol)
 (add-hook 'web-mode-hook 'remove-dos-eol)
 (add-hook 'fundamental-mode 'remove-dos-eol)
 
-
 ;; Disable annoying prompts and messages 
 ;; Use confirmation y and p instead of yes or not
 (fset 'yes-or-no-p 'y-or-n-p)
-
-;; (validate-setq kill-buffer-query-functions
-;;                (remq 'process-kill-buffer-query-function
-;;                      kill-buffer-query-functions))
-
-;; (validate-setq ring-bell-function #'ignore
-;;                inhibit-startup-screen t
-;;                initial-scratch-message nil)
 (fset 'display-startup-echo-area-message #'ignore)
 
 ;; transient-mark-mode 
@@ -347,14 +310,6 @@
 ;; https://emacs.stackexchange.com/questions/22283/dired-group-directories-and-symlinks-to-directories-first
 (setq ls-lisp-dirs-first t)
 
-;; Show trailing whitespace
-;; https://emacs.stackexchange.com/a/21961
-(setq-default show-trailing-whitespace nil)
-(setq whitespace-display-mappings '((space-mark 32 [?·])))
-(setq whitespace-style '(face trailing spaces space-mark))
-(global-whitespace-mode t)
-
-
 ;; Do not truncate words
 (setq visual-line-mode t)
 
@@ -386,8 +341,7 @@
 
 (desktop-save-mode 1)
 
-
-;; Syntax entry --------------
+;; Syntax entry
 ;; Syntax entry for web mode doesnt work actualy
 ;; https://github.com/fxbois/web-mode/issues/149
 ;; Select whole word when separated with _
@@ -398,7 +352,3 @@
 (update-syntax-entry)
 (add-hook 'prog-mode-hook (lambda () (update-syntax-entry)))
 (add-hook 'web-mode-hook (lambda () (update-syntax-entry))) ;; Needed for web-mode
-
-;; Every time a window is started, make sure it get maximized
-;; Update : No, don't
-;; (add-to-list 'default-frame-alist '(fullscreen . maximized))

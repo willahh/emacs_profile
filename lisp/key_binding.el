@@ -85,6 +85,7 @@
 ;; (global-set-key (kbd "∑") 'helm-ag) ; Alt + S
 (global-set-key (kbd "∑") 'helm-ag) ; Alt + shift + s
 ;; (global-set-key (kbd "C-∑") 'helm-projectile-ag) ; Alt + control + shift + s
+(global-set-key (kbd "C-c C-c C-s") 'helm-ag)
 
 (global-set-key (kbd "ƒ") 'helm-recentf) ; Alt + f
 ;; (global-set-key (kbd "¢") 'org-capture) ; Alt + C
@@ -181,6 +182,7 @@
 (global-set-key (kbd "M-g") 'goto-line) ; https://github.com/skeeto/.emacs.d/blob/master/init.el
 (define-key paredit-mode-map (kbd "M-q") 'fill-paragraph)
 (global-set-key (kbd "C-;") "\C-e;") ; (CONTROL + ; -> Append ";" at the end of a line)
+(global-set-key (kbd "C-c RET") 'wlh/join-line)
 
 
 ;; Scroll
@@ -212,7 +214,7 @@
 (global-set-key (kbd "C-t") 'transpose-chars)
 
 ;; ---
-(define-key ivy-minibuffer-map (kbd "<escape>") 'minibuffer-keyboard-quit)
+;; (define-key ivy-minibuffer-map (kbd "<escape>") 'minibuffer-keyboard-quit)
 (define-key ivy-minibuffer-map (kbd "C-h") 'delete-backward-char)
 
 ;; Backward kill sexp
@@ -229,6 +231,7 @@
 
 
 ;; ---------------- Tab
+(global-set-key (kbd "<backtab>") 'untab-region)
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
 
 
