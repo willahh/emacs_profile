@@ -17,10 +17,6 @@
 
 (define-abbrev-table 'bookmark-edit-annotation-mode-abbrev-table '())
 
-(define-abbrev-table 'browse-kill-ring-edit-mode-abbrev-table '())
-
-(define-abbrev-table 'browse-kill-ring-mode-abbrev-table '())
-
 (define-abbrev-table 'c++-mode-abbrev-table
   '(
    ))
@@ -84,8 +80,6 @@
 (define-abbrev-table 'diff-mode-abbrev-table '())
 
 (define-abbrev-table 'display-time-world-mode-abbrev-table '())
-
-(define-abbrev-table 'edebug-eval-mode-abbrev-table '())
 
 (define-abbrev-table 'edit-abbrevs-mode-abbrev-table '())
 
@@ -174,8 +168,6 @@
 (define-abbrev-table 'lisp-mode-abbrev-table '())
 
 (define-abbrev-table 'log-edit-mode-abbrev-table '())
-
-(define-abbrev-table 'log-view-mode-abbrev-table '())
 
 (define-abbrev-table 'magit-cherry-mode-abbrev-table '())
 
@@ -299,10 +291,6 @@
 
 (define-abbrev-table 'url-cookie-mode-abbrev-table '())
 
-(define-abbrev-table 'vc-annotate-mode-abbrev-table '())
-
-(define-abbrev-table 'vc-bzr-log-view-mode-abbrev-table '())
-
 (define-abbrev-table 'vc-dir-mode-abbrev-table '())
 
 (define-abbrev-table 'vc-git-log-edit-mode-abbrev-table '())
@@ -310,10 +298,6 @@
 (define-abbrev-table 'vc-git-log-view-mode-abbrev-table '())
 
 (define-abbrev-table 'vc-git-region-history-mode-abbrev-table '())
-
-(define-abbrev-table 'vc-hg-log-view-mode-abbrev-table '())
-
-(define-abbrev-table 'vc-mtn-log-view-mode-abbrev-table '())
 
 (define-abbrev-table 'vc-svn-log-view-mode-abbrev-table '())
 
