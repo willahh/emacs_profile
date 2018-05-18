@@ -69,7 +69,8 @@
   ;; (define-key js2-mode-map (kbd "<C-M-mouse-3>") 'xref-pop-marker-stack)
   )
 
-(add-hook 'js2-mode-hook 'wlh/js-mode)
+;; (add-hook 'js2-mode-hook 'wlh/js-mode)
+(add-hook 'js-mode-hook 'wlh/js-mode)
 
 ;; Javascript xref
 (add-hook 'js2-mode-hook (lambda ()
