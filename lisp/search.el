@@ -11,6 +11,7 @@
 (setq ag-reuse-buffers nil)
 (setq ag-reuse-window t)
 (setq ag-reuse-buffers nil)
+(setq ag-reuse-window nil)
 
 
 (setq-default
