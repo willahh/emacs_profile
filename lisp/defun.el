@@ -812,15 +812,15 @@ Version 2017-04-19"
 ;;   (follow-mode t))
 
 ;; https://stackoverflow.com/a/32002122
-;; (defun jrh-isearch-with-region ()
-;;   "Use region as the isearch text."
-;;   (when mark-active
-;;     (let ((region (funcall region-extract-function nil)))
-;;       (deactivate-mark)
-;;       (isearch-push-state)
-;;       (isearch-yank-string region))))
+(defun jrh-isearch-with-region ()
+  "Use region as the isearch text."
+  (when mark-active
+    (let ((region (funcall region-extract-function nil)))
+      (deactivate-mark)
+      (isearch-push-state)
+      (isearch-yank-string region))))
 
-;; (add-hook 'isearch-mode-hook #'jrh-isearch-with-region)
+(add-hook 'isearch-mode-hook #'jrh-isearch-with-region)
 
 ;; http://emacsredux.com/blog/2013/05/30/joining-lines/
 (defun join-region (beg end)
@@ -1003,11 +1003,6 @@ Version 2016-12-27"
 ;;       (let ((transient-mark-mode nil))
 ;;         (yank-advised-indent-function (region-beginning) (region-end)))))
 
-;; (defadvice mouse-set-point (after wlh/mouse-set-point-advice (event &optional promote-to-region) activate)
-;;   "Advice mouse click to remove multi cursors when present."
-;;   (when (> (mc/num-cursors) 1)
-;;     (mc/remove-fake-cursors)))
-
 ;; https://stackoverflow.com/a/2706660
 ;; (defadvice save-buffers-kill-emacs (around no-query-kill-emacs activate)
 ;;   "Prevent annoying \"Active processes exist\" query when you quit Emacs."
@@ -1025,6 +1020,11 @@ Version 2016-12-27"
 ;;     (ad-activate 'isearch-repeat)))
 
 ;; Focus on the result window after doing ag
+(defadvice mouse-set-point (after wlh/mouse-set-point-advice (event &optional promote-to-region) activate)
+  "Advice mouse click to remove multi cursors when present."
+  (when (> (mc/num-cursors) 1)
+    (mc/remove-fake-cursors)))
+
 (defadvice ag (after wlh-ag-before activate)
   (other-window 1))
 
