@@ -37,17 +37,13 @@
   ;; (setq-default js2-strict-missing-semi-warning nil)
   ;; (setq-default js2-strict-trailing-comma-warning t) ;; jshint does not warn about this now for some reason
 
-  ;; From Hlissner config
-  (setq-default
-   js2-skip-preprocessor-directives t
-   js2-highlight-external-variables nil
-   js2-mode-show-parse-errors nil)
+  (setq-default js2-skip-preprocessor-directives t
+                js2-highlight-external-variables nil
+                js2-mode-show-parse-errors nil)
   
   (nlinum-mode)
-  ;; (highlight-symbol-mode t)
   (highlight-symbol-mode t)
 
-  
   ;; js2-imenu-extras-mode
   (js2-imenu-extras-mode)
 
@@ -75,15 +71,7 @@
 
 (add-hook 'js2-mode-hook 'wlh/js-mode)
 
-;; (use-package color-identifiers-mode
-;;   :ensure t
-;;   :init
-;;   (add-hook 'js2-mode-hook 'color-identifiers-mode))
-
 ;; Javascript xref
 (add-hook 'js2-mode-hook (lambda ()
                            (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)))
 
-;; js2-imenu-extras
-;; (require 'js2-imenu-extras)
-;; (js2-imenu-extras-setup)

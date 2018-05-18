@@ -7,7 +7,6 @@
   (interactive "p")
   (yank-pop (- arg)))
 
-
 ;; Revert without confirm
 (defun revert-buffer-no-confirm ()
   "Revert buffer without confirmation."
@@ -116,26 +115,26 @@
   (interactive "r\np")
   (if (use-region-p) (move-region-down start end n) (move-line-down n)))
 
-(defun svn-repo-up ()
-  "Browse to the parent of the current folder."
-  (interactive)
-  (let (rootFolder rootFolderPieces)
-    (goto-char (point-min))
-    (setq rootFolder (buffer-substring-no-properties (line-beginning-position) (line-end-position)))
-    (setq rootFolderPieces (split-string rootFolder "/" nil))
-    (svn-repo-open (mapconcat 'identity (butlast(butlast rootFolderPieces)) "/"))))
+;; (defun svn-repo-up ()
+;;   "Browse to the parent of the current folder."
+;;   (interactive)
+;;   (let (rootFolder rootFolderPieces)
+;;     (goto-char (point-min))
+;;     (setq rootFolder (buffer-substring-no-properties (line-beginning-position) (line-end-position)))
+;;     (setq rootFolderPieces (split-string rootFolder "/" nil))
+;;     (svn-repo-open (mapconcat 'identity (butlast(butlast rootFolderPieces)) "/"))))
 
 ;; Copy current pwd into clipboard
 ;; Source http://stackoverflow.com/a/18816438
 ;; Doesnt seems to work ....
-(defun clip-file()
-  "Put the current file name on the clipboard"
-  (interactive)
-  (let ((filename (if (equal major-mode 'dired-mode)
-                      (file-name-directory default-directory)
-                    (buffer-file-name))))
-    (when filename
-      (x-select-text filename))))
+;; (defun clip-file()
+;;   "Put the current file name on the clipboard"
+;;   (interactive)
+;;   (let ((filename (if (equal major-mode 'dired-mode)
+;;                       (file-name-directory default-directory)
+;;                     (buffer-file-name))))
+;;     (when filename
+;;       (x-select-text filename))))
 
 ;; http://emacsredux.com/blog/2013/05/22/smarter-navigation-to-the-beginning-of-a-line/
 (defun smarter-move-beginning-of-line (arg)
@@ -170,43 +169,32 @@ point reaches the beginning or end of the buffer, stop there."
 ;; next-hunk; Single escape to quit buffer
 ;; esc quits
 ;; Source : https://juanjoalvarez.net/es/detail/2014/sep/19/vim-emacsevil-chaotic-migration-guide/x
-(defun minibuffer-keyboard-quit ()
-  "Abort recursive edit.
-In Delete Selection mode, if the mark is active, just deactivate it;
-then it takes a second \\[keyboard-quit] to abort the minibuffer."
-  (interactive)
-  (if (and delete-selection-mode transient-mark-mode mark-active)
-      (setq deactivate-mark  t)
-    (when (get-buffer "*Completions*") (delete-windows-on "*Completions*"))
-    (abort-recursive-edit)))
+;; (defun minibuffer-keyboard-quit ()
+;;   "Abort recursive edit.
+;; In Delete Selection mode, if the mark is active, just deactivate it;
+;; then it takes a second \\[keyboard-quit] to abort the minibuffer."
+;;   (interactive)
+;;   (if (and delete-selection-mode transient-mark-mode mark-active)
+;;       (setq deactivate-mark  t)
+;;     (when (get-buffer "*Completions*") (delete-windows-on "*Completions*"))
+;;     (abort-recursive-edit)))
 
 ;; Shell
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(shell-pop-shell-type (quote ("eshell" "*eshell*" (lambda nil (eshell)))))
- '(shell-pop-term-shell "/bin/bash")
- ;; '(shell-pop-universal-key "C-t")
- '(shell-pop-window-size 30)
- '(shell-pop-full-span t)
- '(shell-pop-window-position "bottom"))
+
 
 ;; Indent - unindent
 ;; Source http://stackoverflow.com/a/35183657
 ;; Updated to just use for back indent, forward indent is
 (defun custom-indent-region(numSpaces)
   (progn
-                                        ; default to start and end of current line
+    ;; default to start and end of current line
     (setq regionStart (line-beginning-position))
     (setq regionEnd (line-end-position))
 
-                                        ; if there's a selection, use that instead of the current line
+    ;; if there's a selection, use that instead of the current line
     (when (use-region-p)
       (setq regionStart (region-beginning))
-      (setq regionEnd (region-end))
-      )
+      (setq regionEnd (region-end)))
 
     (save-excursion ; restore the position afterwards
       (goto-char regionStart) ; go to the start of region
@@ -216,15 +204,11 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 
       (indent-rigidly start end numSpaces) ; indent between start and end
       (setq deactivate-mark nil) ; restore the selected region
-      )
-    )
-  )
+      )))
 
 (defun untab-region (N)
   (interactive "p")
   (custom-indent-region -4))
-
-(global-set-key (kbd "<backtab>") 'untab-region)
 
 ;; Source : https://www.emacswiki.org/emacs/DiredSortDirectoriesFirst
 (defun mydired-sort ()
@@ -236,97 +220,97 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
     (set-buffer-modified-p nil)))
 
 ;; Get the current file name from bufer file path
-(defun get-curent-file-name ()
-  (interactive)
-  (defvar buffer-file-name-split (split-string buffer-file-name "/")) ;; Split file path
-  (defvar split (last buffer-file-name-split)) ;; Get last entry
-  (mapconcat 'identity split " ")) ;; Convert list of one element to string
+;; (defun get-curent-file-name ()
+;;   (interactive)
+;;   (defvar buffer-file-name-split (split-string buffer-file-name "/")) ;; Split file path
+;;   (defvar split (last buffer-file-name-split)) ;; Get last entry
+;;   (mapconcat 'identity split " ")) ;; Convert list of one element to string
 
 ;; Copy without selection (word, line, paragraph, string, parenthesis)
 ;; https://emacswiki.org/emacs/CopyWithoutSelection
-(defun get-point (symbol &optional arg)
-  "get the point"
-  (funcall symbol arg)
-  (point))
+;; (defun get-point (symbol &optional arg)
+;;   "get the point"
+;;   (funcall symbol arg)
+;;   (point))
 
-(defun copy-thing (begin-of-thing end-of-thing &optional arg)
-  "copy thing between beg & end into kill ring"
-  (save-excursion
-    (let ((beg (get-point begin-of-thing 1))
-          (end (get-point end-of-thing arg)))
-      (copy-region-as-kill beg end))))
+;; (defun copy-thing (begin-of-thing end-of-thing &optional arg)
+;;   "copy thing between beg & end into kill ring"
+;;   (save-excursion
+;;     (let ((beg (get-point begin-of-thing 1))
+;;           (end (get-point end-of-thing arg)))
+;;       (copy-region-as-kill beg end))))
 
-(defun paste-to-mark(&optional arg)
-  "Paste things to mark, or to the prompt in shell-mode"
-  (let ((pasteMe
-         (lambda()
-           (if (string= "shell-mode" major-mode)
-               (progn (comint-next-prompt 25535) (yank))
-             (progn (goto-char (mark)) (yank) )))))
-    (if arg
-        (if (= arg 1)
-            nil
-          (funcall pasteMe))
-      (funcall pasteMe))))
+;; (defun paste-to-mark(&optional arg);
+;;   "Paste things to mark, or to the prompt in shell-mode"
+;;   (let ((pasteMe
+;;          (lambda()
+;;            (if (string= "shell-mode" major-mode)
+;;                (progn (comint-next-prompt 25535) (yank))
+;;              (progn (goto-char (mark)) (yank) )))))
+;;     (if arg
+;;         (if (= arg 1)
+;;             nil
+;;           (funcall pasteMe))
+;;       (funcall pasteMe))))
 
-(defun copy-word (&optional arg)
-  "Copy words at point into kill-ring"
-  (interactive)
-  (copy-thing 'backward-word 'forward-word arg)
-  (message "copy-word"))
-
-
-(defun copy-line (&optional arg)
-  "Save current line into Kill-Ring without mark the line "
-  (interactive)
-  (copy-thing 'beginning-of-line 'end-of-line arg)
-  (message "copy-line"))
+;; (defun copy-word (&optional arg)
+;;   "Copy words at point into kill-ring"
+;;   (interactive)
+;;   (copy-thing 'backward-word 'forward-word arg)
+;;   (message "copy-word"))
 
 
-(defun copy-paragraph (&optional arg)
-  "Copy paragraphes at point"
-  ;; (interactive "P")
-  (interactive)
-  (copy-thing 'backward-paragraph 'forward-paragraph arg)
-  (message "copy-paragraph")
-  ;; (paste-to-mark arg)
-  )
-
-(defun beginning-of-string(&optional arg)
-  "  "
-  (re-search-backward "[ \t]" (line-beginning-position) 3 1)
-  (if (looking-at "[\t ]")  (goto-char (+ (point) 1)) )
-  )
-(defun end-of-string(&optional arg)
-  " "
-  (re-search-forward "[ \t]" (line-end-position) 3 arg)
-  (if (looking-back "[\t ]") (goto-char (- (point) 1)) )
-  )
-
-(defun thing-copy-string-to-mark(&optional arg)
-  " Try to copy a string and paste it to the mark
-     When used in shell-mode, it will paste string on shell prompt by default "
-  (interactive "P")
-  (copy-thing 'beginning-of-string 'end-of-string arg)
-  ;; (paste-to-mark arg)
-  )
+;; (defun copy-line (&optional arg)
+;;   "Save current line into Kill-Ring without mark the line "
+;;   (interactive)
+;;   (copy-thing 'beginning-of-line 'end-of-line arg)
+;;   (message "copy-line"))
 
 
-(defun beginning-of-parenthesis(&optional arg)
-  "  "
-  (re-search-backward "[[<(?\"]" (line-beginning-position) 3 1)
-  (if (looking-at "[[<(?\"]")  (goto-char (+ (point) 1)) ))
+;; (defun copy-paragraph (&optional arg)
+;;   "Copy paragraphes at point"
+;;   ;; (interactive "P")
+;;   (interactive)
+;;   (copy-thing 'backward-paragraph 'forward-paragraph arg)
+;;   (message "copy-paragraph")
+;;   ;; (paste-to-mark arg)
+;;   )
 
-(defun end-of-parenthesis(&optional arg)
-  " "
-  (re-search-forward "[]>)?\"]" (line-end-position) 3 arg)
-  (if (looking-back "[]>)?\"]") (goto-char (- (point) 1))))
+;; (defun beginning-of-string(&optional arg)
+;;   "  "
+;;   (re-search-backward "[ \t]" (line-beginning-position) 3 1)
+;;   (if (looking-at "[\t ]")  (goto-char (+ (point) 1)) )
+;;   )
+;; (defun end-of-string(&optional arg)
+;;   " "
+;;   (re-search-forward "[ \t]" (line-end-position) 3 arg)
+;;   (if (looking-back "[\t ]") (goto-char (- (point) 1)) )
+;;   )
 
-(defun thing-copy-parenthesis-to-mark(&optional arg)
-  " Try to copy a parenthesis and paste it to the mark
-     When used in shell-mode, it will paste parenthesis on shell prompt by default "
-  (interactive "P")
-  (copy-thing 'beginning-of-parenthesis 'end-of-parenthesis arg))
+;; (defun thing-copy-string-to-mark(&optional arg)
+;;   " Try to copy a string and paste it to the mark
+;;      When used in shell-mode, it will paste string on shell prompt by default "
+;;   (interactive "P")
+;;   (copy-thing 'beginning-of-string 'end-of-string arg)
+;;   ;; (paste-to-mark arg)
+;;   )
+
+
+;; (defun beginning-of-parenthesis(&optional arg)
+;;   "  "
+;;   (re-search-backward "[[<(?\"]" (line-beginning-position) 3 1)
+;;   (if (looking-at "[[<(?\"]")  (goto-char (+ (point) 1)) ))
+
+;; (defun end-of-parenthesis(&optional arg)
+;;   " "
+;;   (re-search-forward "[]>)?\"]" (line-end-position) 3 arg)
+;;   (if (looking-back "[]>)?\"]") (goto-char (- (point) 1))))
+
+;; (defun thing-copy-parenthesis-to-mark(&optional arg)
+;;   " Try to copy a parenthesis and paste it to the mark
+;;      When used in shell-mode, it will paste parenthesis on shell prompt by default "
+;;   (interactive "P")
+;;   (copy-thing 'beginning-of-parenthesis 'end-of-parenthesis arg))
 
 ;; Block comment auto close
 ;; https://emacs.stackexchange.com/a/14613
@@ -364,104 +348,103 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
       (if (looking-at "\\.") t
         (backward-char 1)
         (if (looking-at "->") t nil)
-        ;; (if (looking-at "::") t nil) ;; Update wra : add "::" for php support
         ))))
 
-(defun do-yas-expand ()
-  (let ((yas/fallback-behavior 'return-nil))
-    (yas/expand)))
+;; (defun do-yas-expand ()
+;;   (let ((yas/fallback-behavior 'return-nil))
+;;     (yas/expand)))
 
-(defun tab-indent-or-complete ()
-  (interactive)
-  (cond
-   ((minibufferp)
-    (minibuffer-complete))
-   (t
-    (indent-for-tab-command)
-    (if (or (not yas/minor-mode)
-            (null (do-yas-expand)))
-        (if (check-expansion)
-            (progn
-              (company-manual-begin)
-              (if (null company-candidates)
-                  (progn
-                    (company-abort)
-                    (indent-for-tab-command)))))))))
+;; (defun tab-indent-or-complete ()
+;;   (interactive)
+;;   (cond
+;;    ((minibufferp)
+;;     (minibuffer-complete))
+;;    (t
+;;     (indent-for-tab-command)
+;;     (if (or (not yas/minor-mode)
+;;             (null (do-yas-expand)))
+;;         (if (check-expansion)
+;;             (progn
+;;               (company-manual-begin)
+;;               (if (null company-candidates)
+;;                   (progn
+;;                     (company-abort)
+;;                     (indent-for-tab-command)))))))))
 
-(defun tab-complete-or-next-field ()
-  (interactive)
-  (if (or (not yas/minor-mode)
-          (null (do-yas-expand)))
-      (if company-candidates
-          (company-complete-selection)
-        (if (check-expansion)
-            (progn
-              (company-manual-begin)
-              (if (null company-candidates)
-                  (progn
-                    (company-abort)
-                    (yas-next-field))))
-          (yas-next-field)))))
+;; (defun tab-complete-or-next-field ()
+;;   (interactive)
+;;   (if (or (not yas/minor-mode)
+;;           (null (do-yas-expand)))
+;;       (if company-candidates
+;;           (company-complete-selection)
+;;         (if (check-expansion)
+;;             (progn
+;;               (company-manual-begin)
+;;               (if (null company-candidates)
+;;                   (progn
+;;                     (company-abort)
+;;                     (yas-next-field))))
+;;           (yas-next-field)))))
 
-(defun expand-snippet-or-complete-selection ()
-  (interactive)
-  (if (or (not yas/minor-mode)
-          (null (do-yas-expand))
-          (company-abort))
-      (company-complete-selection)))
+;; (defun expand-snippet-or-complete-selection ()
+;;   (interactive)
+;;   (if (or (not yas/minor-mode)
+;;           (null (do-yas-expand))
+;;           (company-abort))
+;;       (company-complete-selection)))
 
-(defun abort-company-or-yas ()
-  (interactive)
-  (if (null company-candidates)
-      (yas-abort-snippet)
-    (company-abort)))
+;; (defun abort-company-or-yas ()
+;;   (interactive)
+;;   (if (null company-candidates)
+;;       (yas-abort-snippet)
+;;     (company-abort)))
 
 ;; ----------------------------
 ;; Move forward and backward between mark ring
 ;; ----------------------------
 ;; http://stackoverflow.com/a/14539202
-(defun unpop-to-mark-command ()
-  "Unpop off mark ring. Does nothing if mark ring is empty."
-  (interactive)
-  (when mark-ring
-    (setq mark-ring (cons (copy-marker (mark-marker)) mark-ring))
-    (set-marker (mark-marker) (car (last mark-ring)) (current-buffer))
-    (when (null (mark t)) (ding))
-    (setq mark-ring (nbutlast mark-ring))
-    (goto-char (marker-position (car (last mark-ring))))))
+;; (defun unpop-to-mark-command ()
+;;   "Unpop off mark ring. Does nothing if mark ring is empty."
+;;   (interactive)
+;;   (when mark-ring
+;;     (setq mark-ring (cons (copy-marker (mark-marker)) mark-ring))
+;;     (set-marker (mark-marker) (car (last mark-ring)) (current-buffer))
+;;     (when (null (mark t)) (ding))
+;;     (setq mark-ring (nbutlast mark-ring))
+;;     (goto-char (marker-position (car (last mark-ring))))))
 
 ;; ----------------------------
 ;; Deplacement entre les global mark ring, ne fonctionne pas bien
 ;; ----------------------------
-(defun marker-is-point-p (marker)
-  "yo if marker is current point"
-  (and (eq (marker-buffer marker) (current-buffer))
-       (= (marker-position marker) (point))))
+;; (defun marker-is-point-p (marker)
+;;   "yo if marker is current point"
+;;   (and (eq (marker-buffer marker) (current-buffer))
+;;        (= (marker-position marker) (point))))
 
-(defun push-mark-maybe ()
-  "push mark onto `global-mark-ring' if mark head or tail is not current location"
-  (if (not global-mark-ring) (error "global-mark-ring empty")
-    (unless (or (marker-is-point-p (car global-mark-ring))
-                (marker-is-point-p (car (reverse global-mark-ring))))
-      (push-mark))))
+;; (defun push-mark-maybe ()
+;;   "push mark onto `global-mark-ring' if mark head or tail is not current location"
+;;   (if (not global-mark-ring) (error "global-mark-ring empty")
+;;     (unless (or (marker-is-point-p (car global-mark-ring))
+;;                 (marker-is-point-p (car (reverse global-mark-ring))))
+;;       (push-mark))))
 
-(defun backward-global-mark ()
-  "use `pop-global-mark', pushing current point if not on ring."
-  (interactive)
-  (push-mark-maybe)
-  (when (marker-is-point-p (car global-mark-ring))
-    (call-interactively 'pop-global-mark))
-  (call-interactively 'pop-global-mark))
+;; (defun backward-global-mark ()
+;;   "use `pop-global-mark', pushing current point if not on ring."
+;;   (interactive)
+;;   (push-mark-maybe)
+;;   (when (marker-is-point-p (car global-mark-ring))
+;;     (call-interactively 'pop-global-mark))
+;;   (call-interactively 'pop-global-mark))
 
-(defun forward-global-mark ()
-  "hack `pop-global-mark' to go in reverse, pushing current point if not on ring."
-  (interactive)
-  (push-mark-maybe)
-  (setq global-mark-ring (nreverse global-mark-ring))
-  (when (marker-is-point-p (car global-mark-ring))
-    (call-interactively 'pop-global-mark))
-  (call-interactively 'pop-global-mark)
-  (setq global-mark-ring (nreverse global-mark-ring)))
+;; (defun forward-global-mark ()
+;;   "hack `pop-global-mark' to go in reverse, pushing current point if not on ring."
+;;   (interactive)
+;;   (push-mark-maybe)
+;;   (setq global-mark-ring (nreverse global-mark-ring))
+;;   (when (marker-is-point-p (car global-mark-ring))
+;;     (call-interactively 'pop-global-mark))
+;;   (call-interactively 'pop-global-mark)
+;;   (setq global-mark-ring (nreverse global-mark-ring)))
 
 ;; (global-set-key [M-left] (quote backward-global-mark))
 ;; (global-set-key [M-right] (quote forward-global-mark))
@@ -529,25 +512,23 @@ Try the repeated popping up to 10 times."
 (advice-add 'pop-to-mark-command :around
             #'modi/multi-pop-to-mark)
 
-;;;###autoload
-(defun avy-goto-word-1-above (char &optional arg)
-  "Jump to the currently visible CHAR at a word start.
-This is a scoped version of `avy-goto-word-1', where the scope is
-the visible part of the current buffer up to point. "
-  (interactive (list (read-char "char: " t)
-                     current-prefix-arg))
-  (avy-with avy-goto-word-1
-    (avy-goto-word-1 char arg (window-start) (point))))
+;; (defun avy-goto-word-1-above (char &optional arg)
+;;   "Jump to the currently visible CHAR at a word start.
+;; This is a scoped version of `avy-goto-word-1', where the scope is
+;; the visible part of the current buffer up to point. "
+;;   (interactive (list (read-char "char: " t)
+;;                      current-prefix-arg))
+;;   (avy-with avy-goto-word-1
+;;     (avy-goto-word-1 char arg (window-start) (point))))
 
-;;;###autoload
-(defun avy-goto-word-1-below (char &optional arg)
-  "Jump to the currently visible CHAR at a word start.
-This is a scoped version of `avy-goto-word-1', where the scope is
-the visible part of the current buffer following point. "
-  (interactive (list (read-char "char: " t)
-                     current-prefix-arg))
-  (avy-with avy-goto-word-1
-    (avy-goto-word-1 char arg (point) (window-end (selected-window) t))))
+;; (defun avy-goto-word-1-below (char &optional arg)
+;;   "Jump to the currently visible CHAR at a word start.
+;; This is a scoped version of `avy-goto-word-1', where the scope is
+;; the visible part of the current buffer following point. "
+;;   (interactive (list (read-char "char: " t)
+;;                      current-prefix-arg))
+;;   (avy-with avy-goto-word-1
+;;     (avy-goto-word-1 char arg (point) (window-end (selected-window) t))))
 
 
 ;; In dired, M-> and M- never take me where I want to go.
@@ -634,8 +615,6 @@ the visible part of the current buffer following point. "
    (concat dired-listing-switches
            (match-string 1 criteria))))
 
-
-
 (defun xah-toggle-letter-case ()
   "Toggle the letter case of current word or text selection.
 Always cycle in this order: Init Caps, ALL CAPS, all lower.
@@ -684,8 +663,8 @@ Version 2017-04-19"
                             LaTeX-mode TeX-mode php-mode web-mode js2-mode)
   "Modes in which to indent regions that are yanked (or yank-popped)")
 
-(defvar yank-advised-indent-threshold 1000
-  "Threshold (# chars) over which indentation does not automatically occur.")
+;; (defvar yank-advised-indent-threshold 1000
+;;   "Threshold (# chars) over which indentation does not automatically occur.")
 
 ;; eldoc at point
 ;; https://www.topbug.net/blog/2016/11/03/emacs-display-function-or-variable-information-near-point-cursor/
@@ -713,8 +692,6 @@ Version 2017-04-19"
 (defun m-eshell-hook ()
   (define-key eshell-mode-map (kbd "C-M-l") 'er/contract-region))
 
-
-
 ;; From : http://www.blogbyben.com/2016/08/emacs-php-modern-and-far-more-complete.html
 (defun toggle-php-flavor-mode ()
   (interactive)
@@ -725,31 +702,27 @@ Version 2017-04-19"
         ((string= mode-name "Web")
          (php-mode))))
 
+;; (defvar auto-minor-mode-alist ()
+;;   "Alist of filename patterns vs correpsonding minor mode functions, see `auto-mode-alist'
+;; All elements of this alist are checked, meaning you can enable multiple minor modes for the same regexp.")
 
-(defvar auto-minor-mode-alist ()
-  "Alist of filename patterns vs correpsonding minor mode functions, see `auto-mode-alist'
-All elements of this alist are checked, meaning you can enable multiple minor modes for the same regexp.")
-
-(defun enable-minor-mode-based-on-extension ()
-  "check file name against auto-minor-mode-alist to enable minor modes
-the checking happens for all pairs in auto-minor-mode-alist"
-  (when buffer-file-name
-    (let ((name buffer-file-name)
-          (remote-id (file-remote-p buffer-file-name))
-          (alist auto-minor-mode-alist))
-      ;; Remove backup-suffixes from file name.
-      (setq name (file-name-sans-versions name))
-      ;; Remove remote file name identification.
-      (when (and (stringp remote-id)
-                 (string-match-p (regexp-quote remote-id) name))
-        (setq name (substring name (match-end 0))))
-      (while (and alist (caar alist) (cdar alist))
-        (if (string-match (caar alist) name)
-            (funcall (cdar alist) 1))
-        (setq alist (cdr alist))))))
-
-
-
+;; (defun enable-minor-mode-based-on-extension ()
+;;   "check file name against auto-minor-mode-alist to enable minor modes
+;; the checking happens for all pairs in auto-minor-mode-alist"
+;;   (when buffer-file-name
+;;     (let ((name buffer-file-name)
+;;           (remote-id (file-remote-p buffer-file-name))
+;;           (alist auto-minor-mode-alist))
+;;       ;; Remove backup-suffixes from file name.
+;;       (setq name (file-name-sans-versions name))
+;;       ;; Remove remote file name identification.
+;;       (when (and (stringp remote-id)
+;;                  (string-match-p (regexp-quote remote-id) name))
+;;         (setq name (substring name (match-end 0))))
+;;       (while (and alist (caar alist) (cdar alist))
+;;         (if (string-match (caar alist) name)
+;;             (funcall (cdar alist) 1))
+;;         (setq alist (cdr alist))))))
 
 ;; Increment at point
 ;; https://www.emacswiki.org/emacs/IncrementNumber
@@ -803,10 +776,10 @@ the checking happens for all pairs in auto-minor-mode-alist"
   (interactive)
   (scroll-down (window-half-height)))
 
-(defun helm/test-default-action (candidate)
-  (eww (format
-        "http://www.google.com/search?q=%s"
-        (url-hexify-string candidate)))) 
+;; (defun helm/test-default-action (candidate)
+;;   (eww (format
+;;         "http://www.google.com/search?q=%s"
+;;         (url-hexify-string candidate)))) 
 
 (defun backward-kill-word-or-region (&optional arg)
   "Calls `kill-region' when a region is active and
@@ -830,16 +803,13 @@ the checking happens for all pairs in auto-minor-mode-alist"
     (let ((inhibit-read-only t))
       (ansi-color-apply-on-region (point-min) (point-max)))))
 
-
-
-
-(defun all-over-the-screen ()
-  (interactive)
-  (delete-other-windows)
-  (split-window-horizontally)
-  (split-window-horizontally)
-  (balance-windows)
-  (follow-mode t))
+;; (defun all-over-the-screen ()
+;;   (interactive)
+;;   (delete-other-windows)
+;;   (split-window-horizontally)
+;;   (split-window-horizontally)
+;;   (balance-windows)
+;;   (follow-mode t))
 
 ;; https://stackoverflow.com/a/32002122
 (defun jrh-isearch-with-region ()
@@ -898,39 +868,39 @@ the checking happens for all pairs in auto-minor-mode-alist"
 
 ;; Better mark-paragraph
 ;; https://stackoverflow.com/a/11240065
-(defun rs-mark-paragraph (&optional arg allow-extend)
-  "The original default mark-paragraph, but doesn't mark the first
-empty line. Put point at beginning of this paragraph, mark at
-end.  The paragraph marked is the one that contains point or
-follows point.
+;; (defun rs-mark-paragraph (&optional arg allow-extend)
+;;   "The original default mark-paragraph, but doesn't mark the first
+;; empty line. Put point at beginning of this paragraph, mark at
+;; end.  The paragraph marked is the one that contains point or
+;; follows point.
 
-With argument ARG, puts mark at end of a following paragraph, so that
-the number of paragraphs marked equals ARG.
+;; With argument ARG, puts mark at end of a following paragraph, so that
+;; the number of paragraphs marked equals ARG.
 
-If ARG is negative, point is put at end of this paragraph, mark is put
-at beginning of this or a previous paragraph.
+;; If ARG is negative, point is put at end of this paragraph, mark is put
+;; at beginning of this or a previous paragraph.
 
-Interactively, if this command is repeated
-or (in Transient Mark mode) if the mark is active,
-it marks the next ARG paragraphs after the ones already marked."
-  (interactive "p\np")
-  (unless arg (setq arg 1))
-  (when (zerop arg)
-    (error "Cannot mark zero paragraphs"))
-  (cond ((and allow-extend
-              (or (and (eq last-command this-command) (mark t))
-                  (and transient-mark-mode mark-active)))
-         (set-mark
-          (save-excursion
-            (goto-char (mark))
-            (forward-paragraph arg)
-            (point))))
-        (t
-         (forward-paragraph arg)
-         (push-mark nil t t)
-         (backward-paragraph arg)
-         (if (/= (line-number-at-pos) 1)
-             (next-line)))))
+;; Interactively, if this command is repeated
+;; or (in Transient Mark mode) if the mark is active,
+;; it marks the next ARG paragraphs after the ones already marked."
+;;   (interactive "p\np")
+;;   (unless arg (setq arg 1))
+;;   (when (zerop arg)
+;;     (error "Cannot mark zero paragraphs"))
+;;   (cond ((and allow-extend
+;;               (or (and (eq last-command this-command) (mark t))
+;;                   (and transient-mark-mode mark-active)))
+;;          (set-mark
+;;           (save-excursion
+;;             (goto-char (mark))
+;;             (forward-paragraph arg)
+;;             (point))))
+;;         (t
+;;          (forward-paragraph arg)
+;;          (push-mark nil t t)
+;;          (backward-paragraph arg)
+;;          (if (/= (line-number-at-pos) 1)
+;;              (next-line)))))
 
 ;; https://stackoverflow.com/a/25792276
 (defun xah-new-empty-buffer ()
@@ -965,11 +935,11 @@ Version 2016-12-27"
     (when (processp proc)
       (set-process-query-on-exit-flag proc nil))))
 
-(use-package visual-fill-column :defer t
-  :config
-  (setq-default visual-fill-column-center-text nil
-                visual-fill-column-width fill-column
-                split-window-preferred-function 'visual-line-mode-split-window-sensibly))
+;; (use-package visual-fill-column :defer t
+;;   :config
+;;   (setq-default visual-fill-column-center-text nil
+;;                 visual-fill-column-width fill-column
+;;                 split-window-preferred-function 'visual-line-mode-split-window-sensibly))
 
 
 
@@ -982,101 +952,94 @@ Version 2016-12-27"
 
 ;; http://stackoverflow.com/a/3399064/8000017
 ;; http://stackoverflow.com/a/14539202
-(defun unpop-to-mark-command ()
-  "Unpop off mark ring. Does nothing if mark ring is empty."
-  (interactive)
-  (when mark-ring
-    (setq mark-ring (cons (copy-marker (mark-marker)) mark-ring))
-    (set-marker (mark-marker) (car (last mark-ring)) (current-buffer))
-    (when (null (mark t)) (ding))
-    (setq mark-ring (nbutlast mark-ring))
-    (goto-char (marker-position (car (last mark-ring))))))
+;; (defun unpop-to-mark-command ()
+;;   "Unpop off mark ring. Does nothing if mark ring is empty."
+;;   (interactive)
+;;   (when mark-ring
+;;     (setq mark-ring (cons (copy-marker (mark-marker)) mark-ring))
+;;     (set-marker (mark-marker) (car (last mark-ring)) (current-buffer))
+;;     (when (null (mark t)) (ding))
+;;     (setq mark-ring (nbutlast mark-ring))
+;;     (goto-char (marker-position (car (last mark-ring))))))
 
-(defmacro my-unpop-to-mark-advice ()
-  "Enable reversing direction with un/pop-to-mark."
-  `(defadvice ,(key-binding (kbd "C-SPC")) (around my-unpop-to-mark activate)
-     "Unpop-to-mark with negative arg"
-     (let* ((arg (ad-get-arg 0))
-            (num (prefix-numeric-value arg)))
-       (cond
-        ;; Enabled repeated un-pops with C-SPC
-        ((eq last-command 'unpop-to-mark-command)
-         (if (and arg (> num 0) (<= num 4))
-             ad-do-it ;; C-u C-SPC reverses back to normal direction
-           ;; Otherwise continue to un-pop
-           (setq this-command 'unpop-to-mark-command)
-           (unpop-to-mark-command)))
-        ;; Negative argument un-pops: C-- C-SPC
-        ((< num 0)
-         (setq this-command 'unpop-to-mark-command)
-         (unpop-to-mark-command))
-        (t
-         ad-do-it)))))
+;; (defmacro my-unpop-to-mark-advice ()
+;;   "Enable reversing direction with un/pop-to-mark."
+;;   `(defadvice ,(key-binding (kbd "C-SPC")) (around my-unpop-to-mark activate)
+;;      "Unpop-to-mark with negative arg"
+;;      (let* ((arg (ad-get-arg 0))
+;;             (num (prefix-numeric-value arg)))
+;;        (cond
+;;         ;; Enabled repeated un-pops with C-SPC
+;;         ((eq last-command 'unpop-to-mark-command)
+;;          (if (and arg (> num 0) (<= num 4))
+;;              ad-do-it ;; C-u C-SPC reverses back to normal direction
+;;            ;; Otherwise continue to un-pop
+;;            (setq this-command 'unpop-to-mark-command)
+;;            (unpop-to-mark-command)))
+;;         ;; Negative argument un-pops: C-- C-SPC
+;;         ((< num 0)
+;;          (setq this-command 'unpop-to-mark-command)
+;;          (unpop-to-mark-command))
+;;         (t
+;;          ad-do-it)))))
 
 ;; Keep region when undoing in region
 ;; from http://whattheemacsd.com/
-(defadvice undo-tree-undo (around keep-region activate)
-  (if (use-region-p)
-      (let ((m (set-marker (make-marker) (mark)))
-            (p (set-marker (make-marker) (point))))
-        ad-do-it
-        (goto-char p)
-        (set-mark m)
-        (set-marker p nil)
-        (set-marker m nil))
-    ad-do-it))
+;; (defadvice undo-tree-undo (around keep-region activate)
+;;   (if (use-region-p)
+;;       (let ((m (set-marker (make-marker) (mark)))
+;;             (p (set-marker (make-marker) (point))))
+;;         ad-do-it
+;;         (goto-char p)
+;;         (set-mark m)
+;;         (set-marker p nil)
+;;         (set-marker m nil))
+;;     ad-do-it))
 
-;; full screen magit-status
-;; http://whattheemacsd.com/
-(defadvice magit-status (around magit-fullscreen activate)
-  (window-configuration-to-register :magit-fullscreen)
-  ad-do-it
-  (delete-other-windows))
+;; (defadvice yank-pop (after yank-pop-indent activate)
+;;   "If current mode is one of 'yank-indent-modes, indent yanked text (with prefix arg don't indent)."
+;;   (if (and (not (ad-get-arg 0))
+;;            (member major-mode yank-indent-modes))
+;;       (let ((transient-mark-mode nil))
+;;         (yank-advised-indent-function (region-beginning) (region-end)))))
 
-(defadvice yank-pop (after yank-pop-indent activate)
-  "If current mode is one of 'yank-indent-modes, indent yanked text (with prefix arg don't indent)."
-  (if (and (not (ad-get-arg 0))
-           (member major-mode yank-indent-modes))
-      (let ((transient-mark-mode nil))
-        (yank-advised-indent-function (region-beginning) (region-end)))))
-
-(defadvice mouse-set-point (after wlh/mouse-set-point-advice (event &optional promote-to-region) activate)
-  "Advice mouse click to remove multi cursors when present."
-  (when (> (mc/num-cursors) 1)
-    (mc/remove-fake-cursors)))
+;; (defadvice mouse-set-point (after wlh/mouse-set-point-advice (event &optional promote-to-region) activate)
+;;   "Advice mouse click to remove multi cursors when present."
+;;   (when (> (mc/num-cursors) 1)
+;;     (mc/remove-fake-cursors)))
 
 ;; https://stackoverflow.com/a/2706660
-(defadvice save-buffers-kill-emacs (around no-query-kill-emacs activate)
-  "Prevent annoying \"Active processes exist\" query when you quit Emacs."
-  (cl-letf (((symbol-function #'process-list) (lambda ())))
-    ad-do-it))
+;; (defadvice save-buffers-kill-emacs (around no-query-kill-emacs activate)
+;;   "Prevent annoying \"Active processes exist\" query when you quit Emacs."
+;;   (cl-letf (((symbol-function #'process-list) (lambda ())))
+;;     ad-do-it))
 
 ;; Auto wrapping isearch
 ;; http://stackoverflow.com/a/287067
-(defadvice isearch-repeat (after isearch-no-fail activate)
-  (unless isearch-success
-    (ad-disable-advice 'isearch-repeat 'after 'isearch-no-fail)
-    (ad-activate 'isearch-repeat)
-    (isearch-repeat (if isearch-forward 'forward))
-    (ad-enable-advice 'isearch-repeat 'after 'isearch-no-fail)
-    (ad-activate 'isearch-repeat)))
+;; (defadvice isearch-repeat (after isearch-no-fail activate)
+;;   (unless isearch-success
+;;     (ad-disable-advice 'isearch-repeat 'after 'isearch-no-fail)
+;;     (ad-activate 'isearch-repeat)
+;;     (isearch-repeat (if isearch-forward 'forward))
+;;     (ad-enable-advice 'isearch-repeat 'after 'isearch-no-fail)
+;;     (ad-activate 'isearch-repeat)))
 
 ;; Focus on the result window after doing ag
 (defadvice ag (after wlh-ag-before activate)
- (other-window 1))
+  (other-window 1))
 
-;; Focus 
 (defadvice apropos (after wlh-apropos-before activate)
   (other-window 1))
 
 (defadvice man (after wlh-man-before activate)
   (other-window 1))
 
-
-
-
-
-
+;; Full screen magit-status.
+;; http://whattheemacsd.com/
+(defadvice magit-status (around magit-fullscreen activate)
+  (window-configuration-to-register :magit-fullscreen)
+  ad-do-it
+  (delete-other-windows))
 
 ;; ffap advice
 ;; Check ffap string for line-number and goto it (using advice)
@@ -1115,7 +1078,6 @@ save it in `ffap-file-at-point-line-number' variable."
 
 
 ;; ------- wlh
-
 (defun wlh/frame-position-1 (frame)
   "Most used frame configuration (x, y, width, height). Depends
 on the screen values."
@@ -1127,11 +1089,9 @@ on the screen values."
     (set-frame-size frame frame-width frame-height t)
     (set-frame-position frame frame-x frame-y)))
 
-
 (defun wlh/neotree-set ()
   (interactive)
   (neo-global--open-and-find (buffer-file-name)))
-
 
 (defun wlh/projectile-ido-find-file ()
   "Find a recent file using ido."
@@ -1234,10 +1194,6 @@ on the screen values."
          (compile-goto-error)
          (setq ag-reuse-window t)))
 
-;; (defun wlh/duplicate ()
-;;   (interactive)
-;;   (duplicate-start-of-line-or-region))
-
 (defun wlh/wlh/create-new-centered-frame ()
   (interactive)
   (wlh/create-new-centered-frame)
@@ -1267,12 +1223,12 @@ on the screen values."
   (interactive)
   (buffer-file-name))
 
-(defun wlh/helm-test ()
-  (interactive)
-  (helm :sources (helm-build-in-buffer-source "test1"
-                   :data '(a b c d e)
-                   :action '(("Google" . helm/test-default-action)))
-        :buffer "*helm test*"))
+;; (defun wlh/helm-test ()
+;;   (interactive)
+;;   (helm :sources (helm-build-in-buffer-source "test1"
+;;                    :data '(a b c d e)
+;;                    :action '(("Google" . helm/test-default-action)))
+;;         :buffer "*helm test*"))
 
 (defun wlh/browse-url-at-point (x)
   (interactive "P")
@@ -1303,12 +1259,6 @@ on the screen values."
     ;; (wlh/frame-center)
     (wlh/frame-position-1 frame)))
 
-
-;; (defun wlh/create-new-centered-frame2 ()
-;;   (interactive)
-;;   (make-frame-command)
-;;   (switch-to-buffer (xah-new-empty-buffer)))
-
 (defun wlh/find-org-files ()
   ;; Find org files in user directory
   (interactive)
@@ -1324,6 +1274,11 @@ on the screen values."
   (if (> (length (window-list)) 1)
       (delete-window)
     (delete-frame)))
+
+(defun wlh/join-line ()
+  (interactive)
+  (paredit-kill)
+  (just-one-space))
 
 ;; (setq *wlh/dbleclick-enablep* nil)
 ;; (defun wlh/dbleclick-select-word-a (enablep)
@@ -1364,16 +1319,26 @@ on the screen values."
 (setq inhibit-splash-screen t)
 (switch-to-buffer "*Bookmark List*")
 
-;; Show matching parenthesis
+;; Show matching parenthesis.
 (show-paren-mode)
 
-;; Active winner-mode to allow navigation between different windows
+;; Active winner-mode to allow navigation between different windows.
 (winner-mode t)
 
-;; Start the server. Used to connect with emacsclient
+;; Start the server. Used to connect with emacsclient.
 ;; (server-start)
 
-;; Create an eshell buffer on background
+;; Start an eshell process at start-up.
 (eshell)
 
-
+;; (custom-set-variables
+;;  ;; custom-set-variables was added by Custom.
+;;  ;; If you edit it by hand, you could mess it up, so be careful.
+;;  ;; Your init file should contain only one such instance.
+;;  ;; If there is more than one, they won't work right.
+;;  '(shell-pop-shell-type (quote ("eshell" "*eshell*" (lambda nil (eshell)))))
+;;  '(shell-pop-term-shell "/bin/bash")
+;;  ;; '(shell-pop-universal-key "C-t")
+;;  '(shell-pop-window-size 30)
+;;  '(shell-pop-full-span t)
+;;  '(shell-pop-window-position "bottom"))

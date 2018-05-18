@@ -9,7 +9,7 @@
 ;; Main background
 (set-face-attribute 'default nil :background "#ffffff")
 (custom-set-faces
- '(default ((t (:stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 130 :width normal :family "Menlo")))))
+ '(default ((t (:stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :family "Menlo")))))
 
 ;; Text selection
 (set-face-attribute 'region nil :background "#b9d6fb")
@@ -104,13 +104,6 @@
 (set-face-attribute 'bm-face nil :background "#e0e0e0" :foreground nil)
 
 ;; ------- neotree
-;; (set-face-attribute 'neo-file-link-face nil :background nil :foreground "#000" :family "arial" :height 1)
-;; (set-face-attribute 'neo-dir-link-face nil :background nil :foreground "#2055a4" :family "arial" :height 1)
-;; (set-face-attribute 'neo-root-dir-face nil :background nil :foreground "#ccc" :family "arial" :height 0.9)
-;; (set-face-attribute 'neo-header-face nil :background nil :foreground "#ccc" :family "arial" :height 0.9)
-;; (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
-
-
 
 ;; ------- modeline
 (set-face-attribute 'mode-line nil

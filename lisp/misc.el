@@ -582,3 +582,10 @@ abort completely with `C-g'."
       treemacs-tag-follow-cleanup         t
       treemacs-tag-follow-delay           1.5
       treemacs-width                      35)
+
+;; hideshowvis
+(require 'hideshowvis)
+(hideshowvis-enable)
+
+(add-hook 'prog-mode-hook (lambda ()
+                            (hideshowvis-enable)))

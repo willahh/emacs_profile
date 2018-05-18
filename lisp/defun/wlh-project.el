@@ -80,3 +80,11 @@ i.e. '(\"dev\" \"deploy_template\")."
             :action '(1 ("o" wlh/workspace-action-1 "action 1")
                         ("j" my-action-2 "action 2")
                         ("k" my-action-3 "action 3"))))
+
+(defun wlh/html-to-hiccup ()
+  (interactive)
+  (let* ((html (read-string "html:"))
+         (str2 (concat "java -jar " (expand-file-name "~") "/.emacs.d/bin/tohiccup.jar" " " "\"" html "\"")))
+    (first (rest (split-string (shell-command-to-string str2) "\n")))))
+
+(wlh/html-to-hiccup)

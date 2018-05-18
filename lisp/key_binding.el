@@ -85,6 +85,7 @@
 ;; (global-set-key (kbd "∑") 'helm-ag) ; Alt + S
 (global-set-key (kbd "∑") 'helm-ag) ; Alt + shift + s
 ;; (global-set-key (kbd "C-∑") 'helm-projectile-ag) ; Alt + control + shift + s
+(global-set-key (kbd "C-c C-c C-s") 'helm-ag)
 
 (global-set-key (kbd "ƒ") 'helm-recentf) ; Alt + f
 ;; (global-set-key (kbd "¢") 'org-capture) ; Alt + C
@@ -181,6 +182,7 @@
 (global-set-key (kbd "M-g") 'goto-line) ; https://github.com/skeeto/.emacs.d/blob/master/init.el
 (define-key paredit-mode-map (kbd "M-q") 'fill-paragraph)
 (global-set-key (kbd "C-;") "\C-e;") ; (CONTROL + ; -> Append ";" at the end of a line)
+(global-set-key (kbd "C-c RET") 'wlh/join-line)
 
 
 ;; Scroll
@@ -212,7 +214,7 @@
 (global-set-key (kbd "C-t") 'transpose-chars)
 
 ;; ---
-(define-key ivy-minibuffer-map (kbd "<escape>") 'minibuffer-keyboard-quit)
+;; (define-key ivy-minibuffer-map (kbd "<escape>") 'minibuffer-keyboard-quit)
 (define-key ivy-minibuffer-map (kbd "C-h") 'delete-backward-char)
 
 ;; Backward kill sexp
@@ -229,6 +231,7 @@
 
 
 ;; ---------------- Tab
+(global-set-key (kbd "<backtab>") 'untab-region)
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
 
 
@@ -581,7 +584,7 @@
 (add-hook 'pdf-view-mode 'wlh/pdf-view-mode-hook)
 
 ;; Hydra
-(global-set-key (kbd "s-o") 'hydra-window/body)
+;; (global-set-key (kbd "s-o") 'hydra-window/body)
 
 ;; Occur mode
 (add-hook 'occur-mode-find-occurrence-hook 'recenter)
@@ -627,7 +630,7 @@
 ;; Kill
 ;; Better move paragraph / mark paragraph
 ;; Convert default qwerty M-{ and M-} position on keyboard to azerty mapping
-(global-set-key (kbd "M-h") 'rs-mark-paragraph)
+;; (global-set-key (kbd "M-h") 'rs-mark-paragraph)
 (global-set-key (kbd "M-¨") 'lawlist-backward-paragraph)
 (global-set-key (kbd "M-*") 'lawlist-forward-paragraph)
 
@@ -650,7 +653,7 @@
 ;; Scroll commands
 (global-set-key (kbd "C-x v U") 'wlh/svn-up-recursive)
 (global-set-key (kbd "s-a") 'mark-whole-buffer)
-(global-set-key (kbd "C-c C-s") 'swiper)
+(global-set-key (kbd "C-c C-s") 'helm-swoop)
 (define-key web-mode-map (kbd "C-c C-s") 'swiper)
 (define-key js2-mode-map (kbd "C-c C-s") 'swiper)
 (define-key php-mode-map (kbd "C-c C-s") 'swiper)
