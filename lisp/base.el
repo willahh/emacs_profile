@@ -83,10 +83,7 @@
 ;; Don't replace line ending (Windows, Unix, Windows+Unix)
 ;; https://stackoverflow.com/a/10845302
 (setq inhibit-eol-conversion t)
-(add-hook 'prog-mode-hook 'remove-dos-eol)
-(add-hook 'text-mode-hook 'remove-dos-eol)
-(add-hook 'web-mode-hook 'remove-dos-eol)
-(add-hook 'fundamental-mode 'remove-dos-eol)
+
 
 ;; Disable annoying prompts and messages 
 ;; Use confirmation y and p instead of yes or not

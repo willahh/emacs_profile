@@ -16,6 +16,7 @@
 (require 'css-mode)
 (require 'emmet-mode)
 (require 'highlight-symbol)
+(require 'js2-mode)
 
 (defun wlh/web-mode-kill-sexp ()
   (interactive)

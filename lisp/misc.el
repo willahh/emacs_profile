@@ -166,6 +166,8 @@
 (add-hook 'text-mode-hook 'remove-dos-eol)
 (add-hook 'prog-mode-hook 'remove-dos-eol)
 (add-hook 'diff-mode-hook 'remove-dos-eol)
+(add-hook 'web-mode-hook 'remove-dos-eol)
+(add-hook 'fundamental-mode 'remove-dos-eol)
 
 ;; Enlarge frame
 (defun wlh/frame-large ()
