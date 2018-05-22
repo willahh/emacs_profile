@@ -38,11 +38,14 @@
  '(rainbow-delimiters-depth-8-face ((t (:foreground "#55bdf0" :weight bold)))))
 
 (set-face-attribute 'scroll-bar nil :background "#fff")
-(set-face-attribute 'show-paren-match-face nil :background nil :foreground "#ff00a0" :weight 'ultra-bold)
-(set-face-attribute 'show-paren-match-face nil :background nil :foreground "#000000" :weight 'ultra-bold :underline "#000000")
+;; (set-face-attribute 'show-paren-match-face nil :background nil :foreground "#ff00a0" :weight 'ultra-bold)
+;; (set-face-attribute 'show-paren-match-face nil :background nil :foreground "#000000" :weight 'ultra-bold :underline "#000000")
 ;; (set-face-attribute 'show-paren-match-face nil :background "#ff00a0" :foreground "#fff" :weight 'ultra-bold :underline "#000000")
-(set-face-attribute 'show-paren-match-face nil :background "#f4f4f4" :foreground "#ff00a0" :weight 'ultra-bold :underline "#ff00a0")
 ;; (set-face-attribute 'show-paren-match-face nil :background nil :foreground "transparent" :weight 'ultra-bold :underline "#ff00a0")
+;; (set-face-attribute 'show-paren-match-face nil :background "#f4f4f4" :foreground "#ff00a0" :weight 'ultra-bold :underline "#ff00a0")
+;; (set-face-attribute 'show-paren-match-face nil :background "#e4e4e4" :foreground "#000" :weight 'ultra-bold :underline "#ff00a0")
+(set-face-attribute 'show-paren-match-face nil :background "#ccc" :foreground "#000" :weight 'ultra-bold :underline "#ff00a0")
+
 (setq show-paren-priority -50)
 (set-face-attribute 'fringe nil :background "#fafafa" :slant 'normal)
 (set-face-attribute 'window-divider nil :foreground "#fafafa")
