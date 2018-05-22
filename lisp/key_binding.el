@@ -1,3 +1,4 @@
+
 (require 'ggtags)
 (require 'magit)
 (require 'paredit)
@@ -345,8 +346,8 @@
 
 
 ;; Kill line or region
-(global-set-key (kbd "C-z") 'whole-line-or-region-kill-region)
-(define-key org-mode-map (kbd "C-z") 'whole-line-or-region-kill-region)
+;; (global-set-key (kbd "C-z") 'whole-line-or-region-kill-region)
+;; (define-key org-mode-map (kbd "C-z") 'whole-line-or-region-kill-region)
 
 
 ;; ;; ---------------- Company map
