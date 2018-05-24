@@ -77,7 +77,7 @@
 (add-hook 'cider-mode-hook
           (lambda ()
             (eldoc-mode)
-
+            (company-mode)
             (highlight-symbol-mode)
             (setq company-minimum-prefix-length 0)
             

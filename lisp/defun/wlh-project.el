@@ -87,4 +87,3 @@ i.e. '(\"dev\" \"deploy_template\")."
          (str2 (concat "java -jar " (expand-file-name "~") "/.emacs.d/bin/tohiccup.jar" " " "\"" html "\"")))
     (first (rest (split-string (shell-command-to-string str2) "\n")))))
 
-(wlh/html-to-hiccup)
