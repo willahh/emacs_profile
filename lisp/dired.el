@@ -25,9 +25,6 @@
 (setq dired-dwim-target nil)
 
 ;; -------------------------------
-;; Preview media when in dired directory
-;; https://emacs.stackexchange.com/a/22541
-
 (defvar my-dired-spawn nil)
 (make-variable-buffer-local 'my-dired-spawn)
 
@@ -116,11 +113,11 @@ and then calling `my-dired-kill-spawn' twice."
                             (define-key dired-mode-map [up] 'my-dired-previous-line)
                             (define-key dired-mode-map (kbd "SPC") 'my-dired-quicklook)))
 
-;; ----------image-dired+
-(eval-after-load 'image-dired+ '(image-diredx-adjust-mode 1))
-(define-key image-dired-thumbnail-mode-map "\C-p" 'image-diredx-previous-line)
-(define-key image-dired-thumbnail-mode-map "\C-n" 'image-diredx-next-line)
-(define-key image-dired-thumbnail-mode-map "g" 'revert-buffer)
-(define-key image-dired-thumbnail-mode-map "x" 'image-diredx-flagged-delete)
-(setq image-dired-track-movement nil)
-(setq dired-listing-switches "-alh")
+;; ;; ----------image-dired+
+;; (eval-after-load 'image-dired+ '(image-diredx-adjust-mode 1))
+;; (define-key image-dired-thumbnail-mode-map "\C-p" 'image-diredx-previous-line)
+;; (define-key image-dired-thumbnail-mode-map "\C-n" 'image-diredx-next-line)
+;; (define-key image-dired-thumbnail-mode-map "g" 'revert-buffer)
+;; (define-key image-dired-thumbnail-mode-map "x" 'image-diredx-flagged-delete)
+;; (setq image-dired-track-movement nil)
+;; (setq dired-listing-switches "-alh")

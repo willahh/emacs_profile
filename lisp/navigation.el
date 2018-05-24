@@ -1,4 +1,4 @@
-;; ido -------------------------------------------------------------------------
+;; Ido ---
 (require 'ido)
 (require 'flx-ido)
 (require 'ido-vertical-mode)
@@ -23,9 +23,8 @@
 
 
 
-;;  Ivy -------------------------------------------------------------------------
+;;  Ivy ---
 (require 'ivy)
-
 (ivy-mode)
 
 ;; ivy conf
@@ -66,9 +65,7 @@
 ;; http://oremacs.com/swiper/
 (setq magit-completing-read-function 'ivy-completing-read)
 
-
-
-;; Helm -------------------------------------------------------------------------
+;; Helm ---
 (require 'helm-ag)
 (require 'helm-config)
 (require 'helm-swoop)
@@ -97,7 +94,6 @@
 (setq helm-autoresize-max-height 25)
 (setq helm-display-buffer-default-height 10)
 (setq helm-allow-mouse t)
-
 
 (defun helm-mouse-1-exit-minibuffer (click)
   (interactive "e")
