@@ -72,7 +72,6 @@
 (require 'helm-ag)
 (require 'helm-config)
 (require 'helm-swoop)
-(require 'helm-swoop)
 
 ;; Helm conf
 (setq helm-split-window-in-side-p           t ; open helm buffer inside current window, not occupy whole other window

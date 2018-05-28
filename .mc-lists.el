@@ -81,7 +81,7 @@
         kill-region
         kill-sentence
         kill-sexp
-        kill-visual-line
+        log-edit-beginning-of-line
         mark-sexp
         markdown-cycle
         mc/remove-fake-cursors
