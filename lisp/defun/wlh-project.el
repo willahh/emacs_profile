@@ -2,39 +2,7 @@
                              "~/Desktop/"
                              "~/Documents/"
                              "~/Downloads/"
-                             "~/www/project/arsia/arsia_3.0.0_allibert/"
-                             "~/www/project/arsia/arsia_3.0.0_carrefour_market/"
-                             "~/www/project/arsia/arsia_3.0.0_standard/"
-                             "~/www/project/arsia/arsia_3.0.3_allibert/"
-                             "~/www/project/arsia/arsia_3.0.x_gun/"
-                             "~/www/project/arsia/arsia_3.1.0_standard/"
-                             "~/www/project/arsia/arsia_3.2.x_standard/"
-                             "~/www/project/arsia/arsia_3.2.x_standard_editzone/"
-                             "~/www/project/arsia/arsia_3.0.0_weiss_poc/"
-                             "~/www/project/arsia/arsia_3.1.x_ccas/"
-                             "~/www/project/arsia/arsia_3.1.x_yr"
-                             "~/www/project/businessmanager/"
-                             "~/www/project/easy3p/easy3p_2.18/"
-                             "~/www/project/easy3p/easy3p_2.19/"
-                             "~/www/project/easy3p/easy3p_3.0/"
-                             "~/www/project/easy3p/easy3p_3.1/"
-                             "~/www/project/easy3p/easy3p_3.2/"
-                             "~/www/project/easy3p/easy3p_3.2_ao/"
-                             "~/www/project/easy3p/easy3p_3.2_lot2/"
-                             "~/www/project/easy3p/easy3p_3.3/"
-                             "~/www/project/easy3p/easy3p_3.4/"
-                             "~/www/project/easy3p/easy3p_3.5/"
-                             "~/www/project/easy3p/easy3p_3.6/"
-                             "~/www/project/easy3p/easy3p_3.7/"
-                             "~/www/project/goaland_siteweb/goaland_siteweb_6.0.0/"
-                             "~/www/project/lifechecker/"
-                             "~/www/project/rb_3d/rb_3d_1.0/"
-                             "~/www/project/rb_siteweb/rb_siteweb_1.2/"
-                             "~/www/project/rb_siteweb/rb_siteweb_1.3/"
-                             "~/www/project/rb_siteweb/rb_siteweb_1.4/"
-                             "~/www/temp/"
-                             "~/www/project/goaland_maintenance/"
-                             ))
+                             "~/Project-a"))
 
 (defun wlh/workspace-add-vc-view (workspace-dir vc-dir)
   (if (file-exists-p (concat workspace-dir vc-dir))
@@ -44,8 +12,7 @@
              (balance-windows))))
 
 (defun wlh/workspace-get-subdirs (dir)
-  "Return a list of sub directory for the project.
-i.e. '(\"dev\" \"deploy_template\")."
+  "Return a list of sub directory for the project."
   (interactive)
   (seq-filter (lambda (a)
                 (if (not (equal a "."))

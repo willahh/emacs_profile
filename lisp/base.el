@@ -1,4 +1,3 @@
-
 ;; System -----------------------------
 ;; Increase the garbage collection threshold to 500 MB to ease startup @see
 ;; http://sriramkswamy.github.io/dotemacs/
@@ -33,10 +32,6 @@
               ;; Keep cursors and highlights in current window only
               cursor-in-non-selected-windows nil
               highlight-nonselected-windows nil
-              
-              ;; Disable bidirectional text support for slight performance bonus
-              ;; Wed Apr 11 20:22:03 2018 Disabled it to test
-              ;; bidi-display-reordering nil
               
               ;; Remove continuation arrow on right fringe
               fringe-indicator-alist (delq (assq 'continuation fringe-indicator-alist)

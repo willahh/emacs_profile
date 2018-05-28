@@ -1,4 +1,3 @@
-
 (require 'ggtags)
 (require 'magit)
 (require 'paredit)
@@ -37,10 +36,6 @@
   (interactive)
   (other-window -1))
 
-;; TODO l'indentation ne fonctionne pas dans du js -> Il faut tester si
-;; yas-expand-from-trigger-key ne retourne pas d'erreur. Si c'est le cas, il
-;; faut lancer la commande indentation normale.
-;;
 ;; Update : Voir pour trapper l'erreur avec par exemple condition-case.
 (defun wlh/web-mode-tab ()
   (interactive)
@@ -49,15 +44,9 @@
           (indent-for-tab-command))
     (condition-case err (yas-expand-from-trigger-key) (error "ok"))))
 
-
-
 ;; leader key © (alt+c on osx azerty keyboard)
-(defvar wlh/leader-key (concat "©" " "))
-
-(defun wlh/insert-4spaces ()
-  (interactive)
-  (insert "    "))
-
+;; (defvar wlh/leader-key (concat "©" " "))
+(defvar wlh/leader-key (concat "C-c C-c" " "))
 
 (global-unset-key (kbd "M-m")) ; Define M-m shortcut as a leader key
 (global-unset-key (kbd "©"))
@@ -70,27 +59,11 @@
 
 ;; --------------- ALT key binding
 ;; Azerty keyboard
-;; (global-set-key (kbd "≈") 'counsel-M-x) ; Alt + x
 (global-set-key (kbd "≈") 'helm-M-x) ; Alt + x
-;; (global-set-key (kbd "Â") 'toggle-php-flavor-mode) ; Alt + z
 (global-set-key (kbd "") 'toggle-php-flavor-mode) ; Alt + 1
-(global-set-key (kbd "Å") 'zap-to-char) ; Alt + Z
-(global-set-key (kbd "ß") 'ivy-switch-buffer) ; Alt + b
-(global-set-key (kbd "∫") 'projectile-switch-to-buffer) ; Alt + B
-(global-set-key (kbd "È") 'fixup-whitespace) ; Alt + k
 (global-set-key (kbd "Ì") 'help) ; Alt + h
-(global-set-key (kbd "æ") 'backward-sentence) ; Alt + a
-;; (global-set-key (kbd "æ") 'backward-sentence) ; Alt + a
-
-;; (global-set-key (kbd "Ò") 'swiper) ; Alt + s
-(global-set-key (kbd "Ò") 'helm-swoop) ; Alt + s
-;; (global-set-key (kbd "∑") 'helm-ag) ; Alt + S
 (global-set-key (kbd "∑") 'helm-ag) ; Alt + shift + s
-;; (global-set-key (kbd "C-∑") 'helm-projectile-ag) ; Alt + control + shift + s
 (global-set-key (kbd "C-c C-c C-s") 'helm-ag)
-
-(global-set-key (kbd "ƒ") 'helm-recentf) ; Alt + f
-;; (global-set-key (kbd "¢") 'org-capture) ; Alt + C
 (global-set-key (kbd "†") 'toggle-truncate-lines) ; Alt + t
 (global-set-key (kbd "ﬁ") 'goto-line) ; Alt + g
 (global-set-key (kbd "Â") 'toggle-php-flavor-mode) ; Alt+z
@@ -98,20 +71,8 @@
 (global-set-key (kbd "Ë") 'increment-number-at-point)
 (define-key php-mode-map (kbd "Â") 'toggle-php-flavor-mode) ; Alt+z
 
-
-;; M-x
-;; (global-set-key (kbd "C-c C-x") 'helm-M-x)
-;; (global-set-key (kbd "M-m M-m") 'helm-M-x)
-;; (global-set-key (kbd "M-x") 'helm-M-x)
-;; (global-set-key (kbd "M-x") 'counsel-M-x)
-;; (global-set-key (kbd "M-m M-x") 'counsel-M-x)
-
-
-
-
 ;; ---------------- key-chord
 (key-chord-define-global "xc" 'er/expand-region)
-
 
 ;; --------------- Leader key bindings
 ;; Search
@@ -144,20 +105,7 @@
 
 ;; Misc
 (global-set-key (kbd (concat wlh/leader-key "b u")) 'browse-url)
-
-;; ---------------- Evil leader key bindings
-;; (evil-leader/set-key
-;;   ;; opened buffers scope
-;;   "ss" 'ag
-
-;;   ;; current file scope
-
-;;   ;; files scope
-;;   ;; "sf"
-;;   ""
-
-;;   ;; "b" 'switch-to-buffer
-;;   "k" 'kill-buffer)
+(global-set-key (kbd (concat wlh/leader-key "m d")) 'wlh/mysql-dump)
 
 ;; ---------------- Custom CUA
 ;; Copy
@@ -189,12 +137,10 @@
 
 ;; Scroll
 (global-set-key (kbd "C-v") 'scroll-up-half)
-;; (global-set-key (kbd "s-v") 'scroll-down-half)◊
 (global-set-key (kbd "◊") 'scroll-down-half) ; ALT + v
 
 ;; Scroll half can be slow
 (add-hook 'syslog-mode-hook (lambda ()
-                              ;; (define-key syslog-mode-map (kbd "s-v") 'scroll-down)
                               (define-key syslog-mode-map (kbd "◊") 'scroll-down)
                               (define-key syslog-mode-map (kbd "C-v") 'scroll-up)))
 
@@ -337,29 +283,21 @@
 (global-set-key (kbd "C-h") 'backward-delete-char)
 (define-key lisp-mode-map (kbd "C-h") 'paredit-backward-delete)
 (define-key emacs-lisp-mode-map (kbd "C-h") 'paredit-backward-delete)
-;; (define-key clojure-mode-map (kbd "C-h") 'paredit-backward-delete)
 (define-key helm-map (kbd "C-h") 'paredit-backward-delete)
-;; (define-key iedit-mode-keymap (kbd "C-h") 'paredit-backward-delete)
 
 ;; ---------------- Backward delete word
 (global-set-key (kbd "C-w") 'backward-kill-word-or-region)
 
-
 ;; Kill line or region
-;; (global-set-key (kbd "C-z") 'whole-line-or-region-kill-region)
-;; (define-key org-mode-map (kbd "C-z") 'whole-line-or-region-kill-region)
+(global-set-key (kbd "C-z") 'whole-line-or-region-kill-region)
+(define-key org-mode-map (kbd "C-z") 'whole-line-or-region-kill-region)
 
-
-;; ;; ---------------- Company map
-;; (define-key company-active-map (kbd "C-z") 'whole-line-or-region-kill-region)
+;; ---------------- Company map
 (define-key company-active-map (kbd "C-h") 'backward-delete-char)
 (define-key company-active-map (kbd "<tab>") 'company-complete-selection)
-;; (define-key company-active-map (kbd "C-m") 'new-line-dwim)
 (define-key company-active-map (kbd "C-m") 'company-complete-selection)
 (define-key company-active-map (kbd "C-j") 'company-complete)
 (define-key company-active-map (kbd "C-i") 'company-complete-selection)
-;; (define-key company-active-map (kbd "C-j") 'emmet-expand-line)
-;; (define-key company-active-map (kbd "C-w") 'backward-kill-word)
 
 ;; counsel-find-file
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
@@ -387,14 +325,11 @@
 (define-key org-mode-map (kbd "C-M-i") 'org-shifttab)
 (global-set-key (kbd "C-M-s") 'isearch-forward-regexp)
 (global-set-key (kbd "C-c C-M-s") 'vr/replace)
-;; (global-set-key (kbd "M-=") 'delete-horizontal-space) ; Azerty equivalent of M-\
 (global-set-key (kbd "M-=") 'just-one-space) ; Azerty equivalent of M-\
 (define-key helm-map (kbd "C-j") 'helm-confirm-and-exit-minibuffer)
 
 ;; Search
-;; (global-set-key (kbd "M-F") 'ag)
 (global-set-key (kbd "M-F") 'projectile-ag)
-;; (global-set-key (kbd "C-s-s") 'helm-ag) ; Super+Contral+s
 
 ;; wgrep
 (define-key compilation-mode-map (kbd "C-x w") 'wgrep-change-to-wgrep-mode)
@@ -404,38 +339,12 @@
 (global-set-key (kbd "C-c TAB") 'wlh/insert-4spaces)
 
 ;; ---------------- new line
-;; new-line-dwin cannot be setted globally
-;; (global-set-key (kbd "<return>") 'new-line-dwim) ; Can't be setted globally (mini buffer, helm, misc actions)
-;; (global-set-key (kbd "C-j") 'new-line-dwim)
-;; (global-set-key (kbd "RET") 'new-line-dwim)
-
 (define-key css-mode-map (kbd "RET") 'new-line-dwim)
 (define-key prog-mode-map (kbd "RET") 'new-line-dwim)
 (define-key php-mode-map (kbd "RET") 'new-line-dwim)
 (define-key web-mode-map(kbd "<return>") 'wlh/web-mode-new-line)
-
-;; Needed for web-mode > css / web-mode > js ENTER key
-;; Update : wrong need only for web mode
-;; (define-key textmate-mode-map (kbd "<return>") 'wlh/web-mode-new-line) 
-
-;; (define-key web-mode-map (kbd "C-m") 'newline-and-indent)
-;; (define-key prog-mode-map "<return>" 'new-line-dwim)
-;; (define-key web-mode-map "<return>" 'new-line-dwim)
-
-
-
-;; (define-key web-mode-map (kbd "C-m") 'new-line-dwim) ; <-- Utiliser celle-ci
-                                        ; dans un block de css ou de javascript
-                                        ; pour avoir une ouverture de balise
-                                        ; plus precise
-
-;; (define-key web-mode-map (kbd "C-m") 'newline-and-indent)
-;; (define-key web-mode-map (kbd "TAB") 'wlh/web-mode-tab)
-;; (define-key web-mode-map (kbd "TAB") 'indent-for-tab-command)
-;; (define-key web-mode-map (kbd "TAB") 'wlh/web-mode-tab)
 (define-key web-mode-map (kbd "TAB") 'indent-for-tab-command)
 (define-key web-mode-map (kbd "C-o") 'crux-smart-open-line-above)
-
 
 ;; Duplicate line
 (global-set-key (kbd "C-x C-d") 'duplicate-start-of-line-or-region)
@@ -470,7 +379,6 @@
 (global-set-key (kbd "C-x \\") 'align-regexp)
 
 ;; Browse the kill ring
-;; (global-set-key (kbd "C-x C-y") 'browse-kill-ring)
 (global-set-key (kbd "C-M-y") 'helm-show-kill-ring)
 
 ;; Display and edit occurances of regexp in buffer
@@ -486,14 +394,6 @@
 ;; vc
 (global-set-key (kbd "C-x v f") 'vc-diff)
 
-;; ;; ---------------- Shell
-;; (define-key shell-mode-map (kbd "RET") 'eshell-send-input)
-;; (define-key eshell-mode-map (kbd "C-j") 'eshell-send-input)
-
-;; (defun wlj/eshell-mode-hook ()
-;;   (interactive)
-;;   (define-key eshell-mode-map (kbd "C-j") 'eshell-send-input))
-;; (add-hook 'eshell-mode-hook 'wlj/eshell-mode-hook)
 ;; ---------------- Shell
 (define-key shell-mode-map (kbd "RET") 'eshell-send-input)
 (define-key shell-mode-map (kbd "C-j") 'paredit-newline)
@@ -512,11 +412,9 @@
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
 
-;; (define-key magit-status-mode-map (kbd "M-w") 'kill-ring-save)
 (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
 
 ;; open line above / below
-;; (global-set-key (kbd "C-o") 'crux-smart-open-line)
 (global-set-key (kbd "C-M-o") 'crux-smart-open-line-above)
 
 ;; Emmet
@@ -548,10 +446,6 @@
 (define-key diff-mode-map (kbd "M-o") 'other-window)
 (define-key ggtags-navigation-map (kbd "M-o") 'other-window) ; Need to override ggtags map
 (define-key ibuffer-mode-map (kbd "M-o") 'other-window)
-
-
-
-
 (global-set-key [(meta shift o)] 'wlh/previous-window)
 
 (global-set-key (kbd "M-p") 'projectile-find-file)
@@ -612,21 +506,15 @@
 (define-key paredit-mode-map (kbd "M-;") 'comment-or-uncomment-region-or-line)
 
 ;; Better move paragraph / mark paragraph
-;; Convert default qwerty M-{ and M-} position on keyboard to azerty mapping
-;; (global-set-key (kbd "M-h") 'rs-mark-paragraph)
-;; (global-set-key (kbd "M-h") 'mark-paragraph)
-;;(define-key js-mode-map (kbd "M-H") 'js2-mark-defun)
 (global-set-key (kbd "M-¨") 'lawlist-forward-paragraph)
 (global-set-key (kbd "M-*") 'lawlist-backward-paragraph)
 
-
 ;; ---------------- Function keys -
-;; (global-set-key (kbd "<f2>") 'my/open-tree-view)
 ;; F Keys
-(global-set-key (kbd "<f5>") 'revert-buffer-no-confirm)
-(global-set-key (kbd "<f6>") 'dired-jump)
-(global-set-key (kbd "<f7>") 'projectile-dired)
-(global-set-key (kbd "<f8>") 'treemacs-projectile-toggle)
+;; (global-set-key (kbd "<f5>") 'revert-buffer-no-confirm)
+;; (global-set-key (kbd "<f6>") 'dired-jump)
+;; (global-set-key (kbd "<f7>") 'projectile-dired)
+;; (global-set-key (kbd "<f8>") 'treemacs-projectile-toggle)
 
 
 ;; Kill
@@ -718,15 +606,16 @@
 ;; From prelude
 (global-set-key (kbd "C-c r") 'crux-rename-buffer-and-file)
 (global-set-key (kbd "C-c d") 'crux-delete-file-and-buffer)
+(global-set-key (kbd "C-c s") 'crux-swap-windows)
+(global-set-key (kbd "C-c r") 'crux-rename-buffer-and-file)
 (global-set-key [(control shift up)] 'move-text-up)
 (global-set-key [(control shift down)] 'move-text-down)
 (global-set-key [(meta shift up)] 'move-text-up)
 (global-set-key [(meta shift down)] 'move-text-down)
-(global-set-key (kbd "C-c s") 'crux-swap-windows)
-(global-set-key (kbd "C-c r") 'crux-rename-buffer-and-file)
-(global-set-key (kbd "C-c t") 'crux-visit-term-buffer)
-(global-set-key (kbd "C-c I") 'crux-find-user-init-file)
-(global-set-key (kbd "C-c S") 'crux-find-shell-init-file)
+
+;; (global-set-key (kbd "C-c t") 'crux-visit-term-buffer)
+;; (global-set-key (kbd "C-c I") 'crux-find-user-init-file)
+;; (global-set-key (kbd "C-c S") 'crux-find-shell-init-file)
 ;; (global-set-key (kbd "s-j") 'crux-top-join-line)
 
 (global-set-key [f7] 'winner-undo)

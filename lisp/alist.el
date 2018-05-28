@@ -9,7 +9,7 @@
 (add-to-list 'auto-mode-alist '("\\.jar$" . archive-mode))
 (add-to-list 'auto-mode-alist '("\\.log\\'" . syslog-mode))
 (add-to-list 'auto-mode-alist '("logs/.*.txt" . syslog-mode))
-;;; (add-to-list 'auto-mode-alist '("\\.*.log\\" . syslog-mode)) ;; Fait planter
+;;; (add-to-list 'auto-mode-alist '("\\.*.log\\" . syslog-mode)) ;; Crash
 
 ;; Custom rules for php files
 ;; By default all php files are in web mode (mix of html / php / js / css)
