@@ -218,6 +218,7 @@
         mouse-set-secondary
         next-buffer
         org-mouse-down-mouse
+        other-frame
         previous-buffer
         previous-multiframe-window
         projectile-find-file-dwim
