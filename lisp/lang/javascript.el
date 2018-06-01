@@ -41,7 +41,7 @@
                 js2-highlight-external-variables nil
                 js2-mode-show-parse-errors nil)
   
-  (nlinum-mode)
+  ;; (nlinum-mode)
   (highlight-symbol-mode t)
 
   ;; js2-imenu-extras-mode
