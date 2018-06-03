@@ -45,7 +45,9 @@
 ;; (set-face-attribute 'show-paren-match-face nil :background "#f4f4f4" :foreground "#ff00a0" :weight 'ultra-bold :underline "#ff00a0")
 ;; (set-face-attribute 'show-paren-match-face nil :background "#e4e4e4" :foreground "#000" :weight 'ultra-bold :underline "#ff00a0")
 ;; (set-face-attribute 'show-paren-match-face nil :background "#ccc" :foreground "#000" :weight 'ultra-bold :underline "#ff00a0")
-(set-face-attribute 'show-paren-match-face nil :background "#dedede" :foreground "#000" :weight 'ultra-bold :underline "#ff00a0")
+
+
+;; (set-face-attribute 'show-paren-match-face nil :background "#dedede" :foreground "#000" :weight 'ultra-bold :underline "#ff00a0")
 
 (setq show-paren-priority -50)
 (set-face-attribute 'fringe nil :background "#fafafa" :slant 'normal)
@@ -58,10 +60,10 @@
 ;; (add-hook 'linum-mode-hook 'wlh/theme-linum-mode-hook)
 
 ;; nliunm
-(defun wlh/theme-nlinum-mode-hook ()
-  (set-face-attribute 'linum nil :foreground "#b5b5b5" :background"#fafafa" :height 100))
+;; (defun wlh/theme-nlinum-mode-hook ()
+;;   (set-face-attribute 'linum nil :foreground "#b5b5b5" :background"#fafafa" :height 100))
 
-(add-hook 'nlinum-mode-hook 'wlh/theme-nlinum-mode-hook)
+;; (add-hook 'nlinum-mode-hook 'wlh/theme-nlinum-mode-hook)
 
 ;; -------
 ;; (set-face-attribute 'font-lock-keyword-face nil :foreground "#9d288b")

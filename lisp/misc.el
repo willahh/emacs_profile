@@ -441,12 +441,13 @@ Version 2016-10-24"
 (setq google-translate-default-target-language "en")
 
 ;; nlinum-mode
-(add-hook 'prog-mode-hook 'nlinum-mode)
-(add-hook 'php-mode-hook 'nlinum-mode)
-(add-hook 'web-mode-hook 'nlinum-mode)
-(add-hook 'js2-mode-hook 'nlinum-mode)
-(add-hook 'js-mode-hook 'nlinum-mode)
-(add-hook 'css-mode-hook 'nlinum-mode)
+;; Use new default line numbered
+;; (add-hook 'prog-mode-hook 'nlinum-mode)
+;; (add-hook 'php-mode-hook 'nlinum-mode)
+;; (add-hook 'web-mode-hook 'nlinum-mode)
+;; (add-hook 'js2-mode-hook 'nlinum-mode)
+;; (add-hook 'js-mode-hook 'nlinum-mode)
+;; (add-hook 'css-mode-hook 'nlinum-mode)
 
 ;; disable window-system in terminal mode
 (unless window-system

@@ -81,7 +81,7 @@
         kill-region
         kill-sentence
         kill-sexp
-        kill-visual-line
+        log-edit-beginning-of-line
         mark-sexp
         markdown-cycle
         mc/remove-fake-cursors
@@ -218,6 +218,7 @@
         mouse-set-secondary
         next-buffer
         org-mouse-down-mouse
+        other-frame
         previous-buffer
         previous-multiframe-window
         projectile-find-file-dwim
