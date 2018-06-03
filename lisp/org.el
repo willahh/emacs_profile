@@ -60,23 +60,23 @@
                            ;; Enable source code block edition in org files
                            (org-src-mode)))
 
-;; Add org babel langages support
-(org-babel-do-load-languages
- 'org-babel-load-languages
- '((sh         . t)
-   (js         . t)
-   (emacs-lisp . t)
-   (perl       . t)
-   ;; (html       . t)
-   (scala      . t)
-   (sass       . t)
-   (clojure    . t)
-   (php        . t)
-   (python     . t)
-   (ruby       . t)
-   (dot        . t)
-   (css        . t)
-   (plantuml   . t)))
+;; ;; Add org babel langages support
+;; (org-babel-do-load-languages
+;;  'org-babel-load-languages
+;;  '((sh         . t)
+;;    (js         . t)
+;;    (emacs-lisp . t)
+;;    (perl       . t)
+;;    ;; (html       . t)
+;;    (scala      . t)
+;;    (sass       . t)
+;;    (clojure    . t)
+;;    (php        . t)
+;;    (python     . t)
+;;    (ruby       . t)
+;;    (dot        . t)
+;;    (css        . t)
+;;    (plantuml   . t)))
 
 ;; org syntax highlight code
 (setq org-confirm-babel-evaluate nil

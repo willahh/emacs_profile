@@ -1,4 +1,3 @@
-;; AG
 (require 'ag)
 (require 'find-file-in-project)
 

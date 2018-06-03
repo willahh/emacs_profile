@@ -1,5 +1,4 @@
 (require 'git-gutter)
-;; (require 'psvn)
 (require 'diff-hl)
 (require 'vc-svn)
 

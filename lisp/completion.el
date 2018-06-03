@@ -15,7 +15,6 @@
 (setq company-quickhelp-mode 1)
 (setq company-quickhelp-delay 1)
 (setq company-quickhelp-max-lines nil)
-(setq yas-indent-line 'auto)
 
 (add-hook 'after-init-hook 'global-company-mode)
 (company-quickhelp-mode 1)

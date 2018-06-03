@@ -18,50 +18,6 @@
 ;; Mac-Pass-Command-To-System
 (setq mac-pass-command-to-system nil)
 
-;; Don't pause display on input
-;; (setq  redisplay-dont-pause t
-;;        scroll-preserve-screen-position t
-;;        scroll-conservatively 0)
-
-;; ;; From hl-lissner cf
-;; (setq-default mode-line-default-help-echo nil ; don't say anything on mode-line mouseover
-;;               indicate-buffer-boundaries nil  ; don't show where buffer starts/ends
-;;               indicate-empty-lines nil        ; don't show empty lines
-;;               fringes-outside-margins t       ; switches order of fringe and margin
-              
-;;               ;; Keep cursors and highlights in current window only
-;;               cursor-in-non-selected-windows nil
-;;               highlight-nonselected-windows nil
-              
-;;               ;; Remove continuation arrow on right fringe
-;;               fringe-indicator-alist (delq (assq 'continuation fringe-indicator-alist)
-;;                                            fringe-indicator-alist)
-
-;;               blink-matching-paren nil ; don't blink--too distracting
-;;               show-paren-delay 0.075
-;;               show-paren-highlight-openparen t
-;;               show-paren-when-point-inside-paren t
-;;               uniquify-buffer-name-style nil
-;;               visible-cursor nil
-;;               x-stretch-cursor t
-;;               split-width-threshold nil      ; favor horizontal splits
-;;               show-help-function nil         ; hide :help-echo text
-;;               jit-lock-defer-time nil
-;;               jit-lock-stealth-nice 0.1
-;;               jit-lock-stealth-time 0.2
-;;               jit-lock-stealth-verbose nil
-              
-;;               ;; Minibuffer resizing
-;;               resize-mini-windows 'grow-only
-;;               image-animate-loop t
-              
-;;               ;; Ask for confirmation on exit only if there are real buffers left
-;;               confirm-kill-emacs
-;;               (lambda (_)
-;;                 (if (ignore-errors (doom/get-real-buffers))
-;;                     (y-or-n-p "››› Quit?")
-;;                   t)))
-
 ;; Fix snapy frame resize
 ;; https://emacs.stackexchange.com/a/30444
 (setq frame-resize-pixelwise t)
@@ -78,7 +34,6 @@
 ;; Don't replace line ending (Windows, Unix, Windows+Unix)
 ;; https://stackoverflow.com/a/10845302
 (setq inhibit-eol-conversion t)
-
 
 ;; Disable annoying prompts and messages 
 ;; Use confirmation y and p instead of yes or not
@@ -219,11 +174,11 @@
 (setq scroll-margin 0)
 (setq scroll-step 1)
 
-;; Mouse -----------------------------
-(setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil)))
-(setq mouse--progressive-speed 10)
-(setq mouse-wheel-scroll-amount '(0.05))
-(setq mouse-wheel-progressive-speed 10)
+;; ;; Mouse -----------------------------
+;; (setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil)))
+;; (setq mouse--progressive-speed 10)
+;; (setq mouse-wheel-scroll-amount '(0.05))
+;; (setq mouse-wheel-progressive-speed 10)
 
 ;; stops selection with a mouse being immediately injected to the kill ring
 (setq mouse-drag-copy-region nil)
@@ -253,7 +208,6 @@
 (setq apropos-do-all t
       mouse-yank-at-point t)
 
-;;
 (setq search-whitespace-regexp nil)
 
 ;; Tramp
