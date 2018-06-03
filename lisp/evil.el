@@ -4,7 +4,7 @@
 (require 'evil-org)
 (require 'evil-matchit)
 (require 'evil-snipe)
-(require 'evil-easymotion)
+;; (require 'evil-easymotion)
 (require 'evil-leader)
 (require 'evil-nerd-commenter)
 

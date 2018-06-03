@@ -13,7 +13,7 @@
                      async
                      hy-mode
                      pfuture
-                     nlinum
+                     ;; nlinum
                      diffview
                      ac-slime
                      auto-complete
@@ -69,7 +69,7 @@
                      helm-projectile
                      highlight-symbol
                      hydra
-                     ibuffer-vc
+                     ;; ibuffer-vc
                      ido
                      ido-at-point
                      ido-ubiquitous
@@ -150,33 +150,33 @@
 
 ;; Add some missing packages
 (load "~/.emacs.d/vendor/emacs-textmate-0.1/textmate")
-(add-to-list 'load-path "~/.emacs.d/vendor/evil-easymotion")
-(add-to-list 'load-path "~/.emacs.d/vendor/simple-httpd")
+;; (add-to-list 'load-path "~/.emacs.d/vendor/evil-easymotion")
+;; (add-to-list 'load-path "~/.emacs.d/vendor/simple-httpd")
 (add-to-list 'load-path "~/.emacs.d/vendor/dumb-jump")
-(add-to-list 'load-path "~/.emacs.d/vendor/Indium")
-(add-to-list 'load-path "~/.emacs.d/vendor/restclient")
+;; (add-to-list 'load-path "~/.emacs.d/vendor/Indium")
+;; (add-to-list 'load-path "~/.emacs.d/vendor/restclient")
 (add-to-list 'load-path "~/.emacs.d/vendor/org-mouse")
 (add-to-list 'load-path "~/.emacs.d/vendor/clean-aindent-mode")
-(add-to-list 'load-path "~/.emacs.d/vendor/workgroups2")
-(add-to-list 'load-path "~/.emacs.d/vendor/ob-php")
-(add-to-list 'load-path "~/.emacs.d/vendor/emacs-langtool")
+;; (add-to-list 'load-path "~/.emacs.d/vendor/workgroups2")
+;; (add-to-list 'load-path "~/.emacs.d/vendor/ob-php")
+;; (add-to-list 'load-path "~/.emacs.d/vendor/emacs-langtool")
 (add-to-list 'load-path "~/.emacs.d/vendor/string-inflection-1.0.5")
 (add-to-list 'load-path "~/.emacs.d/vendor/easy-kill-0.9.3")
-(add-to-list 'load-path "~/.emacs.d/vendor/general")
+;; (add-to-list 'load-path "~/.emacs.d/vendor/general")
 (add-to-list 'load-path "~/.emacs.d/vendor/slime")
 (add-to-list 'load-path "~/.emacs.d/vendor/cider")
 (add-to-list 'load-path "~/.emacs.d/vendor/centered-window")
-(add-to-list 'load-path "~/.emacs.d/vendor/jumptoprevpos")
-(add-to-list 'load-path "~/.emacs.d/vendor/vi-tilde-fringe")
+;; (add-to-list 'load-path "~/.emacs.d/vendor/jumptoprevpos")
+;; (add-to-list 'load-path "~/.emacs.d/vendor/vi-tilde-fringe")
 (add-to-list 'load-path "~/.emacs.d/vendor/vkill")
-(add-to-list 'load-path "~/.emacs.d/vendor/ibuffer-vc")
-(add-to-list 'load-path "~/.emacs.d/vendor/better-breadcrumbs")
+;; (add-to-list 'load-path "~/.emacs.d/vendor/ibuffer-vc")
+;; (add-to-list 'load-path "~/.emacs.d/vendor/better-breadcrumbs")
 (add-to-list 'load-path "~/.emacs.d/vendor/smartparens")
-(add-to-list 'load-path "~/.emacs.d/vendor/sotlisp")
-(add-to-list 'load-path "~/.emacs.d/vendor/font-lock-plus")
+;; (add-to-list 'load-path "~/.emacs.d/vendor/sotlisp")
+;; (add-to-list 'load-path "~/.emacs.d/vendor/font-lock-plus")
 (add-to-list 'load-path "~/.emacs.d/vendor/all-the-icons.el")
-(add-to-list 'load-path "~/.emacs.d/vendor/origami")
-(add-to-list 'load-path "~/.emacs.d/vendor/treemacs/src/elisp")
+;; (add-to-list 'load-path "~/.emacs.d/vendor/origami")
+;; (add-to-list 'load-path "~/.emacs.d/vendor/treemacs/src/elisp")
 (add-to-list 'load-path "~/.emacs.d/vendor/syslog-mode-2.2")
 
 ;; activate all the packages

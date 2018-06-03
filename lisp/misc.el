@@ -201,17 +201,18 @@
                       'display '(left-fringe right-triangle))
           'modification-hooks '(prelude-todo-ov-evaporate)))
 
-;; ibuffer-vc
-(require 'ibuffer-vc)
+;; ;; ibuffer-vc
+;; (require 'ibuffer-vc)
 
-;; langtool
-(require 'langtool)
+;; ;; langtool
+;; (require 'langtool)
 
-;; (setq langtool-language-tool-jar "/path/to/languagetool-commandline.jar")
-(setq langtool-language-tool-jar "~/bin/languagetool/languagetool-commandline.jar")
+;; ;; (setq langtool-language-tool-jar "/path/to/languagetool-commandline.jar")
+;; (setq langtool-language-tool-jar "~/bin/languagetool/languagetool-commandline.jar")
+
+;; (setq langtool-default-language "fr")
 
 ;; Lang hunspel
-(setq langtool-default-language "fr")
 (setq ispell-program-name (executable-find "hunspell"))
 (setq ispell-dictionary "fr")
 
@@ -232,15 +233,15 @@
 (global-set-key [remap kill-ring-save] 'easy-kill)
 ;; (global-set-key [remap mark-sexp] 'easy-mark)
 
-;; general
-(require 'general)
-(setq my-leader1 "H-<SPC>")
+;; ;; general
+;; (require 'general)
+;; (setq my-leader1 "H-<SPC>")
 
-;; without :keymaps, general-define-key acts similarly to global-set-key
-;; bind "C-c a" and "C-c b" globally
-(general-define-key :prefix my-leader1
-                    "a" 'some-command
-                    "b" 'another-command)
+;; ;; without :keymaps, general-define-key acts similarly to global-set-key
+;; ;; bind "C-c a" and "C-c b" globally
+;; (general-define-key :prefix my-leader1
+;;                     "a" 'some-command
+;;                     "b" 'another-command)
 
 ;; Gradle
 (require 'gradle-mode)
@@ -404,10 +405,10 @@ Version 2016-10-24"
 ;; Pandoc
 (require 'pandoc-mode)
 
-;; vi-tilde-fringe
-(require 'vi-tilde-fringe)
-(add-hook 'prog-mode-hook (lambda ()
-                            (vi-tilde-fringe-mode t)))
+;; ;; vi-tilde-fringe
+;; (require 'vi-tilde-fringe)
+;; (add-hook 'prog-mode-hook (lambda ()
+;;                             (vi-tilde-fringe-mode t)))
 
 ;; Skewer-mode
 (require 'skewer-mode)
@@ -542,8 +543,8 @@ abort completely with `C-g'."
 (require 'markdown-mode)
 (setq markdown-toggle-fontify-code-blocks-natively t)
 
-;; simple-httpd
-(require 'simple-httpd)
+;; ;; simple-httpd
+;; (require 'simple-httpd)
 
 ;; term
 (add-hook 'term-exec-hook 'set-no-process-query-on-exit)
@@ -557,34 +558,34 @@ abort completely with `C-g'."
   (company-mode 0))
 (add-hook 'eshell-mode-hook 'wlh/eshell-mode-hook)
 
-;; origami
-(require 'origami)
+;; ;; origami
+;; (require 'origami)
 
 ;; treemacs
-(require 'treemacs)
-(require 'treemacs-projectile)
+;; (require 'treemacs)
+;; (require 'treemacs-projectile)
 
-(setq treemacs-change-root-without-asking nil
-      treemacs-collapse-dirs              (if (executable-find "python") 3 0)
-      treemacs-follow-mode t
-      treemacs-file-event-delay           5000
-      treemacs-follow-after-init          t
-      treemacs-follow-recenter-distance   0.1
-      treemacs-goto-tag-strategy          'refetch-index
-      treemacs-indentation                2
-      treemacs-indentation-string         " "
-      treemacs-is-never-other-window      nil
-      treemacs-never-persist              nil
-      treemacs-no-png-images              nil
-      treemacs-recenter-after-file-follow nil
-      treemacs-recenter-after-tag-follow  nil
-      treemacs-show-hidden-files          t
-      treemacs-silent-filewatch           nil
-      treemacs-silent-refresh             nil
-      treemacs-sorting                    'alphabetic-desc
-      treemacs-tag-follow-cleanup         t
-      treemacs-tag-follow-delay           1.5
-      treemacs-width                      35)
+;; (setq treemacs-change-root-without-asking nil
+;;       treemacs-collapse-dirs              (if (executable-find "python") 3 0)
+;;       treemacs-follow-mode t
+;;       treemacs-file-event-delay           5000
+;;       treemacs-follow-after-init          t
+;;       treemacs-follow-recenter-distance   0.1
+;;       treemacs-goto-tag-strategy          'refetch-index
+;;       treemacs-indentation                2
+;;       treemacs-indentation-string         " "
+;;       treemacs-is-never-other-window      nil
+;;       treemacs-never-persist              nil
+;;       treemacs-no-png-images              nil
+;;       treemacs-recenter-after-file-follow nil
+;;       treemacs-recenter-after-tag-follow  nil
+;;       treemacs-show-hidden-files          t
+;;       treemacs-silent-filewatch           nil
+;;       treemacs-silent-refresh             nil
+;;       treemacs-sorting                    'alphabetic-desc
+;;       treemacs-tag-follow-cleanup         t
+;;       treemacs-tag-follow-delay           1.5
+;;       treemacs-width                      35)
 
 ;; hideshowvis
 (require 'hideshowvis)

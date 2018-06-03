@@ -61,15 +61,17 @@
 ;; Azerty keyboard
 (global-set-key (kbd "≈") 'helm-M-x) ; Alt + x
 (global-set-key (kbd "") 'toggle-php-flavor-mode) ; Alt + 1
-(global-set-key (kbd "Ì") 'help) ; Alt + h
+;; (global-set-key (kbd "Ì") 'help) ; Alt + h
 (global-set-key (kbd "∑") 'helm-ag) ; Alt + shift + s
 (global-set-key (kbd "C-c C-c C-s") 'helm-ag)
 (global-set-key (kbd "†") 'toggle-truncate-lines) ; Alt + t
-(global-set-key (kbd "ﬁ") 'goto-line) ; Alt + g
+;; (global-set-key (kbd "ﬁ") 'goto-line) ; Alt + g
 (global-set-key (kbd "Â") 'toggle-php-flavor-mode) ; Alt+z
 (global-set-key (kbd "Í") 'decrement-number-at-point)
 (global-set-key (kbd "Ë") 'increment-number-at-point)
-(define-key php-mode-map (kbd "Â") 'toggle-php-flavor-mode) ; Alt+z
+;; (define-key php-mode-map (kbd "Â") 'toggle-php-flavor-mode) ; Alt+z
+
+(global-set-key (kbd "C-c C-g") 'goto-line)
 
 ;; ---------------- key-chord
 (key-chord-define-global "xc" 'er/expand-region)
@@ -261,21 +263,19 @@
 (global-set-key (kbd "<M-down>") 'drag-stuff-down)
 
 
-
-;; ---------------- Multi cursor binding
-;; PHP jump
 (define-key php-mode-map (kbd "<C-M-mouse-1>") 'dumb-jump-go)
 
+;; ---------------- Multi cursor binding
 ;; All
-(global-set-key (kbd "M-L") 'mc/mark-all-words-like-this) ; Like in VS Code
+;; (global-set-key (kbd "M-L") 'mc/mark-all-words-like-this) ; Like in VS Code
 
 ;; Next
 (global-set-key (kbd "M-g") 'mc/mark-next-like-this-word) ; Was go to line
 (define-key paredit-mode-map (kbd "M-g") 'mc/mark-next-like-this-word) ; Was go to line
 
 ;; Previous
-(global-set-key (kbd "Δ") 'mc/mark-previous-like-this-word) ; ALT+SHIFT+q
-(define-key paredit-mode-map (kbd "Δ") 'mc/mark-previous-like-this-word) ; ALT+SHIFT+q
+;; (global-set-key (kbd "Δ") 'mc/mark-previous-like-this-word) ; ALT+SHIFT+q
+;; (define-key paredit-mode-map (kbd "Δ") 'mc/mark-previous-like-this-word) ; ALT+SHIFT+q
 
 
 
@@ -577,7 +577,6 @@
                 'smarter-move-beginning-of-line)
 
 ;; Navigation entre les buffers
-
 (global-set-key (kbd "C-`") 'next-buffer)
 (global-set-key (kbd "C-M-`") 'winner-redo)
 
@@ -623,7 +622,7 @@
 
 ;; C-x shortcuts from oremacs
 (global-set-key (kbd "C-x l") 'counsel-locate)
-(global-set-key (kbd "C-x C-l") 'locate)
+;; (global-set-key (kbd "C-x C-l") 'locate)
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 (global-set-key (kbd "C-c g") 'counsel-git)
 (global-set-key (kbd "C-x l") 'counsel-locate)

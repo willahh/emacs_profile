@@ -1,4 +1,4 @@
 (defun wlh/prog-hook ()
-  (line-number-mode))
+  (display-line-numbers-mode))
 
 (add-hook 'prog-mode-hook 'wlh/prog-hook)
