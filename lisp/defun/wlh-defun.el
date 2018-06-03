@@ -178,31 +178,29 @@ on the screen values."
 (defun wlh/recenter-top-bottom ()
   "Call recenter-top-bottom then do a beacon-blink"
   (interactive)
-  (recenter-top-bottom)
-  ;; (beacon-blink)
-  )
+  (recenter-top-bottom))
 
 (defun wlh/other-window () 
   (interactive)
   (other-window 1)
   (hydra-window/body))
 
-;; New centered frame
+
 (defun wlh/create-new-centered-frame ()
+  "New centered frame."
   (interactive)
   (let ((frame (make-frame)))
     (select-frame frame)
-    (funcall #'switch-to-buffer (xah-new-empty-buffer))
-    ;; (wlh/frame-center)
+    (funcall #'switch-to-buffer (xah-new-empty-buffer))    
     (wlh/frame-position-1 frame)))
 
 (defun wlh/find-org-files ()
-  ;; Find org files in user directory
+  "Find org files in user directory."
   (interactive)
   (find-name-dired "~/" "*.org"))
 
 (defun wlh/find-org-files-in-directory ()
-  ;; Find org files in current directory
+  "Find org files in current directory."
   (interactive)
   (find-name-dired default-directory "*.org"))
 
