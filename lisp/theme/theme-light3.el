@@ -109,9 +109,10 @@
 (set-face-attribute 'js2-warning nil :foreground "#ff0000")
 
 ;; ------- bm
-(set-face-attribute 'bm-face nil :background "#e0e0e0" :foreground nil)
+(when (boundp 'bm-face)
+    (set-face-attribute 'bm-face nil :background "#e0e0e0" :foreground nil)
+    (set-face-attribute 'bm-face nil :foreground "#000" :background nil :underline t))
 
-;; ------- neotree
 
 ;; ------- modeline
 (set-face-attribute 'mode-line nil
@@ -131,12 +132,6 @@
 ;; ------- php
 (require 'php-mode)
 (set-face-attribute 'php-annotations-annotation-face nil :foreground "#008000" :background nil :underline t)
-
-
-;; ------- misc
-(set-face-attribute 'bm-face nil :foreground "#000" :background nil :underline t)
-
-
 
 ;; ------- org
 (defun wlh/org-mode-hook ()

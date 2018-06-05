@@ -164,7 +164,7 @@
 (add-to-list 'load-path "~/.emacs.d/site-lisp/easy-kill-0.9.3")
 ;; (add-to-list 'load-path "~/.emacs.d/site-lisp/general")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/slime")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/cider")
+(add-to-list 'load-path "~/.emacs.d/site-lisp/cider-0.16.0")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/centered-window")
 ;; (add-to-list 'load-path "~/.emacs.d/site-lisp/jumptoprevpos")
 ;; (add-to-list 'load-path "~/.emacs.d/site-lisp/vi-tilde-fringe")
