@@ -1,7 +1,7 @@
 (require 'yasnippet)
 
-(setq yas-snippet-dirs '("~/.emacs.d/snippets/willahh/"))
-(add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/yasnippet")
+(setq yas-snippet-dirs '("~/.emacs.d/resources/snippets/willahh/"))
+(add-to-list 'yas-snippet-dirs "~/.emacs.d/resources/snippets/yasnippet")
 
 (setq yas/indent-line nil)
 (setq yas-indent-line 'auto)
