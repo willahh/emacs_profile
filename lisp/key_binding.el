@@ -72,6 +72,7 @@
 ;; (define-key php-mode-map (kbd "Â") 'toggle-php-flavor-mode) ; Alt+z
 
 (global-set-key (kbd "C-c C-g") 'goto-line)
+(global-set-key (kbd "C-c h") 'help)
 
 ;; ---------------- key-chord
 (key-chord-define-global "xc" 'er/expand-region)

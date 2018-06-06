@@ -5,17 +5,14 @@
 
 ;; Package list
 (setq package-list '(
-                     ace-jump-mode
+                     ;; ibuffer-vc
+                     ;; nlinum
+                     ac-slime
                      ace-link
                      ace-window
                      actionscript-mode
                      ag
                      async
-                     hy-mode
-                     pfuture
-                     ;; nlinum
-                     diffview
-                     ac-slime
                      auto-complete
                      auto-yasnippet
                      autopair
@@ -30,10 +27,12 @@
                      company-tern
                      company-web
                      counsel
+                     counsel-gtags
                      crux
                      darkroom
                      dash
                      diff-hl
+                     diffview
                      dracula-theme
                      drag-stuff
                      dtrt-indent
@@ -51,7 +50,6 @@
                      evil-surround
                      evil-visualstar
                      exec-path-from-shell
-                     shell-pop
                      expand-region
                      find-file-in-project
                      flx-ido
@@ -65,22 +63,23 @@
                      helm
                      helm-ag
                      helm-cider
-                     helm-swoop
                      helm-projectile
+                     helm-swoop
                      highlight-symbol
+                     hy-mode
                      hydra
-                     ;; ibuffer-vc
                      ido
                      ido-at-point
+                     ido-occur
                      ido-ubiquitous
                      ido-vertical-mode
-                     ido-occur
                      iedit
                      iflipb
                      image-dired+
                      imenu-list
                      impatient-mode
                      indent-guide
+                     indium
                      inf-clojure
                      intellij-theme
                      ivy
@@ -107,6 +106,7 @@
                      paredit-everywhere
                      pdf-tools
                      perspective
+                     pfuture
                      php-auto-yasnippets
                      php-mode
                      pkg-info
@@ -121,6 +121,7 @@
                      react-snippets
                      resize-window
                      ripgrep
+                     shell-pop
                      skewer-mode
                      smex
                      sml-mode
@@ -142,11 +143,11 @@
                      wgrep
                      which-key
                      whole-line-or-region
+                     xref-js2
                      yaml-mode
                      yasnippet
                      zop-to-char
-                     xref-js2
-                     counsel-gtags))
+ace-jump-mode))
 
 ;; Add some missing packages
 (load "~/.emacs.d/site-lisp/emacs-textmate-0.1/textmate")
