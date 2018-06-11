@@ -387,15 +387,13 @@ Version 2016-10-24"
 (use-package help-mode+)
 (use-package help+)
 
-(window-divider-mode-apply nil)
+;; (defun wlh/window-divider-off ()
+;;   (interactive)
+;;   (window-divider-mode-apply nil))
 
-(defun wlh/window-divider-off ()
-  (interactive)
-  (window-divider-mode-apply nil))
-
-(defun wlh/window-divider-on ()
-  (interactive)
-  (window-divider-mode-apply t))
+;; (defun wlh/window-divider-on ()
+;;   (interactive)
+;;   (window-divider-mode-apply t))
 
 (setq global-flycheck-mode t)
 

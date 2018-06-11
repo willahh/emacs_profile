@@ -27,6 +27,7 @@
         comment-or-uncomment-region-or-line
         company-indent-or-complete-common
         crux-smart-open-line
+        crux-smart-open-line-above
         delete-horizontal-space
         dired-jump
         dired-previous-line

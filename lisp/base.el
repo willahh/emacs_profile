@@ -175,10 +175,10 @@
 (setq scroll-step 1)
 
 ;; ;; Mouse -----------------------------
-;; (setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil)))
-;; (setq mouse--progressive-speed 10)
-;; (setq mouse-wheel-scroll-amount '(0.05))
-;; (setq mouse-wheel-progressive-speed 10)
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil)))
+(setq mouse--progressive-speed 10)
+(setq mouse-wheel-scroll-amount '(0.05))
+(setq mouse-wheel-progressive-speed 10)
 
 ;; stops selection with a mouse being immediately injected to the kill ring
 (setq mouse-drag-copy-region nil)
@@ -297,3 +297,6 @@
 (update-syntax-entry)
 (add-hook 'prog-mode-hook (lambda () (update-syntax-entry)))
 (add-hook 'web-mode-hook (lambda () (update-syntax-entry))) ;; Needed for web-mode
+
+(window-divider-mode-apply 1)
+(put 'scroll-left 'disabled nil)
