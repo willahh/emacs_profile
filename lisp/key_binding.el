@@ -1,22 +1,3 @@
-(require 'ggtags)
-(require 'magit)
-(require 'paredit)
-(require 'iedit)
-(require 'php-mode)
-(require 'nxml-mode)
-(require 'tern)
-(require 'org)
-(require 'conf-mode)
-(require 'magit)
-(require 'term)
-(require 'web-mode)
-(require 'typescript-mode)
-(require 'css-mode)
-(require 'slime)
-(require 'css-mode)
-(require 'emmet-mode)
-(require 'highlight-symbol)
-(require 'js2-mode)
 
 (defun wlh/web-mode-kill-sexp ()
   (interactive)
@@ -644,3 +625,6 @@
 (global-set-key (kbd "C-é") 'point-to-register) ; C-2 on qwerty
 (global-set-key (kbd "C-\"") 'jump-to-register) ; C-3 on qwerty
 (global-set-key (kbd "C-&") 'xah-toggle-letter-case) ; (C-1 on azerty keyboard)
+
+
+(global-set-key (kbd "<mouse-3>") 'mouse-major-mode-menu)

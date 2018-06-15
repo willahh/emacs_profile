@@ -4,6 +4,9 @@
 (require 'cl-lib)
 (require 'validate)
 
+(require 'exec-path-from-shell)
+(exec-path-from-shell-initialize)
+
 (setq kill-buffer-query-functions
       (remq 'process-kill-buffer-query-function
             kill-buffer-query-functions))
@@ -593,3 +596,15 @@ abort completely with `C-g'."
 
 (add-hook 'prog-mode-hook (lambda ()
                             (hideshowvis-enable)))
+
+
+;; hl-line-mode
+(add-hook 'compilation-mode-hook (lambda () (hl-line-mode)))
+(add-hook 'dired-mode-hook (lambda () (hl-line-mode)))
+(add-hook 'occur-mode-hook (lambda () (hl-line-mode)))
+(add-hook 'ibuffer-mode-hook (lambda () (hl-line-mode)))
+(add-hook 'diff-mode-hook (lambda () (hl-line-mode)))
+
+;; editorconfig
+(require 'editorconfig)
+(add-hook 'prog-mode-hook 'editorconfig-mode)

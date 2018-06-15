@@ -1,7 +1,6 @@
-(require 'yasnippet)
 (require 'company)
-(require 'company-web-html)
-(require 'company-web)
+;; (require 'company-web-html)
+;; (require 'company-web)
 
 (setq company-show-numbers t)
 (setq company-minimum-prefix-length 3)
@@ -20,5 +19,5 @@
 (company-quickhelp-mode 1)
 
 ;; Remove some words completion
-(delete 'company-dabbrev company-backends)
-(delete '(company-dabbrev-code company-gtags company-etags company-keywords) company-backends)
+;; (delete 'company-dabbrev company-backends)
+;; (delete '(company-dabbrev-code company-gtags company-etags company-keywords) company-backends)

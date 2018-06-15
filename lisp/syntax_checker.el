@@ -1,6 +1,4 @@
 ;; flycheck
-;; http://codewinds.com/blog/2015-04-02-emacs-flycheck-eslint-jsx.html
-;; Note : attention flycheck fat ralentir web mode sur des gros fichiers
 (require 'flycheck)
 (require 'flycheck-pos-tip)
 
@@ -50,7 +48,3 @@ clean buffer we're an order of magnitude laxer about checking."
 (setq flycheck-check-syntax-automatically '(save
                                             idle-change
                                             mode-enabled))
-
-;; editorconfig
-(require 'editorconfig)
-(add-hook 'prog-mode-hook 'editorconfig-mode)

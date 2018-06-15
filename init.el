@@ -5,8 +5,8 @@
 (package-initialize)
 
 (load "~/.emacs.d/lisp/init-packages")
+(load-file "~/.emacs.d/lisp/require.el")
 (load-file "~/.emacs.d/lisp/base.el")
-(load-file "~/.emacs.d/lisp/system.el")
 (load-file "~/.emacs.d/lisp/defun.el")
 (load-file "~/.emacs.d/lisp/alist.el")
 (load-file "~/.emacs.d/lisp/navigation.el")

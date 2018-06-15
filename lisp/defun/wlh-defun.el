@@ -33,9 +33,9 @@ on the screen values."
     (set-frame-size frame frame-width frame-height t)
     (set-frame-position frame frame-x frame-y)))
 
-(defun wlh/neotree-set ()
-  (interactive)
-  (neo-global--open-and-find (buffer-file-name)))
+;; (defun wlh/neotree-set ()
+;;   (interactive)
+;;   (neo-global--open-and-find (buffer-file-name)))
 
 (defun wlh/projectile-ido-find-file ()
   "Find a recent file using ido."
@@ -49,8 +49,8 @@ on the screen values."
 (defun wlh/vscode-dired-at-point ()
   "Open a VS Code at point from dired"
   (interactive)
-  (let ((default-directory (dired-dwim-target-directory)
-          )) (shell-command "code")))
+  (let ((default-directory (dired-dwim-target-directory)))
+    (shell-command "code")))
 
 (defun wlh/project-browser-open ()
   (interactive)

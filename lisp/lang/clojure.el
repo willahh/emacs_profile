@@ -1,6 +1,6 @@
 ;; Check https://github.com/clojure-emacs/example-config/blob/master/lisp/cfg-hlsexp.el
 (require 'cider)
-(require 'helm-cider)
+;; (require 'helm-cider)
 (require 'clojure-snippets)
 
 ;; Specify history file
@@ -33,15 +33,15 @@
 ;; looong history
 (setq cider-repl-history-size 3000)
 
-;; cljrefactor -------------------
-(require 'clj-refactor)
+;; ;; cljrefactor -------------------
+;; (require 'clj-refactor)
 
-;; no auto sort
-(setq cljr-auto-sort-ns nil)
+;; ;; no auto sort
+;; (setq cljr-auto-sort-ns nil)
 
-;; do not prefer prefixes when using clean-ns
-(setq cljr-favor-prefix-notation nil)
-(setq cljr-warn-on-eval nil)
+;; ;; do not prefer prefixes when using clean-ns
+;; (setq cljr-favor-prefix-notation nil)
+;; (setq cljr-warn-on-eval nil)
 
 
 ;; Flycheck ---------------

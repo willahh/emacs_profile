@@ -5,11 +5,6 @@
       wg-mode-line-decor-right-brace "]"  ; how to surround it
       wg-mode-line-decor-divider ":")
 
-;; ;; Mode line height
-;; ;; Update : pas sure que cela soit fonctionnel
-;; (- (elt (window-pixel-edges) 1) 
-;;    (elt (window-inside-pixel-edges) 1))
-
 ;; Diminish modeline clutter
 (require 'diminish)
 
@@ -23,10 +18,8 @@
 (eval-after-load "skewer-html" '(diminish 'skewer-html-mode))
 (eval-after-load "smartparens" '(diminish 'smartparens-mode))
 (eval-after-load "editorconfig" '(diminish 'editorconfig-mode))
-; (eval-after-load "anzu" '(diminish 'anzu-mode))
 (eval-after-load "company" '(diminish 'company-mode))
 (eval-after-load "rainbow-mode" '(diminish 'rainbow-mode))
-;; (eval-after-load "hs-minor-mode" '(diminish 'hs-minor-mode))
 (eval-after-load "ivy" '(diminish 'ivy-mode))
 (eval-after-load "which-key" '(diminish 'which-key-mode))
 (eval-after-load "undo-tree" '(diminish 'undo-tree-mode))
@@ -35,4 +28,3 @@
 (eval-after-load "highlight-symbol" '(diminish 'highlight-symbol-mode))
 (eval-after-load "flycheck" '(diminish 'flycheck-mode))
 (eval-after-load "evil-snipe" '(diminish 'evil-snipe-mode))
-;; (eval-after-load "arev" '(diminish 'auto-revert-mode))
