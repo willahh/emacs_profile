@@ -34,6 +34,7 @@
 (setq cider-repl-history-size 3000)
 
 ;; ;; cljrefactor -------------------
+;; Disable atm
 ;; (require 'clj-refactor)
 
 ;; ;; no auto sort
@@ -76,7 +77,7 @@
 ;; Hooks ----------------------
 (defun wlh/clojure-mode-hook ()
   (interactive)
-  (clj-refactor-mode 1)
+  ;; (clj-refactor-mode 1)
   
   ;; insert keybinding setup here
   (cljr-add-keybindings-with-prefix "C-c RET"))
