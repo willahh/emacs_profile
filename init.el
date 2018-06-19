@@ -7,6 +7,8 @@
 (load "~/.emacs.d/lisp/init-packages")
 (load-file "~/.emacs.d/lisp/require.el")
 (load-file "~/.emacs.d/lisp/base.el")
+(load-file "~/.emacs.d/lisp/defun/wlh-project.el")
+(load-file "~/.emacs.d/lisp/defun/wlh-defun.el")
 (load-file "~/.emacs.d/lisp/defun.el")
 (load-file "~/.emacs.d/lisp/alist.el")
 (load-file "~/.emacs.d/lisp/navigation.el")
@@ -34,8 +36,7 @@
 (load-file "~/.emacs.d/lisp/lang/clojure.el")
 (load-file "~/.emacs.d/lisp/lang/react.el")
 (load-file "~/.emacs.d/lisp/lang/hy.el")
-(load-file "~/.emacs.d/lisp/defun/wlh-project.el")
-(load-file "~/.emacs.d/lisp/defun/wlh-defun.el")
+
 
 (window-divider-mode-apply 1)
 (put 'scroll-left 'disabled nil)

@@ -45,6 +45,11 @@
 
 ;; syntax highlighting everywhere
 (global-font-lock-mode 1)
+(setq font-lock-support-mode 'jit-lock-mode)
+(setq jit-lock-stealth-time 16
+	  jit-lock-defer-contextually t
+	  jit-lock-stealth-nice 0.5)
+(setq-default font-lock-multiline t)
 
 ;; Encoding
 (prefer-coding-system 'utf-8)

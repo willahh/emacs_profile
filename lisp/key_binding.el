@@ -327,6 +327,9 @@
 (define-key web-mode-map(kbd "<return>") 'wlh/web-mode-new-line)
 (define-key web-mode-map (kbd "TAB") 'indent-for-tab-command)
 (define-key web-mode-map (kbd "C-o") 'crux-smart-open-line-above)
+(global-set-key (kbd "C-o") 'crux-smart-open-line-above)
+(global-set-key (kbd "C-M-o") 'crux-smart-open-line)
+
 
 ;; Duplicate line
 (global-set-key (kbd "C-x C-d") 'duplicate-start-of-line-or-region)
@@ -395,9 +398,6 @@
 (global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
 
 (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
-
-;; open line above / below
-(global-set-key (kbd "C-M-o") 'crux-smart-open-line-above)
 
 ;; Emmet
 (global-set-key [control command shift j] 'emmet-expand-line)

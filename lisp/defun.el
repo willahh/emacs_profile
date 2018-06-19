@@ -1,7 +1,3 @@
-(require 'cl-lib)
-(require 'shell-pop)
-(require 'evil)
-
 ;; yank-pop-forwards
 (defun yank-pop-forwards (arg)
   (interactive "p")
@@ -184,41 +180,41 @@ point reaches the beginning or end of the buffer, stop there."
 
 ;; Block comment auto close
 ;; https://emacs.stackexchange.com/a/14613
-(defun my-prettify-c-block-comment (orig-fun &rest args)
-  (let* ((first-comment-line (looking-back "/\\*\\s-*.*"))
-         (star-col-num (when first-comment-line
-                         (save-excursion
-                           (re-search-backward "/\\*")
-                           (1+ (current-column))))))
-    (apply orig-fun args)
-    (when first-comment-line
-      (save-excursion
-        (newline)
-        (dotimes (cnt star-col-num)
-          (insert " "))
-        (move-to-column star-col-num)
-        (insert "*/"))
-      (move-to-column star-col-num) ; comment this line if using bsd style
-      (insert "*") ; comment this line if using bsd style
-      ))
-  ;; Ensure one space between the asterisk and the comment
-  (when (not (looking-back " "))
-    (insert " ")))
+;; (defun my-prettify-c-block-comment (orig-fun &rest args)
+;;   (let* ((first-comment-line (looking-back "/\\*\\s-*.*"))
+;;          (star-col-num (when first-comment-line
+;;                          (save-excursion
+;;                            (re-search-backward "/\\*")
+;;                            (1+ (current-column))))))
+;;     (apply orig-fun args)
+;;     (when first-comment-line
+;;       (save-excursion
+;;         (newline)
+;;         (dotimes (cnt star-col-num)
+;;           (insert " "))
+;;         (move-to-column star-col-num)
+;;         (insert "*/"))
+;;       (move-to-column star-col-num) ; comment this line if using bsd style
+;;       (insert "*") ; comment this line if using bsd style
+;;       ))
+;;   ;; Ensure one space between the asterisk and the comment
+;;   (when (not (looking-back " "))
+;;     (insert " ")))
 
-(advice-add 'c-indent-new-comment-line :around #'my-prettify-c-block-comment)
+;; (advice-add 'c-indent-new-comment-line :around #'my-prettify-c-block-comment)
 ;; (advice-remove 'c-indent-new-comment-line #'my-prettify-c-block-comment)
 
-;; Source : http://emacs.stackexchange.com/a/7925
-;; @todo ajouter la completion en php apres :: (la ligne en commentaire empeche
-;; la completion apres ->
-(defun check-expansion ()
-  (save-excursion
-    (if (looking-at "\\_>") t
-      (backward-char 1)
-      (if (looking-at "\\.") t
-        (backward-char 1)
-        (if (looking-at "->") t nil)
-        ))))
+;; ;; Source : http://emacs.stackexchange.com/a/7925
+;; ;; @todo ajouter la completion en php apres :: (la ligne en commentaire empeche
+;; ;; la completion apres ->
+;; (defun check-expansion ()
+;;   (save-excursion
+;;     (if (looking-at "\\_>") t
+;;       (backward-char 1)
+;;       (if (looking-at "\\.") t
+;;         (backward-char 1)
+;;         (if (looking-at "->") t nil)
+;;         ))))
 
 ;; http://endlessparentheses.com/emacs-narrow-or-widen-dwim.html
 (define-prefix-command 'endless/toggle-map)
@@ -627,10 +623,28 @@ save it in `ffap-file-at-point-line-number' variable."
     (goto-line ffap-file-at-point-line-number)
     (setq ffap-file-at-point-line-number nil)))
 
+(defun describe-thing-in-popup ()
+  "http://blog.jenkster.com/2013/12/popup-help-in-emacs-lisp.html"
+  (interactive)
+  (let* ((thing (symbol-at-point))
+         (help-xref-following t)
+         (description (with-temp-buffer
+                        (help-mode)
+                        (help-xref-interned thing)
+                        (buffer-string))))
+    (popup-tip description
+               :point (point)
+               :around t
+               :height 30
+               :scroll-bar t
+               :margin t)))
+
+(global-set-key (kbd "M-'") 'describe-thing-in-popup)
+
+
 ;; -------- Init
-(require 'bookmark)
-(setq inhibit-splash-screen t)
-(switch-to-buffer "*Bookmark List*")
+;; (setq inhibit-splash-screen t)
+;; (switch-to-buffer "*Bookmark List*")
 
 ;; Show matching parenthesis.
 (show-paren-mode)

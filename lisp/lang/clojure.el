@@ -64,6 +64,14 @@
 (add-hook 'clojure-mode-hook #'paredit-mode)
 (add-hook 'cider-repl-mode-hook #'paredit-mode)
 
+;; highlight-sexp
+(require 'highlight-sexp)
+(add-hook 'lisp-mode-hook #'highlight-sexp-mode)
+(add-hook 'emacs-lisp-mode-hook #'highlight-sexp-mode)
+(add-hook 'clojure-mode-hook #'highlight-sexp-mode)
+(add-hook 'cider-repl-mode-hook #'highlight-sexp-mode)
+
+
 
 ;; Hooks ----------------------
 (defun wlh/clojure-mode-hook ()
@@ -108,7 +116,7 @@
       result)))
 
 (defun live-cycle-clj-coll ()
-  "convert the coll at (point) from (x) -> {x} -> [x] -> (x) recur"
+  "Convert the coll at (point) from (x) -> {x} -> [x] -> (x) recur"
   (interactive)
   (let* ((original-point (point)))
     (while (and (> (point) 1)

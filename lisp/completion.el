@@ -1,6 +1,4 @@
 (require 'company)
-;; (require 'company-web-html)
-;; (require 'company-web)
 
 (setq company-show-numbers t)
 (setq company-minimum-prefix-length 3)

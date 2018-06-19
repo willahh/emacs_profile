@@ -1,10 +1,4 @@
-(require 'thingatpt)
-(require 'dash)
-(require 'ov)
-(require 'cl-lib)
-(require 'validate)
-
-(require 'exec-path-from-shell)
+;; exec-path-from-shell-initialize
 (exec-path-from-shell-initialize)
 
 (setq kill-buffer-query-functions
@@ -32,7 +26,6 @@
 
 ;; Witch-key -----------------------
 (which-key-mode)
-
 
 ;; http://pragmaticemacs.com/
 (use-package pdf-tools
@@ -204,17 +197,6 @@
                       'display '(left-fringe right-triangle))
           'modification-hooks '(prelude-todo-ov-evaporate)))
 
-;; ;; ibuffer-vc
-;; (require 'ibuffer-vc)
-
-;; ;; langtool
-;; (require 'langtool)
-
-;; ;; (setq langtool-language-tool-jar "/path/to/languagetool-commandline.jar")
-;; (setq langtool-language-tool-jar "~/bin/languagetool/languagetool-commandline.jar")
-
-;; (setq langtool-default-language "fr")
-
 ;; Lang hunspel
 (setq ispell-program-name (executable-find "hunspell"))
 (setq ispell-dictionary "fr")
@@ -231,7 +213,7 @@
 (setq langtool-autoshow-message-function
       'langtool-autoshow-detail-popup)
 
-(require 'string-inflection)
+;; (require 'string-inflection)
 (require 'easy-kill)
 (global-set-key [remap kill-ring-save] 'easy-kill)
 ;; (global-set-key [remap mark-sexp] 'easy-mark)
@@ -247,13 +229,13 @@
 ;;                     "b" 'another-command)
 
 ;; Gradle
-(require 'gradle-mode)
+;; (require 'gradle-mode)
 
-(setq jabber-account-list 
-      '(("wravel@gmail.com"
-         (:network-server . "talk.google.com")
-         (:connection-type . ssl)
-         (:port . 443))))
+;; (setq jabber-account-list 
+;;       '(("wravel@gmail.com"
+;;          (:network-server . "talk.google.com")
+;;          (:connection-type . ssl)
+;;          (:port . 443))))
 
 (use-package dired-ranger
   :ensure t
@@ -390,15 +372,13 @@ Version 2016-10-24"
 (use-package help-mode+)
 (use-package help+)
 
-(window-divider-mode-apply nil)
+;; (defun wlh/window-divider-off ()
+;;   (interactive)
+;;   (window-divider-mode-apply nil))
 
-(defun wlh/window-divider-off ()
-  (interactive)
-  (window-divider-mode-apply nil))
-
-(defun wlh/window-divider-on ()
-  (interactive)
-  (window-divider-mode-apply t))
+;; (defun wlh/window-divider-on ()
+;;   (interactive)
+;;   (window-divider-mode-apply t))
 
 (setq global-flycheck-mode t)
 
@@ -413,11 +393,11 @@ Version 2016-10-24"
 ;; (add-hook 'prog-mode-hook (lambda ()
 ;;                             (vi-tilde-fringe-mode t)))
 
-;; Skewer-mode
-(require 'skewer-mode)
-(add-hook 'js2-mode-hook 'skewer-mode)
-(add-hook 'css-mode-hook 'skewer-css-mode)
-(add-hook 'html-mode-hook 'skewer-html-mode)
+;; ;; Skewer-mode
+;; (require 'skewer-mode)
+;; (add-hook 'js2-mode-hook 'skewer-mode)
+;; (add-hook 'css-mode-hook 'skewer-css-mode)
+;; (add-hook 'html-mode-hook 'skewer-html-mode)
 
 ;; From prelude
 ;; proced-mode doesn't work on OS X so we use vkill instead

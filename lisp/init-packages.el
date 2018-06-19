@@ -1,12 +1,12 @@
 (require 'package)
 
 (add-to-list 'package-archives
-             '("melpa-stable" . "http://melpa-stable.milkbox.net/packages/") t)
+             ;; '("melpa-stable" . "http://stable.melpa.org/packages/")
+             ;; '("melpa" . "https://melpa.org/packages/")
+             '("melpa-stable" . "https://stable.melpa.org/packages/"))
 
 ;; Package list
 (setq package-list '(
-                     ;; ibuffer-vc
-                     ;; nlinum
                      ac-slime
                      ace-link
                      ace-window
@@ -111,7 +111,7 @@
                      php-mode
                      pkg-info
                      popup
-                     popwin
+                     ;; popwin
                      powerline
                      projectile
                      projectile-ripgrep
@@ -147,43 +147,35 @@
                      yaml-mode
                      yasnippet
                      zop-to-char
-ace-jump-mode))
+                     ace-jump-mode))
 
 ;; Add some missing packages
-(load "~/.emacs.d/site-lisp/emacs-textmate-0.1/textmate")
-;; (add-to-list 'load-path "~/.emacs.d/site-lisp/evil-easymotion")
-;; (add-to-list 'load-path "~/.emacs.d/site-lisp/simple-httpd")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/dumb-jump")
-;; (add-to-list 'load-path "~/.emacs.d/site-lisp/Indium")
-;; (add-to-list 'load-path "~/.emacs.d/site-lisp/restclient")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/org-mouse")
-;; (add-to-list 'load-path "~/.emacs.d/site-lisp/clean-aindent-mode")
-;; (add-to-list 'load-path "~/.emacs.d/site-lisp/workgroups2")
-;; (add-to-list 'load-path "~/.emacs.d/site-lisp/ob-php")
-;; (add-to-list 'load-path "~/.emacs.d/site-lisp/emacs-langtool")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/string-inflection-1.0.5")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/easy-kill-0.9.3")
-;; (add-to-list 'load-path "~/.emacs.d/site-lisp/general")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/slime")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/cider-0.16.0")
+(add-to-list 'load-path "~/.emacs.d/site-lisp/cider-0.17.0")
+(add-to-list 'load-path "~/.emacs.d/site-lisp/clj-refactor-2.3.1")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/centered-window")
-;; (add-to-list 'load-path "~/.emacs.d/site-lisp/jumptoprevpos")
-;; (add-to-list 'load-path "~/.emacs.d/site-lisp/vi-tilde-fringe")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/vkill")
-;; (add-to-list 'load-path "~/.emacs.d/site-lisp/ibuffer-vc")
-;; (add-to-list 'load-path "~/.emacs.d/site-lisp/better-breadcrumbs")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/smartparens")
-;; (add-to-list 'load-path "~/.emacs.d/site-lisp/sotlisp")
-;; (add-to-list 'load-path "~/.emacs.d/site-lisp/font-lock-plus")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/all-the-icons.el")
-;; (add-to-list 'load-path "~/.emacs.d/site-lisp/origami")
-;; (add-to-list 'load-path "~/.emacs.d/site-lisp/treemacs/src/elisp")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/syslog-mode-2.2")
+
+;; Load some package lisp files who don't have auto load
+(load "~/.emacs.d/site-lisp/emacs-textmate-0.1/textmate")
+(load-file "~/.emacs.d/site-lisp/dired-hacks-utils-20160527.1436/dired-hacks-utils.el")
+(load-file "~/.emacs.d/site-lisp/dired-subtree-20160920.130/dired-subtree.el")
+(load-file "~/.emacs.d/site-lisp/dired-ranger-20160924.335/dired-ranger.el")
+(load-file "~/.emacs.d/site-lisp/smartcomment/smartcomment.el")
+(load-file "~/.emacs.d/site-lisp/hideshowvis/hideshowvis.el")
+(load-file "~/.emacs.d/site-lisp/highlight-sexp.el")
 
 ;; activate all the packages
 (package-initialize)
 
-; fetch the list of packages available 
+;; fetch the list of packages available 
 (unless package-archive-contents
   (package-refresh-contents))
 
@@ -191,12 +183,3 @@ ace-jump-mode))
 (dolist (package package-list)
   (unless (package-installed-p package)
     (package-install package)))
-
-;; Load some package lisp files who don't have auto load
-(load-file "~/.emacs.d/site-lisp/dired-hacks-utils-20160527.1436/dired-hacks-utils.el")
-(load-file "~/.emacs.d/site-lisp/dired-subtree-20160920.130/dired-subtree.el")
-(load-file "~/.emacs.d/site-lisp/dired-ranger-20160924.335/dired-ranger.el")
-(load-file "~/.emacs.d/site-lisp/smartcomment/smartcomment.el")
-;; (load-file "~/.emacs.d/site-lisp/visible-bookmarks/bm.el")
-;; (load-file "~/.emacs.d/site-lisp/ibuffer-projectile.el")
-(load-file "~/.emacs.d/site-lisp/hideshowvis/hideshowvis.el")
