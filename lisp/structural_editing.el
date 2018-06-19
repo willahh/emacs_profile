@@ -13,7 +13,7 @@
 (require 'neotree)
 (require 'expand-region)
 (require 'paredit)
-(require 'ace-window)
+;; (require 'ace-window)
 (require 'avy)
 (require 'web-mode)
 (require 'clojure-mode)
@@ -163,7 +163,7 @@
 
 ;; Textmate-mode ---------------------------
 
-(require 'textmate-mode)
+(require 'textmate)
 
 (add-hook 'js2-mode-hook 'textmate-mode)
 (add-hook 'web-mode-hook 'textmate-mode)

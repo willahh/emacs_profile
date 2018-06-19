@@ -65,12 +65,12 @@
 (add-hook 'clojure-mode-hook #'paredit-mode)
 (add-hook 'cider-repl-mode-hook #'paredit-mode)
 
-;; highlight-sexp
-(require 'highlight-sexp)
-(add-hook 'lisp-mode-hook #'highlight-sexp-mode)
-(add-hook 'emacs-lisp-mode-hook #'highlight-sexp-mode)
-(add-hook 'clojure-mode-hook #'highlight-sexp-mode)
-(add-hook 'cider-repl-mode-hook #'highlight-sexp-mode)
+;; ;; highlight-sexp
+;; (require 'highlight-sexp)
+;; (add-hook 'lisp-mode-hook #'highlight-sexp-mode)
+;; (add-hook 'emacs-lisp-mode-hook #'highlight-sexp-mode)
+;; (add-hook 'clojure-mode-hook #'highlight-sexp-mode)
+;; (add-hook 'cider-repl-mode-hook #'highlight-sexp-mode)
 
 
 

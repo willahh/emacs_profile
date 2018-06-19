@@ -1,7 +1,7 @@
 (require 'dired-x)
 (require 'dired)
 (require 'cl)
-(require 'dired-narrow)
+;; (require 'dired-narrow)
 
 (defun wlh/dired-hook ()
   (dired-hide-details-mode +1)

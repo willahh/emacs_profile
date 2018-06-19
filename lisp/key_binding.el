@@ -216,7 +216,7 @@
 (define-key dired-mode-map (kbd "<tab>") 'dired-subtree-toggle)
 (define-key dired-mode-map (kbd "C-c C-p") 'dired-subtree-up)
 (define-key dired-mode-map (kbd "C-c C-n") 'dired-subtree-down)
-(define-key dired-mode-map (kbd "C-x n") 'dired-narrow)
+;; (define-key dired-mode-map (kbd "C-x n") 'dired-narrow)
 (define-key dired-mode-map (kbd "b") 'crux-open-with)
 (define-key dired-mode-map (kbd "C-j") 'dired-find-file)
 (define-key dired-mode-map (kbd "B") 'wlh/vscode-dired-at-point)
