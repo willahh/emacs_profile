@@ -18,6 +18,7 @@
 (setq window-divider-default-bottom-width 10)
 (setq window-divider-default-right-width 10)
 
+(require 'dired-subtree)
 (add-hook 'dired-mode-hook (lambda ()
                              (set-face-attribute 'dired-subtree-depth-1-face nil :background nil)
                              (set-face-attribute 'dired-subtree-depth-2-face nil :background nil)
