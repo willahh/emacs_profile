@@ -19,6 +19,13 @@
 (require 'ido-completing-read+)
 (ido-ubiquitous-mode 1)
 
+(add-hook 'ido-setup-hook
+  (lambda()
+    (define-key ido-completion-map (kbd "C-M-p") (lookup-key ido-completion-map (kbd "C-p")))
+    (define-key ido-completion-map (kbd "C-M-n") (lookup-key ido-completion-map (kbd "C-n"))) ; currently, this makes nothing. Maybe they'll make C-n key lately.
+    (define-key ido-completion-map (kbd "C-p") 'ido-preview-backward)
+    (define-key ido-completion-map (kbd "C-n") 'ido-preview-forward)))
+
 ;; (setq ido-enable-prefix nil
 ;;       ido-enable-flex-matching t
 ;;       ido-case-fold nil

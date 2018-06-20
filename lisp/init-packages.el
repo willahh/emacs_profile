@@ -23,7 +23,9 @@
                      autopair
                      avy
                      avy-menu
+                     all-the-icons
                      browse-kill-ring
+                     centered-window
                      clj-refactor
                      clojure-cheatsheet
                      clojure-snippets
@@ -45,6 +47,7 @@
                      dumb-jump
                      dtrt-indent
                      eclim
+                     easy-kill
                      edit-server
                      editorconfig
                      emmet-mode
@@ -61,6 +64,7 @@
                      exec-path-from-shell
                      expand-region
                      find-file-in-project
+                     flx
                      flx-ido
                      flycheck-pos-tip
                      fullframe
@@ -108,6 +112,7 @@
                      ;; monokai-theme
                      multiple-cursors
                      neotree
+                     noflet ; Used by ido-preview
                      org-bullets
                      ov ; Used for some useful prelude functions
                      pandoc-mode
@@ -132,12 +137,15 @@
                      resize-window
                      ripgrep
                      shell-pop
+                     slime
                      skewer-mode
                      smex
                      sml-mode
                      smooth-scrolling
+                     smartparens
                      ;; sourcemap
                      sx
+                     string-inflection
                      tern
                      tide
                      toc-org
@@ -160,28 +168,24 @@
                      ace-jump-mode))
 
 ;; Add some missing packages
-(add-to-list 'load-path "~/.emacs.d/site-lisp/dumb-jump")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/org-mouse")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/string-inflection-1.0.5")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/easy-kill-0.9.3")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/slime")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/cider-0.17.0")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/clj-refactor-2.3.1")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/centered-window")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/vkill")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/smartparens")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/all-the-icons.el")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/syslog-mode-2.2")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/flx")
 
-;; Load some package lisp files who don't have auto load
-;; (load "~/.emacs.d/site-lisp/emacs-textmate-0.1/textmate")
-;; (load-file "~/.emacs.d/site-lisp/dired-hacks-utils-20160527.1436/dired-hacks-utils.el")
-;; (load-file "~/.emacs.d/site-lisp/dired-subtree-20160920.130/dired-subtree.el")
-;; (load-file "~/.emacs.d/site-lisp/dired-ranger-20160924.335/dired-ranger.el")
-;; (load-file "~/.emacs.d/site-lisp/smartcomment/smartcomment.el")
+;; (add-to-list 'load-path "~/.emacs.d/site-lisp/dumb-jump")
+;; (add-to-list 'load-path "~/.emacs.d/site-lisp/string-inflection-1.0.5")
+;; (add-to-list 'load-path "~/.emacs.d/site-lisp/easy-kill-0.9.3")
+;; (add-to-list 'load-path "~/.emacs.d/site-lisp/slime")
+;; (add-to-list 'load-path "~/.emacs.d/site-lisp/cider-0.17.0")
+;; (add-to-list 'load-path "~/.emacs.d/site-lisp/clj-refactor-2.3.1")
+;; (add-to-list 'load-path "~/.emacs.d/site-lisp/centered-window")
+;; (add-to-list 'load-path "~/.emacs.d/site-lisp/smartparens")
+;; (add-to-list 'load-path "~/.emacs.d/site-lisp/all-the-icons.el")
+;; (add-to-list 'load-path "~/.emacs.d/site-lisp/flx")
+
+;; Add additional files
 (load-file "~/.emacs.d/site-lisp/hideshowvis/hideshowvis.el")
-;; (load-file "~/.emacs.d/site-lisp/highlight-sexp.el")
+(load-file "~/.emacs.d/site-lisp/ido-preview.el")
 
 ;; fetch the list of packages available 
 (unless package-archive-contents
