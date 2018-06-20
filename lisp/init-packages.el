@@ -11,151 +11,152 @@
 ;; Package list
 (setq package-list '(
 		             ac-slime
-      ace-link
-      ace-window
-      hide-lines
-      actionscript-mode
-      textmate
-      ag
-      async
-      auto-complete
-      auto-yasnippet
-      autopair
-      avy
-      avy-menu
-      browse-kill-ring
-      clj-refactor
-      clojure-cheatsheet
-      clojure-snippets
-      coffee-mode
-      company-quickhelp
-      company-tern
-      company-web
-      counsel
-      counsel-gtags
-      crux
-      darkroom
-      dash
-      diminish
-      diff-hl
-      diffview
-      dracula-theme
-      drag-stuff
-      dumb-jump
-      dtrt-indent
-      eclim
-      edit-server
-      editorconfig
-      emmet-mode
-      epl
-      evil
-      react-snippets
-      ;; evil-leader
-      ;; evil-matchit
-      ;; evil-nerd-commenter
-      ;; evil-org
-      ;; evil-snipe
-      ;; evil-surround
-      ;; evil-visualstar
-      exec-path-from-shell
-      expand-region
-      find-file-in-project
-      flx-ido
-      flycheck-pos-tip
-      fullframe
-      ggtags
-      git-gutter
-      git-timemachine
-      google-translate
-      gradle-mode
-      helm
-      helm-ag
-      helm-cider
-      helm-projectile
-      helm-swoop
-      highlight-symbol
-      hy-mode
-      hydra
-      ido
-      ido-at-point
-      ido-occur
-      ;; ido-ubiquitous
-      ido-vertical-mode
-      iedit
-      ;; iflipb
-      ;; image-dired+
-      imenu-list
-      impatient-mode
-      indent-guide
-      ;; indium
-      inf-clojure
-      ;; intellij-theme
-      ivy
-      ivy-hydra
-      iy-go-to-char
-      ;; jabber
-      js-comint
-      js2-mode
-      js2-refactor
-      json-mode
-      key-chord
-      magit
-      magit-popup
-      markdown-mode
-      memoize
-      ;; monokai-theme
-      multiple-cursors
-      neotree
-      org-bullets
-      ov ; Used for some useful prelude functions
-      pandoc-mode
-      ;; paradox
-      paredit
-      paredit-everywhere
-      pdf-tools
-      perspective
-      pfuture
-      php-auto-yasnippets
-      php-mode
-      pkg-info
-      popup
-      ;; popwin
-      powerline
-      projectile
-      ;; projectile-ripgrep
-      ;; psysh
-      rainbow-delimiters
-      rainbow-mode
-      ;; react-snippets
-      resize-window
-      ripgrep
-      shell-pop
-      skewer-mode
-      smex
-      sml-mode
-      smooth-scrolling
-      ;; sourcemap
-      sx
-      tern
-      tide
-      toc-org
-      typescript-mode
-      undo-tree
-      use-package
-      validate
-      visual-regexp
-      visual-regexp-steroids
-      web-beautify
-      web-mode
-      websocket
-      wgrep
-      which-key
-      whole-line-or-region
-      xref-js2
-      yaml-mode
-      yasnippet
-      zop-to-char
-      ace-jump-mode))
+                     ace-link
+                     ace-window
+                     hide-lines
+                     actionscript-mode
+                     textmate
+                     ag
+                     async
+                     auto-complete
+                     auto-yasnippet
+                     autopair
+                     avy
+                     avy-menu
+                     browse-kill-ring
+                     clj-refactor
+                     clojure-cheatsheet
+                     clojure-snippets
+                     coffee-mode
+                     company-quickhelp
+                     company-tern
+                     company-web
+                     company-flx
+                     counsel
+                     counsel-gtags
+                     crux
+                     darkroom
+                     dash
+                     diminish
+                     diff-hl
+                     diffview
+                     dracula-theme
+                     drag-stuff
+                     dumb-jump
+                     dtrt-indent
+                     eclim
+                     edit-server
+                     editorconfig
+                     emmet-mode
+                     epl
+                     evil
+                     react-snippets
+                     ;; evil-leader
+                     ;; evil-matchit
+                     ;; evil-nerd-commenter
+                     ;; evil-org
+                     ;; evil-snipe
+                     ;; evil-surround
+                     ;; evil-visualstar
+                     exec-path-from-shell
+                     expand-region
+                     find-file-in-project
+                     flx-ido
+                     flycheck-pos-tip
+                     fullframe
+                     ggtags
+                     git-gutter
+                     git-timemachine
+                     google-translate
+                     gradle-mode
+                     helm
+                     helm-ag
+                     helm-cider
+                     helm-projectile
+                     helm-swoop
+                     highlight-symbol
+                     hy-mode
+                     hydra
+                     ido
+                     ido-at-point
+                     ido-occur
+                     ;; ido-ubiquitous
+                     ido-vertical-mode
+                     iedit
+                     ;; iflipb
+                     ;; image-dired+
+                     imenu-list
+                     impatient-mode
+                     indent-guide
+                     ;; indium
+                     inf-clojure
+                     ;; intellij-theme
+                     ivy
+                     ivy-hydra
+                     iy-go-to-char
+                     ;; jabber
+                     js-comint
+                     js2-mode
+                     js2-refactor
+                     json-mode
+                     key-chord
+                     magit
+                     magit-popup
+                     markdown-mode
+                     memoize
+                     ;; monokai-theme
+                     multiple-cursors
+                     neotree
+                     org-bullets
+                     ov ; Used for some useful prelude functions
+                     pandoc-mode
+                     ;; paradox
+                     paredit
+                     paredit-everywhere
+                     pdf-tools
+                     perspective
+                     pfuture
+                     php-auto-yasnippets
+                     php-mode
+                     pkg-info
+                     popup
+                     ;; popwin
+                     powerline
+                     projectile
+                     ;; projectile-ripgrep
+                     ;; psysh
+                     rainbow-delimiters
+                     rainbow-mode
+                     ;; react-snippets
+                     resize-window
+                     ripgrep
+                     shell-pop
+                     skewer-mode
+                     smex
+                     sml-mode
+                     smooth-scrolling
+                     ;; sourcemap
+                     sx
+                     tern
+                     tide
+                     toc-org
+                     typescript-mode
+                     undo-tree
+                     use-package
+                     validate
+                     visual-regexp
+                     visual-regexp-steroids
+                     web-beautify
+                     web-mode
+                     websocket
+                     wgrep
+                     which-key
+                     whole-line-or-region
+                     xref-js2
+                     yaml-mode
+                     yasnippet
+                     zop-to-char
+                     ace-jump-mode))
 
 ;; Add some missing packages
 (add-to-list 'load-path "~/.emacs.d/site-lisp/dumb-jump")
@@ -170,6 +171,7 @@
 (add-to-list 'load-path "~/.emacs.d/site-lisp/smartparens")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/all-the-icons.el")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/syslog-mode-2.2")
+(add-to-list 'load-path "~/.emacs.d/site-lisp/flx")
 
 ;; Load some package lisp files who don't have auto load
 ;; (load "~/.emacs.d/site-lisp/emacs-textmate-0.1/textmate")
