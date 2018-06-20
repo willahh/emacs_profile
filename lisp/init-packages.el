@@ -74,6 +74,7 @@
                      helm-cider
                      helm-projectile
                      helm-swoop
+                     helm-flx
                      highlight-symbol
                      hy-mode
                      hydra

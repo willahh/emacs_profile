@@ -1,13 +1,17 @@
 ;; System -----------------------------
-;; Increase the garbage collection threshold to 500 MB to ease startup @see
 ;; http://sriramkswamy.github.io/dotemacs/
+;; Increase the garbage collection threshold to 500 MB to ease startup.
 (setq gc-cons-threshold (* 500 1024 1024))
 
-;; Garbage collector - decrease threshold to 5 MB after init
-(add-hook 'after-init-hook (lambda () (setq gc-cons-threshold (* 5 1024 1024))))
+;; Garbage collector - decrease threshold to 20 MB after init.
+;;
+;;"... By default Emacs will initiate GC every 0.76 MB allocated
+;; (gc-cons-threshold == 800000). ... So if you have a modern machine, I
+;; encourage you to add the following:..."
+(add-hook 'after-init-hook (lambda () (setq gc-cons-threshold (* 20 1024 1024))))
 
 ;; gc-cons-threshold
-(setq-default gc-cons-percentage 0.4)
+;; (setq-default gc-cons-percentage 0.4)
 
 ;; Warn when opening files bigger than 100MB
 (setq large-file-warning-threshold 100000000)
