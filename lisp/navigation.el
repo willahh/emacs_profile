@@ -24,7 +24,8 @@
     (define-key ido-completion-map (kbd "C-M-p") (lookup-key ido-completion-map (kbd "C-p")))
     (define-key ido-completion-map (kbd "C-M-n") (lookup-key ido-completion-map (kbd "C-n"))) ; currently, this makes nothing. Maybe they'll make C-n key lately.
     (define-key ido-completion-map (kbd "C-p") 'ido-preview-backward)
-    (define-key ido-completion-map (kbd "C-n") 'ido-preview-forward)))
+    (define-key ido-completion-map (kbd "C-n") 'ido-preview-forward)
+    (define-key ido-completion-map (kbd "C-h") 'backward-delete-char)))
 
 ;; (setq ido-enable-prefix nil
 ;;       ido-enable-flex-matching t
@@ -42,6 +43,16 @@
 
 ;; ;;  Ivy ---
 (require 'ivy)
+
+(setq ivy-re-builders-alist
+      '((ivy-switch-buffer . ivy--regex-plus)
+        (swiper . ivy--regex-plus)
+        (counsel-imenu . ivy--regex-plus)
+        (t . ivy--regex-fuzzy)
+        ;; (projectile-find-file . ivy--regex-fuzzy)
+        ;; (projectile-find-file . ivy--regex-plus)
+        (projectile-find-file . ivy--regex-fuzzy)
+        (t . ivy--regex-plus)))
 
 ;; (ivy-mode)
 
