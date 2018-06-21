@@ -16,6 +16,9 @@
 (add-hook 'after-init-hook 'global-company-mode)
 (company-quickhelp-mode 1)
 
+(require 'company-flx)
+(company-flx-mode)
+
 ;; Remove some words completion
 ;; (delete 'company-dabbrev company-backends)
 ;; (delete '(company-dabbrev-code company-gtags company-etags company-keywords) company-backends)

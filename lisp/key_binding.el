@@ -1,4 +1,3 @@
-
 (defun wlh/web-mode-kill-sexp ()
   (interactive)
   (cond ((equal (web-mode-language-at-pos) "html") (kill-sexp))
@@ -40,7 +39,8 @@
 
 ;; --------------- ALT key binding
 ;; Azerty keyboard
-(global-set-key (kbd "≈") 'helm-M-x) ; Alt + x
+;; (global-set-key (kbd "≈") 'helm-M-x) ; Alt + x
+(global-set-key (kbd "≈") 'smex) ; Alt + x
 (global-set-key (kbd "") 'toggle-php-flavor-mode) ; Alt + 1
 ;; (global-set-key (kbd "Ì") 'help) ; Alt + h
 (global-set-key (kbd "∑") 'helm-ag) ; Alt + shift + s
@@ -118,7 +118,6 @@
 (global-set-key (kbd "C-;") "\C-e;") ; (CONTROL + ; -> Append ";" at the end of a line)
 (global-set-key (kbd "C-c RET") 'wlh/join-line)
 
-
 ;; Scroll
 (global-set-key (kbd "C-v") 'scroll-up-half)
 (global-set-key (kbd "◊") 'scroll-down-half) ; ALT + v
@@ -154,13 +153,11 @@
 (global-set-key (kbd "C-c C-k") 'kill-whole-line) ;; Override default emacs kill sentence but i don't use it
 (global-set-key (kbd "C-c C-o") 'ivy-occur)
 
-
 ;; ---------------- Eval
 (define-key emacs-lisp-mode-map (kbd "C-c C-r") 'eval-region)
 (define-key emacs-lisp-mode-map (kbd "C-c C-e") 'rr/eval-and-replace)
 (define-key emacs-lisp-mode-map (kbd "C-c C-v") 'eval-buffer)
 (global-set-key (kbd "C-c C-v") 'eval-buffer)
-
 
 ;; ---------------- Tab
 (global-set-key (kbd "<backtab>") 'untab-region)
@@ -186,8 +183,8 @@
 
 ;; Buffer / frames / main
 ;; Frames
-(global-set-key (kbd "C-x C-b") 'ibuffer)
-(global-set-key (kbd "C-x C-r") 'rename-current-buffer-file)
+;; (global-set-key (kbd "C-x C-b") 'ibuffer)
+;; (global-set-key (kbd "C-x C-r") 'rename-current-buffer-file)
 
 ;; ---------------- Buffer
 ;; New buffer
@@ -282,7 +279,7 @@
 (define-key company-active-map (kbd "C-i") 'company-complete-selection)
 
 ;; counsel-find-file
-(global-set-key (kbd "C-x C-f") 'counsel-find-file)
+;; (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 
 ;; Diff hl next / prev
 (global-set-key (kbd "C-c C-n") 'diff-hl-next-hunk)
@@ -603,16 +600,18 @@
 (global-set-key [C-f7] 'winner-redo)
 
 ;; C-x shortcuts from oremacs
-(global-set-key (kbd "C-x l") 'counsel-locate)
+;; (global-set-key (kbd "C-x l") 'counsel-locate)
 ;; (global-set-key (kbd "C-x C-l") 'locate)
-(global-set-key (kbd "C-x C-f") 'counsel-find-file)
-(global-set-key (kbd "C-c g") 'counsel-git)
-(global-set-key (kbd "C-x l") 'counsel-locate)
-(global-set-key (kbd "C-c C-r") 'ivy-resume)
+;; (global-set-key (kbd "C-x C-f") 'counsel-find-file)
+;; (global-set-key (kbd "C-c g") 'counsel-git)
+;; (global-set-key (kbd "C-x l") 'counsel-locate)
+;; (global-set-key (kbd "C-c C-r") 'ivy-resume)
 
 ;; org (from prelude)
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
+
+;; join-region
 (global-set-key (kbd "C-c C-j") 'join-region)
 
 ;; Tab related behaviour
@@ -626,5 +625,5 @@
 (global-set-key (kbd "C-\"") 'jump-to-register) ; C-3 on qwerty
 (global-set-key (kbd "C-&") 'xah-toggle-letter-case) ; (C-1 on azerty keyboard)
 
-
+;; Mouse
 (global-set-key (kbd "<mouse-3>") 'mouse-major-mode-menu)
