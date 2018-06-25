@@ -26,7 +26,10 @@
 
 ;; leader key © (alt+c on osx azerty keyboard)
 ;; (defvar wlh/leader-key (concat "©" " "))
-(defvar wlh/leader-key (concat "C-c C-c" " "))
+;; 
+;; C-c C-c can't be used, because of some common major mode that already use
+;; them.  (defvar wlh/leader-key (concat "C-c C-c" " "))
+(defvar wlh/leader-key (concat "M-m" " "))
 
 (global-unset-key (kbd "M-m")) ; Define M-m shortcut as a leader key
 (global-unset-key (kbd "©"))

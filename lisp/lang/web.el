@@ -2,7 +2,8 @@
 
 (defun wlh/web-mode ()
   (emmet-mode t)
-  (flycheck-mode))
+  (flycheck-mode)
+  (line-number-mode))
 
 (defun wlh/web-mode-indent ()
   (interactive)
