@@ -181,7 +181,7 @@
 
 ;; Buffer / frames / main
 ;; Frames
-;; (global-set-key (kbd "C-x C-b") 'ibuffer)
+(global-set-key (kbd "C-x C-b") 'ibuffer)
 ;; (global-set-key (kbd "C-x C-r") 'rename-current-buffer-file)
 
 ;; ---------------- Buffer
