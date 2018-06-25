@@ -122,11 +122,6 @@
 (global-set-key (kbd "C-v") 'scroll-up-half)
 (global-set-key (kbd "◊") 'scroll-down-half) ; ALT + v
 
-;; Scroll half can be slow
-(add-hook 'syslog-mode-hook (lambda ()
-                              (define-key syslog-mode-map (kbd "◊") 'scroll-down)
-                              (define-key syslog-mode-map (kbd "C-v") 'scroll-up)))
-
 ;; undo-tree
 (global-set-key (kbd "M-z") 'undo-tree-undo)
 (global-set-key [(meta shift z)] 'undo-tree-redo)

@@ -55,23 +55,27 @@
 
 ;; sy
 (require 'syslog-mode)
+
 (add-hook 'syslog-mode-hook
           (lambda ()
-            (toggle-truncate-lines 0)))
+            (toggle-truncate-lines 0)
+            (define-key syslog-mode-map (kbd "◊") 'scroll-down)
+            (define-key syslog-mode-map (kbd "C-v") 'scroll-up)))
 
 ;; https://emacs.stackexchange.com/a/13010
 (defun etc-log-tail-handler ()
+  (syslog-mode)
   (end-of-buffer)
   (make-variable-buffer-local 'auto-revert-interval)
   (setq auto-revert-interval 1)
   (auto-revert-set-timer)
   (make-variable-buffer-local 'auto-revert-verbose)
   (setq auto-revert-verbose nil)
-  (read-only-mode t)
+  ;; (read-only-mode t)
   (font-lock-mode 0)
   (when (fboundp 'show-smartparens-mode)
     (show-smartparens-mode 0))
-  (syslog-mode)
+  
   (editorconfig-mode 0)
   (yas-global-mode 0)
   (yas-minor-mode 0)

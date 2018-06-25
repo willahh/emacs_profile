@@ -7,6 +7,7 @@
 (ido-mode 1)
 (ido-everywhere 1)
 (flx-ido-mode 1)
+(ido-vertical-mode t)
 
 ;; C-n/p is more intuitive in vertical layout
 (setq ido-vertical-define-keys 'C-n-C-p-up-down-left-right)
@@ -19,13 +20,11 @@
 (require 'ido-completing-read+)
 (ido-ubiquitous-mode 1)
 
-(add-hook 'ido-setup-hook
-  (lambda()
-    (define-key ido-completion-map (kbd "C-M-p") (lookup-key ido-completion-map (kbd "C-p")))
-    (define-key ido-completion-map (kbd "C-M-n") (lookup-key ido-completion-map (kbd "C-n"))) ; currently, this makes nothing. Maybe they'll make C-n key lately.
-    (define-key ido-completion-map (kbd "C-p") 'ido-preview-backward)
-    (define-key ido-completion-map (kbd "C-n") 'ido-preview-forward)
-    (define-key ido-completion-map (kbd "C-h") 'backward-delete-char)))
+;; (add-hook 'ido-setup-hook
+;;   (lambda()
+;;     (define-key ido-completion-map (kbd "C-p") 'ido-preview-backward)
+;;     (define-key ido-completion-map (kbd "C-n") 'ido-preview-forward)
+;;     (define-key ido-completion-map (kbd "C-h") 'backward-delete-char)))
 
 ;; (setq ido-enable-prefix nil
 ;;       ido-enable-flex-matching t
@@ -54,7 +53,7 @@
         (projectile-find-file . ivy--regex-fuzzy)
         (t . ivy--regex-plus)))
 
-;; (ivy-mode)
+(ivy-mode)
 
 ;; (define-key ivy-minibuffer-map (kbd "C-m") 'ivy-alt-done)
 ;; (define-key ivy-minibuffer-map (kbd "<tab>") 'ivy-alt-done)
@@ -67,21 +66,12 @@
 ;; (setq ivy-fixed-height-minibuffer nil)
 
 ;; ;; full file names - useful when multiple files have same names
-;; (setq ivy-virtual-abbreviate 'full)
-;; (setq ivy-use-virtual-buffers t)
-;; (setq ivy-count-format "(%d/%d) ")
-;; (setq ivy-initial-inputs-alist nil)
-;; (setq ivy-re-builders-alist
-;;       '((ivy-switch-buffer . ivy--regex-plus)
-;;         (swiper . ivy--regex-plus)
-;;         (counsel-imenu . ivy--regex-plus)
-;;         ;; (projectile-find-file . ivy--regex-fuzzy)
-;;         (t . ivy--regex-fuzzy)
-;;         ;; (projectile-find-file . ivy--regex-plus)
-;;         (projectile-find-file . ivy--regex-fuzzy)
-;;         (t . ivy--regex-plus)))
-;; (setq ivy-use-selectable-prompt t)
-;; (setq projectile-completion-system 'ivy)
+(setq ivy-virtual-abbreviate 'full)
+(setq ivy-use-virtual-buffers t)
+(setq ivy-count-format "(%d/%d) ")
+(setq ivy-initial-inputs-alist nil)
+(setq ivy-use-selectable-prompt t)
+(setq projectile-completion-system 'ivy)
 
 ;; ;; http://oremacs.com/swiper/
 ;; (setq magit-completing-read-function 'ivy-completing-read);
