@@ -43,7 +43,8 @@
 ;; --------------- ALT key binding
 ;; Azerty keyboard
 ;; (global-set-key (kbd "≈") 'helm-M-x) ; Alt + x
-(global-set-key (kbd "≈") 'smex) ; Alt + x
+;; (global-set-key (kbd "≈") 'smex) ; Alt + x
+(global-set-key (kbd "≈") 'counsel-M-x) ; Alt + x
 (global-set-key (kbd "") 'toggle-php-flavor-mode) ; Alt + 1
 ;; (global-set-key (kbd "Ì") 'help) ; Alt + h
 (global-set-key (kbd "∑") 'helm-ag) ; Alt + shift + s
