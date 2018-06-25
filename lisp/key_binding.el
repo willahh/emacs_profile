@@ -314,13 +314,16 @@
 (define-key compilation-mode-map (kbd "C-c C-c") 'wgrep-finish-edit)
 
 (global-set-key (kbd "C-c TAB") 'wlh/insert-4spaces)
+(define-key web-mode-map (kbd "TAB") 'indent-for-tab-command)
 
 ;; ---------------- new line
-(define-key css-mode-map (kbd "RET") 'new-line-dwim)
 (define-key prog-mode-map (kbd "RET") 'new-line-dwim)
+(define-key lisp-mode-map (kbd "RET") 'paredit-newline)
+(define-key css-mode-map (kbd "RET") 'new-line-dwim)
 (define-key php-mode-map (kbd "RET") 'new-line-dwim)
 (define-key web-mode-map(kbd "<return>") 'wlh/web-mode-new-line)
-(define-key web-mode-map (kbd "TAB") 'indent-for-tab-command)
+
+;; Open line
 (define-key web-mode-map (kbd "C-o") 'crux-smart-open-line-above)
 (global-set-key (kbd "C-o") 'crux-smart-open-line-above)
 (global-set-key (kbd "C-M-o") 'crux-smart-open-line)
