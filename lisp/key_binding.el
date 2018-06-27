@@ -48,7 +48,6 @@
 (global-set-key (kbd "") 'toggle-php-flavor-mode) ; Alt + 1
 ;; (global-set-key (kbd "Ì") 'help) ; Alt + h
 (global-set-key (kbd "∑") 'helm-ag) ; Alt + shift + s
-(global-set-key (kbd "C-c C-c C-s") 'helm-ag)
 (global-set-key (kbd "†") 'toggle-truncate-lines) ; Alt + t
 ;; (global-set-key (kbd "ﬁ") 'goto-line) ; Alt + g
 (global-set-key (kbd "Â") 'toggle-php-flavor-mode) ; Alt+z
@@ -66,7 +65,8 @@
 ;; Search
 (global-set-key (kbd (concat wlh/leader-key "s s")) 'projectile-ag)
 (global-set-key (kbd (concat wlh/leader-key "s a")) 'ag)
-(global-set-key (kbd (concat wlh/leader-key "s h")) 'helm-ag)
+(global-set-key (kbd (concat wlh/leader-key "M-s")) 'helm-ag)
+
 
 ;; Google
 (global-set-key (kbd (concat wlh/leader-key "g s")) 'helm-google-suggest)
