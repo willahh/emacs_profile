@@ -292,6 +292,9 @@
 (setq undo-tree-history-directory-alist
       (quote (("" . "~/.emacs.d/undo_hist"))))
 
+(add-hook 'lisp-mode-hook (lambda ()
+                            (define-key slime-macroexpansion-minor-mode-map (kbd "M-z") 'slime-macroexpand-undo)))
+
 (add-hook 'prog-mode-hook 'hs-minor-mode)
 
 ;; hippie expand is dabbrev expand on steroids

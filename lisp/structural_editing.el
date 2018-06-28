@@ -172,3 +172,4 @@
 (add-hook 'scss-mode-hook 'textmate-mode)
 (add-hook 'org-mode 'textmate-mode)
 (add-hook 'text-mode (lambda () (textmate-mode nil)))
+(add-hook 'lisp-mode (lambda () (textmate-mode nil)))
