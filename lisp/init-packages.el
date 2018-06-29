@@ -184,7 +184,6 @@
 ;; (add-to-list 'load-path "~/.emacs.d/site-lisp/flx")
 
 ;; Add additional files
-(load-file "~/.emacs.d/site-lisp/hideshowvis/hideshowvis.el")
 (load-file "~/.emacs.d/site-lisp/ido-preview.el")
 
 ;; fetch the list of packages available 
