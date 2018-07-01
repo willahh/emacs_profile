@@ -173,3 +173,4 @@
 (add-hook 'org-mode 'textmate-mode)
 (add-hook 'text-mode (lambda () (textmate-mode nil)))
 (add-hook 'lisp-mode (lambda () (textmate-mode nil)))
+(add-hook 'diff-mode-hook (lambda () (textmate-mode nil)))
