@@ -55,44 +55,21 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 C
 * Tasks                                                               :@home:
   :VISIBILITY: content
-** TODO [#A] Faire fonctionner Clojure LUMO
-   Fonctionne avec inf-clojure, inf-clojure ne remplace pas CIDER, mais est une
-   alternative plus légère
-   https://anmonteiro.com/2016/11/the-fastest-clojure-repl-in-the-world/
-   http://www.planck-repl.org/emacs.html
-   https://github.com/clojure-emacs/inf-clojure
-   [2018-04-06 Fri]
-   [[file:~/.emacs.d/emacs_todo.org::*Utils][Utils]]
-
-** TODO Web-mode / CSS MODE ENTER || KP_ENTER || C-m ---> New line and indent
 ** TODO CSS : Tab --> Emmet
 
 
 
 
 
-** TODO [#B] [helm] [mini-buffer] Ajouter la possibilité de faire du M-v dans le mini-buffer 
-   SCHEDULED: <2017-11-30 Thu>
 ** TODO [#A] web-mode single quote dans commentaire : Ne pas auto fermer la quote lorsque l'on est dans un commentaire 
    [2017-10-23 Mon]
    [[file:~/www/project/arsia/goacrop/src/main.js:://%20Pas%20de%20traitement%20particulier,%20l'image][file:~/www/project/arsia/goacrop/src/main.js::// Pas de traitement particulier, l'image]]
 *
-** TODO [#A] [counsel-find-file] [mini-buffer] Ajouter un bind C-k pour supprimer tout le texte 
 ** TODO [#B] [vc-diff mode] Voir si il est possible de lancer des commandes de type ediff 
        Depuis  le vc-diff
-** TODO [#A] [css-mode] Virer company dabbrev de css mode             
 ** TODO [#C] [dired] Rename file : Possibilité de préciser un chemin contenant des dossiers 
       N'existant pas, ces dossier seront créés automatiquement à la validation
-** TODO [#C] Ajouter des bind system sur C-h et C-w C-w https://blog.sensible.io/2012/10/19/mac-os-x-emacs-style-keybindings-everywhere.html 
-  - [ ] C-j new line
-  - [ ] C-w delete back word
-  - [ ] M-b back word
-** TODO [#C] Open file from system in new emacs frame (Right click open in) 
-** TODO [#C] [ivy] [mini buffer] Add C-l keybinding                   
-** TODO [#C] [flycheck] : Mieux distinguer la ligne en erreur         
-** TODO [#C] [web-mode] [javascript] [company] Add javascript keywords to company backend 
-** TODO [#C] [ivy] [mini buffer] CTRL+l to back up                    
-** TODO [#A] [util] Revert buffer : keep current line position        
+** DONE [#A] [util] Revert buffer : keep current line position        
 ** TODO [#A] Ajouter une méthode copy file name pour retourner uniquement le nom du fichier 
   - La fonction copy-file-name-to-clipbord est present, mais elle retourne le chemin complet
     Il faudrait garder que la derniere partie apres le /
@@ -262,33 +239,12 @@ C
    [2018-01-10 Wed]
    [[file:~/Downloads/export.php]]
 
-** TODO Etor - Dashboard : La barre des boutons n'est pas centrée horizontalement, il faut tout centrer en absolut par rapport à la largeur de l'écran
-   [2018-02-23 Fri]
    [[file:~/www/project/arsia/arsia_3.2.x_standard_editzone/dev/sygesp/module/production/editzone_v2/index.php::foreach($aoPage%20as%20$oPageTemp)]]
 ** TODO M-n New frame : Faire en sorte qu'elle soit centrée en bas
    [2018-02-13 Tue]
-** TODO Man -> auto focus windows
-   [2018-02-13 Tue]
-** TODO web-mode new-line ne fonctionne pas correctement
-   [2018-02-14 Wed]
-** TODO web-mode : TAB n'indente plus
-   [2018-02-15 Thu]
-   [[file:~/www/project/arsia/arsia_3.2.x_standard/dev/mediadata/full/module/media/iframe/media_edit_multiple/index.php::}]]
-** TODO web-mode Flycheck : Add javascript to check
-   [2018-02-16 Fri]
-   [[file:~/www/project/arsia/arsia_3.2.x_standard/dev/mediadata/full/module/media/iframe/media_edit_multiple/index.php::reader.fileId%20=%20file.lastModified%20+%20'_'%20+%20file%5D.name%20+%20'_'%20+%20file.size;]]
-** TODO js2-mode refresh font slow
-   [2018-02-20 Tue]
-   [[file:~/www/project/rb_siteweb/rb_siteweb_1.4/dev/js/script.test.js][file:~/www/project/rb_siteweb/rb_siteweb_1.4/dev/js/script.test.js]]
-** TODO web-mode > js script snippet without src attribute
-   [2018-02-27 Tue]
-   [[file:~/www/project/easy3p/easy3p_3.7/dev/module/html_template/resize.php::<script></script>]]
 ** TODO Faire une mode mineur pour AG avec le fonctionnement suivant :
    u -> up -> Relaunch command with cd
    [2018-03-01 Thu]
-** TODO Highlight-selection mode is slow
-   [2018-03-01 Thu]
-   [[file:~/www/project/easy3p/easy3p_3.7/dev/module/flatplan/js/controller/preparation/FlatplanController.js::flatplan.oMainView.fireEvent('FlatplanController:productlistpageload:after',%20oJsonData);]]
 ** TODO [#B] Texte mate mode sur la partie javascript n'est plus actic'
    Voir pour utiliser le nouvueau package textmate
    [2018-02-05 Mon]

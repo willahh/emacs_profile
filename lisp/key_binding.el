@@ -47,7 +47,7 @@
 (global-set-key (kbd "≈") 'counsel-M-x) ; Alt + x
 (global-set-key (kbd "") 'toggle-php-flavor-mode) ; Alt + 1
 ;; (global-set-key (kbd "Ì") 'help) ; Alt + h
-(global-set-key (kbd "∑") 'helm-ag) ; Alt + shift + s
+;; (global-set-key (kbd "∑") 'helm-ag) ; Alt + shift + s
 (global-set-key (kbd "†") 'toggle-truncate-lines) ; Alt + t
 ;; (global-set-key (kbd "ﬁ") 'goto-line) ; Alt + g
 (global-set-key (kbd "Â") 'toggle-php-flavor-mode) ; Alt+z
@@ -242,7 +242,6 @@
 
 (global-set-key (kbd "<M-down>") 'drag-stuff-down)
 
-
 (define-key php-mode-map (kbd "<C-M-mouse-1>") 'dumb-jump-go)
 
 ;; ---------------- Multi cursor binding
@@ -280,7 +279,7 @@
 (define-key company-active-map (kbd "C-i") 'company-complete-selection)
 
 ;; counsel-find-file
-;; (global-set-key (kbd "C-x C-f") 'counsel-find-file)
+(global-set-key (kbd "C-x C-f") 'counsel-find-file)
 
 ;; Diff hl next / prev
 (global-set-key (kbd "C-c C-n") 'diff-hl-next-hunk)
@@ -525,8 +524,11 @@
 (define-key js2-mode-map (kbd "C-c C-s") 'swiper)
 (define-key php-mode-map (kbd "C-c C-s") 'swiper)
 
-(define-key js2-mode-map (kbd "<C-M-mouse-1>") 'xref-find-definitions)
+;; (define-key js2-mode-map (kbd "<C-M-mouse-1>") 'xref-find-definitions)
+(define-key js2-mode-map (kbd "<C-M-mouse-1>") 'dumb-jump-go)
+(define-key js-mode-map (kbd "<C-M-mouse-1>") 'dumb-jump-go)
 (define-key js2-mode-map (kbd "<C-M-mouse-3>") 'xref-pop-marker-stack)
+(define-key js-mode-map (kbd "<C-M-mouse-3>") 'xref-pop-marker-stack)
 
 ;; vc
 (define-key vc-dir-mode-map (kbd "C-M-i") 'vc-dir-previous-directory)
@@ -588,22 +590,8 @@
 (global-set-key [(control shift down)] 'move-text-down)
 (global-set-key [(meta shift up)] 'move-text-up)
 (global-set-key [(meta shift down)] 'move-text-down)
-
-;; (global-set-key (kbd "C-c t") 'crux-visit-term-buffer)
-;; (global-set-key (kbd "C-c I") 'crux-find-user-init-file)
-;; (global-set-key (kbd "C-c S") 'crux-find-shell-init-file)
-;; (global-set-key (kbd "s-j") 'crux-top-join-line)
-
 (global-set-key [f7] 'winner-undo)
 (global-set-key [C-f7] 'winner-redo)
-
-;; C-x shortcuts from oremacs
-;; (global-set-key (kbd "C-x l") 'counsel-locate)
-;; (global-set-key (kbd "C-x C-l") 'locate)
-;; (global-set-key (kbd "C-x C-f") 'counsel-find-file)
-;; (global-set-key (kbd "C-c g") 'counsel-git)
-;; (global-set-key (kbd "C-x l") 'counsel-locate)
-;; (global-set-key (kbd "C-c C-r") 'ivy-resume)
 
 ;; org (from prelude)
 (global-set-key "\C-cl" 'org-store-link)
