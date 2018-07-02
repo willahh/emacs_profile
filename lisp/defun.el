@@ -4,9 +4,20 @@
   (yank-pop (- arg)))
 
 ;; Revert without confirm
-(defun revert-buffer-no-confirm ()
-  "Revert buffer without confirmation."
-  (interactive) (revert-buffer t t))
+;; (defun revert-buffer-no-confirm ()
+;;   "Revert buffer without confirmation."
+;;   (interactive) 
+;;   (revert-buffer t t))
+
+(defun wlh/revert-buffer ()
+  "Save the current position to tmp, then call revert-buffer,
+  then goto-char(position)"
+  (interactive)
+  (defvar tmp)
+  (setq tmp (point))
+  (revert-buffer t)
+  (goto-char tmp)
+  (kill-local-variable 'tmp))
 
 (defun duplicate-current-line-or-region (arg)
   "Duplicates the current line or region ARG times.

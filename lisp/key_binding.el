@@ -199,7 +199,9 @@
 (define-key slime-mode-map (kbd "M-n") 'wlh/create-new-centered-frame)
 
 ;; Revert buffer
-(define-key global-map (kbd "C-x C-r") 'revert-buffer-no-confirm)
+(define-key global-map (kbd "C-x C-r") 'wlh/revert-buffer)
+(define-key diff-mode-shared-map (kbd "g") 'wlh/revert-buffer)
+
 (global-set-key (kbd "C-x C-k") 'kill-region)
 
 ;; ---------------- Dired
@@ -491,12 +493,6 @@
 (global-set-key (kbd "M-*") 'lawlist-backward-paragraph)
 
 ;; ---------------- Function keys -
-;; F Keys
-;; (global-set-key (kbd "<f5>") 'revert-buffer-no-confirm)
-;; (global-set-key (kbd "<f6>") 'dired-jump)
-;; (global-set-key (kbd "<f7>") 'projectile-dired)
-;; (global-set-key (kbd "<f8>") 'treemacs-projectile-toggle)
-
 
 ;; Kill
 ;; Better move paragraph / mark paragraph
