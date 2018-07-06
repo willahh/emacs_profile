@@ -13,3 +13,6 @@
 [submodule "vendor/sidebar.el"]
 	path = vendor/sidebar.el
 	url = https://github.com/sebastiencs/sidebar.el.git
+[submodule "site-lisp/lsp-mode"]
+	path = site-lisp/lsp-mode
+	url = https://github.com/emacs-lsp/lsp-mode.git
