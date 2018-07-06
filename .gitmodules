@@ -19,3 +19,6 @@
 [submodule "site-lisp/lsp-ui"]
 	path = site-lisp/lsp-ui
 	url = https://github.com/emacs-lsp/lsp-ui.git
+[submodule "site-lisp/lsp-php"]
+	path = site-lisp/lsp-php
+	url = https://github.com/emacs-lsp/lsp-php.git

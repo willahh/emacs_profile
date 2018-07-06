@@ -7,12 +7,12 @@
 ;; (set-frame-font "Menlo")
 ;; (set-frame-font "Menlo-LG-M")
 ;; (set-frame-font "Fira Sans")
-(set-frame-font "Meslo LG")
+;; (set-frame-font "Meslo")
 
 ;; Main background
 (set-face-attribute 'default nil :background "#ffffff")
 (custom-set-faces
- '(default ((t (:stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 130 :width normal :family "Fira Sans")))))
+ '(default ((t (:stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 130 :width normal :family "Meslo M")))))
 
 ;; Text selection
 (set-face-attribute 'region nil :background "#b9d6fb")
