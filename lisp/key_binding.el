@@ -185,18 +185,36 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 ;; (global-set-key (kbd "C-x C-r") 'rename-current-buffer-file)
 
-;; ---------------- Buffer
+;; ---------------- M-n M-N
 ;; New buffer
-(global-set-key (kbd "C-x C-n") 'xah-new-empty-buffer)
-(define-key org-mode-map (kbd "C-x C-n") 'xah-new-empty-buffer)
+;; (global-set-key (kbd "C-x C-n") 'xah-new- empty-buffer)
+;; (define-key org-mode-map (kbd "C-x C-n") 'xah-new-empty-buffer)
+
+(global-set-key (kbd "M-n") 'xah-new-empty-buffer)
+(define-key org-mode-map (kbd "M-n") 'xah-new-empty-buffer)
 
 ;; New frame
-(global-set-key (kbd "M-n") 'wlh/create-new-centered-frame)
-(define-key highlight-symbol-nav-mode-map (kbd "M-n") 'wlh/create-new-centered-frame)
-(define-key ibuffer-mode-map (kbd "M-n") 'wlh/create-new-centered-frame)
-(define-key compilation-mode-map (kbd "M-n") 'wlh/create-new-centered-frame)
-(define-key magit-mode-map (kbd "M-n") 'wlh/create-new-centered-frame)
-(define-key slime-mode-map (kbd "M-n") 'wlh/create-new-centered-frame)
+(global-set-key (kbd "M-N") 'wlh/create-new-centered-frame)
+(define-key highlight-symbol-nav-mode-map (kbd "M-N") 'wlh/create-new-centered-frame)
+(define-key ibuffer-mode-map (kbd "M-N") 'wlh/create-new-centered-frame)
+(define-key compilation-mode-map (kbd "M-N") 'wlh/create-new-centered-frame)
+(define-key magit-mode-map (kbd "M-N") 'wlh/create-new-centered-frame)
+(define-key slime-mode-map (kbd "M-N") 'wlh/create-new-centered-frame)
+
+;; Highlight-symbol
+;; (global-set-key (kbd "M-N") 'highlight-symbol-next)
+;; (define-key slime-mode-map (kbd "M-N") 'highlight-symbol-next)
+;; (define-key highlight-symbol-nav-mode-map (kbd "M-N") 'highlight-symbol-next)
+;; (define-key ggtags-navigation-map (kbd "M-N") 'highlight-symbol-next)
+;; (define-key magit-mode-map (kbd "M-N") 'highlight-symbol-next)
+;; (define-key slime-mode-map (kbd "M-N") 'highlight-symbol-next)
+
+
+
+
+
+
+
 
 ;; Revert buffer
 (define-key global-map (kbd "C-x C-r") 'wlh/revert-buffer)
@@ -500,14 +518,6 @@
 (global-set-key (kbd "M-¨") 'lawlist-backward-paragraph)
 (global-set-key (kbd "M-*") 'lawlist-forward-paragraph)
 
-;; Highlight-symbol
-(global-set-key (kbd "M-N") 'highlight-symbol-next)
-(define-key slime-mode-map (kbd "M-N") 'highlight-symbol-next)
-(define-key highlight-symbol-nav-mode-map (kbd "M-N") 'highlight-symbol-next)
-(define-key ggtags-navigation-map (kbd "M-N") 'highlight-symbol-next)
-(define-key magit-mode-map (kbd "M-N") 'highlight-symbol-next)
-(define-key slime-mode-map (kbd "M-N") 'highlight-symbol-next)
-
 (global-set-key (kbd "M-P") 'highlight-symbol-prev)
 (define-key slime-mode-map (kbd "M-P") 'highlight-symbol-prev)
 (define-key highlight-symbol-nav-mode-map (kbd "M-P") 'highlight-symbol-prev)
@@ -612,4 +622,4 @@
 (global-set-key (kbd "C-&") 'xah-toggle-letter-case) ; (C-1 on azerty keyboard)
 
 ;; Mouse
-(global-set-key (kbd "<mouse-3>") 'mouse-major-mode-menu)
+;; (global-set-key (kbd "<mouse-3>") 'mouse-major-mode-menu)
