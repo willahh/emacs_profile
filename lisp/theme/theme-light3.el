@@ -6,7 +6,8 @@
 ;; (set-frame-font "Office Code Pro:antialias=1")
 ;; (set-frame-font "Menlo")
 ;; (set-frame-font "Menlo-LG-M")
-(set-frame-font "Fira Sans")
+;; (set-frame-font "Fira Sans")
+(set-frame-font "Meslo LG")
 
 ;; Main background
 (set-face-attribute 'default nil :background "#ffffff")

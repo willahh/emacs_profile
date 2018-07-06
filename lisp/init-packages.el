@@ -172,6 +172,7 @@
 (add-to-list 'load-path "~/.emacs.d/site-lisp/vkill")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/syslog-mode-2.2")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/lsp-mode")
+(add-to-list 'load-path "~/.emacs.d/site-lisp/lsp-ui")
 
 ;; (add-to-list 'load-path "~/.emacs.d/site-lisp/dumb-jump")
 ;; (add-to-list 'load-path "~/.emacs.d/site-lisp/string-inflection-1.0.5")

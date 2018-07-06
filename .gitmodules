@@ -16,3 +16,6 @@
 [submodule "site-lisp/lsp-mode"]
 	path = site-lisp/lsp-mode
 	url = https://github.com/emacs-lsp/lsp-mode.git
+[submodule "site-lisp/lsp-ui"]
+	path = site-lisp/lsp-ui
+	url = https://github.com/emacs-lsp/lsp-ui.git
