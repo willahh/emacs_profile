@@ -1,6 +1,8 @@
 (require 'slime)
 (require 'slime-autoloads)
 (require 'ac-slime)
+(require 'redshank)
+(require 'erefactor)
 
 (add-to-list 'slime-contribs 'slime-fancy)
 
@@ -14,7 +16,11 @@
   (company-mode nil)
   (auto-complete-mode t)
   (set-up-slime-ac)
-  (edebug-mode t))
+  ;; (edebug-mode t)
+  ;; (redshank-mode)
+  ;; (erefactor-highlight-mode)
+  ;; (define-key emacs-lisp-mode-map "\C-c\C-v" erefactor-map)
+  )
 
 (defun wlh/inferior-scheme-mode-hook ()
   (paredit-mode)
