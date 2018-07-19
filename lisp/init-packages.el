@@ -15,7 +15,7 @@
                      ace-window
                      hide-lines
                      actionscript-mode
-                     textmate
+                     ;; textmate
                      ag
                      async
                      auto-complete
@@ -188,6 +188,7 @@
 
 ;; Add additional files
 (load-file "~/.emacs.d/site-lisp/ido-preview.el")
+(load-file "~/.emacs.d/site-lisp/aggressive-indent.el")
 
 ;; fetch the list of packages available 
 (unless package-archive-contents

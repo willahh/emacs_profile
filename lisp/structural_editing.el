@@ -162,15 +162,14 @@
 (define-key clojure-mode-map (kbd "<backspace>") 'delete-backward-char)
 
 ;; Textmate-mode ---------------------------
+;; (require 'textmate)
 
-(require 'textmate)
-
-(add-hook 'js2-mode-hook 'textmate-mode)
-(add-hook 'web-mode-hook 'textmate-mode)
-(add-hook 'php-mode-hook 'textmate-mode)
-(add-hook 'css-mode-hook 'textmate-mode)
-(add-hook 'scss-mode-hook 'textmate-mode)
-(add-hook 'org-mode 'textmate-mode)
-(add-hook 'text-mode (lambda () (textmate-mode nil)))
-(add-hook 'lisp-mode (lambda () (textmate-mode nil)))
-(add-hook 'diff-mode-hook (lambda () (textmate-mode nil)))
+;; (add-hook 'js2-mode-hook 'textmate-mode)
+;; (add-hook 'web-mode-hook 'textmate-mode)
+;; (add-hook 'php-mode-hook 'textmate-mode)
+;; (add-hook 'css-mode-hook 'textmate-mode)
+;; (add-hook 'scss-mode-hook 'textmate-mode)
+;; (add-hook 'org-mode 'textmate-mode)
+;; (add-hook 'text-mode (lambda () (textmate-mode nil)))
+;; (add-hook 'lisp-mode (lambda () (textmate-mode nil)))
+;; (add-hook 'diff-mode-hook (lambda () (textmate-mode nil)))

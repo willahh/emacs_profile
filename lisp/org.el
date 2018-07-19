@@ -44,8 +44,6 @@
 (add-hook 'org-mode-hook (lambda () 
                            (interactive)
                            
-                           ;; Disable textemate quote system is bad in org mode
-                           ;; (textmate-mode)
                            
                            (smartparens-mode)
                            

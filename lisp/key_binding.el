@@ -194,6 +194,8 @@
 
 (global-set-key (kbd "M-n") 'xah-new-empty-buffer)
 (define-key org-mode-map (kbd "M-n") 'xah-new-empty-buffer)
+(define-key slime-repl-mode-map (kbd "M-n") 'xah-new-empty-buffer)
+(define-key diff-mode-map (kbd "M-n") 'xah-new-empty-buffer)
 
 ;; New frame
 (global-set-key (kbd "M-N") 'wlh/create-new-centered-frame)

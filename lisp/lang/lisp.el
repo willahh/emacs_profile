@@ -4,18 +4,15 @@
 (require 'redshank)
 (require 'erefactor)
 
-(add-to-list 'slime-contribs 'slime-fancy)
-
-(setq inferior-lisp-program "sbcl")
-(setq slime-contribs '(slime-fancy))
-
 (defun wlh/slime-mode-hook ()
+  
   (define-key slime-prefix-map (kbd "M-h") 'slime-documentation-lookup))
 
 (defun wlh/lisp-mode-hook ()
   (company-mode nil)
   (auto-complete-mode t)
   (set-up-slime-ac)
+  (aggressive-indent-mode)
   ;; (edebug-mode t)
   ;; (redshank-mode)
   ;; (erefactor-highlight-mode)
@@ -26,11 +23,14 @@
   (paredit-mode)
   (auto-complete-mode))
 
+(setq inferior-lisp-program "sbcl")
+(slime-setup '(slime-fancy))
+(global-set-key "\C-cs" 'slime-selector)
+
 (add-hook 'slime-load-hook 'wlh/slime-mode-hook)
 (add-hook 'lisp-mode-hook 'wlh/lisp-mode-hook)
 (add-hook 'slime-repl-mode-hook (lambda () (paredit-mode)))
-;; (add-hook 'emacs-lisp-mode-hook (lambda () (aggressive-indent-mode)))
-;; (add-hook 'clojure-mode-hook (lambda () (aggressive-indent-mode)))
 (add-hook 'inferior-scheme-mode-hook 'wlh/inferior-scheme-mode-hook)
 (eval-after-load "auto-complete"
   '(add-to-list 'ac-modes 'slime-repl-mode))
+

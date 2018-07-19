@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# contributor: William Ravel
+# name: setf
+# key: setf
+# --
+(setf *${1:name}* ${2:})$0

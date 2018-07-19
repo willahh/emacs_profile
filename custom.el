@@ -18,12 +18,15 @@
    (quote
     (erefactor redshank all-the-icons smartparens easy-kill string-inflection centered-window noflet ido-completing-read+ helm-flx company-flx diminish dumb-jump move-text cider indium treemacs-projectile treemacs hide-lines hy-mode elscreen-mew elscreen-fr flycheck-clojure ac-slime markdown-preview-mode diffview aggressive-indent counsel-gtags xref-js2 zop-to-char yaml-mode whole-line-or-region which-key wgrep websocket web-mode web-beautify visual-regexp-steroids visual-regexp validate use-package toc-org tide sx sourcemap smooth-scrolling sml-mode smex skewer-mode resize-window react-snippets rainbow-mode rainbow-delimiters psysh projectile-ripgrep powerline php-auto-yasnippets perspective pdf-tools paredit-everywhere paradox pandoc-mode ov org-bullets neotree monokai-theme magit key-chord json-mode js2-refactor js-comint jabber iy-go-to-char ivy-hydra intellij-theme inf-clojure indent-guide impatient-mode imenu-list image-dired+ iflipb iedit ido-vertical-mode ido-ubiquitous ido-occur ido-at-point ibuffer-vc highlight-symbol helm-swoop helm-projectile helm-ag gradle-mode google-translate git-timemachine git-gutter ggtags fullframe flycheck-pos-tip flx-ido find-file-in-project expand-region exec-path-from-shell evil-visualstar evil-surround evil-snipe evil-org evil-nerd-commenter evil-matchit evil-leader emmet-mode editorconfig edit-server eclim dtrt-indent drag-stuff dracula-theme diff-hl darkroom crux counsel company-web company-tern company-quickhelp coffee-mode clojure-snippets clojure-cheatsheet clj-refactor browse-kill-ring avy-menu autopair auto-yasnippet auto-complete ag actionscript-mode ace-window ace-link ace-jump-mode)))
  '(scheme-program-name "guile")
+ '(send-mail-function (quote smtpmail-send-it))
  '(shell-pop-full-span t)
  '(shell-pop-shell-type (quote ("eshell" "*eshell*" (lambda nil (eshell)))))
  '(shell-pop-term-shell "/bin/bash")
  '(shell-pop-universal-key "C-t")
  '(shell-pop-window-position "bottom")
  '(shell-pop-window-size 30)
+ '(smtpmail-smtp-server "smtp.gmail.com")
+ '(smtpmail-smtp-service 587)
  '(sp-escape-quotes-after-insert nil)
  '(sp-escape-wrapped-region nil))
 (custom-set-faces
@@ -31,7 +34,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :family "Menlo"))))
  '(mode-line-emphasis ((t nil)))
  '(mode-line-highlight ((t nil)))
  '(rainbow-delimiters-depth-1-face ((t (:foreground "#5abeee" :weight bold))))
