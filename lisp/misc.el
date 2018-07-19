@@ -373,12 +373,12 @@ Version 2016-10-24"
 ;; From
 ;; https://github.com/cichli/dotfiles/blob/master/.emacs.d/init.el#L172
 ;; Update: Theses package seems not available on Elpa at the moment
-(use-package help-fns+
-  :config
-  (setq help-cross-reference-manuals nil))
+;; (use-package help-fns+
+;;   :config
+;;   (setq help-cross-reference-manuals nil))
 
-(use-package help-mode+)
-(use-package help+)
+;; (use-package help-mode+)
+;; (use-package help+)
 
 ;; (defun wlh/window-divider-off ()
 ;;   (interactive)

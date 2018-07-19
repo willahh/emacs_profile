@@ -138,6 +138,8 @@
 ;; delete-window
 (global-set-key (kbd "M-w") 'wlh/delete-window) ;; Delete window or frame
 (define-key magit-mode-map (kbd "M-w") 'wlh/delete-window)
+(global-set-key (kbd "M-W") 'delete-frame)
+(define-key magit-mode-map (kbd "M-W") 'delete-frame)
 
 ;; shell-pop
 (global-set-key (kbd "C-!") 'shell-pop)

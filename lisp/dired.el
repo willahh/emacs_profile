@@ -121,3 +121,9 @@ and then calling `my-dired-kill-spawn' twice."
 ;; (define-key image-dired-thumbnail-mode-map "x" 'image-diredx-flagged-delete)
 ;; (setq image-dired-track-movement nil)
 ;; (setq dired-listing-switches "-alh")
+
+(defun wlh/dired-mouse-1-handler ()
+  (message "ok"))
+
+(define-key dired-mode-map (kbd "<S-mouse-1>") 'wlh/dired-mouse-1-handler)
+
