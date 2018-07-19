@@ -50,10 +50,13 @@
 ;; syntax highlighting everywhere
 (global-font-lock-mode 1)
 (setq font-lock-support-mode 'jit-lock-mode)
-(setq jit-lock-stealth-time 16
+(setq jit-lock-stealth-time 30
 	  jit-lock-defer-contextually t
-	  jit-lock-stealth-nice 0.5)
+      jit-lock-contextually t
+	  jit-lock-stealth-nice 5
+      jit-lock-context-time 10)
 (setq-default font-lock-multiline t)
+(jit-lock-debug-mode)
 
 ;; Encoding
 (prefer-coding-system 'utf-8)
@@ -183,11 +186,13 @@
 (setq scroll-margin 0)
 (setq scroll-step 1)
 
-;; ;; Mouse -----------------------------
-(setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil)))
+;; Mouse -----------------------------
 (setq mouse--progressive-speed 10)
-(setq mouse-wheel-scroll-amount '(0.05))
-(setq mouse-wheel-progressive-speed 10)
+;; (setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil)))
+;; (setq mouse-wheel-scroll-amount '(0.05))
+(setq mouse-wheel-scroll-amount '(0.9))
+;; (setq mouse-wheel-progressive-speed 0)
+(setq mouse-wheel-progressive-speed nil)
 
 ;; stops selection with a mouse being immediately injected to the kill ring
 (setq mouse-drag-copy-region nil)

@@ -4,10 +4,17 @@
 
 ;; ------- Font
 ;; (set-frame-font "Office Code Pro:antialias=1")
+;; (set-frame-font "Menlo")
+;; (set-frame-font "Menlo")
+;; (set-frame-font "Fira Sans")
+;; (set-frame-font "Meslo")
+
+;; (set-frame-font "Monaco")
 (set-frame-font "Menlo")
 
 ;; Main background
 (set-face-attribute 'default nil :background "#ffffff")
+
 (custom-set-faces
  '(default ((t (:stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :family "Menlo")))))
 

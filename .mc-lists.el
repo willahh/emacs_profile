@@ -16,6 +16,7 @@
         beginning-of-visual-line
         c-electric-colon
         c-electric-delete-forward
+        c-electric-paren
         c-electric-pound
         c-electric-semi&comma
         c-electric-slash
@@ -208,6 +209,7 @@
         highlight-symbol-next
         hrs/split-window-right-and-switch
         iedit-mode
+        iedit-switch-to-mc-mode
         ivy-switch-buffer
         keyboard-quit
         mac-mouse-buffer-menu

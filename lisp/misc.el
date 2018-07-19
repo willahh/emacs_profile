@@ -1,3 +1,4 @@
+
 ;; exec-path-from-shell-initialize
 (exec-path-from-shell-initialize)
 
@@ -372,12 +373,12 @@ Version 2016-10-24"
 ;; From
 ;; https://github.com/cichli/dotfiles/blob/master/.emacs.d/init.el#L172
 ;; Update: Theses package seems not available on Elpa at the moment
-(use-package help-fns+
-  :config
-  (setq help-cross-reference-manuals nil))
+;; (use-package help-fns+
+;;   :config
+;;   (setq help-cross-reference-manuals nil))
 
-(use-package help-mode+)
-(use-package help+)
+;; (use-package help-mode+)
+;; (use-package help+)
 
 ;; (defun wlh/window-divider-off ()
 ;;   (interactive)
@@ -577,13 +578,6 @@ abort completely with `C-g'."
 ;;       treemacs-tag-follow-delay           1.5
 ;;       treemacs-width                      35)
 
-;; hideshowvis
-(require 'hideshowvis)
-(hideshowvis-enable)
-
-(add-hook 'prog-mode-hook (lambda ()
-                            (hideshowvis-enable)))
-
 
 ;; hl-line-mode
 (add-hook 'compilation-mode-hook (lambda () (hl-line-mode)))
@@ -595,3 +589,16 @@ abort completely with `C-g'."
 ;; editorconfig
 (require 'editorconfig)
 (add-hook 'prog-mode-hook 'editorconfig-mode)
+
+
+
+;; If file too large
+;; https://stackoverflow.com/questions/18316665/how-to-improve-emacs-performance-when-view-large-file
+;; (defun my-find-file-check-make-large-file-read-only-hook ()
+;;   "If a file is over a given size, make the buffer read only."
+;;   (when (> (buffer-size) (* 1024 1024))
+;;     (setq buffer-read-only t)
+;;     (buffer-disable-undo)
+;;     (font-lock-mode nil)))
+
+;; (add-hook 'find-file-hook 'my-find-file-check-make-large-file-read-only-hook)

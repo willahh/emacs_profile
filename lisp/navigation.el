@@ -5,7 +5,7 @@
 (require 'ido-occur)
 
 (ido-mode 1)
-(ido-everywhere 1)
+;; (ido-everywhere 1)
 (flx-ido-mode 1)
 (ido-vertical-mode t)
 
@@ -17,8 +17,8 @@
 (setq ido-use-faces nil)
 
 ;; Better ido completion
-(require 'ido-completing-read+)
-(ido-ubiquitous-mode 1)
+;; (require 'ido-completing-read+)
+;; (ido-ubiquitous-mode 1)
 
 ;; (add-hook 'ido-setup-hook
 ;;   (lambda()
@@ -55,12 +55,13 @@
 
 (ivy-mode)
 
+
 ;; (define-key ivy-minibuffer-map (kbd "C-m") 'ivy-alt-done)
 ;; (define-key ivy-minibuffer-map (kbd "<tab>") 'ivy-alt-done)
 ;; (ivy-set-occur 'ivy-switch-buffer 'ivy-switch-buffer-occur)
 
 ;; (setq ivy-virtual-abbreviate 'full)
-;; (setq ivy-height 12)
+(setq ivy-height 12)
 
 ;; ;; make sure it always stays that high
 ;; (setq ivy-fixed-height-minibuffer nil)

@@ -171,6 +171,9 @@
 (add-to-list 'load-path "~/.emacs.d/site-lisp/org-mouse")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/vkill")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/syslog-mode-2.2")
+(add-to-list 'load-path "~/.emacs.d/site-lisp/lsp-mode")
+(add-to-list 'load-path "~/.emacs.d/site-lisp/lsp-ui")
+(add-to-list 'load-path "~/.emacs.d/site-lisp/lsp-php")
 
 ;; (add-to-list 'load-path "~/.emacs.d/site-lisp/dumb-jump")
 ;; (add-to-list 'load-path "~/.emacs.d/site-lisp/string-inflection-1.0.5")
@@ -184,7 +187,6 @@
 ;; (add-to-list 'load-path "~/.emacs.d/site-lisp/flx")
 
 ;; Add additional files
-(load-file "~/.emacs.d/site-lisp/hideshowvis/hideshowvis.el")
 (load-file "~/.emacs.d/site-lisp/ido-preview.el")
 
 ;; fetch the list of packages available 

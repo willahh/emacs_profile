@@ -2052,3 +2052,217 @@ Archived entries from file /Users/wravel/.emacs.d/emacs_todo.org
   [[file:~/www/project/arsia/arsia_3.2.x_standard/pimdatamanager/admin/module/data/list2.php::*%20filterToolbar][file:~/www/project/arsia/arsia_3.2.x_standard/pimdatamanager/admin/module/data/list2.php::* filterToolbar]]
   [[file:~/org/arsia.org::*%5Bevol%5D%20Arsia%203.3%20-%20Faire%20un%20js%20global%20permettant%20de%20masquer%20via%20une%20conf%20tout%20les%20console.log.][{evol} Arsia 3.3 - Faire un js global permettant de masquer via une conf tout les console.log.]]
 
+
+* TODO [#A] Faire fonctionner Clojure LUMO
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-07-02 Mon 13:39
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+  Fonctionne avec inf-clojure, inf-clojure ne remplace pas CIDER, mais est une
+  alternative plus légère
+  https://anmonteiro.com/2016/11/the-fastest-clojure-repl-in-the-world/
+  http://www.planck-repl.org/emacs.html
+  https://github.com/clojure-emacs/inf-clojure
+  [2018-04-06 Fri]
+  [[file:~/.emacs.d/emacs_todo.org::*Utils][Utils]]
+
+
+* TODO Web-mode / CSS MODE ENTER || KP_ENTER || C-m ---> New line and indent
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-07-02 Mon 13:40
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+
+* TODO Web-mode / CSS MODE ENTER || KP_ENTER || C-m ---> New line and indent
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-07-02 Mon 13:40
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+
+* TODO [#B] [helm] [mini-buffer] Ajouter la possibilité de faire du M-v dans le mini-buffer 
+  SCHEDULED: <2017-11-30 Thu>
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-07-02 Mon 13:40
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+
+* TODO [#A] [counsel-find-file] [mini-buffer] Ajouter un bind C-k pour supprimer tout le texte 
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-07-02 Mon 13:40
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+
+* TODO [#A] [css-mode] Virer company dabbrev de css mode             
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-07-02 Mon 13:40
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+
+* TODO [#C] Ajouter des bind system sur C-h et C-w C-w https://blog.sensible.io/2012/10/19/mac-os-x-emacs-style-keybindings-everywhere.html 
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-07-02 Mon 13:40
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+ - [ ] C-j new line
+ - [ ] C-w delete back word
+ - [ ] M-b back word
+
+* TODO [#C] Open file from system in new emacs frame (Right click open in) 
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-07-02 Mon 13:40
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+
+* TODO [#C] [ivy] [mini buffer] Add C-l keybinding                   
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-07-02 Mon 13:41
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+
+* TODO [#C] [flycheck] : Mieux distinguer la ligne en erreur         
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-07-02 Mon 13:41
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+
+* TODO [#C] [web-mode] [javascript] [company] Add javascript keywords to company backend 
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-07-02 Mon 13:41
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+
+* TODO [#C] [ivy] [mini buffer] CTRL+l to back up                    
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-07-02 Mon 13:41
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+
+* TODO Man -> auto focus windows
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-07-02 Mon 13:41
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+  [2018-02-13 Tue]
+
+* TODO web-mode new-line ne fonctionne pas correctement
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-07-02 Mon 13:41
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+  [2018-02-14 Wed]
+
+* TODO web-mode : TAB n'indente plus
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-07-02 Mon 13:41
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+  [2018-02-15 Thu]
+  [[file:~/www/project/arsia/arsia_3.2.x_standard/dev/mediadata/full/module/media/iframe/media_edit_multiple/index.php::}]]
+
+* TODO web-mode Flycheck : Add javascript to check
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-07-02 Mon 13:41
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+  [2018-02-16 Fri]
+  [[file:~/www/project/arsia/arsia_3.2.x_standard/dev/mediadata/full/module/media/iframe/media_edit_multiple/index.php::reader.fileId%20=%20file.lastModified%20+%20'_'%20+%20file%5D.name%20+%20'_'%20+%20file.size;]]
+
+* TODO js2-mode refresh font slow
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-07-02 Mon 13:41
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+  [2018-02-20 Tue]
+  [[file:~/www/project/rb_siteweb/rb_siteweb_1.4/dev/js/script.test.js][file:~/www/project/rb_siteweb/rb_siteweb_1.4/dev/js/script.test.js]]
+
+* TODO web-mode > js script snippet without src attribute
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-07-02 Mon 13:42
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+  [2018-02-27 Tue]
+  [[file:~/www/project/easy3p/easy3p_3.7/dev/module/html_template/resize.php::<script></script>]]
+
+* TODO Highlight-selection mode is slow
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-07-02 Mon 13:42
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :ARCHIVE_ITAGS: @home
+  :END:
+  [2018-03-01 Thu]
+  [[file:~/www/project/easy3p/easy3p_3.7/dev/module/flatplan/js/controller/preparation/FlatplanController.js::flatplan.oMainView.fireEvent('FlatplanController:productlistpageload:after',%20oJsonData);]]

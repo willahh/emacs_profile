@@ -4,9 +4,20 @@
   (yank-pop (- arg)))
 
 ;; Revert without confirm
-(defun revert-buffer-no-confirm ()
-  "Revert buffer without confirmation."
-  (interactive) (revert-buffer t t))
+;; (defun revert-buffer-no-confirm ()
+;;   "Revert buffer without confirmation."
+;;   (interactive) 
+;;   (revert-buffer t t))
+
+(defun wlh/revert-buffer ()
+  "Save the current position to tmp, then call revert-buffer,
+  then goto-char(position)"
+  (interactive)
+  (defvar tmp)
+  (setq tmp (point))
+  (revert-buffer t)
+  (goto-char tmp)
+  (kill-local-variable 'tmp))
 
 (defun duplicate-current-line-or-region (arg)
   "Duplicates the current line or region ARG times.
@@ -640,6 +651,36 @@ save it in `ffap-file-at-point-line-number' variable."
                :margin t)))
 
 (global-set-key (kbd "M-'") 'describe-thing-in-popup)
+
+
+
+
+
+
+;; Windowing
+;; From frontmacs
+;; Split horizontally when opening a new window from a command
+;; whenever possible.
+;; (setq split-height-threshold 0)
+
+;; (defun frontside-windowing-adjust-split-width-threshold ()
+;;   "Change the value of `split-width-threshold' so that it will cause the screen
+;; split once and only once.
+
+;; For example, if the frame is 360 columns wide, then we want the
+;; split-width-threshold to be 181. That way, when you split horizontally, the two
+;; new windows will each be 180 columns wide, and sit just below the threshold.
+;; "
+;;   (setq split-width-threshold (+ 1 (/ (frame-width) 2))))
+
+;; ;; recaculate split-width-threshold with every change
+;; (add-hook 'window-configuration-change-hook
+;;           'frontside-windowing-adjust-split-width-threshold)
+
+
+
+
+
 
 
 ;; -------- Init

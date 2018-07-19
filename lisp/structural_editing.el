@@ -29,9 +29,9 @@
 
 (setq highlight-symbol-idle-delay .3)
 
-(add-hook 'prog-mode-hook 'highlight-symbol-nav-mode)
-(add-hook 'typescript-mode-hook 'highlight-symbol-nav-mode)
-(add-hook 'emacs-lisp-mode 'highlight-symbol-nav-mode)
+;; (add-hook 'prog-mode-hook 'highlight-symbol-nav-mode)
+;; (add-hook 'typescript-mode-hook 'highlight-symbol-nav-mode)
+;; (add-hook 'emacs-lisp-mode 'highlight-symbol-nav-mode)
 
 (add-hook 'prog-mode-hook
           (highlight-symbol-nav-mode))

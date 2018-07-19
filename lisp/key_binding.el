@@ -47,7 +47,7 @@
 (global-set-key (kbd "≈") 'counsel-M-x) ; Alt + x
 (global-set-key (kbd "") 'toggle-php-flavor-mode) ; Alt + 1
 ;; (global-set-key (kbd "Ì") 'help) ; Alt + h
-(global-set-key (kbd "∑") 'helm-ag) ; Alt + shift + s
+;; (global-set-key (kbd "∑") 'helm-ag) ; Alt + shift + s
 (global-set-key (kbd "†") 'toggle-truncate-lines) ; Alt + t
 ;; (global-set-key (kbd "ﬁ") 'goto-line) ; Alt + g
 (global-set-key (kbd "Â") 'toggle-php-flavor-mode) ; Alt+z
@@ -138,6 +138,8 @@
 ;; delete-window
 (global-set-key (kbd "M-w") 'wlh/delete-window) ;; Delete window or frame
 (define-key magit-mode-map (kbd "M-w") 'wlh/delete-window)
+(global-set-key (kbd "M-W") 'delete-frame)
+(define-key magit-mode-map (kbd "M-W") 'delete-frame)
 
 ;; shell-pop
 (global-set-key (kbd "C-!") 'shell-pop)
@@ -185,21 +187,41 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 ;; (global-set-key (kbd "C-x C-r") 'rename-current-buffer-file)
 
-;; ---------------- Buffer
+;; ---------------- M-n M-N
 ;; New buffer
-(global-set-key (kbd "C-x C-n") 'xah-new-empty-buffer)
-(define-key org-mode-map (kbd "C-x C-n") 'xah-new-empty-buffer)
+;; (global-set-key (kbd "C-x C-n") 'xah-new- empty-buffer)
+;; (define-key org-mode-map (kbd "C-x C-n") 'xah-new-empty-buffer)
+
+(global-set-key (kbd "M-n") 'xah-new-empty-buffer)
+(define-key org-mode-map (kbd "M-n") 'xah-new-empty-buffer)
 
 ;; New frame
-(global-set-key (kbd "M-n") 'wlh/create-new-centered-frame)
-(define-key highlight-symbol-nav-mode-map (kbd "M-n") 'wlh/create-new-centered-frame)
-(define-key ibuffer-mode-map (kbd "M-n") 'wlh/create-new-centered-frame)
-(define-key compilation-mode-map (kbd "M-n") 'wlh/create-new-centered-frame)
-(define-key magit-mode-map (kbd "M-n") 'wlh/create-new-centered-frame)
-(define-key slime-mode-map (kbd "M-n") 'wlh/create-new-centered-frame)
+(global-set-key (kbd "M-N") 'wlh/create-new-centered-frame)
+(define-key highlight-symbol-nav-mode-map (kbd "M-N") 'wlh/create-new-centered-frame)
+(define-key ibuffer-mode-map (kbd "M-N") 'wlh/create-new-centered-frame)
+(define-key compilation-mode-map (kbd "M-N") 'wlh/create-new-centered-frame)
+(define-key magit-mode-map (kbd "M-N") 'wlh/create-new-centered-frame)
+(define-key slime-mode-map (kbd "M-N") 'wlh/create-new-centered-frame)
+
+;; Highlight-symbol
+;; (global-set-key (kbd "M-N") 'highlight-symbol-next)
+;; (define-key slime-mode-map (kbd "M-N") 'highlight-symbol-next)
+;; (define-key highlight-symbol-nav-mode-map (kbd "M-N") 'highlight-symbol-next)
+;; (define-key ggtags-navigation-map (kbd "M-N") 'highlight-symbol-next)
+;; (define-key magit-mode-map (kbd "M-N") 'highlight-symbol-next)
+;; (define-key slime-mode-map (kbd "M-N") 'highlight-symbol-next)
+
+
+
+
+
+
+
 
 ;; Revert buffer
-(define-key global-map (kbd "C-x C-r") 'revert-buffer-no-confirm)
+(define-key global-map (kbd "C-x C-r") 'wlh/revert-buffer)
+(define-key diff-mode-shared-map (kbd "g") 'wlh/revert-buffer)
+
 (global-set-key (kbd "C-x C-k") 'kill-region)
 
 ;; ---------------- Dired
@@ -240,7 +262,6 @@
 
 (global-set-key (kbd "<M-down>") 'drag-stuff-down)
 
-
 (define-key php-mode-map (kbd "<C-M-mouse-1>") 'dumb-jump-go)
 
 ;; ---------------- Multi cursor binding
@@ -278,7 +299,7 @@
 (define-key company-active-map (kbd "C-i") 'company-complete-selection)
 
 ;; counsel-find-file
-;; (global-set-key (kbd "C-x C-f") 'counsel-find-file)
+(global-set-key (kbd "C-x C-f") 'counsel-find-file)
 
 ;; Diff hl next / prev
 (global-set-key (kbd "C-c C-n") 'diff-hl-next-hunk)
@@ -491,12 +512,6 @@
 (global-set-key (kbd "M-*") 'lawlist-backward-paragraph)
 
 ;; ---------------- Function keys -
-;; F Keys
-;; (global-set-key (kbd "<f5>") 'revert-buffer-no-confirm)
-;; (global-set-key (kbd "<f6>") 'dired-jump)
-;; (global-set-key (kbd "<f7>") 'projectile-dired)
-;; (global-set-key (kbd "<f8>") 'treemacs-projectile-toggle)
-
 
 ;; Kill
 ;; Better move paragraph / mark paragraph
@@ -504,14 +519,6 @@
 ;; (global-set-key (kbd "M-h") 'rs-mark-paragraph)
 (global-set-key (kbd "M-¨") 'lawlist-backward-paragraph)
 (global-set-key (kbd "M-*") 'lawlist-forward-paragraph)
-
-;; Highlight-symbol
-(global-set-key (kbd "M-N") 'highlight-symbol-next)
-(define-key slime-mode-map (kbd "M-N") 'highlight-symbol-next)
-(define-key highlight-symbol-nav-mode-map (kbd "M-N") 'highlight-symbol-next)
-(define-key ggtags-navigation-map (kbd "M-N") 'highlight-symbol-next)
-(define-key magit-mode-map (kbd "M-N") 'highlight-symbol-next)
-(define-key slime-mode-map (kbd "M-N") 'highlight-symbol-next)
 
 (global-set-key (kbd "M-P") 'highlight-symbol-prev)
 (define-key slime-mode-map (kbd "M-P") 'highlight-symbol-prev)
@@ -529,8 +536,11 @@
 (define-key js2-mode-map (kbd "C-c C-s") 'swiper)
 (define-key php-mode-map (kbd "C-c C-s") 'swiper)
 
-(define-key js2-mode-map (kbd "<C-M-mouse-1>") 'xref-find-definitions)
+;; (define-key js2-mode-map (kbd "<C-M-mouse-1>") 'xref-find-definitions)
+(define-key js2-mode-map (kbd "<C-M-mouse-1>") 'dumb-jump-go)
+(define-key js-mode-map (kbd "<C-M-mouse-1>") 'dumb-jump-go)
 (define-key js2-mode-map (kbd "<C-M-mouse-3>") 'xref-pop-marker-stack)
+(define-key js-mode-map (kbd "<C-M-mouse-3>") 'xref-pop-marker-stack)
 
 ;; vc
 (define-key vc-dir-mode-map (kbd "C-M-i") 'vc-dir-previous-directory)
@@ -592,22 +602,8 @@
 (global-set-key [(control shift down)] 'move-text-down)
 (global-set-key [(meta shift up)] 'move-text-up)
 (global-set-key [(meta shift down)] 'move-text-down)
-
-;; (global-set-key (kbd "C-c t") 'crux-visit-term-buffer)
-;; (global-set-key (kbd "C-c I") 'crux-find-user-init-file)
-;; (global-set-key (kbd "C-c S") 'crux-find-shell-init-file)
-;; (global-set-key (kbd "s-j") 'crux-top-join-line)
-
 (global-set-key [f7] 'winner-undo)
 (global-set-key [C-f7] 'winner-redo)
-
-;; C-x shortcuts from oremacs
-;; (global-set-key (kbd "C-x l") 'counsel-locate)
-;; (global-set-key (kbd "C-x C-l") 'locate)
-;; (global-set-key (kbd "C-x C-f") 'counsel-find-file)
-;; (global-set-key (kbd "C-c g") 'counsel-git)
-;; (global-set-key (kbd "C-x l") 'counsel-locate)
-;; (global-set-key (kbd "C-c C-r") 'ivy-resume)
 
 ;; org (from prelude)
 (global-set-key "\C-cl" 'org-store-link)
@@ -628,4 +624,4 @@
 (global-set-key (kbd "C-&") 'xah-toggle-letter-case) ; (C-1 on azerty keyboard)
 
 ;; Mouse
-(global-set-key (kbd "<mouse-3>") 'mouse-major-mode-menu)
+;; (global-set-key (kbd "<mouse-3>") 'mouse-major-mode-menu)
