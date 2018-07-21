@@ -1,4 +1,4 @@
-n(require 'git-gutter)
+(require 'git-gutter)
 (require 'diff-hl)
 (require 'vc-svn)
 

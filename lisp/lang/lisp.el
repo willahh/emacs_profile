@@ -5,11 +5,10 @@
 (require 'erefactor)
 
 (defun wlh/slime-mode-hook ()
-  
   (define-key slime-prefix-map (kbd "M-h") 'slime-documentation-lookup))
 
 (defun wlh/lisp-mode-hook ()
-  (company-mode nil)
+  ;; (company-mode nil)
   (auto-complete-mode t)
   (set-up-slime-ac)
   (aggressive-indent-mode)
@@ -36,5 +35,6 @@
 
 ;;;; Emacs lisp
 (defun wlh/emacs-lisp-mode-hook ()
-  (company-mode))
+  ;; (company-mode)
+  )
 (add-hook 'emacs-lisp-mode-hook 'wlh/emacs-lisp-mode-hook)

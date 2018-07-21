@@ -291,15 +291,23 @@
 (define-key compilation-mode-map (kbd "C-x s") 'wgrep-save-all-buffers)
 (define-key compilation-mode-map (kbd "C-c C-c") 'wgrep-finish-edit)
 
+;; TAB
 (global-set-key (kbd "C-c TAB") 'wlh/insert-4spaces)
 (define-key web-mode-map (kbd "TAB") 'indent-for-tab-command)
+(define-key web-mode-map (kbd "TAB") 'wlh/web-mode-tab)
 
-;; ---------------- new line
+;; New line
 (define-key prog-mode-map (kbd "RET") 'new-line-dwim)
 (define-key lisp-mode-map (kbd "RET") 'paredit-newline)
 (define-key css-mode-map (kbd "RET") 'new-line-dwim)
 (define-key php-mode-map (kbd "RET") 'new-line-dwim)
-(define-key web-mode-map(kbd "<return>") 'wlh/web-mode-new-line)
+(define-key web-mode-map (kbd "RET") 'new-line-dwim)
+
+;; (define-key web-mode-map(kbd "<return>") 'wlh/web-mode-new-line) ; Return key
+;; (define-key web-mode-map (kbd "RET") 'wlh/web-mode-new-line) ; Used by C-j
+
+;; (define-key web-mode-map(kbd "<return>") 'wlh/web-mode-new-line) ; Return key
+;; (define-key web-mode-map (kbd "RET") 'wlh/web-mode-new-line) ; Used by C-j
 
 ;; Open line
 (define-key web-mode-map (kbd "C-o") 'crux-smart-open-line-above)
