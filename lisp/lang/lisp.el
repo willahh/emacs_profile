@@ -34,3 +34,7 @@
 (eval-after-load "auto-complete"
   '(add-to-list 'ac-modes 'slime-repl-mode))
 
+;;;; Emacs lisp
+(defun wlh/emacs-lisp-mode-hook ()
+  (company-mode))
+(add-hook 'emacs-lisp-mode-hook 'wlh/emacs-lisp-mode-hook)

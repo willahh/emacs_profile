@@ -35,7 +35,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :family "Menlo"))))
- '(mc/cursor-bar-face ((t nil)))
+ '(mc/cursor-bar-face ((t (:foreground "magenta" :weight light :width condensed))))
  '(mode-line-emphasis ((t nil)))
  '(mode-line-highlight ((t nil)))
  '(rainbow-delimiters-depth-1-face ((t (:foreground "#5abeee" :weight bold))))

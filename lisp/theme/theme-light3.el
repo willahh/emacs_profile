@@ -8,7 +8,6 @@
 ;; (set-frame-font "Menlo")
 ;; (set-frame-font "Fira Sans")
 ;; (set-frame-font "Meslo")
-
 ;; (set-frame-font "Monaco")
 (set-frame-font "Menlo")
 
@@ -205,4 +204,3 @@
 (set-face-attribute 'company-tooltip-annotation nil :foreground "#62c0ea" :background nil)
 (set-face-attribute 'company-tooltip-common nil :foreground "#62c0ea" :background nil)
 (set-face-attribute 'company-tooltip-selection nil :foreground "#62c0ea" :background "#e9e9e9")
-

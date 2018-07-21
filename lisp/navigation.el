@@ -1,4 +1,4 @@
-;; Ido ---
+;; Ido ------------------------------
 (require 'ido)
 (require 'flx-ido)
 (require 'ido-vertical-mode)
@@ -16,31 +16,8 @@
 (setq ido-enable-flex-matching t)
 (setq ido-use-faces nil)
 
-;; Better ido completion
-;; (require 'ido-completing-read+)
-;; (ido-ubiquitous-mode 1)
 
-;; (add-hook 'ido-setup-hook
-;;   (lambda()
-;;     (define-key ido-completion-map (kbd "C-p") 'ido-preview-backward)
-;;     (define-key ido-completion-map (kbd "C-n") 'ido-preview-forward)
-;;     (define-key ido-completion-map (kbd "C-h") 'backward-delete-char)))
-
-;; (setq ido-enable-prefix nil
-;;       ido-enable-flex-matching t
-;;       ido-case-fold nil
-;;       ido-auto-merge-work-directories-length -1
-;;       ido-create-new-buffer 'always
-;;       ido-use-filename-at-point nil
-;;       ;; ido-max-prospects 40
-;;       ido-max-prospects 10
-;;       ido-everywhere 1
-;;       ido-mode 1
-;;       ido-vertical-mode n)
-
-
-
-;; ;;  Ivy ---
+;;  Ivy -------------------------------
 (require 'ivy)
 
 (setq ivy-re-builders-alist
@@ -54,19 +31,9 @@
         (t . ivy--regex-plus)))
 
 (ivy-mode)
-
-
-;; (define-key ivy-minibuffer-map (kbd "C-m") 'ivy-alt-done)
-;; (define-key ivy-minibuffer-map (kbd "<tab>") 'ivy-alt-done)
-;; (ivy-set-occur 'ivy-switch-buffer 'ivy-switch-buffer-occur)
-
-;; (setq ivy-virtual-abbreviate 'full)
 (setq ivy-height 12)
 
-;; ;; make sure it always stays that high
-;; (setq ivy-fixed-height-minibuffer nil)
-
-;; ;; full file names - useful when multiple files have same names
+;; full file names - useful when multiple files have same names
 (setq ivy-virtual-abbreviate 'full)
 (setq ivy-use-virtual-buffers t)
 (setq ivy-count-format "(%d/%d) ")
@@ -74,10 +41,8 @@
 (setq ivy-use-selectable-prompt t)
 (setq projectile-completion-system 'ivy)
 
-;; ;; http://oremacs.com/swiper/
-;; (setq magit-completing-read-function 'ivy-completing-read);
 
-;; Helm ---
+;; Helm ---------------------------------
 (require 'helm-ag)
 (require 'helm-config)
 (require 'helm-swoop)

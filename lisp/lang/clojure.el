@@ -9,9 +9,6 @@
 ;; Don't prompt when go to symbol
 (setq cider-prompt-for-symbol nil)
 
-;; ;; auto-select the error buffer when it's displayed
-;; (setq cider-auto-select-error-buffer t)
-
 ;; nicer font lock in REPL
 (setq cider-repl-use-clojure-font-lock t)
 

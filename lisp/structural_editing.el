@@ -1,52 +1,7 @@
-(require 'projectile)
-(require 'php-mode)
-(require 'nxml-mode)
-(require 'whole-line-or-region)
-(require 'iy-go-to-char)
-(require 'smex)
-(require 'which-key)
-(require 'multiple-cursors)
-(require 'key-chord)
-(require 'which-key)
-(require 'flx)
-(require 'resize-window)
-(require 'neotree)
-(require 'expand-region)
-(require 'paredit)
-;; (require 'ace-window)
-(require 'avy)
-(require 'web-mode)
-(require 'clojure-mode)
-
-;; Delete char ---------------------------
-(define-key prog-mode-map (kbd "C-h") 'backward-delete-char)
-(define-key php-mode-map (kbd "C-h") 'backward-delete-char)
-(define-key nxml-mode-map (kbd "C-h") 'backward-delete-char)
-
-
-;; highlight-symbol ---------------------------
-(require 'highlight-symbol)
-
-(setq highlight-symbol-idle-delay .3)
-
-;; (add-hook 'prog-mode-hook 'highlight-symbol-nav-mode)
-;; (add-hook 'typescript-mode-hook 'highlight-symbol-nav-mode)
-;; (add-hook 'emacs-lisp-mode 'highlight-symbol-nav-mode)
-
-(add-hook 'prog-mode-hook
-          (highlight-symbol-nav-mode))
-
-(add-hook 'typscript-mode-hook
-          (highlight-symbol-nav-mode))
-
-(add-hook 'emacs-lisp-mode-hook
-          (highlight-symbol-nav-mode))
-
 ;; Swiper ----------------------------
 (defun bjm-swiper-recenter (&rest args)
   "Recenter display after swiper"
   (recenter))
-
 
 ;; Paredit ----------------------------
 (autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
@@ -155,21 +110,5 @@
 (define-key php-mode-map (kbd "C-M-e") 'end-of-defun)
 (define-key nxml-mode-map (kbd "C-M-e") 'end-of-defun)
 
-;; (define-key emacs-lisp-mode-map (kbd "<backspace>") 'paredit-backward-delete)
-;; (define-key clojure-mode-map (kbd "<backspace>") 'paredit-backward-delete)
-
 (define-key emacs-lisp-mode-map (kbd "<backspace>") 'delete-backward-char)
 (define-key clojure-mode-map (kbd "<backspace>") 'delete-backward-char)
-
-;; Textmate-mode ---------------------------
-;; (require 'textmate)
-
-;; (add-hook 'js2-mode-hook 'textmate-mode)
-;; (add-hook 'web-mode-hook 'textmate-mode)
-;; (add-hook 'php-mode-hook 'textmate-mode)
-;; (add-hook 'css-mode-hook 'textmate-mode)
-;; (add-hook 'scss-mode-hook 'textmate-mode)
-;; (add-hook 'org-mode 'textmate-mode)
-;; (add-hook 'text-mode (lambda () (textmate-mode nil)))
-;; (add-hook 'lisp-mode (lambda () (textmate-mode nil)))
-;; (add-hook 'diff-mode-hook (lambda () (textmate-mode nil)))
