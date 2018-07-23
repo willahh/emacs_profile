@@ -8,7 +8,6 @@
 ;; (set-frame-font "Menlo")
 ;; (set-frame-font "Fira Sans")
 ;; (set-frame-font "Meslo")
-
 ;; (set-frame-font "Monaco")
 (set-frame-font "Menlo")
 
@@ -39,7 +38,7 @@
  '(rainbow-delimiters-depth-1-face ((t (:foreground "#5abeee" :weight bold))))
  '(rainbow-delimiters-depth-2-face ((t (:foreground "#ff00a0" :weight bold))))
  '(rainbow-delimiters-depth-3-face ((t (:foreground "#328d2e" :weight bold))))
- '(rainbow-delimiters-depth-4-face ((t (:foreground "#2a97b4" :weight bold))))
+ '(rainbow-delimiters-depth-4-face ((t (:foreground "#ff8700" :weight bold))))
  '(rainbow-delimiters-depth-5-face ((t (:foreground "#22988a" :weight bold))))
  '(rainbow-delimiters-depth-6-face ((t (:foreground "#cc99ff" :weight bold))))
  '(rainbow-delimiters-depth-7-face ((t (:foreground "#fa75e2" :weight bold))))
@@ -205,4 +204,3 @@
 (set-face-attribute 'company-tooltip-annotation nil :foreground "#62c0ea" :background nil)
 (set-face-attribute 'company-tooltip-common nil :foreground "#62c0ea" :background nil)
 (set-face-attribute 'company-tooltip-selection nil :foreground "#62c0ea" :background "#e9e9e9")
-

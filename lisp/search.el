@@ -1,15 +1,13 @@
-(require 'find-file-in-project)
-
-;; Isearch
+;; Isearch ---------------------
 (defun isearch-occur ()
   "Invoke `occur' from within isearch."
   (interactive)
   (let ((case-fold-search isearch-case-fold-search))
     (occur (if isearch-regexp isearch-string (regexp-quote isearch-string)))))
 
-;; https://www.emacswiki.org/emacs/HighlightFromIsearch
 (defun isearch-highlight-phrase ()
-  "Invoke `highligh-phrase' from within isearch."
+  "Invoke `highligh-phrase' from within isearch.
+  From: https://www.emacswiki.org/emacs/HighlightFromIsearch"
   (interactive)
   (let ((case-fold-search isearch-case-fold-search))
     (highlight-phrase (if isearch-regexp
@@ -24,7 +22,8 @@
  lazy-highlight-cleanup t
  lazy-highlight-initial-delay 0)
 
-;; Ag
+
+;; Ag ---------------------
 (require 'ag)
 
 (defun wlh/ag-mode-hook ()

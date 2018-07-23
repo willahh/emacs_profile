@@ -214,3 +214,30 @@ on the screen values."
   (interactive)
   (paredit-kill)
   (just-one-space))
+
+(defun wlh/web-mode-kill-sexp ()
+  (interactive)
+  (cond ((equal (web-mode-language-at-pos) "html") (kill-sexp))
+        ((equal (web-mode-language-at-pos) "javascript") (sp-kill-hybrid-sexp 1))
+        ((equal (web-mode-language-at-pos) "php") (paredit-kill))
+        ((equal (web-mode-language-at-pos) "css") (paredit-kill))))
+
+;; (defun wlh/web-mode-new-line ()
+;;   (interactive)
+;;   (cond ((equal (web-mode-language-at-pos) "html") 
+;;          (newline-and-indent))
+;;         ((equal (web-mode-language-at-pos) "javascript") (new-line-dwim))
+;;         ((equal (web-mode-language-at-pos) "php") (newline))
+;;         ((equal (web-mode-language-at-pos) "css") (new-line-dwim))))
+
+(defun wlh/previous-window ()
+  (interactive)
+  (other-window -1))
+
+;; Update : Voir pour trapper l'erreur avec par exemple condition-case.
+(defun wlh/web-mode-tab ()
+  (interactive)
+  (if (equal (web-mode-language-at-pos) "html")
+      (if (not (emmet-expand-line nil))
+          (indent-for-tab-command))
+    (condition-case err (yas-expand-from-trigger-key) (error "ok"))))
