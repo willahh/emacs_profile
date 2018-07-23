@@ -185,7 +185,6 @@ on the screen values."
   (other-window 1)
   (hydra-window/body))
 
-
 (defun wlh/create-new-centered-frame ()
   "New centered frame."
   (interactive)
