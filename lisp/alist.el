@@ -14,7 +14,7 @@
 ;; Custom rules for php files
 ;; By default all php files are in web mode (mix of html / php / js / css)
 ;; (add-to-list 'auto-mode-alist '(".*.php\\" . web-mode))
-(add-to-list 'auto-mode-alist '("\\*/.*.php\\" . web-mode))
+;; (add-to-list 'auto-mode-alist '("\\*/.*.php\\" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("model/.*/.*.php" . php-mode))
 (add-to-list 'auto-mode-alist '("lib/.*/.*.php" . php-mode))

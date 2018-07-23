@@ -407,6 +407,8 @@
 (global-set-key (kbd "C-M-é") 'evil-window-move-very-bottom)
 (global-set-key (kbd "C-M-\"") 'evil-window-move-far-left)
 
+(global-set-key (kbd "M-X") 'other-frame) ; Same keybinding from osx switch window habits
+
 ;; other Window
 (global-set-key (kbd "M-o") 'other-window)
 (define-key diff-mode-map (kbd "M-o") 'other-window)
