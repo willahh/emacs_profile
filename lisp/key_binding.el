@@ -425,6 +425,11 @@
 (define-key web-mode-map (kbd "C-M-S-j") 'emmet-expand-line)
 
 
+
+;; ---------------- f keys
+(global-set-key (kbd "<f2>") 'helm-mini)
+
+
 ;; ---------------- Window
 ;; Azerty binding equivalent chars to 0-9 on the upper row keyboard
 (global-set-key (kbd "M-à") 'delete-window) ;; M-0

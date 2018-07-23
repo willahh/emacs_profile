@@ -53,7 +53,7 @@
 (add-hook 'css-mode-hook 'paredit-mode)
 (add-hook 'clojure-mode-hook 'paredit-mode)
 
-(add-hook 'eshell-mode-hook 'smartparens-mode)
+;; (add-hook 'eshell-mode-hook 'smartparens-mode)
 (add-hook 'cider-repl-mode-hook 'paredit-mode)
 (add-hook 'emacs-lisp-mode-hook       #'enable-paredit-mode)
 (add-hook 'eval-expression-minibuffer-setup-hook #'enable-paredit-mode)
@@ -90,17 +90,30 @@
                    (let ((matching (matching-paren delimiter)))
                      (and matching (char-syntax matching)))))))
 
+
+
+;; Autopair ---------------------------
+(require 'autopair)
+
+(add-hook 'js2-mode-hook #'autopair-mode)
+(add-hook 'js-mode-hook #'autopair-mode)
+(add-hook 'web-mode-hook #'autopair-mode)
+(add-hook 'php-mode-hook #'autopair-mode)
+(add-hook 'css-mode-hook #'autopair-mode)
+(add-hook 'scss-mode-hook #'autopair-mode)
+(add-hook 'org-mode #'autopair-mode)
+
 ;; Smartparens ---------------------------
 (require 'smartparens-config)
 (require 'smartparens-html)
 
-(add-hook 'js2-mode-hook #'smartparens-mode)
-(add-hook 'js-mode-hook #'smartparens-mode)
-(add-hook 'web-mode-hook #'smartparens-mode)
-(add-hook 'php-mode-hook #'smartparens-mode)
-(add-hook 'css-mode-hook #'smartparens-mode)
-(add-hook 'scss-mode-hook #'smartparens-mode)
-(add-hook 'org-mode #'smartparens-mode)
+;; (add-hook 'js2-mode-hook #'smartparens-mode)
+;; (add-hook 'js-mode-hook #'smartparens-mode)
+;; (add-hook 'web-mode-hook #'smartparens-mode)
+;; (add-hook 'php-mode-hook #'smartparens-mode)
+;; (add-hook 'css-mode-hook #'smartparens-mode)
+;; (add-hook 'scss-mode-hook #'smartparens-mode)
+;; (add-hook 'org-mode #'smartparens-mode)
 
 (define-key prog-mode-map (kbd "C-M-f") 'sp-forward-sexp)
 (define-key php-mode-map (kbd "C-M-f") 'sp-forward-sexp)

@@ -47,7 +47,7 @@
                            ;; Disable textemate quote system is bad in org mode
                            ;; (textmate-mode)
                            
-                           (smartparens-mode)
+                           ;; (smartparens-mode)
                            
                            ;; Disable company mode to use autocomplete mode instead
                            (company-mode nil)

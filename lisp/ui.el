@@ -16,7 +16,7 @@
 (eval-after-load "skewer-mode" '(diminish 'skewer-mode))
 (eval-after-load "skewer-css" '(diminish 'skewer-css-mode))
 (eval-after-load "skewer-html" '(diminish 'skewer-html-mode))
-(eval-after-load "smartparens" '(diminish 'smartparens-mode))
+;; (eval-after-load "smartparens" '(diminish 'smartparens-mode))
 (eval-after-load "editorconfig" '(diminish 'editorconfig-mode))
 (eval-after-load "company" '(diminish 'company-mode))
 (eval-after-load "rainbow-mode" '(diminish 'rainbow-mode))

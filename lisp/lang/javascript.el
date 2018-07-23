@@ -48,7 +48,7 @@
   (js2-imenu-extras-mode)
 
   ;; Smartparens mode
-  (smartparens-mode)
+  ;; (smartparens-mode)
   
   ;; Paredit
   ;; Prevent paredit from adding a space before delimiters
