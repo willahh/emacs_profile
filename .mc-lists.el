@@ -107,6 +107,7 @@
         org-metaup
         org-return
         org-self-insert-command
+        org-shifttab
         org-todo
         org-yank
         paredit-backslash
