@@ -172,6 +172,7 @@
 ;; Buffer / frames / main
 ;; Frames
 (global-set-key (kbd "C-x C-b") 'ibuffer)
+(global-set-key (kbd "C-x b") 'ivy-switch-buffer)
 ;; (global-set-key (kbd "C-x C-r") 'rename-current-buffer-file)
 
 ;; ---------------- M-n M-N
