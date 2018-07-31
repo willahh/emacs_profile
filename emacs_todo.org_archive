@@ -2266,3 +2266,116 @@ Archived entries from file /Users/wravel/.emacs.d/emacs_todo.org
   :END:
   [2018-03-01 Thu]
   [[file:~/www/project/easy3p/easy3p_3.7/dev/module/flatplan/js/controller/preparation/FlatplanController.js::flatplan.oMainView.fireEvent('FlatplanController:productlistpageload:after',%20oJsonData);]]
+
+* TODO [#A] Mini buffer : Ne pas afficher de scrollbar               
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-07-25 Wed 12:30
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks old
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :END:
+
+* TODO [#B] Terminer intégration de hunspell                           :work:
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-07-25 Wed 12:31
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks old
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :END:
+
+* TODO [#B] Rebind les scroll to other window pour avoir un scroll sur la fenetre a cote mais d'une demie page seulement 
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-07-25 Wed 12:31
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks old
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :END:
+     C-M-S-v runs the command scroll-other-window-down (found in
+     global-map), which is an interactive compiled Lisp function in
+     ‘window.el’.
+
+     It is bound to <M-prior>, C-M-S-v, ESC <prior>.
+
+     (scroll-other-window-down &optional LINES)
+
+     Scroll the "other window" down.
+     For more details, see the documentation for ‘scroll-other-window’.
+
+
+* TODO [#B] [vc-dir] Faire une fonction toggle des hunk comme dans magit 
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-07-25 Wed 12:31
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks old
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :END:
+
+* TODO [#B] General : Utiliser le package general et jouer une touche sur 
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-07-25 Wed 12:31
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks old
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :END:
+ super-spc ou hyper-sp
+
+* TODO [#C] [theme] Ajouter des differenciations sur certains mot clee comme "$", "=", ".", "'", "(", ")", "+", "-", certains mots clés php "var_dump", "PHP_EOL", etc Voir package "highlight-chars" 
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-07-25 Wed 12:31
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks old
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :END:
+
+* TODO [#C] Markdown white theme           
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-07-25 Wed 12:31
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks old
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :END:
+
+* TODO [#C] Associer les fichiers .pdf au mode PDFView               
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-07-25 Wed 12:31
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks old
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :END:
+
+* TODO [#C] [vc-dir] N et P pour se déplacer en evitant les dossiers 
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-07-25 Wed 12:31
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks old
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :END:
+
+* TODO [#C] Help mode evil : add q binding pour quitter              
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-07-25 Wed 12:32
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks old
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :END:
+
+* TODO [#A] web-mode single quote dans commentaire : Ne pas auto fermer la quote lorsque l'on est dans un commentaire 
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-07-25 Wed 12:32
+  :ARCHIVE_FILE: ~/.emacs.d/emacs_todo.org
+  :ARCHIVE_OLPATH: Tasks old
+  :ARCHIVE_CATEGORY: emacs_todo
+  :ARCHIVE_TODO: TODO
+  :END:
+  [2017-10-23 Mon]
+  [[file:~/www/project/arsia/goacrop/src/main.js:://%20Pas%20de%20traitement%20particulier,%20l'image][file:~/www/project/arsia/goacrop/src/main.js::// Pas de traitement particulier, l'image]]

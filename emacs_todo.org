@@ -55,19 +55,13 @@ https://www.youtube.com/watch?v=KoRNCrx9pak
 C
 * Tasks                                                               :@home:
   :VISIBILITY: content
-** TODO 
 ** TODO CSS : Tab --> Emmet
-** TODO CSS : Tab --> Emmet
-
-
-
-
-
-
-** TODO [#A] web-mode single quote dans commentaire : Ne pas auto fermer la quote lorsque l'on est dans un commentaire 
-   [2017-10-23 Mon]
-   [[file:~/www/project/arsia/goacrop/src/main.js:://%20Pas%20de%20traitement%20particulier,%20l'image][file:~/www/project/arsia/goacrop/src/main.js::// Pas de traitement particulier, l'image]]
-*
+** TODO CSS Mode, la touche enter ne fonctionne plus
+   [2018-07-25 Wed]
+   [[file:~/.emacs.d/emacs_todo.org::*CSS%20:%20Tab%20-->%20Emmet][CSS : Tab --> Emmet]]
+** TODO Scroll mousewheel : Increase speed
+** TODO Horizontal scrollbar : Display horizontal scrollbars
+* Tasks old
 ** TODO [#B] [vc-diff mode] Voir si il est possible de lancer des commandes de type ediff 
        Depuis  le vc-diff
 ** TODO [#C] [dired] Rename file : Possibilité de préciser un chemin contenant des dossiers 
@@ -82,7 +76,6 @@ C
   - [ ] Show current mode in color
   - [ ] Show current VC system used
   - [ ] Show current encoding
-** TODO [#A] Mini buffer : Ne pas afficher de scrollbar               
 ** TODO [#B] Faire fonctionner fengyuanchen/cropper, les fichiers .babelrc, .editorconfig (déjà le cas en principe), .eslintrc 
    [2017-09-20 Wed]
 ** DONE [#B] Definir tous les fichiers .php dans un dossier "process" pour être en mode php 
@@ -138,7 +131,7 @@ C
    [2017-11-13 Mon]
    [[file:~/www/project/easy3p/easy3p_3.2_lot2/dev/module/flatplan/ajax/conception/pageListInfo.php::$asAssign%5B'canDo'%5D%5B'pageXToPageY'%5D%20%3D%20RightHelper::getInstance()->canDoActionForFlatplan(RightActionConstant::ASSIGN_CATEGORY_MOVE_PAGEX_TO_PAGEY,%20$iFPPrIdx)%3B][file:~/www/project/easy3p/easy3p_3.2_lot2/dev/module/flatplan/ajax/conception/pageListInfo.php::$asAssign['canDo']['pageXToPageY'] = RightHelper::getInstance()->canDoActionForFlatplan(RightActionConstant::ASSIGN_CATEGORY_MOVE_PAGEX_TO_PAGEY, $iFPPrIdx);]]
 
-** TODO [#A] Disable company mode auto -> Trigger it only by key binding 
+** DONE [#A] Disable company mode auto -> Trigger it only by key binding 
    [2017-11-13 Mon]
    [[file:~/www/project/easy3p/easy3p_3.2_lot2/dev/module/flatplan/js/view/conception/popup/Refine.js::{action:%20'close',%20text:%20'',%20cls:%20'closeButton',%20iconCls:%20'ico-close-24',%20tooltip:%20getTrad('doClose')}][file:~/www/project/easy3p/easy3p_3.2_lot2/dev/module/flatplan/js/view/conception/popup/Refine.js::{action: 'close', text: '', cls: 'closeButton', iconCls: 'ico-close-24', tooltip: getTrad('doClose')}]]
 
@@ -146,26 +139,10 @@ C
    [2017-11-13 Mon]
    [[file:~/.emacs.d/emacs_todo.org::*%5Bprojectile%20find%20file%5D%20Auto%20centrer%20la%20ligne%20une%20fois%20le%20goto%20dans%20le%20fichier][{projectile find file} Auto centrer la ligne une fois le goto dans le fichier]]
 
-** TODO [#A] Il faut initialiser les divider a visible au lancement   
+** DONE [#A] Il faut initialiser les divider a visible au lancement   
    [2017-11-14 Tue]
    [[file:~/www/project/rb_siteweb/rb_siteweb_1.4/resources/module/mag_list/js/mag_list.js::*]]
 
-** TODO [#B] Terminer intégration de hunspell :work:
-** TODO [#B] Rebind les scroll to other window pour avoir un scroll sur la fenetre a cote mais d'une demie page seulement 
-      C-M-S-v runs the command scroll-other-window-down (found in
-      global-map), which is an interactive compiled Lisp function in
-      ‘window.el’.
-
-      It is bound to <M-prior>, C-M-S-v, ESC <prior>.
-
-      (scroll-other-window-down &optional LINES)
-
-      Scroll the "other window" down.
-      For more details, see the documentation for ‘scroll-other-window’.
-
-** TODO [#B] [vc-dir] Faire une fonction toggle des hunk comme dans magit 
-** TODO [#B] General : Utiliser le package general et jouer une touche sur 
-  super-spc ou hyper-sp
 ** TODO [#B] Mini buffer > M-p : Ne pas afficher de message beginning of 
   buffer bla bla
 ** TODO [#B] [projectile find file] Auto centrer la ligne une fois le goto dans le fichier 
@@ -175,12 +152,7 @@ C
    [2017-11-10 Fri]
    [[file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/include/lib/internal/croptosize2/src/events.js::Events.on_validate%20%3D%20function(input)%20{][file:/Volumes/dev/arsia_3.1.x_standard/dev/sygesp/include/lib/internal/croptosize2/src/events.js::Events.on_validate = function(input) {]]
 
-** TODO [#C] [theme] Ajouter des differenciations sur certains mot clee comme "$", "=", ".", "'", "(", ")", "+", "-", certains mots clés php "var_dump", "PHP_EOL", etc Voir package "highlight-chars" 
-** TODO [#C] Markdown in white theme                                  
-** TODO [#C] Associer les fichiers .pdf au mode PDFView               
 ** TODO [#C] Ag result buffer : C-o : Open in new window              
-** TODO [#C] [vc-dir] N et P pour se déplacer en evitant les dossiers 
-** TODO [#C] Help mode evil : add q binding pour quitter              
 ** TODO [#C] [vc-dir] key M-< && M-> : Faire pointer sur le vrai début/fin de ligne 
 ** TODO [#C] [doc-view] Faire fonctionner doc-view
 ** TODO [#C] [util] Voir si il est possible de faire un (CMD+P + touche @) (file.php@methode_name) 

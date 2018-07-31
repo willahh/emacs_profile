@@ -78,6 +78,7 @@
   ;; (when (fboundp 'show-smartparens-mode)
   ;;   (show-smartparens-mode 0))
   
+  (undo-tree-mode 0)
   (editorconfig-mode 0)
   (yas-global-mode 0)
   (yas-minor-mode 0)
