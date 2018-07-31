@@ -12,6 +12,7 @@
   (auto-complete-mode t)
   (set-up-slime-ac)
   (aggressive-indent-mode)
+  (highlight-symbol-mode)
   ;; (edebug-mode t)
   ;; (redshank-mode)
   ;; (erefactor-highlight-mode)

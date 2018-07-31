@@ -67,7 +67,7 @@
 (defun etc-log-tail-handler ()
   (syslog-mode)
   (end-of-buffer)
-  (make-variable-buffer-local 'auto-revert-interval)
+  ;; (make-variable-buffer-local 'auto-revert-interval)
   (setq auto-revert-interval 1)
   (auto-revert-set-timer)
   (make-variable-buffer-local 'auto-revert-verbose)
@@ -83,7 +83,6 @@
   (yas-global-mode 0)
   (yas-minor-mode 0)
   (company-mode 0)
-  (evil-snipe-mode 0)
   (ivy-mode 0)
   (highlight-symbol-mode 0))
 
@@ -169,7 +168,7 @@
 (add-hook 'text-mode-hook 'remove-dos-eol)
 (add-hook 'prog-mode-hook 'remove-dos-eol)
 (add-hook 'diff-mode-hook 'remove-dos-eol)
-(add-hook 'web-mode-hook 'remove-dos-eol)
+(add-hook 'web-mode-hook 'remove-dos-eol) 
 (add-hook 'fundamental-mode 'remove-dos-eol)
 
 ;; Enlarge frame
