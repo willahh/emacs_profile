@@ -120,7 +120,7 @@
 ;; Reactivation because I had a lot of trouble with paredit M-s
 (global-set-key (kbd "M-s") 'save-buffer)
 (define-key paredit-mode-map (kbd "M-s") 'save-buffer)
-
+ 
 ;; delete-window
 (global-set-key (kbd "M-w") 'wlh/delete-window) ;; Delete window or frame
 (define-key magit-mode-map (kbd "M-w") 'wlh/delete-window)
@@ -462,6 +462,9 @@
 
 (global-set-key (kbd "C-ù") 'previous-buffer)
 (global-set-key (kbd "C-M-ù") 'winner-undo)
+(global-set-key (kbd "M-t") 'tabbar-new-tab)
+
+
 
 ;; Recentf
 (global-set-key (kbd "C-c f") 'counsel-recentf) 

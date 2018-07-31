@@ -203,11 +203,19 @@ on the screen values."
   (interactive)
   (find-name-dired default-directory "*.org"))
 
+;; (defun wlh/delete-window ()
+;;   (interactive)
+;;   (if (> (length (window-list)) 1)
+;;       (delete-window)
+;;     (delete-frame)))
+
 (defun wlh/delete-window ()
+  "Close tab if multiple tabs are present in window, close window
+  if there is just one tab."
   (interactive)
-  (if (> (length (window-list)) 1)
+  (if (eql (length (tabbar-tabs tabbar-current-tabset)) 1)
       (delete-window)
-    (delete-frame)))
+      (tabbar-close-tab)))
 
 (defun wlh/join-line ()
   (interactive)
