@@ -59,7 +59,7 @@
 (set-face-attribute 'show-paren-match nil :background "#55bdf0" :foreground "#fff" :weight 'ultra-bold :underline "#ff00a0")
 
 ;; (set-face-attribute 'hl-sexp-background-color nil :background "#cccccc")
-(setq hl-sexp-background-color "#f4f4f4")
+(setq hl-sexp-background-color "#f9f9f9")
 
 (setq show-paren-priority -50)
 (set-face-attribute 'fringe nil :background "#fafafa" :slant 'normal)

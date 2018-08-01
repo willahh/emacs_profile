@@ -65,6 +65,7 @@
         helm-M-x
         helm-show-kill-ring
         highlight-symbol-mode
+        hrs/split-window-below-and-switch
         hydra-macro/nil
         hydra-vi/body
         hydra-vi/evil-backward-WORD-begin
@@ -231,6 +232,7 @@
         treemacs-leftclick-action
         undefined
         vc-dir-mark
+        vc-dir-menu
         vc-dir-next-line
         vc-dir-previous-line
         wdired-finish-edit
