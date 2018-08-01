@@ -19,6 +19,7 @@
 ;; (setq mc/always-run-for-all 1)
 (setq mc/always-run-for-all nil)
 
+
 ;; Multiple-curspr with mouse
 ;; http://pragmaticemacs.com/emacs/add-multiple-cursors-with-mouse-clicks/
 (use-package multiple-cursors
@@ -292,7 +293,7 @@
 (global-undo-tree-mode 1)
 (setq undo-tree-auto-save-history t)
 (setq undo-tree-history-directory-alist
-      (quote (("" . "~/.emacs.d/undo_hist"))))
+      (quote (("" . "~/.emacs.d/tmp/undo_hist"))))
 
 (add-hook 'lisp-mode-hook (lambda ()
                             (define-key slime-macroexpansion-minor-mode-map (kbd "M-z") 'slime-macroexpand-undo)))

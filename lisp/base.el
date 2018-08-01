@@ -235,7 +235,7 @@
 
 ;; Abbrev
 (setq default-abbrev-mode t)
-(setq abbrev-file-name "~/.emacs.d/abbrev_defs")
+(setq abbrev-file-name "~/.emacs.d/tmp/abbrev_defs")
 (setq save-abbrevs t) ; save abbrevs when files are saved
 (setq save-abbrevs 'silently)
 (add-hook 'text-mode-hook (lambda () (abbrev-mode 1)))

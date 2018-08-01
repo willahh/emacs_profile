@@ -71,7 +71,7 @@ on the screen values."
 (defun wlh/open-projectile-bookmarks ()
   ;; Find pdf files in user directory
   (interactive)
-  (find-file "~/.emacs.d/projectile-bookmarks.eld"))
+  (find-file "~/.emacs.d/tmp/projectile-bookmarks.eld"))
 
 (defun wlh/delete-backspace ()
   ;; delete the selection or forward-char

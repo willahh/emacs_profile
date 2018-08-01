@@ -213,12 +213,9 @@
 (set-face-attribute 'company-tooltip-selection nil :foreground "#62c0ea" :background "#e9e9e9")
 
 
-
-
-
-
 ;; ------- tabbar
 (require 'tabbar)
+
 (defun wlh/tabbar-mode-hook ()
   (custom-set-variables
    '(tabbar-background-color "white smoke"))
@@ -234,10 +231,5 @@
    '(tabbar-separator ((t (:inherit tabbar-default :background "white" :foreground "white" :height 1.0))))
    '(tabbar-unselected ((t (:inherit tabbar-default :background "#ececec" :box (:line-width 3 :color "#ececec"))))))  )
 
-(add-hook 'tabbar-mode-hook 'wlh/tabbar-mode-hook)
-
-
-(add-hook 'after-init-hook (lambda ()
-                             (tabbar-mode)
-                             (tabbar-mode)))
-
+;; (add-hook 'tabbar-mode-hook 'wlh/tabbar-mode-hook)
+;; (add-hook 'custom-mode-hook 'wlh/tabbar-mode-hook)
