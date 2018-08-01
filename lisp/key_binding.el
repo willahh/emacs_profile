@@ -576,8 +576,9 @@
 (global-set-key (kbd "C-c TAB") 'crux-indent-rigidly-and-copy-to-clipboard)
 ;; (global-set-key (kbd "<C-tab>") 'next-buffer)
 ;; (global-set-key (kbd "<C-S-tab>") 'previous-buffer)
-(global-set-key (kbd "<C-tab>") 'tabbar-forward-tab)
-(global-set-key (kbd "<C-S-tab>") 'tabbar-backward-tab)
+
+(global-set-key (kbd "<C-tab>") 'wlh/next-buffer)
+(global-set-key (kbd "<C-S-tab>") 'wlh/previous-buffer)
 
 ;; Bm
 (global-set-key (kbd "C-é") 'point-to-register) ; C-2 on qwerty

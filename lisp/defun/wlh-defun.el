@@ -245,3 +245,19 @@ on the screen values."
          (indent-for-tab-command))
         ((string-equal (web-mode-language-at-pos) "php")
          (indent-for-tab-command))))
+
+(defun wlh/next-buffer ()
+  "Navigate to the next buffer, use tabbar if the mode is active,
+otherwise next-buffer"
+  (interactive)
+  (if tabbar-mode
+    (tabbar-forward-tab)
+    (next-buffer)))
+
+(defun wlh/previous-buffer ()
+  "Navigate to the previous buffer, use tabbar if the mode is active,
+otherwise previous-buffer"
+  (interactive)
+  (if tabbar-mode
+      (tabbar-backward-tab)
+    (previous-buffer)))
