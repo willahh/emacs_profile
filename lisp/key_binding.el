@@ -120,7 +120,7 @@
 ;; Reactivation because I had a lot of trouble with paredit M-s
 (global-set-key (kbd "M-s") 'save-buffer)
 (define-key paredit-mode-map (kbd "M-s") 'save-buffer)
-
+ 
 ;; delete-window
 (global-set-key (kbd "M-w") 'wlh/delete-window) ;; Delete window or frame
 (define-key magit-mode-map (kbd "M-w") 'wlh/delete-window)
@@ -184,6 +184,7 @@
 (define-key org-mode-map (kbd "M-n") 'xah-new-empty-buffer)
 ;; (define-key slime-repl-mode-map (kbd "M-n") 'xah-new-empty-buffer)
 (define-key diff-mode-map (kbd "M-n") 'xah-new-empty-buffer)
+(define-key ibuffer-mode-map (kbd "M-n") 'xah-new-empty-buffer)
 
 ;; New frame
 (global-set-key (kbd "M-N") 'wlh/create-new-centered-frame)
@@ -422,6 +423,7 @@
 (define-key ggtags-navigation-map (kbd "M-p") 'projectile-find-file)
 (define-key highlight-symbol-nav-mode-map (kbd "M-p") 'projectile-find-file)
 (define-key magit-mode-map (kbd "M-p") 'projectile-find-file)
+(define-key ibuffer-mode-map (kbd "M-p") 'projectile-find-file)
 
 ;; Find file
 (global-set-key [(meta control shift p)] 'find-file-in-current-directory)
@@ -460,6 +462,9 @@
 
 (global-set-key (kbd "C-ù") 'previous-buffer)
 (global-set-key (kbd "C-M-ù") 'winner-undo)
+(global-set-key (kbd "M-t") 'tabbar-new-tab)
+
+
 
 ;; Recentf
 (global-set-key (kbd "C-c f") 'counsel-recentf) 
@@ -568,9 +573,11 @@
 
 ;; Tab related behaviour
 (global-set-key (kbd "C-x <tab>") 'indent-rigidly) ; Default emacs key binding
-(global-set-key (kbd "<C-tab>") 'next-buffer)
-(global-set-key (kbd "<C-S-tab>") 'previous-buffer)
 (global-set-key (kbd "C-c TAB") 'crux-indent-rigidly-and-copy-to-clipboard)
+;; (global-set-key (kbd "<C-tab>") 'next-buffer)
+;; (global-set-key (kbd "<C-S-tab>") 'previous-buffer)
+(global-set-key (kbd "<C-tab>") 'tabbar-forward-tab)
+(global-set-key (kbd "<C-S-tab>") 'tabbar-backward-tab)
 
 ;; Bm
 (global-set-key (kbd "C-é") 'point-to-register) ; C-2 on qwerty

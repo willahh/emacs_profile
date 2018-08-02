@@ -153,10 +153,15 @@
 (add-to-list 'load-path "~/.emacs.d/site-lisp/lsp-mode")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/lsp-ui")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/lsp-php")
+(add-to-list 'load-path "~/.emacs.d/site-lisp/tabbar")
 
 ;; Add additional files
 (load-file "~/.emacs.d/site-lisp/ido-preview.el")
 (load-file "~/.emacs.d/site-lisp/aggressive-indent.el")
+(load-file "~/.emacs.d/site-lisp/tabbar/aquamacs-tools.el")
+(load-file "~/.emacs.d/site-lisp/tabbar/aquamacs-compat.el")
+(load-file "~/.emacs.d/site-lisp/tabbar/aquamacs-tabbar.el")
+(load-file "~/.emacs.d/site-lisp/tabbar/aquamacs-tools.el")
 
 ;; fetch the list of packages available 
 (unless package-archive-contents

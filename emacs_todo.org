@@ -61,6 +61,8 @@ C
    [[file:~/.emacs.d/emacs_todo.org::*CSS%20:%20Tab%20-->%20Emmet][CSS : Tab --> Emmet]]
 ** TODO Scroll mousewheel : Increase speed
 ** TODO Horizontal scrollbar : Display horizontal scrollbars
+** TODO Mousewheel : La molette ne se déclenche pas tant que l'on ne donne pas 2, 3 crans
+   [2018-08-01 Wed]
 * Tasks old
 ** TODO [#B] [vc-diff mode] Voir si il est possible de lancer des commandes de type ediff 
        Depuis  le vc-diff
