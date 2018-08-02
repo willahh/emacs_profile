@@ -312,9 +312,10 @@
 ;; (define-key web-mode-map (kbd "RET") 'wlh/web-mode-new-line) ; Used by C-j
 
 ;; Open line
-(define-key web-mode-map (kbd "C-o") 'crux-smart-open-line-above)
-(global-set-key (kbd "C-o") 'crux-smart-open-line-above)
+;; (define-key web-mode-map (kbd "C-o") 'crux-smart-open-line-above)
+;; (global-set-key (kbd "C-o") 'crux-smart-open-line-above)
 (global-set-key (kbd "C-M-o") 'crux-smart-open-line)
+
 
 ;; Duplicate line
 (global-set-key (kbd "C-x C-d") 'duplicate-start-of-line-or-region)

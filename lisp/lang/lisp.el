@@ -4,15 +4,14 @@
 (require 'redshank)
 (require 'erefactor)
 
-(defun wlh/slime-mode-hook ()
-  (define-key slime-prefix-map (kbd "M-h") 'slime-documentation-lookup))
-
 (defun wlh/lisp-mode-hook ()
+  (define-key slime-prefix-map (kbd "M-h") 'slime-documentation-lookup)
   (company-mode nil)
   (auto-complete-mode nil)
   (set-up-slime-ac)
   (aggressive-indent-mode)
   (highlight-symbol-mode)
+  (define-key lisp-mode-map (kbd "C-c M-j") 'slime) ; Same as Clojure Cider connect to repl ! 
   ;; (edebug-mode t)
   ;; (redshank-mode)
   ;; (erefactor-highlight-mode)
@@ -40,3 +39,5 @@
   ;; (company-mode)
   )
 (add-hook 'emacs-lisp-mode-hook 'wlh/emacs-lisp-mode-hook)
+
+
