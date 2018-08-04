@@ -162,6 +162,7 @@
 (load-file "~/.emacs.d/site-lisp/tabbar/aquamacs-compat.el")
 (load-file "~/.emacs.d/site-lisp/tabbar/aquamacs-tabbar.el")
 (load-file "~/.emacs.d/site-lisp/tabbar/aquamacs-tools.el")
+(load-file "~/.emacs.d/site-lisp/highlight-defined.el")
 
 ;; fetch the list of packages available 
 (unless package-archive-contents

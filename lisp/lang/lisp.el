@@ -14,6 +14,7 @@
   (define-key lisp-mode-map (kbd "C-c M-j") 'slime) ; Same as Clojure Cider connect to repl ! 
   ;; (edebug-mode t)
   ;; (redshank-mode)
+  (redshank-mode)
   ;; (erefactor-highlight-mode)
   ;; (define-key emacs-lisp-mode-map "\C-c\C-v" erefactor-map)
   )
