@@ -11,6 +11,8 @@
 ;; (set-frame-font "Monaco")
 (set-frame-font "Menlo")
 
+(setq-default line-spacing 1)
+
 ;; Main background
 (set-face-attribute 'default nil :background "#ffffff")
 (set-face-attribute 'shadow nil :foreground "#ccc")
