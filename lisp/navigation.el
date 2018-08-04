@@ -21,17 +21,19 @@
 (require 'ivy)
 
 (setq ivy-re-builders-alist
-      '((ivy-switch-buffer . ivy--regex-plus)
-        (swiper . ivy--regex-plus)
-        (counsel-imenu . ivy--regex-plus)
+      '(
+        ;; (ivy-switch-buffer . ivy--regex-plus)
+        ;; (swiper . ivy--regex-plus)
+        ;; (counsel-imenu . ivy--regex-plus)
         (t . ivy--regex-fuzzy)
         ;; (projectile-find-file . ivy--regex-fuzzy)
         ;; (projectile-find-file . ivy--regex-plus)
-        (projectile-find-file . ivy--regex-fuzzy)
-        (t . ivy--regex-plus)))
+        ;; (projectile-find-file . ivy--regex-fuzzy)
+        ))
 
 (ivy-mode)
-(setq ivy-height 12)
+;; (setq ivy-height 12)
+(setq ivy-height 14)
 
 ;; full file names - useful when multiple files have same names
 (setq ivy-virtual-abbreviate 'full)

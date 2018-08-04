@@ -138,14 +138,14 @@
 ;; ------- modeline
 (set-face-attribute 'mode-line nil
                     :foreground "#ffffff"
-                    :background "#304f4f"
+                    :background "#007acc"
                     :height 100
                     :font "Menlo"
                     :box nil)
 
 (set-face-attribute 'mode-line-inactive nil
                     :foreground "#666"
-                    :background "#e0e0e0"
+                    :background "#f3f3f3"
                     :font "Menlo"
                     :height 100
                     :box nil)
