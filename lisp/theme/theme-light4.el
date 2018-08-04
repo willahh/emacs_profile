@@ -13,6 +13,8 @@
 
 ;; Main background
 (set-face-attribute 'default nil :background "#ffffff")
+(set-face-attribute 'shadow nil :foreground "#ccc")
+(set-face-attribute 'line-number-current-line nil :foreground "#000")
 
 (custom-set-faces
  '(default ((t (:stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :family "Menlo")))))
@@ -236,3 +238,14 @@
 
 ;; (add-hook 'tabbar-mode-hook 'wlh/tabbar-mode-hook)
 ;; (add-hook 'custom-mode-hook 'wlh/tabbar-mode-hook)
+
+
+;; ------ ivy
+(set-face-attribute 'ivy-minibuffer-match-face-1 nil :foreground "#d73a49" :background nil :underline t)
+(set-face-attribute 'ivy-minibuffer-match-face-2 nil :foreground "#d73a49" :background nil :underline t)
+(set-face-attribute 'ivy-minibuffer-match-face-3 nil :foreground "#d73a49" :background nil :underline t)
+(set-face-attribute 'ivy-minibuffer-match-face-4 nil :foreground "#d73a49" :background nil :underline t)
+
+;; -- Group
+(set-face-attribute 'custom-group-tag nil :foreground "#000")
+(set-face-attribute 'custom-variable-tag nil :foreground "#000")

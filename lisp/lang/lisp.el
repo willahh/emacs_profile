@@ -6,6 +6,7 @@
 
 (defun wlh/lisp-mode-hook ()
   (define-key slime-prefix-map (kbd "M-h") 'slime-documentation-lookup)
+  (highlight-defined-mode)
   (company-mode nil)
   (auto-complete-mode nil)
   (set-up-slime-ac)
