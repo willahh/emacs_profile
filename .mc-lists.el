@@ -241,5 +241,6 @@
         wlh/dbleclick-mouse1
         wlh/dbleclick-select-word
         wlh/delete-window
+        wlh/dired-mouse-2
         wlh/recenter-top-bottom
         ))

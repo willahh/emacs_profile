@@ -7,6 +7,19 @@
   (dired-hide-details-mode +1)
   (diff-hl-dired-mode))
 
+;; (defun wlh/dired-mouse-1 ()
+;;   (interactive)
+;;   (let* ((a (thing-at-point 'filename)))
+;;     (if (f-directory-p a)
+;;         (dired-subtree-toggle)
+;;       (find-file a))))
+
+;; (defun wlh/dired-mouse-2 ()
+;;   (interactive)
+;;   (let ((thing (thing-at-point 'filename))) (message "ok")))
+
+;; (define-key dired-mode-map (kbd "<mouse-2>") 'wlh/dired-mouse-1)
+;; (define-key dired-mode-map (kbd "<C-mouse-1>") 'wlh/dired-mouse-2)
 (add-hook 'dired-mode-hook 'wlh/dired-hook)
 
 ;; Mouse click to open in current window

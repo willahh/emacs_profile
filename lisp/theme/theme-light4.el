@@ -36,7 +36,8 @@
                              (set-face-attribute 'dired-subtree-depth-4-face nil :background nil)
                              (set-face-attribute 'dired-subtree-depth-5-face nil :background nil)
                              (set-face-attribute 'dired-subtree-depth-6-face nil :background nil)
-                             (set-face-attribute 'dired-directory nil :foreground "#0000ff" :background nil)))
+                             (set-face-attribute 'dired-directory nil :foreground "#d73a49" :background nil)
+                             (set-face-attribute 'dired-header nil :foreground "#6a737d" :background nil)))
 
 (custom-set-faces
  ;; '(rainbow-delimiters-depth-1-face ((t (:foreground "#5abeee" :weight bold))))

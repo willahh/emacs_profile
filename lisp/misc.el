@@ -639,7 +639,7 @@ abort completely with `C-g'."
 (defvar line-padding 2)
 (defun add-line-padding ()
   "Add extra padding between lines"
-
+  (interactive)
   ; remove padding overlays if they already exist
   (let ((overlays (overlays-at (point-min))))
     (while overlays
@@ -654,4 +654,6 @@ abort completely with `C-g'."
     (overlay-put padding-overlay 'line-spacing (* .1 line-padding))
     (overlay-put padding-overlay 'line-height (+ 1 (* .1 line-padding))))
   (setq mark-active nil))
+
 (add-hook 'buffer-list-update-hook 'add-line-padding)
+;; (add-hook 'post-command-hook 'add-line-padding)
