@@ -11,7 +11,12 @@
 ;; (set-frame-font "Monaco")
 (set-frame-font "Menlo")
 
-(setq-default line-spacing 1)
+;; (setq-default line-spacing 1)
+(setq-default line-spacing 0.25)
+(setq-default line-height 1.25)
+
+
+
 
 ;; Main background
 (set-face-attribute 'default nil :background "#ffffff")
@@ -252,3 +257,13 @@
 ;; -- Group
 (set-face-attribute 'custom-group-tag nil :foreground "#000")
 (set-face-attribute 'custom-variable-tag nil :foreground "#000")
+
+
+;; Line padding
+;; (defun wlh/prog-mode-line-padding-hook ()
+;;   (add-text-properties (point-min) (point-max)
+;;                      '(line-spacing 0.25 line-height 1.25)))
+
+;; (add-hook 'prog-mode-hook 'wlh/prog-mode-line-padding-hook)
+;; (add-hook 'text-mode-hook 'wlh/prog-mode-line-padding-hook)
+
