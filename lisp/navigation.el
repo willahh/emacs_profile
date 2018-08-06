@@ -17,7 +17,7 @@
 (setq ido-use-faces nil)
 
 
-;;  Ivy -------------------------------
+ ;;Ivy -------------------------------
 (require 'ivy)
 
 (setq ivy-re-builders-alist

@@ -52,11 +52,6 @@ on the screen values."
   (let ((default-directory (dired-dwim-target-directory)))
     (shell-command "code")))
 
-(defun wlh/project-browser-open ()
-  (interactive)
-  (let ((path (s-replace "/Users/wravel/www/" "http://192.168.0.26/" (projectile-project-root))))
-    (browse-url path)))
-
 (defun wlh/pdf-view-mode-hook ()
   (define-key pdf-view-mode-map (kbd ".") 'hydra-pdftools/body))
 
@@ -71,7 +66,7 @@ on the screen values."
 (defun wlh/open-projectile-bookmarks ()
   ;; Find pdf files in user directory
   (interactive)
-  (find-file "~/.emacs.d/projectile-bookmarks.eld"))
+  (find-file "~/.emacs.d/tmp/projectile-bookmarks.eld"))
 
 (defun wlh/delete-backspace ()
   ;; delete the selection or forward-char
@@ -245,3 +240,24 @@ on the screen values."
          (indent-for-tab-command))
         ((string-equal (web-mode-language-at-pos) "php")
          (indent-for-tab-command))))
+
+(defun wlh/next-buffer ()
+  "Navigate to the next buffer, use tabbar if the mode is active,
+otherwise next-buffer"
+  (interactive)
+  (if tabbar-mode
+    (tabbar-forward-tab)
+    (next-buffer)))
+
+(defun wlh/previous-buffer ()
+  "Navigate to the previous buffer, use tabbar if the mode is active,
+otherwise previous-buffer"
+  (interactive)
+  (if tabbar-mode
+      (tabbar-backward-tab)
+    (previous-buffer)))
+
+(defun wlh/project-browser-open ()
+  "Browse project url root."
+  (interactive)
+  (browse-url (concat "http://192.168.0.26/" (string-join (cddddr (split-string (projectile-project-root) "/")) "/"))))

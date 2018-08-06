@@ -8,8 +8,8 @@
   (define-key slime-prefix-map (kbd "M-h") 'slime-documentation-lookup))
 
 (defun wlh/lisp-mode-hook ()
-  ;; (company-mode nil)
-  (auto-complete-mode t)
+  (company-mode nil)
+  (auto-complete-mode nil)
   (set-up-slime-ac)
   (aggressive-indent-mode)
   (highlight-symbol-mode)
@@ -24,6 +24,7 @@
   (auto-complete-mode))
 
 (setq inferior-lisp-program "sbcl")
+;; (setq inferior-lisp-program "ccl")
 (slime-setup '(slime-fancy))
 (global-set-key "\C-cs" 'slime-selector)
 

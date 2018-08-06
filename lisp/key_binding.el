@@ -16,7 +16,7 @@
 (global-set-key (kbd "M-v") 'yank)
 (define-key mc/keymap (kbd "M-v") 'yank)
 (define-key helm-map (kbd "M-v") 'yank)
-(define-key ivy-minibuffer-map (kbd "M-v") 'yank)
+;; (define-key ivy-minibuffer-map (kbd "M-v") 'yank)
 (global-set-key [(meta v)] 'yank)
 
 ;; Yank pop
@@ -25,6 +25,11 @@
 ;; End / Home
 (global-set-key (kbd "<end>") 'end-of-buffer)
 (global-set-key (kbd "<home>") 'beginning-of-buffer)
+
+;; ;; 
+;; (global-set-key (kbd "C-x b") 'switch-to-buffer)
+
+
 
 ;; --------------- ALT key binding
 ;; Azerty keyboard
@@ -133,7 +138,7 @@
 
 ;;
 ;; (define-key ivy-minibuffer-map (kbd "<escape>") 'minibuffer-keyboard-quit)
-(define-key ivy-minibuffer-map (kbd "C-h") 'delete-backward-char)
+;; (define-key ivy-minibuffer-map (kbd "C-h") 'delete-backward-char)
 
 ;; Backward kill sexp
 (global-set-key [(control meta h)] 'backward-kill-sexp)
@@ -576,8 +581,8 @@
 (global-set-key (kbd "C-c TAB") 'crux-indent-rigidly-and-copy-to-clipboard)
 ;; (global-set-key (kbd "<C-tab>") 'next-buffer)
 ;; (global-set-key (kbd "<C-S-tab>") 'previous-buffer)
-(global-set-key (kbd "<C-tab>") 'tabbar-forward-tab)
-(global-set-key (kbd "<C-S-tab>") 'tabbar-backward-tab)
+(global-set-key (kbd "<C-tab>") 'wlh/next-buffer)
+(global-set-key (kbd "<C-S-tab>") 'wlh/previous-buffer)
 
 ;; Bm
 (global-set-key (kbd "C-é") 'point-to-register) ; C-2 on qwerty

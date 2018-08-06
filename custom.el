@@ -4,6 +4,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(ag-reuse-window nil)
+ '(bookmark-default-file "~/.emacs.d/tmp/bookmarks")
  '(custom-safe-themes
    (quote
     ("b48150eac948d6de3f8103e6e92f105979277b91c96e9687c13f2d80977d381d" "b2c8ea4a3049e4399a4015f8eddb74fcd0473e9aa0c8818a04979230b22d0e75" default)))
@@ -14,7 +15,8 @@
  '(helm-allow-mouse t)
  '(helm-source-names-using-follow
    (quote
-    ("Search at ~/www/project/easy3p/easy3p_3.11/dev/module/flatplan/js/view/" "Search at ~/www/project/easy3p/easy3p_3.11/dev/" "Buffers" "Search at ~/.emacs.d/lisp/" "SliderHelper.js" "Search at ~/www/project/easy3p/easy3p_3.10_draganddrop/dev/module/flatplan/js/view/" "Search at ~/www/project/easy3p/easy3p_3.10_draganddrop/dev/module/flatplan/js/" "_module.scss" "Search at ~/www/project/easy3p/easy3p_3.8/dev/module/vshootintention/js/" "Search at ~/www/project/easy3p/easy3p_3.8/dev/module/flatplan/js/controller/preparation/" "global-mark-ring" "Search at ~/quicklisp/dists/quicklisp/software/clsql-20160208-git/sql/" "Search at ~/.emacs.d/vendor/smartparens/" "smartparens-html.el" "Search at ~/www/project/easy3p/easy3p_3.7/dev/module/flatplan/" "Search at ~/www/project/easy3p/easy3p_3.7/dev/module/flatplan/js/view/" "Search at ~/www/project/easy3p/easy3p_3.7/dev/module/flatplan/js/controller/preparation/" "Search at ~/www/project/easy3p/easy3p_3.5/dev/module/vvisual/show/js/view/" "Search at ~/www/project/arsia/arsia_3.2.x_standard_editzone/dev/sygesp/module/production/editzone_v2/js/app/" "Search at ~/www/project/easy3p/easy3p_3.4/dev/module/flatplan/js/" "Search at ~/www/project/arsia/arsia_3.2.x_standard/dev/mediadata/full/module/" "Search at ~/www/project/arsia/arsia_3.2.x_standard/dev/mediadata/full/module/media/iframe/media_edit_multiple/" "Search at ~/www/project/easy3p/easy3p_3.3/dev/module/flatplan/js/controller/preparation/" "Imenu" "Search at ~/www/project/easy3p/easy3p_3.5/dev/module/flatplan/" "")))
+    ("Search at ~/.emacs.d/" "Search at ~/www/project/easy3p/easy3p_3.11/dev/module/flatplan/js/view/" "Search at ~/www/project/easy3p/easy3p_3.11/dev/" "Buffers" "Search at ~/.emacs.d/lisp/" "SliderHelper.js" "Search at ~/www/project/easy3p/easy3p_3.10_draganddrop/dev/module/flatplan/js/view/" "Search at ~/www/project/easy3p/easy3p_3.10_draganddrop/dev/module/flatplan/js/" "_module.scss" "Search at ~/www/project/easy3p/easy3p_3.8/dev/module/vshootintention/js/" "Search at ~/www/project/easy3p/easy3p_3.8/dev/module/flatplan/js/controller/preparation/" "global-mark-ring" "Search at ~/quicklisp/dists/quicklisp/software/clsql-20160208-git/sql/" "Search at ~/.emacs.d/vendor/smartparens/" "smartparens-html.el" "Search at ~/www/project/easy3p/easy3p_3.7/dev/module/flatplan/" "Search at ~/www/project/easy3p/easy3p_3.7/dev/module/flatplan/js/view/" "Search at ~/www/project/easy3p/easy3p_3.7/dev/module/flatplan/js/controller/preparation/" "Search at ~/www/project/easy3p/easy3p_3.5/dev/module/vvisual/show/js/view/" "Search at ~/www/project/arsia/arsia_3.2.x_standard_editzone/dev/sygesp/module/production/editzone_v2/js/app/" "Search at ~/www/project/easy3p/easy3p_3.4/dev/module/flatplan/js/" "Search at ~/www/project/arsia/arsia_3.2.x_standard/dev/mediadata/full/module/" "Search at ~/www/project/arsia/arsia_3.2.x_standard/dev/mediadata/full/module/media/iframe/media_edit_multiple/" "Search at ~/www/project/easy3p/easy3p_3.3/dev/module/flatplan/js/controller/preparation/" "Imenu" "Search at ~/www/project/easy3p/easy3p_3.5/dev/module/flatplan/" "")))
+ '(ido-save-directory-list-file "~/.emacs.d/tmp/ido.last")
  '(mac-mouse-wheel-mode t)
  '(mouse-wheel-mode nil)
  '(mouse-wheel-progressive-speed t)
@@ -22,6 +24,9 @@
  '(package-selected-packages
    (quote
     (tabbar elscreen erefactor redshank all-the-icons smartparens easy-kill string-inflection centered-window noflet ido-completing-read+ helm-flx company-flx diminish dumb-jump move-text cider indium treemacs-projectile treemacs hide-lines hy-mode elscreen-mew elscreen-fr flycheck-clojure ac-slime markdown-preview-mode diffview aggressive-indent counsel-gtags xref-js2 zop-to-char yaml-mode whole-line-or-region which-key wgrep websocket web-mode web-beautify visual-regexp-steroids visual-regexp validate use-package toc-org tide sx sourcemap smooth-scrolling sml-mode smex skewer-mode resize-window react-snippets rainbow-mode rainbow-delimiters psysh projectile-ripgrep powerline php-auto-yasnippets perspective pdf-tools paredit-everywhere paradox pandoc-mode ov org-bullets neotree monokai-theme magit key-chord json-mode js2-refactor js-comint jabber iy-go-to-char ivy-hydra intellij-theme inf-clojure indent-guide impatient-mode imenu-list image-dired+ iflipb iedit ido-vertical-mode ido-ubiquitous ido-occur ido-at-point ibuffer-vc highlight-symbol helm-swoop helm-projectile helm-ag gradle-mode google-translate git-timemachine git-gutter ggtags fullframe flycheck-pos-tip flx-ido find-file-in-project expand-region exec-path-from-shell evil-visualstar evil-surround evil-snipe evil-org evil-nerd-commenter evil-matchit evil-leader emmet-mode editorconfig edit-server eclim dtrt-indent drag-stuff dracula-theme diff-hl darkroom crux counsel company-web company-tern company-quickhelp coffee-mode clojure-snippets clojure-cheatsheet clj-refactor browse-kill-ring avy-menu autopair auto-yasnippet auto-complete ag actionscript-mode ace-window ace-link ace-jump-mode)))
+ '(projectile-cache-file "/~/.emacs.d/tmp/projectile.cache")
+ '(recentf-save-file "~/.emacs.d/tmp/recentf")
+ '(save-place-file "/~/.emacs.d/tmp/.places" t)
  '(scheme-program-name "guile")
  '(send-mail-function (quote smtpmail-send-it))
  '(shell-pop-full-span t)
@@ -35,13 +40,13 @@
  '(sp-escape-quotes-after-insert nil)
  '(sp-escape-wrapped-region nil)
  '(tabbar-background-color "white smoke")
- '(tabbar-mode t nil (tabbar)))
+ '(tabbar-mode t nil (tabbar))
+ '(url-configuration-directory "~/.emacs.d/tmp/url/"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :family "Menlo"))))
  '(mc/cursor-bar-face ((t (:foreground "magenta" :weight light :width condensed))))
  '(mode-line-emphasis ((t nil)))
  '(mode-line-highlight ((t nil)))

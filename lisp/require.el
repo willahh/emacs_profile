@@ -45,4 +45,4 @@
 (require 'cl-lib)
 (require 'validate)
 (require 'exec-path-from-shell)
-(require 'find-file-in-project)
+;;(require 'find-file-in-project)
