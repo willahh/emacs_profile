@@ -103,6 +103,9 @@
 ;; Disable auto underlining links
 (setq goto-address-mode nil)
 
+;; Don't popup warn
+(add-to-list 'warning-suppress-types '(undo discard-info))
+
 ;; Keep cursor blinking
 (blink-cursor-mode 1)
 
@@ -314,3 +317,17 @@
 
 (window-divider-mode-apply 1)
 (put 'scroll-left 'disabled nil)
+
+;; Display some buffer in current window
+(setq display-buffer-alist
+      '(
+        ("*vc-dir*"               . (display-buffer-same-window . nil))
+        ("*ag*"               . (display-buffer-same-window . nil))
+        ;; ("*vc-diff*"               . (display-buffer-same-window . nil))
+        ;; ("*vc-diff*"               . (display-buffer-same-window . nil))
+        ;; ("*vc-change-log*"            . (display-buffer-same-window . nil))
+        ;; ("*shell*"            . (display-buffer-same-window . nil))
+        ;; ("*Google Translate*" . (display-buffer-same-window . nil))
+        ))
+
+(setq split-width-threshold 9999)

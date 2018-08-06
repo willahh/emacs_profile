@@ -1,7 +1,7 @@
 <?xml version="1.1" encoding="UTF-8"?>
 <!DOCTYPE keyboard SYSTEM "file://localhost/System/Library/DTDs/KeyboardLayout.dtd">
-<!--Last edited by Ukelele version 3.2.5.180 on 2018-07-21 at 12:21 (UTC+2)-->
-<keyboard group="126" id="-25199" name="wlh" maxout="1">
+<!--Last edited by Ukelele version 3.2.5.180 on 2018-08-05 at 23:50 (UTC+2)-->
+<keyboard group="126" id="-7529" name="wlh" maxout="1">
 	<layouts>
 		<layout first="0" last="0" mapSet="138" modifiers="30"/>
 	</layouts>
@@ -430,7 +430,7 @@
 			<key code="42" output="@"/>
 			<key code="43" output="…"/>
 			<key code="44" output="≠"/>
-			<key code="45" action="~"/>
+			<key code="45" output="~"/>
 			<key code="46" output="∞"/>
 			<key code="47" output="÷"/>
 			<key code="48" output="&#x0009;"/>

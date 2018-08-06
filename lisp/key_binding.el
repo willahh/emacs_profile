@@ -43,10 +43,11 @@
 (global-set-key (kbd "Ë") 'increment-number-at-point)
 
 ;; Multi cursor stuf
-(global-set-key (kbd "~") 'mc/mark-next-lines) ; ALT+SHIFT+n
-(global-set-key (kbd "π") 'mc/mark-previous-lines) ; ALT+SHIFT+p
+;; (global-set-key (kbd "~") 'mc/mark-next-lines) ; ALT+SHIFT+n
+;; (global-set-key (kbd "π") 'mc/mark-previous-lines) ; ALT+SHIFT+p
+;; (global-set-key (kbd "~") '(lambda () (insert "~")))
 
-;; Drag line
+;; Drag line"
 (global-set-key (kbd "π") 'drag-stuff-up) ; ALT+p
 (define-key org-mode-map (kbd "π") 'org-metaup) ; ALT+p
 (global-set-key (kbd "È") 'drag-stuff-up) ; ALT+k
@@ -317,9 +318,10 @@
 ;; (define-key web-mode-map (kbd "RET") 'wlh/web-mode-new-line) ; Used by C-j
 
 ;; Open line
-(define-key web-mode-map (kbd "C-o") 'crux-smart-open-line-above)
-(global-set-key (kbd "C-o") 'crux-smart-open-line-above)
+;; (define-key web-mode-map (kbd "C-o") 'crux-smart-open-line-above)
+;; (global-set-key (kbd "C-o") 'crux-smart-open-line-above)
 (global-set-key (kbd "C-M-o") 'crux-smart-open-line)
+
 
 ;; Duplicate line
 (global-set-key (kbd "C-x C-d") 'duplicate-start-of-line-or-region)
