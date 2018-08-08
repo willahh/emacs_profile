@@ -209,8 +209,10 @@ on the screen values."
   if there is just one tab."
   (interactive)
   (if (eql (length (tabbar-tabs tabbar-current-tabset)) 1)
-      (delete-window)
-      (tabbar-close-tab)))
+      (condition-case nil
+          (delete-window)
+        (message "ok"))
+    (tabbar-close-tab)))
 
 (defun wlh/join-line ()
   (interactive)

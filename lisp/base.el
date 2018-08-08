@@ -190,16 +190,25 @@
 (setq scroll-step 1)
 
 ;; Mouse -----------------------------
+;; Need to enable this mode to have modern mouse wheel behaviour
+(mouse-wheel-mode t)
 (setq mouse--progressive-speed 10)
 ;; (setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil)))
 ;; (setq mouse-wheel-scroll-amount '(0.05))
-(setq mouse-wheel-scroll-amount '(0.9))
+;; (setq mouse-wheel-scroll-amount '(0.9))
+;; (setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil)))
+;; (setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
+(setq mouse-wheel-scroll-amount '(3 ((shift) . 1) ((control) . nil))) ; 3 line at time (VS Code behaviour)
 ;; (setq mouse-wheel-progressive-speed 0)
-(setq mouse-wheel-progressive-speed nil)
+;; (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
+(setq mouse-wheel-progressive-speed t)
+(setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
+
 
 ;; stops selection with a mouse being immediately injected to the kill ring
 (setq mouse-drag-copy-region nil)
 (setq x-select-enable-primary nil)
+
 
 ;; --------------
 ;; Shell
@@ -274,6 +283,9 @@
 
 ;; Do not truncate words
 (setq visual-line-mode t)
+
+;; Word-wrap by word instead of character by default:
+(setq-default word-wrap t)
 
 ;; display-time-mode
 (display-time-mode 1)

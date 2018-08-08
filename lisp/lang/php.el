@@ -4,6 +4,6 @@
 (defun wlh/php-mode-hook ()
   (interactive)
   ;; (nlinum-mode t)
-  (ggtags-mode 1)
+  ;; (ggtags-mode 1)
   )
 (add-hook 'php-mode-hook 'wlh/php-mode-hook)

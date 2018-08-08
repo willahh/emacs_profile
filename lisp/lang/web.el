@@ -23,12 +23,13 @@
 
 ;; css colorization
 (setq web-mode-enable-css-colorization t)
+;; (setq web-mode-enable-auto-indentation nil) ; Disable auto indent in web mode (can be very slow)
 (setq web-mode-enable-auto-indentation nil) ; Disable auto indent in web mode (can be very slow)
 (setq web-mode-markup-indent-offset 4)
 (setq web-mode-css-indent-offset 4)
 (setq web-mode-code-indent-offset 4)
 (setq web-mode-style-padding 4)
-(setq web-mode-script-padding 4)
+(setq web-mode-script-padding 0)
 (setq web-mode-block-padding 0)
 
 ;; Emmet

@@ -470,6 +470,7 @@
 (global-set-key (kbd "C-ù") 'previous-buffer)
 (global-set-key (kbd "C-M-ù") 'winner-undo)
 (global-set-key (kbd "M-t") 'tabbar-new-tab)
+(global-set-key (kbd "™") 'tabbar-close-other-tabs) ; ALT+SHIFT+t
 
 
 

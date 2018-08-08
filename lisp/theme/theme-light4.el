@@ -227,25 +227,88 @@
 
 
 ;; ------- tabbar
-(require 'tabbar)
+;; (require 'tabbar)
 
-(defun wlh/tabbar-mode-hook ()
-  (custom-set-variables
-   '(tabbar-background-color "white smoke"))
-  '(tabbar-mode t nil (tabbar))
+;; (defun wlh/tabbar-mode-hook ()
+;;   (custom-set-variables
+;;    '(tabbar-background-color "white smoke"))
+;;   '(tabbar-mode t nil (tabbar))
 
-  (custom-set-faces
-   '(tabbar-button ((t (:inherit tabbar-default :background "#ececec" :box nil))))
-   '(tabbar-default ((t (:inherit nil :stipple nil :background "white" :foreground "black" :box nil :strike-through nil :underline nil :slant normal :weight normal :height 110 :width normal :family "Lucida Grande"))))
-   '(tabbar-modified ((t (:inherit tabbar-default :foreground "deep sky blue"))))
-   '(tabbar-selected ((t (:inherit tabbar-default :background "white" :foreground "gray20" :box (:line-width 3 :color "white")))))
-   '(tabbar-selected-highlight ((t (:foreground "black"))))
-   '(tabbar-selected-modified ((t (:inherit tabbar-default :background "white" :foreground "deep sky blue"))))
-   '(tabbar-separator ((t (:inherit tabbar-default :background "white" :foreground "white" :height 1.0))))
-   '(tabbar-unselected ((t (:inherit tabbar-default :background "#ececec" :box (:line-width 3 :color "#ececec"))))))  )
+;;   (custom-set-faces
+;;    '(tabbar-button ((t (:inherit tabbar-default :background "#ececec" :box nil))))
+;;    '(tabbar-default ((t (:inherit nil :stipple nil :background "white" :foreground "black" :box nil :strike-through nil :underline nil :slant normal :weight normal :height 110 :width normal :family "Lucida Grande"))))
+;;    '(tabbar-modified ((t (:inherit tabbar-default :foreground "deep sky blue"))))
+;;    '(tabbar-selected ((t (:inherit tabbar-default :background "white" :foreground "gray20" :box (:line-width 3 :color "white")))))
+;;    '(tabbar-selected-highlight ((t (:foreground "black"))))
+;;    '(tabbar-selected-modified ((t (:inherit tabbar-default :background "white" :foreground "deep sky blue"))))
+;;    '(tabbar-separator ((t (:inherit tabbar-default :background "white" :foreground "white" :height 1.0))))
+;;    '(tabbar-unselected ((t (:inherit tabbar-default :background "#ececec" :box (:line-width 3 :color "#ececec"))))))  )
 
 ;; (add-hook 'tabbar-mode-hook 'wlh/tabbar-mode-hook)
 ;; (add-hook 'custom-mode-hook 'wlh/tabbar-mode-hook)
+
+
+;; Tabbar
+(require 'tabbar)
+;; Tabbar settings
+(set-face-attribute
+ 'tabbar-default nil
+ :background "#ececec"
+ :foreground "#000"
+ :box '(:line-width 2 :color "#ececec" :style nil))
+(set-face-attribute
+ 'tabbar-unselected nil
+ :background "#ececec"
+ :foreground "#888"
+ :box '(:line-width 10 :color "#ececec" :style nil))
+(set-face-attribute
+ 'tabbar-selected nil
+ :background "white"
+ :foreground "black"
+ :box '(:line-width 10 :color "white" :style nil))
+(set-face-attribute
+ 'tabbar-highlight nil
+ :background "white"
+ :foreground "black"
+ :underline nil
+ :box '(:line-width 10 :color "white" :style nil))
+(set-face-attribute
+ 'tabbar-button nil
+ :box '(:line-width 1 :color "white" :style nil))
+(set-face-attribute
+ 'tabbar-separator nil
+ :background "white"
+ :height 0.6)
+
+;; Change padding of the tabs
+;; we also need to set separator to avoid overlapping tabs by highlighted tabs
+(custom-set-variables
+ '(tabbar-separator (quote (0.5))))
+;; adding spaces
+(defun tabbar-buffer-tab-label (tab)
+  "Return a label for TAB.
+That is, a string used to represent it on the tab bar."
+  (let ((label  (if tabbar--buffer-show-groups
+                    (format "[%s]  " (tabbar-tab-tabset tab))
+                  (format "%s  " (tabbar-tab-value tab)))))
+    ;; Unless the tab bar auto scrolls to keep the selected tab
+    ;; visible, shorten the tab label to keep as many tabs as possible
+    ;; in the visible area of the tab bar.
+    (if tabbar-auto-scroll-flag
+        label
+      (tabbar-shorten
+       label (max 1 (/ (window-width)
+                       (length (tabbar-view
+                                (tabbar-current-tabset)))))))))
+
+(tabbar-mode 1)
+
+
+
+
+
+
+
 
 
 ;; ------ ivy
