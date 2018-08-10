@@ -342,4 +342,4 @@
         ;; ("*Google Translate*" . (display-buffer-same-window . nil))
         ))
 
-(setq split-width-threshold 9999)
+;; (setq split-width-threshold 9999)

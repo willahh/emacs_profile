@@ -8,6 +8,9 @@
  '(custom-safe-themes
    (quote
     ("b48150eac948d6de3f8103e6e92f105979277b91c96e9687c13f2d80977d381d" "b2c8ea4a3049e4399a4015f8eddb74fcd0473e9aa0c8818a04979230b22d0e75" default)))
+ '(ede-project-directories
+   (quote
+    ("/Users/wravel/www/project/arsia/arsia_3.1.0_standard/dev")))
  '(ediff-diff-options "-w")
  '(ediff-split-window-function (quote split-window-horizontally))
  '(ediff-window-setup-function (quote ediff-setup-windows-plain))
@@ -15,8 +18,12 @@
  '(helm-allow-mouse t)
  '(helm-source-names-using-follow
    (quote
-    ("Search at ~/www/project/arsia/arsia_3.1.0_standard/dev/sygesp/include/lib/internal/editorplain/js/" "Search at ~/Documents/emacs/.emacs.d_will_backup/lisp/" "Search at ~/.emacs.d/" "Search at ~/www/project/easy3p/easy3p_3.11/dev/module/flatplan/js/view/" "Search at ~/www/project/easy3p/easy3p_3.11/dev/" "Buffers" "Search at ~/.emacs.d/lisp/" "SliderHelper.js" "Search at ~/www/project/easy3p/easy3p_3.10_draganddrop/dev/module/flatplan/js/view/" "Search at ~/www/project/easy3p/easy3p_3.10_draganddrop/dev/module/flatplan/js/" "_module.scss" "Search at ~/www/project/easy3p/easy3p_3.8/dev/module/vshootintention/js/" "Search at ~/www/project/easy3p/easy3p_3.8/dev/module/flatplan/js/controller/preparation/" "global-mark-ring" "Search at ~/quicklisp/dists/quicklisp/software/clsql-20160208-git/sql/" "Search at ~/.emacs.d/vendor/smartparens/" "smartparens-html.el" "Search at ~/www/project/easy3p/easy3p_3.7/dev/module/flatplan/" "Search at ~/www/project/easy3p/easy3p_3.7/dev/module/flatplan/js/view/" "Search at ~/www/project/easy3p/easy3p_3.7/dev/module/flatplan/js/controller/preparation/" "Search at ~/www/project/easy3p/easy3p_3.5/dev/module/vvisual/show/js/view/" "Search at ~/www/project/arsia/arsia_3.2.x_standard_editzone/dev/sygesp/module/production/editzone_v2/js/app/" "Search at ~/www/project/easy3p/easy3p_3.4/dev/module/flatplan/js/" "Search at ~/www/project/arsia/arsia_3.2.x_standard/dev/mediadata/full/module/" "Search at ~/www/project/arsia/arsia_3.2.x_standard/dev/mediadata/full/module/media/iframe/media_edit_multiple/" "Search at ~/www/project/easy3p/easy3p_3.3/dev/module/flatplan/js/controller/preparation/" "Imenu" "Search at ~/www/project/easy3p/easy3p_3.5/dev/module/flatplan/" "")))
+    ("Search at ~/www/project/easy3p/easy3p_3.14/dev/process/dashboardwidget/" "Search at ~/www/project/arsia/arsia_3.1.0_standard/dev/sygesp/include/lib/internal/editorplain/js/" "Search at ~/Documents/emacs/.emacs.d_will_backup/lisp/" "Search at ~/.emacs.d/" "Search at ~/www/project/easy3p/easy3p_3.11/dev/module/flatplan/js/view/" "Search at ~/www/project/easy3p/easy3p_3.11/dev/" "Buffers" "Search at ~/.emacs.d/lisp/" "SliderHelper.js" "Search at ~/www/project/easy3p/easy3p_3.10_draganddrop/dev/module/flatplan/js/view/" "Search at ~/www/project/easy3p/easy3p_3.10_draganddrop/dev/module/flatplan/js/" "_module.scss" "Search at ~/www/project/easy3p/easy3p_3.8/dev/module/vshootintention/js/" "Search at ~/www/project/easy3p/easy3p_3.8/dev/module/flatplan/js/controller/preparation/" "global-mark-ring" "Search at ~/quicklisp/dists/quicklisp/software/clsql-20160208-git/sql/" "Search at ~/.emacs.d/vendor/smartparens/" "smartparens-html.el" "Search at ~/www/project/easy3p/easy3p_3.7/dev/module/flatplan/" "Search at ~/www/project/easy3p/easy3p_3.7/dev/module/flatplan/js/view/" "Search at ~/www/project/easy3p/easy3p_3.7/dev/module/flatplan/js/controller/preparation/" "Search at ~/www/project/easy3p/easy3p_3.5/dev/module/vvisual/show/js/view/" "Search at ~/www/project/arsia/arsia_3.2.x_standard_editzone/dev/sygesp/module/production/editzone_v2/js/app/" "Search at ~/www/project/easy3p/easy3p_3.4/dev/module/flatplan/js/" "Search at ~/www/project/arsia/arsia_3.2.x_standard/dev/mediadata/full/module/" "Search at ~/www/project/arsia/arsia_3.2.x_standard/dev/mediadata/full/module/media/iframe/media_edit_multiple/" "Search at ~/www/project/easy3p/easy3p_3.3/dev/module/flatplan/js/controller/preparation/" "Imenu" "Search at ~/www/project/easy3p/easy3p_3.5/dev/module/flatplan/" "")))
  '(ido-save-directory-list-file "~/.emacs.d/tmp/ido.last")
+ '(lsp-php-server-install-dir "~/.composer/")
+ '(lsp-php-workspace-root-detectors
+   (quote
+    (lsp-php-root-projectile lsp-php-root-composer-json "index.php" "robots.txt")))
  '(mac-mouse-wheel-mode t)
  '(mouse-wheel-mode nil)
  '(mouse-wheel-progressive-speed t)

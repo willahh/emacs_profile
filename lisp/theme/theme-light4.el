@@ -260,18 +260,18 @@
  'tabbar-unselected nil
  :background "#ececec"
  :foreground "#888"
- :box '(:line-width 10 :color "#ececec" :style nil))
+ :box '(:line-width 8 :color "#ececec" :style nil))
 (set-face-attribute
  'tabbar-selected nil
  :background "white"
  :foreground "black"
- :box '(:line-width 10 :color "white" :style nil))
+ :box '(:line-width 8 :color "white" :style nil))
 (set-face-attribute
  'tabbar-highlight nil
  :background "white"
  :foreground "black"
  :underline nil
- :box '(:line-width 10 :color "white" :style nil))
+ :box '(:line-width 8 :color "white" :style nil))
 (set-face-attribute
  'tabbar-button nil
  :box '(:line-width 1 :color "white" :style nil))
