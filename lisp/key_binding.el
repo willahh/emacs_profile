@@ -137,11 +137,12 @@
 (global-set-key (kbd "C-!") 'shell-pop)
 (global-set-key (kbd "C-t") 'transpose-chars)
 
-;;
+;; ivy
 ;; (define-key ivy-minibuffer-map (kbd "<escape>") 'minibuffer-keyboard-quit)
-;; (define-key ivy-minibuffer-map (kbd "C-h") 'delete-backward-char)
+(define-key ivy-minibuffer-map (kbd "C-h") 'delete-backward-char)
 
 ;; Backward kill sexp
+(global-set-key (kbd "C-w") 'whole-line-or-region-kill-region)
 (global-set-key [(control meta h)] 'backward-kill-sexp)
 (global-set-key (kbd "C-c C-k") 'kill-whole-line) ;; Override default emacs kill sentence but i don't use it
 (global-set-key (kbd "C-c C-o") 'ivy-occur)
@@ -249,11 +250,11 @@
 (define-key web-mode-map (kbd "C-k") 'wlh/web-mode-kill-sexp)
 
 ;; ---------------- Backward delete word
-(global-set-key (kbd "C-w") 'backward-kill-word-or-region)
+;; (global-set-key (kbd "C-w") 'backward-kill-word-or-region)
 
 ;; Kill line or region
-(global-set-key (kbd "C-z") 'whole-line-or-region-kill-region)
-(define-key org-mode-map (kbd "C-z") 'whole-line-or-region-kill-region)
+;; (global-set-key (kbd "C-z") 'whole-line-or-region-kill-region)
+;; (define-key org-mode-map (kbd "C-z") 'whole-line-or-region-kill-region)
 (define-key company-active-map (kbd "C-h") 'backward-delete-char)
 (define-key company-active-map (kbd "<tab>") 'company-complete-selection)
 (define-key company-active-map (kbd "C-m") 'company-complete-selection)

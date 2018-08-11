@@ -7,9 +7,9 @@
 (defun wlh/lisp-mode-hook ()
   (define-key slime-prefix-map (kbd "M-h") 'slime-documentation-lookup)
   (highlight-defined-mode)
-  (company-mode nil)
-  (auto-complete-mode nil)
-  (set-up-slime-ac)
+  (company-mode 0)
+  (auto-complete-mode 0)
+  ;; (set-up-slime-ac)
   (aggressive-indent-mode)
   (highlight-symbol-mode)
   (define-key lisp-mode-map (kbd "C-c M-j") 'slime) ; Same as Clojure Cider connect to repl ! 
@@ -21,8 +21,7 @@
   )
 
 (defun wlh/inferior-scheme-mode-hook ()
-  (paredit-mode)
-  (auto-complete-mode))
+  (paredit-mode))
 
 (setq inferior-lisp-program "sbcl")
 ;; (setq inferior-lisp-program "ccl")
