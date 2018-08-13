@@ -334,7 +334,8 @@
 (setq display-buffer-alist
       '(
         ("*vc-dir*"               . (display-buffer-same-window . nil))
-        ("*ag*"               . (display-buffer-same-window . nil))
+        ("*vc-change-log*"        . (display-buffer-same-window . nil))
+        ("*ag*"                   . (display-buffer-same-window . nil))
         ;; ("*vc-diff*"               . (display-buffer-same-window . nil))
         ;; ("*vc-diff*"               . (display-buffer-same-window . nil))
         ;; ("*vc-change-log*"            . (display-buffer-same-window . nil))
