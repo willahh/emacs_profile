@@ -214,7 +214,9 @@ on the screen values."
               (delete-window)
             (message "ok"))
         (tabbar-close-tab))
-    (delete-window)))
+    (if (< 1 (count-windows))
+        (delete-window)
+      (delete-frame))))
 
 (defun wlh/join-line ()
   (interactive)
