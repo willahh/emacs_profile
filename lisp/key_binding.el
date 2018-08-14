@@ -13,11 +13,11 @@
 (global-set-key (kbd "M-c") 'easy-kill)
 
 ;; Yank
-(global-set-key (kbd "M-v") 'yank)
-(define-key mc/keymap (kbd "M-v") 'yank)
-(define-key helm-map (kbd "M-v") 'yank)
-(define-key ivy-minibuffer-map (kbd "M-v") 'yank)
-(global-set-key [(meta v)] 'yank)
+(global-set-key (kbd "M-v") 'yank-and-indent)
+(define-key mc/keymap (kbd "M-v") 'yank-and-indent)
+(define-key helm-map (kbd "M-v") 'yank-and-indent)
+(define-key ivy-minibuffer-map (kbd "M-v") 'yank-and-indent)
+(global-set-key [(meta v)] 'yank-and-indent)
 
 ;; Yank pop
 (global-set-key [(meta shift v)] 'yank-pop)
