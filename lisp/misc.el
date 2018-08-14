@@ -55,21 +55,21 @@
 ;; (require 'rainbow-mode)
 ;; Disable rainbow-mode by default
 (require 'rainbow-mode)
-;; (add-hook 'prog-mode-hook #'rainbow-mode)
 
 ;; sy
 (require 'syslog-mode)
 
-(add-hook 'syslog-mode-hook
-          (lambda ()
-            (toggle-truncate-lines 0)
-            (define-key syslog-mode-map (kbd "◊") 'scroll-down)
-            (define-key syslog-mode-map (kbd "C-v") 'scroll-up)))
+;; (add-hook 'syslog-mode-hook
+;;           (lambda ()
+;;             ))
 
 ;; https://emacs.stackexchange.com/a/13010
 (defun etc-log-tail-handler ()
   (syslog-mode)
   (end-of-buffer)
+  (toggle-truncate-lines 1)
+  (define-key syslog-mode-map (kbd "◊") 'scroll-down)
+  (define-key syslog-mode-map (kbd "C-v") 'scroll-up)
   ;; (make-variable-buffer-local 'auto-revert-interval)
   (setq auto-revert-interval 1)
   (auto-revert-set-timer)
@@ -80,7 +80,7 @@
   
   ;; (when (fboundp 'show-smartparens-mode)
   ;;   (show-smartparens-mode 0))
-  
+  (company-mode 0)
   (undo-tree-mode 0)
   (editorconfig-mode 0)
   (yas-global-mode 0)
@@ -107,7 +107,7 @@
 
 ;; rainbow-delimiters
 (require 'rainbow-delimiters)
-(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+(add-hook 'c-mode-map #'rainbow-delimiters-mode)
 (add-hook 'eshell-mode-hook #'rainbow-delimiters-mode)
 (add-hook 'eww-mode #'rainbow-delimiters-mode)
 (add-hook 'eww-mode #'rainbow-mode)
@@ -300,7 +300,7 @@
 (add-hook 'lisp-mode-hook (lambda ()
                             (define-key slime-macroexpansion-minor-mode-map (kbd "M-z") 'slime-macroexpand-undo)))
 
-(add-hook 'prog-mode-hook 'hs-minor-mode)
+(add-hook 'c-mode-hook 'hs-minor-mode)
 
 ;; hippie expand is dabbrev expand on steroids
 (setq hippie-expand-try-functions-list '(try-expand-dabbrev
@@ -392,24 +392,13 @@ Version 2016-10-24"
 ;;   (interactive)
 ;;   (window-divider-mode-apply t))
 
-(setq global-flycheck-mode t)
+;; (setq global-flycheck-mode t) ; Prog mode only (or c-mode only)
 
 (require 'edit-server)
 (edit-server-start)
 
 ;; Pandoc
 (require 'pandoc-mode)
-
-;; ;; vi-tilde-fringe
-;; (require 'vi-tilde-fringe)
-;; (add-hook 'prog-mode-hook (lambda ()
-;;                             (vi-tilde-fringe-mode t)))
-
-;; ;; Skewer-mode
-;; (require 'skewer-mode)
-;; (add-hook 'js2-mode-hook 'skewer-mode)
-;; (add-hook 'css-mode-hook 'skewer-css-mode)
-;; (add-hook 'html-mode-hook 'skewer-html-mode)
 
 ;; From prelude
 ;; proced-mode doesn't work on OS X so we use vkill instead
@@ -435,15 +424,6 @@ Version 2016-10-24"
 ;; google-translate conf
 (setq google-translate-default-source-language "fr")
 (setq google-translate-default-target-language "en")
-
-;; nlinum-mode
-;; Use new default line numbered
-;; (add-hook 'prog-mode-hook 'nlinum-mode)
-;; (add-hook 'php-mode-hook 'nlinum-mode)
-;; (add-hook 'web-mode-hook 'nlinum-mode)
-;; (add-hook 'js2-mode-hook 'nlinum-mode)
-;; (add-hook 'js-mode-hook 'nlinum-mode)
-;; (add-hook 'css-mode-hook 'nlinum-mode)
 
 ;; disable window-system in terminal mode
 (unless window-system
@@ -547,10 +527,6 @@ abort completely with `C-g'."
 (require 'highlight-symbol)
 
 (setq highlight-symbol-idle-delay .3)
-
-;; (add-hook 'prog-mode-hook 'highlight-symbol-nav-mode)
-;; (add-hook 'typescript-mode-hook 'highlight-symbol-nav-mode)
-;; (add-hook 'emacs-lisp-mode 'highlight-symbol-nav-mode)
 
 (add-hook 'prog-mode-hook
           (highlight-symbol-nav-mode))

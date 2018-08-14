@@ -7,8 +7,8 @@
 (setq yas/indent-line nil)
 (setq yas-indent-line 'auto)
 
-(yas-global-mode t)
-(yas-reload-all)
+;; (yas-global-mode t) ; Prog mode (c-mode) only
+;; (yas-reload-all)
 (add-hook 'prog-mode-hook #'yas-minor-mode)
 (add-hook 'web-mode-hook #'yas-minor-mode)
 (add-hook 'org-mode-hook #'yas-minor-mode)

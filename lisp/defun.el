@@ -653,10 +653,6 @@ save it in `ffap-file-at-point-line-number' variable."
 (global-set-key (kbd "M-'") 'describe-thing-in-popup)
 
 
-
-
-
-
 ;; Windowing
 ;; From frontmacs
 ;; Split horizontally when opening a new window from a command
@@ -690,18 +686,3 @@ buffer is not visiting a file."
                          (ido-read-file-name "Find file(as root): ")))
     (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
 (global-set-key (kbd "C-x C-r") 'sudo-edit)
-
-
-
-;; -------- Init
-;; (setq inhibit-splash-screen t)
-;; (switch-to-buffer "*Bookmark List*")
-
-;; Show matching parenthesis.
-(show-paren-mode)
-
-;; Active winner-mode to allow navigation between different windows.
-(winner-mode t)
-
-;; Start an eshell process at start-up.
-(eshell)

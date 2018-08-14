@@ -62,7 +62,7 @@ on the screen values."
   (interactive)
   (set-frame-position (selected-frame) (- (/ (x-display-pixel-width) 4) (/ (frame-pixel-width) 2)) (- (/ (x-display-pixel-width) 4) (frame-pixel-height))))
 
-;; ------------ willahh custom
+;; custom
 (defun wlh/open-projectile-bookmarks ()
   ;; Find pdf files in user directory
   (interactive)
@@ -185,6 +185,7 @@ on the screen values."
   (interactive)
   (let ((frame (make-frame)))
     (select-frame frame)
+    (set-frame-size frame 190 70)
     (funcall #'switch-to-buffer (xah-new-empty-buffer))    
     (wlh/frame-position-1 frame)))
 
@@ -197,12 +198,6 @@ on the screen values."
   "Find org files in current directory."
   (interactive)
   (find-name-dired default-directory "*.org"))
-
-;; (defun wlh/delete-window ()
-;;   (interactive)
-;;   (if (> (length (window-list)) 1)
-;;       (delete-window)
-;;     (delete-frame)))
 
 (defun wlh/delete-window ()
   "Close tab if multiple tabs are present in window, close window

@@ -15,9 +15,6 @@
 (setq-default line-spacing 0.25)
 (setq-default line-height 1.25)
 
-
-
-
 ;; Main background
 (set-face-attribute 'default nil :background "#ffffff")
 (set-face-attribute 'shadow nil :foreground "#ccc")
@@ -301,15 +298,7 @@ That is, a string used to represent it on the tab bar."
                        (length (tabbar-view
                                 (tabbar-current-tabset)))))))))
 
-(tabbar-mode 1)
-
-
-
-
-
-
-
-
+;; (tabbar-mode 1)
 
 ;; ------ ivy
 (set-face-attribute 'ivy-minibuffer-match-face-1 nil :foreground "#d73a49" :background nil :underline t)

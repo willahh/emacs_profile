@@ -8,8 +8,8 @@
 ;; => Provide a first entry called "npm install".
 ;; 
 
-(defvar wlh/nodejs-root-dir "/Users/willahh/www/test/react/react-static-boilerplate/")
-(defvar wlh/nodejs-root-dir "/Users/willahh/.emacs.d/")
+(defvar wlh/nodejs-root-dir "~/www/test/react/react-static-boilerplate/")
+(defvar wlh/nodejs-root-dir "~/.emacs.d/")
 ;; (defvar wlh/nodejs-root-dir (projectile-project-root))
 
 (defun wlh/nodejs-list-files (root-dir) 

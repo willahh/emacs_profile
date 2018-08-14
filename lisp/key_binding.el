@@ -308,6 +308,7 @@
 
 ;; New line
 ;; (define-key prog-mode-map (kbd "RET") 'new-line-dwim)
+;; (define-key c-mode-map (kbd "RET") 'new-line-dwim) ;; TODO Check error
 (define-key lisp-mode-map (kbd "RET") 'paredit-newline)
 (define-key css-mode-map (kbd "RET") 'new-line-dwim)
 (define-key php-mode-map (kbd "RET") 'new-line-dwim)

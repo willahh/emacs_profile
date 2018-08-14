@@ -26,7 +26,7 @@
 (setq inferior-lisp-program "sbcl")
 ;; (setq inferior-lisp-program "ccl")
 (slime-setup '(slime-fancy))
-(global-set-key "\C-cs" 'slime-selector)
+;; (global-set-key "\C-cs" 'slime-selector)
 
 (add-hook 'slime-load-hook 'wlh/slime-mode-hook)
 (add-hook 'lisp-mode-hook 'wlh/lisp-mode-hook)

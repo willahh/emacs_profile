@@ -37,6 +37,7 @@
 (load-file "~/.emacs.d/lisp/lang/clojure.el")
 (load-file "~/.emacs.d/lisp/lang/react.el")
 (load-file "~/.emacs.d/lisp/lang/hy.el")
+(load-file "~/.emacs.d/lisp/init.el")
 
 
 (window-divider-mode-apply 1)

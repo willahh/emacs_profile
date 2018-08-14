@@ -2,4 +2,4 @@
   (display-line-numbers-mode)
   (hl-line-mode))
 
-(add-hook 'prog-mode-hook 'wlh/prog-hook)
+(add-hook 'c-mode-map 'wlh/prog-hook)

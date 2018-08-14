@@ -13,12 +13,16 @@
 (setq company-quickhelp-delay 1)
 (setq company-quickhelp-max-lines nil)
 
-(add-hook 'after-init-hook 'global-company-mode)
-(company-quickhelp-mode 1)
+;; (add-hook 'after-init-hook 'global-company-mode) ; Set this only for local mode
+;; (company-quickhelp-mode 1) ; Set this only for local mode
 
 (require 'company-flx)
-(company-flx-mode)
+(defun wlh/company-hook ()
+  (interactive)
+  (company-mode)
+  (company-flx-mode))
 
+(add-hook 'emacs-lisp-mode-hook 'wlh/company-hook)
 ;; Remove some words completion
 ;; (delete 'company-dabbrev company-backends)
 ;; (delete '(company-dabbrev-code company-gtags company-etags company-keywords) company-backends)

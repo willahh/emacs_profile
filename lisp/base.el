@@ -168,6 +168,9 @@
 ;; Set window divider bottom and right
 (setq window-divider-default-places t)
 
+(window-divider-mode-apply 1)
+(setq split-width-threshold 400)
+
 ;; Indentation -----------------------------
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
@@ -203,7 +206,6 @@
 ;; (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
 (setq mouse-wheel-progressive-speed t)
 (setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
-
 
 ;; stops selection with a mouse being immediately injected to the kill ring
 (setq mouse-drag-copy-region nil)
@@ -327,7 +329,6 @@
 (add-hook 'prog-mode-hook (lambda () (update-syntax-entry)))
 (add-hook 'web-mode-hook (lambda () (update-syntax-entry))) ;; Needed for web-mode
 
-(window-divider-mode-apply 1)
 (put 'scroll-left 'disabled nil)
 
 ;; Display some buffer in current window
@@ -342,5 +343,3 @@
         ;; ("*shell*"            . (display-buffer-same-window . nil))
         ;; ("*Google Translate*" . (display-buffer-same-window . nil))
         ))
-
-;; (setq split-width-threshold 9999)
