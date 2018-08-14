@@ -143,6 +143,7 @@
 
 ;; Backward kill sexp
 (global-set-key (kbd "C-w") 'whole-line-or-region-kill-region)
+(global-set-key (kbd "C-z") 'whole-line-or-region-kill-region)
 (global-set-key [(control meta h)] 'backward-kill-sexp)
 (global-set-key (kbd "C-c C-k") 'kill-whole-line) ;; Override default emacs kill sentence but i don't use it
 (global-set-key (kbd "C-c C-o") 'ivy-occur)
@@ -306,7 +307,7 @@
 (define-key web-mode-map (kbd "TAB") 'wlh/web-mode-tab)
 
 ;; New line
-(define-key prog-mode-map (kbd "RET") 'new-line-dwim)
+;; (define-key prog-mode-map (kbd "RET") 'new-line-dwim)
 (define-key lisp-mode-map (kbd "RET") 'paredit-newline)
 (define-key css-mode-map (kbd "RET") 'new-line-dwim)
 (define-key php-mode-map (kbd "RET") 'new-line-dwim)
