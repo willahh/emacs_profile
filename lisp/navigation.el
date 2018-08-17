@@ -27,12 +27,14 @@
         ;; (counsel-imenu . ivy--regex-plus)
         ;; (t . ivy--regex-fuzzy)
         (t . ivy--regex-plus)
+        ;; (t . ivy--regex-fuzzy)
         ;; (projectile-find-file . ivy--regex-fuzzy)
         ;; (projectile-find-file . ivy--regex-plus)
         ;; (projectile-find-file . ivy--regex-fuzzy)
         ))
 
 (ivy-mode)
+
 ;; (setq ivy-height 12)
 (setq ivy-height 14)
 
