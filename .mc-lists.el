@@ -228,6 +228,8 @@
         previous-multiframe-window
         projectile-find-file-dwim
         resize-window
+        scroll-down-half
+        scroll-right
         toggle-truncate-lines
         treemacs-leftclick-action
         undefined

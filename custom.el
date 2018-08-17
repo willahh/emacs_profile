@@ -14,6 +14,7 @@
  '(ediff-diff-options "-w")
  '(ediff-split-window-function (quote split-window-horizontally))
  '(ediff-window-setup-function (quote ediff-setup-windows-plain))
+ '(fast-but-imprecise-scrolling t)
  '(global-diff-hl-mode t)
  '(helm-allow-mouse t)
  '(helm-source-names-using-follow
@@ -25,6 +26,8 @@
    (quote
     (lsp-php-root-projectile lsp-php-root-composer-json "index.php" "robots.txt")))
  '(mac-mouse-wheel-mode t)
+ '(mc/always-repeat-command t)
+ '(mc/cycle-looping-behaviour (quote continue))
  '(mouse-wheel-mode nil)
  '(mouse-wheel-progressive-speed t)
  '(mouse-yank-at-point t)
@@ -55,7 +58,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(mc/cursor-bar-face ((t (:foreground "magenta" :weight light :width condensed))))
+ '(mc/cursor-bar-face ((t (:distant-foreground "black"))))
  '(mode-line-emphasis ((t nil)))
  '(mode-line-highlight ((t nil)))
  '(rainbow-delimiters-depth-1-face ((t (:foreground "#5abeee" :weight bold))))
