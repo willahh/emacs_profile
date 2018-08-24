@@ -116,6 +116,7 @@
                      rainbow-mode
                      resize-window
                      ripgrep
+                     request
                      shell-pop
                      slime
                      skewer-mode
