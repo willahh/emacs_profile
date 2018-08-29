@@ -343,3 +343,18 @@
         ;; ("*shell*"            . (display-buffer-same-window . nil))
         ;; ("*Google Translate*" . (display-buffer-same-window . nil))
         ))
+
+
+;; (defadvice yank (after indent-region activate)
+;;   (if (member major-mode '(emacs-lisp-mode scheme-mode lisp-mode
+;;                                            c-mode c++-mode objc-mode
+;;                                            LaTeX-mode TeX-mode))
+;;       (indent-region (region-beginning) (region-end) nil)))
+
+;; (defadvice yank (after indent-region activate)
+;;   (indent-region (region-beginning) (region-end) nil))
+
+(define-advice kill-ring-save (:around (old-fun &rest args) highlight)
+  "Save the text selection and keep the selection highlight."
+  (let (deactivate-mark)
+    (apply old-fun args)))

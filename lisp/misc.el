@@ -107,7 +107,7 @@
 
 ;; rainbow-delimiters
 (require 'rainbow-delimiters)
-(add-hook 'c-mode-map #'rainbow-delimiters-mode)
+;;(add-hook 'prog-mode-map #'rainbow-delimiters-mode)
 (add-hook 'eshell-mode-hook #'rainbow-delimiters-mode)
 (add-hook 'eww-mode #'rainbow-delimiters-mode)
 (add-hook 'eww-mode #'rainbow-mode)
@@ -300,7 +300,7 @@
 (add-hook 'lisp-mode-hook (lambda ()
                             (define-key slime-macroexpansion-minor-mode-map (kbd "M-z") 'slime-macroexpand-undo)))
 
-(add-hook 'c-mode-hook 'hs-minor-mode)
+;; (add-hook 'c-mode-hook 'hs-minor-mode)
 
 ;; hippie expand is dabbrev expand on steroids
 (setq hippie-expand-try-functions-list '(try-expand-dabbrev

@@ -652,7 +652,6 @@ save it in `ffap-file-at-point-line-number' variable."
 
 (global-set-key (kbd "M-'") 'describe-thing-in-popup)
 
-
 ;; Windowing
 ;; From frontmacs
 ;; Split horizontally when opening a new window from a command

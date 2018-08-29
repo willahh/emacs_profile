@@ -169,6 +169,7 @@
         wlh/delete-backspace
         wlh/web-mode-kill-sexp
         xah-toggle-letter-case
+        yank-and-indent
         yank-rectangle
         yas-expand
         ))

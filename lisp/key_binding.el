@@ -10,14 +10,15 @@
 (define-key key-translation-map (kbd "C-j") (kbd "RET"))
 
 ;; Copy
-(global-set-key (kbd "M-c") 'easy-kill)
+;; (global-set-key (kbd "M-c") #'kill-ring-save-keep-selection)
+(global-set-key (kbd "M-c") 'kill-ring-save)
 
 ;; Yank
-(global-set-key (kbd "M-v") 'yank-and-indent)
-(define-key mc/keymap (kbd "M-v") 'yank-and-indent)
-(define-key helm-map (kbd "M-v") 'yank-and-indent)
-(define-key ivy-minibuffer-map (kbd "M-v") 'yank-and-indent)
-(global-set-key [(meta v)] 'yank-and-indent)
+(global-set-key (kbd "M-v") 'yank)
+(define-key mc/keymap (kbd "M-v") 'yank)
+(define-key helm-map (kbd "M-v") 'yank)
+(define-key ivy-minibuffer-map (kbd "M-v") 'yank)
+(global-set-key [(meta v)] 'yank)
 
 ;; Yank pop
 (global-set-key [(meta shift v)] 'yank-pop)
