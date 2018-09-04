@@ -7,8 +7,9 @@
 (defun wlh/lisp-mode-hook ()
   (define-key slime-prefix-map (kbd "M-h") 'slime-documentation-lookup)
   (highlight-defined-mode)
-  (company-mode 0)
-  (auto-complete-mode 0)
+  
+  ;; (company-mode 0)
+  ;; (auto-complete-mode 0)
   ;; (set-up-slime-ac)
   (aggressive-indent-mode)
   (highlight-symbol-mode)

@@ -189,44 +189,6 @@ point reaches the beginning or end of the buffer, stop there."
       (sort-regexp-fields t "^.*$" "[ ]*." (point) (point-max)))
     (set-buffer-modified-p nil)))
 
-;; Block comment auto close
-;; https://emacs.stackexchange.com/a/14613
-;; (defun my-prettify-c-block-comment (orig-fun &rest args)
-;;   (let* ((first-comment-line (looking-back "/\\*\\s-*.*"))
-;;          (star-col-num (when first-comment-line
-;;                          (save-excursion
-;;                            (re-search-backward "/\\*")
-;;                            (1+ (current-column))))))
-;;     (apply orig-fun args)
-;;     (when first-comment-line
-;;       (save-excursion
-;;         (newline)
-;;         (dotimes (cnt star-col-num)
-;;           (insert " "))
-;;         (move-to-column star-col-num)
-;;         (insert "*/"))
-;;       (move-to-column star-col-num) ; comment this line if using bsd style
-;;       (insert "*") ; comment this line if using bsd style
-;;       ))
-;;   ;; Ensure one space between the asterisk and the comment
-;;   (when (not (looking-back " "))
-;;     (insert " ")))
-
-;; (advice-add 'c-indent-new-comment-line :around #'my-prettify-c-block-comment)
-;; (advice-remove 'c-indent-new-comment-line #'my-prettify-c-block-comment)
-
-;; ;; Source : http://emacs.stackexchange.com/a/7925
-;; ;; @todo ajouter la completion en php apres :: (la ligne en commentaire empeche
-;; ;; la completion apres ->
-;; (defun check-expansion ()
-;;   (save-excursion
-;;     (if (looking-at "\\_>") t
-;;       (backward-char 1)
-;;       (if (looking-at "\\.") t
-;;         (backward-char 1)
-;;         (if (looking-at "->") t nil)
-;;         ))))
-
 ;; http://endlessparentheses.com/emacs-narrow-or-widen-dwim.html
 (define-prefix-command 'endless/toggle-map)
 
@@ -272,10 +234,10 @@ is already narrowed."
 ;; copy it if that's what you want.
 (define-key ctl-x-map "n" #'narrow-or-widen-dwim)
 
-(add-hook 'LaTeX-mode-hook
-          (lambda ()
-            (define-key LaTeX-mode-map "\C-xn"
-              nil)))
+;; (add-hook 'LaTeX-mode-hook
+;;           (lambda ()
+;;             (define-key LaTeX-mode-map "\C-xn"
+;;               nil)))
 
 ;; http://endlessparentheses.com/faster-pop-to-mark-command.html
 ;; Prevent emacs from adding same entries in the mark ring... usefull !
@@ -290,43 +252,43 @@ Try the repeated popping up to 10 times."
 (advice-add 'pop-to-mark-command :around
             #'modi/multi-pop-to-mark)
 
-;; For some reason, renaming the current buffer file is a multi-step process in Emacs.
-;; http://whattheemacsd.com/
-(defun rename-current-buffer-file ()
-  "Renames current buffer and file it is visiting."
-  (interactive)
-  (let ((name (buffer-name))
-        (filename (buffer-file-name)))
-    (if (not (and filename (file-exists-p filename)))
-        (error "Buffer '%s' is not visiting a file!" name)
-      (let ((new-name (read-file-name "New name: " filename)))
-        (if (get-buffer new-name)
-            (error "A buffer named '%s' already exists!" new-name)
-          (rename-file filename new-name 1)
-          (rename-buffer new-name)
-          (set-visited-file-name new-name)
-          (set-buffer-modified-p nil)
-          (message "File '%s' successfully renamed to '%s'"
-                   name (file-name-nondirectory new-name)))))))
+;; ;; For some reason, renaming the current buffer file is a multi-step process in Emacs.
+;; ;; http://whattheemacsd.com/
+;; (defun rename-current-buffer-file ()
+;;   "Renames current buffer and file it is visiting."
+;;   (interactive)
+;;   (let ((name (buffer-name))
+;;         (filename (buffer-file-name)))
+;;     (if (not (and filename (file-exists-p filename)))
+;;         (error "Buffer '%s' is not visiting a file!" name)
+;;       (let ((new-name (read-file-name "New name: " filename)))
+;;         (if (get-buffer new-name)
+;;             (error "A buffer named '%s' already exists!" new-name)
+;;           (rename-file filename new-name 1)
+;;           (rename-buffer new-name)
+;;           (set-visited-file-name new-name)
+;;           (set-buffer-modified-p nil)
+;;           (message "File '%s' successfully renamed to '%s'"
+;;                    name (file-name-nondirectory new-name)))))))
 
-(defun open-line-below ()
-  (interactive)
-  (end-of-line)
-  (newline)
-  (indent-for-tab-command))
+;; (defun open-line-below ()
+;;   (interactive)
+;;   (end-of-line)
+;;   (newline)
+;;   (indent-for-tab-command))
 
-(defun open-line-above ()
-  (interactive)
-  (beginning-of-line)
-  (newline)
-  (forward-line -1)
-  (indent-for-tab-command))
+;; (defun open-line-above ()
+;;   (interactive)
+;;   (beginning-of-line)
+;;   (newline)
+;;   (forward-line -1)
+;;   (indent-for-tab-command))
 
-(defun magit-quit-session ()
-  "Restores the previous window configuration and kills the magit buffer"
-  (interactive)
-  (kill-buffer)
-  (jump-to-register :magit-fullscreen))
+;; (defun magift-quit-session ()
+;;   "Restores the previous window configuration and kills the magit buffer"
+;;   (interactive)
+;;   (kill-buffer)
+;;   (jump-to-register :magit-fullscreen))
 
 ;; Switch and rebalance windows when splitting
 ;; https://github.com/hrsp/dotfiles/blob/master/emacs.d/configuration.org
@@ -342,19 +304,19 @@ Try the repeated popping up to 10 times."
   (split-window-right)
   (other-window 1))
 
-;; https://www.emacswiki.org/emacs/DiredSortCriterias?
-(defun dired-sort-criteria (criteria)
-  "sort-dired by different criteria by Robert Gloeckner "
-  (interactive
-   (list
-    (or (completing-read "criteria [name]: "
-                         '("size(S)" "extension(X)" "creation-time(ct)"
-                           "access-time(ut)" "time(t)" "name()"))
-        "")))
-  (string-match ".*(\\(.*\\))" criteria)
-  (dired-sort-other
-   (concat dired-listing-switches
-           (match-string 1 criteria))))
+;; ;; https://www.emacswiki.org/emacs/DiredSortCriterias?
+;; (defun dired-sort-criteria (criteria)
+;;   "sort-dired by different criteria by Robert Gloeckner "
+;;   (interactive
+;;    (list
+;;     (or (completing-read "criteria [name]: "
+;;                          '("size(S)" "extension(X)" "creation-time(ct)"
+;;                            "access-time(ut)" "time(t)" "name()"))
+;;         "")))
+;;   (string-match ".*(\\(.*\\))" criteria)
+;;   (dired-sort-other
+;;    (concat dired-listing-switches
+;;            (match-string 1 criteria))))
 
 (defun xah-toggle-letter-case ()
   "Toggle the letter case of current word or text selection.
@@ -387,16 +349,16 @@ Version 2017-04-19"
       (downcase-region -p1 -p2)
       (put this-command 'state 0)))))
 
-;; automatically indenting yanked text if in programming-modes
-;; http://trey-jackson.blogspot.fr/2008/03/emacs-tip-15-indent-yanked-code.html
-(defvar yank-indent-modes '(emacs-lisp-mode
-                            c-mode c++-mode
-                            tcl-mode sql-mode
-                            perl-mode cperl-mode
-                            java-mode jde-mode
-                            lisp-interaction-mode
-                            LaTeX-mode TeX-mode php-mode web-mode js2-mode)
-  "Modes in which to indent regions that are yanked (or yank-popped)")
+;; ;; automatically indenting yanked text if in programming-modes
+;; ;; http://trey-jackson.blogspot.fr/2008/03/emacs-tip-15-indent-yanked-code.html
+;; (defvar yank-indent-modes '(emacs-lisp-mode
+;;                             c-mode c++-mode
+;;                             tcl-mode sql-mode
+;;                             perl-mode cperl-mode
+;;                             java-mode jde-mode
+;;                             lisp-interaction-mode
+;;                             LaTeX-mode TeX-mode php-mode web-mode js2-mode)
+;;   "Modes in which to indent regions that are yanked (or yank-popped)")
 
 ;; https://stackoverflow.com/a/9697222
 (defun comment-or-uncomment-region-or-line ()
@@ -472,17 +434,17 @@ Version 2017-04-19"
   (interactive)
   (scroll-down (window-half-height)))
 
-(defun backward-kill-word-or-region (&optional arg)
-  "Calls `kill-region' when a region is active and
-`backward-kill-word' otherwise. ARG is passed to
-`backward-kill-word' if no region is active."
-  (interactive "p")
-  (if (region-active-p)
-      ;; call interactively so kill-region handles rectangular selection
-      ;; correctly (see https://github.com/syl20bnr/spacemacs/issues/3278)
-      (call-interactively #'kill-region)
-    ;; (backward-kill-word arg)
-    (paredit-backward-kill-word)))
+;; (defun backward-kill-word-or-region (&optional arg)
+;;   "Calls `kill-region' when a region is active and
+;; `backward-kill-word' otherwise. ARG is passed to
+;; `backward-kill-word' if no region is active."
+;;   (interactive "p")
+;;   (if (region-active-p)
+;;       ;; call interactively so kill-region handles rectangular selection
+;;       ;; correctly (see https://github.com/syl20bnr/spacemacs/issues/3278)
+;;       (call-interactively #'kill-region)
+;;     ;; (backward-kill-word arg)
+;;     (paredit-backward-kill-word)))
 
 ;; From prelude
 ;; Compilation from Emacs

@@ -14,13 +14,12 @@
                           isearch-string
                         (regexp-quote isearch-string)))))
 
-(setq-default
- isearch-allow-scroll t
- lazy-highlight-cleanup t
- lazy-highlight-initial-delay 0
- isearch-allow-scroll t
- lazy-highlight-cleanup t
- lazy-highlight-initial-delay 0)
+(setq-default isearch-allow-scroll t
+              lazy-highlight-cleanup t
+              lazy-highlight-initial-delay 0
+              isearch-allow-scroll t
+              lazy-highlight-cleanup t
+              lazy-highlight-initial-delay 0)
 
 
 ;; Ag ---------------------

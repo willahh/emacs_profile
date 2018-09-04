@@ -27,11 +27,6 @@
 (global-set-key (kbd "<end>") 'end-of-buffer)
 (global-set-key (kbd "<home>") 'beginning-of-buffer)
 
-;; ;; 
-;; (global-set-key (kbd "C-x b") 'switch-to-buffer)
-
-
-
 ;; --------------- ALT key binding
 ;; Azerty keyboard
 (global-set-key (kbd "≈") 'counsel-M-x) ; Alt + x
@@ -233,7 +228,8 @@
 
 ;; ---------------- Multi cursor binding
 (global-set-key (kbd "M-L") 'mc/mark-all-words-like-this) ; VS Code key binding
-(global-set-key (kbd "M-g") 'mc/mark-next-like-this-word) ; Almost like sublime M-d. Was go to line
+;; (global-set-key (kbd "M-g") 'mc/mark-next-like-this-word) ; Almost like sublime M-d. Was go to line
+(global-set-key (kbd "Δ") 'mc/mark-next-like-this-word) ; Almost like sublime M-d. Was go to line
 (global-set-key (kbd "M-G") 'mc/mark-previous-like-this-word)
 (define-key paredit-mode-map (kbd "M-g") 'mc/mark-next-like-this-word) ; Was go to line
 

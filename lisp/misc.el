@@ -21,6 +21,11 @@
 ;; (setq mc/always-run-for-all 1)
 (setq mc/always-run-for-all nil)
 
+;; (defun jump-to-next-cursor (test another)
+;;   (call-interactively 'mc/cycle-forward))
+;; (advice-add 'mc/mark-next-like-this :after 'jump-to-next-cursor)
+;; (advice-add 'mc/mark-next-like-this-word :after 'jump-to-next-cursor)
+
 
 ;; Multiple-curspr with mouse
 ;; http://pragmaticemacs.com/emacs/add-multiple-cursors-with-mouse-clicks/
