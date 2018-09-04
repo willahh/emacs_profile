@@ -7,23 +7,26 @@
   ;; (eldoc-mode +1)
   ;; (tide-hl-identifier-mode +1)
   
-  
   ;; aligns annotation to the right hand side
-  (setq company-tooltip-align-annotations t)
+  ;; (setq company-tooltip-align-annotations t)
 
   (setq-default js-switch-indent-offset 4)
   (setq-default js2-idle-timer-delay 0.1)
   (setq-default js2-global-externs '("module" "require" "buster" "sinon" "assert" "refute" "setTimeout" "clearTimeout" "setInterval" "clearInterval" "location" "__dirname" "console" "JSON"))
   (setq-default js2-auto-indent-p t)
-  
   ;; (setq js2-missing-semi-one-line-override 1)
-  ;; (setq js2-strict-missing-semi-warning t)
-  ;; (setq js2-highlight-unused-variables-mode t)
+  (setq js2-strict-missing-semi-warning t)
+  (setq js2-highlight-unused-variables-mode t)
+  (setq-default js2-idle-timer-delay 0.1)
+  (setq-default js2-auto-indent-p nil)
+  (setq-default js2-show-parse-errors t)
+  (setq-default js2-skip-preprocessor-directives t
+                js2-highlight-external-variables t
+                js2-mode-show-parse-errors t)
+  
   ;; (setq js2-strict-var-hides-function-arg-warning t)
-  ;; (setq-default js2-idle-timer-delay 0.1)
   ;; (setq-default js2-idle-timer-delay 2)
   ;; (setq-default js2-allow-rhino-new-expr-initializer nil)
-  ;; (setq-default js2-auto-indent-p nil)
   ;; (setq-default js2-enter-indents-newline nil)
   ;; (setq-default js2-indent-on-enter-key nil)
   ;; (setq-default js2-mirror-mode nil)
@@ -36,13 +39,13 @@
   ;; (setq-default js2-show-parse-errors nil)
   ;; (setq-default js2-strict-missing-semi-warning nil)
   ;; (setq-default js2-strict-trailing-comma-warning t) ;; jshint does not warn about this now for some reason
-
-  (setq-default js2-skip-preprocessor-directives t
-                js2-highlight-external-variables nil
-                js2-mode-show-parse-errors nil)
   
   ;; (nlinum-mode)
   (highlight-symbol-mode t)
+
+  (js2-refactor-mode 1)
+  (tern-mode 1)
+  (company-mode 1)
 
   ;; js2-imenu-extras-mode
   (js2-imenu-extras-mode)
@@ -64,6 +67,8 @@
   
   ;; js2-xref
   (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)
+
+  (define-key js2-mode-map (kbd "<f2>") 'js2r-rename-var)
   
   ;; (define-key js2-mode-map (kbd "<C-M-mouse-1>") 'xref-find-definitions)
   ;; (define-key js2-mode-map (kbd "<C-M-mouse-3>") 'xref-pop-marker-stack)
