@@ -602,11 +602,13 @@ abort completely with `C-g'."
 ;;                  (let ((mark-even-if-inactive transient-mark-mode))
 ;;                    (indent-region (region-beginning) (region-end) nil))))))
 
-(defun yank-and-indent ()
-  "Yank and then indent the newly formed region according to mode."
-  (interactive)
-  (yank)
-  (call-interactively 'indent-region))
+
+
+;; (defun yank-and-indent ()
+;;   "Yank and then indent the newly formed region according to mode."
+;;   (interactive)
+;;   (yank)
+;;   (call-interactively 'indent-region))
 
 ;; If file too large
 ;; https://stackoverflow.com/questions/18316665/how-to-improve-emacs-performance-when-view-large-file
