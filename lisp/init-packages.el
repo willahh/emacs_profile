@@ -10,7 +10,7 @@
 
 ;; Package list
 (setq package-list '(
-		             ac-slime
+		     ac-slime
                      ace-link
                      ace-window
                      hide-lines
@@ -116,7 +116,7 @@
                      rainbow-mode
                      resize-window
                      ripgrep
-                     request
+                     ;; request
                      shell-pop
                      slime
                      skewer-mode
@@ -155,6 +155,7 @@
 (add-to-list 'load-path "~/.emacs.d/site-lisp/lsp-ui")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/lsp-php")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/tabbar")
+;; (add-to-list 'load-path "~/.emacs.d/site-lisp/auto-highlight-symbol-mode")
 
 ;; Add additional files
 (load-file "~/.emacs.d/site-lisp/ido-preview.el")
@@ -164,6 +165,8 @@
 (load-file "~/.emacs.d/site-lisp/tabbar/aquamacs-tabbar.el")
 (load-file "~/.emacs.d/site-lisp/tabbar/aquamacs-tools.el")
 (load-file "~/.emacs.d/site-lisp/highlight-defined.el")
+(load-file "~/.emacs.d/site-lisp/auto-highlight-symbol-mode/auto-highlight-symbol-mode.el")
+(load-file "~/.emacs.d/site-lisp/auto-highlight-symbol-mode/auto-highlight-symbol-mode-config.el")
 
 ;; fetch the list of packages available 
 (unless package-archive-contents

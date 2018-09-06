@@ -39,9 +39,8 @@
 (global-set-key (kbd "Ë") 'increment-number-at-point)
 
 ;; Multi cursor stuf
-;; (global-set-key (kbd "~") 'mc/mark-next-lines) ; ALT+SHIFT+n
-;; (global-set-key (kbd "π") 'mc/mark-previous-lines) ; ALT+SHIFT+p
-;; (global-set-key (kbd "~") '(lambda () (insert "~")))
+(global-set-key (kbd "ı") 'mc/mark-next-lines) ; ALT+SHIFT+n
+(global-set-key (kbd "∏") 'mc/mark-previous-lines) ; ALT+SHIFT+p
 
 ;; Drag line"
 (global-set-key (kbd "π") 'drag-stuff-up) ; ALT+p

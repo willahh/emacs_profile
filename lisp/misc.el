@@ -581,12 +581,12 @@ abort completely with `C-g'."
 ;;       treemacs-width                      35)
 
 
-;; hl-line-mode
-(add-hook 'compilation-mode-hook (lambda () (hl-line-mode)))
-(add-hook 'dired-mode-hook (lambda () (hl-line-mode)))
-(add-hook 'occur-mode-hook (lambda () (hl-line-mode)))
-(add-hook 'ibuffer-mode-hook (lambda () (hl-line-mode)))
-(add-hook 'diff-mode-hook (lambda () (hl-line-mode)))
+;; ;; hl-line-mode
+;; (add-hook 'compilation-mode-hook (lambda () (hl-line-mode)))
+;; (add-hook 'dired-mode-hook (lambda () (hl-line-mode)))
+;; (add-hook 'occur-mode-hook (lambda () (hl-line-mode)))
+;; (add-hook 'ibuffer-mode-hook (lambda () (hl-line-mode)))
+;; (add-hook 'diff-mode-hook (lambda () (hl-line-mode)))
 
 ;; editorconfig
 (require 'editorconfig)

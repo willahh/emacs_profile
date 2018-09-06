@@ -354,7 +354,7 @@
 ;; (defadvice yank (after indent-region activate)
 ;;   (indent-region (region-beginning) (region-end) nil))
 
-(define-advice kill-ring-save (:around (old-fun &rest args) highlight)
-  "Save the text selection and keep the selection highlight."
-  (let (deactivate-mark)
-    (apply old-fun args)))
+;; (define-advice kill-ring-save (:around (old-fun &rest args) highlight)
+;;   "Save the text selection and keep the selection highlight."
+;;   (let (deactivate-mark)
+;;     (apply old-fun args)))

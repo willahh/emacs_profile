@@ -11,9 +11,24 @@
 ;; (set-frame-font "Monaco")
 (set-frame-font "Menlo")
 
+;; Line spacing
+;; https://stackoverflow.com/questions/26437034/emacs-line-height
 ;; (setq-default line-spacing 1)
-(setq-default line-spacing 0.25)
+;; (setq-default line-spacing 0.25)
+;; (setq-default line-spacing 0.25)
+(setq-default line-spacing 2) ; https://www.emacswiki.org/emacs/LineSpacing
 (setq-default line-height 1.25)
+
+;; "<a class="bt g buttonSectorMultiple""
+
+(defun wlh/theme-hook ()
+  (interactive)
+  (add-text-properties (point-min) (point-max)
+                       '(line-spacing 2 line-height 1.25)))
+
+(add-hook 'prog-mode-hook 'wlh/theme-hook)
+(add-hook 'compilation-mode-hook 'wlh/theme-hook)
+
 
 ;; Main background
 (set-face-attribute 'default nil :background "#ffffff")
@@ -100,7 +115,7 @@
 (set-face-attribute 'highlight-defined-builtin-function-name-face nil :foreground "#d73a49")
 ;; (set-face-attribute 'font-lock-string-face nil :foreground "#b62e24")
 ;; (set-face-attribute 'font-lock-string-face nil :foreground "#008000")
-(set-face-attribute 'font-lock-string-face nil :foreground "#032f62")
+(set-face-attribute 'font-lock-string-face nil :foreground "#032f62" :slant 'normal)
 (set-face-attribute 'font-lock-comment-face nil :foreground "#6a737d")
 (set-face-attribute 'font-lock-doc-face nil :foreground "#032f62")
 (set-face-attribute 'font-lock-constant-face nil :foreground "#5fbfec")
