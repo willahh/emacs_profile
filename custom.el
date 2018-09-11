@@ -33,7 +33,7 @@
  '(mouse-yank-at-point t)
  '(package-selected-packages
    (quote
-    (csv-mode highlight-defined tabbar elscreen erefactor redshank all-the-icons smartparens easy-kill string-inflection centered-window noflet ido-completing-read+ helm-flx company-flx diminish dumb-jump move-text cider indium treemacs-projectile treemacs hide-lines hy-mode elscreen-mew elscreen-fr flycheck-clojure ac-slime markdown-preview-mode diffview aggressive-indent counsel-gtags xref-js2 zop-to-char yaml-mode whole-line-or-region which-key wgrep websocket web-mode web-beautify visual-regexp-steroids visual-regexp validate use-package toc-org tide sx sourcemap smooth-scrolling sml-mode smex skewer-mode resize-window react-snippets rainbow-mode rainbow-delimiters psysh projectile-ripgrep powerline php-auto-yasnippets perspective pdf-tools paredit-everywhere paradox pandoc-mode ov org-bullets neotree monokai-theme magit key-chord json-mode js2-refactor js-comint jabber iy-go-to-char ivy-hydra intellij-theme inf-clojure indent-guide impatient-mode imenu-list image-dired+ iflipb iedit ido-vertical-mode ido-ubiquitous ido-occur ido-at-point ibuffer-vc highlight-symbol helm-swoop helm-projectile helm-ag gradle-mode google-translate git-timemachine git-gutter ggtags fullframe flycheck-pos-tip flx-ido find-file-in-project expand-region exec-path-from-shell evil-visualstar evil-surround evil-snipe evil-org evil-nerd-commenter evil-matchit evil-leader emmet-mode editorconfig edit-server eclim dtrt-indent drag-stuff dracula-theme diff-hl darkroom crux counsel company-web company-tern company-quickhelp coffee-mode clojure-snippets clojure-cheatsheet clj-refactor browse-kill-ring avy-menu autopair auto-yasnippet auto-complete ag actionscript-mode ace-window ace-link ace-jump-mode)))
+    (dired-subtree smart-comment dired-ranger csv-mode highlight-defined tabbar elscreen erefactor redshank all-the-icons smartparens easy-kill string-inflection centered-window noflet ido-completing-read+ helm-flx company-flx diminish dumb-jump move-text cider indium treemacs-projectile treemacs hide-lines hy-mode elscreen-mew elscreen-fr flycheck-clojure ac-slime markdown-preview-mode diffview aggressive-indent counsel-gtags xref-js2 zop-to-char yaml-mode whole-line-or-region which-key wgrep websocket web-mode web-beautify visual-regexp-steroids visual-regexp validate use-package toc-org tide sx sourcemap smooth-scrolling sml-mode smex skewer-mode resize-window react-snippets rainbow-mode rainbow-delimiters psysh projectile-ripgrep powerline php-auto-yasnippets perspective pdf-tools paredit-everywhere paradox pandoc-mode ov org-bullets neotree monokai-theme magit key-chord json-mode js2-refactor js-comint jabber iy-go-to-char ivy-hydra intellij-theme inf-clojure indent-guide impatient-mode imenu-list image-dired+ iflipb iedit ido-vertical-mode ido-ubiquitous ido-occur ido-at-point ibuffer-vc highlight-symbol helm-swoop helm-projectile helm-ag gradle-mode google-translate git-timemachine git-gutter ggtags fullframe flycheck-pos-tip flx-ido find-file-in-project expand-region exec-path-from-shell evil-visualstar evil-surround evil-snipe evil-org evil-nerd-commenter evil-matchit evil-leader emmet-mode editorconfig edit-server eclim dtrt-indent drag-stuff dracula-theme diff-hl darkroom crux counsel company-web company-tern company-quickhelp coffee-mode clojure-snippets clojure-cheatsheet clj-refactor browse-kill-ring avy-menu autopair auto-yasnippet auto-complete ag actionscript-mode ace-window ace-link ace-jump-mode)))
  '(projectile-cache-file "~/.emacs.d/tmp/projectile.cache")
  '(recentf-save-file "~/.emacs.d/tmp/recentf")
  '(save-place-file "/~/.emacs.d/tmp/.places" t)
@@ -49,16 +49,12 @@
  '(smtpmail-smtp-service 587)
  '(sp-escape-quotes-after-insert nil)
  '(sp-escape-wrapped-region nil)
- ;; '(tabbar-background-color "white smoke")
- ;; '(tabbar-mode t nil (tabbar))
- ;; '(tabbar-separator (quote (0.5)))
  '(url-configuration-directory "~/.emacs.d/tmp/url/"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :family "Menlo"))))
  '(mc/cursor-bar-face ((t (:foreground "magenta" :weight light :width condensed))))
  '(mode-line-emphasis ((t nil)))
  '(mode-line-highlight ((t nil)))
@@ -71,14 +67,6 @@
  '(rainbow-delimiters-depth-7-face ((t (:foreground "#fa75e2" :weight bold))))
  '(rainbow-delimiters-depth-8-face ((t (:foreground "#55bdf0" :weight bold))))
  '(sp-show-pair-enclosing ((t (:inherit highlight :background "magenta"))))
- ;; '(tabbar-button ((t (:inherit tabbar-default :background "#ececec" :box nil))))
- ;; '(tabbar-default ((t (:inherit nil :stipple nil :background "white" :foreground "black" :box nil :strike-through nil :underline nil :slant normal :weight normal :height 110 :width normal :family "Lucida Grande"))))
- ;; '(tabbar-modified ((t (:inherit tabbar-default :foreground "deep sky blue"))))
- ;; '(tabbar-selected ((t (:inherit tabbar-default :background "white" :foreground "gray20" :box (:line-width 3 :color "white")))))
- ;; '(tabbar-selected-highlight ((t (:foreground "black"))))
- ;; '(tabbar-selected-modified ((t (:inherit tabbar-default :background "white" :foreground "deep sky blue"))))
- ;; '(tabbar-separator ((t (:inherit tabbar-default :background "white" :foreground "white" :height 1.0))))
- ;; '(tabbar-unselected ((t (:inherit tabbar-default :background "#ececec" :box (:line-width 3 :color "#ececec")))))
  '(whitespace-empty ((t (:background "light gray"))))
  '(whitespace-line ((t nil)))
  '(whitespace-space ((t (:foreground "lightgray"))))

@@ -169,7 +169,7 @@
 (setq window-divider-default-places t)
 
 (window-divider-mode-apply 1)
-(setq split-width-threshold 400)
+;; (setq split-width-threshold 400)
 
 ;; Indentation -----------------------------
 (setq-default indent-tabs-mode nil)

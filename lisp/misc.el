@@ -437,8 +437,8 @@ Version 2016-10-24"
 (require 'smart-comment)
 (global-set-key (kbd "M-;") 'smart-comment)
 
-(require 'visual-regexp)
-(global-set-key (kbd "M-%") 'vr/query-replace)
+;; (require 'visual-regexp)
+;; (global-set-key (kbd "M-%") 'vr/query-replace)
 
 ;; http://endlessparentheses.com/ispell-and-abbrev-the-perfect-auto-correct.html
 (define-key ctl-x-map "\C-i"
@@ -485,7 +485,7 @@ abort completely with `C-g'."
 (require 'ace-link)
 (ace-link-setup-default)
 
-(require 'visual-regexp)
+;; (require 'visual-regexp)
 
 ;; http://endlessparentheses.com/eval-result-overlays-in-emacs-lisp.html
 ;; Cette partie doit est presente une fois cider charge

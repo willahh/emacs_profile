@@ -428,7 +428,7 @@
 (global-set-key (kbd "M-p") 'projectile-find-file)
 (define-key ggtags-navigation-map (kbd "M-p") 'projectile-find-file)
 (define-key highlight-symbol-nav-mode-map (kbd "M-p") 'projectile-find-file)
-(define-key magit-mode-map (kbd "M-p") 'projectile-find-file)
+;; (define-key magit-mode-map (kbd "M-p") 'projectile-find-file)
 (define-key ibuffer-mode-map (kbd "M-p") 'projectile-find-file)
 
 ;; Find file

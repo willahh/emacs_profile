@@ -57,6 +57,7 @@
 (add-hook 'css-mode-hook #'autopair-mode)
 (add-hook 'scss-mode-hook #'autopair-mode)
 (add-hook 'org-mode #'autopair-mode)
+(add-hook 'clojure-mode-hook #'autopair-mode)
 
 ;; Smartparens ---------------------------
 (require 'smartparens-config)

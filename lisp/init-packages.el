@@ -7,20 +7,23 @@
              '("melpa" . "https://melpa.org/packages/"))
 
 ;; (add-to-list 'package-archives
-;;              '("melpa" . "http://melpa.milkbox.net/packages/"))
+;;              '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+
 
 
 (package-initialize)
 
 ;; Package list
 (setq package-list '(
-		     ac-slime
+                     cider
+		             clj-refactor
+		             ac-slime
                      ace-link
                      ace-window
                      hide-lines
                      actionscript-mode
                      ag
-                     async
+                     ;; async
                      auto-complete
                      auto-yasnippet
                      autopair
@@ -28,11 +31,12 @@
                      avy-menu
                      all-the-icons
                      browse-kill-ring
-                     centered-window
-                     ;; clj-refactor
+
+
+		             ;; centered-window
                      clojure-cheatsheet
                      clojure-snippets
-                     coffee-mode
+                     ;; coffee-mode
                      company-quickhelp
                      company-tern
                      company-web
@@ -40,23 +44,26 @@
                      counsel
                      counsel-gtags
                      crux
-                     darkroom
+                     ;; darkroom
                      dash
                      diminish
                      diff-hl
                      diffview
-                     dracula-theme
+                     ;; dracula-theme
                      drag-stuff
                      dumb-jump
-                     dtrt-indent
-                     eclim
+                     ;; dtrt-indent
+                     ;; eclim
                      easy-kill
-                     edit-server
+                     ;; edit-server
                      editorconfig
                      emmet-mode
-                     epl
+
+
+		             
+                     ;; epl
                      evil
-                     react-snippets
+                     ;; react-snippets
                      exec-path-from-shell
                      expand-region
                      find-file-in-project
@@ -78,6 +85,7 @@
                      highlight-symbol
                      hy-mode
                      hydra
+
                      ido
                      ido-at-point
                      ido-occur
@@ -87,29 +95,31 @@
                      impatient-mode
                      indent-guide
                      inf-clojure
-                     ivy
+
+		             ivy
                      ivy-hydra
                      iy-go-to-char
-                     js-comint
+                     ;; js-comint
                      js2-mode
                      js2-refactor
                      json-mode
                      key-chord
                      magit
-                     magit-popup
+                     ;; magit-popup
+		             
                      markdown-mode
-                     memoize
+                     ;; memoize
                      multiple-cursors
                      neotree
                      noflet ; Used by ido-preview
                      org-bullets
-                     ov ; Used for some useful prelude functions
+                     ;; ov ; Used for some useful prelude functions
                      pandoc-mode
                      paredit
                      paredit-everywhere
                      pdf-tools
-                     perspective
-                     pfuture
+                     ;; perspective
+                     ;; pfuture
                      php-auto-yasnippets
                      php-mode
                      pkg-info
@@ -119,7 +129,7 @@
                      rainbow-delimiters
                      rainbow-mode
                      resize-window
-                     ripgrep
+                     ;; ripgrep
                      ;; request
                      shell-pop
                      slime
@@ -128,7 +138,8 @@
                      sml-mode
                      smooth-scrolling
                      smartparens
-                     sx
+                     ;; smart-comment
+                     ;; sx
                      string-inflection
                      tern
                      tide
@@ -136,9 +147,9 @@
                      typescript-mode
                      undo-tree
                      use-package
-                     validate
-                     visual-regexp
-                     visual-regexp-steroids
+                     ;; validate
+                     ;; visual-regexp
+                     ;; visual-regexp-steroids
                      web-beautify
                      web-mode
                      websocket
@@ -147,9 +158,13 @@
                      whole-line-or-region
                      xref-js2
                      yaml-mode
+                     redshank ; Common lisp lib
+                     erefactor ; Common lisp lib
                      yasnippet
                      zop-to-char
-                     ace-jump-mode))
+                     ace-jump-mode
+		             with-editor ; Required by magit
+		             ))
 
 ;; Add some missing packages
 (add-to-list 'load-path "~/.emacs.d/site-lisp/org-mouse")
@@ -159,7 +174,8 @@
 (add-to-list 'load-path "~/.emacs.d/site-lisp/lsp-ui")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/lsp-php")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/tabbar")
-
+;; (add-to-list 'load-path "~/.emacs.d/site-lisp/magit-2.11.0")
+;; (add-to-list 'load-path "~/.emacs.d/site-lisp/magit-2.13.0")
 
 ;; (add-to-list 'load-path "~/.emacs.d/site-lisp/auto-highlight-symbol-mode")
 
@@ -173,7 +189,8 @@
 (load-file "~/.emacs.d/site-lisp/highlight-defined.el")
 (load-file "~/.emacs.d/site-lisp/auto-highlight-symbol-mode/auto-highlight-symbol-mode.el")
 (load-file "~/.emacs.d/site-lisp/auto-highlight-symbol-mode/auto-highlight-symbol-mode-config.el")
-(load-file "~/.emacs.d/site-lisp/clj-refactor.el/clj-refactor.el")
+(load-file "~/.emacs.d/site-lisp/dired-subtree-20160920.130/dired-subtree.el")
+
 
 ;; fetch the list of packages available 
 (unless package-archive-contents
