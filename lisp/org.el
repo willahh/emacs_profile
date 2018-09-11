@@ -38,45 +38,46 @@
 (setq comment-auto-fill-only-comments t)
 (add-hook 'org-mode-hook 'toc-org-enable)
 (setq org-src-window-setup 'current-window)
-(add-hook 'org-mode-hook (lambda () 
-                           (interactive)
-                           
-                           
-                           ;; (smartparens-mode)
-                           
-                           ;; Disable company mode to use autocomplete mode instead
-                           (company-mode nil)
-                           (auto-complete-mode t)
-                           (add-to-list 'ac-modes 'org-mode)
-                           (org-bullets-mode 1)
-                           
-                           (toggle-truncate-lines)
-                           
-                           ;; Enable source code block edition in org files
-                           (org-src-mode)))
 
-;; ;; Add org babel langages support
-;; (org-babel-do-load-languages
-;;  'org-babel-load-languages
-;;  '((sh         . t)
-;;    (js         . t)
-;;    (emacs-lisp . t)
-;;    (perl       . t)
-;;    ;; (html       . t)
-;;    (scala      . t)
-;;    (sass       . t)
-;;    (clojure    . t)
-;;    (php        . t)
-;;    (python     . t)
-;;    (ruby       . t)
-;;    (dot        . t)
-;;    (css        . t)
-;;    (plantuml   . t)))
+;; (add-hook 'org-mode-hook (lambda () 
+;;                            (interactive)
+                           
+                           
+;;                            ;; (smartparens-mode)
+                           
+;;                            ;; Disable company mode to use autocomplete mode instead
+;;                            (company-mode nil)
+;;                            (auto-complete-mode t)
+;;                            (add-to-list 'ac-modes 'org-mode)
+;;                            (org-bullets-mode 1)
+                           
+;;                            (toggle-truncate-lines)
+                           
+;;                            ;; Enable source code block edition in org files
+;;                            (org-src-mode)))
 
-;; org syntax highlight code
-(setq org-confirm-babel-evaluate nil
-      org-src-fontify-natively t
-      org-src-tab-acts-natively t)
+;; ;; ;; Add org babel langages support
+;; ;; (org-babel-do-load-languages
+;; ;;  'org-babel-load-languages
+;; ;;  '((sh         . t)
+;; ;;    (js         . t)
+;; ;;    (emacs-lisp . t)
+;; ;;    (perl       . t)
+;; ;;    ;; (html       . t)
+;; ;;    (scala      . t)
+;; ;;    (sass       . t)
+;; ;;    (clojure    . t)
+;; ;;    (php        . t)
+;; ;;    (python     . t)
+;; ;;    (ruby       . t)
+;; ;;    (dot        . t)
+;; ;;    (css        . t)
+;; ;;    (plantuml   . t)))
+
+;; ;; org syntax highlight code
+;; (setq org-confirm-babel-evaluate nil
+;;       org-src-fontify-natively t
+;;       org-src-tab-acts-natively t)
 
 ;; org protocol
 ;; http://orgmode.org/worg/org-contrib/org-protocol.html

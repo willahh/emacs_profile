@@ -19,15 +19,13 @@
 (setq-default line-spacing 2) ; https://www.emacswiki.org/emacs/LineSpacing
 (setq-default line-height 1.25)
 
-;; "<a class="bt g buttonSectorMultiple""
+;; (defun wlh/theme-hook ()
+;;   (interactive)
+;;   (add-text-properties (point-min) (point-max)
+;;                        '(line-spacing 2 line-height 1.25)))
 
-(defun wlh/theme-hook ()
-  (interactive)
-  (add-text-properties (point-min) (point-max)
-                       '(line-spacing 2 line-height 1.25)))
-
-(add-hook 'prog-mode-hook 'wlh/theme-hook)
-(add-hook 'compilation-mode-hook 'wlh/theme-hook)
+;; (add-hook 'prog-mode-hook 'wlh/theme-hook)
+;; (add-hook 'compilation-mode-hook 'wlh/theme-hook)
 
 
 ;; Main background
@@ -185,6 +183,7 @@
   (set-face-attribute 'org-document-info-keyword nil :height 1 :foreground "#b0dcff" :background nil)
   (set-face-attribute 'org-tag nil :height 0.8 :foreground "#98cf15" :box "#98cf15" :background "#f2fff7")
   (set-face-attribute 'org-block-begin-line nil :background "#e3e3e3" :foreground "#000000" :underline "#000000")
+  (set-face-attribute 'org-block nil :background nil :foreground "#000000" :underline nil)
   (set-face-attribute 'org-block-end-line nil :background "#e3e3e3" :foreground "#000000" :underline "#000000")
 
   (if (bound-and-true-p org-block-background)
