@@ -6,6 +6,10 @@
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/"))
 
+;; (add-to-list 'package-archives
+;;              '("melpa" . "http://melpa.milkbox.net/packages/"))
+
+
 (package-initialize)
 
 ;; Package list
@@ -25,7 +29,7 @@
                      all-the-icons
                      browse-kill-ring
                      centered-window
-                     clj-refactor
+                     ;; clj-refactor
                      clojure-cheatsheet
                      clojure-snippets
                      coffee-mode
@@ -155,6 +159,8 @@
 (add-to-list 'load-path "~/.emacs.d/site-lisp/lsp-ui")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/lsp-php")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/tabbar")
+
+
 ;; (add-to-list 'load-path "~/.emacs.d/site-lisp/auto-highlight-symbol-mode")
 
 ;; Add additional files
@@ -167,6 +173,7 @@
 (load-file "~/.emacs.d/site-lisp/highlight-defined.el")
 (load-file "~/.emacs.d/site-lisp/auto-highlight-symbol-mode/auto-highlight-symbol-mode.el")
 (load-file "~/.emacs.d/site-lisp/auto-highlight-symbol-mode/auto-highlight-symbol-mode-config.el")
+(load-file "~/.emacs.d/site-lisp/clj-refactor.el/clj-refactor.el")
 
 ;; fetch the list of packages available 
 (unless package-archive-contents

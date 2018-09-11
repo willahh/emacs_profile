@@ -183,6 +183,7 @@
   (set-face-attribute 'org-document-info-keyword nil :height 1 :foreground "#b0dcff" :background nil)
   (set-face-attribute 'org-tag nil :height 0.8 :foreground "#98cf15" :box "#98cf15" :background "#f2fff7")
   (set-face-attribute 'org-block-begin-line nil :background "#e3e3e3" :foreground "#000000" :underline "#000000")
+  (set-face-attribute 'org-block nil :background nil :foreground "#000000" :underline nil)
   (set-face-attribute 'org-block-end-line nil :background "#e3e3e3" :foreground "#000000" :underline "#000000")
 
   (if (bound-and-true-p org-block-background)

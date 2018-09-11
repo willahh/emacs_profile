@@ -56,7 +56,7 @@
 	  jit-lock-stealth-nice 5
       jit-lock-context-time 10)
 (setq-default font-lock-multiline t)
-(jit-lock-debug-mode)
+;; (jit-lock-debug-mode)
 
 ;; Encoding
 (prefer-coding-system 'utf-8)

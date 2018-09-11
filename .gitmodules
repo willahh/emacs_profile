@@ -25,3 +25,6 @@
 [submodule "site-lisp/tabbar"]
 	path = site-lisp/tabbar
 	url = https://github.com/dholm/tabbar.git
+[submodule "clj-refactor"]
+	path = site-lisp/clj-refactor.el
+	url = https://github.com/clojure-emacs/clj-refactor.el.git
