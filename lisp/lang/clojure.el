@@ -1,7 +1,7 @@
 ;; Check https://github.com/clojure-emacs/example-config/blob/master/lisp/cfg-hlsexp.el
 (require 'cider)
-;; (require 'helm-cider)
 (require 'clojure-snippets)
+(require 'auto-indent-mode)
 
 ;; Specify history file
 (setq cider-history-file "~/.emacs.d/nrepl-history")
@@ -32,14 +32,14 @@
 
 ;; ;; cljrefactor -------------------
 ;; Disable atm
-;; (require 'clj-refactor)
+(require 'clj-refactor)
 
 ;; ;; no auto sort
-;; (setq cljr-auto-sort-ns nil)
+(setq cljr-auto-sort-ns nil)
 
 ;; ;; do not prefer prefixes when using clean-ns
-;; (setq cljr-favor-prefix-notation nil)
-;; (setq cljr-warn-on-eval nil)
+(setq cljr-favor-prefix-notation nil)
+(setq cljr-warn-on-eval nil)
 
 
 ;; Flycheck ---------------
@@ -72,7 +72,9 @@
 ;; Hooks ----------------------
 (defun wlh/clojure-mode-hook ()
   (interactive)
-  ;; (clj-refactor-mode 1)
+  (clj-refactor-mode 1)
+  (auto-indent-mode)
+  (aggressive-indent-mode)
   
   ;; insert keybinding setup here
   (cljr-add-keybindings-with-prefix "C-c RET"))
@@ -83,6 +85,7 @@
             (eldoc-mode)
             (company-mode)
             (highlight-symbol-mode)
+            
             (setq company-minimum-prefix-length 0)
             
             ;; (helm-cider-mode 1) ; Return an error for the moment, disable it
