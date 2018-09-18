@@ -5,7 +5,8 @@
 (setq company-dabbrev-downcase nil)
 (setq company-dabbrev-downcase 0) 
 (setq company-dabbrev-downcase nil)
-(setq company-idle-delay 0.2)
+;; (setq company-idle-delay 0.2)
+(setq company-idle-delay 1)
 (setq company-tooltip-align-annotations t)
 (setq company-tooltip-limit 16)
 (setq company-require-match nil)
@@ -20,7 +21,8 @@
 (defun wlh/company-hook ()
   (interactive)
   (company-mode)
-  (company-flx-mode))
+  (company-flx-mode)
+  (define-key company-mode-map (kbd "TAB") 'company-indent-or-complete-common))
 
 (add-hook 'emacs-lisp-mode-hook 'wlh/company-hook)
 ;; Remove some words completion

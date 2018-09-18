@@ -13,7 +13,7 @@
 (setq cider-repl-use-clojure-font-lock t)
 
 ;; Prevent the auto-display of the REPL buffer in a separate window after connection is established
-(setq cider-repl-pop-to-buffer-on-connect nil)
+;; (setq cider-repl-pop-to-buffer-on-connect nil)
 
 ;; Pretty print results in repl
 (setq cider-repl-use-pretty-printing t)
@@ -81,19 +81,22 @@
             (company-mode)
             (highlight-symbol-mode)
             
-            (setq company-minimum-prefix-length 0)
+            (setq company-minimum-prefix-length 2)
+            (setq company-idle-delay 0.8)
+            
             
             ;; (helm-cider-mode 1) ; Return an error for the moment, disable it
-            (cider-company-enable-fuzzy-completion)
+            ;; (cider-company-enable-fuzzy-completion)
             (define-key mc/keymap (kbd "C-c C-v") 'cider-eval-buffer)
             (yas-minor-mode)))
 
 (add-hook 'cider-repl-mode-hook (lambda ()
                                   (company-mode t)
-                                  (cider-company-enable-fuzzy-completion)))
+                                  ;; (cider-company-enable-fuzzy-completion)
+                                  ))
 
 ;; https://cider.readthedocs.io/en/latest/code_completion/
-(add-hook 'cider-repl-mode-hook #'cider-company-enable-fuzzy-completion)
+;; (add-hook 'cider-repl-mode-hook #'cider-company-enable-fuzzy-completion)
 
 ;; Indent and highlight more commands
 (put-clojure-indent 'match 'defun)

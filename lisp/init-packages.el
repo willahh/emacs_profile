@@ -18,6 +18,7 @@
                      cider
 		             clj-refactor
 		             ac-slime
+		             auto-indent-mode
                      ace-link
                      ace-window
                      hide-lines
@@ -165,7 +166,7 @@
                      zop-to-char
                      ace-jump-mode
 		             with-editor ; Required by magit
-		             ))
+		     ))
 
 ;; Add some missing packages
 (add-to-list 'load-path "~/.emacs.d/site-lisp/org-mouse")

@@ -58,6 +58,7 @@
 (add-hook 'scss-mode-hook #'autopair-mode)
 (add-hook 'org-mode #'autopair-mode)
 ;; (add-hook 'clojure-mode-hook #'autopair-mode) ;; No need
+(add-hook 'clojure-mode-hook #'autopair-mode) ;; Needed: for newline-and-indent
 
 ;; Smartparens ---------------------------
 (require 'smartparens-config)

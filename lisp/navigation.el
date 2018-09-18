@@ -32,9 +32,8 @@
         ;; (projectile-find-file . ivy--regex-plus)
         ;; (projectile-find-file . ivy--regex-fuzzy)
 
-        (t . ivy--regex-fuzzy)
-
-        ))
+        ;; (t . ivy--regex-fuzzy)
+        (t . ivy--regex-plus)))
 
 (ivy-mode)
 
