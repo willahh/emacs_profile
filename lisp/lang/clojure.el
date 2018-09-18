@@ -60,24 +60,19 @@
 (add-hook 'clojure-mode-hook #'paredit-mode)
 (add-hook 'cider-repl-mode-hook #'paredit-mode)
 
-;; ;; highlight-sexp
-;; (require 'highlight-sexp)
-;; (add-hook 'lisp-mode-hook #'highlight-sexp-mode)
-;; (add-hook 'emacs-lisp-mode-hook #'highlight-sexp-mode)
-;; (add-hook 'clojure-mode-hook #'highlight-sexp-mode)
-;; (add-hook 'cider-repl-mode-hook #'highlight-sexp-mode)
-
 
 
 ;; Hooks ----------------------
 (defun wlh/clojure-mode-hook ()
   (interactive)
   (clj-refactor-mode 1)
+  (typed-clojure-mode)
   (auto-indent-mode)
   (aggressive-indent-mode)
   
   ;; insert keybinding setup here
-  (cljr-add-keybindings-with-prefix "C-c RET"))
+  (cljr-add-keybindings-with-prefix "C-c C-l")
+  (define-key clojure-mode-map (kbd "RET") 'newline-and-indent))
 
 (add-hook 'clojure-mode-hook 'wlh/clojure-mode-hook)
 (add-hook 'cider-mode-hook
