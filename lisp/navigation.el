@@ -32,7 +32,8 @@
         ;; (projectile-find-file . ivy--regex-plus)
         ;; (projectile-find-file . ivy--regex-fuzzy)
 
-        (t . ivy--regex-fuzzy)
+        ;; (t . ivy--regex-fuzzy)
+        (t . ivy--regex-plus) ; Better than regexp-fuzzy when lot lot a files
 
         ))
 
@@ -84,20 +85,21 @@
       ;; If this value is t, split window inside the current window
       ;; (setq helm-swoop-split-with-multiple-windows t)
 
-      ;; helm locate
-      helm-locate-fuzzy-match t
+      ;; helm-locate-fuzzy-match t
 
       ;; Truncate lines
       helm-truncate-lines 1
       helm-follow-mode-persistent t
       helm-ag-insert-at-point nil
 
-      helm-M-x-fuzzy-match t
-      helm-recentf-fuzzy-match t
-      helm-buffers-fuzzy-matching t
-      helm-locate-fuzzy-match t
-      helm-imenu-fuzzy-match t
-      helm-mode-fuzzy-match t
+      ;; helm-M-x-fuzzy-match t
+      ;; helm-recentf-fuzzy-match t
+      ;; helm-buffers-fuzzy-matching t
+      ;; helm-locate-fuzzy-match t
+      ;; helm-imenu-fuzzy-match t
+      ;; helm-mode-fuzzy-match t
+
+      
       )
 
 (define-key helm-map [mouse-1] 'helm-mouse-1-exit-minibuffer)

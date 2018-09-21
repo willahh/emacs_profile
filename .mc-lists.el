@@ -168,6 +168,7 @@
         wlh-tab-indent-or-complete-web
         wlh/delete-backspace
         wlh/web-mode-kill-sexp
+        wlh/web-mode-tab
         xah-toggle-letter-case
         yank-and-indent
         yank-rectangle
