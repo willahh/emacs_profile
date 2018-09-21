@@ -33,9 +33,8 @@
         ;; (projectile-find-file . ivy--regex-fuzzy)
 
         ;; (t . ivy--regex-fuzzy)
-        (t . ivy--regex-plus) ; Better than regexp-fuzzy when lot lot a files
 
-        ))
+        (t . ivy--regex-plus)))
 
 (ivy-mode)
 

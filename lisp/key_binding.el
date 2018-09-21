@@ -139,7 +139,7 @@
 ;; Kill
 ;; (global-set-key (kbd "C-w") 'whole-line-or-region-kill-region)
 (global-set-key (kbd "C-w") 'backward-kill-word-or-region)
-(global-set-key (kbd "C-z") 'undo-tree-undo)
+(global-set-key (kbd "C-z") 'whole-line-or-region-kill-region)
 (global-set-key [(control meta h)] 'backward-kill-sexp)
 (global-set-key (kbd "C-c C-k") 'kill-whole-line) ;; Override default emacs kill sentence but i don't use it
 (global-set-key (kbd "C-c C-o") 'ivy-occur)
