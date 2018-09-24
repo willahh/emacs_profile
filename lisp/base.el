@@ -60,6 +60,9 @@
 
 ;; Encoding
 (prefer-coding-system 'utf-8)
+(set-default-coding-systems 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
 (setq-default buffer-file-coding-system 'utf-8-auto-unix)
 
 ;; Replace selection by text
@@ -143,6 +146,13 @@
 ;; Auto refresh buffers
 (global-auto-revert-mode 1)
 
+;; global-mark-ring-max
+(setq global-mark-ring-max 500)
+
+;; Repeating set-mark-command after popping mark pops it again.
+(setq set-mark-command-repeat-pop t)
+
+
 ;; Disable toolbar
 (tool-bar-mode -1)
 
@@ -184,9 +194,6 @@
 ;; ----------
 ;; Inserts newline to avoid `end of buffer' error. -> ?
 (setq next-line-add-newlines t)
-
-;; Repeating set-mark-command after popping mark pops it again.
-(setq set-mark-command-repeat-pop t)
 
 ;; Scroll
 (setq scroll-margin 0)

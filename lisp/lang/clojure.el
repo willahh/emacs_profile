@@ -2,7 +2,7 @@
 ;; Check https://github.com/clojure-emacs/example-config/blob/master/lisp/cfg-hlsexp.el
 (require 'cider)
 (require 'clojure-snippets)
-(require 'auto-indent-mode)
+;; (require 'auto-indent-mode)
 
 ;; Specify history file
 (setq cider-history-file "~/.emacs.d/nrepl-history")
@@ -67,6 +67,7 @@
 (defun wlh/clojure-mode-hook ()
   (interactive)
   (clj-refactor-mode 1)
+  ;; (auto-indent-mode) ; Package not found
   (typed-clojure-mode)
   (auto-indent-mode)
   (aggressive-indent-mode)

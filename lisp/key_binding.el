@@ -136,8 +136,9 @@
 ;; (define-key ivy-minibuffer-map (kbd "<escape>") 'minibuffer-keyboard-quit)
 (define-key ivy-minibuffer-map (kbd "C-h") 'delete-backward-char)
 
-;; Backward kill sexp
-(global-set-key (kbd "C-w") 'whole-line-or-region-kill-region)
+;; Kill
+;; (global-set-key (kbd "C-w") 'whole-line-or-region-kill-region)
+(global-set-key (kbd "C-w") 'backward-kill-word-or-region)
 (global-set-key (kbd "C-z") 'whole-line-or-region-kill-region)
 (global-set-key [(control meta h)] 'backward-kill-sexp)
 (global-set-key (kbd "C-c C-k") 'kill-whole-line) ;; Override default emacs kill sentence but i don't use it
@@ -230,7 +231,7 @@
 ;; (global-set-key (kbd "M-g") 'mc/mark-next-like-this-word) ; Almost like sublime M-d. Was go to line
 (global-set-key (kbd "Δ") 'mc/mark-next-like-this-word) ; Almost like sublime M-d. Was go to line
 (global-set-key (kbd "M-G") 'mc/mark-previous-like-this-word)
-(define-key paredit-mode-map (kbd "M-g") 'mc/mark-next-like-this-word) ; Was go to line
+;; (define-key paredit-mode-map (kbd "M-g") 'mc/mark-next-like-this-word) ; Was go to line
 
 ;; ---------------- Backward delete char C-h
 (global-set-key (kbd "C-h") 'backward-delete-char)
@@ -468,7 +469,7 @@
 
 (global-set-key (kbd "C-ù") 'previous-buffer)
 (global-set-key (kbd "C-M-ù") 'winner-undo)
-
+(global-set-key (kbd "M-t") 'tabbar-new-tab)
 (global-set-key (kbd "™") 'tabbar-close-other-tabs) ; ALT+SHIFT+t
 
 
