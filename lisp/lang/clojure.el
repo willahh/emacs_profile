@@ -1,3 +1,4 @@
+
 ;; Check https://github.com/clojure-emacs/example-config/blob/master/lisp/cfg-hlsexp.el
 (require 'cider)
 (require 'clojure-snippets)
@@ -80,6 +81,7 @@
             (eldoc-mode)
             (company-mode)
             (highlight-symbol-mode)
+            (company-quickhelp-mode)
             
             (setq company-minimum-prefix-length 2)
             (setq company-idle-delay 0.8)
