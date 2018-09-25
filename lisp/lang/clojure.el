@@ -68,7 +68,7 @@
   (interactive)
   (clj-refactor-mode 1)
   ;; (auto-indent-mode) ; Package not found
-  (typed-clojure-mode)
+  ;; (typed-clojure-mode)
   (auto-indent-mode)
   (aggressive-indent-mode)
   
