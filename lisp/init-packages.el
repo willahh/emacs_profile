@@ -146,7 +146,7 @@
                      tide
                      toc-org
                      typescript-mode
-                     typed-clojure
+                     ;; typed-clojure-mode
                      undo-tree
                      use-package
                      ;; validate
