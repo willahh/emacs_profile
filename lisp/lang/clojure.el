@@ -14,7 +14,7 @@
 (setq cider-repl-use-clojure-font-lock t)
 
 ;; Prevent the auto-display of the REPL buffer in a separate window after connection is established
-;; (setq cider-repl-pop-to-buffer-on-connect nil)
+(setq cider-repl-pop-to-buffer-on-connect nil)
 
 ;; Pretty print results in repl
 (setq cider-repl-use-pretty-printing t)
@@ -68,7 +68,7 @@
   (interactive)
   (clj-refactor-mode 1)
   ;; (auto-indent-mode) ; Package not found
-  (typed-clojure-mode)
+  ;; (typed-clojure-mode)
   (auto-indent-mode)
   (aggressive-indent-mode)
   
@@ -88,8 +88,8 @@
             (setq company-idle-delay 0.8)
             
             
-            ;; (helm-cider-mode 1) ; Return an error for the moment, disable it
-            ;; (cider-company-enable-fuzzy-completion)
+            (helm-cider-mode 1)
+            (cider-company-enable-fuzzy-completion)
             (define-key mc/keymap (kbd "C-c C-v") 'cider-eval-buffer)
             (yas-minor-mode)))
 

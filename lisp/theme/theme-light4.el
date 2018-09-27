@@ -77,7 +77,8 @@
 ;; (set-face-attribute 'show-paren-face nil :background "#ccc" :foreground "#000" :weight 'ultra-bold :underline "#ff00a0")
 ;; (set-face-attribute 'show-paren-match nil :background "#dedede" :foreground "#000" :weight 'ultra-bold :underline "#ff00a0")
 ;; (set-face-attribute 'show-paren-match nil :background "#55bdf0" :foreground "#fff" :weight 'ultra-bold :underline "#ff00a0")
-(set-face-attribute 'show-paren-match nil :background "#e2e2e2" :foreground "#000" :weight 'ultra-bold :underline "#ff00a0")
+;; (set-face-attribute 'show-paren-match nil :background "#e2e2e2" :foreground "#000" :weight 'ultra-bold :underline "#ff00a0")
+(set-face-attribute 'show-paren-match nil :background "#e2e2e2" :foreground "#fa75e2" :weight 'ultra-bold :underline "#ff00a0")
 
 (require 'ediff)
 (set-face-attribute 'ediff-fine-diff-A nil :background "#f3bebe")
