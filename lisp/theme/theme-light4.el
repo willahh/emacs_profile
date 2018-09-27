@@ -16,9 +16,12 @@
 ;; (setq-default line-spacing 1)
 ;; (setq-default line-spacing 0.25)
 ;; (setq-default line-spacing 0.25)
-(setq-default line-spacing 2) ; https://www.emacswiki.org/emacs/LineSpacing
-(setq-default line-height 1.25)
+;; (setq-default line-spacing 2) ; https://www.emacswiki.org/emacs/LineSpacing
+;; (setq-default line-height 1.25)
 
+
+;; ----------------------------
+;; Le hook provoque une modification du fichier à l'ouverture.
 ;; (defun wlh/theme-hook ()
 ;;   (interactive)
 ;;   (add-text-properties (point-min) (point-max)
@@ -26,6 +29,31 @@
 
 ;; (add-hook 'prog-mode-hook 'wlh/theme-hook)
 ;; (add-hook 'compilation-mode-hook 'wlh/theme-hook)
+
+
+;; (setq-default line-spacing 2) ; https://www.emacswiki.org/emacs/LineSpacing
+;; (setq-default line-height 1.25)
+
+;; (defun wlh/theme-hook ()
+;;   (interactive)
+;;   (add-text-properties (point-min) (point-max)
+;;                        '(line-spacing 2 line-height 1.25)))
+
+;; (add-hook 'prog-mode-hook 'wlh/theme-hook)
+;; (add-hook 'prog-mode-hook 'wlh/theme-hook)
+;; (add-hook 'compilation-mode-hook 'wlh/theme-hook)
+
+
+;; ----------------------------
+(setq-default line-spacing 2) ; https://www.emacswiki.org/emacs/LineSpacing
+(setq-default line-height 1.25)
+
+
+
+
+
+
+
 
 
 ;; Main background
