@@ -15,7 +15,7 @@
   (interactive)
   (defvar tmp)
   (setq tmp (point))
-  (revert-buffer t)
+  (revert-buffer t t)
   (goto-char tmp)
   (kill-local-variable 'tmp))
 

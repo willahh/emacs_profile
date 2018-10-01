@@ -10,7 +10,8 @@
   (interactive)
 
   (setq company-show-numbers t)
-  (setq company-minimum-prefix-length 3)
+  ;; (setq company-minimum-prefix-length 3)
+  (setq company-minimum-prefix-length 10)
   (setq company-dabbrev-downcase nil)
   (setq company-dabbrev-downcase 0) 
   (setq company-dabbrev-downcase nil)
