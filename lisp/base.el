@@ -83,6 +83,8 @@
 ;; window title which I rather configure differently
 (setq inhibit-default-init t)
 
+;; (toggle-debug-on-error)
+
 ;; Backup -----------------------------
 ;; Disable backup
 (setq backup-inhibited t)

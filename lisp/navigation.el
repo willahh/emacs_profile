@@ -77,7 +77,7 @@
       helm-ag-insert-at-point 'sexp
       
       helm-autoresize-min-height 20
-      helm-autoresize-max-height 25
+      helm-autoresize-max-height 35
       helm-display-buffer-default-height 10
       helm-allow-mouse t
       
