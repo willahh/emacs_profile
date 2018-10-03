@@ -102,12 +102,11 @@
 (global-set-key (kbd (concat wlh/leader-key "M-j")) 'join-line)
 
 ;; 
-
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
 (define-key paredit-mode-map (kbd "M-q") 'fill-paragraph)
 (global-set-key (kbd "C-;") "\C-e;") ; (CONTROL + ; -> Append ";" at the end of a line)
 (global-set-key (kbd "C-c RET") 'wlh/join-line)
-(global-set-key (kbd "C-c C-g") 'goto-line)
+;; (global-set-key (kbd "C-c C-g") 'goto-line)
 (global-set-key (kbd "C-c h") 'help)
 
 ;; Scroll

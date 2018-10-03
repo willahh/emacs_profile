@@ -1,12 +1,11 @@
 ;; Ido ------------------------------
 (require 'ido)
-(require 'flx-ido)
+
 (require 'ido-vertical-mode)
 (require 'ido-occur)
 
 (ido-mode 1)
-;; (ido-everywhere 1)
-(flx-ido-mode 1)
+
 (ido-vertical-mode t)
 
 ;; C-n/p is more intuitive in vertical layout
@@ -20,21 +19,31 @@
  ;;Ivy -------------------------------
 (require 'ivy)
 
+;; (setq ivy-re-builders-alist
+;;       '(
+;;         ;; (ivy-switch-buffer . ivy--regex-plus)
+;;         ;; (swiper . ivy--regex-plus)
+;;         ;; (counsel-imenu . ivy--regex-plus)
+;;         ;; (t . ivy--regex-fuzzy)
+;;         ;; (t . ivy--regex-plus)
+;;         ;; (t . ivy--regex-fuzzy)
+;;         ;; (projectile-find-file . ivy--regex-fuzzy)
+;;         ;; (projectile-find-file . ivy--regex-plus)
+;;         ;; (projectile-find-file . ivy--regex-fuzzy)
+
+;;         ;; (t . ivy--regex-fuzzy)
+
+;;         ;; (t . ivy--regex-plus)
+;;         ;; (t. ivy--regex-fuzzy)
+;;         ;; (projectile-find-file . ivy--regex-plus)
+;;         ))
+
 (setq ivy-re-builders-alist
-      '(
-        ;; (ivy-switch-buffer . ivy--regex-plus)
-        ;; (swiper . ivy--regex-plus)
-        ;; (counsel-imenu . ivy--regex-plus)
-        ;; (t . ivy--regex-fuzzy)
-        ;; (t . ivy--regex-plus)
-        ;; (t . ivy--regex-fuzzy)
-        ;; (projectile-find-file . ivy--regex-fuzzy)
-        ;; (projectile-find-file . ivy--regex-plus)
-        ;; (projectile-find-file . ivy--regex-fuzzy)
+      '((t . ivy--regex-fuzzy)))
 
-        ;; (t . ivy--regex-fuzzy)
+(require 'flx-ido)
 
-        (t . ivy--regex-plus)))
+(flx-ido-mode 1)
 
 (ivy-mode)
 
@@ -77,7 +86,8 @@
       helm-ag-insert-at-point 'sexp
       
       helm-autoresize-min-height 20
-      helm-autoresize-max-height 35
+      ;; helm-autoresize-max-height 35
+      helm-autoresize-max-height 40
       helm-display-buffer-default-height 10
       helm-allow-mouse t
       

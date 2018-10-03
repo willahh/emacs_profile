@@ -345,10 +345,12 @@ That is, a string used to represent it on the tab bar."
 ;; (tabbar-mode 1)
 
 ;; ------ ivy
-(set-face-attribute 'ivy-minibuffer-match-face-1 nil :foreground "#d73a49" :background nil :underline t)
-(set-face-attribute 'ivy-minibuffer-match-face-2 nil :foreground "#d73a49" :background nil :underline t)
-(set-face-attribute 'ivy-minibuffer-match-face-3 nil :foreground "#d73a49" :background nil :underline t)
-(set-face-attribute 'ivy-minibuffer-match-face-4 nil :foreground "#d73a49" :background nil :underline t)
+(require 'ivy)
+(add-hook 'ivy-mode-hook (lambda ()
+                           (set-face-attribute 'ivy-minibuffer-match-face-1 nil :foreground "#d73a49" :background nil :underline t)
+                           (set-face-attribute 'ivy-minibuffer-match-face-2 nil :foreground "#d73a49" :background nil :underline t)
+                           (set-face-attribute 'ivy-minibuffer-match-face-3 nil :foreground "#d73a49" :background nil :underline t)
+                           (set-face-attribute 'ivy-minibuffer-match-face-4 nil :foreground "#d73a49" :background nil :underline t)))
 
 ;; -- Group
 (set-face-attribute 'custom-group-tag nil :foreground "#000")
