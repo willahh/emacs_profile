@@ -9,6 +9,7 @@
 ;; (set-frame-font "Fira Sans")
 ;; (set-frame-font "Meslo")
 ;; (set-frame-font "Monaco")
+;; (set-frame-font "Menlo")
 (set-frame-font "Menlo")
 
 ;; Line spacing
@@ -18,6 +19,12 @@
 ;; (setq-default line-spacing 0.25)
 ;; (setq-default line-spacing 2) ; https://www.emacswiki.org/emacs/LineSpacing
 ;; (setq-default line-height 1.25)
+
+
+;; (set-face-font 'default "Source Code Pro Semibold-12")
+;; (set-face-font 'default "Menlo Semibold-12")
+;; (set-face-font 'variable-pitch "Segoe UI Semibold-9")
+;; (copy-face 'default 'fixed-pitch)
 
 
 ;; ----------------------------
