@@ -102,12 +102,11 @@
 (global-set-key (kbd (concat wlh/leader-key "M-j")) 'join-line)
 
 ;; 
-
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
 (define-key paredit-mode-map (kbd "M-q") 'fill-paragraph)
 (global-set-key (kbd "C-;") "\C-e;") ; (CONTROL + ; -> Append ";" at the end of a line)
 (global-set-key (kbd "C-c RET") 'wlh/join-line)
-(global-set-key (kbd "C-c C-g") 'goto-line)
+;; (global-set-key (kbd "C-c C-g") 'goto-line)
 (global-set-key (kbd "C-c h") 'help)
 
 ;; Scroll
@@ -177,7 +176,6 @@
 ;; Frames
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "C-x b") 'ivy-switch-buffer)
-;; (global-set-key (kbd "C-x C-r") 'rename-current-buffer-file)
 
 ;; ---------------- M-n M-N
 ;; New buffer
@@ -208,6 +206,7 @@
 
 ;; Revert buffer
 (define-key global-map (kbd "C-x C-r") 'wlh/revert-buffer)
+(global-set-key (kbd "C-x C-r") 'wlh/revert-buffer)
 (define-key diff-mode-shared-map (kbd "g") 'wlh/revert-buffer)
 
 (global-set-key (kbd "C-x C-k") 'kill-region)
