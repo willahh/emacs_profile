@@ -475,6 +475,7 @@
 
 ;; Recentf
 (global-set-key (kbd "C-c f") 'counsel-recentf) 
+(global-set-key (kbd "C-c C-f") 'counsel-recentf) 
 
 ;; -------- org
 (define-key org-mode-map (kbd "C-c C-b") 'org-backward-heading-same-level)

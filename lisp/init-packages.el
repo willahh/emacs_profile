@@ -114,6 +114,10 @@
                      neotree
                      noflet ; Used by ido-preview
                      org-bullets
+
+                     ;; lsp
+                     lsp-mode
+                     
                      ;; ov ; Used for some useful prelude functions
                      pandoc-mode
                      paredit
@@ -172,7 +176,7 @@
 (add-to-list 'load-path "~/.emacs.d/site-lisp/org-mouse")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/vkill")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/syslog-mode-2.2")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/lsp-mode")
+;; (add-to-list 'load-path "~/.emacs.d/site-lisp/lsp-mode")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/lsp-ui")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/lsp-php")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/tabbar")

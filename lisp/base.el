@@ -315,7 +315,7 @@
 
 ;; Automatically save and restore sessions
 ;; https://stackoverflow.com/a/4485083
-(setq desktop-dirname             "~/.emacs.d/desktop/"
+(setq desktop-dirname             "~/.emacs.d/tmp/"
       desktop-base-file-name      "emacs.desktop"
       desktop-base-lock-name      "lock"
       desktop-path                (list desktop-dirname)
