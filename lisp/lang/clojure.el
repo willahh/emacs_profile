@@ -1,5 +1,3 @@
-
-;; Check https://github.com/clojure-emacs/example-config/blob/master/lisp/cfg-hlsexp.el
 (require 'cider)
 (require 'clojure-snippets)
 ;; (require 'auto-indent-mode)
@@ -71,6 +69,7 @@
   ;; (typed-clojure-mode)
   (auto-indent-mode)
   (aggressive-indent-mode)
+  (display-line-numbers-mode)
   
   ;; insert keybinding setup here
   (cljr-add-keybindings-with-prefix "C-c C-l")
