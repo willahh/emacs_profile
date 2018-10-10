@@ -18,6 +18,7 @@
 (define-key mc/keymap (kbd "M-v") 'yank)
 (define-key helm-map (kbd "M-v") 'yank)
 (define-key ivy-minibuffer-map (kbd "M-v") 'yank)
+(define-key ivy-minibuffer-map (kbd "C-i") 'ivy-alt-done)
 (global-set-key [(meta v)] 'yank)
 
 ;; Yank pop
