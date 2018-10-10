@@ -96,7 +96,7 @@
 ;; (setq nlinum-format "%4d \u2502 ")
 
 ;; A bit margin left
-(set-window-margins nil 5)
+;; (set-window-margins nil 5)
 
 (set-face-background 'vertical-border "gray")
 (set-face-foreground 'vertical-border (face-background 'vertical-border))
@@ -113,7 +113,6 @@
 (set-face-attribute 'region nil :background "#fdb92c" :foreground "#000" :box nil)
 
 ;; parenthesis
-
 (set-face-foreground 'show-paren-match "#fff")
 (set-face-background 'show-paren-match "#9a00ff")
 
@@ -211,7 +210,7 @@
 
 ;; ------ Isearch
 (set-face-attribute 'isearch nil :background "#56b0ec" :foreground "#000")
-(set-face-attribute 'isearch-lazy-highlight-face nil :background "#225680" :foreground "#fff")
+;; (set-face-attribute 'isearch-lazy-highlight-face nil :background "#225680" :foreground "#fff")
 
 ;; ------ avy
 (set-face-attribute 'avy-lead-face nil :background "#fff" :foreground "#000" :underline "#ff00ff")
