@@ -2,10 +2,16 @@
 
 (load-theme 'doom-one t)
 
-(setq-default line-spacing 0)
+;; (setq-default line-spacing 0)
+(set-frame-font "Menlo")
+(setq-default line-spacing 2) ; https://www.emacswiki.org/emacs/LineSpacing
+(setq-default line-height 1.25)
 
 ;; ------ cursor
 (setq cursor-type 'box)
+
+(custom-set-faces
+ '(default ((t (:height 120 :width normal :family "Menlo")))))
 
 ;; ------ Override theme
 (set-face-attribute 'default nil :background "#212121" :foreground "#e6fbfb" :box nil)
@@ -96,16 +102,13 @@
 (set-face-foreground 'vertical-border (face-background 'vertical-border))
 
 
-;; ------- Custom theme
-(set-frame-font "Fira mono:antialias=1")
 
-
-;; Disable bold ---> seems to work !
-(mapc
- (lambda (face)
-   (when (eq (face-attribute face :weight) 'bold)
-     (set-face-attribute face nil :weight 'normal)))
- (face-list))
+;; Disable bold
+;; (mapc
+;;  (lambda (face)
+;;    (when (eq (face-attribute face :weight) 'bold)
+;;      (set-face-attribute face nil :weight 'normal)))
+;;  (face-list))
 
 (set-face-attribute 'region nil :background "#fdb92c" :foreground "#000" :box nil)
 

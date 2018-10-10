@@ -4,16 +4,22 @@
 (require 'faces)
 (require 'eshell)
 (require 'hi-lock)
+(require 'tide)
 
 (load-theme 'dracula t)
 
 ;; ------- Font
-(set-frame-font "Office Code Pro:antialias=1")
+;; (set-frame-font "Office Code Pro:antialias=1")
+(set-frame-font "Menlo")
+(setq-default line-spacing 2) ; https://www.emacswiki.org/emacs/LineSpacing
+(setq-default line-height 1.25)
 
 ;; (setq-default line-spacing 2) ; Same line height as modern editor (VS Code)
-(setq-default line-spacing 1) ; Update to default value (switch font instead)
+(setq-default line-spacing 2) ; Update to default value (switch font instead)
 
-(set-face-attribute 'default nil :background "#1a1c1d")
+(set-face-attribute 'default nil :background "#1a1c1d" :foreground "#fff")
+
+(set-face-background 'scroll-bar "#000")
 
 ;; (mapc (lambda (face)
 ;;         (set-face-attribute face :box "#1a1c1d"))
@@ -84,8 +90,7 @@
 ;; (set-face-background 'show-paren-match "#2897f5")
 ;; (set-face-attribute 'show-paren-match-face nil :background "#2e4d67" :foreground "#fff")
 ;; (set-face-attribute 'show-paren-match-face nil :background "#0d874c" :foreground "#ffffff" :weight 'ultra-bold)
-(set-face-attribute 'show-paren-match-face nil :background "#0d5787" :foreground "#ffffff" :weight 'ultra-bold)
-
+(set-face-attribute 'show-paren-match nil :background "#000" :foreground "#fa75e2" :weight 'ultra-bold :underline "#ff00a0")
 
 (set-face-attribute 'js2-error nil
                     :foreground "#fff")
