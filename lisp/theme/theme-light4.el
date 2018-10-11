@@ -55,13 +55,7 @@
 (setq-default line-spacing 2) ; https://www.emacswiki.org/emacs/LineSpacing
 (setq-default line-height 1.25)
 
-
-
-
-
-
-
-
+(set-face-background 'scroll-bar "#000")
 
 ;; Main background
 (set-face-attribute 'default nil :background "#ffffff")
