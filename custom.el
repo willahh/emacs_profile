@@ -17,7 +17,9 @@
  '(fast-but-imprecise-scrolling t)
  '(global-diff-hl-mode t)
  '(helm-allow-mouse t)
- '(helm-source-names-using-follow (quote ("Imenu" "Search at ~/.emacs.d/lisp/")))
+ ;; '(helm-source-names-using-follow
+ ;;   (quote
+ ;;    ()))
  '(ido-save-directory-list-file "~/.emacs.d/tmp/ido.last")
  '(lsp-php-server-install-dir "~/.composer/")
  '(lsp-php-workspace-root-detectors
@@ -55,4 +57,22 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:height 120 :width normal :family "Menlo")))))
+ ;; '(default ((t (:height 120 :width normal :family "Menlo")))))
+ ;; '(mc/cursor-bar-face ((t (:foreground "magenta" :weight light :width condensed))))
+ ;; '(mode-line-emphasis ((t nil)))
+ ;; '(mode-line-highlight ((t nil)))
+ ;; '(rainbow-delimiters-depth-1-face ((t (:foreground "#5abeee" :weight bold))))
+ ;; '(rainbow-delimiters-depth-2-face ((t (:foreground "#ff00a0" :weight bold))))
+ ;; '(rainbow-delimiters-depth-3-face ((t (:foreground "#328d2e" :weight bold))))
+ ;; '(rainbow-delimiters-depth-4-face ((t (:foreground "#ff953f" :weight bold))))
+ ;; '(rainbow-delimiters-depth-5-face ((t (:foreground "#22988a" :weight bold))))
+ ;; '(rainbow-delimiters-depth-6-face ((t (:foreground "#cc99ff" :weight bold))))
+ ;; '(rainbow-delimiters-depth-7-face ((t (:foreground "#fa75e2" :weight bold))))
+ ;; '(rainbow-delimiters-depth-8-face ((t (:foreground "#55bdf0" :weight bold))))
+ ;; '(sp-show-pair-enclosing ((t (:inherit highlight :background "magenta"))))
+ ;; '(whitespace-empty ((t (:background "light gray"))))
+ ;; '(whitespace-line ((t nil)))
+ ;; '(whitespace-space ((t (:foreground "lightgray"))))
+ ;; '(whitespace-trailing ((t (:foreground "gainsboro" :weight bold))))
+ 
+)
