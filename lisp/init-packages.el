@@ -3,11 +3,11 @@
 (add-to-list 'package-archives
 	         '("gnu" . "https://elpa.gnu.org/packages/"))
 
-;; (add-to-list 'package-archives
-;;              '("melpa" . "https://melpa.org/packages/"))
-
 (add-to-list 'package-archives
-             '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+             '("melpa" . "https://melpa.org/packages/"))
+
+;; (add-to-list 'package-archives
+;;              '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 
 ;; (setq package-archives '())
 
@@ -177,12 +177,11 @@
 (add-to-list 'load-path "~/.emacs.d/site-lisp/vkill")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/syslog-mode-2.2")
 ;; (add-to-list 'load-path "~/.emacs.d/site-lisp/lsp-mode")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/lsp-ui")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/lsp-php")
+;; (add-to-list 'load-path "~/.emacs.d/site-lisp/lsp-ui")
+;; (add-to-list 'load-path "~/.emacs.d/site-lisp/lsp-php")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/tabbar")
 ;; (add-to-list 'load-path "~/.emacs.d/site-lisp/magit-2.11.0")
 ;; (add-to-list 'load-path "~/.emacs.d/site-lisp/magit-2.13.0")
-
 ;; (add-to-list 'load-path "~/.emacs.d/site-lisp/auto-highlight-symbol-mode")
 
 ;; Add additional files

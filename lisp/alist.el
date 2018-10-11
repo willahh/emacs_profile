@@ -1,6 +1,4 @@
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
-;; (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode)) ;; js2 too slow on large files 
-;; (add-to-list 'auto-mode-alist '("\\.js\\'" . js-mode)) ;; Update 2 re try js2-mode
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.css\\'" . css-mode))
 (add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-mode))
@@ -27,4 +25,3 @@
 (add-to-list 'auto-mode-alist '("controller/.*.php" . php-mode))
 (add-to-list 'auto-mode-alist '("cron/.*.php" . php-mode))
 (add-to-list 'auto-mode-alist '("index.php" . web-mode))
-;; (add-to-list 'auto-mode-alist '("_lang_fr.inc.php" . fundamental-mode))

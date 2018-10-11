@@ -1,6 +1,4 @@
-;; -------- Init
 (window-divider-mode-apply 1)
-;; (put 'scroll-left 'disabled nil)
 
 ;; Show matching parenthesis.
 (show-paren-mode)
@@ -13,4 +11,3 @@
 
 ;; Start an eshell process at start-up.
 (eshell)
-

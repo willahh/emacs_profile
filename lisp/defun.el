@@ -252,44 +252,6 @@ Try the repeated popping up to 10 times."
 (advice-add 'pop-to-mark-command :around
             #'modi/multi-pop-to-mark)
 
-;; ;; For some reason, renaming the current buffer file is a multi-step process in Emacs.
-;; ;; http://whattheemacsd.com/
-;; (defun rename-current-buffer-file ()
-;;   "Renames current buffer and file it is visiting."
-;;   (interactive)
-;;   (let ((name (buffer-name))
-;;         (filename (buffer-file-name)))
-;;     (if (not (and filename (file-exists-p filename)))
-;;         (error "Buffer '%s' is not visiting a file!" name)
-;;       (let ((new-name (read-file-name "New name: " filename)))
-;;         (if (get-buffer new-name)
-;;             (error "A buffer named '%s' already exists!" new-name)
-;;           (rename-file filename new-name 1)
-;;           (rename-buffer new-name)
-;;           (set-visited-file-name new-name)
-;;           (set-buffer-modified-p nil)
-;;           (message "File '%s' successfully renamed to '%s'"
-;;                    name (file-name-nondirectory new-name)))))))
-
-;; (defun open-line-below ()
-;;   (interactive)
-;;   (end-of-line)
-;;   (newline)
-;;   (indent-for-tab-command))
-
-;; (defun open-line-above ()
-;;   (interactive)
-;;   (beginning-of-line)
-;;   (newline)
-;;   (forward-line -1)
-;;   (indent-for-tab-command))
-
-;; (defun magift-quit-session ()
-;;   "Restores the previous window configuration and kills the magit buffer"
-;;   (interactive)
-;;   (kill-buffer)
-;;   (jump-to-register :magit-fullscreen))
-
 ;; Switch and rebalance windows when splitting
 ;; https://github.com/hrsp/dotfiles/blob/master/emacs.d/configuration.org
 (defun hrs/split-window-below-and-switch ()
@@ -303,20 +265,6 @@ Try the repeated popping up to 10 times."
   (interactive)
   (split-window-right)
   (other-window 1))
-
-;; ;; https://www.emacswiki.org/emacs/DiredSortCriterias?
-;; (defun dired-sort-criteria (criteria)
-;;   "sort-dired by different criteria by Robert Gloeckner "
-;;   (interactive
-;;    (list
-;;     (or (completing-read "criteria [name]: "
-;;                          '("size(S)" "extension(X)" "creation-time(ct)"
-;;                            "access-time(ut)" "time(t)" "name()"))
-;;         "")))
-;;   (string-match ".*(\\(.*\\))" criteria)
-;;   (dired-sort-other
-;;    (concat dired-listing-switches
-;;            (match-string 1 criteria))))
 
 (defun xah-toggle-letter-case ()
   "Toggle the letter case of current word or text selection.
@@ -348,17 +296,6 @@ Version 2017-04-19"
      ((equal 2 (get this-command 'state))
       (downcase-region -p1 -p2)
       (put this-command 'state 0)))))
-
-;; ;; automatically indenting yanked text if in programming-modes
-;; ;; http://trey-jackson.blogspot.fr/2008/03/emacs-tip-15-indent-yanked-code.html
-;; (defvar yank-indent-modes '(emacs-lisp-mode
-;;                             c-mode c++-mode
-;;                             tcl-mode sql-mode
-;;                             perl-mode cperl-mode
-;;                             java-mode jde-mode
-;;                             lisp-interaction-mode
-;;                             LaTeX-mode TeX-mode php-mode web-mode js2-mode)
-;;   "Modes in which to indent regions that are yanked (or yank-popped)")
 
 ;; https://stackoverflow.com/a/9697222
 (defun comment-or-uncomment-region-or-line ()
@@ -433,18 +370,6 @@ Version 2017-04-19"
 (defun scroll-down-half ()
   (interactive)
   (scroll-down (window-half-height)))
-
-;; (defun backward-kill-word-or-region (&optional arg)
-;;   "Calls `kill-region' when a region is active and
-;; `backward-kill-word' otherwise. ARG is passed to
-;; `backward-kill-word' if no region is active."
-;;   (interactive "p")
-;;   (if (region-active-p)
-;;       ;; call interactively so kill-region handles rectangular selection
-;;       ;; correctly (see https://github.com/syl20bnr/spacemacs/issues/3278)
-;;       (call-interactively #'kill-region)
-;;     ;; (backward-kill-word arg)
-;;     (paredit-backward-kill-word)))
 
 ;; From prelude
 ;; Compilation from Emacs
@@ -613,26 +538,6 @@ save it in `ffap-file-at-point-line-number' variable."
                :margin t)))
 
 (global-set-key (kbd "M-'") 'describe-thing-in-popup)
-
-;; Windowing
-;; From frontmacs
-;; Split horizontally when opening a new window from a command
-;; whenever possible.
-;; (setq split-height-threshold 0)
-
-;; (defun frontside-windowing-adjust-split-width-threshold ()
-;;   "Change the value of `split-width-threshold' so that it will cause the screen
-;; split once and only once.
-
-;; For example, if the frame is 360 columns wide, then we want the
-;; split-width-threshold to be 181. That way, when you split horizontally, the two
-;; new windows will each be 180 columns wide, and sit just below the threshold.
-;; "
-;;   (setq split-width-threshold (+ 1 (/ (frame-width) 2))))
-
-;; ;; recaculate split-width-threshold with every change
-;; (add-hook 'window-configuration-change-hook
-;;           'frontside-windowing-adjust-split-width-threshold)
 
 ;; http://emacsredux.com/blog/2013/04/21/edit-files-as-root/
 (defun sudo-edit (&optional arg)

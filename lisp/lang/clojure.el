@@ -65,6 +65,7 @@
 (defun wlh/clojure-mode-hook ()
   (interactive)
   (clj-refactor-mode 1)
+  (hl-line-mode)
   ;; (auto-indent-mode) ; Package not found
   ;; (typed-clojure-mode)
   (auto-indent-mode)

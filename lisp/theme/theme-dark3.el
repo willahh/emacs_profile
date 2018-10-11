@@ -26,9 +26,10 @@
 (set-face-attribute 'font-lock-doc-face nil :foreground "#848484")
 ;; (set-face-attribute 'font-lock-comment-face nil :foreground "#848484")
 (set-face-attribute 'font-lock-comment-face nil :foreground "#848484")
+(set-face-attribute 'font-lock-function-name-face nil :foreground "#fff")
 (set-face-attribute 'font-lock-doc-face nil :foreground "#848484")
 (set-face-attribute 'font-lock-string-face nil :foreground "#bfee79")
-(set-face-attribute 'font-lock-keyword-face nil :foreground "#c792ea")
+(set-face-attribute 'font-lock-keyword-face nil :foreground "#ff5370")
 (set-face-attribute 'font-lock-type-face nil :foreground "#fecc6a")
 (set-face-attribute 'font-lock-variable-name-face nil :foreground "#eeffff")
 (set-face-attribute 'font-lock-constant-face nil :foreground "#ff5370")
@@ -42,9 +43,9 @@
 ;; ------ Flycheck
 
 ;; ------ Dired
-(set-face-attribute 'dired-header nil :foreground "#56b0ec" :background nil)
-(set-face-attribute 'dired-directory nil :foreground "#56b0ec" :background nil)
-(set-face-attribute 'dired-perm-write nil :foreground "#56b0ec" :background nil)
+(set-face-attribute 'dired-header nil :foreground "#fecc6a" :background nil)
+(set-face-attribute 'dired-directory nil :foreground "#fecc6a" :background nil)
+(set-face-attribute 'dired-perm-write nil :foreground "#fecc6a" :background nil)
 
 ;; ------ js2-mode
 (set-face-attribute 'js2-function-call nil :foreground "#82aaff")
@@ -57,10 +58,10 @@
 
 ;; ------ web-mode
 (set-face-attribute 'web-mode-type-face nil :foreground "#ffcb6b" :background nil)
-(set-face-attribute 'web-mode-keyword-face nil :foreground "#c694e8" :background nil)
+(set-face-attribute 'web-mode-keyword-face nil :foreground "#ff5370" :background nil)
 (set-face-attribute 'web-mode-function-call-face nil :foreground "#82aaff" :background nil)
 (set-face-attribute 'web-mode-function-name-face nil :foreground "#82aaff" :background nil)
-(set-face-attribute 'web-mode-keyword-face nil :foreground "#c694e8" :background nil)
+(set-face-attribute 'web-mode-keyword-face nil :foreground "#ff5370" :background nil)
 (set-face-attribute 'web-mode-variable-name-face nil :foreground "#eeffff" :background nil)
 
 (set-face-attribute 'web-mode-doctype-face nil :foreground "#f07178" :background nil)
@@ -88,9 +89,9 @@
                            (set-face-attribute 'css-property nil :foreground "#b2ccd6")
                            (set-face-attribute 'css-proprietary-property nil :foreground "#c792ea")))
 
-;; powerline
-(setq powerline-color1 "#21242b")
-(setq powerline-color2 "#21242b")
+;; ;; powerline
+;; (setq powerline-color1 "#21242b")
+;; (setq powerline-color2 "#21242b")
 
 ;; make the left fringe 4 pixels wide and the right disappear
 ;; (fringe-mode '(8 . 0))
@@ -98,6 +99,25 @@
 
 ;; A bit margin left
 ;; (set-window-margins nil 5)
+
+
+;; ------- modeline
+(set-face-attribute 'mode-line nil
+                    :foreground "#000000"
+                    :background "#fecc6a"
+                    :height 110
+                    :weight 'normal
+                    :font "Menlo"
+                    :box nil)
+
+(set-face-attribute 'mode-line-inactive nil
+                    :foreground "#ccc"
+                    :background "#000"
+                    :font "Menlo"
+                    :weight 'normal
+                    :height 110
+                    :box nil)
+
 
 (set-face-background 'vertical-border "gray")
 (set-face-foreground 'vertical-border (face-background 'vertical-border))
@@ -158,35 +178,8 @@
 (set-face-attribute 'yas--field-debug-face nil :foreground "#fff" :background nil)
 (set-face-attribute 'yas-field-highlight-face nil :foreground "#fff" :background nil)
 
-;; ----- magit
-(defun powerline-theme-emacs()
-  (set-face-attribute 'mode-line nil
-                      :foreground "#000"
-                      :background "#56b0ec"
-                      :box nil))
-
-(defun powerline-theme-visual()
-  (set-face-attribute 'mode-line nil
-                      :foreground "#000"
-                      :background "#ffba00"
-                      :box nil))
-
-(defun powerline-theme-insert()
-  (set-face-attribute 'mode-line nil
-                      :foreground "#000"
-                      :background "red"
-                      :box nil))
-
-(defun powerline-theme-normal()
-  (set-face-attribute 'mode-line nil
-                      :foreground "#000"
-                      :background "#98cf15"
-                      :box nil))
-
-(add-hook 'evil-normal-state-entry-hook 'powerline-theme-normal)
-(add-hook 'evil-visual-state-entry-hook 'powerline-theme-visual)
-(add-hook 'evil-insert-state-entry-hook 'powerline-theme-insert)
-(add-hook 'evil-emacs-state-entry-hook 'powerline-theme-emacs)
+;; hl-line
+(set-face-attribute 'hl-line nil :background "#000")
 
 
 ;; Cursor / caret state color
@@ -199,7 +192,7 @@
 (setq evil-operator-state-cursor '("red" hollow))
 
 ;; powerline
-(powerline-theme-normal)
+;; (powerline-theme-normal)
 
 ;; ------ Helm
 (set-face-attribute 'header-line nil :background "#212121" :foreground "#ffffff")

@@ -5,6 +5,7 @@
 (package-initialize)
 
 (load "~/.emacs.d/lisp/init-packages")
+(load-file "~/.emacs.d/custom.el")
 (load-file "~/.emacs.d/lisp/require.el")
 (load-file "~/.emacs.d/lisp/base.el")
 (load-file "~/.emacs.d/lisp/defun/wlh-project.el")
@@ -25,8 +26,9 @@
 (load-file "~/.emacs.d/lisp/syntax_checker.el")
 (load-file "~/.emacs.d/lisp/key_binding.el")
 ;; (load-file "~/.emacs.d/lisp/theme/theme-light4.el")
-(load-file "~/.emacs.d/lisp/theme/theme-dark.el")
+;; (load-file "~/.emacs.d/lisp/theme/theme-dark.el")
 ;; (load-file "~/.emacs.d/lisp/theme/theme-dark2.el")
+(load-file "~/.emacs.d/lisp/theme/theme-dark3.el")
 (load-file "~/.emacs.d/lisp/lsp.el")
 (load-file "~/.emacs.d/lisp/lang/prog.el")
 (load-file "~/.emacs.d/lisp/lang/typescript.el")

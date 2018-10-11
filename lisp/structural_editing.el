@@ -127,6 +127,3 @@
 
 (define-key emacs-lisp-mode-map (kbd "<backspace>") 'delete-backward-char)
 (define-key clojure-mode-map (kbd "<backspace>") 'delete-backward-char)
-
-
-

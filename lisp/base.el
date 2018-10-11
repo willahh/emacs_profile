@@ -125,8 +125,9 @@
 ;; Let's emacs use a different file to write in when updating via
 ;; customize-group
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-(when (file-exists-p custom-file)
-  (load custom-file))
+
+;; (when (file-exists-p custom-file)
+;;   (load custom-file))
 
 ;; Display current file path in title
 (setq frame-title-format
@@ -350,18 +351,3 @@
         ;; ("*shell*"            . (display-buffer-same-window . nil))
         ;; ("*Google Translate*" . (display-buffer-same-window . nil))
         ))
-
-
-;; (defadvice yank (after indent-region activate)
-;;   (if (member major-mode '(emacs-lisp-mode scheme-mode lisp-mode
-;;                                            c-mode c++-mode objc-mode
-;;                                            LaTeX-mode TeX-mode))
-;;       (indent-region (region-beginning) (region-end) nil)))
-
-;; (defadvice yank (after indent-region activate)
-;;   (indent-region (region-beginning) (region-end) nil))
-
-;; (define-advice kill-ring-save (:around (old-fun &rest args) highlight)
-;;   "Save the text selection and keep the selection highlight."
-;;   (let (deactivate-mark)
-;;     (apply old-fun args)))

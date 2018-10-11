@@ -242,12 +242,7 @@ unreachable."
            (+ js-indent-level js-expr-indent-offset))
           (t 0))))
 
-(add-to-list 'yas-snippet-dirs
-             (expand-file-name "snippets"
-                               (file-name-directory
-                                (or load-file-name buffer-file-name)))
-             t)
-(yas-reload-all)
+
 
 (provide 'emacs-js)
 ;;; emacs-js.el ends here

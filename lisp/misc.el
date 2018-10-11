@@ -582,6 +582,7 @@ abort completely with `C-g'."
 
 
 ;; ;; hl-line-mode
+(require 'hl-line)
 ;; (add-hook 'compilation-mode-hook (lambda () (hl-line-mode)))
 ;; (add-hook 'dired-mode-hook (lambda () (hl-line-mode)))
 ;; (add-hook 'occur-mode-hook (lambda () (hl-line-mode)))

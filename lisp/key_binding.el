@@ -5,7 +5,7 @@
 ;; --------------- Main Emacs keybinding changes
 (global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
 (global-set-key (kbd "C-x RET") 'dired-jump)
-;; (global-set-key (kbd "M-a") 'mark-whole-buffer) ; Was backward-sentence
+(global-set-key (kbd "M-a") 'mark-whole-buffer) ; Was backward-sentence
 ;; (define-key php-mode-map (kbd "M-a") 'mark-whole-buffer)
 (define-key key-translation-map (kbd "C-j") (kbd "RET"))
 
@@ -242,17 +242,11 @@
 (define-key emacs-lisp-mode-map (kbd "C-h") 'paredit-backward-delete)
 (define-key helm-map (kbd "C-h") 'paredit-backward-delete)
 
-
-
 ;; Kill
 (define-key web-mode-map (kbd "C-k") 'wlh/web-mode-kill-sexp)
 
 ;; ---------------- Backward delete word
-;; (global-set-key (kbd "C-w") 'backward-kill-word-or-region)
-
 ;; Kill line or region
-;; (global-set-key (kbd "C-z") 'whole-line-or-region-kill-region)
-;; (define-key org-mode-map (kbd "C-z") 'whole-line-or-region-kill-region)
 (define-key company-active-map (kbd "C-h") 'backward-delete-char)
 (define-key company-active-map (kbd "<tab>") 'company-complete-selection)
 (define-key company-active-map (kbd "C-m") 'company-complete-selection)
@@ -392,11 +386,8 @@
 (define-key web-mode-map [control command shift j] 'emmet-expand-line)
 (define-key web-mode-map (kbd "C-M-S-j") 'emmet-expand-line)
 
-
-
 ;; ---------------- f keys
 (global-set-key (kbd "<f2>") 'helm-mini)
-
 
 ;; ---------------- Window
 ;; Azerty binding equivalent chars to 0-9 on the upper row keyboard
@@ -471,8 +462,6 @@
 (global-set-key (kbd "C-M-ù") 'winner-undo)
 (global-set-key (kbd "M-t") 'tabbar-new-tab)
 (global-set-key (kbd "™") 'tabbar-close-other-tabs) ; ALT+SHIFT+t
-
-
 
 ;; Recentf
 (global-set-key (kbd "C-c f") 'counsel-recentf) 
@@ -555,10 +544,6 @@
 
 ;; url
 (global-set-key (kbd "M-m u") 'wlh/browse-url-at-point)
-
-;; Prev / next location
-;; (global-set-key (kbd "C-$") 'jump-to-prev-pos)
-;; (global-set-key (kbd "C-M-$") 'jump-to-next-pos)
 
 ;; dumb-jump-go
 (global-set-key (kbd "C-c M-.") 'dumb-jump-go)

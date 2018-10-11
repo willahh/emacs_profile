@@ -1,12 +1,9 @@
-;; Mode Line changes
-;; Display workgroups in Mode Line?
-(setq wg-flag-modified t)                 ; Display modified flags as well
+(require 'diminish)
+
+(setq wg-flag-modified t) ; Display modified flags as well
 (setq wg-mode-line-decor-left-brace "["
       wg-mode-line-decor-right-brace "]"  ; how to surround it
       wg-mode-line-decor-divider ":")
-
-;; Diminish modeline clutter
-(require 'diminish)
 
 (eval-after-load "yasnippet" '(diminish 'yas-minor-mode))
 (eval-after-load "eldoc" '(diminish 'eldoc-mode))
