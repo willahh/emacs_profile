@@ -5,7 +5,7 @@
 ;; --------------- Main Emacs keybinding changes
 (global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
 (global-set-key (kbd "C-x RET") 'dired-jump)
-;; (global-set-key (kbd "M-a") 'mark-whole-buffer) ; Was backward-sentence
+(global-set-key (kbd "M-a") 'mark-whole-buffer) ; Was backward-sentence
 ;; (define-key php-mode-map (kbd "M-a") 'mark-whole-buffer)
 (define-key key-translation-map (kbd "C-j") (kbd "RET"))
 
