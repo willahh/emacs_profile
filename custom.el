@@ -17,9 +17,7 @@
  '(fast-but-imprecise-scrolling t)
  '(global-diff-hl-mode t)
  '(helm-allow-mouse t)
- ;; '(helm-source-names-using-follow
- ;;   (quote
- ;;    ()))
+ '(helm-source-names-using-follow (quote ("Search at ~/.emacs.d/lisp/")))
  '(ido-save-directory-list-file "~/.emacs.d/tmp/ido.last")
  '(lsp-php-server-install-dir "~/.composer/")
  '(lsp-php-workspace-root-detectors
@@ -28,22 +26,22 @@
  '(mac-mouse-wheel-mode t)
  '(mc/always-repeat-command t)
  '(mc/cycle-looping-behaviour (quote continue))
- '(mouse-wheel-mode nil)
  '(mouse-wheel-progressive-speed t)
  '(mouse-yank-at-point t)
  '(package-selected-packages
    (quote
-    (doom-themes lsp-mode elein typed-clojure-mode auto-indent-mode dired-subtree smart-comment dired-ranger csv-mode highlight-defined elscreen erefactor redshank all-the-icons smartparens easy-kill string-inflection centered-window noflet ido-completing-read+ helm-flx company-flx diminish dumb-jump move-text cider indium treemacs-projectile treemacs hide-lines hy-mode elscreen-mew elscreen-fr flycheck-clojure ac-slime markdown-preview-mode diffview aggressive-indent counsel-gtags xref-js2 zop-to-char yaml-mode whole-line-or-region which-key wgrep websocket web-mode web-beautify visual-regexp-steroids visual-regexp validate use-package toc-org tide sx sourcemap smooth-scrolling sml-mode smex skewer-mode resize-window react-snippets rainbow-mode rainbow-delimiters psysh projectile-ripgrep powerline php-auto-yasnippets perspective pdf-tools paredit-everywhere paradox pandoc-mode ov org-bullets neotree monokai-theme magit key-chord json-mode js2-refactor js-comint jabber iy-go-to-char ivy-hydra intellij-theme inf-clojure indent-guide impatient-mode imenu-list image-dired+ iflipb iedit ido-vertical-mode ido-ubiquitous ido-occur ido-at-point ibuffer-vc highlight-symbol helm-swoop helm-projectile helm-ag gradle-mode google-translate git-timemachine git-gutter ggtags fullframe flycheck-pos-tip flx-ido find-file-in-project expand-region exec-path-from-shell evil-visualstar evil-surround evil-snipe evil-org evil-nerd-commenter evil-matchit evil-leader emmet-mode editorconfig edit-server eclim dtrt-indent drag-stuff dracula-theme diff-hl darkroom crux counsel company-web company-tern company-quickhelp coffee-mode clojure-snippets clojure-cheatsheet clj-refactor browse-kill-ring avy-menu autopair auto-yasnippet auto-complete ag actionscript-mode ace-window ace-link ace-jump-mode)))
+    (workgroups doom-themes lsp-mode elein typed-clojure-mode auto-indent-mode dired-subtree smart-comment dired-ranger csv-mode highlight-defined elscreen erefactor redshank all-the-icons smartparens easy-kill string-inflection centered-window noflet ido-completing-read+ helm-flx company-flx diminish dumb-jump move-text cider indium treemacs-projectile treemacs hide-lines hy-mode elscreen-mew elscreen-fr flycheck-clojure ac-slime markdown-preview-mode diffview aggressive-indent counsel-gtags xref-js2 zop-to-char yaml-mode whole-line-or-region which-key wgrep websocket web-mode web-beautify visual-regexp-steroids visual-regexp validate use-package toc-org tide sx sourcemap smooth-scrolling sml-mode smex skewer-mode resize-window react-snippets rainbow-mode rainbow-delimiters psysh projectile-ripgrep powerline php-auto-yasnippets perspective pdf-tools paredit-everywhere paradox pandoc-mode ov org-bullets neotree monokai-theme magit key-chord json-mode js2-refactor js-comint jabber iy-go-to-char ivy-hydra intellij-theme inf-clojure indent-guide impatient-mode imenu-list image-dired+ iflipb iedit ido-vertical-mode ido-ubiquitous ido-occur ido-at-point ibuffer-vc highlight-symbol helm-swoop helm-projectile helm-ag gradle-mode google-translate git-timemachine git-gutter ggtags fullframe flycheck-pos-tip flx-ido find-file-in-project expand-region exec-path-from-shell evil-visualstar evil-surround evil-snipe evil-org evil-nerd-commenter evil-matchit evil-leader emmet-mode editorconfig edit-server eclim dtrt-indent drag-stuff dracula-theme diff-hl darkroom crux counsel company-web company-tern company-quickhelp coffee-mode clojure-snippets clojure-cheatsheet clj-refactor browse-kill-ring avy-menu autopair auto-yasnippet auto-complete ag actionscript-mode ace-window ace-link ace-jump-mode)))
  '(projectile-cache-file "~/.emacs.d/tmp/projectile.cache")
  '(recentf-save-file "~/.emacs.d/tmp/recentf")
  '(save-place-file "/~/.emacs.d/tmp/.places" t)
  '(scheme-program-name "guile")
  '(send-mail-function (quote smtpmail-send-it))
  '(shell-pop-full-span t)
- '(shell-pop-shell-type (quote ("eshell" "*eshell*" (lambda nil (eshell)))))
- '(shell-pop-term-shell "/bin/bash")
- '(shell-pop-universal-key "C-t")
- '(shell-pop-window-position "bottom")
+ '(shell-pop-shell-type
+   (quote
+    ("ansi-term" "*ansi-term*"
+     (lambda nil
+       (ansi-term shell-pop-term-shell)))))
  '(shell-pop-window-size 30)
  '(smtpmail-smtp-server "smtp.gmail.com")
  '(smtpmail-smtp-service 587)
@@ -57,22 +55,4 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- ;; '(default ((t (:height 120 :width normal :family "Menlo")))))
- ;; '(mc/cursor-bar-face ((t (:foreground "magenta" :weight light :width condensed))))
- ;; '(mode-line-emphasis ((t nil)))
- ;; '(mode-line-highlight ((t nil)))
- ;; '(rainbow-delimiters-depth-1-face ((t (:foreground "#5abeee" :weight bold))))
- ;; '(rainbow-delimiters-depth-2-face ((t (:foreground "#ff00a0" :weight bold))))
- ;; '(rainbow-delimiters-depth-3-face ((t (:foreground "#328d2e" :weight bold))))
- ;; '(rainbow-delimiters-depth-4-face ((t (:foreground "#ff953f" :weight bold))))
- ;; '(rainbow-delimiters-depth-5-face ((t (:foreground "#22988a" :weight bold))))
- ;; '(rainbow-delimiters-depth-6-face ((t (:foreground "#cc99ff" :weight bold))))
- ;; '(rainbow-delimiters-depth-7-face ((t (:foreground "#fa75e2" :weight bold))))
- ;; '(rainbow-delimiters-depth-8-face ((t (:foreground "#55bdf0" :weight bold))))
- ;; '(sp-show-pair-enclosing ((t (:inherit highlight :background "magenta"))))
- ;; '(whitespace-empty ((t (:background "light gray"))))
- ;; '(whitespace-line ((t nil)))
- ;; '(whitespace-space ((t (:foreground "lightgray"))))
- ;; '(whitespace-trailing ((t (:foreground "gainsboro" :weight bold))))
- 
-)
+ '(default ((t (:height 120 :width normal :family "Menlo")))))

@@ -13,12 +13,11 @@
   (define-key typescript-mode-map (kbd "M-]") 'tide-jump-back)
 
   ;; company mode
-  (company-mode +1))
+  (company-mode +1)
+  (setq company-minimum-prefix-length 0))
 
 ;; aligns annotation to the right hand side
 (setq company-tooltip-align-annotations t)
 
 (add-hook 'typescript-mode-hook 'setup-tide-mode)
 
-;; tsx support
-(add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))

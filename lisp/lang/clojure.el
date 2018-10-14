@@ -77,12 +77,12 @@
   (define-key clojure-mode-map (kbd "RET") 'newline-and-indent))
 
 (add-hook 'clojure-mode-hook 'wlh/clojure-mode-hook)
-(add-hook 'cider-mode-hook
-          (lambda ()
+(add-hook 'cider-mode-hook (lambda ()
             (eldoc-mode)
             (company-mode)
             (highlight-symbol-mode)
             (company-quickhelp-mode)
+            (setq cider-special-mode-truncate-lines nil)
             
             (setq company-minimum-prefix-length 2)
             (setq company-idle-delay 0.8)

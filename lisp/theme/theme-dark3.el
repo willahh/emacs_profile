@@ -131,7 +131,8 @@
 ;;      (set-face-attribute face nil :weight 'normal)))
 ;;  (face-list))
 
-(set-face-attribute 'region nil :background "#fdb92c" :foreground "#000" :box nil)
+;; region
+(set-face-attribute 'region nil :background "#224d7b" :foreground nil)
 
 ;; parenthesis
 (set-face-foreground 'show-paren-match "#fff")
@@ -182,14 +183,14 @@
 (set-face-attribute 'hl-line nil :background "#000")
 
 
-;; Cursor / caret state color
-;; (setq evil-emacs-state-cursor '("#56b0ec" box))
-(setq evil-emacs-state-cursor '("#ff00d2" box))
-(setq evil-normal-state-cursor '("#98cf15" box))
-(setq evil-visual-state-cursor '("#fff" box))
-(setq evil-insert-state-cursor '("red" bar))
-(setq evil-replace-state-cursor '("red" bar))
-(setq evil-operator-state-cursor '("red" hollow))
+;; ;; Cursor / caret state color
+;; ;; (setq evil-emacs-state-cursor '("#56b0ec" box))
+;; (setq evil-emacs-state-cursor '("#ff00d2" box))
+;; (setq evil-normal-state-cursor '("#98cf15" box))
+;; (setq evil-visual-state-cursor '("#fff" box))
+;; (setq evil-insert-state-cursor '("red" bar))
+;; (setq evil-replace-state-cursor '("red" bar))
+;; (setq evil-operator-state-cursor '("red" hollow))
 
 ;; powerline
 ;; (powerline-theme-normal)

@@ -10,3 +10,4 @@
 ;; (add-hook 'css-mode-hook 'wlh/prog-hook)
 ;; (add-hook 'typescript-mode-hook 'wlh/prog-hook)
 (add-hook 'prog-mode-hook 'wlh/prog-hook)
+(add-hook 'web-mode-hook 'wlh/prog-hook)

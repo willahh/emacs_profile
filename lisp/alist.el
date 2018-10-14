@@ -25,3 +25,6 @@
 (add-to-list 'auto-mode-alist '("controller/.*.php" . php-mode))
 (add-to-list 'auto-mode-alist '("cron/.*.php" . php-mode))
 (add-to-list 'auto-mode-alist '("index.php" . web-mode))
+
+;; tsx support
+(add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))

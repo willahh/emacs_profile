@@ -551,35 +551,6 @@ abort completely with `C-g'."
   (company-mode 0))
 (add-hook 'eshell-mode-hook 'wlh/eshell-mode-hook)
 
-;; ;; origami
-;; (require 'origami)
-
-;; treemacs
-;; (require 'treemacs)
-;; (require 'treemacs-projectile)
-
-;; (setq treemacs-change-root-without-asking nil
-;;       treemacs-collapse-dirs              (if (executable-find "python") 3 0)
-;;       treemacs-follow-mode t
-;;       treemacs-file-event-delay           5000
-;;       treemacs-follow-after-init          t
-;;       treemacs-follow-recenter-distance   0.1
-;;       treemacs-goto-tag-strategy          'refetch-index
-;;       treemacs-indentation                2
-;;       treemacs-indentation-string         " "
-;;       treemacs-is-never-other-window      nil
-;;       treemacs-never-persist              nil
-;;       treemacs-no-png-images              nil
-;;       treemacs-recenter-after-file-follow nil
-;;       treemacs-recenter-after-tag-follow  nil
-;;       treemacs-show-hidden-files          t
-;;       treemacs-silent-filewatch           nil
-;;       treemacs-silent-refresh             nil
-;;       treemacs-sorting                    'alphabetic-desc
-;;       treemacs-tag-follow-cleanup         t
-;;       treemacs-tag-follow-delay           1.5
-;;       treemacs-width                      35)
-
 
 ;; ;; hl-line-mode
 (require 'hl-line)
@@ -593,72 +564,5 @@ abort completely with `C-g'."
 (require 'editorconfig)
 (add-hook 'prog-mode-hook 'editorconfig-mode)
 
-;; Auto indent after yank
-;; https://www.emacswiki.org/emacs/AutoIndentation
-;; (dolist (command '(yank yank-pop))
-;;    (eval `(defadvice ,command (after indent-region activate)
-;;             (and (not current-prefix-arg)
-;;                  (member major-mode '(emacs-lisp-mode lisp-mode
-;;                                                       clojure-mode    scheme-mode
-;;                                                       haskell-mode    ruby-mode
-;;                                                       rspec-mode      python-mode
-;;                                                       c-mode          c++-mode
-;;                                                       objc-mode       latex-mode
-;;                                                       plain-tex-mode))
-;;                  (let ((mark-even-if-inactive transient-mark-mode))
-;;                    (indent-region (region-beginning) (region-end) nil))))))
-
-
-
-;; (defun yank-and-indent ()
-;;   "Yank and then indent the newly formed region according to mode."
-;;   (interactive)
-;;   (yank)
-;;   (call-interactively 'indent-region))
-
-;; If file too large
-;; https://stackoverflow.com/questions/18316665/how-to-improve-emacs-performance-when-view-large-file
-;; (defun my-find-file-check-make-large-file-read-only-hook ()
-;;   "If a file is over a given size, make the buffer read only."
-;;   (when (> (buffer-size) (* 1024 1024))
-;;     (setq buffer-read-only t)
-;;     (buffer-disable-undo)
-;;     (font-lock-mode nil)))
-
-;; (add-hook 'find-file-hook 'my-find-file-check-make-large-file-read-only-hook)
-
-
-
-
-
-
-
-
-;; Interesting thing from this post :
-;; https://stackoverflow.com/a/51202601
-;;
-;; Add true line padding like modern editors using overlays.
-;; Set the padding between lines
-;; (defvar line-padding 2)
-;; (defun add-line-padding ()
-  ;; "Add extra padding between lines"
-  ;; (interactive)
-  ;; remove padding overlays if they already exist
-  ;; (let ((overlays (overlays-at (point-min))))
-    ;; (while overlays
-      ;; (let ((overlay (car overlays)))
-        ;; (if (overlay-get overlay 'is-padding-overlay)
-            ;; (delete-overlay overlay)))
-      ;; (setq overlays (cdr overlays))))
-
-  ;; add a new padding overlay
-  ;; (let ((padding-overlay (make-overlay (point-min) (point-max))))
-    ;; (overlay-put padding-overlay 'is-padding-overlay t)
-    ;; (overlay-put padding-overlay 'line-spacing (* .1 line-padding))
-    ;; (overlay-put padding-overlay 'line-height (+ 1 (* .1 line-padding))))
-  ;; (setq mark-active nil))
-
-;; (add-hook 'buffer-list-update-hook 'add-line-padding)
-;; (add-hook 'post-command-hook 'add-line-padding)
-;; (add-hook 'post-command-hook 'add-line-padding)
-
+(require 'shell-pop)
+(setq shell-pop-shell-type `ansi-term)
