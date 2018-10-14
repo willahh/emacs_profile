@@ -7,7 +7,7 @@
 (global-set-key (kbd "C-x RET") 'dired-jump)
 (global-set-key (kbd "M-a") 'mark-whole-buffer) ; Was backward-sentence
 ;; (define-key php-mode-map (kbd "M-a") 'mark-whole-buffer)
-(define-key key-translation-map (kbd "C-j") (kbd "RET"))
+;; (define-key key-translation-map (kbd "C-j") (kbd "RET"))
 
 ;; Copy
 ;; (global-set-key (kbd "M-c") #'kill-ring-save-keep-selection)
@@ -460,7 +460,7 @@
 
 (global-set-key (kbd "C-ù") 'previous-buffer)
 (global-set-key (kbd "C-M-ù") 'winner-undo)
-(global-set-key (kbd "M-t") 'tabbar-new-tab)
+;; (global-set-key (kbd "M-t") 'tabbar-new-tab)
 (global-set-key (kbd "™") 'tabbar-close-other-tabs) ; ALT+SHIFT+t
 
 ;; Recentf
