@@ -17,7 +17,9 @@
  '(fast-but-imprecise-scrolling t)
  '(global-diff-hl-mode t)
  '(helm-allow-mouse t)
- '(helm-source-names-using-follow (quote ("Search at ~/.emacs.d/lisp/")))
+ '(helm-source-names-using-follow
+   (quote
+    ("Search at ~/www/projects/clojure/reagent03/src/reagent03/" "Search at ~/.emacs.d/lisp/")))
  '(ido-save-directory-list-file "~/.emacs.d/tmp/ido.last")
  '(lsp-php-server-install-dir "~/.composer/")
  '(lsp-php-workspace-root-detectors
@@ -37,11 +39,19 @@
  '(scheme-program-name "guile")
  '(send-mail-function (quote smtpmail-send-it))
  '(shell-pop-full-span t)
+ 
+ ;; '(shell-pop-shell-type
+ ;;   (quote
+ ;;    ("ansi-term" "*ansi-term*"
+ ;;     (lambda nil
+ ;;       (ansi-term shell-pop-term-shell)))))
+
  '(shell-pop-shell-type
    (quote
     ("ansi-term" "*ansi-term*"
      (lambda nil
        (ansi-term shell-pop-term-shell)))))
+ 
  '(shell-pop-window-size 30)
  '(smtpmail-smtp-server "smtp.gmail.com")
  '(smtpmail-smtp-service 587)

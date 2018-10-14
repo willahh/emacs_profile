@@ -1,5 +1,5 @@
 (defvar wlh/leader-key (concat "M-m" " "))
-
+(require 'cider)
 (global-unset-key (kbd "M-m"))
 
 ;; --------------- Main Emacs keybinding changes
@@ -7,7 +7,7 @@
 (global-set-key (kbd "C-x RET") 'dired-jump)
 (global-set-key (kbd "M-a") 'mark-whole-buffer) ; Was backward-sentence
 ;; (define-key php-mode-map (kbd "M-a") 'mark-whole-buffer)
-;; (define-key key-translation-map (kbd "C-j") (kbd "RET"))
+
 
 ;; Copy
 ;; (global-set-key (kbd "M-c") #'kill-ring-save-keep-selection)
@@ -223,7 +223,6 @@
 (define-key dired-mode-map (kbd "C-c C-p") 'dired-subtree-up)
 (define-key dired-mode-map (kbd "C-c C-n") 'dired-subtree-down)
 (define-key dired-mode-map (kbd "b") 'crux-open-with)
-(define-key dired-mode-map (kbd "C-j") 'dired-find-file)
 (define-key dired-mode-map (kbd "B") 'wlh/vscode-dired-at-point)
 
 ;; ---------------- Multi cursor binding
@@ -250,7 +249,8 @@
 (define-key company-active-map (kbd "C-h") 'backward-delete-char)
 (define-key company-active-map (kbd "<tab>") 'company-complete-selection)
 (define-key company-active-map (kbd "C-m") 'company-complete-selection)
-(define-key company-active-map (kbd "C-j") 'company-complete)
+
+
 (define-key company-active-map (kbd "C-i") 'company-complete-selection)
 (global-set-key (kbd "<delete>") 'wlh/delete-backspace)
 (define-key paredit-mode-map (kbd "<delete>") 'wlh/delete-backspace)
@@ -282,7 +282,16 @@
 (global-set-key (kbd "C-M-s") 'isearch-forward-regexp)
 (global-set-key (kbd "C-c C-M-s") 'vr/replace)
 (global-set-key (kbd "M-=") 'just-one-space) ; Azerty equivalent of M-\
+
+(define-key company-active-map (kbd "C-j") 'company-complete)
+(define-key dired-mode-map (kbd "C-j") 'dired-find-file)
+(define-key key-translation-map (kbd "C-j") (kbd "RET"))
+(define-key shell-mode-map (kbd "C-j") 'paredit-newline)
+(define-key emmet-mode-keymap (kbd "C-j") 'new-line-dwim)
 (define-key helm-map (kbd "C-j") 'helm-confirm-and-exit-minibuffer)
+(define-key ibuffer-mode-map (kbd "C-j") 'ibuffer-visit-buffer)
+(define-key cider-repl-mode-map (kbd "C-j") 'paredit-newline)
+(define-key cider-mode-map (kbd "C-c C-j") 'cider-macroexpand-1)
 
 ;; Search
 (global-set-key (kbd "M-F") 'projectile-ag)
@@ -367,8 +376,7 @@
 
 ;; ---------------- Shell
 (define-key shell-mode-map (kbd "RET") 'eshell-send-input)
-(define-key shell-mode-map (kbd "C-j") 'paredit-newline)
-(define-key emmet-mode-keymap (kbd "C-j") 'new-line-dwim)
+
 (add-hook 'eshell-mode-hook 'm-eshell-hook)
 
 ;; expand-region
