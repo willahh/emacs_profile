@@ -24,7 +24,3 @@
 (add-hook 'inferior-scheme-mode-hook 'wlh/inferior-scheme-mode-hook)
 (eval-after-load "auto-complete"
   '(add-to-list 'ac-modes 'slime-repl-mode))
-
-;; Emacs lisp
-;; (defun wlh/emacs-lisp-mode-hook ())
-;; (add-hook 'emacs-lisp-mode-hook 'wlh/emacs-lisp-mode-hook)

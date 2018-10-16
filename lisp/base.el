@@ -153,7 +153,6 @@
 ;; Repeating set-mark-command after popping mark pops it again.
 (setq set-mark-command-repeat-pop t)
 
-
 ;; Disable toolbar
 (tool-bar-mode -1)
 

@@ -196,7 +196,6 @@
 (load-file "~/.emacs.d/site-lisp/auto-highlight-symbol-mode/auto-highlight-symbol-mode-config.el")
 (load-file "~/.emacs.d/site-lisp/dired-subtree-20160920.130/dired-subtree.el")
 
-
 ;; fetch the list of packages available 
 (unless package-archive-contents
   (package-refresh-contents))

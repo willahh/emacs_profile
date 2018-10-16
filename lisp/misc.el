@@ -1,5 +1,3 @@
-
-;; exec-path-from-shell-initialize
 (exec-path-from-shell-initialize)
 
 (setq kill-buffer-query-functions

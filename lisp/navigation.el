@@ -1,11 +1,9 @@
 ;; Ido ------------------------------
 (require 'ido)
-
 (require 'ido-vertical-mode)
 (require 'ido-occur)
 
 (ido-mode 1)
-
 (ido-vertical-mode t)
 
 ;; C-n/p is more intuitive in vertical layout
@@ -44,7 +42,6 @@
 (require 'flx-ido)
 
 (flx-ido-mode 1)
-
 (ivy-mode)
 
 ;; (setq ivy-height 12)
@@ -107,8 +104,6 @@
       ;; helm-locate-fuzzy-match t
       ;; helm-imenu-fuzzy-match t
       ;; helm-mode-fuzzy-match t
-
-      
       )
 
 (define-key helm-map [mouse-1] 'helm-mouse-1-exit-minibuffer)

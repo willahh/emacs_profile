@@ -11,7 +11,6 @@
 (add-to-list 'projectile-globally-ignored-directories "node_modules") ; Some ignore rules
 
 
-
 (require 'workgroups)
 (workgroups-mode)
 (setq wg-prefix-key (kbd "C-c w"))

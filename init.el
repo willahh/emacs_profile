@@ -31,7 +31,7 @@
 (load-file "~/.emacs.d/lisp/lang/prog.el")
 (load-file "~/.emacs.d/lisp/lang/typescript.el")
 (load-file "~/.emacs.d/lisp/lang/html.el")
-(load-file "~/.emacs.d/lisp/lang/javascript.el")
+(load-file "~/.emacs.d/lisp/lang/javascript_modern.el")
 (load-file "~/.emacs.d/lisp/lang/php.el")
 (load-file "~/.emacs.d/lisp/lang/css.el")
 (load-file "~/.emacs.d/lisp/lang/web.el")

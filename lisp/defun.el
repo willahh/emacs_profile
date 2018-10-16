@@ -3,12 +3,6 @@
   (interactive "p")
   (yank-pop (- arg)))
 
-;; Revert without confirm
-;; (defun revert-buffer-no-confirm ()
-;;   "Revert buffer without confirmation."
-;;   (interactive) 
-;;   (revert-buffer t t))
-
 (defun wlh/revert-buffer ()
   "Save the current position to tmp, then call revert-buffer,
   then goto-char(position)"
@@ -74,8 +68,8 @@
         (clipboard-kill-region (point-min) (point-max)))
       (message filename))))
 
-;; Shorthand : ([c]opy-[f]ile-[p]ath)
 (defun cfp ()
+  "[C]opy [f]ile [p]ath"
   (interactive)
   (copy-file-path))
 
@@ -100,7 +94,6 @@
   (let ((line-text (delete-and-extract-region start end)))
     (forward-line n)
     (insert line-text)
-    ;; restore point to original column in moved line
     (forward-line -1)
     (forward-char col)))
 
