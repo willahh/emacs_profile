@@ -5,6 +5,7 @@
 (package-initialize)
 
 (load "~/.emacs.d/lisp/init-packages")
+(load-file "~/.emacs.d/custom.el")
 (load-file "~/.emacs.d/lisp/require.el")
 (load-file "~/.emacs.d/lisp/base.el")
 (load-file "~/.emacs.d/lisp/defun/wlh-project.el")
@@ -24,13 +25,19 @@
 (load-file "~/.emacs.d/lisp/search.el")
 (load-file "~/.emacs.d/lisp/syntax_checker.el")
 (load-file "~/.emacs.d/lisp/key_binding.el")
+
+;; (let* ((home t))
+;;   (if (home)
+;;      (load-file "~/.emacs.d/lisp/theme/theme-light4.el")
+;;    (load-file "~/.emacs.d/lisp/theme/theme-dark3.el")))
+
 (load-file "~/.emacs.d/lisp/theme/theme-light4.el")
-;; (load-file "~/.emacs.d/lisp/theme/theme-dark.el")
-(load-file "~/.emacs.d/lisp/lsp.el")
+
+
 (load-file "~/.emacs.d/lisp/lang/prog.el")
 (load-file "~/.emacs.d/lisp/lang/typescript.el")
 (load-file "~/.emacs.d/lisp/lang/html.el")
-(load-file "~/.emacs.d/lisp/lang/javascript.el")
+(load-file "~/.emacs.d/lisp/lang/javascript_modern.el")
 (load-file "~/.emacs.d/lisp/lang/php.el")
 (load-file "~/.emacs.d/lisp/lang/css.el")
 (load-file "~/.emacs.d/lisp/lang/web.el")

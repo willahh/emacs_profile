@@ -12,3 +12,5 @@
 (add-hook 'prog-mode-hook #'yas-minor-mode)
 (add-hook 'web-mode-hook #'yas-minor-mode)
 (add-hook 'org-mode-hook #'yas-minor-mode)
+
+(yas-reload-all)

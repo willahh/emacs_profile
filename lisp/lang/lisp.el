@@ -7,27 +7,16 @@
 (defun wlh/lisp-mode-hook ()
   (define-key slime-prefix-map (kbd "M-h") 'slime-documentation-lookup)
   (highlight-defined-mode)
-  
-  ;; (company-mode 0)
-  ;; (auto-complete-mode 0)
-  ;; (set-up-slime-ac)
   (aggressive-indent-mode)
   (highlight-symbol-mode)
   (define-key lisp-mode-map (kbd "C-c M-j") 'slime) ; Same as Clojure Cider connect to repl ! 
-  ;; (edebug-mode t)
-  ;; (redshank-mode)
-  (redshank-mode)
-  ;; (erefactor-highlight-mode)
-  ;; (define-key emacs-lisp-mode-map "\C-c\C-v" erefactor-map)
-  )
+  (redshank-mode))
 
 (defun wlh/inferior-scheme-mode-hook ()
   (paredit-mode))
 
 (setq inferior-lisp-program "sbcl")
-;; (setq inferior-lisp-program "ccl")
 (slime-setup '(slime-fancy))
-;; (global-set-key "\C-cs" 'slime-selector)
 
 (add-hook 'slime-load-hook 'wlh/slime-mode-hook)
 (add-hook 'lisp-mode-hook 'wlh/lisp-mode-hook)
@@ -35,11 +24,3 @@
 (add-hook 'inferior-scheme-mode-hook 'wlh/inferior-scheme-mode-hook)
 (eval-after-load "auto-complete"
   '(add-to-list 'ac-modes 'slime-repl-mode))
-
-;;;; Emacs lisp
-(defun wlh/emacs-lisp-mode-hook ()
-  ;; (company-mode)
-  )
-(add-hook 'emacs-lisp-mode-hook 'wlh/emacs-lisp-mode-hook)
-
-

@@ -367,3 +367,6 @@ That is, a string used to represent it on the tab bar."
 ;; (add-hook 'prog-mode-hook 'wlh/prog-mode-line-padding-hook)
 ;; (add-hook 'text-mode-hook 'wlh/prog-mode-line-padding-hook)
 
+
+
+;; ------ log

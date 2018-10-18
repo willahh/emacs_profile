@@ -6,6 +6,12 @@
   ;; (tide-setup)
   ;; (eldoc-mode +1)
   ;; (tide-hl-identifier-mode +1)
+
+  ;; ;; Tide mode
+  ;; (tide-mode)
+  ;; (tide-setup)
+  ;; (eldoc-mode +1)
+  ;; (tide-hl-identifier-mode +1)
   
   ;; aligns annotation to the right hand side
   ;; (setq company-tooltip-align-annotations t)
@@ -44,7 +50,7 @@
   (highlight-symbol-mode t)
 
   (js2-refactor-mode 1)
-  (tern-mode 1)
+  ;; (tern-mode 1)
   (company-mode 1)
 
   ;; js2-imenu-extras-mode

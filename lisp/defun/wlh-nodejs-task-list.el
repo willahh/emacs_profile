@@ -8,7 +8,6 @@
 ;; => Provide a first entry called "npm install".
 ;; 
 
-(defvar wlh/nodejs-root-dir "~/www/test/react/react-static-boilerplate/")
 (defvar wlh/nodejs-root-dir "~/.emacs.d/")
 ;; (defvar wlh/nodejs-root-dir (projectile-project-root))
 
@@ -52,69 +51,3 @@
   (let* ((root-dir wlh/nodejs-root-dir)
          (task-name (wlh/nodejs-prompt root-dir)))
     (wlh/nodejs-add-eshell-exec-task root-dir task-name)))
-
-
-
-
-
-
-
-
-
-
-;; (require 'find-lisp)
-;; (require 'projectile)
-
-;; (defun re-seq (regexp string)
-;;   "Get a list of all regexp matches in a string"
-;;   (save-match-data
-;;     (let ((pos 0)
-;;           matches)
-;;       (while (string-match regexp string pos)
-;;         (push (match-string 0 string) matches)
-;;         (setq pos (match-end 0)))
-;;       matches)))
-
-;; (defvar wlh/nodejs-list-files '("gulpfile.js"))
-
-;; (defun wlh/nodejs-list-files ()
-;;   (find-lisp-find-files (projectile-project-root) "\\gulpfile.js$"))
-
-
-;; ;; (with-temp-buffer (let ((root-file (projectile-project-root))
-;; ;;                         ;; (buffer-content (concat root-file "gulpfile.js"))
-;; ;;                         (list-of-files (find-lisp-find-files root-file "\\gulpfile.js$"))
-;; ;;                         (message list-of-files)
-;; ;;                         (buffer-string))
-;; ;;                     ))
-
-;; (defun wlh/nodejs-get-node-buffer ()
-;;   (interactive)
-;;   (let ((file-target (wlh/nodejs-list-files))
-;;         (buffer-content (concat (projectile-project-root) "gulpfile.js")))
-;;     (with-temp-buffer (buffer-string))
-;;     (message buffer-content)))
-
-
-;; ;; (defun wlh/nodejs-get-node-buffer ()
-;; ;;   (let ((test (projectile-project-root)))
-;; ;;     (progn (let (list-of-files (find-lisp-find-files projectile-project-root "\\gulpfile.js$"))
-;; ;;              (progn (message list-of-files)
-;; ;;                     (buffer-string))))
-
-;; ;;     ;; (insert-file-contents buffer-content)
-
-;; ;;     )
-;; ;;   ;; (with-temp-buffer )
-;; ;;   )
-
-;; (defun wlh/nodesjs-debug ()
-;;   (interactive)
-;;   (message (wlh/nodejs-get-node-buffer)))
-
-
-;; ;; (re-seq "ulp.task\('(.)+" buffer-string)
-;; ;; (re-seq "gulp.task('\(.+\)', function" buffer-string)
-;; ;; (re-seq "gulp.task('\([[:word:]]+\)'," buffer-string)
-
-;; ;; (string-match "gulp" buffer-string)

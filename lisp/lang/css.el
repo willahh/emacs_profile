@@ -4,7 +4,8 @@
   (interactive)
   (insert " {\n}")
   (backward-char)
-  (crux-smart-open-line-above))
+  (crux-smart-open-line-above)
+  (company-mode))
 
 (defun wlh/css-mode-hook ()
   ;; (smartparens-mode)
