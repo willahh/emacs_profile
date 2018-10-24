@@ -17,9 +17,6 @@
  '(fast-but-imprecise-scrolling t)
  '(global-diff-hl-mode t)
  '(helm-allow-mouse t)
- '(helm-source-names-using-follow
-   (quote
-    ("Search at ~/www/projects/clojure/rum01/src/rum01/" "Imenu" "Search at ~/www/projects/clojure/reagent03/src/reagent03/" "Search at ~/.emacs.d/lisp/")))
  '(ido-save-directory-list-file "~/.emacs.d/tmp/ido.last")
  '(lsp-php-server-install-dir "~/.composer/")
  '(lsp-php-workspace-root-detectors

@@ -25,9 +25,16 @@
 (load-file "~/.emacs.d/lisp/search.el")
 (load-file "~/.emacs.d/lisp/syntax_checker.el")
 (load-file "~/.emacs.d/lisp/key_binding.el")
+
+;; (let* ((home t))
+;;   (if (home)
+;;      (load-file "~/.emacs.d/lisp/theme/theme-light4.el")
+;;    (load-file "~/.emacs.d/lisp/theme/theme-dark3.el")))
+
 ;; (load-file "~/.emacs.d/lisp/theme/theme-light4.el")
-(load-file "~/.emacs.d/lisp/theme/theme-dark3.el")
-;; (load-file "~/.emacs.d/lisp/lsp.el")
+(load-file "~/.emacs.d/lisp/theme/theme-light5.el")
+
+
 (load-file "~/.emacs.d/lisp/lang/prog.el")
 (load-file "~/.emacs.d/lisp/lang/typescript.el")
 (load-file "~/.emacs.d/lisp/lang/html.el")

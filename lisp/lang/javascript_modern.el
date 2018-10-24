@@ -11,7 +11,7 @@
   (set (make-local-variable 'company-minimum-prefix-length) 0)
   (set (make-local-variable 'company-idle-delay) 0)
   
-  (set (make-local-variable 'js2-basic-offset) 2)
+  (set (make-local-variable 'js2-basic-offset) 4)
 
   ;; Needed, sometimes autopair is not enough
   (set (make-local-variable 'smartparens-mode) t)

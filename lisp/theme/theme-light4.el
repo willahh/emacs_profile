@@ -250,7 +250,8 @@
 
 ;; ------ Evil cursor
 (setq evil-emacs-state-cursor '("#ff00d2" box))
-(setq evil-normal-state-cursor '("#98cf15" box))
+;; (setq evil-normal-state-cursor '("#98cf15" box))
+(setq evil-normal-state-cursor '("#000000" box))
 (setq evil-visual-state-cursor '("#ffffff" box))
 (setq evil-insert-state-cursor '("red" bar))
 (setq evil-replace-state-cursor '("red" bar))
@@ -366,3 +367,6 @@ That is, a string used to represent it on the tab bar."
 ;; (add-hook 'prog-mode-hook 'wlh/prog-mode-line-padding-hook)
 ;; (add-hook 'text-mode-hook 'wlh/prog-mode-line-padding-hook)
 
+
+
+;; ------ log
