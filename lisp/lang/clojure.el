@@ -84,8 +84,15 @@
             (company-quickhelp-mode)
             (setq cider-special-mode-truncate-lines nil)
             
-            (setq company-minimum-prefix-length 2)
-            (setq company-idle-delay 0.8)
+            ;; (setq company-minimum-prefix-length 2)
+            ;; (setq company-idle-delay 0.8)
+
+            ;; (setq company-minimum-prefix-length 0)
+            ;; (setq company-idle-delay 0)
+
+            (setq company-minimum-prefix-length 20)
+            (setq company-idle-delay 0)
+            
             
             
             (helm-cider-mode 1)

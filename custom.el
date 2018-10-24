@@ -19,7 +19,7 @@
  '(helm-allow-mouse t)
  '(helm-source-names-using-follow
    (quote
-    ("Imenu" "Search at ~/www/projects/clojure/reagent03/src/reagent03/" "Search at ~/.emacs.d/lisp/")))
+    ("Search at ~/www/projects/clojure/rum01/src/rum01/" "Imenu" "Search at ~/www/projects/clojure/reagent03/src/reagent03/" "Search at ~/.emacs.d/lisp/")))
  '(ido-save-directory-list-file "~/.emacs.d/tmp/ido.last")
  '(lsp-php-server-install-dir "~/.composer/")
  '(lsp-php-workspace-root-detectors
@@ -52,4 +52,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:height 120 :width normal :family "Menlo")))))
+ '(default ((t (:height 120 :width normal :family "Menlo"))))
+ '(diff-refine-added ((t (:inherit diff-added :inverse-video t))))
+ '(diff-refine-removed ((t (:inherit diff-removed)))))

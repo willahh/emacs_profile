@@ -149,8 +149,8 @@
 (set-face-attribute 'diff-removed nil :foreground "#ff5370" :background nil)
 (set-face-attribute 'diff-indicator-removed nil :foreground "#89ddff" :background nil)
 
-(set-face-attribute 'diff-refine-removed nil :foreground "#000" :background nil)
-(set-face-attribute 'diff-refine-added nil :foreground "#000" :background nil)
+(set-face-attribute 'diff-refine-removed nil :foreground "#ff5370" :background nil)
+(set-face-attribute 'diff-refine-added nil :foreground "#c3e88d" :background nil)
 
 ;; ;; ----- vc-ediff color custom
 (require 'ediff)
