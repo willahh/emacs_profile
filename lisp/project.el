@@ -14,4 +14,3 @@
 (require 'workgroups)
 (workgroups-mode)
 (setq wg-prefix-key (kbd "C-c w"))
-

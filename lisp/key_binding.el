@@ -226,7 +226,7 @@
 (define-key dired-mode-map (kbd "B") 'wlh/vscode-dired-at-point)
 
 ;; ---------------- Multi cursor binding
-(global-set-key (kbd "M-L") 'mc/mark-all-words-like-this) ; VS Code key binding
+;; (global-set-key (kbd "M-L") 'mc/mark-all-words-like-this) ; VS Code key binding
 ;; (global-set-key (kbd "M-g") 'mc/mark-next-like-this-word) ; Almost like sublime M-d. Was go to line
 (global-set-key (kbd "Δ") 'mc/mark-next-like-this-word) ; Almost like sublime M-d. Was go to line
 (global-set-key (kbd "M-G") 'mc/mark-previous-like-this-word)
@@ -277,12 +277,12 @@
 (global-set-key (kbd "C-c C-x C-d") 'crux-duplicate-and-comment-current-line-or-region)
 
 ;; Misc
-;; (define-key org-mode-map (kbd "C-x <C-i>") 'helm-org-in-buffer-headings)
 (define-key org-mode-map (kbd "C-M-i") 'org-shifttab)
 (global-set-key (kbd "C-M-s") 'isearch-forward-regexp)
 (global-set-key (kbd "C-c C-M-s") 'vr/replace)
 (global-set-key (kbd "M-=") 'just-one-space) ; Azerty equivalent of M-\
 
+;; C-j
 (define-key company-active-map (kbd "C-j") 'company-complete)
 (define-key dired-mode-map (kbd "C-j") 'dired-find-file)
 (define-key key-translation-map (kbd "C-j") (kbd "RET"))
@@ -302,7 +302,7 @@
 (define-key compilation-mode-map (kbd "C-c C-c") 'wgrep-finish-edit)
 
 ;; TAB
-(global-set-key (kbd "C-c TAB") 'wlh/insert-4spaces)
+;; (global-set-key (kbd "C-c TAB") 'wlh/insert-4spaces)
 (define-key web-mode-map (kbd "TAB") 'indent-for-tab-command)
 (define-key web-mode-map (kbd "TAB") 'wlh/web-mode-tab)
 
@@ -321,8 +321,6 @@
 ;; (define-key web-mode-map (kbd "RET") 'wlh/web-mode-new-line) ; Used by C-j
 
 ;; Open line
-;; (define-key web-mode-map (kbd "C-o") 'crux-smart-open-line-above)
-;; (global-set-key (kbd "C-o") 'crux-smart-open-line-above)
 (global-set-key (kbd "C-M-o") 'crux-smart-open-line)
 
 
@@ -372,7 +370,7 @@
 (global-set-key (kbd "C-x M-g") 'browse-url-at-point)
 
 ;; vc
-(global-set-key (kbd "C-x v f") 'vc-diff)
+;; (global-set-key (kbd "C-x v f") 'vc-diff)
 
 ;; ---------------- Shell
 (define-key shell-mode-map (kbd "RET") 'eshell-send-input)
@@ -380,11 +378,10 @@
 (add-hook 'eshell-mode-hook 'm-eshell-hook)
 
 ;; expand-region
-(global-set-key (kbd "C-à") 'er/expand-region) ; C-0 on azerty keyboard
+(global-set-key (kbd "C-à") 'er/expand-region) ; C-0 on azerty
 (global-set-key (kbd "C-M-l") 'mark-sexp)
 
 ;; ---------------- Magit
-;; Magit
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
 (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
@@ -395,10 +392,10 @@
 (define-key web-mode-map (kbd "C-M-S-j") 'emmet-expand-line)
 
 ;; ---------------- f keys
-(global-set-key (kbd "<f2>") 'helm-mini)
+;; (global-set-key (kbd "<f2>") 'helm-mini)
 
 ;; ---------------- Window
-;; Azerty binding equivalent chars to 0-9 on the upper row keyboard
+;; Azerty bindings
 (global-set-key (kbd "M-à") 'delete-window) ;; M-0
 (define-key diff-mode-map (kbd "M-à") 'delete-window)
 
@@ -415,7 +412,7 @@
 (global-set-key (kbd "C-M-é") 'evil-window-move-very-bottom)
 (global-set-key (kbd "C-M-\"") 'evil-window-move-far-left)
 
-(global-set-key (kbd "M-X") 'other-frame) ; Same keybinding from osx switch window habits
+(global-set-key (kbd "M-X") 'other-frame) ; Same keybinding from osx switch window
 
 ;; other Window
 (global-set-key (kbd "M-o") 'other-window)
@@ -428,7 +425,6 @@
 (global-set-key (kbd "M-p") 'projectile-find-file)
 (define-key ggtags-navigation-map (kbd "M-p") 'projectile-find-file)
 (define-key highlight-symbol-nav-mode-map (kbd "M-p") 'projectile-find-file)
-;; (define-key magit-mode-map (kbd "M-p") 'projectile-find-file)
 (define-key ibuffer-mode-map (kbd "M-p") 'projectile-find-file)
 
 ;; Find file
@@ -436,7 +432,7 @@
 
 ;; Find file at point
 ;; Update to use find-file-in-project-by-selected
-(global-set-key (kbd "C->") 'ffap)
+;; (global-set-key (kbd "C->") 'ffap)
 
 (global-set-key (kbd "C-.") 'find-file-in-project-by-selected)
 (define-key php-mode-map [(control .)] 'find-file-in-project-by-selected)
@@ -485,7 +481,6 @@
 (global-set-key (kbd "M--") 'text-scale-decrease)
 (global-set-key (kbd "M-+") 'text-scale-increase)
 
-
 ;; ;; Comment
 (global-set-key (kbd "M-/") 'comment-or-uncomment-region-or-line)
 (global-set-key (kbd "M-;") 'comment-or-uncomment-region-or-line)
@@ -506,8 +501,8 @@
 (define-key ggtags-navigation-map (kbd "M-P") 'highlight-symbol-prev)
 
 ;; Scroll commands
-(global-set-key (kbd "C-x v U") 'wlh/svn-up-recursive)
-(global-set-key (kbd "s-a") 'mark-whole-buffer)
+;; (global-set-key (kbd "C-x v U") 'wlh/svn-up-recursive)
+;; (global-set-key (kbd "s-a") 'mark-whole-buffer)
 (global-set-key (kbd "C-c C-s") 'helm-swoop)
 (define-key web-mode-map (kbd "C-c C-s") 'swiper)
 (define-key js2-mode-map (kbd "C-c C-s") 'swiper)
@@ -523,8 +518,8 @@
 ;; (global-set-key (kbd "<mouse-3>") 'mouse-major-mode-menu)
 
 ;; vc
-(define-key vc-dir-mode-map (kbd "C-M-i") 'vc-dir-previous-directory)
-(define-key diff-mode-map (kbd "C-M-i") 'diff-hunk-prev)
+;; (define-key vc-dir-mode-map (kbd "C-M-i") 'vc-dir-previous-directory)
+;; (define-key diff-mode-map (kbd "C-M-i") 'diff-hunk-prev)
 (define-key diff-mode-map (kbd "l") 'recenter-top-bottom)
 
 ;; avy
@@ -551,7 +546,7 @@
 (define-key markdown-mode-map (kbd "C-M-i") 'markdown-shifttab)
 
 ;; url
-(global-set-key (kbd "M-m u") 'wlh/browse-url-at-point)
+;; (global-set-key (kbd "M-m u") 'wlh/browse-url-at-point)
 
 ;; dumb-jump-go
 (global-set-key (kbd "C-c M-.") 'dumb-jump-go)

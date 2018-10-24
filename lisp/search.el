@@ -21,8 +21,6 @@
               lazy-highlight-cleanup t
               lazy-highlight-initial-delay 0)
 
-
-;; Ag ---------------------
 (require 'ag)
 
 (defun wlh/ag-mode-hook ()

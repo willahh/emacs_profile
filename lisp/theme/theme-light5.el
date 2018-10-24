@@ -74,16 +74,17 @@
 (set-face-attribute 'window-divider-last-pixel nil :foreground "#fff")
 (set-face-attribute 'window-divider nil :foreground "#fff")
 
-;; (require 'dired-subtree)
-;; (add-hook 'dired-mode-hook (lambda ()
-;;                              (set-face-attribute 'dired-subtree-depth-1-face nil :background nil)
-;;                              (set-face-attribute 'dired-subtree-depth-2-face nil :background nil)
-;;                              (set-face-attribute 'dired-subtree-depth-3-face nil :background nil)
-;;                              (set-face-attribute 'dired-subtree-depth-4-face nil :background nil)
-;;                              (set-face-attribute 'dired-subtree-depth-5-face nil :background nil)
-;;                              (set-face-attribute 'dired-subtree-depth-6-face nil :background nil)
-;;                              (set-face-attribute 'dired-directory nil :foreground "#d73a49" :background nil)
-;;                              (set-face-attribute 'dired-header nil :foreground "#6a737d" :background nil)))
+(require 'dired-subtree)
+(add-hook 'dired-mode-hook (lambda ()
+                             (set-face-attribute 'dired-subtree-depth-1-face nil :background nil)
+                             (set-face-attribute 'dired-subtree-depth-2-face nil :background nil)
+                             (set-face-attribute 'dired-subtree-depth-3-face nil :background nil)
+                             (set-face-attribute 'dired-subtree-depth-4-face nil :background nil)
+                             (set-face-attribute 'dired-subtree-depth-5-face nil :background nil)
+                             (set-face-attribute 'dired-subtree-depth-6-face nil :background nil)
+                             ;; (set-face-attribute 'dired-directory nil :foreground "#d73a49" :background nil)
+                             ;; (set-face-attribute 'dired-header nil :foreground "#6a737d" :background nil)
+                             ))
 
 ;; (custom-set-faces
 ;;  '(rainbow-delimiters-depth-1-face ((t (:foreground "#000000" :weight bold))))
@@ -174,24 +175,26 @@
 ;; (set-face-attribute 'php-annotations-annotation-face nil :foreground "#008000" :background nil :underline t)
 
 ;; ------- org
-;; (defun wlh/org-mode-hook ()
-;;   (set-face-attribute 'org-document-title nil :family "Sans Serif" :height 1.8 :foreground "#999")
-;;   (set-face-attribute 'org-level-1 nil :height 1.3 :overline nil :foreground "#000" :background "#ffffff" :box nil)
-;;   (set-face-attribute 'org-level-2 nil :height 1 :box nil :overline nil :foreground "#000" :background "#ffffff")
-;;   (set-face-attribute 'org-level-3 nil :height 1 :box nil :overline nil :foreground "#000" :background "#ffffff")
-;;   (set-face-attribute 'org-special-keyword nil :height 1 :foreground "#aeb7da" :background nil)
-;;   (set-face-attribute 'org-document-info-keyword nil :height 1 :foreground "#b0dcff" :background nil)
-;;   (set-face-attribute 'org-tag nil :height 0.8 :foreground "#98cf15" :box "#98cf15" :background "#f2fff7")
-;;   (set-face-attribute 'org-block-begin-line nil :background "#e3e3e3" :foreground "#000000" :underline "#000000")
-;;   (set-face-attribute 'org-block nil :background nil :foreground "#000000" :underline nil)
-;;   (set-face-attribute 'org-block-end-line nil :background "#e3e3e3" :foreground "#000000" :underline "#000000")
+(defun wlh/org-mode-hook ()
+  (set-face-attribute 'org-document-title nil :family "Sans Serif" :height 1.8 :foreground "#999")
+  (set-face-attribute 'org-level-1 nil :height 1.3 :overline nil :foreground "#000" :background "#ffffff" :box nil)
+  (set-face-attribute 'org-level-2 nil :height 1 :box nil :overline nil :foreground "#000" :background "#ffffff")
+  (set-face-attribute 'org-level-3 nil :height 1 :box nil :overline nil :foreground "#000" :background "#ffffff")
+  (set-face-attribute 'org-special-keyword nil :height 1 :foreground "#aeb7da" :background nil)
+  (set-face-attribute 'org-document-info-keyword nil :height 1 :foreground "#b0dcff" :background nil)
+  (set-face-attribute 'org-tag nil :height 0.8 :foreground "#98cf15" :box "#98cf15" :background "#f2fff7")
+  (set-face-attribute 'org-block-begin-line nil :background "#e3e3e3" :foreground "#000000" :underline "#000000")
+  (set-face-attribute 'org-block nil :background nil :foreground "#000000" :underline nil)
+  (set-face-attribute 'org-block-end-line nil :background "#e3e3e3" :foreground "#000000" :underline "#000000")
 
-;;   (if (bound-and-true-p org-block-background)
-;;       (set-face-attribute 'org-block-background nil :background "#f5f5f5"))
+  (if (bound-and-true-p org-block-background)
+      (set-face-attribute 'org-block-background nil :background "#f5f5f5"))
 
-;;   (set-face-attribute 'org-checkbox-statistics-todo  nil :height 1))
+  
+  (set-face-attribute 'org-checkbox-statistics-todo  nil :height 1))
+(setq org-confirm-babel-evaluate nil)
 
-;; (add-hook 'org-mode-hook 'wlh/org-mode-hook)
+(add-hook 'org-mode-hook 'wlh/org-mode-hook)
 
 
 ;; ------- diff

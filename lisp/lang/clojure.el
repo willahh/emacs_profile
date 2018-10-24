@@ -93,8 +93,6 @@
             (setq company-minimum-prefix-length 20)
             (setq company-idle-delay 0)
             
-            
-            
             (helm-cider-mode 1)
             (cider-company-enable-fuzzy-completion)
             (define-key mc/keymap (kbd "C-c C-v") 'cider-eval-buffer)
@@ -142,8 +140,6 @@
       (message "beginning of file reached, this was probably a mistake.")))
     (goto-char original-point)))
 
-
-
 ;; Warn about missing nREPL instead of doing stupid things
 (defun nrepl-warn-when-not-connected ()
   (interactive)
@@ -152,5 +148,3 @@
 (define-key clojure-mode-map (kbd "C-^") 'live-cycle-clj-coll)
 (define-key clojure-mode-map (kbd "C-M-x")   'nrepl-warn-when-not-connected)
 (define-key clojure-mode-map (kbd "C-x C-e") 'nrepl-warn-when-not-connected)
-;; (define-key cider-mode-map (kbd "C-M-i") 'company-complete)
-;; (define-key cider-mode-map (kbd "C-i") 'company-complete)

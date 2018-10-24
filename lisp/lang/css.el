@@ -7,10 +7,10 @@
   (crux-smart-open-line-above)
   (company-mode))
 
-(defun wlh/css-mode-hook ()
-  ;; (smartparens-mode)
-  ;; (rainbow-mode)
-  )
+;; (defun wlh/css-mode-hook ()
+;;   ;; (smartparens-mode)
+;;   ;; (rainbow-mode)
+;;   )
 
-(add-hook 'css-mode-hook 'wlh/css-mode-hook)
+;; (add-hook 'css-mode-hook 'wlh/css-mode-hook)
 (define-key css-mode-map (kbd "C-c C-j") 'wlh/css-open-declaration)

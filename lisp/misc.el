@@ -230,25 +230,6 @@
 (global-set-key [remap kill-ring-save] 'easy-kill)
 ;; (global-set-key [remap mark-sexp] 'easy-mark)
 
-;; ;; general
-;; (require 'general)
-;; (setq my-leader1 "H-<SPC>")
-
-;; ;; without :keymaps, general-define-key acts similarly to global-set-key
-;; ;; bind "C-c a" and "C-c b" globally
-;; (general-define-key :prefix my-leader1
-;;                     "a" 'some-command
-;;                     "b" 'another-command)
-
-;; Gradle
-;; (require 'gradle-mode)
-
-;; (setq jabber-account-list 
-;;       '(("wravel@gmail.com"
-;;          (:network-server . "talk.google.com")
-;;          (:connection-type . ssl)
-;;          (:port . 443))))
-
 (use-package dired-ranger
   :ensure t
   :bind (:map dired-mode-map
@@ -377,26 +358,6 @@ Version 2016-10-24"
   :bind
   (("C-c k" . browse-kill-ring)))
 
-;; From
-;; https://github.com/cichli/dotfiles/blob/master/.emacs.d/init.el#L172
-;; Update: Theses package seems not available on Elpa at the moment
-;; (use-package help-fns+
-;;   :config
-;;   (setq help-cross-reference-manuals nil))
-
-;; (use-package help-mode+)
-;; (use-package help+)
-
-;; (defun wlh/window-divider-off ()
-;;   (interactive)
-;;   (window-divider-mode-apply nil))
-
-;; (defun wlh/window-divider-on ()
-;;   (interactive)
-;;   (window-divider-mode-apply t))
-
-;; (setq global-flycheck-mode t) ; Prog mode only (or c-mode only)
-
 (require 'edit-server)
 (edit-server-start)
 
@@ -514,15 +475,9 @@ abort completely with `C-g'."
                  (end-of-defun)
                  (point)))))
 
-;; All the icons
-;; (require 'all-the-icons)
-
 ;; markdown-mode
 (require 'markdown-mode)
 (setq markdown-toggle-fontify-code-blocks-natively t)
-
-;; ;; simple-httpd
-;; (require 'simple-httpd)
 
 ;; term
 (add-hook 'term-exec-hook 'set-no-process-query-on-exit)
@@ -550,13 +505,8 @@ abort completely with `C-g'."
 (add-hook 'eshell-mode-hook 'wlh/eshell-mode-hook)
 
 
-;; ;; hl-line-mode
+;; hl-line-mode
 (require 'hl-line)
-;; (add-hook 'compilation-mode-hook (lambda () (hl-line-mode)))
-;; (add-hook 'dired-mode-hook (lambda () (hl-line-mode)))
-;; (add-hook 'occur-mode-hook (lambda () (hl-line-mode)))
-;; (add-hook 'ibuffer-mode-hook (lambda () (hl-line-mode)))
-;; (add-hook 'diff-mode-hook (lambda () (hl-line-mode)))
 
 ;; editorconfig
 (require 'editorconfig)

@@ -18,61 +18,53 @@
                            (org-agenda-files :maxlevel . 1)))
 
 (setq org-tag-alist '(("@work" . ?w) ("@home" . ?h) ("laptop" . ?l)))
-(unless (boundp 'org-latex-classes)
-  (setq org-latex-classes nil))
-
-(add-to-list 'org-latex-classes
-             '("article"
-               "\\documentclass{article}"
-               ("\\section{%s}" . "\\section*{%s}")))
 
 ;; https://www.reddit.com/r/emacs/comments/43vfl1/enable_wordwrap_in_orgmode/czmaj7n/
 (add-hook 'text-mode-hook 'turn-on-visual-line-mode)
-
-;; Edit flyspell mode is slow, activate it only when needed
-;; (add-hook 'text-mode-hook 'flyspell-mode)
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 
-;; Note : ne pas activer ce mode, pose trop de problèmes
-(auto-fill-mode 1)
+;; (auto-fill-mode 1)
 (setq comment-auto-fill-only-comments t)
 (add-hook 'org-mode-hook 'toc-org-enable)
 (setq org-src-window-setup 'current-window)
 
-;; (add-hook 'org-mode-hook (lambda () 
-;;                            (interactive)
-                           
-                           
-;;                            ;; (smartparens-mode)
-                           
-;;                            ;; Disable company mode to use autocomplete mode instead
-;;                            (company-mode nil)
-;;                            (auto-complete-mode t)
-;;                            (add-to-list 'ac-modes 'org-mode)
-;;                            (org-bullets-mode 1)
-                           
-;;                            (toggle-truncate-lines)
-                           
-;;                            ;; Enable source code block edition in org files
-;;                            (org-src-mode)))
+(add-hook 'org-mode-hook
+          (lambda () 
+            (interactive)
+            (org-bullets-mode 1)))
 
-;; ;; ;; Add org babel langages support
-;; ;; (org-babel-do-load-languages
-;; ;;  'org-babel-load-languages
-;; ;;  '((sh         . t)
-;; ;;    (js         . t)
-;; ;;    (emacs-lisp . t)
-;; ;;    (perl       . t)
-;; ;;    ;; (html       . t)
-;; ;;    (scala      . t)
-;; ;;    (sass       . t)
-;; ;;    (clojure    . t)
-;; ;;    (php        . t)
-;; ;;    (python     . t)
-;; ;;    (ruby       . t)
-;; ;;    (dot        . t)
-;; ;;    (css        . t)
-;; ;;    (plantuml   . t)))
+;; Add org babel langages support
+(require 'ob)
+(require 'ob-clojure)
+
+(setq org-babel-clojure-backend 'cider)
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((shell . t)
+   (ditaa . t)
+   (plantuml . t)
+   (dot . t)
+   (ruby . t)
+   (clojure . t)
+   (js . t)
+   (C . t)))
+
+;; (org-babel-do-load-languages
+;;  'org-babel-load-languages
+;;  '((sh         . t)
+;;    (js         . t)
+;;    (emacs-lisp . t)
+;;    (perl       . t)
+;;    ;; (html       . t)
+;;    (scala      . t)
+;;    (sass       . t)
+;;    (clojure    . t)
+;;    (php        . t)
+;;    (python     . t)
+;;    (ruby       . t)
+;;    (dot        . t)
+;;    (css        . t)
+;;    (plantuml   . t)))
 
 ;; ;; org syntax highlight code
 ;; (setq org-confirm-babel-evaluate nil
@@ -84,7 +76,6 @@
 ;; (add-to-list 'load-path "~/path/to/org/protocol/")
 (require 'org-protocol)
 
-;; If you would like a TODO entry to automatically change to DONE when all children are done, you can use the following setup:
 ;; http://orgmode.org/manual/Breaking-down-tasks.html#Breaking-down-tasks
 (defun org-summary-todo (n-done n-not-done)
        "Switch entry to DONE when all subentries are done, to TODO otherwise."
@@ -93,11 +84,10 @@
      
 (add-hook 'org-after-todo-statistics-hook 'org-summary-todo)
 
-
 ;; http://orgmode.org/manual/Multiple-sets-in-one-file.html#Multiple-sets-in-one-file
 (setq org-todo-keywords
       '((sequence "TODO" "|" "DONE")
         (sequence "WAIT" "IN PROGRESS" "CANCELED" "|")))
 
 ;; http://aaronbedra.com/emacs.d/
-(provide 'ob-clojure)
+;; (provide 'ob-clojure)

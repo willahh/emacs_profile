@@ -56,7 +56,7 @@
 
 ;; Delay re-rendering of font
 (setq font-lock-support-mode 'jit-lock-mode)
-(setq jit-lock-stealth-time 30
+(setq jit-lock-stealth-time 1000
 	  jit-lock-defer-contextually t
       jit-lock-contextually t
 	  jit-lock-stealth-nice 5
@@ -162,7 +162,7 @@
 ;; Disable toolbar
 (tool-bar-mode -1)
 
-;; Disable scrollbar
+;; Scrollbar
 (scroll-bar-mode 1)
 
 ;; 
@@ -181,14 +181,12 @@
 (set-default 'cursor-type 'bar)
 
 ;; Enable window-divider
-;; (setq window-divider-mode 1)
 (setq window-divider-mode t)
 
 ;; Set window divider bottom and right
 (setq window-divider-default-places t)
 
 (window-divider-mode-apply 1)
-;; (setq split-width-threshold 400)
 
 ;; Indentation -----------------------------
 (setq-default indent-tabs-mode nil)

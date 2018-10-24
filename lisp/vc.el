@@ -102,7 +102,6 @@
 (define-key vc-dir-mode-map (kbd "g") 'vc-dir-refresh)
 
 ;; Ediff window management
-;; https://emacs.stackexchange.com/a/17089
 (defvar my-ediff-last-windows nil)
 
 (defun my-restore-pre-ediff-winconfig ()
