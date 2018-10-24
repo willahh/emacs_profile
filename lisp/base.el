@@ -49,6 +49,12 @@
 
 ;; syntax highlighting everywhere
 (global-font-lock-mode 1)
+
+;; Long line
+;; https://emacs.stackexchange.com/a/603
+(setq bidi-display-reordering nil)
+
+;; Delay re-rendering of font
 (setq font-lock-support-mode 'jit-lock-mode)
 (setq jit-lock-stealth-time 30
 	  jit-lock-defer-contextually t
