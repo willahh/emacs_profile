@@ -165,6 +165,9 @@
 ;; Disable scrollbar
 (scroll-bar-mode 1)
 
+;; 
+(smooth-scrolling-mode t)
+
 ;; make the left fringe 4 pixels wide and the right disappear
 (fringe-mode '(12 . 0))
 

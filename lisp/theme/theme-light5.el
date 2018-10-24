@@ -59,7 +59,7 @@
 
 ;; Main background
 ;; (set-face-attribute 'default nil :background "#ffffff")
-;; (set-face-attribute 'line-number-current-line nil :foreground "#000")
+(set-face-attribute 'line-number-current-line nil :foreground "#000")
 
 ;; (custom-set-faces
 ;;  '(default ((t (:stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :family "Menlo")))))
@@ -70,6 +70,9 @@
 ;; Window-divider
 (setq window-divider-default-bottom-width 10)
 (setq window-divider-default-right-width 10)
+(set-face-attribute 'window-divider-first-pixel nil :foreground "#fffefe")
+(set-face-attribute 'window-divider-last-pixel nil :foreground "#fff")
+(set-face-attribute 'window-divider nil :foreground "#fff")
 
 ;; (require 'dired-subtree)
 ;; (add-hook 'dired-mode-hook (lambda ()
@@ -103,8 +106,6 @@
 (setq show-paren-priority -50)
 ;; (set-face-attribute 'fringe nil :background "#fafafa" :slant 'normal)
 ;; (set-face-attribute 'window-divider nil :foreground "#fafafa")
-;; (set-face-attribute 'window-divider-first-pixel nil :foreground "#fffefe")
-;; (set-face-attribute 'window-divider-last-pixel nil :foreground "#fff")
 
 
 ;; -------
