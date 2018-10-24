@@ -31,7 +31,8 @@
 ;;      (load-file "~/.emacs.d/lisp/theme/theme-light4.el")
 ;;    (load-file "~/.emacs.d/lisp/theme/theme-dark3.el")))
 
-(load-file "~/.emacs.d/lisp/theme/theme-light4.el")
+;; (load-file "~/.emacs.d/lisp/theme/theme-light4.el")
+(load-file "~/.emacs.d/lisp/theme/theme-light5.el")
 
 
 (load-file "~/.emacs.d/lisp/lang/prog.el")

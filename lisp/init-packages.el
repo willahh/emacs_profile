@@ -201,6 +201,8 @@
 (when (require 'so-long nil :noerror)
   (so-long-enable))
 
+;; (load-file "~/.emacs.d/site-lisp/intellij-theme.el")
+
 ;; fetch the list of packages available 
 (unless package-archive-contents
   (package-refresh-contents))
