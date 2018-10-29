@@ -141,7 +141,7 @@
                      skewer-mode
                      smex
                      sml-mode
-                     smooth-scrolling
+                     ;; smooth-scrolling
                      smartparens
                      ;; smart-comment
                      ;; sx
@@ -192,8 +192,8 @@
 (load-file "~/.emacs.d/site-lisp/tabbar/aquamacs-tabbar.el")
 (load-file "~/.emacs.d/site-lisp/tabbar/aquamacs-tools.el")
 (load-file "~/.emacs.d/site-lisp/highlight-defined.el")
-(load-file "~/.emacs.d/site-lisp/auto-highlight-symbol-mode/auto-highlight-symbol-mode.el")
-(load-file "~/.emacs.d/site-lisp/auto-highlight-symbol-mode/auto-highlight-symbol-mode-config.el")
+;; (load-file "~/.emacs.d/site-lisp/auto-highlight-symbol-mode/auto-highlight-symbol-mode.el")
+;; (load-file "~/.emacs.d/site-lisp/auto-highlight-symbol-mode/auto-highlight-symbol-mode-config.el")
 (load-file "~/.emacs.d/site-lisp/dired-subtree-20160920.130/dired-subtree.el")
 
 ;; https://emacs.stackexchange.com/questions/5545/how-to-prevent-slow-down-when-an-inferior-processes-generates-long-lines

@@ -240,6 +240,10 @@
 ;; (set-face-attribute 'company-tooltip-common nil :foreground "#62c0ea" :background nil)
 ;; (set-face-attribute 'company-tooltip-selection nil :foreground "#62c0ea" :background "#e9e9e9")
 
+;; (set-face-attribute 'isearch nil :weight 'normal :slant 'normal :underline nil :inverse-video t :foreground "#bd3612" :background "yellow")
+;; (set-face-attribute 'isearch-fail nil :weight 'normal :slant 'normal :underline nil :inverse-video t :foreground "#bd3612" :background "#042028")
+
+
 
 ;; Tabbar
 (require 'tabbar)
