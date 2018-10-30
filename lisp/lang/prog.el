@@ -1,7 +1,8 @@
 (defun wlh/prog-hook ()
   (display-line-numbers-mode)
   (hl-line-mode)
-  (auto-highlight-symbol-mode))
+  ;; (auto-highlight-symbol-mode)
+  )
 
 ;; (add-hook 'c-mode-common-hook 'wlh/prog-hook)
 ;; (add-hook 'emacs-lisp-mode-hook 'wlh/prog-hook)

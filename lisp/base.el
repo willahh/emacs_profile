@@ -165,9 +165,6 @@
 ;; Scrollbar
 (scroll-bar-mode 1)
 
-;; 
-(smooth-scrolling-mode t)
-
 ;; make the left fringe 4 pixels wide and the right disappear
 (fringe-mode '(12 . 0))
 
@@ -202,9 +199,19 @@
 ;; Inserts newline to avoid `end of buffer' error. -> ?
 (setq next-line-add-newlines t)
 
+
 ;; Scroll
 (setq scroll-margin 0)
+(setq smooth-scroll-margin 0)
 (setq scroll-step 1)
+(setq scroll-conservatively 0)
+(setq scroll-conservatively 10000)
+(setq auto-window-vscroll nil)
+
+;; (smooth-scrolling-mode t)
+(smooth-scrolling-mode nil)
+
+
 
 ;; Mouse -----------------------------
 ;; Need to enable this mode to have modern mouse wheel behaviour
@@ -219,7 +226,10 @@
 ;; (setq mouse-wheel-progressive-speed 0)
 ;; (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
 (setq mouse-wheel-progressive-speed t)
+;; (setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
+;; (setq mouse-wheel-follow-mouse nil) ;; scroll window under mouse
 (setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
+
 
 ;; stops selection with a mouse being immediately injected to the kill ring
 (setq mouse-drag-copy-region nil)

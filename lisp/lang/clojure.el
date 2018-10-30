@@ -1,5 +1,12 @@
 (require 'cider)
 (require 'clojure-snippets)
+
+(defun wlh/clj-comment-sexp ()
+  "Wrap mark into (comment)"
+  (interactive)
+  (paredit-wrap-round)
+  (insert "comment \n"))
+
 ;; (require 'auto-indent-mode)
 
 ;; Specify history file
@@ -74,7 +81,8 @@
   
   ;; insert keybinding setup here
   (cljr-add-keybindings-with-prefix "C-c C-l")
-  (define-key clojure-mode-map (kbd "RET") 'newline-and-indent))
+  (define-key clojure-mode-map (kbd "RET") 'newline-and-indent)
+  (define-key clojure-mode-map (kbd "C-c C-x C-;") 'wlh/clj-comment-sexp))
 
 (add-hook 'clojure-mode-hook 'wlh/clojure-mode-hook)
 (add-hook 'cider-mode-hook (lambda ()
@@ -82,6 +90,7 @@
             (company-mode)
             (highlight-symbol-mode)
             (company-quickhelp-mode)
+
             (setq cider-special-mode-truncate-lines nil)
             
             ;; (setq company-minimum-prefix-length 2)
@@ -90,8 +99,11 @@
             ;; (setq company-minimum-prefix-length 0)
             ;; (setq company-idle-delay 0)
 
-            (setq company-minimum-prefix-length 20)
-            (setq company-idle-delay 0)
+            ;; (setq company-minimum-prefix-length 20)
+            ;; (setq company-idle-delay 0)
+
+            (setq company-minimum-prefix-length 2)
+            (setq company-idle-delay 0.8)
             
             (helm-cider-mode 1)
             (cider-company-enable-fuzzy-completion)

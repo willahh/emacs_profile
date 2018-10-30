@@ -18,6 +18,9 @@
  '(fast-but-imprecise-scrolling t)
  '(global-diff-hl-mode t)
  '(helm-allow-mouse t)
+ '(helm-source-names-using-follow
+   (quote
+    ("Search at ~/.emacs.d/lisp/" "Search at ~/www/projects/clojure/xpage/src/xpage/")))
  '(ido-save-directory-list-file "~/.emacs.d/tmp/ido.last")
  '(lsp-php-server-install-dir "~/.composer/")
  '(lsp-php-workspace-root-detectors
@@ -28,9 +31,14 @@
  '(mc/cycle-looping-behaviour (quote continue))
  '(mouse-wheel-progressive-speed t)
  '(mouse-yank-at-point t)
- '(package-selected-packages
-   (quote
-    (org-babel-eval-in-repl workgroups doom-themes lsp-mode elein typed-clojure-mode auto-indent-mode dired-subtree smart-comment dired-ranger csv-mode highlight-defined elscreen erefactor redshank all-the-icons smartparens easy-kill string-inflection centered-window noflet ido-completing-read+ helm-flx company-flx diminish dumb-jump move-text cider indium treemacs-projectile treemacs hide-lines hy-mode elscreen-mew elscreen-fr flycheck-clojure ac-slime markdown-preview-mode diffview aggressive-indent counsel-gtags xref-js2 zop-to-char yaml-mode whole-line-or-region which-key wgrep websocket web-mode web-beautify visual-regexp-steroids visual-regexp validate use-package toc-org tide sx sourcemap smooth-scrolling sml-mode smex skewer-mode resize-window react-snippets rainbow-mode rainbow-delimiters psysh projectile-ripgrep powerline php-auto-yasnippets perspective pdf-tools paredit-everywhere paradox pandoc-mode ov org-bullets neotree monokai-theme magit key-chord json-mode js2-refactor js-comint jabber iy-go-to-char ivy-hydra intellij-theme inf-clojure indent-guide impatient-mode imenu-list image-dired+ iflipb iedit ido-vertical-mode ido-ubiquitous ido-occur ido-at-point ibuffer-vc highlight-symbol helm-swoop helm-projectile helm-ag gradle-mode google-translate git-timemachine git-gutter ggtags fullframe flycheck-pos-tip flx-ido find-file-in-project expand-region exec-path-from-shell evil-visualstar evil-surround evil-snipe evil-org evil-nerd-commenter evil-matchit evil-leader emmet-mode editorconfig edit-server eclim dtrt-indent drag-stuff dracula-theme diff-hl darkroom crux counsel company-web company-tern company-quickhelp coffee-mode clojure-snippets clojure-cheatsheet clj-refactor browse-kill-ring avy-menu autopair auto-yasnippet auto-complete ag actionscript-mode ace-window ace-link ace-jump-mode)))
+ 
+
+
+
+ ;; '(package-selected-packages
+ ;;   (quote
+ ;;    (org-babel-eval-in-repl workgroups doom-themes lsp-mode elein typed-clojure-mode auto-indent-mode dired-subtree smart-comment dired-ranger csv-mode highlight-defined elscreen erefactor redshank all-the-icons smartparens easy-kill string-inflection centered-window noflet ido-completing-read+ helm-flx company-flx diminish dumb-jump move-text cider indium treemacs-projectile treemacs hide-lines hy-mode elscreen-mew elscreen-fr flycheck-clojure ac-slime markdown-preview-mode diffview aggressive-indent counsel-gtags xref-js2 zop-to-char yaml-mode whole-line-or-region which-key wgrep websocket web-mode web-beautify visual-regexp-steroids visual-regexp validate use-package toc-org tide sx sourcemap sml-mode smex skewer-mode resize-window react-snippets rainbow-mode rainbow-delimiters psysh projectile-ripgrep powerline php-auto-yasnippets perspective pdf-tools paredit-everywhere paradox pandoc-mode ov org-bullets neotree monokai-theme magit key-chord json-mode js2-refactor js-comint jabber iy-go-to-char ivy-hydra intellij-theme inf-clojure indent-guide impatient-mode imenu-list image-dired+ iflipb iedit ido-vertical-mode ido-ubiquitous ido-occur ido-at-point ibuffer-vc highlight-symbol helm-swoop helm-projectile helm-ag gradle-mode google-translate git-timemachine git-gutter ggtags fullframe flycheck-pos-tip flx-ido find-file-in-project expand-region exec-path-from-shell evil-visualstar evil-surround evil-snipe evil-org evil-nerd-commenter evil-matchit evil-leader emmet-mode editorconfig edit-server eclim dtrt-indent drag-stuff dracula-theme diff-hl darkroom crux counsel company-web company-tern company-quickhelp coffee-mode clojure-snippets clojure-cheatsheet clj-refactor browse-kill-ring avy-menu autopair auto-yasnippet auto-complete ag actionscript-mode ace-window ace-link ace-jump-mode)))
+
  '(projectile-cache-file "~/.emacs.d/tmp/projectile.cache")
  '(recentf-save-file "~/.emacs.d/tmp/recentf")
  '(save-place-file "/~/.emacs.d/tmp/.places" t)
