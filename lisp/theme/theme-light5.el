@@ -176,8 +176,8 @@
 
 ;; ------- org
 (defun wlh/org-mode-hook ()
-  (set-face-attribute 'org-document-title nil :family "Sans Serif" :height 1.8 :foreground "#999")
-  (set-face-attribute 'org-level-1 nil :height 1.3 :overline nil :foreground "#000" :background "#ffffff" :box nil)
+  (set-face-attribute 'org-document-title nil :family "Helvetica Neue Light, Helvetica, Arial" :height 1.8 :foreground "#999")
+  (set-face-attribute 'org-level-1 nil :family "Helvetica Neue Light, Helvetica, Arial" :height 1.3 :overline nil :foreground "#000" :background "#ffffff" :box nil)
   (set-face-attribute 'org-level-2 nil :height 1 :box nil :overline nil :foreground "#000" :background "#ffffff")
   (set-face-attribute 'org-level-3 nil :height 1 :box nil :overline nil :foreground "#000" :background "#ffffff")
   (set-face-attribute 'org-special-keyword nil :height 1 :foreground "#aeb7da" :background nil)
