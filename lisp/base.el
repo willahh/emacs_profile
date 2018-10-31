@@ -22,6 +22,15 @@
 ;; Mac-Pass-Command-To-System
 (setq mac-pass-command-to-system nil)
 
+;; Disable toolbar
+(tool-bar-mode -1)
+
+;; Scrollbar
+(scroll-bar-mode 1)
+
+;; make the left fringe 4 pixels wide and the right disappear
+(fringe-mode '(12 . 0))
+
 ;; Fix snapy frame resize
 ;; https://emacs.stackexchange.com/a/30444
 (setq frame-resize-pixelwise t)
@@ -159,15 +168,6 @@
 ;; Repeating set-mark-command after popping mark pops it again.
 (setq set-mark-command-repeat-pop t)
 
-;; Disable toolbar
-(tool-bar-mode -1)
-
-;; Scrollbar
-(scroll-bar-mode 1)
-
-;; make the left fringe 4 pixels wide and the right disappear
-(fringe-mode '(12 . 0))
-
 ;; Make the flycheck arrow look like an exclamation point but only do it when
 ;; emacs runs in a window, not terminal
 (when window-system
@@ -217,11 +217,6 @@
 ;; Need to enable this mode to have modern mouse wheel behaviour
 (mouse-wheel-mode t)
 (setq mouse--progressive-speed 10)
-;; (setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil)))
-;; (setq mouse-wheel-scroll-amount '(0.05))
-;; (setq mouse-wheel-scroll-amount '(0.9))
-;; (setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil)))
-;; (setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
 (setq mouse-wheel-scroll-amount '(3 ((shift) . 1) ((control) . nil))) ; 3 line at time (VS Code behaviour)
 ;; (setq mouse-wheel-progressive-speed 0)
 ;; (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
@@ -272,12 +267,12 @@
 (setq shr-color-visible-luminance-min 100)
 
 ;; Abbrev
-(setq default-abbrev-mode t)
-(setq abbrev-file-name "~/.emacs.d/tmp/abbrev_defs")
-(setq save-abbrevs t) ; save abbrevs when files are saved
-(setq save-abbrevs 'silently)
-(add-hook 'text-mode-hook (lambda () (abbrev-mode 1)))
-(add-hook 'prog-mode-hook (lambda () (abbrev-mode 1)))
+;; (setq default-abbrev-mode t)
+;; (setq abbrev-file-name "~/.emacs.d/tmp/abbrev_defs")
+;; (setq save-abbrevs t) ; save abbrevs when files are saved
+;; (setq save-abbrevs 'silently)
+;; (add-hook 'text-mode-hook (lambda () (abbrev-mode 1)))
+;; (add-hook 'prog-mode-hook (lambda () (abbrev-mode 1)))
 
 ;; Always give focus to the help window when invoked
 (setq help-window-select t)

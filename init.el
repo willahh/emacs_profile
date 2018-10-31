@@ -36,3 +36,7 @@
 (load-file "~/.emacs.d/lisp/lang/clojure.el")
 (load-file "~/.emacs.d/lisp/lang/react.el")
 (load-file "~/.emacs.d/lisp/init.el")
+
+(add-hook 'emacs-startup-hook (lambda ()
+    (mouse-wheel-mode t)))
+
