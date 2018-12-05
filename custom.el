@@ -5,6 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(ag-reuse-window nil)
  '(aggressive-indent-sit-for-time 0.2)
+ '(align-default-spacing 3)
  '(bookmark-default-file "~/.emacs.d/tmp/bookmarks")
  '(dired-recursive-deletes (quote always))
  '(ediff-diff-options "-w")
@@ -17,6 +18,7 @@
    (quote
     ("Search at ~/www/project/etor_www/etor_3.17_proto_refonte/dev/module/flatplan/js/" "Search at ~/www/project/etor_www/etor_3.17/dev/module/")))
  '(ido-save-directory-list-file "~/.emacs.d/tmp/ido.last")
+ '(line-spacing 1)
  '(lsp-php-server-install-dir "~/.composer/")
  '(mc/always-repeat-command t)
  '(mc/cycle-looping-behaviour (quote continue))
@@ -39,5 +41,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(default ((t (:inherit nil :stipple nil :background "#ffffff" :foreground "#000000" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :width normal :foundry nil))))
  '(diff-refine-added ((t (:inherit diff-added :inverse-video t))))
  '(diff-refine-removed ((t (:inherit diff-removed)))))
