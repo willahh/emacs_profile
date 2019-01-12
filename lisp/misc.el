@@ -122,7 +122,14 @@
 
 (add-hook 'eshell-mode-hook 'wlh/eshell-hook)
 
+
+;; Diff mode
 (require 'diff-mode)
+(defun wlh/diff-hook ()
+  (interactive))
+(add-hook 'diff-mode-hook 'wlh/diff-hook)
+
+;;
 (require 'smerge-mode)
 
 (defun occur-dwim ()

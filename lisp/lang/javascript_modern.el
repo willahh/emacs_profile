@@ -1,9 +1,9 @@
 (defun wlh/js-mode ()
   (interactive)
   
-  (tide-mode)
-  (tide-setup)
-  (tide-hl-identifier-mode +1)
+  ;; (tide-mode)
+  ;; (tide-setup)
+  ;; (tide-hl-identifier-mode +1)
 
   (eldoc-mode +1)
   
