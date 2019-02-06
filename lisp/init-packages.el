@@ -35,7 +35,7 @@
 
 
 		             ;; centered-window
-                     clojure-cheatsheet
+                     ;; clojure-cheatsheet ; not available now
                      clojure-snippets
                      ;; coffee-mode
                      company-quickhelp
@@ -122,7 +122,7 @@
                      pandoc-mode
                      paredit
                      paredit-everywhere
-                     pdf-tools
+                     ;; pdf-tools ; Not available atm
                      ;; perspective
                      ;; pfuture
                      php-auto-yasnippets
@@ -174,6 +174,9 @@
 
 ;; Add some missing packages
 (add-to-list 'load-path "~/.emacs.d/site-lisp/org-mouse")
+(add-to-list 'load-path "~/.emacs.d/site-lisp/dired-hack/dired-hacks-utils-20160527.2136")
+(add-to-list 'load-path "~/.emacs.d/site-lisp/dired-hack/dired-ranger-20180401.2206")
+(add-to-list 'load-path "~/.emacs.d/site-lisp/dired-hack/dired-subtree-20160920.130")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/vkill")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/syslog-mode-2.2")
 ;; (add-to-list 'load-path "~/.emacs.d/site-lisp/lsp-mode")
@@ -194,7 +197,7 @@
 (load-file "~/.emacs.d/site-lisp/highlight-defined.el")
 ;; (load-file "~/.emacs.d/site-lisp/auto-highlight-symbol-mode/auto-highlight-symbol-mode.el")
 ;; (load-file "~/.emacs.d/site-lisp/auto-highlight-symbol-mode/auto-highlight-symbol-mode-config.el")
-(load-file "~/.emacs.d/site-lisp/dired-subtree-20160920.130/dired-subtree.el")
+
 
 ;; https://emacs.stackexchange.com/questions/5545/how-to-prevent-slow-down-when-an-inferior-processes-generates-long-lines
 (load-file "~/.emacs.d/site-lisp/so-long.el")

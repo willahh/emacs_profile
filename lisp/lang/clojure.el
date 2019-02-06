@@ -72,12 +72,12 @@
 (defun wlh/clojure-mode-hook ()
   (interactive)
   (clj-refactor-mode 1)
-  (hl-line-mode)
+  ;; (hl-line-mode) ;; Disable too slow
   ;; (auto-indent-mode) ; Package not found
   ;; (typed-clojure-mode)
   (auto-indent-mode)
   (aggressive-indent-mode)
-  (display-line-numbers-mode)
+  ;; (display-line-numbers-mode) ; Disable too slow
   
   ;; insert keybinding setup here
   (cljr-add-keybindings-with-prefix "C-c C-l")

@@ -1,4 +1,4 @@
-(require 'react-snippets)
+;; (require 'react-snippets) ; Not available on melpa atm
 (require 'web-mode)
 (require 'tide)
 

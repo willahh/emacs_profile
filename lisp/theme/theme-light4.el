@@ -355,8 +355,8 @@ That is, a string used to represent it on the tab bar."
                            (set-face-attribute 'ivy-minibuffer-match-face-4 nil :foreground "#d73a49" :background nil :underline t)))
 
 ;; -- Group
-(set-face-attribute 'custom-group-tag nil :foreground "#000")
-(set-face-attribute 'custom-variable-tag nil :foreground "#000")
+;; (set-face-attribute 'custom-group-tag nil :foreground "#000")
+;; (set-face-attribute 'custom-variable-tag nil :foreground "#000")
 
 
 ;; Line padding

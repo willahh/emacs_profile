@@ -35,17 +35,18 @@
 (which-key-mode)
 
 ;; http://pragmaticemacs.com/
-(use-package pdf-tools
-  :pin manual ;; manually update
-  :config
-  ;; initialise
-  (pdf-tools-install)
-  ;; open pdfs scaled to fit page
-  (setq-default pdf-view-display-size 'fit-page)
-  ;; automatically annotate highlights
-  (setq pdf-annot-activate-created-annotations t)
-  ;; use normal isearch
-  (define-key pdf-view-mode-map (kbd "C-s") 'isearch-forward))
+;; Update not available atm
+;; (use-package pdf-tools
+;;   :pin manual ;; manually update
+;;   :config
+;;   ;; initialise
+;;   (pdf-tools-install)
+;;   ;; open pdfs scaled to fit page
+;;   (setq-default pdf-view-display-size 'fit-page)
+;;   ;; automatically annotate highlights
+;;   (setq pdf-annot-activate-created-annotations t)
+;;   ;; use normal isearch
+;;   (define-key pdf-view-mode-map (kbd "C-s") 'isearch-forward))
 
 ;; Don't prompt me when i want to kill a shell
 ;; Source : http://stackoverflow.com/a/2706660
@@ -365,8 +366,8 @@ Version 2016-10-24"
   :bind
   (("C-c k" . browse-kill-ring)))
 
-(require 'edit-server)
-(edit-server-start)
+;; (require 'edit-server)
+;; (edit-server-start)
 
 ;; Pandoc
 (require 'pandoc-mode)
@@ -400,8 +401,9 @@ Version 2016-10-24"
 (unless window-system
   (menu-bar-mode -1))
 
-(require 'smart-comment)
-(global-set-key (kbd "M-;") 'smart-comment)
+;; Not available atm
+;; (require 'smart-comment)
+;; (global-set-key (kbd "M-;") 'smart-comment)
 
 ;; (require 'visual-regexp)
 ;; (global-set-key (kbd "M-%") 'vr/query-replace)
@@ -513,7 +515,8 @@ abort completely with `C-g'."
 
 
 ;; hl-line-mode
-(require 'hl-line)
+;; Disable too slow
+;; (require 'hl-line)
 
 ;; editorconfig
 (require 'editorconfig)

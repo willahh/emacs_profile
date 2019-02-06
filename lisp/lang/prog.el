@@ -1,6 +1,6 @@
 (defun wlh/prog-hook ()
-  (display-line-numbers-mode)
-  (hl-line-mode)
+  ;; (display-line-numbers-mode) ; Disable too slow
+  ;; (hl-line-mode) ; Disable too slow
   ;; (auto-highlight-symbol-mode)
   )
 

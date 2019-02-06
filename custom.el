@@ -22,6 +22,9 @@
  '(lsp-php-server-install-dir "~/.composer/")
  '(mc/always-repeat-command t)
  '(mc/cycle-looping-behaviour (quote continue))
+ '(package-selected-packages
+   (quote
+    (move-text dired-ranger ace-jump-mode zop-to-char erefactor redshank yaml-mode xref-js2 whole-line-or-region which-key wgrep websocket web-mode web-beautify use-package toc-org tide string-inflection smartparens sml-mode smex skewer-mode shell-pop resize-window rainbow-mode rainbow-delimiters powerline php-auto-yasnippets pdf-tools paredit-everywhere pandoc-mode lsp-mode org-bullets noflet neotree markdown-mode magit key-chord json-mode js2-refactor js2-mode iy-go-to-char ivy-hydra inf-clojure indent-guide impatient-mode imenu-list iedit ido-vertical-mode ido-occur ido-at-point hy-mode highlight-symbol helm-flx helm-swoop helm-projectile helm-cider helm-ag helm gradle-mode google-translate git-timemachine git-gutter ggtags fullframe flycheck-pos-tip flx-ido find-file-in-project expand-region exec-path-from-shell evil emmet-mode editorconfig easy-kill dumb-jump drag-stuff diffview diff-hl diminish crux counsel-gtags counsel company-flx company-web company-tern company-quickhelp clojure-snippets clojure-cheatsheet browse-kill-ring all-the-icons avy-menu autopair auto-yasnippet ag actionscript-mode hide-lines ace-window ace-link auto-indent-mode ac-slime clj-refactor cider)))
  '(projectile-cache-file "~/.emacs.d/tmp/projectile.cache")
  '(recentf-save-file "~/.emacs.d/tmp/recentf")
  '(save-place-file "/~/.emacs.d/tmp/.places" t)
@@ -41,6 +44,13 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#ffffff" :foreground "#000000" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :width normal :foundry nil))))
  '(diff-refine-added ((t (:inherit diff-added :inverse-video t))))
- '(diff-refine-removed ((t (:inherit diff-removed)))))
+ '(diff-refine-removed ((t (:inherit diff-removed))))
+ '(rainbow-delimiters-depth-1-face ((t (:foreground "#000000" :weight bold))))
+ '(rainbow-delimiters-depth-2-face ((t (:foreground "#ff00a0" :weight bold))))
+ '(rainbow-delimiters-depth-3-face ((t (:foreground "#5abeee" :weight bold))))
+ '(rainbow-delimiters-depth-4-face ((t (:foreground "#000000" :weight bold))))
+ '(rainbow-delimiters-depth-5-face ((t (:foreground "#22988a" :weight bold))))
+ '(rainbow-delimiters-depth-6-face ((t (:foreground "#cc99ff" :weight bold))))
+ '(rainbow-delimiters-depth-7-face ((t (:foreground "#fa75e2" :weight bold))))
+ '(rainbow-delimiters-depth-8-face ((t (:foreground "#55bdf0" :weight bold)))))
