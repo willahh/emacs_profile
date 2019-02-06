@@ -16,7 +16,7 @@
  '(helm-allow-mouse t)
  '(helm-source-names-using-follow
    (quote
-    ("Search at ~/www/project/etor_www/etor_3.17_proto_refonte/dev/module/flatplan/js/" "Search at ~/www/project/etor_www/etor_3.17/dev/module/")))
+    ("Imenu" "Search at ~/www/project/editzone/editzone_07/src/as/zone/zoneCreation/" "Search at ~/www/project/etor_www/etor_3.17_proto_refonte/dev/module/flatplan/js/" "Search at ~/www/project/etor_www/etor_3.17/dev/module/")))
  '(ido-save-directory-list-file "~/.emacs.d/tmp/ido.last")
  '(line-spacing 1)
  '(lsp-php-server-install-dir "~/.composer/")

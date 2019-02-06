@@ -10,7 +10,11 @@
 ;; (set-frame-font "Meslo")
 ;; (set-frame-font "Monaco")
 ;; (set-frame-font "Menlo")
-(set-frame-font "Menlo")
+;; (set-frame-font "Menlo")
+(set-frame-font "Inconsolata")
+(custom-set-faces
+ '(default ((t (:stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 150 :width normal :family "Inconsolata")))))
+
 
 ;; Line spacing
 ;; https://stackoverflow.com/questions/26437034/emacs-line-height
