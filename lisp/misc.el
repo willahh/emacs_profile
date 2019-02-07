@@ -3,8 +3,9 @@
 (setq kill-buffer-query-functions
       (remq 'process-kill-buffer-query-function
             kill-buffer-query-functions))
-(require 'highlight-defined)
-(highlight-defined-mode)
+
+;; (require 'highlight-defined)
+;; (highlight-defined-mode)
 
 ;; Key chords ------------------------------------
 ;; From http://emacsrocks.com/e07.html

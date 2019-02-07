@@ -25,7 +25,6 @@
 (load-file "~/.emacs.d/lisp/search.el")
 (load-file "~/.emacs.d/lisp/syntax_checker.el")
 (load-file "~/.emacs.d/lisp/key_binding.el")
-;; (load-file "~/.emacs.d/lisp/theme/theme-light5.el")
 (load-file "~/.emacs.d/lisp/theme/theme-light4.el")
 (load-file "~/.emacs.d/lisp/lang/prog.el")
 (load-file "~/.emacs.d/lisp/lang/typescript.el")

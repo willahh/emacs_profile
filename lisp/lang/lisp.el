@@ -6,7 +6,7 @@
 
 (defun wlh/lisp-mode-hook ()
   (define-key slime-prefix-map (kbd "M-h") 'slime-documentation-lookup)
-  (highlight-defined-mode)
+  ;; (highlight-defined-mode)
   (aggressive-indent-mode)
   (highlight-symbol-mode)
   (define-key lisp-mode-map (kbd "C-c M-j") 'slime) ; Same as Clojure Cider connect to repl ! 

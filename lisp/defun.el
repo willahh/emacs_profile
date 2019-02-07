@@ -56,17 +56,17 @@
 ;;   Pouvoir copier le chemin du buffer actuel dans le clipboard
 ;; Source : http://stackoverflow.com/a/2417617
 ;; Update : add w- prefix for quicker find in m-x command
-(defun copy-file-path ()
-  "Copy current file path into clipboard"
-  (interactive)
-  (let ((filename (if (equal major-mode 'dired-mode)
-                      default-directory
-                    (buffer-file-name))))
-    (when filename
-      (with-temp-buffer
-        (insert filename)
-        (clipboard-kill-region (point-min) (point-max)))
-      (message filename))))
+;; (defun copy-file-path ()
+;;   "Copy current file path into clipboard"
+;;   (interactive)
+;;   (let ((filename (if (equal major-mode 'dired-mode)
+;;                       default-directory
+;;                     (buffer-file-name))))
+;;     (when filename
+;;       (with-temp-buffer
+;;         (insert filename)
+;;         (clipboard-kill-region (point-min) (point-max)))
+;;       (message filename))))
 
 (defun cfp ()
   "[C]opy [f]ile [p]ath"
@@ -514,23 +514,23 @@ save it in `ffap-file-at-point-line-number' variable."
     (goto-line ffap-file-at-point-line-number)
     (setq ffap-file-at-point-line-number nil)))
 
-(defun describe-thing-in-popup ()
-  "http://blog.jenkster.com/2013/12/popup-help-in-emacs-lisp.html"
-  (interactive)
-  (let* ((thing (symbol-at-point))
-         (help-xref-following t)
-         (description (with-temp-buffer
-                        (help-mode)
-                        (help-xref-interned thing)
-                        (buffer-string))))
-    (popup-tip description
-               :point (point)
-               :around t
-               :height 30
-               :scroll-bar t
-               :margin t)))
+;; (defun describe-thing-in-popup ()
+;;   "http://blog.jenkster.com/2013/12/popup-help-in-emacs-lisp.html"
+;;   (interactive)
+;;   (let* ((thing (symbol-at-point))
+;;          (help-xref-following t)
+;;          (description (with-temp-buffer
+;;                         (help-mode)
+;;                         (help-xref-interned thing)
+;;                         (buffer-string))))
+;;     (popup-tip description
+;;                :point (point)
+;;                :around t
+;;                :height 30
+;;                :scroll-bar t
+;;                :margin t)))
 
-(global-set-key (kbd "M-'") 'describe-thing-in-popup)
+;; (global-set-key (kbd "M-'") 'describe-thing-in-popup)
 
 ;; http://emacsredux.com/blog/2013/04/21/edit-files-as-root/
 (defun sudo-edit (&optional arg)

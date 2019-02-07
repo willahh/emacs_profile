@@ -1,59 +1,62 @@
 ;; Ido ------------------------------
 (require 'ido)
-(require 'ido-vertical-mode)
+;; (require 'ido-vertical-mode)
 (require 'ido-occur)
 
-(ido-mode 1)
-(ido-vertical-mode t)
+(ido-mode t)
+;; (ido-vertical-mode nil)
+;; (turn-off-ido-vertical)
 
 ;; C-n/p is more intuitive in vertical layout
-(setq ido-vertical-define-keys 'C-n-C-p-up-down-left-right)
+;; (setq ido-vertical-define-keys 'C-n-C-p-up-down-left-right)
 
 ;; disable ido faces to see flx highlights.
-(setq ido-enable-flex-matching t)
-(setq ido-use-faces nil)
+;; (setq ido-enable-flex-matching t)
+;; (setq ido-use-faces nil)
 
 
- ;;Ivy -------------------------------
-(require 'ivy)
+;;  ;;Ivy -------------------------------
+;; (require 'ivy)
+
+;; ;; (setq ivy-re-builders-alist
+;; ;;       '(
+;; ;;         ;; (ivy-switch-buffer . ivy--regex-plus)
+;; ;;         ;; (swiper . ivy--regex-plus)
+;; ;;         ;; (counsel-imenu . ivy--regex-plus)
+;; ;;         ;; (t . ivy--regex-fuzzy)
+;; ;;         ;; (t . ivy--regex-plus)
+;; ;;         ;; (t . ivy--regex-fuzzy)
+;; ;;         ;; (projectile-find-file . ivy--regex-fuzzy)
+;; ;;         ;; (projectile-find-file . ivy--regex-plus)
+;; ;;         ;; (projectile-find-file . ivy--regex-fuzzy)
+
+;; ;;         ;; (t . ivy--regex-fuzzy)
+
+;; ;;         ;; (t . ivy--regex-plus)
+;; ;;         ;; (t. ivy--regex-fuzzy)
+;; ;;         ;; (projectile-find-file . ivy--regex-plus)
+;; ;;         ))
 
 ;; (setq ivy-re-builders-alist
-;;       '(
-;;         ;; (ivy-switch-buffer . ivy--regex-plus)
-;;         ;; (swiper . ivy--regex-plus)
-;;         ;; (counsel-imenu . ivy--regex-plus)
-;;         ;; (t . ivy--regex-fuzzy)
-;;         ;; (t . ivy--regex-plus)
-;;         ;; (t . ivy--regex-fuzzy)
-;;         ;; (projectile-find-file . ivy--regex-fuzzy)
-;;         ;; (projectile-find-file . ivy--regex-plus)
-;;         ;; (projectile-find-file . ivy--regex-fuzzy)
+;;       '((t . ivy--regex-fuzzy)))
 
-;;         ;; (t . ivy--regex-fuzzy)
+;; (ivy-mode)
 
-;;         ;; (t . ivy--regex-plus)
-;;         ;; (t. ivy--regex-fuzzy)
-;;         ;; (projectile-find-file . ivy--regex-plus)
-;;         ))
+;; ;; (setq ivy-height 12)
+;; (setq ivy-height 14)
 
-(setq ivy-re-builders-alist
-      '((t . ivy--regex-fuzzy)))
+;; ;; full file names - useful when multiple files have same names
+;; (setq ivy-virtual-abbreviate 'full)
+;; (setq ivy-use-virtual-buffers t)
+;; (setq ivy-count-format "(%d/%d) ")
+;; (setq ivy-initial-inputs-alist nil)
+;; (setq ivy-use-selectable-prompt t)
+;; (setq projectile-completion-system 'ivy)
 
-(require 'flx-ido)
 
-(flx-ido-mode 1)
-(ivy-mode)
+;; (require 'flx-ido)
+;; (flx-ido-mode 1)
 
-;; (setq ivy-height 12)
-(setq ivy-height 14)
-
-;; full file names - useful when multiple files have same names
-(setq ivy-virtual-abbreviate 'full)
-(setq ivy-use-virtual-buffers t)
-(setq ivy-count-format "(%d/%d) ")
-(setq ivy-initial-inputs-alist nil)
-(setq ivy-use-selectable-prompt t)
-(setq projectile-completion-system 'ivy)
 
 
 ;; Helm ---------------------------------

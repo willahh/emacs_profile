@@ -202,9 +202,9 @@
 
 ;; Scroll
 (setq scroll-margin 0)
-;; (setq smooth-scroll-margin 0)
+(setq smooth-scroll-margin 0)
 (setq scroll-step 1)
-(setq scroll-conservatively 0)
+;; (setq scroll-conservatively 0)
 (setq scroll-conservatively 10000)
 (setq auto-window-vscroll nil)
 

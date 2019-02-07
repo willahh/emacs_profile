@@ -22,21 +22,21 @@
 (define-key prog-mode-map (kbd "M-(") 'paredit-wrap-round)
 (define-key php-mode-map (kbd "M-(") 'paredit-wrap-round)
 
-(define-key prog-mode-map (kbd "M-{") 'paredit-wrap-curly)
-(define-key php-mode-map (kbd "M-{") 'paredit-wrap-curly)
-(define-key nxml-mode-map (kbd "M-{") 'paredit-wrap-curly)
+;; (define-key prog-mode-map (kbd "M-{") 'paredit-wrap-curly)
+;; (define-key php-mode-map (kbd "M-{") 'paredit-wrap-curly)
+;; (define-key nxml-mode-map (kbd "M-{") 'paredit-wrap-curly)
 
-(define-key prog-mode-map (kbd "M-[") 'paredit-wrap-angled)
-(define-key php-mode-map (kbd "M-[") 'paredit-wrap-angled)
-(define-key nxml-mode-map (kbd "M-[") 'paredit-wrap-angled)
+;; (define-key prog-mode-map (kbd "M-[") 'paredit-wrap-angled)
+;; (define-key php-mode-map (kbd "M-[") 'paredit-wrap-angled)
+;; (define-key nxml-mode-map (kbd "M-[") 'paredit-wrap-angled)
 
-(define-key prog-mode-map (kbd "<C-left>")'paredit-forward-barf-sexp)
-(define-key php-mode-map (kbd "<C-left>")'paredit-forward-barf-sexp)
-(define-key nxml-mode-map (kbd "<C-left>")'paredit-forward-barf-sexp)
+;; (define-key prog-mode-map (kbd "<C-left>")'paredit-forward-barf-sexp)
+;; (define-key php-mode-map (kbd "<C-left>")'paredit-forward-barf-sexp)
+;; (define-key nxml-mode-map (kbd "<C-left>")'paredit-forward-barf-sexp)
 
-(define-key prog-mode-map (kbd "<C-right>")'paredit-forward-slurp-sexp)
-(define-key php-mode-map (kbd "<C-right>")'paredit-forward-slurp-sexp)
-(define-key nxml-mode-map (kbd "<C-right>")'paredit-forward-slurp-sexp)
+;; (define-key prog-mode-map (kbd "<C-right>")'paredit-forward-slurp-sexp)
+;; (define-key php-mode-map (kbd "<C-right>")'paredit-forward-slurp-sexp)
+;; (define-key nxml-mode-map (kbd "<C-right>")'paredit-forward-slurp-sexp)
 
 (defun paredit-space-for-delimiter-p (endp delimiter)
   (and (not (if endp (eobp) (bobp)))

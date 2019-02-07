@@ -214,21 +214,21 @@
 
 
 ;; ------- tabbar
-(require 'tabbar)
+;; (require 'tabbar)
 
-(defun wlh/tabbar-mode-hook ()
-  (custom-set-variables
-   '(tabbar-background-color "white smoke"))
-  '(tabbar-mode t nil (tabbar))
+;; (defun wlh/tabbar-mode-hook ()
+;;   (custom-set-variables
+;;    '(tabbar-background-color "white smoke"))
+;;   '(tabbar-mode t nil (tabbar))
 
-  (custom-set-faces
-   '(tabbar-button ((t (:inherit tabbar-default :background "#ececec" :box nil))))
-   '(tabbar-default ((t (:inherit nil :stipple nil :background "white" :foreground "black" :box nil :strike-through nil :underline nil :slant normal :weight normal :height 110 :width normal :family "Lucida Grande"))))
-   '(tabbar-modified ((t (:inherit tabbar-default :foreground "deep sky blue"))))
-   '(tabbar-selected ((t (:inherit tabbar-default :background "white" :foreground "gray20" :box (:line-width 3 :color "white")))))
-   '(tabbar-selected-highlight ((t (:foreground "black"))))
-   '(tabbar-selected-modified ((t (:inherit tabbar-default :background "white" :foreground "deep sky blue"))))
-   '(tabbar-separator ((t (:inherit tabbar-default :background "white" :foreground "white" :height 1.0))))
-   '(tabbar-unselected ((t (:inherit tabbar-default :background "#ececec" :box (:line-width 3 :color "#ececec")))))))
+;;   (custom-set-faces
+;;    '(tabbar-button ((t (:inherit tabbar-default :background "#ececec" :box nil))))
+;;    '(tabbar-default ((t (:inherit nil :stipple nil :background "white" :foreground "black" :box nil :strike-through nil :underline nil :slant normal :weight normal :height 110 :width normal :family "Lucida Grande"))))
+;;    '(tabbar-modified ((t (:inherit tabbar-default :foreground "deep sky blue"))))
+;;    '(tabbar-selected ((t (:inherit tabbar-default :background "white" :foreground "gray20" :box (:line-width 3 :color "white")))))
+;;    '(tabbar-selected-highlight ((t (:foreground "black"))))
+;;    '(tabbar-selected-modified ((t (:inherit tabbar-default :background "white" :foreground "deep sky blue"))))
+;;    '(tabbar-separator ((t (:inherit tabbar-default :background "white" :foreground "white" :height 1.0))))
+;;    '(tabbar-unselected ((t (:inherit tabbar-default :background "#ececec" :box (:line-width 3 :color "#ececec")))))))
 
-(add-hook 'tabbar-mode-hook 'wlh/tabbar-mode-hook)
+;; (add-hook 'tabbar-mode-hook 'wlh/tabbar-mode-hook)

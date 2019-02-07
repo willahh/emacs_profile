@@ -13,7 +13,7 @@
 ;; (set-frame-font "Menlo")
 (set-frame-font "Inconsolata")
 (custom-set-faces
- '(default ((t (:stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 150 :width normal :family "Inconsolata")))))
+ '(default ((t (:stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 140 :width normal :family "Inconsolata")))))
 
 
 ;; Line spacing
@@ -143,8 +143,8 @@
 (set-face-attribute 'font-lock-type-face nil :foreground "#6c1883")
 (set-face-attribute 'font-lock-variable-name-face nil :foreground "#6f42c1")
 (set-face-attribute 'font-lock-function-name-face nil :foreground "#6f42c1")
-(set-face-attribute 'highlight-defined-function-name-face nil :foreground "#005cc5")
-(set-face-attribute 'highlight-defined-builtin-function-name-face nil :foreground "#d73a49")
+;; (set-face-attribute 'highlight-defined-function-name-face nil :foreground "#005cc5")
+;; (set-face-attribute 'highlight-defined-builtin-function-name-face nil :foreground "#d73a49")
 ;; (set-face-attribute 'font-lock-string-face nil :foreground "#b62e24")
 ;; (set-face-attribute 'font-lock-string-face nil :foreground "#008000")
 (set-face-attribute 'font-lock-string-face nil :foreground "#032f62" :slant 'normal)
@@ -296,67 +296,67 @@
 
 
 ;; Tabbar
-(require 'tabbar)
+;; (require 'tabbar)
 ;; Tabbar settings
-(set-face-attribute
- 'tabbar-default nil
- :background "#ececec"
- :foreground "#000"
- :box '(:line-width 2 :color "#ececec" :style nil))
-(set-face-attribute
- 'tabbar-unselected nil
- :background "#ececec"
- :foreground "#888"
- :box '(:line-width 8 :color "#ececec" :style nil))
-(set-face-attribute
- 'tabbar-selected nil
- :background "white"
- :foreground "black"
- :box '(:line-width 8 :color "white" :style nil))
-(set-face-attribute
- 'tabbar-highlight nil
- :background "white"
- :foreground "black"
- :underline nil
- :box '(:line-width 8 :color "white" :style nil))
-(set-face-attribute
- 'tabbar-button nil
- :box '(:line-width 1 :color "white" :style nil))
-(set-face-attribute
- 'tabbar-separator nil
- :background "white"
- :height 0.6)
+;; (set-face-attribute
+;;  'tabbar-default nil
+;;  :background "#ececec"
+;;  :foreground "#000"
+;;  :box '(:line-width 2 :color "#ececec" :style nil))
+;; (set-face-attribute
+;;  'tabbar-unselected nil
+;;  :background "#ececec"
+;;  :foreground "#888"
+;;  :box '(:line-width 8 :color "#ececec" :style nil))
+;; (set-face-attribute
+;;  'tabbar-selected nil
+;;  :background "white"
+;;  :foreground "black"
+;;  :box '(:line-width 8 :color "white" :style nil))
+;; (set-face-attribute
+;;  'tabbar-highlight nil
+;;  :background "white"
+;;  :foreground "black"
+;;  :underline nil
+;;  :box '(:line-width 8 :color "white" :style nil))
+;; (set-face-attribute
+;;  'tabbar-button nil
+;;  :box '(:line-width 1 :color "white" :style nil))
+;; (set-face-attribute
+;;  'tabbar-separator nil
+;;  :background "white"
+;;  :height 0.6)
 
-;; Change padding of the tabs
-;; we also need to set separator to avoid overlapping tabs by highlighted tabs
-(custom-set-variables
- '(tabbar-separator (quote (0.5))))
-;; adding spaces
-(defun tabbar-buffer-tab-label (tab)
-  "Return a label for TAB.
-That is, a string used to represent it on the tab bar."
-  (let ((label  (if tabbar--buffer-show-groups
-                    (format "[%s]  " (tabbar-tab-tabset tab))
-                  (format "%s  " (tabbar-tab-value tab)))))
-    ;; Unless the tab bar auto scrolls to keep the selected tab
-    ;; visible, shorten the tab label to keep as many tabs as possible
-    ;; in the visible area of the tab bar.
-    (if tabbar-auto-scroll-flag
-        label
-      (tabbar-shorten
-       label (max 1 (/ (window-width)
-                       (length (tabbar-view
-                                (tabbar-current-tabset)))))))))
+;; ;; Change padding of the tabs
+;; ;; we also need to set separator to avoid overlapping tabs by highlighted tabs
+;; (custom-set-variables
+;;  '(tabbar-separator (quote (0.5))))
+;; ;; adding spaces
+;; (defun tabbar-buffer-tab-label (tab)
+;;   "Return a label for TAB.
+;; That is, a string used to represent it on the tab bar."
+;;   (let ((label  (if tabbar--buffer-show-groups
+;;                     (format "[%s]  " (tabbar-tab-tabset tab))
+;;                   (format "%s  " (tabbar-tab-value tab)))))
+;;     ;; Unless the tab bar auto scrolls to keep the selected tab
+;;     ;; visible, shorten the tab label to keep as many tabs as possible
+;;     ;; in the visible area of the tab bar.
+;;     (if tabbar-auto-scroll-flag
+;;         label
+;;       (tabbar-shorten
+;;        label (max 1 (/ (window-width)
+;;                        (length (tabbar-view
+;;                                 (tabbar-current-tabset)))))))))
 
 ;; (tabbar-mode 1)
 
 ;; ------ ivy
-(require 'ivy)
-(add-hook 'ivy-mode-hook (lambda ()
-                           (set-face-attribute 'ivy-minibuffer-match-face-1 nil :foreground "#d73a49" :background nil :underline t)
-                           (set-face-attribute 'ivy-minibuffer-match-face-2 nil :foreground "#d73a49" :background nil :underline t)
-                           (set-face-attribute 'ivy-minibuffer-match-face-3 nil :foreground "#d73a49" :background nil :underline t)
-                           (set-face-attribute 'ivy-minibuffer-match-face-4 nil :foreground "#d73a49" :background nil :underline t)))
+;; (require 'ivy)
+;; (add-hook 'ivy-mode-hook (lambda ()
+;;                            (set-face-attribute 'ivy-minibuffer-match-face-1 nil :foreground "#d73a49" :background nil :underline t)
+;;                            (set-face-attribute 'ivy-minibuffer-match-face-2 nil :foreground "#d73a49" :background nil :underline t)
+;;                            (set-face-attribute 'ivy-minibuffer-match-face-3 nil :foreground "#d73a49" :background nil :underline t)
+;;                            (set-face-attribute 'ivy-minibuffer-match-face-4 nil :foreground "#d73a49" :background nil :underline t)))
 
 ;; -- Group
 ;; (set-face-attribute 'custom-group-tag nil :foreground "#000")

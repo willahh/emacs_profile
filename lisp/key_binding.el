@@ -3,7 +3,8 @@
 (global-unset-key (kbd "M-m"))
 
 ;; --------------- Main Emacs keybinding changes
-(global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
+;; (global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
+(global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-x RET") 'dired-jump)
 (global-set-key (kbd "M-a") 'mark-whole-buffer) ; Was backward-sentence
 ;; (define-key php-mode-map (kbd "M-a") 'mark-whole-buffer)
@@ -17,8 +18,8 @@
 (global-set-key (kbd "M-v") 'yank)
 (define-key mc/keymap (kbd "M-v") 'yank)
 (define-key helm-map (kbd "M-v") 'yank)
-(define-key ivy-minibuffer-map (kbd "M-v") 'yank)
-(define-key ivy-minibuffer-map (kbd "C-i") 'ivy-alt-done)
+;; (define-key ivy-minibuffer-map (kbd "M-v") 'yank)
+;; (define-key ivy-minibuffer-map (kbd "C-i") 'ivy-alt-done)
 (global-set-key [(meta v)] 'yank)
 
 ;; Yank pop
@@ -30,7 +31,7 @@
 
 ;; --------------- ALT key binding
 ;; Azerty keyboard
-(global-set-key (kbd "≈") 'counsel-M-x) ; Alt + x
+(global-set-key (kbd "≈") 'M-x) ; Alt + x
 (global-set-key (kbd "") 'toggle-php-flavor-mode) ; Alt + 1
 (global-set-key (kbd "∑") 'helm-ag) ; Alt + shift + s
 (global-set-key (kbd "†") 'toggle-truncate-lines) ; Alt + t
@@ -134,7 +135,7 @@
 
 ;; ivy
 ;; (define-key ivy-minibuffer-map (kbd "<escape>") 'minibuffer-keyboard-quit)
-(define-key ivy-minibuffer-map (kbd "C-h") 'delete-backward-char)
+;; (define-key ivy-minibuffer-map (kbd "C-h") 'delete-backward-char)
 
 ;; Kill
 ;; (global-set-key (kbd "C-w") 'whole-line-or-region-kill-region)
@@ -256,7 +257,7 @@
 (define-key paredit-mode-map (kbd "<delete>") 'wlh/delete-backspace)
 
 ;; counsel-find-file
-(global-set-key (kbd "C-x C-f") 'counsel-find-file)
+;; (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 
 ;; Diff hl next / prev
 (global-set-key (kbd "C-c C-n") 'diff-hl-next-hunk)
@@ -270,8 +271,8 @@
 ;; helm-imenu - M-r key binding come from Sublime M-r go to symbol 
 (global-set-key (kbd "M-r") 'helm-imenu)
 (define-key paredit-mode-map (kbd "M-r") 'helm-imenu)
-(global-set-key (kbd "C-c i") 'counsel-imenu)
-(define-key paredit-mode-map (kbd "C-c i") 'counsel-imenu)
+;; (global-set-key (kbd "C-c i") 'counsel-imenu)
+;; (define-key paredit-mode-map (kbd "C-c i") 'counsel-imenu)
 
 ;; mark
 (global-set-key (kbd "C-c C-x C-d") 'crux-duplicate-and-comment-current-line-or-region)
@@ -465,11 +466,12 @@
 (global-set-key (kbd "C-ù") 'previous-buffer)
 (global-set-key (kbd "C-M-ù") 'winner-undo)
 ;; (global-set-key (kbd "M-t") 'tabbar-new-tab)
-(global-set-key (kbd "™") 'tabbar-close-other-tabs) ; ALT+SHIFT+t
+;; (global-set-key (kbd "™") 'tabbar-close-other-tabs) ; ALT+SHIFT+t
 
 ;; Recentf
-(global-set-key (kbd "C-c f") 'counsel-recentf) 
-(global-set-key (kbd "C-c C-f") 'counsel-recentf) 
+;; (global-set-key (kbd "C-c f") 'counsel-recentf) 
+;; (global-set-key (kbd "C-c C-f") 'counsel-recentf) 
+(global-set-key (kbd "C-c f") 'helm-recentf)
 
 ;; -------- org
 (define-key org-mode-map (kbd "C-c C-b") 'org-backward-heading-same-level)
@@ -502,6 +504,7 @@
 
 ;; Scroll commands
 ;; (global-set-key (kbd "C-x v U") 'wlh/svn-up-recursive)
+(global-set-key (kbd "C-x r b") 'helm-bookmarks)
 ;; (global-set-key (kbd "s-a") 'mark-whole-buffer)
 (global-set-key (kbd "C-c C-s") 'helm-swoop)
 (define-key web-mode-map (kbd "C-c C-s") 'swiper)

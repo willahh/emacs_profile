@@ -17,9 +17,9 @@
 (add-hook 'ediff-prepare-buffer-hook #'show-all)
 
 ;; Some defun helpers
-(defun wlh/vc-dir ()
-  (interactive)
-  (vc-dir (projectile-project-root)))
+;; (defun wlh/vc-dir ()
+;;   (interactive)
+;;   (vc-dir (projectile-project-root)))
 
 (defun wlh/vc-version-diff-base-head ()
   ;; Quick call vc-version-diff to compare the base and head version
@@ -39,28 +39,28 @@
 
 ;; Ediff from dired
 ;; https://oremacs.com/2017/03/18/dired-ediff/
-(defun ora-ediff-files ()
-  (interactive)
-  (let ((files (dired-get-marked-files))
-        (wnd (current-window-configuration)))
-    (if (<= (length files) 2)
-        (let ((file1 (car files))
-              (file2 (if (cdr files)
-                         (cadr files)
-                       (read-file-name
-                        "file: "
-                        (dired-dwim-target-directory)))))
-          (if (file-newer-than-file-p file1 file2)
-              (ediff-files file2 file1)
-            (ediff-files file1 file2))
-          (add-hook 'ediff-after-quit-hook-internal
-                    (lambda ()
-                      (setq ediff-after-quit-hook-internal nil)
-                      (set-window-configuration wnd))))
-      (error "no more than 2 files should be marked")))
-  (define-key dired-mode-map "e" 'ora-ediff-files)
-  (setq ediff-window-setup-function 'ediff-setup-windows-plain
-        ediff-split-window-function 'split-window-horizontally))
+;; (defun ora-ediff-files ()
+;;   (interactive)
+;;   (let ((files (dired-get-marked-files))
+;;         (wnd (current-window-configuration)))
+;;     (if (<= (length files) 2)
+;;         (let ((file1 (car files))
+;;               (file2 (if (cdr files)
+;;                          (cadr files)
+;;                        (read-file-name
+;;                         "file: "
+;;                         (dired-dwim-target-directory)))))
+;;           (if (file-newer-than-file-p file1 file2)
+;;               (ediff-files file2 file1)
+;;             (ediff-files file1 file2))
+;;           (add-hook 'ediff-after-quit-hook-internal
+;;                     (lambda ()
+;;                       (setq ediff-after-quit-hook-internal nil)
+;;                       (set-window-configuration wnd))))
+;;       (error "no more than 2 files should be marked")))
+;;   (define-key dired-mode-map "e" 'ora-ediff-files)
+;;   (setq ediff-window-setup-function 'ediff-setup-windows-plain
+;;         ediff-split-window-function 'split-window-horizontally))
 
 ;; Don't ask if i want to quit this ediff session, yes i always want if i type q
 ;; https://emacs.stackexchange.com/a/24602
@@ -81,6 +81,7 @@
   (interactive)
   (toggle-truncate-lines)
   (outline-minor-mode)
+  (hl-line-mode)
   (setq diff-hl-draw-borders nil)
   (diff-hl-mode t))
 

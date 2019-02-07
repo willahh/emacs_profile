@@ -1,5 +1,5 @@
 (window-divider-mode-apply 1)
 (show-paren-mode)
 (winner-mode t)
-(tabbar-mode 0)
+;; (tabbar-mode 0)
 (eshell)

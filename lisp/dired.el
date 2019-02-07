@@ -1,6 +1,6 @@
-(require 'dired-x)
-(require 'dired)
-(require 'cl)
+;; (require 'dired-x)
+;; (require 'dired)
+;; (require 'cl)
 
 (setq auto-revert-interval 1)
 (setq dired-dwim-target nil)

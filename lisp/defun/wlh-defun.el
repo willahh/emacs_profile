@@ -37,14 +37,14 @@ on the screen values."
 ;;   (interactive)
 ;;   (neo-global--open-and-find (buffer-file-name)))
 
-(defun wlh/projectile-ido-find-file ()
-  "Find a recent file using ido."
-  (interactive)
-  (let ((file (ido-completing-read "Project file: "
-                                   (mapcar #'abbreviate-file-name (projectile-current-project-files))
-                                   nil t)))
-    (when file
-      (find-file file))))
+;; (defun wlh/projectile-ido-find-file ()
+;;   "Find a recent file using ido."
+;;   (interactive)
+;;   (let ((file (ido-completing-read "Project file: "
+;;                                    (mapcar #'abbreviate-file-name (projectile-current-project-files))
+;;                                    nil t)))
+;;     (when file
+;;       (find-file file))))
 
 (defun wlh/vscode-dired-at-point ()
   "Open a VS Code at point from dired"
@@ -150,13 +150,13 @@ on the screen values."
   (beginning-of-line)
   (kill-line))
 
-(defun wlh/vc-status ()
-  "Switch to either SVN status or GIT status"
-  (interactive)
-  (let ((vc-type (vc-backend (copy-file-path))))
-    (if (string= vc-type "SVN")
-        (wlh/vc-dir)
-      (magit-status))))
+;; (defun wlh/vc-status ()
+;;   "Switch to either SVN status or GIT status"
+;;   (interactive)
+;;   (let ((vc-type (vc-backend (copy-file-path))))
+;;     (if (string= vc-type "SVN")
+;;         (wlh/vc-dir)
+;;       (magit-status))))
 
 (defun wlh/open-file-in-browser ()
   (interactive)

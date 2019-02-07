@@ -32,9 +32,7 @@
                      avy-menu
                      all-the-icons
                      browse-kill-ring
-
-
-		             ;; centered-window
+                     ;; centered-window
                      ;; clojure-cheatsheet ; not available now
                      clojure-snippets
                      ;; coffee-mode
@@ -43,10 +41,10 @@
                      company-web
                      company-flx
                      counsel
-                     counsel-gtags
+                     ;; counsel-gtags
                      crux
                      ;; darkroom
-                     dash
+                     ;; dash
                      diminish
                      diff-hl
                      diffview
@@ -59,9 +57,6 @@
                      ;; edit-server
                      editorconfig
                      emmet-mode
-
-
-		             
                      ;; epl
                      evil
                      ;; react-snippets
@@ -72,11 +67,11 @@
                      flx-ido
                      flycheck-pos-tip
                      fullframe
-                     ggtags
+                     ;; ggtags
                      git-gutter
                      git-timemachine
                      google-translate
-                     gradle-mode
+                     ;; gradle-mode
                      helm
                      helm-ag
                      helm-cider
@@ -86,7 +81,6 @@
                      highlight-symbol
                      hy-mode
                      hydra
-
                      ido
                      ido-at-point
                      ido-occur
@@ -95,10 +89,9 @@
                      imenu-list
                      impatient-mode
                      indent-guide
-                     inf-clojure
-
-		             ivy
-                     ivy-hydra
+                     ;; inf-clojure
+		             ;; ivy
+                     ;; ivy-hydra
                      iy-go-to-char
                      ;; js-comint
                      js2-mode
@@ -107,17 +100,14 @@
                      key-chord
                      magit
                      ;; magit-popup
-		             
                      markdown-mode
                      ;; memoize
                      multiple-cursors
                      neotree
-                     noflet ; Used by ido-preview
+                     ;; noflet ; Used by ido-preview
                      org-bullets
-
                      ;; lsp
                      lsp-mode
-                     
                      ;; ov ; Used for some useful prelude functions
                      pandoc-mode
                      paredit
@@ -125,13 +115,13 @@
                      ;; pdf-tools ; Not available atm
                      ;; perspective
                      ;; pfuture
-                     php-auto-yasnippets
+                     ;; php-auto-yasnippets
                      php-mode
                      pkg-info
                      popup
-                     powerline
+                     ;; powerline
                      projectile
-                     rainbow-delimiters
+                     ;; rainbow-delimiters
                      rainbow-mode
                      resize-window
                      ;; ripgrep
@@ -169,7 +159,7 @@
                      yasnippet
                      zop-to-char
                      ace-jump-mode
-		             with-editor ; Required by magit
+		             ;; with-editor ; Required by magit
 		     ))
 
 ;; Add some missing packages
@@ -182,19 +172,19 @@
 ;; (add-to-list 'load-path "~/.emacs.d/site-lisp/lsp-mode")
 ;; (add-to-list 'load-path "~/.emacs.d/site-lisp/lsp-ui")
 ;; (add-to-list 'load-path "~/.emacs.d/site-lisp/lsp-php")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/tabbar")
+;; (add-to-list 'load-path "~/.emacs.d/site-lisp/tabbar")
 ;; (add-to-list 'load-path "~/.emacs.d/site-lisp/magit-2.11.0")
 ;; (add-to-list 'load-path "~/.emacs.d/site-lisp/magit-2.13.0")
 ;; (add-to-list 'load-path "~/.emacs.d/site-lisp/auto-highlight-symbol-mode")
 
 ;; Add additional files
-(load-file "~/.emacs.d/site-lisp/ido-preview.el")
+;; (load-file "~/.emacs.d/site-lisp/ido-preview.el")
 (load-file "~/.emacs.d/site-lisp/aggressive-indent.el")
-(load-file "~/.emacs.d/site-lisp/tabbar/aquamacs-tools.el")
-(load-file "~/.emacs.d/site-lisp/tabbar/aquamacs-compat.el")
-(load-file "~/.emacs.d/site-lisp/tabbar/aquamacs-tabbar.el")
-(load-file "~/.emacs.d/site-lisp/tabbar/aquamacs-tools.el")
-(load-file "~/.emacs.d/site-lisp/highlight-defined.el")
+;; (load-file "~/.emacs.d/site-lisp/tabbar/aquamacs-tools.el")
+;; (load-file "~/.emacs.d/site-lisp/tabbar/aquamacs-compat.el")
+;; (load-file "~/.emacs.d/site-lisp/tabbar/aquamacs-tabbar.el")
+;; (load-file "~/.emacs.d/site-lisp/tabbar/aquamacs-tools.el")
+;; (load-file "~/.emacs.d/site-lisp/highlight-defined.el")
 ;; (load-file "~/.emacs.d/site-lisp/auto-highlight-symbol-mode/auto-highlight-symbol-mode.el")
 ;; (load-file "~/.emacs.d/site-lisp/auto-highlight-symbol-mode/auto-highlight-symbol-mode-config.el")
 
