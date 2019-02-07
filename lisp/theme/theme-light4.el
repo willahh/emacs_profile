@@ -11,9 +11,22 @@
 ;; (set-frame-font "Monaco")
 ;; (set-frame-font "Menlo")
 ;; (set-frame-font "Menlo")
-(set-frame-font "Inconsolata")
+;; (set-frame-font "Inconsolata")
+;; (set-frame-font "Menlo")
 (custom-set-faces
- '(default ((t (:stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 140 :width normal :family "Inconsolata")))))
+ '(default ((t (:stipple nil
+                         :background "white"
+                         :foreground "black"
+                         :inverse-video nil
+                         :box nil
+                         :strike-through nil
+                         :overline nil
+                         :underline nil
+                         :slant normal
+                         :weight normal
+                         :height 140
+                         :width normal
+                         :family "input")))))
 
 
 ;; Line spacing
@@ -56,9 +69,10 @@
 
 
 ;; ----------------------------
-(setq-default line-spacing 2) ; https://www.emacswiki.org/emacs/LineSpacing
-(setq-default line-height 1.25)
-
+;; (setq-default line-spacing 2) ; https://www.emacswiki.org/emacs/LineSpacing
+;; (setq-default line-height 1.25)
+(setq-default line-spacing 1)
+(setq-default line-height 1)
 (set-face-background 'scroll-bar "#000")
 
 ;; Main background
