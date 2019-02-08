@@ -24,7 +24,7 @@
                          :underline nil
                          :slant normal
                          :weight normal
-                         :height 140
+                         :height 120
                          :width normal
                          :family "input")))))
 
