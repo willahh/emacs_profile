@@ -85,6 +85,7 @@
         kill-sentence
         kill-sexp
         log-edit-beginning-of-line
+        magit-next-line
         mark-sexp
         markdown-cycle
         mc/remove-fake-cursors
@@ -196,6 +197,7 @@
         dired-next-line
         dired-unmark-backward
         emmet-expand-line
+        end-of-buffer
         end-of-visual-line
         evil-buffer-new
         evil-emacs-state
@@ -218,6 +220,7 @@
         keyboard-quit
         mac-mouse-buffer-menu
         mac-mwheel-scroll
+        magit-section-forward
         mark-whole-buffer
         mc/mark-next-lines
         mc/mark-previous-lines
