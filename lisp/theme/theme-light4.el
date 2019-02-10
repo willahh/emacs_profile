@@ -12,21 +12,21 @@
 ;; (set-frame-font "Menlo")
 ;; (set-frame-font "Menlo")
 ;; (set-frame-font "Inconsolata")
-;; (set-frame-font "Menlo")
+;; (set-frame-font "Input")
 (custom-set-faces
  '(default ((t (:stipple nil
-                         :background "white"
-                         :foreground "black"
-                         :inverse-video nil
-                         :box nil
-                         :strike-through nil
-                         :overline nil
-                         :underline nil
+                         ;; :background "white"
+                         ;; :foreground "black"
+                         ;; :inverse-video nil
+                         ;; :box nil
+                         ;; :strike-through nil
+                         ;; :overline nil
+                         ;; :underline nil
                          :slant normal
                          :weight normal
-                         :height 140
+                         :height 150
                          :width normal
-                         :family "input")))))
+                         :family "Inconsolata")))))
 
 
 ;; Line spacing
