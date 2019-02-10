@@ -71,8 +71,8 @@
 ;; ----------------------------
 ;; (setq-default line-spacing 2) ; https://www.emacswiki.org/emacs/LineSpacing
 ;; (setq-default line-height 1.25)
-(setq-default line-spacing 1)
-(setq-default line-height 1)
+;; (setq-default line-spacing 1)
+;; (setq-default line-height 1)
 (set-face-background 'scroll-bar "#000")
 
 ;; Main background
@@ -80,8 +80,8 @@
 (set-face-attribute 'shadow nil :foreground "#ccc")
 (set-face-attribute 'line-number-current-line nil :foreground "#000")
 
-(custom-set-faces
- '(default ((t (:stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :family "Menlo")))))
+;; (custom-set-faces
+;;  '(default ((t (:stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :family "Menlo")))))
 
 ;; Text selection
 (set-face-attribute 'region nil :background "#b9d6fb")
@@ -254,7 +254,6 @@
   (set-face-attribute 'diff-context nil :background "#ffffff" :foreground "#ccc")
   (set-face-attribute 'diff-header nil :background "#ffffff" :foreground "#000")
   (set-face-attribute 'diff-refine-added nil :background "#e4fee1" :foreground "#0cba3d")
-
   (set-face-background 'git-gutter:modified "#ff7200")
   (set-face-foreground 'git-gutter:modified "#ff7200")
   (set-face-background 'git-gutter:added "#92de37")
