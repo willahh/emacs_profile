@@ -383,7 +383,7 @@
 (global-set-key (kbd "C-M-l") 'mark-sexp)
 
 ;; ---------------- Magit
-;; (global-set-key (kbd "C-x g") 'magit-status);
+(global-set-key (kbd "C-x g") 'magit-status)
 ;; (global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
 ;; (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
 

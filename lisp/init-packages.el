@@ -6,6 +6,7 @@
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/"))
 
+
 ;; (add-to-list 'package-archives
 ;;              '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 
@@ -169,24 +170,11 @@
 (add-to-list 'load-path "~/.emacs.d/site-lisp/dired-hack/dired-subtree-20160920.130")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/vkill")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/syslog-mode-2.2")
-;; (add-to-list 'load-path "~/.emacs.d/site-lisp/lsp-mode")
-;; (add-to-list 'load-path "~/.emacs.d/site-lisp/lsp-ui")
-;; (add-to-list 'load-path "~/.emacs.d/site-lisp/lsp-php")
-;; (add-to-list 'load-path "~/.emacs.d/site-lisp/tabbar")
-;; (add-to-list 'load-path "~/.emacs.d/site-lisp/magit-2.11.0")
-;; (add-to-list 'load-path "~/.emacs.d/site-lisp/magit-2.13.0")
-;; (add-to-list 'load-path "~/.emacs.d/site-lisp/auto-highlight-symbol-mode")
+
 
 ;; Add additional files
-;; (load-file "~/.emacs.d/site-lisp/ido-preview.el")
 (load-file "~/.emacs.d/site-lisp/aggressive-indent.el")
-;; (load-file "~/.emacs.d/site-lisp/tabbar/aquamacs-tools.el")
-;; (load-file "~/.emacs.d/site-lisp/tabbar/aquamacs-compat.el")
-;; (load-file "~/.emacs.d/site-lisp/tabbar/aquamacs-tabbar.el")
-;; (load-file "~/.emacs.d/site-lisp/tabbar/aquamacs-tools.el")
-;; (load-file "~/.emacs.d/site-lisp/highlight-defined.el")
-;; (load-file "~/.emacs.d/site-lisp/auto-highlight-symbol-mode/auto-highlight-symbol-mode.el")
-;; (load-file "~/.emacs.d/site-lisp/auto-highlight-symbol-mode/auto-highlight-symbol-mode-config.el")
+(load-file "~/.emacs.d/site-lisp/goto-last-change.el")
 
 
 ;; https://emacs.stackexchange.com/questions/5545/how-to-prevent-slow-down-when-an-inferior-processes-generates-long-lines
