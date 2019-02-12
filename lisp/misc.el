@@ -525,3 +525,8 @@ abort completely with `C-g'."
 
 (require 'shell-pop)
 (setq shell-pop-shell-type `ansi-term)
+
+
+(require 'goto-last-change)
+(global-set-key (kbd "C-x C--") 'goto-last-change)
+
