@@ -16,7 +16,7 @@
  '(helm-allow-mouse t)
  '(helm-source-names-using-follow
    (quote
-    ("Imenu" "Search at ~/www/project/editzone/editzone_07/src/as/zone/zoneCreation/" "Search at ~/www/project/etor_www/etor_3.17_proto_refonte/dev/module/flatplan/js/" "Search at ~/www/project/etor_www/etor_3.17/dev/module/")))
+    ("Search at ~/www/projects/clojure/reframe01/src/cljs/reframe01/" "Imenu" "Search at ~/www/project/editzone/editzone_07/src/as/zone/zoneCreation/" "Search at ~/www/project/etor_www/etor_3.17_proto_refonte/dev/module/flatplan/js/" "Search at ~/www/project/etor_www/etor_3.17/dev/module/")))
  '(ido-save-directory-list-file "~/.emacs.d/tmp/ido.last")
  '(line-spacing 1)
  '(lsp-php-server-install-dir "~/.composer/")
@@ -44,6 +44,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(default ((t (:stipple nil :slant normal :weight normal :height 150 :width normal :family "Inconsolata"))))
  '(diff-refine-added ((t (:inherit diff-added :inverse-video t))))
  '(diff-refine-removed ((t (:inherit diff-removed))))
  '(rainbow-delimiters-depth-1-face ((t (:foreground "#000000" :weight bold))))

@@ -143,7 +143,7 @@
 (global-set-key (kbd "C-z") 'whole-line-or-region-kill-region)
 (global-set-key [(control meta h)] 'backward-kill-sexp)
 (global-set-key (kbd "C-c C-k") 'kill-whole-line) ;; Override default emacs kill sentence but i don't use it
-(global-set-key (kbd "C-c C-o") 'ivy-occur)
+;; (global-set-key (kbd "C-c C-o") 'ivy-occur)
 
 ;; ---------------- Eval
 (define-key emacs-lisp-mode-map (kbd "C-c C-r") 'eval-region)
@@ -177,7 +177,7 @@
 ;; Buffer / frames / main
 ;; Frames
 (global-set-key (kbd "C-x C-b") 'ibuffer)
-(global-set-key (kbd "C-x b") 'ivy-switch-buffer)
+;; (global-set-key (kbd "C-x b") 'ivy-switch-buffer)
 
 ;; ---------------- M-n M-N
 ;; New buffer
