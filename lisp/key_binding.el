@@ -4,7 +4,7 @@
 
 ;; --------------- Main Emacs keybinding changes
 ;; (global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
-;; (global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-x RET") 'dired-jump)
 (global-set-key (kbd "M-a") 'mark-whole-buffer) ; Was backward-sentence
 ;; (define-key php-mode-map (kbd "M-a") 'mark-whole-buffer)
@@ -420,7 +420,7 @@
 (global-set-key [(meta shift o)] 'wlh/previous-window)
 
 ;; Projectile
-(global-set-key (kbd "M-p") 'helm-projectile-find-file)
+(global-set-key (kbd "M-p") 'helm-projectile-find-file-dwim)
 (define-key ggtags-navigation-map (kbd "M-p") 'helm-projectile-find-file)
 (define-key highlight-symbol-nav-mode-map (kbd "M-p") 'helm-projectile-find-file)
 (define-key ibuffer-mode-map (kbd "M-p") 'helm-projectile-find-file)
