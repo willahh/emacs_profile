@@ -4,7 +4,7 @@
 
 ;; --------------- Main Emacs keybinding changes
 ;; (global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
-(global-set-key (kbd "M-x") 'helm-M-x)
+;; (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-x RET") 'dired-jump)
 (global-set-key (kbd "M-a") 'mark-whole-buffer) ; Was backward-sentence
 ;; (define-key php-mode-map (kbd "M-a") 'mark-whole-buffer)
@@ -177,7 +177,7 @@
 ;; Buffer / frames / main
 ;; Frames
 (global-set-key (kbd "C-x C-b") 'ibuffer)
-;; (global-set-key (kbd "C-x b") 'ivy-switch-buffer)
+(global-set-key (kbd "C-x b") 'helm-buffers-list)
 
 ;; ---------------- M-n M-N
 ;; New buffer
@@ -227,11 +227,8 @@
 (define-key dired-mode-map (kbd "B") 'wlh/vscode-dired-at-point)
 
 ;; ---------------- Multi cursor binding
-;; (global-set-key (kbd "M-L") 'mc/mark-all-words-like-this) ; VS Code key binding
-;; (global-set-key (kbd "M-g") 'mc/mark-next-like-this-word) ; Almost like sublime M-d. Was go to line
 (global-set-key (kbd "Δ") 'mc/mark-next-like-this-word) ; Almost like sublime M-d. Was go to line
 (global-set-key (kbd "M-G") 'mc/mark-previous-like-this-word)
-;; (define-key paredit-mode-map (kbd "M-g") 'mc/mark-next-like-this-word) ; Was go to line
 
 ;; ---------------- Backward delete char C-h
 (global-set-key (kbd "C-h") 'backward-delete-char)
@@ -423,17 +420,13 @@
 (global-set-key [(meta shift o)] 'wlh/previous-window)
 
 ;; Projectile
-(global-set-key (kbd "M-p") 'projectile-find-file)
-(define-key ggtags-navigation-map (kbd "M-p") 'projectile-find-file)
-(define-key highlight-symbol-nav-mode-map (kbd "M-p") 'projectile-find-file)
-(define-key ibuffer-mode-map (kbd "M-p") 'projectile-find-file)
+(global-set-key (kbd "M-p") 'helm-projectile-find-file)
+(define-key ggtags-navigation-map (kbd "M-p") 'helm-projectile-find-file)
+(define-key highlight-symbol-nav-mode-map (kbd "M-p") 'helm-projectile-find-file)
+(define-key ibuffer-mode-map (kbd "M-p") 'helm-projectile-find-file)
 
 ;; Find file
 (global-set-key [(meta control shift p)] 'find-file-in-current-directory)
-
-;; Find file at point
-;; Update to use find-file-in-project-by-selected
-;; (global-set-key (kbd "C->") 'ffap)
 
 (global-set-key (kbd "C-.") 'find-file-in-project-by-selected)
 (define-key php-mode-map [(control .)] 'find-file-in-project-by-selected)

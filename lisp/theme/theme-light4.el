@@ -24,7 +24,7 @@
                          ;; :underline nil
                          :slant normal
                          :weight normal
-                         :height 150
+                         :height 140
                          :width normal
                          :family "Inconsolata")))))
 
