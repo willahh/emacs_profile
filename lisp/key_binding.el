@@ -3,8 +3,8 @@
 (global-unset-key (kbd "M-m"))
 
 ;; --------------- Main Emacs keybinding changes
-;; (global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
-(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
+;; (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-x RET") 'dired-jump)
 (global-set-key (kbd "M-a") 'mark-whole-buffer) ; Was backward-sentence
 ;; (define-key php-mode-map (kbd "M-a") 'mark-whole-buffer)
@@ -273,7 +273,8 @@
 ;; (define-key paredit-mode-map (kbd "C-c i") 'counsel-imenu)
 
 ;; mark
-(global-set-key (kbd "C-c C-x C-d") 'crux-duplicate-and-comment-current-line-or-region)
+;; (global-set-key (kbd "C-c C-x C-d") 'crux-duplicate-and-comment-current-line-or-region)
+(global-set-key (kbd "C-c C-x") 'helm-M-x)
 
 ;; Misc
 (define-key org-mode-map (kbd "C-M-i") 'org-shifttab)
