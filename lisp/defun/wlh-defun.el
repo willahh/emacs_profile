@@ -203,15 +203,22 @@ on the screen values."
   "Close tab if multiple tabs are present in window, close window
   if there is just one tab."
   (interactive)
-  (if tabbar-mode
-      (if (eql (length (tabbar-tabs tabbar-current-tabset)) 1)
-          (condition-case nil
-              (delete-window)
-            (message "ok"))
-        (tabbar-close-tab))
-    (if (< 1 (count-windows))
+
+  (if (< 1 (count-windows))
         (delete-window)
-      (delete-frame))))
+      (delete-frame))
+  
+  ;; (if ((boundp 'tabbar-mode) tabbar-mode)
+  ;;     (if (eql (length (tabbar-tabs tabbar-current-tabset)) 1)
+  ;;         (condition-case nil
+  ;;             (delete-window)
+  ;;           (message "ok"))
+  ;;       (tabbar-close-tab))
+  ;;   (if (< 1 (count-windows))
+  ;;       (delete-window)
+  ;;     (delete-frame)))
+
+  )
 
 (defun wlh/join-line ()
   (interactive)
