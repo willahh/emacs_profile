@@ -225,6 +225,7 @@
 (define-key dired-mode-map (kbd "C-c C-n") 'dired-subtree-down)
 (define-key dired-mode-map (kbd "b") 'crux-open-with)
 (define-key dired-mode-map (kbd "B") 'wlh/vscode-dired-at-point)
+(define-key dired-mode-map (kbd "Y") 'dired-ranger-paste)
 
 ;; ---------------- Multi cursor binding
 (global-set-key (kbd "Δ") 'mc/mark-next-like-this-word) ; Almost like sublime M-d. Was go to line
