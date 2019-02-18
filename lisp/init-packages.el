@@ -25,6 +25,7 @@
                      hide-lines
                      actionscript-mode
                      ag
+                     dired-subtree
                      ;; async
                      auto-complete
                      auto-yasnippet
@@ -167,9 +168,10 @@
 (add-to-list 'load-path "~/.emacs.d/site-lisp/org-mouse")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/dired-hack/dired-hacks-utils-20160527.2136")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/dired-hack/dired-ranger-20180401.2206")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/dired-hack/dired-subtree-20160920.130")
+;; (add-to-list 'load-path "~/.emacs.d/site-lisp/dired-hack/dired-subtree-20160920.130")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/vkill")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/syslog-mode-2.2")
+
 
 
 ;; Add additional files

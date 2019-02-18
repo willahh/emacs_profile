@@ -110,12 +110,12 @@
 
 (require 'yaml-mode)
 
-;; rainbow-delimiters
-(require 'rainbow-delimiters)
-;;(add-hook 'prog-mode-map #'rainbow-delimiters-mode)
-(add-hook 'eshell-mode-hook #'rainbow-delimiters-mode)
-(add-hook 'eww-mode #'rainbow-delimiters-mode)
-(add-hook 'eww-mode #'rainbow-mode)
+;; ;; rainbow-delimiters
+;; (require 'rainbow-delimiters)
+;; ;;(add-hook 'prog-mode-map #'rainbow-delimiters-mode)
+;; (add-hook 'eshell-mode-hook #'rainbow-delimiters-mode)
+;; (add-hook 'eww-mode #'rainbow-delimiters-mode)
+;; (add-hook 'eww-mode #'rainbow-mode)
 
 ;; Eshell conf
 (defun wlh/eshell-hook ()

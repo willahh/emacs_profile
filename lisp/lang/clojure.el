@@ -31,21 +31,22 @@
 (setq cider-repl-result-prefix ";; => ")
 
 ;; never ending REPL history
-(setq cider-repl-wrap-history t)
+;; (setq cider-repl-wrap-history t)
 
 ;; looong history
-(setq cider-repl-history-size 3000)
+;; (setq cider-repl-history-size 3000)
+
 
 ;; ;; cljrefactor -------------------
 ;; Disable atm
 (require 'clj-refactor)
 
 ;; ;; no auto sort
-(setq cljr-auto-sort-ns nil)
+;; (setq cljr-auto-sort-ns nil)
 
 ;; ;; do not prefer prefixes when using clean-ns
 (setq cljr-favor-prefix-notation nil)
-(setq cljr-warn-on-eval nil)
+;; (setq cljr-warn-on-eval nil)
 
 
 ;; Flycheck ---------------
@@ -72,12 +73,8 @@
 (defun wlh/clojure-mode-hook ()
   (interactive)
   (clj-refactor-mode 1)
-  ;; (hl-line-mode) ;; Disable too slow
-  ;; (auto-indent-mode) ; Package not found
-  ;; (typed-clojure-mode)
   (auto-indent-mode)
   (aggressive-indent-mode)
-  ;; (display-line-numbers-mode) ; Disable too slow
   
   ;; insert keybinding setup here
   (cljr-add-keybindings-with-prefix "C-c C-l")
@@ -102,8 +99,8 @@
             ;; (setq company-minimum-prefix-length 20)
             ;; (setq company-idle-delay 0)
 
-            (setq company-minimum-prefix-length 2)
-            (setq company-idle-delay 0.8)
+            (setq company-minimum-prefix-length 3)
+            ;; (setq company-idle-delay 0.8)
             
             (helm-cider-mode 1)
             (cider-company-enable-fuzzy-completion)
