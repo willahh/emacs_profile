@@ -16,7 +16,7 @@
 (require 'avy)
 (require 'web-mode)
 (require 'clojure-mode)
-(require 'ggtags)
+;; (require 'ggtags)
 (require 'magit)
 (require 'paredit)
 (require 'iedit)

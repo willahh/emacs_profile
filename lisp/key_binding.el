@@ -4,7 +4,6 @@
 
 ;; --------------- Main Emacs keybinding changes
 (global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
-;; (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-x RET") 'dired-jump)
 (global-set-key (kbd "M-a") 'mark-whole-buffer) ; Was backward-sentence
 ;; (define-key php-mode-map (kbd "M-a") 'mark-whole-buffer)
@@ -18,8 +17,8 @@
 (global-set-key (kbd "M-v") 'yank)
 (define-key mc/keymap (kbd "M-v") 'yank)
 (define-key helm-map (kbd "M-v") 'yank)
-;; (define-key ivy-minibuffer-map (kbd "M-v") 'yank)
-;; (define-key ivy-minibuffer-map (kbd "C-i") 'ivy-alt-done)
+(define-key ivy-minibuffer-map (kbd "M-v") 'yank)
+(define-key ivy-minibuffer-map (kbd "C-i") 'ivy-alt-done)
 (global-set-key [(meta v)] 'yank)
 
 ;; Yank pop
@@ -31,7 +30,7 @@
 
 ;; --------------- ALT key binding
 ;; Azerty keyboard
-(global-set-key (kbd "≈") 'M-x) ; Alt + x
+(global-set-key (kbd "≈") 'counsel-M-x) ; Alt + x
 (global-set-key (kbd "") 'toggle-php-flavor-mode) ; Alt + 1
 (global-set-key (kbd "∑") 'helm-ag) ; Alt + shift + s
 (global-set-key (kbd "†") 'toggle-truncate-lines) ; Alt + t
@@ -135,7 +134,7 @@
 
 ;; ivy
 ;; (define-key ivy-minibuffer-map (kbd "<escape>") 'minibuffer-keyboard-quit)
-;; (define-key ivy-minibuffer-map (kbd "C-h") 'delete-backward-char)
+(define-key ivy-minibuffer-map (kbd "C-h") 'delete-backward-char)
 
 ;; Kill
 ;; (global-set-key (kbd "C-w") 'whole-line-or-region-kill-region)
@@ -143,7 +142,7 @@
 (global-set-key (kbd "C-z") 'whole-line-or-region-kill-region)
 (global-set-key [(control meta h)] 'backward-kill-sexp)
 (global-set-key (kbd "C-c C-k") 'kill-whole-line) ;; Override default emacs kill sentence but i don't use it
-;; (global-set-key (kbd "C-c C-o") 'ivy-occur)
+(global-set-key (kbd "C-c C-o") 'ivy-occur)
 
 ;; ---------------- Eval
 (define-key emacs-lisp-mode-map (kbd "C-c C-r") 'eval-region)
@@ -177,7 +176,7 @@
 ;; Buffer / frames / main
 ;; Frames
 (global-set-key (kbd "C-x C-b") 'ibuffer)
-(global-set-key (kbd "C-x b") 'helm-buffers-list)
+(global-set-key (kbd "C-x b") 'ivy-switch-buffer)
 
 ;; ---------------- M-n M-N
 ;; New buffer
@@ -225,11 +224,13 @@
 (define-key dired-mode-map (kbd "C-c C-n") 'dired-subtree-down)
 (define-key dired-mode-map (kbd "b") 'crux-open-with)
 (define-key dired-mode-map (kbd "B") 'wlh/vscode-dired-at-point)
-(define-key dired-mode-map (kbd "Y") 'dired-ranger-paste)
 
 ;; ---------------- Multi cursor binding
+;; (global-set-key (kbd "M-L") 'mc/mark-all-words-like-this) ; VS Code key binding
+;; (global-set-key (kbd "M-g") 'mc/mark-next-like-this-word) ; Almost like sublime M-d. Was go to line
 (global-set-key (kbd "Δ") 'mc/mark-next-like-this-word) ; Almost like sublime M-d. Was go to line
 (global-set-key (kbd "M-G") 'mc/mark-previous-like-this-word)
+;; (define-key paredit-mode-map (kbd "M-g") 'mc/mark-next-like-this-word) ; Was go to line
 
 ;; ---------------- Backward delete char C-h
 (global-set-key (kbd "C-h") 'backward-delete-char)
@@ -255,7 +256,7 @@
 (define-key paredit-mode-map (kbd "<delete>") 'wlh/delete-backspace)
 
 ;; counsel-find-file
-;; (global-set-key (kbd "C-x C-f") 'counsel-find-file)
+(global-set-key (kbd "C-x C-f") 'counsel-find-file)
 
 ;; Diff hl next / prev
 (global-set-key (kbd "C-c C-n") 'diff-hl-next-hunk)
@@ -269,12 +270,11 @@
 ;; helm-imenu - M-r key binding come from Sublime M-r go to symbol 
 (global-set-key (kbd "M-r") 'helm-imenu)
 (define-key paredit-mode-map (kbd "M-r") 'helm-imenu)
-;; (global-set-key (kbd "C-c i") 'counsel-imenu)
-;; (define-key paredit-mode-map (kbd "C-c i") 'counsel-imenu)
+(global-set-key (kbd "C-c i") 'counsel-imenu)
+(define-key paredit-mode-map (kbd "C-c i") 'counsel-imenu)
 
 ;; mark
-;; (global-set-key (kbd "C-c C-x C-d") 'crux-duplicate-and-comment-current-line-or-region)
-(global-set-key (kbd "C-c C-x") 'helm-M-x)
+(global-set-key (kbd "C-c C-x C-d") 'crux-duplicate-and-comment-current-line-or-region)
 
 ;; Misc
 (define-key org-mode-map (kbd "C-M-i") 'org-shifttab)
@@ -417,18 +417,22 @@
 ;; other Window
 (global-set-key (kbd "M-o") 'other-window)
 (define-key diff-mode-map (kbd "M-o") 'other-window)
-(define-key ggtags-navigation-map (kbd "M-o") 'other-window) ; Need to override ggtags map
+;; (define-key ggtags-navigation-map (kbd "M-o") 'other-window) ; Need to override ggtags map
 (define-key ibuffer-mode-map (kbd "M-o") 'other-window)
 (global-set-key [(meta shift o)] 'wlh/previous-window)
 
 ;; Projectile
-(global-set-key (kbd "M-p") 'helm-projectile-find-file-dwim)
-(define-key ggtags-navigation-map (kbd "M-p") 'helm-projectile-find-file)
-(define-key highlight-symbol-nav-mode-map (kbd "M-p") 'helm-projectile-find-file)
-(define-key ibuffer-mode-map (kbd "M-p") 'helm-projectile-find-file)
+(global-set-key (kbd "M-p") 'projectile-find-file)
+;; (define-key ggtags-navigation-map (kbd "M-p") 'projectile-find-file)
+(define-key highlight-symbol-nav-mode-map (kbd "M-p") 'projectile-find-file)
+(define-key ibuffer-mode-map (kbd "M-p") 'projectile-find-file)
 
 ;; Find file
 (global-set-key [(meta control shift p)] 'find-file-in-current-directory)
+
+;; Find file at point
+;; Update to use find-file-in-project-by-selected
+;; (global-set-key (kbd "C->") 'ffap)
 
 (global-set-key (kbd "C-.") 'find-file-in-project-by-selected)
 (define-key php-mode-map [(control .)] 'find-file-in-project-by-selected)
@@ -461,12 +465,11 @@
 (global-set-key (kbd "C-ù") 'previous-buffer)
 (global-set-key (kbd "C-M-ù") 'winner-undo)
 ;; (global-set-key (kbd "M-t") 'tabbar-new-tab)
-;; (global-set-key (kbd "™") 'tabbar-close-other-tabs) ; ALT+SHIFT+t
+(global-set-key (kbd "™") 'tabbar-close-other-tabs) ; ALT+SHIFT+t
 
 ;; Recentf
-;; (global-set-key (kbd "C-c f") 'counsel-recentf) 
-;; (global-set-key (kbd "C-c C-f") 'counsel-recentf) 
-(global-set-key (kbd "C-c f") 'helm-recentf)
+(global-set-key (kbd "C-c f") 'counsel-recentf) 
+(global-set-key (kbd "C-c C-f") 'counsel-recentf) 
 
 ;; -------- org
 (define-key org-mode-map (kbd "C-c C-b") 'org-backward-heading-same-level)
@@ -495,11 +498,10 @@
 (global-set-key (kbd "M-P") 'highlight-symbol-prev)
 (define-key slime-mode-map (kbd "M-P") 'highlight-symbol-prev)
 (define-key highlight-symbol-nav-mode-map (kbd "M-P") 'highlight-symbol-prev)
-(define-key ggtags-navigation-map (kbd "M-P") 'highlight-symbol-prev)
+;; (define-key ggtags-navigation-map (kbd "M-P") 'highlight-symbol-prev)
 
 ;; Scroll commands
 ;; (global-set-key (kbd "C-x v U") 'wlh/svn-up-recursive)
-(global-set-key (kbd "C-x r b") 'helm-bookmarks)
 ;; (global-set-key (kbd "s-a") 'mark-whole-buffer)
 (global-set-key (kbd "C-c C-s") 'helm-swoop)
 (define-key web-mode-map (kbd "C-c C-s") 'swiper)
