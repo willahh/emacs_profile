@@ -99,8 +99,12 @@
             ;; (setq company-minimum-prefix-length 20)
             ;; (setq company-idle-delay 0)
 
-            (setq company-minimum-prefix-length 3)
+            ;; (setq company-minimum-prefix-length 3)
             ;; (setq company-idle-delay 0.8)
+
+            (setq company-minimum-prefix-length 0)
+            (setq company-idle-delay 30)
+            
             
             (helm-cider-mode 1)
             (cider-company-enable-fuzzy-completion)
