@@ -172,19 +172,14 @@
 (add-to-list 'load-path "~/.emacs.d/site-lisp/vkill")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/syslog-mode-2.2")
 
-
-
 ;; Add additional files
 (load-file "~/.emacs.d/site-lisp/aggressive-indent.el")
 (load-file "~/.emacs.d/site-lisp/goto-last-change.el")
-
 
 ;; https://emacs.stackexchange.com/questions/5545/how-to-prevent-slow-down-when-an-inferior-processes-generates-long-lines
 (load-file "~/.emacs.d/site-lisp/so-long.el")
 (when (require 'so-long nil :noerror)
   (so-long-enable))
-
-;; (load-file "~/.emacs.d/site-lisp/intellij-theme.el")
 
 ;; fetch the list of packages available 
 (unless package-archive-contents
