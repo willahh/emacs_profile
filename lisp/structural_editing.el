@@ -48,17 +48,17 @@
 
 
 ;; Autopair ---------------------------
-(require 'autopair)
+;; (require 'autopair)
 
-(add-hook 'js2-mode-hook #'autopair-mode)
-(add-hook 'js-mode-hook #'autopair-mode)
-(add-hook 'web-mode-hook #'autopair-mode)
-(add-hook 'php-mode-hook #'autopair-mode)
-(add-hook 'css-mode-hook #'autopair-mode)
-(add-hook 'scss-mode-hook #'autopair-mode)
-(add-hook 'org-mode #'autopair-mode)
-;; (add-hook 'clojure-mode-hook #'autopair-mode) ;; No need
-(add-hook 'clojure-mode-hook #'autopair-mode) ;; Needed: for newline-and-indent
+;; (add-hook 'js2-mode-hook #'autopair-mode)
+;; (add-hook 'js-mode-hook #'autopair-mode)
+;; (add-hook 'web-mode-hook #'autopair-mode)
+;; (add-hook 'php-mode-hook #'autopair-mode)
+;; (add-hook 'css-mode-hook #'autopair-mode)
+;; (add-hook 'scss-mode-hook #'autopair-mode)
+;; (add-hook 'org-mode #'autopair-mode)
+;; ;; (add-hook 'clojure-mode-hook #'autopair-mode) ;; No need
+;; (add-hook 'clojure-mode-hook #'autopair-mode) ;; Needed: for newline-and-indent
 
 ;; Smartparens ---------------------------
 (require 'smartparens-config)
