@@ -1,15 +1,14 @@
-;; evil mode
-(require 'evil)
-(require 'evil-surround)
-(require 'evil-org)
-(require 'evil-matchit)
-(require 'evil-snipe)
-;; (require 'evil-easymotion)
-(require 'evil-leader)
-(require 'evil-nerd-commenter)
+(use-package evil :ensure t)
+(use-package evil-surround :ensure t)
+(use-package evil-org :ensure t)
+(use-package evil-matchit )
+(use-package evil-snipe :ensure t)
+(use-package evil-leader :ensure t)
+(use-package evil-nerd-commenter)
+(use-package evil-magit :ensure t)
 
-;; Enable evil mode
 (evil-mode 1)
+(evil-normal-state)
 
 ;; Use the same behaviour as in vim when move trough sentences
 (setf sentence-end-double-space nil)
@@ -39,3 +38,4 @@
 (setq evil-operator-state-cursor '("red" hollow))
 (setq evil-operator-state-cursor '("red" hollow))
 (setq evil-replace-state-cursor '("red" bar))
+

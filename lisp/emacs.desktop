@@ -1,0 +1,331 @@
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Wed Mar 27 22:04:23 2019
+;; Desktop file format version 208
+;; Emacs version 26.1
+
+;; Global section:
+(setq desktop-saved-frameset [frameset 1 (23707 58711 82038 0) (desktop . "208") "willahh@willahh.local" nil nil ((((minibuffer . t) (undecorated) (override-redirect) (font-backend mac-ct) (font . "-*-Inconsolata-normal-normal-normal-*-15-*-*-*-m-0-iso10646-1") (border-width . 0) (internal-border-width . 0) (right-divider-width . 10) (bottom-divider-width . 10) (vertical-scroll-bars . right) (horizontal-scroll-bars) (foreground-color . "#000000") (background-color . "#ffffff") (mouse-color . "mac:textColor") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 12) (right-fringe . 0) (no-special-glyphs) (alpha) (scroll-bar-foreground) (scroll-bar-background . "#fff") (tool-bar-lines . 0) (title) (inhibit-double-buffering) (menu-bar-lines . 1) (icon-type) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 15) (scroll-bar-height . 0) (no-focus-on-map) (no-accept-focus) (fullscreen) (visibility . t) (skip-taskbar) (z-group) (display-type . color) (background-mode . light) (cursor-color . "#ff00d2") (environment) (frameset--id . "25BD-644B-B5B6-BC55") (frameset--mini t . t) (frameset--text-pixel-width . 1413) (frameset--text-pixel-height . 855) (height . 53) (width . 176) (modeline . t) (unsplittable) (left . 0) (top . 23) (icon-name) (display . "Mac") (explicit-name) (tool-bar-position . top)) ((min-height . 8) (min-width . 20) (min-height-ignore . 6) (min-width-ignore . 13) (min-height-safe . 2) (min-width-safe . 4) (min-pixel-height . 128) (min-pixel-width . 160) (min-pixel-height-ignore . 96) (min-pixel-width-ignore . 104) (min-pixel-height-safe . 32) (min-pixel-width-safe . 32)) hc (pixel-width . 1440) (pixel-height . 839) (total-width . 180) (total-height . 52) (normal-height . 1.0) (normal-width . 1.0) (combination-limit) (vc (pixel-width . 720) (pixel-height . 839) (total-width . 90) (total-height . 52) (normal-height . 1.0) (normal-width . 0.5) (combination-limit) (leaf (pixel-width . 720) (pixel-height . 423) (total-width . 90) (total-height . 26) (normal-height . 0.5) (normal-width . 1.0) (buffer "evil.el" (selected . t) (hscroll . 0) (fringes 12 0 nil) (margins nil) (scroll-bars nil 2 t nil 0 nil) (vscroll . 0) (dedicated) (point . 1488) (start . 1057))) (leaf (last . t) (pixel-width . 720) (pixel-height . 416) (total-width . 90) (total-height . 26) (normal-height . 0.5) (normal-width . 1.0) (buffer "*Messages*" (selected) (hscroll . 0) (fringes 12 0 nil) (margins nil) (scroll-bars nil 2 t nil 0 nil) (vscroll . 0) (dedicated) (point . 2645) (start . 1944)))) (leaf (last . t) (pixel-width . 720) (pixel-height . 839) (total-width . 90) (total-height . 52) (normal-height . 1.0) (normal-width . 0.5) (buffer "card_list.cljs" (selected) (hscroll . 0) (fringes 12 0 nil) (margins nil) (scroll-bars nil 2 t nil 0 nil) (vscroll . 0) (dedicated) (point . 1) (start . 1)))))])
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring '("evil" "match" "evil" "card" "re-frame" "s/" "deftest" "async" "restart" "ref" "#object[org" "tream" "tr" "result" "cider l" "comment-body"))
+(setq regexp-search-ring '("emacs" "evil" "require*+" "rum" "rum*" "delete" "\\(helm-\\).*?\\(ag\\)" "m-x" "c-x" "n" "\\(prog\\).*?\\(hook\\)" "\\(wlh\\).*?\\(svn\\)" "update" "dis" "-c" "\\(dired\\).*?\\(map\\)"))
+(setq register-alist nil)
+(setq file-name-history '("/Users/willahh/.emacs.d/lisp" "/Users/willahh/.emacs.d_spacemacs/" "/Users/willahh/.emacs.d_spacemacs" "/Users/willahh/" "/Users/willahh/.emacs.d/lisp/" "/Users/willahh/.spacemacs" "/Users/willahh/.emacs.d/lisp/require.el" "/Users/willahh/.emacs.d/lisp/evil.el" "/Users/willahh/www/projects/clojure/" "/Users/willahh/www/projects/clojure/re-partee/" "/Users/willahh/www" "/Users/willahh/www/projects/clojure/re-partee/src/re_partee/views/" "/Users/willahh/www/projects/clojure/re-partee/src/re_partee/views/filter_list.cljs" "/Users/willahh/www/projects/" "/Users/willahh/www/projects/clojure/re-partee/src/re_partee/views/card_list.cljs" "/Users/willahh/www/projects/clojure/re-partee/test/re_partee/views/card_test.cljs" "/Users/willahh/www/projects/clojure/re-partee/src/re_partee/views/card.cljs" "/Users/willahh/www/projects/clojure/async-to-async/src/async_to_async/core.cljs" "/Users/willahh/www/projects/clojure/async-to-async/src/async_to_async" "/Users/willahh/www/projects/clojure/async-to-async/resources/public/cljs-out/dev/promesa/" "/Users/willahh/.m2/repository/org/clojure/core.async/0.4.490/" "/Users/willahh/www/projects/clojure/scrap4/src/scrap4" "/Users/willahh/.m2/repository/clojure-soup/clojure-soup/0.0.1/" "/Users/willahh/www/projects/clojure/scrap4/src/scrap4/core3.clj" "/Users/willahh/www/projects/clojure/scrap4/src/scrap4/core2.clj" "/Users/willahh/.m2/repository/enlive/enlive/1.1.6/" "/Users/willahh/www/projects/clojure/datomic01/src/datomic01/admin" "/Users/willahh/www/projects/clojure/datomic01/src/datomic01/front/ui" "/Users/willahh/www/projects/clojure/datomic01/src/datomic01/core" "/Users/willahh/www/projects/clojure/datomic01/src/datomic01/back" "/Users/willahh/www/projects/clojure/datomic01/src/datomic01/service" "/Users/willahh/www/projects/clojure/datomic01/src/datomic01/api" "/Users/willahh/www/projects/clojure/datomic01/src/datomic01/front" "/Users/willahh/www/projects/clojure/datomic01/src/datomic01/sample.clj" "/Users/willahh/www/projects/clojure/datomic01/" "/Users/willahh/www/projects_goaland/easy3p_3.8/dev/module/" "/Users/willahh/www/projects_goaland/easy3p_3.8/dev/" "/Users/willahh/www/projects_goaland/" "/Users/willahh/www/projects/clojure/datomic01/resources/media_schema.edn" "/Users/willahh/www/projects/clojure/datomic01/resources/keyword_schema.edn" "/Users/willahh/www/projects/clojure/datomic01/src/datomic01/resources/data/user.edn" "/Users/willahh/www/" "/Users/willahh/www/projects/clojure/datomic01/src/datomic01/database.clj" "/Users/willahh/www/projects/clojure/datomic01/src/datomic01/db.clj" "/Users/willahh/www/projects/clojure/datomic01/src/datomic01/model/user_dao.clj" "/Users/willahh/www/projects/clojure/datomic01/src/datomic01/model/user_model.clj" "/Users/willahh/www/projects/clojure/datomic01/src/datomic01/model/user.clj" "/Users/willahh/Downloads/a_ranger/c" "/Users/willahh/Downloads/a_ranger/b" "/Users/willahh/Downloads/" "/Users/willahh/www/projects/clojure/shadowcljs/datalog-schema/" "/Users/willahh/.emacs.d/" "/Users/willahh/www/server/" "/Users/willahh/.m2/repository/io/replikativ/datahike/0.1.2/" "/Users/willahh/www/projects/clojure/datum/" "/Users/willahh/.emacs.d/site-lisp/dired-hacks-utils-20160527.1436_" "/Users/willahh/.emacs.d/site-lisp/dired-ranger-20160924.335_" "/Users/willahh/.emacs.d/lisp/key_binding.el" "/Users/willahh/.emacs.d/lisp/misc.el" "/Users/willahh/.emacs.d/lisp/navigation.el" "~/www/projects/clojure/datum/src/datum/domain/group_schema.clj" "/Users/willahh/www/projects/clojure/datum/src/datum/domain/user_html.clj" "/Users/willahh/www/projects/clojure/datum/src/datum/page/main.clj" "/Users/willahh/www/projects/clojure/datum/src/datum/page/user/list.clj" "~/www/projects/clojure/datum/src/datum/page/user" "~/www/projects/clojure/datum/src/datum/page" "/Users/willahh/www/projects/clojure/datum/src/datum/route.clj" "~/www/projects/clojure/datum/src/datum/core.clj" "~/www/projects/clojure/datum2" "/Users/willahh/www/projects/clojure/datum/resources/data/profile.edn" "~/www/projects/clojure/datum/dev.cljs.edn" "~/www/projects/clojure/datum/src/datum/" "~/.emacs.d/tmp/" "~/www/projects/clojure/datum/target" "~/www/projects/clojure/datum/" "~/www/projects/clojure/datahike01/resources/data/group_user.edn" "/Users/willahh/www/projects/clojure/datum/resources/data/company.edn" "/Users/willahh/www/projects/clojure/datum/src/datum/test_facts.clj" "/Users/willahh/www/projects/clojure/datahike01/resources/data/user.edn" "~/www/projects/clojure/datum/resources/data" "/Users/willahh/www/projects/clojure/datum/src/datum/domain/user_dao.clj" "~/www/projects/clojure/datum/src/datum/domain/user_schema.clj" "/Users/willahh/www/projects/clojure/datum/src/datum/domain/user/schema.clj" "~/www/projects/clojure/datum/src/datum/domain/user" "~/www/projects/clojure/datum/src/datum/domain" "/Users/willahh/www/projects/clojure/datum/test/datum/datomic/media.clj" "~/www/projects/clojure/datum/test/datum/datomic" "~/www/projects/clojure/datum/src/datum/server.clj" "/Users/willahh/www/projects/clojure/datum/src/datum/route.clj" "~/www/projects/clojure/datum" "/Users/willahh/www/projects/clojure/shadowcljs/duct/foobar/resources/foobar/handler/example/example2.html" "~/www/projects/clojure/shadowcljs/duct" "~/www/projects/clojure/sqlpatcher/" "~/www/projects/clojure/datahike01/src/datahike01/test03.clj" "/Users/willahh/www/projects/clojure/sqlpatcher/src/sqlpatcher/route.cljs" "~/www/projects/clojure/sqlpatcher/src/sqlpatcher/route.clj" "~/www/projects/clojure/sqlpatcher/src/sqlpatcher/api.clj" "~/www/projects/clojure/sqlpatcher/src/sqlpatcher/route.clj" "~/www/projects/clojure/sqlpatcher/src/sqlpatcher/module/list/view.cljs" "/Users/willahh/www/projects/clojure/sqlpatcher/src/sqlpatcher/state.cljs" "~/www/projects/clojure/sqlpatcher/src/sqlpatcher/action.cljs"))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 208
+  "/Users/willahh/.emacs.d/lisp/evil.el"
+  "evil.el"
+  'emacs-lisp-mode
+  '(eldoc-mode diff-hl-mode projectile-mode which-key-mode paredit-mode global-auto-revert-mode magit-file-mode undo-tree-mode ivy-mode flx-ido-mode override-global-mode editorconfig-mode company-mode yas-minor-mode)
+  1488
+  '(1488 nil)
+  nil
+  nil
+  '((tab-width . 4) (indent-tabs-mode) (buffer-display-time 23706 35655 488923 0) (buffer-file-coding-system . prefer-utf-8-unix) (overwrite-mode))
+  '((mark-ring (303 1488))))
+
+(desktop-create-buffer 208
+  "/Users/willahh/www/projects/clojure/re-partee/src/re_partee/views/card_list.cljs"
+  "card_list.cljs"
+  'clojurescript-mode
+  '(aggressive-indent-mode diff-hl-mode projectile-mode which-key-mode paredit-mode global-auto-revert-mode magit-file-mode undo-tree-mode ivy-mode flx-ido-mode autopair-mode override-global-mode editorconfig-mode yas-minor-mode clj-refactor-mode auto-indent-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((tab-width . 4) (indent-tabs-mode) (buffer-display-time 23706 35655 488924 0) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  "views"
+  'dired-mode
+  '(projectile-mode which-key-mode auto-revert-mode global-auto-revert-mode ivy-mode flx-ido-mode override-global-mode editorconfig-mode diff-hl-dired-mode)
+  431
+  '(nil nil)
+  t
+  '("/Users/willahh/www/projects/clojure/re-partee/src/re_partee/views/")
+  '((buffer-display-time 23706 35637 571479 0) (overwrite-mode))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/Users/willahh/www/projects/clojure/re-partee/src/re_partee/views/filter_list.cljs"
+  "filter_list.cljs"
+  'clojurescript-mode
+  '(aggressive-indent-mode diff-hl-mode projectile-mode which-key-mode paredit-mode global-auto-revert-mode magit-file-mode undo-tree-mode ivy-mode flx-ido-mode autopair-mode override-global-mode editorconfig-mode yas-minor-mode clj-refactor-mode auto-indent-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((tab-width . 4) (indent-tabs-mode) (buffer-display-time 23706 35627 231764 0) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/Users/willahh/.emacs.d/lisp/org.el"
+  "org.el"
+  'emacs-lisp-mode
+  '(eldoc-mode diff-hl-mode projectile-mode which-key-mode paredit-mode global-auto-revert-mode magit-file-mode undo-tree-mode ivy-mode flx-ido-mode override-global-mode editorconfig-mode company-mode yas-minor-mode)
+  2229
+  '(nil nil)
+  nil
+  nil
+  '((tab-width . 4) (indent-tabs-mode) (buffer-display-time 23706 35578 139012 0) (buffer-file-coding-system . prefer-utf-8-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/Users/willahh/.emacs.d/lisp/yas.el"
+  "yas.el"
+  'emacs-lisp-mode
+  '(eldoc-mode diff-hl-mode projectile-mode which-key-mode paredit-mode global-auto-revert-mode magit-file-mode undo-tree-mode ivy-mode flx-ido-mode override-global-mode editorconfig-mode company-mode yas-minor-mode)
+  474
+  '(nil nil)
+  nil
+  nil
+  '((tab-width . 4) (indent-tabs-mode) (buffer-display-time 23706 35568 308755 0) (buffer-file-coding-system . prefer-utf-8-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/Users/willahh/.emacs.d/lisp/misc.el"
+  "misc.el"
+  'emacs-lisp-mode
+  '(eldoc-mode diff-hl-mode projectile-mode which-key-mode paredit-mode global-auto-revert-mode magit-file-mode undo-tree-mode ivy-mode flx-ido-mode override-global-mode editorconfig-mode company-mode yas-minor-mode)
+  9546
+  '(9213 nil)
+  nil
+  nil
+  '((tab-width . 4) (indent-tabs-mode) (buffer-display-time 23706 35505 619455 0) (buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (9434))))
+
+(desktop-create-buffer 208
+  nil
+  "lisp"
+  'dired-mode
+  '(projectile-mode which-key-mode auto-revert-mode global-auto-revert-mode ivy-mode flx-ido-mode override-global-mode editorconfig-mode diff-hl-dired-mode)
+  789
+  '(1 nil)
+  t
+  '("/Users/willahh/.emacs.d/lisp/")
+  '((buffer-display-time 23706 35434 474231 0) (overwrite-mode))
+  '((mark-ring (1 1))))
+
+(desktop-create-buffer 208
+  "/Users/willahh/.emacs.d/lisp/key_binding.el"
+  "key_binding.el"
+  'emacs-lisp-mode
+  '(eldoc-mode diff-hl-mode projectile-mode which-key-mode paredit-mode global-auto-revert-mode magit-file-mode undo-tree-mode ivy-mode flx-ido-mode override-global-mode editorconfig-mode company-mode yas-minor-mode)
+  18123
+  '(nil nil)
+  nil
+  nil
+  '((tab-width . 4) (indent-tabs-mode) (buffer-display-time 23706 35413 77304 0) (buffer-file-coding-system . utf-8-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/Users/willahh/.emacs.d/lisp/vc.el"
+  "vc.el"
+  'emacs-lisp-mode
+  '(eldoc-mode diff-hl-mode projectile-mode which-key-mode paredit-mode global-auto-revert-mode magit-file-mode undo-tree-mode ivy-mode flx-ido-mode override-global-mode editorconfig-mode company-mode yas-minor-mode)
+  2975
+  '(nil nil)
+  nil
+  nil
+  '((tab-width . 4) (indent-tabs-mode) (buffer-display-time 23706 35410 16517 0) (buffer-file-coding-system . prefer-utf-8-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/Users/willahh/.emacs.d/lisp/dired.el"
+  "dired.el"
+  'emacs-lisp-mode
+  '(eldoc-mode diff-hl-mode projectile-mode which-key-mode paredit-mode global-auto-revert-mode magit-file-mode undo-tree-mode ivy-mode flx-ido-mode override-global-mode editorconfig-mode company-mode yas-minor-mode)
+  213
+  '(nil nil)
+  nil
+  nil
+  '((tab-width . 4) (indent-tabs-mode) (buffer-display-time 23706 35394 29158 0) (buffer-file-coding-system . prefer-utf-8-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/Users/willahh/.emacs.d/lisp/defun.el"
+  "defun.el"
+  'emacs-lisp-mode
+  '(eldoc-mode diff-hl-mode projectile-mode which-key-mode paredit-mode global-auto-revert-mode magit-file-mode undo-tree-mode ivy-mode flx-ido-mode override-global-mode editorconfig-mode company-mode yas-minor-mode)
+  8606
+  '(nil nil)
+  nil
+  nil
+  '((tab-width . 4) (indent-tabs-mode) (buffer-display-time 23706 35370 380336 0) (buffer-file-coding-system . prefer-utf-8-unix) (overwrite-mode))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/Users/willahh/.emacs.d/lisp/base.el"
+  "base.el"
+  'emacs-lisp-mode
+  '(eldoc-mode diff-hl-mode projectile-mode which-key-mode paredit-mode global-auto-revert-mode magit-file-mode undo-tree-mode ivy-mode flx-ido-mode override-global-mode editorconfig-mode company-mode yas-minor-mode)
+  7753
+  '(nil nil)
+  nil
+  nil
+  '((tab-width . 4) (indent-tabs-mode) (buffer-display-time 23706 35321 519220 0) (buffer-file-coding-system . utf-8-unix) (overwrite-mode))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/Users/willahh/.emacs.d/lisp/alist.el"
+  "alist.el"
+  'emacs-lisp-mode
+  '(eldoc-mode diff-hl-mode projectile-mode which-key-mode paredit-mode global-auto-revert-mode magit-file-mode undo-tree-mode ivy-mode flx-ido-mode override-global-mode editorconfig-mode company-mode yas-minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((tab-width . 4) (indent-tabs-mode) (buffer-display-time 23706 35302 757072 0) (buffer-file-coding-system . prefer-utf-8-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  "lang"
+  'dired-mode
+  '(projectile-mode which-key-mode auto-revert-mode global-auto-revert-mode ivy-mode flx-ido-mode override-global-mode editorconfig-mode diff-hl-dired-mode)
+  677
+  '(nil nil)
+  t
+  '("/Users/willahh/.emacs.d/lisp/lang/")
+  '((buffer-display-time 23706 35261 814370 0) (overwrite-mode))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/Users/willahh/.emacs.d/lisp/lang/prog.el"
+  "prog.el"
+  'emacs-lisp-mode
+  '(eldoc-mode diff-hl-mode projectile-mode which-key-mode paredit-mode global-auto-revert-mode magit-file-mode undo-tree-mode ivy-mode flx-ido-mode override-global-mode editorconfig-mode company-mode yas-minor-mode)
+  169
+  '(nil nil)
+  nil
+  nil
+  '((tab-width . 4) (indent-tabs-mode) (buffer-display-time 23706 35259 395606 0) (buffer-file-coding-system . prefer-utf-8-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  ".emacs.d"
+  'dired-mode
+  '(projectile-mode which-key-mode auto-revert-mode global-auto-revert-mode ivy-mode flx-ido-mode override-global-mode editorconfig-mode diff-hl-dired-mode)
+  546
+  '(1 nil)
+  t
+  '("/Users/willahh/.emacs.d/")
+  '((buffer-display-time 23706 35240 155567 0) (overwrite-mode))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  "willahh"
+  'dired-mode
+  '(projectile-mode which-key-mode auto-revert-mode global-auto-revert-mode ivy-mode flx-ido-mode override-global-mode editorconfig-mode diff-hl-dired-mode)
+  1468
+  '(1 nil)
+  t
+  '("/Users/willahh/")
+  '((buffer-display-time 23706 34861 920187 0) (overwrite-mode))
+  '((mark-ring (1))))
+
+(desktop-create-buffer 208
+  "/Users/willahh/.lispworks-config/6.1/Editor/.values"
+  ".values"
+  'fundamental-mode
+  '(diff-hl-mode projectile-mode which-key-mode global-auto-revert-mode undo-tree-mode ivy-mode flx-ido-mode override-global-mode editorconfig-mode)
+  2
+  '(nil nil)
+  nil
+  nil
+  '((tab-width . 4) (indent-tabs-mode) (buffer-display-time 23706 34873 174502 0) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  "Editor"
+  'dired-mode
+  '(projectile-mode which-key-mode auto-revert-mode global-auto-revert-mode ivy-mode flx-ido-mode override-global-mode editorconfig-mode diff-hl-dired-mode)
+  337
+  '(nil nil)
+  t
+  '("/Users/willahh/.lispworks-config/6.1/Editor/")
+  '((buffer-display-time 23706 34873 103969 0) (overwrite-mode))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  "6.1"
+  'dired-mode
+  '(projectile-mode which-key-mode auto-revert-mode global-auto-revert-mode ivy-mode flx-ido-mode override-global-mode editorconfig-mode diff-hl-dired-mode)
+  241
+  '(nil nil)
+  t
+  '("/Users/willahh/.lispworks-config/6.1/")
+  '((buffer-display-time 23706 34873 62042 0) (overwrite-mode))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  ".lispworks-config"
+  'dired-mode
+  '(projectile-mode which-key-mode auto-revert-mode global-auto-revert-mode ivy-mode flx-ido-mode override-global-mode editorconfig-mode diff-hl-dired-mode)
+  246
+  '(nil nil)
+  t
+  '("/Users/willahh/.lispworks-config/")
+  '((buffer-display-time 23706 34872 824871 0) (overwrite-mode))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/Users/willahh/.zshrc"
+  ".zshrc"
+  'sh-mode
+  '(diff-hl-mode projectile-mode which-key-mode global-auto-revert-mode undo-tree-mode ivy-mode flx-ido-mode override-global-mode editorconfig-mode yas-minor-mode)
+  3983
+  '(3844 nil)
+  nil
+  nil
+  '((tab-width . 4) (indent-tabs-mode) (buffer-display-time 23706 34821 667506 0) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (3835 3750 3983))))
+
+(desktop-create-buffer 208
+  "/Users/willahh/.emacs.d_spacemacs/init.el"
+  "init.el"
+  'emacs-lisp-mode
+  '(eldoc-mode diff-hl-mode projectile-mode which-key-mode paredit-mode global-auto-revert-mode magit-file-mode undo-tree-mode ivy-mode flx-ido-mode override-global-mode editorconfig-mode company-mode yas-minor-mode)
+  547
+  '(548 nil)
+  nil
+  nil
+  '((tab-width . 4) (indent-tabs-mode) (buffer-display-time 23706 34826 906938 0) (buffer-file-coding-system . prefer-utf-8-unix))
+  '((mark-ring (360))))
+
+(desktop-create-buffer 208
+  nil
+  ".emacs.d_spacemacs"
+  'dired-mode
+  '(projectile-mode which-key-mode auto-revert-mode global-auto-revert-mode ivy-mode flx-ido-mode override-global-mode editorconfig-mode diff-hl-dired-mode)
+  1518
+  '(nil nil)
+  t
+  '("/Users/willahh/.emacs.d_spacemacs/")
+  '((buffer-display-time 23706 34825 50738 0) (overwrite-mode))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/Users/willahh/.emacs.d/lisp/completion.el"
+  "completion.el"
+  'emacs-lisp-mode
+  '(eldoc-mode diff-hl-mode projectile-mode which-key-mode paredit-mode global-auto-revert-mode magit-file-mode undo-tree-mode ivy-mode flx-ido-mode override-global-mode editorconfig-mode company-mode yas-minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((tab-width . 4) (indent-tabs-mode) (buffer-display-time 23706 35351 597153 0) (buffer-file-coding-system . prefer-utf-8-unix))
+  '((mark-ring nil)))
+

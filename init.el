@@ -22,6 +22,7 @@
 (load-file "~/.emacs.d/lisp/completion.el")
 (load-file "~/.emacs.d/lisp/yas.el")
 (load-file "~/.emacs.d/lisp/vc.el")
+;; (load-file "~/.emacs.d/lisp/evil.el")
 (load-file "~/.emacs.d/lisp/search.el")
 (load-file "~/.emacs.d/lisp/syntax_checker.el")
 (load-file "~/.emacs.d/lisp/key_binding.el")

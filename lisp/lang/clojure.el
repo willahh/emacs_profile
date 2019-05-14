@@ -13,22 +13,24 @@
 (setq cider-history-file "~/.emacs.d/nrepl-history")
 
 ;; Don't prompt when go to symbol
-(setq cider-prompt-for-symbol nil)
+;; (setq cider-prompt-for-symbol nil)
+
+(cider-repl-toggle-pretty-printing)
 
 ;; nicer font lock in REPL
-(setq cider-repl-use-clojure-font-lock t)
+;; (setq cider-repl-use-clojure-font-lock t)
 
 ;; Prevent the auto-display of the REPL buffer in a separate window after connection is established
 (setq cider-repl-pop-to-buffer-on-connect nil)
 
 ;; Pretty print results in repl
-(setq cider-repl-use-pretty-printing t)
+;; (setq cider-repl-use-pretty-printing t)
 
 ;; Don't prompt for symbols
 ;; (setq cider-prompt-for-symbol nil)
 
 ;; result prefix for the REPL
-(setq cider-repl-result-prefix ";; => ")
+;; (setq cider-repl-result-prefix ";; => ")
 
 ;; never ending REPL history
 ;; (setq cider-repl-wrap-history t)
@@ -81,6 +83,9 @@
   (define-key clojure-mode-map (kbd "RET") 'newline-and-indent)
   (define-key clojure-mode-map (kbd "C-c C-x C-;") 'wlh/clj-comment-sexp))
 
+(add-hook 'cider-popup-buffer-mode-hook (lambda ()
+                                          (toggle-truncate-lines)))
+
 (add-hook 'clojure-mode-hook 'wlh/clojure-mode-hook)
 (add-hook 'cider-mode-hook (lambda ()
             (eldoc-mode)
@@ -99,8 +104,12 @@
             ;; (setq company-minimum-prefix-length 20)
             ;; (setq company-idle-delay 0)
 
-            (setq company-minimum-prefix-length 3)
+            ;; (setq company-minimum-prefix-length 3)
             ;; (setq company-idle-delay 0.8)
+
+            (setq company-minimum-prefix-length 0)
+            (setq company-idle-delay 30)
+            
             
             (helm-cider-mode 1)
             (cider-company-enable-fuzzy-completion)
