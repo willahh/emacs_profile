@@ -119,7 +119,8 @@
 (setq confirm-nonexistent-file-or-buffer nil)
 
 ;; Disable auto underlining links
-(setq goto-address-mode nil)
+;; (setq goto-address-mode nil)
+(setq goto-address-mode t)
 
 ;; Don't popup warn
 (add-to-list 'warning-suppress-types '(undo discard-info))

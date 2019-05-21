@@ -44,7 +44,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:stipple nil :slant normal :weight normal :height 150 :width normal :family "Inconsolata"))))
  '(diff-refine-added ((t (:inherit diff-added :inverse-video t))))
  '(diff-refine-removed ((t (:inherit diff-removed))))
  '(rainbow-delimiters-depth-1-face ((t (:foreground "#000000" :weight bold))))

@@ -179,6 +179,7 @@
 (setq mc/cmds-to-run-once
       '(
         abbrev-prefix-mark
+        about-emacs
         ace-window
         ag
         avy-goto-word-1-above
