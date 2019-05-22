@@ -87,6 +87,10 @@
   (define-key clojure-mode-map (kbd "RET") 'paredit-newline)
   (define-key clojure-mode-map (kbd "C-c C-x C-;") 'wlh/clj-comment-sexp))
 
+(add-hook 'cider-mode-hook
+          (lambda ()
+            (add-hook 'after-save-hook 'cider-load-buffer nil 'make-it-local)))
+
 (add-hook 'cider-popup-buffer-mode-hook (lambda ()
                                           (toggle-truncate-lines)))
 
