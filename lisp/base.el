@@ -234,7 +234,7 @@
 
 ;; --------------
 ;; Shell
-(setq shell-file-name "bash")
+(setq shell-file-name "zsh")
 (setq shell-command-switch "-ic")
 
 ;; Always display line and column numbers

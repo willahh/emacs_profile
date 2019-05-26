@@ -4,9 +4,6 @@
       (remq 'process-kill-buffer-query-function
             kill-buffer-query-functions))
 
-;; (require 'highlight-defined)
-;; (highlight-defined-mode)
-
 ;; Key chords ------------------------------------
 ;; From http://emacsrocks.com/e07.html
 (key-chord-mode 1)
@@ -20,11 +17,6 @@
 ;; (setq mc/always-run-for-all 1)
 (setq mc/always-run-for-all nil)
 
-;; (defun jump-to-next-cursor (test another)
-;;   (call-interactively 'mc/cycle-forward))
-;; (advice-add 'mc/mark-next-like-this :after 'jump-to-next-cursor)
-;; (advice-add 'mc/mark-next-like-this-word :after 'jump-to-next-cursor)
-
 
 ;; Multiple-curspr with mouse
 ;; http://pragmaticemacs.com/emacs/add-multiple-cursors-with-mouse-clicks/
@@ -32,22 +24,8 @@
   :ensure t
   :bind (("C-S-<mouse-1>" . mc/add-cursor-on-click)))
 
-;; Witch-key -----------------------
+;; Witch-key
 (which-key-mode)
-
-;; http://pragmaticemacs.com/
-;; Update not available atm
-;; (use-package pdf-tools
-;;   :pin manual ;; manually update
-;;   :config
-;;   ;; initialise
-;;   (pdf-tools-install)
-;;   ;; open pdfs scaled to fit page
-;;   (setq-default pdf-view-display-size 'fit-page)
-;;   ;; automatically annotate highlights
-;;   (setq pdf-annot-activate-created-annotations t)
-;;   ;; use normal isearch
-;;   (define-key pdf-view-mode-map (kbd "C-s") 'isearch-forward))
 
 ;; Don't prompt me when i want to kill a shell
 ;; Source : http://stackoverflow.com/a/2706660
@@ -56,17 +34,8 @@
   (cl-letf (((symbol-function #'process-list) (lambda ())))
     ad-do-it))
 
-;; rainbow-mode (css color)
-;; (require 'rainbow-mode)
-;; Disable rainbow-mode by default
 (require 'rainbow-mode)
-
-;; sy
 (require 'syslog-mode)
-
-;; (add-hook 'syslog-mode-hook
-;;           (lambda ()
-;;             ))
 
 ;; https://emacs.stackexchange.com/a/13010
 (defun etc-log-tail-handler ()
@@ -109,13 +78,6 @@
 (setq-default recent-save-file "~/.emacs.d/tmp/recentf")
 
 (require 'yaml-mode)
-
-;; ;; rainbow-delimiters
-;; (require 'rainbow-delimiters)
-;; ;;(add-hook 'prog-mode-map #'rainbow-delimiters-mode)
-;; (add-hook 'eshell-mode-hook #'rainbow-delimiters-mode)
-;; (add-hook 'eww-mode #'rainbow-delimiters-mode)
-;; (add-hook 'eww-mode #'rainbow-mode)
 
 ;; Eshell conf
 (defun wlh/eshell-hook ()
@@ -401,13 +363,6 @@ Version 2016-10-24"
 ;; disable window-system in terminal mode
 (unless window-system
   (menu-bar-mode -1))
-
-;; Not available atm
-;; (require 'smart-comment)
-;; (global-set-key (kbd "M-;") 'smart-comment)
-
-;; (require 'visual-regexp)
-;; (global-set-key (kbd "M-%") 'vr/query-replace)
 
 ;; http://endlessparentheses.com/ispell-and-abbrev-the-perfect-auto-correct.html
 (define-key ctl-x-map "\C-i"

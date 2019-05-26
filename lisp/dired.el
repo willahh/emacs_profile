@@ -2,7 +2,6 @@
 (setq dired-dwim-target nil)
 
 (defun wlh/dired-hook ()
-  ;; (evil-normal-state)
   (dired-hide-details-mode +1)
   (diff-hl-dired-mode))
 

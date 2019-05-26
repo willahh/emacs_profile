@@ -2,7 +2,6 @@
 #+OPTIONS: toc:3
 
 :TOC:      
-
 ** Rules
    Packages :
   - Only stable packages are used from Elpa package manager
@@ -18,98 +17,11 @@
  -  Use of emacs-osx for osx instead of the default brew emacs
     https://github.com/railwaycat/homebrew-emacsmacport
     
-    Emacs installation :
-    
  #+BEGIN_SRC bash
 brew tap railwaycat/emacsmacport brew install emacs-mac --with-cocoa
  #+END_SRC
- 
- 
- Clone this configuration :
- 
- #+BEGIN_SRC bash
-git clone https://github.com/willahh/emacs_profile ~/.emacs.d
- #+END_SRC
- 
- Font :
-    - Use font "fira-mono" - size : 12 - ~/.emacs.d/fonts/meslo (Menu > option >
-      set default font)
-** Windows
-   :PROPERTIES: 
-    :CUSTOM_ID: windows
-    :END:
-   
-- Gnutls
-- htftp://ftp.gnutls.org/gcrypt/gnutls/w32/
-** Launch as server
-http://www.star.bris.ac.uk/bjm/emacs-tips.html#orgheadline3
 
-#+BEGIN_SRC shell
-#! /bin/tcsh -f
-
-# start emacs server - replace with path to your emacs
-/Applications/Emacs.app/Contents/MacOS/Emacs --daemon
-
-# start emacs client - replace with path to your emacsclient
-# this is usually in the same place as your emacs executable
-/Applications/Emacs.app/Contents/MacOS/bin-x86_64-10_9/emacsclient -c $argv
-#+END_SRC
-
-* Required binaries
-  - brew
-  - gnutls
-  - svn
-  - git
-  - ag
-  - php
-  - mysql
-  - apache
-  - node
-  - npm
-  - ispell
-  - typescript
-  - jscs
-  - pandoc
-  - Latex dependencies
 * Support
-** Spell checker
-*** Tools : hunspell
-Links
- - https://wiki.openoffice.org/wiki/Dictionaries .
- - https://cgit.freedesktop.org/libreoffice/dictionaries/tree/fr_FR
-
-Install hunspell :
-#+BEGIN_SRC shell
-brew instsall hunspell
-#+END_SRC
-
-Install dictionary :
-
-Copy
-  - .emacs.d/resources/dictionary/*
-
-to ~/Library/Spelling/
-
-**** Documentation
-#+BEGIN_SRC bash
-man hunspell
-#+END_SRC
-
-"... Dictionary files (*.aff and *.dic) should be placed in ~/Library/Spelling/
-or /Library/Spelling/.  Homebrew itself provides no dictionaries for Hunspell,
-but you can download compatible dictionaries from other sources, such as ..."
-*** Tools : ispell
-**** OSX
-#+BEGIN_SRC
-brew install ispell
-#+END_SRC
-
-*** Tools : languagetools
-  @todo Used for grammar check https://www.languagetool.org
-
-  - Download the "Stand alone for desktop" version.
-  - Move the folder to "~/bin/"
-
 ** Sass
 *** Resources :
 [[http://sass-lang.com/install][sass]]-lang.com
@@ -167,17 +79,7 @@ psysh should be accessible on your $PATH dir.
 **** @todo
 PHP tools - php https://secure.php.net/ (brew install homebrew/php/php56)
 
-** HTML
-*** Tools
-**** phantomjs
-     http://phantomjs.org/
-***** osx
-#+BEGIN_SRC bash
-brew install phantomjs
-#+END_SRC
 ** Javascript :todo:
-   The most recent and advanced support is eslint. It seems to me that
-   currently my conf is only using jscs. The file to edit is .jscsrc
 *** Tools
     npm install -g typescript
 *** jscs
@@ -198,56 +100,5 @@ Default config files : https://gist.github.com/cletusw/e01a85e399ab563b1236
   { "parserOptions": { "ecmaVersion": 6, "sourceType": "module", "ecmaFeatures":
       { "jsx": true } }, "rules": { "semi": 0 } }
 #+END_SRC
-**** todo
-Javascript tools - Nodejs https://nodejs.org/en/
-
--  Node package manager https://www.npmjs.com/
--  tern http://ternjs.net/
--  eslint http://eslint.org/docs/user-guide/getting-started (sudo npm -g
-   install eslint)
--  babel-eslint (sudo npm install babel-eslint -g)
--  eslint-plugin-react (sudo npm install eslint-plugin-react -g)
--  js-beautify (npm install -g js-beautify)
-
-Javascript tools - tern - eslint - babel-eslint - eslint-plugin-react -
-js-beautify
-
 ** PDF
    Display PDF in Emacs on OSX
-** LaTeX
-     https://www.latex-project.org/get/ #### Installation on OSX
-
-     
-#+BEGIN_SRC 
-brew install poppler
-#+END_SRC
-     
-     - Full support : MacTeX : http://www.tug.org/mactex/
-
-     Full support is needed to export org file to LaTeX PDF file.
-
-** Office Documents
-    :PROPERTIES:
-    :CUSTOM_ID: excel-word-support
-    :END:
-Excel, Word support ={r, engine='bash', count_lines} brew install ghostscript=
-* Utils
-** Convert Markdown to org
-*** Links
-  - http://pandoc.org/
-
-*** Documentation
-#+BEGIN_SRC man
-man pandoc
-#+END_SRC
-
-*** Installation
-  - http://pandoc.org/installing.html
-    
-*** Simple example
-Convert .md file to .org file with :
-
-#+BEGIN_SRC shell
-pandoc -o README.md README.org
-#+END_SRC
-
