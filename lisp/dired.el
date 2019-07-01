@@ -4,7 +4,9 @@
 (defun wlh/dired-hook ()
   ;; (evil-normal-state)
   (dired-hide-details-mode +1)
-  (diff-hl-dired-mode))
+  (diff-hl-dired-mode)
+  (global-set-key (kbd "Y") 'dired-ranger-paste)
+  (define-key dired-mode-map (kbd "Y") 'dired-ranger-paste))
 
 (add-hook 'dired-mode-hook 'wlh/dired-hook)
 (add-hook 'dired-mode-hook 'auto-revert-mode)
