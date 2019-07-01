@@ -1,6 +1,9 @@
 (defun wlh/prog-hook ()
   ;; Update: Re-enable, Slowness must come from elsewhere.
-  (display-line-numbers-mode) ; Disable too slow
+  ;; (display-line-numbers-mode) ; Disable too slow
+  
+
+  
   (hl-line-mode) ; Disable too slow
   ;; (auto-highlight-symbol-mode)
   )

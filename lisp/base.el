@@ -234,11 +234,11 @@
 
 ;; --------------
 ;; Shell
-(setq shell-file-name "bash")
+(setq shell-file-name "zsh")
 (setq shell-command-switch "-ic")
 
 ;; Always display line and column numbers
-(setq line-number-mode t)
+;; (setq line-number-mode t) ; No
 (setq column-number-mode t)
 
 ;; Mini window height

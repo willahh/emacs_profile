@@ -1,19 +1,21 @@
 (require 'cider)
 (require 'clojure-snippets)
 
+(use-package html-to-hiccup
+  :ensure t
+  :config
+  (define-key clojure-mode-map (kbd "C-c C-l v") 'html-to-hiccup-convert-region))
+
 (defun wlh/clj-comment-sexp ()
   "Wrap mark into (comment)"
   (interactive)
   (paredit-wrap-round)
   (insert "comment \n"))
 
-;; (require 'auto-indent-mode)
+(require 'auto-indent-mode)
 
 ;; Specify history file
 (setq cider-history-file "~/.emacs.d/nrepl-history")
-
-;; Don't prompt when go to symbol
-;; (setq cider-prompt-for-symbol nil)
 
 (cider-repl-toggle-pretty-printing)
 
@@ -28,6 +30,7 @@
 
 ;; Don't prompt for symbols
 ;; (setq cider-prompt-for-symbol nil)
+(setq cider-prompt-for-symbol nil)
 
 ;; result prefix for the REPL
 ;; (setq cider-repl-result-prefix ";; => ")
@@ -80,8 +83,13 @@
   
   ;; insert keybinding setup here
   (cljr-add-keybindings-with-prefix "C-c C-l")
-  (define-key clojure-mode-map (kbd "RET") 'newline-and-indent)
+  ;; (define-key clojure-mode-map (kbd "RET") 'newline-and-indent)
+  (define-key clojure-mode-map (kbd "RET") 'paredit-newline)
   (define-key clojure-mode-map (kbd "C-c C-x C-;") 'wlh/clj-comment-sexp))
+
+(add-hook 'cider-mode-hook
+          (lambda ()
+            (add-hook 'after-save-hook 'cider-load-buffer nil 'make-it-local)))
 
 (add-hook 'cider-popup-buffer-mode-hook (lambda ()
                                           (toggle-truncate-lines)))
