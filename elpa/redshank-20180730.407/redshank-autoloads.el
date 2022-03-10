@@ -12,6 +12,11 @@
 (autoload 'redshank-mode "redshank" "\
 Minor mode for editing and refactoring (Common) Lisp code.
 
+If called interactively, enable Redshank mode if ARG is positive,
+and disable it if ARG is zero or negative.  If called from Lisp,
+also enable the mode if ARG is omitted or nil, and toggle it if
+ARG is `toggle'; disable the mode otherwise.
+
 \\{redshank-mode-map}
 
 \(fn &optional ARG)" t nil)
@@ -20,9 +25,7 @@ Minor mode for editing and refactoring (Common) Lisp code.
 Turn on Redshank mode.  Please see function `redshank-mode'.
 
 This function is designed to be added to hooks, for example:
-  (add-hook 'lisp-mode-hook 'turn-on-redshank-mode)
-
-\(fn)" t nil)
+  (add-hook 'lisp-mode-hook 'turn-on-redshank-mode)" t nil)
 
 (autoload 'asdf-mode "redshank" "\
 Major mode for ASDF files.  This mode is derived from `lisp-mode'
@@ -36,9 +39,7 @@ and activates minor mode `redshank-mode' by default.
 Turn on ASDF mode.  Please see function `asdf-mode'.
 
 This function is designed to be added to hooks, for example:
-  (add-hook 'lisp-mode-hook 'turn-on-asdf-mode)
-
-\(fn)" t nil)
+  (add-hook 'lisp-mode-hook 'turn-on-asdf-mode)" t nil)
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "redshank" '("redshank-")))
 

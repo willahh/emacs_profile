@@ -10,21 +10,15 @@
 ;;; Generated autoloads from diffview.el
 
 (autoload 'diffview-current "diffview" "\
-Show current diff buffer in a side-by-side view.
-
-\(fn)" t nil)
+Show current diff buffer in a side-by-side view." t nil)
 
 (autoload 'diffview-region "diffview" "\
-Show current diff region in a side-by-side view.
-
-\(fn)" t nil)
+Show current diff region in a side-by-side view." t nil)
 
 (autoload 'diffview-message "diffview" "\
 Show `message-mode' buffer in a side-by-side view.
 
-This is useful for reading patches from mailing lists.
-
-\(fn)" t nil)
+This is useful for reading patches from mailing lists." t nil)
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "diffview" '("diffview-")))
 

@@ -10,10 +10,7 @@
 ;;;;;;  0 0 0))
 ;;; Generated autoloads from clojure-snippets.el
 
-(autoload 'clojure-snippets-initialize "clojure-snippets" "\
-
-
-\(fn)" nil nil)
+(autoload 'clojure-snippets-initialize "clojure-snippets" nil nil nil)
 
 (eval-after-load 'yasnippet '(clojure-snippets-initialize))
 

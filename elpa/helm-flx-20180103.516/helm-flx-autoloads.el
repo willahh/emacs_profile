@@ -22,6 +22,11 @@ or call the function `helm-flx-mode'.")
 (autoload 'helm-flx-mode "helm-flx" "\
 helm-flx minor mode
 
+If called interactively, enable Helm-Flx mode if ARG is positive,
+and disable it if ARG is zero or negative.  If called from Lisp,
+also enable the mode if ARG is omitted or nil, and toggle it if
+ARG is `toggle'; disable the mode otherwise.
+
 \(fn &optional ARG)" t nil)
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "helm-flx" '("helm-flx-")))

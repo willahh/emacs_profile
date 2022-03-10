@@ -12,13 +12,11 @@
 
 (autoload 'actionscript-mode "actionscript-mode" "\
 Major mode for editing Actionscript files.
-\\{actionscript-mode-map}
-
-\(fn)" t nil)
+\\{actionscript-mode-map}" t nil)
 
 (add-to-list 'auto-mode-alist '("\\.as\\'" . actionscript-mode))
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "actionscript-mode" '("reload-actionscript-mode" "actionscript-" "preprocessor-kwds")))
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "actionscript-mode" '("actionscript-" "preprocessor-kwds" "reload-actionscript-mode")))
 
 ;;;***
 

@@ -12,9 +12,7 @@
 (autoload 'resize-window "resize-window" "\
 Resize the window.
 Press n to enlarge down, p to enlarge up, b to enlarge left and f
-to enlarge right.
-
-\(fn)" t nil)
+to enlarge right." t nil)
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "resize-window" '("resize-window-")))
 

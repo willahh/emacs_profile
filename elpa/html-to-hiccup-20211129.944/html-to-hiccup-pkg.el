@@ -1,0 +1,2 @@
+;;; Generated package description from html-to-hiccup.el  -*- no-byte-compile: t -*-
+(define-package "html-to-hiccup" "20211129.944" "Convert HTML to Hiccup syntax" '((emacs "25.1") (dash "2.13.0") (s "1.10.0")) :commit "97ecc8cce11f577ad4406da0367aa5eeec1bd8c6" :authors '(("Arne Brasseur" . "arne@arnebrasseur.net")) :maintainer '("Arne Brasseur" . "arne@arnebrasseur.net") :keywords '("html" "hiccup" "clojure") :url "https://github.com/plexus/html-to-hiccup")

@@ -10,10 +10,10 @@
 ;;; Generated autoloads from ac-slime.el
 
 (defface ac-slime-menu-face '((t (:inherit ac-candidate-face))) "\
-Face for slime candidate menu." :group (quote auto-complete))
+Face for slime candidate menu." :group 'auto-complete)
 
 (defface ac-slime-selection-face '((t (:inherit ac-selection-face))) "\
-Face for the slime selected candidate." :group (quote auto-complete))
+Face for the slime selected candidate." :group 'auto-complete)
 
 (defvar ac-source-slime-fuzzy '((init . ac-slime-init) (candidates . ac-source-slime-fuzzy-candidates) (candidate-face . ac-slime-menu-face) (selection-face . ac-slime-selection-face) (prefix . slime-symbol-start-pos) (symbol . "l") (match lambda (prefix candidates) candidates) (document . ac-slime-documentation)) "\
 Source for fuzzy slime completion.")

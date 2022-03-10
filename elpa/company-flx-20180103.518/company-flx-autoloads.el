@@ -22,6 +22,11 @@ or call the function `company-flx-mode'.")
 (autoload 'company-flx-mode "company-flx" "\
 company-flx minor mode
 
+If called interactively, enable Company-Flx mode if ARG is
+positive, and disable it if ARG is zero or negative.  If called
+from Lisp, also enable the mode if ARG is omitted or nil, and
+toggle it if ARG is `toggle'; disable the mode otherwise.
+
 \(fn &optional ARG)" t nil)
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "company-flx" '("company-flx-")))
