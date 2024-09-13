@@ -15,7 +15,8 @@
  -  Mac Os X >= 10.11
  -  emacs >= 25
  -  Use of emacs-osx for osx instead of the default brew emacs
-    https://github.com/railwaycat/homebrew-emacsmacport
+    https://github.com/railwaycat/homebrew-emacsmacport 
+    or via https://emacsformacosx.com/
     
  #+BEGIN_SRC bash
 brew tap railwaycat/emacsmacport brew install emacs-mac --with-cocoa
