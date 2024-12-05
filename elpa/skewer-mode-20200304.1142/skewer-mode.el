@@ -3,6 +3,8 @@
 ;; This is free and unencumbered software released into the public domain.
 
 ;; Author: Christopher Wellons <wellons@nullprogram.com>
+;; Package-Version: 20200304.1142
+;; Package-Revision: e5bed351939c
 ;; URL: https://github.com/skeeto/skewer-mode
 
 ;;; Commentary:

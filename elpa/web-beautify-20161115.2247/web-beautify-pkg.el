@@ -1,2 +1,9 @@
-;;; Generated package description from web-beautify.el  -*- no-byte-compile: t -*-
-(define-package "web-beautify" "20161115.2247" "Format HTML, CSS and JavaScript/JSON" 'nil :commit "e1b45321d8c11b404b12c8e55afe55eaa7c84ee9" :authors '(("Yasuyuki Oka" . "yasuyk@gmail.com")) :maintainer '("Yasuyuki Oka" . "yasuyk@gmail.com") :url "https://github.com/yasuyk/web-beautify")
+;; -*- no-byte-compile: t; lexical-binding: nil -*-
+(define-package "web-beautify" "20161115.2247"
+  "Format HTML, CSS and JavaScript/JSON."
+  ()
+  :url "https://github.com/yasuyk/web-beautify"
+  :commit "e1b45321d8c11b404b12c8e55afe55eaa7c84ee9"
+  :revdesc "e1b45321d8c1"
+  :authors '(("Yasuyuki Oka" . "yasuyk@gmail.com"))
+  :maintainers '(("Yasuyuki Oka" . "yasuyk@gmail.com")))

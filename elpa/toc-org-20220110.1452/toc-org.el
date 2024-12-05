@@ -3,9 +3,8 @@
 ;; Copyright (C) 2014 Sergei Nosov
 
 ;; Author: Sergei Nosov <sergei.nosov [at] gmail.com>
-;; Version: 1.1
 ;; Package-Version: 20220110.1452
-;; Package-Commit: bf2e4b358efbd860ecafe6e74776de0885d9d100
+;; Package-Revision: bf2e4b358efb
 ;; Keywords: org-mode org-toc toc-org org toc table of contents
 ;; URL: https://github.com/snosov1/toc-org
 

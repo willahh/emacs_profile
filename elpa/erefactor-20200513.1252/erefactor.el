@@ -2,12 +2,11 @@
 
 ;; Author: Masahiro Hayashi <mhayashi1120@gmail.com>
 ;; Keywords: extensions, tools, maint
-;; Package-Version: 20200513.1252
-;; Package-Commit: bfe27a1b8c7cac0fe054e76113e941efa3775fe8
 ;; URL: https://github.com/mhayashi1120/Emacs-erefactor
 ;; Emacs: GNU Emacs 24 or later
 ;; Package-Requires: ((cl-lib "0.3"))
-;; Version: 0.7.2
+;; Package-Version: 20200513.1252
+;; Package-Revision: bfe27a1b8c7c
 
 ;; This program is free software; you can redistribute it and/or
 ;; modify it under the terms of the GNU General Public License as

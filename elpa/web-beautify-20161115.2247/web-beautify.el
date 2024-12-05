@@ -3,9 +3,8 @@
 ;; Copyright (C) 2013-2016 Yasuyuki Oka and web-beautify contributors
 
 ;; Author: Yasuyuki Oka <yasuyk@gmail.com>
-;; Version: 0.3.2
 ;; Package-Version: 20161115.2247
-;; Package-Commit: e1b45321d8c11b404b12c8e55afe55eaa7c84ee9
+;; Package-Revision: e1b45321d8c1
 ;; URL: https://github.com/yasuyk/web-beautify
 
 ;; This program is free software; you can redistribute it and/or modify

@@ -5,7 +5,8 @@
 ;; Author: Matthew L. Fidler, Le Wang & Others
 ;; Maintainer: Matthew L. Fidler
 ;; Created: Sat Nov  6 11:02:07 2010 (-0500)
-;; Version: 0.127
+;; Package-Version: 20211029.11
+;; Package-Revision: 664006b67329
 ;; Last-Updated: Tue Aug 21 13:08:42 2012 (-0500)
 ;;           By: Matthew L. Fidler
 ;;     Update #: 1467

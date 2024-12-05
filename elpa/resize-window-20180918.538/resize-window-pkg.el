@@ -1,2 +1,11 @@
-;;; Generated package description from resize-window.el  -*- no-byte-compile: t -*-
-(define-package "resize-window" "20180918.538" "easily resize windows" '((emacs "24") (cl-lib "0.5")) :commit "72018aa4d2401b60120588199d4cedd0dc1fbcfb" :authors '(("Dan Sutton " . "danielsutton01@gmail.com")) :maintainer '("Dan Sutton " . "danielsutton01@gmail.com") :keywords '("window" "resize") :url "https://github.com/dpsutton/resize-mode")
+;; -*- no-byte-compile: t; lexical-binding: nil -*-
+(define-package "resize-window" "20180918.538"
+  "Easily resize windows."
+  '((emacs  "24")
+    (cl-lib "0.5"))
+  :url "https://github.com/dpsutton/resize-window"
+  :commit "09dc5968f1c988c51fcd6ea5d68bb38b7541eb66"
+  :revdesc "09dc5968f1c9"
+  :keywords '("window" "resize")
+  :authors '(("Dan Sutton" . "danielsutton01@gmail.com"))
+  :maintainers '(("Dan Sutton" . "danielsutton01@gmail.com")))

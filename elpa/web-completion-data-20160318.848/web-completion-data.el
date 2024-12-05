@@ -3,7 +3,8 @@
 ;; Copyright (C) 2015 Zhang Kai Yu, Olexandr Sydorchuk
 
 ;; Author: Olexandr Sydorchuk <olexandr.syd@gmail.com>
-;; Version: 0.2
+;; Package-Version: 20160318.848
+;; Package-Revision: c272c94e8a71
 ;; Keywords: html, auto-complete, company
 ;; URL: https://github.com/osv/web-completion-data
 

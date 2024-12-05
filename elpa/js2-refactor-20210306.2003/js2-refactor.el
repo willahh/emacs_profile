@@ -5,6 +5,8 @@
 
 ;; Author: Magnar Sveen <magnars@gmail.com>,
 ;;         Nicolas Petton <nicolas@petton.fr>
+;; Package-Version: 20210306.2003
+;; Package-Revision: 1372f8449c62
 ;; Keywords: conveniences
 
 ;; This program is free software; you can redistribute it and/or modify

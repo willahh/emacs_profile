@@ -1,7 +1,8 @@
 ;;; redshank.el --- Common Lisp Editing Extensions
 
 ;; Copyright (C) 2006--2012  Michael Weber
-;; Version: 1
+;; Package-Version: 20180730.407
+;; Package-Revision: d059c5841044
 ;; Package-Requires: ((paredit "21"))
 
 ;; Author: Michael Weber <michaelw@foldr.org>

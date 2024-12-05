@@ -4,8 +4,6 @@
 
 ;; Author   : winterTTr <winterTTr@gmail.com>
 ;; URL      : https://github.com/winterTTr/ace-jump-mode/
-;; Package-Version: 20140616.815
-;; Package-Commit: 8351e2df4fbbeb2a4003f2fb39f46d33803f3dac
 ;; Version  : 2.0.RC
 ;; Keywords : motion, location, cursor
 
@@ -23,6 +21,9 @@
 
 ;; You should have received a copy of the GNU General Public License
 ;; along with GNU Emacs.  If not, see <http://www.gnu.org/licenses/>.
+
+;; Package-Version: 20140616.815
+;; Package-Revision: 8351e2df4fbb
 
 ;;; Commentary:
 

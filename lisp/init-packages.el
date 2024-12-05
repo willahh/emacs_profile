@@ -22,7 +22,7 @@
                      ;; async
                      auto-complete
                      auto-yasnippet
-                     autopair
+                     ;; autopair
                      avy
                      avy-menu
                      all-the-icons
@@ -32,7 +32,7 @@
                      clojure-snippets
                      ;; coffee-mode
                      company-quickhelp
-                     company-tern
+                     ;;company-tern
                      company-web
                      company-flx
                      counsel
@@ -78,7 +78,7 @@
                      hydra
                      ido
                      ido-at-point
-                     ido-occur
+                     ;;ido-occur
                      ido-vertical-mode
                      iedit
                      imenu-list
@@ -87,7 +87,7 @@
                      ;; inf-clojure
 		             ;; ivy
                      ;; ivy-hydra
-                     iy-go-to-char
+                     ;;iy-go-to-char
                      ;; js-comint
                      js2-mode
                      js2-refactor
