@@ -1,4 +1,3 @@
-(defvar wlh/leader-key (concat "M-m" " "))
 (require 'cider)
 (global-unset-key (kbd "M-m"))
 
@@ -6,7 +5,6 @@
 (global-set-key (kbd "M-x") 'whole-line-or-region-kill-region)
 (global-set-key (kbd "C-x RET") 'dired-jump)
 (global-set-key (kbd "M-a") 'mark-whole-buffer) ; Was backward-sentence
-;; (define-key php-mode-map (kbd "M-a") 'mark-whole-buffer)
 
 
 ;; Copy
@@ -31,11 +29,9 @@
 ;; --------------- ALT key binding
 ;; Azerty keyboard
 (global-set-key (kbd "≈") 'counsel-M-x) ; Alt + x
-(global-set-key (kbd "") 'toggle-php-flavor-mode) ; Alt + 1
 (global-set-key (kbd "∑") 'helm-ag) ; Alt + shift + s
 (global-set-key (kbd "†") 'toggle-truncate-lines) ; Alt + t
 (global-set-key (kbd "ﬁ") 'goto-line) ; Alt + g
-(global-set-key (kbd "Â") 'toggle-php-flavor-mode) ; Alt+z
 (global-set-key (kbd "Í") 'decrement-number-at-point)
 (global-set-key (kbd "Ë") 'increment-number-at-point)
 
@@ -124,9 +120,9 @@
  
 ;; delete-window
 (global-set-key (kbd "M-w") 'wlh/delete-window) ;; Delete window or frame
-(define-key magit-mode-map (kbd "M-w") 'wlh/delete-window)
+;; (define-key magit-mode-map (kbd "M-w") 'wlh/delete-window)
 (global-set-key (kbd "M-W") 'delete-frame)
-(define-key magit-mode-map (kbd "M-W") 'delete-frame)
+;; (define-key magit-mode-map (kbd "M-W") 'delete-frame)
 
 ;; shell-pop
 (global-set-key (kbd "C-!") 'shell-pop)
@@ -170,7 +166,6 @@
 (global-set-key (kbd "<double-wheel-left>") 'scroll-right)
 (global-set-key (kbd "<double-wheel-right>") 'scroll-left)
 (define-key global-map (kbd "<S-down-mouse-1>") 'mouse-save-then-kill)
-(define-key php-mode-map (kbd "<C-M-mouse-1>") 'dumb-jump-go)
 
 
 ;; Buffer / frames / main
@@ -194,8 +189,8 @@
 (define-key highlight-symbol-nav-mode-map (kbd "M-N") 'wlh/create-new-centered-frame)
 (define-key ibuffer-mode-map (kbd "M-N") 'wlh/create-new-centered-frame)
 (define-key compilation-mode-map (kbd "M-N") 'wlh/create-new-centered-frame)
-(define-key magit-mode-map (kbd "M-N") 'wlh/create-new-centered-frame)
-(define-key slime-mode-map (kbd "M-N") 'wlh/create-new-centered-frame)
+;; (define-key magit-mode-map (kbd "M-N") 'wlh/create-new-centered-frame)
+;; (define-key slime-mode-map (kbd "M-N") 'wlh/create-new-centered-frame)
 
 ;; Highlight-symbol
 ;; (global-set-key (kbd "M-N") 'highlight-symbol-next)
@@ -214,8 +209,7 @@
 
 ;; ---------------- Dired
 (global-set-key (kbd "C-x RET") 'dired-jump)
-(define-key php-mode-map [(control x) (control j)] 'dired-jump)
-(define-key web-mode-map [(control x) (control j)] 'dired-jump)
+;; (define-key web-mode-map [(control x) (control j)] 'dired-jump)
 (define-key dired-mode-map (kbd "C-x w") 'wdired-change-to-wdired-mode)
 (define-key dired-mode-map (kbd "C-i") 'dired-subtree-toggle)
 (define-key dired-mode-map (kbd "i") 'dired-subtree-toggle)
@@ -235,14 +229,13 @@
 ;; ---------------- Backward delete char C-h
 (global-set-key (kbd "C-h") 'backward-delete-char)
 (define-key prog-mode-map (kbd "C-h") 'backward-delete-char)
-(define-key php-mode-map (kbd "C-h") 'backward-delete-char)
-(define-key nxml-mode-map (kbd "C-h") 'backward-delete-char)
+;; (define-key nxml-mode-map (kbd "C-h") 'backward-delete-char)
 (define-key lisp-mode-map (kbd "C-h") 'paredit-backward-delete)
 (define-key emacs-lisp-mode-map (kbd "C-h") 'paredit-backward-delete)
 (define-key helm-map (kbd "C-h") 'paredit-backward-delete)
 
 ;; Kill
-(define-key web-mode-map (kbd "C-k") 'wlh/web-mode-kill-sexp)
+;; (define-key web-mode-map (kbd "C-k") 'wlh/web-mode-kill-sexp)
 
 ;; ---------------- Backward delete word
 ;; Kill line or region
@@ -260,12 +253,11 @@
 
 ;; Diff hl next / prev
 (global-set-key (kbd "C-c C-n") 'diff-hl-next-hunk)
-(define-key web-mode-map (kbd "C-c C-n") 'diff-hl-next-hunk)
-(define-key php-mode-map (kbd "C-c C-n") 'diff-hl-next-hunk)
+;; (define-key web-mode-map (kbd "C-c C-n") 'diff-hl-next-hunk)
+(define-key  (kbd "C-c C-n") 'diff-hl-next-hunk)
 
 (global-set-key (kbd "C-c C-p") 'diff-hl-previous-hunk)
-(define-key web-mode-map (kbd "C-c C-p") 'diff-hl-previous-hunk)
-(define-key php-mode-map (kbd "C-c C-p") 'diff-hl-previous-hunk)
+;; (define-key web-mode-map (kbd "C-c C-p") 'diff-hl-previous-hunk)
 
 ;; helm-imenu - M-r key binding come from Sublime M-r go to symbol 
 (global-set-key (kbd "M-r") 'helm-imenu)
@@ -303,15 +295,14 @@
 
 ;; TAB
 ;; (global-set-key (kbd "C-c TAB") 'wlh/insert-4spaces)
-(define-key web-mode-map (kbd "TAB") 'indent-for-tab-command)
-(define-key web-mode-map (kbd "TAB") 'wlh/web-mode-tab)
+;; (define-key web-mode-map (kbd "TAB") 'indent-for-tab-command)
+;; (define-key web-mode-map (kbd "TAB") 'wlh/web-mode-tab)
 
 ;; New line
 ;; (define-key prog-mode-map (kbd "RET") 'new-line-dwim)
 ;; (define-key c-mode-map (kbd "RET") 'new-line-dwim) ;; TODO Check error
 (define-key lisp-mode-map (kbd "RET") 'paredit-newline)
 (define-key css-mode-map (kbd "RET") 'newline)
-(define-key php-mode-map (kbd "RET") 'new-line-dwim)
 (define-key web-mode-map (kbd "RET") 'new-line-dwim)
 
 ;; (define-key web-mode-map(kbd "<return>") 'wlh/web-mode-new-line) ; Return key
@@ -388,8 +379,8 @@
 
 ;; Emmet
 (global-set-key [control command shift j] 'emmet-expand-line)
-(define-key web-mode-map [control command shift j] 'emmet-expand-line)
-(define-key web-mode-map (kbd "C-M-S-j") 'emmet-expand-line)
+;; (define-key web-mode-map [control command shift j] 'emmet-expand-line)
+;; (define-key web-mode-map (kbd "C-M-S-j") 'emmet-expand-line)
 
 ;; ---------------- f keys
 ;; (global-set-key (kbd "<f2>") 'helm-mini)
@@ -435,14 +426,12 @@
 ;; (global-set-key (kbd "C->") 'ffap)
 
 (global-set-key (kbd "C-.") 'find-file-in-project-by-selected)
-(define-key php-mode-map [(control .)] 'find-file-in-project-by-selected)
 
 (global-set-key (kbd "C-c p ' g") 'projectile-find-file-dwim-other-window) ; (C-c p 4 g on azerty)
 
 ;; ---------------- text
 (define-key typescript-mode-map (kbd "C-:") "\C-e;")
-(define-key php-mode-map (kbd "C-:") "\C-e;")
-(define-key web-mode-map (kbd "C-:") "\C-e;")
+;; (define-key web-mode-map (kbd "C-:") "\C-e;")
 
 ;; PDF
 (add-hook 'pdf-view-mode 'wlh/pdf-view-mode-hook)
@@ -496,7 +485,7 @@
 
 ;; Highlight symbol
 (global-set-key (kbd "M-P") 'highlight-symbol-prev)
-(define-key slime-mode-map (kbd "M-P") 'highlight-symbol-prev)
+;; (define-key slime-mode-map (kbd "M-P") 'highlight-symbol-prev)
 (define-key highlight-symbol-nav-mode-map (kbd "M-P") 'highlight-symbol-prev)
 ;; (define-key ggtags-navigation-map (kbd "M-P") 'highlight-symbol-prev)
 
@@ -504,9 +493,8 @@
 ;; (global-set-key (kbd "C-x v U") 'wlh/svn-up-recursive)
 ;; (global-set-key (kbd "s-a") 'mark-whole-buffer)
 (global-set-key (kbd "C-c C-s") 'helm-swoop)
-(define-key web-mode-map (kbd "C-c C-s") 'swiper)
+;; (define-key web-mode-map (kbd "C-c C-s") 'swiper)
 (define-key js2-mode-map (kbd "C-c C-s") 'swiper)
-(define-key php-mode-map (kbd "C-c C-s") 'swiper)
 
 ;; (define-key js2-mode-map (kbd "<C-M-mouse-1>") 'xref-find-definitions)
 (define-key js2-mode-map (kbd "<C-M-mouse-1>") 'dumb-jump-go)

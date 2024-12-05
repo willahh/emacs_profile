@@ -105,13 +105,6 @@ on the screen values."
   (easy-kill)
   (deactivate-mark))
 
-(defun wlh/html-to-concat ()
-  "Convert a string into a concation for php [WIP]"
-  (interactive)
-  (move-beginning-of-line 1)
-  (set-mark (point))
-  (move-end-of-line 1))
-
 (defun wlh/dired-new-dir (name)
   (interactive "sName: ")
   (mkdir name))
@@ -229,7 +222,6 @@ on the screen values."
   (interactive)
   (cond ((equal (web-mode-language-at-pos) "html") (kill-sexp))
         ((equal (web-mode-language-at-pos) "javascript") (sp-kill-hybrid-sexp 1))
-        ((equal (web-mode-language-at-pos) "php") (paredit-kill))
         ((equal (web-mode-language-at-pos) "css") (paredit-kill))))
 
 (defun wlh/previous-window ()
@@ -246,8 +238,7 @@ on the screen values."
          (indent-for-tab-command))
         ((string-equal (web-mode-language-at-pos) "css")
          (indent-for-tab-command))
-        ((string-equal (web-mode-language-at-pos) "php")
-         (indent-for-tab-command))))
+        ))
 
 (defun wlh/next-buffer ()
   "Navigate to the next buffer, use tabbar if the mode is active,

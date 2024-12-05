@@ -123,7 +123,7 @@
 (setq goto-address-mode t)
 
 ;; Don't popup warn
-(add-to-list 'warning-suppress-types '(undo discard-info))
+;; (add-to-list 'warning-suppress-types '(undo discard-info))
 
 ;; Keep cursor blinking
 (blink-cursor-mode 1)

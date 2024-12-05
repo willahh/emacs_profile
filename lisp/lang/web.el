@@ -19,8 +19,7 @@
 ;; Add auto-pair
 (setq web-mode-extra-auto-pairs
       '(("erb"  . (("beg" "end")))
-        ("php"  . (("beg" "end")
-                   ("beg" "end")))))
+       )))
 
 ;; css colorization
 (setq web-mode-enable-css-colorization t)
@@ -41,4 +40,4 @@
 (add-hook 'css-mode-hook  'emmet-mode)
 (add-hook 'web-mode-hook 'emmet-mode)
 (add-hook 'web-mode-hook 'wlh/web-mode)
-(define-key web-mode-map (kbd "C-M-i") 'wlh/web-mode-indent)
+;; (define-key web-mode-map (kbd "C-M-i") 'wlh/web-mode-indent)

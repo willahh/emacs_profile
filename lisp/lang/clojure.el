@@ -1,10 +1,10 @@
 (require 'cider)
 (require 'clojure-snippets)
 
-(use-package html-to-hiccup
-  :ensure t
-  :config
-  (define-key clojure-mode-map (kbd "C-c C-l v") 'html-to-hiccup-convert-region))
+;; (use-package html-to-hiccup
+;;  :ensure t
+;;  :config
+;;  (define-key clojure-mode-map (kbd "C-c C-l v") 'html-to-hiccup-convert-region))
 
 (defun wlh/clj-comment-sexp ()
   "Wrap mark into (comment)"
@@ -84,8 +84,9 @@
   ;; insert keybinding setup here
   (cljr-add-keybindings-with-prefix "C-c C-l")
   ;; (define-key clojure-mode-map (kbd "RET") 'newline-and-indent)
-  (define-key clojure-mode-map (kbd "RET") 'paredit-newline)
-  (define-key clojure-mode-map (kbd "C-c C-x C-;") 'wlh/clj-comment-sexp))
+  ;; (define-key clojure-mode-map (kbd "RET") 'paredit-newline)
+  ;;(define-key clojure-mode-map (kbd "C-c C-x C-;") 'wlh/clj-comment-sexp)
+  )
 
 (add-hook 'cider-mode-hook
           (lambda ()
@@ -171,6 +172,6 @@
   (interactive)
   (message "Oops! You're not connected to an nREPL server. Please run M-x cider or M-x cider-jack-in to connect."))
 
-(define-key clojure-mode-map (kbd "C-^") 'live-cycle-clj-coll)
-(define-key clojure-mode-map (kbd "C-M-x")   'nrepl-warn-when-not-connected)
-(define-key clojure-mode-map (kbd "C-x C-e") 'nrepl-warn-when-not-connected)
+;; (define-key clojure-mode-map (kbd "C-^") 'live-cycle-clj-coll)
+;; (define-key clojure-mode-map (kbd "C-M-x")   'nrepl-warn-when-not-connected)
+;; (define-key clojure-mode-map (kbd "C-x C-e") 'nrepl-warn-when-not-connected)

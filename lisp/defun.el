@@ -303,15 +303,6 @@ Version 2017-04-19"
 (defun m-eshell-hook ()
   (define-key eshell-mode-map (kbd "C-M-l") 'er/contract-region))
 
-;; From : http://www.blogbyben.com/2016/08/emacs-php-modern-and-far-more-complete.html
-(defun toggle-php-flavor-mode ()
-  (interactive)
-  "Toggle mode between PHP & Web-Mode Helper modes"
-  ;; (cond ((string= mode-name "PHP")
-  (cond ((string= mode-name "PHP/l")
-         (web-mode))
-        ((string= mode-name "Web")
-         (php-mode))))
 
 ;; Increment at point
 ;; https://www.emacswiki.org/emacs/IncrementNumber

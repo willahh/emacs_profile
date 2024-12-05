@@ -110,8 +110,6 @@
                      ;; pdf-tools ; Not available atm
                      ;; perspective
                      ;; pfuture
-                     ;; php-auto-yasnippets
-                     php-mode
                      pkg-info
                      popup
                      ;; powerline

@@ -1,5 +1,4 @@
 (require 'projectile)
-;; (require 'php-mode)
 ;; (require 'nxml-mode)
 ;; (require 'whole-line-or-region)
 ;; (require 'iy-go-to-char)
@@ -19,7 +18,6 @@
 ;; (require 'magit)
 ;; (require 'paredit)
 ;; (require 'iedit)
-;; (require 'php-mode)
 ;; (require 'nxml-mode)
 ;; (require 'tern)
 ;; (require 'org)

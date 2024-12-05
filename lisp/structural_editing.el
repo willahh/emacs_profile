@@ -17,9 +17,8 @@
 (add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
 (add-hook 'scheme-mode-hook           #'enable-paredit-mode)
 
-(define-key paredit-mode-map (kbd "C-h") 'paredit-backward-delete)
+;;(define-key paredit-mode-map (kbd "C-h") 'paredit-backward-delete)
 (define-key prog-mode-map (kbd "M-(") 'paredit-wrap-round)
-(define-key php-mode-map (kbd "M-(") 'paredit-wrap-round)
 
 (defun paredit-space-for-delimiter-p (endp delimiter)
   (and (not (if endp (eobp) (bobp)))
@@ -36,7 +35,6 @@
 ;; (add-hook 'js2-mode-hook #'autopair-mode)
 ;; (add-hook 'js-mode-hook #'autopair-mode)
 ;; (add-hook 'web-mode-hook #'autopair-mode)
-;; (add-hook 'php-mode-hook #'autopair-mode)
 ;; (add-hook 'css-mode-hook #'autopair-mode)
 ;; (add-hook 'scss-mode-hook #'autopair-mode)
 ;; (add-hook 'org-mode #'autopair-mode)
@@ -50,63 +48,51 @@
 ;; (add-hook 'js2-mode-hook #'smartparens-mode)
 ;; (add-hook 'js-mode-hook #'smartparens-mode)
 ;; (add-hook 'web-mode-hook #'smartparens-mode)
-;; (add-hook 'php-mode-hook #'smartparens-mode)
 ;; (add-hook 'css-mode-hook #'smartparens-mode)
 ;; (add-hook 'scss-mode-hook #'smartparens-mode)
 ;; (add-hook 'org-mode #'smartparens-mode)
 
 (define-key prog-mode-map (kbd "C-M-f") 'sp-forward-sexp)
-(define-key php-mode-map (kbd "C-M-f") 'sp-forward-sexp)
-(define-key nxml-mode-map (kbd "C-M-f") 'sp-forward-sexp)
+;; (define-key nxml-mode-map (kbd "C-M-f") 'sp-forward-sexp)
 ;; (define-key web-mode-map (kbd "C-M-f") 'sp-forward-sexp)
 
 (define-key prog-mode-map (kbd "C-M-b") 'sp-backward-sexp)
-(define-key php-mode-map (kbd "C-M-b") 'sp-backward-sexp)
-(define-key nxml-mode-map (kbd "C-M-b") 'sp-backward-sexp)
+;; (define-key nxml-mode-map (kbd "C-M-b") 'sp-backward-sexp)
 ;; (define-key web-mode-map (kbd "C-M-b") 'sp-backward-sexp)
 
 (define-key prog-mode-map (kbd "C-M-u") 'sp-backward-up-sexp)
-(define-key php-mode-map (kbd "C-M-u") 'sp-backward-up-sexp)
-(define-key nxml-mode-map (kbd "C-M-u") 'sp-backward-up-sexp)
-(define-key web-mode-map (kbd "C-M-u") 'sp-backward-up-sexp)
+;; (define-key nxml-mode-map (kbd "C-M-u") 'sp-backward-up-sexp)
+;; (define-key web-mode-map (kbd "C-M-u") 'sp-backward-up-sexp)
 
 (define-key prog-mode-map (kbd "C-M-d") 'sp-down-sexp)
-(define-key php-mode-map (kbd "C-M-d") 'sp-down-sexp)
-(define-key nxml-mode-map (kbd "C-M-d") 'sp-down-sexp)
-(define-key web-mode-map (kbd "C-M-d") 'sp-down-sexp)
+;; (define-key nxml-mode-map (kbd "C-M-d") 'sp-down-sexp)
+;; (define-key web-mode-map (kbd "C-M-d") 'sp-down-sexp)
 
 (define-key prog-mode-map (kbd "C-M-p") 'sp-backward-down-sexp)
-(define-key php-mode-map (kbd "C-M-p") 'sp-backward-down-sexp)
-(define-key nxml-mode-map (kbd "C-M-p") 'sp-backward-down-sexp)
-(define-key web-mode-map (kbd "C-M-p") 'sp-backward-down-sexp)
+;; (define-key nxml-mode-map (kbd "C-M-p") 'sp-backward-down-sexp)
+;; (define-key web-mode-map (kbd "C-M-p") 'sp-backward-down-sexp)
 
 (define-key prog-mode-map (kbd "C-M-n") 'sp-up-sexp)
-(define-key php-mode-map (kbd "C-M-n") 'sp-up-sexp)
-(define-key nxml-mode-map (kbd "C-M-n") 'sp-up-sexp)
-(define-key web-mode-map (kbd "C-M-n") 'sp-up-sexp) ;; OK in web mode > js
+;; (define-key nxml-mode-map (kbd "C-M-n") 'sp-up-sexp)
+;; (define-key web-mode-map (kbd "C-M-n") 'sp-up-sexp) ;; OK in web mode > js
 
 (define-key prog-mode-map (kbd "C-k") 'sp-kill-hybrid-sexp)
-(define-key php-mode-map (kbd "C-k") 'sp-kill-hybrid-sexp)
-(define-key nxml-mode-map (kbd "C-k") 'sp-kill-hybrid-sexp)
+;; (define-key nxml-mode-map (kbd "C-k") 'sp-kill-hybrid-sexp)
 ;; (define-key web-mode-map (kbd "C-k") 'sp-kill-hybrid-sexp)
 
 (define-key prog-mode-map (kbd "C-M-k") 'sp-kill-sexp)
-(define-key php-mode-map (kbd "C-M-k") 'sp-kill-sexp)
-(define-key nxml-mode-map (kbd "C-M-k") 'sp-kill-sexp)
-(define-key web-mode-map (kbd "C-M-k") 'sp-kill-sexp)
+;; (define-key nxml-mode-map (kbd "C-M-k") 'sp-kill-sexp)
+;; (define-key web-mode-map (kbd "C-M-k") 'sp-kill-sexp)
 
 (define-key prog-mode-map (kbd "C-M-h") 'sp-backward-kill-sexp)
-(define-key php-mode-map (kbd "C-M-h") 'sp-backward-kill-sexp)
-(define-key nxml-mode-map (kbd "C-M-h") 'sp-backward-kill-sexp)
-(define-key web-mode-map (kbd "C-M-h") 'sp-backward-kill-sexp) ;; OK in web mode > js
+;; (define-key nxml-mode-map (kbd "C-M-h") 'sp-backward-kill-sexp)
+;; (define-key web-mode-map (kbd "C-M-h") 'sp-backward-kill-sexp) ;; OK in web mode > js
 (define-key emacs-lisp-mode-map (kbd "C-M-h") 'sp-backward-kill-sexp)
-(define-key clojure-mode-map (kbd "C-M-h") 'sp-backward-kill-sexp)
+;; (define-key clojure-mode-map (kbd "C-M-h") 'sp-backward-kill-sexp)
 
-(define-key php-mode-map (kbd "C-M-a") 'beginning-of-defun)
-(define-key nxml-mode-map (kbd "C-M-a") 'beginning-of-defun)
+;; (define-key nxml-mode-map (kbd "C-M-a") 'beginning-of-defun)
 
-(define-key php-mode-map (kbd "C-M-e") 'end-of-defun)
-(define-key nxml-mode-map (kbd "C-M-e") 'end-of-defun)
+;; (define-key nxml-mode-map (kbd "C-M-e") 'end-of-defun)
 
 (define-key emacs-lisp-mode-map (kbd "<backspace>") 'delete-backward-char)
-(define-key clojure-mode-map (kbd "<backspace>") 'delete-backward-char)
+;; (define-key clojure-mode-map (kbd "<backspace>") 'delete-backward-char)

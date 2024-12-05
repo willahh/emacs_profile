@@ -145,9 +145,6 @@
                     :height 100
                     :box nil)
 
-;; ------- php
-(require 'php-mode)
-(set-face-attribute 'php-annotations-annotation-face nil :foreground "#008000" :background nil :underline t)
 
 ;; ------- org
 (defun wlh/org-mode-hook ()

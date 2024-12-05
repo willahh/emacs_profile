@@ -1,7 +1,7 @@
 ;; Ido ------------------------------
 (require 'ido)
 ;; (require 'ido-vertical-mode)
-(require 'ido-occur)
+;; (require 'ido-occur) ;; error
 
 (ido-mode t)
 ;; (ido-vertical-mode nil)
@@ -62,7 +62,7 @@
 
 ;; Helm ---------------------------------
 (require 'helm-ag)
-(require 'helm-config)
+;; (require 'helm-config) ;; error
 (require 'helm-swoop)
 
 (defun helm-mouse-1-exit-minibuffer (click)

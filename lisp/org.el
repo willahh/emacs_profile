@@ -59,7 +59,6 @@
 ;;    (scala      . t)
 ;;    (sass       . t)
 ;;    (clojure    . t)
-;;    (php        . t)
 ;;    (python     . t)
 ;;    (ruby       . t)
 ;;    (dot        . t)
