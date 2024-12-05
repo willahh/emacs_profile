@@ -1,4 +1,7 @@
-(require 'dracula-theme)
+(load "./../../elpa/dracula-theme.el")
+
+;;(require 'dracula-theme)
+;;(load-theme 'dracula t)
 (require 'ediff)
 (require 'scroll-bar)
 (require 'faces)
@@ -11,11 +14,13 @@
 ;; ------- Font
 ;; (set-frame-font "Office Code Pro:antialias=1")
 (set-frame-font "Menlo")
-(setq-default line-spacing 2) ; https://www.emacswiki.org/emacs/LineSpacing
-(setq-default line-height 1.25)
-
+;;(setq-default line-height 1.25)
+;; (setq-default line-spacing 2) ; https://www.emacswiki.org/emacs/LineSpacing
 ;; (setq-default line-spacing 2) ; Same line height as modern editor (VS Code)
-(setq-default line-spacing 2) ; Update to default value (switch font instead)
+;; (setq-default line-spacing 2) ; Update to default value (switch font instead)
+
+(setq-default line-height 1)
+(setq-default line-spacing 1) ; Update to default value (switch font instead)
 
 (set-face-attribute 'default nil :background "#1a1c1d" :foreground "#fff")
 
@@ -46,7 +51,7 @@
 ;; (set-face-attribute 'trailing-whitespace nil :background "#242f33")
 ;; (set-face-attribute 'web-mode-whitespace-face nil :background "#192124")
 (set-face-attribute 'trailing-whitespace nil :background "#161818")
-(set-face-attribute 'web-mode-whitespace-face nil :background "#161818")
+;;(set-face-attribute 'web-mode-whitespace-face nil :background "#161818")
 
 ;; Mode line
 ;; (set-face-background 'mode-line-inactive "#000")
@@ -92,8 +97,8 @@
 ;; (set-face-attribute 'show-paren-match-face nil :background "#0d874c" :foreground "#ffffff" :weight 'ultra-bold)
 (set-face-attribute 'show-paren-match nil :background "#000" :foreground "#fa75e2" :weight 'ultra-bold :underline "#ff00a0")
 
-(set-face-attribute 'js2-error nil
-                    :foreground "#fff")
+;; (set-face-attribute 'js2-error nil
+;;                     :foreground "#fff")
 
 (set-face-attribute 'yas-field-highlight-face nil
                     :foreground "#fff"
@@ -159,13 +164,13 @@
 (set-face-attribute 'font-lock-function-name-face nil  :foreground "#ff79c6")
 (set-face-attribute 'font-lock-keyword-face nil  :foreground "#bd93f9")
 
-(set-face-attribute 'magit-diff-removed-highlight nil :background nil :foreground "#ff536a")
-(set-face-attribute 'magit-diff-removed nil :background nil :foreground "#ff536a")
-(set-face-attribute 'magit-diff-added nil :background nil :foreground "#c3e886")
-(set-face-attribute 'magit-diff-added-highlight nil :background nil :foreground "#c3e886")
+;;(set-face-attribute 'magit-diff-removed-highlight nil :background nil :foreground "#ff536a")
+;;(set-face-attribute 'magit-diff-removed nil :background nil :foreground "#ff536a")
+;;(set-face-attribute 'magit-diff-added nil :background nil :foreground "#c3e886")
+;;(set-face-attribute 'magit-diff-added-highlight nil :background nil :foreground "#c3e886")
 
 ;; Magit
-(set-face-attribute 'magit-diff-context-highlight nil :background "#1a1c1d")
+;;(set-face-attribute 'magit-diff-context-highlight nil :background "#1a1c1d")
 
 (set-face-attribute 'ediff-even-diff-A nil :foreground nil :background "#000")
 (set-face-attribute 'ediff-even-diff-B nil :foreground nil :background "#000")

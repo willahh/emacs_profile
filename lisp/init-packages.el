@@ -1,12 +1,15 @@
+;; https://melpa.org/#/getting-started
 (require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+;; Comment/uncomment this line to enable MELPA Stable if desired.  See `package-archive-priorities`
+;; and `package-pinned-packages`. Most users will not need or want to do this.
+;;(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 
 (add-to-list 'package-archives
-	         '("gnu" . "https://elpa.gnu.org/packages/"))
-
-(add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/"))
-
+             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (package-initialize)
+
+
 
 (setq package-list '(
                      cider
@@ -42,7 +45,6 @@
                      ;; dash
                      diminish
                      diff-hl
-                     diffview
                      ;; dracula-theme
                      drag-stuff
                      dumb-jump
@@ -147,13 +149,13 @@
                      whole-line-or-region
                      xref-js2
                      yaml-mode
-                     redshank ; Common lisp lib
-                     erefactor ; Common lisp lib
+                     redshank           ; Common lisp lib
+                     erefactor          ; Common lisp lib
                      yasnippet
                      zop-to-char
                      ace-jump-mode
 		             ;; with-editor ; Required by magit
-		     ))
+		             ))
 
 ;; Add some missing packages
 (add-to-list 'load-path "~/.emacs.d/site-lisp/org-mouse")

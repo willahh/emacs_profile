@@ -6,7 +6,6 @@
 (global-set-key (kbd "C-x RET") 'dired-jump)
 (global-set-key (kbd "M-a") 'mark-whole-buffer) ; Was backward-sentence
 
-
 ;; Copy
 ;; (global-set-key (kbd "M-c") #'kill-ring-save-keep-selection)
 (global-set-key (kbd "M-c") 'kill-ring-save)
@@ -63,40 +62,40 @@
 
 ;; --------------- Leader key bindings
 ;; Search
-(global-set-key (kbd (concat wlh/leader-key "s s")) 'projectile-ag)
-(global-set-key (kbd (concat wlh/leader-key "s a")) 'ag)
-(global-set-key (kbd (concat wlh/leader-key "M-s")) 'helm-ag)
+;; (global-set-key (kbd (concat wlh/leader-key "s s")) 'projectile-ag)
+;; (global-set-key (kbd (concat wlh/leader-key "s a")) 'ag)
+;; (global-set-key (kbd (concat wlh/leader-key "M-s")) 'helm-ag)
 
-;; Google
-(global-set-key (kbd (concat wlh/leader-key "g s")) 'helm-google-suggest)
-(global-set-key (kbd (concat wlh/leader-key "g t")) 'google-translate-at-point)
+;; ;; Google
+;; (global-set-key (kbd (concat wlh/leader-key "g s")) 'helm-google-suggest)
+;; (global-set-key (kbd (concat wlh/leader-key "g t")) 'google-translate-at-point)
 
-;; User keybinding - Line
-(global-set-key (kbd (concat wlh/leader-key "t")) 'toggle-truncate-lines)
+;; ;; User keybinding - Line
+;; (global-set-key (kbd (concat wlh/leader-key "t")) 'toggle-truncate-lines)
 
-;; Shell / Term
-(global-set-key (kbd (concat wlh/leader-key "e")) 'eshell)
-(global-set-key (kbd (concat wlh/leader-key "a")) 'ansi-term)
+;; ;; Shell / Term
+;; (global-set-key (kbd (concat wlh/leader-key "e")) 'eshell)
+;; (global-set-key (kbd (concat wlh/leader-key "a")) 'ansi-term)
 
-;; Emacs custom commonly used functions
-(global-set-key (kbd (concat wlh/leader-key "f n d")) 'find-name-dired)
-(global-set-key (kbd (concat wlh/leader-key "w c")) 'whitespace-cleanup)
+;; ;; Emacs custom commonly used functions
+;; (global-set-key (kbd (concat wlh/leader-key "f n d")) 'find-name-dired)
+;; (global-set-key (kbd (concat wlh/leader-key "w c")) 'whitespace-cleanup)
 
-;; Increment at point
-(global-set-key (kbd (concat wlh/leader-key "i")) 'wlh/hydra-increment-at-point/body)
-(global-set-key (kbd (concat wlh/leader-key "p")) 'wlh/workspace-search)
+;; ;; Increment at point
+;; (global-set-key (kbd (concat wlh/leader-key "i")) 'wlh/hydra-increment-at-point/body)
+;; (global-set-key (kbd (concat wlh/leader-key "p")) 'wlh/workspace-search)
 
-;; org
-(global-set-key (kbd (concat wlh/leader-key "o")) 'org-iswitchb)
-(global-set-key (kbd (concat wlh/leader-key "c")) 'org-capture)
+;; ;; org
+;; (global-set-key (kbd (concat wlh/leader-key "o")) 'org-iswitchb)
+;; (global-set-key (kbd (concat wlh/leader-key "c")) 'org-capture)
 
-;; Misc
-(global-set-key (kbd (concat wlh/leader-key "b u")) 'browse-url)
-(global-set-key (kbd (concat wlh/leader-key "m d")) 'wlh/mysql-dump)
+;; ;; Misc
+;; (global-set-key (kbd (concat wlh/leader-key "b u")) 'browse-url)
+;; (global-set-key (kbd (concat wlh/leader-key "m d")) 'wlh/mysql-dump)
 
-;; Join region
-(global-set-key (kbd (concat wlh/leader-key "M-J")) 'join-region)
-(global-set-key (kbd (concat wlh/leader-key "M-j")) 'join-line)
+;; ;; Join region
+;; (global-set-key (kbd (concat wlh/leader-key "M-J")) 'join-region)
+;; (global-set-key (kbd (concat wlh/leader-key "M-j")) 'join-line)
 
 ;; 
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
@@ -254,7 +253,7 @@
 ;; Diff hl next / prev
 (global-set-key (kbd "C-c C-n") 'diff-hl-next-hunk)
 ;; (define-key web-mode-map (kbd "C-c C-n") 'diff-hl-next-hunk)
-(define-key  (kbd "C-c C-n") 'diff-hl-next-hunk)
+;; (define-key  (kbd "C-c C-n") 'diff-hl-next-hunk) ;; error wrong number of arguments
 
 (global-set-key (kbd "C-c C-p") 'diff-hl-previous-hunk)
 ;; (define-key web-mode-map (kbd "C-c C-p") 'diff-hl-previous-hunk)
@@ -279,7 +278,7 @@
 (define-key dired-mode-map (kbd "C-j") 'dired-find-file)
 (define-key key-translation-map (kbd "C-j") (kbd "RET"))
 (define-key shell-mode-map (kbd "C-j") 'paredit-newline)
-(define-key emmet-mode-keymap (kbd "C-j") 'new-line-dwim)
+;; (define-key emmet-mode-keymap (kbd "C-j") 'new-line-dwim)
 (define-key helm-map (kbd "C-j") 'helm-confirm-and-exit-minibuffer)
 (define-key ibuffer-mode-map (kbd "C-j") 'ibuffer-visit-buffer)
 (define-key cider-repl-mode-map (kbd "C-j") 'paredit-newline)
@@ -302,8 +301,8 @@
 ;; (define-key prog-mode-map (kbd "RET") 'new-line-dwim)
 ;; (define-key c-mode-map (kbd "RET") 'new-line-dwim) ;; TODO Check error
 (define-key lisp-mode-map (kbd "RET") 'paredit-newline)
-(define-key css-mode-map (kbd "RET") 'newline)
-(define-key web-mode-map (kbd "RET") 'new-line-dwim)
+;; (define-key css-mode-map (kbd "RET") 'newline)
+;;(define-key web-mode-map (kbd "RET") 'new-line-dwim)
 
 ;; (define-key web-mode-map(kbd "<return>") 'wlh/web-mode-new-line) ; Return key
 ;; (define-key web-mode-map (kbd "RET") 'wlh/web-mode-new-line) ; Used by C-j
@@ -313,7 +312,6 @@
 
 ;; Open line
 (global-set-key (kbd "C-M-o") 'crux-smart-open-line)
-
 
 ;; Duplicate line
 (global-set-key (kbd "C-x C-d") 'duplicate-start-of-line-or-region)
@@ -430,7 +428,7 @@
 (global-set-key (kbd "C-c p ' g") 'projectile-find-file-dwim-other-window) ; (C-c p 4 g on azerty)
 
 ;; ---------------- text
-(define-key typescript-mode-map (kbd "C-:") "\C-e;")
+;;(define-key typescript-mode-map (kbd "C-:") "\C-e;")
 ;; (define-key web-mode-map (kbd "C-:") "\C-e;")
 
 ;; PDF
@@ -494,13 +492,13 @@
 ;; (global-set-key (kbd "s-a") 'mark-whole-buffer)
 (global-set-key (kbd "C-c C-s") 'helm-swoop)
 ;; (define-key web-mode-map (kbd "C-c C-s") 'swiper)
-(define-key js2-mode-map (kbd "C-c C-s") 'swiper)
+;; (define-key js2-mode-map (kbd "C-c C-s") 'swiper)
 
 ;; (define-key js2-mode-map (kbd "<C-M-mouse-1>") 'xref-find-definitions)
-(define-key js2-mode-map (kbd "<C-M-mouse-1>") 'dumb-jump-go)
-(define-key js-mode-map (kbd "<C-M-mouse-1>") 'dumb-jump-go)
-(define-key js2-mode-map (kbd "<C-M-mouse-3>") 'xref-pop-marker-stack)
-(define-key js-mode-map (kbd "<C-M-mouse-3>") 'xref-pop-marker-stack)
+;; (define-key js2-mode-map (kbd "<C-M-mouse-1>") 'dumb-jump-go)
+;; (define-key js-mode-map (kbd "<C-M-mouse-1>") 'dumb-jump-go)
+;; (define-key js2-mode-map (kbd "<C-M-mouse-3>") 'xref-pop-marker-stack)
+;; (define-key js-mode-map (kbd "<C-M-mouse-3>") 'xref-pop-marker-stack)
 
 ;; Mouse
 ;; (global-set-key (kbd "<mouse-3>") 'mouse-major-mode-menu)
@@ -568,3 +566,13 @@
 (global-set-key (kbd "C-é") 'point-to-register) ; C-2 on qwerty
 (global-set-key (kbd "C-\"") 'jump-to-register) ; C-3 on qwerty
 (global-set-key (kbd "C-&") 'xah-toggle-letter-case) ; (C-1 on azerty keyboard)
+
+
+
+
+
+
+
+
+
+
